@@ -300,6 +300,16 @@ def built_name(glyphs_path):
     return "%s-%s.ttf" % (fam.replace(" ", ""), inst.replace(" ", ""))
 
 
+def cmap_difference(shipped, built):
+    """Codepoints the build gains and loses against the release. Checked here because
+    the table gate accepts a GAINED codepoint (cmap_blocking's duplicate-cmap class),
+    so a gate-clean build can still map what the release does not."""
+    from fontTools.ttLib import TTFont
+    rel = set(TTFont(shipped).getBestCmap() or {})
+    ours = set(TTFont(built).getBestCmap() or {})
+    return sorted(ours - rel), sorted(rel - ours)
+
+
 def gate(shipped, built, scratch):
     j = os.path.join(scratch, os.path.basename(built) + ".d3.json")
     with open(j, "w") as fh:
@@ -352,6 +362,11 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
             results.append((p["row"]["style"], None, ["BUILD: %s not produced (%s)" % (name, ", ".join(built) or "nothing")]))
             continue
         n, blocking = gate(p["row"]["shipped"], os.path.join(ttf_dir, name), scratch)
+        gained, lost = cmap_difference(p["row"]["shipped"], os.path.join(ttf_dir, name))
+        if gained or lost:
+            n += len(gained) + len(lost)
+            blocking = blocking + ["CMAP gained %s lost %s" % (["U+%04X" % c for c in gained],
+                                                               ["U+%04X" % c for c in lost])]
         results.append((p["row"]["style"], n, blocking))
         p["built"] = name
 
@@ -409,8 +424,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     lines.append("")
     if clean:
         lines += textwrap.wrap("Builds with gftools-builder3 %s (fontc %s) and matches the binaries "
-                               "google/fonts %s ships: 0 blocking rows under the table gate, %d "
-                               "style(s)." % (B3_ID, FONTC_ID, gf_ref, len(results)), 72)
+                               "google/fonts %s ships: 0 blocking rows under the table gate and "
+                               "exactly the release's codepoints, %d style(s)."
+                               % (B3_ID, FONTC_ID, gf_ref, len(results)), 72)
     else:
         lines += textwrap.wrap("Builds with gftools-builder3 %s (fontc %s). Against google/fonts %s, "
                                "under the table gate:" % (B3_ID, FONTC_ID, gf_ref), 72)

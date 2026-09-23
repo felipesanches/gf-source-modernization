@@ -12,8 +12,9 @@ a fresh clone -- and checks, for every repository given:
   3. SHAPE: every commit between the template and the conversion changes only .sfd
      files (criterion B: each edit to the font is its own commit); the convert
      commit is last and retires the converted sources.
-  4. CORRESPONDENCE: a fresh clone builds from its own sources/config.yaml, and
-     every style gates at 0 blocking rows against the release.
+  4. CORRESPONDENCE: a fresh clone builds from its own sources/config.yaml, every
+     style gates at 0 blocking rows against the release, and maps EXACTLY the
+     release's codepoints (the gate itself tolerates gained ones).
   5. MESSAGES: ASCII only; each ends with "Assisted by an AI agent (Claude ...)";
      none carries Co-Authored-By.
   6. REMOTE: origin points at the repository it will be pushed to.
@@ -154,6 +155,10 @@ def verify(repo):
                 continue
             if n:
                 problems.append("GATE: %s %d blocking row(s): %s" % (r["style"], n, blocking[:3]))
+            gained, lost = land.cmap_difference(r["shipped"], os.path.join(ttf, name))
+            if gained or lost:
+                problems.append("CMAP: %s gains %s, loses %s" % (
+                    r["style"], ["U+%04X" % c for c in gained], ["U+%04X" % c for c in lost]))
     return problems
 
 

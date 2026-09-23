@@ -39,11 +39,21 @@ BASE = ["--fontforge-os2-defaults", "--add-instance-per-master", "--infer-mark-c
         "--snap-component-transforms", "--fontforge-underline-position"]
 
 
+# makeotf's duplicate cmap entries: each maps a second codepoint to the glyph of the
+# first. --add-legacy-duplicate-cmap adds all of them.
+MAKEOTF_DUPLICATES = [(0x00A0, 0x0020), (0x00AD, 0x002D), (0x02C9, 0x00AF),
+                      (0x2219, 0x00B7), (0x03BC, 0x00B5), (0x2126, 0x03A9),
+                      (0x2206, 0x0394), (0x2215, 0x002F)]
+
+
 def legacy_duplicate_cmap(shipped):
-    """makeotf's duplicate set: 'yes' only when the release maps both U+00A0 and U+00AD."""
+    """Does the release carry makeotf's duplicate entries -- a codepoint mapped to the
+    SAME glyph as its partner? Merely mapping U+00A0 and U+00AD is not evidence: a
+    source can draw them as glyphs of their own (Corben does), and the flag would then
+    add U+02C9, U+2219 and U+03BC that the release does not have. (Corben-Bold
+    verification, sfd-reland/investigations/corben-bold.)"""
     cm = TTFont(shipped).getBestCmap() or {}
-    a, d = 0xA0 in cm, 0xAD in cm
-    return "yes" if (a and d) else ("partial" if (a or d) else "no")
+    return "yes" if any(a in cm and b in cm and cm[a] == cm[b] for a, b in MAKEOTF_DUPLICATES) else "no"
 
 
 def directions_uniform(shipped):
@@ -79,8 +89,11 @@ def flags_for(sfd_text, shipped, add=(), drop=()):
         flags.insert(0, "--fontforge-height-glyph-count-mean")
     flags.append("--correct-path-direction" if directions_uniform(shipped)
                  else "--reverse-path-direction")
-    if legacy_duplicate_cmap(shipped) == "yes":
-        flags.append("--add-legacy-duplicate-cmap")
+    # --add-legacy-duplicate-cmap is NEVER passed. It adds makeotf's duplicate set,
+    # and these releases were exported by FontForge, whose duplicate mappings come
+    # from the .sfd's own AltUni2 alternates. Measured on all 42 styles
+    # (probes/cmap_recipe/RESULT.tsv): without it every style outside play and tuffy
+    # maps EXACTLY its release's codepoints; with it 11 landed styles gained 1-3.
     if "abvm" in sfd_text or "blwm" in sfd_text:
         flags.append("--correct-conjunct-category")
     flags += [f for f in add if f not in flags]
