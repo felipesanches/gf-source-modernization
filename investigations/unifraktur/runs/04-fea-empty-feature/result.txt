@@ -1,0 +1,1 @@
+no GPOS table: an empty feature block does not make fontc emit one

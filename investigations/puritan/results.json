@@ -1,0 +1,718 @@
+{
+ "investigation": {
+  "unit": "puritan",
+  "styles": [
+   "Puritan-Regular",
+   "Puritan-Italic",
+   "Puritan-Bold",
+   "Puritan-BoldItalic"
+  ],
+  "rows": [
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.y_subscript_x_size [717, 700]",
+    "classification": "source-edit-from-source",
+    "cause": "src/generate.py runs f.em=1024; SFScaleToEm rint(700*1.024)=717",
+    "evidence": "row present in runs/unmodified, absent in runs/intul (scaleem 1024)"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.y_subscript_y_size [666, 650]",
+    "classification": "source-edit-from-source",
+    "cause": "rint(650*1.024)=666 by f.em=1024",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.y_subscript_y_offset [146, 143]",
+    "classification": "source-edit-from-source",
+    "cause": "rint(143*1.024)=146",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.y_superscript_x_size [717, 700]",
+    "classification": "source-edit-from-source",
+    "cause": "rint(700*1.024)=717",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.y_superscript_y_size [666, 650]",
+    "classification": "source-edit-from-source",
+    "cause": "rint(650*1.024)=666",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.y_superscript_y_offset [464, 453]",
+    "classification": "source-edit-from-source",
+    "cause": "rint(453*1.024)=464",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.y_strikeout_size [51, 50]",
+    "classification": "source-edit-from-source",
+    "cause": "rint(50*1.024)=51",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.y_strikeout_position [265, 259]",
+    "classification": "source-edit-from-source",
+    "cause": "rint(259*1.024)=265",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.s_typo_ascender [881, 860]",
+    "classification": "source-edit-from-source",
+    "cause": "The Python em setter truncates the descent: ds=1024*200/1000=204, as=820. The offset delta becomes rint(60*1.024)=61, so the ascender is 820+61=881",
+    "evidence": "closed in runs/intul. With the Font Info dialog split 819/205 (runs/gui-rint) it stays open as [881, 880]"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.s_typo_descender [-255, -250]",
+    "classification": "source-edit-from-source",
+    "cause": "-204 + rint(-50*1.024)=-51 gives -255",
+    "evidence": "closed in runs/intul; runs/gui-rint gives [-255, -256]"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.us_win_ascent [881, 860]",
+    "classification": "source-edit-from-source",
+    "cause": "Offset 0 is measured from the bbox of the scaled outlines (yMax 881)",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.us_win_descent [238, 232]",
+    "classification": "source-edit-from-source",
+    "cause": "bbox yMin of the scaled outlines is -238",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.sx_height [507, 500]",
+    "classification": "converter-fidelity",
+    "cause": "The converter change for this row is in progress. After the em edit, FontForge's SFStandardHeight on the source gives 507. On the unmodified source it gives 495, the value src/Puritan-Regular.otf carries",
+    "evidence": "ff_heights_oracle.Sfd/standard_height on edited/intul/Puritan-Regular.sfd gives 507, equal to the release. Still open in runs/intul only because the converter does not implement it yet"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "OS/2.s_cap_height [655, 700]",
+    "classification": "converter-fidelity",
+    "cause": "In progress. On the scaled source the oracle gives 655; on the unmodified source, 640",
+    "evidence": "oracle on edited/intul gives 655, equal to the release"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "head.units_per_em [1024, 1000]",
+    "classification": "source-edit-from-source",
+    "cause": "generate.py f.em=1024 (Ascent/Descent 820/204)",
+    "evidence": "closed in runs/intul. The release is byte-identical to the monorepo ofl/puritan/Puritan-Regular.ttf, and its FFTM timestamp is FontForge 20100501 (LibFF_ModTime 1272512607)"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "hhea.ascender [881, 860]",
+    "classification": "source-edit-from-source",
+    "cause": "bbox yMax + HheadAscent 0 on the scaled outlines",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "hhea.descender [-256, -250]",
+    "classification": "source-edit-from-source",
+    "cause": "yMin -238 + rint(-18*1.024)=-18",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "hmtx.193 bearings (widest 4 at J, -152 vs -148)",
+    "classification": "source-edit-from-source",
+    "cause": "The outlines are at em 1000 and the release at 1024. FontForge rounds each control's offset from its rounded point (SplinePointRound)",
+    "evidence": "verify_scaled_points: 237/237 glyphs point-for-point and 237/237 widths exact. Only RELEASE-STALE lsb rows remain in runs/intul"
+   },
+   {
+    "style": "Puritan-Regular",
+    "row": "post.underline_position [-146, -143]",
+    "classification": "source-edit-from-source",
+    "cause": "upos scales to -136.192 and uwidth to 20.48. FontForge exports (short)(upos-uwidth/2)=-146. The edit stores the integers -136/20, which export the same bytes",
+    "evidence": "closed in runs/intul. The real-valued form reopens [-146,-100] and adds underline_thickness [20,50] (runs/exact)"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.y_subscript_x_size [717, 700]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.y_subscript_y_size [666, 650]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.y_subscript_y_offset [146, 143]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.y_superscript_x_size [717, 700]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.y_superscript_y_size [666, 650]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.y_superscript_y_offset [464, 453]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.y_strikeout_size [51, 50]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.y_strikeout_position [265, 259]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.s_typo_ascender [881, 860]",
+    "classification": "source-edit-from-source",
+    "cause": "820+61",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.s_typo_descender [-255, -250]",
+    "classification": "source-edit-from-source",
+    "cause": "-204-51",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.us_win_ascent [880, 860]",
+    "classification": "gate-arbitration",
+    "cause": "The em edit takes ours to 881, the true yMax (Scaron). The release's 880 comes from a stale composite bbox. FontForge's in-memory em change scaled Scaron (slot 0xA6) before caron (slot >255); the reference's cached box stayed as the unscaled caron plus the scaled offset (header yMax 864 while the outline reaches 881). The release font bbox therefore became Aring's 880, and 880 clips Scaron by 1 unit",
+    "evidence": "runs/intul shows [880, 881]. stale_composite_bbox.py predicts 3/3 composite headers (Scaron, scaron, yacute) in Regular and Italic. Fallback edit (OS2WinAscent 880 absolute) verified: runs/italic-abs880"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.us_win_descent [255, 249]",
+    "classification": "source-edit-from-source",
+    "cause": "scaled bbox yMin -255",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.sx_height [507, 500]",
+    "classification": "converter-fidelity",
+    "cause": "In progress; the oracle on the scaled source gives 507",
+    "evidence": "oracle on edited/intul/Puritan-Italic.sfd gives 507/655, equal to the release"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "OS/2.s_cap_height [655, 700]",
+    "classification": "converter-fidelity",
+    "cause": "In progress; the oracle on the scaled source gives 655",
+    "evidence": "oracle on edited/intul gives 655"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "head.units_per_em [1024, 1000]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024",
+    "evidence": "closed in runs/intul. The release equals the monorepo Puritan-Italic.ttf except fsType 1->0 (google/fonts 8ccda7bf7) and checkSumAdjustment"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "hhea.ascender [880, 860]",
+    "classification": "gate-arbitration",
+    "cause": "Same as us_win_ascent: the em edit gives 881, the true bbox; the release's 880 comes from FontForge's stale Scaron composite bbox",
+    "evidence": "runs/intul shows [880, 881]. Fallback edit (HheadAscent 880 absolute) verified: runs/italic-abs880 closes both rows and opens none"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "hhea.descender [-256, -250]",
+    "classification": "source-edit-from-source",
+    "cause": "yMin -255 + rint(-1*1.024)=-1",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "hmtx.158 bearings (widest 4 at J)",
+    "classification": "source-edit-from-source",
+    "cause": "em 1000 vs 1024 outlines",
+    "evidence": "verify_scaled_points 237/237 exact; only RELEASE-STALE lsbs remain"
+   },
+   {
+    "style": "Puritan-Italic",
+    "row": "post.underline_position [-146, -143]",
+    "classification": "source-edit-from-source",
+    "cause": "FontForge exports (short)(-136.192-10.24)=-146; the edit stores -136/20",
+    "evidence": "closed in runs/intul; runs/exact shows the real-valued form dropped by babelfont"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "converter-fidelity",
+    "cause": "In progress (fontc does not set it for a static single-master source); the .sfd states TTFWeight: 700",
+    "evidence": "still open in runs/intul, which is expected"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.y_subscript_x_size [717, 700]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.y_subscript_y_size [666, 650]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.y_subscript_y_offset [146, 143]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.y_superscript_x_size [717, 700]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.y_superscript_y_size [666, 650]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.y_superscript_y_offset [464, 453]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.y_strikeout_size [51, 50]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.y_strikeout_position [265, 259]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.s_typo_ascender [897, 875]",
+    "classification": "source-edit-from-source",
+    "cause": "820 + rint(75*1.024)=77 gives 897",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.s_typo_descender [-255, -250]",
+    "classification": "source-edit-from-source",
+    "cause": "-204-51",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.us_win_ascent [896, 875]",
+    "classification": "source-edit-from-source",
+    "cause": "scaled bbox yMax 896",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.us_win_descent [248, 242]",
+    "classification": "source-edit-from-source",
+    "cause": "scaled bbox yMin -248",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.sx_height [507, 500]",
+    "classification": "converter-fidelity",
+    "cause": "In progress; the oracle on the scaled source gives 507",
+    "evidence": "oracle on edited/intul/Puritan-Bold.sfd gives 507/655, equal to the release"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "OS/2.s_cap_height [655, 700]",
+    "classification": "converter-fidelity",
+    "cause": "In progress; the oracle on the scaled source gives 655",
+    "evidence": "oracle on edited/intul gives 655"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "head.units_per_em [1024, 1000]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "hhea.ascender [896, 875]",
+    "classification": "source-edit-from-source",
+    "cause": "scaled bbox yMax + 0",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "hhea.descender [-256, -250]",
+    "classification": "source-edit-from-source",
+    "cause": "-248 + rint(-8*1.024)=-8",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "hmtx.177 bearings (widest 4 at J)",
+    "classification": "source-edit-from-source",
+    "cause": "em 1000 vs 1024 outlines",
+    "evidence": "verify_scaled_points 237/237 exact"
+   },
+   {
+    "style": "Puritan-Bold",
+    "row": "post.underline_position [-146, -143]",
+    "classification": "source-edit-from-source",
+    "cause": "FontForge exports (short)(upos-uwidth/2) after scaling; the edit stores -136/20",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "converter-fidelity",
+    "cause": "In progress; TTFWeight: 700 is stated",
+    "evidence": "still open in runs/intul, which is expected"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.y_subscript_x_size [717, 700]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.y_subscript_y_size [666, 650]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.y_subscript_y_offset [146, 143]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.y_superscript_x_size [717, 700]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.y_superscript_y_size [666, 650]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.y_superscript_y_offset [464, 453]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.y_strikeout_size [51, 50]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.y_strikeout_position [265, 259]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024 rint scaling",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.s_typo_ascender [897, 875]",
+    "classification": "source-edit-from-source",
+    "cause": "820+77",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.s_typo_descender [-255, -250]",
+    "classification": "source-edit-from-source",
+    "cause": "-204-51",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.us_win_ascent [896, 875]",
+    "classification": "source-edit-from-source",
+    "cause": "scaled bbox yMax 896",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.us_win_descent [248, 242]",
+    "classification": "source-edit-from-source",
+    "cause": "scaled bbox yMin -248",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.sx_height [507, 500]",
+    "classification": "converter-fidelity",
+    "cause": "In progress; the oracle on the scaled source gives 507",
+    "evidence": "oracle on edited/intul/Puritan-BoldItalic.sfd gives 507/655, equal to the release"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "OS/2.s_cap_height [655, 700]",
+    "classification": "converter-fidelity",
+    "cause": "In progress; the oracle on the scaled source gives 655",
+    "evidence": "oracle on edited/intul gives 655"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "head.units_per_em [1024, 1000]",
+    "classification": "source-edit-from-source",
+    "cause": "f.em=1024",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "hhea.ascender [896, 875]",
+    "classification": "source-edit-from-source",
+    "cause": "scaled bbox yMax + 0",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "hhea.descender [-256, -250]",
+    "classification": "source-edit-from-source",
+    "cause": "-248-8",
+    "evidence": "closed in runs/intul"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "hmtx.151 bearings (widest 4 at J)",
+    "classification": "source-edit-from-source",
+    "cause": "em 1000 vs 1024 outlines",
+    "evidence": "verify_scaled_points 237/237 exact"
+   },
+   {
+    "style": "Puritan-BoldItalic",
+    "row": "post.underline_position [-146, -143]",
+    "classification": "source-edit-from-source",
+    "cause": "FontForge exports (short)(upos-uwidth/2) after scaling; the edit stores -136/20",
+    "evidence": "closed in runs/intul"
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Puritan-Regular",
+     "Puritan-Italic",
+     "Puritan-Bold",
+     "Puritan-BoldItalic"
+    ],
+    "op": "scaleem (NEW OP)",
+    "args": "1024  -- implemented by investigations/puritan/tools/ff_scale_em.py <in.sfd> <out.sfd> --int-underline. It ports FontForge 20100501 PyFF_Font_set_em (python.c:11508): ds = newem*Descent/(Ascent+Descent) in INTEGER division, as = newem-ds. Then SFScaleToEm (splinefont.c:506): every OS2*/Hhead*/LineGap field becomes rint(v*scale), offset-mode deltas included; UnderlinePosition and UnderlineWidth are multiplied by scale and written rounded to integers. Then FVTrans (fontviewbase.c:649): every Width and VWidth is truncated (int16 = float); references to selected glyphs have only their offsets scaled; the Back layer is scaled but not rounded. Points go through TransformPoint (single precision, snapped to 1/1024; splineutil.c:1760) and then SCRound2Int/SplinePointRound on Fore (splinechar.c:834/696). An implied point (flag 128, ttfindex -1) becomes the midpoint of its rounded controls. Any other point rounds me and each control's OFFSET from me; order2 controls propagate to the neighbour, and the first-processed point wins. A control rounded onto its point makes the spline a line (SplineRefigure2, splineorder2.c:1229). Fore reference offsets are rint'd. Line count and point flags are preserved.",
+    "commit_subject": "Scale the em to 1024 as src/generate.py did",
+    "commit_body": "generate.py sets f.em = 1024 before exporting the .ttf. This is what FontForge\n20100501 made of it: Ascent/Descent 820/204 (integer division), OS/2 fields\nrint-scaled, widths truncated, points rounded by SCRound2Int. Underline stored\nas -136/20; FontForge's -136.192/20.48 export the same post values.",
+    "value_derived_from": "The same source tree's ofl/puritan/src/generate.py ('f.em = 1024'), executed by FontForge 20100501. That build is identified by the FFTM FFTimeStamp 2010-04-29 03:43:27, which equals LibFF_ModTime 1272512607 in fontforge_full-20100501.tar.bz2 (sha256 ee4928b0df7480c31a422645854d9f3f4f6718dd423b6885bd33e87a8a6edd79). No value is copied from the release. The port reproduces the release glyf point-for-point in 237/237 glyphs and 237/237 advance widths in all 4 styles.",
+    "source_currently_states": "Ascent: 800 / Descent: 200 (em 1000). OS2TypoAscent 60 (Regular, Italic) or 75 (Bold, BoldItalic), offset 1; OS2TypoDescent -50, offset 1; HheadDescent -18/-1/-8, offset 1; Win and HheadAscent 0 in offset mode. OS2SubXSize/YSize/XOff/YOff 700/650/0/143; Sup 700/650/0/453; Strike 50/259; UnderlinePosition -133; UnderlineWidth 20. All widths and outlines are at em 1000.",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Puritan-Italic"
+    ],
+    "op": "setfield",
+    "args": "OS2WinAscent 880",
+    "commit_subject": "OS2WinAscent 880",
+    "commit_body": "Release-only value, kept as released: FontForge's in-memory em change left\nScaron's composite box stale (yMax 864; its outline reaches 881), so the\nrelease's bbox, and this metric, came from Aring's 880. Clips Scaron by 1 unit.",
+    "value_derived_from": "Release only (Puritan-Italic.ttf usWinAscent 880). ALTERNATIVE, to use only if the proposed gate arbitration is declined. It reproduces a 1-unit clip.",
+    "source_currently_states": "OS2WinAscent: 0 with OS2WinAOffset: 1 (font bbox yMax + 0, i.e. 881 after the em edit)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Puritan-Italic"
+    ],
+    "op": "setfield",
+    "args": "OS2WinAOffset 0",
+    "commit_subject": "OS2WinAOffset 0",
+    "commit_body": "Value above is absolute.",
+    "value_derived_from": "Companion of OS2WinAscent 880 (alternative to gate arbitration)",
+    "source_currently_states": "OS2WinAOffset: 1",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Puritan-Italic"
+    ],
+    "op": "setfield",
+    "args": "HheadAscent 880",
+    "commit_subject": "HheadAscent 880",
+    "commit_body": "Release-only value, kept as released: taken from the same stale Scaron\ncomposite box as OS2WinAscent (outline yMax 881, release bbox 880).",
+    "value_derived_from": "Release only (Puritan-Italic.ttf hhea.ascent 880). Alternative to gate arbitration.",
+    "source_currently_states": "HheadAscent: 0 with HheadAOffset: 1",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Puritan-Italic"
+    ],
+    "op": "setfield",
+    "args": "HheadAOffset 0",
+    "commit_subject": "HheadAOffset 0",
+    "commit_body": "Value above is absolute.",
+    "value_derived_from": "Companion of HheadAscent 880 (alternative to gate arbitration)",
+    "source_currently_states": "HheadAOffset: 1",
+    "verified": true
+   }
+  ],
+  "proposed_converter_changes": [
+   {
+    "description": "babelfont convertors/fontforge.rs parse_metric! parses UnderlinePosition/UnderlineWidth (and every metric it handles) as i32 and silently drops a real. FontForge stores sf->upos/uwidth as real and writes them with %g (sfd.c:1838). It exports post.underlinePosition = putshort(upos - uwidth/2) and underlineThickness = putshort(uwidth), both C float-to-int truncation (tottf.c:4116). The proposal: parse these two as f64 and apply that rule in --fontforge-underline-position. Needed only if the scaleem edit keeps FontForge's exact reals (-136.192/20.48); the proposed integer form (-136/20) does not need it. None of the 42 families.tsv sources states a real underline value today, so priority is low.",
+    "evidence": "runs/exact/*.gate.txt: with UnderlinePosition -136.192 / UnderlineWidth 20.48 the build carries post.underline_position [-146, -100] and underline_thickness [20, 50], the Glyphs defaults. runs/intul, with -136/20, closes both.",
+    "styles_affected": [
+     "Puritan-Regular",
+     "Puritan-Italic",
+     "Puritan-Bold",
+     "Puritan-BoldItalic"
+    ]
+   }
+  ],
+  "proposed_flag_changes": [],
+  "verification": {
+   "commands": [
+    "S=/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-puritan; I=/home/fsanches/compartilhado/sfd-reland/investigations/puritan; A=/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git; PY='env PYTHONDONTWRITEBYTECODE=1 /home/fsanches/compartilhado/gftools/venv/bin/python3'; R=/home/fsanches/compartilhado/google/fonts/ofl/puritan",
+    "mkdir -p $S/mono; git -C $A archive 52f780bc9d197280a9f430574e179a5f233c56b6 ofl/puritan | tar -x -C $S/mono --strip-components=2",
+    "for s in Regular Italic Bold BoldItalic; do $PY $I/tools/ff_scale_em.py $S/mono/src/Puritan-$s.sfd $I/edited/intul/Puritan-$s.sfd --int-underline; $PY $I/tools/ff_scale_em.py $S/mono/src/Puritan-$s.sfd $I/edited/exact/Puritan-$s.sfd; done",
+    "for s in Regular Italic Bold BoldItalic; do $PY $I/tools/verify_scaled_points.py $I/edited/intul/Puritan-$s.sfd $R/Puritan-$s.ttf; done   # 237 exact, 0 widths differing, x4",
+    "for s in Regular Italic Bold BoldItalic; do $PY $I/tools/naive_rounding_check.py $S/mono/src/Puritan-$s.sfd $R/Puritan-$s.ttf --implied-midpoints; done   # 135/140/120/128 glyphs differ under plain rounding",
+    "for s in Regular Italic; do $PY $I/tools/stale_composite_bbox.py $S/mono/src/Puritan-$s.sfd $R/Puritan-$s.ttf; done   # 3/3 PREDICTED",
+    "cd /home/fsanches/compartilhado/sfd-reland; for s in Regular Italic Bold BoldItalic; do TAG=puritan OUT=$I/runs/unmodified bash tools/baseline.sh Puritan-$s; done",
+    "cd /home/fsanches/compartilhado/sfd-reland; for s in Regular Italic Bold BoldItalic; do TAG=puritan OUT=$I/runs/intul SRC_OVERRIDE=$I/edited/intul/Puritan-$s.sfd bash tools/baseline.sh Puritan-$s; done",
+    "cd /home/fsanches/compartilhado/sfd-reland; for s in Regular Italic Bold BoldItalic; do TAG=puritan OUT=$I/runs/exact SRC_OVERRIDE=$I/edited/exact/Puritan-$s.sfd bash tools/baseline.sh Puritan-$s; done",
+    "sed -e 's/^HheadAscent: 0$/HheadAscent: 880/' -e 's/^HheadAOffset: 1$/HheadAOffset: 0/' -e 's/^OS2WinAscent: 0$/OS2WinAscent: 880/' -e 's/^OS2WinAOffset: 1$/OS2WinAOffset: 0/' $I/edited/intul/Puritan-Italic.sfd > $I/edited/italic-abs880/Puritan-Italic.sfd; cd /home/fsanches/compartilhado/sfd-reland; TAG=puritan OUT=$I/runs/italic-abs880 SRC_OVERRIDE=$I/edited/italic-abs880/Puritan-Italic.sfd bash tools/baseline.sh Puritan-Italic",
+    "sed -e 's/^Ascent: 820$/Ascent: 819/' -e 's/^Descent: 204$/Descent: 205/' $I/edited/intul/Puritan-Regular.sfd > $I/edited/gui-rint/Puritan-Regular.sfd; cd /home/fsanches/compartilhado/sfd-reland; TAG=puritan OUT=$I/runs/gui-rint SRC_OVERRIDE=$I/edited/gui-rint/Puritan-Regular.sfd bash tools/baseline.sh Puritan-Regular",
+    "cd /home/fsanches/compartilhado/sfd-reland/tools; PYTHONDONTWRITEBYTECODE=1 $PY -c \"import ff_heights_oracle as o; [print(s, o.exported(o.standard_height(o.Sfd(open('$I/edited/intul/Puritan-%s.sfd'%s).read()),o.XH)), o.exported(o.standard_height(o.Sfd(open('$I/edited/intul/Puritan-%s.sfd'%s).read()),o.CAP))) for s in ['Regular','Italic','Bold','BoldItalic']]\"   # 507 655 x4"
+   ],
+   "rows_before": "Regular 19, Italic 19, Bold 20, BoldItalic 20 (baseline/*.gate.txt; re-run into runs/unmodified gives identical BLOCKING lines)",
+   "rows_after": "With scaleem 1024 (runs/intul): Regular 2 [sx_height 507/500, s_cap_height 655/700]. Italic 4 [us_win_ascent 880/881, hhea.ascender 880/881, sx_height, s_cap_height]. Bold 3 and BoldItalic 3 [us_weight_class 700/400, sx_height, s_cap_height]. Adding the Italic fallback edit (runs/italic-abs880) takes Italic to 2 [sx_height, s_cap_height]. Every remaining row is converter work already in progress; the heights oracle gives 507/655 on the scaled sources in 4/4. No row was opened by either edit. The exact-real underline variant (runs/exact) adds post.underline_position [-146,-100] and underline_thickness [20,50].",
+   "summary": "FINDINGS (FINDINGS.md was NOT written: the Write tool refused report .md files for this subagent, so the full content is here). **Model**: Claude Opus 5.5. CONCLUSION: The Puritan release is not provenance and not a different revision. It is exactly the four .sfd files at googlefontdirectory-hg 52f780bc, run through that tree's own ofl/puritan/src/generate.py under FontForge 20100501. The script exports the .otf at em 1000, then runs f.em = 1024 and f.is_quadratic = True (a no-op, since the Fore layers are already order2). It runs f.round() (a no-op, because it acts on the selection, which is empty at that point), then autoHint and autoInstr, and exports the .ttf. The prior notes (B6-RESIDUALS 'source generation this repo no longer holds', WHATS_NEEDED, PROVENANCE-NOT-CONVERSION) are wrong on this point. EVIDENCE: (1) Release Puritan-Regular.ttf (google/fonts b5efa9c) is byte-identical to monorepo ofl/puritan/Puritan-Regular.ttf. Italic, Bold and BoldItalic differ only in OS/2 fsType 1->0 (google/fonts 8ccda7bf7 'Fix fsType for 40 font files') and head.checkSumAdjustment. (2) The FFTM FFTimeStamp of every release .ttf is 2010-04-29 03:43:27, which equals LibFF_ModTime 1272512607 in fontforge_full-20100501.tar.bz2 (downloads.sourceforge.net/project/fontforge/fontforge-source/, sha256 ee4928b0df7480c31a422645854d9f3f4f6718dd423b6885bd33e87a8a6edd79). The src/*.otf FFTM sourceModified equals the .sfd ModificationTime (2010-11-26 14:05:32), and the .ttf are stamped 14:09:49-52 in generate.py list order. (3) src/*.otf is FontForge's own export before the em change: UPM 1000, sx/cap 495/640, which equals ff_heights_oracle on the unmodified source. (4) tools/ff_scale_em.py ports what f.em=1024 executes in FontForge 20100501, in single precision. The resulting .sfd reproduces the release glyf point-for-point in order: 234/234/229/229 simple glyphs plus every composite's components and offsets, 237/237 glyphs in each of the 4 styles. Advance widths are 237/237 in all 4 (tools/verify_scaled_points.py, which emulates SSTtfNumberPoints+SSAddPoints). (5) The rounding rules are load-bearing. Widths are truncated (int16 = float, splinechar.c:121): truncation matches 237/237, rint only 107/97/113/113. SplinePointRound (splinechar.c:696) rounds each control's offset from its rounded point: plain per-point rounding, even with implied midpoints kept, matches only 95/90/105/97 of 230/230/225/225 simple glyphs (tools/naive_rounding_check.py). The Python em setter splits the em by integer division (python.c:11527): ds = 1024*200/1000 = 204, as = 820. The typo metrics are then 881/-255, which equal the release. The Font Info dialog (fontinfo.c:2019, rint) gives 819/205, which leaves s_typo_ascender [881,880] and s_typo_descender [-255,-256] (runs/gui-rint). PROPOSED EDIT: one commit on all four .sfd, 'Scale the em to 1024 as src/generate.py did', using a new op scaleem 1024 (tools/ff_scale_em.py --int-underline). It writes the underline as -136/20 rather than FontForge's reals -136.192/20.48, because babelfont f725e6a's parse_metric parses i32 and silently drops reals (runs/exact). FontForge exports (short)(upos-uwidth/2) = -146 and (short)uwidth = 20 either way, so the integer form is lossless. Verified: 19/19/20/20 -> 2/4/3/3 blocking rows, none opened. ITALIC RESIDUAL: us_win_ascent and hhea.ascender are [880,881]. FontForge's in-memory em change scaled Scaron (iso8859-15 slot 0xA6) before caron (slot >255), and only reference offsets are scaled. Scaron's cached reference box therefore stayed as the unscaled caron plus the scaled offset. tools/stale_composite_bbox.py predicts the release glyf header of all 3 composites (Scaron, scaron, yacute) in Regular and Italic exactly; Italic Scaron has header yMax 864 while its outline reaches 881. Italic's tallest glyph is Scaron, so the release's font bbox, and the offset-mode Win/Hhead ascent (delta 0), is Aring's 880. That clips Scaron by 1 unit. A fresh FontForge load of the scaled .sfd would give 881; the converter is not at fault. Recommended closure is gate-arbitration: extend table_gate.py _bbox_declared so that, when the head bboxes differ and the release's own resolved glyf max equals ours, these offset-mode rows become RELEASE-STALE. Verified fallback is a source-edit-from-release: OS2WinAscent 880, OS2WinAOffset 0, HheadAscent 880, HheadAOffset 0 in Italic, which takes Italic from 4 to 2 rows (runs/italic-abs880). REMAINING: sx/cap heights (all four) are converter-fidelity, in progress; the oracle on the scaled sources gives 507/655, equal to the release, in 4/4. us_weight_class (Bold, BoldItalic; TTFWeight 700) is converter work in progress. NON-BLOCKING: 13/34/17/29 RELEASE-STALE hmtx lsbs, where FontForge's lsb follows curve extrema rather than points, plus the stale composite boxes. PINS: babelfont gf-sfd-conversion f725e6a (0.2.1); gftools-builder3 e851b8b (fontc 1.0.0); diffenator3 1.1.4; table_gate.py sfd-batch5 f5cb410 (sha256 391e296d...); baseline.sh sha256 c76a392f...; ff_heights_oracle.py sha256 c7647148...; google/fonts b5efa9c32e8f; googlefontdirectory-hg 52f780bc9d197280a9f430574e179a5f233c56b6; FontForge 20100501 as above. Edited-source sha256 (edited/intul): Regular b312261f, Italic fbfa0e89, Bold 16a0064d, BoldItalic 1fb24d7b; Italic fallback f405da90. Tool sha256: ff_scale_em.py 9248fa24, verify_scaled_points.py 20a8c892, naive_rounding_check.py 8192e62c, stale_composite_bbox.py 98eda89f."
+  },
+  "unresolved": [
+   "FINDINGS.md was not written. The Write tool refused a findings .md file for this subagent ('Subagents should return findings as text'), and I did not work around it. The full FINDINGS content is in verification.summary. Everything else is under /home/fsanches/compartilhado/sfd-reland/investigations/puritan/: tools/ (4 scripts), edited/ (scaled sources), runs/ (gate outputs).",
+   "Decision for Felipe on the Italic residual (us_win_ascent and hhea.ascender at 880 vs 881): adopt the proposed table_gate.py rule (release-stale: the release's head bbox contradicts its own resolved glyf outline), or apply the verified source-edit-from-release (OS2WinAscent/HheadAscent 880 absolute). The latter reproduces a 1-unit clip of Scaron.",
+   "The new op scaleem is not yet in sfd-reland/tools/sfd_edit.py or sfd-batch5/tools/source_corrections.py (outside my write scope). The reference implementation is investigations/puritan/tools/ff_scale_em.py, scale_sfd(text, 1024, int_underline=True).",
+   "Prior notes to correct (outside my write scope): sfd-batch6/B6-RESIDUALS-2026-09-22.md (lines ~164-172: 'a source generation this repo no longer holds', 'sources rescaled since the release'), sfd-batch6/WHATS_NEEDED.md (~95-97) and sfd-batch5/PROVENANCE-NOT-CONVERSION-2026-09-23.md (line 17) list puritan as provenance. It is the tree's own build script at the same source state.",
+   "sx_height/s_cap_height close only when the in-progress converter change lands AND runs on the em-scaled source; on the unmodified source the rule gives 495/640.",
+   "Nothing was committed (as instructed). The probe scripts and edited sources exist only in the untracked investigations/puritan directory. The global rule wants them committed next to the numbers they back. The FontForge 20100501 tarball is scratch-only; its URL and sha256 are recorded.",
+   "Housekeeping: importing ff_heights_oracle from sfd-reland/tools may have created sfd-reland/tools/__pycache__/ff_heights_oracle.cpython-313.pyc (20:56:07). Another agent's verify_heights_port.py (written 20:56:04) imports the same module, so it is ambiguous whether the cache is mine. It is a harmless bytecode cache and I left it in place."
+  ],
+  "confidence": "high. The release glyf is reproduced point-for-point for 237/237 glyphs and 237/237 advance widths in all 4 styles by a port of the exact FontForge build identified by FFTM. The em-scaling edit was gate-verified on all 4 styles with baseline.sh. The only judgment call left is how to close the Italic 1-unit residual.",
+  "findings_path": "NOT WRITTEN: the Write tool refused /home/fsanches/compartilhado/sfd-reland/investigations/puritan/FINDINGS.md (subagents may not write report .md files). The full findings text is in verification.summary."
+ },
+ "verification": {
+  "unit": "puritan",
+  "reproduced": true,
+  "reproduction_notes": "I extracted a fresh ofl/puritan tree from googlefontdirectory-hg 52f780bc9d19 into my scratch (inv-puritan-verify/mono) and ran their ff_scale_em.py (sha256 9248fa24) on the unmodified sources. That produced edited/intul and edited/exact. Both are byte-identical to their files. The intul sha256 prefixes are Regular b312261f, Italic fbfa0e89, Bold 16a0064d, BoldItalic 1fb24d7b.\n\nI ran baseline.sh one style at a time with TAG=puritan-verify and OUT=scratch/runs/<v>. After removing the flags lines, every gate output is byte-identical to theirs:\n- unmodified: 19/19/20/20 blocking. The BLOCKING lines match sfd-reland/baseline/*.gate.txt exactly.\n- intul: 2/4/3/3. Regular has sx_height and s_cap_height. Italic adds us_win_ascent [880,881] and hhea.ascender [880,881]. Bold and BoldItalic add us_weight_class [700,400].\n- exact: 4/6/5/5. It adds post.underline_position [-146,-100] and underline_thickness [20,50].\n- italic-abs880: Italic goes to 2 (the heights only).\n\nI also tested an alternative the investigator did not try: OS2WinAscent -1 and HheadAscent -1, keeping offset mode. It also closes Italic to 2.\n\nNo edit opened a BLOCKING row. The only new gate lines are RELEASE-STALE hmtx lsb rows: 12/33/16/28, plus the GDEF row already present.\n\nIndependent checks, written from scratch and using only the release and the built TTFs:\n1. cmp_glyf.py decomposes both fonts and compares each canonicalised contour exactly. The built outlines match the release in 237/237 glyphs in all 4 styles, once degenerate controls are normalised. Advances match 237/237.\n2. Without that normalisation, point structure differs in 1/5/2/5 glyphs (Regular B; Italic K f j thorn fi; Bold at braceright; BoldItalic two at f braceright approxequal). FontForge wrote an off-curve point on its own on-curve point, or wrote an explicit midpoint, and our pipeline drops or implies it. The geometry is identical and the gate does not see it. Their \"point-for-point 237/237\" is therefore true of their SFD-level emulation (verify_scaled_points reruns 237/237), not of the built font.\n3. Width truncation, recomputed from the .sfd Width lines: int(f32(w*1.024)) matches 237/237 in all 4 styles, and rint only 107/97/113/113. This confirms their claim.\n4. The heights oracle on my fresh intul sources gives 507/655 in 4/4, and 495/640 on the unmodified sources, which equals the src/*.otf.\n5. Byte comparison: release Regular equals the monorepo .ttf. Italic, Bold and BoldItalic differ only in head bytes 8-11 (checkSumAdjustment) and OS/2 bytes 8-9 (fsType 1->0).\n6. FFTM FFTimeStamp is 2010-04-29 03:43:27 in all four styles, equal to LibFF_ModTime 1272512607 in their ff20100501.tar.bz2 (sha256 ee4928b0..., which I rechecked).\n7. I read PyFF_Font_set_em in the FontForge 20100501 sources (python.c:11527): `ds = newem*descent/oldem` is int arithmetic. SFScaleToEm rint-scales the pfminfo fields and multiplies upos/uwidth unrounded. FVTrans truncates widths through SCSynchronizeWidth and calls SCRound2Int on the active layer. `font.round()` in python.c:14708 acts on the selection only. `real` is float by default (configure.in:856).",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Scale the em to 1024 as src/generate.py did",
+    "verdict": "revise",
+    "reason": "Keep the transformation exactly as proposed. It is reproduced and gate-verified: 19/19/20/20 -> 2/4/3/3 with no row opened, built geometry 237/237 x4 and advances 237/237 x4. It discards no designer-stated value: every stated metric is rescaled by FontForge's own rule, offset flags stay offsets, and HheadDescent -18/-1/-8 is unchanged by rint. No fidelity route exists, because the exporter writes UPM = Ascent+Descent; the 1024 comes from the build script. value_derived_from is honest: no number is taken from the release, which is used only through FFTM to identify the FontForge version.\n\nRevise the commit body only:\n(1) The binaries were built at e6ab8ab47 (2010-11-26 14:22) by the ORIGINAL generate.py (blob 9d1f2a7b: f.em = 1024 then f.round(), no is_quadratic, file names 'Puritan.sfd' etc.). The 52f780bc script is a later rewrite (15d6ae4fd on 11-29, acd4730e6 on 11-30). Cite 'generate.py as committed with the binaries in e6ab8ab47'.\n(2) Name the implementing tool and its sha (ff_scale_em.py 9248fa24) and the FontForge 20100501 identification.\n(3) Keep the sentence saying -136/20 is a rounding of FontForge's -136.192/20.48 that exports the same post bytes. This choice does work around a real converter bug (i32 parse silently drops reals), and that bug should be filed regardless.\n(4) Say that the .sfd still carries em-1000 TrueType instructions: TtInstrs in 229/229/224/224 glyphs, plus the cvt, prep and fpgm tables. The release regenerated these with autoInstr, and the converter ignores them.\n\nBefore the scaleem op goes into source_corrections.py, it needs a guard. It must refuse sources with KP/KernClass2/AnchorPoint/HStem/VStem/BeginPrivate/BASE/math data: FontForge scales these (fvt_scalekernclasses, fvt_scalepstpos, SFScalePrivate) and the port silently does not. None is present in Puritan (checked)."
+   },
+   {
+    "commit_subject": "OS2WinAscent 880",
+    "verdict": "keep",
+    "reason": "This is the fallback only, and it is verified: Italic goes 4 -> 2 with nothing opened. The source states OS2WinAscent 0 with OS2WinAOffset 1 (bbox + 0). 880 exists only in the release, and the body says so plainly and says it clips Scaron by 1 unit. The facts in the body are right: the Scaron glyf header yMax is 864 while the outline reaches 881; caron is all on-curve lines (top 727+154=881), so no curve-extrema fidelity explanation applies; Aring (simple) is 880.\n\nAn equally verified, smaller alternative is OS2WinAscent -1 in offset mode, with no companion flag commit. Absolute plus flag follows the existing precedent, so either is acceptable.\n\nFelipe should decide between this and the gate rule."
+   },
+   {
+    "commit_subject": "OS2WinAOffset 0",
+    "verdict": "keep",
+    "reason": "Companion of OS2WinAscent 880. The source states 1; the body 'Value above is absolute.' matches precedent. Not needed if the offset -1 form or gate arbitration is chosen."
+   },
+   {
+    "commit_subject": "HheadAscent 880",
+    "verdict": "keep",
+    "reason": "Fallback only, verified together with OS2WinAscent 880 (runs/italic-abs880 reproduced byte-identically). The source states HheadAscent 0 with HheadAOffset 1. The value is release-only and the body is accurate. HheadAscent -1 in offset mode also closes the row (verified)."
+   },
+   {
+    "commit_subject": "HheadAOffset 0",
+    "verdict": "keep",
+    "reason": "Companion of HheadAscent 880. The source states 1. Drop it if the offset -1 form or gate arbitration is chosen."
+   }
+  ],
+  "classification_objections": [
+   "Italic OS/2.us_win_ascent [880,881] and hhea.ascender [880,881] (gate-arbitration): the fact is right but the stated mechanism is wrong. The findings say FontForge 'scaled Scaron (slot 0xA6) before caron (slot >255)'. The release contradicts an ordering effect. The Regular Scaron header xMin/xMax 41/450 is the UNSCALED S (41/450), although S (enc 83) comes before Scaron (enc 166). The yacute header (22,-196,458) is the unscaled y (enc 121 < 253). Stale composite headers exist in all four styles (3/3/8/8), and their own stale_composite_bbox.py predicts 22/22 of them. That script models EVERY component as unscaled, regardless of order. The correct statement is that every composite's cached reference geometry stayed unscaled with a scaled offset: SCTransLayer only translates a selected reference (fontviewbase.c, 20100501). Only Italic is affected, because Scaron is uniquely tallest there. In Regular, .notdef (simple) also reaches 881; in Bold and BoldItalic, Icircumflex/Ecircumflex reach 896. Also, the proposed gate arbitration does not exist yet. _bbox_declared deliberately says nothing when head bboxes differ (table_gate.py:555-584), so these rows stay BLOCKING until Felipe approves a gate change or the fallback edit. A gate rule should compare resolved extremes by one method on both sides; FontForge's simple-glyph headers use curve extrema, not control points.",
+   "Provenance narrative (it affects no row class, but the text should be corrected): 'exactly the four .sfd at 52f780bc run through that tree's generate.py' is imprecise. The binaries were committed at e6ab8ab47 with the original generate.py (no is_quadratic). Three .sfd were changed afterwards by e15966610 (2011-01-26, 'Removing OpenType DRM bits': FSType 1->0 in Italic/Bold/BoldItalic); the monorepo TTFs still carry fsType 1 and google/fonts 8ccda7bf7 mirrored the fix, so no row results. The Regular .sfd blob 698e56ac is unchanged since e6ab8ab47. The FFTM sourceModified values equal the .sfd ModificationTime (14:05:32/33/34/34), which corroborates that the outline state is unchanged.",
+   "OS/2.sx_height / s_cap_height (converter-fidelity): I agree, and I add evidence they omitted. The oracle ports FontForge MASTER. Its one semantic difference from 20100501 (splinefont.c SFStandardHeight, no-flat branch: 'tot += curves[i].cnt' vs '++tot') is not exercised here. All 4 scaled styles take the FLATS branch, with modes 507 (x-height) and 655 (cap height). So the oracle is valid for this vintage. Caveat: the converter commit ca43adc now sits in the babelfont worktree, but target/release/babelfont (built 20:27:57) predates it (committed 20:56:25). Closure is proven by the oracle only, not by a build.",
+   "hmtx.N bearings rows (source-edit-from-source): I agree they close. But the residual RELEASE-STALE lsb rows are 12/33/16/28 hmtx rows (13/34/17/29 counts the GDEF row too). The explanation 'FontForge's lsb follows curve extrema' matches only 52 of 72 simple-glyph rows (floor/round of fontTools BoundsPen xMin). For example, Italic e has lsb 32 against a curve xMin of 31.35, and Italic questiondown has 11 against 10.0. These rows are non-blocking and gate-arbitrated already, but the stated cause is partial."
+  ],
+  "missed": [
+   "The generate.py history: the binaries were built by the e6ab8ab47 script, and the 52f780bc script is a 2010-11-29/30 rewrite. The commit body and value_derived_from should cite the original.",
+   "The post-build .sfd edit e15966610 (FSType 1->0, three styles). It is neutralised by google/fonts 8ccda7bf7, but it means the 52f780bc .sfd is not byte-for-byte the build state.",
+   "Stale composite headers in Bold and BoldItalic (8 each: edieresis, igrave, icircumflex, odieresis, udieresis, Scaron, scaron, yacute). They ran the predictor only on Regular and Italic.",
+   "The built font is point-for-point only modulo degenerate controls: 1/5/2/5 glyphs differ in point structure while their geometry is identical. The gate is unaffected.",
+   "The scaled .sfd keeps stale em-1000 TtInstrs, cvt, prep and fpgm. The converter ignores them, and the release regenerated them with autoInstr.",
+   "The new scaleem op has no guard against data FontForge would scale but the port ignores (kerning, anchors, hints, private dict, BASE, math). This is safe for Puritan only.",
+   "The babelfont worktree HEAD moved to ca43adc (heights) after the pinned binary was built. The heights closure is unbuilt and unverified end-to-end.",
+   "The offset-mode alternative for Italic (OS2WinAscent -1 / HheadAscent -1, 2 lines instead of 4) also closes both rows (verified).",
+   "Pairing is correct: each .sfd FontName equals the release post_script_name and the METADATA.pb filename. All 4 styles are covered, and all 78 given rows are classified. No BLOCKING row is opened by any proposed edit.",
+   "Reproducibility: their tools, their edited sources and my probes (inv-puritan-verify/tools: cmp_glyf.py 63af2d1a, bbox_probe.py aa5c206d, probe_release.py fd67592a, show_glyph.py a4034f6c) exist only in untracked or scratch locations. Under the global rule they must be committed next to the numbers before the edit lands."
+  ],
+  "overall": "VERIFY (puritan) -- **Model**: Claude Opus 5.5\n\nVERIFY.md was NOT written. This subagent's instructions forbid writing report .md files, so the content is here instead.\n\nVERDICT: The investigation holds up. The Puritan release is the monorepo sources with FontForge 20100501's in-memory `f.em = 1024` applied, not provenance. The proposed scaleem edit reproduces it: gate 19/19/20/20 -> 2/4/3/3, with no row opened. Independently of their tools, the built fonts match the release in outline geometry for 237/237 glyphs x4 and in advances for 237/237 x4. Widths truncate in 237/237 x4, while rint matches only 107/97/113/113. The Python-setter split 820/204 is confirmed in python.c:11527, and runs/gui-rint (819/205) fails.\n\nFour corrections:\n(1) The binaries were built at e6ab8ab47 by the original generate.py (blob 9d1f2a7b: f.em=1024, f.round(), no is_quadratic). The 52f780bc script is a later rewrite. Three .sfd were changed afterwards by e15966610 (FSType 1->0), which google/fonts 8ccda7bf7 mirrored.\n(2) The Italic 880 mechanism is not encoding order. Every composite's header, in all 4 styles (3/3/8/8), is its unscaled components plus a scaled offset. Proof: Regular Scaron's xMin/xMax 41/450 equal the unscaled S (enc 83, before Scaron); yacute's header equals the unscaled y. Only Italic is affected, because Scaron is uniquely tallest there.\n(3) The claim \"point-for-point\" holds for their SFD emulation only. The built fonts differ in point structure in 1/5/2/5 glyphs (degenerate controls); geometry is identical.\n(4) The heights oracle is valid for the 20100501 vintage here, because the flats branch applies (modes 507/655). The ca43adc converter commit is not in the pinned binary.\n\nEdit verdicts:\n- scaleem: keep the transformation, revise the body (cite the e6ab8ab47 script and the tool sha; mention the stale em-1000 TT instructions; keep the underline note). Add a scope guard before making it a general op.\n- Italic OS2WinAscent/HheadAscent 880 plus the two offset-flag commits: keep as a verified fallback. The offset -1 form is also verified and uses 2 lines instead of 4.\n- Gate arbitration versus fallback is Felipe's decision. The current table_gate.py (_bbox_declared) keeps those rows BLOCKING.\n- Converter proposal (parse UnderlinePosition/Width as f64 and apply (short)(upos-uwidth/2)): valid, because babelfont fontforge.rs:92 parse::<i32> drops reals silently. Low priority.\n\nPINS:\n- babelfont 0.2.1: binary built 2026-09-23 20:27:57 (f725e6a); the worktree HEAD is now ca43adc, not built.\n- gftools-builder e851b8b (fontc 1.0.0); diffenator3 1.1.4\n- table_gate.py: sfd-batch5 f5cb410, sha256 391e296d3f6e0768\n- baseline.sh sha256 c76a392f07676a4a; ff_heights_oracle.py sha256 c7647148524e0544\n- google/fonts b5efa9c32e8f; googlefontdirectory-hg 52f780bc9d19 (binaries from e6ab8ab47)\n- FontForge 20100501 tarball sha256 ee4928b0df74...\n\nRERUN (S=/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-puritan-verify, A=/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git, PY=/home/fsanches/compartilhado/gftools/venv/bin/python3, R=/home/fsanches/compartilhado/google/fonts/ofl/puritan):\n1. git -C $A archive 52f780bc9d197280a9f430574e179a5f233c56b6 ofl/puritan | tar -x -C $S/mono --strip-components=2\n2. for s in Regular Italic Bold BoldItalic; do $PY $S/tools/ff_scale_em.py $S/mono/src/Puritan-$s.sfd $S/edited/intul/Puritan-$s.sfd --int-underline; done\n3. cd /home/fsanches/compartilhado/sfd-reland; for s in ...; do TAG=puritan-verify OUT=$S/runs/intul SRC_OVERRIDE=$S/edited/intul/Puritan-$s.sfd bash tools/baseline.sh Puritan-$s; done  (also runs/unmodified, runs/exact, runs/italic-abs880, runs/italic-off-1)\n4. $PY $S/tools/cmp_glyf.py $R/Puritan-$s.ttf $S/built/intul/Puritan-$s.ttf [--degen]   (built fonts copied from scratchpad/baseline/Puritan-$s-puritan-verify/fonts/ttf)\n5. $PY $S/tools/bbox_probe.py $R/Puritan-*.ttf\n6. git -C $A show e6ab8ab47:puritan/src/generate.py; git -C $A show e15966610 -- puritan/\n\nAll my probes are scratch-only (volatile). They must be committed next to these numbers before anyone cites them."
+ }
+}

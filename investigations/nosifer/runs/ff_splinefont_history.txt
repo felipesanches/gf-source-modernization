@@ -1,0 +1,16 @@
+4d34d21e 2012-05-14 michal-n | Patch by Khaled Hosny for calculating wrong x and cap height for some fonts. If glyphs checked don't have flat surfaces at the top, FontForge takes the mean. But it was dividing by the wrong value.
+28754c27 2012-03-20 michal-n | Update copyright notices.
+89e109b5 2011-09-20 Alexey Kryukov | A wrong Descender value has been written into generated afm files, if the font lacked typical glyphs with descenders.
+9ce1c684 2011-02-16 George Williams | Was asked to retain the UFO ascender and descender fields.
+8163e4b2 2011-02-10 pfaedit | My cidmap files have always been a one to one mapping of cid to unicode. But that's not what Adobe does. Many cids get mapped to several code points each. So I've revamped the format to support this. The new map files need the new code (obviously) so don't download one without the other.
+91071d7e 2011-01-24 pfaedit | Scripting didn't let anyone pick a subfont within a pdf file. (did not support: filename(fontname) notation for pdf).
+a9ee0bad 2011-01-23 pfaedit | Redo the "PS Private" pane of the Font Info dialog so that it uses a matrix edit rather than the old clumsy list with editing area kludge.
+c4825764 2011-01-21 pfaedit | I used "double" in many places where I should have used "bigreal". Bigreals become "long double" when appropriate, but doubles stay doubles. I didn't get everything, just the ones I thought important.
+fe27eb4f 2011-01-12 pfaedit | New copyright notice.
+47820c5e 2010-04-16 pfaedit | FontForge failed to handle archives with double extensions (like ".tar.bz2"). Also d binderman points out that I was missing an fclose in archive processing.
+b7ed2026 2010-04-15 pfaedit | Barry thinks an error message should be improved.
+0ee7d97e 2010-04-14 pfaedit | Jeff Harmon reports that ff writes "Postscript" into PFM files rather than "PostScript" and that this matters.
+15c54c22 2010-02-12 pfaedit | Grab many patches from the mingw build. I did not grab the winmmap files because I'm not sure what the license is for that.
+da5f2af4 2010-02-04 pfaedit | New copyright notices for 2010.
+443a540f 2010-02-02 pfaedit | Add support for the Web Open Font Format (woff) which is basically just an sfnt with its tables compressed and some extra metadata. http://people.mozilla.com/~jkew/woff/woff-2009-09-16.html
+37d20840 2009-05-27 pfaedit | Consolidate various mechanisms for finding the xHeight/capHeight of a font. Look for flat lines at the top of appropriate glyphs and then snap to the closest bluevalue. If no flat lines, then try curves.

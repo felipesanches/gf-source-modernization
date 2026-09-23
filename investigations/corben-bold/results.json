@@ -1,0 +1,246 @@
+{
+ "investigation": {
+  "unit": "corben-bold",
+  "styles": [
+   "Corben-Bold"
+  ],
+  "rows": [
+   {
+    "style": "Corben-Bold",
+    "row": "BUILD-FAILED: operation 'Fontc' ... Unable to proceed; 648 jobs stuck pending",
+    "classification": "build-failure",
+    "cause": "Source defect: src/Corben-Bold.sfd has two glyphs named 'dcroat': gid 211 (Encoding 273 273 211, U+0111, the real glyph) and gid 547 (Encoding 65704 -1 547, Width 0, no outline, carrying only the smcp/aalt Substitution2 lines to dcroat.sc). babelfont writes both as 'glyphname = dcroat;'. fontc keys glyph jobs by name: workload.rs insert_with_bookkeeping counts 2 Glyph jobs, jobs_pending (a HashMap) keeps 1, the Glyph counter never reaches 0, so Fe(GlyphOrder) is never launchable and everything downstream is reported stuck. Not a scheduler hang, composite cycle or feature-code problem. Closed by edit E1 (rename only gid 547 to dcroat.1).",
+    "evidence": "Converted .glyphs lines 20947 and 42080 both 'glyphname = dcroat;' (only duplicate). fontc 0.6.0 with RUST_LOG=warn: '1596/2246 jobs have succeeded', blocked = Fe(GlyphOrder), Fe(KernInstance), 646 Be jobs (runs/fontc060-unmodified-blocked.log). Minimal repro fontc-dup-repro/: two glyphs named 'a' -> 'Unable to proceed; 29 jobs stuck pending' (fontc 0.6.0) / '30 jobs' (builder3 e851b8b, fontc 1.0.0); identical file with 'a.1' builds in both. With E1 the harness builds and gates (runs/e1-dcroat1: 11 blocking, none about dcroat). The release's RAW post table names gid 211 and gid 548 both 'dcroat' in all 4 google/fonts versions (release_history.txt); fontTools reads the second as 'dcroat.1'; release smcp/aalt map dcroat.1 -> dcroat.sc and kerning binds to gid 211, exactly what renaming only gid 547 preserves."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "hhea.ascender [2826, 2300]",
+    "classification": "source-edit-from-source",
+    "cause": "The release was edited after export: google/fonts 5b1755d5a (2015-09-21) rewrote the vertical metrics. The value is stated by src/Corben-Bold-TTF.sfd (the later 2011-10-10 revision of this style in the same tree): HheadAscent: 2826. Corben-Bold.sfd states HheadAscent: 2300 (HheadAOffset: 0).",
+    "evidence": "First google/fonts binary 90abd17b4 (the FontForge 2011 export) has hhea 2300/-940 = the .sfd; 5b1755d5a and later have 2826/-969 (release_history.txt). Closed by E2 in runs/e12-vmetrics (11 -> 5 rows)."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "hhea.descender [-969, -940]",
+    "classification": "source-edit-from-source",
+    "cause": "As hhea.ascender: Corben-Bold-TTF.sfd states HheadDescent: -969; this .sfd states -940 (HheadDOffset: 0). Release value set by google/fonts 5b1755d5a.",
+    "evidence": "release_history.txt; closed by E2 in runs/e12-vmetrics."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.s_typo_ascender [2826, 2300]",
+    "classification": "source-edit-from-source",
+    "cause": "Corben-Bold-TTF.sfd states OS2TypoAscent: 2826 (OS2TypoAOffset: 0); this .sfd states 2300 (OS2TypoAOffset: 0). Release value set by google/fonts 5b1755d5a.",
+    "evidence": "release_history.txt (90abd17b4 typo 2300/-940); closed by E2 in runs/e12-vmetrics."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.s_typo_descender [-969, -940]",
+    "classification": "source-edit-from-source",
+    "cause": "Corben-Bold-TTF.sfd states OS2TypoDescent: -969 (OS2TypoDOffset: 0); this .sfd states -940.",
+    "evidence": "release_history.txt; closed by E2 in runs/e12-vmetrics."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.us_win_ascent [2826, 2300]",
+    "classification": "source-edit-from-source",
+    "cause": "Corben-Bold-TTF.sfd states OS2WinAscent: 2826 (OS2WinAOffset: 0); this .sfd states 2300.",
+    "evidence": "release_history.txt; closed by E2 in runs/e12-vmetrics."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.us_win_descent [969, 940]",
+    "classification": "source-edit-from-source",
+    "cause": "Corben-Bold-TTF.sfd states OS2WinDescent: 969 (OS2WinDOffset: 0); this .sfd states 940.",
+    "evidence": "release_history.txt; closed by E2 in runs/e12-vmetrics."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.ach_vend_id [\"newt\", \"NONE\"]",
+    "classification": "source-edit-from-source",
+    "cause": "Neither Bold source states a real vendor: Corben-Bold.sfd has OS2Vendor: '    ' (blank) and Corben-Bold-TTF.sfd has 'PfEd' (FontForge's fallback placeholder, tottf.c). The family's vendor 'newt' is stated by src/Corben-Regular.sfd and src/Corben-Regular-TTF.sfd; it entered the Bold release via google/fonts 5b1755d5a. Value is from a sibling style's source, not this style's.",
+    "evidence": "90abd17b4 vendor '    '; 5b1755d5a+ 'newt' (release_history.txt). grep OS2Vendor on the four .sfd files. Closed by E3 in runs/e123-vendor (5 -> 4 rows)."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.panose_10 {\"1\": [15, 0]}",
+    "classification": "source-edit-from-release",
+    "cause": "Both Bold sources STATE Panose: 2 0 5 5 2 0 0 2 0 4 (bSerifStyle 0). The value 15 exists for this style only in the release: google/fonts 5b1755d5a (2015) changed it; the original FontForge export 90abd17b4 had 0. 15 is the Regular sources' value (Panose: 2 15 5 3 ...), which explains where the 2015 edit got it. Overrides a value the source states, so it must be an explicit commit.",
+    "evidence": "release_history.txt (bSerifStyle 0 in 90abd17b4/bacec3651, 15 from 5b1755d5a). Closed by E4 in runs/e1234-panose (4 -> 3 rows)."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "converter-fidelity",
+    "cause": "Converter, in progress (fontc does not set it for a static single-master source). The .sfd states TTFWeight: 700.",
+    "evidence": "Remains in runs/e1234-panose and runs/e1234-nodupcmap; no per-family edit proposed."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.sx_height [1296, 500]",
+    "classification": "converter-fidelity",
+    "cause": "Converter, in progress. FontForge's exporter rule reproduces the release from the unmodified .sfd.",
+    "evidence": "tools/ff_heights_oracle.py: 'Corben-Bold v2 1296/1296 1593/1593 MATCH'. The 2011 export 90abd17b4 already carried 1296. No per-family edit proposed."
+   },
+   {
+    "style": "Corben-Bold",
+    "row": "OS/2.s_cap_height [1593, 700]",
+    "classification": "converter-fidelity",
+    "cause": "Converter, in progress. Oracle reproduces 1593 from the unmodified .sfd.",
+    "evidence": "tools/ff_heights_oracle.py: Corben-Bold cap 1593/1593 MATCH."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Corben-Bold"
+    ],
+    "op": "renameglyphgid (NEW op; reference implementation investigations/corben-bold/renameglyphgid.py): renames exactly the one StartChar whose following 'Encoding: <enc> <uni> <gid>' line carries <gid> as its third field, touches nothing else (by-name references in kern classes and other glyphs keep binding to the remaining <old> glyph, as FontForge bound them); lines inside the renamed glyph's own block move with it. FATAL unless <old> is duplicated, exactly one duplicate has that gid, and <new> is not already a StartChar. The existing renameglyph cannot be used: it renames the FIRST StartChar and every standalone occurrence of the name.",
+    "args": "547 dcroat dcroat.1",
+    "commit_subject": "Rename the empty duplicate dcroat to dcroat.1",
+    "commit_body": "Two glyphs were named dcroat (gid 211 U+0111; gid 547 empty, unencoded); fontc cannot build a duplicated name. The release keeps both; its second reads as dcroat.1.",
+    "value_derived_from": "The name is how fontTools reads the release's second copy (the raw post table names gid 211 and gid 548 both 'dcroat'). Diff is one line: 49307 'StartChar: dcroat' -> 'StartChar: dcroat.1'.",
+    "source_currently_states": "StartChar: dcroat / Encoding: 65704 -1 547 / Width: 0 / Substitution2 smcp+aalt -> dcroat.sc (second glyph of that name; the first is StartChar: dcroat / Encoding: 273 273 211)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Corben-Bold"
+    ],
+    "op": "setfield (6 rows, investigations/corben-bold/e2-vmetrics.tsv)",
+    "args": "OS2TypoAscent 2826\nOS2TypoDescent -969\nOS2WinAscent 2826\nOS2WinDescent 969\nHheadAscent 2826\nHheadDescent -969",
+    "commit_subject": "Take the vertical metrics of Corben-Bold-TTF.sfd",
+    "commit_body": "The later src/Corben-Bold-TTF.sfd states 2826/-969, as the release carries; this file stated 2300/-940.",
+    "value_derived_from": "src/Corben-Bold-TTF.sfd header in the same tree (2011-10-10 revision of this style): OS2TypoAscent: 2826, OS2TypoDescent: -969, OS2WinAscent: 2826, OS2WinDescent: 969, HheadAscent: 2826, HheadDescent: -969, all *Offset: 0. The Regular sources state the same.",
+    "source_currently_states": "OS2TypoAscent: 2300, OS2TypoDescent: -940, OS2WinAscent: 2300, OS2WinDescent: 940, HheadAscent: 2300, HheadDescent: -940; OS2TypoAOffset/DOffset, OS2WinAOffset/DOffset, HheadAOffset/DOffset all 0 (absolute), so no offset edit needed",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Corben-Bold"
+    ],
+    "op": "setfield (investigations/corben-bold/e3-vendor.tsv)",
+    "args": "OS2Vendor 'newt'",
+    "commit_subject": "OS2Vendor newt",
+    "commit_body": "The family's vendor as the Corben-Regular sources state it; this file left it blank (the TTF revision has FontForge's placeholder PfEd).",
+    "value_derived_from": "src/Corben-Regular.sfd and src/Corben-Regular-TTF.sfd: OS2Vendor: 'newt'. Release achVendID 'newt' since google/fonts 5b1755d5a.",
+    "source_currently_states": "OS2Vendor: '    '",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Corben-Bold"
+    ],
+    "op": "setfield (investigations/corben-bold/e4-panose.tsv)",
+    "args": "Panose 2 15 5 5 2 0 0 2 0 4",
+    "commit_subject": "PANOSE serif style 15",
+    "commit_body": "This value exists only in the release (set by google/fonts 5b1755d5a in 2015); both Bold sources state 0. 15 is what the Regular's sources state.",
+    "value_derived_from": "Release OS/2 panose bSerifStyle 15 (only there for this style); the other nine digits are unchanged from this .sfd. Corben-Regular sources state Panose: 2 15 5 3 2 0 0 2 0 4 for the Regular.",
+    "source_currently_states": "Panose: 2 0 5 5 2 0 0 2 0 4 (Corben-Bold-TTF.sfd states the same)",
+    "verified": true
+   }
+  ],
+  "proposed_converter_changes": [
+   {
+    "description": "babelfont (diagnostic only, not a fidelity flag): when an SFD has two StartChar with the same name, fail or warn naming the glyphs and their gids, instead of writing a .glyphs file with duplicate glyphname entries that fontc cannot compile. No output change for valid sources.",
+    "evidence": "Corben-Bold.sfd gid 211 and gid 547 both 'dcroat' -> converted Corben-Bold.glyphs lines 20947 and 42080; build then fails with 'Unable to proceed; 648 jobs stuck pending'. Same pattern observed (not rebuilt) in sfd-batch7/work-legacy/dhyana/sources/Dhyana.glyphs and Dhyana-Bold.glyphs: duplicate 'macron' (the other 'stuck pending' family in sfd-batch7/FONTC-JOBS-STUCK-PENDING.md).",
+    "styles_affected": [
+     "Corben-Bold",
+     "Dhyana-Regular (observed, not verified here)",
+     "Dhyana-Bold (observed, not verified here)"
+    ]
+   },
+   {
+    "description": "UPSTREAM fontc (not the converter; for Felipe to file): a duplicated glyph name should be reported as such, not as 'Unable to proceed; N jobs stuck pending'. Cause in fontc-1.0.0/src/workload.rs: insert_with_bookkeeping increments count_pending per job while jobs_pending is a HashMap keyed by Fe(Glyph(name)), so the second job with the same name replaces the first and the Glyph counter never reaches 0.",
+    "evidence": "investigations/corben-bold/fontc-dup-repro/ (DupName.glyphs vs UniqueName.glyphs, README.md): fontc 0.6.0 -> 29 jobs stuck, gftools-builder3 e851b8b (fontc 1.0.0) -> 30 jobs stuck; the a.1 control builds in both.",
+    "styles_affected": [
+     "Corben-Bold"
+    ]
+   }
+  ],
+  "proposed_flag_changes": [
+   {
+    "style": "Corben-Bold",
+    "add": [],
+    "drop": [
+     "--add-legacy-duplicate-cmap"
+    ],
+    "reason": "The harness enables it because the release maps both U+00A0 and U+00AD, but here those are the .sfd's own glyphs (uni00A0 width 500, uni00AD), not makeotf-synthesised duplicates; the release's cmap equals the .sfd's (380 = 380, same glyph per codepoint). The flag adds U+02C9->macron and U+2219->periodcentered, which the release does not have (the gate accepts additions, so they were silent). With the flag dropped: cmap_diff is {} and still 3 blocking rows (runs/e1234-nodupcmap). Corben-Regular's release also has distinct uni00A0/uni00AD glyphs, so the same misfire is likely there (not rebuilt here)."
+   }
+  ],
+  "verification": {
+   "commands": [
+    "TAG=corben-bold OUT=investigations/corben-bold/runs/e1-dcroat1 SRC_OVERRIDE=<scratch>/cand/e1-dcroat1.sfd SCRATCH=<scratch> bash tools/baseline.sh Corben-Bold",
+    "TAG=corben-bold OUT=investigations/corben-bold/runs/e12-vmetrics SRC_OVERRIDE=<scratch>/cand/e12.sfd SCRATCH=<scratch> bash tools/baseline.sh Corben-Bold",
+    "TAG=corben-bold OUT=investigations/corben-bold/runs/e123-vendor SRC_OVERRIDE=<scratch>/cand/e123.sfd SCRATCH=<scratch> bash tools/baseline.sh Corben-Bold",
+    "TAG=corben-bold OUT=investigations/corben-bold/runs/e1234-panose SRC_OVERRIDE=<scratch>/cand/e1234.sfd SCRATCH=<scratch> bash tools/baseline.sh Corben-Bold",
+    "DROP_FLAGS=--add-legacy-duplicate-cmap TAG=corben-bold OUT=investigations/corben-bold/runs/e1234-nodupcmap SRC_OVERRIDE=<scratch>/cand/e1234.sfd SCRATCH=<scratch> bash tools/baseline.sh Corben-Bold",
+    "bash investigations/corben-bold/rerun.sh <scratch-dir>   (regenerates all candidate sources from the archive and repeats the 5 runs, sequentially)",
+    "RUST_LOG=warn fontc(0.6.0, sfd-batch5/d4d5-probe/fontc-3518040) --build-dir X -o X.ttf <unmodified Corben-Bold.glyphs>  -> runs/fontc060-unmodified-blocked.log",
+    "gftools/venv/bin/python3 investigations/corben-bold/release_history.py > release_history.txt",
+    "gftools/venv/bin/python3 investigations/corben-bold/cmap_provenance.py <tree> google/fonts/ofl/corben/Corben-Bold.ttf > cmap_provenance.txt",
+    "gftools/venv/bin/python3 investigations/corben-bold/outline_compare.py <release.ttf> <built.ttf> > runs/e1234-nodupcmap/outline_compare.txt",
+    "gftools/venv/bin/python3 tools/ff_heights_oracle.py | grep Corben"
+   ],
+   "rows_before": "BUILD-FAILED (Unable to proceed; 648 jobs stuck pending); after E1 alone the build completes and shows 11 blocking: hhea.ascender, hhea.descender, OS/2.s_typo_ascender, OS/2.s_typo_descender, OS/2.us_win_ascent, OS/2.us_win_descent, OS/2.ach_vend_id, OS/2.panose_10, OS/2.us_weight_class, OS/2.sx_height, OS/2.s_cap_height",
+   "rows_after": "3 blocking: OS/2.us_weight_class [700,400], OS/2.sx_height [1296,500], OS/2.s_cap_height [1593,700] -- all three the converter work in progress (TTFWeight: 700 stated; oracle MATCH 1296/1593). cmap_diff {} with the flag dropped. 10 RELEASE-STALE non-blocking rows unchanged throughout.",
+   "summary": "E1 (rename gid 547 dcroat -> dcroat.1) turns BUILD-FAILED into a finished gate with 11 rows. Cumulative runs: +E2 11->5, +E3 5->4, +E4 4->3, dropping --add-legacy-duplicate-cmap 3->3 with empty cmap_diff. Each step closed exactly its rows and opened none; every gate printed its closing 'N blocking table difference(s)' line. All 551 common glyphs have equal advances and equal areas vs the release; tight bounds differ only for AE/Lslash/lslash (9/5/5 units), which is the release's stale lsb: FontForge 2011 wrote glyf xMin = hmtx lsb from on-curve points (-10/3/-38), and the 2015 fontTools save in google/fonts 5b1755d5a recomputed xMin (-19/-2/-43) without the lsb (gate: RELEASE-STALE). Tools: babelfont gf-sfd-conversion f725e6a (binary mtime 20:27:57, before ca43adc; sha256 prefix f96e0851990f4807), gftools-builder3 e851b8b (fontc 1.0.0, sha256 prefix d6dd442c2cb549fa), diffenator3 1.1.4, table_gate.py md5 d99eadad22d0ec57d119ba6ce517ed07 (sfd-batch5 cd4f827), baseline.sh md5 e5b0b4033b3bc7c99c29ba3b4c6de46a, release google/fonts b5efa9c32e8f."
+  },
+  "unresolved": [
+   "FINDINGS.md was NOT written: the Write tool refused it ('Subagents should return findings as text, not write report files'). I did not work around that refusal. Everything it would say is in this structured result. The probes, TSVs, repro and run outputs are under /home/fsanches/compartilhado/sfd-reland/investigations/corben-bold/. Someone with permission should write FINDINGS.md from this result.",
+   "Provenance (glyph data): the release's glyph set, cmap, advances and GSUB/GPOS bindings come from FontForge's 2011-01-26 export of src/Corben-Bold.sfd. Evidence: head.created 1296003342 is 8 s after the .sfd's ModificationTime 1296003334; 551 + generated .null = 552 glyphs; cmap 380 = 380. google/fonts 5b1755d5a (2015) then edited the header metadata and ee1e172ab (2017) ttfautohinted it. src/Corben-Bold-TTF.sfd cannot be the source: it is truncated at exactly 229376 bytes (56 x 4 KiB), cut off mid-record in its 955th KernClass2 before BeginChars (0 glyphs). Its CreationTime (1318235497, 2011-10-10) matches the head.created of the 264-glyph src/Corben-Bold.otf.*.ttx build, which lacks 129 of the release's codepoints. src/Corben-Bold.vfb was not read (no pinned reader).",
+   "E1 keeps a designer defect of the release: U+0111 dcroat never gets smcp/aalt, because the rule sits on the unencoded orphan. Fixing it would be a correction, not a reproduction, and would need a separate decision.",
+   "The name table differs widely because of the 2015 edit (copyright, uniqueID, version, URLs, full and PostScript names). The table gate does not block on name records (full_table_diff.py discloses them), so no name edits are proposed here.",
+   "Dhyana (sfd-batch7) shows the same duplicate-name pattern (macron) in its older conversions. I have not rebuilt or verified it in this unit.",
+   "Before the 3 remaining converter rows can close, the babelfont work in progress (worktree HEAD ca43adc, heights) and the us_weight_class fix need to be rebuilt and rerun. I did not build babelfont."
+  ],
+  "confidence": "high: the build-failure cause is shown three ways (fontc's blocked-job list, the source code, and a minimal repro that fails with a duplicate name and builds when it is renamed). All 4 edits and the flag drop were checked with baseline.sh one run at a time, and each gate printed its closing line. The classifications for vendor (value taken from the sibling style's sources) and PANOSE (value found only in the release) are judgement calls, and both are stated plainly.",
+  "findings_path": "NOT WRITTEN: the harness refused report .md files for subagents; the findings are in this structured result. Intended path: /home/fsanches/compartilhado/sfd-reland/investigations/corben-bold/FINDINGS.md"
+ },
+ "verification": {
+  "unit": "corben-bold",
+  "reproduced": true,
+  "reproduction_notes": "I built fresh candidates from a git archive of librefonts/corben 94d5b00e6b64. E1 was a hand sed on line 49307; E2 to E4 went through my own TSVs and source_corrections.py. sfd_edit.py setfield gives the same bytes. All 4 candidates are byte-identical to theirs. I ran baseline.sh sequentially with TAG=corben-bold-verify, same babelfont binary (sha256 f96e0851...), builder3 e851b8b (fontc 1.0.0), diffenator3 1.1.4, table_gate md5 d99eadad (sfd-batch5 cd4f827), release google/fonts b5efa9c32e8f. Results: unmodified = BUILD-FAILED 'Unable to proceed; 648 jobs stuck pending'; +E1 = 11; +E2 = 5; +E3 = 4; +E4 = 3 (us_weight_class, sx_height, s_cap_height); +E4 with --add-legacy-duplicate-cmap dropped = 3, and the cmap equals the release (380). All 5 gate files are byte-identical to their runs/*. Every gate printed its closing line, and the 10 RELEASE-STALE lines are identical in every run. Their fontc repro re-ran with builder3 e851b8b: DupName gives '30 jobs stuck pending', UniqueName builds. The mechanism is confirmed in fontc-1.0.0/src/workload.rs:246-251. The heights oracle gives Corben-Bold 1296/1296 1593/1593 MATCH. Extra checks beyond theirs: all 551 common glyphs have identical raw glyf outlines, 0 advance differences, and 0 of 142,129 encoded pairs shape differently (default and smcp). Report: /home/fsanches/compartilhado/sfd-reland/investigations/corben-bold/VERIFY.md",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Rename the empty duplicate dcroat to dcroat.1",
+    "verdict": "keep",
+    "reason": "The source has StartChar: dcroat twice: line 25881 (Encoding 273 273 211, the real glyph) and line 49307 (Encoding 65704 -1 547, Width 0, smcp/aalt only). No Refer or Kerns2 points at 547, so a one-line rename is minimal. The release keeps both glyphs and fontTools reads the second as dcroat.1. GSUB smcp/aalt in release and build are identical. Wording fix: say 'SFD glyph index 547 (release gid 548)'. Tooling fix: the op must go into sfd-reland/tools/sfd_edit.py, which land.py applies, not only source_corrections.py. Also, the existing renameglyph on this file exits 0 and leaves TWO 'StartChar: dcroat.1', so it needs a FATAL guard for duplicated names."
+   },
+   {
+    "commit_subject": "Take the vertical metrics of Corben-Bold-TTF.sfd",
+    "verdict": "keep",
+    "reason": "The source states typo/win/hhea 2300/-940 with all Offsets 0 (absolute). The first google/fonts binary 90abd17b4 carries exactly 2300/-940, so no FontForge vintage explains 2826. The value is stated by the designer's v1.100 Bold: the -TTF.sfd, and also Corben-Bold.vfb (vfb3ufo: 2826/-969 typo, win and hhea), which they did not read. Honest and minimal. Optionally cite the .vfb in the body."
+   },
+   {
+    "commit_subject": "OS2Vendor newt",
+    "verdict": "keep",
+    "reason": "The source states '    '. FontForge copies a stated vendor (2012 tottf.c:3495-3500), and the 2011 export has '    ', so no fidelity path exists. No Bold source names a vendor (.sfd blank, -TTF.sfd 'PfEd', .vfb empty, OTF NUL). 'newt' comes from the Regular sources and entered the Bold release in 5b1755d5a. The body says this plainly."
+   },
+   {
+    "commit_subject": "PANOSE serif style 15",
+    "verdict": "keep",
+    "reason": "The source states Panose: 2 0 5 5 2 0 0 2 0 4, as do the -TTF.sfd and the .vfb. 90abd17b4 and bacec3651 carry 0; 15 first appears in 5b1755d5a. Babelfont's PANOSE fill applies only when none is stated. The edit is explicit and changes only digit 1. Wording fix: the body says both 'exists only in the release' and '15 is what the Regular's sources state'. Suggested: 'No Bold source states it (.sfd, -TTF.sfd, .vfb all give 0); google/fonts 5b1755d5a set 15, the Regular's serif style.'"
+   },
+   {
+    "commit_subject": "(flag) drop --add-legacy-duplicate-cmap for Corben-Bold",
+    "verdict": "revise",
+    "reason": "The outcome is right: with the flag the build adds U+02C9->macron and U+2219->periodcentered, which the release lacks; without it the cmap equals the release and there are still 3 rows. But the cause is the harness rule in baseline.sh (dup=yes whenever the release maps U+00A0 and U+00AD), which misfires wherever those are distinct source glyphs. Corben-Regular misfires too: converting only (no build), the flag adds U+02C9, U+2219 and U+03BC, none of which its release has. Fix the rule (pass the flag only when U+00A0 or U+00AD maps to the same glyph as U+0020 or U+002D, or the release carries a makeotf-only codepoint) instead of a per-style DROP_FLAGS."
+   }
+  ],
+  "classification_objections": [
+   "Mild: vendor ('newt') and PANOSE (15) are the same case. No Bold source (.sfd, -TTF.sfd, .vfb) states either, and the Regular sources state both, yet one is labelled source-edit-from-source and the other source-edit-from-release. Defensible (vendor is family-wide, PANOSE is per style), but the reason should be written down.",
+   "Mild: the BUILD-FAILED row is labelled build-failure. Its cause is a source defect (duplicate StartChar name) closed by a source edit whose new name, dcroat.1, follows how fontTools reads the release. Acceptable as written; no change required."
+  ],
+  "missed": [
+   "The diffenator3 'kerns' section reports 'There are 2732 changes, check manually!'. table_gate.py reads only 'tables' and 'cmap_diff', and arbitrate_gpos accepts GPOS rows without shaping when both fonts have lookups, so kerning is ungated in this pipeline. For Corben-Bold I checked it: 0 of 142,129 encoded pairs differ, default and smcp (41,028 and 23,884 kerned pairs in both fonts). It is still a gap for every other family.",
+   "src/Corben-Bold.vfb was not read. It is readable with vfbLib 0.11.7 vfb3ufo: v1.100, 264 glyphs, no dcroat and no .sc glyphs, so it is not the release master. It states vmetrics 2826/-969, PANOSE serif 0 and an empty vendor, which corroborates E2 and shows E3/E4 are absent from all Bold sources.",
+   "The existing renameglyph in sfd_edit.py and source_corrections.py fails silently on this file: it exits 0 and leaves two 'StartChar: dcroat.1'. It needs a duplicate-name guard.",
+   "The landing tool is sfd-reland/tools/sfd_edit.py (applied by land.py), not source_corrections.py. The proposed renameglyphgid op has to be added there.",
+   "Corben-Regular (not in this unit): the dup-cmap flag misfire adds 3 codepoints (U+02C9, U+2219, U+03BC), not 2. Found by conversion only, not rebuilt.",
+   "The outline evidence can be stronger than areas and bounds: all 551 common glyphs have identical raw glyf outlines. The AE/Lslash/lslash bound differences (9/5/5) are only the fontTools lsb-xMin shift from the release's stale lsb.",
+   "FINDINGS.md for the unit is still not written."
+  ],
+  "overall": "Their result holds: I rebuilt every edit independently and reproduced it byte for byte. The build failure comes from a duplicated glyph name (dcroat, SFD glyph index 547), which fontc's job bookkeeping cannot handle. Renaming only index 547 to dcroat.1 builds, and E2 (vertical metrics), E3 (vendor) and E4 (PANOSE) then close 8 rows without opening any. That leaves 3 rows, all converter work already in progress (weight class, x-height, cap height). No FontForge exporter vintage explains any edited value: the original 2011 export carries exactly what the .sfd states, and the 2015 google/fonts commit 5b1755d5a changed only the header tables. The glyph provenance is confirmed and stronger than they claimed. All 551 raw outlines, the advances, the cmap and all kerned pairs match the release, head.created is 8 s after the .sfd was last saved, and the .vfb is a 264-glyph v1.100 master, so it cannot be the source. All 4 edits are kept; E1 and E4 need small wording fixes. The flag drop should be done as a baseline.sh rule fix, since Corben-Regular misfires too. Beyond this unit: the table gate ignores the diffenator3 kerning report and accepts GPOS differences without shaping, a gap for every family; the existing renameglyph silently re-creates the duplicate here; and the new op has to be added to sfd_edit.py. The report is at /home/fsanches/compartilhado/sfd-reland/investigations/corben-bold/VERIFY.md. Its probe scripts (kerning pairs, outline segments, release history, cmap) exist only in my scratch directory; the key two are written into VERIFY.md so they can be re-run."
+ }
+}

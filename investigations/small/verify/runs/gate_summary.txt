@@ -1,0 +1,14 @@
+runs/comicrelief-bold-noflag-f725e6a/ComicRelief-Bold.gate.txt:BLOCKING OS/2.us_weight_class [700, 400]
+runs/comicrelief-bold-noflag-f725e6a/ComicRelief-Bold.gate.txt:BLOCKING post.underline_position [-97, -185]
+runs/comicrelief-bold-noflag-f725e6a/ComicRelief-Bold.gate.txt:2 blocking table difference(s), 1 stale in the release
+runs/comicrelief-bold-sim97-ca43adc/ComicRelief-Bold.gate.txt:BLOCKING OS/2.us_weight_class [700, 400]
+runs/comicrelief-bold-sim97-ca43adc/ComicRelief-Bold.gate.txt:1 blocking table difference(s), 1 stale in the release
+runs/comicrelief-bold-sim97-f725e6a/ComicRelief-Bold.gate.txt:BLOCKING OS/2.us_weight_class [700, 400]
+runs/comicrelief-bold-sim97-f725e6a/ComicRelief-Bold.gate.txt:1 blocking table difference(s), 1 stale in the release
+runs/comicrelief-regular-noflag-f725e6a/ComicRelief-Regular.gate.txt:BLOCKING post.underline_position [-97, -185]
+runs/comicrelief-regular-noflag-f725e6a/ComicRelief-Regular.gate.txt:1 blocking table difference(s), 1 stale in the release
+runs/comicrelief-regular-sim97-ca43adc/ComicRelief-Regular.gate.txt:0 blocking table difference(s), 1 stale in the release
+runs/comicrelief-regular-sim97-f725e6a/ComicRelief-Regular.gate.txt:0 blocking table difference(s), 1 stale in the release
+runs/russoone-FSType0-ca43adc/RussoOne-Regular.gate.txt:0 blocking table difference(s), 7 stale in the release
+runs/russoone-FSType0-f725e6a/RussoOne-Regular.gate.txt:BLOCKING OS/2.sx_height [530, 500]
+runs/russoone-FSType0-f725e6a/RussoOne-Regular.gate.txt:1 blocking table difference(s), 7 stale in the release

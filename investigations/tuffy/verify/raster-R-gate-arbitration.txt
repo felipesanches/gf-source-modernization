@@ -1,0 +1,11 @@
+U+04D1 uni04D1                  abrevecyrillic               adv   993   993  px  127336  127578  diff    562  ratio 0.0044
+U+04D3 uni04D3                  adieresiscyrillic            adv   993   993  px  104558  104759  diff    461  ratio 0.0044
+U+0430 uni0430                  afii10065                    adv   993   993  px  104558  104759  diff    461  ratio 0.0044
+U+0440 uni0440                  afii10082                    adv  1044  1044  px  128754  128771  diff    387  ratio 0.0030
+U+1E03 uni1E03                  bdotaccent                   adv  1044  1044  px  135230  135160  diff    282  ratio 0.0021
+U+1E57 uni1E57                  pdotaccent                   adv  1044  1044  px  137084  137003  diff    275  ratio 0.0020
+U+1E0B uni1E0B                  ddotaccent                   adv  1044  1044  px  135261  135166  diff    267  ratio 0.0020
+U+1FE4 uni1FE4                  rholenis                     adv  1054  1054  px  142502  142401  diff    277  ratio 0.0019
+U+1FE5 uni1FE5                  rhoasper                     adv  1054  1054  px  142427  142357  diff    222  ratio 0.0016
+U+0458 uni0458                  afii10105                    adv   468   468  px   69548   69500  diff     70  ratio 0.0010
+10 codepoint(s) compared, 10 differ (advance, or >= 0.000 of pixels at 1024 ppem)

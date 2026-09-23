@@ -1,0 +1,22 @@
+addfield OS2CapHeight 644: before=None changed=True
+addfield OS2XHeight 265: before=None changed=True
+addfield OS2XHeight 925: before=None changed=True
+addfield OS2CapHeight 854: before=None changed=True
+addfield OS2XHeight 319: before=None changed=True
+addfield OS2CapHeight 485: before=None changed=True
+addfield OS2CapHeight 661: before=None changed=True
+HerrVonMuellerhoff-Regular: BLOCKING 2
+HerrVonMuellerhoff-Regular: BLOCKING 1
+Miama-Regular: BLOCKING 2
+Miama-Regular: BLOCKING 1
+NosiferCaps-Regular: BLOCKING 3
+NosiferCaps-Regular: BLOCKING 3
+PatrickHand-Regular: BLOCKING 2
+PatrickHand-Regular: BLOCKING 1
+UnifrakturCook-Bold: BLOCKING 3
+UnifrakturCook-Bold: BLOCKING 3
+HerrVonMuellerhoff-Regular: CLEAN 0
+Miama-Regular: CLEAN 0
+NosiferCaps-Regular: BLOCKING 1
+UnifrakturCook-Bold: BLOCKING 1
+PatrickHand-Regular: CLEAN 0

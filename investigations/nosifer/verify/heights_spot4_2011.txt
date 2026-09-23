@@ -1,0 +1,254 @@
+source spot-HerrVonMuellerhoff-Regular-TTF.sfd BlueValues [] snap window 10.0
+== xheight 18 glyphs
+   a            273.0000 round
+   c            275.0000 round
+   e            272.0000 round
+   g            273.0000 round
+   m            264.0000 round
+   n            264.0000 round
+   o            254.0000 round
+   p            393.0000 round
+   q            270.0000 round
+   r            270.0000 round
+   s            295.0323 round
+   u            269.0000 flat
+   v            264.0000 flat
+   w            311.0000 round
+   x            265.0000 round
+   y            269.0000 flat
+   z            273.0000 round
+   dotlessi     278.0000 flat
+   flats [[269.0, 2], [264.0, 1], [278.0, 1]]
+   curves (pos,cnt) [[273.0, 3], [275.0, 1], [272.0, 1], [264.0, 2], [254.0, 1], [393.0, 1], [270.0, 2], [295.0322580645161, 1], [311.0, 1], [265.0, 1]] distinct 10 glyphs 14 sum 2872.032258064516
+   rule 2011   mean 269.0 snapped 269.0 -> OS/2 int16 (C truncation) 269
+   rule master mean 269.0 snapped 269.0 -> OS/2 int16 (C truncation) 269
+== capheight 26 glyphs
+   A            733.0000 round
+   B            738.0000 round
+   C            733.0000 round
+   D            743.0000 round
+   E            771.0000 round
+   F            790.0000 round
+   G            738.0000 round
+   H            854.0000 round
+   I            759.0000 round
+   J            745.0000 round
+   K            788.0000 round
+   L            733.0000 round
+   M            823.0000 round
+   N            810.0000 round
+   O            739.0000 round
+   P            768.0000 round
+   Q            688.0000 round
+   R            738.0000 round
+   S            721.0000 round
+   T            756.0000 round
+   U            757.0000 round
+   V            776.0000 round
+   W            767.0000 round
+   X            773.0000 round
+   Y            765.0000 round
+   Z            694.0000 round
+   flats []
+   curves (pos,cnt) [[733.0, 3], [738.0, 3], [743.0, 1], [771.0, 1], [790.0, 1], [854.0, 1], [759.0, 1], [745.0, 1], [788.0, 1], [823.0, 1], [810.0, 1], [739.0, 1], [768.0, 1], [688.0, 1], [721.0, 1], [756.0, 1], [757.0, 1], [776.0, 1], [767.0, 1], [773.0, 1], [765.0, 1], [694.0, 1]] distinct 22 glyphs 26 sum 16758.0
+   rule 2011   mean 644.5384615384615 snapped 644.5384615384615 -> OS/2 int16 (C truncation) 644
+   rule master mean 761.7272727272727 snapped 761.7272727272727 -> OS/2 int16 (C truncation) 761
+source spot-Miama-Regular-TTF.sfd BlueValues [] snap window 10.0
+== xheight 30 glyphs
+   a            462.0000 round
+   c            468.0000 round
+   e            466.0000 round
+   g            464.0000 round
+   m            460.0000 round
+   n            456.0000 round
+   o            516.0000 round
+   p            468.0000 round
+   q            464.0000 round
+   r            488.0000 round
+   s            456.0000 round
+   u            448.0000 round
+   v            570.0000 round
+   w            478.0000 round
+   x            460.0000 round
+   y            448.0000 round
+   z            448.0000 round
+   dotlessi     448.0000 round
+   gamma        570.0000 round
+   iota         448.0000 round
+   kappa        456.0000 round
+   mu           446.0000 pointy
+   nu           602.0000 round
+   pi           460.0000 round
+   sigma        476.0000 pointy
+   tau          490.0000 round
+   upsilon      466.0000 round
+   chi          678.0000 round
+   psi          464.0000 round
+   omega        448.0000 round
+   flats []
+   curves (pos,cnt) [[462.0, 1], [468.0, 2], [466.0, 2], [464.0, 3], [460.0, 3], [456.0, 3], [516.0, 1], [488.0, 1], [448.0, 6], [570.0, 2], [478.0, 1], [446.0, 1], [602.0, 1], [476.0, 1], [490.0, 1], [678.0, 1]] distinct 16 glyphs 30 sum 7968.0
+   rule 2011   mean 265.6 snapped 265.6 -> OS/2 int16 (C truncation) 265
+   rule master mean 498.0 snapped 498.0 -> OS/2 int16 (C truncation) 498
+== capheight 50 glyphs
+   A            902.0000 round
+   B            886.0000 round
+   C            886.0000 round
+   D           1030.0000 round
+   E            886.0000 round
+   F           1086.0000 round
+   G            884.0000 round
+   H            886.0000 round
+   I            974.0000 round
+   J            974.0000 round
+   K            886.0000 round
+   L            886.0000 round
+   M            900.0000 round
+   N            874.0000 round
+   O            888.0000 round
+   P            886.0000 round
+   Q            888.0000 round
+   R            886.0000 round
+   S            886.0000 round
+   T           1104.0000 round
+   U            886.0000 round
+   V            894.0000 round
+   W            894.0000 round
+   X            886.0000 round
+   Y            886.0000 round
+   Z            862.0000 round
+   Alpha        902.0000 round
+   Beta         886.0000 round
+   Gamma        890.0000 flat
+   Delta        896.0000 round
+   Epsilon      886.0000 round
+   Zeta         862.0000 round
+   Eta          886.0000 round
+   Theta        888.0000 round
+   Iota         886.0000 round
+   Kappa        886.0000 round
+   Lambda       902.0000 round
+   Mu           900.0000 round
+   Nu           874.0000 round
+   Xi           886.0000 round
+   Omicron      888.0000 round
+   Pi           898.0000 flat
+   Rho          886.0000 round
+   Sigma        886.1000 round
+   Tau         1104.0000 round
+   Upsilon      886.0000 round
+   Phi          888.0000 round
+   Chi          886.0000 round
+   Psi          990.0000 round
+   Omega        886.0000 round
+   flats [[890.0, 1], [898.0, 1]]
+   curves (pos,cnt) [[902.0, 3], [886.0, 22], [1030.0, 1], [1086.0, 1], [884.0, 1], [974.0, 2], [900.0, 2], [874.0, 2], [888.0, 5], [1104.0, 2], [894.0, 2], [862.0, 2], [896.0, 1], [886.1, 1], [990.0, 1]] distinct 15 glyphs 48 sum 14056.1
+   rule 2011   mean 894.0 snapped 894.0 -> OS/2 int16 (C truncation) 894
+   rule master mean 894.0 snapped 894.0 -> OS/2 int16 (C truncation) 894
+source spot-UnifrakturCook-Bold-TTF.sfd BlueValues [] snap window 20.48
+== xheight 17 glyphs
+   a           1076.0000 pointy
+   c           1092.0000 round
+   e           1080.0000 pointy
+   g           1076.0000 pointy
+   m           1080.0000 pointy
+   n           1080.0000 pointy
+   o           1084.0000 round
+   p           1084.0000 pointy
+   q           1076.0000 pointy
+   r           1080.0000 pointy
+   s           1080.0000 round
+   u           1080.0000 pointy
+   v           1084.0000 pointy
+   w           1084.0000 pointy
+   x           1080.0000 round
+   y           1080.0000 pointy
+   z           1104.0000 pointy
+   flats []
+   curves (pos,cnt) [[1076.0, 3], [1092.0, 1], [1080.0, 8], [1084.0, 4], [1104.0, 1]] distinct 5 glyphs 17 sum 5436.0
+   rule 2011   mean 319.7647058823529 snapped 319.7647058823529 -> OS/2 int16 (C truncation) 319
+   rule master mean 1087.2 snapped 1087.2 -> OS/2 int16 (C truncation) 1087
+== capheight 26 glyphs
+   A           1535.0000 round
+   B           1535.0000 pointy
+   C           1535.0000 pointy
+   D           1535.0000 pointy
+   E           1535.0000 pointy
+   F           1535.0000 round
+   G           1535.0000 round
+   H           1535.0000 round
+   I           1562.0000 round
+   J           1562.0000 pointy
+   K           1535.0000 round
+   L           1535.8830 round
+   M           1535.0000 round
+   N           1535.0000 round
+   O           1535.0000 round
+   P           1535.0000 pointy
+   Q           1535.0000 round
+   R           1535.0000 pointy
+   S           1563.5391 round
+   T           1562.0000 pointy
+   U           1626.0000 round
+   V           1595.8421 round
+   W           1605.0000 pointy
+   X           1594.0000 round
+   Y           1626.0000 round
+   Z           1562.0000 pointy
+   flats []
+   curves (pos,cnt) [[1535.0, 15], [1562.0, 4], [1535.88297872, 1], [1563.5391304347827, 1], [1626.0, 2], [1595.84210526, 1], [1605.0, 1], [1594.0, 1]] distinct 8 glyphs 26 sum 12617.264214414783
+   rule 2011   mean 485.27939286210704 snapped 485.27939286210704 -> OS/2 int16 (C truncation) 485
+   rule master mean 1577.1580268018479 snapped 1577.1580268018479 -> OS/2 int16 (C truncation) 1577
+source spot-UnifrakturMaguntia.sfd BlueValues [] snap window 20.48
+== xheight 17 glyphs
+   a           1037.0167 round
+   c           1035.4848 round
+   e           1036.7143 round
+   g           1047.0167 round
+   m           1058.7547 round
+   n           1036.7547 round
+   o           1047.5714 round
+   p           1212.2373 round
+   q           1046.0167 round
+   r           1043.3673 round
+   s           1254.0440 round
+   u           1065.0000 round
+   v           1155.5217 round
+   w           1197.5714 round
+   x           1065.3673 round
+   y           1218.9032 round
+   z           1060.7358 round
+   flats []
+   curves (pos,cnt) [[1037.0166666666667, 1], [1035.4848484848485, 1], [1036.7142857142858, 1], [1047.0166666666667, 1], [1058.754716981132, 1], [1036.754716981132, 1], [1047.5714285714287, 1], [1212.2372881355932, 1], [1046.0166666666667, 1], [1043.3673469387754, 1], [1254.043956043956, 1], [1065.0, 1], [1155.5217391304348, 1], [1197.5714285714287, 1], [1065.3673469387754, 1], [1218.9032258064517, 1], [1060.7358490566037, 1]] distinct 17 glyphs 17 sum 18618.078177354844
+   rule 2011   mean 1095.1810692561673 snapped 1095.1810692561673 -> OS/2 int16 (C truncation) 1095
+   rule master mean 1095.1810692561673 snapped 1095.1810692561673 -> OS/2 int16 (C truncation) 1095
+== capheight 26 glyphs
+   A           1459.0000 round
+   B           1482.4776 round
+   C           1486.0000 round
+   D           1487.5504 round
+   E           1487.0000 round
+   F           1503.0000 round
+   G           1467.3214 round
+   H           1468.1615 round
+   I           1503.0941 round
+   J           1503.0941 round
+   K           1455.0729 round
+   L           1441.0000 round
+   M           1436.0000 round
+   N           1445.0000 round
+   O           1467.1000 round
+   P           1435.0000 round
+   Q           1469.1000 round
+   R           1436.0050 round
+   S           1461.1250 round
+   T           1462.0105 round
+   U           1429.1818 round
+   V           1469.7524 round
+   W           1454.5421 round
+   X           1455.0000 round
+   Y           1478.5217 round
+   Z           1497.0853 round
+   flats []
+   curves (pos,cnt) [[1459.0, 1], [1482.4776119402986, 1], [1486.0, 1], [1487.5503875968993, 1], [1487.0, 1], [1503.0, 1], [1467.3214285714287, 1], [1468.1614906832299, 1], [1503.0941176470587, 2], [1455.0728744939272, 1], [1441.0, 1], [1436.0, 1], [1445.0, 1], [1467.1, 1], [1435.0, 1], [1469.1, 1], [1436.004975124378, 1], [1461.125, 1], [1462.0105263157895, 1], [1429.1818181818182, 1], [1469.7524038461538, 1], [1454.5420875420875, 1], [1455.0, 1], [1478.5217391304348, 1], [1497.085308056872, 1]] distinct 25 glyphs 26 sum 36635.10176913038
+   rule 2011   mean 1409.0423757357837 snapped 1409.0423757357837 -> OS/2 int16 (C truncation) 1409
+   rule master mean 1465.4040707652152 snapped 1465.4040707652152 -> OS/2 int16 (C truncation) 1465

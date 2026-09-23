@@ -1,0 +1,24 @@
+CreepsterCaps-Regular        empty GSUB marks=0 kern=False
+HerrVonMuellerhoff-Regular   empty GSUB marks=0 kern=False
+Kristi-Regular               empty GPOS marks=0 kern=False
+Lekton-Bold                  empty GPOS marks=0 kern=False
+Lekton-Italic                empty GSUB marks=0 kern=True
+Lekton-Regular               empty GPOS marks=0 kern=False
+Monoton-Regular              empty GSUB marks=4 kern=False
+NixieOne-Regular             empty GSUB marks=0 kern=False
+NovaCut                      empty GSUB marks=0 kern=False
+NovaFlat                     empty GSUB marks=0 kern=False
+NovaOval                     empty GSUB marks=0 kern=False
+NovaRound                    empty GSUB marks=0 kern=False
+NovaScript-Regular           empty GSUB marks=0 kern=False
+NovaSlim                     empty GSUB marks=0 kern=False
+NovaSquare                   empty GSUB marks=0 kern=False
+RussoOne-Regular             empty GSUB marks=0 kern=False
+SixCaps                      empty GSUB marks=0 kern=True
+Smythe-Regular               empty GSUB marks=2 kern=False
+Tuffy-Bold                   empty GSUB marks=19 kern=False
+Tuffy-BoldItalic             empty GSUB marks=19 kern=False
+UnifrakturCook-Bold          empty GSUB marks=9 kern=False
+UnifrakturMaguntia-Book      empty GPOS marks=9 kern=False
+AllertaStencil-Regular       empty GSUB marks=0 kern=False
+empty GSUB 19 empty GPOS 4

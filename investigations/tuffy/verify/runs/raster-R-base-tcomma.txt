@@ -1,0 +1,3 @@
+U+0163 uni0163                  tcommaaccent                 adv   696   696  px   78227   78220  diff     33  ratio 0.0004
+U+0162 uni0162                  Tcommaaccent                 adv  1243  1243  px  103425  103434  diff     17  ratio 0.0002
+2 codepoint(s) compared, 2 differ (advance, or >= 0.000 of pixels at 1024 ppem)

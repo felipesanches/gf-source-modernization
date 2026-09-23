@@ -1,0 +1,16 @@
+== A. RussoOne-Regular.ttf
+  hg@52f780bc    sha1 a1a8bff384a0 fsType 4 FFTM True
+  gf@90abd17b4   sha1 a1a8bff384a0 fsType 4 FFTM True
+  gf@8ccda7bf7   sha1 c05ca5b6fb5c fsType 0 FFTM True
+  gf@HEAD        sha1 c05ca5b6fb5c fsType 0 FFTM True
+  8ccda7bf7 vs parent: raw tables differ ['head', 'OS/2', 'cmap']; OS/2 fields differ ['fsType'] (panose equal True); cmap mapping equal True
+  .sfd FSType: 4
+== B. Tuffy
+  Regular: -TTF.sfd FSType 0, plain .sfd FSType 0
+    hg@52f780bc  fsType 0 FFTM True  vendor PfEd name5 'Version 001.271 ' sub 0/2/0 sup-yoff 1 strike 12312/-16224 (em fractions trunc: 1331/1228/153/716)
+    gf@ebcdfd2bb fsType 8 FFTM False vendor PfEd name5 'Version 1.272; ttfautohint (v1.6)' sub 1331/1228/153 sup-yoff 716 strike 50/300 (em fractions trunc: 1331/1228/153/716)
+    gf@HEAD      fsType 8 FFTM False vendor PfEd name5 'Version 1.272; ttfautohint (v1.6)' sub 1331/1228/153 sup-yoff 716 strike 50/300 (em fractions trunc: 1331/1228/153/716)
+  Italic: -TTF.sfd FSType 0, plain .sfd FSType 0
+    hg@52f780bc  fsType 0 FFTM True  vendor PfEd name5 'Version 001.271 ' sub 0/2/0 sup-yoff 1 strike 12312/-16224 (em fractions trunc: 1331/1228/153/716)
+    gf@ebcdfd2bb fsType 8 FFTM False vendor PfEd name5 'Version 1.272; ttfautohint (v1.6)' sub 1331/1228/153 sup-yoff 716 strike 50/300 (em fractions trunc: 1331/1228/153/716)
+    gf@HEAD      fsType 8 FFTM False vendor PfEd name5 'Version 1.272; ttfautohint (v1.6)' sub 1331/1228/153 sup-yoff 716 strike 50/300 (em fractions trunc: 1331/1228/153/716)

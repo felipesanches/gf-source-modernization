@@ -1,0 +1,55 @@
+source NosiferCaps-Regular.orig.sfd BlueValues [-57.0, 0.0, 1229.0, 1282.0, 1645.0, 1698.0] snap window 20.48
+== xheight 18 glyphs
+   a           1375.0000 pointy
+   c           1375.0000 round
+   e           1369.0000 pointy
+   g           1375.0000 round
+   m           1375.0000 round
+   n           1409.0000 round
+   o           1375.0000 round
+   p           1374.0000 pointy
+   q           1400.0000 round
+   r           1374.0000 pointy
+   s           1410.0000 round
+   u           1354.0000 pointy
+   v           1413.0000 round
+   w           1397.0000 pointy
+   x           1395.0000 round
+   y           1384.0000 round
+   z           1372.0000 pointy
+   dotlessi    1372.0000 pointy
+   flats []
+   curves (pos,cnt) [[1375.0, 5], [1369.0, 1], [1409.0, 1], [1374.0, 2], [1400.0, 1], [1410.0, 1], [1354.0, 1], [1413.0, 1], [1397.0, 1], [1395.0, 1], [1384.0, 1], [1372.0, 2]] distinct 12 glyphs 18 sum 16652.0
+   rule 2011   mean 925.1111111111111 snapped 925.1111111111111 -> OS/2 int16 (C truncation) 925
+   rule master mean 1387.6666666666667 snapped 1387.6666666666667 -> OS/2 int16 (C truncation) 1387
+== capheight 26 glyphs
+   A           1375.0000 pointy
+   B           1372.0000 pointy
+   C           1375.0000 round
+   D           1372.0000 pointy
+   E           1369.0000 pointy
+   F           1401.0000 pointy
+   G           1375.0000 round
+   H           1372.0000 pointy
+   I           1372.0000 pointy
+   J           1372.0000 pointy
+   K           1377.0000 pointy
+   L           1372.0000 pointy
+   M           1408.0000 round
+   N           1409.0000 round
+   O           1375.0000 round
+   P           1374.0000 pointy
+   Q           1400.0000 round
+   R           1374.0000 pointy
+   S           1410.0000 round
+   T           1373.0000 pointy
+   U           1354.0000 pointy
+   V           1413.0000 round
+   W           1397.0000 pointy
+   X           1395.0000 round
+   Y           1384.0000 round
+   Z           1372.0000 pointy
+   flats []
+   curves (pos,cnt) [[1375.0, 4], [1372.0, 7], [1369.0, 1], [1401.0, 1], [1377.0, 1], [1408.0, 1], [1409.0, 1], [1374.0, 2], [1400.0, 1], [1410.0, 1], [1373.0, 1], [1354.0, 1], [1413.0, 1], [1397.0, 1], [1395.0, 1], [1384.0, 1]] distinct 16 glyphs 26 sum 22211.0
+   rule 2011   mean 854.2692307692307 snapped 854.2692307692307 -> OS/2 int16 (C truncation) 854
+   rule master mean 1388.1875 snapped 1388.1875 -> OS/2 int16 (C truncation) 1388

@@ -1,0 +1,5 @@
+marks ['U+0300', 'U+0301', 'U+0302', 'U+0303', 'U+0304', 'U+0308', 'U+030A', 'U+030C', 'U+0327'] bases 153 texts 1386
+UnifrakturMaguntia-Regular.ttf                               ltr differ  1317 / 1386  e.g. '0̀' rel=(('zero', 966, 0, 0, 0), ('gravecomb', 0, 0, 0, 0)) ours=(('zero', 966, 0, 0, 0), ('gravecomb', 0, 0, 57, 506))
+UnifrakturMaguntia-Regular.ttf                               ttb differ  1386 / 1386  e.g. '0̀' rel=(('zero', 0, -2120, -483, -1766), ('gravecomb', 0, -2120, 0, -2304)) ours=(('zero', 0, -2121, -483, -1767), ('gravecomb', 0, 0, 1023, 1490))
+built+releaseGPOSbytes.ttf                                   ltr differ     0 / 1386
+built+releaseGPOSbytes.ttf                                   ttb differ  1386 / 1386  e.g. '0̀' rel=(('zero', 0, -2120, -483, -1766), ('gravecomb', 0, -2120, 0, -2304)) ours=(('zero', 0, -2121, -483, -1767), ('gravecomb', 0, 0, 0, -2304))

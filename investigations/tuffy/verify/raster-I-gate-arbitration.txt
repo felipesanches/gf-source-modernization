@@ -1,0 +1,4 @@
+U+1FED uni1FED                  dialytika_varia              adv   794   794  px   29314   29363  diff    109  ratio 0.0037
+U+1E57 uni1E57                  pdotaccent                   adv  1044  1044  px  136471  136369  diff    254  ratio 0.0019
+U+0458 uni0458                  afii10105                    adv   468   468  px   69428   69454  diff     58  ratio 0.0008
+3 codepoint(s) compared, 3 differ (advance, or >= 0.000 of pixels at 1024 ppem)

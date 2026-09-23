@@ -1,0 +1,1 @@
+control: 186 shared codepoints; same-geometry verdicts: gate 71, either-measure 71

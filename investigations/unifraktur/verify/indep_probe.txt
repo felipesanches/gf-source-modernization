@@ -1,0 +1,9 @@
+on-curve (incl. implied) min y -495.5000 (J) floor -496
+on-curve max y 1906.0000 (Igrave) ceil 1906
+all points min y -514.0000 (J)
+true-curve min y -497.5805 (J) int -497 round -498
+true-curve max y 1906.0000 (Igrave) int 1906
+xheight: 2010 mean 1095.1811 -> 1095 ; post-2012 mean 1095.1811 -> 1095 ; flats={} ; distinct curves=17 glyphs=17 sum=18618.0782
+    [('a', 1037.0167, 'round'), ('c', 1035.4848, 'round'), ('e', 1036.7143, 'round'), ('g', 1047.0167, 'round'), ('m', 1058.7547, 'round'), ('n', 1036.7547, 'round'), ('o', 1047.5714, 'round'), ('p', 1212.2373, 'round'), ('q', 1046.0167, 'round'), ('r', 1043.3673, 'round'), ('s', 1254.044, 'round'), ('u', 1065.0, 'round'), ('v', 1155.5217, 'round'), ('w', 1197.5714, 'round'), ('x', 1065.3673, 'round'), ('y', 1218.9032, 'round'), ('z', 1060.7358, 'round')]
+capheight: 2010 mean 1409.0424 -> 1409 ; post-2012 mean 1465.4041 -> 1465 ; flats={} ; distinct curves=25 glyphs=26 sum=36635.1018
+    [('A', 1459.0, 'round'), ('B', 1482.4776, 'round'), ('C', 1486.0, 'round'), ('D', 1487.5504, 'round'), ('E', 1487.0, 'round'), ('F', 1503.0, 'round'), ('G', 1467.3214, 'round'), ('H', 1468.1615, 'round'), ('I', 1503.0941, 'round'), ('J', 1503.0941, 'round'), ('K', 1455.0729, 'round'), ('L', 1441.0, 'round'), ('M', 1436.0, 'round'), ('N', 1445.0, 'round'), ('O', 1467.1, 'round'), ('P', 1435.0, 'round'), ('Q', 1469.1, 'round'), ('R', 1436.005, 'round'), ('S', 1461.125, 'round'), ('T', 1462.0105, 'round'), ('U', 1429.1818, 'round'), ('V', 1469.7524, 'round'), ('W', 1454.5421, 'round'), ('X', 1455.0, 'round'), ('Y', 1478.5217, 'round'), ('Z', 1497.0853, 'round')]

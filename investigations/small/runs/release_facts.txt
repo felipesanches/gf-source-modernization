@@ -1,0 +1,31 @@
+== A. ComicRelief release toolchain (google/fonts b5efa9c32e8f)
+Regular: tables GDEF GSUB OS/2 cmap cvt  fpgm gasp glyf head hhea hmtx loca maxp name post prep
+  FFTM False | DSIG False | name5 'Version 1.200; ttfautohint (v1.8.4.7-5d5b)'
+  OS/2.version 4 (sfd OS2Version 3) | usWeightClass 400 (sfd TTFWeight 400)
+  head.created 3441383408 == sfd CreationTime? True | head.modified 2025-02-12T23:16:33 UTC
+  post.underlinePosition -97 thickness 175 | sfd UnderlinePosition -185 UnderlineWidth 175
+Bold: tables GDEF GSUB OS/2 cmap cvt  fpgm gasp glyf head hhea hmtx loca maxp name post prep
+  FFTM False | DSIG False | name5 'Version 1.200; ttfautohint (v1.8.4.7-5d5b)'
+  OS/2.version 4 (sfd OS2Version 3) | usWeightClass 700 (sfd TTFWeight 700)
+  head.created 3441383408 == sfd CreationTime? True | head.modified 2025-02-12T23:16:33 UTC
+  post.underlinePosition -97 thickness 175 | sfd UnderlinePosition -185 UnderlineWidth 175
+
+== B. RussoOne fsType
+sfd (hg 52f780bc9d19 src/RussoOne-Regular-TTF.sfd) FSType: 4
+  hg-era binary ofl/russoone/RussoOne-Regular.ttf @52f780bc9d19 fsType 4  FFTM True  vendor 'PYRS'
+  google/fonts 90abd17b4 (2015-03-07 initial)        fsType 4  FFTM True  vendor 'PYRS'
+  google/fonts 8ccda7bf7 (2015-08-05 fsType sweep)   fsType 0  FFTM True  vendor 'PYRS'
+  release (HEAD)                                     fsType 0  FFTM True  vendor 'PYRS'
+  8ccda7bf7 touched 40 .ttf: fsType before {4: 34, 256: 3, 1: 3}, after {0: 40}
+
+== C. Tuffy Regular/Italic fsType
+Regular: sfd -TTF.sfd FSType 0 (families.tsv source); plain .sfd FSType 0
+  hg-era binary @52f780bc9d19                   fsType 0  FFTM True  name5 'Version 001.271 '
+  google/fonts 90abd17b4 (initial)              fsType 0  FFTM True  name5 'Version 001.271 '
+  google/fonts ebcdfd2bb (v1.272, 2017-10-24)   fsType 8  FFTM False  name5 'Version 1.272; ttfautohint (v1.6)'
+  release (HEAD)                                fsType 8  FFTM False  name5 'Version 1.272; ttfautohint (v1.6)'
+Italic: sfd -TTF.sfd FSType 0 (families.tsv source); plain .sfd FSType 0
+  hg-era binary @52f780bc9d19                   fsType 0  FFTM True  name5 'Version 001.271 '
+  google/fonts 90abd17b4 (initial)              fsType 0  FFTM True  name5 'Version 001.271 '
+  google/fonts ebcdfd2bb (v1.272, 2017-10-24)   fsType 8  FFTM False  name5 'Version 1.272; ttfautohint (v1.6)'
+  release (HEAD)                                fsType 8  FFTM False  name5 'Version 1.272; ttfautohint (v1.6)'

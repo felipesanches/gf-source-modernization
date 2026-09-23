@@ -1,0 +1,8 @@
+setfield FSType 0: before='4' changed=True
+18c18
+< FSType: 4
+---
+> FSType: 0
+setfield UnderlinePosition -97: before='-185' changed=True
+setfield UnderlinePosition -97: before='-185' changed=True
+FSType0 copy identical to the investigation's

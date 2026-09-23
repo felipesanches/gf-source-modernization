@@ -1,0 +1,7 @@
+U+221B uni221B                  uni221B                      adv  1245  1245  px  166461  166373  diff  77482  ratio 0.4655
+U+221C uni221C                  uni221C                      adv  1245  1245  px  165621  165621  diff  31024  ratio 0.1873
+U+1FC2 uni1FC2                  etaiotasubgrave              adv  1064  1064  px  135795  135810  diff  16397  ratio 0.1207
+U+1FC4 uni1FC4                  etaiotasubacute              adv  1064  1064  px  135794  135813  diff  16395  ratio 0.1207
+U+2208 element                  element                      adv  1142  1142  px  119587  119556  diff   1789  ratio 0.0150
+U+10910 u10910                   u10910                       adv  1153  1153  px   91132   91204  diff    936  ratio 0.0103
+1501 codepoint(s) compared, 6 differ (advance, or >= 0.010 of pixels at 1024 ppem)

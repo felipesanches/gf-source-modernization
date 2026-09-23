@@ -1,0 +1,124 @@
+setfield Version: [001.271] -> [1.272]
+setfield FSType: [0] -> [8]
+setencoding .null: [Encoding: 65536 -1 194] -> [Encoding: 0 0 194]
+setencoding nonmarkingreturn: [Encoding: 65537 -1 195] -> [Encoding: 13 13 195]
+ffnotdef: stem 68 ymax 1365 xmax 612 advance 748 slot 65570 gid 1501
+translateglyph brevesubnosp by -1302,0: 15 point lines
+setwidth brevesubnosp: [Width: 1302] -> [Width: 0]
+setfield OS2SubXSize: [0] -> [1331]
+setfield OS2SubYSize: [2] -> [1228]
+setfield OS2SubXOff: [-16560] -> [0]
+setfield OS2SubYOff: [0] -> [153]
+setfield OS2SupXSize: [-25944] -> [1331]
+setfield OS2SupYSize: [-27176] -> [1228]
+setfield OS2SupXOff: [-16376] -> [0]
+setfield OS2SupYOff: [1] -> [716]
+setfield OS2StrikeYSize: [12312] -> [50]
+setfield OS2StrikeYPos: [-16224] -> [300]
+setrefer Agrave #1: [Refer: 88 65 N 1 0 0 1 -8 0 2] -> [Refer: 88 65 N 1 0 0 1 0 0 2]
+setrefer Aacute #1: [Refer: 88 65 N 1 0 0 1 -8 0 2] -> [Refer: 88 65 N 1 0 0 1 0 0 2]
+setrefer Amacron #1: [Refer: 88 65 N 1 0 0 1 -8 0 2] -> [Refer: 88 65 N 1 0 0 1 0 0 2]
+setrefer Iacute #1: [Refer: 96 73 N 1 0 0 1 10 0 2] -> [Refer: 96 73 N 1 0 0 1 0 0 2]
+setrefer eacute #1: [Refer: 124 101 N 1 0 0 1 10 0 2] -> [Refer: 124 101 N 1 0 0 1 0 0 2]
+setrefer uacute #1: [Refer: 41 117 N 1 0 0 1 42 0 2] -> [Refer: 41 117 N 1 0 0 1 0 0 2]
+setrefer alphaiotasub #1: [Refer: 848 8126 N 1 0 0 1 -121 0 2] -> [Refer: 848 8126 N 1 0 0 1 0 0 2]
+setrefer alphaiotasub #2: [Refer: 596 945 N 1 0 0 1 0 0 2] -> [Refer: 596 945 N 1 0 0 1 801 0 2]
+setwidth alphaiotasub: [Width: 1212] -> [Width: 2013]
+setrefer Alphaiotasub #2: [Refer: 575 913 N 1 0 0 1 0 0 2] -> [Refer: 575 913 N 1 0 0 1 801 0 2]
+setwidth Alphaiotasub: [Width: 1302] -> [Width: 2103]
+setrefer etaiotasub #1: [Refer: 848 8126 N 1 0 0 1 -467 0 2] -> [Refer: 848 8126 N 1 0 0 1 0 0 2]
+setrefer etaiotasub #2: [Refer: 621 951 N 1 0 0 1 0 0 2] -> [Refer: 621 951 N 1 0 0 1 801 0 2]
+setwidth etaiotasub: [Width: 1064] -> [Width: 1865]
+setrefer Etaiotasub #1: [Refer: 848 8126 N 1 0 0 1 -54 0 2] -> [Refer: 848 8126 N 1 0 0 1 0 0 2]
+setrefer Etaiotasub #2: [Refer: 587 919 N 1 0 0 1 0 0 2] -> [Refer: 587 919 N 1 0 0 1 801 0 2]
+setwidth Etaiotasub: [Width: 1198] -> [Width: 1999]
+setrefer omegaiotasub #1: [Refer: 848 8126 N 1 0 0 1 -51 0 2] -> [Refer: 848 8126 N 1 0 0 1 0 0 2]
+setrefer omegaiotasub #2: [Refer: 608 969 N 1 0 0 1 0 0 2] -> [Refer: 608 969 N 1 0 0 1 801 0 2]
+setwidth omegaiotasub: [Width: 1208] -> [Width: 2009]
+setrefer Omegaiotasub #1: [Refer: 848 8126 N 1 0 0 1 17 0 2] -> [Refer: 848 8126 N 1 0 0 1 0 0 2]
+setrefer Omegaiotasub #2: [Refer: 282 937 N 1 0 0 1 0 0 2] -> [Refer: 282 937 N 1 0 0 1 801 0 2]
+setwidth Omegaiotasub: [Width: 1358] -> [Width: 2159]
+setrefer uni1E2A #1: [Refer: 1120 814 N 1 0 0 1 -50 0 2] -> [Refer: 1120 814 N 1 0 0 1 1252 0 2]
+setrefer uni1E2B #1: [Refer: 1120 814 N 1 0 0 1 -124 0 2] -> [Refer: 1120 814 N 1 0 0 1 1178 0 2]
+replaced U+0162 (uni0162): 1 contours, width 1243
+replaced U+0163 (uni0163): 1 contours, width 696
+setrefer uni221B #1: [Refer: 268 179 N 1 0 0 1 172 7 2] -> [Refer: 268 179 N 1 0 0 1 0 0 2]
+setrefer uni221C #1: [Refer: 463 8308 N 1 0 0 1 68 0 2] -> [Refer: 463 8308 N 1 0 0 1 0 0 2]
+setrefer etaiotasubgrave #1: [Refer: 848 8126 N 1 0 0 1 -464 0 2] -> [Refer: 848 8126 N 1 0 0 1 0 0 2]
+setrefer etaiotasubacute #1: [Refer: 848 8126 N 1 0 0 1 -468 0 2] -> [Refer: 848 8126 N 1 0 0 1 0 0 2]
+addfield OS2XHeight: 500
+addfield OS2CapHeight: 700
+setfield Version: [001.271] -> [1.272]
+setfield FSType: [0] -> [8]
+setencoding .null: [Encoding: 65536 -1 194] -> [Encoding: 0 0 194]
+setencoding nonmarkingreturn: [Encoding: 65537 -1 195] -> [Encoding: 13 13 195]
+ffnotdef: stem 68 ymax 1365 xmax 612 advance 748 slot 65570 gid 1501
+translateglyph brevesubnosp by -1302,0: 17 point lines
+setwidth brevesubnosp: [Width: 1302] -> [Width: 0]
+setfield OS2SubXSize: [0] -> [1331]
+setfield OS2SubYSize: [2] -> [1228]
+setfield OS2SubXOff: [-16560] -> [-32]
+setfield OS2SubYOff: [0] -> [153]
+setfield OS2SupXSize: [-25944] -> [1331]
+setfield OS2SupYSize: [-27176] -> [1228]
+setfield OS2SupXOff: [-16376] -> [150]
+setfield OS2SupYOff: [1] -> [716]
+setfield OS2StrikeYSize: [12312] -> [50]
+setfield OS2StrikeYPos: [-16224] -> [300]
+replaced U+004A (J): 1 contours, width 1140
+replaced U+00B7 (periodcentered): 1 contours, width 438
+replaced U+0162 (uni0162): 1 contours, width 1243
+replaced U+0163 (uni0163): 1 contours, width 696
+replaced U+03A9 (uni03A9): 1 contours, width 1358
+replaced U+0134 (Jcircumflex): 2 contours, width 1140
+replaced U+E257 (uniE257): 2 contours, width 993
+replaced U+1F6B (uni1F6B): 3 contours, width 1744
+replaced U+2076 (uni2076): 2 contours, width 626
+replaced U+2086 (uni2086): 2 contours, width 626
+replaced U+20B7 (uni20B7): 4 contours, width 1178
+addfield OS2XHeight: 500
+addfield OS2CapHeight: 700
+Tuffy-Regular: BLOCKING 64
+Tuffy-Italic: BLOCKING 24
+Tuffy-Bold: BLOCKING 1
+Tuffy-BoldItalic: BLOCKING 1
+Tuffy-Regular: BLOCKING 3
+Tuffy-Italic: BLOCKING 3
+Tuffy-Regular: BLOCKING 3
+Tuffy-Regular: BLOCKING 5
+Tuffy-Regular: BLOCKING 3
+Tuffy-Italic: BLOCKING 5
+Tuffy-Italic: BLOCKING 3
+Tuffy-Bold: BLOCKING 1
+Tuffy-BoldItalic: BLOCKING 1
+base/Tuffy-Bold.gate.txt                                     1 blocking table difference(s), 16 stale in the release
+base/Tuffy-BoldItalic.gate.txt                               1 blocking table difference(s), 12 stale in the release
+base/Tuffy-Italic.gate.txt                                   24 blocking table difference(s), 2 stale in the release, 481 accepted rename(s)
+base/Tuffy-Regular.gate.txt                                  64 blocking table difference(s), 2 stale in the release, 441 accepted rename(s)
+bold-heights/Tuffy-Bold.gate.txt                             1 blocking table difference(s), 16 stale in the release
+bold-heights/Tuffy-BoldItalic.gate.txt                       1 blocking table difference(s), 12 stale in the release
+I-full/Tuffy-Italic.gate.txt                                 3 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+I-heights-fields/Tuffy-Italic.gate.txt                       3 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+I-heights/Tuffy-Italic.gate.txt                              5 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+R-full-plus4/Tuffy-Regular.gate.txt                          3 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+R-full/Tuffy-Regular.gate.txt                                3 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+R-heights-fields/Tuffy-Regular.gate.txt                      3 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+R-heights/Tuffy-Regular.gate.txt                             5 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+component-moves-R-ff1271-vs-v1272.txt              66 composite codepoint(s) differ
+component-moves-R-full-vs-v1272.txt                15 composite codepoint(s) differ
+component-moves-R-plus4-vs-v1272.txt               11 composite codepoint(s) differ
+gate-either-base-Tuffy-Italic.txt                  21 blocking table difference(s), 2 stale in the release, 484 accepted rename(s)
+gate-either-base-Tuffy-Regular.txt                 62 blocking table difference(s), 2 stale in the release, 443 accepted rename(s)
+gate-either-control.txt                            control: 186 shared codepoints; same-geometry verdicts: gate 71, either-measure 71
+gate-split-I-full.txt                              3 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+gate-split-R-full.txt                              3 blocking table difference(s), 3 stale in the release, 489 accepted rename(s)
+gate-vs-ff1271-Tuffy-Italic.txt                    3 blocking table difference(s), 22 stale in the release
+gate-vs-ff1271-Tuffy-Regular.txt                   3 blocking table difference(s), 7 stale in the release
+raster-I-base-imports.txt                          11 codepoint(s) compared, 11 differ (advance, or >= 0.000 of pixels at 1024 ppem)
+raster-I-base.txt                                  1499 codepoint(s) compared, 108 differ (advance, or >= 0.005 of pixels at 1024 ppem)
+raster-I-full.txt                                  1501 codepoint(s) compared, 3 differ (advance, or >= 0.010 of pixels at 1024 ppem)
+raster-R-base-tcomma.txt                           2 codepoint(s) compared, 2 differ (advance, or >= 0.000 of pixels at 1024 ppem)
+raster-R-ff1271-vs-ours.txt                        6 codepoint(s) compared, 6 differ (advance, or >= 0.000 of pixels at 1024 ppem)
+raster-R-full-plus4.txt                            1501 codepoint(s) compared, 2 differ (advance, or >= 0.010 of pixels at 1024 ppem)
+raster-R-full.txt                                  1501 codepoint(s) compared, 6 differ (advance, or >= 0.010 of pixels at 1024 ppem)
+exit 0

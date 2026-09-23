@@ -1,0 +1,20 @@
+== Nosifer-Regular  source googlefonts/googlefontdirectory-hg@52f780bc9d19:ofl/nosifer/src/Nosifer-Regular-TTF.sfd
+   release Nosifer-Regular.ttf: sxHeight 925  sCapHeight 854
+   x-height: 18 glyphs measured; flat tops []; round/pointy distinct tops 12, glyphs 18
+     per glyph: a=1375p c=1375r e=1369p g=1375r m=1375r n=1409r o=1375r p=1374p q=1400r r=1374p s=1410r u=1354p v=1413r w=1397p x=1395r y=1384r z=1372p U+0131=1372p
+     rule 2012+ (master): raw 1387.6667 -> exported 1387  differs from release 925
+     rule 2011 (v20110222): raw 925.1111 -> exported 925  MATCHES release
+   cap-height: 26 glyphs measured; flat tops []; round/pointy distinct tops 16, glyphs 26
+     per glyph: A=1375p B=1372p C=1375r D=1372p E=1369p F=1401p G=1375r H=1372p I=1372p J=1372p K=1377p L=1372p M=1408r N=1409r O=1375r P=1374p Q=1400r R=1374p S=1410r T=1373p U=1354p V=1413r W=1397p X=1395r Y=1384r Z=1372p
+     rule 2012+ (master): raw 1388.1875 -> exported 1388  differs from release 854
+     rule 2011 (v20110222): raw 854.2692 -> exported 854  MATCHES release
+== NosiferCaps-Regular  source googlefonts/googlefontdirectory-hg@52f780bc9d19:ofl/nosifercaps/src/NosiferCaps-Regular-TTF.sfd
+   release NosiferCaps-Regular.ttf: sxHeight 925  sCapHeight 854
+   x-height: 18 glyphs measured; flat tops []; round/pointy distinct tops 12, glyphs 18
+     per glyph: a=1375p c=1375r e=1369p g=1375r m=1375r n=1409r o=1375r p=1374p q=1400r r=1374p s=1410r u=1354p v=1413r w=1397p x=1395r y=1384r z=1372p U+0131=1372p
+     rule 2012+ (master): raw 1387.6667 -> exported 1387  differs from release 925
+     rule 2011 (v20110222): raw 925.1111 -> exported 925  MATCHES release
+   cap-height: 26 glyphs measured; flat tops []; round/pointy distinct tops 16, glyphs 26
+     per glyph: A=1375p B=1372p C=1375r D=1372p E=1369p F=1401p G=1375r H=1372p I=1372p J=1372p K=1377p L=1372p M=1408r N=1409r O=1375r P=1374p Q=1400r R=1374p S=1410r T=1373p U=1354p V=1413r W=1397p X=1395r Y=1384r Z=1372p
+     rule 2012+ (master): raw 1388.1875 -> exported 1388  differs from release 854
+     rule 2011 (v20110222): raw 854.2692 -> exported 854  MATCHES release

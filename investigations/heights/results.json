@@ -1,0 +1,235 @@
+{
+ "investigation": {
+  "unit": "heights",
+  "styles": [
+   "HerrVonMuellerhoff-Regular",
+   "Miama-Regular",
+   "NosiferCaps-Regular",
+   "PatrickHand-Regular",
+   "UnifrakturCook-Bold"
+  ],
+  "rows": [
+   {
+    "style": "HerrVonMuellerhoff-Regular",
+    "row": "OS/2.sx_height [269, 500]",
+    "classification": "converter-fidelity",
+    "cause": "Converter work in progress (ca43adc). FontForge's master rule already gives 269 from this source because the tops are flat (flat mode 269). The pinned f725e6a converter writes the default 500. Note: the brief says the rule gives 271, but it gives 269.",
+    "evidence": "The oracle, ff_heights_probe.py and the ca43adc port all give 269 (dump-HerrVonMuellerhoff-Regular-TTF-2012.txt). The runs/before-ca43adc gate has no sx_height row."
+   },
+   {
+    "style": "HerrVonMuellerhoff-Regular",
+    "row": "OS/2.s_cap_height [644, 700]",
+    "classification": "converter-fidelity",
+    "cause": "The release was exported by FontForge 20110222 (FFTM build 2011-02-22 13:48:33). From 5fba6c9 (2009-05-27) until 4d34d21ef866 (2012-05-14), SFStandardHeight divided the sum of the DISTINCT curve heights by the number of GLYPHS (`tot += curves[i].cnt`). No A-Z top here is flat: 16758/26 = 644.54, so 644. Master divides by 22 distinct heights: 761.",
+    "evidence": "The glyph-count loop is in splinefont.c at b69c9652 (2011-02-22) and f316d0f6; 4d34d21e, 5a11aa4c and master have `++tot`. The FFTM created/modified times equal the .sfd CreationTime/ModificationTime (2011-11-25 00:44:38 / 2011-11-27 00:21:56). The FontLab .otf in the tree gives x 175 under the 2011 rule, so the release was not measured from it. Stand-in run: runs/after-ca43adc gives 0 blocking."
+   },
+   {
+    "style": "Miama-Regular",
+    "row": "OS/2.sx_height [265, 500]",
+    "classification": "converter-fidelity",
+    "cause": "FontForge 20110222's glyph-count curve mean: 7968/30 = 265.6, so 265. Master gives 7968/16 = 498. No flat tops, and no BlueValues in this .sfd.",
+    "evidence": "FFTM build 2011-02-22. FFTM modified 2011-07-08 09:08:15 equals the .sfd ModificationTime 1310116095 (dump-Miama-Regular-TTF-2011.txt). Stand-in (OS2XHeight 265) gives 0 blocking in runs/after-ca43adc."
+   },
+   {
+    "style": "Miama-Regular",
+    "row": "OS/2.s_cap_height [894, 700]",
+    "classification": "converter-fidelity",
+    "cause": "Converter work in progress (ca43adc). Flat mode 894 under both FontForge vintages. The cubic Miama.sfd in the tree gives 886, so the -TTF.sfd is the state that was measured.",
+    "evidence": "The runs/before-ca43adc gate has no s_cap_height row. dump-Miama-Regular-TTF-2012.txt"
+   },
+   {
+    "style": "NosiferCaps-Regular",
+    "row": "OS/2.sx_height [925, 500]",
+    "classification": "converter-fidelity",
+    "cause": "FontForge 20110222's glyph-count curve mean: 16652/18 = 925.11, so 925. Master gives 16652/12 = 1387. No BlueValues zone bottom falls within 20.48 units.",
+    "evidence": "FFTM build 2011-02-22; FFTM modified 2011-10-24 13:20:44 equals the .sfd ModificationTime. The cubic NosiferCaps-Regular.sfd also gives 925 under the 2011 rule. Stand-in closes the row (runs/after-ca43adc)."
+   },
+   {
+    "style": "NosiferCaps-Regular",
+    "row": "OS/2.s_cap_height [854, 700]",
+    "classification": "converter-fidelity",
+    "cause": "FontForge 20110222's glyph-count curve mean: 22211/26 = 854.27, so 854. Master gives 22211/16 = 1388.",
+    "evidence": "dump-NosiferCaps-Regular-TTF-2011.txt; the stand-in closes the row (runs/after-ca43adc: 1 blocking left, us_weight_class only)."
+   },
+   {
+    "style": "NosiferCaps-Regular",
+    "row": "OS/2.us_weight_class [800, 400]",
+    "classification": "converter-fidelity",
+    "cause": "Converter work in progress (fontc 1.0.0 ignores a static single-master weightClass). The .sfd states TTFWeight: 800.",
+    "evidence": "The TTFWeight: 800 line in the source. The row is unchanged by every height edit (nothing_else_opened.sh)."
+   },
+   {
+    "style": "PatrickHand-Regular",
+    "row": "OS/2.sx_height [467, 500]",
+    "classification": "converter-fidelity",
+    "cause": "Converter work in progress (ca43adc). The master rule on this source gives 467.64, so 467. The release's own export gives 467.505, so 467, which is the same value.",
+    "evidence": "The runs/before-ca43adc gate has no sx_height row."
+   },
+   {
+    "style": "PatrickHand-Regular",
+    "row": "OS/2.s_cap_height [661, 700]",
+    "classification": "provenance",
+    "cause": "The release was not exported from this .sfd. It is src/PatrickHand-Regular_prettfautohint.ttf plus ttfautohint. That TTF is an export by FontForge build 2012-09-06 (which already has `++tot`) of the font loaded from src/PatrickHand-Regular.otf. FontForge measured the .otf's cubic outlines: 15 distinct round tops, mean 661.449, so 661. The -TTF.sfd is a later re-import of the hinted release. Its quadratic tops differ for B (667.97->668), F (658.54->658), Y (665.26->666), Z (662.96->664) and T (round->pointy), giving 12 distinct tops and 7925/12 = 660.42, so 660.",
+    "evidence": "1. All 728 glyphs have identical coordinates in the release and prettfautohint.ttf, and both have heights 467/661. 2. FFTM sourceCreated 2013-01-30 01:41:19 equals the .otf's head.created. The .otf and the release share 727 glyphs and an identical cmap (515 entries), with 0 advance differences and every bbox within 2.25 units. 3. cff_heights_probe.py on the .otf gives x 467.505 and cap 661.449 (cff-PatrickHand-Regular.otf-2012.txt). 4. The -TTF.sfd Version carries the ttfautohint string, which only the final TTF has, plus 722 TtInstrs. 5. The rule on _prettfautohint.sfd also gives 660. Edit OS2CapHeight 661 gives 0 blocking in runs/after-ca43adc."
+   },
+   {
+    "style": "UnifrakturCook-Bold",
+    "row": "OS/2.sx_height [319, 500]",
+    "classification": "converter-fidelity",
+    "cause": "FontForge 20110222's glyph-count curve mean: 5436/17 = 319.76, so 319. Master gives 5436/5 = 1087.",
+    "evidence": "FFTM build 2011-02-22; FFTM modified 2011-09-01 11:40:43 equals the .sfd ModificationTime. dump-UnifrakturCook-Bold-TTF-2011.txt. The stand-in closes the row."
+   },
+   {
+    "style": "UnifrakturCook-Bold",
+    "row": "OS/2.s_cap_height [485, 700]",
+    "classification": "converter-fidelity",
+    "cause": "FontForge 20110222's glyph-count curve mean: 12617.264/26 = 485.28, so 485. Master gives 12617.264/8 = 1577.",
+    "evidence": "dump-UnifrakturCook-Bold-TTF-2011.txt. The stand-in closes the row (runs/after-ca43adc: 1 blocking left, us_weight_class only)."
+   },
+   {
+    "style": "UnifrakturCook-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "converter-fidelity",
+    "cause": "Converter work in progress (fontc static weight class). The .sfd states TTFWeight: 700.",
+    "evidence": "The TTFWeight: 700 line in the source. The row is unchanged by the height edits."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "PatrickHand-Regular"
+    ],
+    "op": "addfield",
+    "args": "OS2CapHeight 661",
+    "commit_subject": "OS2CapHeight 661",
+    "commit_body": "FontForge computed 661 from the cubic outlines of PatrickHand-Regular.otf, which the release was exported from; this source re-imports the hinted release, whose quadratic outlines give 660.",
+    "value_derived_from": "FontForge's SFStandardHeight at 5a11aa4c (2012-09-06, the release's FFTM build) applied to the cubic CFF outlines of src/PatrickHand-Regular.otf in the same base tree: mean of 15 distinct round tops = 661.4486, so 661. That equals the release's sCapHeight. The value is derived from a file in the base tree; it does not exist only in the release.",
+    "source_currently_states": "No OS2CapHeight or OS2XHeight line. Header: Ascent 800, Descent 200, order-2 layers, no BlueValues. The exporter rule on this .sfd's own quadratic outlines gives 660.",
+    "verified": true
+   }
+  ],
+  "proposed_converter_changes": [
+   {
+    "description": "Proposed change in babelfont filters/fontforge_standard_height.rs, fn standard_height, curve branch. Add an opt-in fidelity flag, for example --fontforge-height-glyph-count-mean. Help text: 'Reproduce a TTF exported by a FontForge built before 2012-05-14 (fontforge 4d34d21ef866): SFStandardHeight divided the sum of the distinct round/pointed top heights by the number of glyphs, not by the number of distinct heights.' With the flag, the divisor is curves.iter().map(|o| o.count).sum() instead of curves.len(). Recipe change (baseline.sh / recipe.py), decided from the release like the other fidelity decisions: pass the flag when the release has an FFTM table whose FFTimeStamp is before 2012-05-14T19:24:59Z. With no FFTM, or a later build, keep the master rule. Fallback if the flag is rejected: state the same values as .sfd edits (the tested stand-ins in edits/*-2011rule.sfd); these would be classed source-edit-from-source.",
+    "evidence": "1. FontForge C: the glyph-count divisor (`tot += curves[i].cnt`) is in splinefont.c at 5fba6c9 (2009-05-27), b69c9652 (2011-02-22) and f316d0f6 (the parent of 4d34d21ef866). 4d34d21ef866 (2012-05-14T19:24:59Z, 'it was dividing by the wrong value') changes it to `++tot`, which 5a11aa4c (2012-09-06) and master keep. Nothing else in SPLMaxHeight..SFXHeight differs between b69c9652 and 5a11aa4c. 2. Selecting the rule by the release's FFTM build reproduces 29 of the 36 styles that do not state heights, against 23 with the master rule alone (31 of 38 counting ComicRelief's stated values, against the oracle's 25). It breaks no style that master reproduces (vintage_selection.txt). The 2011 rule applied everywhere would break PatrickHand x (257), so selection is required. 3. Stand-ins: stating the 2011-rule values in copies of the four sources and converting with babelfont ca43adc closes every height row. Before those edits the ca43adc harness showed 1/1/3/3 blocking; after, 0/0/1/1, and the remaining rows are us_weight_class only. The gates are otherwise identical line for line (nothing_else_opened.sh).",
+    "styles_affected": [
+     "HerrVonMuellerhoff-Regular",
+     "Miama-Regular",
+     "NosiferCaps-Regular",
+     "UnifrakturCook-Bold",
+     "Nosifer-Regular",
+     "UnifrakturMaguntia-Book"
+    ]
+   }
+  ],
+  "proposed_flag_changes": [
+   {
+    "style": "HerrVonMuellerhoff-Regular",
+    "add": [
+     "--fontforge-height-glyph-count-mean"
+    ],
+    "drop": [],
+    "reason": "Release FFTM build 2011-02-22 predates fontforge 4d34d21ef866. The flag gives cap 644 (the release value) where master gives 761. The flag does not exist yet (proposed converter change)."
+   },
+   {
+    "style": "Miama-Regular",
+    "add": [
+     "--fontforge-height-glyph-count-mean"
+    ],
+    "drop": [],
+    "reason": "Release FFTM build 2011-02-22. The flag gives x 265 (the release value) where master gives 498."
+   },
+   {
+    "style": "NosiferCaps-Regular",
+    "add": [
+     "--fontforge-height-glyph-count-mean"
+    ],
+    "drop": [],
+    "reason": "Release FFTM build 2011-02-22. The flag gives x 925 and cap 854 (the release values) where master gives 1387 and 1388."
+   },
+   {
+    "style": "UnifrakturCook-Bold",
+    "add": [
+     "--fontforge-height-glyph-count-mean"
+    ],
+    "drop": [],
+    "reason": "Release FFTM build 2011-02-22. The flag gives x 319 and cap 485 (the release values) where master gives 1087 and 1577."
+   }
+  ],
+  "verification": {
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland/investigations/heights && bash rerun.sh probes   # probe_all.txt, dump-*-{2011,2012}.txt, cff-PatrickHand-Regular.otf-2012.txt, vintage_selection.txt",
+    "bash rerun.sh builds   # sequential. For each style: before-f725e6a (pinned), BF=<ca43adc> before-ca43adc, BF=<ca43adc> SRC_OVERRIDE=edits/<x>.sfd after-ca43adc. Harness: tools/baseline.sh with TAG=heights OUT=runs/<name>",
+    "sh summarize.sh; bash nothing_else_opened.sh",
+    "/home/fsanches/compartilhado/gftools/venv/bin/python3 /home/fsanches/compartilhado/sfd-reland/tools/ff_heights_oracle.py   # cross-check: 25/38, same values as ff_heights_probe.py master column"
+   ],
+   "rows_before": "Pinned babelfont f725e6a (same as the baseline/): HerrVonMuellerhoff sx [269,500] cap [644,700]; Miama sx [265,500] cap [894,700]; NosiferCaps wc [800,400] sx [925,500] cap [854,700]; PatrickHand sx [467,500] cap [661,700]; UnifrakturCook wc [700,400] sx [319,500] cap [485,700]. With the ca43adc height rule (BF=target-heights build): HerrVonMuellerhoff cap [644,761] (1 blocking); Miama sx [265,498] (1); NosiferCaps wc, sx [925,1387], cap [854,1388] (3); PatrickHand cap [661,660] (1); UnifrakturCook wc, sx [319,1087], cap [485,1577] (3).",
+   "rows_after": "ca43adc plus the tested source copies (edits/). HerrVonMuellerhoff (OS2CapHeight 644): 0 blocking, 6 stale. Miama (OS2XHeight 265): 0 blocking, 1 stale. NosiferCaps (OS2XHeight 925, OS2CapHeight 854): 1 blocking, us_weight_class [800,400], 16 stale. PatrickHand (OS2CapHeight 661, the proposed edit): 0 blocking, 45 stale. UnifrakturCook (OS2XHeight 319, OS2CapHeight 485): 1 blocking, us_weight_class [700,400], 22 stale. Every gate printed its closing 'N blocking table difference(s)' line. Apart from the height rows, each gate is identical line for line to its before-ca43adc gate, stale rows included.",
+   "summary": "Pinned tools: babelfont gf-sfd-conversion f725e6a (target/release, the pinned build) and ca43adc (target-heights/release, BUILT_FROM=ca43adc, used as BF only, not rebuilt); gftools-builder3 e851b8b (fontc 1.0.0); diffenator3; sfd-batch5/tools/table_gate.py; releases google/fonts b5efa9c32e8f, byte-identical to the .ttf files in googlefontdirectory-hg 52f780bc. The oracle port is correct. An independent re-implementation from the C (ff_heights_probe.py) agrees with it on all 38 styles. It also finds four minor divergences, none of which changes a value: AltUni is ignored, file order is used instead of the lowest gid, MinMaxWithin's t2=-1 root is skipped, and only master's tolerances are modelled. Root causes: four styles need FontForge's pre-2012-05-14 glyph-count curve mean (a converter fidelity flag, selected by the release's FFTM build date), verified through stand-in .sfd statements. For PatrickHand the provenance is established: the cap height was computed from the cubic .otf outlines, and the edit OS2CapHeight 661 was verified. The remaining x/cap rows close with the ca43adc rule already in progress; the us_weight_class rows are the in-progress fontc item."
+  },
+  "unresolved": [
+   "FINDINGS.md was NOT written. The Write tool refused it ('Subagents should return findings as text, not write report files'), and I did not bypass that through the shell. Its content is in this result. The evidence it would cite is under /home/fsanches/compartilhado/sfd-reland/investigations/heights/: ff_heights_probe.py (sha256 70e11942...), cff_heights_probe.py (6f06eb7a...), rerun.sh, summarize.sh, nothing_else_opened.sh, probe_all.txt, vintage_selection.txt, dump-*.txt, cff-PatrickHand-Regular.otf-2012.txt, edits/*.sfd and runs/{before-f725e6a,before-ca43adc,after-ca43adc}/. The parent should write FINDINGS.md from this result, or have the rule relaxed.",
+   "The converter flag (--fontforge-height-glyph-count-mean) is only proposed. Per the rules I did not build babelfont, so the four converter-fidelity rows were verified through stand-ins: the 2011-rule values stated in source copies. The flag itself still needs a build and a harness rerun. The recipe needs a new release-derived decision: FFTM FFTimeStamp < 2012-05-14T19:24:59Z.",
+   "The after runs used the ca43adc build (target-heights) because the pinned f725e6a has no height rule. With f725e6a, PatrickHand's x row [467,500] stays open until ca43adc is pinned.",
+   "FontForge 'real' is assumed to be double (FONTFORGE_CONFIG_USE_DOUBLE). The configuration of the 2011/2012 distro builds is not documented. On these integer-coordinate order-2 sources the float variant does not change any top.",
+   "The FontForge C read for this unit (b69c9652, 5a11aa4c, f316d0f6, 4d34d21e, 5fba6c9 copies of splinefont.c, tottf.c, sfd.c, splineutil*.c, splineorder2.c, fvfonts.c) is only in volatile scratch: .../scratchpad/inv-heights/ff/. It can be refetched from https://raw.githubusercontent.com/fontforge/fontforge/<commit>/fontforge/<file>. Per the task rules nothing was committed.",
+   "The brief quoted HerrVonMuellerhoff's rule value as 271/761. The oracle, the probe and the ca43adc port all give 269/761, and 269 is the release's x-height."
+  ],
+  "confidence": "High. Two independent implementations of the rule agree with each other, and with the babelfont ca43adc port, on every style. The pre-2012 divisor is read directly in the FontForge C at the release's own FFTM build date. For PatrickHand, the cubic-.otf computation matches the release exactly (661.449 gives 661), and four independent file facts tie the release to that .otf. Every proposed value closed its row in the harness without changing any other gate line.",
+  "findings_path": "NOT WRITTEN: the Write tool refused report .md files from subagents. The intended path was /home/fsanches/compartilhado/sfd-reland/investigations/heights/FINDINGS.md. All evidence files are in that directory; see unresolved[0]."
+ },
+ "verification": {
+  "unit": "heights",
+  "reproduced": true,
+  "reproduction_notes": "I reproduced the results exactly. I did not reuse their edited files. I started from the unmodified sources (git -C .../googlefontdirectory-hg.git show 52f780bc:ofl/<fam>/src/<X>-TTF.sfd, byte-identical to the archived tree) and inserted the header lines with my own script after FontName:. My copies came out byte-identical to their edits/*.sfd, and each differs from its source only by the one or two added lines. I ran tools/baseline.sh one build at a time (TAG=heights-verify, SCRATCH and OUT under scratchpad/inv-heights-verify/).\nConverter ca43adc (target-heights, BUILT_FROM ca43adc491fa) plus my edits:\n- HerrVonMuellerhoff: 0 blocking, 6 stale.\n- Miama: 0 blocking, 1 stale.\n- NosiferCaps: 1 blocking (us_weight_class [800,400]), 16 stale.\n- PatrickHand: 0 blocking, 45 stale.\n- UnifrakturCook: 1 blocking (us_weight_class [700,400]), 22 stale.\nConverter ca43adc on the unmodified sources: HerrVonMuellerhoff cap [644,761]; Miama sx [265,498]; NosiferCaps wc, sx [925,1387], cap [854,1388]; PatrickHand cap [661,660]; UnifrakturCook wc, sx [319,1087], cap [485,1577].\nPinned f725e6a plus the PatrickHand edit: only sx [467,500] is left, and apart from the cap row that gate is identical to the unedited pinned gate.\nEvery gate printed its closing 'N blocking table difference(s)' line. Each of my gates is byte-identical to the matching gate in their runs/. With the height rows removed, each after-gate is identical to its before-gate. Their before-f725e6a gates match baseline/ except for the order on the flags line.\nIndependent rule check: I wrote scratchpad/inv-heights-verify/indep_heights.py (sha256 a0d7179ea2e8fd36...). It measures the RELEASE binaries' glyf (or CFF) outlines through fontTools with exact arithmetic, a separate data path from the .sfd parsers. Its per-glyph tops match their .sfd dumps for all 44/80/44/47/43 list glyphs. The one exception is UnifrakturCook L, S and V, where the .sfd has fractional coordinates that the export rounded (L 1535.883 -> 1536). That changes the cap sum from 12617.264 to 12618.018 and gives the same 485 and 1577.\nInteger results from the release outlines:\n- HerrVonMuellerhoff: x flat mode 269 (flats 264x1, 269x2, 278x1). Cap 16758/26 = 644 under the 2011 divisor; 761 under 2012.\n- Miama: x 7968/30 = 265 vs 7968/16 = 498. Cap is the mean of the tied flats 890 and 898 = 894.\n- NosiferCaps and Nosifer: x 16652/18 = 925 vs 1387; cap 22211/26 = 854 vs 1388.\n- UnifrakturCook: x 5436/17 = 319 vs 1087; cap 485 vs 1577.\n- PatrickHand release: x 467.64, cap 660.42 (not 661).\n- PatrickHand-Regular.otf (cubic CFF): x 467.505, cap 9921.728/15 = 661.449, so 661.\nThe oracle (tools/ff_heights_oracle.py families.tsv) gives HerrVonMuellerhoff 269/761, so the brief's 271 is wrong. It also gives Miama cap 894, so the brief's 898 is wrong as well; they did not flag that one.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "OS2CapHeight 661 (PatrickHand-Regular, addfield)",
+    "verdict": "keep",
+    "reason": "The unmodified PatrickHand-Regular-TTF.sfd states no OS2CapHeight or OS2XHeight (the header has no height field and no Private BlueValues), so no designer value is discarded. The edit is minimal: only the cap row needs it, because the rule on this .sfd already yields x 467. No FontForge vintage yields 661 from these quadratic outlines (2011 rule 293, 5a11aa4c/master 660.42), so a fidelity flag cannot replace the edit. The value is not release-only: FontForge's rule on the base-tree PatrickHand-Regular.otf gives 661.449 -> 661, confirmed by my own CFF measurement. The provenance evidence also checks out: release glyf == _prettfautohint.ttf glyf for all 728 glyphs; the release adds only cvt and fpgm; the .otf shares 727 glyphs with the release, with an identical 515-entry cmap, 0 advance differences and a max bbox delta of 2.25; FFTM sourceCreated == .otf head.created; the -TTF.sfd Version carries the ttfautohint string and the file has 722 TtInstrs (_prettfautohint.sfd has 0). Verified: 0 blocking with ca43adc; with pinned f725e6a the cap row closes and nothing else changes. Two wording fixes. (1) Body: say 'exported by FontForge 20120906 from the font loaded from PatrickHand-Regular.otf', not 'exported from' the .otf. (2) value_derived_from labels the rule '5a11aa4c', but their cff probe's '2012' mode models master's SplineIsLinear (`ret &&`, absolute RealNear); 5a11aa4c has the looser form. I checked that the per-glyph tops are identical under both, so the value stands."
+   },
+   {
+    "commit_subject": "OS2CapHeight 644 (HerrVonMuellerhoff-Regular, stand-in for the proposed flag)",
+    "verdict": "drop",
+    "reason": "A fidelity explanation makes this edit unnecessary. The release FFTM FFTimeStamp is 1298382513, exactly source_modtime in stamp.c at b69c9652 (20110222). The FFTM created/modified times equal the .sfd CreationTime/ModificationTime. The b69c9652 SFStandardHeight divides by the glyph count (`tot += curves[i].cnt`), which gives 644 from this very source. The .sfd states no height. Use this only as a fallback if the converter flag is refused, and then class it as source-edit-from-source with a body naming FontForge 20110222's glyph-count mean. As a stand-in it reproduces 0 blocking."
+   },
+   {
+    "commit_subject": "OS2XHeight 265 (Miama-Regular, stand-in)",
+    "verdict": "drop",
+    "reason": "Same fidelity explanation: FFTM stamp 20110222, and the FFTM modified time equals the -TTF.sfd ModificationTime (the cubic Miama.sfd is 9 s older and carries BlueValues that the -TTF.sfd lacks). The 2011 divisor gives 7968/30 = 265. The .sfd states no height. Fallback only, as source-edit-from-source. As a stand-in: 0 blocking."
+   },
+   {
+    "commit_subject": "OS2XHeight 925 + OS2CapHeight 854 (NosiferCaps-Regular, stand-ins)",
+    "verdict": "drop",
+    "reason": "Same fidelity explanation: FFTM stamp 20110222, and the FFTM modified time (2011-10-24 13:20:44) equals the .sfd ModificationTime. No BlueValues zone bottom lies within 20.48 units. The .sfd states no height. Fallback only. As stand-ins: 1 blocking left, us_weight_class, which is the in-progress fontc item (TTFWeight: 800 is stated)."
+   },
+   {
+    "commit_subject": "OS2XHeight 319 + OS2CapHeight 485 (UnifrakturCook-Bold, stand-ins)",
+    "verdict": "drop",
+    "reason": "Same fidelity explanation: FFTM stamp 20110222, and the FFTM modified time (2011-09-01 11:40:43) equals the .sfd ModificationTime. The .sfd states no height. Fallback only. As stand-ins: 1 blocking left, us_weight_class (TTFWeight: 700 is stated). The converter must measure the unrounded .sfd coordinates, as FontForge did."
+   },
+   {
+    "commit_subject": "Converter flag --fontforge-height-glyph-count-mean, chosen by the release FFTM (proposed converter change)",
+    "verdict": "revise",
+    "reason": "The mechanism is correct: 4d34d21ef866 is the only change to that code between b69c9652 and 5a11aa4c, apart from the do_max return, and ca43adc's Occurrence.count makes the one-line divisor switch straightforward. Revise four things. (1) Cutoff: FFTM stores stamp.c's source_modtime, not the commit time, so select the flag on FFTimeStamp < 1337023489 (2012-05-14T19:24:49Z, the stamp of both 4d34d21ef866 and its twin 5817e4ae), not '< 19:24:59Z'. (2) Give the lower bound: SFStandardHeight with this divisor exists from 5fba6c9 (2009-05-27). The 20090914 build (c9ca2f32) and the 20100429 build (549d3cbe) both carry `tot += curves[i].cnt` (verified), and the 20120731 release commit (63a4d0a8) has the fix, so the FFTM rule holds for every stamp in families.tsv (earliest 2009-09-14). (3) State in the help text what the flag does not model. FontForge up to at least 5a11aa4c lacks `ret &&` in SplineIsLinear and uses the relative RealNear; ca43adc ports master. For the 6 affected styles that makes no difference (their 2011 and 2012 dumps have identical per-glyph tops), but it is a gap in general. (4) ca43adc's glyphs_by_primary_codepoint ignores AltUni, while FontForge's SFFindGID/SCUniMatch matches it; this has no effect here."
+   }
+  ],
+  "classification_objections": [
+   "No class is wrong. All 12 baseline blocking rows for the 5 styles are classified, and every class holds up.",
+   "PatrickHand OS/2.sx_height [467,500] as converter-fidelity: the class stands, but the cause should say the release's 467 was computed from the .otf (467.505). The rule on this .sfd gives 467.636 and truncates to the same integer by coincidence.",
+   "HerrVonMuellerhoff, Miama, NosiferCaps and UnifrakturCook 2011-rule rows as converter-fidelity: accepted. The evidence is exact: the FFTM FFTimeStamp equals the stamp.c at b69c9652 to the second, the FFTM created/modified times equal each .sfd, and 6 values reproduce to the integer. The class depends on the flag being built; until then the rows stay open under the pinned tools.",
+   "PatrickHand OS/2.s_cap_height as provenance: accepted. It is not source-edit-from-release, because the value is derived from the .otf in the same base tree. I found no FontForge code path that yields 661 from the quadratic -TTF.sfd."
+  ],
+  "missed": [
+   "Unused corroboration: the base tree has src/Miama.otf, a FontForge 20090914 export (FFTM 2009-09-14, the c9ca2f32 stamp) with OS/2 x=132 and cap=439. Its outlines are half scale (curve sum 3984). The glyph-count mean gives 3984/30 = 132 where master gives 249. Its only flat cap top, 443, snaps to the BlueValue 439. That is a third FontForge build showing the pre-2012 divisor.",
+   "The brief's Miama cap '898' is wrong: the oracle gives 894, the mean of the tied flats 890 and 898. They flagged only HerrVonMuellerhoff's 271.",
+   "ff_heights_probe.py's docstring says 5a11aa4c == master for this path ('ret &&' present, RealNear absolute). That is false: 5a11aa4c has the 2011 SplineIsLinear and RealNear, and `ret &&` came later. Nothing changes here (I checked per-glyph tops identical under both for the 5 -TTF.sfd, the PatrickHand .otf and _prettfautohint.sfd), but the label is wrong.",
+   "The FFTM cutoff is 10 s off: the stamp is 1337023489 (19:24:49Z), not the commit time 19:24:59Z. The rule's lower bound (5fba6c9, 2009-05-27) is not stated.",
+   "UnifrakturCook-Bold-TTF.sfd has fractional coordinates that the release rounded (L, S, V tops). FontForge measured the unrounded outlines, and the converter must too. The integers are unaffected here.",
+   "ca43adc ignores AltUni when finding list glyphs, unlike FontForge's SCUniMatch. That is a general fidelity gap with no effect on these styles.",
+   "Nothing is committed. Their FontForge C copies and my blobless FontForge clone (scratchpad/inv-heights-verify/ff.git), indep_heights.py (sha256 a0d7179ea2e8fd36...), runs.sh (9a4b82efb1a3738a...) and runs/ are only in volatile scratch. FINDINGS.md was not written, and I did not write VERIFY.md either, because subagents are told to return findings rather than write report .md files. The parent must preserve these and write both reports.",
+   "No rows were opened by the edits and no style was left uncovered. Nosifer-Regular and UnifrakturMaguntia-Book appear only as extra data (other units). The release-outline check confirms Nosifer's 925/854 under the 2011 divisor."
+  ],
+  "overall": "Their findings hold up. I reproduced every row count exactly. The root causes are right and proven from the FontForge C at the release's own build.\n\n**VERIFY.md body (ASCII, for the parent to write to /home/fsanches/compartilhado/sfd-reland/investigations/heights/VERIFY.md)**\n\n**Model**: Claude Opus 5.5\n\nTools:\n- babelfont f725e6a (pinned, target/release)\n- babelfont ca43adc491fa (target-heights, BF only, not rebuilt)\n- gftools-builder3 e851b8b (fontc 1.0.0)\n- diffenator3 1.1.4\n- table gate: sfd-batch5/tools/table_gate.py (sha256 008e73197f7a8736...)\n- google/fonts b5efa9c32e8f; the 5 releases are byte-identical to googlefontdirectory-hg 52f780bc\n\nConclusions:\n\n1. Pairing is correct. The sources are src/<X>-TTF.sfd per families.tsv, and the harness pairs by construction.\n\n2. The pre-2012 divisor is real and dates correctly.\n   - In the FontForge git history (blobless clone), 4d34d21ef866 and its twin 5817e4ae (2012-05-14) change `tot += curves[i].cnt` to `++tot`. Across the SPLMaxHeight..SFDescender block, nothing else changes between b69c9652 and 5a11aa4c except the do_max return.\n   - stamp.c at b69c9652 has source_modtime 1298382513 (2011-02-22 13:48:33), which is exactly the FFTM FFTimeStamp of HerrVonMuellerhoff, Miama, NosiferCaps and UnifrakturCook. Their FFTM created/modified times equal each .sfd's CreationTime/ModificationTime.\n   - The 20090914 and 20100429 builds have the same divisor. The 20120731 release has the fix.\n   - Measuring the release glyf outlines independently gives the same tops and integers. The 2011 divisor gives 644 / 265 / 925,854 / 319,485.\n\n3. PatrickHand provenance is proven:\n   - release glyf == _prettfautohint.ttf glyf for all 728 glyphs\n   - the .otf and the release share 727 glyphs, an identical cmap and 0 advance differences\n   - FFTM sourceCreated == .otf head.created\n   - the -TTF.sfd has the ttfautohint Version string and 722 TtInstrs\n   - the .otf gives cap 661.449 and x 467.505; the release's own outlines and the -TTF.sfd give 660.42\n   - verdict: keep OS2CapHeight 661, with the wording fixes above\n\n4. The four 2011-rule stand-in edits are unnecessary once the fidelity flag exists; keep them only as a fallback.\n\n5. Revise the flag proposal:\n   - cutoff FFTimeStamp < 1337023489\n   - state the lower bound (5fba6c9)\n   - document the SplineIsLinear, RealNear and AltUni gaps\n\n6. The us_weight_class rows are the in-progress fontc item: TTFWeight 800 and 700 are stated in the sources.\n\nRerun:\n- `bash scratchpad/inv-heights-verify/runs.sh` (sequential)\n- `gftools/venv/bin/python3 scratchpad/inv-heights-verify/indep_heights.py <release.ttf|.otf> [--blues '...'] [--em N]`\n- `(cd sfd-reland && gftools/venv/bin/python3 tools/ff_heights_oracle.py families.tsv)`\n- FontForge C: `git clone --bare --filter=blob:none https://github.com/fontforge/fontforge.git`, then `git show <commit>:fontforge/splinefont.c` and `git show <commit>:fontforge/stamp.c`\n\nEverything under scratchpad/inv-heights-verify is volatile and must be copied into the repo if it is to be kept. Nothing was committed or modified outside my scratch."
+ }
+}

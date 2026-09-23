@@ -1,0 +1,12 @@
+U+00B7 periodcentered             adv   438 ->   438  A [('period', 39, 635)]  B [('periodcentered', 0, 0)]
+U+013F Ldot                       adv  1105 ->  1105  A [('L', 0, 0), ('period', 449, 635)]  B [('L', 0, 0), ('periodcentered', 410, 0)]
+U+0140 ldot                       adv   625 ->   625  A [('l', 0, 0), ('period', 351, 635)]  B [('l', 0, 0), ('periodcentered', 312, 0)]
+U+2018 quoteleft                  adv   385 ->   385  A [('comma', 401, 1294)]  B [('quoteleft', 0, 0)]
+U+2019 quoteright                 adv   385 ->   385  A [('comma', -8, 1307)]  B [('quoteright', 0, 0)]
+U+201A quotesinglbase             adv   385 ->   385  A [('comma', -4, 17)]  B [('quoteright', 4, -1290)]
+U+201B quotereversed              adv   385 ->   385  A [('comma', 424, 1294)]  B [('quoteleft', 23, 0)]
+U+201C quotedblleft               adv   677 ->   677  A [('comma', 399, 1296), ('comma', 729, 1294)]  B [('quoteleft', -2, 2), ('quoteleft', 328, 0)]
+U+201D quotedblright              adv   677 ->   677  A [('comma', -6, 1309), ('comma', 322, 1307)]  B [('quoteright', 2, 2), ('quoteright', 330, 0)]
+U+201E quotedblbase               adv   688 ->   688  A [('comma', 10, 17), ('comma', 338, 15)]  B [('quoteright', 18, -1290), ('quoteright', 346, -1292)]
+U+201F uni201F                    adv   688 ->   688  A [('comma', 409, 1290), ('comma', 739, 1288)]  B [('quoteleft', 8, -4), ('quoteleft', 338, -6)]
+11 composite codepoint(s) differ

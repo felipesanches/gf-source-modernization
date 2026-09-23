@@ -1,0 +1,12 @@
+U+03A9 uni03A9                  Omega                        adv  1358  1358  px  160433  161096  diff   1149  ratio 0.0071
+U+00B7 periodcentered           periodcentered               adv   438   438  px    9088    9101  diff     53  ratio 0.0058
+U+1F6B uni1F6B                  Omegaaspergrave              adv  1744  1744  px  189127  189975  diff   1030  ratio 0.0054
+U+20B7 uni20B7                  uni20B7                      adv  1178  1178  px  142925  142995  diff    384  ratio 0.0027
+U+2086 uni2086                  uni2086                      adv   626   626  px   55480   55541  diff    133  ratio 0.0024
+U+2076 uni2076                  uni2076                      adv   626   626  px   55343   55396  diff    127  ratio 0.0023
+U+004A J                        J                            adv  1140  1140  px   89370   89482  diff    192  ratio 0.0021
+U+E257 uniE257                  aogonekalt                   adv   993   993  px  116240  116239  diff    211  ratio 0.0018
+U+0134 Jcircumflex              Jcircumflex                  adv  1140  1140  px  116177  116289  diff    192  ratio 0.0017
+U+0162 uni0162                  Tcommaaccent                 adv  1243  1243  px  102818  102763  diff    113  ratio 0.0011
+U+0163 uni0163                  tcommaaccent                 adv   696   696  px   77977   77992  diff     31  ratio 0.0004
+11 codepoint(s) compared, 11 differ (advance, or >= 0.000 of pixels at 1024 ppem)

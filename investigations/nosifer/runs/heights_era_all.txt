@@ -1,0 +1,41 @@
+style                        FF build   release    master     2009-12    matches      era-choice
+CreepsterCaps-Regular        2011-02-22 751/751    751/751    751/751    master+2009-12 MATCH (2009-12 rule)
+HerrVonMuellerhoff-Regular   2011-02-22 269/644    269/761    269/644    2009-12      MATCH (2009-12 rule)
+Lekton-Bold                  2010-04-29 476/655    476/655    476/655    master+2009-12 MATCH (2009-12 rule)
+Lekton-Italic                2010-04-29 475/655    475/655    475/655    master+2009-12 MATCH (2009-12 rule)
+Lekton-Regular               2010-04-29 475/655    475/655    475/655    master+2009-12 MATCH (2009-12 rule)
+Miama-Regular                2011-02-22 265/894    498/894    265/894    2009-12      MATCH (2009-12 rule)
+Monoton-Regular              2011-02-22 1440/1656  1440/1656  1440/1656  master+2009-12 MATCH (2009-12 rule)
+NixieOne-Regular             2011-02-22 500/700    500/700    500/700    master+2009-12 MATCH (2009-12 rule)
+Nosifer-Regular              2011-02-22 925/854    1387/1388  925/854    2009-12      MATCH (2009-12 rule)
+NosiferCaps-Regular          2011-02-22 925/854    1387/1388  925/854    2009-12      MATCH (2009-12 rule)
+NovaCut                      2009-09-14 1140/1550  1140/1550  1140/1550  master+2009-12 MATCH (2009-12 rule)
+NovaFlat                     2009-09-14 1120/1530  1120/1530  1120/1530  master+2009-12 MATCH (2009-12 rule)
+NovaMono                     2009-09-14 1120/1509  1120/1509  1120/1509  master+2009-12 MATCH (2009-12 rule)
+NovaOval                     2009-09-14 1120/1550  1120/1550  1120/1550  master+2009-12 MATCH (2009-12 rule)
+NovaRound                    2009-09-14 1120/1530  1120/1530  1120/1530  master+2009-12 MATCH (2009-12 rule)
+NovaScript-Regular           2009-09-14 1120/1550  1120/1550  1120/1550  master+2009-12 MATCH (2009-12 rule)
+NovaSlim                     2009-09-14 1120/1530  1120/1530  1120/1530  master+2009-12 MATCH (2009-12 rule)
+NovaSquare                   2009-09-14 1100/1510  1100/1510  1100/1510  master+2009-12 MATCH (2009-12 rule)
+PatrickHand-Regular          2012-09-06 467/661    467/660    257/293    neither      differ
+Play-Bold                    no-FFTM    484/649    484/649    484/649    master+2009-12 MATCH
+Play-Regular                 no-FFTM    484/649    484/649    484/649    master+2009-12 MATCH
+Puritan-Bold                 2010-04-29 507/655    495/640    495/640    neither      differ (2009-12 rule)
+Puritan-BoldItalic           2010-04-29 507/655    495/640    495/640    neither      differ (2009-12 rule)
+Puritan-Italic               2010-04-29 507/655    495/640    495/640    neither      differ (2009-12 rule)
+Puritan-Regular              2010-04-29 507/655    495/640    495/640    neither      differ (2009-12 rule)
+RussoOne-Regular             2011-02-22 530/700    530/700    530/700    master+2009-12 MATCH (2009-12 rule)
+Smythe-Regular               2011-02-22 963/1317   963/1317   963/1317   master+2009-12 MATCH (2009-12 rule)
+Tuffy-Italic                 no-FFTM    500/700    1069/1450  1069/1450  neither      differ
+Tuffy-Regular                no-FFTM    500/700    1069/1450  1069/1450  neither      differ
+TulpenOne-Regular            2011-02-22 1018/1393  1018/1393  1018/1393  master+2009-12 MATCH (2009-12 rule)
+UnifrakturCook-Bold          2011-02-22 319/485    1087/1577  319/485    2009-12      MATCH (2009-12 rule)
+UnifrakturMaguntia-Book      2010-04-29 1095/1409  1095/1465  1095/1409  2009-12      MATCH (2009-12 rule)
+AbrilFatface-Regular         2011-02-22 476/700    476/700    476/700    master+2009-12 MATCH (2009-12 rule)
+Corben-Regular               no-FFTM    958/1404   958/1404   958/1404   master+2009-12 MATCH
+Corben-Bold                  no-FFTM    1296/1593  1296/1593  1296/1593  master+2009-12 MATCH
+AllertaStencil-Regular       2011-02-22 564/737    564/737    564/737    master+2009-12 MATCH (2009-12 rule)
+ComicRelief-Regular          no-FFTM    1105/1554  1105/1554  1105/1554  master+2009-12 MATCH
+ComicRelief-Bold             no-FFTM    1105/1554  1105/1554  1105/1554  master+2009-12 MATCH
+
+master rule alone reproduces 25 of 38; era-chosen rule reproduces 31 of 38

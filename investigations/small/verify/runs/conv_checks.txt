@@ -1,0 +1,4 @@
+target Regular: os2-defaults no-op; snap no-op; ff-underline: < value = -185; > value = -272; ; sim vs unmodified: 2 lines, > value = -97; 
+target Bold: os2-defaults no-op; snap no-op; ff-underline: < value = -185; > value = -272; ; sim vs unmodified: 2 lines, > value = -97; 
+target-heights Regular: os2-defaults no-op; snap no-op; ff-underline: < value = -185; > value = -272; ; sim vs unmodified: 2 lines, > value = -97; 
+target-heights Bold: os2-defaults no-op; snap no-op; ff-underline: < value = -185; > value = -272; ; sim vs unmodified: 2 lines, > value = -97; 

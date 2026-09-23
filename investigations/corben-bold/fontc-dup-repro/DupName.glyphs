@@ -1,0 +1,72 @@
+{
+.formatVersion = 3;
+familyName = DupName;
+fontMaster = (
+{
+id = m01;
+metricValues = (
+{
+over = 16;
+pos = 800;
+},
+{
+over = -16;
+pos = -200;
+}
+);
+name = Regular;
+}
+);
+glyphs = (
+{
+glyphname = .notdef;
+layers = (
+{
+layerId = m01;
+width = 500;
+}
+);
+},
+{
+glyphname = a;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(100,0,l),
+(400,0,l),
+(400,500,l),
+(100,500,l)
+);
+}
+);
+width = 500;
+}
+);
+unicode = 97;
+},
+{
+glyphname = a;
+layers = (
+{
+layerId = m01;
+width = 0;
+}
+);
+}
+);
+metrics = (
+{
+type = ascender;
+},
+{
+type = descender;
+}
+);
+unitsPerEm = 1000;
+versionMajor = 1;
+versionMinor = 0;
+}

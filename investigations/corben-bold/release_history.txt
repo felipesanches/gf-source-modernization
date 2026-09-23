@@ -1,0 +1,52 @@
+== 90abd17b4  139588 bytes  glyphs 552  cmap 380
+  head.created unix 1296003342  modified unix 1296003342
+  OS/2 typo 2300/-940 win 2300/940 vendor '    ' panose.bSerifStyle 0 weight 700 xh 1296 cap 1593
+  hhea 2300/-940
+  name 0: Copyright (c) 2010 by vernon adams. All rights reserved.
+  name 1: Corben
+  name 2: Bold
+  name 3: 1.000;Corben;
+  name 4: Corben
+  name 5: Version 1.000
+  name 6: Corben
+  raw post name gid211=dcroat gid548=dcroat  duplicated raw names: ['dcroat']
+  stored AE xMin -10 lsb -10; Lslash xMin 3 lsb 3; lslash xMin -38 lsb -38
+== bacec3651  139588 bytes  glyphs 552  cmap 380
+  head.created unix 1296003342  modified unix 1296003342
+  OS/2 typo 2300/-940 win 2300/940 vendor '    ' panose.bSerifStyle 0 weight 700 xh 1296 cap 1593
+  hhea 2300/-940
+  name 0: Copyright (c) 2010 by vernon adams. All rights reserved.
+  name 1: Corben
+  name 2: Bold
+  name 3: 1.000;Corben;
+  name 4: Corben
+  name 5: Version 1.000
+  name 6: Corben
+  raw post name gid211=dcroat gid548=dcroat  duplicated raw names: ['dcroat']
+  stored AE xMin -10 lsb -10; Lslash xMin 3 lsb 3; lslash xMin -38 lsb -38
+== 5b1755d5a  125516 bytes  glyphs 552  cmap 380
+  head.created unix 1296003342  modified unix 1442847474
+  OS/2 typo 2826/-969 win 2826/969 vendor 'newt' panose.bSerifStyle 15 weight 700 xh 1296 cap 1593
+  hhea 2826/-969
+  name 0: Copyright (c) 2010, 2011 by vernon adams (vern@newtypography.co.uk), with Reserved Font Name Corben.
+  name 1: Corben
+  name 2: Bold
+  name 3: FontForge 2.0 : Corben Bold
+  name 4: Corben Bold
+  name 5: Version 1.101
+  name 6: Corben-Bold
+  raw post name gid211=dcroat gid548=dcroat  duplicated raw names: ['dcroat']
+  stored AE xMin -19 lsb -10; Lslash xMin -2 lsb 3; lslash xMin -43 lsb -38
+== ee1e172ab  125892 bytes  glyphs 552  cmap 380
+  head.created unix 1296003342  modified unix 1503625007
+  OS/2 typo 2826/-969 win 2826/969 vendor 'newt' panose.bSerifStyle 15 weight 700 xh 1296 cap 1593
+  hhea 2826/-969
+  name 0: Copyright (c) 2010, 2011 by vernon adams (vern@newtypography.co.uk), with Reserved Font Name Corben.
+  name 1: Corben
+  name 2: Bold
+  name 3: FontForge 2.0 : Corben Bold
+  name 4: Corben Bold
+  name 5: Version 1.101; ttfautohint (v1.6)
+  name 6: Corben-Bold
+  raw post name gid211=dcroat gid548=dcroat  duplicated raw names: ['dcroat']
+  stored AE xMin -19 lsb -10; Lslash xMin -2 lsb 3; lslash xMin -43 lsb -38

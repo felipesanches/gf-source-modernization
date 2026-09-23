@@ -1,0 +1,5 @@
+style                      rOS2  x ff/rel      cap ff/rel    verdict
+RussoOne-Regular           v3    530/530       700/700       MATCH
+ComicRelief-Regular        v4    1105/1105     1554/1554     MATCH  (stated in .sfd)
+ComicRelief-Bold           v4    1105/1105     1554/1554     MATCH  (stated in .sfd)
+FontForge's rule reproduces the release: 25 of 38 styles that carry the fields

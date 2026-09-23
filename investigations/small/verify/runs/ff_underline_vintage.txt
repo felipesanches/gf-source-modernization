@@ -1,0 +1,10 @@
+20170731 tottf.c: putshort(at->post,sf->upos-sf->uwidth/2)
+20190317 tottf.c: putshort(at->post,sf->upos+sf->uwidth/2)
+20200314 tottf.c: putshort(at->post,sf->upos+sf->uwidth/2)
+20230101 tottf.c: putshort(at->post,sf->upos+sf->uwidth/2)
+20190317 splinefont.h:     real italicangle, upos, uwidth;		/* In font info */
+20190317 sfd.c SFDDump versions:  double version = 3.1; 
+20200314 sfd.c SFDDump versions:  double version = 3.2;  double version = 3.1; 
+ComicRelief-Regular.sfd @856315f: SplineFontDB: 3.2 UnderlinePosition: -185 UnderlineWidth: 175 OS2XHeight: 1105 
+ComicRelief-Bold.sfd @856315f: SplineFontDB: 3.2 UnderlinePosition: -185 UnderlineWidth: 175 OS2XHeight: 1105 
+ComicRelief: FontForge>=20190317 trunc(p+w/2)=-97  sfdLib+ufo2ft floor(p+w/2+.5)=-97  FontForge<=2017 trunc(p-w/2)=-272  i32 naive p+w//2 (C/Rust trunc)=-98

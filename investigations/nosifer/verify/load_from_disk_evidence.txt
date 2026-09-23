@@ -1,0 +1,11 @@
+gasp version: Nosifer 0 NosiferCaps 1
+comma          pt6   Nosifer (373, -42)   NosiferCaps (373, -43)    .5 values printed in the .sfd glyph: ['-42.5']
+three          pt25  Nosifer (780, 1293)  NosiferCaps (779, 1293)   .5 values printed in the .sfd glyph: ['1090.5', '112.5', '1142.5', '1167.5', '1192.5', '1206.5', '1258.5', '1289.5', '1480.5', '1600.5', '254.5', '291.5', '449.5', '739.5', '779.5', '829.5', '899.5', '919.5', '973.5', '986.5', '989.5']
+semicolon      pt5   Nosifer (396, -42)   NosiferCaps (396, -43)    .5 values printed in the .sfd glyph: ['-42.5']
+less           pt39  Nosifer (100, 474)   NosiferCaps (100, 473)    .5 values printed in the .sfd glyph: ['473.5']
+brokenbar      pt40  Nosifer (222, 1535)  NosiferCaps (223, 1535)   .5 values printed in the .sfd glyph: ['1531.5', '1539.5', '1542.5', '170.5', '171.5', '222.5', '512.5', '843.5']
+brokenbar      pt43  Nosifer (512, 1535)  NosiferCaps (513, 1535)   .5 values printed in the .sfd glyph: ['1531.5', '1539.5', '1542.5', '170.5', '171.5', '222.5', '512.5', '843.5']
+copyright      pt52  Nosifer (1600, 480)  NosiferCaps (1599, 480)   .5 values printed in the .sfd glyph: ['-298.5', '-303.5', '-306.5', '-312.5', '-335.5', '-409.5', '-466.5', '-566.5', '-612.5', '-891.5', '101.5', '103.5', '1040.5', '1072.5', '1108.5', '1167.5', '1172.5', '1204.5', '1220.5', '1304.5', '1337.5', '1348.5', '1376.5', '1383.5', '1460.5', '1536.5', '1599.5', '1600.5', '1726.5', '1804.5', '1811.5', '1840.5', '243.5', '271.5', '275.5', '286.5', '306.5', '398.5', '410.5', '501.5', '611.5', '617.5', '620.5', '635.5', '73.5', '802.5', '824.5', '829.5', '905.5', '953.5']
+uni0326        pt6   Nosifer (373, -42)   NosiferCaps (373, -43)    .5 values printed in the .sfd glyph: ['-42.5']
+guilsinglleft  pt39  Nosifer (100, 474)   NosiferCaps (100, 473)    .5 values printed in the .sfd glyph: ['473.5']
+commaaccent    pt6   Nosifer (373, -42)   NosiferCaps (373, -43)    .5 values printed in the .sfd glyph: ['-42.5']

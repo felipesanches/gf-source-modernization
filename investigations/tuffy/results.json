@@ -1,0 +1,385 @@
+{
+ "investigation": {
+  "unit": "tuffy",
+  "styles": [
+   "Tuffy-Regular",
+   "Tuffy-Italic",
+   "Tuffy-Bold",
+   "Tuffy-BoldItalic"
+  ],
+  "rows": [
+   {
+    "style": "Tuffy-Bold, Tuffy-BoldItalic",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "converter-fidelity",
+    "cause": "fontc does not set usWeightClass for a static single-master source; the .sfd states TTFWeight: 700. Converter fix in progress elsewhere. Releases are FontForge 2.0 exports of exactly these .sfd states.",
+    "evidence": "Release sha1 abb65fbf / 6c2a7d5d == monorepo 52f780b ofl/tuffy/Tuffy-Bold*.ttf; FFTM sourceModified == .sfd ModificationTime (1314725717 = 2011-08-30 17:35:17; 1314725601 = 17:33:21). Baseline rerun runs/r0-baseline: 1 row each; still 1 with the target-heights build (runs/b1-heightsbin)."
+   },
+   {
+    "style": "Tuffy-Regular, Tuffy-Italic",
+    "row": "OS/2.fs_type [8, 0]",
+    "classification": "source-edit-from-release",
+    "cause": "v1.272 (2017 re-export, google/fonts ebcdfd2bb) sets fsType 8; the .sfd states FSType: 0 and the 001.271 FontForge export carries 0.",
+    "evidence": "setfield FSType 8 closes it: runs/r1-os2 (74->63, 0 opened), runs/i1-os2 (27->16, 0 opened)."
+   },
+   {
+    "style": "Tuffy-Regular, Tuffy-Italic",
+    "row": "OS/2.y_subscript_x_size, y_subscript_y_size, y_subscript_x_offset, y_subscript_y_offset, y_superscript_x_size, y_superscript_y_size, y_superscript_x_offset, y_superscript_y_offset, y_strikeout_size, y_strikeout_position (10 rows)",
+    "classification": "source-edit-from-release",
+    "cause": "The .sfd STATES corrupt values (OS2SubXSize 0, OS2SubYSize 2, OS2SubXOff -16560, OS2SubYOff 0, OS2SupXSize -25944, OS2SupYSize -27176, OS2SupXOff -16376, OS2SupYOff 1, OS2StrikeYSize 12312, OS2StrikeYPos -16224). FontForge's 001.271 export and our build carry them verbatim (so --fontforge-os2-defaults is irrelevant here); OTS 9.2.0 flags 'Bad ySuperscriptXSize: -25944' on both, not on v1.272 -- very likely the 2017 'ots failure'. v1.272 carries 1331/1228/0/153, 1331/1228/0/716, 50/300 (Italic x-offsets -32/150).",
+    "evidence": "runs/provenance.txt, runs/ots.txt; 10 x setfield close all 10: runs/r1-os2, runs/i1-os2. Corrects sfd-batch6/B6-RESIDUALS-2026-09-22.md line 65 (true for Bold/BoldItalic only)."
+   },
+   {
+    "style": "Tuffy-Regular, Tuffy-Italic",
+    "row": "cmap U+0000 LOST [uni0000, null]; cmap U+000D LOST [uni000D, null]",
+    "classification": "source-edit-from-release",
+    "cause": "The .sfd has .null (Encoding: 65536 -1 194, width 0) and nonmarkingreturn (Encoding: 65537 -1 195, width 682) unencoded; v1.272 maps them at U+0000/U+000D as uni0000/uni000D.",
+    "evidence": "setencoding .null 0 0 + setencoding nonmarkingreturn 13 13: both rows become ACCEPTED-RENAME (runs/r2-controls 63->61, runs/i2-controls 16->14, 0 opened)."
+   },
+   {
+    "style": "Tuffy-Regular, Tuffy-Italic",
+    "row": "hmtx.7 -- the .notdef member (release 748/lsb 68, ours 1024/lsb 102)",
+    "classification": "converter-fidelity",
+    "cause": "Regular/Italic .sfd have no .notdef; FontForge's TTF exporter synthesises one (tottf.c dumpmissingglyph: stem 68 because StdVW '[70]' strtod-parses to 0 -> (a+d)/30; advance 748). The 001.271 export has it, v1.272 kept it; fontc synthesises its own 1024-wide glyph.",
+    "evidence": "Emulated by appending that glyph to a copy of the .sfd: hmtx.7 -> hmtx.6 with .notdef gone, built glyph equals release point-for-point (runs/r3-notdef, runs/i3-notdef)."
+   },
+   {
+    "style": "Tuffy-Regular",
+    "row": "hmtx.7 -- Agrave, Aacute, Amacron, Iacute, eacute, uacute (widest uacute 120 vs 162)",
+    "classification": "source-edit-from-release",
+    "cause": "v1.272 re-aligned the base component to x=0 (source: A -8, I 10, e 10, u 42), as automatic component alignment does.",
+    "evidence": "setrefer on ref 1 of the six glyphs closes the remaining hmtx.6 row: runs/r4-composites (61->17, 0 opened). probes/hmtx_outline_led.py -> runs/hmtx/Tuffy-Regular.txt."
+   },
+   {
+    "style": "Tuffy-Italic",
+    "row": "hmtx.7 -- J, Jcircumflex, periodcentered, uni2076, uni2086, uni20B7 (lsb +1)",
+    "classification": "source-edit-from-release",
+    "cause": "v1.272 refit these outlines with extremum points (J 21 -> 25 points), so the curve extremum, not the off-curve control, sets xMin (+1 unit).",
+    "evidence": "Outlines imported from the release (import_outlines.py) close hmtx.6: runs/i5-imports (12->6, 0 opened). runs/hmtx/Tuffy-Italic.txt."
+   },
+   {
+    "style": "Tuffy-Regular",
+    "row": "cmap U+1F80-1F8F, U+1F98-1F9F, U+1FA0-1FA7, U+1FB2, U+1FB3, U+1FB4, U+1FB7, U+1FBC, U+1FC3, U+1FCC, U+1FF3, U+1FF4, U+1FF7, U+1FFC (43 rows)",
+    "classification": "source-edit-from-release",
+    "cause": "v1.272 re-laid out the six iota-subscript base composites (iotasubscript at 0, letter at +801 = iota advance, advance +801) and the 37 composites built on them follow; the iota now sits beside the letter and the letter overflows its advance. Values exist only in the release (a visible defect).",
+    "evidence": "runs/three_way/Tuffy-Regular.txt (bbox delta 801 on all 43); setrefer/setwidth on alphaiotasub, Alphaiotasub, etaiotasub, Etaiotasub, omegaiotasub, Omegaiotasub closes all 43: runs/r4-composites."
+   },
+   {
+    "style": "Tuffy-Regular, Tuffy-Italic",
+    "row": "cmap U+032E [uni032E, brevesubnosp]; GDEF.glyph_classes (only the release marks U+032E)",
+    "classification": "source-edit-from-release",
+    "cause": "brevesubnosp ('no spacing') has Width 1302 in the .sfd; v1.272 ships it zero-width, outline moved left by 1302, class mark; in Regular uni1E2A/uni1E2B moved their reference right by 1302 so they draw as before.",
+    "evidence": "translateglyph brevesubnosp -1302 0 + setwidth 0 (+ Regular setrefer uni1E2A 1 1252 0, uni1E2B 1 1178 0): both rows close, GDEF now agrees on 19 marks (runs/r5-brevesub 17->15, runs/i4-brevesub 14->12, 0 opened). Without the uni1E2A/B refs an hmtx row opens (first r5 attempt)."
+   },
+   {
+    "style": "Tuffy-Regular",
+    "row": "cmap U+0162 [uni0162, Tcommaaccent]; cmap U+0163 [uni0163, tcommaaccent]",
+    "classification": "source-edit-from-release",
+    "cause": "v1.272 removed the overlap between T/t and its comma (2 contours -> 1): area 1.88%/3.58% vs ours, 0.01%/0.02% after removing overlaps from ours.",
+    "evidence": "runs/cmap_rows/Tuffy-Regular.txt; import_outlines.py U+0162 U+0163 closes both: runs/r6-tcomma (15->13, 0 opened)."
+   },
+   {
+    "style": "Tuffy-Italic",
+    "row": "cmap U+0162, U+0163, U+E257 (overlap); cmap U+03A9, U+1F6B (refit)",
+    "classification": "source-edit-from-release",
+    "cause": "v1.272 removed overlaps (T/t comma, aogonekalt: 1.81/3.60/0.50% -> 0.01-0.02% after overlap removal) and refit Omega/Omegaaspergrave (area 0.41%/0.44% vs ours, just over the gate's 0.4%; the release is 0.34% off FontForge's own export, ours 0.075%).",
+    "evidence": "runs/cmap_rows/Tuffy-Italic.txt; import_outlines.py closes all five: runs/i5-imports (12->6, 0 opened)."
+   },
+   {
+    "style": "Tuffy-Regular",
+    "row": "cmap U+0430, U+0440, U+0458, U+04D1, U+04D3, U+1E03, U+1E0B, U+1E57, U+1FE4, U+1FE5",
+    "classification": "gate-arbitration",
+    "cause": "table_gate._abs_contour_area starts a new contour only on moveTo; a TrueType contour of only off-curve points is drawn as qCurveTo(..., None) with no moveTo, so its area is folded into the previous contour (Cyrillic a: 23.25% 'difference' for drawings 0.15% apart). Same advance, same bbox, area within 0.02-0.15% when split at closePath.",
+    "evidence": "probes/gate_area_split.py -> runs/gate_area_split/Tuffy-Regular.txt (0 pass -> 10 pass); unmodified gate with only that function replaced (probes/table_gate_closepath.py) on the final build: 13 -> 3 rows (runs/r6-tcomma/gate-closepath.txt, runs/r7-final/gate-closepath.txt). Allerta/AllertaStencil control unchanged (runs/geom_control.txt)."
+   },
+   {
+    "style": "Tuffy-Italic",
+    "row": "cmap U+0458, U+1E57, U+1FED",
+    "classification": "gate-arbitration",
+    "cause": "Same gate area-measure defect (9.98%/4.25%/23.62% under the gate's measure; 0.03%/0.04%/0.18% split at closePath).",
+    "evidence": "runs/gate_area_split/Tuffy-Italic.txt; runs/i5-imports/gate-closepath.txt and runs/i6-final/gate-closepath.txt: 6 -> 3 rows."
+   },
+   {
+    "style": "Tuffy-Regular, Tuffy-Italic",
+    "row": "GSUB.script_list, GSUB.feature_list, GSUB.lookup_list",
+    "classification": "provenance",
+    "cause": "v1.272's GSUB was regenerated from glyph names (11 lookups: aalt, ccmp, dlig, frac with slash, hlig, liga HUN only, locl CAT/MOL/ROM, ordn, sups); the source and FontForge's 001.271 export carry 4 (liga, liga HUN, locl dflt/MOL/ROM, frac with fraction). At default features v1.272 loses the f+accented-i ligatures, U+2044 fractions and default-language Scedilla->Scommaaccent. Only a wholesale replacement of the four source lookups by those eleven (two of them chaining) would reproduce it.",
+    "evidence": "probes/gsub_dump.py; probes/gsub_shaping.py -> runs/gsub_shaping/: 336 HarfBuzz runs per style, release differs from ours in 85, the 001.271 export in 0."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Tuffy-Regular",
+     "Tuffy-Italic"
+    ],
+    "op": "setfield",
+    "args": "Version 1.272",
+    "commit_subject": "Bump the version to 1.272",
+    "commit_body": "The release google/fonts ships is v1.272 (google/fonts ebcdfd2bb, 2017); the source says 001.271.",
+    "value_derived_from": "release name ID 5 'Version 1.272; ttfautohint (v1.6)', head.fontRevision 1.272 (google/fonts b5efa9c32e8f). Optional: not a gate row.",
+    "source_currently_states": "Version: 001.271",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Regular"
+    ],
+    "op": "setfield (x10)",
+    "args": "OS2SubXSize 1331; OS2SubYSize 1228; OS2SubXOff 0; OS2SubYOff 153; OS2SupXSize 1331; OS2SupYSize 1228; OS2SupXOff 0; OS2SupYOff 716; OS2StrikeYSize 50; OS2StrikeYPos 300",
+    "commit_subject": "Replace the corrupt OS/2 script and strikeout metrics",
+    "commit_body": "The source states negative sizes and a strikeout at -16224, which FontForge exported verbatim and OTS flags. These are the v1.272 release's values; they exist only in the release.",
+    "value_derived_from": "release OS/2 (google/fonts b5efa9c32e8f ofl/tuffy/Tuffy-Regular.ttf)",
+    "source_currently_states": "OS2SubXSize: 0, OS2SubYSize: 2, OS2SubXOff: -16560, OS2SubYOff: 0, OS2SupXSize: -25944, OS2SupYSize: -27176, OS2SupXOff: -16376, OS2SupYOff: 1, OS2StrikeYSize: 12312, OS2StrikeYPos: -16224",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Italic"
+    ],
+    "op": "setfield (x10)",
+    "args": "OS2SubXSize 1331; OS2SubYSize 1228; OS2SubXOff -32; OS2SubYOff 153; OS2SupXSize 1331; OS2SupYSize 1228; OS2SupXOff 150; OS2SupYOff 716; OS2StrikeYSize 50; OS2StrikeYPos 300",
+    "commit_subject": "Replace the corrupt OS/2 script and strikeout metrics",
+    "commit_body": "The source states negative sizes and a strikeout at -16224, which FontForge exported verbatim and OTS flags. These are the v1.272 release's values; they exist only in the release.",
+    "value_derived_from": "release OS/2 (google/fonts b5efa9c32e8f ofl/tuffy/Tuffy-Italic.ttf)",
+    "source_currently_states": "same ten corrupt values as Regular (OS2SubXOff: -16560, OS2SupXOff: -16376, ...)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Regular",
+     "Tuffy-Italic"
+    ],
+    "op": "setfield",
+    "args": "FSType 8",
+    "commit_subject": "FSType 8",
+    "commit_body": "Only the v1.272 release sets bit 3 (editable embedding); the source and its 001.271 export say 0.",
+    "value_derived_from": "release OS/2.fsType 8. Caution: Google Fonts expects fsType 0; reproducing 8 reproduces a check failure the release already has.",
+    "source_currently_states": "FSType: 0",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Regular",
+     "Tuffy-Italic"
+    ],
+    "op": "setencoding (NEW op: rewrite a glyph's 'Encoding: slot unicode gid', keeping gid)",
+    "args": ".null 0 0; nonmarkingreturn 13 13",
+    "commit_subject": "Encode .null and nonmarkingreturn at U+0000 and U+000D",
+    "commit_body": "The v1.272 release maps both; the source leaves them unencoded.",
+    "value_derived_from": "release cmap U+0000 -> uni0000 (advance 0), U+000D -> uni000D (advance 682)",
+    "source_currently_states": "StartChar: .null / Encoding: 65536 -1 194; StartChar: nonmarkingreturn / Encoding: 65537 -1 195 (slots 0 and 13 unused)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Regular"
+    ],
+    "op": "setrefer (NEW op: set translation of a glyph's n-th Refer: line)",
+    "args": "Agrave 1 0 0; Aacute 1 0 0; Amacron 1 0 0; Iacute 1 0 0; eacute 1 0 0; uacute 1 0 0",
+    "commit_subject": "Reproduce the released composite placement",
+    "commit_body": "v1.272 puts the base component of Agrave, Aacute, Amacron, Iacute, eacute and uacute at x=0; the values exist only in the release.",
+    "value_derived_from": "release glyf components (A/I/e/u at 0,0)",
+    "source_currently_states": "Refer offsets A -8 (Agrave, Aacute, Amacron), I 10 (Iacute), e 10 (eacute), u 42 (uacute)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Regular"
+    ],
+    "op": "setrefer + setwidth (NEW ops)",
+    "args": "alphaiotasub 1 0 0, 2 801 0, width 2013; Alphaiotasub 1 0 0, 2 801 0, width 2103; etaiotasub 1 0 0, 2 801 0, width 1865; Etaiotasub 1 0 0, 2 801 0, width 1999; omegaiotasub 1 0 0, 2 801 0, width 2009; Omegaiotasub 1 0 0, 2 801 0, width 2159",
+    "commit_subject": "Reproduce the released iota-subscript layout",
+    "commit_body": "v1.272 places the iota subscript at 0 and the letter 801 units right in the six iota-subscript bases, adding 801 to their advances; the 37 composites built on them follow. This exists only in the release and draws the iota beside, not under, the letter.",
+    "value_derived_from": "release glyf: uni1FB3 = uni1FBE (0,0) + alpha (801,0), advance 2013, etc.",
+    "source_currently_states": "e.g. alphaiotasub Width 1212, Refer iotasubscript -121 0, Refer alpha 0 0; iota offsets -121/0/-467/-54/-51/17, letters at 0, widths 1212/1302/1064/1198/1208/1358",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Regular",
+     "Tuffy-Italic"
+    ],
+    "op": "translateglyph + setwidth (NEW ops); Regular also setrefer",
+    "args": "translateglyph brevesubnosp -1302 0; setwidth brevesubnosp 0; Regular only: setrefer uni1E2A 1 1252 0; setrefer uni1E2B 1 1178 0",
+    "commit_subject": "Make U+032E a zero-width mark",
+    "commit_body": "brevesubnosp ('no spacing') has advance 1302 in the source; v1.272 ships it zero-width with its outline moved left by its former advance, and the composites using it keep their drawing.",
+    "value_derived_from": "release uni032E advance 0, bbox -948..-342 (= source -1302), GDEF mark; release uni1E2A/uni1E2B reference uni032E at 1252/1178",
+    "source_currently_states": "brevesubnosp Width: 1302, outline x 354..960; uni1E2A Refer brevesubnosp -50 0; uni1E2B Refer brevesubnosp -124 0",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Regular"
+    ],
+    "op": "importoutlines (sfd-batch5/tools/drift/import_outlines.py)",
+    "args": "U+0162 U+0163",
+    "commit_subject": "Normalize gate-implicated glyphs to the released representation",
+    "commit_body": "Outlines recovered from the released binary (google/fonts b5efa9c32e8f): v1.272 removed the overlap between T/t and the comma accent.",
+    "value_derived_from": "release glyf uni0162/uni0163 (1 contour each)",
+    "source_currently_states": "Tcommaaccent/tcommaaccent: 2 overlapping contours",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Italic"
+    ],
+    "op": "importoutlines (sfd-batch5/tools/drift/import_outlines.py)",
+    "args": "U+0162 U+0163 U+E257 U+03A9 U+1F6B U+004A U+00B7 U+0134 U+2076 U+2086 U+20B7",
+    "commit_subject": "Normalize gate-implicated glyphs to the released representation",
+    "commit_body": "Outlines recovered from the released binary (google/fonts b5efa9c32e8f): v1.272 removed the overlaps of the T/t comma accents and aogonekalt, and refit curves with extremum points (J and five others: xMin +1; Omega: area -0.34%).",
+    "value_derived_from": "release glyf for the listed codepoints",
+    "source_currently_states": "the source outlines (overlapping contours; fewer points, off-curve extrema)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Tuffy-Regular",
+     "Tuffy-Italic"
+    ],
+    "op": "addfield",
+    "args": "OS2XHeight 500; OS2CapHeight 700",
+    "commit_subject": "OS2XHeight 500 / OS2CapHeight 700",
+    "commit_body": "The release's x-height and cap height; the source states neither, and FontForge's rule gives 1069/1450, which the release does not carry.",
+    "value_derived_from": "release OS/2 sxHeight 500, sCapHeight 700. Needed ONLY once --fontforge-os2-defaults fills heights (babelfont ca43adc); with the pinned binary these rows do not exist.",
+    "source_currently_states": "no OS2XHeight / OS2CapHeight lines",
+    "verified": true
+   }
+  ],
+  "proposed_converter_changes": [
+   {
+    "description": "babelfont: opt-in fidelity filter (e.g. --fontforge-notdef) that, when an .sfd has no .notdef, adds the glyph FontForge's TTF exporter synthesises (tottf.c dumpmissingglyph, identical 2012-06-28 and master): stem = strtod(StdVW), else strtod(StdHW) (a PostScript array such as '[70]' parses to 0), else (ascent+descent)/30 integer; ymax = min(2*(a+d)/3, ascent); xmax = 6*stem + (a+d)/10; contours (stem,0)-(stem,ymax)-(xmax,ymax)-(xmax,0) and (2*stem,stem)-(xmax-stem,stem)-(xmax-stem,ymax-stem)-(2*stem,ymax-stem); advance xmax+2*stem, lsb stem. Implementation note: babelfont resolves 'Refer: <n>' by file position, not by the Encoding gid field FontForge uses, so a synthesised glyph must be appended (or references resolved by gid); an emulation that inserted it first re-targeted references and fontc overflowed its stack.",
+    "evidence": "Tuffy: stem 68, advance 748 = the 001.271 FontForge export and v1.272 exactly; fontc otherwise synthesises 1024/102. Emulated by appending the glyph to a copy of the .sfd: the .notdef member of hmtx.7 closes, built glyph equals the release point-for-point (runs/r3-notdef, runs/i3-notdef; probes/apply_edits.py ffnotdef).",
+    "styles_affected": [
+     "Tuffy-Regular",
+     "Tuffy-Italic"
+    ]
+   },
+   {
+    "description": "NOT babelfont -- sfd-batch5/tools/table_gate.py: _abs_contour_area must split contours at closePath/endPath, not at moveTo. fontTools draws a TrueType contour of only off-curve points as qCurveTo(..., None) + closePath with no moveTo, so the current code folds it into the previous contour's AreaPen and corrupts the per-contour |area| sum used by _same_geometry.",
+    "evidence": "Closes 10 Regular and 3 Italic cmap rows, opens none (runs/r7-final/gate-closepath.txt, runs/i6-final/gate-closepath.txt: 13->3, 6->3; probes/table_gate_closepath.py replaces only that function). Allerta/AllertaStencil negative control: 182 glyphs, 0 verdicts change (runs/geom_control.txt). Should be re-run across the batch by the gate's owner.",
+    "styles_affected": [
+     "Tuffy-Regular",
+     "Tuffy-Italic"
+    ]
+   }
+  ],
+  "proposed_flag_changes": [],
+  "verification": {
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland && for s in Tuffy-Regular Tuffy-Italic Tuffy-Bold Tuffy-BoldItalic; do TAG=tuffy OUT=investigations/tuffy/runs/r0-baseline bash tools/baseline.sh $s; done",
+    "cd /home/fsanches/compartilhado/sfd-reland/investigations/tuffy && bash probes/run_stage.sh Tuffy-Regular r7-final --import \"U+0162 U+0163\" edits/both-0-version.tsv edits/regular-1-os2.tsv edits/both-2-controls.tsv edits/both-3-ffnotdef.tsv edits/regular-4-composites.tsv edits/both-5-brevesub.tsv edits/regular-5b-brevesub-users.tsv",
+    "cd /home/fsanches/compartilhado/sfd-reland/investigations/tuffy && bash probes/run_stage.sh Tuffy-Italic i6-final --import \"U+0162 U+0163 U+E257 U+03A9 U+1F6B U+004A U+00B7 U+0134 U+2076 U+2086 U+20B7\" edits/both-0-version.tsv edits/italic-1-os2.tsv edits/both-2-controls.tsv edits/both-3-ffnotdef.tsv edits/both-5-brevesub.tsv",
+    "/home/fsanches/compartilhado/gftools/venv/bin/python3 probes/table_gate_closepath.py runs/r7-final/d3.json --fonts /home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Regular.ttf runs/r7-final/built-Tuffy-Regular.ttf",
+    "/home/fsanches/compartilhado/gftools/venv/bin/python3 probes/table_gate_closepath.py runs/i6-final/d3.json --fonts /home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Italic.ttf runs/i6-final/built-Tuffy-Italic.ttf",
+    "BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont bash probes/run_stage.sh Tuffy-Regular r9-heightsbin-fields --import \"U+0162 U+0163\" <same edits as r7-final> edits/both-9-heights.tsv   (and i8/i9 for Italic)",
+    "bash probes/gate_vs_ff_export.sh Tuffy-Regular <baseline build .ttf> runs/vs-ff-export-1.271   (same for Italic)",
+    "Stages r1..r6 / i1..i5: run_stage.sh with a prefix of the edit list; each run dir holds edits.log, source.diff, rows.before, rows.after, <Style>.gate.txt"
+   ],
+   "rows_before": "Tuffy-Regular 74, Tuffy-Italic 27, Tuffy-Bold 1, Tuffy-BoldItalic 1 (baseline reproduced exactly in runs/r0-baseline)",
+   "rows_after": "Tuffy-Regular 13 with all proposed .sfd edits + .notdef emulation (3 with the gate fix: GSUB x3); Tuffy-Italic 6 (3 with the gate fix: GSUB x3); Tuffy-Bold 1 and Tuffy-BoldItalic 1 (us_weight_class, converter in progress). No stage opened a row.",
+   "summary": "PROVENANCE. Bold/BoldItalic ship FontForge 2.0 exports of exactly these .sfd states (sha1 == monorepo 52f780b ofl/tuffy/*.ttf; FFTM sourceModified == .sfd ModificationTime to the second). Regular/Italic ship v1.272, made in 2017 by a third party (google/fonts ebcdfd2bb, PR #1269, 'fixed ots errors and ttfautohinted') FROM FontForge's 001.271 export of these .sfd states -- which is byte-identical to what google/fonts shipped 2015-03..2017-10 (sha1 c0ec1c8d/b62df32a) and which our build reproduces at 3 rows (GSUB liga lookup order with 0/336 shaping differences, head.font_direction_hint 0 vs 2; per codepoint 2 and 0 glyphs differ). v1.272 kept head.created from that TTF, matches its bboxes (never the .otf's alone), but has no FFTM, OS/2 v3 with unscaled 500/700 heights, name 3 '1.272;PfEd;Tuffy-Regular', ttfautohint 1.6, overlaps removed, curves refit with extrema, components re-aligned automatically and a GSUB regenerated from glyph names -- consistent with a Glyphs.app round trip (inference). The source STATES corrupt OS/2 sub/super/strike values (-25944 etc.) that FontForge exported verbatim and OTS flags; this contradicts B6-RESIDUALS line 65 for Regular/Italic. CLOSURE vs v1.272: all rows except GSUB close by verified edits (FSType, 10 OS/2 fields, 2 encodings, 12 composite placements in Regular incl. the 6 iota-subscript bases that fix 43 Greek rows, U+032E as zero-width mark, imported outlines for 2/11 glyphs), one converter change (FontForge's synthesised .notdef, emulated) and one gate fix (area measure). FORWARD WARNING: babelfont ca43adc's heights fill opens sx_height [500,1069] and s_cap_height [700,1450] on Regular/Italic; addfield OS2XHeight 500 / OS2CapHeight 700 closes them (verified with target-heights). DECISION for Felipe: reproducing v1.272 commits its defects (43 displaced Greek iota-subscript glyphs, fsType 8, a GSUB that drops default f+accented-i ligatures) and still leaves 3 GSUB rows per style; the alternative is to treat Regular/Italic as provenance and land 001.271. FINDINGS.md was NOT written: the harness refused report-file writes for subagents; this structured result carries its content. Probes (each docstring states its question) and all run outputs are under /home/fsanches/compartilhado/sfd-reland/investigations/tuffy/{probes,edits,runs}. Nothing committed."
+  },
+  "unresolved": [
+   "FINDINGS.md was not written: the Write tool refused report files for subagents ('Subagents should return findings as text'). I did not work around it; the content is in this result. Probes, edit lists and run outputs are on disk under /home/fsanches/compartilhado/sfd-reland/investigations/tuffy/.",
+   "Decision (Felipe): reproduce v1.272 (commit its defects: 43 Greek iota-subscript glyphs drawn beside, not under, the letter; fsType 8, which Google Fonts expects to be 0; and 3 GSUB rows per style that stay open) or treat Regular/Italic as provenance and land 001.271, which our build reproduces at 3 rows against the binary google/fonts shipped 2015-03..2017-10.",
+   "GSUB.script_list/feature_list/lookup_list (Regular, Italic): provenance. Reproducing them means replacing the source's 4 lookups with v1.272's 11 (two of them chaining). That is not a minimal edit and was not tried.",
+   "The .notdef converter change is emulated only (a glyph added to a copy of the .sfd). It still has to be implemented in babelfont.",
+   "The table_gate.py area fix must be applied by the gate's owner and re-run across the batch. It could also close rows in other families.",
+   "If the babelfont heights fill (ca43adc) becomes the pinned recipe, Regular/Italic need addfield OS2XHeight 500 / OS2CapHeight 700.",
+   "sfd-batch6/B6-RESIDUALS-2026-09-22.md line 65 ('tuffy declare zero OS2Sub/Sup/Strike lines') holds only for Bold/BoldItalic. I was not allowed to edit it.",
+   "Seen once: fontc (gftools-builder3 e851b8b) overflowed its stack on a source whose component references had been re-targeted into cycles. It should report an error. Possible upstream issue, not reduced to a minimal repro.",
+   "Only if 001.271 is chosen: residual rows against the FontForge export are the GSUB liga lookup order (structural, 0/336 shaping differences) and head.font_direction_hint (FontForge wrote 0, we write 2)."
+  ],
+  "confidence": "High on provenance (byte-identity, FFTM timestamps, google/fonts history) and on every edit marked verified: each was applied to a copy of the source and gated with baseline.sh, closing its rows without opening any. Medium on attributing v1.272 to Glyphs.app specifically: that rests on toolchain traits, not on a record. High on the gate area-measure defect: reproduced per glyph and checked against the Allerta control.",
+  "findings_path": "NOT WRITTEN -- harness refused /home/fsanches/compartilhado/sfd-reland/investigations/tuffy/FINDINGS.md (subagent report files blocked); findings are in this StructuredOutput; artefacts in /home/fsanches/compartilhado/sfd-reland/investigations/tuffy/{probes,edits,runs}"
+ },
+ "verification": {
+  "unit": "tuffy",
+  "reproduced": true,
+  "reproduction_notes": "Their figures reproduce exactly. I rewrote every proposed edit independently (verify/verify_apply.py) and applied them from the unmodified sources in googlefontdirectory-hg 52f780bc. The edited sources match theirs (runs/r7-final and runs/i6-final source.diff) line for line, except the Flags line of the synthesized .notdef.\n\n**Under the pinned gate as it was (f5cb410):**\n- Baseline: Regular 74, Italic 27, Bold 1, BoldItalic 1.\n- With all their edits: Regular 13 and Italic 6, the same rows as their rows.after.\n\n**Under the gate as it is now (cd4f827):** the gate owner committed their proposed closePath area fix at 21:18, during this verification (\"table_gate: end a contour at closePath, not at the next moveTo\").\n- Baseline: Regular 64, Italic 24.\n- With all their edits: Regular 3 and Italic 3 (the three GSUB rows each).\n- baseline.tsv and baseline/Tuffy-{Regular,Italic}.gate.txt are now stale for tuffy.\n- My own contour-split reimplementation also gives 13->3 and 6->3.\n- Their four gate-closepath.txt files are byte-identical. That is genuine: my Regular and Italic outputs are identical too.\n\n**With the landing converter ca43adc**, which fills the x-height and cap height: Regular and Italic show 5 rows (GSUB plus sx/cap height). Their addfield OS2XHeight 500 / OS2CapHeight 700 brings each to 3. Bold and BoldItalic stay at 1 (us_weight_class).\n\n**Against the FontForge 001.271 export**, our unmodified build gives 3 rows: two GSUB rows and head.font_direction_hint [0, 2]. This confirms their fallback option.\n\n**Provenance is confirmed:**\n- Bold and BoldItalic have the same sha1 as the monorepo files.\n- FFTM sourceModified equals the paired -TTF.sfd ModificationTime to the second for all four styles.\n- Regular and Italic are v1.272 (google/fonts ebcdfd2bb, 2017), built from the 001.271 export. google/fonts 90abd17b4 carries that export byte for byte.\n\n**Rerun and outputs:** everything reruns end to end with /home/fsanches/compartilhado/sfd-reland/investigations/tuffy/verify/rerun.sh (exit 0). Step 8 of that script re-gates with f5cb410 to give 13/6. The text outputs are in verify/runs/. The report is /home/fsanches/compartilhado/sfd-reland/investigations/tuffy/VERIFY.md.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Bump the version to 1.272",
+    "verdict": "keep",
+    "reason": "Optional; not a gate row. It overwrites the stated 'Version: 001.271' with the release value, so keep it only if v1.272 is the target."
+   },
+   {
+    "commit_subject": "Replace the corrupt OS/2 script and strikeout metrics (Regular)",
+    "verdict": "revise",
+    "reason": "The edit is right: all ten values differ, the source's values are garbage, and FontForge exported them verbatim (001.271 export and 2011 .otf), so no fidelity route exists. The body is inaccurate. OTS 9.2.0 accepts the 001.271 export (exit 0, 'File sanitized successfully'); it only warns about and zeroes the two negative superscript sizes. Only 5 of the 10 source values are negative. Say plainly that the release values are the 2017 tool's defaults: 1331/1228/153/716 are 0.65/0.6/0.075/0.35 em truncated, and 300 is 0.6 x the default x-height 500."
+   },
+   {
+    "commit_subject": "Replace the corrupt OS/2 script and strikeout metrics (Italic)",
+    "verdict": "revise",
+    "reason": "Same body revision as Regular. Also note that the x offsets -32/150 are tan(11.85 deg) x 153 / 716 (32.1 and 150.2). 11.85 is the release's own italicAngle; the source states ItalicAngle: -12."
+   },
+   {
+    "commit_subject": "FSType 8",
+    "verdict": "keep",
+    "reason": "Keep only if v1.272 is the target. It discards the stated 'FSType: 0', which is also what the 001.271 export carries, and reproduces a Google Fonts check failure. The body is honest."
+   },
+   {
+    "commit_subject": "Encode .null and nonmarkingreturn at U+0000 and U+000D",
+    "verdict": "keep",
+    "reason": "Verified. Nothing stated is discarded: slots 0 and 13 are free in the UnicodeBmp encoding, and file order equals gid order, so babelfont's positional Refer resolution is unaffected. FontForge's 2011 exporter did not map them (the 001.271 cmap has 1499 entries), so no fidelity route exists."
+   },
+   {
+    "commit_subject": "Reproduce the released composite placement",
+    "verdict": "revise",
+    "reason": "Incomplete. v1.272 moved the first component to (0,0) in two more glyphs: uni221B (threesuperior 172 7) and uni221C (foursuperior 68 0). They render 46.5% and 18.7% of their pixels differently from the release. The gate cannot see this because advance, bbox and area are unchanged. Adding 'setrefer uni221B 1 0 0' and 'setrefer uni221C 1 0 0' removes both differences, and the gate stays at 3 rows (verified, R-full-plus4). The body should say 'first component to the origin'."
+   },
+   {
+    "commit_subject": "Reproduce the released iota-subscript layout",
+    "verdict": "revise",
+    "reason": "Add 'setrefer etaiotasubgrave 1 0 0' and 'setrefer etaiotasubacute 1 0 0'. The release moved the iota from -464/-468 to 0 in both; each renders 12.1% of its pixels differently, and the gate cannot see it. Verified: the differences go and no row opens. Drop 'setrefer Alphaiotasub 1 0 0', a no-op (the source already states 0 0). Otherwise verified: the 43 rows close, and the body is honest about the defect."
+   },
+   {
+    "commit_subject": "Make U+032E a zero-width mark",
+    "verdict": "keep",
+    "reason": "Verified. The release's uni032E has lsb -948 (= 354 - 1302), and its uni1E2A/uni1E2B refs sit at the source offsets + 1302. The Italic .sfd has no Refer lines at all, so Italic has no users to adjust. The 001.271 export keeps the 1302 advance, so no fidelity route exists."
+   },
+   {
+    "commit_subject": "Normalize gate-implicated glyphs to the released representation (Regular U+0162 U+0163)",
+    "verdict": "revise",
+    "reason": "This is overlap removal only. FreeType renders the release and our unmodified build 0.02%/0.04% of pixels apart; the 001.271 export and ours are 0.00% apart. The rows exist because the gate's per-contour |area| sum counts the overlap twice. Treat it as gate-arbitration. verify/gate_either_area.py accepts a glyph when either the per-contour or the filled-region area agrees: it closes both rows, opens none, and changes none of the 71 Allerta control verdicts. Keep the import only as a fallback, with the body saying the drawing is unchanged."
+   },
+   {
+    "commit_subject": "Normalize gate-implicated glyphs to the released representation (Italic, 11 codepoints)",
+    "verdict": "revise",
+    "reason": "Split it. U+0162, U+0163 and U+E257 are overlap-only: the release renders 0.11/0.04/0.18% apart from ours, and the 001.271 export 0.00-0.02%. They are gate-arbitration, as for Regular; the either-measure gate closes them and opens none. Keep the import for the 8 genuine v1.272 refits (U+03A9, U+1F6B, U+004A, U+00B7, U+0134, U+2076, U+2086, U+20B7; 0.2-0.7% of pixels). U+03A9 and U+1F6B are threshold-marginal: 105 other Italic codepoints differ by 0.5% or more with no cmap row, and U+2126 carries the same Omega refit without being imported."
+   },
+   {
+    "commit_subject": "OS2XHeight 500 / OS2CapHeight 700",
+    "verdict": "keep",
+    "reason": "Needed with the landing binary ca43adc: 5 -> 3 rows per style, verified. The keywords are valid FontForge SFD (sfd.cpp, fontforge master 606b33dc). The body should say plainly that 500/700 exist only in the release and are not the design's heights; FontForge's rule and FontForge's own 2011 .otf give 1069/1450."
+   },
+   {
+    "commit_subject": "(converter) babelfont --fontforge-notdef",
+    "verdict": "keep",
+    "reason": "Verified. dumpmissingglyph has the same logic in 2012 and master: strtod('[70]') = 0, so the stem is 2048/30 = 68 and the advance is 748. The 001.271 export and both releases carry exactly those 8 points. The emulated build has the same points in the same cyclic order but a different start point. The spec should add the monospace branch: the advance becomes the fixed width, and the glyph is synthesized when .notdef's width differs from it."
+   },
+   {
+    "commit_subject": "(gate) table_gate _abs_contour_area split at closePath",
+    "verdict": "keep",
+    "reason": "Already adopted as sfd-batch5 cd4f827 during this verification. My independent reimplementation gives the same result (13->3, 6->3), and the 10+3 closed rows render within 0.08-0.44% of pixels."
+   }
+  ],
+  "classification_objections": [
+   "U+0162/U+0163 (Regular and Italic) and U+E257 (Italic) are classified source-edit-from-release but are gate-arbitration. The release only removed overlaps: renders are 0.02-0.18% apart, and our build vs the 001.271 export is 0.00-0.02%. The gate's per-contour area sum counts the overlap twice. An either-measure gate closes exactly these 5 rows, opens none, and leaves the Allerta control unchanged (71/71).",
+   "GSUB provenance stands, but the count is wrong: the release LookupList has 13 lookups (2 of them chaining), not 11.",
+   ".notdef converter-fidelity stands, but 'built glyph equals release point-for-point' is loose. Our build has the same 8 points in the same cyclic order with a different start point.",
+   "Italic U+03A9/U+1F6B (source-edit-from-release) stands but is threshold-marginal. The same Omega refit on U+2126, and 105 other codepoints differing by 0.5% or more of pixels (e.g. Omicron 0.84%), pass the gate.",
+   "The Italic J-family rows stand. A fidelity angle they did not mention does not rescue them: FontForge wrote curve-extremum xMin/lsb, which OTS reports as 'Glyph bbox was incorrect'. That matches the release for J, Jcircumflex and uni20B7, but not for periodcentered, uni2076 or uni2086."
+  ],
+  "missed": [
+   "Four composites that v1.272 changed and the gate cannot see. uni221B and uni221C had their superscript numeral moved to (0,0); etaiotasubgrave and etaiotasubacute had the iota moved from -464/-468 to 0. They render 46.5/18.7/12.1/12.1% of pixels differently. Composites whose placement differs from the release: 66 before any edits, 15 after the proposed edits, 11 after adding these 4 (the 11 are re-spellings that render within 1%).",
+   "The gate changed mid-verification (sfd-batch5 cd4f827). Tuffy's baseline is now 64/24, not 74/27, so baseline.tsv and baseline/Tuffy-{Regular,Italic}.gate.txt are stale.",
+   "v1.272 differences outside the gate that no edit reproduces: Italic post.italicAngle is -11.85 against the source's -12. Render refits: U+2208 1.5% and U+10910 1.0% in Regular; U+2024 1.35%, U+10910 1.0% and U+2026 1.0% in Italic.",
+   "The investigation's FINDINGS.md is still not written. I did not write it, since it is their file.",
+   "The fallback of landing 001.271 would re-point families.tsv from google/fonts b5efa9c32e8f to 90abd17b4 (or monorepo 52f780b). That pairing change needs Felipe's approval.",
+   "Someone else copied my scratch probe xor_scan.py into verify/, with a README row presenting it as valid. Its measure is unreliable: identical regions measured 115% different. I marked it UNRELIABLE in verify/README.md and did not delete it; no number in VERIFY.md comes from it."
+  ],
+  "overall": "Sound work, reproduced exactly. The provenance is well evidenced: byte identity, FFTM timestamps equal to the .sfd ModificationTime, google/fonts history, and Glyphs-style auto-alignment, auto-features and 500/700 defaults. Every edit I re-applied from scratch closes the rows they report without opening others. The .notdef converter proposal and the gate closePath fix are both correct; the gate fix is already adopted as cd4f827.\n\nMain corrections:\n- Four composites the gate cannot see belong in the placement and iota edits: uni221B, uni221C, etaiotasubgrave, etaiotasubacute. Verified: they close and nothing opens.\n- The T/t-comma and aogonekalt rows are overlap-only. They are gate-arbitration, not outline imports: an either-measure area check closes them with no side effects on Tuffy or the Allerta control.\n- Several commit bodies need rewording: the OTS claim, the release OS/2 values being 2017 tool defaults, and 500/700 not being the design's heights.\n\nThe decision for Felipe stands:\n- Reproducing v1.272 means committing its defects: 43 displaced iota glyphs, fsType 8, 500/700 heights. It still leaves 3 GSUB rows per style.\n- Landing 001.271 reproduces the 2015-2017 binary at 3 rows per style."
+ }
+}

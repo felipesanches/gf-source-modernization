@@ -1,0 +1,90 @@
+order2=True ascent=800.0 descent=200.0 blues=None vintage=2012
+== x-height
+  U+0061 a              round    462.000000
+  U+0063 c              round    468.000000
+  U+0065 e              round    466.000000
+  U+0067 g              round    464.000000
+  U+006D m              round    460.000000
+  U+006E n              round    456.000000
+  U+006F o              round    516.000000
+  U+0070 p              round    468.000000
+  U+0071 q              round    464.000000
+  U+0072 r              round    488.000000
+  U+0073 s              round    456.000000
+  U+0075 u              round    448.000000
+  U+0076 v              round    570.000000
+  U+0077 w              round    478.000000
+  U+0078 x              round    460.000000
+  U+0079 y              round    448.000000
+  U+007A z              round    448.000000
+  U+0131 dotlessi       round    448.000000
+  U+03B3 gamma          round    570.000000
+  U+03B9 iota           round    448.000000
+  U+03BA kappa          round    456.000000
+  U+03BC mu             pointy   446.000000
+  U+03BD nu             round    602.000000
+  U+03C0 pi             round    460.000000
+  U+03C3 sigma          pointy   476.000000
+  U+03C4 tau            round    490.000000
+  U+03C5 upsilon        round    466.000000
+  U+03C7 chi            round    678.000000
+  U+03C8 psi            round    464.000000
+  U+03C9 omega          round    448.000000
+  flats  (height,count): []
+  curves (height,count): [(462.0, 1), (468.0, 2), (466.0, 2), (464.0, 3), (460.0, 3), (456.0, 3), (516.0, 1), (488.0, 1), (448.0, 6), (570.0, 2), (478.0, 1), (446.0, 1), (602.0, 1), (476.0, 1), (490.0, 1), (678.0, 1)]
+  curve sum 7968.000000; distinct 16 -> 498.000000; glyphs 30 -> 265.600000
+  raw 498.0 -> after BlueValues 498.0 -> exported 498
+== cap height
+  U+0041 A              round    902.000000
+  U+0042 B              round    886.000000
+  U+0043 C              round    886.000000
+  U+0044 D              round    1030.000000
+  U+0045 E              round    886.000000
+  U+0046 F              round    1086.000000
+  U+0047 G              round    884.000000
+  U+0048 H              round    886.000000
+  U+0049 I              round    974.000000
+  U+004A J              round    974.000000
+  U+004B K              round    886.000000
+  U+004C L              round    886.000000
+  U+004D M              round    900.000000
+  U+004E N              round    874.000000
+  U+004F O              round    888.000000
+  U+0050 P              round    886.000000
+  U+0051 Q              round    888.000000
+  U+0052 R              round    886.000000
+  U+0053 S              round    886.000000
+  U+0054 T              round    1104.000000
+  U+0055 U              round    886.000000
+  U+0056 V              round    894.000000
+  U+0057 W              round    894.000000
+  U+0058 X              round    886.000000
+  U+0059 Y              round    886.000000
+  U+005A Z              round    862.000000
+  U+0391 Alpha          round    902.000000
+  U+0392 Beta           round    886.000000
+  U+0393 Gamma          flat     890.000000
+  U+0394 Delta          round    896.000000
+  U+0395 Epsilon        round    886.000000
+  U+0396 Zeta           round    862.000000
+  U+0397 Eta            round    886.000000
+  U+0398 Theta          round    888.000000
+  U+0399 Iota           round    886.000000
+  U+039A Kappa          round    886.000000
+  U+039B Lambda         round    902.000000
+  U+039C Mu             round    900.000000
+  U+039D Nu             round    874.000000
+  U+039E Xi             round    886.000000
+  U+039F Omicron        round    888.000000
+  U+03A0 Pi             flat     898.000000
+  U+03A1 Rho            round    886.000000
+  U+03A3 Sigma          round    886.100000
+  U+03A4 Tau            round    1104.000000
+  U+03A5 Upsilon        round    886.000000
+  U+03A6 Phi            round    888.000000
+  U+03A7 Chi            round    886.000000
+  U+03A8 Psi            round    990.000000
+  U+03A9 Omega          round    886.000000
+  flats  (height,count): [(890.0, 1), (898.0, 1)]
+  curves (height,count): [(902.0, 3), (886.0, 22), (1030.0, 1), (1086.0, 1), (884.0, 1), (974.0, 2), (900.0, 2), (874.0, 2), (888.0, 5), (1104.0, 2), (894.0, 2), (862.0, 2), (896.0, 1), (886.1, 1), (990.0, 1)]
+  raw 894.0 -> after BlueValues 894.0 -> exported 894

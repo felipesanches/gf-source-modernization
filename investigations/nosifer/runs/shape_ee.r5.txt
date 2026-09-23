@@ -1,0 +1,4 @@
+BEEF  release B E E F                  built B E_E F                  DIFFERENT
+SEE   release S E E                    built S E_E                    DIFFERENT
+EEE   release E E E                    built E_E E                    DIFFERENT
+ee    release e e                      built e e                      same

@@ -1,0 +1,204 @@
+FontForge source excerpts, commit cd438ca99d76ce0ada43145cf96a27236a442be3 (2010-04-29T03:16:13Z),
+the last commit before the FFTM FontForge timestamp of the release (2010-04-29T03:43:27Z).
+Re-fetch: https://raw.githubusercontent.com/fontforge/fontforge/cd438ca99d76ce0ada43145cf96a27236a442be3/fontforge/<file>
+
+== splineutil.c SplineSetQuickBounds: on-curve points only (control points added by ee15007274e9, 2014-09-16)
+   957	void SplineSetQuickBounds(SplineSet *ss,DBounds *b) {
+   958	    SplinePoint *sp;
+   959	
+   960	    b->minx = b->miny = 1e10;
+   961	    b->maxx = b->maxy = -1e10;
+   962	    for ( ; ss!=NULL; ss=ss->next ) {
+   963		for ( sp=ss->first; ; ) {
+   964		    if ( sp->me.y < b->miny ) b->miny = sp->me.y;
+   965		    if ( sp->me.x < b->minx ) b->minx = sp->me.x;
+   966		    if ( sp->me.y > b->maxy ) b->maxy = sp->me.y;
+   967		    if ( sp->me.x > b->maxx ) b->maxx = sp->me.x;
+   968		    if ( sp->next==NULL )
+   969		break;
+   970		    sp = sp->next->to;
+   971		    if ( sp==ss->first )
+   972		break;
+   973		}
+   974	    }
+   975	    if ( b->minx>65536 ) b->minx = 0;
+   976	    if ( b->miny>65536 ) b->miny = 0;
+   977	    if ( b->maxx<-65536 ) b->maxx = 0;
+   978	    if ( b->maxy<-65536 ) b->maxy = 0;
+   979	}
+
+== tottf.c dumpglyph: glyf header bbox = floor/ceil of QuickBounds of the exported (order2) contours
+  1187	    origptcnt = ptcnt;
+  1188	
+  1189	    SplineSetQuickBounds(ttfss,&bb);
+  1190	    gh.numContours = contourcnt;
+  1191	    gh.xmin = floor(bb.minx); gh.ymin = floor(bb.miny);
+  1192	    gh.xmax = ceil(bb.maxx); gh.ymax = ceil(bb.maxy);
+  1193	    dumpghstruct(gi,&gh);
+
+== tottf.c sethhead: int ymin/ymax from SplineCharLayerFindBounds (true bounds, truncated), widened by head bbox
+  2841	static void sethhead(struct hhead *hhead,struct hhead *vhead,struct alltabs *at, SplineFont *sf) {
+  2842	    int i, width, rbearing, height, bbearing;
+  2843	    int ymax, ymin, xmax, xmin, off;
+  2844	    DBounds bb;
+  2845	    /* Might as well fill in the vhead even if we don't use it */
+  2846	    /*  we just won't dump it out if we don't want it */
+  2847	
+  2848	    width = 0x80000000; rbearing = 0x7fffffff; height = 0x80000000; bbearing=0x7fffffff;
+  2849	    xmax = ymax = 0x80000000; xmin = ymin = 0x7fffffff;
+  2850	    for ( i=0; i<at->gi.gcnt; ++i ) if ( at->gi.bygid[i]!=-1 ) {
+  2851		SplineChar *sc = sf->glyphs[at->gi.bygid[i]];
+  2852		SplineCharLayerFindBounds(sc,at->gi.layer,&bb);
+  2853		if ( sc->width>width ) width = sc->width;
+  2854		if ( sc->vwidth>height ) height = sc->vwidth;
+  2855		if ( sc->width-bb.maxx < rbearing ) rbearing = sc->width-bb.maxx;
+  2856		if ( sc->vwidth-bb.maxy < bbearing ) bbearing = sc->vwidth-bb.maxy;
+  2857		if ( bb.maxy > ymax ) ymax = bb.maxy;
+  2858		if ( bb.miny < ymin ) ymin = bb.miny;
+  2859		if ( bb.maxx > xmax ) xmax = bb.maxx;
+  2860		if ( bb.minx < xmin ) xmin = bb.minx;
+  2861	    }
+  2862	
+  2863	    if ( at->head.ymax>ymax ) ymax = at->head.ymax;	/* If generated .notdef glyph is bigger than real glyphs */
+  2864	    if ( at->head.ymin<ymin ) ymin = at->head.ymin;
+  2865	
+  2866	    if ( ymax==0 && ymin==0 ) {
+  2867		/* this can happen in a bitmap only font */
+  2868		ymax = sf->ascent;
+  2869		ymin = -sf->descent;
+  2870	    }
+  2871	    hhead->version = 0x00010000;
+  2872	    if ( sf->pfminfo.hheadascent_add )
+  2873		hhead->ascender = ymax + sf->pfminfo.hhead_ascent;
+  2874	    else
+  2875		hhead->ascender = sf->pfminfo.hhead_ascent;
+  2876	    if ( sf->pfminfo.hheadascent_add )
+  2877		hhead->descender = ymin + sf->pfminfo.hhead_descent;
+  2878	    else
+  2879		hhead->descender = sf->pfminfo.hhead_descent;
+  2880	    hhead->linegap = sf->pfminfo.linegap;
+
+== tottf.c WinBB: win base = head.yMax / -head.yMin
+  3269	static void WinBB(SplineFont *sf,uint16 *winascent,uint16 *windescent,struct alltabs *at) {
+  3270	    /* The windows ascent/descent is calculated on the ymin/max of the */
+  3271	    /*  glyphs in the so called ANSI character set. I'm going to pretend */
+  3272	    /*  that's Latin1 with a few additions */
+  3273	    /* Well, that's what is documented, but the documentation says contradictory */
+  3274	    /*  things. I believe that winAscent should be the same as hhea.ascent */
+  3275	
+  3276	    *winascent = at->head.ymax;
+  3277	    *windescent = -at->head.ymin;		/* Should be positive */
+  3278	    if ( sf->cidmaster!=NULL )
+  3279		sf = sf->cidmaster;
+  3280	
+  3281	    if ( sf->pfminfo.winascent_add )
+  3282		*winascent += sf->pfminfo.os2_winascent;
+  3283	    else
+  3284		*winascent  = sf->pfminfo.os2_winascent;
+  3285	    if ( sf->pfminfo.windescent_add )
+  3286		*windescent += sf->pfminfo.os2_windescent;
+  3287	    else
+  3288		*windescent  = sf->pfminfo.os2_windescent;
+  3289	}
+
+== splinefont.c SFStandardHeight: curve mean divides by GLYPH count (fixed to distinct count by 4d34d21ef866, 2012-05-14)
+  1695	    } else if ( ccnt==0 )
+  1696	return( -1e23 );		/* We didn't find any glyphs */
+  1697	    else {
+  1698		/* Italic fonts will often have no flat surfaces for x-height just wavies */
+  1699		test = 0;
+  1700		tot = 0;
+  1701		/* find the mean */
+  1702		for ( i=0; i<ccnt; ++i ) {
+  1703		    test += curves[i].pos;
+  1704		    tot += curves[i].cnt;
+  1705		}
+  1706		result = test/tot;
+  1707	    }
+
+== splinefont.c _GetModifiers: subfamily falls back to the Weight field when FontName has no
+   suffix beyond the family name (here FontName == FamilyName == "UnifrakturMaguntia")
+  1340	char *_GetModifiers(char *fontname, char *familyname,char *weight) {
+  1341	    char *pt, *fpt;
+  1342	    int i, j;
+  1343	
+  1344	    /* URW fontnames don't match the familyname */
+  1345	    /* "NimbusSanL-Regu" vs "Nimbus Sans L" (note "San" vs "Sans") */
+  1346	    /* so look for a '-' if there is one and use that as the break point... */
+  1347	
+  1389	    }
+  1390	
+  1391	return( weight==NULL || *weight=='\0' ? "Regular": weight );
+  1392	}
+  1393	
+  1394	char *SFGetModifiers(SplineFont *sf) {
+  1395	return( _GetModifiers(sf->fontname,sf->familyname,sf->weight));
+  1396	}
+
+== lookups.c SFScriptsInLookups: one script list for GSUB and GPOS
+   298	uint32 *SFScriptsInLookups(SplineFont *sf,int gpos) {
+   299	    /* Presumes that either SFFindUnusedLookups or SFFindClearUnusedLookupBits */
+   300	    /*  has been called first */
+   301	    /* Since MS will sometimes ignore a script if it isn't found in both */
+   302	    /*  GPOS and GSUB we want to return the same script list no matter */
+   303	    /*  what the setting of gpos ... so we totally ignore that argument */
+   304	    /*  and always look at both sets of lookups */
+   305	
+
+== tottfgpos.c dumpg___info: a table with scripts and no lookups is written
+  3038	    FindFeatures(sf,is_gpos,&ginfo);
+  3039	    if ( ginfo.sc==0 )
+  3040	return( NULL );
+  3041	    lfile = G___figureLookups(sf,is_gpos,at);
+  3042	
+  3043	    if ( ginfo.sc==0 && ftell(lfile)==0 ) {
+  3044		/* ftell(lfile)==0 => There are no lookups for this table */
+  3045		/* ginfo.sc==0 => There are no scripts. */
+  3046		/* If both are true then we don't need to output the table */
+  3047		/* It is perfectly possible to have lookups without scripts */
+  3048		/*  (if some other table refered to them -- we don't currently */
+  3049		/*  support this, but we might some day). */
+  3050		/* It is also possible to have scripts without lookups (to get */
+  3051		/*  around a bug in Uniscribe which only processes some scripts */
+  3052		/*  if both GPOS and GSUB entries are present. So we share scripts */
+  3053		/*  between the two tables */
+  3054		fclose(lfile);
+  3055		/* if ginfo.sc==0 then there will be nothing to free in the ginfo struct*/
+  3056	return( NULL );
+
+== tottfgpos.c gdefclass: no anchors, no stated GlyphClass -> base (1)
+  3398	int gdefclass(SplineChar *sc) {
+  3399	    PST *pst;
+  3400	    AnchorPoint *ap;
+  3401	
+  3402	    if ( sc->glyph_class!=0 )
+  3403	return( sc->glyph_class-1 );
+  3404	
+  3405	    if ( strcmp(sc->name,".notdef")==0 )
+  3406	return( 0 );
+  3407	
+  3408	    /* It isn't clear to me what should be done if a glyph is both a ligature */
+  3409	    /*  and a mark (There are some greek accent ligatures, it is probably more*/
+  3410	    /*  important that they be indicated as marks). Here I chose mark rather  */
+  3411	    /*  than ligature as the mark class is far more likely to be used */
+  3412	    ap=sc->anchor;
+  3413	    while ( ap!=NULL && (ap->type==at_centry || ap->type==at_cexit) )
+  3414		ap = ap->next;
+  3415	    if ( ap!=NULL && (ap->type==at_mark || ap->type==at_basemark) )
+  3416	return( 3 );
+  3417	
+  3418	    for ( pst=sc->possub; pst!=NULL; pst=pst->next ) {
+  3419		if ( pst->type == pst_ligature )
+  3420	return( 2 );			/* Ligature */
+  3421	    }
+  3422	
+  3423		/* I not quite sure what a componant glyph is. Probably something */
+  3424		/*  that is not in the cmap table and is referenced in other glyphs */
+  3425		/* (I've never seen it used by others) */
+  3426		/* (Note: No glyph in a CID font can be components as all CIDs mean */
+  3427		/*  something) (I think) */
+  3428	    if ( sc->unicodeenc==-1 && sc->dependents!=NULL &&
+  3429		    sc->parent->cidmaster!=NULL && !ReferencedByGSUB(sc))
+  3430	return( 4 );
+  3431	    else
+  3432	return( 1 );

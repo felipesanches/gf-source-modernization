@@ -1,0 +1,43 @@
+style                      pos    width  raw       pre2019   post2019  release  matches / toolchain
+CreepsterCaps-Regular      -52    51     -52       -77       -26       -77      pre2019 / FFTM FontForge 2011-02-22
+HerrVonMuellerhoff-Regular -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2011-02-22
+Kristi-Regular             0      0      0         0         0         0        raw,pre2019,post2019 / FFTM FontForge 2010-04-29
+Lekton-Bold                -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2010-04-29
+Lekton-Italic              -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2010-04-29
+Lekton-Regular             -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2010-04-29
+Miama-Regular              -80    48     -80       -104      -56       -104     pre2019 / FFTM FontForge 2011-02-22
+Monoton-Regular            -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2011-02-22
+NixieOne-Regular           -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2011-02-22
+Nosifer-Regular            -103   102    -103      -154      -52       -154     pre2019 / FFTM FontForge 2011-02-22
+NosiferCaps-Regular        -103   102    -103      -154      -52       -154     pre2019 / FFTM FontForge 2011-02-22
+NovaCut                    -81    122    -81       -142      -20       -142     pre2019 / FFTM FontForge 2009-09-14
+NovaFlat                   -81    122    -81       -142      -20       -142     pre2019 / FFTM FontForge 2009-09-14
+NovaMono                   -81    122    -81       -142      -20       -142     pre2019 / FFTM FontForge 2009-09-14
+NovaOval                   -81    122    -81       -142      -20       -142     pre2019 / FFTM FontForge 2009-09-14
+NovaRound                  -81    122    -81       -142      -20       -142     pre2019 / FFTM FontForge 2009-09-14
+NovaScript-Regular         -81    122    -81       -142      -20       -142     pre2019 / FFTM FontForge 2009-09-14
+NovaSlim                   -81    122    -81       -142      -20       -142     pre2019 / FFTM FontForge 2009-09-14
+NovaSquare                 -81    122    -81       -142      -20       -142     pre2019 / FFTM FontForge 2009-09-14
+PatrickHand-Regular        -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2012-09-06
+Play-Bold                  -50    50     -50       -75       -25       -75      pre2019 / no FFTM
+Play-Regular               -50    50     -50       -75       -25       -75      pre2019 / no FFTM
+Puritan-Bold               -133   20     -133      -143      -123      -146     NONE / FFTM FontForge 2010-04-29
+Puritan-BoldItalic         -133   20     -133      -143      -123      -146     NONE / FFTM FontForge 2010-04-29
+Puritan-Italic             -133   20     -133      -143      -123      -146     NONE / FFTM FontForge 2010-04-29
+Puritan-Regular            -133   20     -133      -143      -123      -146     NONE / FFTM FontForge 2010-04-29
+RussoOne-Regular           -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2011-02-22
+SixCaps                    -232   41     -232      -252      -211      -252     pre2019 / FFTM FontForge 2011-02-21
+Smythe-Regular             -103   102    -103      -154      -52       -154     pre2019 / FFTM FontForge 2011-02-22
+Tuffy-Bold                 -204   102    -204      -255      -153      -255     pre2019 / FFTM FontForge 2011-02-22
+Tuffy-BoldItalic           -204   102    -204      -255      -153      -255     pre2019 / FFTM FontForge 2011-02-22
+Tuffy-Italic               -100   50     -100      -125      -75       -125     pre2019 / no FFTM
+Tuffy-Regular              -100   50     -100      -125      -75       -125     pre2019 / no FFTM
+TulpenOne-Regular          -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2011-02-22
+UnifrakturCook-Bold        0      0      0         0         0         0        raw,pre2019,post2019 / FFTM FontForge 2011-02-22
+UnifrakturMaguntia-Book    0      0      0         0         0         0        raw,pre2019,post2019 / FFTM FontForge 2010-04-29
+AbrilFatface-Regular       -50    50     -50       -75       -25       -75      pre2019 / FFTM FontForge 2011-02-22
+Corben-Regular             -103   102    -103      -154      -52       -154     pre2019 / no FFTM
+Corben-Bold                -103   102    -103      -154      -52       -154     pre2019 / no FFTM
+AllertaStencil-Regular     -51    51     -51       -76       -25       -76      pre2019 / FFTM FontForge 2011-02-22
+ComicRelief-Regular        -185   175    -185      -272      -97       -97      post2019 / no FFTM
+ComicRelief-Bold           -185   175    -185      -272      -97       -97      post2019 / no FFTM

@@ -1,0 +1,157 @@
+{
+ "investigation": {
+  "unit": "unifraktur",
+  "styles": [
+   "UnifrakturMaguntia-Book"
+  ],
+  "rows": [
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "GPOS.script_list",
+    "classification": "converter-fidelity",
+    "cause": "FontForge's exporter shares one script list between GSUB and GPOS. SFScriptsInLookups (lookups.c:298 at cd438ca99d76) ignores its gpos argument, and dumpg___info (tottfgpos.c:3043-3056) still writes a table that has scripts but no lookups; the code comment says this is 'to get around a bug in Uniscribe'. The .sfd has only GSUB lookups (DFLT/hani/latn), so FontForge wrote a GPOS with those 3 scripts. fontc writes none. This was deliberate in FontForge, not a build artefact, which corrects sfd-batch6/UNIFRAKTURMAGUNTIA-EMPTY-GPOS.md.",
+    "evidence": "Release GPOS: DFLT/hani/latn, 0 features, 0 lookups. empty_gpos_probe.py adds that shape (built from our own GSUB script list) to our build. Horizontal shaping over sweep.py's 25008 runs goes from ltr 324 + rtl 324 differing to 0 + 0. d3 plus table_gate then shows the GPOS rows closed and nothing new (runs/01-gpos-graft, runs/03-proxy-vmetrics-heights/gate-graft.txt). No FEA can express this: an empty 'feature kern {} kern;' makes fontc 1.0.0 emit no GPOS (runs/04-fea-empty-feature/result.txt)."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "GPOS.feature_list",
+    "classification": "converter-fidelity",
+    "cause": "Same as GPOS.script_list: FontForge's shared-script GPOS shell, which carries 0 features.",
+    "evidence": "Same runs as script_list. The row closes once the shell is added (runs/01-gpos-graft/gate-UnifrakturMaguntia-Regular+ffgpos.ttf.txt)."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "GPOS.lookup_list",
+    "classification": "converter-fidelity",
+    "cause": "Same as GPOS.script_list: FontForge's shared-script GPOS shell, which carries 0 lookups.",
+    "evidence": "Same runs as script_list. The row closes once the shell is added."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "hhea.descender",
+    "classification": "converter-fidelity",
+    "cause": "The .sfd gives 'HheadDescent: -16' with 'HheadDOffset: 1', which is an OFFSET, not a value. FontForge's sethhead (tottf.c:2841-2880 at cd438ca99d76) builds the base from int ymin, which is C truncation of the true curve minimum from SplineCharLayerFindBounds. It then widens that to head.yMin. Glyph J's true minimum is -497.5805, which truncates to -497, so FontForge wrote -497-16=-513. babelfont f725e6a (resolve_offset_metrics) uses round(-497.58)=-498 instead and gets -514.",
+    "evidence": "vmetrics_probe.py on the unmodified source: ff2012 rule -513 (release -513), babelfont rule -514. A scratch copy stating 'HheadDescent: -513' / 'HheadDOffset: 0' as a stand-in closes the row and opens nothing: 7 rows -> 5 (runs/02-proxy-vmetrics). Across families.tsv (60 offset-mode metrics in 15 styles), the FontForge rule matches 41 and babelfont 39; the only difference is this style's two rows (runs/vmetrics_sweep.txt)."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "OS/2.us_win_descent",
+    "classification": "converter-fidelity",
+    "cause": "The .sfd gives 'OS2WinDescent: 16' with 'OS2WinDOffset: 1', which is an offset. FontForge's WinBB (tottf.c:3269-3289) uses base -head.yMin. head.yMin is floor(SplineSetQuickBounds) of the exported contours, and before fontforge ee15007274e9 (2014-09-16) QuickBounds counts only ON-CURVE points, including the implied on-curve points a quadratic .sfd writes with flag 128. J's lowest on-curve point is implied at -495.5, which floors to -496, so FontForge wrote 496+16=512. babelfont uses -round(true min)=498 and gets 514.",
+    "evidence": "vmetrics_probe.py: ff2012 rule 512 (release 512); FontForge master with control points gives 530; babelfont gives 514. Release head.yMin is -496 and release glyph J has header yMin -496 while its off-curve points reach -514, so the release keeps FontForge's on-curve-only bbox. The scratch stand-in 'OS2WinDescent: 512' / 'OS2WinDOffset: 0' closes the row (runs/02-proxy-vmetrics)."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "OS/2.sx_height",
+    "classification": "converter-fidelity",
+    "cause": "Being fixed at the converter by someone else. The pinned babelfont f725e6a does not fill the x-height (500 is fontc's default). FontForge's SFStandardHeight gives 1095 under both the master rule and the pre-2012 rule, because all 17 x-height tops are distinct.",
+    "evidence": "ff_heights_oracle rule 1095.18 -> 1095, which equals the release. heights_pre2012_probe.py also gives 1095. A scratch stand-in stating 'OS2XHeight: 1095' closes the row (runs/03-proxy-vmetrics-heights)."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "OS/2.s_cap_height",
+    "classification": "converter-fidelity",
+    "cause": "The release was exported by a FontForge older than commit 4d34d21ef866 (2012-05-14, Khaled Hosny's patch 'it was dividing by the wrong value'). When no top is flat, the old SFStandardHeight (splinefont.c:1702-1706 at cd438ca99d76) does 'test += curves[i].pos; tot += curves[i].cnt;': it adds up the DISTINCT tops and divides by the number of GLYPHS. None of the A-Z tops is flat and I and J share 1503.094, so the result is 36635.1/26 = 1409.04, truncated to 1409. The oracle ports FontForge master, which divides by the distinct count (25) and gets 1465.40 -> 1465.",
+    "evidence": "The release FFTM FFTimeStamp is 2010-04-29T03:43:27Z, and FFTM sourceModified 1290606759 equals the .sfd's ModificationTime, so this source state was the export input. heights_pre2012_probe.py over families.tsv: the master rule reproduces 25 of 38 releases and the pre-2012 rule 31 of 38. The six it adds are HerrVonMuellerhoff, Miama, Nosifer, NosiferCaps, UnifrakturCook and UnifrakturMaguntia, all with FFTM dates before 2012-05-14, and it loses none. A scratch stand-in stating 'OS2CapHeight: 1409' closes the row (runs/03-proxy-vmetrics-heights: 3 rows left, GPOS only)."
+   }
+  ],
+  "proposed_sfd_edits": [],
+  "proposed_converter_changes": [
+   {
+    "description": "Offset-mode vertical metrics: use FontForge's exporter bases (babelfont fontforge.rs resolve_offset_metrics, and its inverse offsetmetrics.rs compute_offset_delta). (1) Win base = FontForge's head bbox: per glyph, floor(min)/ceil(max) of the ON-CURVE points of the exported contours, counting implied quadratic on-curve points (flag 128) and resolved references. Off-curve points count only for an exporter from fontforge ee15007274e9 (2014-09-16) or later. winDescent = -head.yMin + offset, winAscent = head.yMax + offset. (2) hhea base = C truncation toward zero of the true curve bounds (SplineCharLayerFindBounds), widened to that head bbox. Today babelfont applies round() of the true bounds to both. Quirk to reproduce: FontForge <= 2012 decides the hhea DESCENDER mode from hheadascent_add (tottf.c:2876); master uses hheaddescent_add. Cubic sources are untested: FontForge measures its own quadratic approximation (SSttfApprox), and every offset-mode style in families.tsv is quadratic.",
+    "evidence": "vmetrics_probe.py gives win 512 and hhea -513 under the FontForge <= 2014 rule, equal to the release; babelfont gives 514/-514. vmetrics_sweep.py over families.tsv (60 offset-mode metrics in 15 styles): FontForge rule 41 matches, babelfont 39; the only difference is these 2 rows, with no regressions. Scratch stand-in with absolute values: 7 -> 5 rows (runs/02-proxy-vmetrics). The quoted code is in ff-2010-excerpts.txt.",
+    "styles_affected": [
+     "UnifrakturMaguntia-Book"
+    ]
+   },
+   {
+    "description": "x-height/cap-height for exporters before 2012-05-14: give fontforge_standard_height.rs (ca43adc, another person's work) a switch. When no top is flat, the curve mean then divides by the GLYPH count (sum of counts) instead of the number of distinct heights, reproducing FontForge before 4d34d21ef866. The flag is chosen per release, the same way baseline.sh already asks the release: turn it on when the release's FFTM FFTimeStamp is before 2012-05-14.",
+    "evidence": "heights_pre2012_probe.py: 31 of 38 releases reproduced vs 25 of 38 with the master rule. The six added styles all have FFTM builds from 2010-04-29 or 2011-02-22, and none is lost. PatrickHand (FFTM 2012-09-06, after the fix) is unaffected. For this style: cap height 1409 (release 1409) vs 1465; x-height 1095 under both.",
+    "styles_affected": [
+     "UnifrakturMaguntia-Book",
+     "UnifrakturCook-Bold",
+     "HerrVonMuellerhoff-Regular",
+     "Miama-Regular",
+     "Nosifer-Regular",
+     "NosiferCaps-Regular"
+    ]
+   },
+   {
+    "description": "FontForge's shared script list: when the source has lookups in only one of GSUB and GPOS, emit the other table with the same scripts and languages (empty default LangSys) and 0 features / 0 lookups, as FontForge's SFScriptsInLookups + dumpg___info did. The .glyphs format and FEA cannot express this, so babelfont alone cannot do it. It needs a fontc option or a gftools-builder3 post-compile step in the recipe, keyed to FontForge-exported releases.",
+    "evidence": "empty_gpos_probe.py adds this shell to our build: the 3 GPOS rows close, no other row opens, and horizontal HarfBuzz shaping goes from 648 differing runs to 0 of the ltr/rtl share of 25008. fea_empty_feature_test.sh shows an empty 'feature kern {} kern;' makes fontc 1.0.0 emit no GPOS. In families.tsv, 23 releases carry FontForge's shell (19 with an empty GSUB, 4 with an empty GPOS). Only this one blocks, because it is the only style with combining marks; the table_gate _nothing_to_position guard passes the rest.",
+    "styles_affected": [
+     "UnifrakturMaguntia-Book"
+    ]
+   }
+  ],
+  "proposed_flag_changes": [],
+  "verification": {
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland && TAG=unifraktur OUT=/home/fsanches/compartilhado/sfd-reland/investigations/unifraktur/runs/00-baseline bash tools/baseline.sh UnifrakturMaguntia-Book",
+    "TAG=unifraktur OUT=.../runs/02-proxy-vmetrics SRC_OVERRIDE=<copy of the .sfd patched with runs/02-proxy-vmetrics/source.diff> bash tools/baseline.sh UnifrakturMaguntia-Book",
+    "TAG=unifraktur OUT=.../runs/03-proxy-vmetrics-heights SRC_OVERRIDE=<copy patched with runs/03-proxy-vmetrics-heights/source.diff> bash tools/baseline.sh UnifrakturMaguntia-Book",
+    "/home/fsanches/compartilhado/gftools/venv/bin/python3 investigations/unifraktur/empty_gpos_probe.py <release.ttf> runs/03-proxy-vmetrics-heights/UnifrakturMaguntia-Regular.ttf runs/03-proxy-vmetrics-heights/UnifrakturMaguntia-Regular+ffgpos.ttf; then diffenator3 -J 1 --no-languages --no-match --json --succinct <release> <out> and table_gate.py <json> --fonts <release> <out>",
+    "$PY investigations/unifraktur/vmetrics_probe.py <UnifrakturMaguntia.sfd from hg 52f780bc> <release.ttf>",
+    "$PY investigations/unifraktur/vmetrics_sweep.py",
+    "$PY investigations/unifraktur/heights_pre2012_probe.py",
+    "bash investigations/unifraktur/fea_empty_feature_test.sh runs/00-baseline/UnifrakturMaguntia-Book.glyphs <scratch dir>"
+   ],
+   "rows_before": "7 (runs/00-baseline, which reproduces baseline/UnifrakturMaguntia-Book.gate.txt): GPOS.script_list, GPOS.feature_list, GPOS.lookup_list, hhea.descender [-513,-514], OS/2.us_win_descent [512,514], OS/2.sx_height [1095,500], OS/2.s_cap_height [1409,700]",
+   "rows_after": "0 in a stand-in only: absolute win/hhea descents plus stated heights in a scratch copy of the .sfd (runs/03, 3 rows left, all GPOS) plus FontForge's shared-script GPOS added after the build (gate-graft.txt: '0 blocking table difference(s), 3 stale in the release', no glyph or word differences). The unmodified source still gates 7 until the three converter changes land. The stand-ins are not proposed .sfd edits.",
+   "summary": "All 7 rows are converter-fidelity. The release is what FontForge (build of 2010-04-29, commit cd438ca99d76) exports from this unmodified .sfd; FFTM sourceModified equals the .sfd's ModificationTime. (1) Empty GPOS: FontForge deliberately shares GSUB's script list into GPOS for Uniscribe. It matters here because HarfBuzz turns off fallback mark positioning when a GPOS exists. Adding the shell makes horizontal shaping identical to the release. FEA and fontc cannot emit it; it needs a compiler or build step. (2) Vertical metrics: the .sfd states offsets (OS2WinDOffset/HheadDOffset 1). FontForge's bases are the head bbox of on-curve points only (floor -496, from J's implied point -495.5) for win, and the truncated true curve minimum (-497) for hhea, giving 512/-513. babelfont rounds the true minimum (-498) and gets 514/-514. (3) Cap height 1409 comes from FontForge's pre-2012-05-14 bug of dividing the sum of distinct tops by the glyph count (36635.1/26). The x-height (1095) matches both rules. (4) File name: generate.py builds it as FontName + '-' + Weight ('UnifrakturMaguntia-Book.ttf'). FontForge's _GetModifiers falls back to 'Weight: Book' for nameID 2. babelfont names the master and instance 'Regular' from TTFWeight 400, so builder3 writes UnifrakturMaguntia-Regular.ttf. That is a METADATA.pb files-mapping matter (filename, post_script_name and full_name follow the built font, and the PostScript-name change is disclosed), not a source edit; the gate accepts name records. FINDINGS.md was NOT written: the harness refused report files from this subagent. Probes, excerpts and run outputs are under /home/fsanches/compartilhado/sfd-reland/investigations/unifraktur/. Pins: babelfont binary f725e6a (sha256 f96e0851..., built before ca43adc), gftools-builder3 e851b8b (fontc 1.0.0), diffenator3 1.1.4, table_gate.py sfd-batch5 cd4f827 (sha256 008e7319...), sweep.py sha256 75b4d351, fontTools 4.61.1, uharfbuzz 0.53.3 / HarfBuzz 12.3.2, google/fonts b5efa9c32e8f."
+  },
+  "unresolved": [
+   "FINDINGS.md was not written: the harness blocked report .md files from this subagent. The content is in this result, and the probes and runs are in the investigations dir. The parent needs to write FINDINGS.md from it if it wants the file.",
+   "The GPOS shell cannot be closed through babelfont or FEA. Someone has to pick the mechanism: a fontc option, a gftools-builder3 recipe post-step, or leaving the rows open. That decision belongs to Felipe or the tool owners.",
+   "sfd-batch6/UNIFRAKTURMAGUNTIA-EMPTY-GPOS.md says the empty GPOS 'looks like a build artefact rather than a decision'. FontForge's source shows it was deliberate (Uniscribe script sharing). That text needs correcting, and this unit may not edit it.",
+   "Not among the 7 rows: GDEF is marked RELEASE-STALE. FontForge 2010's gdefclass makes these 9 combining marks base glyphs because the .sfd has no anchors and no GlyphClass. Our build classes them as marks, which is a correction made silently in the converter/compiler rather than a visible .sfd edit. It is inert for horizontal shaping once the GPOS shell exists.",
+   "Vertical text (ttb/btt) still differs in 6225 runs per direction even with every row closed. HarfBuzz's fallback vertical origin reads the per-glyph glyf header bbox, and the release keeps FontForge's on-curve-only headers. The gate does not check this.",
+   "The offset-base rule is proven for quadratic sources only. For cubic sources FontForge measures its own quadratic approximation (SSttfApprox), which no offset-mode style in families.tsv exercises."
+  ],
+  "confidence": "high: every value is reproduced exactly from the unmodified source using the FontForge code at the commit that matches the release's FFTM timestamp, and the stand-in builds take the gate to 0 blocking rows. Medium only for how the converter or compiler should implement the GPOS shell.",
+  "findings_path": "/home/fsanches/compartilhado/sfd-reland/investigations/unifraktur/ (FINDINGS.md not written: the harness refused report files; see verification.summary)"
+ },
+ "verification": {
+  "unit": "unifraktur",
+  "reproduced": true,
+  "reproduction_notes": "I made fresh copies of the unmodified source (googlefontdirectory-hg 52f780bc, ofl/unifrakturmaguntia/src/UnifrakturMaguntia.sfd, sha256 2457ee9a...) with my own sed edits and built them one at a time with baseline.sh (TAG=unifraktur-verify). The babelfont binary sha256 was f96e0851... before and after my runs. Results: unmodified 7 rows, identical to baseline/UnifrakturMaguntia-Book.gate.txt. Absolute win/hhea descents 512/-513 as a stand-in: 5 rows. Adding OS2CapHeight 1409 / OS2XHeight 1095: 3 rows, all GPOS. Grafting the release's OWN GPOS bytes (an independent control, not their GSUB-derived shell): '0 blocking table difference(s), 3 stale', and diffenator3 reports 0 glyph differences. With my own HarfBuzz check (153 bases x 9 marks plus the 9 marks alone = 1386 texts), 1317 texts differ in ltr without the graft and 0 with it; ttb still differs in all 1386. My own port of the 2010 FontForge code gives: on-curve min -495.5 (J, implied point) -> floor -496 -> win 512; true minimum -497.5805 -> int -497 -> hhea -513; x-height 1095.18 -> 1095; cap height 36635.1018/26 = 1409.04 -> 1409, versus 1465.40 under the post-2012 rule. The exporter is the FontForge 20100501 release tarball (sha256 ee4928b0...): its libffstamp.h LibFF_ModTime 1272512607 exactly equals FFTM FFTimeStamp. Its tottf.c, splinefont.c, splineutil.c, splineutil2.c, splineorder2.c, lookups.c, tottfgpos.c and ttfspecial.c are byte-identical to cd438ca99d76, so their line citations hold, although cd438's own libffstamp (1272500371) shows it is not literally the build. Pairing is correct: families.tsv names the only .sfd in the family tree; the release sha256 d64afc05... is identical to the TTF in the hg tree at 52f780bc; FFTM sourceCreated/sourceModified equal the .sfd's CreationTime/ModificationTime. Report: /home/fsanches/compartilhado/sfd-reland/investigations/unifraktur/VERIFY.md. My probes and runs are only in /tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-unifraktur-verify/, which is volatile: indep_probe.py sha256 ea0b7b2d..., shape_check.py 984a70d1..., runs/00,02,03,04,05. The parent should copy them into the investigation dir if they are to be kept.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "(no .sfd edits proposed; runs/02 and runs/03 are stand-ins only)",
+    "verdict": "keep",
+    "reason": "Correctly not proposed as commits. The .sfd states the win/hhea descents as OFFSETS (OS2WinDOffset 1, HheadDOffset 1) and states no OS2XHeight/OS2CapHeight, so replicating the exporter reproduces every value without overwriting anything the designer stated. The stand-ins do close exactly those 4 rows and open none (7 -> 5 -> 3)."
+   },
+   {
+    "commit_subject": "(converter) offset-mode vertical metrics from FontForge's exporter bases: win = on-curve-only head bbox (pre-ee15007274e9), hhea = int() of true bounds widened to head bbox",
+    "verdict": "keep",
+    "reason": "Verified against the exact 2010 exporter source: WinBB uses head.ymin, and dumpglyph/dumpcomposite use floor of SplineSetQuickBounds (on-curve points only, implied flag-128 points included). sethhead assigns the double to an int (truncation) and then widens to the head bbox. ee15007274e9 (2014-09-16) is confirmed as the commit that added control points. Refinement: say which vintage to assume when the release has no FFTM (Play, Tuffy, Corben, ComicRelief)."
+   },
+   {
+    "commit_subject": "(converter) SFStandardHeight pre-2012-05-14 mean: sum of distinct tops / glyph count",
+    "verdict": "keep",
+    "reason": "Confirmed in the 2010 splinefont.c and in the 4d34d21ef866 patch. My independent port reproduces this style's 1409/1095 and all 5 other pre-2012 styles exactly: UnifrakturCook-Bold 319/485, HerrVonMuellerhoff 269/644, Miama 265/894, Nosifer and NosiferCaps 925/854."
+   },
+   {
+    "commit_subject": "(toolchain) emit FontForge's shared-script empty GPOS shell",
+    "verdict": "revise",
+    "reason": "The cause is right: SFScriptsInLookups deliberately ignores gpos, 'for Uniscribe'. The rule as written is wrong on languages: SFLangsInScript (lookups.c:375-425) is per table, so a script with no lookups in a table gets only a dummy DEFAULT_LANG (dflt). Scripts are the UNION of both tables and go into both tables even when both have lookups. Their 'same scripts and languages' rule, and their probe copying GSUB LangSysRecords, would over-emit languages; this font is unaffected because it has only dflt. It cannot be done in babelfont or FEA: a kern block holding only script/language statements also yields no GPOS from fontc 1.0.0 (my runs/05). It deliberately re-disables HarfBuzz fallback mark positioning, which is Felipe's decision."
+   },
+   {
+    "commit_subject": "(naming) UnifrakturMaguntia-Book.ttf -> UnifrakturMaguntia-Regular.ttf as a METADATA.pb files-mapping matter",
+    "verdict": "revise",
+    "reason": "The FontForge side is correct: 2010 _GetModifiers falls back to 'Weight: Book' for nameID 2. But 'not a source edit, just mapping' understates it. babelfont (fontforge.rs ~L985) names the master 'Regular' from TTFWeight 400 and never uses the stated Weight (it is parked as postscript_weight_name). Result: nameID 2 Book->Regular, nameID 4 gains ' Regular', and PostScript name UnifrakturMaguntia -> UnifrakturMaguntia-Regular. The gate accepts this, but it is a silent converter normalisation. METADATA.pb filename/post_script_name/full_name must follow and the PR must disclose it. An .sfd 'Weight: Regular' edit would be documentary only."
+   }
+  ],
+  "classification_objections": [
+   "GPOS.script_list/feature_list/lookup_list as 'converter-fidelity': the cause is accepted, but these rows cannot be closed by the converter (babelfont), the .glyphs format or FEA. They are toolchain (fontc or builder3 post-step) fidelity, and the mechanism is undecided, so they stay open until someone picks one. Blocking is correct (not gate-arbitration): without the shell, 1317 of 1386 ltr base+mark texts shape differently."
+  ],
+  "missed": [
+   "--add-legacy-duplicate-cmap misfires for this style. The .sfd itself maps U+00A0 to space (AltUni2) and has its own uni00AD, so the harness's test (release carries 00A0 and 00AD) says yes, and the flag then adds U+02C9->macron and U+2219->periodcentered, which the release does not map. table_gate cmap_blocking accepts gained codepoints and prints nothing. With DROP_FLAGS=--add-legacy-duplicate-cmap the cmap is identical to the release (247/247) and the same 7 rows remain. For this style it is not a fidelity flag; the harness should test for the synthesised duplicates themselves.",
+   "OS/2.fs_selection is 64 in the release and 192 in ours, and the gate accepts it wholesale. The .sfd states OS2_UseTypoMetrics 1 with OS2Version 3, and FontForge 2010 sets bit 7 only for version>=4 (tottf.c:3331-3337). It changes the HarfBuzz vertical advance (2121 vs 2120) and line spacing in apps that honour the bit. Their unresolved note blames the vertical residue only on glyf header bboxes, but their own nobit7 control shows bit 7 accounts for part of it (ttb 6225 -> 5232 runs).",
+   "Their claim 'only this one blocks because it is the only style with combining marks' is false as stated: Monoton (4), Smythe (2), Tuffy-Bold/BoldItalic (19) and UnifrakturCook-Bold (9) also have marks, but their shell is an empty GSUB. Correct statement: it is the only one of the 4 empty-GPOS releases (Kristi, Lekton-Bold, Lekton-Regular, UnifrakturMaguntia-Book) with marks. The 19/4 census itself is confirmed.",
+   "Their provenance claim names cd438ca99d76 as the exporter. The exact build is the FontForge 20100501 release (libffstamp LibFF_ModTime == FFTM FFTimeStamp 1272512607). The relevant files are byte-identical to cd438, so the conclusions stand.",
+   "FINDINGS.md still does not exist in the unit directory; the parent must write it."
+  ],
+  "overall": "The findings hold up. Every figure in the 7 rows reproduces from the unmodified source: rows go 7 -> 5 -> 3 -> 0 with the stand-ins plus a GPOS graft. My own port of the exact exporter source (the FontForge 20100501 tarball, whose stamp equals FFTM) reproduces each value. All 7 classifications are sound in cause. The GPOS rows are toolchain fidelity rather than babelfont, and remain open until a mechanism is chosen. Proposal verdicts: keep both converter rules (vmetrics, pre-2012 heights); revise the GPOS-shell rule (languages are per table, with a dummy dflt only; scripts are the union); reframe the Book->Regular naming as a disclosed silent converter normalisation rather than a pure METADATA mapping. Three non-blocking misses: the duplicate-cmap flag adds 2 codepoints the release lacks; USE_TYPO_METRICS is set where FontForge 2010 did not set it; and the marks-only-here claim is imprecise."
+ }
+}

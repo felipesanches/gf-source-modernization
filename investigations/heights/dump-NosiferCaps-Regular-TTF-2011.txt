@@ -1,0 +1,55 @@
+order2=True ascent=1638.0 descent=410.0 blues=[-57 0 1229 1282 1645 1698] vintage=2011
+== x-height
+  U+0061 a              pointy   1375.000000
+  U+0063 c              round    1375.000000
+  U+0065 e              pointy   1369.000000
+  U+0067 g              round    1375.000000
+  U+006D m              round    1375.000000
+  U+006E n              round    1409.000000
+  U+006F o              round    1375.000000
+  U+0070 p              pointy   1374.000000
+  U+0071 q              round    1400.000000
+  U+0072 r              pointy   1374.000000
+  U+0073 s              round    1410.000000
+  U+0075 u              pointy   1354.000000
+  U+0076 v              round    1413.000000
+  U+0077 w              pointy   1397.000000
+  U+0078 x              round    1395.000000
+  U+0079 y              round    1384.000000
+  U+007A z              pointy   1372.000000
+  U+0131 dotlessi       pointy   1372.000000
+  flats  (height,count): []
+  curves (height,count): [(1375.0, 5), (1369.0, 1), (1409.0, 1), (1374.0, 2), (1400.0, 1), (1410.0, 1), (1354.0, 1), (1413.0, 1), (1397.0, 1), (1395.0, 1), (1384.0, 1), (1372.0, 2)]
+  curve sum 16652.000000; distinct 12 -> 1387.666667; glyphs 18 -> 925.111111
+  raw 925.111111 -> after BlueValues 925.111111 -> exported 925
+== cap height
+  U+0041 A              pointy   1375.000000
+  U+0042 B              pointy   1372.000000
+  U+0043 C              round    1375.000000
+  U+0044 D              pointy   1372.000000
+  U+0045 E              pointy   1369.000000
+  U+0046 F              pointy   1401.000000
+  U+0047 G              round    1375.000000
+  U+0048 H              pointy   1372.000000
+  U+0049 I              pointy   1372.000000
+  U+004A J              pointy   1372.000000
+  U+004B K              pointy   1377.000000
+  U+004C L              pointy   1372.000000
+  U+004D M              round    1408.000000
+  U+004E N              round    1409.000000
+  U+004F O              round    1375.000000
+  U+0050 P              pointy   1374.000000
+  U+0051 Q              round    1400.000000
+  U+0052 R              pointy   1374.000000
+  U+0053 S              round    1410.000000
+  U+0054 T              pointy   1373.000000
+  U+0055 U              pointy   1354.000000
+  U+0056 V              round    1413.000000
+  U+0057 W              pointy   1397.000000
+  U+0058 X              round    1395.000000
+  U+0059 Y              round    1384.000000
+  U+005A Z              pointy   1372.000000
+  flats  (height,count): []
+  curves (height,count): [(1375.0, 4), (1372.0, 7), (1369.0, 1), (1401.0, 1), (1377.0, 1), (1408.0, 1), (1409.0, 1), (1374.0, 2), (1400.0, 1), (1410.0, 1), (1373.0, 1), (1354.0, 1), (1413.0, 1), (1397.0, 1), (1395.0, 1), (1384.0, 1)]
+  curve sum 22211.000000; distinct 16 -> 1388.187500; glyphs 26 -> 854.269231
+  raw 854.269231 -> after BlueValues 854.269231 -> exported 854

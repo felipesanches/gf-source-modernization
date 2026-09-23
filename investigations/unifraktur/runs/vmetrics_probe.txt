@@ -1,0 +1,14 @@
+source: /tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-unifraktur/ofl/unifrakturmaguntia/src/UnifrakturMaguntia.sfd  (Fore layer quadratic)
+  on-curve min y   J          floor -> -496
+  all-point min y  J          floor -> -514
+  true-curve min y J          -497.5805  int() -> -497  round() -> -498
+  on-curve max y   Igrave     ceil  -> 1906
+  all-point max y  Igrave     ceil  -> 1906
+  true-curve max y Igrave     1906.0000  int() -> 1906  round() -> 1906
+metric             source states                ff2012 ffmaster babelfont  release
+OS/2.usWinAscent   WinAscent -299 (offset)        1607     1607      1607     1607
+OS/2.usWinDescent  WinDescent 16 (offset)          512      530       514      512
+hhea.ascender      HheadAscent -299 (offset)      1607     1607      1607     1607
+hhea.descender     HheadDescent -16 (offset)      -513     -530      -514     -513
+head.yMin          (computed)                     -496     -514         -     -496
+head.yMax          (computed)                     1906     1906         -     1906

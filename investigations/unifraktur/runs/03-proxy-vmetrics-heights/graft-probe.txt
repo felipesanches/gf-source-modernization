@@ -1,0 +1,17 @@
+release GPOS scripts ['DFLT', 'hani', 'latn'], features 0, lookups 0
+grafted GPOS scripts ['DFLT', 'hani', 'latn'], features 0, lookups 0
+release vs built                 : 25008 runs, 13098 differ
+    ltr   324  cp-after-H=108 mark-after-base=108 mark-stack=108
+    rtl   324  cp-after-H=108 mark-after-base=108 mark-stack=108
+    ttb  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+    btt  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+release vs built + shared GPOS   : 25008 runs, 12450 differ
+    ltr     0  
+    rtl     0  
+    ttb  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+    btt  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+release vs built + GPOS + release GDEF classes (control only): 25008 runs, 12450 differ
+    ltr     0  
+    rtl     0  
+    ttb  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+    btt  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108

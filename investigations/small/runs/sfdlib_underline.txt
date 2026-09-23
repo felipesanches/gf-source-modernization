@@ -1,0 +1,5 @@
+sfdLib/parser.py lines that decide the value:
+1556:        # FontForge does not match OpenType here.
+1557-        if info.postscriptUnderlinePosition and info.postscriptUnderlineThickness:
+Regular  sfd UnderlinePosition -185 UnderlineWidth 175 | sfdLib postscriptUnderlinePosition -97.5 thickness 175.0 | ufo2ft post.underlinePosition -97 thickness 175 | release -97 175
+Bold     sfd UnderlinePosition -185 UnderlineWidth 175 | sfdLib postscriptUnderlinePosition -97.5 thickness 175.0 | ufo2ft post.underlinePosition -97 thickness 175 | release -97 175

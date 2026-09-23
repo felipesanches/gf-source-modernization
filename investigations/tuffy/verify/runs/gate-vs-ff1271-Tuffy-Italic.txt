@@ -1,0 +1,26 @@
+RELEASE-STALE hmtx.gidGID_0 -- each bearing matches its own outline (68 and 102) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE hmtx.exclam -- shipped records 121 for an outline at 120; ours records 120
+RELEASE-STALE hmtx.quotedbl -- shipped records 380 for an outline at 381; ours records 381
+RELEASE-STALE hmtx.quotesingle -- shipped records 380 for an outline at 381; ours records 381
+RELEASE-STALE hmtx.period -- shipped records 121 for an outline at 120; ours records 120
+RELEASE-STALE hmtx.colon -- shipped records 131 for an outline at 130; ours records 130
+RELEASE-STALE hmtx.J -- shipped records 209 for an outline at 208; ours records 208
+RELEASE-STALE hmtx.periodcentered -- shipped records 295 for an outline at 294; ours records 294
+RELEASE-STALE hmtx.Jcircumflex -- shipped records 209 for an outline at 208; ours records 208
+RELEASE-STALE hmtx.afii10057 -- shipped records 209 for an outline at 208; ours records 208
+RELEASE-STALE hmtx.Epsilongrave -- shipped records 381 for an outline at 378; ours records 378
+RELEASE-STALE hmtx.Etagrave -- shipped records 381 for an outline at 378; ours records 378
+RELEASE-STALE hmtx.Upsilongrave -- shipped records 381 for an outline at 378; ours records 378
+RELEASE-STALE hmtx.varia -- shipped records 422 for an outline at 419; ours records 419
+RELEASE-STALE hmtx.uni2076 -- shipped records 296 for an outline at 291; ours records 291
+RELEASE-STALE hmtx.uni2086 -- shipped records 27 for an outline at 22; ours records 22
+RELEASE-STALE hmtx.uni20B7 -- shipped records 142 for an outline at 141; ours records 141
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (2 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (2 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE OS/2.sx_height -- the release ships an OS/2 version 1 table, which has no such field
+RELEASE-STALE OS/2.s_cap_height -- the release ships an OS/2 version 1 table, which has no such field
+RELEASE-STALE GDEF.glyph_classes -- our build corrects 18 mark class(es) the release got wrong: U+0300, U+0301, U+0302, U+0303, U+0304, U+0306, U+0307, U+0308, U+030A, U+030B, U+030C, U+0310, U+0323, U+0324, U+0325, U+0327, U+0328, U+0331. Disclose in the PR body; the release calls these base glyphs and they are Unicode combining marks
+BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [1, 2]}}, "latn/dflt": {"lookups": {"1": [1, 2]}
+BLOCKING GSUB.feature_list {"liga": {"0": [0, 3]}}
+BLOCKING head.font_direction_hint [0, 2]
+3 blocking table difference(s), 22 stale in the release

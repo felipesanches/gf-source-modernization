@@ -1,0 +1,5 @@
+repo	family	lic	kind	base	commit	style	source	shipped
+tuffy	tuffy	ofl	hg	googlefonts/googlefontdirectory-hg	52f780bc9d197280a9f430574e179a5f233c56b6	Tuffy-Bold	src/Tuffy-Bold-TTF.sfd	/home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Bold.ttf
+tuffy	tuffy	ofl	hg	googlefonts/googlefontdirectory-hg	52f780bc9d197280a9f430574e179a5f233c56b6	Tuffy-BoldItalic	src/Tuffy-BoldItalic-TTF.sfd	/home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-BoldItalic.ttf
+tuffy	tuffy	ofl	hg	googlefonts/googlefontdirectory-hg	52f780bc9d197280a9f430574e179a5f233c56b6	Tuffy-Italic	src/Tuffy-Italic-TTF.sfd	/home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Italic.ttf
+tuffy	tuffy	ofl	hg	googlefonts/googlefontdirectory-hg	52f780bc9d197280a9f430574e179a5f233c56b6	Tuffy-Regular	src/Tuffy-Regular-TTF.sfd	/home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Regular.ttf

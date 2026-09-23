@@ -1,0 +1,45 @@
+style                      rOS2  x ff/rel      cap ff/rel    verdict
+CreepsterCaps-Regular      v3    751/751       751/751       MATCH
+HerrVonMuellerhoff-Regular v2    269/269       761/644       DIFFER
+Kristi-Regular             v1    829           1131          release carries no heights
+Lekton-Bold                v2    476/476       655/655       MATCH
+Lekton-Italic              v2    475/475       655/655       MATCH
+Lekton-Regular             v2    475/475       655/655       MATCH
+Miama-Regular              v4    498/265       894/894       DIFFER
+Monoton-Regular            v3    1440/1440     1656/1656     MATCH
+NixieOne-Regular           v3    500/500       700/700       MATCH
+Nosifer-Regular            v3    1387/925      1388/854      DIFFER
+NosiferCaps-Regular        v3    1387/925      1388/854      DIFFER
+NovaCut                    v3    1140/1140     1550/1550     MATCH
+NovaFlat                   v3    1120/1120     1530/1530     MATCH
+NovaMono                   v3    1120/1120     1509/1509     MATCH
+NovaOval                   v3    1120/1120     1550/1550     MATCH
+NovaRound                  v3    1120/1120     1530/1530     MATCH
+NovaScript-Regular         v3    1120/1120     1550/1550     MATCH
+NovaSlim                   v3    1120/1120     1530/1530     MATCH
+NovaSquare                 v3    1100/1100     1510/1510     MATCH
+PatrickHand-Regular        v3    467/467       660/661       DIFFER
+Play-Bold                  v4    484/484       649/649       MATCH
+Play-Regular               v4    484/484       649/649       MATCH
+Puritan-Bold               v4    495/507       640/655       DIFFER
+Puritan-BoldItalic         v4    495/507       640/655       DIFFER
+Puritan-Italic             v4    495/507       640/655       DIFFER
+Puritan-Regular            v4    495/507       640/655       DIFFER
+RussoOne-Regular           v3    530/530       700/700       MATCH
+SixCaps                    v1    1536          1728          release carries no heights
+Smythe-Regular             v2    963/963       1317/1317     MATCH
+Tuffy-Bold                 v1    1073          1456          release carries no heights
+Tuffy-BoldItalic           v1    1073          1456          release carries no heights
+Tuffy-Italic               v3    1069/500      1450/700      DIFFER
+Tuffy-Regular              v3    1069/500      1450/700      DIFFER
+TulpenOne-Regular          v2    1018/1018     1393/1393     MATCH
+UnifrakturCook-Bold        v3    1087/319      1577/485      DIFFER
+UnifrakturMaguntia-Book    v3    1095/1095     1465/1409     DIFFER
+AbrilFatface-Regular       v2    476/476       700/700       MATCH
+Corben-Regular             v2    958/958       1404/1404     MATCH
+Corben-Bold                v2    1296/1296     1593/1593     MATCH
+AllertaStencil-Regular     v3    564/564       737/737       MATCH
+ComicRelief-Regular        v4    1105/1105     1554/1554     MATCH  (stated in .sfd)
+ComicRelief-Bold           v4    1105/1105     1554/1554     MATCH  (stated in .sfd)
+
+FontForge's rule reproduces the release: 25 of 38 styles that carry the fields

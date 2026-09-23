@@ -1,0 +1,552 @@
+0 .notdef 0 empty 
+1 .null 0 empty 
+2 nonmarkingreturn 0 empty 
+3 space 500 empty 0020
+4 exclam 820 outl 0021
+5 quotedbl 1327 comp 0022
+6 numbersign 2037 outl 0023
+7 dollar 1562 outl 0024
+8 percent 3340 outl 0025
+9 ampersand 2149 outl 0026
+10 quotesingle 657 outl 0027
+11 parenleft 1034 outl 0028
+12 parenright 1033 outl 0029
+13 asterisk 2055 outl 002A
+14 plus 1330 outl 002B
+15 comma 735 outl 002C
+16 hyphen 1267 outl 002D
+17 period 736 outl 002E
+18 slash 1034 outl 002F
+19 zero 1671 outl 0030
+20 one 1129 outl 0031
+21 two 1269 outl 0032
+22 three 1301 outl 0033
+23 four 1502 outl 0034
+24 five 1254 outl 0035
+25 six 1554 outl 0036
+26 seven 1258 outl 0037
+27 eight 1526 outl 0038
+28 nine 1554 outl 0039
+29 colon 824 outl 003A
+30 semicolon 799 outl 003B
+31 less 1025 outl 003C
+32 equal 1180 outl 003D
+33 greater 1025 outl 003E
+34 question 1280 outl 003F
+35 at 3052 outl 0040
+36 A 1791 outl 0041
+37 B 1902 outl 0042
+38 C 1564 outl 0043
+39 D 1962 outl 0044
+40 E 1765 outl 0045
+41 F 1660 outl 0046
+42 G 1709 outl 0047
+43 H 2226 outl 0048
+44 I 1097 outl 0049
+45 J 1623 outl 004A
+46 K 2081 outl 004B
+47 L 1542 outl 004C
+48 M 2219 outl 004D
+49 N 1811 outl 004E
+50 O 1899 outl 004F
+51 P 1895 outl 0050
+52 Q 1902 outl 0051
+53 R 2051 outl 0052
+54 S 1570 outl 0053
+55 T 1740 outl 0054
+56 U 1882 outl 0055
+57 V 1713 outl 0056
+58 W 2737 outl 0057
+59 X 1772 outl 0058
+60 Y 1744 outl 0059
+61 Z 1597 outl 005A
+62 bracketleft 863 outl 005B
+63 backslash 1034 outl 005C
+64 bracketright 863 outl 005D
+65 asciicircum 1046 outl 005E
+66 underscore 1183 comp 005F
+67 grave 806 outl 0060
+68 a 1556 outl 0061
+69 b 1787 outl 0062
+70 c 1329 outl 0063
+71 d 1783 outl 0064
+72 e 1345 outl 0065
+73 f 1056 outl 0066
+74 g 1644 outl 0067
+75 h 1940 outl 0068
+76 i 1024 outl 0069
+77 j 957 outl 006A
+78 k 1855 outl 006B
+79 l 1023 outl 006C
+80 m 2759 outl 006D
+81 n 1967 outl 006E
+82 o 1572 outl 006F
+83 p 1716 outl 0070
+84 q 1782 outl 0071
+85 r 1349 outl 0072
+86 s 1289 outl 0073
+87 t 1123 outl 0074
+88 u 1941 outl 0075
+89 v 1582 outl 0076
+90 w 2082 outl 0077
+91 x 1601 outl 0078
+92 y 1651 outl 0079
+93 z 1356 outl 007A
+94 braceleft 1149 outl 007B
+95 bar 750 outl 007C
+96 braceright 1147 outl 007D
+97 asciitilde 1411 outl 007E
+98 uni00A0 500 empty 00A0
+99 exclamdown 820 comp 00A1
+100 cent 1351 outl 00A2
+101 sterling 1673 outl 00A3
+102 currency 1290 outl 00A4
+103 yen 1810 outl 00A5
+104 brokenbar 734 outl 00A6
+105 section 1085 outl 00A7
+106 dieresis 1512 outl 00A8
+107 copyright 1997 outl 00A9
+108 ordfeminine 1600 comp 00AA
+109 guillemotleft 1944 outl 00AB
+110 logicalnot 1163 outl 00AC
+111 uni00AD 803 outl 00AD
+112 registered 1997 outl 00AE
+113 macron 1250 outl 00AF
+114 degree 995 outl 00B0
+115 plusminus 1343 outl 00B1
+116 uni00B2 1131 comp 00B2
+117 uni00B3 1274 comp 00B3
+118 acute 805 outl 00B4
+119 uni00B5 1998 outl 00B5 03BC
+120 paragraph 1483 outl 00B6
+121 periodcentered 742 outl 00B7
+122 cedilla 693 outl 00B8
+123 uni00B9 1045 outl 00B9
+124 ordmasculine 1464 comp 00BA
+125 guillemotright 1709 outl 00BB
+126 onequarter 2180 outl 00BC
+127 onehalf 2276 outl 00BD
+128 threequarters 2495 outl 00BE
+129 questiondown 1280 comp 00BF
+130 Agrave 1790 comp 00C0
+131 Aacute 1790 comp 00C1
+132 Acircumflex 1790 comp 00C2
+133 Atilde 1790 comp 00C3
+134 Adieresis 1790 comp 00C4
+135 Aring 1790 comp 00C5
+136 AE 2465 outl 00C6
+137 Ccedilla 1569 comp 00C7
+138 Egrave 1765 comp 00C8
+139 Eacute 1765 comp 00C9
+140 Ecircumflex 1765 comp 00CA
+141 Edieresis 1765 comp 00CB
+142 Igrave 1097 comp 00CC
+143 Iacute 1098 comp 00CD
+144 Icircumflex 1097 comp 00CE
+145 Idieresis 1097 comp 00CF
+146 Eth 1962 outl 00D0
+147 Ntilde 1812 comp 00D1
+148 Ograve 1899 comp 00D2
+149 Oacute 1899 comp 00D3
+150 Ocircumflex 1899 comp 00D4
+151 Otilde 1899 comp 00D5
+152 Odieresis 1899 comp 00D6
+153 multiply 1134 outl 00D7
+154 Oslash 1893 outl 00D8
+155 Ugrave 1882 comp 00D9
+156 Uacute 1882 comp 00DA
+157 Ucircumflex 1882 comp 00DB
+158 Udieresis 1882 comp 00DC
+159 Yacute 1743 comp 00DD
+160 Thorn 1800 outl 00DE
+161 germandbls 1963 outl 00DF
+162 agrave 1556 comp 00E0
+163 aacute 1556 comp 00E1
+164 acircumflex 1556 comp 00E2
+165 atilde 1556 comp 00E3
+166 adieresis 1556 comp 00E4
+167 aring 1556 comp 00E5
+168 ae 2118 outl 00E6
+169 ccedilla 1331 comp 00E7
+170 egrave 1346 comp 00E8
+171 eacute 1346 comp 00E9
+172 ecircumflex 1346 comp 00EA
+173 edieresis 1346 comp 00EB
+174 igrave 1024 outl 00EC
+175 iacute 1024 outl 00ED
+176 icircumflex 1024 outl 00EE
+177 idieresis 1024 outl 00EF
+178 eth 1567 outl 00F0
+179 ntilde 1967 comp 00F1
+180 ograve 1572 comp 00F2
+181 oacute 1572 comp 00F3
+182 ocircumflex 1572 comp 00F4
+183 otilde 1572 comp 00F5
+184 odieresis 1572 comp 00F6
+185 divide 1106 outl 00F7
+186 oslash 1571 outl 00F8
+187 ugrave 1940 comp 00F9
+188 uacute 1940 comp 00FA
+189 ucircumflex 1940 comp 00FB
+190 udieresis 1940 comp 00FC
+191 yacute 1651 comp 00FD
+192 thorn 1734 outl 00FE
+193 ydieresis 1651 comp 00FF
+194 Amacron 1790 comp 0100
+195 amacron 1556 comp 0101
+196 Abreve 1790 comp 0102
+197 abreve 1556 comp 0103
+198 Aogonek 1790 comp 0104
+199 aogonek 1558 comp 0105
+200 Cacute 1564 comp 0106
+201 cacute 1328 comp 0107
+202 Ccircumflex 1564 comp 0108
+203 ccircumflex 1328 comp 0109
+204 Cdotaccent 1564 comp 010A
+205 cdotaccent 1328 comp 010B
+206 Ccaron 1564 comp 010C
+207 ccaron 1328 comp 010D
+208 Dcaron 1962 comp 010E
+209 dcaron 2034 comp 010F
+210 Dcroat 1962 outl 0110
+211 dcroat 1783 outl 0111
+212 Emacron 1765 comp 0112
+213 emacron 1345 comp 0113
+214 ebreve 1345 comp 0115
+215 Edotaccent 1765 comp 0116
+216 edotaccent 1345 comp 0117
+217 Eogonek 1765 comp 0118
+218 eogonek 1348 comp 0119
+219 Ecaron 1765 comp 011A
+220 ecaron 1345 comp 011B
+221 Gcircumflex 1709 comp 011C
+222 gcircumflex 1644 comp 011D
+223 Gbreve 1709 comp 011E
+224 gbreve 1644 comp 011F
+225 Gdotaccent 1709 comp 0120
+226 gdotaccent 1644 comp 0121
+227 Gcommaaccent 1708 comp 0122
+228 gcommaaccent 1644 comp 0123
+229 Hcircumflex 2226 comp 0124
+230 hcircumflex 1940 comp 0125
+231 Hbar 2218 outl 0126
+232 hbar 1940 outl 0127
+233 Itilde 1097 comp 0128
+234 itilde 1024 comp 0129
+235 Imacron 1098 comp 012A
+236 imacron 1024 comp 012B
+237 ibreve 1024 comp 012D
+238 Iogonek 1091 comp 012E
+239 iogonek 1018 comp 012F
+240 Idotaccent 1098 comp 0130
+241 dotlessi 1025 outl 0131
+242 Jcircumflex 1623 comp 0134
+243 jcircumflex 958 outl 0135
+244 Kcommaaccent 2080 comp 0136
+245 kcommaaccent 1854 comp 0137
+246 kgreenlandic 1860 outl 0138
+247 Lacute 1542 comp 0139
+248 lacute 1023 comp 013A
+249 Lcommaaccent 1542 comp 013B
+250 lcommaaccent 1023 comp 013C
+251 Lcaron 1735 comp 013D
+252 lcaron 1294 comp 013E
+253 Lslash 1551 outl 0141
+254 lslash 1082 outl 0142
+255 Nacute 1812 comp 0143
+256 nacute 1967 comp 0144
+257 Ncommaaccent 1811 comp 0145
+258 ncommaaccent 1967 comp 0146
+259 Ncaron 1812 comp 0147
+260 ncaron 1967 comp 0148
+261 Eng 1815 outl 014A
+262 eng 1917 outl 014B
+263 Omacron 1899 comp 014C
+264 omacron 1572 comp 014D
+265 obreve 1572 comp 014F
+266 Ohungarumlaut 1899 comp 0150
+267 ohungarumlaut 1572 comp 0151
+268 OE 2666 outl 0152
+269 oe 2228 outl 0153
+270 Racute 2051 comp 0154
+271 racute 1348 comp 0155
+272 Rcommaaccent 2051 comp 0156
+273 rcommaaccent 1348 comp 0157
+274 Rcaron 2051 comp 0158
+275 rcaron 1348 comp 0159
+276 Sacute 1570 comp 015A
+277 sacute 1289 comp 015B
+278 Scircumflex 1570 comp 015C
+279 scircumflex 1289 comp 015D
+280 Scedilla 1571 comp 015E
+281 scedilla 1291 comp 015F
+282 Scaron 1570 comp 0160
+283 scaron 1289 comp 0161
+284 Tcommaaccent 1740 comp 0162
+285 tcommaaccent 1122 comp 0163
+286 Tcaron 1740 comp 0164
+287 tcaron 1123 comp 0165
+288 Tbar 1740 outl 0166
+289 tbar 1124 outl 0167
+290 Utilde 1882 comp 0168
+291 utilde 1940 comp 0169
+292 Umacron 1882 comp 016A
+293 umacron 1940 comp 016B
+294 Ubreve 1882 comp 016C
+295 ubreve 1940 comp 016D
+296 Uring 1882 comp 016E
+297 uring 1940 comp 016F
+298 Uhungarumlaut 1882 comp 0170
+299 uhungarumlaut 1940 comp 0171
+300 Uogonek 1894 comp 0172
+301 uogonek 1941 comp 0173
+302 Wcircumflex 2737 comp 0174
+303 wcircumflex 2082 comp 0175
+304 Ycircumflex 1743 comp 0176
+305 ycircumflex 1651 comp 0177
+306 Ydieresis 1743 comp 0178
+307 Zacute 1597 comp 0179
+308 zacute 1356 comp 017A
+309 Zdotaccent 1597 comp 017B
+310 zdotaccent 1356 comp 017C
+311 Zcaron 1597 comp 017D
+312 zcaron 1356 comp 017E
+313 florin 1261 outl 0192
+314 gcaron 1644 comp 01E7
+315 uni01EA 1902 comp 01EA
+316 uni01EB 1574 comp 01EB
+317 uni01F5 1644 comp 01F5
+318 Scommaaccent 1570 comp 0218
+319 scommaaccent 1290 comp 0219
+320 uni021A 1740 comp 021A
+321 uni021B 1122 comp 021B
+322 circumflex 945 outl 02C6
+323 caron 945 outl 02C7
+324 breve 1045 outl 02D8
+325 dotaccent 938 comp 02D9
+326 ring 981 outl 02DA
+327 ogonek 735 outl 02DB
+328 tilde 1431 outl 02DC
+329 hungarumlaut 1450 outl 02DD
+330 uni1E02 1902 comp 1E02
+331 uni1E03 1787 comp 1E03
+332 uni1E0A 1962 comp 1E0A
+333 uni1E0B 1783 comp 1E0B
+334 uni1E1E 1661 comp 1E1E
+335 uni1E1F 1056 comp 1E1F
+336 uni1E40 2219 comp 1E40
+337 uni1E41 2759 comp 1E41
+338 uni1E45 1967 comp 1E45
+339 uni1E56 1894 comp 1E56
+340 uni1E57 1716 comp 1E57
+341 uni1E60 1570 comp 1E60
+342 uni1E61 1289 comp 1E61
+343 uni1E62 1570 comp 1E62
+344 uni1E63 1290 comp 1E63
+345 uni1E6A 1740 comp 1E6A
+346 uni1E6B 1122 comp 1E6B
+347 Wgrave 2737 comp 1E80
+348 wgrave 2082 comp 1E81
+349 Wacute 2737 comp 1E82
+350 wacute 2082 comp 1E83
+351 Wdieresis 2737 comp 1E84
+352 wdieresis 2082 comp 1E85
+353 uni1E8F 1651 comp 1E8F
+354 uni1E91 1356 comp 1E91
+355 Ygrave 1743 comp 1EF2
+356 ygrave 1651 comp 1EF3
+357 endash 1267 comp 2013
+358 emdash 1852 outl 2014
+359 afii00208 1852 outl 2015
+360 quoteleft 730 outl 2018
+361 quoteright 718 outl 2019
+362 quotesinglbase 683 comp 201A
+363 quotedblleft 1436 outl 201C
+364 quotedblright 1412 outl 201D
+365 quotedblbase 1353 comp 201E
+366 dagger 1563 outl 2020
+367 daggerdbl 1611 outl 2021
+368 bullet 1151 outl 2022
+369 ellipsis 2333 comp 2026
+370 perthousand 4796 outl 2030
+371 guilsinglleft 1056 outl 2039
+372 guilsinglright 964 outl 203A
+373 fraction 1483 outl 2044
+374 Euro 1753 outl 20AC
+375 trademark 2491 outl 2122
+376 minus 1157 outl 2212
+377 uniFB00 2081 outl FB00
+378 uniFB01 1944 outl FB01
+379 uniFB02 2024 comp FB02
+380 uniFB03 3075 outl FB03
+381 uniFB04 3172 outl FB04
+382 NULL 0 empty 
+383 t_f 1926 outl 
+384 S.alt 1553 outl 
+385 one.old 1072 outl 
+386 two.old 1131 outl 
+387 three.old 1278 outl 
+388 four.old 1607 outl 
+389 five.old 1191 outl 
+390 six.old 1544 outl 
+391 seven.old 1295 outl 
+392 eight.old 1558 outl 
+393 nine.old 1544 outl 
+394 zero.old 1484 outl 
+395 f_i 1945 comp 
+396 t_t 2194 outl 
+397 f_l 2023 outl 
+398 d.sc 1721 outl 
+399 h.sc 1946 outl 
+400 c.sc 1384 outl 
+401 p.sc 1655 outl 
+402 g.sc 1509 outl 
+403 l.sc 1353 outl 
+404 f.sc 1455 outl 
+405 t.sc 1513 outl 
+406 u.sc 1653 outl 
+407 q.sc 1673 outl 
+408 r.sc 1795 outl 
+409 i.sc 989 outl 
+410 m.sc 1944 outl 
+411 a.sc 1549 outl 
+412 o.sc 1669 outl 
+413 b.sc 1674 outl 
+414 s.sc 1383 outl 
+415 z.sc 1433 outl 
+416 y.sc 1505 outl 
+417 j.sc 1425 outl 
+418 v.sc 1479 outl 
+419 w.sc 2352 outl 
+420 x.sc 1565 outl 
+421 k.sc 1823 outl 
+422 e.sc 1550 outl 
+423 n.sc 1589 outl 
+424 oe.sc 2322 outl 
+425 aogonek.sc 1549 comp 
+426 scaron.sc 1383 comp 
+427 zacute.sc 1433 comp 
+428 zcaron.sc 1433 comp 
+429 ccaron.sc 1384 comp 
+430 scommaaccent.sc 1383 comp 
+431 zdotaccent.sc 1433 comp 
+432 agrave.sc 1549 comp 
+433 aacute.sc 1549 comp 
+434 acircumflex.sc 1549 comp 
+435 abreve.sc 1549 comp 
+436 adieresis.sc 1549 comp 
+437 cacute.sc 1384 comp 
+438 ae.sc 2195 outl 
+439 ccedilla.sc 1387 comp 
+440 egrave.sc 1550 comp 
+441 eacute.sc 1550 comp 
+442 ecircumflex.sc 1550 comp 
+443 edieresis.sc 1550 comp 
+444 igrave.sc 988 comp 
+445 iacute.sc 988 comp 
+446 icircumflex.sc 989 comp 
+447 idieresis.sc 989 comp 
+448 dcroat.sc 1721 outl 
+449 nacute.sc 1590 comp 
+450 ograve.sc 1669 comp 
+451 oacute.sc 1669 comp 
+452 ocircumflex.sc 1669 comp 
+453 ohungarumlaut.sc 1669 comp 
+454 odieresis.sc 1669 comp 
+455 sacute.sc 1383 comp 
+456 uhungarumlaut.sc 1653 comp 
+457 ugrave.sc 1653 comp 
+458 uacute.sc 1653 comp 
+459 ucircumflex.sc 1653 comp 
+460 udieresis.sc 1653 comp 
+461 eogonek.sc 1550 comp 
+462 tcommaaccent.sc 1514 comp 
+463 ydieresis.sc 1504 comp 
+464 eth.sc 1721 outl 
+465 otilde.sc 1669 comp 
+466 thorn.sc 1512 outl 
+467 ntilde.sc 1590 comp 
+468 oslash.sc 1662 outl 
+469 f_f.sc 2811 comp 
+470 f_i.sc 2422 comp 
+471 t_t.sc 3048 comp 
+472 f_f_i.sc 3800 comp 
+473 f_l.sc 2762 comp 
+474 f_f_l.sc 4179 comp 
+475 yacute.sc 1504 comp 
+476 uni01F5.sc 1509 comp 
+477 ygrave.sc 1504 comp 
+478 ccircumflex.sc 1384 comp 
+479 ycircumflex.sc 1504 comp 
+480 gcircumflex.sc 1509 comp 
+481 uni1E91.sc 1433 comp 
+482 scircumflex.sc 1383 comp 
+483 cdotaccent.sc 1384 comp 
+484 edotaccent.sc 1550 comp 
+485 uni1E45.sc 1590 comp 
+486 uni1E8F.sc 1504 comp 
+487 gdotaccent.sc 1509 comp 
+488 sdotaccent.sc 1383 comp 
+489 dotlessi.sc 988 comp 
+490 aring.sc 1549 comp 
+491 uring.sc 1653 comp 
+492 atilde.sc 1549 comp 
+493 uni01EB.sc 1670 comp 
+494 uogonek.sc 1657 comp 
+495 gcaron.sc 1509 comp 
+496 ebreve.sc 1550 comp 
+497 obreve.sc 1669 comp 
+498 ubreve.sc 1653 comp 
+499 gbreve.sc 1509 comp 
+500 ibreve.sc 988 comp 
+501 lcaron.sc 1458 comp 
+502 tcaron.sc 1514 comp 
+503 racute.sc 1795 comp 
+504 lacute.sc 1352 comp 
+505 ecaron.sc 1550 comp 
+506 dcaron.sc 1721 comp 
+507 ncaron.sc 1590 comp 
+508 rcaron.sc 1795 comp 
+509 hbar.sc 1968 outl 
+510 hcircumflex.sc 1946 comp 
+511 scedilla.sc 1384 comp 
+512 jcircumflex.sc 1425 comp 
+513 rcommaaccent.sc 1795 comp 
+514 itilde.sc 988 comp 
+515 lcommaaccent.sc 1352 comp 
+516 emacron.sc 1550 comp 
+517 gcommaaccent.sc 1509 comp 
+518 tbar.sc 1516 outl 
+519 eng.sc 1597 outl 
+520 umacron.sc 1653 comp 
+521 utilde.sc 1653 comp 
+522 kcommaaccent.sc 1823 comp 
+523 omacron.sc 1669 comp 
+524 ncommaaccent.sc 1590 comp 
+525 imacron.sc 988 comp 
+526 iogonek.sc 986 comp 
+527 amacron.sc 1549 comp 
+528 uni1E03.sc 1674 comp 
+529 uni1E0B.sc 1721 comp 
+530 uni1E1F.sc 1454 comp 
+531 uni1E41.sc 1943 comp 
+532 wgrave.sc 2351 comp 
+533 wacute.sc 2351 comp 
+534 wdieresis.sc 2351 comp 
+535 wcircumflex.sc 2351 comp 
+536 uni1E6B.sc 1514 comp 
+537 commaaccent 701 outl 
+538 s_t_i 3348 outl 
+539 c_k 3146 outl 
+540 s_k 3150 outl 
+541 s_f 2328 outl 
+542 s_p 3013 outl 
+543 f_u 2881 outl 
+544 s_b 3042 outl 
+545 uni1E63.sc 1383 comp 
+546 lslash.sc 1408 outl 
+547 uni021B.sc 1514 comp 
+548 dcroat.1 0 empty 
+549 uni1E61.sc 1289 empty 
+550 uni1E62.sc 1570 empty 
+551 uni1E6A.sc 1740 empty 

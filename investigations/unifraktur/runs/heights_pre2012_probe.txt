@@ -1,0 +1,43 @@
+style                        FontForge build     x mst/pre/rel     cap mst/pre/rel   verdict
+CreepsterCaps-Regular        2011-02-22 13:48    751/751/751       751/751/751       master+pre2012
+HerrVonMuellerhoff-Regular   2011-02-22 13:48    269/269/269       761/644/644       pre2012
+Lekton-Bold                  2010-04-29 03:43    476/476/476       655/655/655       master+pre2012
+Lekton-Italic                2010-04-29 03:43    475/475/475       655/655/655       master+pre2012
+Lekton-Regular               2010-04-29 03:43    475/475/475       655/655/655       master+pre2012
+Miama-Regular                2011-02-22 13:48    498/265/265       894/894/894       pre2012
+Monoton-Regular              2011-02-22 13:48    1440/1440/1440    1656/1656/1656    master+pre2012
+NixieOne-Regular             2011-02-22 13:48    500/500/500       700/700/700       master+pre2012
+Nosifer-Regular              2011-02-22 13:48    1387/925/925      1388/854/854      pre2012
+NosiferCaps-Regular          2011-02-22 13:48    1387/925/925      1388/854/854      pre2012
+NovaCut                      2009-09-14 17:32    1140/1140/1140    1550/1550/1550    master+pre2012
+NovaFlat                     2009-09-14 17:32    1120/1120/1120    1530/1530/1530    master+pre2012
+NovaMono                     2009-09-14 17:32    1120/1120/1120    1509/1509/1509    master+pre2012
+NovaOval                     2009-09-14 17:32    1120/1120/1120    1550/1550/1550    master+pre2012
+NovaRound                    2009-09-14 17:32    1120/1120/1120    1530/1530/1530    master+pre2012
+NovaScript-Regular           2009-09-14 17:32    1120/1120/1120    1550/1550/1550    master+pre2012
+NovaSlim                     2009-09-14 17:32    1120/1120/1120    1530/1530/1530    master+pre2012
+NovaSquare                   2009-09-14 17:32    1100/1100/1100    1510/1510/1510    master+pre2012
+PatrickHand-Regular          2012-09-06 01:48    467/257/467       660/293/661       NEITHER
+Play-Bold                    -                   484/484/484       649/649/649       master+pre2012
+Play-Regular                 -                   484/484/484       649/649/649       master+pre2012
+Puritan-Bold                 2010-04-29 03:43    495/495/507       640/640/655       NEITHER
+Puritan-BoldItalic           2010-04-29 03:43    495/495/507       640/640/655       NEITHER
+Puritan-Italic               2010-04-29 03:43    495/495/507       640/640/655       NEITHER
+Puritan-Regular              2010-04-29 03:43    495/495/507       640/640/655       NEITHER
+RussoOne-Regular             2011-02-22 13:48    530/530/530       700/700/700       master+pre2012
+Smythe-Regular               2011-02-22 13:48    963/963/963       1317/1317/1317    master+pre2012
+Tuffy-Italic                 -                   1069/1069/500     1450/1450/700     NEITHER
+Tuffy-Regular                -                   1069/1069/500     1450/1450/700     NEITHER
+TulpenOne-Regular            2011-02-22 13:48    1018/1018/1018    1393/1393/1393    master+pre2012
+UnifrakturCook-Bold          2011-02-22 13:48    1087/319/319      1577/485/485      pre2012
+UnifrakturMaguntia-Book      2010-04-29 03:43    1095/1095/1095    1465/1409/1409    pre2012
+AbrilFatface-Regular         2011-02-22 13:48    476/476/476       700/700/700       master+pre2012
+Corben-Regular               -                   958/958/958       1404/1404/1404    master+pre2012
+Corben-Bold                  -                   1296/1296/1296    1593/1593/1593    master+pre2012
+AllertaStencil-Regular       2011-02-22 13:48    564/564/564       737/737/737       master+pre2012
+ComicRelief-Regular          -                   1105/1105/1105    1554/1554/1554    master+pre2012  (stated in .sfd)
+ComicRelief-Bold             -                   1105/1105/1105    1554/1554/1554    master+pre2012  (stated in .sfd)
+
+styles whose release carries the fields: 38
+  master   reproduces 25
+  pre2012  reproduces 31

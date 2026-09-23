@@ -1,0 +1,15 @@
+release vs A: 25008 runs, 12450 differ
+    ltr     0  
+    rtl     0  
+    ttb  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+    btt  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+release vs B: 25008 runs, 12450 differ
+    ltr     0  
+    rtl     0  
+    ttb  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+    btt  6225  cp-after-H=2964 cp-alone=2937 mark-after-base=108 mark-alone=108 mark-stack=108
+release vs C: 25008 runs, 10464 differ
+    ltr     0  
+    rtl     0  
+    ttb  5232  cp-after-H=2964 cp-alone=1944 mark-after-base=108 mark-alone=108 mark-stack=108
+    btt  5232  cp-after-H=2964 cp-alone=1944 mark-after-base=108 mark-alone=108 mark-stack=108

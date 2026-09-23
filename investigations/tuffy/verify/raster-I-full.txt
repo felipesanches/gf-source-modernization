@@ -1,0 +1,4 @@
+U+2024 onedotenleader           onedotenleader               adv   382   382  px    9105    9142  diff    123  ratio 0.0135
+U+10910 u10910                   u10910                       adv  1153  1153  px   90812   90959  diff    937  ratio 0.0103
+U+2026 ellipsis                 ellipsis                     adv  1767  1767  px   27328   27409  diff    281  ratio 0.0103
+1501 codepoint(s) compared, 3 differ (advance, or >= 0.010 of pixels at 1024 ppem)

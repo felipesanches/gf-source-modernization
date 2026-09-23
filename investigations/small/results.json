@@ -1,0 +1,171 @@
+{
+ "investigation": {
+  "unit": "small",
+  "styles": [
+   "ComicRelief-Regular",
+   "ComicRelief-Bold",
+   "RussoOne-Regular",
+   "Tuffy-Regular",
+   "Tuffy-Italic"
+  ],
+  "rows": [
+   {
+    "style": "ComicRelief-Regular",
+    "row": "post.underline_position [-97, -272]",
+    "classification": "converter-fidelity",
+    "cause": "The release was not exported by FontForge. It was built by the repo's own pipeline at 856315f (= tag v1.2): sfdLib 2.0.0.post0 sfd2ufo, then gftools builder 0.9.77 / ufo2ft 3.4.1. sfdLib converts the .sfd's UnderlinePosition (the centre) to the top with postscriptUnderlinePosition += thickness/2 (-185 + 87.5 = -97.5). ufo2ft then writes otRound(-97.5) = -97. babelfont's --fontforge-underline-position applies FontForge's pre-2019 rule trunc(pos - width/2) = -272. Without the flag, babelfont carries the raw -185. No existing flag produces -97.",
+    "evidence": "The .sfd states UnderlinePosition: -185 and UnderlineWidth: 175. The release has no FFTM and no DSIG; name5 is 'Version 1.200; ttfautohint (v1.8.4.7-5d5b)'; OS/2 v4 where the sfd says OS2Version 3; head.created = sfd CreationTime; head.modified 2025-02-12T23:16:33Z (runs/release_facts.txt). sfdLib parser.py:1557-1558 adds thickness/2. ufo2ft 3.4.1 outlineCompiler.py:956 has post.underlinePosition = otRound(postscriptUnderlinePosition). probes/sfdlib_underline.sh ran the real sfdLib 2.0.0.post0 and ufo2ft on the unmodified .sfd and got -97/175 = release (runs/sfdlib_underline.txt). Of 42 styles, only ComicRelief follows this rule; every FFTM release (FontForge 2009-2012) follows pre-2019 (runs/underline_rules.txt). Simulation: a copy with UnderlinePosition -97, converted without the underline flag, changes only underlinePosition in the .glyphs (runs/convert_diffs.txt). Gate 1 -> 0 (runs/comicrelief-regular-sim97); control without the flag gives [-97, -185] (runs/comicrelief-regular-noflag)."
+   },
+   {
+    "style": "ComicRelief-Bold",
+    "row": "post.underline_position [-97, -272]",
+    "classification": "converter-fidelity",
+    "cause": "Same as Regular: identical UnderlinePosition -185 / UnderlineWidth 175, identical toolchain (sfdLib sfd2ufo + ufo2ft otRound of pos + width/2 = -97).",
+    "evidence": "runs/sfdlib_underline.txt Bold: sfdLib -97.5, ufo2ft -97, release -97. Simulation runs/comicrelief-bold-sim97: this row closes, the only row left is us_weight_class, RELEASE-STALE is unchanged. Control runs/comicrelief-bold-noflag: [-97, -185]."
+   },
+   {
+    "style": "ComicRelief-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "converter-fidelity",
+    "cause": "Converter work in progress: fontc 1.0.0 ignores a single-master Glyphs instance's weightClass (issues/fontc-static-weight-class.md). The .sfd states TTFWeight: 700, and the converted .glyphs instance says weightClass = 700.",
+    "evidence": "The converted ComicRelief-Bold.glyphs instance 'Bold' has weightClass = 700. Release usWeightClass 700 = sfd TTFWeight 700 (runs/release_facts.txt). The row persists in runs/comicrelief-bold-sim97 and is unaffected by the underline change."
+   },
+   {
+    "style": "RussoOne-Regular",
+    "row": "OS/2.fs_type [0, 4]",
+    "classification": "source-edit-from-release",
+    "cause": "The .sfd states FSType: 4, and the binary FontForge exported from it carried 4. google/fonts 8ccda7bf7 (2015-08-05, Dave Crossland, 'Fix fsType for 40 font files') changed the shipped binary to 0 after export. The value 0 exists only in the release.",
+    "evidence": "sfd line 18 'FSType: 4'. The hg-era binary (52f780bc9d19) is byte-identical to google/fonts 90abd17b4 and carries fsType 4. 8ccda7bf7 and HEAD carry 0. That commit touched 40 .ttf: fsType before {4: 34, 256: 3, 1: 3}, after {0: 40} (runs/release_facts.txt). With setfield FSType 0, the .glyphs gets fsType = (), the build carries fsType 0, and the gate goes 2 -> 1 at f725e6a (runs/russoone-fstype0; only sx_height remains) and 2 -> 0 at ca43adc (runs/russoone-fstype0-ca43adc). Control, ca43adc on the unmodified source: 1 row, fs_type [0, 4] (runs/russoone-unmodified-ca43adc). The 7 RELEASE-STALE lines are unchanged."
+   },
+   {
+    "style": "RussoOne-Regular",
+    "row": "OS/2.sx_height [530, 500]",
+    "classification": "converter-fidelity",
+    "cause": "Converter work in progress: FontForge's exporter computes sxHeight (SFStandardHeight). The f725e6a converter lacks the port, and ca43adc has it.",
+    "evidence": "tools/ff_heights_oracle.py: RussoOne-Regular 530/530, 700/700 MATCH. With the FSType edit and BF=ca43adc (target-heights, BUILT_FROM ca43adc491fa), the gate has 0 blocking rows (runs/russoone-fstype0-ca43adc)."
+   },
+   {
+    "style": "Tuffy-Regular",
+    "row": "OS/2.fs_type [8, 0]",
+    "classification": "provenance",
+    "cause": "Report only; the tuffy unit owns the rest. The source states FSType: 0 in both Tuffy-Regular-TTF.sfd (the families.tsv source) and Tuffy-Regular.sfd. The shipped 8 first appears in the v1.272 rebuild, google/fonts ebcdfd2bb (2017-10-24, Micah Stupak, 'v 1.272 added. Fixes ots failure. (#1269)'). That binary has no FFTM, while the source says Version 001.271. The release was not built from this source state. Reproducing it would take setfield FSType 8 (source-edit-from-release), which adds a DRM bit the source does not state. This was not tested here.",
+    "evidence": "runs/release_facts.txt: the hg-era binary and google/fonts 90abd17b4 have fsType 0, FFTM, name5 'Version 001.271'. ebcdfd2bb and HEAD have fsType 8, no FFTM, name5 'Version 1.272; ttfautohint (v1.6)'. The baseline gate row is [8, 0]."
+   },
+   {
+    "style": "Tuffy-Italic",
+    "row": "OS/2.fs_type [8, 0]",
+    "classification": "provenance",
+    "cause": "Same as Tuffy-Regular (report only). The source (-TTF.sfd and plain .sfd) states FSType: 0. The release's 8 was introduced by the v1.272 rebuild in google/fonts ebcdfd2bb (2017-10-24), which was not exported by FontForge.",
+    "evidence": "runs/release_facts.txt, Italic: hg binary and 90abd17b4 have fsType 0 and FFTM. ebcdfd2bb and HEAD have fsType 8, no FFTM, 'Version 1.272; ttfautohint (v1.6)'."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "RussoOne-Regular"
+    ],
+    "op": "setfield",
+    "args": "FSType 0",
+    "commit_subject": "FSType 0",
+    "commit_body": "Installable embedding. The value exists only in the release: google/fonts\n8ccda7bf7 (2015-08-05, \"Fix fsType for 40 font files\") changed the shipped\nbinary from 4 to 0. This source, and the binary FontForge exported from it,\nstate 4 (preview & print). The OFL shipped with the font already permits\nembedding.",
+    "value_derived_from": "The release only. google/fonts 8ccda7bf7 changed the shipped RussoOne-Regular.ttf from fsType 4 to 0 after export (40 fonts in that commit: 34 at 4, all ended at 0). Neither the source nor the FontForge-exported hg-era binary states 0.",
+    "source_currently_states": "FSType: 4 (line 18 of googlefontdirectory-hg 52f780bc9d19 ofl/russoone/src/RussoOne-Regular-TTF.sfd)",
+    "verified": true
+   }
+  ],
+  "proposed_converter_changes": [
+   {
+    "description": "New opt-in babelfont filter, suggested name --underline-position-centre-to-top (the name is Felipe's call). For each master it sets UnderlinePosition := otRound(position + thickness/2), in i32 as (2*position + thickness + 1).div_euclid(2), with missing thickness = 0. It must be mutually exclusive with --fontforge-underline-position, which is the pre-2019 rule trunc(position - thickness/2). The rule is sfdLib sfd2ufo + ufo2ft; FontForge >= 20190317 (tottf.c:4089 putshort(upos+uwidth/2), which truncates) gives the same value whenever position + thickness/2 <= 0. WARNING: the naive integer form position + thickness/2 gives -98 for Comic Relief (175/2 = 87), not -97. Suggested tests: -185/175 -> -97; -50/50 -> -25; applying twice is not the same as once. Help text should state only the format rule (centre -> top, + half thickness, rounded half up).",
+    "evidence": "ComicRelief .sfd: UnderlinePosition -185, UnderlineWidth 175; the release has -97. The release toolchain was sfdLib 2.0.0.post0 (parser.py:1557-1558: postscriptUnderlinePosition += thickness/2) and ufo2ft 3.4.1 (outlineCompiler.py:956 otRound). Executed end to end, it reproduces -97 for both styles (probes/sfdlib_underline.sh -> runs/sfdlib_underline.txt). Simulated through the real pipeline, the gate goes Regular 1 -> 0 and Bold 2 -> 1, with no new rows (runs/comicrelief-*-sim97). The .glyphs differ from the unmodified conversion only in underlinePosition (runs/convert_diffs.txt). Only these 2 of 42 styles need it (runs/underline_rules.txt).",
+    "styles_affected": [
+     "ComicRelief-Regular",
+     "ComicRelief-Bold"
+    ]
+   }
+  ],
+  "proposed_flag_changes": [
+   {
+    "style": "ComicRelief-Regular",
+    "add": [
+     "--underline-position-centre-to-top"
+    ],
+    "drop": [
+     "--fontforge-underline-position"
+    ],
+    "reason": "The release was built by sfdLib sfd2ufo + ufo2ft, not FontForge (no FFTM; the repo pins sfdLib==2.0.0.post0). Its underline is otRound(pos + width/2) = -97, not FontForge-2017's trunc(pos - width/2) = -272. --fontforge-os2-defaults and --snap-component-transforms can stay: the .glyphs are byte-identical with or without them under f725e6a and ca43adc (runs/convert_diffs*.txt). Needs a per-family override in tools/recipe.py flags_for() and baseline.sh."
+   },
+   {
+    "style": "ComicRelief-Bold",
+    "add": [
+     "--underline-position-centre-to-top"
+    ],
+    "drop": [
+     "--fontforge-underline-position"
+    ],
+    "reason": "Same as Regular (identical UnderlinePosition/UnderlineWidth and toolchain). After the change, the only remaining row is OS/2.us_weight_class, which is the fontc static weightClass gap already being fixed."
+   }
+  ],
+  "verification": {
+   "commands": [
+    "sh /home/fsanches/compartilhado/sfd-reland/investigations/small/probes/rerun.sh   # everything below, in order, one build at a time",
+    "sh probes/make_edits.sh   # regenerates edits/*.sfd from the archive via tools/sfd_edit.py",
+    "cd /home/fsanches/compartilhado/sfd-reland && TAG=small OUT=investigations/small/runs/russoone-fstype0 SRC_OVERRIDE=investigations/small/edits/RussoOne-Regular-TTF.fstype0.sfd bash tools/baseline.sh RussoOne-Regular",
+    "BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont TAG=small OUT=investigations/small/runs/russoone-fstype0-ca43adc SRC_OVERRIDE=investigations/small/edits/RussoOne-Regular-TTF.fstype0.sfd bash tools/baseline.sh RussoOne-Regular",
+    "BF=<ca43adc> TAG=small OUT=investigations/small/runs/russoone-unmodified-ca43adc bash tools/baseline.sh RussoOne-Regular",
+    "DROP_FLAGS=--fontforge-underline-position TAG=small OUT=investigations/small/runs/comicrelief-{regular,bold}-noflag bash tools/baseline.sh ComicRelief-{Regular,Bold}",
+    "DROP_FLAGS=--fontforge-underline-position TAG=small OUT=investigations/small/runs/comicrelief-{regular,bold}-sim97 SRC_OVERRIDE=investigations/small/edits/ComicRelief-{Regular,Bold}.upos-sim-97.sfd bash tools/baseline.sh ComicRelief-{Regular,Bold}",
+    "sh probes/sfdlib_underline.sh; python3 probes/underline_rules.py; python3 probes/release_facts.py; sh probes/convert_diffs.sh [babelfont]"
+   ],
+   "rows_before": "Baseline (f725e6a): ComicRelief-Regular 1 (post.underline_position [-97,-272]); ComicRelief-Bold 2 (OS/2.us_weight_class [700,400], post.underline_position [-97,-272]); RussoOne-Regular 2 (OS/2.fs_type [0,4], OS/2.sx_height [530,500]); Tuffy-Regular/Italic fs_type [8,0] (reported only, not rerun).",
+   "rows_after": "RussoOne-Regular with FSType 0: 1 at f725e6a (sx_height only), 0 at ca43adc (CLEAN). ComicRelief-Regular with the simulated rule output (-97): 0 (CLEAN). ComicRelief-Bold with the simulated rule: 1 (us_weight_class only, fontc in progress). No new BLOCKING rows; RELEASE-STALE lists are unchanged against baseline/*.gate.txt. Every run printed its closing 'N blocking table difference(s)' line.",
+   "summary": "Every run printed its gate summary line and the full rerun.sh reproduced all 7 runs. The RussoOne edit is verified with the real source edit. The ComicRelief converter rule is verified only by simulation: babelfont could not be built in this unit. So a copy stating the rule's output (-97) was converted with the stock converter, and convert_diffs.sh proved that .glyphs differs from the unmodified conversion only in underlinePosition. Once the filter lands, rerun without SRC_OVERRIDE to confirm it for real. FINDINGS.md could not be written: the subagent harness refuses report files. Its content is in this result and all evidence files exist under investigations/small/{probes,runs,edits}."
+  },
+  "unresolved": [
+   "The ComicRelief converter filter is specified but not implemented or built (babelfont builds were out of scope). Verification is by exact simulation. After the filter lands, rerun baseline.sh for ComicRelief-{Regular,Bold} with the new flag and without SRC_OVERRIDE.",
+   "Filter name and CLI shape are suggestions: a new flag vs a value on --fontforge-underline-position. tools/recipe.py and baseline.sh need a per-family override for comicrelief; today both apply --fontforge-underline-position to every style.",
+   "Tuffy-Regular/Italic fs_type: the source states 0 and the v1.272 release (ebcdfd2bb, 2017) states 8. Whether to reproduce 8 (setfield FSType 8, adding a DRM bit the source does not state) is for the tuffy unit / Felipe. Not tested here.",
+   "The release's ufo2ft was 3.4.1. The probe executed ufo2ft 3.7.0 from the gftools venv. The underline code is the same in 3.4.1, but that was read from its PyPI wheel, not executed.",
+   "FINDINGS.md not written: the harness blocked report files. The orchestrator should write it from this result."
+  ],
+  "confidence": "high: RussoOne fsType (verified edit, clear history) and the Comic Relief underline root cause (the release's own toolchain was executed and reproduces -97 exactly). medium-high: the converter filter's gate outcome, which is verified by exact simulation, not by the implemented filter.",
+  "findings_path": "/home/fsanches/compartilhado/sfd-reland/investigations/small/FINDINGS.md (NOT WRITTEN: the subagent harness refused report files. The content is in this result. Evidence: investigations/small/probes/*.{sh,py}, runs/*.txt, runs/<name>/*.gate.txt, edits/*.sfd)"
+ },
+ "verification": {
+  "unit": "small",
+  "reproduced": true,
+  "reproduction_notes": "I made every edited copy fresh from the read-only archive with tools/sfd_edit.py and ran them one at a time through baseline.sh (TAG=small-verify). My FSType 0 copy is byte-identical to theirs.\n\nResults:\n- RussoOne-Regular with FSType 0: 1 row (OS/2.sx_height [530, 500]) at f725e6a; 0 rows (CLEAN) at ca43adc.\n- ComicRelief-Regular without --fontforge-underline-position: 1 row [-97, -185]. With the -97 simulation: 0 rows at both f725e6a and ca43adc.\n- ComicRelief-Bold without the flag: 2 rows. With the simulation: 1 row (us_weight_class [700, 400]) at both converters.\n\nThe BLOCKING and RELEASE-STALE lines match their run files exactly. The RELEASE-STALE sets match baseline/*.gate.txt. Every run printed its closing \"N blocking table difference(s)\" line.\n\nConversion checks (verify/runs/conv_checks.txt), at both f725e6a and ca43adc:\n- The simulation copy differs from the unmodified conversion only in underlinePosition (-185 -> -97).\n- --fontforge-os2-defaults and --snap-component-transforms are byte-identical no-ops for ComicRelief.\n\nSomeone else re-ran their probes/rerun.sh at 22:31-22:32 BST, while this verification was running. I did not run it. Their files still match mine.\n\nEverything is in /home/fsanches/compartilhado/sfd-reland/investigations/small/verify/: rerun.sh, probes/, runs/gate_summary.txt and runs/*.txt. The report is /home/fsanches/compartilhado/sfd-reland/investigations/small/VERIFY.md.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "FSType 0",
+    "verdict": "keep",
+    "reason": "The .sfd states FSType: 4 (line 18). The edit overwrites that stated value openly, and the body says so. It is minimal: one line. value_derived_from is honest. The hg FontForge export (FFTM, sha1 a1a8bff384a0) carries 4 and is byte-identical to google/fonts 90abd17b4. In 8ccda7bf7 the only OS/2 field that changed is fsType (raw head/OS/2/cmap tables differ; the cmap mapping is unchanged), and HEAD equals 8ccda7bf7. No fidelity explanation is possible, and the landed config.yaml runs no gftools fix step. Verified: 2 -> 1 rows at f725e6a (sx_height, converter in progress) and 2 -> 0 at ca43adc; no new rows. The body's OFL claim is true (OFL.txt lines 21 and 49)."
+   },
+   {
+    "commit_subject": "[converter] new ComicRelief underline rule (their --underline-position-centre-to-top)",
+    "verdict": "revise",
+    "reason": "The classification is right, and there is stronger evidence than they gave. The .sfd header is SplineFontDB: 3.2, which FontForge writes from 20200314 on. That FontForge's own exporter (tottf.c at 20190317, 20200314 and 20230101) writes putshort(upos+uwidth/2) with real operands, which gives -97. So the rule is FontForge fidelity, not only a copy of sfdLib. Their otRound spec with a missing width read as 0 matches neither model at the edges. sfdLib shifts only when both values are non-zero (0/50 stays 0). FontForge truncates toward zero, so it differs from otRound when pos+width/2 is positive with odd width. Specify it as FontForge's >=20190317 rule: trunc(pos + width/2), in i32 (2*pos+width)/2 with Rust's truncating division. Make it a vintage of --fontforge-underline-position (2017 = minus, 2019 = plus). Every candidate rule gives -97 for both styles, so the gate result does not change."
+   },
+   {
+    "commit_subject": "[recipe] ComicRelief-Regular/Bold: drop --fontforge-underline-position, add the new rule",
+    "verdict": "keep",
+    "reason": "Verified by simulation at f725e6a and ca43adc: Regular 1 -> 0 rows, Bold 2 -> 1 (only the fontc us_weight_class gap remains), no new rows. This depends on the spec revision above and needs per-family overrides in tools/recipe.py and baseline.sh."
+   }
+  ],
+  "classification_objections": [
+   "No row is misclassified. All 7 rows keep their classes: ComicRelief underline (x2) and Bold us_weight_class are converter-fidelity; RussoOne fs_type is source-edit-from-release; RussoOne sx_height is converter-fidelity (in progress); Tuffy-Regular and Tuffy-Italic fs_type are provenance.",
+   "ComicRelief underline_position: the class is right, but the justification should rest mainly on the source's own FontForge vintage. The file is SFD 3.2, written by FontForge >=20200314, whose exporter gives upos+uwidth/2 = -97. The sfdLib toolchain is secondary evidence. The row is not provenance: the release was built from exactly this source state (METADATA commit 856315f = tag v1.2; head.created 1358538608 = CreationTime).",
+   "Tuffy fs_type provenance: I agree, and there is more evidence. The v1.272 OS/2 script and strikeout metrics are em-fraction defaults (0.65/0.6/0.075/0.35 x 2048, truncated; strike 50/300). The FontForge export of this .sfd carried the .sfd's garbage values verbatim (sub 0/2/0, strike 12312/-16224). fsType 8 is the Glyphs.app default that glyphsLib and fontc apply when a source states none. That points to a tool default, not an authored value (an inference). setfield FSType 8 would discard the stated 0 and would fail googlefonts/fstype."
+  ],
+  "missed": [
+   "They missed that the ComicRelief .sfd is SplineFontDB 3.2 (FontForge >=20200314) and that its own exporter vintage writes upos+uwidth/2 = -97. This keeps the fix inside FontForge fidelity, and it changes how the converter flag should be specified.",
+   "Their filter spec (otRound, missing width = 0) matches neither sfdLib (which shifts only when both values are non-zero) nor FontForge >=20190317 (which truncates toward zero) at the edges. Their claim that the rules agree whenever pos+width/2 <= 0 holds only for integer inputs.",
+   "Their underline_rules claim that every FFTM release follows the pre-2019 rule is wrong. The 4 Puritan styles (FFTM 2010-04-29) match no rule from the unmodified source (release -146). Only the puritan scaleem edit reconciles them.",
+   "baseline/{ComicRelief-*,RussoOne-Regular}.gate.txt came from an older baseline.sh flag order (--fontforge-os2-defaults last) and gate f5cb410. Under the current harness and gate cd4f827 the rows are the same.",
+   "Scope: comicrelief is not among the googlefonts repos in Felipe's list. git ls-remote of googlefonts/comicrelief asks for credentials, so it is not public. Upstream loudifier/Comic-Relief main is at V1.210 (526aa02, 2025-05-07) and now converts its .sfd with FontForge itself. Whether to re-land it at all is Felipe's call.",
+   "Their run files were rewritten concurrently (22:31-22:32 BST) by someone re-running probes/rerun.sh during this verification. That breaks the one-build-at-a-time rule; the contents are unchanged.",
+   "FINDINGS.md still does not exist; the orchestrator needs to write it.",
+   "No rows are opened by the edit or the simulation, and every style in the brief is covered."
+  ],
+  "overall": "The findings hold and reproduce exactly.\n\n- **RussoOne:** keep the \"FSType 0\" edit. It is verified at 2 -> 1 rows (f725e6a) and 0 rows (ca43adc). Its source-edit-from-release classification and the commit body are accurate.\n- **ComicRelief:** the underline rows are converter-fidelity, as they said. The stronger reason, which they missed, is that the .sfd was saved by FontForge >=20200314, whose own exporter gives -97. The release's sfdLib+ufo2ft toolchain gives -97 too. The converter spec should be revised to FontForge's >=20190317 rule, trunc(pos + width/2), as a vintage of --fontforge-underline-position rather than an sfdLib-modelled otRound filter. The gate outcome is the same either way.\n- **Tuffy:** the fs_type provenance classification is sound, and the release's OS/2 tool-default metrics give it more evidence.\n- **Pairing:** correct for all 5 styles.\n\nOnly minor inaccuracies remain: the Puritan claim, and a scope question over whether comicrelief should be re-landed at all.\n\nReport: /home/fsanches/compartilhado/sfd-reland/investigations/small/VERIFY.md. Rerun: sh /home/fsanches/compartilhado/sfd-reland/investigations/small/verify/rerun.sh"
+ }
+}

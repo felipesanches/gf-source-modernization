@@ -1,0 +1,28 @@
+== the two releases
+nosifer/Nosifer-Regular.ttf                  layout=kern                     maxctx=1 head.created=Mon Dec 19 18:44:21 2011
+                                             FFTM: FontForge build Tue Feb 22 13:48:33 2011 | source created Mon Oct 17 15:03:00 2011 | source modified Mon Oct 24 13:20:44 2011
+nosifercaps/NosiferCaps-Regular.ttf          layout=GSUB,GPOS,GDEF,DSIG      maxctx=2 head.created=Mon Oct 24 13:21:16 2011
+                                             FFTM: FontForge build Tue Feb 22 13:48:33 2011 | source created Mon Oct 17 15:03:00 2011 | source modified Mon Oct 24 13:20:44 2011
+== the sources families.tsv names
+ofl/nosifer/src/Nosifer-Regular-TTF.sfd                      CreationTime 2011-10-17 15:03:00 UTC  ModificationTime 2011-10-24 13:20:44 UTC  Lookups: ["'liga' Standard Ligatures in Latin lookup 0", "'kern' Horizontal Kerning in Latin lookup 0"]
+ofl/nosifercaps/src/NosiferCaps-Regular-TTF.sfd              CreationTime 2011-10-17 15:03:00 UTC  ModificationTime 2011-10-24 13:20:44 UTC  Lookups: ["'liga' Standard Ligatures in Latin lookup 0", "'kern' Horizontal Kerning in Latin lookup 0"]
+== the fonts committed with Nosifer on 2011-12-19 (same export session?)
+butcherman/Butcherman-Regular.ttf            layout=-                        maxctx=1 head.created=Mon Dec 19 18:44:21 2011
+                                             FFTM: FontForge build Tue Feb 22 13:48:33 2011 | source created Thu Oct 20 09:38:00 2011 | source modified Mon Oct 24 12:20:56 2011
+creepster/Creepster-Regular.ttf              layout=kern                     maxctx=1 head.created=Mon Dec 19 18:44:21 2011
+                                             FFTM: FontForge build Tue Feb 22 13:48:33 2011 | source created Thu Oct 20 19:00:00 2011 | source modified Mon Oct 24 14:01:11 2011
+eater/Eater-Regular.ttf                      layout=-                        maxctx=1 head.created=Mon Dec 19 18:44:21 2011
+                                             FFTM: FontForge build Tue Feb 22 13:48:33 2011 | source created Tue Oct 18 15:17:18 2011 | source modified Mon Oct 24 13:47:34 2011
+ofl/butcherman/src/Butcherman-Regular-TTF.sfd                CreationTime 2011-10-20 09:38:00 UTC  ModificationTime 2011-10-24 12:20:56 UTC  Lookups: ["'liga' Standard Ligatures in Latin lookup 0"]
+== monorepo commits
+e7f3bb9f0 2011-12-19 10:53:58 -0800 Dave Crossland | Adding Nosifer
+08431f56e 2011-12-19 10:53:54 -0800 Dave Crossland | Adding Eater
+1cd8b48e0 2011-12-19 10:53:44 -0800 Dave Crossland | Adding Creepster
+2b9433483 2011-12-19 10:53:39 -0800 Dave Crossland | Adding Butcherman
+798399c64 2011-12-19 10:51:07 -0800 Dave Crossland | Setting nosifercaps visibility internal
+48fb2ea2e 2011-12-15 15:18:18 -0800 Raph Levien | Visibility and md5 updates, cleaning up in preparation for commit of IE6-8 name table fixes.
+a93a9b43f 2011-10-31 09:06:33 -0700 Dave Crossland | Removing sandbox flag from fonts pushed last week
+c840150c0 2011-10-24 07:02:15 -0700 Dave Crossland | Removing Creepster
+73c445f2f 2011-10-24 06:58:18 -0700 Dave Crossland | Adding Nosifer Caps
+93a7dab87 2011-10-23 22:29:08 -0700 Dave Crossland | Adding Creepster
+

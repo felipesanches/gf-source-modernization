@@ -1,0 +1,6 @@
+Regular: only underlinePosition differs (< value = -185; > value = -97; )
+Regular: --fontforge-os2-defaults no-op
+Regular: --snap-component-transforms no-op
+Bold: only underlinePosition differs (< value = -185; > value = -97; )
+Bold: --fontforge-os2-defaults no-op
+Bold: --snap-component-transforms no-op

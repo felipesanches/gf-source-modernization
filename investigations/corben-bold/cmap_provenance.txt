@@ -1,0 +1,9 @@
+src/Corben-Bold.sfd        glyphs 551  cmap 380  duplicate names ['dcroat']
+   release cmap - source cmap: []
+   source cmap - release cmap: []
+   codepoints mapped to a different glyph name: []
+   release glyphs not in source: ['.null', 'dcroat.1']
+   source glyphs not in release: []
+src/Corben-Bold-TTF.sfd    glyphs   0  cmap   0  duplicate names none
+src/Corben-Bold.otf.ttx    glyphs 264  cmap 316  (release cmap - otf cmap: 129 codepoints)
+release                    glyphs 552  cmap 380

@@ -30,7 +30,8 @@ W = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # FontForge's x-height/cap-height mean changed in 4d34d21ef866; FFTM records
 # stamp.c's source_modtime, which for that build is 1337023489 (2012-05-14T19:24:49Z).
-# The old divisor exists from 5fba6c9 (2009-05-27), before every stamp in this batch.
+# The old divisor entered in 37d20840 (2009-05-27), before every stamp in this batch.
+# (5fba6c9 is the same change in a history with no common ancestor with 4d34d21ef866.)
 FONTFORGE_HEIGHT_MEAN_FIXED = 1337023489
 UNIX_FROM_1904 = 2082844800
 
