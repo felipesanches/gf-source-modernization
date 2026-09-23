@@ -16,6 +16,16 @@ in the shape the repositories this programme already published use (verified on
 Font Repository template, one commit per documented `.sfd` edit, and
 `Convert to .glyphs with babelfont <rev>` last.
 
+## The equivalence commit (Felipe, 2026-09-24)
+
+Modernization adds no features. The commit METADATA.pb records is the one whose build is
+FUNCTIONALLY equivalent to the binaries Google Fonts ships (same cmap, shaping, metrics,
+rendering; not byte-identical). Where the release differs from the source -- a dropped
+ligature, a clipped ascent, an empty GPOS -- a documented commit before the conversion
+reproduces it. Any improvement is a later commit, left as future work for an onboarder's
+font-update PR. `tools/metadata.py` records the conversion commit (not HEAD), states this
+in `upstream_info.md`, and lists later commits plus each plan's `future_work`.
+
 ## What changed the picture
 
 Converting each style's UNMODIFIED source with **fidelity flags only** -- flags that
