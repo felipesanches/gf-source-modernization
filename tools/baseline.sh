@@ -93,9 +93,13 @@ for n in f.getGlyphOrder():
 print("yes" if cw == 0 or ccw == 0 else "no")
 EOF
 )
-  flags=(--add-instance-per-master --infer-mark-category --set-subcategory
-         --keep-source-glyph-names --keep-source-advances --snap-component-transforms
-         --fontforge-underline-position --fontforge-os2-defaults)
+  # Filters run in command-line order. --fontforge-os2-defaults measures the
+  # outlines (x-height, cap height), so it runs FIRST, on the outlines exactly as
+  # the source states them -- before --snap-component-transforms or any path
+  # direction filter changes what FontForge would have measured.
+  flags=(--fontforge-os2-defaults --add-instance-per-master --infer-mark-category
+         --set-subcategory --keep-source-glyph-names --keep-source-advances
+         --snap-component-transforms --fontforge-underline-position)
   if [ "$uni" = yes ]; then flags+=(--correct-path-direction); else flags+=(--reverse-path-direction); fi
   [ "$dup" = yes ] && flags+=(--add-legacy-duplicate-cmap)
   if [ -f "$sfd" ] && grep -qE 'abvm|blwm' "$sfd"; then flags+=(--correct-conjunct-category); fi

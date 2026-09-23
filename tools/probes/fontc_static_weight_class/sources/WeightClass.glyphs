@@ -1,0 +1,43 @@
+{
+.appVersion = "3260";
+.formatVersion = 3;
+familyName = "Weight Class Probe";
+fontMaster = (
+{
+id = m01;
+name = Bold;
+}
+);
+glyphs = (
+{
+glyphname = A;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(100,0,l),
+(500,0,l),
+(500,700,l),
+(100,700,l)
+);
+}
+);
+width = 600;
+}
+);
+unicode = 65;
+}
+);
+instances = (
+{
+name = Bold;
+weightClass = 700;
+}
+);
+unitsPerEm = 1000;
+versionMajor = 1;
+versionMinor = 0;
+}

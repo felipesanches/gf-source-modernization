@@ -171,50 +171,167 @@ def seg_list(contours, xf=None):
                 prev = p
 
 
-def curve_extrema_y(p0, c1, c2, p3, order2):
-    ys = []
-    if order2:
-        # the single quadratic control point is written twice
-        y0, q, y2 = p0[1], c1[1], p3[1]
-        den = y0 - 2 * q + y2
-        if den != 0:
-            t = (y0 - q) / den
-            if 0 < t < 1:
-                ys.append((1 - t) ** 2 * y0 + 2 * (1 - t) * t * q + t * t * y2)
-        return ys
-    y0, y1, y2, y3 = p0[1], c1[1], c2[1], p3[1]
-    a = -y0 + 3 * y1 - 3 * y2 + y3
-    b = 3 * y0 - 6 * y1 + 3 * y2
-    c = -3 * y0 + 3 * y1
-    # dy/dt = 3a t^2 + 2b t + c
-    A, B, C = 3 * a, 2 * b, c
-    roots = []
-    if abs(A) < 1e-12:
-        if abs(B) > 1e-12:
-            roots.append(-C / B)
-    else:
-        disc = B * B - 4 * A * C
+# --- FontForge's numeric helpers (fontforge/splineutil2.c, double configuration) ---
+RE_NEARZERO = 1e-8
+RE_FACTOR = 1024.0 * 1024.0 * 1024.0 * 1024.0 * 1024.0 * 2.0
+
+
+def real_near(a, b):
+    if a == 0:
+        return -1e-8 < b < 1e-8
+    if b == 0:
+        return -1e-8 < a < 1e-8
+    d = a - b
+    return -1e-6 < d < 1e-6
+
+
+def real_approx(a, b):
+    if a == 0:
+        return -.0001 < b < .0001
+    if b == 0:
+        return -.0001 < a < .0001
+    r = a / b
+    return .95 <= r <= 1.05
+
+
+def within16(v1, v2):
+    temp = v1 * v2
+    if temp < 0:
+        return False
+    if temp == 0:
+        v = v2 if v1 == 0 else v1
+        return -RE_NEARZERO < v < RE_NEARZERO
+    if v1 > 0:
+        if v1 > v2:
+            return v1 - v2 < v1 / (RE_FACTOR / 16)
+        return v2 - v1 < v2 / (RE_FACTOR / 16)
+    if v1 < v2:
+        return v1 - v2 > v1 / (RE_FACTOR / 16)
+    return v2 - v1 > v2 / (RE_FACTOR / 16)
+
+
+def find_extrema(a, b, c):
+    """SplineFindExtrema (splineutil.c): t values strictly inside (0,1), else -1."""
+    t1 = t2 = -1.0
+    if a != 0:
+        disc = 4 * b * b - 12 * a * c
         if disc >= 0:
             r = math.sqrt(disc)
-            roots += [(-B + r) / (2 * A), (-B - r) / (2 * A)]
-    for t in roots:
-        if 0 < t < 1:
-            ys.append(((a * t + b) * t + c) * t + y0)
-    return ys
+            t1 = (-2 * b - r) / (6 * a)
+            t2 = (-2 * b + r) / (6 * a)
+            if t1 > t2:
+                t1, t2 = t2, t1
+            elif t1 == t2:
+                t2 = -1.0
+            if real_near(t1, 0): t1 = 0.0
+            elif real_near(t1, 1): t1 = 1.0
+            if real_near(t2, 0): t2 = 0.0
+            elif real_near(t2, 1): t2 = 1.0
+            if t2 <= 0 or t2 >= 1: t2 = -1.0
+            if t1 <= 0 or t1 >= 1: t1, t2 = t2, -1.0
+    elif b != 0:
+        t1 = -c / (2.0 * b)
+        if t1 <= 0 or t1 >= 1: t1 = -1.0
+    return t1, t2
+
+
+class Spline:
+    """One FontForge Spline: SplineRefigure3 (cubic) / SplineRefigure2 (quadratic),
+    then SplineIsLinear, exactly as splinerefigure.c and splineorder2.c do it."""
+
+    def __init__(self, p0, c1, c2, p3, order2):
+        self.p0, self.c1, self.c2, self.p3 = p0, c1, c2, p3
+        if order2:
+            nonext = (c1 == p0) or (c2 == p3)
+        else:
+            nonext = (c1 == p0) and (c2 == p3)
+        self.linear = False
+        if nonext:
+            self.linear = True
+            self.xs = [0.0, 0.0, p3[0] - p0[0], p0[0]]
+            self.ys = [0.0, 0.0, p3[1] - p0[1], p0[1]]
+        else:
+            co = []
+            for k in (0, 1):
+                if order2:
+                    c = 2 * (c1[k] - p0[k]); b = p3[k] - p0[k] - c; a = 0.0
+                else:
+                    c = 3 * (c1[k] - p0[k]); b = 3 * (c2[k] - c1[k]) - c; a = p3[k] - p0[k] - c - b
+                if real_near(c, 0): c = 0.0
+                if real_near(b, 0): b = 0.0
+                if real_near(a, 0): a = 0.0
+                if a != 0 and (within16(a + p0[k], p0[k]) or within16(a + p3[k], p3[k])):
+                    a = 0.0
+                co.append([a, b, c, p0[k]])
+            self.xs, self.ys = co
+            if self.xs[0] == 0 and self.ys[0] == 0 and self.xs[1] == 0 and self.ys[1] == 0:
+                self.linear = True
+        self.linear = self._is_linear()
+
+    def _minmax_within(self):
+        dx = abs(self.p3[0] - self.p0[0]); dy = abs(self.p3[1] - self.p0[1])
+        w_ = 1 if dx < dy else 0
+        a, b, c, d = self.ys if w_ else self.xs
+        t1, t2 = find_extrema(a, b, c)
+        if t1 == -1:
+            return True
+        for t in (t1, t2):
+            if t == -1:
+                continue
+            w = ((a * t + b) * t + c) * t + d
+            e0, e3 = self.p0[w_], self.p3[w_]
+            if real_near(w, e3) or real_near(w, e0):
+                continue
+            if (w < e3 and w < e0) or (w > e3 and w > e0):
+                return False
+        return True
+
+    def _is_linear(self):
+        if self.linear:
+            return True
+        if self.xs[0] == 0 and self.xs[1] == 0 and self.ys[0] == 0 and self.ys[1] == 0:
+            return True
+        p0, c1, c2, p3 = self.p0, self.c1, self.c2, self.p3
+        if real_near(p0[0], p3[0]):
+            ret = real_near(p0[0], c1[0]) and real_near(p0[0], c2[0])
+            if ret and not ((c1[1] >= p0[1] and c1[1] <= p3[1] and c2[1] >= p0[1] and c2[1] <= p3[1]) or
+                            (c1[1] <= p0[1] and c1[1] >= p3[1] and c2[1] <= p0[1] and c2[1] >= p3[1])):
+                ret = self._minmax_within()
+        elif real_near(p0[1], p3[1]):
+            ret = real_near(p0[1], c1[1]) and real_near(p0[1], c2[1])
+            if ret and not ((c1[0] >= p0[0] and c1[0] <= p3[0] and c2[0] >= p0[0] and c2[0] <= p3[0]) or
+                            (c1[0] <= p0[0] and c1[0] >= p3[0] and c2[0] <= p0[0] and c2[0] >= p3[0])):
+                ret = self._minmax_within()
+        else:
+            t1 = (c1[1] - p0[1]) / (p3[1] - p0[1]); t2 = (c1[0] - p0[0]) / (p3[0] - p0[0])
+            t3 = (p3[1] - c2[1]) / (p3[1] - p0[1]); t4 = (p3[0] - c2[0]) / (p3[0] - p0[0])
+            ret = ((within16(t1, t2) or (real_approx(t1, 0) and real_approx(t2, 0))) and
+                   (within16(t3, t4) or (real_approx(t3, 0) and real_approx(t4, 0))))
+            if ret and any(v < 0 or v > 1 for v in (t1, t2, t3, t4)):
+                ret = self._minmax_within()
+        if ret:
+            self.xs = [0.0, 0.0, p3[0] - p0[0], p0[0]]
+            self.ys = [0.0, 0.0, p3[1] - p0[1], p0[1]]
+        return ret
 
 
 def spl_max(contours, order2, xf=None):
     """SPLMaxHeight: the top of a set of contours and how it is shaped."""
     f, mx = UNKNOWN, -1e23
-    for p0, c1, c2, p3, linear in seg_list(contours, xf):
+    for p0, c1, c2, p3, _ in seg_list(contours, xf):
+        s = Spline(p0, c1, c2, p3, order2)
         if not (p0[1] >= mx or p3[1] >= mx or c1[1] > mx or c2[1] > mx):
             continue
-        if not linear:
+        if not s.linear:
             if p0[1] > mx:
                 f, mx = ROUND, p0[1]
             if p3[1] > mx:
                 f, mx = ROUND, p3[1]
-            for y in curve_extrema_y(p0, c1, c2, p3, order2):
+            a, b, c, d = s.ys
+            for t in find_extrema(a, b, c):
+                if t == -1:
+                    continue
+                y = ((a * t + b) * t + c) * t + d
                 if y > mx:
                     f, mx = ROUND, y
         elif p0[1] == p3[1]:

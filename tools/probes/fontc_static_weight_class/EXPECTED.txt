@@ -1,0 +1,2 @@
+fontmake  usWeightClass=700
+fontc     usWeightClass=400
