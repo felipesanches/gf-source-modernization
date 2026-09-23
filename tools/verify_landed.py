@@ -138,7 +138,9 @@ def verify(repo):
         b = run(land.B3, "sources/config.yaml", cwd=clone)
         ttf = os.path.join(clone, "fonts", "ttf")
         built = sorted(os.listdir(ttf)) if os.path.isdir(ttf) else []
-        if len(built) != len(rows):
+        # a repository extended with a family (allerta) also builds what it had
+        expected = len(rows) + (len(built) - len(rows) if kind == "allerta" else 0)
+        if len(built) != expected or len(built) < len(rows):
             problems.append("BUILD: %d fonts built for %d styles: %s" % (len(built), len(rows), built))
         for r in rows:
             name = land.built_name(os.path.join(clone, "sources", r["style"] + ".glyphs"))

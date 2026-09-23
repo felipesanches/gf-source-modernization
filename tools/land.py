@@ -185,7 +185,12 @@ def start(repo, rows, d):
             subtree out of a repository that serves the whole library is not
             practical. The commit named above is the provenance.""") % (
             fam, commit_id[:12], lic, fam, commit_id, base))
-    sh("git", "clone", "-q", mirror, d)
+    if kind == "allerta":
+        # the repository being extended is googlefonts/<repo>; `base` names where the
+        # restored file comes from, not the repository to clone
+        sh("git", "clone", "-q", os.path.join(ARC, "googlefonts", repo + ".git"), d)
+    else:
+        sh("git", "clone", "-q", mirror, d)
     if kind == "allerta":
         git(d, "checkout", "-q", "-b", BRANCH[kind], "master")
         src = rows[0]["source"]
