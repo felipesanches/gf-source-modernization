@@ -1,0 +1,3 @@
+# stage 2: encode .null and nonmarkingreturn as the release does (U+0000, U+000D)
+setencoding	.null	0	0
+setencoding	nonmarkingreturn	13	13

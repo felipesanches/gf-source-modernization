@@ -1,0 +1,45 @@
+setfield: Version: 001.271 -> Version: 1.272
+setfield: FSType: 0 -> FSType: 8
+setfield: OS2SubXSize: 0 -> OS2SubXSize: 1331
+setfield: OS2SubYSize: 2 -> OS2SubYSize: 1228
+setfield: OS2SubXOff: -16560 -> OS2SubXOff: 0
+setfield: OS2SubYOff: 0 -> OS2SubYOff: 153
+setfield: OS2SupXSize: -25944 -> OS2SupXSize: 1331
+setfield: OS2SupYSize: -27176 -> OS2SupYSize: 1228
+setfield: OS2SupXOff: -16376 -> OS2SupXOff: 0
+setfield: OS2SupYOff: 1 -> OS2SupYOff: 716
+setfield: OS2StrikeYSize: 12312 -> OS2StrikeYSize: 50
+setfield: OS2StrikeYPos: -16224 -> OS2StrikeYPos: 300
+setencoding: .null 0 0
+setencoding: nonmarkingreturn 13 13
+ffnotdef: stem 68, advance 748, outer [(68, 0), (68, 1365), (612, 1365), (612, 0)]
+setrefer: Agrave 1 0 0
+setrefer: Aacute 1 0 0
+setrefer: Amacron 1 0 0
+setrefer: Iacute 1 0 0
+setrefer: eacute 1 0 0
+setrefer: uacute 1 0 0
+setrefer: alphaiotasub 1 0 0
+setrefer: alphaiotasub 2 801 0
+setwidth: alphaiotasub 2013
+setrefer: Alphaiotasub 1 0 0
+setrefer: Alphaiotasub 2 801 0
+setwidth: Alphaiotasub 2103
+setrefer: etaiotasub 1 0 0
+setrefer: etaiotasub 2 801 0
+setwidth: etaiotasub 1865
+setrefer: Etaiotasub 1 0 0
+setrefer: Etaiotasub 2 801 0
+setwidth: Etaiotasub 1999
+setrefer: omegaiotasub 1 0 0
+setrefer: omegaiotasub 2 801 0
+setwidth: omegaiotasub 2009
+setrefer: Omegaiotasub 1 0 0
+setrefer: Omegaiotasub 2 801 0
+setwidth: Omegaiotasub 2159
+translateglyph: brevesubnosp by (-1302, 0)
+setwidth: brevesubnosp 0
+setrefer: uni1E2A 1 1252 0
+setrefer: uni1E2B 1 1178 0
+replaced U+0162 (uni0162): 1 contours, width 1243
+replaced U+0163 (uni0163): 1 contours, width 696

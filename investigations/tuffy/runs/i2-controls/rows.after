@@ -1,0 +1,14 @@
+BLOCKING cmap U+0162 ["uni0162", "Tcommaaccent"]
+BLOCKING cmap U+0163 ["uni0163", "tcommaaccent"]
+BLOCKING cmap U+032E ["uni032E", "brevesubnosp"]
+BLOCKING cmap U+03A9 ["uni03A9", "Omega"]
+BLOCKING cmap U+0458 ["uni0458", "afii10105"]
+BLOCKING cmap U+1E57 ["uni1E57", "pdotaccent"]
+BLOCKING cmap U+1F6B ["uni1F6B", "Omegaaspergrave"]
+BLOCKING cmap U+1FED ["uni1FED", "dialytika_varia"]
+BLOCKING cmap U+E257 ["uniE257", "aogonekalt"]
+BLOCKING GDEF.glyph_classes -- the two fonts disagree about 1 mark(s): only the release marks U+032E; only ours marks none
+BLOCKING GSUB.feature_list {"aalt": [[0], null], "ccmp": [[2], null], "dlig": [[10], null], "frac": {"0": [
+BLOCKING GSUB.lookup_list {"0": {"0": {"type": ["single", "ligature"], "one": ["uni00B9", null], "two": ["
+BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 2], "2": [15, 3], "3": [22, null], "4": [33,
+BLOCKING hmtx.7 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 34 unit(s) at .notdef (release 68, ours 102)

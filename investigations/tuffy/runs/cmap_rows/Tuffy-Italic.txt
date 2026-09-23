@@ -1,0 +1,10 @@
+U+0162 uni0162/Tcommaaccent     adv 1243/1243  bbox-delta    0 area   1.81%  | overlaps removed: bbox-delta    0 area   0.01%  GEOM-PASS
+U+0163 uni0163/tcommaaccent     adv  696/ 696  bbox-delta    0 area   3.60%  | overlaps removed: bbox-delta    0 area   0.02%  GEOM-PASS
+U+032E uni032E/brevesubnosp     adv    0/1302  bbox-delta 1302 area   0.20%  | overlaps removed: bbox-delta 1302 area   0.20%  differs
+U+03A9 uni03A9/Omega            adv 1358/1358  bbox-delta    0 area   0.41%  | overlaps removed: bbox-delta    0 area   0.41%  differs
+U+0458 uni0458/afii10105        adv  468/ 468  bbox-delta    0 area   9.98%  | overlaps removed: bbox-delta    0 area   9.98%  differs
+U+1E57 uni1E57/pdotaccent       adv 1044/1044  bbox-delta    0 area   4.25%  | overlaps removed: bbox-delta    0 area   4.25%  differs
+U+1F6B uni1F6B/Omegaaspergrave  adv 1744/1744  bbox-delta  0.0 area   0.44%  | overlaps removed: bbox-delta  0.0 area   0.44%  differs
+U+1FED uni1FED/dialytika_varia  adv  794/ 794  bbox-delta  0.0 area  23.62%  | overlaps removed: bbox-delta  0.0 area  23.62%  differs
+U+E257 uniE257/aogonekalt       adv  993/ 993  bbox-delta    0 area   0.50%  | overlaps removed: bbox-delta    0 area   0.01%  GEOM-PASS
+rows: 9  pass after overlap removal of ours: 3

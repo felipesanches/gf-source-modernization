@@ -1,0 +1,141 @@
+19c19
+< FSType: 0
+---
+> FSType: 8
+44,53c44,53
+< OS2SubXSize: 0
+< OS2SubYSize: 2
+< OS2SubXOff: -16560
+< OS2SubYOff: 0
+< OS2SupXSize: -25944
+< OS2SupYSize: -27176
+< OS2SupXOff: -16376
+< OS2SupYOff: 1
+< OS2StrikeYSize: 12312
+< OS2StrikeYPos: -16224
+---
+> OS2SubXSize: 1331
+> OS2SubYSize: 1228
+> OS2SubXOff: 0
+> OS2SubYOff: 153
+> OS2SupXSize: 1331
+> OS2SupYSize: 1228
+> OS2SupXOff: 0
+> OS2SupYOff: 716
+> OS2StrikeYSize: 50
+> OS2StrikeYPos: 300
+124c124
+< BeginChars: 65571 1501
+---
+> BeginChars: 65572 1502
+3003c3003
+< Refer: 124 101 N 1 0 0 1 10 0 2
+---
+> Refer: 124 101 N 1 0 0 1 0 0 2
+6465c6465
+< Refer: 88 65 N 1 0 0 1 -8 0 2
+---
+> Refer: 88 65 N 1 0 0 1 0 0 2
+6476c6476
+< Refer: 88 65 N 1 0 0 1 -8 0 2
+---
+> Refer: 88 65 N 1 0 0 1 0 0 2
+6623c6623
+< Refer: 96 73 N 1 0 0 1 10 0 2
+---
+> Refer: 96 73 N 1 0 0 1 0 0 2
+6768c6768
+< Refer: 41 117 N 1 0 0 1 42 0 2
+---
+> Refer: 41 117 N 1 0 0 1 0 0 2
+6874c6874
+< Encoding: 65536 -1 194
+---
+> Encoding: 0 0 194
+6881c6881
+< Encoding: 65537 -1 195
+---
+> Encoding: 13 13 195
+9410c9410
+< Refer: 88 65 N 1 0 0 1 -8 0 2
+---
+> Refer: 88 65 N 1 0 0 1 0 0 2
+18372c18372
+< Width: 1302
+---
+> Width: 2103
+18377c18377
+< Refer: 575 913 N 1 0 0 1 0 0 2
+---
+> Refer: 575 913 N 1 0 0 1 801 0 2
+18393c18393
+< Width: 1064
+---
+> Width: 1865
+18397,18398c18397,18398
+< Refer: 848 8126 N 1 0 0 1 -467 0 2
+< Refer: 621 951 N 1 0 0 1 0 0 2
+---
+> Refer: 848 8126 N 1 0 0 1 0 0 2
+> Refer: 621 951 N 1 0 0 1 801 0 2
+19413c19413
+< Width: 1198
+---
+> Width: 1999
+19417,19418c19417,19418
+< Refer: 848 8126 N 1 0 0 1 -54 0 2
+< Refer: 587 919 N 1 0 0 1 0 0 2
+---
+> Refer: 848 8126 N 1 0 0 1 0 0 2
+> Refer: 587 919 N 1 0 0 1 801 0 2
+19668c19668
+< Width: 1208
+---
+> Width: 2009
+19672,19673c19672,19673
+< Refer: 848 8126 N 1 0 0 1 -51 0 2
+< Refer: 608 969 N 1 0 0 1 0 0 2
+---
+> Refer: 848 8126 N 1 0 0 1 0 0 2
+> Refer: 608 969 N 1 0 0 1 801 0 2
+19748c19748
+< Width: 1358
+---
+> Width: 2159
+19752,19753c19752,19753
+< Refer: 848 8126 N 1 0 0 1 17 0 2
+< Refer: 282 937 N 1 0 0 1 0 0 2
+---
+> Refer: 848 8126 N 1 0 0 1 0 0 2
+> Refer: 282 937 N 1 0 0 1 801 0 2
+20979c20979
+< Width: 1212
+---
+> Width: 2013
+20983,20984c20983,20984
+< Refer: 848 8126 N 1 0 0 1 -121 0 2
+< Refer: 596 945 N 1 0 0 1 0 0 2
+---
+> Refer: 848 8126 N 1 0 0 1 0 0 2
+> Refer: 596 945 N 1 0 0 1 801 0 2
+38792a38793,38812
+> StartChar: .notdef
+> Encoding: 65570 -1 1501
+> Width: 748
+> Flags: HMW
+> LayerCount: 2
+> Fore
+> SplineSet
+> 68 0 m 1
+>  68 1365 l 1
+>  612 1365 l 1
+>  612 0 l 1
+>  68 0 l 1
+> 136 68 m 1
+>  544 68 l 1
+>  544 1297 l 1
+>  136 1297 l 1
+>  136 68 l 1
+> EndSplineSet
+> EndChar
+> 

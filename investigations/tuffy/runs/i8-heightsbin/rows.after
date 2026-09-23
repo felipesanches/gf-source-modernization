@@ -1,0 +1,8 @@
+BLOCKING cmap U+0458 ["uni0458", "afii10105"]
+BLOCKING cmap U+1E57 ["uni1E57", "pdotaccent"]
+BLOCKING cmap U+1FED ["uni1FED", "dialytika_varia"]
+BLOCKING GSUB.feature_list {"aalt": [[0], null], "ccmp": [[2], null], "dlig": [[10], null], "frac": {"0": [
+BLOCKING GSUB.lookup_list {"0": {"0": {"type": ["single", "ligature"], "one": ["uni00B9", null], "two": ["
+BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 2], "2": [15, 3], "3": [22, null], "4": [33,
+BLOCKING OS/2.s_cap_height [700, 1450]
+BLOCKING OS/2.sx_height [500, 1069]

@@ -1,0 +1,5 @@
+glyphs with same advance and bbox: 182
+gate measure : min 0.000%  pass<=0.4%: 69
+closePath fix: min 0.000%  pass<=0.4%: 69
+glyphs whose pass/fail differs between the two measures: 0
+glyphs whose measured difference changes at all: 0

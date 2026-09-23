@@ -1,0 +1,59 @@
+19c19
+< FSType: 0
+---
+> FSType: 8
+44,53c44,53
+< OS2SubXSize: 0
+< OS2SubYSize: 2
+< OS2SubXOff: -16560
+< OS2SubYOff: 0
+< OS2SupXSize: -25944
+< OS2SupYSize: -27176
+< OS2SupXOff: -16376
+< OS2SupYOff: 1
+< OS2StrikeYSize: 12312
+< OS2StrikeYPos: -16224
+---
+> OS2SubXSize: 1331
+> OS2SubYSize: 1228
+> OS2SubXOff: -32
+> OS2SubYOff: 153
+> OS2SupXSize: 1331
+> OS2SupYSize: 1228
+> OS2SupXOff: 150
+> OS2SupYOff: 716
+> OS2StrikeYSize: 50
+> OS2StrikeYPos: 300
+124c124
+< BeginChars: 65571 1501
+---
+> BeginChars: 65572 1502
+9016c9016
+< Encoding: 65536 -1 194
+---
+> Encoding: 0 0 194
+9023c9023
+< Encoding: 65537 -1 195
+---
+> Encoding: 13 13 195
+59956a59957,59976
+> StartChar: .notdef
+> Encoding: 65570 -1 1501
+> Width: 748
+> Flags: HMW
+> LayerCount: 2
+> Fore
+> SplineSet
+> 68 0 m 1
+>  68 1365 l 1
+>  612 1365 l 1
+>  612 0 l 1
+>  68 0 l 1
+> 136 68 m 1
+>  544 68 l 1
+>  544 1297 l 1
+>  136 1297 l 1
+>  136 68 l 1
+> EndSplineSet
+> EndChar
+> 

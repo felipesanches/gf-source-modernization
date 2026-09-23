@@ -1,0 +1,4 @@
+# stage 5: U+032E as the release has it -- a zero-width nonspacing mark, outline moved left by its former advance;
+# the composites that use it keep their drawing (the release moved their references right by the same 1302)
+translateglyph	brevesubnosp	-1302	0
+setwidth	brevesubnosp	0

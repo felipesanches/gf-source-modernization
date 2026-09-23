@@ -1,0 +1,15 @@
+BLOCKING cmap U+0162 ["uni0162", "Tcommaaccent"]
+BLOCKING cmap U+0163 ["uni0163", "tcommaaccent"]
+BLOCKING cmap U+0430 ["uni0430", "afii10065"]
+BLOCKING cmap U+0440 ["uni0440", "afii10082"]
+BLOCKING cmap U+0458 ["uni0458", "afii10105"]
+BLOCKING cmap U+04D1 ["uni04D1", "abrevecyrillic"]
+BLOCKING cmap U+04D3 ["uni04D3", "adieresiscyrillic"]
+BLOCKING cmap U+1E03 ["uni1E03", "bdotaccent"]
+BLOCKING cmap U+1E0B ["uni1E0B", "ddotaccent"]
+BLOCKING cmap U+1E57 ["uni1E57", "pdotaccent"]
+BLOCKING cmap U+1FE4 ["uni1FE4", "rholenis"]
+BLOCKING cmap U+1FE5 ["uni1FE5", "rhoasper"]
+BLOCKING GSUB.feature_list {"aalt": [[0], null], "ccmp": [[2], null], "dlig": [[10], null], "frac": {"0": [
+BLOCKING GSUB.lookup_list {"0": {"0": {"type": ["single", "ligature"], "one": ["uni00B9", null], "two": ["
+BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 2], "2": [15, 3], "3": [22, null], "4": [33,

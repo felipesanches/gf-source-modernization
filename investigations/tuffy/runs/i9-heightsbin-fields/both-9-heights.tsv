@@ -1,0 +1,4 @@
+# needed only once --fontforge-os2-defaults also fills the heights (babelfont ca43adc):
+# the release's x-height and cap height, which the source does not state
+addfield	OS2XHeight	500
+addfield	OS2CapHeight	700

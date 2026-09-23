@@ -1,0 +1,10 @@
+U+0162  gate-rule: False (bbox 0.0 area 1.81%)   split-at-closePath: False (bbox 0.0 area 1.81%)
+U+0163  gate-rule: False (bbox 0.0 area 3.60%)   split-at-closePath: False (bbox 0.0 area 3.60%)
+U+032E  gate-rule: False (advance 0/1302)   split-at-closePath: False (advance 0/1302)
+U+03A9  gate-rule: False (bbox 0.0 area 0.41%)   split-at-closePath: False (bbox 0.0 area 0.41%)
+U+0458  gate-rule: False (bbox 0.0 area 9.98%)   split-at-closePath: True  (bbox 0.0 area 0.03%)
+U+1E57  gate-rule: False (bbox 0.0 area 4.25%)   split-at-closePath: True  (bbox 0.0 area 0.04%)
+U+1F6B  gate-rule: False (bbox 0.0 area 0.44%)   split-at-closePath: False (bbox 0.0 area 0.44%)
+U+1FED  gate-rule: False (bbox 0.0 area 23.62%)   split-at-closePath: True  (bbox 0.0 area 0.18%)
+U+E257  gate-rule: False (bbox 0.0 area 0.50%)   split-at-closePath: False (bbox 0.0 area 0.50%)
+rows 9: pass under the gate's measure 0; pass with contours split at closePath 3

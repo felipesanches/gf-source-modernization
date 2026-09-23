@@ -1,0 +1,8 @@
+.notdef        release lsb    68  ours   102  adv 748/1024  release simple  ours simple
+J              release lsb   209  ours   208  adv 1140/1140  release simple  ours simple
+periodcentered release lsb   293  ours   294  adv 438/438  release simple  ours simple
+Jcircumflex    release lsb   209  ours   208  adv 1140/1140  release simple  ours simple
+uni2076        release lsb   292  ours   291  adv 626/626  release simple  ours simple
+uni2086        release lsb    23  ours    22  adv 626/626  release simple  ours simple
+uni20B7        release lsb   142  ours   141  adv 1178/1178  release simple  ours simple
+outline-led bearing differences: 7

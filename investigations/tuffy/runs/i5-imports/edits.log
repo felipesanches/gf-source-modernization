@@ -1,0 +1,27 @@
+setfield: FSType: 0 -> FSType: 8
+setfield: OS2SubXSize: 0 -> OS2SubXSize: 1331
+setfield: OS2SubYSize: 2 -> OS2SubYSize: 1228
+setfield: OS2SubXOff: -16560 -> OS2SubXOff: -32
+setfield: OS2SubYOff: 0 -> OS2SubYOff: 153
+setfield: OS2SupXSize: -25944 -> OS2SupXSize: 1331
+setfield: OS2SupYSize: -27176 -> OS2SupYSize: 1228
+setfield: OS2SupXOff: -16376 -> OS2SupXOff: 150
+setfield: OS2SupYOff: 1 -> OS2SupYOff: 716
+setfield: OS2StrikeYSize: 12312 -> OS2StrikeYSize: 50
+setfield: OS2StrikeYPos: -16224 -> OS2StrikeYPos: 300
+setencoding: .null 0 0
+setencoding: nonmarkingreturn 13 13
+ffnotdef: stem 68, advance 748, outer [(68, 0), (68, 1365), (612, 1365), (612, 0)]
+translateglyph: brevesubnosp by (-1302, 0)
+setwidth: brevesubnosp 0
+replaced U+004A (J): 1 contours, width 1140
+replaced U+00B7 (periodcentered): 1 contours, width 438
+replaced U+0162 (uni0162): 1 contours, width 1243
+replaced U+0163 (uni0163): 1 contours, width 696
+replaced U+03A9 (uni03A9): 1 contours, width 1358
+replaced U+0134 (Jcircumflex): 2 contours, width 1140
+replaced U+E257 (uniE257): 2 contours, width 993
+replaced U+1F6B (uni1F6B): 3 contours, width 1744
+replaced U+2076 (uni2076): 2 contours, width 626
+replaced U+2086 (uni2086): 2 contours, width 626
+replaced U+20B7 (uni20B7): 4 contours, width 1178

@@ -1,0 +1,13 @@
+setfield: FSType: 0 -> FSType: 8
+setfield: OS2SubXSize: 0 -> OS2SubXSize: 1331
+setfield: OS2SubYSize: 2 -> OS2SubYSize: 1228
+setfield: OS2SubXOff: -16560 -> OS2SubXOff: -32
+setfield: OS2SubYOff: 0 -> OS2SubYOff: 153
+setfield: OS2SupXSize: -25944 -> OS2SupXSize: 1331
+setfield: OS2SupYSize: -27176 -> OS2SupYSize: 1228
+setfield: OS2SupXOff: -16376 -> OS2SupXOff: 150
+setfield: OS2SupYOff: 1 -> OS2SupYOff: 716
+setfield: OS2StrikeYSize: 12312 -> OS2StrikeYSize: 50
+setfield: OS2StrikeYPos: -16224 -> OS2StrikeYPos: 300
+setencoding: .null 0 0
+setencoding: nonmarkingreturn 13 13

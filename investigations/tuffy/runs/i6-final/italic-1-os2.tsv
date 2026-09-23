@@ -1,0 +1,12 @@
+# Italic stage 1: fsType and the OS/2 sub/superscript + strikeout values of the v1.272 release
+setfield	FSType	8
+setfield	OS2SubXSize	1331
+setfield	OS2SubYSize	1228
+setfield	OS2SubXOff	-32
+setfield	OS2SubYOff	153
+setfield	OS2SupXSize	1331
+setfield	OS2SupYSize	1228
+setfield	OS2SupXOff	150
+setfield	OS2SupYOff	716
+setfield	OS2StrikeYSize	50
+setfield	OS2StrikeYPos	300

@@ -1,0 +1,27 @@
+# stage 4 (Regular): the component placement of the v1.272 release
+# Latin: the base component's offset is 0 in the release
+setrefer	Agrave	1	0	0
+setrefer	Aacute	1	0	0
+setrefer	Amacron	1	0	0
+setrefer	Iacute	1	0	0
+setrefer	eacute	1	0	0
+setrefer	uacute	1	0	0
+# Greek iota-subscript bases: iota subscript at 0, the letter after it at +801 (the iota's advance), advance += 801
+setrefer	alphaiotasub	1	0	0
+setrefer	alphaiotasub	2	801	0
+setwidth	alphaiotasub	2013
+setrefer	Alphaiotasub	1	0	0
+setrefer	Alphaiotasub	2	801	0
+setwidth	Alphaiotasub	2103
+setrefer	etaiotasub	1	0	0
+setrefer	etaiotasub	2	801	0
+setwidth	etaiotasub	1865
+setrefer	Etaiotasub	1	0	0
+setrefer	Etaiotasub	2	801	0
+setwidth	Etaiotasub	1999
+setrefer	omegaiotasub	1	0	0
+setrefer	omegaiotasub	2	801	0
+setwidth	omegaiotasub	2009
+setrefer	Omegaiotasub	1	0	0
+setrefer	Omegaiotasub	2	801	0
+setwidth	Omegaiotasub	2159

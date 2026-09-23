@@ -1,0 +1,49 @@
+== <monorepo>/Tuffy-Regular.ttf
+exit 0
+File sanitized successfully!
+WARNING: OS/2: Bad ySuperscriptXSize: -25944, setting it to zero
+WARNING: OS/2: Bad ySuperscriptYSize: -27176, setting it to zero
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 354)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 658)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 673)
+WARNING: gasp: Changed the version number to 1
+
+== <monorepo>/Tuffy-Italic.ttf
+exit 0
+File sanitized successfully!
+WARNING: OS/2: Bad ySuperscriptXSize: -25944, setting it to zero
+WARNING: OS/2: Bad ySuperscriptYSize: -27176, setting it to zero
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 4)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 10)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 17)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 29)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 45)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 99)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 121)
+WARNING
+== /home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Regular.ttf
+exit 0
+File sanitized successfully!
+
+== /home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Italic.ttf
+exit 0
+File sanitized successfully!
+
+== /home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Bold.ttf
+exit 0
+File sanitized successfully!
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 356)
+
+== /home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-BoldItalic.ttf
+exit 0
+File sanitized successfully!
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 117)
+WARNING: glyf: Glyph bbox was incorrect; adjusting (glyph 393)
+
+== <baseline-build>/Tuffy-Regular.ttf
+exit 0
+File sanitized successfully!
+WARNING: OS/2: Bad ySuperscriptXSize: -25944, setting it to zero
+WARNING: OS/2: Bad ySuperscriptYSize: -27176, setting it to zero
+WARNING: gasp: Changed the version number to 1
+

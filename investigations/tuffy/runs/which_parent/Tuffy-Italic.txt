@@ -1,0 +1,5 @@
+shared codepoints: 1499
+release bbox == TTF 001.271 bbox: 1488    == OTF 001.270 bbox: 1469
+release on-curve set == TTF's: 429    release on-curve set contains all OTF on-curve points: 374
+bbox matches OTF only: 
+bbox matches TTF only: U+0027 U+00C4 U+00E4 U+00EF U+0130 U+02D9 U+0390 U+03CA U+0457 U+04ED U+1FC8 U+1FCA U+1FD2 U+1FEA U+1FEF U+22C5 U+E10C U+E118 U+E256

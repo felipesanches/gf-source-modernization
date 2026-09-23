@@ -1,0 +1,82 @@
+== <google/fonts b5efa9c ofl/tuffy>/Tuffy-Regular.ttf
+  tables: DSIG GDEF GPOS GSUB GlyphOrder OS/2 cmap cvt  fpgm gasp glyf head hhea hmtx loca maxp name post prep
+  head.created: Tue Aug 30 17:40:34 2011  modified: Tue Oct 24 14:46:45 2017  fontRevision: 1.272  unitsPerEm: 2048
+  OS/2.version: 3  fsType: 8  usWeightClass: 400  achVendID: PfEd
+  sub(xs,ys,xo,yo): 1331 1228 0 153  sup: 1331 1228 0 716  strike: 50 300
+  sxHeight: 500  sCapHeight: 700  usDefaultChar: 0  usBreakChar: 32  usMaxContext: 3
+  name3: 1.272;PfEd;Tuffy-Regular
+  name5: Version 1.272; ttfautohint (v1.6)
+  glyphs: 1502  cmap: 1501  post.format: 2.0
+  gasp: {65535: 15}
+  fpgm bytes: 3437
+== <monorepo 52f780b ofl/tuffy>/Tuffy-Regular.ttf
+  tables: DSIG FFTM GDEF GPOS GSUB GlyphOrder OS/2 cmap cvt  gasp glyf head hhea hmtx loca maxp name post prep
+  head.created: Tue Aug 30 17:40:34 2011  modified: Tue Aug 30 17:40:34 2011  fontRevision: 1.271  unitsPerEm: 2048
+  FFTM version: 1  FFTimeStamp: Tue Feb 22 13:48:33 2011  sourceCreated: Tue Dec 19 12:25:29 2006  sourceModified: Tue Aug 30 17:24:02 2011
+  OS/2.version: 1  fsType: 0  usWeightClass: 400  achVendID: PfEd
+  sub(xs,ys,xo,yo): 0 2 -16560 0  sup: -25944 -27176 -16376 1  strike: 12312 -16224
+  name3: FontForge 2.0 : Tuffy Regular : 30-8-2011
+  name5: Version 001.271 
+  glyphs: 1502  cmap: 1499  post.format: 2.0
+  gasp: {65535: 15}
+== <monorepo 52f780b ofl/tuffy>/src/Tuffy-Regular.otf
+  tables: CFF  FFTM GlyphOrder OS/2 cmap feat head hhea hmtx kern maxp morx name post prop
+  head.created: Wed Aug 24 15:05:12 2011  modified: Wed Aug 24 15:05:12 2011  fontRevision: 1.27  unitsPerEm: 2048
+  FFTM version: 1  FFTimeStamp: Tue Feb 22 13:48:33 2011  sourceCreated: Tue Dec 19 12:25:29 2006  sourceModified: Wed Aug 24 15:04:46 2011
+  OS/2.version: 3  fsType: 0  usWeightClass: 500  achVendID: PfEd
+  sub(xs,ys,xo,yo): 0 2 -16560 0  sup: -25944 -27176 -16376 1  strike: 12312 -16224
+  sxHeight: 1069  sCapHeight: 1450  usDefaultChar: 32  usBreakChar: 32  usMaxContext: 1
+  name3: FontForge : Tuffy Regular : 24-8-2011
+  name5: Version 001.270 
+  glyphs: 1502  cmap: 1499  post.format: 3.0
+== <google/fonts b5efa9c ofl/tuffy>/Tuffy-Italic.ttf
+  tables: DSIG GDEF GPOS GSUB GlyphOrder OS/2 cmap cvt  fpgm gasp glyf head hhea hmtx loca maxp name post prep
+  head.created: Tue Aug 30 17:31:21 2011  modified: Tue Oct 24 14:46:45 2017  fontRevision: 1.272  unitsPerEm: 2048
+  OS/2.version: 3  fsType: 8  usWeightClass: 400  achVendID: PfEd
+  sub(xs,ys,xo,yo): 1331 1228 -32 153  sup: 1331 1228 150 716  strike: 50 300
+  sxHeight: 500  sCapHeight: 700  usDefaultChar: 0  usBreakChar: 32  usMaxContext: 3
+  name3: 1.272;PfEd;Tuffy-Italic
+  name5: Version 1.272; ttfautohint (v1.6)
+  glyphs: 1502  cmap: 1501  post.format: 2.0
+  gasp: {65535: 15}
+  fpgm bytes: 3437
+== <monorepo 52f780b ofl/tuffy>/Tuffy-Italic.ttf
+  tables: DSIG FFTM GDEF GPOS GSUB GlyphOrder OS/2 cmap cvt  gasp glyf head hhea hmtx loca maxp name post prep
+  head.created: Tue Aug 30 17:31:21 2011  modified: Tue Aug 30 17:31:21 2011  fontRevision: 1.271  unitsPerEm: 2048
+  FFTM version: 1  FFTimeStamp: Tue Feb 22 13:48:33 2011  sourceCreated: Tue Dec 19 12:25:29 2006  sourceModified: Tue Aug 30 17:31:03 2011
+  OS/2.version: 1  fsType: 0  usWeightClass: 400  achVendID: PfEd
+  sub(xs,ys,xo,yo): 0 2 -16560 0  sup: -25944 -27176 -16376 1  strike: 12312 -16224
+  name3: FontForge 2.0 : Tuffy Italic : 30-8-2011
+  name5: Version 001.271 
+  glyphs: 1502  cmap: 1499  post.format: 2.0
+  gasp: {65535: 15}
+== <monorepo 52f780b ofl/tuffy>/src/Tuffy-Italic.otf
+  tables: CFF  FFTM GlyphOrder OS/2 cmap feat head hhea hmtx kern maxp morx name post prop
+  head.created: Wed Aug 24 15:07:38 2011  modified: Wed Aug 24 15:07:38 2011  fontRevision: 1.27  unitsPerEm: 2048
+  FFTM version: 1  FFTimeStamp: Tue Feb 22 13:48:33 2011  sourceCreated: Tue Dec 19 12:25:29 2006  sourceModified: Wed Aug 24 15:06:53 2011
+  OS/2.version: 3  fsType: 0  usWeightClass: 500  achVendID: PfEd
+  sub(xs,ys,xo,yo): 0 2 -16560 0  sup: -25944 -27176 -16376 1  strike: 12312 -16224
+  sxHeight: 1069  sCapHeight: 1450  usDefaultChar: 32  usBreakChar: 32  usMaxContext: 1
+  name3: FontForge : Tuffy Italic : 24-8-2011
+  name5: Version 001.270 
+  glyphs: 1502  cmap: 1499  post.format: 3.0
+== <google/fonts b5efa9c ofl/tuffy>/Tuffy-Bold.ttf
+  tables: DSIG FFTM GDEF GPOS GSUB GlyphOrder OS/2 cmap cvt  gasp glyf head hhea hmtx loca maxp name post
+  head.created: Tue Aug 30 17:35:23 2011  modified: Tue Aug 30 17:35:23 2011  fontRevision: 1.271  unitsPerEm: 2048
+  FFTM version: 1  FFTimeStamp: Tue Feb 22 13:48:33 2011  sourceCreated: Tue Dec 19 12:25:29 2006  sourceModified: Tue Aug 30 17:35:17 2011
+  OS/2.version: 1  fsType: 0  usWeightClass: 700  achVendID: PfEd
+  sub(xs,ys,xo,yo): 1331 1433 0 286  sup: 1331 1433 0 983  strike: 102 530
+  name3: FontForge 2.0 : Tuffy Bold : 30-8-2011
+  name5: Version 001.271 
+  glyphs: 890  cmap: 887  post.format: 2.0
+  gasp: {65535: 15}
+== <google/fonts b5efa9c ofl/tuffy>/Tuffy-BoldItalic.ttf
+  tables: DSIG FFTM GDEF GPOS GSUB GlyphOrder OS/2 cmap gasp glyf head hhea hmtx loca maxp name post prep
+  head.created: Tue Aug 30 17:33:47 2011  modified: Tue Aug 30 17:33:47 2011  fontRevision: 1.271  unitsPerEm: 2048
+  FFTM version: 1  FFTimeStamp: Tue Feb 22 13:48:33 2011  sourceCreated: Tue Dec 19 12:25:29 2006  sourceModified: Tue Aug 30 17:33:21 2011
+  OS/2.version: 1  fsType: 0  usWeightClass: 700  achVendID: PfEd
+  sub(xs,ys,xo,yo): 1331 1433 59 286  sup: 1331 1433 -204 983  strike: 102 530
+  name3: FontForge 2.0 : Tuffy Bold Italic : 30-8-2011
+  name5: Version 001.271 
+  glyphs: 890  cmap: 887  post.format: 2.0
+  gasp: {65535: 15}

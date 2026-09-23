@@ -1,0 +1,8 @@
+.notdef        release lsb    68  ours   102  adv 748/1024  release simple  ours simple
+Agrave         release lsb    72  ours    64  adv 1302/1302  release [('A', 0, 0), ('grave', 248, 0)]  ours [('A', -8, 0), ('grave', 248, 0)]
+Aacute         release lsb    72  ours    64  adv 1302/1302  release [('A', 0, 0), ('acute', 503, 0)]  ours [('A', -8, 0), ('acute', 503, 0)]
+Iacute         release lsb   154  ours   164  adv 440/440  release [('I', 0, 0), ('acute', 104, 0)]  ours [('I', 10, 0), ('acute', 104, 0)]
+eacute         release lsb    98  ours   108  adv 1046/1046  release [('e', 0, 0), ('acute', 355, -347)]  ours [('e', 10, 0), ('acute', 355, -347)]
+uacute         release lsb   120  ours   162  adv 996/996  release [('u', 0, 0), ('acute', 396, -347)]  ours [('u', 42, 0), ('acute', 396, -347)]
+Amacron        release lsb    72  ours    64  adv 1302/1302  release [('A', 0, 0), ('macron', 118, 418)]  ours [('A', -8, 0), ('macron', 118, 418)]
+outline-led bearing differences: 7
