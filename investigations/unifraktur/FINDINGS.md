@@ -10,9 +10,11 @@ release's FFTM names. The cap height is the pre-2012 height rule (converter). Th
 win descents are FontForge's exporter bases for offset-mode metrics -- win from the
 on-curve-only head bbox, hhea from int() of the true bounds widened to the head bbox -- a
 converter change NOT yet implemented. The three GPOS rows are FontForge's empty GPOS, which
-shares GSUB's script list when only GSUB has lookups; HarfBuzz gates its fallback mark
-positioning on that table's presence, so reproducing it would make marks render worse
-(sfd-batch6/UNIFRAKTURMAGUNTIA-EMPTY-GPOS.md). Not landed: the GPOS question is Felipe's.
+shares GSUB's script list when only GSUB has lookups. It is functional: HarfBuzz skips its
+fallback mark positioning when a GPOS exists, and adding the shell to our build takes
+shaping from 648 differing runs to 0. Under the equivalence rule (2026-09-24: reproduce
+what ships, improve in later commits) it must be reproduced; FEA cannot express it and
+fontc does not emit it, so it needs a tool change. Not landed.
 The Book/Regular file name is a METADATA.pb files mapping, disclosed as a converter
 normalisation.
 
