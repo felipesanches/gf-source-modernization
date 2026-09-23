@@ -22,6 +22,7 @@ import os
 import re
 import subprocess
 import sys
+import functools
 import textwrap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -29,6 +30,8 @@ sys.path.insert(0, HERE)
 import land  # noqa: E402
 
 GF = land.GF
+# never break a file or flag name at its hyphen
+wrap = functools.partial(textwrap.wrap, break_on_hyphens=False, break_long_words=False)
 WT_ROOT = "/home/fsanches/compartilhado/google/fonts-worktrees"
 
 
@@ -82,31 +85,31 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future):
         origin = "https://github.com/%s at commit `%s`" % (base, commit)
     edits = edit_subjects(d, rows)
     out = ["# %s" % display, ""]
-    out += textwrap.wrap("Sources modernized 2026-09: the FontForge `.sfd` sources were converted to "
+    out += wrap("Sources modernized 2026-09: the FontForge `.sfd` sources were converted to "
                          "Glyphs (`.glyphs`) and build with gftools-builder3 and fontc. The "
                          "repository, commit and config are in the `source { }` block of "
                          "METADATA.pb.", 88)
     out += ["", "## Initial state", ""]
-    out += textwrap.wrap("Google Fonts shipped %s built from FontForge `.sfd` sources in %s. There "
+    out += wrap("Google Fonts shipped %s built from FontForge `.sfd` sources in %s. There "
                          "was no source that builds with fontc." % (display, origin), 88)
     out += ["", "## Actions taken", ""]
     first = ("The family's files were imported unmodified as the first commit of "
              "https://github.com/googlefonts/%s." % repo if kind == "hg" else
              "The work was done on top of the upstream history, in https://github.com/googlefonts/%s." % repo)
-    out += textwrap.wrap("- " + first, 88, subsequent_indent="  ")
+    out += wrap("- " + first, 88, subsequent_indent="  ")
     if edits:
-        out += textwrap.wrap("- Each change to the `.sfd` before conversion is its own commit: "
+        out += wrap("- Each change to the `.sfd` before conversion is its own commit: "
                              + "; ".join(edits) + ".", 88, subsequent_indent="  ")
     else:
         out += ["- The `.sfd` needed no change: it was converted exactly as the designer left it."]
-    out += textwrap.wrap("- The `.sfd` was converted with babelfont-rs, using only filters that "
+    out += wrap("- The `.sfd` was converted with babelfont-rs, using only filters that "
                          "reproduce FontForge's own export, as the last commit.", 88,
                          subsequent_indent="  ")
     out += ["", "## Final state", ""]
-    out += textwrap.wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
+    out += wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
                          % (repo, head_full[:12], claim), 88)
     out += [""]
-    out += textwrap.wrap("`%s` is the equivalence commit: its build is functionally equivalent "
+    out += wrap("`%s` is the equivalence commit: its build is functionally equivalent "
                          "to the binaries Google Fonts ships. Source modernization adds no "
                          "features. Where the shipped binaries differ from the source, the "
                          "difference is reproduced by a documented commit before the "
@@ -116,17 +119,17 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future):
     later = later_subjects(d, head_full)
     if later or future:
         out += ["", "## Future work", ""]
-        out += textwrap.wrap("Not part of what Google Fonts ships; for review in a font-update "
+        out += wrap("Not part of what Google Fonts ships; for review in a font-update "
                              "PR:", 88)
         for l in later:
-            out += textwrap.wrap("- commit `%s` (after the equivalence commit): %s"
+            out += wrap("- commit `%s` (after the equivalence commit): %s"
                                  % (l.split(" ", 1)[0], l.split(" ", 1)[1]), 88,
                                  subsequent_indent="  ")
         for f in future:
-            out += textwrap.wrap("- " + f, 88, subsequent_indent="  ")
+            out += wrap("- " + f, 88, subsequent_indent="  ")
     if old_block:
         out += ["", "## Original repository (dormant)", ""]
-        out += textwrap.wrap("The source block this replaces, preserved for provenance:", 88)
+        out += wrap("The source block this replaces, preserved for provenance:", 88)
         out += [""] + ["    " + l for l in old_block.rstrip("\n").splitlines()]
     if previous.strip():
         # never discard an earlier investigation: carried forward, one heading level down

@@ -42,5 +42,8 @@
    "subject": "Set the Italic's hhea ascender to 880, as the release carries",
    "body": "The same stale bounding box as the Win ascent: hhea.ascender 880, stated\nabsolutely to reproduce the release."
   }
+ ],
+ "future_work": [
+  "Raise Puritan Italic's Win ascent and hhea ascender from 880 to 881, so the top of Scaron is not clipped. 880 is a stale bounding box left by FontForge's em change; the two commits that reproduce it can be reverted."
  ]
 }

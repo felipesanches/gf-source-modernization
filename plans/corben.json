@@ -61,5 +61,8 @@
    "subject": "Set the PANOSE serif style to 15 (rounded)",
    "body": "This value exists only in the release, set by google/fonts 5b1755d5a in 2015;\nboth Bold sources state 0. 15 is what the Regular's sources state."
   }
+ ],
+ "future_work": [
+  "Remove the empty, unencoded glyph dcroat.1 from Corben Bold (a duplicate the source carried as a second dcroat)."
  ]
 }

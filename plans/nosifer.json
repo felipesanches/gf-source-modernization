@@ -8,5 +8,8 @@
    "subject": "Drop the E E ligature the release does not carry",
    "body": "Nosifer-Regular.ttf was exported with FontForge's OpenType tables off (legacy\nkern, no GSUB), so this liga never shipped. The absence exists only in the\nrelease; the E_E glyph itself stays."
   }
+ ],
+ "future_work": [
+  "Restore the E E ligature (liga -> E_E) the source defines. The shipped Nosifer-Regular.ttf lacks it only because FontForge exported it with its OpenType tables off; the commit that drops it can simply be reverted."
  ]
 }
