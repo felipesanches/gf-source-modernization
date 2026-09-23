@@ -30,17 +30,26 @@ Most of the rest were two converter/compiler gaps:
   (`SFStandardHeight`). Ported to babelfont (`--fontforge-os2-defaults`, gf-sfd-conversion
   `ca43adc`); the port agrees with an independent Python oracle on 42 of 42 sources,
   and the rule reproduces 54 of 76 released values.
+- **The pre-2012 height rule**: FontForge builds before 4d34d21ef866 (2012-05-14) divided
+  the distinct round tops by the number of glyphs. `--fontforge-height-glyph-count-mean`
+  (gf-sfd-conversion `8b59bc3`), chosen by the release's FFTM stamp, closes the heights of
+  HerrVonMuellerhoff, Miama, NosiferCaps and UnifrakturCook (`investigations/heights/`).
 - **usWeightClass**: fontc 1.0.0 ignores a single-master Glyphs source's instance
   `weightClass` (`issues/fontc-static-weight-class.md`). Carried as FEA, from the
   `.sfd`'s own `TTFWeight`, until fontc is fixed.
+
+The table gate accepts GAINED codepoints, which hid that `--add-legacy-duplicate-cmap`
+added 1-3 codepoints to 11 landed styles (`tools/probes/cmap_recipe/RESULT.tsv`). The flag
+is now never passed, and land.py and verify_landed.py require exactly the release's
+codepoints.
 
 ## Pinned toolchain
 
 | tool | revision |
 |---|---|
-| babelfont | `ca43adc` on branch `gf-sfd-conversion` (upstream main `6ab2312` + PR 90 + fidelity filters + the height rule) -- **must be pushed to felipesanches/babelfont-rs before the repos are published, so the revision every convert commit cites is public** |
+| babelfont | `8b59bc3` on branch `gf-sfd-conversion` (upstream main `6ab2312` + PR 90 + fidelity filters + both height rules) -- **must be pushed to felipesanches/babelfont-rs before the repos are published, so the revision every convert commit cites is public** |
 | gftools-builder3 | `e851b8b` (upstream tip), fontc 1.0.0 (latest release) |
-| table gate | `../sfd-batch5/tools/table_gate.py` |
+| table gate | `../sfd-batch5/tools/table_gate.py` at `2f43693` (contour split fixed in `cd4f827`) |
 | releases | google/fonts `b5efa9c32e8f` |
 
 ## Tools -- what each answers, and how to run it
@@ -54,20 +63,28 @@ All Python runs with `PY=/home/fsanches/compartilhado/gftools/venv/bin/python3`.
 | `tools/ff_heights_oracle.py` | Are the released sxHeight/sCapHeight what FontForge's exporter computes from the source? | `$PY tools/ff_heights_oracle.py` |
 | `tools/verify_heights_port.py` | Does babelfont's Rust port of that rule agree with the oracle on every real source? | `$PY tools/verify_heights_port.py <babelfont>` |
 | `tools/recipe.py` | Which babelfont flags does a style get, and why? (`--check`: agrees with baseline.sh.) | `$PY tools/recipe.py <Style>` |
-| `tools/sfd_edit.py` | Apply one documented `.sfd` edit (setfield / addfield / ensurefield / nbspwidth / renameglyph). | `$PY tools/sfd_edit.py <file.sfd> <op> <args>` |
+| `tools/sfd_edit.py` | Apply one documented `.sfd` edit (setfield / addfield / ensurefield / nbspwidth / renameglyph / renameglyphgid / scaleem / droplookup). | `$PY tools/sfd_edit.py <file.sfd> <op> <args>` |
+| `tools/ff_scale_em.py` | What did FontForge 20100501's `f.em = 1024` do to each point? (Puritan; used by `scaleem`.) | imported by sfd_edit.py |
 | `tools/workarounds.py` | Which values does the toolchain lose, and carry them across from the `.sfd`. | `$PY tools/workarounds.py <file.glyphs> <file.sfd>` |
 | `tools/build_babelfont.sh` | Build the pinned converter and stamp the commit it was built from. | `sh tools/build_babelfont.sh` |
 | `tools/land.py` | Build one repository's history, gate it before the convert commit is written. | `$PY tools/land.py <repo> [--rebuild]` |
 | `tools/verify_landed.py` | Independently re-check a landed repository from a fresh clone. | `$PY tools/verify_landed.py <repo>...` |
 | `tools/push.sh` | Push what is verified; `--check` first. | `sh tools/push.sh --check` |
+| `tools/metadata.py` | The google/fonts commit per family pointing at a landed repository. | `$PY tools/metadata.py <branch> <repo>...` |
+| `tools/pr_body.py` | The PR body for a fork branch, derived from the branch itself. | `$PY tools/pr_body.py <repo>` |
+| `tools/findings_from_results.py` | Render the investigation workflow's structured results as FINDINGS.md / VERIFY.md. | `$PY tools/findings_from_results.py investigations/workflow-journal-*.jsonl <unit>...` |
 
-Probes, each with `run.sh` and `EXPECTED.txt`: `tools/probes/fontc_static_weight_class/`.
+Probes: `tools/probes/fontc_static_weight_class/` (`run.sh`, `EXPECTED.txt`: fontmake 700,
+fontc 400); `tools/probes/cmap_recipe/` (`run.py`; `RESULT.tsv`: per style, the codepoints
+gained and lost with and without `--add-legacy-duplicate-cmap`).
 
 ## Outputs
 
 - `families.tsv` -- the pairing; `baseline.tsv` + `baseline/` -- the fidelity-only measurement
 - `plans/<repo>.json` -- the documented `.sfd` edits for a repository, when it needs any
 - `landed.tsv` -- one row per landing (last row per repository wins)
-- `investigations/<unit>/FINDINGS.md`, `VERIFY.md` -- per-family root causes, each
-  adversarially re-verified
+- `investigations/<unit>/FINDINGS.md`, `VERIFY.md`, `results.json` -- per-family root
+  causes, each adversarially re-verified; the workflow journal they came from is
+  `investigations/workflow-journal-wf_67b21e98-632.jsonl`
+- `issues/` -- upstream issue drafts (fontc weight class, fontc duplicate glyph name)
 - the repositories themselves: `../sfd-reland-repos/<repo>` (not in this repo)

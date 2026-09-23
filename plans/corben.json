@@ -49,7 +49,7 @@
    ],
    "op": "setfield",
    "args": "OS2Vendor 'newt'",
-   "subject": "OS2Vendor newt",
+   "subject": "Set the OS/2 vendor ID to newt",
    "body": "The family's vendor, as the Corben-Regular sources state it; this file left\nit blank."
   },
   {
@@ -58,7 +58,7 @@
    ],
    "op": "setfield",
    "args": "Panose 2 15 5 5 2 0 0 2 0 4",
-   "subject": "PANOSE serif style 15",
+   "subject": "Set the PANOSE serif style to 15 (rounded)",
    "body": "This value exists only in the release, set by google/fonts 5b1755d5a in 2015;\nboth Bold sources state 0. 15 is what the Regular's sources state."
   }
  ]
