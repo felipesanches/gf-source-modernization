@@ -13,6 +13,13 @@ written for either tool means the same thing:
   nbspwidth                       set the U+00A0 glyph's Width to the space's
   renameglyph <old> <new>         rename a StartChar and every standalone reference
 
+and one this workspace adds:
+
+  scaleem <em>                    change the em as FontForge 20100501's `f.em = <em>`
+                                  did (tools/ff_scale_em.py, from the puritan
+                                  investigation: its port reproduces a released glyf
+                                  point for point)
+
 An operation that cannot apply is FATAL: a silently skipped correction is how a
 defect ships. Every edit reports what the field said before, so a plan cannot
 overwrite a value the designer stated without the commit saying so.
@@ -20,8 +27,11 @@ overwrite a value the designer stated without the commit saying so.
 Usage (for testing a plan by hand):
   sfd_edit.py <file.sfd> <op> [args...]
 """
+import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 
 class EditError(Exception):
@@ -89,6 +99,13 @@ def apply(text, op, args):
         if re.search(r"(?<![\w.])%s(?![\w.])" % re.escape(old), text):
             raise EditError("%s still referenced after rename" % old)
         return text, "glyph %s" % old
+    if op == "scaleem":
+        import ff_scale_em
+        before = "Ascent %s, Descent %s" % (field_value(text, "Ascent"), field_value(text, "Descent"))
+        # integer underline values: babelfont parses metrics as i32 and drops a real
+        # (FontForge's own export gives the same bytes either way)
+        scaled, (asc, desc, _scale, _stats) = ff_scale_em.scale_sfd(text, int(args), int_underline=True)
+        return scaled, before + " -> Ascent %d, Descent %d" % (asc, desc)
     raise EditError("unknown op %s" % op)
 
 
