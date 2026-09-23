@@ -68,10 +68,10 @@ def replace_source(text, block):
     return text.rstrip("\n") + "\n" + block, None
 
 
-def upstream_info(repo, rows, old_block, head_full, display, previous):
+def upstream_info(repo, rows, old_block, head_full, display, previous, future):
     kind, base, commit = rows[0]["kind"], rows[0]["base"], rows[0]["commit"]
     d = os.path.join(land.OUT, repo)
-    convert = git(d, "log", "-1", "--format=%B", "HEAD")
+    convert = git(d, "log", "-1", "--format=%B", head_full)
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
     claim = " ".join(claim.group(1).split()) if claim else ""
     if kind == "hg":
@@ -105,6 +105,25 @@ def upstream_info(repo, rows, old_block, head_full, display, previous):
     out += ["", "## Final state", ""]
     out += textwrap.wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
                          % (repo, head_full[:12], claim), 88)
+    out += [""]
+    out += textwrap.wrap("`%s` is the equivalence commit: its build is functionally equivalent "
+                         "to the binaries Google Fonts ships. Source modernization adds no "
+                         "features. Where the shipped binaries differ from the source, the "
+                         "difference is reproduced by a documented commit before the "
+                         "conversion, never silently corrected. Any improvement is a later "
+                         "commit that needs its own QA, and is left as future work for an "
+                         "onboarder to review in a font-update PR." % head_full[:12], 88)
+    later = later_subjects(d, head_full)
+    if later or future:
+        out += ["", "## Future work", ""]
+        out += textwrap.wrap("Not part of what Google Fonts ships; for review in a font-update "
+                             "PR:", 88)
+        for l in later:
+            out += textwrap.wrap("- commit `%s` (after the equivalence commit): %s"
+                                 % (l.split(" ", 1)[0], l.split(" ", 1)[1]), 88,
+                                 subsequent_indent="  ")
+        for f in future:
+            out += textwrap.wrap("- " + f, 88, subsequent_indent="  ")
     if old_block:
         out += ["", "## Original repository (dormant)", ""]
         out += textwrap.wrap("The source block this replaces, preserved for provenance:", 88)
@@ -115,6 +134,21 @@ def upstream_info(repo, rows, old_block, head_full, display, previous):
         for l in previous.rstrip("\n").splitlines():
             out.append("#" + l if l.startswith("#") else l)
     return "\n".join(out) + "\n"
+
+
+def equivalence_commit(d):
+    """The commit METADATA.pb records: the conversion, whose build is functionally
+    equivalent to the binaries google/fonts ships. Anything after it is an improvement,
+    left for an onboarder's font-update PR."""
+    for line in git(d, "log", "--format=%H %s").splitlines():
+        h, subject = line.split(" ", 1)
+        if subject.startswith("Convert to .glyphs with babelfont "):
+            return h
+    raise SystemExit("FATAL: %s has no conversion commit" % d)
+
+
+def later_subjects(d, equiv):
+    return [l for l in git(d, "log", "--reverse", "--format=%h %s", "%s..HEAD" % equiv).splitlines() if l]
 
 
 def own_subjects(d, rows):
@@ -148,7 +182,8 @@ def main():
         if git(os.path.join(land.OUT, repo), "rev-parse", "--short", "HEAD").strip() != landed[repo][2]:
             raise SystemExit("FATAL: %s HEAD is not the landed commit %s" % (repo, landed[repo][2]))
         d = os.path.join(land.OUT, repo)
-        head_full = git(d, "rev-parse", "HEAD").strip()
+        head_full = equivalence_commit(d)      # recorded; later commits are future work
+        future = land.load_plan(repo).get("future_work", [])
         # the branch the commit lives on once published: `main` for a fresh repository;
         # `master` for a fork or an extended repository, AFTER its pull request is
         # MERGED -- a squash merge would give the commit a new hash and orphan this one
@@ -162,7 +197,7 @@ def main():
         open(mp, "w", encoding="utf-8").write(new)
         ui = os.path.join(wt, lic, fam, "upstream_info.md")
         previous = open(ui, encoding="utf-8").read() if os.path.exists(ui) else ""
-        body = upstream_info(repo, rows, old, head_full, display, previous)
+        body = upstream_info(repo, rows, old, head_full, display, previous, future)
         if any(ord(c) > 127 for c in body) and not any(ord(c) > 127 for c in previous):
             raise SystemExit("FATAL: non-ASCII introduced into upstream_info.md for %s" % fam)
         open(ui, "w", encoding="utf-8").write(body)

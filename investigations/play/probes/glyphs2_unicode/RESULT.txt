@@ -1,0 +1,21 @@
+== variable (exit 0)
+Min[wght].ttf U+0041 U+2013
+== statics (exit 0)
+Min-Bold.ttf U+0041 U+07DD
+== babelfont (glyphslib) read, written back as Glyphs 3:
+glyphname = A	unicode = 65
+glyphname = endash	unicode = 2013
+== variable (exit 0)
+Min[wght].ttf U+0041 U+2013
+== statics (exit 0)
+Min-Regular.ttf U+0041 U+07DD
+== babelfont (glyphslib) read, written back as Glyphs 3:
+glyphname = A	unicode = 65
+glyphname = endash	unicode = 2013
+== variable (exit 0)
+Min[wght].ttf U+0041 U+2013
+== statics (exit 0)
+Min-Bold.ttf U+0041 U+07DD
+== babelfont (glyphslib) read, written back as Glyphs 3:
+glyphname = A	unicode = 65
+glyphname = endash	unicode = 2013

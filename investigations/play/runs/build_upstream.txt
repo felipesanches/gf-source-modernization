@@ -1,0 +1,41 @@
+== run 1-as-is: exit 1; built: 
+operation 'Fontc' while building [../fonts//ttf/Play-Bold.ttf, ../fonts//variable/Play[wght].ttf, ../fonts//webfonts/Play-Regular.woff2, ../fonts//webfonts/Play[wght].woff2] from [Play.glyphs]: Invalid source glyph 'ringcomb.case': 'bad anchor: 'Invalid anchor '_top': 'no value at default location''
+== run 2-no-ringcomb-anchors: exit 1; built: 
+operation 'Fontc' while building [../fonts//ttf/Play-Regular.ttf, ../fonts//variable/Play[wght].ttf, ../fonts//webfonts/Play-Regular.woff2, ../fonts//webfonts/Play[wght].woff2] from [Play.glyphs]: 'ze-cy' has interpolation-incompatible paths
+interpolation-incompatible glyphs: 3
+endescender-cy s ze-cy 
+== run 3-statics-only: exit 0; built: Play-Regular.ttf 
+== gate Play-Regular
+BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+BLOCKING GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+BLOCKING GDEF.mark_glyph_sets [null, {"0": ["uni0308", "uni0307", "gravecomb", "acutecomb", "uni0302", "uni030
+BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [16, 5],
+BLOCKING GSUB.feature_list {"c2sc": {"0": [25, 30]}, "case": {"0": [27, 32]}, "ccmp": {"0": [2, 6], "1": [3
+BLOCKING GSUB.lookup_list {"0": {"0": {"Gcommaaccent": ["gcommaaccent.smcp", null], "Kcommaaccent": ["kcom
+BLOCKING OS/2.panose_10 {"2": [5, 0]}
+BLOCKING cmap U+2013 LOST ["endash", null]
+BLOCKING cmap U+2014 LOST ["emdash", null]
+BLOCKING cmap U+2018 LOST ["quoteleft", null]
+BLOCKING cmap U+2019 LOST ["quoteright", null]
+BLOCKING cmap U+2020 LOST ["dagger", null]
+BLOCKING cmap U+2021 LOST ["daggerdbl", null]
+BLOCKING cmap U+2022 LOST ["bullet", null]
+BLOCKING cmap U+2026 LOST ["ellipsis", null]
+BLOCKING cmap U+2030 LOST ["perthousand", null]
+BLOCKING cmap U+2039 LOST ["guilsinglleft", null]
+BLOCKING cmap U+2044 LOST ["fraction", null]
+BLOCKING cmap U+2070 LOST ["uni2070", null]
+BLOCKING cmap U+2074 LOST ["uni2074", null]
+BLOCKING cmap U+2075 LOST ["uni2075", null]
+BLOCKING cmap U+2076 LOST ["uni2076", null]
+BLOCKING cmap U+2077 LOST ["uni2077", null]
+BLOCKING cmap U+2078 LOST ["uni2078", null]
+BLOCKING cmap U+2079 LOST ["uni2079", null]
+BLOCKING cmap U+2080 LOST ["uni2080", null]
+BLOCKING cmap U+2081 LOST ["uni2081", null]
+BLOCKING cmap U+2082 LOST ["uni2082", null]
+BLOCKING cmap U+2083 LOST ["uni2083", null]
+BLOCKING cmap U+2084 LOST ["uni2084", null]
+cmap: 827 shipped, 824 built, 50 gained, 53 lost
+Play-Bold: not built
+workdir: /tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/play-upstream2

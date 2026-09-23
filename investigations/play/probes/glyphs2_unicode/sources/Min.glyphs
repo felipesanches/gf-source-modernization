@@ -1,0 +1,114 @@
+{
+.appVersion = "983";
+familyName = Min;
+fontMaster = (
+{
+ascender = 800;
+capHeight = 700;
+descender = -200;
+id = m01;
+weightValue = 0;
+xHeight = 500;
+},
+{
+ascender = 800;
+capHeight = 700;
+descender = -200;
+id = m02;
+weight = Bold;
+xHeight = 500;
+}
+);
+glyphs = (
+{
+glyphname = A;
+layers = (
+{
+layerId = m01;
+paths = (
+{
+closed = 1;
+nodes = (
+"0 0 LINE",
+"500 0 LINE",
+"250 700 LINE"
+);
+}
+);
+width = 500;
+},
+{
+layerId = m02;
+paths = (
+{
+closed = 1;
+nodes = (
+"0 0 LINE",
+"600 0 LINE",
+"300 700 LINE"
+);
+}
+);
+width = 600;
+}
+);
+unicode = 0041;
+},
+{
+glyphname = endash;
+layers = (
+{
+layerId = m01;
+paths = (
+{
+closed = 1;
+nodes = (
+"0 200 LINE",
+"500 200 LINE",
+"500 260 LINE",
+"0 260 LINE"
+);
+}
+);
+width = 500;
+},
+{
+layerId = m02;
+paths = (
+{
+closed = 1;
+nodes = (
+"0 200 LINE",
+"500 200 LINE",
+"500 290 LINE",
+"0 290 LINE"
+);
+}
+);
+width = 500;
+}
+);
+unicode = 2013;
+}
+);
+instances = (
+{
+interpolationWeight = 0;
+instanceInterpolations = {
+m01 = 1;
+};
+name = Regular;
+},
+{
+instanceInterpolations = {
+m02 = 1;
+};
+isBold = 1;
+name = Bold;
+weightClass = Bold;
+}
+);
+unitsPerEm = 1000;
+versionMajor = 1;
+versionMinor = 0;
+}
