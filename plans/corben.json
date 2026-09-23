@@ -1,0 +1,65 @@
+{
+ "repo": "corben",
+ "commits": [
+  {
+   "styles": [
+    "Corben-Bold"
+   ],
+   "op": "renameglyphgid",
+   "args": "547 dcroat dcroat.1",
+   "subject": "Rename the empty duplicate dcroat to dcroat.1",
+   "body": "Two glyphs were named dcroat: gid 211, U+0111, and gid 547, empty and\nunencoded. fontc cannot build a duplicated name. The release keeps both; its\nsecond reads as dcroat.1."
+  },
+  {
+   "styles": [
+    "Corben-Bold"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2TypoAscent 2826"
+    ],
+    [
+     "setfield",
+     "OS2TypoDescent -969"
+    ],
+    [
+     "setfield",
+     "OS2WinAscent 2826"
+    ],
+    [
+     "setfield",
+     "OS2WinDescent 969"
+    ],
+    [
+     "setfield",
+     "HheadAscent 2826"
+    ],
+    [
+     "setfield",
+     "HheadDescent -969"
+    ]
+   ],
+   "subject": "Take the vertical metrics of Corben-Bold-TTF.sfd",
+   "body": "The later src/Corben-Bold-TTF.sfd states 2826/-969, as the release carries;\nthis file stated 2300/-940. Both state them as absolute values."
+  },
+  {
+   "styles": [
+    "Corben-Bold"
+   ],
+   "op": "setfield",
+   "args": "OS2Vendor 'newt'",
+   "subject": "OS2Vendor newt",
+   "body": "The family's vendor, as the Corben-Regular sources state it; this file left\nit blank."
+  },
+  {
+   "styles": [
+    "Corben-Bold"
+   ],
+   "op": "setfield",
+   "args": "Panose 2 15 5 5 2 0 0 2 0 4",
+   "subject": "PANOSE serif style 15",
+   "body": "This value exists only in the release, set by google/fonts 5b1755d5a in 2015;\nboth Bold sources state 0. 15 is what the Regular's sources state."
+  }
+ ]
+}

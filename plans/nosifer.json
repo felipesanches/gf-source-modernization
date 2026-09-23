@@ -1,0 +1,12 @@
+{
+ "repo": "nosifer",
+ "commits": [
+  {
+   "styles": "*",
+   "op": "droplookup",
+   "args": "'liga' Standard Ligatures in Latin lookup 0",
+   "subject": "Drop the E E ligature the release does not carry",
+   "body": "Nosifer-Regular.ttf was exported with FontForge's OpenType tables off (legacy\nkern, no GSUB), so this liga never shipped. The absence exists only in the\nrelease; the E_E glyph itself stays."
+  }
+ ]
+}

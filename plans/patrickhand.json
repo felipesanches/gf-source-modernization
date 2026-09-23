@@ -1,0 +1,12 @@
+{
+ "repo": "patrickhand",
+ "commits": [
+  {
+   "styles": "*",
+   "op": "addfield",
+   "args": "OS2CapHeight 661",
+   "subject": "OS2CapHeight 661",
+   "body": "FontForge computed 661 from the cubic outlines of src/PatrickHand-Regular.otf,\nwhich the release was exported from. This .sfd re-imports the hinted release,\nwhose quadratic outlines give FontForge's rule 660."
+  }
+ ]
+}

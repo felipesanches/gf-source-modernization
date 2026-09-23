@@ -1,0 +1,12 @@
+{
+ "repo": "russoone",
+ "commits": [
+  {
+   "styles": "*",
+   "op": "setfield",
+   "args": "FSType 0",
+   "subject": "FSType 0",
+   "body": "Installable embedding. The value exists only in the release: google/fonts\n8ccda7bf7 (2015-08-05, \"Fix fsType for 40 font files\") changed the shipped\nbinary from 4 to 0. This source, and the binary FontForge exported from it,\nstate 4 (preview & print). The OFL shipped with the font already permits\nembedding."
+  }
+ ]
+}
