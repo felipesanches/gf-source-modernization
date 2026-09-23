@@ -47,7 +47,7 @@ codepoints.
 
 | tool | revision |
 |---|---|
-| babelfont | `8b59bc3` on branch `gf-sfd-conversion` (upstream main `6ab2312` + PR 90 + fidelity filters + both height rules) -- **must be pushed to felipesanches/babelfont-rs before the repos are published, so the revision every convert commit cites is public** |
+| babelfont | `8b59bc3` on branch `gf-sfd-conversion` (upstream main `6ab2312` + PR 90 + fidelity filters + both height rules) -- **not yet upstream. A font repository may cite only a revision merged into simoncozens/babelfont-rs, never a fork: land.py refuses otherwise (`--unpublished-converter` lands for measurement only, status `*-UNPUBLISHED-CONVERTER`), and push.sh refuses a convert commit citing a revision not on upstream main. The 27 landings are blocked until these commits merge; then re-land.** |
 | gftools-builder3 | `e851b8b` (upstream tip), fontc 1.0.0 (latest release) |
 | table gate | `../sfd-batch5/tools/table_gate.py` at `2f43693` (contour split fixed in `cd4f827`) |
 | releases | google/fonts `b5efa9c32e8f` |

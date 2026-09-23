@@ -44,7 +44,11 @@ OUT = "/home/fsanches/compartilhado/sfd-reland-repos"
 TEMPLATE = "/home/fsanches/compartilhado/sfd-func-audit/ufr-template"
 BF_TREE = "/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion"
 BF = os.path.join(BF_TREE, "target-heights/release/babelfont")
-BF_WHAT = "felipesanches/babelfont-rs gf-sfd-conversion"
+# A font repository may cite only a converter revision merged into babelfont's upstream:
+# never a personal fork (Felipe, 2026-09-23). --unpublished-converter lands anyway, for
+# measurement only; push.sh refuses such a landing.
+BF_UPSTREAM = "simoncozens/babelfont-rs"
+BF_WHERE = BF_UPSTREAM            # set by check_converter()
 B3 = "/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/gftools-builder"
 B3_ID, FONTC_ID = "e851b8b", "1.0.0"
 D3 = "/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3"
@@ -157,7 +161,16 @@ def check_converter():
     if built != head:
         raise LandError("babelfont binary was built from %s, HEAD is %s; run tools/build_babelfont.sh"
                         % (built, head))
-    return head[:7]
+    git(BF_TREE, "fetch", "-q", "upstream", "main")
+    upstream = git(BF_TREE, "merge-base", "--is-ancestor", head, "upstream/main",
+                   check=False).returncode == 0
+    if not upstream and "--unpublished-converter" not in sys.argv:
+        raise LandError("babelfont %s is not on %s main; a font repository may cite only an "
+                        "upstream revision (--unpublished-converter lands for measurement only)"
+                        % (head[:7], BF_UPSTREAM))
+    global BF_WHERE
+    BF_WHERE = BF_UPSTREAM if upstream else "UNPUBLISHED, not on %s main" % BF_UPSTREAM
+    return head[:7], upstream
 
 
 # --- step 1: the unmodified original ------------------------------------------
@@ -398,7 +411,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     common = [f for f in every if 2 * sum(f in p["flags"] for p in per_style) > len(per_style)]
     lines = ["Convert to .glyphs with babelfont %s" % bf_rev, ""]
     lines += wrap("Converted from %s%s with babelfont %s (%s), FontForge-fidelity filters "
-                  "only:" % (srcs, corrected, bf_rev, BF_WHAT), "", "")
+                  "only:" % (srcs, corrected, bf_rev, BF_WHERE), "", "")
     lines += wrap(" ".join(common), "  ", "  ")
     for p in per_style:
         extra = [f for f in p["flags"] if f not in common]
@@ -444,7 +457,7 @@ def main():
     rebuild = "--rebuild" in sys.argv
     rows = family_rows(repo)
     plan = load_plan(repo)
-    bf_rev = check_converter()
+    bf_rev, bf_upstream = check_converter()
     d = os.path.join(OUT, repo)
     if os.path.exists(d):
         if not rebuild:
@@ -466,6 +479,8 @@ def main():
         git(d, "remote", "add", "origin", "https://github.com/googlefonts/%s.git" % repo)
     n = int(git(d, "rev-list", "--count", "HEAD").stdout)
     status = "CLEAN" if all(x == 0 for _, x, _ in results) else "RESIDUAL"
+    if not bf_upstream:
+        status += "-UNPUBLISHED-CONVERTER"      # push.sh pushes only CLEAN
     summary = "; ".join("%s=%s" % (st, x if x is not None else "BUILD") for st, x, _ in results)
     with open(os.path.join(W, "landed.tsv"), "a") as fh:
         fh.write("\t".join([repo, BRANCH[kind], head, str(n), status, summary]) + "\n")
