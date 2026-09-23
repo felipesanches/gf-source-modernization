@@ -1,0 +1,3 @@
+lost 53, gained 50; lost codepoints found at their hex digits read as decimal: 50
+examples: U+2013->U+07DD endash U+2014->U+07DE emdash U+2018->U+07E2 quoteleft U+2019->U+07E3 quoteright U+2020->U+07E4 dagger U+2021->U+07E5 daggerdbl U+2022->U+07E6 bullet U+2026->U+07EA ellipsis
+other lost: U+FB00 ff U+FB03 ffi U+FB04 ffl
