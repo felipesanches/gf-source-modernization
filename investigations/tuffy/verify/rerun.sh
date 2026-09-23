@@ -11,7 +11,10 @@ W=${W:-/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4
 R=/home/fsanches/compartilhado/sfd-reland
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3
-TG=/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py
+# The gate changed mid-verification (sfd-batch5 f5cb410 -> cd4f827, contour split). For
+# the pre-fix numbers: git -C /home/fsanches/compartilhado/sfd-batch5 show
+#   f5cb410:tools/table_gate.py > /some/dir/table_gate.py; TG=/some/dir/table_gate.py bash rerun.sh
+TG=${TG:-/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py}
 IMP=/home/fsanches/compartilhado/sfd-batch5/tools/drift/import_outlines.py
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git
 C=52f780bc9d197280a9f430574e179a5f233c56b6

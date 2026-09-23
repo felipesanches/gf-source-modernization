@@ -13,7 +13,7 @@ Run with `PY=/home/fsanches/compartilhado/gftools/venv/bin/python3`.
 | `component_moves.py` | Which composites place their components differently in two fonts (leaf components flattened, matched by codepoint)? | `$PY component_moves.py <A.ttf> <B.ttf>` |
 | `gate_filled_area.py` | Which gate rows are only overlap representation? The unmodified gate with the area measure swapped for the FILLED region (pathops simplify, nonzero); `--control A B` for the Allerta negative control. | `$PY gate_filled_area.py <d3.json> --fonts <shipped> <built>` |
 | `gate_either_area.py` | The same, but a glyph passes when EITHER the gate's per-contour sum OR the filled-region area agrees within 0.4% (so no current pass can turn into a fail). | `$PY gate_either_area.py <d3.json> --fonts <shipped> <built>` / `--control A B` |
-| `rerun.sh` | Reruns every measurement VERIFY.md quotes, from the unmodified sources, one build at a time; records every edit applied. | `bash rerun.sh` (writes to `W=`, default session scratch) |
+| `rerun.sh` | Reruns every measurement VERIFY.md quotes, from the unmodified sources, one build at a time; records every edit applied. | `bash rerun.sh` (writes to `W=`, default session scratch; `TG=` picks the gate -- VERIFY.md's pre-fix numbers need sfd-batch5 `f5cb410`'s, see the header) |
 
 The investigator's own probes are in `../probes/`, each stating its question in its header.
 
