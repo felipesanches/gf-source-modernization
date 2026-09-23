@@ -21,7 +21,10 @@ Font Repository template, one commit per documented `.sfd` edit, and
 Converting each style's UNMODIFIED source with **fidelity flags only** -- flags that
 replicate FontForge's own TTF exporter, never flags that correct the font -- left
 far fewer differences than the old 19-step pipeline was compensating for
-(`baseline.tsv`). Most of the rest were two converter/compiler gaps:
+(`baseline.tsv`): of 42 styles, 3 were already CLEAN and 25 more differed only in the
+OS/2 x-height, cap height or weight class. (The commit that recorded the baseline,
+`063d57b`, says "29 more"; that count was wrong -- 25 is what `baseline.tsv` holds.)
+Most of the rest were two converter/compiler gaps:
 
 - **OS/2 x-height and cap height**: FontForge computes them at export
   (`SFStandardHeight`). Ported to babelfont (`--fontforge-os2-defaults`, gf-sfd-conversion
