@@ -1,0 +1,54 @@
+recipe:
+  ../fonts//webfonts/Play-Regular.woff2:
+  - source: Play.glyphs
+  - operation: instantiateSource
+    args: wght=0
+  - operation: fontc
+    args: null
+    flattenComponents: false
+    decomposeTransformedComponents: false
+    reverseOutlineDirection: true
+  - operation: fix
+    args: null
+    includeSourceFixes: false
+  - operation: compress
+    args: null
+  ../fonts//ttf/Play-Regular.ttf:
+  - source: Play.glyphs
+  - operation: instantiateSource
+    args: wght=0
+  - operation: fontc
+    args: null
+    flattenComponents: false
+    decomposeTransformedComponents: false
+    reverseOutlineDirection: true
+  - operation: fix
+    args: null
+    includeSourceFixes: false
+  ../fonts//webfonts/Play-Bold.woff2:
+  - source: Play.glyphs
+  - operation: instantiateSource
+    args: wght=0
+  - operation: fontc
+    args: null
+    reverseOutlineDirection: true
+    flattenComponents: false
+    decomposeTransformedComponents: false
+  - operation: fix
+    args: null
+    includeSourceFixes: false
+  - operation: compress
+    args: null
+  ../fonts//ttf/Play-Bold.ttf:
+  - source: Play.glyphs
+  - operation: instantiateSource
+    args: wght=0
+  - operation: fontc
+    args: null
+    reverseOutlineDirection: true
+    flattenComponents: false
+    decomposeTransformedComponents: false
+  - operation: fix
+    args: null
+    includeSourceFixes: false
+

@@ -1,0 +1,7 @@
+source: endash unicode = 2013; (Glyphs 2: hex)
+babelfont G3 out: endash unicode = 2013; (Glyphs 3: decimal; 8211 expected)
+babelfont G3 out: instances:
+  axesValues = (0);
+  name = Regular;
+  axesValues = (0);
+  name = Bold;

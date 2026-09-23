@@ -1,0 +1,453 @@
+Play-Regular	GDEF.glyph_classes	provenance	GDEF.glyph_classes -- a lookup filters on glyph class
+Play-Regular	GDEF.mark_attach_classes	provenance	GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+Play-Regular	GSUB.script_list	provenance	GSUB.script_list {"DFLT/dflt": [{"lookups": [0, 4, 8, 12, 16, 20, 24, 28, 40, 44, 48, 52, 56, 60,
+Play-Regular	GSUB.feature_list	provenance	GSUB.feature_list {"c2sc": {"0": [25, 21]}, "case": [[27], null], "ccmp": [[2, 3, 4], null], "dlig
+Play-Regular	GSUB.lookup_list	provenance	GSUB.lookup_list {"0": {"0": {"error": "There are 337 changes, check manually!"}}, "1": {"0": {"A
+Play-Regular	OS/2.y_subscript_x_size	provenance	OS/2.y_subscript_x_size [650, 700]
+Play-Regular	OS/2.y_subscript_y_size	provenance	OS/2.y_subscript_y_size [600, 650]
+Play-Regular	OS/2.y_subscript_y_offset	provenance	OS/2.y_subscript_y_offset [75, 140]
+Play-Regular	OS/2.y_superscript_x_size	provenance	OS/2.y_superscript_x_size [650, 700]
+Play-Regular	OS/2.y_superscript_y_size	provenance	OS/2.y_superscript_y_size [600, 650]
+Play-Regular	OS/2.y_superscript_y_offset	provenance	OS/2.y_superscript_y_offset [350, 477]
+Play-Regular	OS/2.y_strikeout_position	provenance	OS/2.y_strikeout_position [290, 250]
+Play-Regular	OS/2.panose_10	provenance	OS/2.panose_10 {"0": [0, 2], "1": [0, 11], "2": [5, 0]}
+Play-Regular	OS/2.ach_vend_id	provenance	OS/2.ach_vend_id ["PLAY", "PT  "]
+Play-Regular	OS/2.s_typo_descender	provenance	OS/2.s_typo_descender [-220, 220]
+Play-Regular	OS/2.us_win_ascent	provenance	OS/2.us_win_ascent [1052, 937]
+Play-Regular	OS/2.us_win_descent	provenance	OS/2.us_win_descent [224, 220]
+Play-Regular	OS/2.sx_height	converter-fidelity	FontForge SFStandardHeight rule reproduces the release (ff_heights_oracle MATCH); converter fix in progress
+Play-Regular	OS/2.s_cap_height	converter-fidelity	FontForge SFStandardHeight rule reproduces the release (ff_heights_oracle MATCH); converter fix in progress
+Play-Regular	cmap U+0000	provenance	LOST; release: NULL adv=0 bbox=None; ours: absent
+Play-Regular	cmap U+000D	provenance	LOST; release: nonmarkingreturn adv=230 bbox=None; ours: absent
+Play-Regular	cmap U+0162	provenance	renamed+redrawn; release: uni0162 adv=600 bbox=(24, -212, 561, 649); ours: Tcommaaccent adv=585 bbox=(24, -190, 561, 649)
+Play-Regular	cmap U+0163	provenance	renamed+redrawn; release: uni0163 adv=600 bbox=(10, -220, 382, 634); ours: tcommaaccent adv=402 bbox=(10, -190, 382, 634)
+Play-Regular	cmap U+01A0	provenance	LOST; release: Ohorn adv=679 bbox=(66, -10, 621, 737); ours: absent
+Play-Regular	cmap U+01A1	provenance	LOST; release: ohorn adv=568 bbox=(60, -10, 571, 572); ours: absent
+Play-Regular	cmap U+01AF	provenance	LOST; release: Uhorn adv=676 bbox=(84, -10, 690, 737); ours: absent
+Play-Regular	cmap U+01B0	provenance	LOST; release: uhorn adv=573 bbox=(78, -10, 600, 572); ours: absent
+Play-Regular	cmap U+02BC	provenance	renamed+redrawn; release: uni02BC adv=183 bbox=(0, 539, 133, 679); ours: apostrophe adv=222 bbox=(44, 509, 177, 649)
+Play-Regular	cmap U+0300	provenance	LOST; release: gravecomb adv=0 bbox=(-299, 553, -100, 680); ours: absent
+Play-Regular	cmap U+0301	provenance	LOST; release: acutecomb adv=0 bbox=(-299, 553, -100, 680); ours: absent
+Play-Regular	cmap U+0302	provenance	LOST; release: uni0302 adv=0 bbox=(-341, 553, -100, 680); ours: absent
+Play-Regular	cmap U+0303	provenance	LOST; release: tildecomb adv=0 bbox=(-364, 556, -88, 646); ours: absent
+Play-Regular	cmap U+0304	provenance	LOST; release: uni0304 adv=0 bbox=(-318, 590, -100, 649); ours: absent
+Play-Regular	cmap U+0306	provenance	LOST; release: uni0306 adv=0 bbox=(-336, 553, -100, 680); ours: absent
+Play-Regular	cmap U+0307	provenance	LOST; release: uni0307 adv=0 bbox=(-140, 568, -50, 666); ours: absent
+Play-Regular	cmap U+0308	provenance	LOST; release: uni0308 adv=0 bbox=(-360, 565, -100, 659); ours: absent
+Play-Regular	cmap U+0309	provenance	LOST; release: hookabovecomb adv=0 bbox=(-312, 572, -169, 746); ours: absent
+Play-Regular	cmap U+030B	provenance	LOST; release: uni030B adv=0 bbox=(-373, 552, -100, 680); ours: absent
+Play-Regular	cmap U+031B	provenance	LOST; release: uni031B adv=0 bbox=(-241, 419, -60, 572); ours: absent
+Play-Regular	cmap U+0323	provenance	LOST; release: dotbelowcomb adv=0 bbox=(-175, -151, -80, -62); ours: absent
+Play-Regular	cmap U+0326	provenance	LOST; release: uni0326 adv=0 bbox=(-240, -190, -100, -40); ours: absent
+Play-Regular	cmap U+0335	provenance	LOST; release: uni0335 adv=0 bbox=(-457, 401, -100, 469); ours: absent
+Play-Regular	cmap U+0344	provenance	LOST; release: uni0344 adv=0 bbox=(-164, 565, 195, 692); ours: absent
+Play-Regular	cmap U+0374	provenance	LOST; release: uni0374 adv=276 bbox=(40, 503, 216, 680); ours: absent
+Play-Regular	cmap U+0375	provenance	LOST; release: uni0375 adv=276 bbox=(60, -157, 236, 20); ours: absent
+Play-Regular	cmap U+037E	provenance	LOST; release: uni037E adv=256 bbox=(39, -112, 191, 484); ours: absent
+Play-Regular	cmap U+0387	provenance	LOST; release: anoteleia adv=256 bbox=(70, 376, 186, 484); ours: absent
+Play-Regular	cmap U+03A9	provenance	renamed+redrawn; release: uni03A9 adv=679 bbox=(66, 0, 613, 659); ours: Omega adv=702 bbox=(66, 0, 636, 659)
+Play-Regular	cmap U+03CF	provenance	LOST; release: uni03CF adv=609 bbox=(84, -208, 619, 649); ours: absent
+Play-Regular	cmap U+03D7	provenance	LOST; release: uni03D7 adv=514 bbox=(78, -208, 512, 484); ours: absent
+Play-Regular	cmap U+0401	provenance	renamed+redrawn; release: uni0401 adv=580 bbox=(84, 0, 530, 849); ours: afii10023 adv=580 bbox=(84, 0, 530, 815)
+Play-Regular	cmap U+0402	provenance	renamed+redrawn; release: uni0402 adv=691 bbox=(24, -9, 651, 649); ours: afii10051 adv=750 bbox=(24, -198, 672, 649)
+Play-Regular	cmap U+0403	provenance	renamed+redrawn; release: uni0403 adv=510 bbox=(84, 0, 480, 842); ours: afii10052 adv=490 bbox=(84, 0, 460, 830)
+Play-Regular	cmap U+0407	provenance	renamed+redrawn; release: uni0407 adv=265 bbox=(3, 0, 263, 849); ours: afii10056 adv=265 bbox=(2, 0, 262, 819)
+Play-Regular	cmap U+0409	provenance	renamed+redrawn; release: uni0409 adv=926 bbox=(18, -2, 880, 649); ours: afii10058 adv=1000 bbox=(16, 0, 955, 649)
+Play-Regular	cmap U+040A	provenance	renamed+redrawn; release: uni040A adv=1012 bbox=(84, 0, 967, 649); ours: afii10059 adv=1000 bbox=(84, 0, 955, 649)
+Play-Regular	cmap U+040B	provenance	renamed+redrawn; release: uni040B adv=730 bbox=(24, 0, 661, 649); ours: afii10060 adv=750 bbox=(24, 0, 672, 649)
+Play-Regular	cmap U+040C	provenance	renamed+redrawn; release: uni040C adv=606 bbox=(84, 0, 596, 842); ours: afii10061 adv=600 bbox=(84, 0, 616, 845)
+Play-Regular	cmap U+040E	provenance	renamed+redrawn; release: uni040E adv=544 bbox=(0, -10, 574, 845); ours: afii10062 adv=537 bbox=(6, -10, 531, 845)
+Play-Regular	cmap U+040F	provenance	renamed+redrawn; release: uni040F adv=687 bbox=(84, -166, 603, 649); ours: afii10145 adv=707 bbox=(84, -166, 623, 649)
+Play-Regular	cmap U+0411	provenance	renamed+redrawn; release: uni0411 adv=570 bbox=(84, 0, 525, 649); ours: afii10018 adv=570 bbox=(84, 0, 525, 649)
+Play-Regular	cmap U+0413	provenance	renamed+redrawn; release: uni0413 adv=510 bbox=(84, 0, 480, 649); ours: afii10020 adv=490 bbox=(84, 0, 460, 649)
+Play-Regular	cmap U+0414	provenance	renamed+redrawn; release: uni0414 adv=651 bbox=(25, -166, 622, 649); ours: afii10021 adv=667 bbox=(20, -166, 632, 649)
+Play-Regular	cmap U+0416	provenance	renamed+redrawn; release: uni0416 adv=896 bbox=(10, 0, 886, 649); ours: afii10024 adv=954 bbox=(-6, 0, 959, 649)
+Play-Regular	cmap U+0418	provenance	renamed+redrawn; release: uni0418 adv=723 bbox=(85, 0, 630, 649); ours: afii10026 adv=723 bbox=(85, 0, 640, 649)
+Play-Regular	cmap U+0419	provenance	renamed+redrawn; release: uni0419 adv=723 bbox=(85, 0, 630, 845); ours: afii10027 adv=725 bbox=(85, 0, 640, 830)
+Play-Regular	cmap U+041A	provenance	renamed+redrawn; release: uni041A adv=606 bbox=(84, 0, 596, 649); ours: afii10028 adv=600 bbox=(84, 0, 616, 649)
+Play-Regular	cmap U+041B	provenance	renamed+redrawn; release: uni041B adv=652 bbox=(30, -2, 568, 649); ours: afii10029 adv=700 bbox=(4, 0, 616, 649)
+Play-Regular	cmap U+0422	provenance	renamed+redrawn; release: uni0422 adv=585 bbox=(24, 0, 561, 649); ours: afii10036 adv=585 bbox=(24, 0, 561, 649)
+Play-Regular	cmap U+0423	provenance	renamed+redrawn; release: uni0423 adv=544 bbox=(0, -10, 574, 649); ours: afii10037 adv=537 bbox=(6, -10, 531, 649)
+Play-Regular	cmap U+0424	provenance	renamed+redrawn; release: uni0424 adv=779 bbox=(66, -20, 713, 699); ours: afii10038 adv=719 bbox=(66, 0, 653, 649)
+Play-Regular	cmap U+0426	provenance	renamed+redrawn; release: uni0426 adv=672 bbox=(84, -136, 643, 649); ours: afii10040 adv=707 bbox=(84, -166, 623, 649)
+Play-Regular	cmap U+0427	provenance	renamed+redrawn; release: uni0427 adv=610 bbox=(69, 0, 526, 649); ours: afii10041 adv=610 bbox=(69, 0, 526, 649)
+Play-Regular	cmap U+0429	provenance	renamed+redrawn; release: uni0429 adv=944 bbox=(84, -166, 915, 649); ours: afii10043 adv=929 bbox=(84, -166, 845, 649)
+Play-Regular	cmap U+042A	provenance	renamed+redrawn; release: uni042A adv=621 bbox=(0, 0, 576, 649); ours: afii10044 adv=680 bbox=(9, 0, 635, 649)
+Play-Regular	cmap U+042B	provenance	renamed+redrawn; release: uni042B adv=786 bbox=(84, 0, 702, 649); ours: afii10045 adv=806 bbox=(84, 0, 722, 649)
+Play-Regular	cmap U+042C	provenance	renamed+redrawn; release: uni042C adv=570 bbox=(84, 0, 525, 649); ours: afii10046 adv=570 bbox=(84, 0, 525, 649)
+Play-Regular	cmap U+042D	provenance	renamed+redrawn; release: uni042D adv=563 bbox=(44, -10, 499, 660); ours: afii10047 adv=563 bbox=(44, -10, 499, 660)
+Play-Regular	cmap U+042F	provenance	renamed+redrawn; release: uni042F adv=612 bbox=(32, 0, 528, 649); ours: afii10049 adv=612 bbox=(32, 0, 528, 649)
+Play-Regular	cmap U+0431	provenance	renamed+redrawn; release: uni0431 adv=568 bbox=(71, -10, 509, 708); ours: afii10066 adv=580 bbox=(71, -10, 509, 703)
+Play-Regular	cmap U+0433	provenance	renamed+redrawn; release: uni0433 adv=420 bbox=(84, 0, 400, 484); ours: afii10068 adv=420 bbox=(84, 0, 390, 484)
+Play-Regular	cmap U+0434	provenance	renamed+redrawn; release: uni0434 adv=567 bbox=(10, -134, 537, 484); ours: afii10069 adv=533 bbox=(16, -134, 483, 484)
+Play-Regular	cmap U+0436	provenance	renamed+redrawn; release: uni0436 adv=753 bbox=(-16, 0, 769, 484); ours: afii10072 adv=728 bbox=(-14, 0, 742, 484)
+Play-Regular	cmap U+0437	provenance	renamed+redrawn; release: uni0437 adv=473 bbox=(50, -10, 413, 494); ours: afii10073 adv=501 bbox=(35, -10, 441, 494)
+Play-Regular	cmap U+0438	provenance	renamed+redrawn; release: uni0438 adv=588 bbox=(78, 0, 510, 484); ours: afii10074 adv=598 bbox=(78, 0, 520, 484)
+Play-Regular	cmap U+0439	provenance	renamed+redrawn; release: uni0439 adv=588 bbox=(78, 0, 510, 680); ours: afii10075 adv=598 bbox=(78, 0, 520, 679)
+Play-Regular	cmap U+043B	provenance	renamed+redrawn; release: uni043B adv=559 bbox=(30, -1, 481, 484); ours: afii10077 adv=571 bbox=(0, -7, 493, 484)
+Play-Regular	cmap U+0442	provenance	renamed+redrawn; release: uni0442 adv=489 bbox=(30, 0, 459, 484); ours: afii10084 adv=517 bbox=(24, 0, 493, 484)
+Play-Regular	cmap U+0443	provenance	renamed+redrawn; release: uni0443 adv=460 bbox=(6, -208, 454, 484); ours: afii10085 adv=460 bbox=(6, -198, 454, 484)
+Play-Regular	cmap U+0444	provenance	renamed+redrawn; release: uni0444 adv=718 bbox=(60, -198, 656, 693); ours: afii10086 adv=909 bbox=(60, -198, 849, 693)
+Play-Regular	cmap U+0446	provenance	renamed+redrawn; release: uni0446 adv=601 bbox=(84, -124, 571, 484); ours: afii10088 adv=587 bbox=(84, -134, 503, 484)
+Play-Regular	cmap U+0447	provenance	renamed+redrawn; release: uni0447 adv=573 bbox=(78, 0, 495, 484); ours: afii10089 adv=573 bbox=(78, 0, 495, 484)
+Play-Regular	cmap U+0449	provenance	renamed+redrawn; release: uni0449 adv=831 bbox=(84, -134, 801, 484); ours: afii10091 adv=817 bbox=(84, -134, 733, 484)
+Play-Regular	cmap U+044A	provenance	renamed+redrawn; release: uni044A adv=565 bbox=(30, 0, 535, 484); ours: afii10092 adv=587 bbox=(28, 0, 543, 484)
+Play-Regular	cmap U+044B	provenance	renamed+redrawn; release: uni044B adv=678 bbox=(78, 0, 600, 484); ours: afii10093 adv=725 bbox=(84, 0, 646, 484)
+Play-Regular	cmap U+044C	provenance	renamed+redrawn; release: uni044C adv=491 bbox=(78, 0, 461, 484); ours: afii10094 adv=533 bbox=(84, 0, 489, 484)
+Play-Regular	cmap U+044D	provenance	renamed+redrawn; release: uni044D adv=464 bbox=(36, -10, 404, 494); ours: afii10095 adv=464 bbox=(36, -10, 404, 494)
+Play-Regular	cmap U+044F	provenance	renamed+redrawn; release: uni044F adv=546 bbox=(30, 0, 468, 484); ours: afii10097 adv=560 bbox=(20, 0, 476, 484)
+Play-Regular	cmap U+0452	provenance	renamed+redrawn; release: uni0452 adv=542 bbox=(0, -129, 507, 700); ours: afii10099 adv=573 bbox=(19, -190, 498, 693)
+Play-Regular	cmap U+0453	provenance	renamed+redrawn; release: uni0453 adv=420 bbox=(84, 0, 400, 680); ours: afii10100 adv=420 bbox=(84, 0, 390, 680)
+Play-Regular	cmap U+0456	provenance	renamed+redrawn; release: uni0456 adv=246 bbox=(78, 0, 168, 659); ours: afii10103 adv=248 bbox=(79, 0, 169, 666)
+Play-Regular	cmap U+0457	provenance	renamed+redrawn; release: uni0457 adv=246 bbox=(-5, 0, 255, 659); ours: afii10104 adv=247 bbox=(-7, 0, 253, 659)
+Play-Regular	cmap U+0458	provenance	renamed+redrawn; release: uni0458 adv=247 bbox=(-43, -220, 169, 659); ours: afii10105 adv=245 bbox=(-43, -220, 169, 659)
+Play-Regular	cmap U+0459	provenance	renamed+redrawn; release: uni0459 adv=754 bbox=(30, 0, 724, 484); ours: afii10106 adv=846 bbox=(3, -7, 802, 484)
+Play-Regular	cmap U+045A	provenance	renamed+redrawn; release: uni045A adv=776 bbox=(78, 0, 746, 484); ours: afii10107 adv=836 bbox=(84, 0, 792, 484)
+Play-Regular	cmap U+045B	provenance	renamed+redrawn; release: uni045B adv=584 bbox=(0, 0, 506, 700); ours: afii10108 adv=573 bbox=(19, 0, 495, 700)
+Play-Regular	cmap U+045C	provenance	renamed+redrawn; release: uni045C adv=502 bbox=(77, 0, 518, 680); ours: afii10109 adv=502 bbox=(77, 0, 518, 700)
+Play-Regular	cmap U+045E	provenance	renamed+redrawn; release: uni045E adv=460 bbox=(6, -208, 454, 680); ours: afii10110 adv=460 bbox=(6, -200, 454, 680)
+Play-Regular	cmap U+046A	provenance	LOST; release: uni046A adv=896 bbox=(10, 0, 886, 649); ours: absent
+Play-Regular	cmap U+046B	provenance	LOST; release: uni046B adv=753 bbox=(-16, 0, 769, 484); ours: absent
+Play-Regular	cmap U+0490	provenance	renamed+redrawn; release: uni0490 adv=510 bbox=(84, 0, 480, 762); ours: afii10050 adv=560 bbox=(84, 0, 530, 762)
+Play-Regular	cmap U+0491	provenance	renamed+redrawn; release: uni0491 adv=440 bbox=(84, 0, 400, 576); ours: afii10098 adv=440 bbox=(84, 0, 410, 576)
+Play-Regular	cmap U+051A	provenance	LOST; release: uni051A adv=676 bbox=(64, 0, 682, 659); ours: absent
+Play-Regular	cmap U+051B	provenance	LOST; release: uni051B adv=579 bbox=(78, -208, 519, 494); ours: absent
+Play-Regular	cmap U+051C	provenance	LOST; release: uni051C adv=968 bbox=(8, 0, 960, 649); ours: absent
+Play-Regular	cmap U+051D	provenance	LOST; release: uni051D adv=792 bbox=(12, 0, 780, 484); ours: absent
+Play-Regular	cmap U+0524	provenance	LOST; release: uni0524 adv=687 bbox=(84, -136, 673, 649); ours: absent
+Play-Regular	cmap U+0525	provenance	LOST; release: uni0525 adv=577 bbox=(84, -124, 561, 484); ours: absent
+Play-Regular	cmap U+1EA0	provenance	LOST; release: uni1EA0 adv=652 bbox=(15, -151, 637, 649); ours: absent
+Play-Regular	cmap U+1EA1	provenance	LOST; release: uni1EA1 adv=538 bbox=(50, -151, 460, 494); ours: absent
+Play-Regular	cmap U+1EA2	provenance	LOST; release: uni1EA2 adv=652 bbox=(15, 0, 637, 911); ours: absent
+Play-Regular	cmap U+1EA3	provenance	LOST; release: uni1EA3 adv=538 bbox=(50, -10, 460, 746); ours: absent
+Play-Regular	cmap U+1EA4	provenance	LOST; release: uni1EA4 adv=652 bbox=(15, 0, 637, 887); ours: absent
+Play-Regular	cmap U+1EA5	provenance	LOST; release: uni1EA5 adv=538 bbox=(50, -10, 522, 722); ours: absent
+Play-Regular	cmap U+1EA6	provenance	LOST; release: uni1EA6 adv=652 bbox=(15, 0, 637, 907); ours: absent
+Play-Regular	cmap U+1EA7	provenance	LOST; release: uni1EA7 adv=538 bbox=(50, -10, 479, 742); ours: absent
+Play-Regular	cmap U+1EA8	provenance	LOST; release: uni1EA8 adv=652 bbox=(15, 0, 637, 967); ours: absent
+Play-Regular	cmap U+1EA9	provenance	LOST; release: uni1EA9 adv=538 bbox=(50, -10, 487, 802); ours: absent
+Play-Regular	cmap U+1EAA	provenance	LOST; release: uni1EAA adv=652 bbox=(15, 0, 637, 959); ours: absent
+Play-Regular	cmap U+1EAB	provenance	LOST; release: uni1EAB adv=538 bbox=(50, -10, 460, 794); ours: absent
+Play-Regular	cmap U+1EAC	provenance	LOST; release: uni1EAC adv=652 bbox=(15, -151, 637, 832); ours: absent
+Play-Regular	cmap U+1EAD	provenance	LOST; release: uni1EAD adv=538 bbox=(50, -151, 460, 680); ours: absent
+Play-Regular	cmap U+1EAE	provenance	LOST; release: uni1EAE adv=652 bbox=(15, 0, 637, 964); ours: absent
+Play-Regular	cmap U+1EAF	provenance	LOST; release: uni1EAF adv=538 bbox=(50, -10, 460, 799); ours: absent
+Play-Regular	cmap U+1EB0	provenance	LOST; release: uni1EB0 adv=652 bbox=(15, 0, 637, 962); ours: absent
+Play-Regular	cmap U+1EB1	provenance	LOST; release: uni1EB1 adv=538 bbox=(50, -10, 460, 797); ours: absent
+Play-Regular	cmap U+1EB2	provenance	LOST; release: uni1EB2 adv=652 bbox=(15, 0, 637, 1035); ours: absent
+Play-Regular	cmap U+1EB3	provenance	LOST; release: uni1EB3 adv=538 bbox=(50, -10, 460, 870); ours: absent
+Play-Regular	cmap U+1EB4	provenance	LOST; release: uni1EB4 adv=652 bbox=(15, 0, 637, 967); ours: absent
+Play-Regular	cmap U+1EB5	provenance	LOST; release: uni1EB5 adv=538 bbox=(50, -10, 460, 802); ours: absent
+Play-Regular	cmap U+1EB6	provenance	LOST; release: uni1EB6 adv=652 bbox=(15, -151, 637, 841); ours: absent
+Play-Regular	cmap U+1EB7	provenance	LOST; release: uni1EB7 adv=538 bbox=(50, -151, 460, 680); ours: absent
+Play-Regular	cmap U+1EB8	provenance	LOST; release: uni1EB8 adv=580 bbox=(84, -151, 530, 649); ours: absent
+Play-Regular	cmap U+1EB9	provenance	LOST; release: uni1EB9 adv=535 bbox=(60, -151, 476, 494); ours: absent
+Play-Regular	cmap U+1EBA	provenance	LOST; release: uni1EBA adv=580 bbox=(84, 0, 530, 911); ours: absent
+Play-Regular	cmap U+1EBB	provenance	LOST; release: uni1EBB adv=535 bbox=(60, -10, 476, 746); ours: absent
+Play-Regular	cmap U+1EBC	provenance	LOST; release: uni1EBC adv=580 bbox=(84, 0, 530, 816); ours: absent
+Play-Regular	cmap U+1EBD	provenance	LOST; release: uni1EBD adv=535 bbox=(60, -10, 476, 646); ours: absent
+Play-Regular	cmap U+1EBE	provenance	LOST; release: uni1EBE adv=580 bbox=(84, 0, 543, 887); ours: absent
+Play-Regular	cmap U+1EBF	provenance	LOST; release: uni1EBF adv=535 bbox=(60, -10, 521, 722); ours: absent
+Play-Regular	cmap U+1EC0	provenance	LOST; release: uni1EC0 adv=580 bbox=(84, 0, 530, 907); ours: absent
+Play-Regular	cmap U+1EC1	provenance	LOST; release: uni1EC1 adv=535 bbox=(60, -10, 478, 742); ours: absent
+Play-Regular	cmap U+1EC2	provenance	LOST; release: uni1EC2 adv=580 bbox=(84, 0, 530, 967); ours: absent
+Play-Regular	cmap U+1EC3	provenance	LOST; release: uni1EC3 adv=535 bbox=(60, -10, 486, 802); ours: absent
+Play-Regular	cmap U+1EC4	provenance	LOST; release: uni1EC4 adv=580 bbox=(84, 0, 530, 959); ours: absent
+Play-Regular	cmap U+1EC5	provenance	LOST; release: uni1EC5 adv=535 bbox=(60, -10, 476, 794); ours: absent
+Play-Regular	cmap U+1EC6	provenance	LOST; release: uni1EC6 adv=580 bbox=(84, -151, 530, 832); ours: absent
+Play-Regular	cmap U+1EC7	provenance	LOST; release: uni1EC7 adv=535 bbox=(60, -151, 476, 680); ours: absent
+Play-Regular	cmap U+1EC8	provenance	LOST; release: uni1EC8 adv=265 bbox=(61, 0, 204, 911); ours: absent
+Play-Regular	cmap U+1EC9	provenance	LOST; release: uni1EC9 adv=246 bbox=(51, 0, 194, 746); ours: absent
+Play-Regular	cmap U+1ECA	provenance	LOST; release: uni1ECA adv=265 bbox=(84, -151, 181, 649); ours: absent
+Play-Regular	cmap U+1ECB	provenance	LOST; release: uni1ECB adv=246 bbox=(75, -151, 170, 659); ours: absent
+Play-Regular	cmap U+1ECC	provenance	LOST; release: uni1ECC adv=679 bbox=(66, -151, 613, 659); ours: absent
+Play-Regular	cmap U+1ECD	provenance	LOST; release: uni1ECD adv=568 bbox=(60, -151, 506, 494); ours: absent
+Play-Regular	cmap U+1ECE	provenance	LOST; release: uni1ECE adv=679 bbox=(66, -10, 613, 911); ours: absent
+Play-Regular	cmap U+1ECF	provenance	LOST; release: uni1ECF adv=568 bbox=(60, -10, 506, 746); ours: absent
+Play-Regular	cmap U+1ED0	provenance	LOST; release: uni1ED0 adv=679 bbox=(66, -10, 613, 887); ours: absent
+Play-Regular	cmap U+1ED1	provenance	LOST; release: uni1ED1 adv=568 bbox=(60, -10, 537, 722); ours: absent
+Play-Regular	cmap U+1ED2	provenance	LOST; release: uni1ED2 adv=679 bbox=(66, -10, 613, 907); ours: absent
+Play-Regular	cmap U+1ED3	provenance	LOST; release: uni1ED3 adv=568 bbox=(60, -10, 506, 742); ours: absent
+Play-Regular	cmap U+1ED4	provenance	LOST; release: uni1ED4 adv=679 bbox=(66, -10, 613, 967); ours: absent
+Play-Regular	cmap U+1ED5	provenance	LOST; release: uni1ED5 adv=568 bbox=(60, -10, 506, 802); ours: absent
+Play-Regular	cmap U+1ED6	provenance	LOST; release: uni1ED6 adv=679 bbox=(66, -10, 613, 959); ours: absent
+Play-Regular	cmap U+1ED7	provenance	LOST; release: uni1ED7 adv=568 bbox=(60, -10, 506, 794); ours: absent
+Play-Regular	cmap U+1ED8	provenance	LOST; release: uni1ED8 adv=679 bbox=(66, -151, 613, 832); ours: absent
+Play-Regular	cmap U+1ED9	provenance	LOST; release: uni1ED9 adv=568 bbox=(60, -151, 506, 680); ours: absent
+Play-Regular	cmap U+1EDA	provenance	LOST; release: uni1EDA adv=679 bbox=(66, -10, 621, 842); ours: absent
+Play-Regular	cmap U+1EDB	provenance	LOST; release: uni1EDB adv=568 bbox=(60, -10, 571, 680); ours: absent
+Play-Regular	cmap U+1EDC	provenance	LOST; release: uni1EDC adv=679 bbox=(66, -10, 621, 839); ours: absent
+Play-Regular	cmap U+1EDD	provenance	LOST; release: uni1EDD adv=568 bbox=(60, -10, 571, 680); ours: absent
+Play-Regular	cmap U+1EDE	provenance	LOST; release: uni1EDE adv=679 bbox=(66, -10, 621, 911); ours: absent
+Play-Regular	cmap U+1EDF	provenance	LOST; release: uni1EDF adv=568 bbox=(60, -10, 571, 746); ours: absent
+Play-Regular	cmap U+1EE0	provenance	LOST; release: uni1EE0 adv=679 bbox=(66, -10, 621, 816); ours: absent
+Play-Regular	cmap U+1EE1	provenance	LOST; release: uni1EE1 adv=568 bbox=(60, -10, 571, 646); ours: absent
+Play-Regular	cmap U+1EE2	provenance	LOST; release: uni1EE2 adv=679 bbox=(66, -151, 621, 737); ours: absent
+Play-Regular	cmap U+1EE3	provenance	LOST; release: uni1EE3 adv=568 bbox=(60, -151, 571, 572); ours: absent
+Play-Regular	cmap U+1EE4	provenance	LOST; release: uni1EE4 adv=676 bbox=(84, -151, 591, 649); ours: absent
+Play-Regular	cmap U+1EE5	provenance	LOST; release: uni1EE5 adv=573 bbox=(78, -151, 495, 484); ours: absent
+Play-Regular	cmap U+1EE6	provenance	LOST; release: uni1EE6 adv=676 bbox=(84, -10, 591, 911); ours: absent
+Play-Regular	cmap U+1EE7	provenance	LOST; release: uni1EE7 adv=573 bbox=(78, -10, 495, 746); ours: absent
+Play-Regular	cmap U+1EE8	provenance	LOST; release: uni1EE8 adv=676 bbox=(84, -10, 690, 842); ours: absent
+Play-Regular	cmap U+1EE9	provenance	LOST; release: uni1EE9 adv=573 bbox=(78, -10, 600, 680); ours: absent
+Play-Regular	cmap U+1EEA	provenance	LOST; release: uni1EEA adv=676 bbox=(84, -10, 690, 839); ours: absent
+Play-Regular	cmap U+1EEB	provenance	LOST; release: uni1EEB adv=573 bbox=(78, -10, 600, 680); ours: absent
+Play-Regular	cmap U+1EEC	provenance	LOST; release: uni1EEC adv=676 bbox=(84, -10, 690, 911); ours: absent
+Play-Regular	cmap U+1EED	provenance	LOST; release: uni1EED adv=573 bbox=(78, -10, 600, 746); ours: absent
+Play-Regular	cmap U+1EEE	provenance	LOST; release: uni1EEE adv=676 bbox=(84, -10, 690, 816); ours: absent
+Play-Regular	cmap U+1EEF	provenance	LOST; release: uni1EEF adv=573 bbox=(78, -10, 600, 646); ours: absent
+Play-Regular	cmap U+1EF0	provenance	LOST; release: uni1EF0 adv=676 bbox=(84, -151, 690, 737); ours: absent
+Play-Regular	cmap U+1EF1	provenance	LOST; release: uni1EF1 adv=573 bbox=(78, -151, 600, 572); ours: absent
+Play-Regular	cmap U+1EF4	provenance	LOST; release: uni1EF4 adv=584 bbox=(8, -151, 576, 649); ours: absent
+Play-Regular	cmap U+1EF5	provenance	LOST; release: uni1EF5 adv=460 bbox=(6, -208, 454, 484); ours: absent
+Play-Regular	cmap U+1EF6	provenance	LOST; release: uni1EF6 adv=584 bbox=(8, 0, 576, 911); ours: absent
+Play-Regular	cmap U+1EF7	provenance	LOST; release: uni1EF7 adv=460 bbox=(6, -208, 454, 746); ours: absent
+Play-Regular	cmap U+1EF8	provenance	LOST; release: uni1EF8 adv=584 bbox=(8, 0, 576, 816); ours: absent
+Play-Regular	cmap U+1EF9	provenance	LOST; release: uni1EF9 adv=460 bbox=(6, -208, 454, 646); ours: absent
+Play-Regular	cmap U+20B8	provenance	LOST; release: uni20B8 adv=585 bbox=(24, 0, 561, 649); ours: absent
+Play-Regular	cmap U+20BD	provenance	LOST; release: uni20BD adv=570 bbox=(20, 0, 525, 649); ours: absent
+Play-Regular	cmap U+2126	provenance	renamed+redrawn; release: uni2126 adv=679 bbox=(66, 0, 613, 659); ours: Omega adv=702 bbox=(66, 0, 636, 659)
+Play-Regular	cmap U+2150	provenance	LOST; release: uni2150 adv=956 bbox=(147, 0, 884, 649); ours: absent
+Play-Regular	cmap U+2151	provenance	LOST; release: uni2151 adv=956 bbox=(147, -1, 900, 649); ours: absent
+Play-Regular	cmap U+2155	provenance	LOST; release: uni2155 adv=956 bbox=(147, -2, 891, 649); ours: absent
+Play-Regular	cmap U+2156	provenance	LOST; release: uni2156 adv=956 bbox=(41, -2, 891, 658); ours: absent
+Play-Regular	cmap U+2157	provenance	LOST; release: uni2157 adv=956 bbox=(47, -2, 891, 659); ours: absent
+Play-Regular	cmap U+2158	provenance	LOST; release: uni2158 adv=956 bbox=(14, -2, 891, 649); ours: absent
+Play-Regular	cmap U+2159	provenance	LOST; release: uni2159 adv=956 bbox=(147, -2, 900, 649); ours: absent
+Play-Regular	cmap U+215A	provenance	LOST; release: uni215A adv=956 bbox=(40, -2, 900, 649); ours: absent
+Play-Regular	hhea.descender	provenance	hhea.descender [-220, 220]
+Play-Regular	hmtx.76	provenance	hmtx.76 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 229 unit(s) at Upsilontonos (release -181, ours 48)
+Play-Regular	post.num_glyphs	provenance	post.num_glyphs -- the release has acutecomb.case (1 contour(s), unmapped, referenced by a lookup); brevecombcy (1 contour(s), unmapped, referenced by a lookup); brevecombcy.case (1 contour(s), unmapp
+Play-Bold	GDEF.glyph_classes	provenance	GDEF.glyph_classes -- a lookup filters on glyph class
+Play-Bold	GDEF.mark_attach_classes	provenance	GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+Play-Bold	GSUB.script_list	provenance	GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [4, 3], "2": [8, null], "3": [12, null], "4": [1
+Play-Bold	GSUB.feature_list	provenance	GSUB.feature_list {"aalt": [[0, 1], null], "c2sc": [[25], null], "case": [[27], null], "ccmp": [[2
+Play-Bold	GSUB.lookup_list	provenance	GSUB.lookup_list {"0": {"0": {"error": "There are 326 changes, check manually!"}}, "1": {"0": {"t
+Play-Bold	OS/2.us_weight_class	converter-fidelity	.sfd states TTFWeight: 700; fontc leaves 400 for a static single-master source; converter fix in progress
+Play-Bold	OS/2.y_subscript_x_size	provenance	OS/2.y_subscript_x_size [650, 700]
+Play-Bold	OS/2.y_subscript_y_size	provenance	OS/2.y_subscript_y_size [600, 650]
+Play-Bold	OS/2.y_subscript_y_offset	provenance	OS/2.y_subscript_y_offset [75, 140]
+Play-Bold	OS/2.y_superscript_x_size	provenance	OS/2.y_superscript_x_size [650, 700]
+Play-Bold	OS/2.y_superscript_y_size	provenance	OS/2.y_superscript_y_size [600, 650]
+Play-Bold	OS/2.y_superscript_y_offset	provenance	OS/2.y_superscript_y_offset [350, 477]
+Play-Bold	OS/2.y_strikeout_position	provenance	OS/2.y_strikeout_position [290, 250]
+Play-Bold	OS/2.panose_10	provenance	OS/2.panose_10 {"0": [0, 2], "1": [0, 11], "2": [8, 0]}
+Play-Bold	OS/2.s_typo_ascender	provenance	OS/2.s_typo_ascender [937, 932]
+Play-Bold	OS/2.us_win_ascent	provenance	OS/2.us_win_ascent [1052, 932]
+Play-Bold	OS/2.us_win_descent	provenance	OS/2.us_win_descent [224, 220]
+Play-Bold	OS/2.sx_height	converter-fidelity	FontForge SFStandardHeight rule reproduces the release (ff_heights_oracle MATCH); converter fix in progress
+Play-Bold	OS/2.s_cap_height	converter-fidelity	FontForge SFStandardHeight rule reproduces the release (ff_heights_oracle MATCH); converter fix in progress
+Play-Bold	cmap U+0000	provenance	LOST; release: NULL adv=0 bbox=None; ours: absent
+Play-Bold	cmap U+000D	provenance	LOST; release: nonmarkingreturn adv=230 bbox=None; ours: absent
+Play-Bold	cmap U+0162	provenance	renamed+redrawn; release: uni0162 adv=600 bbox=(20, -209, 575, 649); ours: Tcommaaccent adv=595 bbox=(20, -208, 575, 649)
+Play-Bold	cmap U+0163	provenance	renamed+redrawn; release: uni0163 adv=600 bbox=(10, -218, 387, 624); ours: tcommaaccent adv=407 bbox=(10, -208, 387, 624)
+Play-Bold	cmap U+01A0	provenance	LOST; release: Ohorn adv=728 bbox=(56, -10, 672, 737); ours: absent
+Play-Bold	cmap U+01A1	provenance	LOST; release: ohorn adv=592 bbox=(50, -10, 595, 572); ours: absent
+Play-Bold	cmap U+01AF	provenance	LOST; release: Uhorn adv=699 bbox=(68, -10, 743, 737); ours: absent
+Play-Bold	cmap U+01B0	provenance	LOST; release: uhorn adv=595 bbox=(64, -10, 640, 572); ours: absent
+Play-Bold	cmap U+02BC	provenance	renamed+redrawn; release: uni02BC adv=210 bbox=(0, 537, 160, 700); ours: apostrophe adv=256 bbox=(43, 537, 203, 700)
+Play-Bold	cmap U+0300	provenance	LOST; release: gravecomb adv=0 bbox=(-349, 553, -100, 680); ours: absent
+Play-Bold	cmap U+0301	provenance	LOST; release: acutecomb adv=0 bbox=(-349, 553, -100, 680); ours: absent
+Play-Bold	cmap U+0302	provenance	LOST; release: uni0302 adv=0 bbox=(-401, 553, -100, 680); ours: absent
+Play-Bold	cmap U+0303	provenance	LOST; release: tildecomb adv=0 bbox=(-389, 556, -100, 662); ours: absent
+Play-Bold	cmap U+0304	provenance	LOST; release: uni0304 adv=0 bbox=(-378, 560, -100, 649); ours: absent
+Play-Bold	cmap U+0306	provenance	LOST; release: uni0306 adv=0 bbox=(-376, 553, -100, 680); ours: absent
+Play-Bold	cmap U+0307	provenance	LOST; release: uni0307 adv=0 bbox=(-196, 565, -50, 680); ours: absent
+Play-Bold	cmap U+0308	provenance	LOST; release: uni0308 adv=0 bbox=(-416, 565, -100, 683); ours: absent
+Play-Bold	cmap U+0309	provenance	LOST; release: hookabovecomb adv=0 bbox=(-379, 572, -226, 756); ours: absent
+Play-Bold	cmap U+030B	provenance	LOST; release: uni030B adv=0 bbox=(-413, 552, -100, 680); ours: absent
+Play-Bold	cmap U+031B	provenance	LOST; release: uni031B adv=0 bbox=(-241, 389, -30, 572); ours: absent
+Play-Bold	cmap U+0323	provenance	LOST; release: dotbelowcomb adv=0 bbox=(-192, -178, -63, -64); ours: absent
+Play-Bold	cmap U+0326	provenance	LOST; release: uni0326 adv=0 bbox=(-279, -208, -100, -46); ours: absent
+Play-Bold	cmap U+0335	provenance	LOST; release: uni0335 adv=0 bbox=(-388, 383, -100, 485); ours: absent
+Play-Bold	cmap U+0344	provenance	LOST; release: uni0344 adv=0 bbox=(-216, 553, 248, 710); ours: absent
+Play-Bold	cmap U+0374	provenance	LOST; release: uni0374 adv=343 bbox=(50, 503, 273, 710); ours: absent
+Play-Bold	cmap U+0375	provenance	LOST; release: uni0375 adv=343 bbox=(70, -187, 293, 20); ours: absent
+Play-Bold	cmap U+037E	provenance	LOST; release: uni037E adv=256 bbox=(19, -112, 217, 484); ours: absent
+Play-Bold	cmap U+0387	provenance	LOST; release: anoteleia adv=256 bbox=(50, 346, 197, 484); ours: absent
+Play-Bold	cmap U+0394	provenance	renamed+redrawn; release: uni0394 adv=651 bbox=(12, 0, 639, 649); ours: Delta adv=652 bbox=(-6, 0, 658, 649)
+Play-Bold	cmap U+03A9	provenance	renamed+redrawn; release: uni03A9 adv=728 bbox=(56, 0, 672, 659); ours: Omega adv=730 bbox=(50, 0, 680, 659)
+Play-Bold	cmap U+03BC	provenance	renamed+redrawn; release: uni03BC adv=629 bbox=(64, -208, 599, 485); ours: mu adv=595 bbox=(64, -208, 531, 484)
+Play-Bold	cmap U+03C2	provenance	renamed+redrawn; release: uni03C2 adv=496 bbox=(50, -188, 478, 493); ours: sigma1 adv=482 bbox=(50, -161, 505, 494)
+Play-Bold	cmap U+03CF	provenance	LOST; release: uni03CF adv=682 bbox=(70, -208, 683, 649); ours: absent
+Play-Bold	cmap U+03D7	provenance	LOST; release: uni03D7 adv=540 bbox=(64, -208, 556, 484); ours: absent
+Play-Bold	cmap U+0401	provenance	renamed+redrawn; release: uni0401 adv=610 bbox=(70, 0, 575, 853); ours: afii10023 adv=610 bbox=(70, 0, 575, 848)
+Play-Bold	cmap U+0402	provenance	renamed+redrawn; release: uni0402 adv=759 bbox=(20, -10, 719, 649); ours: afii10051 adv=844 bbox=(20, -162, 782, 649)
+Play-Bold	cmap U+0403	provenance	renamed+redrawn; release: uni0403 adv=523 bbox=(70, 0, 524, 840); ours: afii10052 adv=517 bbox=(70, 0, 495, 845)
+Play-Bold	cmap U+0407	provenance	renamed+redrawn; release: uni0407 adv=296 bbox=(-10, 0, 306, 853); ours: afii10056 adv=296 bbox=(-10, 0, 306, 848)
+Play-Bold	cmap U+0409	provenance	renamed+redrawn; release: uni0409 adv=1074 bbox=(44, -8, 1034, 649); ours: afii10058 adv=1127 bbox=(20, -7, 1082, 649)
+Play-Bold	cmap U+040A	provenance	renamed+redrawn; release: uni040A adv=1050 bbox=(70, 0, 1010, 649); ours: afii10059 adv=1093 bbox=(70, 0, 1048, 649)
+Play-Bold	cmap U+040B	provenance	renamed+redrawn; release: uni040B adv=779 bbox=(20, 0, 722, 649); ours: afii10060 adv=844 bbox=(20, 0, 782, 649)
+Play-Bold	cmap U+040C	provenance	renamed+redrawn; release: uni040C adv=655 bbox=(70, 0, 653, 840); ours: afii10061 adv=667 bbox=(70, 0, 673, 845)
+Play-Bold	cmap U+040E	provenance	renamed+redrawn; release: uni040E adv=608 bbox=(2, -10, 618, 875); ours: afii10062 adv=636 bbox=(10, -10, 626, 845)
+Play-Bold	cmap U+040F	provenance	renamed+redrawn; release: uni040F adv=712 bbox=(70, -168, 642, 649); ours: afii10145 adv=728 bbox=(70, -165, 658, 649)
+Play-Bold	cmap U+0411	provenance	renamed+redrawn; release: uni0411 adv=618 bbox=(70, 0, 578, 649); ours: afii10018 adv=667 bbox=(70, 0, 622, 649)
+Play-Bold	cmap U+0413	provenance	renamed+redrawn; release: uni0413 adv=523 bbox=(70, 0, 503, 649); ours: afii10020 adv=517 bbox=(70, 0, 495, 649)
+Play-Bold	cmap U+0414	provenance	renamed+redrawn; release: uni0414 adv=738 bbox=(15, -151, 716, 649); ours: afii10021 adv=710 bbox=(22, -166, 674, 649)
+Play-Bold	cmap U+0416	provenance	renamed+redrawn; release: uni0416 adv=979 bbox=(5, 0, 974, 649); ours: afii10024 adv=1015 bbox=(-6, 0, 1021, 649)
+Play-Bold	cmap U+0417	provenance	renamed+redrawn; release: uni0417 adv=570 bbox=(30, -10, 533, 659); ours: afii10025 adv=601 bbox=(40, -10, 538, 659)
+Play-Bold	cmap U+0418	provenance	renamed+redrawn; release: uni0418 adv=732 bbox=(70, 0, 662, 649); ours: afii10026 adv=751 bbox=(70, 0, 681, 649)
+Play-Bold	cmap U+0419	provenance	renamed+redrawn; release: uni0419 adv=732 bbox=(70, 0, 662, 875); ours: afii10027 adv=751 bbox=(70, 0, 681, 845)
+Play-Bold	cmap U+041A	provenance	renamed+redrawn; release: uni041A adv=655 bbox=(70, 0, 653, 649); ours: afii10028 adv=667 bbox=(70, 0, 673, 649)
+Play-Bold	cmap U+041B	provenance	renamed+redrawn; release: uni041B adv=752 bbox=(44, -8, 682, 649); ours: afii10029 adv=761 bbox=(20, -7, 691, 649)
+Play-Bold	cmap U+041F	provenance	renamed+redrawn; release: uni041F adv=712 bbox=(70, 0, 642, 649); ours: afii10033 adv=722 bbox=(70, 0, 652, 649)
+Play-Bold	cmap U+0423	provenance	renamed+redrawn; release: uni0423 adv=608 bbox=(2, -10, 618, 649); ours: afii10037 adv=636 bbox=(10, -10, 626, 649)
+Play-Bold	cmap U+0424	provenance	renamed+redrawn; release: uni0424 adv=774 bbox=(53, -10, 721, 694); ours: afii10038 adv=756 bbox=(50, 0, 706, 649)
+Play-Bold	cmap U+0426	provenance	renamed+redrawn; release: uni0426 adv=726 bbox=(70, -151, 704, 649); ours: afii10040 adv=728 bbox=(70, -166, 658, 649)
+Play-Bold	cmap U+0427	provenance	renamed+redrawn; release: uni0427 adv=669 bbox=(57, 0, 599, 649); ours: afii10041 adv=694 bbox=(62, 0, 624, 649)
+Play-Bold	cmap U+0428	provenance	renamed+redrawn; release: uni0428 adv=1016 bbox=(70, 0, 946, 649); ours: afii10042 adv=1039 bbox=(70, 0, 969, 649)
+Play-Bold	cmap U+0429	provenance	renamed+redrawn; release: uni0429 adv=1064 bbox=(70, -151, 1042, 649); ours: afii10043 adv=1039 bbox=(70, -166, 969, 649)
+Play-Bold	cmap U+042A	provenance	renamed+redrawn; release: uni042A adv=767 bbox=(20, 0, 727, 649); ours: afii10044 adv=816 bbox=(20, 0, 771, 649)
+Play-Bold	cmap U+042B	provenance	renamed+redrawn; release: uni042B adv=896 bbox=(70, 0, 826, 649); ours: afii10045 adv=941 bbox=(70, 0, 871, 649)
+Play-Bold	cmap U+042C	provenance	renamed+redrawn; release: uni042C adv=618 bbox=(70, 0, 578, 649); ours: afii10046 adv=667 bbox=(70, 0, 622, 649)
+Play-Bold	cmap U+042D	provenance	renamed+redrawn; release: uni042D adv=597 bbox=(30, -10, 541, 659); ours: afii10047 adv=597 bbox=(30, -10, 541, 659)
+Play-Bold	cmap U+042E	provenance	renamed+redrawn; release: uni042E adv=1018 bbox=(70, -10, 962, 659); ours: afii10048 adv=998 bbox=(70, -10, 942, 659)
+Play-Bold	cmap U+042F	provenance	renamed+redrawn; release: uni042F adv=668 bbox=(20, 0, 598, 649); ours: afii10049 adv=668 bbox=(20, 0, 598, 649)
+Play-Bold	cmap U+0431	provenance	renamed+redrawn; release: uni0431 adv=595 bbox=(57, -10, 545, 740); ours: afii10066 adv=580 bbox=(55, -10, 525, 710)
+Play-Bold	cmap U+0432	provenance	renamed+redrawn; release: uni0432 adv=581 bbox=(64, 0, 541, 484); ours: afii10067 adv=581 bbox=(64, 0, 539, 484)
+Play-Bold	cmap U+0433	provenance	renamed+redrawn; release: uni0433 adv=437 bbox=(64, 0, 417, 484); ours: afii10068 adv=405 bbox=(64, 0, 389, 484)
+Play-Bold	cmap U+0434	provenance	renamed+redrawn; release: uni0434 adv=611 bbox=(20, -134, 587, 484); ours: afii10069 adv=594 bbox=(12, -134, 558, 484)
+Play-Bold	cmap U+0436	provenance	renamed+redrawn; release: uni0436 adv=816 bbox=(5, 0, 811, 484); ours: afii10072 adv=808 bbox=(-19, 0, 827, 484)
+Play-Bold	cmap U+0437	provenance	renamed+redrawn; release: uni0437 adv=500 bbox=(28, -10, 458, 494); ours: afii10073 adv=533 bbox=(35, -10, 490, 494)
+Play-Bold	cmap U+0438	provenance	renamed+redrawn; release: uni0438 adv=611 bbox=(64, 0, 547, 484); ours: afii10074 adv=643 bbox=(64, 0, 579, 484)
+Play-Bold	cmap U+0439	provenance	renamed+redrawn; release: uni0439 adv=611 bbox=(64, 0, 547, 690); ours: afii10075 adv=643 bbox=(64, 0, 579, 680)
+Play-Bold	cmap U+043A	provenance	renamed+redrawn; release: uni043A adv=563 bbox=(64, 0, 563, 484); ours: afii10076 adv=554 bbox=(64, 0, 573, 484)
+Play-Bold	cmap U+043B	provenance	renamed+redrawn; release: uni043B adv=610 bbox=(34, -8, 546, 484); ours: afii10077 adv=611 bbox=(12, -7, 547, 484)
+Play-Bold	cmap U+043C	provenance	renamed+redrawn; release: uni043C adv=733 bbox=(64, 0, 669, 484); ours: afii10078 adv=735 bbox=(64, 0, 671, 484)
+Play-Bold	cmap U+043D	provenance	renamed+redrawn; release: uni043D adv=603 bbox=(64, 0, 539, 484); ours: afii10079 adv=617 bbox=(64, 0, 553, 484)
+Play-Bold	cmap U+043F	provenance	renamed+redrawn; release: uni043F adv=597 bbox=(64, 0, 533, 484); ours: afii10081 adv=610 bbox=(64, 0, 546, 484)
+Play-Bold	cmap U+0442	provenance	renamed+redrawn; release: uni0442 adv=506 bbox=(20, 0, 486, 484); ours: afii10084 adv=505 bbox=(30, 0, 475, 484)
+Play-Bold	cmap U+0444	provenance	renamed+redrawn; release: uni0444 adv=762 bbox=(50, -208, 712, 700); ours: afii10086 adv=907 bbox=(50, -208, 857, 700)
+Play-Bold	cmap U+0446	provenance	renamed+redrawn; release: uni0446 adv=608 bbox=(64, -134, 584, 484); ours: afii10088 adv=599 bbox=(64, -134, 535, 484)
+Play-Bold	cmap U+0447	provenance	renamed+redrawn; release: uni0447 adv=560 bbox=(46, 0, 496, 484); ours: afii10089 adv=595 bbox=(54, 0, 531, 483)
+Play-Bold	cmap U+0449	provenance	renamed+redrawn; release: uni0449 adv=867 bbox=(64, -134, 843, 484); ours: afii10091 adv=832 bbox=(64, -134, 768, 484)
+Play-Bold	cmap U+044A	provenance	renamed+redrawn; release: uni044A adv=665 bbox=(20, 0, 619, 484); ours: afii10092 adv=505 bbox=(30, 0, 658, 484)
+Play-Bold	cmap U+044B	provenance	renamed+redrawn; release: uni044B adv=780 bbox=(64, 0, 716, 484); ours: afii10093 adv=830 bbox=(64, 0, 766, 484)
+Play-Bold	cmap U+044C	provenance	renamed+redrawn; release: uni044C adv=549 bbox=(64, 0, 503, 484); ours: afii10094 adv=582 bbox=(64, 0, 542, 484)
+Play-Bold	cmap U+044D	provenance	renamed+redrawn; release: uni044D adv=492 bbox=(28, -10, 442, 494); ours: afii10095 adv=509 bbox=(30, -10, 459, 494)
+Play-Bold	cmap U+044E	provenance	renamed+redrawn; release: uni044E adv=837 bbox=(64, -10, 787, 494); ours: afii10096 adv=853 bbox=(64, -10, 803, 494)
+Play-Bold	cmap U+044F	provenance	renamed+redrawn; release: uni044F adv=586 bbox=(20, 0, 522, 484); ours: afii10097 adv=581 bbox=(5, 0, 517, 484)
+Play-Bold	cmap U+0452	provenance	renamed+redrawn; release: uni0452 adv=632 bbox=(0, -184, 587, 700); ours: afii10099 adv=595 bbox=(19, 0, 560, 700)
+Play-Bold	cmap U+0453	provenance	renamed+redrawn; release: uni0453 adv=437 bbox=(64, 0, 439, 680); ours: afii10100 adv=405 bbox=(64, 0, 389, 680)
+Play-Bold	cmap U+0454	provenance	renamed+redrawn; release: uni0454 adv=492 bbox=(50, -10, 464, 494); ours: afii10101 adv=482 bbox=(50, -10, 464, 494)
+Play-Bold	cmap U+0457	provenance	renamed+redrawn; release: uni0457 adv=282 bbox=(-17, 0, 299, 683); ours: afii10104 adv=282 bbox=(-76, 0, 360, 710)
+Play-Bold	cmap U+0459	provenance	renamed+redrawn; release: uni0459 adv=885 bbox=(34, -8, 839, 484); ours: afii10106 adv=913 bbox=(12, -7, 873, 484)
+Play-Bold	cmap U+045A	provenance	renamed+redrawn; release: uni045A adv=878 bbox=(64, 0, 832, 484); ours: afii10107 adv=919 bbox=(64, 0, 879, 484)
+Play-Bold	cmap U+045B	provenance	renamed+redrawn; release: uni045B adv=632 bbox=(0, 0, 568, 700); ours: afii10108 adv=595 bbox=(19, 0, 531, 700)
+Play-Bold	cmap U+045C	provenance	renamed+redrawn; release: uni045C adv=563 bbox=(64, 0, 563, 680); ours: afii10109 adv=554 bbox=(64, 0, 573, 680)
+Play-Bold	cmap U+045E	provenance	renamed+redrawn; release: uni045E adv=534 bbox=(8, -208, 526, 690); ours: afii10110 adv=534 bbox=(8, -208, 526, 680)
+Play-Bold	cmap U+045F	provenance	renamed+redrawn; release: uni045F adv=597 bbox=(64, -144, 533, 484); ours: afii10193 adv=599 bbox=(64, -134, 535, 484)
+Play-Bold	cmap U+046A	provenance	LOST; release: uni046A adv=979 bbox=(5, 0, 974, 649); ours: absent
+Play-Bold	cmap U+046B	provenance	LOST; release: uni046B adv=817 bbox=(5, 0, 811, 484); ours: absent
+Play-Bold	cmap U+0490	provenance	renamed+redrawn; release: uni0490 adv=523 bbox=(70, 0, 503, 788); ours: afii10050 adv=517 bbox=(70, 0, 495, 789)
+Play-Bold	cmap U+0491	provenance	renamed+redrawn; release: uni0491 adv=434 bbox=(64, 0, 414, 604); ours: afii10098 adv=405 bbox=(64, 0, 389, 605)
+Play-Bold	cmap U+051A	provenance	LOST; release: uni051A adv=740 bbox=(56, -10, 732, 659); ours: absent
+Play-Bold	cmap U+051B	provenance	LOST; release: uni051B adv=608 bbox=(50, -208, 544, 494); ours: absent
+Play-Bold	cmap U+051C	provenance	LOST; release: uni051C adv=985 bbox=(8, 0, 977, 649); ours: absent
+Play-Bold	cmap U+051D	provenance	LOST; release: uni051D adv=822 bbox=(8, 0, 814, 484); ours: absent
+Play-Bold	cmap U+0524	provenance	LOST; release: uni0524 adv=760 bbox=(70, -151, 738, 649); ours: absent
+Play-Bold	cmap U+0525	provenance	LOST; release: uni0525 adv=632 bbox=(64, -134, 608, 484); ours: absent
+Play-Bold	cmap U+1EA0	provenance	LOST; release: uni1EA0 adv=668 bbox=(2, -178, 666, 649); ours: absent
+Play-Bold	cmap U+1EA1	provenance	LOST; release: uni1EA1 adv=564 bbox=(39, -178, 500, 494); ours: absent
+Play-Bold	cmap U+1EA2	provenance	LOST; release: uni1EA2 adv=668 bbox=(2, 0, 666, 921); ours: absent
+Play-Bold	cmap U+1EA3	provenance	LOST; release: uni1EA3 adv=564 bbox=(39, -10, 500, 756); ours: absent
+Play-Bold	cmap U+1EA4	provenance	LOST; release: uni1EA4 adv=668 bbox=(2, 0, 666, 895); ours: absent
+Play-Bold	cmap U+1EA5	provenance	LOST; release: uni1EA5 adv=564 bbox=(39, -10, 586, 730); ours: absent
+Play-Bold	cmap U+1EA6	provenance	LOST; release: uni1EA6 adv=668 bbox=(2, 0, 666, 905); ours: absent
+Play-Bold	cmap U+1EA7	provenance	LOST; release: uni1EA7 adv=564 bbox=(39, -10, 554, 740); ours: absent
+Play-Bold	cmap U+1EA8	provenance	LOST; release: uni1EA8 adv=668 bbox=(2, 0, 666, 993); ours: absent
+Play-Bold	cmap U+1EA9	provenance	LOST; release: uni1EA9 adv=564 bbox=(39, -10, 537, 828); ours: absent
+Play-Bold	cmap U+1EAA	provenance	LOST; release: uni1EAA adv=668 bbox=(2, 0, 666, 983); ours: absent
+Play-Bold	cmap U+1EAB	provenance	LOST; release: uni1EAB adv=564 bbox=(39, -10, 500, 818); ours: absent
+Play-Bold	cmap U+1EAC	provenance	LOST; release: uni1EAC adv=668 bbox=(2, -178, 666, 840); ours: absent
+Play-Bold	cmap U+1EAD	provenance	LOST; release: uni1EAD adv=564 bbox=(39, -178, 500, 680); ours: absent
+Play-Bold	cmap U+1EAE	provenance	LOST; release: uni1EAE adv=668 bbox=(2, 0, 666, 973); ours: absent
+Play-Bold	cmap U+1EAF	provenance	LOST; release: uni1EAF adv=564 bbox=(39, -10, 500, 808); ours: absent
+Play-Bold	cmap U+1EB0	provenance	LOST; release: uni1EB0 adv=668 bbox=(2, 0, 666, 972); ours: absent
+Play-Bold	cmap U+1EB1	provenance	LOST; release: uni1EB1 adv=564 bbox=(39, -10, 500, 807); ours: absent
+Play-Bold	cmap U+1EB2	provenance	LOST; release: uni1EB2 adv=668 bbox=(2, 0, 666, 1052); ours: absent
+Play-Bold	cmap U+1EB3	provenance	LOST; release: uni1EB3 adv=564 bbox=(39, -10, 500, 887); ours: absent
+Play-Bold	cmap U+1EB4	provenance	LOST; release: uni1EB4 adv=668 bbox=(2, 0, 666, 986); ours: absent
+Play-Bold	cmap U+1EB5	provenance	LOST; release: uni1EB5 adv=564 bbox=(39, -10, 500, 821); ours: absent
+Play-Bold	cmap U+1EB6	provenance	LOST; release: uni1EB6 adv=668 bbox=(2, -178, 666, 840); ours: absent
+Play-Bold	cmap U+1EB7	provenance	LOST; release: uni1EB7 adv=564 bbox=(39, -178, 500, 680); ours: absent
+Play-Bold	cmap U+1EB8	provenance	LOST; release: uni1EB8 adv=610 bbox=(70, -178, 575, 649); ours: absent
+Play-Bold	cmap U+1EB9	provenance	LOST; release: uni1EB9 adv=559 bbox=(50, -178, 511, 494); ours: absent
+Play-Bold	cmap U+1EBA	provenance	LOST; release: uni1EBA adv=610 bbox=(70, 0, 575, 921); ours: absent
+Play-Bold	cmap U+1EBB	provenance	LOST; release: uni1EBB adv=559 bbox=(50, -10, 511, 756); ours: absent
+Play-Bold	cmap U+1EBC	provenance	LOST; release: uni1EBC adv=610 bbox=(70, 0, 575, 833); ours: absent
+Play-Bold	cmap U+1EBD	provenance	LOST; release: uni1EBD adv=559 bbox=(50, -10, 511, 662); ours: absent
+Play-Bold	cmap U+1EBE	provenance	LOST; release: uni1EBE adv=610 bbox=(70, 0, 609, 895); ours: absent
+Play-Bold	cmap U+1EBF	provenance	LOST; release: uni1EBF adv=559 bbox=(50, -10, 584, 730); ours: absent
+Play-Bold	cmap U+1EC0	provenance	LOST; release: uni1EC0 adv=610 bbox=(70, 0, 577, 905); ours: absent
+Play-Bold	cmap U+1EC1	provenance	LOST; release: uni1EC1 adv=559 bbox=(50, -10, 552, 740); ours: absent
+Play-Bold	cmap U+1EC2	provenance	LOST; release: uni1EC2 adv=610 bbox=(70, 0, 575, 993); ours: absent
+Play-Bold	cmap U+1EC3	provenance	LOST; release: uni1EC3 adv=559 bbox=(50, -10, 535, 828); ours: absent
+Play-Bold	cmap U+1EC4	provenance	LOST; release: uni1EC4 adv=610 bbox=(70, 0, 575, 983); ours: absent
+Play-Bold	cmap U+1EC5	provenance	LOST; release: uni1EC5 adv=559 bbox=(50, -10, 511, 818); ours: absent
+Play-Bold	cmap U+1EC6	provenance	LOST; release: uni1EC6 adv=610 bbox=(70, -178, 575, 840); ours: absent
+Play-Bold	cmap U+1EC7	provenance	LOST; release: uni1EC7 adv=559 bbox=(50, -178, 511, 680); ours: absent
+Play-Bold	cmap U+1EC8	provenance	LOST; release: uni1EC8 adv=296 bbox=(70, 0, 226, 921); ours: absent
+Play-Bold	cmap U+1EC9	provenance	LOST; release: uni1EC9 adv=282 bbox=(64, 0, 217, 756); ours: absent
+Play-Bold	cmap U+1ECA	provenance	LOST; release: uni1ECA adv=296 bbox=(70, -178, 226, 649); ours: absent
+Play-Bold	cmap U+1ECB	provenance	LOST; release: uni1ECB adv=282 bbox=(68, -178, 214, 659); ours: absent
+Play-Bold	cmap U+1ECC	provenance	LOST; release: uni1ECC adv=728 bbox=(56, -178, 672, 659); ours: absent
+Play-Bold	cmap U+1ECD	provenance	LOST; release: uni1ECD adv=592 bbox=(50, -178, 542, 494); ours: absent
+Play-Bold	cmap U+1ECE	provenance	LOST; release: uni1ECE adv=728 bbox=(56, -10, 672, 921); ours: absent
+Play-Bold	cmap U+1ECF	provenance	LOST; release: uni1ECF adv=592 bbox=(50, -10, 542, 756); ours: absent
+Play-Bold	cmap U+1ED0	provenance	LOST; release: uni1ED0 adv=728 bbox=(56, -10, 672, 895); ours: absent
+Play-Bold	cmap U+1ED1	provenance	LOST; release: uni1ED1 adv=592 bbox=(50, -10, 600, 730); ours: absent
+Play-Bold	cmap U+1ED2	provenance	LOST; release: uni1ED2 adv=728 bbox=(56, -10, 672, 905); ours: absent
+Play-Bold	cmap U+1ED3	provenance	LOST; release: uni1ED3 adv=592 bbox=(50, -10, 568, 740); ours: absent
+Play-Bold	cmap U+1ED4	provenance	LOST; release: uni1ED4 adv=728 bbox=(56, -10, 672, 993); ours: absent
+Play-Bold	cmap U+1ED5	provenance	LOST; release: uni1ED5 adv=592 bbox=(50, -10, 551, 828); ours: absent
+Play-Bold	cmap U+1ED6	provenance	LOST; release: uni1ED6 adv=728 bbox=(56, -10, 672, 983); ours: absent
+Play-Bold	cmap U+1ED7	provenance	LOST; release: uni1ED7 adv=592 bbox=(50, -10, 542, 818); ours: absent
+Play-Bold	cmap U+1ED8	provenance	LOST; release: uni1ED8 adv=728 bbox=(56, -178, 672, 840); ours: absent
+Play-Bold	cmap U+1ED9	provenance	LOST; release: uni1ED9 adv=592 bbox=(50, -178, 542, 680); ours: absent
+Play-Bold	cmap U+1EDA	provenance	LOST; release: uni1EDA adv=728 bbox=(56, -10, 672, 840); ours: absent
+Play-Bold	cmap U+1EDB	provenance	LOST; release: uni1EDB adv=592 bbox=(50, -10, 595, 680); ours: absent
+Play-Bold	cmap U+1EDC	provenance	LOST; release: uni1EDC adv=728 bbox=(56, -10, 672, 840); ours: absent
+Play-Bold	cmap U+1EDD	provenance	LOST; release: uni1EDD adv=592 bbox=(50, -10, 595, 680); ours: absent
+Play-Bold	cmap U+1EDE	provenance	LOST; release: uni1EDE adv=728 bbox=(56, -10, 672, 921); ours: absent
+Play-Bold	cmap U+1EDF	provenance	LOST; release: uni1EDF adv=592 bbox=(50, -10, 595, 756); ours: absent
+Play-Bold	cmap U+1EE0	provenance	LOST; release: uni1EE0 adv=728 bbox=(56, -10, 672, 833); ours: absent
+Play-Bold	cmap U+1EE1	provenance	LOST; release: uni1EE1 adv=592 bbox=(50, -10, 595, 662); ours: absent
+Play-Bold	cmap U+1EE2	provenance	LOST; release: uni1EE2 adv=728 bbox=(56, -178, 672, 737); ours: absent
+Play-Bold	cmap U+1EE3	provenance	LOST; release: uni1EE3 adv=592 bbox=(50, -178, 595, 572); ours: absent
+Play-Bold	cmap U+1EE4	provenance	LOST; release: uni1EE4 adv=699 bbox=(68, -178, 631, 649); ours: absent
+Play-Bold	cmap U+1EE5	provenance	LOST; release: uni1EE5 adv=595 bbox=(64, -178, 531, 484); ours: absent
+Play-Bold	cmap U+1EE6	provenance	LOST; release: uni1EE6 adv=699 bbox=(68, -10, 631, 921); ours: absent
+Play-Bold	cmap U+1EE7	provenance	LOST; release: uni1EE7 adv=595 bbox=(64, -10, 531, 756); ours: absent
+Play-Bold	cmap U+1EE8	provenance	LOST; release: uni1EE8 adv=699 bbox=(68, -10, 743, 840); ours: absent
+Play-Bold	cmap U+1EE9	provenance	LOST; release: uni1EE9 adv=595 bbox=(64, -10, 640, 680); ours: absent
+Play-Bold	cmap U+1EEA	provenance	LOST; release: uni1EEA adv=699 bbox=(68, -10, 743, 840); ours: absent
+Play-Bold	cmap U+1EEB	provenance	LOST; release: uni1EEB adv=595 bbox=(64, -10, 640, 680); ours: absent
+Play-Bold	cmap U+1EEC	provenance	LOST; release: uni1EEC adv=699 bbox=(68, -10, 743, 921); ours: absent
+Play-Bold	cmap U+1EED	provenance	LOST; release: uni1EED adv=595 bbox=(64, -10, 640, 756); ours: absent
+Play-Bold	cmap U+1EEE	provenance	LOST; release: uni1EEE adv=699 bbox=(68, -10, 743, 833); ours: absent
+Play-Bold	cmap U+1EEF	provenance	LOST; release: uni1EEF adv=595 bbox=(64, -10, 640, 662); ours: absent
+Play-Bold	cmap U+1EF0	provenance	LOST; release: uni1EF0 adv=699 bbox=(68, -178, 743, 737); ours: absent
+Play-Bold	cmap U+1EF1	provenance	LOST; release: uni1EF1 adv=595 bbox=(64, -178, 640, 572); ours: absent
+Play-Bold	cmap U+1EF4	provenance	LOST; release: uni1EF4 adv=644 bbox=(8, -178, 636, 649); ours: absent
+Play-Bold	cmap U+1EF5	provenance	LOST; release: uni1EF5 adv=534 bbox=(8, -208, 526, 484); ours: absent
+Play-Bold	cmap U+1EF6	provenance	LOST; release: uni1EF6 adv=644 bbox=(8, 0, 636, 921); ours: absent
+Play-Bold	cmap U+1EF7	provenance	LOST; release: uni1EF7 adv=534 bbox=(8, -208, 526, 756); ours: absent
+Play-Bold	cmap U+1EF8	provenance	LOST; release: uni1EF8 adv=644 bbox=(8, 0, 636, 833); ours: absent
+Play-Bold	cmap U+1EF9	provenance	LOST; release: uni1EF9 adv=534 bbox=(8, -208, 526, 662); ours: absent
+Play-Bold	cmap U+20B8	provenance	LOST; release: uni20B8 adv=595 bbox=(20, 0, 575, 649); ours: absent
+Play-Bold	cmap U+20BD	provenance	LOST; release: uni20BD adv=600 bbox=(20, 0, 587, 649); ours: absent
+Play-Bold	cmap U+2116	provenance	renamed+redrawn; release: uni2116 adv=1191 bbox=(70, 0, 1140, 658); ours: afii61352 adv=1343 bbox=(70, 0, 681, 649)
+Play-Bold	cmap U+2126	provenance	renamed+redrawn; release: uni2126 adv=728 bbox=(56, 0, 672, 659); ours: Omega adv=730 bbox=(50, 0, 680, 659)
+Play-Bold	cmap U+2150	provenance	LOST; release: uni2150 adv=956 bbox=(114, 0, 895, 649); ours: absent
+Play-Bold	cmap U+2151	provenance	LOST; release: uni2151 adv=956 bbox=(114, -6, 902, 649); ours: absent
+Play-Bold	cmap U+2155	provenance	LOST; release: uni2155 adv=956 bbox=(114, -6, 888, 649); ours: absent
+Play-Bold	cmap U+2156	provenance	LOST; release: uni2156 adv=956 bbox=(27, -6, 888, 655); ours: absent
+Play-Bold	cmap U+2157	provenance	LOST; release: uni2157 adv=956 bbox=(22, -6, 888, 655); ours: absent
+Play-Bold	cmap U+2158	provenance	LOST; release: uni2158 adv=956 bbox=(8, -6, 888, 649); ours: absent
+Play-Bold	cmap U+2159	provenance	LOST; release: uni2159 adv=956 bbox=(114, -6, 902, 649); ours: absent
+Play-Bold	cmap U+215A	provenance	LOST; release: uni215A adv=956 bbox=(30, -6, 902, 649); ours: absent
+Play-Bold	cmap U+2206	provenance	renamed+redrawn; release: uni2206 adv=653 bbox=(-6, 0, 658, 649); ours: Delta adv=652 bbox=(-6, 0, 658, 649)
+Play-Bold	hhea.ascender	provenance	hhea.ascender [937, 932]
+Play-Bold	hmtx.79	provenance	hmtx.79 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 218 unit(s) at Upsilontonos (release -218, ours 0)
+Play-Bold	post.num_glyphs	provenance	post.num_glyphs -- the release has acutecomb.case (1 contour(s), unmapped, referenced by a lookup); brevecombcy (1 contour(s), unmapped, referenced by a lookup); brevecombcy.case (1 contour(s), unmapp

@@ -1,0 +1,67 @@
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (8 and 13); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (8 and 13); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (8 and 13); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+ACCEPTED-RENAME cmap U+000D ["nonmarkingreturn", "CR"]: same outline and advance under a different name
+BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+BLOCKING GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+BLOCKING GDEF.mark_glyph_sets [null, {"0": ["uni0308", "uni0307", "gravecomb", "acutecomb", "uni0302", "uni030
+BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [16, 5],
+BLOCKING GSUB.feature_list {"c2sc": {"0": [25, 30]}, "case": {"0": [27, 32]}, "ccmp": {"0": [2, 6], "1": [3
+BLOCKING GSUB.lookup_list {"0": {"0": {"Gcommaaccent": ["gcommaaccent.smcp", null], "Kcommaaccent": ["kcom
+BLOCKING OS/2.panose_10 {"2": [5, 0]}
+BLOCKING cmap U+2013 LOST ["endash", null]
+BLOCKING cmap U+2014 LOST ["emdash", null]
+BLOCKING cmap U+2018 LOST ["quoteleft", null]
+BLOCKING cmap U+2019 LOST ["quoteright", null]
+BLOCKING cmap U+2020 LOST ["dagger", null]
+BLOCKING cmap U+2021 LOST ["daggerdbl", null]
+BLOCKING cmap U+2022 LOST ["bullet", null]
+BLOCKING cmap U+2026 LOST ["ellipsis", null]
+BLOCKING cmap U+2030 LOST ["perthousand", null]
+BLOCKING cmap U+2039 LOST ["guilsinglleft", null]
+BLOCKING cmap U+2044 LOST ["fraction", null]
+BLOCKING cmap U+2070 LOST ["uni2070", null]
+BLOCKING cmap U+2074 LOST ["uni2074", null]
+BLOCKING cmap U+2075 LOST ["uni2075", null]
+BLOCKING cmap U+2076 LOST ["uni2076", null]
+BLOCKING cmap U+2077 LOST ["uni2077", null]
+BLOCKING cmap U+2078 LOST ["uni2078", null]
+BLOCKING cmap U+2079 LOST ["uni2079", null]
+BLOCKING cmap U+2080 LOST ["uni2080", null]
+BLOCKING cmap U+2081 LOST ["uni2081", null]
+BLOCKING cmap U+2082 LOST ["uni2082", null]
+BLOCKING cmap U+2083 LOST ["uni2083", null]
+BLOCKING cmap U+2084 LOST ["uni2084", null]
+BLOCKING cmap U+2085 LOST ["uni2085", null]
+BLOCKING cmap U+2086 LOST ["uni2086", null]
+BLOCKING cmap U+2087 LOST ["uni2087", null]
+BLOCKING cmap U+2088 LOST ["uni2088", null]
+BLOCKING cmap U+2089 LOST ["uni2089", null]
+BLOCKING cmap U+2116 LOST ["uni2116", null]
+BLOCKING cmap U+2122 LOST ["trademark", null]
+BLOCKING cmap U+2126 LOST ["uni2126", null]
+BLOCKING cmap U+2150 LOST ["uni2150", null]
+BLOCKING cmap U+2151 LOST ["uni2151", null]
+BLOCKING cmap U+2153 LOST ["uni2153", null]
+BLOCKING cmap U+2154 LOST ["uni2154", null]
+BLOCKING cmap U+2155 LOST ["uni2155", null]
+BLOCKING cmap U+2156 LOST ["uni2156", null]
+BLOCKING cmap U+2157 LOST ["uni2157", null]
+BLOCKING cmap U+2158 LOST ["uni2158", null]
+BLOCKING cmap U+2159 LOST ["uni2159", null]
+BLOCKING cmap U+2202 LOST ["partialdiff", null]
+BLOCKING cmap U+2206 LOST ["uni2206", null]
+BLOCKING cmap U+2211 LOST ["summation", null]
+BLOCKING cmap U+2212 LOST ["minus", null]
+BLOCKING cmap U+2215 LOST ["uni2215", null]
+BLOCKING cmap U+2219 LOST ["uni2219", null]
+BLOCKING cmap U+2248 LOST ["approxequal", null]
+BLOCKING cmap U+2260 LOST ["notequal", null]
+BLOCKING cmap U+2264 LOST ["lessequal", null]
+BLOCKING cmap U+2265 LOST ["greaterequal", null]
+BLOCKING cmap U+FB00 LOST ["ff", null]
+BLOCKING cmap U+FB03 LOST ["ffi", null]
+BLOCKING cmap U+FB04 LOST ["ffl", null]
+BLOCKING hmtx.303 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 557 unit(s) at uni0335 (release -457, ours 100)
+BLOCKING post.underline_position [-75, -100]
+62 blocking table difference(s), 3 stale in the release, 1 accepted rename(s)

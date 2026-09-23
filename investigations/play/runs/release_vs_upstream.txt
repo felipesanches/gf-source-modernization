@@ -1,0 +1,5 @@
+Play.glyphs blob at f17f03f / 3565c8a: b5d9f580adf099d9ef02c7b85ee20c62cd722a1c b5d9f580adf099d9ef02c7b85ee20c62cd722a1c
+Regular: release vs 3565c8a hinted: tables differing ['head']; head fields differing ['checkSumAdjustment', 'modified']
+Regular: release vs f17f03f unhinted: byte-identical ['cmap', 'hmtx', 'GSUB', 'GPOS', 'GDEF', 'OS/2', 'hhea', 'post']; glyph order equal True; glyphs with different coordinates 0
+Bold: release vs 3565c8a hinted: tables differing ['head']; head fields differing ['checkSumAdjustment', 'modified']
+Bold: release vs f17f03f unhinted: byte-identical ['cmap', 'hmtx', 'GSUB', 'GPOS', 'GDEF', 'OS/2', 'hhea', 'post']; glyph order equal True; glyphs with different coordinates 0

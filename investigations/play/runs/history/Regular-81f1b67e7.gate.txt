@@ -1,0 +1,22 @@
+RELEASE-STALE hmtx.iotadieresistonos -- each bearing matches its own outline (-67 and -40) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE hmtx.afii10092 -- each bearing matches its own outline (24 and 28) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE hmtx.afii10104 -- each bearing matches its own outline (-67 and -7) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE hmtx.uni0462 -- each bearing matches its own outline (24 and 15) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE hmtx.uni0463 -- each bearing matches its own outline (24 and 14) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE hmtx.uni04A0 -- each bearing matches its own outline (24 and 85) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE hmtx.uni04A1 -- each bearing matches its own outline (24 and 77) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's .null (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))), nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s)))
+BLOCKING OS/2.ach_vend_id ["PLAY", "PT  "]
+BLOCKING OS/2.s_typo_descender [-220, 220]
+BLOCKING OS/2.sx_height [484, 500]
+BLOCKING OS/2.s_cap_height [649, 700]
+BLOCKING feat: whole-table difference
+BLOCKING GSUB.script_list [null, {"latn/dflt": {"lookups": [0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15
+BLOCKING GSUB.feature_list [null, {"aalt": [0, 1], "c2sc": [21], "dnom": [10], "frac": [13, 14, 15, 17], "l
+BLOCKING GSUB.lookup_list [null, {"0": [{"type": "single", "slash": "fraction", "i": "i.locl", "Tcommaacce
+BLOCKING hhea.descender [-220, 220]
+BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "cyrl/dflt": {"lookups": [0]}, "grek/dflt
+BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "comma": {"Tau": {"x": -100}, "afii10051": {"x": 
+BLOCKING morx: whole-table difference
+13 blocking table difference(s), 8 stale in the release

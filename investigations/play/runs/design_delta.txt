@@ -1,0 +1,28 @@
+=== Regular: release v2.101 (A) vs our SFD build (B)
+A /home/fsanches/compartilhado/google/fonts/ofl/play/Play-Regular.ttf: 1150 glyphs, 827 codepoints, version 'Version 2.101; ttfautohint (v1.6)'
+B $SCRATCH/baseline/Play-Regular-play/fonts/ttf/Play-Regular.ttf: 1005 glyphs, 694 codepoints, version 'Version 001.001;fontc 1.0.0'
+codepoints only in A: 133; only in B: 0; common: 694
+common codepoints with a different advance: 146
+common codepoints with a different outline: 218
+  first 40 differing outlines: U+0060 U+00A8 U+00AD U+00AF U+00B4 U+00B8 U+00C0 U+00C1 U+00C3 U+00C8 U+00C9 U+00CC U+00CD U+00D2 U+00D3 U+00D5 U+00D9 U+00DA U+00DD U+00E3 U+00EC U+00ED U+00F5 U+0102 U+0111 U+0128 U+0129 U+0162 U+0163 U+0168 U+0169 U+021B U+02BC U+02C6 U+02C7 U+02C9 U+02D8 U+02D9 U+02DA U+02DB
+=== Regular: hg-era v1.002 (A) vs our SFD build (B)
+A $SCRATCH/inv-play/hg-Play-Regular.ttf: 1007 glyphs, 693 codepoints, version 'Version 1.002'
+B $SCRATCH/baseline/Play-Regular-play/fonts/ttf/Play-Regular.ttf: 1005 glyphs, 694 codepoints, version 'Version 001.001;fontc 1.0.0'
+codepoints only in A: 0; only in B: 1; common: 693
+common codepoints with a different advance: 5
+common codepoints with a different outline: 7
+  first 40 differing outlines: U+0390 U+044A U+0457 U+0462 U+0463 U+04A0 U+04A1
+=== Bold: release v2.101 (A) vs our SFD build (B)
+A /home/fsanches/compartilhado/google/fonts/ofl/play/Play-Bold.ttf: 1150 glyphs, 827 codepoints, version 'Version 2.101; ttfautohint (v1.6)'
+B $SCRATCH/baseline/Play-Bold-play/fonts/ttf/Play-Bold.ttf: 986 glyphs, 694 codepoints, version 'Version 1.002;fontc 1.0.0'
+codepoints only in A: 133; only in B: 0; common: 694
+common codepoints with a different advance: 176
+common codepoints with a different outline: 231
+  first 40 differing outlines: U+0060 U+00A8 U+00AA U+00AD U+00AF U+00B4 U+00B8 U+00BA U+00C0 U+00C1 U+00C2 U+00C8 U+00C9 U+00CA U+00CC U+00CD U+00D0 U+00D2 U+00D3 U+00D4 U+00D5 U+00D9 U+00DA U+00DD U+00E3 U+00EC U+00ED U+00F5 U+0102 U+0110 U+0111 U+0128 U+0129 U+0162 U+0163 U+0168 U+0169 U+02BC U+02C6 U+02C7
+=== Bold: hg-era v1.002 (A) vs our SFD build (B)
+A $SCRATCH/inv-play/hg-Play-Bold.ttf: 986 glyphs, 693 codepoints, version 'Version 1.002'
+B $SCRATCH/baseline/Play-Bold-play/fonts/ttf/Play-Bold.ttf: 986 glyphs, 694 codepoints, version 'Version 1.002;fontc 1.0.0'
+codepoints only in A: 0; only in B: 1; common: 693
+common codepoints with a different advance: 0
+common codepoints with a different outline: 0
+  first 40 differing outlines: 
