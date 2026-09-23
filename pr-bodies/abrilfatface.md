@@ -6,9 +6,9 @@ Converts Abril Fatface's FontForge sources to `.glyphs`, so the family builds wi
 
 One commit per step, the conversion last:
 
-- `e4e7061 Adopt the Unified Font Repository template`
-- `2f3cf30 Convert to .glyphs with babelfont ca43adc`
+- `9b8db6f Adopt the Unified Font Repository template`
+- `f431a0a Convert to .glyphs with babelfont 8b59bc3`
 
-Builds with gftools-builder3 e851b8b (fontc 1.0.0) and matches the binaries google/fonts b5efa9c32e8f ships: 0 blocking rows under the table gate, 1 style(s).
+Builds with gftools-builder3 e851b8b (fontc 1.0.0) and matches the binaries google/fonts b5efa9c32e8f ships: 0 blocking rows under the table gate and exactly the release's codepoints, 1 style(s).
 
 Every change made to the font before the conversion is its own commit; the converted `.sfd` remains in the git history.

@@ -6,9 +6,9 @@ Adds Allerta Stencil, whose source this repository lost: the commit that retired
 
 One commit per step, the conversion last:
 
-- `286fb54 Restore src/AllertaStencil-Regular-TTF.sfd as committed at 88a8c57b949c`
-- `a9d3f6a Convert to .glyphs with babelfont ca43adc`
+- `6ed5cd8 Restore src/AllertaStencil-Regular-TTF.sfd as committed at 88a8c57b949c`
+- `bac063d Convert to .glyphs with babelfont 8b59bc3`
 
-Builds with gftools-builder3 e851b8b (fontc 1.0.0) and matches the binaries google/fonts b5efa9c32e8f ships: 0 blocking rows under the table gate, 1 style(s).
+Builds with gftools-builder3 e851b8b (fontc 1.0.0) and matches the binaries google/fonts b5efa9c32e8f ships: 0 blocking rows under the table gate and exactly the release's codepoints, 1 style(s).
 
 Every change made to the font before the conversion is its own commit; the converted `.sfd` remains in the git history.
