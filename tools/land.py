@@ -276,11 +276,15 @@ def edits(repo, rows, d, plan):
     for c in plan["commits"]:
         styles = list(by_style) if c.get("styles", "*") in ("*", ["*"]) else c["styles"]
         touched = []
+        # a commit is one op, or several that only make sense together (a value and
+        # the flag saying it is absolute) so that no commit leaves a nonsense state
+        ops = c["ops"] if "ops" in c else [[c["op"], c.get("args", "")]]
         for st in styles:
             path = by_style[st]["source"]
-            before, changed = sfd_edit.apply_file(os.path.join(d, path), c["op"], c.get("args", ""))
-            if changed:
-                touched.append(path)
+            for op, args in ops:
+                before, changed = sfd_edit.apply_file(os.path.join(d, path), op, args)
+                if changed and path not in touched:
+                    touched.append(path)
         if not touched:
             raise LandError("plan commit changed nothing: %s" % c["subject"])
         made.append(commit(d, c["subject"] + "\n\n" + c["body"].strip(), *touched))

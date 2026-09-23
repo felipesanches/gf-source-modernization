@@ -101,6 +101,18 @@ def apply(text, op, args):
         return text, "glyph %s" % old
     if op == "scaleem":
         import ff_scale_em
+        # The port scales outlines, references, widths and the header metrics -- all
+        # a source like Puritan's holds. Anything else FontForge would also scale is
+        # refused rather than left at the old em.
+        unsupported = [k for k, pat in (
+            ("kerning", r"^(KernClass2?|VKernClass2?|KP|VKP|Kerns):"),
+            ("anchors", r"^(AnchorPoint|AnchorClass2?):"),
+            ("PostScript hints", r"^(HStem|VStem|DStem2?):"),
+            ("BASE", r"^BaseHoriz|^BaseVert"),
+            ("MATH", r"^MATH:"),
+        ) if re.search(pat, text, re.M)]
+        if unsupported:
+            raise EditError("scaleem does not model: %s" % ", ".join(unsupported))
         before = "Ascent %s, Descent %s" % (field_value(text, "Ascent"), field_value(text, "Descent"))
         # integer underline values: babelfont parses metrics as i32 and drops a real
         # (FontForge's own export gives the same bytes either way)
