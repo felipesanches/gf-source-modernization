@@ -96,8 +96,13 @@ def apply(text, op, args):
         return text, "nbsp Width %s, space Width %s" % (nw.group(1), sw.group(1))
     if op == "renameglyph":
         old, new = args.split()
-        if not re.search(r"^StartChar: %s$" % re.escape(old), text, re.M):
+        n_old = len(re.findall(r"^StartChar: %s$" % re.escape(old), text, re.M))
+        if not n_old:
             raise EditError("no StartChar: %s to rename" % old)
+        if n_old > 1:
+            # the reference rewrite below would rename every copy, leaving the name
+            # duplicated under its new spelling (Corben-Bold's two dcroat)
+            raise EditError("%d glyphs are named %s; use renameglyphgid" % (n_old, old))
         if re.search(r"^StartChar: %s$" % re.escape(new), text, re.M):
             raise EditError("StartChar: %s already exists" % new)
         text = re.sub(r"^StartChar: %s$" % re.escape(old), "StartChar: %s" % new, text,
