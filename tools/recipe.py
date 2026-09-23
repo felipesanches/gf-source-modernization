@@ -9,16 +9,16 @@ faithful conversion" (--single-line-names, --drop-copyright-description) and
 --normalise-nbsp-width are never passed: a correction belongs in the history as a
 visible .sfd edit.
 
-Order matters: babelfont applies filters in command-line order, and
---fontforge-os2-defaults MEASURES the outlines (x-height, cap height), so it runs
-first, on the outlines exactly as the source states them.
+Order matters: babelfont applies filters in command-line order, and the height
+filters MEASURE the outlines, so they run first, on the outlines exactly as the
+source states them. --fontforge-height-glyph-count-mean, when chosen, runs before
+--fontforge-os2-defaults, because each fills only a height still missing.
 
-This is the same logic as tools/baseline.sh, in Python so that tools/land.py can
-use it; `recipe.py --check` confirms the two agree on every style baseline.sh ran.
+This is the only implementation of the recipe: tools/baseline.sh and tools/land.py
+both call it.
 
 Usage:
-  recipe.py <Style>        print the flags for one style
-  recipe.py --check        compare with the flags recorded in baseline/*.gate.txt
+  recipe.py <Style>        print the flags for one style, one per line
 """
 import os
 import sys
@@ -27,6 +27,12 @@ from fontTools.pens.areaPen import AreaPen
 from fontTools.ttLib import TTFont
 
 W = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# FontForge's x-height/cap-height mean changed in 4d34d21ef866; FFTM records
+# stamp.c's source_modtime, which for that build is 1337023489 (2012-05-14T19:24:49Z).
+# The old divisor exists from 5fba6c9 (2009-05-27), before every stamp in this batch.
+FONTFORGE_HEIGHT_MEAN_FIXED = 1337023489
+UNIX_FROM_1904 = 2082844800
 
 BASE = ["--fontforge-os2-defaults", "--add-instance-per-master", "--infer-mark-category",
         "--set-subcategory", "--keep-source-glyph-names", "--keep-source-advances",
@@ -56,9 +62,21 @@ def directions_uniform(shipped):
     return cw == 0 or ccw == 0
 
 
+def fontforge_build(shipped):
+    """The build stamp of the FontForge that exported the release, as Unix time, or
+    None when the release has no FFTM table (not exported by FontForge)."""
+    f = TTFont(shipped)
+    if "FFTM" not in f:
+        return None
+    return f["FFTM"].FFTimeStamp - UNIX_FROM_1904
+
+
 def flags_for(sfd_text, shipped, add=(), drop=()):
     """The babelfont arguments for one style, in order."""
     flags = list(BASE)
+    built = fontforge_build(shipped)
+    if built is not None and built < FONTFORGE_HEIGHT_MEAN_FIXED:
+        flags.insert(0, "--fontforge-height-glyph-count-mean")
     flags.append("--correct-path-direction" if directions_uniform(shipped)
                  else "--reverse-path-direction")
     if legacy_duplicate_cmap(shipped) == "yes":
@@ -86,26 +104,6 @@ def source_text(row):
                           capture_output=True, check=True).stdout.decode("utf-8", "replace")
 
 
-def check():
-    bad = 0
-    for row in rows():
-        log = os.path.join(W, "baseline", row["style"] + ".gate.txt")
-        if not os.path.exists(log):
-            continue
-        recorded = next((l[len("flags: "):].split() for l in open(log) if l.startswith("flags: ")), None)
-        ours = flags_for(source_text(row), row["shipped"])
-        # baseline.sh ran before the recipe was reordered; compare as sets
-        same = recorded is not None and set(recorded) == set(ours)
-        bad += not same
-        if not same:
-            print("DIFFER %-26s baseline=%s recipe=%s" % (row["style"], recorded, ours))
-    print("recipe.py agrees with baseline.sh on every recorded style" if not bad
-          else "%d style(s) differ" % bad)
-    return 1 if bad else 0
-
-
 if __name__ == "__main__":
-    if sys.argv[1:] == ["--check"]:
-        sys.exit(check())
     row = next(r for r in rows() if r["style"] == sys.argv[1])
-    print(" ".join(flags_for(source_text(row), row["shipped"])))
+    print("\n".join(flags_for(source_text(row), row["shipped"])))

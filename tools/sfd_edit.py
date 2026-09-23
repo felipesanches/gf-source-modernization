@@ -13,12 +13,19 @@ written for either tool means the same thing:
   nbspwidth                       set the U+00A0 glyph's Width to the space's
   renameglyph <old> <new>         rename a StartChar and every standalone reference
 
-and one this workspace adds:
+and three this workspace adds, each from an investigation's reference
+implementation (investigations/<unit>/):
 
   scaleem <em>                    change the em as FontForge 20100501's `f.em = <em>`
-                                  did (tools/ff_scale_em.py, from the puritan
-                                  investigation: its port reproduces a released glyf
-                                  point for point)
+                                  did (tools/ff_scale_em.py, puritan: its port
+                                  reproduces a released glyf point for point)
+  droplookup <name>               delete a Lookup: line with this exact name and every
+                                  glyph line filling its subtables; FATAL if anything
+                                  still names the lookup or a subtable (nosifer)
+  renameglyphgid <gid> <old> <new>  rename only the StartChar whose Encoding: line
+                                  carries <gid>, when <old> is duplicated; by-name
+                                  references keep binding to the other glyph, as
+                                  FontForge bound them (corben-bold)
 
 An operation that cannot apply is FATAL: a silently skipped correction is how a
 defect ships. Every edit reports what the field said before, so a plan cannot
@@ -118,6 +125,40 @@ def apply(text, op, args):
         # (FontForge's own export gives the same bytes either way)
         scaled, (asc, desc, _scale, _stats) = ff_scale_em.scale_sfd(text, int(args), int_underline=True)
         return scaled, before + " -> Ascent %d, Descent %d" % (asc, desc)
+    if op == "droplookup":
+        name = args
+        m = re.search(r'^Lookup: \d+ \d+ \d+ "%s"\s+\{(.*?)\}.*\n' % re.escape(name), text, re.M)
+        if not m:
+            raise EditError("no Lookup: line named %r" % name)
+        subtables = re.findall(r'"((?:[^"\\]|\\.)*)"', m.group(1))
+        text = text[:m.start()] + text[m.end():]
+        n = 0
+        for st in subtables:
+            text, k = re.subn(r'^(?:Ligature2|Substitution2|AlternateSubs2|MultipleSubs2): "%s" .*\n'
+                              % re.escape(st), "", text, flags=re.M)
+            n += k
+        if n == 0:
+            raise EditError("lookup %r had no glyph entries" % name)
+        for token in [name] + subtables:
+            if '"%s"' % token in text:
+                raise EditError("%r is still referenced after the drop" % token)
+        return text, "lookup %r with %d glyph entr%s" % (name, n, "y" if n == 1 else "ies")
+    if op == "renameglyphgid":
+        gid_s, old, new = args.split()
+        gid = int(gid_s)
+        starts = list(re.finditer(r"^StartChar: (.*)\n", text, re.M))
+        same = [s for s in starts if s.group(1) == old]
+        if len(same) < 2:
+            raise EditError("%s is not duplicated; use renameglyph" % old)
+        if any(s.group(1) == new for s in starts):
+            raise EditError("StartChar: %s already exists" % new)
+        hit = [s for s in same
+               if (lambda e: e and int(e.group(3)) == gid)(
+                   re.match(r"Encoding: (-?\d+) (-?\d+) (\d+)", text[s.end():s.end() + 80]))]
+        if len(hit) != 1:
+            raise EditError("%d StartChar: %s with gid %d" % (len(hit), old, gid))
+        s = hit[0]
+        return text[:s.start()] + "StartChar: %s\n" % new + text[s.end():], "glyph %s (gid %d)" % (old, gid)
     raise EditError("unknown op %s" % op)
 
 

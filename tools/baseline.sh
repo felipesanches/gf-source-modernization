@@ -34,7 +34,7 @@
 set -uo pipefail
 W=$(cd "$(dirname "$0")/.." && pwd)
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive
-BF=${BF:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target/release/babelfont}
+BF=${BF:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont}
 B3=/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/gftools-builder
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
@@ -67,49 +67,16 @@ for style in "$@"; do
   if [ -n "${SRC_OVERRIDE:-}" ]; then cp "$SRC_OVERRIDE" "$sfd"; fi
   [ -e "$sfd" ] || { printf '%s\t%s\tNO-SOURCE\t-\t-\t%s\n' "$repo" "$style" "$src" > "$OUT/$style.tsv"; continue; }
 
-  # --- fidelity decisions, each asked of the release -------------------------
-  # makeotf's duplicate set: pass the filter only when the release carries it
-  dup=$("$PY" - "$shipped" <<'EOF'
-import sys
-from fontTools.ttLib import TTFont
-cm = TTFont(sys.argv[1]).getBestCmap() or {}
-a, d = 0x00A0 in cm, 0x00AD in cm
-print("yes" if (a and d) else ("partial" if (a or d) else "no"))
-EOF
-)
-  # contour direction: normalise only when the release is itself uniform
-  uni=$("$PY" - "$shipped" <<'EOF'
-import sys
-from fontTools.ttLib import TTFont
-from fontTools.pens.areaPen import AreaPen
-f = TTFont(sys.argv[1]); gs = f.getGlyphSet(); cw = ccw = 0
-for n in f.getGlyphOrder():
-    p = AreaPen(gs)
-    try:
-        gs[n].draw(p)
-    except Exception:
-        continue
-    cw += p.value < 0; ccw += p.value > 0
-print("yes" if cw == 0 or ccw == 0 else "no")
-EOF
-)
-  # Filters run in command-line order. --fontforge-os2-defaults measures the
-  # outlines (x-height, cap height), so it runs FIRST, on the outlines exactly as
-  # the source states them -- before --snap-component-transforms or any path
-  # direction filter changes what FontForge would have measured.
-  flags=(--fontforge-os2-defaults --add-instance-per-master --infer-mark-category
-         --set-subcategory --keep-source-glyph-names --keep-source-advances
-         --snap-component-transforms --fontforge-underline-position)
-  if [ "$uni" = yes ]; then flags+=(--correct-path-direction); else flags+=(--reverse-path-direction); fi
-  [ "$dup" = yes ] && flags+=(--add-legacy-duplicate-cmap)
-  if [ -f "$sfd" ] && grep -qE 'abvm|blwm' "$sfd"; then flags+=(--correct-conjunct-category); fi
+  # --- fidelity decisions, each asked of the release: tools/recipe.py, the one
+  # implementation of the recipe, which tools/land.py uses too
+  mapfile -t flags < <("$PY" "$W/tools/recipe.py" "$style")
+  [ "${#flags[@]}" -gt 0 ] || { printf '%s\t%s\tRECIPE-FAILED\t-\t-\t-\n' "$repo" "$style" > "$OUT/$style.tsv"; continue; }
   for x in ${EXTRA_FLAGS:-}; do flags+=("$x"); done
   if [ -n "${DROP_FLAGS:-}" ]; then
     keep=(); for x in "${flags[@]}"; do case " $DROP_FLAGS " in *" $x "*) ;; *) keep+=("$x");; esac; done
     flags=("${keep[@]}")
   fi
   echo "flags: ${flags[*]}" >> "$log"
-  echo "decisions: legacy-duplicate-cmap-in-release=$dup release-directions-uniform=$uni" >> "$log"
 
   g="$d/sources/$style.glyphs"
   if ! "$BF" "$sfd" "$g" "${flags[@]}" >> "$log" 2>&1 || [ ! -s "$g" ]; then

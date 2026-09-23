@@ -71,6 +71,7 @@ BRANCH = {"hg": "main", "fork": "modernize-sfd-to-glyphs",
 
 # Why a per-release flag differs between the styles of one family.
 REASON = {
+    "--fontforge-height-glyph-count-mean": "its release was exported by a FontForge built before 2012-05-14",
     "--reverse-path-direction": "its release mixes contour directions",
     "--correct-path-direction": "its release has uniform contour directions",
     "--add-legacy-duplicate-cmap": "its release carries makeotf's duplicate cmap entries",
