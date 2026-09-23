@@ -11,8 +11,11 @@ and Italic ship v1.272, a 2017 third-party rebuild (google/fonts PR #1269) of Fo
 dozen edits that commit its defects -- 43 Greek iota-subscript glyphs drawn beside rather
 than under the letter, fsType 8, 500/700 heights that are Glyphs defaults, not the
 design's -- and still leaves 3 GSUB rows per style. The alternative is to land against the
-001.271 binary Google Fonts shipped 2015-2017, which our build reproduces at 3 rows. That
-choice, and the re-pairing it implies, is Felipe's; tuffy is not landed. Two findings
+001.271 binary Google Fonts shipped 2015-2017, which our build reproduces at 3 rows.
+Settled 2026-09-24 by the equivalence rule: the target is v1.272, what ships; its defects
+are reproduced and their fixes are future work. Before it can land: v1.272's GSUB (its 11
+lookups replacing the source's 4), the verifier's 4 further composite placements, and the
+.notdef. Not landed. Two findings
 outlived the family: the table gate's area-measure bug (fixed, sfd-batch5 cd4f827) and
 FontForge's synthesised `.notdef` (a proposed converter filter).
 

@@ -7,8 +7,8 @@ conclusion below). Written from the agents' structured results (`results.json`).
 
 Nosifer-Regular.ttf was exported with FontForge's OpenType tables off (a legacy kern table,
 no GSUB), so the source's one `liga` lookup (E E) never shipped. One documented edit drops
-it; whether to reproduce that absence or keep the ligature as better than the release is a
-decision for Felipe. Both height rows are FontForge 20110222's pre-2012 rule, handled by the
+it. Settled 2026-09-24 by the equivalence rule (reproduce what ships, improve in later
+commits): the drop stays, and restoring the ligature is listed as future work. Both height rows are FontForge 20110222's pre-2012 rule, handled by the
 converter; NosiferCaps' only other row is the weight class, handled by the fontc
 workaround.
 

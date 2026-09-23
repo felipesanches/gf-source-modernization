@@ -41,8 +41,8 @@ release (660). One documented edit, `OS2CapHeight 661`.""",
     "nosifer": """\
 Nosifer-Regular.ttf was exported with FontForge's OpenType tables off (a legacy kern table,
 no GSUB), so the source's one `liga` lookup (E E) never shipped. One documented edit drops
-it; whether to reproduce that absence or keep the ligature as better than the release is a
-decision for Felipe. Both height rows are FontForge 20110222's pre-2012 rule, handled by the
+it. Settled 2026-09-24 by the equivalence rule (reproduce what ships, improve in later
+commits): the drop stays, and restoring the ligature is listed as future work. Both height rows are FontForge 20110222's pre-2012 rule, handled by the
 converter; NosiferCaps' only other row is the weight class, handled by the fontc
 workaround.""",
     "unifraktur": """\
@@ -79,8 +79,11 @@ and Italic ship v1.272, a 2017 third-party rebuild (google/fonts PR #1269) of Fo
 dozen edits that commit its defects -- 43 Greek iota-subscript glyphs drawn beside rather
 than under the letter, fsType 8, 500/700 heights that are Glyphs defaults, not the
 design's -- and still leaves 3 GSUB rows per style. The alternative is to land against the
-001.271 binary Google Fonts shipped 2015-2017, which our build reproduces at 3 rows. That
-choice, and the re-pairing it implies, is Felipe's; tuffy is not landed. Two findings
+001.271 binary Google Fonts shipped 2015-2017, which our build reproduces at 3 rows.
+Settled 2026-09-24 by the equivalence rule: the target is v1.272, what ships; its defects
+are reproduced and their fixes are future work. Before it can land: v1.272's GSUB (its 11
+lookups replacing the source's 4), the verifier's 4 further composite placements, and the
+.notdef. Not landed. Two findings
 outlived the family: the table gate's area-measure bug (fixed, sfd-batch5 cd4f827) and
 FontForge's synthesised `.notdef` (a proposed converter filter).""",
 }
