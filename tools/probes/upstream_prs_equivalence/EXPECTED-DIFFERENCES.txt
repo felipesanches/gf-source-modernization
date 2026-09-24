@@ -1,0 +1,9 @@
+Differences the probe reports that are intended (round 4, 2026-09-24):
+
+original/ComicRelief-Regular -- three component offsets written as -0 by 8b59bc3
+(pos = (-0,-1), (23,-0), (236,-0)) are written as 0 by the candidate. The
+pr-ff-source-fidelity fix normalises a rounded -0.0 to +0.0, as FontForge's
+dumpcomposite stores rint() in an int. Both compile to the same bytes, and 0 is
+what the shipped ComicRelief-Regular.ttf carries. Comic Relief is not landed
+(active upstream), so no repository is affected: checks 2 and 3 (landed,
+committed) stay 33/33 identical.

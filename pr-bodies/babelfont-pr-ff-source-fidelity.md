@@ -2,15 +2,26 @@
 > @felipesanches, but submitted **without human review**. @felipesanches himself would
 > still need to participate in the PR thread if he wants to contribute to the review.
 
-Five opt-in filters for converting a FontForge source, and one CLI change.
+Five opt-in filters that keep what a FontForge source states through conversion and
+compilation, and one CLI change.
 
-- `--drop-alternate-unicodes`: drop the plain AltUni2 alternate codepoints and keep each glyph's Encoding codepoint, for a target cmap that does not carry the alternates, such as a binary built without them. FontForge's own TTF export does map them, whatever the encoding (`NeedsUCS2Table()` in tottf.c; for a Unicode encoding, `SFD_DoAltUnis()` in sfd.c adds them to the encoding map first; the same in 20120731 and 20230101). It works the other way from `--add-legacy-duplicate-cmap`, which maps a fixed set of such codepoints onto glyphs found by name. Variation sequences are untouched; a glyph with no Encoding codepoint keeps its first one.
-- `--reverse-path-direction`: reverse every closed contour; the counterpart to `--correct-path-direction` for a font whose mixed contour directions are meant to be kept.
-- `--keep-source-glyph-names`: set the Glyphs custom parameter "Don't use Production Names", so a later compile keeps the glyph names the source states, as FontForge's TTF export does (`dumppost()` in tottf.c). A .glyphs, .glyphspackage or .babelfont output carries the parameter; a UFO or designspace output does not.
-- `--keep-source-advances`: record an uncategorised glyph with a non-zero advance as a base, so a compiler does not zero its advance as a mark by its name. Run `--infer-mark-category` first.
-- `--snap-component-transforms`: in a glyph made only of components, read a component scale within 1.5 F2Dot14 steps of an integer as that integer, and round each component offset with rint, ties to even, as `dumpcomposite()` in tottf.c does. It touches only a glyph that FontForge exports as a TrueType composite (`IsTTFRefable()`: no contours, and every 2x2 matrix entry in [-2, 1.999939]). FontForge writes any other glyph as a simple glyph: it applies each component's transform as it stands and rounds the points, as a compiler that decomposes the component does, so the filter leaves it alone. A FontForge source may carry a mirror as -0.999939 (-16383/16384 to six digits), which `put2d14()` exports as -1. The scale rule is not `put2d14()`'s floor: FontForge exports +0.999939 as 16383/16384, which this filter reads as 1. A scale near 2 is left as it is, since F2Dot14 cannot hold 2. The same in 20120731 and 20230101.
-- CLI (not opt-in): when compiling a TTF, `babelfont` now honours a "Don't use Production Names" custom parameter that is enabled and set to 1 (a number or a string), so a .glyphs source that already carries it compiles without production names. A disabled parameter, or one set to 0, changes nothing.
+- `--drop-alternate-unicodes`: drop AltUni2 alternate codepoints, keeping each glyph's
+  Encoding codepoint; the inverse of `--add-legacy-duplicate-cmap`, for a target cmap
+  without them.
+- `--reverse-path-direction`: reverse every closed contour; the counterpart of
+  `--correct-path-direction` for a font whose mixed directions are meant to be kept.
+- `--keep-source-glyph-names`: set "Don't use Production Names" (carried by .glyphs and
+  .babelfont outputs).
+- `--keep-source-advances`: mark an uncategorised glyph with a non-zero advance as a
+  base, so a compiler does not zero it as a mark by its name. Run it after
+  `--infer-mark-category`.
+- `--snap-component-transforms`: where FontForge exports a TrueType composite
+  (`IsTTFRefable()`, master layers only), read a scale within 1.5 F2Dot14 steps of an
+  integer as that integer and round offsets with rint, as `dumpcomposite()` does.
+- CLI: compiling a TTF honours "Don't use Production Names" when it is enabled and 1.
 
-In `--help`, `--drop-alternate-unicodes` sits under "Filters for subsetting fonts", `--reverse-path-direction` next to `--correct-path-direction` and `--snap-component-transforms` next to `--decompose-components` under "Filters for manipulating outlines", and the two keep-source filters under a new heading, "Filters for keeping what the source states". This PR merges cleanly with each of the companion FontForge reader-fixes and OS/2-defaults PRs.
+Merges cleanly with the two companion FontForge PRs.
 
-Tests: 16 new unit tests. `cargo test -p babelfont --no-fail-fast`: 213 passed, 11 failed; upstream/main 6ab2312: 197 passed, 11 failed (the same 11 failures: the robocjk and decomposecomponentreferences tests that load the untracked noto-cjk-varco/notosanscjksc.rcjk fixture). Integration 7/7 and doc-tests 4 passed, 1 ignored, on both. On every commit, `cargo fmt --all -- --check` is clean, and `cargo clippy -p babelfont --all-targets --features cli` and `cargo clippy --all-targets --all-features -- -D warnings` give no warnings; at the tip, `cargo clippy --all-targets` gives none either.
+Tests: 18 new. `cargo test -p babelfont --no-fail-fast`: 215 passed, 11 failed;
+upstream/main d758b98: 197 passed, the same 11 failed (they need the untracked .rcjk
+fixture). fmt clean; clippy, also with `--features cli`, 0 warnings.

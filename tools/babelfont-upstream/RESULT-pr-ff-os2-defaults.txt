@@ -1,0 +1,15 @@
+== upstream/main (d758b98)
+fmt: clean
+clippy (default): 0 warning line(s)
+clippy -p babelfont --features cli: 0 warning line(s)
+  test result: FAILED. 197 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 12.05s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.20s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 1.67s
+== pr-ff-os2-defaults (6d33ae6)
+fmt: clean
+clippy (default): 0 warning line(s)
+clippy -p babelfont --features cli: 0 warning line(s)
+  test result: FAILED. 229 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 12.48s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.17s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 1.56s
+workdir: /home/fsanches/compartilhado/babelfont-rs-worktrees/check-branch-pr-ff-os2-defaults

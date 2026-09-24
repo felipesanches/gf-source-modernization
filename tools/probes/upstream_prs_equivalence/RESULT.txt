@@ -1,6 +1,6 @@
 reference  /home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont  (29355000 bytes, sha256:744f0ecd14d5ae97)
            BUILT_FROM 8b59bc33af8c0ed77819d5a785eccef610bef8e8
-candidate  /home/fsanches/compartilhado/babelfont-rs-worktrees/target-integration/release/babelfont  (29357544 bytes, sha256:0fb5460cb02a2200)
+candidate  /home/fsanches/compartilhado/babelfont-rs-worktrees/target-integration/release/babelfont  (29358408 bytes, sha256:21e6be5223c7a6a3)
 styles     42 (families.tsv)
 
 == 1. original: unmodified .sfd from the repo archive, recipe flags
@@ -44,7 +44,24 @@ styles     42 (families.tsv)
   Corben-Regular               identical  sha256:43ed25e26a333926  226660 bytes
   Corben-Bold                  identical  sha256:cbd6753a1e6c9d53  641398 bytes
   AllertaStencil-Regular       identical  sha256:cfe8506a983f25c9  115391 bytes
-  ComicRelief-Regular          identical  sha256:5ec1bdf1bfd0051e  247125 bytes
+  ComicRelief-Regular          DIFFERS  (6 changed lines)
+      --- reference/ComicRelief-Regular.glyphs
+      +++ candidate/ComicRelief-Regular.glyphs
+      @@ -5330,3 +5330,3 @@
+       {
+      -pos = (-0,-1);
+      +pos = (0,-1);
+       ref = circumflex;
+      @@ -10232,3 +10232,3 @@
+       {
+      -pos = (23,-0);
+      +pos = (23,0);
+       ref = breve;
+      @@ -11403,3 +11403,3 @@
+       {
+      -pos = (236,-0);
+      +pos = (236,0);
+       ref = acute;
   ComicRelief-Bold             identical  sha256:0f17b8ee9aed901f  310587 bytes
 
 == 2. landed: the .sfd committed just before each convert commit
@@ -118,9 +135,9 @@ styles     42 (families.tsv)
   AllertaStencil-Regular       allerta bac063d  ref=  cand=
 
 == summary
-  1. original   42 styles: 42 identical, 0 differ, 0 FAILED on one binary, 0 failed on both, 0 reference non-deterministic
+  1. original   42 styles: 41 identical, 1 differ, 0 FAILED on one binary, 0 failed on both, 0 reference non-deterministic
   2. landed     33 styles: 33 identical, 0 differ, 0 FAILED on one binary, 0 failed on both
   3. committed  33 styles: 33 identical, 0 differ, 0 FAILED on one binary, 0 failed on both
   failures (one binary only): none
-  differences: none
-  VERDICT: EQUIVALENT -- re-landing changes only the cited babelfont revision
+  differences: original/ComicRelief-Regular
+  VERDICT: NOT EQUIVALENT -- see above
