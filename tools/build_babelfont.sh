@@ -6,9 +6,9 @@
 # builds, and writes the HEAD hash to target-heights/BUILT_FROM, which land.py
 # compares against HEAD before converting anything.
 #
-# Usage: sh tools/build_babelfont.sh
+# Usage: [BF_TREE=<babelfont worktree>] sh tools/build_babelfont.sh
 set -eu
-T=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion
+T=${BF_TREE:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion}
 cd "$T"
 if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
   echo "refusing: $T has uncommitted changes" >&2; exit 1

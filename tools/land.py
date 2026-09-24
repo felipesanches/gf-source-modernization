@@ -42,7 +42,9 @@ import workarounds   # noqa: E402
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
 OUT = "/home/fsanches/compartilhado/sfd-reland-repos"
 TEMPLATE = "/home/fsanches/compartilhado/sfd-func-audit/ufr-template"
-BF_TREE = "/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion"
+# the converter checkout; after the upstream merge, a worktree of simoncozens/babelfont-rs
+# main (BF_TREE=... in the environment), built with tools/build_babelfont.sh
+BF_TREE = os.environ.get("BF_TREE", "/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion")
 BF = os.path.join(BF_TREE, "target-heights/release/babelfont")
 # A font repository may cite only a converter revision merged into babelfont's upstream:
 # never a personal fork (Felipe, 2026-09-23). --unpublished-converter lands anyway, for

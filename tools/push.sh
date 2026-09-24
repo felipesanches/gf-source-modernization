@@ -20,7 +20,7 @@ set -u
 W=$(cd "$(dirname "$0")/.." && pwd)
 R=/home/fsanches/compartilhado/sfd-reland-repos
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
-BF_TREE=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion
+BF_TREE=${BF_TREE:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion}   # any worktree of babelfont-rs
 git -C "$BF_TREE" fetch -q upstream main || { echo "cannot fetch babelfont upstream"; exit 1; }
 CHECK=
 [ "${1:-}" = "--check" ] && { CHECK=1; shift; }
