@@ -13,7 +13,7 @@
 set -u
 B=$1; BASE=${2:-upstream/main}
 R=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion   # any worktree of babelfont-rs
-W=${W:-$(mktemp -d)}
+W=${W:-/home/fsanches/compartilhado/babelfont-rs-worktrees/check-branch-$(echo "$1" | tr / _)}   # on /home: two full cargo builds do not fit a tmpfs
 for rev in "$BASE" "$B"; do
   tag=$(echo "$rev" | tr '/' '_')
   src="$W/src-$tag"; rm -rf "$src"; mkdir -p "$src"
@@ -22,8 +22,12 @@ for rev in "$BASE" "$B"; do
   sudo -n /usr/local/sbin/drop-caches >/dev/null 2>&1 || true
   echo "== $rev ($(git -C "$R" rev-parse --short "$rev"))"
   (cd "$src" && cargo fmt --all -- --check >/dev/null 2>&1) && echo "fmt: clean" || echo "fmt: NOT clean"
-  echo "clippy warnings: $(cd "$src" && cargo clippy --all-targets 2>&1 | grep -c '^warning')" \
-       "(--features cli: $(cd "$src" && cargo clippy -p babelfont --all-targets --features cli 2>&1 | grep -c '^warning'))"
+  for feat in "" "-p babelfont --features cli"; do
+    # shellcheck disable=SC2086
+    (cd "$src" && cargo clippy --all-targets $feat 2>&1) | grep -E '^warning' | sort | uniq -c > "$W/clippy-$tag.txt"
+    echo "clippy ${feat:-(default)}: $(awk '{n+=$1} END{print n+0}' "$W/clippy-$tag.txt") warning line(s)"
+    sed 's/^/    /' "$W/clippy-$tag.txt"
+  done
   (cd "$src" && cargo test -p babelfont --no-fail-fast 2>&1) | grep -E '^test result' | sed 's/^/  /'
 done
 echo "workdir: $W"
