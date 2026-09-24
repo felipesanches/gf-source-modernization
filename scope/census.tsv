@@ -1,0 +1,495 @@
+family	gf_path	status	repo	commit_used	class	n_sfd	n_vfb	n_vfj	n_glyphs	n_ufo	n_designspace	n_binaries	already	shipped	fftm	fftm_build
+Aclonica	apache/aclonica	missing_config	librefonts/aclonica	2746e457bdb6	vfb	0	1	0	0	0	0	0		1	0	-
+Calligraffitti	apache/calligraffitti	missing_config	librefonts/calligraffitti	983f7f33e1a6	empty	0	0	0	0	0	0	0		1	0	-
+Cherry Cream Soda	apache/cherrycreamsoda	missing_config	librefonts/cherrycreamsoda	d378933eaf1d	empty	0	0	0	0	0	0	0		1	0	-
+Chewy	apache/chewy	missing_config	librefonts/chewy	7fae11600a5c	empty	0	0	0	0	0	0	0		1	0	-
+Coming Soon	apache/comingsoon	missing_config	librefonts/comingsoon	27c886594add	empty	0	0	0	0	0	0	0		1	0	-
+Crafty Girls	apache/craftygirls	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		1	0	-
+Creepster Caps	apache/creepstercaps	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:creepstercaps	1	1	2011-02-22
+Crushed	apache/crushed	missing_config	librefonts/crushed	32870f119ec7	vfb	0	1	0	0	0	0	0		1	0	-
+Fontdiner Swanky	apache/fontdinerswanky	missing_config	librefonts/fontdinerswanky	5b2cf4d5d491	empty	0	0	0	0	0	0	0		1	0	-
+Homemade Apple	apache/homemadeapple	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Irish Grover	apache/irishgrover	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+jsMath cmbx10	apache/jsmathcmbx10	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+jsMath cmex10	apache/jsmathcmex10	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+jsMath cmmi10	apache/jsmathcmmi10	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+jsMath cmr10	apache/jsmathcmr10	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+jsMath cmsy10	apache/jsmathcmsy10	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+jsMath cmti10	apache/jsmathcmti10	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Just Another Hand	apache/justanotherhand	missing_config	librefonts/justanotherhand	151e64a17c14	vfb	0	1	0	0	0	0	0		1	0	-
+Kranky	apache/kranky	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Luckiest Guy	apache/luckiestguy	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Maiden Orange	apache/maidenorange	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Montez	apache/montez	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Mountains of Christmas	apache/mountainsofchristmas	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	2	0	0	0	0	2		2	2	2011-02-22
+Permanent Marker	apache/permanentmarker	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Rancho	apache/rancho	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Redressed	apache/redressed	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Rochester	apache/rochester	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Rock Salt	apache/rocksalt	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Satisfy	apache/satisfy	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Schoolbell	apache/schoolbell	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Slackey	apache/slackey	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Smokum	apache/smokum	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	1		1	1	2011-02-22
+Special Elite	apache/specialelite	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Sunshiney	apache/sunshiney	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Syncopate	apache/syncopate	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	2	0	0	0	0	4		2	0	-
+Ultra	apache/ultra	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	1		1	1	2011-02-22
+Unkempt	apache/unkempt	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		2	0	-
+Walter Turncoat	apache/walterturncoat	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		1	0	-
+Yellowtail	apache/yellowtail	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Abril Fatface	ofl/abrilfatface	missing_config	librefonts/abrilfatface	5e899bfd997c	sfd+vfb	1	1	0	0	0	0	0	reland:abrilfatface	1	1	2011-02-22
+Actor	ofl/actor	missing_config	librefonts/actor	b1617e5929c9	vfb	0	2	0	0	0	0	0		1	0	-
+Adobe Blank	ofl/adobeblank	missing_config	adobe-fonts/adobe-blank	19279e6f6707	binary-only	0	0	0	0	0	0	4		1	0	-
+Akronim	ofl/akronim	missing_config	librefonts/akronim	9288ae0636d3	empty	0	0	0	0	0	0	0		1	0	-
+Akt	ofl/akt	missing_config	dimgrenev/akt	b3935082b52a	modern	0	0	0	1	0	0	29		1V	0	-
+Aldrich	ofl/aldrich	missing_config	librefonts/aldrich	ec28a1d125f1	vfb	0	2	0	0	0	0	0		1	0	-
+Alef	ofl/alef	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		2	2	2012-07-31
+Alfa Slab One	ofl/alfaslabone	missing_config	librefonts/alfaslabone	84a903ffba3c	vfb	0	3	0	0	0	0	0		1	0	-
+Alien Block	ofl/alienblock	missing_config	koci-design/AlienBlock	036f8f19c165	modern	0	0	0	1	0	0	3		1	0	-
+Allerta Stencil	ofl/allertastencil	missing_config	librefonts/allerta	88a8c57b949c	sfd+vfb	4	2	0	0	0	0	0	reland:allerta	1	1	2011-02-22
+Almarai	ofl/almarai	missing_config	JuergenWillrodt/Almarai	7307ede5d42b	binary-only	0	0	0	0	0	0	20		4	0	-
+Annie Use Your Telescope	ofl/annieuseyourtelescope	missing_config	librefonts/annieuseyourtelescope	0895f3f4e733	vfb	0	1	0	0	0	0	0		1	1	2011-02-22
+Anonymous Pro	ofl/anonymouspro	missing_config	fontmgr/AnonymousPro	de345fb4214f	binary-only	0	0	0	0	0	0	4		4	0	-
+Aref Ruqaa	ofl/arefruqaa	missing_config	aliftype/aref-ruqaa	175e1ed565e7	modern	0	0	0	0	2	0	2		2	0	-
+Aref Ruqaa Ink	ofl/arefruqaaink	missing_config	aliftype/aref-ruqaa	cca3d1256a7c	modern	0	0	0	2	0	0	4		2	0	-
+Arvo	ofl/arvo	missing_config	antonxheight/Arvo	ae906e99ab54	vfb	0	2	0	0	0	0	16		4	0	-
+Asap Sharp	ofl/asapsharp	missing_config	Omnibus-Type/Asap_Sharp	41d013ad7c37	modern	0	0	0	2	0	0	2		2V	0	-
+Atomic Age	ofl/atomicage	missing_config	EbenSorkin/Atomic-Age	bb96b179ca5c	vfb	0	1	0	0	0	0	2		1	0	-
+Audiowide	ofl/audiowide	missing_config	librefonts/audiowide	eccbd790f5c8	vfb	0	3	0	0	0	0	0		1	0	-
+Averia Gruesa Libre	ofl/averiagruesalibre	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	1	2011-02-22
+Averia Libre	ofl/averialibre	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	6		6	6	2011-02-22
+Averia Sans Libre	ofl/averiasanslibre	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	6		6	6	2011-02-22
+Averia Serif Libre	ofl/averiaseriflibre	missing_config	librefonts/averiaseriflibre	d1b2ab3fcea4	empty	0	0	0	0	0	0	0		6	6	2011-02-22
+Batang	ofl/batang	missing_config	googlefonts/batang	6c1e09f93204	binary-only	0	0	0	0	0	0	20		1	0	-
+BatangChe	ofl/batangche	missing_config	googlefonts/batang	6c1e09f93204	binary-only	0	0	0	0	0	0	20		1	0	-
+Baumans	ofl/baumans	missing_config	librefonts/baumans	00e0253a48fe	vfb	0	3	0	0	0	0	0		1	0	-
+Berkshire Swash	ofl/berkshireswash	missing_config	librefonts/berkshireswash	1a4fb49d514e	vfb	0	3	0	0	0	0	0		1	0	-
+Beth Ellen	ofl/bethellen	missing_config	googlefonts/BethEllen	d6c8d9b3871c	sfd	1	0	0	0	0	0	5	ledger:pending	1	0	-
+Bigelow Rules	ofl/bigelowrules	missing_config	librefonts/bigelowrules	f3ba7414e96d	vfb	0	3	0	0	0	0	0		1	0	-
+Bitcount	ofl/bitcount	missing_config	petrvanblokland/TYPETR-Bitcount	653fc48a72cf	modern	0	0	0	0	15	1	32		1V	0	-
+Bitcount Prop Single Ink	ofl/bitcountpropsingleink	missing_config	petrvanblokland/TYPETR-Bitcount	89e7994f73b7	modern	0	0	0	0	15	1	38		1V	0	-
+Bitcount Single Ink	ofl/bitcountsingleink	missing_config	petrvanblokland/TYPETR-Bitcount	89e7994f73b7	modern	0	0	0	0	15	1	38		1V	0	-
+BJCree	ofl/bjcree	missing_config	silnrsi/font-bjcree	7476fb691e64	modern	0	0	0	0	4	2	5		4	0	-
+Black And White Picture	ofl/blackandwhitepicture	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Black Han Sans	ofl/blackhansans	missing_config	zesstype/Black-Han-Sans	8809d5944fbf	binary-only	0	0	0	0	0	0	1		1	0	-
+Bpmf Huninn	ofl/bpmfhuninn	missing_config	ButTaiwan/bpmfvs	20f741c18bb9	binary-only	0	0	0	0	0	0	57		1	0	-
+Bpmf Iansui	ofl/bpmfiansui	missing_config	ButTaiwan/bpmfvs	20f741c18bb9	binary-only	0	0	0	0	0	0	57		1	0	-
+Bpmf Zihi Kai Std	ofl/bpmfzihikaistd	missing_config	ButTaiwan/bpmfvs	20f741c18bb9	binary-only	0	0	0	0	0	0	57		1	0	-
+Bungee Tint	ofl/bungeetint	missing_config	djrrb/Bungee	0ab742e49fc7	modern	0	0	0	0	5	0	2		1	0	-
+Butterfly Kids	ofl/butterflykids	missing_config	librefonts/butterflykids	0c553b23416a	vfb	0	1	0	0	0	0	0		1	0	-
+Caacupe One	ofl/caacupeone	missing_config	googlefonts/caacupe	07166dbe0310	modern	0	0	0	1	0	0	2		1	0	-
+Caesar Dressing	ofl/caesardressing	missing_config	librefonts/caesardressing	fb212a606bc3	vfb	0	1	0	0	0	0	0		1	0	-
+Cantora One	ofl/cantoraone	missing_config	librefonts/cantoraone	45d202afe166	vfb	0	3	0	0	0	0	0		1	0	-
+Cardo	ofl/cardo	missing_config	googlefonts/CardoFont	b2bf876b4e25	sfd	3	0	0	0	0	0	1		3	3	2011-02-22
+Carlito	ofl/carlito	missing_config	googlefonts/carlito	3a810cab78eb	binary-only	0	0	0	0	0	0	4		4	0	-
+Carrois Gothic	ofl/carroisgothic	missing_config	librefonts/carroisgothic	09bb67138894	vfb	0	3	0	0	0	0	0		1	0	-
+Carrois Gothic SC	ofl/carroisgothicsc	missing_config	librefonts/carroisgothicsc	cd21c85aa57e	vfb	0	3	0	0	0	0	0		1	0	-
+Castoro Titling	ofl/castorotitling	missing_config	TiroTypeworks/Castoro	HEAD	modern	0	0	3	0	5	2	66		1	0	-
+Catamaran	ofl/catamaran	missing_config	VanillaandCream/Catamaran-Tamil	7559b4906f9c	modern	0	0	0	4	0	0	9		1V	0	-
+Caveat Brush	ofl/caveatbrush	missing_config	googlefonts/caveat	59745e818ef7	modern	0	0	0	1	2	1	3		1	0	-
+Cedarville Cursive	ofl/cedarvillecursive	missing_config	librefonts/cedarvillecursive	cd212b0e2dc2	vfb	0	1	0	0	0	0	0		1	1	2011-02-22
+Chelsea Market	ofl/chelseamarket	missing_config	librefonts/chelseamarket	cb0d8b1186fc	vfb	0	1	0	0	0	0	0		1	0	-
+Chenla	ofl/chenla	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	1	2009-09-14
+Clarity City	ofl/claritycity	missing_config	googlefonts/clarity-city	0193ff048d04	modern	0	0	0	2	0	0	58		2V	0	-
+Clicker Script	ofl/clickerscript	missing_config	librefonts/clickerscript	f8f050697a52	vfb	0	3	0	0	0	0	0		1	0	-
+Combo	ofl/combo	missing_config	librefonts/combo	ae46147e06fa	vfb	0	2	0	0	0	0	0		1	1	2012-09-06
+Comic Relief	ofl/comicrelief	missing_config	loudifier/Comic-Relief	856315f5a45d	sfd	2	0	0	0	0	0	0	reland:comicrelief	2	0	-
+Content	ofl/content	no_source	-	-	no-repo	0	0	0	0	0	0	0		2	2	2009-09-14
+Corben	ofl/corben	missing_config	librefonts/corben	94d5b00e6b64	sfd+vfb	4	1	0	0	0	0	0	reland:corben	2	0	-
+Cousine	ofl/cousine	missing_config	googlefonts/cousine	c0fbdb438443	modern	0	0	0	4	0	0	12		4	0	-
+Cute Font	ofl/cutefont	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Datatype	ofl/datatype	missing_config	franktisellano/datatype	1a17d767ba7f	binary-only	0	0	0	0	0	0	50		1V	0	-
+Della Respira	ofl/dellarespira	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	1	2010-04-29
+Digital Numbers	ofl/digitalnumbers	missing_config	s-a/digital-numbers-font	b58e33a259af	sfd	1	0	0	0	0	0	4		1	0	-
+Do Hyeon	ofl/dohyeon	missing_config	baemin/Dohyeon	1d32c9fa97c9	binary-only	0	0	0	0	0	0	2		1	0	-
+Dokdo	ofl/dokdo	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Dotum	ofl/dotum	missing_config	googlefonts/gulim	012723a8d5b6	binary-only	0	0	0	0	0	0	16		1	0	-
+DotumChe	ofl/dotumche	missing_config	googlefonts/gulim	012723a8d5b6	binary-only	0	0	0	0	0	0	16		1	0	-
+Dynalight	ofl/dynalight	missing_config	librefonts/dynalight	af7642053cc1	vfb	0	3	0	0	0	0	0		1	0	-
+Eagle Lake	ofl/eaglelake	missing_config	librefonts/eaglelake	4e2b26479cf4	vfb	0	3	0	0	0	0	0		1	0	-
+East Sea Dokdo	ofl/eastseadokdo	missing_config	yoondesign/Yoonfont-KoreaDokdo	1bc4d9ec41e5	binary-only	0	0	0	0	0	0	2		1	0	-
+Ek Mukta	ofl/ekmukta	missing_config	googlefonts/MuktaGFVersion	bccb1e2d95db	binary-only	0	0	0	0	0	0	28		7	0	-
+Electrolize	ofl/electrolize	missing_config	librefonts/electrolize	2450033307b2	vfb	0	2	0	0	0	0	0		1	0	-
+Emilys Candy	ofl/emilyscandy	missing_config	librefonts/emilyscandy	6c0f2ad7e9b0	vfb	0	1	0	0	0	0	0		1	0	-
+Encode Sans Condensed	ofl/encodesanscondensed	missing_config	impallari/Encode-Sans	370cdccdb22d	modern	0	0	0	1	0	0	45		9	0	-
+Encode Sans Expanded	ofl/encodesansexpanded	missing_config	impallari/Encode-Sans	370cdccdb22d	modern	0	0	0	1	0	0	45		9	0	-
+Encode Sans SC	ofl/encodesanssc	missing_config	thundernixon/Encode-Sans	6407de854a4d	modern	0	0	0	2	4	2	187		1V	0	-
+Encode Sans Semi Condensed	ofl/encodesanssemicondensed	missing_config	impallari/Encode-Sans	370cdccdb22d	modern	0	0	0	1	0	0	45		9	0	-
+Encode Sans Semi Expanded	ofl/encodesanssemiexpanded	missing_config	impallari/Encode-Sans	370cdccdb22d	modern	0	0	0	1	0	0	45		9	0	-
+Engagement	ofl/engagement	missing_config	librefonts/engagement	4a28e79422bb	vfb	0	3	0	0	0	0	0		1	0	-
+Fascinate	ofl/fascinate	missing_config	librefonts/fascinate	afac7a8ab8c5	vfb	0	3	0	0	0	0	0		1	0	-
+Fascinate Inline	ofl/fascinateinline	missing_config	librefonts/fascinateinline	0319622bad0a	vfb	0	2	0	0	0	0	0		1	0	-
+Finger Paint	ofl/fingerpaint	missing_config	librefonts/fingerpaint	cb21d1208d6f	vfb	0	3	0	0	0	0	0		1	0	-
+Finlandica Headline	ofl/finlandicaheadline	missing_config	HelsinkiTypeStudio/FinlandicaHeadline	c97bd4dd9fd9	modern	0	0	0	2	0	0	58		2V	0	-
+Finlandica Text	ofl/finlandicatext	missing_config	HelsinkiTypeStudio/FinlandicaText	402f5abf41b8	modern	0	0	0	2	0	0	58		2V	0	-
+Fira Mono	ofl/firamono	missing_config	googlefonts/FiraGFVersion	a7d6892325d5	binary-only	0	0	0	0	0	0	160		3	0	-
+Fira Sans	ofl/firasans	missing_config	googlefonts/FiraGFVersion	a7d6892325d5	binary-only	0	0	0	0	0	0	160		18	0	-
+Fira Sans Condensed	ofl/firasanscondensed	missing_config	googlefonts/FiraGFVersion	a7d6892325d5	binary-only	0	0	0	0	0	0	160		18	0	-
+Fira Sans Extra Condensed	ofl/firasansextracondensed	missing_config	googlefonts/FiraGFVersion	7b7927fac6d4	binary-only	0	0	0	0	0	0	166		18	0	-
+Flavors	ofl/flavors	missing_config	librefonts/flavors	494aad3c703c	vfb	0	1	0	0	0	0	0		1	0	-
+Fondamento	ofl/fondamento	missing_config	librefonts/fondamento	92205310620a	vfb	0	4	0	0	0	0	0		2	2	2011-02-22
+Forum	ofl/forum	missing_config	librefonts/forum	e8efc0bceef3	vfb	0	2	0	0	0	0	0		1	0	-
+Freckle Face	ofl/freckleface	missing_config	librefonts/freckleface	158b54fbb54d	vfb	0	3	0	0	0	0	0		1	0	-
+Fredericka the Great	ofl/frederickathegreat	missing_config	librefonts/frederickathegreat	6968170d91ff	vfb	0	1	0	0	0	0	0		1	0	-
+Frijole	ofl/frijole	missing_config	librefonts/frijole	0e6ba6cfcc63	vfb	0	1	0	0	0	0	0		1	0	-
+Gaegu	ofl/gaegu	no_source	-	-	no-repo	0	0	0	0	0	0	0		3	0	-
+Galindo	ofl/galindo	missing_config	librefonts/galindo	dc5fea52318d	vfb	0	3	0	0	0	0	0		1	0	-
+Gamja Flower	ofl/gamjaflower	missing_config	yoondesign/yoonfont-Gamjaflower	c31c8953af3f	binary-only	0	0	0	0	0	0	2		1	0	-
+Geomini	ofl/geomini	missing_config	fontbob/geomini	259385339d29	modern	0	0	0	0	2	1	0		1V	0	-
+GFS Didot	ofl/gfsdidot	missing_config	librefonts/gfsdidot	ce7a216e8765	empty	0	0	0	0	0	0	0		1	1	2010-04-29
+GFS Neohellenic	ofl/gfsneohellenic	missing_config	librefonts/gfsneohellenic	76fc8bb657ac	empty	0	0	0	0	0	0	0		4	4	2010-04-29
+Gloria Hallelujah	ofl/gloriahallelujah	missing_config	librefonts/gloriahallelujah	1fd8b2f0f0dd	vfb	0	1	0	0	0	0	0		1	0	-
+Google Sans Flex	ofl/googlesansflex	no_source	-	-	no-repo	0	0	0	0	0	0	0		1V	0	-
+Gorditas	ofl/gorditas	missing_config	librefonts/gorditas	2212c0647e87	vfb	0	4	0	0	0	0	0		2	0	-
+Gothic A1	ofl/gothica1	missing_config	hanyangfont/Gothic	599d7e34fff2	binary-only	0	0	0	0	0	0	18		9	0	-
+Gotu	ofl/gotu	missing_config	EkType/Gotu	c02f2e586ef1	vfb	0	1	0	0	0	0	0		1	0	-
+Grand Hotel	ofl/grandhotel	missing_config	librefonts/grandhotel	b0716771fb10	vfb	0	3	0	0	0	0	0		1	0	-
+Griffy	ofl/griffy	missing_config	librefonts/griffy	eed85949102a	vfb	0	1	0	0	0	0	0		1	0	-
+Gugi	ofl/gugi	missing_config	1020tj/Gugi	7aa7f4c408a5	empty	0	0	0	0	0	0	0		1	0	-
+Gulim	ofl/gulim	missing_config	googlefonts/gulim	012723a8d5b6	binary-only	0	0	0	0	0	0	16		1	0	-
+GulimChe	ofl/gulimche	missing_config	googlefonts/gulim	012723a8d5b6	binary-only	0	0	0	0	0	0	16		1	0	-
+Gungsuh	ofl/gungsuh	missing_config	googlefonts/batang	6c1e09f93204	binary-only	0	0	0	0	0	0	20		1	0	-
+GungsuhChe	ofl/gungsuhche	missing_config	googlefonts/batang	6c1e09f93204	binary-only	0	0	0	0	0	0	20		1	0	-
+Hanalei	ofl/hanalei	missing_config	librefonts/hanalei	ec0b5be2259c	vfb	0	3	0	0	0	0	0		1	0	-
+Hanalei Fill	ofl/hanaleifill	missing_config	librefonts/hanaleifill	1df8f49232e8	vfb	0	3	0	0	0	0	0		1	0	-
+Happy Monkey	ofl/happymonkey	missing_config	librefonts/happymonkey	5e49a946fe24	vfb	0	2	0	0	0	0	0		1	0	-
+Henny Penny	ofl/hennypenny	missing_config	librefonts/hennypenny	4847dd1836a1	vfb	0	2	0	0	0	0	0		1	0	-
+Hermeneus One	ofl/hermeneusone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Herr Von Muellerhoff	ofl/herrvonmuellerhoff	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	reland:herrvonmuellerhoff	1	1	2011-02-22
+Hibur Mono	ofl/hiburmono	missing_config	typehabesha/HiburMono	ff7211ea4674	modern	0	0	0	0	1	1	9		1	0	-
+Hi Melody	ofl/himelody	missing_config	yoondesign/Yoonfont-HiMelody	4feb2315457c	binary-only	0	0	0	0	0	0	2		1	0	-
+IBM Plex Sans	ofl/ibmplexsans	missing_config	googlefonts/plex	3e312890b3b9	binary-only	0	0	0	0	0	0	21943		2V	0	-
+IBM Plex Sans Arabic	ofl/ibmplexsansarabic	missing_config	googlefonts/plex	e80bf9282a63	binary-only	0	0	0	0	0	0	14909		7	0	-
+IM Fell Double Pica	ofl/imfelldoublepica	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		2	0	-
+IM Fell Double Pica SC	ofl/imfelldoublepicasc	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+IM Fell DW Pica	ofl/imfelldwpica	missing_config	librefonts/imfelldwpica	0d86e14c53d1	empty	0	0	0	0	0	0	0		2	0	-
+IM Fell DW Pica SC	ofl/imfelldwpicasc	missing_config	librefonts/imfelldwpicasc	7504ed1a0421	empty	0	0	0	0	0	0	0		1	0	-
+IM Fell English	ofl/imfellenglish	missing_config	librefonts/imfellenglish	4cc247267036	empty	0	0	0	0	0	0	0		2	0	-
+IM Fell English SC	ofl/imfellenglishsc	missing_config	librefonts/imfellenglishsc	34a4488608a2	empty	0	0	0	0	0	0	0		1	0	-
+IM Fell French Canon	ofl/imfellfrenchcanon	missing_config	librefonts/imfellfrenchcanon	ae525e02f5d5	empty	0	0	0	0	0	0	0		2	0	-
+IM Fell French Canon SC	ofl/imfellfrenchcanonsc	missing_config	librefonts/imfellfrenchcanonsc	e7117aa9c7fa	empty	0	0	0	0	0	0	0		1	0	-
+IM Fell Great Primer	ofl/imfellgreatprimer	missing_config	librefonts/imfellgreatprimer	caed052ae660	empty	0	0	0	0	0	0	0		2	0	-
+IM Fell Great Primer SC	ofl/imfellgreatprimersc	missing_config	librefonts/imfellgreatprimersc	beb2648c0d59	empty	0	0	0	0	0	0	0		1	0	-
+Iosevka Charon	ofl/iosevkacharon	missing_config	jul-sh/iosevka-charon	727f1343e957	empty	0	0	0	0	0	0	0		8	0	-
+Iosevka Charon Mono	ofl/iosevkacharonmono	missing_config	jul-sh/iosevka-charon	727f1343e957	empty	0	0	0	0	0	0	0		8	0	-
+Isometra	ofl/isometra	missing_config	field2/isometra	06b2637a62ad	modern	0	0	0	1	0	0	3		1	0	-
+Italiana	ofl/italiana	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2011-02-22
+Jim Nightshade	ofl/jimnightshade	missing_config	librefonts/jimnightshade	a04375d8b6c5	vfb	0	3	0	0	0	0	2		1	0	-
+Jolly Lodger	ofl/jollylodger	missing_config	librefonts/jollylodger	06a3c7f44fc0	vfb	0	1	0	0	0	0	1		1	0	-
+Jomhuria	ofl/jomhuria	missing_config	Tarobish/Jomhuria	d4b8f42eaf71	modern	0	0	0	0	1	0	13	ledger:backlog	1	0	-
+Jomolhari	ofl/jomolhari	missing_config	librefonts/jomolhari	08671f042916	empty	0	0	0	0	0	0	0		1	0	-
+Jua	ofl/jua	missing_config	woowabros/Jua	73d9cfefe39b	binary-only	0	0	0	0	0	0	2		1	0	-
+Judson	ofl/judson	missing_config	librefonts/judson	a80a2aecb86b	sfd+vfb	3	3	0	0	0	0	0	ledger:backlog	3	3	2011-02-22
+Junge	ofl/junge	missing_config	librefonts/junge	1753e7a229f4	vfb	0	3	0	0	0	0	0		1	0	-
+Karla Tamil Inclined	ofl/karlatamilinclined	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	2	0	0	0	0	12		2	0	-
+Karla Tamil Upright	ofl/karlatamilupright	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	8		2	0	-
+Kaushan Script	ofl/kaushanscript	missing_config	librefonts/kaushanscript	b1b7451878d4	vfb	0	3	0	0	0	0	0		1	0	-
+Keania One	ofl/keaniaone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2012-09-06
+Kelly Slab	ofl/kellyslab	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Kenia	ofl/kenia	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	1	0	0	0	0	1		1	0	-
+Khmer	ofl/khmer	missing_config	danhhong/Khmer	d72e92059891	binary-only	0	0	0	0	0	0	2		1	1	2010-04-29
+Kirang Haerang	ofl/kiranghaerang	missing_config	woowabros/KirangHaerang	544ae6224fa8	binary-only	0	0	0	0	0	0	2		1	0	-
+Kotta One	ofl/kottaone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Kripa	ofl/kripa	missing_config	kedar9/kripa	cec1e323a5ae	modern	0	0	0	1	0	0	25		1V	0	-
+Kristi	ofl/kristi	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:kristi	1	1	2010-04-29
+Krona One	ofl/kronaone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	1	0	0	0	0	2	ledger:ready	1	0	-
+La Belle Aurore	ofl/labelleaurore	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	1	2011-02-22
+Lato	ofl/lato	missing_config	googlefonts/LatoGFVersion	080cb69711ca	binary-only	0	0	0	0	0	0	36		18	0	-
+Ledger	ofl/ledger	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Lekton	ofl/lekton	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	3	0	0	0	0	0	6	reland:lekton	3	3	2010-04-29
+Libertinus Keyboard	ofl/libertinuskeyboard	missing_config	googlefonts/libertinus	88dfbb0a7715	binary-only	0	0	0	0	0	0	14		1	0	-
+Libertinus Math	ofl/libertinusmath	missing_config	googlefonts/libertinus	88dfbb0a7715	binary-only	0	0	0	0	0	0	14		1	0	-
+Libertinus Mono	ofl/libertinusmono	missing_config	googlefonts/libertinus	88dfbb0a7715	binary-only	0	0	0	0	0	0	14		1	0	-
+Libertinus Sans	ofl/libertinussans	missing_config	googlefonts/libertinus	63b24ea7904a	binary-only	0	0	0	0	0	0	14		3	0	-
+Libertinus Serif	ofl/libertinusserif	missing_config	googlefonts/libertinus	63b24ea7904a	binary-only	0	0	0	0	0	0	14		6	0	-
+Libertinus Serif Display	ofl/libertinusserifdisplay	missing_config	googlefonts/libertinus	63b24ea7904a	binary-only	0	0	0	0	0	0	14		1	0	-
+Libre Barcode 128	ofl/librebarcode128	missing_config	graphicore/librebarcode	f9864c42b2c4	binary-only	0	0	0	0	0	0	23		1	0	-
+Libre Barcode 128 Text	ofl/librebarcode128text	missing_config	graphicore/librebarcode	f9864c42b2c4	binary-only	0	0	0	0	0	0	23		1	0	-
+Libre Barcode 39	ofl/librebarcode39	missing_config	graphicore/librebarcode	f9864c42b2c4	binary-only	0	0	0	0	0	0	23		1	0	-
+Libre Barcode 39 Extended	ofl/librebarcode39extended	missing_config	graphicore/librebarcode	f9864c42b2c4	binary-only	0	0	0	0	0	0	23		1	0	-
+Libre Barcode 39 Extended Text	ofl/librebarcode39extendedtext	missing_config	graphicore/librebarcode	f9864c42b2c4	binary-only	0	0	0	0	0	0	23		1	0	-
+Libre Barcode 39 Text	ofl/librebarcode39text	missing_config	graphicore/librebarcode	f9864c42b2c4	binary-only	0	0	0	0	0	0	23		1	0	-
+Libre Barcode EAN13 Text	ofl/librebarcodeean13text	missing_config	graphicore/librebarcode	f9864c42b2c4	binary-only	0	0	0	0	0	0	23		1	0	-
+Libre Caslon Condensed	ofl/librecasloncondensed	missing_config	ertekinno/libre-caslon-condensed	fe610911976a	modern	0	0	0	2	0	0	28		2V	0	-
+Libre Caslon Display	ofl/librecaslondisplay	missing_config	impallari/Libre-Caslon-Display	3491f6a9cfde	vfb	0	3	0	0	0	0	2		1	0	-
+Lilita One	ofl/lilitaone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2011-02-22
+Limelight	ofl/limelight	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	1	0	0	0	0	2		1	1	2009-09-14
+Lobster Two	ofl/lobstertwo	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	8	0	0	0	0	8		4	0	-
+Lohit Bengali	ofl/lohitbengali	missing_config	pravins/lohit	a403c9b7f509	sfd	13	0	0	0	0	0	0		1	1	2012-09-06
+Lohit Tamil	ofl/lohittamil	missing_config	pravins/lohit	a403c9b7f509	sfd	13	0	0	0	0	0	0		1	1	2011-02-22
+Loved by the King	ofl/lovedbytheking	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Love Ya Like A Sister	ofl/loveyalikeasister	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Lustria	ofl/lustria	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Macondo	ofl/macondo	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Magra	ofl/magra	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	3	0	0	0	0	4		2	2	2011-02-22
+Marcellus	ofl/marcellus	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Marcellus SC	ofl/marcellussc	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Margarine	ofl/margarine	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Marvel	ofl/marvel	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	4	4	0	0	0	0	8		4	4	2011-02-22
+McLaren	ofl/mclaren	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Meddon	ofl/meddon	missing_config	vernnobile/MeddonFont	157a4b58e731	sfd	2	0	0	0	0	0	2	ledger:backlog	1	0	-
+MedievalSharp	ofl/medievalsharp	missing_config	wmk69/Medieval-Sharp	ee7510b6b138	sfd	4	0	0	0	0	0	4	ledger:pending	1	0	-
+Medula One	ofl/medulaone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Meera Inimai	ofl/meerainimai	missing_config	smc/Meera	c689e9c5a4ea	sfd	1	0	0	0	0	0	1		1	0	-
+Megrim	ofl/megrim	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Meie Script	ofl/meiescript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2010-04-29
+Merge One	ofl/mergeone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2012-09-06
+Mervale Script	ofl/mervalescript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Metal Mania	ofl/metalmania	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Miama	ofl/miama	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	2	0	0	0	0	0	3	reland:miama	1	1	2011-02-22
+Milonga	ofl/milonga	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Miltonian	ofl/miltonian	missing_config	impallari/Miltonian	95d180e87443	vfb	0	6	0	0	0	0	4		1	0	-
+Miltonian Tattoo	ofl/miltoniantattoo	missing_config	impallari/Miltonian	95d180e87443	vfb	0	6	0	0	0	0	4		1	0	-
+Miniver	ofl/miniver	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Miss Fajardose	ofl/missfajardose	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Mochiy Pop One	ofl/mochiypopone	missing_config	fontdasu/Mochiypop	438f3dd27a23	modern	0	0	0	1	0	0	2		1	0	-
+Mochiy Pop P One	ofl/mochiypoppone	missing_config	fontdasu/Mochiypop	438f3dd27a23	modern	0	0	0	1	0	0	2		1	0	-
+Modak	ofl/modak	missing_config	EkType/Modak	143b2db4fd5c	vfb	0	1	0	0	0	0	0		1	0	-
+Modern Antiqua	ofl/modernantiqua	missing_config	wmk69/Modern-Antiqua	f88d41ebebb9	sfd	4	0	0	0	0	0	4	ledger:pending	1	1	2011-02-22
+Molengo	ofl/molengo	missing_config	moyogo/molengo-fonts	9e390dcfd861	sfd	1	0	0	0	0	0	0	ledger:pending	1	1	2011-02-22
+Monoton	ofl/monoton	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:monoton	1	1	2011-02-22
+Monsieur La Doulaise	ofl/monsieurladoulaise	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Mouse Memoirs	ofl/mousememoirs	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+M PLUS 1	ofl/mplus1	missing_config	coz-m/MPLUS_FONTS	HEAD	modern	0	0	0	7	0	2	84		1V	0	-
+M PLUS 1 Code	ofl/mplus1code	missing_config	coz-m/MPLUS_FONTS	HEAD	modern	0	0	0	7	0	2	84		1V	0	-
+M PLUS 1p	ofl/mplus1p	missing_config	coz-m/MPLUS_FONTS	9cb1a484f5f8	modern	0	0	0	5	0	2	96		7	0	-
+M PLUS 2	ofl/mplus2	missing_config	coz-m/MPLUS_FONTS	HEAD	modern	0	0	0	7	0	2	84		1V	0	-
+M PLUS Code Latin	ofl/mpluscodelatin	missing_config	coz-m/MPLUS_FONTS	HEAD	modern	0	0	0	7	0	2	84		1V	0	-
+M PLUS Rounded 1c	ofl/mplusrounded1c	missing_config	coz-m/MPLUS_FONTS	eb604901d6f0	modern	0	0	0	6	0	2	84		7	0	-
+M PLUS U	ofl/mplusu	missing_config	coz-m/MPLUS_FONTS	84c56ab8d094	modern	0	0	0	5	0	2	96		1V	0	-
+Mr Bedfort	ofl/mrbedfort	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Mr Dafoe	ofl/mrdafoe	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Mr De Haviland	ofl/mrdehaviland	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Mrs Saint Delafield	ofl/mrssaintdelafield	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Mrs Sheppards	ofl/mrssheppards	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Mukta	ofl/mukta	missing_config	EkType/Mukta	418021bbb8f5	vfb	0	28	0	0	0	0	0		7	0	-
+Mukta Mahee	ofl/muktamahee	missing_config	EkType/Mukta	7db4b0fc0989	vfb	0	28	0	0	0	0	0		7	0	-
+Mukta Malar	ofl/muktamalar	missing_config	EkType/Mukta	7db4b0fc0989	vfb	0	28	0	0	0	0	0		7	0	-
+Mukta Vaani	ofl/muktavaani	missing_config	EkType/Mukta	7db4b0fc0989	vfb	0	28	0	0	0	0	0		7	0	-
+Mystery Quest	ofl/mysteryquest	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Nanum Brush Script	ofl/nanumbrushscript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		1	0	-
+Nanum Gothic	ofl/nanumgothic	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	3		3	0	-
+Nanum Gothic Coding	ofl/nanumgothiccoding	missing_config	naver/nanumfont	770142018d7b	empty	0	0	0	0	0	0	0		2	0	-
+Nanum Myeongjo	ofl/nanummyeongjo	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	3		3	0	-
+Nanum Pen Script	ofl/nanumpenscript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		1	0	-
+Neucha	ofl/neucha	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	3		1	0	-
+Neuton	ofl/neuton	missing_config	anoxic/neuton	b376055d272a	modern	400	0	0	0	3	0	288	ledger:backlog	6	0	-
+Nevermind	ofl/nevermind	missing_config	lamzhonghang/nevermind	8b5dbcc2f615	modern	0	0	0	1	0	0	48		2V	0	-
+New Rocker	ofl/newrocker	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+News Cycle	ofl/newscycle	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		2	0	-
+Niconne	ofl/niconne	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Nixie One	ofl/nixieone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	2	reland:nixieone	1	1	2011-02-22
+Nobile	ofl/nobile	missing_config	vernnobile/NobileFont	d3f6ea2c6434	modern	7	0	0	0	27	0	10		6	6	2010-04-29
+Nosifer	ofl/nosifer	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	2	0	0	0	0	0	1	reland:nosifer	1	1	2011-02-22
+Nosifer Caps	ofl/nosifercaps	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	2	0	0	0	0	0	1	reland:nosifercaps	1	1	2011-02-22
+Nothing You Could Do	ofl/nothingyoucoulddo	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Noto Color Emoji	ofl/notocoloremoji	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Noto Color Emoji Compat Test	ofl/notocoloremojicompattest	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Noto Emoji	ofl/notoemoji	no_source	-	-	no-repo	0	0	0	0	0	0	0		1V	0	-
+Noto Kufi Arabic	ofl/notokufiarabic	missing_config	notofonts/arabic	652edd968849	modern	0	0	0	5838	0	0	0		1V	0	-
+Noto Sans Duployan	ofl/notosansduployan	missing_config	notofonts/duployan	9626869cc851	empty	0	0	0	0	0	0	0		2	0	-
+Noto Sans HK	ofl/notosanshk	missing_config	notofonts/noto-cjk	523d033d6cb4	binary-only	0	0	0	0	0	0	200		1V	0	-
+Noto Sans JP	ofl/notosansjp	missing_config	notofonts/noto-cjk	523d033d6cb4	binary-only	0	0	0	0	0	0	200		1V	0	-
+Noto Sans KR	ofl/notosanskr	missing_config	notofonts/noto-cjk	523d033d6cb4	binary-only	0	0	0	0	0	0	200		1V	0	-
+Noto Sans Mono	ofl/notosansmono	missing_config	notofonts/latin-greek-cyrillic	9b7310b8f99f	modern	0	0	0	19520	0	0	0		1V	0	-
+Noto Sans N Ko	ofl/notosansnko_todelist	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Noto Sans SC	ofl/notosanssc	missing_config	notofonts/noto-cjk	523d033d6cb4	binary-only	0	0	0	0	0	0	200		1V	0	-
+Noto Sans Syriac Western	ofl/notosanssyriacwestern	missing_config	notofonts/syriac	a24ba4586441	modern	0	0	0	3	0	0	0		1V	0	-
+Noto Sans TC	ofl/notosanstc	missing_config	notofonts/noto-cjk	523d033d6cb4	binary-only	0	0	0	0	0	0	200		1V	0	-
+Noto Serif HK	ofl/notoserifhk	missing_config	notofonts/noto-cjk	985fa52c81c1	binary-only	0	0	0	0	0	0	212		1V	0	-
+Noto Serif JP	ofl/notoserifjp	missing_config	notofonts/noto-cjk	985fa52c81c1	binary-only	0	0	0	0	0	0	212		1V	0	-
+Noto Serif KR	ofl/notoserifkr	missing_config	notofonts/noto-cjk	985fa52c81c1	binary-only	0	0	0	0	0	0	212		1V	0	-
+Noto Serif SC	ofl/notoserifsc	missing_config	notofonts/noto-cjk	985fa52c81c1	binary-only	0	0	0	0	0	0	212		1V	0	-
+Noto Serif TC	ofl/notoseriftc	missing_config	notofonts/noto-cjk	985fa52c81c1	binary-only	0	0	0	0	0	0	212		1V	0	-
+Nova Cut	ofl/novacut	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:novacut	1	1	2009-09-14
+Nova Flat	ofl/novaflat	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:novaflat	1	1	2009-09-14
+Nova Mono	ofl/novamono	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:novamono	1	1	2009-09-14
+Nova Oval	ofl/novaoval	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:novaoval	1	1	2009-09-14
+Nova Round	ofl/novaround	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:novaround	1	1	2009-09-14
+Nova Script	ofl/novascript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:novascript	1	1	2009-09-14
+Nova Slim	ofl/novaslim	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:novaslim	1	1	2009-09-14
+Nova Square	ofl/novasquare	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:novasquare	1	1	2009-09-14
+Numans	ofl/numans	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Oldenburg	ofl/oldenburg	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2011-02-22
+Old Standard TT	ofl/oldstandardtt	missing_config	https://git.sr.ht/~ralessi/oldstandard	-	no-repo	0	0	0	0	0	0	0		3	0	-
+Oleo Script	ofl/oleoscript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	2	0	0	0	0	4		2	2	2012-09-06
+Oleo Script Swash Caps	ofl/oleoscriptswashcaps	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	2	0	0	0	0	4		2	2	2012-09-06
+Oranienbaum	ofl/oranienbaum	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		1	0	-
+Oregano	ofl/oregano	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	6	0	0	0	0	4		2	0	-
+Orelega One	ofl/orelegaone	missing_config	haleyhalcyon/orelega	756e15cc3dfe	binary-only	0	0	0	0	0	0	2		1	0	-
+Original Surfer	ofl/originalsurfer	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Overlock	ofl/overlock	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	6	12	0	0	0	0	12		6	6	2011-02-22
+Overlock SC	ofl/overlocksc	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2011-02-22
+Over the Rainbow	ofl/overtherainbow	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	1		1	1	2011-02-22
+Ovo	ofl/ovo	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2011-02-22
+Oxygen	ofl/oxygen	missing_config	vernnobile/oxygenFont	62db0ebe3488	modern	10	0	0	0	9	0	20	ledger:backlog	3	3	2011-02-22
+Oxygen Mono	ofl/oxygenmono	missing_config	vernnobile/oxygenFont	62db0ebe3488	modern	10	0	0	0	9	0	20		1	1	2011-02-22
+Parisienne	ofl/parisienne	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	3	0	0	0	0	2		1	0	-
+Passero One	ofl/passeroone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2009-09-14
+Passion One	ofl/passionone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	3	3	0	0	0	0	6		3	3	2011-02-22
+Patrick Hand	ofl/patrickhand	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	2	0	0	0	0	0	3	reland:patrickhand	1	1	2012-09-06
+Patrick Hand SC	ofl/patrickhandsc	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	3		1	0	-
+Patua One	ofl/patuaone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Peralta	ofl/peralta	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Petit Formal Script	ofl/petitformalscript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Phetsarath	ofl/phetsarath	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	4		2	2	2009-09-14
+Piedra	ofl/piedra	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Pirata One	ofl/pirataone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2012-09-06
+Play	ofl/play	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	2	0	0	0	0	0	2	reland:play	2	0	-
+Poetsen One	ofl/poetsenone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Poller One	ofl/pollerone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2011-02-22
+Poly	ofl/poly	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	2	0	0	0	0	4		2	2	2011-02-22
+Pompiere	ofl/pompiere	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2011-02-22
+Poor Story	ofl/poorstory	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Porter Sans Block	ofl/portersansblock	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		1	0	-
+Port Lligat Sans	ofl/portlligatsans	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Port Lligat Slab	ofl/portlligatslab	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Press Start 2P	ofl/pressstart2p	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Princess Sofia	ofl/princesssofia	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Prosto One	ofl/prostoone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	2	0	0	0	0	2		1	0	-
+Proza Libre	ofl/prozalibre	missing_config	jasperdewaard/Proza-Libre	45ea7bb14c23	vfb	0	16	0	0	0	0	26		10	0	-
+PT Mono	ofl/ptmono	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+PT Sans	ofl/ptsans	no_source	-	-	no-repo	0	0	0	0	0	0	0		4	0	-
+PT Sans Caption	ofl/ptsanscaption	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		2	0	-
+PT Sans Narrow	ofl/ptsansnarrow	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		2	0	-
+PT Serif	ofl/ptserif	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	16		4	0	-
+PT Serif Caption	ofl/ptserifcaption	no_source	-	-	no-repo	0	0	0	0	0	0	0		2	0	-
+Puritan	ofl/puritan	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	4	0	0	0	0	0	8	reland:puritan	4	4	2010-04-29
+Purple Purse	ofl/purplepurse	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Pushster	ofl/pushster	missing_config	impallari/The-Lobster-Font	9101378a660f	modern	0	0	0	1	0	0	2		1	0	-
+Quantico	ofl/quantico	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	4	4	0	0	0	0	8		4	4	2011-02-22
+Quattrocento	ofl/quattrocento	missing_config	librefonts/quattrocento	45d612b9dddd	vfb	0	6	0	0	0	0	0		2	0	-
+Quattrocento Sans	ofl/quattrocentosans	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	12	0	0	0	0	8		4	0	-
+Quintessential	ofl/quintessential	missing_config	librefonts/quintessential	a3d26ff91833	vfb	0	3	0	0	0	0	0		1	0	-
+Racing Sans One	ofl/racingsansone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Raleway Dots	ofl/ralewaydots	missing_config	librefonts/ralewaydots	c845d1a8e750	vfb	0	3	0	0	0	0	0		1	0	-
+Rambla	ofl/rambla	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	4	8	0	0	0	0	8		4	4	2012-09-06
+Ranchers	ofl/ranchers	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Rasa	ofl/rasa	missing_config	rosettatype/yrsa-rasa	36874c97c64a	modern	0	0	0	2	0	2	69		2V	0	-
+Reenie Beanie	ofl/reeniebeanie	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	2		1	0	-
+Revalia	ofl/revalia	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Ribeye	ofl/ribeye	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	2	0	0	0	0	2		1	0	-
+Ribeye Marrow	ofl/ribeyemarrow	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2011-02-22
+Righteous	ofl/righteous	missing_config	librefonts/righteous	583c13c301c5	vfb	0	2	0	0	0	0	0		1	0	-
+Risque	ofl/risque	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Roboto Condensed	ofl/robotocondensed	missing_config	googlefonts/roboto-classic	8aa699a9a715	modern	0	0	0	0	13	1	0		2V	0	-
+Romanesco	ofl/romanesco	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Rosarivo	ofl/rosarivo	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	2	0	0	0	0	4		2	2	2011-02-22
+Rouge Script	ofl/rougescript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2011-02-22
+Rubik One	ofl/rubikone	missing_config	googlefonts/rubik	e337a5f69a9b	modern	0	10	0	4	14	2	64		1	1	2012-09-06
+Rufina	ofl/rufina	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	4	0	0	0	0	4		2	2	2012-09-06
+Ruluko	ofl/ruluko	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2011-02-22
+Rum Raisin	ofl/rumraisin	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Ruslan Display	ofl/ruslandisplay	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Russo One	ofl/russoone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:russoone	1	1	2011-02-22
+Rye	ofl/rye	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	1	0	0	0	0	2	ledger:ready	1	1	2009-09-14
+Sail	ofl/sail	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Saira Stencil One	ofl/sairastencilone	missing_config	Omnibus-Type/Saira	1916f2a57547	modern	0	0	0	4	0	0	384		1	0	-
+Salsa	ofl/salsa	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Sanchez	ofl/sanchez	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	2	0	0	0	0	4		2	2	2012-09-06
+Sansation	ofl/sansation	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	6		6	0	-
+Sansita	ofl/sansita	missing_config	Omnibus-Type/Sansita	168abd68a378	modern	0	0	0	4	0	0	48		8	0	-
+Sansita One	ofl/sansitaone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	1		1	0	-
+Sarina	ofl/sarina	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2009-09-14
+Sawarabi Gothic	ofl/sawarabigothic	missing_config	googlefonts/sawarabi-mincho	397399cfaf01	empty	0	0	0	0	0	0	0		1	0	-
+Scoutie Sans	ofl/scoutiesans	missing_config	sursly/scoutie	1ad978084a85	modern	0	0	0	2	0	0	0		2V	0	-
+Seaweed Script	ofl/seaweedscript	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Sevillana	ofl/sevillana	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	2	0	0	0	0	2		1	0	-
+Shadows Into Light	ofl/shadowsintolight	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	1	2011-02-22
+Shadows Into Light Two	ofl/shadowsintolighttwo	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Share	ofl/share	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	4	12	0	0	0	0	24		4	0	-
+Share Tech Mono	ofl/sharetechmono	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	2	0	0	0	0	5		1	0	-
+Shippori Mincho	ofl/shipporimincho	missing_config	fontdasu/ShipporiMincho	63431fee6c2c	binary-only	0	0	0	0	0	0	10		5	0	-
+Shippori Mincho B1	ofl/shipporiminchob1	missing_config	fontdasu/ShipporiMincho	63431fee6c2c	binary-only	0	0	0	0	0	0	10		5	0	-
+Shojumaru	ofl/shojumaru	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	3	0	0	0	0	2		1	0	-
+Short Stack	ofl/shortstack	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2009-09-14
+Siemreap	ofl/siemreap	missing_config	danhhong/Siemreap	3ce4cbfc6b81	binary-only	0	0	0	0	0	0	2		1	1	2009-09-14
+Sigmar One	ofl/sigmarone	missing_config	googlefonts/sigmarone	1fb4311d7895	modern	0	1	0	26	0	0	15		1	0	-
+Signika Negative SC	ofl/signikanegativesc	missing_config	googlefonts/Signika	7361a224d1d7	modern	0	0	0	2	0	1	38		4	0	-
+Simonetta	ofl/simonetta	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	8	0	0	0	0	8		4	0	-
+Single Day	ofl/singleday	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Sitara	ofl/sitara	no_source	-	-	no-repo	0	0	0	0	0	0	0		4	0	-
+Six Caps	ofl/sixcaps	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:sixcaps	1	1	2011-02-21
+Skranji	ofl/skranji	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	2	0	0	0	0	2		2	0	-
+Smythe	ofl/smythe	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:smythe	1	1	2011-02-22
+Snowburst One	ofl/snowburstone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	1	0	0	0	0	2	ledger:ready	1	1	2012-07-31
+Sofadi One	ofl/sofadione	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	3		1	0	-
+Sofia	ofl/sofia	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	2		1	1	2011-02-22
+Song Myung	ofl/songmyung	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Sonsie One	ofl/sonsieone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2	ledger:ready	1	0	-
+Source Code Pro	ofl/sourcecodepro	missing_config	adobe-fonts/source-code-pro	803b7e23ec97	binary-only	0	0	0	0	0	0	100		2V	0	-
+Spicy Rice	ofl/spicyrice	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Spinnaker	ofl/spinnaker	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2009-09-14
+Spirax	ofl/spirax	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Squada One	ofl/squadaone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Stalemate	ofl/stalemate	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Stalinist One	ofl/stalinistone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Stardos Stencil	ofl/stardosstencil	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	2	0	0	0	0	2		2	0	-
+Stint Ultra Condensed	ofl/stintultracondensed	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Stint Ultra Expanded	ofl/stintultraexpanded	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Stoke	ofl/stoke	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	3	2	0	0	0	0	4	ledger:ready	2	2	2009-09-14
+Strong	ofl/strong	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Stylish	ofl/stylish	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Sue Ellen Francisco	ofl/sueellenfrancisco	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Sunflower	ofl/sunflower	no_source	-	-	no-repo	0	0	0	0	0	0	0		3	0	-
+Supermercado One	ofl/supermercadoone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	1	0	0	0	0	2	ledger:ready	1	1	2009-09-14
+Swanky and Moo Moo	ofl/swankyandmoomoo	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	1		1	1	2011-02-22
+Syne	ofl/syne	missing_config	https://gitlab.com/bonjour-monde/fonderie/syne-typeface	-	no-repo	0	0	0	0	0	0	0		1V	0	-
+Syne Mono	ofl/synemono	missing_config	https://gitlab.com/bonjour-monde/fonderie/syne-typeface	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Syne Tactile	ofl/synetactile	missing_config	https://gitlab.com/bonjour-monde/fonderie/syne-typeface	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Tai Heritage Pro	ofl/taiheritagepro	missing_config	silnrsi/font-taiheritagepro	1ac0dd04cf5d	vfb	0	2	0	0	0	0	4		2	0	-
+Tauri	ofl/tauri	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	1	0	0	0	0	2	ledger:ready	1	0	-
+Telex	ofl/telex	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	0	-
+Tenor Sans	ofl/tenorsans	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	2		1	0	-
+Text Me One	ofl/textmeone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	2	0	0	0	0	2		1	1	2012-09-06
+Thabit	ofl/thabit	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	2	0	0	0	0	0	4		4	4	2008-08-08
+The Girl Next Door	ofl/thegirlnextdoor	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	1		1	1	2011-02-22
+Tienne	ofl/tienne	missing_config	googlefonts/Tienne2Font	e49a4151f9be	modern	2	0	0	0	2	0	2		3	3	2011-02-22
+Tillana	ofl/tillana	missing_config	itfoundry/tillana	7fccbe20b93a	modern	0	0	0	1	7	0	5		5	0	-
+Tinos	ofl/tinos	missing_config	googlefonts/tinos	3b4482a99b80	modern	0	0	0	4	0	0	12		4	0	-
+Titan One	ofl/titanone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Titillium Web	ofl/titilliumweb	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	11	0	0	0	0	0	22		11	11	2012-09-06
+Trade Winds	ofl/tradewinds	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Trochut	ofl/trochut	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	3	3	0	0	0	0	6		3	3	2011-02-22
+Tuffy	ofl/tuffy	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	8	0	0	0	0	0	8	reland:tuffy	4	2	2011-02-22
+Tulpen One	ofl/tulpenone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	2	reland:tulpenone	1	1	2011-02-22
+Uchen	ofl/uchen	no_source	-	-	no-repo	0	0	0	0	0	0	0		1	0	-
+Uncial Antiqua	ofl/uncialantiqua	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Underdog	ofl/underdog	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	2	0	0	0	0	2		1	0	-
+UnifrakturCook	ofl/unifrakturcook	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:unifrakturcook	1	1	2011-02-22
+UnifrakturMaguntia	ofl/unifrakturmaguntia	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd	1	0	0	0	0	0	1	reland:unifraktur	1	1	2010-04-29
+Valley Sans	ofl/valleysans	missing_config	HelsinkiTypeStudio/valley-sans	f5c2dec81e78	modern	0	0	0	1125	0	0	40		2V	0	-
+Varela	ofl/varela	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Vast Shadow	ofl/vastshadow	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2011-02-22
+Vibur	ofl/vibur	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	1	2008-04-30
+Viga	ofl/viga	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2011-02-22
+Volkhov	ofl/volkhov	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	2	12	0	0	0	0	8		4	0	-
+Vollkorn SC	ofl/vollkornsc	missing_config	FAlthausen/Vollkorn-Typeface	38ab7a896bd6	modern	0	0	0	0	4	2	27		4	0	-
+Waiting for the Sunrise	ofl/waitingforthesunrise	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	0	-
+Wallpoet	ofl/wallpoet	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	1		1	1	2011-02-22
+WDXL Lubrifont JP N	ofl/wdxllubrifontjpn	missing_config	NightFurySL2001/WD-XL-font	75c4a3bb2fff	binary-only	0	0	0	0	0	0	13		1	0	-
+WDXL Lubrifont SC	ofl/wdxllubrifontsc	missing_config	NightFurySL2001/WD-XL-font	75c4a3bb2fff	binary-only	0	0	0	0	0	0	13		1	0	-
+WDXL Lubrifont TC	ofl/wdxllubrifonttc	missing_config	NightFurySL2001/WD-XL-font	75c4a3bb2fff	binary-only	0	0	0	0	0	0	13		1	0	-
+Wellfleet	ofl/wellfleet	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2	ledger:ready	1	1	2009-09-14
+Wendy One	ofl/wendyone	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	sfd+vfb	1	1	0	0	0	0	2		1	1	2012-09-06
+Yeon Sung	ofl/yeonsung	missing_config	woowabros/Yeonsung	599fc1b88ba8	binary-only	0	0	0	0	0	0	2		1	0	-
+Yesteryear	ofl/yesteryear	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	3	0	0	0	0	2		1	0	-
+Yinmar	ofl/yinmar	missing_config	khmertype/Yinmar	6ee5643de838	binary-only	0	0	0	0	0	0	3		1	0	-
+Yuji Boku	ofl/yujiboku	missing_config	Kinutafontfactory/Yuji	efec977b14b5	modern	0	0	0	7	0	0	5		1	0	-
+Yuji Hentaigana Akari	ofl/yujihentaiganaakari	missing_config	Kinutafontfactory/Yuji	efec977b14b5	modern	0	0	0	7	0	0	5		1	0	-
+Yuji Hentaigana Akebono	ofl/yujihentaiganaakebono	missing_config	Kinutafontfactory/Yuji	efec977b14b5	modern	0	0	0	7	0	0	5		1	0	-
+Yuji Mai	ofl/yujimai	missing_config	Kinutafontfactory/Yuji	efec977b14b5	modern	0	0	0	7	0	0	5		1	0	-
+Yuji Syuku	ofl/yujisyuku	missing_config	Kinutafontfactory/Yuji	efec977b14b5	modern	0	0	0	7	0	0	5		1	0	-
+Yuyu	ofl/yuyu	missing_config	JuliaGarciaLopez/Yuyu-Font	38e2939cbadb	modern	0	0	0	2	0	0	6		1	0	-
+Yuyu Short	ofl/yuyushort	missing_config	JuliaGarciaLopez/Yuyu-Font	38e2939cbadb	modern	0	0	0	2	0	0	6		1	0	-
+Zen Antique	ofl/zenantique	missing_config	googlefonts/zen-antique	3521a97dfa21	binary-only	0	0	0	0	0	0	2		1	0	-
+Zen Antique Soft	ofl/zenantiquesoft	missing_config	googlefonts/zen-antique	3521a97dfa21	binary-only	0	0	0	0	0	0	2		1	0	-
+Zen Kaku Gothic Antique	ofl/zenkakugothicantique	missing_config	googlefonts/zen-kakugothic	2705757e17e4	modern	0	0	0	3	0	0	10		5	0	-
+Zen Kaku Gothic New	ofl/zenkakugothicnew	missing_config	googlefonts/zen-kakugothic	2705757e17e4	modern	0	0	0	3	0	0	10		5	0	-
+Zen Maru Gothic	ofl/zenmarugothic	missing_config	googlefonts/zen-marugothic	553c872b216d	binary-only	0	0	0	0	0	0	5		5	0	-
+Zen Old Mincho	ofl/zenoldmincho	missing_config	googlefonts/zen-oldmincho	490d363e7886	binary-only	0	0	0	0	0	0	5		5	0	-
+Zeyada	ofl/zeyada	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	1	0	0	0	0	1		1	1	2011-02-22
+Ubuntu	ufl/ubuntu	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	9	0	0	0	0	17		8	0	-
+Ubuntu Condensed	ufl/ubuntucondensed	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	binary-only	0	0	0	0	0	0	1		1	0	-
+Ubuntu Mono	ufl/ubuntumono	missing_config	googlefonts/googlefontdirectory-hg	52f780bc9d19	vfb	0	4	0	0	0	0	8		4	0	-
