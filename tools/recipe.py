@@ -101,9 +101,14 @@ def flags_for(sfd_text, shipped, add=(), drop=()):
     return [f for f in flags if f not in set(drop)]
 
 
+def families_file():
+    """The pairing table: families.tsv, or another batch's (FAMILIES=<path>)."""
+    return os.environ.get("FAMILIES", os.path.join(W, "families.tsv"))
+
+
 def rows():
     out = []
-    with open(os.path.join(W, "families.tsv"), encoding="utf-8") as fh:
+    with open(families_file(), encoding="utf-8") as fh:
         head = fh.readline().rstrip("\n").split("\t")
         for line in fh:
             out.append(dict(zip(head, line.rstrip("\n").split("\t"))))

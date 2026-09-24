@@ -31,6 +31,8 @@
 #   BF=<babelfont binary>    use another converter build
 #   OUT=<dir>                write results there instead of baseline/
 #   TAG=<name>               suffix for the scratch directory (parallel callers)
+#   FAMILIES=<file.tsv>      another batch's pairing table (default families.tsv)
+#   SCRATCH=<dir>            scratch root (default session scratch; a big batch belongs on /home)
 set -uo pipefail
 W=$(cd "$(dirname "$0")/.." && pwd)
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive
@@ -41,18 +43,20 @@ PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 TG=/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py
 SCR=${SCRATCH:-/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad}/baseline
 OUT=${OUT:-$W/baseline}
+FAM=${FAMILIES:-$W/families.tsv}
+export FAMILIES="$FAM"          # recipe.py reads the same table
 mkdir -p "$OUT" "$SCR"
 
 for t in "$BF" "$B3" "$D3" "$PY"; do [ -x "$t" ] || { echo "MISSING TOOL: $t" >&2; exit 2; }; done
 
 if [ "${1:-}" = "--all" ]; then
-  tail -n +2 "$W/families.tsv" | cut -f7 | xargs -P 3 -n 1 "$0"
+  tail -n +2 "$FAM" | cut -f7 | xargs -P 3 -n 1 "$0"
   exit $?
 fi
 
 for style in "$@"; do
-  row=$(awk -F'\t' -v s="$style" 'NR>1 && $7==s' "$W/families.tsv")
-  [ -n "$row" ] || { echo "no families.tsv row for $style" >&2; continue; }
+  row=$(awk -F'\t' -v s="$style" 'NR>1 && $7==s' "$FAM")
+  [ -n "$row" ] || { echo "no row for $style in $FAM" >&2; continue; }
   IFS=$'\t' read -r repo fam lic kind base commit _ src shipped <<<"$row"
   d="$SCR/$style${TAG:+-$TAG}"; rm -rf "$d"; mkdir -p "$d/tree" "$d/sources"
   log="$OUT/$style.gate.txt"; : > "$log"

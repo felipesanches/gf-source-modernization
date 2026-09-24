@@ -134,7 +134,7 @@ def commit(repo, message, *paths):
 def family_rows(repo):
     rows = [r for r in recipe.rows() if r["repo"] == repo]
     if not rows:
-        raise LandError("no families.tsv rows for repo %s" % repo)
+        raise LandError("no rows for repo %s in %s" % (repo, recipe.families_file()))
     return rows
 
 
