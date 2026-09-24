@@ -1,0 +1,347 @@
+reference  /home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont  (29355000 bytes, sha256:744f0ecd14d5ae97)
+           BUILT_FROM 8b59bc33af8c0ed77819d5a785eccef610bef8e8
+candidate  /home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target/release/babelfont  (29321256 bytes, sha256:f96e0851990f4807)
+styles     42 (families.tsv)
+
+== 1. original: unmodified .sfd from the repo archive, recipe flags
+  CreepsterCaps-Regular        FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  HerrVonMuellerhoff-Regular   FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Kristi-Regular               FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Lekton-Bold                  FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Lekton-Italic                FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Lekton-Regular               FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Miama-Regular                FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Monoton-Regular              FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NixieOne-Regular             FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Nosifer-Regular              FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NosiferCaps-Regular          FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaCut                      FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaFlat                     FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaMono                     FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaOval                     FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaRound                    FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaScript-Regular           FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaSlim                     FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaSquare                   FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  PatrickHand-Regular          DIFFERS  (12 changed lines)
+      --- reference/PatrickHand-Regular.glyphs
+      +++ candidate/PatrickHand-Regular.glyphs
+      @@ -1022,8 +1022,2 @@
+       pos = -200;
+      -},
+      -{
+      -pos = 467;
+      -},
+      -{
+      -pos = 660;
+       }
+      @@ -65529,8 +65523,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  Play-Bold                    DIFFERS  (12 changed lines)
+      --- reference/Play-Bold.glyphs
+      +++ candidate/Play-Bold.glyphs
+      @@ -1580,8 +1580,2 @@
+       pos = -200;
+      -},
+      -{
+      -pos = 484;
+      -},
+      -{
+      -pos = 649;
+       }
+      @@ -59433,8 +59427,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  Play-Regular                 DIFFERS  (12 changed lines)
+      --- reference/Play-Regular.glyphs
+      +++ candidate/Play-Regular.glyphs
+      @@ -2117,8 +2117,2 @@
+       pos = -200;
+      -},
+      -{
+      -pos = 484;
+      -},
+      -{
+      -pos = 649;
+       }
+      @@ -60402,8 +60396,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  Puritan-Bold                 FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Puritan-BoldItalic           FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Puritan-Italic               FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Puritan-Regular              FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  RussoOne-Regular             FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  SixCaps                      FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Smythe-Regular               FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Tuffy-Bold                   FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Tuffy-BoldItalic             FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Tuffy-Italic                 DIFFERS  (12 changed lines)
+      --- reference/Tuffy-Italic.glyphs
+      +++ candidate/Tuffy-Italic.glyphs
+      @@ -251,8 +251,2 @@
+       pos = -451;
+      -},
+      -{
+      -pos = 1069;
+      -},
+      -{
+      -pos = 1450;
+       }
+      @@ -100599,8 +100593,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  Tuffy-Regular                DIFFERS  (12 changed lines)
+      --- reference/Tuffy-Regular.glyphs
+      +++ candidate/Tuffy-Regular.glyphs
+      @@ -250,8 +250,2 @@
+       pos = -451;
+      -},
+      -{
+      -pos = 1069;
+      -},
+      -{
+      -pos = 1450;
+       }
+      @@ -64057,8 +64051,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  TulpenOne-Regular            FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  UnifrakturCook-Bold          FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  UnifrakturMaguntia-Book      FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  AbrilFatface-Regular         FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Corben-Regular               DIFFERS  (12 changed lines)
+      --- reference/Corben-Regular.glyphs
+      +++ candidate/Corben-Regular.glyphs
+      @@ -146,8 +146,2 @@
+       pos = -410;
+      -},
+      -{
+      -pos = 958;
+      -},
+      -{
+      -pos = 1404;
+       }
+      @@ -18172,8 +18166,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  Corben-Bold                  DIFFERS  (12 changed lines)
+      --- reference/Corben-Bold.glyphs
+      +++ candidate/Corben-Bold.glyphs
+      @@ -476,8 +476,2 @@
+       pos = -410;
+      -},
+      -{
+      -pos = 1296;
+      -},
+      -{
+      -pos = 1593;
+       }
+      @@ -46683,8 +46677,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  AllertaStencil-Regular       FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  ComicRelief-Regular          identical  sha256:5ec1bdf1bfd0051e  247125 bytes
+  ComicRelief-Bold             identical  sha256:0f17b8ee9aed901f  310587 bytes
+
+== 2. landed: the .sfd committed just before each convert commit
+  CreepsterCaps-Regular        FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  HerrVonMuellerhoff-Regular   FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Kristi-Regular               FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Lekton-Bold                  FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Lekton-Italic                FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Lekton-Regular               FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Miama-Regular                FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Monoton-Regular              FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NixieOne-Regular             FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Nosifer-Regular              FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NosiferCaps-Regular          FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaCut                      FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaFlat                     FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaMono                     FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaOval                     FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaRound                    FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaScript-Regular           FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaSlim                     FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  NovaSquare                   FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  PatrickHand-Regular          DIFFERS  (6 changed lines)
+      --- reference/PatrickHand-Regular.glyphs
+      +++ candidate/PatrickHand-Regular.glyphs
+      @@ -1025,5 +1025,2 @@
+       pos = -200;
+      -},
+      -{
+      -pos = 467;
+       }
+      @@ -65532,5 +65529,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+       }
+  Puritan-Bold                 FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Puritan-BoldItalic           FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Puritan-Italic               FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Puritan-Regular              FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  RussoOne-Regular             FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  SixCaps                      FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Smythe-Regular               FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  TulpenOne-Regular            FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  UnifrakturCook-Bold          FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  AbrilFatface-Regular         FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  Corben-Regular               DIFFERS  (12 changed lines)
+      --- reference/Corben-Regular.glyphs
+      +++ candidate/Corben-Regular.glyphs
+      @@ -146,8 +146,2 @@
+       pos = -410;
+      -},
+      -{
+      -pos = 958;
+      -},
+      -{
+      -pos = 1404;
+       }
+      @@ -18172,8 +18166,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  Corben-Bold                  DIFFERS  (12 changed lines)
+      --- reference/Corben-Bold.glyphs
+      +++ candidate/Corben-Bold.glyphs
+      @@ -476,8 +476,2 @@
+       pos = -410;
+      -},
+      -{
+      -pos = 1296;
+      -},
+      -{
+      -pos = 1593;
+       }
+      @@ -46681,8 +46675,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  AllertaStencil-Regular       FAILURE: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+
+== 3. committed: candidate (+ workarounds.py) vs the .glyphs in the convert commit; ref shown as control
+  PatrickHand-Regular          patrickhand 1ed7368  ref=  cand!=
+      (6 changed lines)
+      --- patrickhand@1ed7368:sources/PatrickHand-Regular.glyphs
+      +++ candidate+workarounds
+      @@ -1025,5 +1025,2 @@
+       pos = -200;
+      -},
+      -{
+      -pos = 467;
+       }
+      @@ -65532,5 +65529,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+       }
+  Corben-Regular               corben 56b176a  ref=  cand!=
+      (12 changed lines)
+      --- corben@56b176a:sources/Corben-Regular.glyphs
+      +++ candidate+workarounds
+      @@ -146,8 +146,2 @@
+       pos = -410;
+      -},
+      -{
+      -pos = 958;
+      -},
+      -{
+      -pos = 1404;
+       }
+      @@ -18172,8 +18166,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+  Corben-Bold                  corben 56b176a  ref=  cand!=
+      (12 changed lines)
+      --- corben@56b176a:sources/Corben-Bold.glyphs
+      +++ candidate+workarounds
+      @@ -482,8 +482,2 @@
+       pos = -410;
+      -},
+      -{
+      -pos = 1296;
+      -},
+      -{
+      -pos = 1593;
+       }
+      @@ -46687,8 +46681,2 @@
+       type = descender;
+      -},
+      -{
+      -type = "x-height";
+      -},
+      -{
+      -type = "cap height";
+       }
+
+== summary
+  1. original   42 styles: 2 identical, 7 differ, 33 FAILED on one binary, 0 failed on both, 0 reference non-deterministic
+  2. landed     33 styles: 0 identical, 3 differ, 30 FAILED on one binary, 0 failed on both
+  3. committed   3 styles: 0 identical, 3 differ, 0 FAILED on one binary, 0 failed on both
+  failures (one binary only): original CreepsterCaps-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original HerrVonMuellerhoff-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Kristi-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Lekton-Bold: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Lekton-Italic: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Lekton-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Miama-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Monoton-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NixieOne-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Nosifer-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NosiferCaps-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NovaCut: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NovaFlat: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NovaMono: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NovaOval: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NovaRound: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NovaScript-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NovaSlim: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original NovaSquare: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Puritan-Bold: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Puritan-BoldItalic: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Puritan-Italic: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Puritan-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original RussoOne-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original SixCaps: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Smythe-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Tuffy-Bold: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original Tuffy-BoldItalic: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original TulpenOne-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original UnifrakturCook-Bold: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original UnifrakturMaguntia-Book: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original AbrilFatface-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); original AllertaStencil-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed CreepsterCaps-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed HerrVonMuellerhoff-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Kristi-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Lekton-Bold: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Lekton-Italic: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Lekton-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Miama-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Monoton-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NixieOne-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Nosifer-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NosiferCaps-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NovaCut: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NovaFlat: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NovaMono: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NovaOval: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NovaRound: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NovaScript-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NovaSlim: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed NovaSquare: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Puritan-Bold: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Puritan-BoldItalic: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Puritan-Italic: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Puritan-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed RussoOne-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed SixCaps: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed Smythe-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed TulpenOne-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed UnifrakturCook-Bold: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed AbrilFatface-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.); landed AllertaStencil-Regular: candidate failed (exit 2: Usage: babelfont --fontforge-underline-position <font_path> <output> |  | For more information, try '--help'.)
+  differences: original/PatrickHand-Regular, original/Play-Bold, original/Play-Regular, original/Tuffy-Italic, original/Tuffy-Regular, original/Corben-Regular, original/Corben-Bold, landed/PatrickHand-Regular, committed/PatrickHand-Regular, landed/Corben-Regular, committed/Corben-Regular, landed/Corben-Bold, committed/Corben-Bold
+  VERDICT: NOT EQUIVALENT -- see above
