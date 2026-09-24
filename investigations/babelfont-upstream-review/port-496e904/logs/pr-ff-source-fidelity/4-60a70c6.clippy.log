@@ -1,0 +1,4 @@
+    Checking babelfont v0.2.1 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/wt-pr-ff-source-fidelity/babelfont)
+    Checking fontmerge v0.1.0 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/wt-pr-ff-source-fidelity/fontmerge)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 11.23s
+clippy rc=0

@@ -1,0 +1,10 @@
+61c61,62
+<                         let paths = Self::splines_to_path(&section, layer_is_quadratic(layer))?;
+---
+>                         let paths =
+>                             pathreading::splines_to_path(&section, layer_is_quadratic(layer))?;
+213c214,215
+<                             let paths = Self::splines_to_path(&section, layer_is_quadratic(layer))?;
+---
+>                             let paths =
+>                                 pathreading::splines_to_path(&section, layer_is_quadratic(layer))?;

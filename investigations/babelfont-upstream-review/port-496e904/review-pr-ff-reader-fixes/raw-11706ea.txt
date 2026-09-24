@@ -1,0 +1,12 @@
+tree 5e43ca8995bb7edb0e54cdf7e5c81b7c6ba6dc51
+parent 191b4420a3bcef20d155ab63ee6d928bbb452527
+author Felipe Corrêa da Silva Sanches <juca@members.fsf.org> 1789834860 +0100
+committer Felipe Corrêa da Silva Sanches <juca@members.fsf.org> 1790249472 +0100
+
+fontforge: do not emit a lookup as a feature prefix when only aalt uses it
+
+Its single and alternate substitutions are already inlined into aalt, so the
+prefix was a lookup nothing referenced. A lookup that a chain context calls
+by name keeps its definition.
+
+Assisted by AI agents (Claude Opus 5, Claude Opus 5.5)

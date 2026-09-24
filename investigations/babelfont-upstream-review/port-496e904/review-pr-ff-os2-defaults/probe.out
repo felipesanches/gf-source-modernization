@@ -1,0 +1,9 @@
+53 SFDs x 4 filter sets: 0 filter-delta mismatch(es)
+files where the filter changed something (pre-port): {'os2': 50, 'ul': 47, 'hgcm+os2': 50, 'hgcm': 50}
+unfiltered pre-vs-post differences (upstream reader changes): 5 file(s)
+   CMAPEncTest.sfd ['/masters[0]/metrics/HheaAscender', '/masters[0]/metrics/WinAscent']
+   OverlapBugs.sfd ['/masters[0]/metrics/HheaAscender', '/masters[0]/metrics/WinAscent']
+   Mina-bengali-0.sfd ('ERR', ('ERR', ['note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace']))
+   Handlee-Regular-TTF.sfd ['/masters[0]/metrics/HheaDescender', '/masters[0]/metrics/WinDescent']
+   Mina-Regular.sfd ('ERR', ('ERR', ['note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace']))
+exit 0

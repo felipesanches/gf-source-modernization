@@ -1,0 +1,11 @@
+== 191b442 alone (fresh mtimes)
+fmt: clean
+clippy default exit=0 warn/err lines=0 compiled-babelfont=0
+clippy cli exit=0 warn/err lines=0 compiled-babelfont=0
+test exit=101 compiled-babelfont=1
+test result: FAILED. 204 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 24.47s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 20.91s
+test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 4.68s
+same 11 failures as base
+test convertors::fontforge::tests::test_quoted_glyph_name_is_decoded_and_trimmed ... ok
+test convertors::fontforge::tests::test_unquoted_glyph_name_is_literal ... ok

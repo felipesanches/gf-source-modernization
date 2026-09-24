@@ -1,0 +1,143 @@
+reference  /home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont  (29355000 bytes, sha256:744f0ecd14d5ae97)
+           BUILT_FROM 8b59bc33af8c0ed77819d5a785eccef610bef8e8
+candidate  /home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/equiv/bin/babelfont-integration-17ea899-minus-496e904  (29437592 bytes, sha256:88be530059eed859)
+styles     42 (families.tsv)
+
+== 1. original: unmodified .sfd from the repo archive, recipe flags
+  CreepsterCaps-Regular        identical  sha256:48855c2c12e74508  409630 bytes
+  HerrVonMuellerhoff-Regular   identical  sha256:19a0d92d12a0f31d  288747 bytes
+  Kristi-Regular               identical  sha256:edf0521caf4b8349  151126 bytes
+  Lekton-Bold                  identical  sha256:8da3332cb535c89c  600050 bytes
+  Lekton-Italic                identical  sha256:210d95dbf6107b8d  121916 bytes
+  Lekton-Regular               identical  sha256:f27baa99079a8c5f  606473 bytes
+  Miama-Regular                identical  sha256:6c31b6404c7fca9f  2054561 bytes
+  Monoton-Regular              identical  sha256:114e321c2766a822  341797 bytes
+  NixieOne-Regular             identical  sha256:766e6a57e771d436  325825 bytes
+  Nosifer-Regular              identical  sha256:bbbbfd504c47b339  274872 bytes
+  NosiferCaps-Regular          identical  sha256:76ecf5be8b8573a1  274884 bytes
+  NovaCut                      identical  sha256:3f56631fcbb3dd9c  280293 bytes
+  NovaFlat                     identical  sha256:80ce574666f701c1  312263 bytes
+  NovaMono                     identical  sha256:fdc7577371161eef  864224 bytes
+  NovaOval                     identical  sha256:f8a466cb2d2dd219  311333 bytes
+  NovaRound                    identical  sha256:c4d32696ef327d80  307457 bytes
+  NovaScript-Regular           identical  sha256:285139f83050b2c1  348242 bytes
+  NovaSlim                     identical  sha256:b81f480e3ff276e3  307039 bytes
+  NovaSquare                   identical  sha256:43b8c7c60ebfb586  276284 bytes
+  PatrickHand-Regular          identical  sha256:294718aa2b3fec59  799103 bytes
+  Play-Bold                    identical  sha256:e4ce5caaac4739f1  741085 bytes
+  Play-Regular                 identical  sha256:9a4032cdf741fe72  761251 bytes
+  Puritan-Bold                 identical  sha256:fb5b5b2fd3483200  132395 bytes
+  Puritan-BoldItalic           identical  sha256:987e81ab62d63362  135341 bytes
+  Puritan-Italic               identical  sha256:b6808171401df41c  137643 bytes
+  Puritan-Regular              identical  sha256:f22929a2b8f0bee7  135457 bytes
+  RussoOne-Regular             identical  sha256:ab3caf4ca7b17724  238118 bytes
+  SixCaps                      identical  sha256:ea952a2d053105be  169880 bytes
+  Smythe-Regular               identical  sha256:db72b39cb861b1e9  281390 bytes
+  Tuffy-Bold                   identical  sha256:e785853787dd5a7d  504831 bytes
+  Tuffy-BoldItalic             identical  sha256:ca99e78dbe747ad1  661606 bytes
+  Tuffy-Italic                 identical  sha256:319daf616e92b8a2  1279717 bytes
+  Tuffy-Regular                identical  sha256:b4f6180ef9605a0a  765681 bytes
+  TulpenOne-Regular            identical  sha256:b4ddad0ca59367d0  177123 bytes
+  UnifrakturCook-Bold          identical  sha256:45a6d3988a961395  258801 bytes
+  UnifrakturMaguntia-Book      identical  sha256:d31a985909cf2383  338284 bytes
+  AbrilFatface-Regular         identical  sha256:60cdc81f4c674c04  362524 bytes
+  Corben-Regular               identical  sha256:43ed25e26a333926  226660 bytes
+  Corben-Bold                  identical  sha256:cbd6753a1e6c9d53  641398 bytes
+  AllertaStencil-Regular       identical  sha256:cfe8506a983f25c9  115391 bytes
+  ComicRelief-Regular          DIFFERS  (6 changed lines)
+      --- reference/ComicRelief-Regular.glyphs
+      +++ candidate/ComicRelief-Regular.glyphs
+      @@ -5330,3 +5330,3 @@
+       {
+      -pos = (-0,-1);
+      +pos = (0,-1);
+       ref = circumflex;
+      @@ -10232,3 +10232,3 @@
+       {
+      -pos = (23,-0);
+      +pos = (23,0);
+       ref = breve;
+      @@ -11403,3 +11403,3 @@
+       {
+      -pos = (236,-0);
+      +pos = (236,0);
+       ref = acute;
+  ComicRelief-Bold             identical  sha256:0f17b8ee9aed901f  310587 bytes
+
+== 2. landed: the .sfd committed just before each convert commit
+  CreepsterCaps-Regular        identical  sha256:48855c2c12e74508  409630 bytes
+  HerrVonMuellerhoff-Regular   identical  sha256:19a0d92d12a0f31d  288747 bytes
+  Kristi-Regular               identical  sha256:edf0521caf4b8349  151126 bytes
+  Lekton-Bold                  identical  sha256:8da3332cb535c89c  600050 bytes
+  Lekton-Italic                identical  sha256:210d95dbf6107b8d  121916 bytes
+  Lekton-Regular               identical  sha256:f27baa99079a8c5f  606473 bytes
+  Miama-Regular                identical  sha256:6c31b6404c7fca9f  2054561 bytes
+  Monoton-Regular              identical  sha256:114e321c2766a822  341797 bytes
+  NixieOne-Regular             identical  sha256:766e6a57e771d436  325825 bytes
+  Nosifer-Regular              identical  sha256:33a3f54d3422dc6f  274370 bytes
+  NosiferCaps-Regular          identical  sha256:76ecf5be8b8573a1  274884 bytes
+  NovaCut                      identical  sha256:3f56631fcbb3dd9c  280293 bytes
+  NovaFlat                     identical  sha256:80ce574666f701c1  312263 bytes
+  NovaMono                     identical  sha256:fdc7577371161eef  864224 bytes
+  NovaOval                     identical  sha256:f8a466cb2d2dd219  311333 bytes
+  NovaRound                    identical  sha256:c4d32696ef327d80  307457 bytes
+  NovaScript-Regular           identical  sha256:285139f83050b2c1  348242 bytes
+  NovaSlim                     identical  sha256:b81f480e3ff276e3  307039 bytes
+  NovaSquare                   identical  sha256:43b8c7c60ebfb586  276284 bytes
+  PatrickHand-Regular          identical  sha256:ea61a1cfc2d8e708  799103 bytes
+  Puritan-Bold                 identical  sha256:cf68ff6c5e6cad5a  132615 bytes
+  Puritan-BoldItalic           identical  sha256:a302e1efd7b779cc  135514 bytes
+  Puritan-Italic               identical  sha256:63caafd41c1b4c7e  137855 bytes
+  Puritan-Regular              identical  sha256:802efa91dfd1bc20  135575 bytes
+  RussoOne-Regular             identical  sha256:ba30b91f8edcd06c  238117 bytes
+  SixCaps                      identical  sha256:ea952a2d053105be  169880 bytes
+  Smythe-Regular               identical  sha256:db72b39cb861b1e9  281390 bytes
+  TulpenOne-Regular            identical  sha256:b4ddad0ca59367d0  177123 bytes
+  UnifrakturCook-Bold          identical  sha256:45a6d3988a961395  258801 bytes
+  AbrilFatface-Regular         identical  sha256:60cdc81f4c674c04  362524 bytes
+  Corben-Regular               identical  sha256:43ed25e26a333926  226660 bytes
+  Corben-Bold                  identical  sha256:c42f27397aa7bac7  641372 bytes
+  AllertaStencil-Regular       identical  sha256:cfe8506a983f25c9  115391 bytes
+
+== 3. committed: candidate (+ workarounds.py) vs the .glyphs in the convert commit; ref shown as control
+  CreepsterCaps-Regular        creepstercaps c5f2ec0  ref=  cand=
+  HerrVonMuellerhoff-Regular   herrvonmuellerhoff d3f201a  ref=  cand=
+  Kristi-Regular               kristi f05a418  ref=  cand=
+  Lekton-Bold                  lekton cd0f945  ref=  cand=
+  Lekton-Italic                lekton cd0f945  ref=  cand=
+  Lekton-Regular               lekton cd0f945  ref=  cand=
+  Miama-Regular                miama 2ff6126  ref=  cand=
+  Monoton-Regular              monoton 60394d3  ref=  cand=
+  NixieOne-Regular             nixieone 89d5f47  ref=  cand=
+  Nosifer-Regular              nosifer 7777099  ref=  cand=
+  NosiferCaps-Regular          nosifercaps b075bc4  ref=  cand=
+  NovaCut                      novacut 64b2e02  ref=  cand=
+  NovaFlat                     novaflat 72dd793  ref=  cand=
+  NovaMono                     novamono 4ad3153  ref=  cand=
+  NovaOval                     novaoval cc8fc40  ref=  cand=
+  NovaRound                    novaround b922b5c  ref=  cand=
+  NovaScript-Regular           novascript 95cd12f  ref=  cand=
+  NovaSlim                     novaslim 9a7efc4  ref=  cand=
+  NovaSquare                   novasquare 9b6eb41  ref=  cand=
+  PatrickHand-Regular          patrickhand 1ed7368  ref=  cand=
+  Puritan-Bold                 puritan 0546c4e  ref=  cand=
+  Puritan-BoldItalic           puritan 0546c4e  ref=  cand=
+  Puritan-Italic               puritan 0546c4e  ref=  cand=
+  Puritan-Regular              puritan 0546c4e  ref=  cand=
+  RussoOne-Regular             russoone 2978615  ref=  cand=
+  SixCaps                      sixcaps db6defb  ref=  cand=
+  Smythe-Regular               smythe e4e1866  ref=  cand=
+  TulpenOne-Regular            tulpenone 68206bb  ref=  cand=
+  UnifrakturCook-Bold          unifrakturcook 511adc6  ref=  cand=
+  AbrilFatface-Regular         abrilfatface f431a0a  ref=  cand=
+  Corben-Regular               corben 56b176a  ref=  cand=
+  Corben-Bold                  corben 56b176a  ref=  cand=
+  AllertaStencil-Regular       allerta bac063d  ref=  cand=
+
+== summary
+  1. original   42 styles: 41 identical, 1 differ, 0 FAILED on one binary, 0 failed on both, 0 reference non-deterministic
+  2. landed     33 styles: 33 identical, 0 differ, 0 FAILED on one binary, 0 failed on both
+  3. committed  33 styles: 33 identical, 0 differ, 0 FAILED on one binary, 0 failed on both
+  failures (one binary only): none
+  differences: original/ComicRelief-Regular
+  VERDICT: NOT EQUIVALENT -- see above

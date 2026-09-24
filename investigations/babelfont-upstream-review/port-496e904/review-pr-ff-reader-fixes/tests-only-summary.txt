@@ -1,0 +1,12 @@
+== tests-only-1 (496e904 + commit-1 tests, no fix)
+   Compiling babelfont v0.2.1 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-reader-fixes/src-tests-only-1/babelfont)
+test convertors::fontforge::tests::test_unquoted_glyph_name_is_literal ... ok
+test convertors::fontforge::tests::test_quoted_glyph_name_is_decoded_and_trimmed ... FAILED
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 213 filtered out; finished in 0.03s
+== tests-only-2 (191b442 + commit-2 tests, no fix)
+   Compiling babelfont v0.2.1 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-reader-fixes/src-tests-only-2/babelfont)
+test convertors::fontforge::tests::test_unquoted_glyph_name_is_literal ... ok
+test convertors::fontforge::tests::test_quoted_glyph_name_is_decoded_and_trimmed ... ok
+test convertors::fontforge::tests::test_aalt_only_lookup_called_from_a_chain_is_still_defined ... ok
+test convertors::fontforge::tests::test_aalt_only_lookup_nothing_calls_is_not_defined ... FAILED
+test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 213 filtered out; finished in 0.06s

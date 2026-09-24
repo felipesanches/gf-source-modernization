@@ -1,0 +1,15 @@
+== upstream/main (496e904)
+fmt: clean
+clippy (default): 0 warning line(s)
+clippy -p babelfont --features cli: 0 warning line(s)
+  test result: FAILED. 202 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 12.19s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.05s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 1.83s
+== pr-ff-reader-fixes (11706ea)
+fmt: clean
+clippy (default): 0 warning line(s)
+clippy -p babelfont --features cli: 0 warning line(s)
+  test result: FAILED. 206 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 13.61s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.46s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 1.42s
+workdir: /home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/check-branch

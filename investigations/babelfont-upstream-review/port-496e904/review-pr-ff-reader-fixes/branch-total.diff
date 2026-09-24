@@ -1,0 +1,239 @@
+diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
+index 842d8cf..a0f72fa 100644
+--- a/babelfont/src/convertors/fontforge.rs
++++ b/babelfont/src/convertors/fontforge.rs
+@@ -1442,7 +1442,20 @@ impl SfdParser {
+             .split_once(": ")
+             .map(|(_, v)| v.to_string())
+             .unwrap_or_else(|| data[0].clone());
+-        let glyph_name = name_line.trim_matches('"');
++        // FontForge quotes a glyph name only when it has a character other than
++        // printable ASCII, tab, CR or LF, and a quoted name is in its modified UTF-7,
++        // like subtable, lookup, class and nameid strings. An unquoted name is
++        // literal, `+` included. FontForge can leave whitespace after the closing
++        // quote.
++        let name_line = name_line.trim();
++        let decoded_name = match name_line
++            .strip_prefix('"')
++            .and_then(|name| name.strip_suffix('"'))
++        {
++            Some(quoted) => decode_utf7(quoted),
++            None => name_line.to_string(),
++        };
++        let glyph_name = decoded_name.as_str();
+         let mut glyph = Glyph::new(glyph_name);
+         glyph.exported = true; // All FontForge glyphs are exported by default
+ 
+@@ -3469,6 +3482,13 @@ impl SfdParser {
+             }
+         }
+ 
++        // Every lookup a chain rule calls, by assigned name, over the whole font. A
++        // lookup registered only to `aalt` still has to be defined when a chain context
++        // calls it by name, or the call would refer to a lookup the feature file never
++        // declares.
++        let chain_referenced: HashSet<String> =
++            deps_by_lookup.values().flatten().cloned().collect();
++
+         let mut is_chain: HashMap<String, bool> = HashMap::new();
+         for (name, lookup) in self.gsub_lookups.0.iter().chain(self.gpos_lookups.0.iter()) {
+             let has_chain = lookup
+@@ -3628,13 +3648,23 @@ impl SfdParser {
+                 continue;
+             }
+             emitted_lookups.insert(name.clone());
+-            self.font.features.prefixes.insert(
+-                SmolStr::from(name.as_str()),
+-                crate::features::PossiblyAutomaticCode {
+-                    code: lookup.block.as_fea(""),
+-                    ..Default::default()
+-                },
+-            );
++            // A lookup used only by `aalt` has its single and alternate substitutions
++            // inlined into the feature further down, because neither a lookup reference
++            // nor a script statement is legal inside aalt. Emitting it as a feature
++            // prefix as well would add a named lookup that nothing references, unless a
++            // chain context calls it by name, in which case the definition has to stay.
++            let only_aalt = !lookup.features.is_empty()
++                && lookup.features.iter().all(|fls| fls.feature == "aalt")
++                && !chain_referenced.contains(name);
++            if !only_aalt {
++                self.font.features.prefixes.insert(
++                    SmolStr::from(name.as_str()),
++                    crate::features::PossiblyAutomaticCode {
++                        code: lookup.block.as_fea(""),
++                        ..Default::default()
++                    },
++                );
++            }
+ 
+             inlinable_rules.insert(
+                 SmolStr::from(lookup.block.name.as_str()),
+diff --git a/babelfont/src/convertors/fontforge/tests.rs b/babelfont/src/convertors/fontforge/tests.rs
+index 0832e10..6c3bc7d 100644
+--- a/babelfont/src/convertors/fontforge/tests.rs
++++ b/babelfont/src/convertors/fontforge/tests.rs
+@@ -289,6 +289,73 @@ fn test_blank_script_tag_becomes_dflt() {
+     assert!(!fea.contains("languagesystem  "), "{}", fea);
+ }
+ 
++#[test]
++fn test_quoted_glyph_name_is_decoded_and_trimmed() {
++    // A quoted name is modified UTF-7, and FontForge can leave whitespace after
++    // the closing quote:
++    //   StartChar: "C+AJIA-rculo0"<space>
++    // names the glyph `C`, U+0092, `rculo0`.
++    let data = concat!(
++        "SplineFontDB: 3.0\n",
++        "Ascent: 800\n",
++        "Descent: 200\n",
++        "LayerCount: 2\n",
++        "Layer: 0 0 \"Back\" 1\n",
++        "Layer: 1 0 \"Fore\" 0\n",
++        "BeginChars: 2 2\n",
++        "StartChar: \"C+AJIA-rculo0\" \n",
++        "Encoding: 57351 57351 0\n",
++        "Width: 600\n",
++        "Fore\n",
++        "EndChar\n",
++        "StartChar: A\n",
++        "Encoding: 65 65 1\n",
++        "Width: 600\n",
++        "Fore\n",
++        "EndChar\n",
++        "EndChars\n",
++        "EndSplineFont\n"
++    );
++    let font = load_str(data).expect("Failed to parse quoted-name SFD");
++    let names: Vec<&str> = font.glyphs.0.iter().map(|g| g.name.as_str()).collect();
++    assert_eq!(names, vec!["C\u{92}rculo0", "A"]);
++}
++
++#[test]
++fn test_unquoted_glyph_name_is_literal() {
++    // FontForge writes a name of printable ASCII unquoted and reads it back as
++    // it stands, so a `+` in it is not a modified-UTF-7 shift.
++    let data = concat!(
++        "SplineFontDB: 3.0\n",
++        "Ascent: 800\n",
++        "Descent: 200\n",
++        "LayerCount: 2\n",
++        "Layer: 0 0 \"Back\" 1\n",
++        "Layer: 1 0 \"Fore\" 0\n",
++        "BeginChars: 3 3\n",
++        "StartChar: a+b\n",
++        "Encoding: 65536 -1 0\n",
++        "Width: 600\n",
++        "Fore\n",
++        "EndChar\n",
++        "StartChar: a+-b\n",
++        "Encoding: 65537 -1 1\n",
++        "Width: 600\n",
++        "Fore\n",
++        "EndChar\n",
++        "StartChar: a\n",
++        "Encoding: 97 97 2\n",
++        "Width: 600\n",
++        "Fore\n",
++        "EndChar\n",
++        "EndChars\n",
++        "EndSplineFont\n"
++    );
++    let font = load_str(data).expect("Failed to parse unquoted-name SFD");
++    let names: Vec<&str> = font.glyphs.0.iter().map(|g| g.name.as_str()).collect();
++    assert_eq!(names, vec!["a+b", "a+-b", "a"]);
++}
++
+ #[test]
+ fn test_load_sfdir() {
+     // An SFDir is an exploded SFD: font.props holds the header and each
+@@ -695,6 +762,89 @@ fn test_chain_context_emission() {
+     );
+ }
+ 
++/// The SFD of `test_chain_context_emission` with `Other Lookup` registered only
++/// to `aalt`, and with or without the chain rule's call to it.
++fn chain_target_sfd(calls_other_lookup: bool) -> String {
++    let seq_lookups = if calls_other_lookup {
++        " 1\n  SeqLookup: 0 \"Other Lookup\"\n"
++    } else {
++        " 0\n"
++    };
++    format!(
++        concat!(
++            "SplineFontDB: 3.0\n",
++            "Lookup: 6 0 0 \"Chain Lookup\" {{\"chain-sub-1\"}} [\n",
++            "ChainSub2: coverage \"chain-sub-1\"  0 0 0 1\n",
++            " 1 0 1\n",
++            "  Coverage: 2 glyph_a glyph_b\n",
++            "  FCoverage: 1 glyph_c\n",
++            "{seq_lookups}",
++            "EndFPST\n",
++            "Lookup: 1 0 0 \"Other Lookup\" {{\"other-sub\"}} ['aalt' ('DFLT' <'dflt' > ) ]\n",
++            "BeginChars: 4 4\n",
++            "StartChar: space\n",
++            "Encoding: 32 32 0\n",
++            "Width: 250\n",
++            "EndChar\n",
++            "StartChar: glyph_a\n",
++            "Encoding: 97 97 1\n",
++            "Width: 250\n",
++            "Substitution2: \"other-sub\" glyph_b\n",
++            "EndChar\n",
++            "StartChar: glyph_b\n",
++            "Encoding: 98 98 2\n",
++            "Width: 250\n",
++            "EndChar\n",
++            "StartChar: glyph_c\n",
++            "Encoding: 99 99 3\n",
++            "Width: 250\n",
++            "EndChar\n",
++            "EndChars\n",
++            "EndSplineFont\n"
++        ),
++        seq_lookups = seq_lookups
++    )
++}
++
++#[test]
++fn test_aalt_only_lookup_called_from_a_chain_is_still_defined() {
++    // A lookup whose only feature registration is `aalt` has its single and
++    // alternate substitutions inlined into the feature, so it is not written out
++    // as a feature prefix. But a chain context may still call it by name, and that
++    // call needs a definition to refer to.
++    let data = chain_target_sfd(true);
++    let font = load_str(&data).expect("Failed to parse chain context SFD");
++    let fea = font.features.to_fea();
++
++    assert!(
++        fea.contains("sub [glyph_a glyph_b]' lookup Other_Lookup glyph_c;"),
++        "The chain rule should still call the aalt-only lookup:\n{fea}"
++    );
++    assert!(
++        fea.contains("lookup Other_Lookup {"),
++        "...and the lookup it calls must be defined, or the call dangles:\n{fea}"
++    );
++}
++
++#[test]
++fn test_aalt_only_lookup_nothing_calls_is_not_defined() {
++    // The converse, and the reason the suppression exists: with no chain calling
++    // it, an aalt-only lookup written out as a prefix is a named lookup nothing
++    // references.
++    let data = chain_target_sfd(false);
++    let font = load_str(&data).expect("Failed to parse chain context SFD");
++    let fea = font.features.to_fea();
++
++    assert!(
++        !fea.contains("lookup Other_Lookup {"),
++        "An aalt-only lookup no chain calls should not be emitted:\n{fea}"
++    );
++    assert!(
++        fea.contains("feature aalt {\nsub glyph_a by glyph_b;"),
++        "aalt must still carry the inlined rule:\n{fea}"
++    );
++}
++
+ #[test]
+ fn test_class_fpst_emission() {
+     // A `class` FPST defines its glyph classes once and then lists rules that

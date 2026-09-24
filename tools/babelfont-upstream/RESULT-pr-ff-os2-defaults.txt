@@ -1,15 +1,15 @@
-== upstream/main (0b55947)
+== upstream/main (496e904)
 fmt: clean
 clippy (default): 0 warning line(s)
 clippy -p babelfont --features cli: 0 warning line(s)
-  test result: FAILED. 201 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.94s
-  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 16.87s
-  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 2.86s
-== pr-ff-os2-defaults (4a293d4)
+  test result: FAILED. 202 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 33.97s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 38.59s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 7.89s
+== pr-ff-os2-defaults (119f2be)
 fmt: clean
 clippy (default): 0 warning line(s)
 clippy -p babelfont --features cli: 0 warning line(s)
-  test result: FAILED. 233 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 15.34s
-  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.31s
-  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 2.17s
+  test result: FAILED. 234 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 27.79s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 24.79s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 5.33s
 workdir: /home/fsanches/compartilhado/babelfont-rs-worktrees/check-branch-pr-ff-os2-defaults

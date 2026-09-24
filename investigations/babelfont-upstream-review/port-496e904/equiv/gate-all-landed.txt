@@ -1,0 +1,155 @@
+== creepstercaps  (convert c5f2ec0)
+   CreepsterCaps-Regular        ref+workarounds == committed; cand+workarounds == committed
+   ctrl CreepsterCaps-Regular        CreepsterCaps-Regular.ttf -> 0 blocking
+
+== herrvonmuellerhoff  (convert d3f201a)
+   HerrVonMuellerhoff-Regular   ref+workarounds == committed; cand+workarounds == committed
+   ctrl HerrVonMuellerhoff-Regular   HerrVonMuellerhoff-Regular.ttf -> 0 blocking
+
+== kristi  (convert f05a418)
+   Kristi-Regular               ref+workarounds == committed; cand+workarounds == committed
+   ctrl Kristi-Regular               Kristi-Regular.ttf -> 0 blocking
+
+== lekton  (convert cd0f945)
+   Lekton-Bold                  ref+workarounds == committed; cand+workarounds == committed
+   Lekton-Italic                ref+workarounds == committed; cand+workarounds == committed
+   Lekton-Regular               ref+workarounds == committed; cand+workarounds == committed
+   ctrl Lekton-Bold                  Lekton-Bold.ttf -> 0 blocking
+   ctrl Lekton-Italic                Lekton-Italic.ttf -> 0 blocking
+   ctrl Lekton-Regular               Lekton-Regular.ttf -> 0 blocking
+
+== miama  (convert 2ff6126)
+   Miama-Regular                ref+workarounds == committed; cand+workarounds == committed
+   ctrl Miama-Regular                Miama-Regular.ttf -> 0 blocking
+
+== monoton  (convert 60394d3)
+   Monoton-Regular              ref+workarounds == committed; cand+workarounds == committed
+   ctrl Monoton-Regular              Monoton-Regular.ttf -> 0 blocking
+
+== nixieone  (convert 89d5f47)
+   NixieOne-Regular             ref+workarounds == committed; cand+workarounds == committed
+   ctrl NixieOne-Regular             NixieOne-Regular.ttf -> 0 blocking
+
+== nosifer  (convert 7777099)
+   Nosifer-Regular              ref+workarounds == committed; cand+workarounds == committed
+   ctrl Nosifer-Regular              Nosifer-Regular.ttf -> 0 blocking
+
+== nosifercaps  (convert b075bc4)
+   NosiferCaps-Regular          ref+workarounds == committed; cand+workarounds == committed
+   ctrl NosiferCaps-Regular          NosiferCaps-Regular.ttf -> 0 blocking
+
+== novacut  (convert 64b2e02)
+   NovaCut                      ref+workarounds == committed; cand+workarounds == committed
+   ctrl NovaCut                      NovaCut-Regular.ttf -> 0 blocking
+
+== novaflat  (convert 72dd793)
+   NovaFlat                     ref+workarounds == committed; cand+workarounds == committed
+   ctrl NovaFlat                     NovaFlat-Regular.ttf -> 0 blocking
+
+== novamono  (convert 4ad3153)
+   NovaMono                     ref+workarounds == committed; cand+workarounds == committed
+   ctrl NovaMono                     NovaMono-Regular.ttf -> 0 blocking
+
+== novaoval  (convert cc8fc40)
+   NovaOval                     ref+workarounds == committed; cand+workarounds == committed
+   ctrl NovaOval                     NovaOval-Regular.ttf -> 0 blocking
+
+== novaround  (convert b922b5c)
+   NovaRound                    ref+workarounds == committed; cand+workarounds == committed
+   ctrl NovaRound                    NovaRound-Regular.ttf -> 0 blocking
+
+== novascript  (convert 95cd12f)
+   NovaScript-Regular           ref+workarounds == committed; cand+workarounds == committed
+   ctrl NovaScript-Regular           NovaScript-Regular.ttf -> 0 blocking
+
+== novaslim  (convert 9a7efc4)
+   NovaSlim                     ref+workarounds == committed; cand+workarounds == committed
+   ctrl NovaSlim                     NovaSlim-Regular.ttf -> 0 blocking
+
+== novasquare  (convert 9b6eb41)
+   NovaSquare                   ref+workarounds == committed; cand+workarounds == committed
+   ctrl NovaSquare                   NovaSquare-Regular.ttf -> 0 blocking
+
+== patrickhand  (convert 1ed7368)
+   PatrickHand-Regular          ref+workarounds == committed; cand+workarounds == committed
+   ctrl PatrickHand-Regular          PatrickHand-Regular.ttf -> 0 blocking
+
+== puritan  (convert 0546c4e)
+   Puritan-Bold                 ref+workarounds == committed; cand+workarounds == committed
+   Puritan-BoldItalic           ref+workarounds == committed; cand+workarounds == committed
+   Puritan-Italic               ref+workarounds == committed; cand+workarounds == committed
+   Puritan-Regular              ref+workarounds == committed; cand+workarounds == committed
+   ctrl Puritan-Bold                 Puritan-Bold.ttf -> 0 blocking
+   ctrl Puritan-BoldItalic           Puritan-BoldItalic.ttf -> 0 blocking
+   ctrl Puritan-Italic               Puritan-Italic.ttf -> 0 blocking
+   ctrl Puritan-Regular              Puritan-Regular.ttf -> 0 blocking
+
+== russoone  (convert 2978615)
+   RussoOne-Regular             ref+workarounds == committed; cand+workarounds == committed
+   ctrl RussoOne-Regular             RussoOne-Regular.ttf -> 0 blocking
+
+== sixcaps  (convert db6defb)
+   SixCaps                      ref+workarounds == committed; cand+workarounds == committed
+   ctrl SixCaps                      SixCaps-Regular.ttf -> 0 blocking
+
+== smythe  (convert e4e1866)
+   Smythe-Regular               ref+workarounds == committed; cand+workarounds == committed
+   ctrl Smythe-Regular               Smythe-Regular.ttf -> 0 blocking
+
+== tulpenone  (convert 68206bb)
+   TulpenOne-Regular            ref+workarounds == committed; cand+workarounds == committed
+   ctrl TulpenOne-Regular            TulpenOne-Regular.ttf -> 0 blocking
+
+== unifrakturcook  (convert 511adc6)
+   UnifrakturCook-Bold          ref+workarounds == committed; cand+workarounds == committed
+   ctrl UnifrakturCook-Bold          UnifrakturCook-Bold.ttf -> 0 blocking
+
+== abrilfatface  (convert f431a0a)
+   AbrilFatface-Regular         ref+workarounds == committed; cand+workarounds == committed
+   ctrl AbrilFatface-Regular         AbrilFatface-Regular.ttf -> 0 blocking
+
+== corben  (convert 56b176a)
+   Corben-Regular               ref+workarounds == committed; cand+workarounds == committed
+   Corben-Bold                  ref+workarounds == committed; cand+workarounds == committed
+   ctrl Corben-Regular               Corben-Regular.ttf -> 0 blocking
+   ctrl Corben-Bold                  Corben-Bold.ttf -> 0 blocking
+
+== allerta  (convert bac063d)
+   AllertaStencil-Regular       ref+workarounds == committed; cand+workarounds == committed
+   ctrl AllertaStencil-Regular       AllertaStencil-Regular.ttf -> 0 blocking
+
+== summary (blocking rows incl. cmap; ctrl = committed sources as landed, cand = re-landed with the candidate)
+   CreepsterCaps-Regular        creepstercaps        same .glyphs  ctrl 0  cand 0  CLEAN
+   HerrVonMuellerhoff-Regular   herrvonmuellerhoff   same .glyphs  ctrl 0  cand 0  CLEAN
+   Kristi-Regular               kristi               same .glyphs  ctrl 0  cand 0  CLEAN
+   Lekton-Bold                  lekton               same .glyphs  ctrl 0  cand 0  CLEAN
+   Lekton-Italic                lekton               same .glyphs  ctrl 0  cand 0  CLEAN
+   Lekton-Regular               lekton               same .glyphs  ctrl 0  cand 0  CLEAN
+   Miama-Regular                miama                same .glyphs  ctrl 0  cand 0  CLEAN
+   Monoton-Regular              monoton              same .glyphs  ctrl 0  cand 0  CLEAN
+   NixieOne-Regular             nixieone             same .glyphs  ctrl 0  cand 0  CLEAN
+   Nosifer-Regular              nosifer              same .glyphs  ctrl 0  cand 0  CLEAN
+   NosiferCaps-Regular          nosifercaps          same .glyphs  ctrl 0  cand 0  CLEAN
+   NovaCut                      novacut              same .glyphs  ctrl 0  cand 0  CLEAN
+   NovaFlat                     novaflat             same .glyphs  ctrl 0  cand 0  CLEAN
+   NovaMono                     novamono             same .glyphs  ctrl 0  cand 0  CLEAN
+   NovaOval                     novaoval             same .glyphs  ctrl 0  cand 0  CLEAN
+   NovaRound                    novaround            same .glyphs  ctrl 0  cand 0  CLEAN
+   NovaScript-Regular           novascript           same .glyphs  ctrl 0  cand 0  CLEAN
+   NovaSlim                     novaslim             same .glyphs  ctrl 0  cand 0  CLEAN
+   NovaSquare                   novasquare           same .glyphs  ctrl 0  cand 0  CLEAN
+   PatrickHand-Regular          patrickhand          same .glyphs  ctrl 0  cand 0  CLEAN
+   Puritan-Bold                 puritan              same .glyphs  ctrl 0  cand 0  CLEAN
+   Puritan-BoldItalic           puritan              same .glyphs  ctrl 0  cand 0  CLEAN
+   Puritan-Italic               puritan              same .glyphs  ctrl 0  cand 0  CLEAN
+   Puritan-Regular              puritan              same .glyphs  ctrl 0  cand 0  CLEAN
+   RussoOne-Regular             russoone             same .glyphs  ctrl 0  cand 0  CLEAN
+   SixCaps                      sixcaps              same .glyphs  ctrl 0  cand 0  CLEAN
+   Smythe-Regular               smythe               same .glyphs  ctrl 0  cand 0  CLEAN
+   TulpenOne-Regular            tulpenone            same .glyphs  ctrl 0  cand 0  CLEAN
+   UnifrakturCook-Bold          unifrakturcook       same .glyphs  ctrl 0  cand 0  CLEAN
+   AbrilFatface-Regular         abrilfatface         same .glyphs  ctrl 0  cand 0  CLEAN
+   Corben-Regular               corben               same .glyphs  ctrl 0  cand 0  CLEAN
+   Corben-Bold                  corben               same .glyphs  ctrl 0  cand 0  CLEAN
+   AllertaStencil-Regular       allerta              same .glyphs  ctrl 0  cand 0  CLEAN
+   33 styles, 33 CLEAN, 0 NOT CLEAN

@@ -1,0 +1,41 @@
+== 7a41856 Add an opt-in filter for FontForge's underline-position offset
+fmt: clean
+clippy (default): 0 warning/error line(s)
+clippy -p babelfont --features cli: 0 warning/error line(s)
+  test result: FAILED. 207 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 30.29s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 26.15s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 6.62s
+  failed: convertors::robocjk::tests::test_deserialize_designspace convertors::robocjk::tests::test_load_robocjk convertors::robocjk::tests::test_load_robocjk_codepoints convertors::robocjk::tests::test_load_robocjk_deep_components convertors::robocjk::tests::test_load_robocjk_glyphs convertors::robocjk::tests::test_load_robocjk_masters convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif convertors::robocjk::tests::test_load_robocjk_variation_layer_classification filters::decomposecomponentreferences::tests::test_decompose filters::decomposecomponentreferences::tests::test_pass_on_external_axes filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole 
+== 33971cb Add an opt-in filter for FontForge's OS/2 sub/superscript defaults
+fmt: clean
+clippy (default): 0 warning/error line(s)
+clippy -p babelfont --features cli: 0 warning/error line(s)
+  test result: FAILED. 213 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 27.87s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 24.53s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 6.26s
+  failed: convertors::robocjk::tests::test_deserialize_designspace convertors::robocjk::tests::test_load_robocjk convertors::robocjk::tests::test_load_robocjk_codepoints convertors::robocjk::tests::test_load_robocjk_deep_components convertors::robocjk::tests::test_load_robocjk_glyphs convertors::robocjk::tests::test_load_robocjk_masters convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif convertors::robocjk::tests::test_load_robocjk_variation_layer_classification filters::decomposecomponentreferences::tests::test_decompose filters::decomposecomponentreferences::tests::test_pass_on_external_axes filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole 
+== 743dae1 Fill PANOSE too, as FontForge's SFDefaultOS2Info does
+fmt: clean
+clippy (default): 0 warning/error line(s)
+clippy -p babelfont --features cli: 0 warning/error line(s)
+  test result: FAILED. 223 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 29.02s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 29.10s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 5.88s
+  failed: convertors::robocjk::tests::test_deserialize_designspace convertors::robocjk::tests::test_load_robocjk convertors::robocjk::tests::test_load_robocjk_codepoints convertors::robocjk::tests::test_load_robocjk_deep_components convertors::robocjk::tests::test_load_robocjk_glyphs convertors::robocjk::tests::test_load_robocjk_masters convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif convertors::robocjk::tests::test_load_robocjk_variation_layer_classification filters::decomposecomponentreferences::tests::test_decompose filters::decomposecomponentreferences::tests::test_pass_on_external_axes filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole 
+== e8604f2 Fill the x-height and cap height the way FontForge's exporter does
+fmt: clean
+clippy (default): 0 warning/error line(s)
+clippy -p babelfont --features cli: 0 warning/error line(s)
+  test result: FAILED. 232 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 28.03s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 21.87s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 3.45s
+  failed: convertors::robocjk::tests::test_deserialize_designspace convertors::robocjk::tests::test_load_robocjk convertors::robocjk::tests::test_load_robocjk_codepoints convertors::robocjk::tests::test_load_robocjk_deep_components convertors::robocjk::tests::test_load_robocjk_glyphs convertors::robocjk::tests::test_load_robocjk_masters convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif convertors::robocjk::tests::test_load_robocjk_variation_layer_classification filters::decomposecomponentreferences::tests::test_decompose filters::decomposecomponentreferences::tests::test_pass_on_external_axes filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole 
+== 119f2be Add a filter for the height mean of a FontForge built before 2012-05-14
+fmt: clean
+clippy (default): 0 warning/error line(s)
+clippy -p babelfont --features cli: 0 warning/error line(s)
+  test result: FAILED. 234 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 20.65s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 19.79s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 4.74s
+  failed: convertors::robocjk::tests::test_deserialize_designspace convertors::robocjk::tests::test_load_robocjk convertors::robocjk::tests::test_load_robocjk_codepoints convertors::robocjk::tests::test_load_robocjk_deep_components convertors::robocjk::tests::test_load_robocjk_glyphs convertors::robocjk::tests::test_load_robocjk_masters convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif convertors::robocjk::tests::test_load_robocjk_variation_layer_classification filters::decomposecomponentreferences::tests::test_decompose filters::decomposecomponentreferences::tests::test_pass_on_external_axes filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole 
+exit 0

@@ -1,0 +1,176 @@
++
++
++
++
++
++
++
++
++
++)
++);
++);
++);
++///
++///
++///
++] {
++]);
++{
++{
++}
++}
++}
++}
++}
++}
++}
++}
++}
++}
++}
++}
++}
++};
++/// 2012-05-14 exported them.
++404
++606
++.action(clap::ArgAction::SetTrue)
++/// A filter that fills the x-height and cap height the way a FontForge built before
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++assert_eq!(
++assert_eq!(
++assert_eq!(f.masters[0].metrics.get(&MetricType::CapHeight), Some(&0));
++assert_eq!(f.masters[0].metrics.get(&MetricType::XHeight), Some(&480));
++built before 2012-05-14 exported them: with no flat top, the sum of the \
+-cap_height: exported_height(font, master, StandardHeight::CapHeight),
++cap_height: exported_height(font, master, StandardHeight::CapHeight, mean),
++('c', arched(0.0, 400.0, 600.0)),
++#[cfg(feature = "cli")]
++#[cfg(test)]
++clap::Arg::new("fontforgeheightglyphcountmean")
++.collect();
++/// commit 4d34d21ef866 (2012-05-14, "it was dividing by the wrong value"), and by the
++/// commit carries the smaller figure.
++/// Create a new FontForgeHeightGlyphCountMean filter
++/// Current FontForge: the sum of the distinct tops over their number.
++CurveMean::DistinctTops => curves.len(),
++CurveMean::GlyphCount => curves.iter().map(|o| o.count).sum(),
+-curves.iter().map(|o| o.height).sum::<f64>() / curves.len() as f64
++curves.iter().map(|o| o.height).sum::<f64>() / divisor as f64
++#[derive(Clone, Copy, Debug, PartialEq, Eq)]
++#[derive(Default)]
++/// distinct heights by the number of glyphs. Every later build divides by the number
++DistinctTops,
++// Distinct tops 600 (two glyphs) and 612 (one glyph): 1212 / 3 = 404.
++distinct tops over the number of glyphs. Run it before \
++('e', arched(0.0, 400.0, 612.0)),
++exported",
+-exported_height(font, &font.masters[0], which)
++exported_height(font, &font.masters[0], which, CurveMean::DistinctTops)
++exported_height(&font, m, StandardHeight::XHeight, CurveMean::DistinctTops),
++exported_height(&font, m, StandardHeight::XHeight, CurveMean::GlyphCount),
++filled += 1;
++"Filled {filled} x-height and cap height value(s) using the SFStandardHeight \
++"Fill the x-height and cap height the source does not state as a FontForge \
++/// filter's notes on the OS/2 table version, on `pfmset` and on stated values apply
++f.masters.push(m);
++fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++fn arg() -> clap::Arg
++fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++fn standard_height(
+-fn standard_height(font: &Font, master: &Master, which: StandardHeight) -> Option<f64> {
++fn test_a_stated_height_is_never_overwritten() {
++fn test_before_2012_the_curve_sum_is_divided_by_the_glyph_count() {
++font: &Font,
++font: &Font,
++/// FontForge built before 2012-05-14: the same sum over the number of glyphs.
++FontForgeHeightGlyphCountMean
++FontForgeHeightGlyphCountMean(fontforgeheightglyphcountmean) => "fontforgeheightglyphcountmean",
++FontForgeHeightGlyphCountMean::new().apply(&mut f).unwrap();
++--fontforge-os2-defaults. Use only to reproduce a binary such a FontForge \
++/// FontForge's code divided the sum of the distinct tops by the number of glyphs until
++for (master, measured) in font.masters.iter_mut().zip(heights) {
++for (metric, value) in [
++GlyphCount,
++/// glyph lookup that also matches alternate codepoints.
+-// glyphs share it.
++.help(
++/// here too; these builds predate tag 20150612, so a non-zero `OS2Version:` sets the
++/// How FontForge averaged the tops when none of them is flat.
++) -> i32 {
++if !master.metrics.contains_key(&metric) {
++impl FontFilter for FontForgeHeightGlyphCountMean {
++impl FontForgeHeightGlyphCountMean {
++.iter()
++/// its reference glyphs, when none of them is flat, by dividing the sum of the
++let divisor = match mean {
++let font = font_with_glyphs(vec![
++let heights: Vec<MeasuredHeights> = font
++let m = &font.masters[0];
++let mut f = Font::new();
++let mut filled = 0;
++let mut m = Master::default();
++/// Like `--fontforge-os2-defaults` it fills only a value the source does not state,
++log::info!(
++.long("fontforge-height-glyph-count-mean")
+-.map(|master| exported_heights(font, master))
++.map(|master| exported_heights(font, master, CurveMean::DistinctTops))
++.map(|master| exported_heights(font, master, CurveMean::GlyphCount))
++master: &Master,
++master: &Master,
++master.metrics.insert(metric, value);
++.masters
+-match standard_height(font, master, which) {
++match standard_height(font, master, which, mean) {
++mean: CurveMean,
++mean: CurveMean,
++(MetricType::CapHeight, measured.cap_height),
++(MetricType::XHeight, measured.x_height),
++m.metrics.insert(MetricType::Ascender, 800);
++m.metrics.insert(MetricType::Descender, -200);
++m.metrics.insert(MetricType::XHeight, 480);
++mod tests {
++// nothing to measure: the exporter writes 0
++/// number of distinct tops afterwards. A font exported by a build from before that
++('o', arched(0.0, 400.0, 600.0)),
++/// of distinct heights. A font exported by an older build carries the smaller value,
++/// often far below the letters it describes.
++Ok(())
++Ok(FontForgeHeightGlyphCountMean::new())
++) -> Option<f64> {
++/// otherwise. It does not model the other differences of those builds:
++pub(crate) enum CurveMean {
++pub(crate) fn exported_height(
+-pub(crate) fn exported_height(font: &Font, master: &Master, which: StandardHeight) -> i32 {
++pub(crate) fn exported_heights(font: &Font, master: &Master, mean: CurveMean) -> MeasuredHeights {
+-pub(crate) fn exported_heights(font: &Font, master: &Master) -> MeasuredHeights {
++pub fn new() -> Self {
++pub struct FontForgeHeightGlyphCountMean;
++/// raise it for `OS2_UseTypoMetrics` or `OS2_WeightWidthSlopeOnly`, so it exports a
++rule of FontForge before 2012-05-14 (distinct tops over the glyph count)"
++Self: Sized,
++Self: Sized,
++// share it, over their number -- or, before 2012, over the number of glyphs.
++/// so it must run before that filter for its values to be the ones kept. That
++/// `SplineIsLinear` without the `ret &&` guard and with a relative `RealNear`, and a
++/// table version outright, and a build before commit 3536593d (2010-06-11) does not
++#[test]
++#[test]
+-// The mean of the distinct heights, each counted once however many
++// The sum of the distinct heights, each counted once however many glyphs
++/// TrueType font as version 1, without these two values, unless `OS2Version:` says
++/// Until commit 4d34d21ef866, FontForge's `SFStandardHeight` averaged the tops of
++use crate::filters::FontFilter;
++use crate::filters::fontforge_standard_height::{exported_heights, CurveMean, MeasuredHeights};
++use crate::filters::fontforge_standard_height::{exported_heights, CurveMean, MeasuredHeights};
+-use crate::filters::fontforge_standard_height::{exported_heights, MeasuredHeights};
++use crate::{Font, Master};
++use crate::MetricType;
++use super::*;
++where
++where
++which: StandardHeight,
++which: StandardHeight,
+-x_height: exported_height(font, master, StandardHeight::XHeight),
++x_height: exported_height(font, master, StandardHeight::XHeight, mean),

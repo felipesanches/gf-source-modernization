@@ -10,6 +10,7 @@ adversarial review rounds, each ending with the 42-style conversion-equivalence 
 | `round2-journal.jsonl` | fixes, second reviews, equivalence (wf_76bdd634-85d) |
 | `round3-journal.jsonl` | fixes, third reviews, equivalence (wf_d1edad54-5c5) |
 | `round4-journal.jsonl` | last fixes (layer scope, -0, wording), verification, equivalence (wf_eb947fdf-bdd) |
+| `port-496e904-journal.jsonl`, `port-496e904/` | port onto upstream 496e904 (fontforge.rs split into modules, #85 merged), reviews, and a re-gate of the 33 landed styles against the shipped fonts: 33/33 CLEAN (wf_41097aec-976) |
 | `agent-scripts/<agent>/` | the agents' own one-off wrappers and helpers, kept verbatim because the numbers in the journals came from them; they hard-code session-scratch paths and will not run as they are |
 
 To reproduce the numbers rather than replay the agents, use the canonical scripts:

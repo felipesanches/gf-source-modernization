@@ -1,0 +1,1826 @@
+diff --git a/babelfont/src/filters/fontforge_standard_height.rs b/babelfont/src/filters/fontforge_standard_height.rs
+new file mode 100644
+index 0000000..9bf870f
+--- /dev/null
++++ b/babelfont/src/filters/fontforge_standard_height.rs
+@@ -0,0 +1,871 @@
++//! FontForge's estimate of a font's x-height and cap height.
++//!
++//! When a FontForge source does not state the OS/2 x-height or cap height, FontForge's
++//! exporter computes it from the outlines (`SFXHeight` and `SFCapHeight`, which call
++//! `SFStandardHeight` in `fontforge/splinefont.c`). It writes the two only into an
++//! OS/2 table of version 2 or later, which a TrueType export gets only when the source
++//! asks for it (see `setos2` in `fontforge/tottf.c`). This module reproduces that
++//! computation, including the numeric tolerances FontForge applies when it decides
++//! whether a curve is really a line, because the flat/curved decision changes the
++//! result.
++//!
++//! The rule:
++//!
++//! 1. For each codepoint in a fixed list -- capitals for the cap height, a set of
++//!    lowercase letters for the x-height -- find the glyph's highest point, and
++//!    whether it is a flat top (a horizontal line), a round one (a curve) or a
++//!    pointed one (a sloping line). References count, transformed.
++//! 2. If any tops are flat, take the most frequent flat height, averaging the
++//!    heights that tie for most frequent. Otherwise take the mean of the distinct
++//!    round and pointed heights, each counted once.
++//! 3. If the font has `BlueValues`, snap to the bottom of the nearest zone, provided
++//!    it is closer than one hundredth of the em.
++//!
++//! The exporter stores the result in a signed 16-bit field, truncating towards zero,
++//! and writes 0 when none of the glyphs exist.
++
++use crate::{Font, Master, Shape};
++use kurbo::{Affine, PathSeg, Point};
++use std::collections::HashMap;
++
++/// A marker used by FontForge's character lists: `a, RANGE, b` means `a..=b`.
++const RANGE: u32 = 0x40ff_ffff;
++
++/// `capheight_str` in FontForge's `splinefont.c`, including its RANGE markers.
++const CAP_HEIGHT_CHARS: &[u32] = &[
++    'A' as u32, RANGE, 'Z' as u32, 0x391, RANGE, 0x3a9, 0x402, 0x404, 0x405, 0x406, 0x408, RANGE,
++    0x40b, 0x40f, RANGE, 0x418, 0x41a, 0x42f,
++];
++
++/// `xheight_str` in FontForge's `splinefont.c`, including its RANGE markers.
++const X_HEIGHT_CHARS: &[u32] = &[
++    'a' as u32, 'c' as u32, 'e' as u32, 'g' as u32, 'm' as u32, 'n' as u32, 'o' as u32, 'p' as u32,
++    'q' as u32, 'r' as u32, 's' as u32, 'u' as u32, 'v' as u32, 'w' as u32, 'x' as u32, 'y' as u32,
++    'z' as u32, 0x131, 0x3b3, 0x3b9, 0x3ba, 0x3bc, 0x3bd, 0x3c0, 0x3c3, 0x3c4, 0x3c5, 0x3c7, 0x3c8,
++    0x3c9, 0x432, 0x433, 0x438, 0x43a, RANGE, 0x43f, 0x442, 0x443, 0x445, 0x44c, 0x44f, 0x459,
++    0x45a,
++];
++
++/// How deep to follow references inside references.
++const MAX_REFERENCE_DEPTH: usize = 8;
++
++/// FontForge's `RE_NearZero` and `RE_Factor` in its double-precision configuration.
++const RE_NEAR_ZERO: f64 = 1e-8;
++const RE_FACTOR: f64 = 1024.0 * 1024.0 * 1024.0 * 1024.0 * 1024.0 * 2.0;
++
++/// How FontForge averaged the tops when none of them is flat.
++///
++/// FontForge's code divided the sum of the distinct tops by the number of glyphs until
++/// commit 4d34d21ef866 (2012-05-14, "it was dividing by the wrong value"), and by the
++/// number of distinct tops afterwards. A font exported by a build from before that
++/// commit carries the smaller figure.
++#[derive(Clone, Copy, Debug, PartialEq, Eq)]
++pub(crate) enum CurveMean {
++    /// Current FontForge: the sum of the distinct tops over their number.
++    DistinctTops,
++    /// FontForge built before 2012-05-14: the same sum over the number of glyphs.
++    GlyphCount,
++}
++
++/// Which of the two heights to compute.
++#[derive(Clone, Copy, Debug, PartialEq, Eq)]
++pub(crate) enum StandardHeight {
++    /// The OS/2 x-height.
++    XHeight,
++    /// The OS/2 cap height.
++    CapHeight,
++}
++
++impl StandardHeight {
++    fn chars(self) -> &'static [u32] {
++        match self {
++            StandardHeight::XHeight => X_HEIGHT_CHARS,
++            StandardHeight::CapHeight => CAP_HEIGHT_CHARS,
++        }
++    }
++}
++
++/// The x-height and cap height FontForge's exporter writes for one master.
++pub(crate) struct MeasuredHeights {
++    pub(crate) x_height: i32,
++    pub(crate) cap_height: i32,
++}
++
++/// Both heights FontForge's exporter writes for `master`.
++pub(crate) fn exported_heights(font: &Font, master: &Master, mean: CurveMean) -> MeasuredHeights {
++    MeasuredHeights {
++        x_height: exported_height(font, master, StandardHeight::XHeight, mean),
++        cap_height: exported_height(font, master, StandardHeight::CapHeight, mean),
++    }
++}
++
++/// The value FontForge's exporter writes for `which`.
++pub(crate) fn exported_height(
++    font: &Font,
++    master: &Master,
++    which: StandardHeight,
++    mean: CurveMean,
++) -> i32 {
++    // `os2->xHeight = (xh >= 0.0 ? xh : 0)`: into a short, so truncation, and 0
++    // when none of the listed glyphs exist.
++    match standard_height(font, master, which, mean) {
++        Some(h) if h >= 0.0 => h as i32,
++        _ => 0,
++    }
++}
++
++/// How the top of a glyph is shaped, in FontForge's classification.
++#[derive(Clone, Copy, Debug, PartialEq, Eq)]
++enum TopShape {
++    Flat,
++    Round,
++    Pointy,
++    Unknown,
++}
++
++/// The highest point of a set of outlines and the shape of the top there.
++#[derive(Clone, Copy, Debug)]
++struct Top {
++    height: f64,
++    shape: TopShape,
++}
++
++impl Top {
++    fn none() -> Self {
++        Top {
++            height: -1e23,
++            shape: TopShape::Unknown,
++        }
++    }
++}
++
++/// A height seen at the top of some glyphs, and how many of them.
++struct Occurrence {
++    height: f64,
++    count: usize,
++}
++
++fn standard_height(
++    font: &Font,
++    master: &Master,
++    which: StandardHeight,
++    mean: CurveMean,
++) -> Option<f64> {
++    let by_codepoint = glyphs_by_primary_codepoint(font);
++    let mut flats: Vec<Occurrence> = vec![];
++    let mut curves: Vec<Occurrence> = vec![];
++    for codepoint in expand(which.chars()) {
++        let Some(name) = by_codepoint.get(&codepoint) else {
++            continue;
++        };
++        let top = glyph_top(font, master, name);
++        let bucket = match top.shape {
++            TopShape::Flat => &mut flats,
++            TopShape::Round | TopShape::Pointy => &mut curves,
++            TopShape::Unknown => continue,
++        };
++        match bucket.iter_mut().find(|o| o.height == top.height) {
++            Some(o) => o.count += 1,
++            None => bucket.push(Occurrence {
++                height: top.height,
++                count: 1,
++            }),
++        }
++    }
++    let result = if flats.len() == 1 {
++        flats[0].height
++    } else if !flats.is_empty() {
++        let most = flats.iter().map(|o| o.count).max().unwrap_or(0);
++        let tied: Vec<f64> = flats
++            .iter()
++            .filter(|o| o.count == most)
++            .map(|o| o.height)
++            .collect();
++        tied.iter().sum::<f64>() / tied.len() as f64
++    } else if curves.is_empty() {
++        return None;
++    } else {
++        // The sum of the distinct heights, each counted once however many glyphs
++        // share it, over their number -- or, before 2012, over the number of glyphs.
++        let divisor = match mean {
++            CurveMean::DistinctTops => curves.len(),
++            CurveMean::GlyphCount => curves.iter().map(|o| o.count).sum(),
++        };
++        curves.iter().map(|o| o.height).sum::<f64>() / divisor as f64
++    };
++    Some(snap_to_blue_zone(font, master, result))
++}
++
++/// FontForge's walk over a character list: `a, RANGE, b` is `a..=b`.
++fn expand(list: &[u32]) -> Vec<u32> {
++    let mut out = vec![];
++    let mut i = 0;
++    while i < list.len() {
++        let low = list[i];
++        let mut high = low;
++        if i + 2 < list.len() && list[i + 1] == RANGE {
++            high = list[i + 2];
++            i += 2;
++        }
++        out.extend(low..=high);
++        i += 1;
++    }
++    out
++}
++
++/// A glyph looked up by codepoint is the first glyph whose primary codepoint it is.
++fn glyphs_by_primary_codepoint(font: &Font) -> HashMap<u32, String> {
++    let mut map = HashMap::new();
++    for glyph in font.glyphs.iter() {
++        if let Some(cp) = glyph.codepoints.first() {
++            map.entry(*cp).or_insert_with(|| glyph.name.to_string());
++        }
++    }
++    map
++}
++
++/// The bottom of the nearest `BlueValues` zone within a hundredth of the em, if any.
++fn snap_to_blue_zone(font: &Font, master: &Master, height: f64) -> f64 {
++    let Some(zones) = blue_values(font) else {
++        return height;
++    };
++    let ascender = master
++        .metrics
++        .get(&crate::MetricType::Ascender)
++        .copied()
++        .unwrap_or(0);
++    let descender = master
++        .metrics
++        .get(&crate::MetricType::Descender)
++        .copied()
++        .unwrap_or(0);
++    let mut best = height;
++    let mut best_distance = f64::from(ascender - descender) / 100.0;
++    // Zones are (bottom, top) pairs; only the bottoms are candidates.
++    for bottom in zones.iter().step_by(2) {
++        let distance = (bottom - height).abs();
++        if distance < best_distance {
++            best = *bottom;
++            best_distance = distance;
++        }
++    }
++    best
++}
++
++/// The numbers in the source's `BlueValues`, from a FontForge private dictionary.
++fn blue_values(font: &Font) -> Option<Vec<f64>> {
++    let lines = font
++        .format_specific
++        .get("sfd.private_section")?
++        .as_array()?;
++    for line in lines.iter().filter_map(|l| l.as_str()) {
++        let mut fields = line.trim().splitn(3, ' ');
++        if fields.next() != Some("BlueValues") {
++            continue;
++        }
++        let _length = fields.next();
++        let value = fields.next().unwrap_or("");
++        let numbers = value
++            .trim_matches(|c: char| c == '[' || c == ']' || c.is_whitespace())
++            .split_whitespace()
++            .map_while(|n| n.parse::<f64>().ok())
++            .collect();
++        return Some(numbers);
++    }
++    None
++}
++
++/// `SCMaxHeight`: a glyph's own outlines, then each reference. A reference replaces
++/// the running top when it is higher, or equally high and flat.
++fn glyph_top(font: &Font, master: &Master, name: &str) -> Top {
++    let Some(layer) = font.master_layer_for(name, master) else {
++        return Top::none();
++    };
++    let mut own = vec![];
++    for shape in layer.shapes.iter() {
++        if let Shape::Path(path) = shape {
++            push_segments(&mut own, path, Affine::IDENTITY);
++        }
++    }
++    let mut top = spline_set_top(&own);
++    for shape in layer.shapes.iter() {
++        if let Shape::Component(component) = shape {
++            let mut flattened = vec![];
++            flatten_reference(
++                font,
++                master,
++                &component.reference,
++                component.transform.as_affine(),
++                0,
++                &mut flattened,
++            );
++            let reference = spline_set_top(&flattened);
++            if reference.height > top.height
++                || (reference.height == top.height && reference.shape == TopShape::Flat)
++            {
++                top = reference;
++            }
++        }
++    }
++    top
++}
++
++/// A reference's outlines as FontForge measures them: the referenced glyph's own
++/// outlines followed by those of its own references, all transformed, as one list.
++fn flatten_reference(
++    font: &Font,
++    master: &Master,
++    name: &str,
++    transform: Affine,
++    depth: usize,
++    out: &mut Vec<Segment>,
++) {
++    let Some(layer) = font.master_layer_for(name, master) else {
++        return;
++    };
++    for shape in layer.shapes.iter() {
++        if let Shape::Path(path) = shape {
++            push_segments(out, path, transform);
++        }
++    }
++    if depth >= MAX_REFERENCE_DEPTH {
++        return;
++    }
++    for shape in layer.shapes.iter() {
++        if let Shape::Component(component) = shape {
++            flatten_reference(
++                font,
++                master,
++                &component.reference,
++                transform * component.transform.as_affine(),
++                depth + 1,
++                out,
++            );
++        }
++    }
++}
++
++/// One outline segment, with its control points as FontForge stores them: a line
++/// has control points at its ends, a quadratic has one control point written twice.
++#[derive(Clone, Copy, Debug)]
++struct Segment {
++    from: Point,
++    next_cp: Point,
++    prev_cp: Point,
++    to: Point,
++    quadratic: bool,
++}
++
++fn push_segments(out: &mut Vec<Segment>, path: &crate::Path, transform: Affine) {
++    let Ok(bez) = path.to_kurbo() else {
++        return;
++    };
++    for seg in (transform * bez).segments() {
++        let segment = match seg {
++            PathSeg::Line(l) => Segment {
++                from: l.p0,
++                next_cp: l.p0,
++                prev_cp: l.p1,
++                to: l.p1,
++                quadratic: false,
++            },
++            PathSeg::Quad(q) => Segment {
++                from: q.p0,
++                next_cp: q.p1,
++                prev_cp: q.p1,
++                to: q.p2,
++                quadratic: true,
++            },
++            PathSeg::Cubic(c) => Segment {
++                from: c.p0,
++                next_cp: c.p1,
++                prev_cp: c.p2,
++                to: c.p3,
++                quadratic: false,
++            },
++        };
++        // FontForge has no spline for a closing edge of zero length.
++        if segment.from == segment.to && segment.from == segment.next_cp {
++            continue;
++        }
++        out.push(segment);
++    }
++}
++
++/// `SPLMaxHeight`: the highest point of a list of splines and its shape.
++fn spline_set_top(segments: &[Segment]) -> Top {
++    let mut top = Top::none();
++    for s in segments {
++        let spline = Spline::new(s);
++        if !(s.from.y >= top.height
++            || s.to.y >= top.height
++            || s.next_cp.y > top.height
++            || s.prev_cp.y > top.height)
++        {
++            continue;
++        }
++        if !spline.linear {
++            if s.from.y > top.height {
++                top = round(s.from.y);
++            }
++            if s.to.y > top.height {
++                top = round(s.to.y);
++            }
++            for t in find_extrema(&spline.y).into_iter().flatten() {
++                let y = spline.y.at(t);
++                if y > top.height {
++                    top = round(y);
++                }
++            }
++        } else if s.from.y == s.to.y {
++            if s.from.y >= top.height {
++                top = Top {
++                    height: s.from.y,
++                    shape: TopShape::Flat,
++                };
++            }
++        } else {
++            if s.from.y > top.height {
++                top = pointy(s.from.y);
++            }
++            if s.to.y > top.height {
++                top = pointy(s.to.y);
++            }
++        }
++    }
++    top
++}
++
++fn round(height: f64) -> Top {
++    Top {
++        height,
++        shape: TopShape::Round,
++    }
++}
++
++fn pointy(height: f64) -> Top {
++    Top {
++        height,
++        shape: TopShape::Pointy,
++    }
++}
++
++/// One coordinate of a spline as a cubic polynomial in t: ((a*t + b)*t + c)*t + d.
++#[derive(Clone, Copy, Debug)]
++struct Polynomial {
++    a: f64,
++    b: f64,
++    c: f64,
++    d: f64,
++}
++
++impl Polynomial {
++    fn at(&self, t: f64) -> f64 {
++        ((self.a * t + self.b) * t + self.c) * t + self.d
++    }
++
++    fn line(from: f64, to: f64) -> Self {
++        Polynomial {
++            a: 0.0,
++            b: 0.0,
++            c: to - from,
++            d: from,
++        }
++    }
++}
++
++/// A spline after FontForge's `SplineRefigure3` / `SplineRefigure2` and
++/// `SplineIsLinear`: its polynomials, and whether FontForge treats it as a line.
++struct Spline {
++    x: Polynomial,
++    y: Polynomial,
++    linear: bool,
++}
++
++impl Spline {
++    fn new(s: &Segment) -> Self {
++        let no_control_points = if s.quadratic {
++            s.next_cp == s.from || s.prev_cp == s.to
++        } else {
++            s.next_cp == s.from && s.prev_cp == s.to
++        };
++        let mut spline = if no_control_points {
++            Spline {
++                x: Polynomial::line(s.from.x, s.to.x),
++                y: Polynomial::line(s.from.y, s.to.y),
++                linear: true,
++            }
++        } else {
++            let x = polynomial(s.from.x, s.next_cp.x, s.prev_cp.x, s.to.x, s.quadratic);
++            let y = polynomial(s.from.y, s.next_cp.y, s.prev_cp.y, s.to.y, s.quadratic);
++            let linear = x.a == 0.0 && y.a == 0.0 && x.b == 0.0 && y.b == 0.0;
++            Spline { x, y, linear }
++        };
++        if !spline.linear && is_linear(s, &spline) {
++            spline.linear = true;
++        }
++        if spline.linear {
++            spline.x = Polynomial::line(s.from.x, s.to.x);
++            spline.y = Polynomial::line(s.from.y, s.to.y);
++        }
++        spline
++    }
++}
++
++fn polynomial(from: f64, next_cp: f64, prev_cp: f64, to: f64, quadratic: bool) -> Polynomial {
++    let (mut a, mut b, mut c) = if quadratic {
++        let c = 2.0 * (next_cp - from);
++        (0.0, to - from - c, c)
++    } else {
++        let c = 3.0 * (next_cp - from);
++        let b = 3.0 * (prev_cp - next_cp) - c;
++        (to - from - c - b, b, c)
++    };
++    if real_near(c, 0.0) {
++        c = 0.0;
++    }
++    if real_near(b, 0.0) {
++        b = 0.0;
++    }
++    if real_near(a, 0.0) {
++        a = 0.0;
++    }
++    if a != 0.0
++        && (within_16_rounding_errors(a + from, from) || within_16_rounding_errors(a + to, to))
++    {
++        a = 0.0;
++    }
++    Polynomial { a, b, c, d: from }
++}
++
++/// `SplineIsLinear`: a spline whose control points lie on the chord between its end
++/// points is a line, as long as it does not double back on itself.
++fn is_linear(s: &Segment, spline: &Spline) -> bool {
++    let (from, next_cp, prev_cp, to) = (s.from, s.next_cp, s.prev_cp, s.to);
++    if real_near(from.x, to.x) {
++        let on_line = real_near(from.x, next_cp.x) && real_near(from.x, prev_cp.x);
++        if on_line && !between(from.y, next_cp.y, prev_cp.y, to.y) {
++            return min_max_within(s, spline);
++        }
++        on_line
++    } else if real_near(from.y, to.y) {
++        let on_line = real_near(from.y, next_cp.y) && real_near(from.y, prev_cp.y);
++        if on_line && !between(from.x, next_cp.x, prev_cp.x, to.x) {
++            return min_max_within(s, spline);
++        }
++        on_line
++    } else {
++        let t1 = (next_cp.y - from.y) / (to.y - from.y);
++        let t2 = (next_cp.x - from.x) / (to.x - from.x);
++        let t3 = (to.y - prev_cp.y) / (to.y - from.y);
++        let t4 = (to.x - prev_cp.x) / (to.x - from.x);
++        let on_line = (within_16_rounding_errors(t1, t2)
++            || (real_approx(t1, 0.0) && real_approx(t2, 0.0)))
++            && (within_16_rounding_errors(t3, t4)
++                || (real_approx(t3, 0.0) && real_approx(t4, 0.0)));
++        if on_line && [t1, t2, t3, t4].iter().any(|t| *t < 0.0 || *t > 1.0) {
++            return min_max_within(s, spline);
++        }
++        on_line
++    }
++}
++
++/// Both control points lie between the two ends, in either direction.
++fn between(from: f64, next_cp: f64, prev_cp: f64, to: f64) -> bool {
++    (next_cp >= from && next_cp <= to && prev_cp >= from && prev_cp <= to)
++        || (next_cp <= from && next_cp >= to && prev_cp <= from && prev_cp >= to)
++}
++
++/// `MinMaxWithin`: a collinear spline is still a line if its extrema along the line
++/// stay between its ends.
++fn min_max_within(s: &Segment, spline: &Spline) -> bool {
++    let along_y = (s.to.x - s.from.x).abs() < (s.to.y - s.from.y).abs();
++    let (poly, from, to) = if along_y {
++        (&spline.y, s.from.y, s.to.y)
++    } else {
++        (&spline.x, s.from.x, s.to.x)
++    };
++    for t in find_extrema(poly).into_iter().flatten() {
++        let w = poly.at(t);
++        if real_near(w, to) || real_near(w, from) {
++            continue;
++        }
++        if (w < to && w < from) || (w > to && w > from) {
++            return false;
++        }
++    }
++    true
++}
++
++/// `SplineFindExtrema`: the parameters strictly inside (0, 1) where the derivative
++/// is zero, smallest first.
++fn find_extrema(p: &Polynomial) -> [Option<f64>; 2] {
++    if p.a != 0.0 {
++        let discriminant = 4.0 * p.b * p.b - 12.0 * p.a * p.c;
++        if discriminant < 0.0 {
++            return [None, None];
++        }
++        let root = discriminant.sqrt();
++        let mut t1 = (-2.0 * p.b - root) / (6.0 * p.a);
++        let mut t2 = (-2.0 * p.b + root) / (6.0 * p.a);
++        if t1 > t2 {
++            std::mem::swap(&mut t1, &mut t2);
++        }
++        let mut second = if t1 == t2 { None } else { Some(t2) };
++        let snap = |t: f64| {
++            if real_near(t, 0.0) {
++                0.0
++            } else if real_near(t, 1.0) {
++                1.0
++            } else {
++                t
++            }
++        };
++        let t1 = snap(t1);
++        second = second.map(snap).filter(|t| *t > 0.0 && *t < 1.0);
++        if t1 > 0.0 && t1 < 1.0 {
++            [Some(t1), second]
++        } else {
++            [second, None]
++        }
++    } else if p.b != 0.0 {
++        let t = -p.c / (2.0 * p.b);
++        if t > 0.0 && t < 1.0 {
++            [Some(t), None]
++        } else {
++            [None, None]
++        }
++    } else {
++        [None, None]
++    }
++}
++
++fn real_near(a: f64, b: f64) -> bool {
++    if a == 0.0 {
++        return b > -1e-8 && b < 1e-8;
++    }
++    if b == 0.0 {
++        return a > -1e-8 && a < 1e-8;
++    }
++    let d = a - b;
++    d > -1e-6 && d < 1e-6
++}
++
++fn real_approx(a: f64, b: f64) -> bool {
++    if a == 0.0 {
++        return b < 0.0001 && b > -0.0001;
++    }
++    if b == 0.0 {
++        return a < 0.0001 && a > -0.0001;
++    }
++    let ratio = a / b;
++    (0.95..=1.05).contains(&ratio)
++}
++
++fn within_16_rounding_errors(v1: f64, v2: f64) -> bool {
++    let product = v1 * v2;
++    if product < 0.0 {
++        return false;
++    }
++    if product == 0.0 {
++        let other = if v1 == 0.0 { v2 } else { v1 };
++        return other < RE_NEAR_ZERO && other > -RE_NEAR_ZERO;
++    }
++    if v1 > 0.0 {
++        if v1 > v2 {
++            v1 - v2 < v1 / (RE_FACTOR / 16.0)
++        } else {
++            v2 - v1 < v2 / (RE_FACTOR / 16.0)
++        }
++    } else if v1 < v2 {
++        v1 - v2 > v1 / (RE_FACTOR / 16.0)
++    } else {
++        v2 - v1 > v2 / (RE_FACTOR / 16.0)
++    }
++}
++
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Glyph, Layer, LayerType, MetricType, Node, NodeType, Path};
++
++    fn node(x: f64, y: f64, nodetype: NodeType) -> Node {
++        Node {
++            x,
++            y,
++            nodetype,
++            ..Default::default()
++        }
++    }
++
++    /// A closed rectangle whose top edge is a horizontal line at `top`.
++    fn flat_topped(left: f64, right: f64, top: f64) -> Path {
++        Path {
++            nodes: vec![
++                node(left, 0.0, NodeType::Line),
++                node(right, 0.0, NodeType::Line),
++                node(right, top, NodeType::Line),
++                node(left, top, NodeType::Line),
++            ],
++            closed: true,
++            ..Default::default()
++        }
++    }
++
++    /// A closed shape whose top is a cubic arch peaking at `peak`.
++    fn arched(left: f64, right: f64, peak: f64) -> Path {
++        // A symmetric cubic from (right, s) to (left, s) with both handles at
++        // height h peaks at s + 0.75 * (h - s).
++        let shoulder = peak - 100.0;
++        let handle = shoulder + (peak - shoulder) / 0.75;
++        Path {
++            nodes: vec![
++                node(left, 0.0, NodeType::Line),
++                node(right, 0.0, NodeType::Line),
++                node(right, shoulder, NodeType::Line),
++                node(right, handle, NodeType::OffCurve),
++                node(left, handle, NodeType::OffCurve),
++                node(left, shoulder, NodeType::Curve),
++            ],
++            closed: true,
++            ..Default::default()
++        }
++    }
++
++    fn font_with_glyphs(glyphs: Vec<(char, Path)>) -> Font {
++        let mut master = Master {
++            id: "m".to_string(),
++            ..Default::default()
++        };
++        master.metrics.insert(MetricType::Ascender, 800);
++        master.metrics.insert(MetricType::Descender, -200);
++        let mut font = Font::new();
++        font.masters.push(master);
++        for (ch, path) in glyphs {
++            let mut glyph = Glyph::new(&ch.to_string());
++            glyph.codepoints = vec![ch as u32];
++            let mut layer = Layer::new(500.0);
++            layer.master = LayerType::DefaultForMaster("m".to_string());
++            layer.shapes.push(Shape::Path(path));
++            glyph.layers.push(layer);
++            font.glyphs.push(glyph);
++        }
++        font
++    }
++
++    fn height(font: &Font, which: StandardHeight) -> i32 {
++        exported_height(font, &font.masters[0], which, CurveMean::DistinctTops)
++    }
++
++    #[test]
++    fn test_the_most_frequent_flat_top_wins() {
++        let font = font_with_glyphs(vec![
++            ('H', flat_topped(0.0, 400.0, 700.0)),
++            ('E', flat_topped(0.0, 400.0, 700.0)),
++            ('T', flat_topped(0.0, 400.0, 710.0)),
++            ('O', arched(0.0, 400.0, 715.0)),
++        ]);
++        assert_eq!(height(&font, StandardHeight::CapHeight), 700);
++    }
++
++    #[test]
++    fn test_a_tie_for_the_mode_is_averaged() {
++        let font = font_with_glyphs(vec![
++            ('x', flat_topped(0.0, 400.0, 500.0)),
++            ('z', flat_topped(0.0, 400.0, 511.0)),
++        ]);
++        assert_eq!(height(&font, StandardHeight::XHeight), 505);
++    }
++
++    #[test]
++    fn test_without_flat_tops_the_mean_of_distinct_heights_is_used() {
++        // Two glyphs share 600; it is counted once: (600 + 612) / 2 = 606.
++        let font = font_with_glyphs(vec![
++            ('o', arched(0.0, 400.0, 600.0)),
++            ('c', arched(0.0, 400.0, 600.0)),
++            ('e', arched(0.0, 400.0, 612.0)),
++        ]);
++        assert_eq!(height(&font, StandardHeight::XHeight), 606);
++    }
++
++    #[test]
++    fn test_before_2012_the_curve_sum_is_divided_by_the_glyph_count() {
++        // Distinct tops 600 (two glyphs) and 612 (one glyph): 1212 / 3 = 404.
++        let font = font_with_glyphs(vec![
++            ('o', arched(0.0, 400.0, 600.0)),
++            ('c', arched(0.0, 400.0, 600.0)),
++            ('e', arched(0.0, 400.0, 612.0)),
++        ]);
++        let m = &font.masters[0];
++        assert_eq!(
++            exported_height(&font, m, StandardHeight::XHeight, CurveMean::GlyphCount),
++            404
++        );
++        assert_eq!(
++            exported_height(&font, m, StandardHeight::XHeight, CurveMean::DistinctTops),
++            606
++        );
++    }
++
++    #[test]
++    fn test_a_curve_with_handles_on_its_chord_is_a_flat_top() {
++        // A horizontal top drawn as a curve whose handles sit on the line between
++        // its ends is a line to FontForge, so this is a flat top at 480 and wins
++        // over the higher round one.
++        let flat_curve = Path {
++            nodes: vec![
++                node(0.0, 0.0, NodeType::Line),
++                node(400.0, 0.0, NodeType::Line),
++                node(400.0, 480.0, NodeType::Line),
++                node(300.0, 480.0, NodeType::OffCurve),
++                node(100.0, 480.0, NodeType::OffCurve),
++                node(0.0, 480.0, NodeType::Curve),
++            ],
++            closed: true,
++            ..Default::default()
++        };
++        let font = font_with_glyphs(vec![('x', flat_curve), ('o', arched(0.0, 400.0, 495.0))]);
++        assert_eq!(height(&font, StandardHeight::XHeight), 480);
++    }
++
++    #[test]
++    fn test_snaps_to_the_nearest_blue_zone_bottom() {
++        let mut font = font_with_glyphs(vec![('x', flat_topped(0.0, 400.0, 505.0))]);
++        font.format_specific.insert(
++            "sfd.private_section".to_string(),
++            serde_json::Value::Array(vec![serde_json::Value::String(
++                "BlueValues 23 [-12 0 500 512 700 712]".to_string(),
++            )]),
++        );
++        assert_eq!(height(&font, StandardHeight::XHeight), 500);
++    }
++
++    #[test]
++    fn test_a_zone_further_than_a_hundredth_of_the_em_is_ignored() {
++        let mut font = font_with_glyphs(vec![('x', flat_topped(0.0, 400.0, 489.0))]);
++        font.format_specific.insert(
++            "sfd.private_section".to_string(),
++            serde_json::Value::Array(vec![serde_json::Value::String(
++                "BlueValues 11 [-12 0 500 512]".to_string(),
++            )]),
++        );
++        // em 1000, so a zone must be closer than 10 units.
++        assert_eq!(height(&font, StandardHeight::XHeight), 489);
++    }
++
++    #[test]
++    fn test_no_glyphs_gives_zero() {
++        let font = font_with_glyphs(vec![('1', flat_topped(0.0, 400.0, 700.0))]);
++        assert_eq!(height(&font, StandardHeight::CapHeight), 0);
++    }
++
++    #[test]
++    fn test_character_ranges_are_inclusive() {
++        let caps = expand(CAP_HEIGHT_CHARS);
++        assert!(caps.contains(&('A' as u32)) && caps.contains(&('Z' as u32)));
++        assert!(caps.contains(&0x3a9) && !caps.contains(&0x3aa));
++        // 0x41a and 0x42f are listed singly, not as a range.
++        assert!(caps.contains(&0x41a) && !caps.contains(&0x41b) && caps.contains(&0x42f));
++    }
++}
+diff --git a/babelfont/src/filters/fontforgeheightglyphcountmean.rs b/babelfont/src/filters/fontforgeheightglyphcountmean.rs
+new file mode 100644
+index 0000000..3a75ac2
+--- /dev/null
++++ b/babelfont/src/filters/fontforgeheightglyphcountmean.rs
+@@ -0,0 +1,104 @@
++use crate::filters::fontforge_standard_height::{exported_heights, CurveMean, MeasuredHeights};
++use crate::filters::FontFilter;
++use crate::MetricType;
++
++#[derive(Default)]
++/// A filter that fills the x-height and cap height the way a FontForge built before
++/// 2012-05-14 exported them.
++///
++/// Until commit 4d34d21ef866, FontForge's `SFStandardHeight` averaged the tops of
++/// its reference glyphs, when none of them is flat, by dividing the sum of the
++/// distinct heights by the number of glyphs. Every later build divides by the number
++/// of distinct heights. A font exported by an older build carries the smaller value,
++/// often far below the letters it describes.
++///
++/// Like `--fontforge-os2-defaults` it fills only a value the source does not state,
++/// so it must run before that filter for its values to be the ones kept. That
++/// filter's notes on the OS/2 table version, on `pfmset` and on stated values apply
++/// here too; these builds predate tag 20150612, so a non-zero `OS2Version:` sets the
++/// table version outright, and a build before commit 3536593d (2010-06-11) does not
++/// raise it for `OS2_UseTypoMetrics` or `OS2_WeightWidthSlopeOnly`, so it exports a
++/// TrueType font as version 1, without these two values, unless `OS2Version:` says
++/// otherwise. It does not model the other differences of those builds:
++/// `SplineIsLinear` without the `ret &&` guard and with a relative `RealNear`, and a
++/// glyph lookup that also matches alternate codepoints.
++pub struct FontForgeHeightGlyphCountMean;
++
++impl FontForgeHeightGlyphCountMean {
++    /// Create a new FontForgeHeightGlyphCountMean filter
++    pub fn new() -> Self {
++        FontForgeHeightGlyphCountMean
++    }
++}
++
++impl FontFilter for FontForgeHeightGlyphCountMean {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        let mut filled = 0;
++        let heights: Vec<MeasuredHeights> = font
++            .masters
++            .iter()
++            .map(|master| exported_heights(font, master, CurveMean::GlyphCount))
++            .collect();
++        for (master, measured) in font.masters.iter_mut().zip(heights) {
++            for (metric, value) in [
++                (MetricType::XHeight, measured.x_height),
++                (MetricType::CapHeight, measured.cap_height),
++            ] {
++                if !master.metrics.contains_key(&metric) {
++                    master.metrics.insert(metric, value);
++                    filled += 1;
++                }
++            }
++        }
++        log::info!(
++            "Filled {filled} x-height and cap height value(s) using the SFStandardHeight \
++             rule of FontForge before 2012-05-14 (distinct tops over the glyph count)"
++        );
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(FontForgeHeightGlyphCountMean::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("fontforgeheightglyphcountmean")
++            .long("fontforge-height-glyph-count-mean")
++            .help(
++                "Fill the x-height and cap height the source does not state as a FontForge \
++                 built before 2012-05-14 exported them: with no flat top, the sum of the \
++                 distinct tops over the number of glyphs. Run it before \
++                 --fontforge-os2-defaults. Use only to reproduce a binary such a FontForge \
++                 exported",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
++
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Font, Master};
++
++    #[test]
++    fn test_a_stated_height_is_never_overwritten() {
++        let mut m = Master::default();
++        m.metrics.insert(MetricType::Ascender, 800);
++        m.metrics.insert(MetricType::Descender, -200);
++        m.metrics.insert(MetricType::XHeight, 480);
++        let mut f = Font::new();
++        f.masters.push(m);
++        FontForgeHeightGlyphCountMean::new().apply(&mut f).unwrap();
++        assert_eq!(f.masters[0].metrics.get(&MetricType::XHeight), Some(&480));
++        // nothing to measure: the exporter writes 0
++        assert_eq!(f.masters[0].metrics.get(&MetricType::CapHeight), Some(&0));
++    }
++}
+diff --git a/babelfont/src/filters/fontforgeos2defaults.rs b/babelfont/src/filters/fontforgeos2defaults.rs
+new file mode 100644
+index 0000000..bf608b6
+--- /dev/null
++++ b/babelfont/src/filters/fontforgeos2defaults.rs
+@@ -0,0 +1,633 @@
++use crate::filters::fontforge_standard_height::{exported_heights, CurveMean, MeasuredHeights};
++use crate::filters::FontFilter;
++use crate::{Font, Master, MetricType, Shape};
++use std::collections::HashSet;
++
++/// The eight sub/superscript metrics and two strikeout metrics FontForge computes
++/// at export, all together, when the source states no `OS2SubXSize`.
++const SUBSUPER: [MetricType; 8] = [
++    MetricType::SubscriptXSize,
++    MetricType::SubscriptYSize,
++    MetricType::SubscriptXOffset,
++    MetricType::SubscriptYOffset,
++    MetricType::SuperscriptXSize,
++    MetricType::SuperscriptYSize,
++    MetricType::SuperscriptXOffset,
++    MetricType::SuperscriptYOffset,
++];
++const STRIKEOUT: [MetricType; 2] = [MetricType::StrikeoutSize, MetricType::StrikeoutPosition];
++
++#[derive(Default)]
++/// A filter that fills in OS/2 values the way FontForge's exporter does: the ten
++/// sub/superscript and strikeout metrics of a source that states no `OS2SubXSize`,
++/// replacing any of them it does state, and the x-height, cap height and PANOSE the
++/// source does not state.
++///
++/// A FontForge `.sfd` usually carries no `OS2SubXSize` and friends. FontForge then
++/// computes them while writing the binary, so the exported font has values that are
++/// nowhere in the source, and a compiler with a different fallback writes different
++/// ones.
++///
++/// FontForge treats the ten values as one group. Reading an `OS2SubXSize:` line is
++/// what marks them as stated (`subsuper_set` in `sfd.c`), and when that mark is unset
++/// the exporter computes all ten, replacing any of them the source does state. This
++/// filter does the same, keyed on the subscript x size.
++///
++/// The rule is stated in FontForge's own source, `fontforge/tottf.c`,
++/// `SFDefaultOS2SubSuper`:
++///
++/// ```text
++/// os2_supysize = os2_subysize = .7*emsize;
++/// os2_supxsize = os2_subxsize = .65*emsize;
++/// os2_subyoff  = .14*emsize;
++/// os2_supyoff  = .48*emsize;
++/// os2_supxoff  =  s*os2_supyoff;    /* s = sin(italic_angle) */
++/// os2_subxoff  = -s*os2_subyoff;
++/// os2_strikeysize = 102*emsize/2048;
++/// os2_strikeypos  = 530*emsize/2048;
++/// ```
++///
++/// `emsize` is ascender + descender. Every field is a 16-bit integer, so each value
++/// is truncated towards zero when it is stored, and the x offsets are computed from
++/// the y offsets already truncated. The two strikeout lines are integer arithmetic
++/// in C, so a 1000-unit em gives 49 and 258 rather than 49.8 and 258.8.
++///
++/// FontForge uses the italic angle as the source states it, a real number, but the
++/// SFD reader rounds it to a whole degree, so a fractional angle gives other x
++/// offsets: on a 2048-unit em, `ItalicAngle: -12.5` gives 61 and -212 in FontForge,
++/// and 64 and -221 here, from -13.
++///
++/// # Opt-in, because it is a statement about who exported the binary
++///
++/// A binary not exported by FontForge has different values, and this filter would
++/// move a conversion further from it. Styles of one family may have been exported by
++/// different tools, so the choice is made per source.
++///
++/// When the source states `OS2SubXSize`, none of the ten is changed.
++///
++/// It also fills each of the x-height and cap height the source does not state,
++/// measured from the outlines, as `setos2` in the same file does with `SFXHeight`
++/// and `SFCapHeight` (see `fontforge_standard_height`). `setos2` writes the two only
++/// into an OS/2 table of version 2 or later. A CFF export gets version 3, but a
++/// TrueType export gets version 1 unless the source's `OS2Version:`,
++/// `OS2_UseTypoMetrics` or `OS2_WeightWidthSlopeOnly` selects a later one, and then
++/// the binary has neither field: the values filled here are FontForge's estimate, not
++/// values found in that binary. Up to tag 20150430 a non-zero `OS2Version:` replaced
++/// the computed version outright, so `OS2Version: 1` gave version 1 even with
++/// `OS2_UseTypoMetrics`, and for CFF; from 20150612 it can only raise it. FontForge
++/// before tag 20150330 measured the two even when the source stated them.
++///
++/// It also fills PANOSE, as `SFDefaultOS2Info` in the same file does.
++/// `SFDefaultOS2Simple` starts it at [2, 0, 5, 3, 0 ...]. `OS2WeightCheck` sets byte
++/// 2 from the `Weight:` name and then from the PostScript font name, so a match in
++/// the font name wins: medi 6; demi, halb, or semi with bold 7; bold, fett or gras 8;
++/// heavy 9; black 10; nord 11; thin 2; extra or light 3. The font name also sets byte
++/// 0 to 3 when it contains "script" but not "sans", and byte 3 from its width words:
++/// ultra or extra with condensed 8; condensed or narrow 6; ultra or extra with
++/// expanded 7; expanded 5. When every glyph FontForge would output has the same
++/// advance (`CIDOneWidth`, up to tag 20230101), byte 3 is 9 and byte 0 stays 2. All
++/// words match without regard to case, anywhere in the name. So `Weight: Medium`
++/// with a font name that matches nothing gives [2, 0, 6, 3, 0 ...].
++///
++/// A PANOSE the source states is never overwritten.
++///
++/// # Not modelled: a source that does not set `pfmset`
++///
++/// Any of the lines `PfmFamily:`, `TTFWeight:`, `PfmWeight:`, `TTFWidth:`, `LineGap:`
++/// and `VLineGap:` sets FontForge's `pfmset`. Without one, `SFDefaultOS2Info` resets
++/// `pfminfo`, FontForge's record of the OS/2 values, before filling it, so the
++/// exporter computes PANOSE, the ten values, the x-height and the cap height even
++/// when the source states them, derives the weight and width classes from the same
++/// name words as PANOSE, and sets the line gaps to `rint(.09*emsize)`. This filter
++/// keeps the stated values and sets no weight or width class and no line gap.
++/// FontForge's Font Info dialog sets `pfmset` whenever it stores any of those values,
++/// so a stated value is ignored only in a source edited by hand or written by another
++/// tool. A font made in FontForge whose OS/2 tab was never opened also lacks
++/// `pfmset`, and FontForge then derives its weight and width classes and line gaps as
++/// above.
++pub struct FontForgeOs2Defaults;
++
++impl FontForgeOs2Defaults {
++    /// Create a new FontForgeOs2Defaults filter
++    pub fn new() -> Self {
++        FontForgeOs2Defaults
++    }
++}
++
++impl FontFilter for FontForgeOs2Defaults {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        let mut filled = 0;
++        // Measured before any master is borrowed mutably: the estimate reads the
++        // glyphs and the font's private dictionary.
++        let heights: Vec<MeasuredHeights> = font
++            .masters
++            .iter()
++            .map(|master| exported_heights(font, master, CurveMean::DistinctTops))
++            .collect();
++        for (master, measured) in font.masters.iter_mut().zip(heights) {
++            for (metric, value) in [
++                (MetricType::XHeight, measured.x_height),
++                (MetricType::CapHeight, measured.cap_height),
++            ] {
++                if !master.metrics.contains_key(&metric) {
++                    master.metrics.insert(metric, value);
++                    filled += 1;
++                }
++            }
++        }
++        for master in font.masters.iter_mut() {
++            // `subsuper_set` comes from the `OS2SubXSize:` line alone; without it,
++            // `SFDefaultOS2SubSuper` writes all ten.
++            if master.metrics.contains_key(&MetricType::SubscriptXSize) {
++                continue;
++            }
++            let ascender = master.metrics.get(&MetricType::Ascender).copied();
++            let descender = master.metrics.get(&MetricType::Descender).copied();
++            let (Some(a), Some(d)) = (ascender, descender) else {
++                continue;
++            };
++            // FontForge's emsize is ascent + descent, and its descent is a positive
++            // number below the baseline where babelfont's is negative.
++            let em = a - d;
++            if em <= 0 {
++                continue;
++            }
++            let em_f = f64::from(em);
++            let italic = master
++                .metrics
++                .get(&MetricType::ItalicAngle)
++                .copied()
++                .unwrap_or(0);
++            // babelfont holds the italic angle in the opposite sense to the `post`
++            // table and the SFD, and FontForge's formula is written against its own
++            // sense, so the angle is negated here.
++            let s = (f64::from(-italic) * std::f64::consts::PI / 180.0).sin();
++            // Stored in 16-bit fields before the x offsets are derived from them.
++            let subyoff = (0.14 * em_f) as i32;
++            let supyoff = (0.48 * em_f) as i32;
++            let value = |m: &MetricType| -> i32 {
++                match m {
++                    MetricType::SubscriptXSize | MetricType::SuperscriptXSize => {
++                        (0.65 * em_f) as i32
++                    }
++                    MetricType::SubscriptYSize | MetricType::SuperscriptYSize => {
++                        (0.7 * em_f) as i32
++                    }
++                    MetricType::SubscriptYOffset => subyoff,
++                    MetricType::SuperscriptYOffset => supyoff,
++                    MetricType::SubscriptXOffset => (-s * f64::from(subyoff)) as i32,
++                    MetricType::SuperscriptXOffset => (s * f64::from(supyoff)) as i32,
++                    // Integer arithmetic, as in the C: 102*em/2048, not 0.0498*em.
++                    MetricType::StrikeoutSize => (102 * em) / 2048,
++                    MetricType::StrikeoutPosition => (530 * em) / 2048,
++                    _ => 0,
++                }
++            };
++            for m in SUBSUPER.iter().chain(STRIKEOUT.iter()) {
++                master.metrics.insert(m.clone(), value(m));
++                filled += 1;
++            }
++        }
++        if font.custom_ot_values.os2_panose.is_none() {
++            font.custom_ot_values.os2_panose = Some(default_panose(font));
++            filled += 1;
++        }
++        log::info!(
++            "Filled {filled} OS/2 value(s) using FontForge's SFDefaultOS2SubSuper, \
++             SFDefaultOS2Info and SFStandardHeight rules"
++        );
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(FontForgeOs2Defaults::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("fontforgeos2defaults")
++            .long("fontforge-os2-defaults")
++            .help(
++                "Compute all ten OS/2 sub/superscript and strikeout metrics of a FontForge \
++                 source that states no OS2SubXSize, replacing any it states, and fill the \
++                 x-height, cap height and PANOSE it does not state, using the rules FontForge's \
++                 exporter uses (SFDefaultOS2SubSuper and SFDefaultOS2Info in tottf.c, \
++                 SFStandardHeight in splinefont.c). Use only to reproduce a binary FontForge \
++                 exported; a binary built by another compiler carries different values",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
++
++/// The PANOSE `SFDefaultOS2Info` computes for a font that states none.
++fn default_panose(font: &Font) -> [u8; 10] {
++    let weight = font
++        .format_specific
++        .get("postscript_weight_name")
++        .and_then(|v| v.as_str())
++        .map(str::to_ascii_lowercase);
++    let font_name = font
++        .names
++        .postscript_name
++        .get_default()
++        .map(|n| n.to_ascii_lowercase())
++        .unwrap_or_default();
++    // `samewid > 0`: a monospaced font is never marked as a script.
++    let monospaced = font
++        .default_master()
++        .or(font.masters.first())
++        .and_then(|master| one_width(font, master))
++        .is_some_and(|width| width > 0);
++    let mut panose = [2, 0, 5, 3, 0, 0, 0, 0, 0, 0];
++    if !monospaced && !font_name.contains("sans") && font_name.contains("script") {
++        panose[0] = 3;
++    }
++    if let Some(weight) = weight {
++        panose[2] = weight_check(&weight, panose[2]);
++    }
++    panose[2] = weight_check(&font_name, panose[2]);
++    if let Some(width) = width_check(&font_name) {
++        panose[3] = width;
++    }
++    if monospaced {
++        panose[3] = 9;
++    }
++    panose
++}
++
++/// `OS2WeightCheck`: PANOSE byte 2 from a lowercased weight or font name, or
++/// `current` when no word matches.
++fn weight_check(name: &str, current: u8) -> u8 {
++    let has = |word: &str| name.contains(word);
++    if has("medi") {
++        6
++    } else if has("demi") || has("halb") || (has("semi") && has("bold")) {
++        7
++    } else if has("bold") || has("fett") || has("gras") {
++        8
++    } else if has("heavy") {
++        9
++    } else if has("black") {
++        10
++    } else if has("nord") {
++        11
++    } else if has("thin") {
++        2
++    } else if has("extra") || has("light") {
++        3
++    } else {
++        current
++    }
++}
++
++/// PANOSE byte 3 from the width words of a lowercased font name, as
++/// `SFDefaultOS2Info` sets it.
++fn width_check(name: &str) -> Option<u8> {
++    let has = |word: &str| name.contains(word);
++    if (has("ultra") || has("extra")) && has("condensed") {
++        Some(8)
++    } else if has("condensed") || has("narrow") {
++        Some(6)
++    } else if (has("ultra") || has("extra")) && has("expanded") {
++        Some(7)
++    } else if has("expanded") {
++        Some(5)
++    } else {
++        None
++    }
++}
++
++/// `CIDOneWidth` in FontForge's `splinesave.c` up to tag 20230101: the advance shared
++/// by every glyph FontForge would output, leaving out `.null`, `nonmarkingreturn` and
++/// a `.notdef` with no contours. `None` when two advances differ or no glyph counts.
++/// From tag 20251009 on, `SFOneWidth` also leaves out zero-width glyphs.
++fn one_width(font: &Font, master: &Master) -> Option<i32> {
++    let referenced: HashSet<&str> = font
++        .glyphs
++        .iter()
++        .flat_map(|glyph| glyph.layers.iter())
++        .flat_map(|layer| layer.shapes.iter())
++        .filter_map(|shape| match shape {
++            Shape::Component(component) => Some(component.reference.as_str()),
++            Shape::Path(_) => None,
++        })
++        .collect();
++    let mut width = None;
++    for glyph in font.glyphs.iter() {
++        let Some(layer) = font.master_layer_for(&glyph.name, master) else {
++            continue;
++        };
++        let has_contours = layer.shapes.iter().any(|s| matches!(s, Shape::Path(_)));
++        match glyph.name.as_str() {
++            ".null" | "nonmarkingreturn" => continue,
++            ".notdef" if !has_contours => continue,
++            _ => {}
++        }
++        // `SCWorthOutputting`: it draws something, its width was set, it carries an
++        // anchor or another glyph uses it as a component.
++        let width_set = glyph
++            .format_specific
++            .get("sfd.width_set")
++            .and_then(|v| v.as_bool())
++            .unwrap_or(false);
++        let worth_outputting = draws_something(font, master, &glyph.name, 0)
++            || width_set
++            || !layer.anchors.is_empty()
++            || referenced.contains(glyph.name.as_str());
++        if !worth_outputting {
++            continue;
++        }
++        let advance = layer.width.round() as i32;
++        match width {
++            None => width = Some(advance),
++            Some(w) if w != advance => return None,
++            Some(_) => {}
++        }
++    }
++    width
++}
++
++/// `SCDrawsSomething`: the glyph has a contour, or a component that brings one.
++fn draws_something(font: &Font, master: &Master, name: &str, depth: usize) -> bool {
++    const MAX_REFERENCE_DEPTH: usize = 8;
++    let Some(layer) = font.master_layer_for(name, master) else {
++        return false;
++    };
++    layer.shapes.iter().any(|shape| match shape {
++        Shape::Path(_) => true,
++        Shape::Component(component) => {
++            depth < MAX_REFERENCE_DEPTH
++                && draws_something(font, master, &component.reference, depth + 1)
++        }
++    })
++}
++
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Glyph, Layer, LayerType, Node, NodeType, Path};
++
++    fn font_with(ascender: i32, descender: i32, italic: Option<i32>) -> Font {
++        let mut m = Master::default();
++        m.metrics.insert(MetricType::Ascender, ascender);
++        m.metrics.insert(MetricType::Descender, descender);
++        if let Some(i) = italic {
++            m.metrics.insert(MetricType::ItalicAngle, i);
++        }
++        let mut f = Font::new();
++        f.masters.push(m);
++        f
++    }
++
++    fn got(f: &Font, m: MetricType) -> Option<i32> {
++        f.masters[0].metrics.get(&m).copied()
++    }
++
++    #[test]
++    fn test_matches_fontforge_on_a_2048_em() {
++        // Ascender 1638, descender -410: a 2048-unit em.
++        let mut f = font_with(1638, -410, None);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(got(&f, MetricType::SubscriptXSize), Some(1331));
++        assert_eq!(got(&f, MetricType::SubscriptYSize), Some(1433));
++        assert_eq!(got(&f, MetricType::SubscriptYOffset), Some(286));
++        assert_eq!(got(&f, MetricType::SuperscriptYSize), Some(1433));
++        assert_eq!(got(&f, MetricType::SuperscriptYOffset), Some(983));
++        assert_eq!(got(&f, MetricType::StrikeoutSize), Some(102));
++        assert_eq!(got(&f, MetricType::StrikeoutPosition), Some(530));
++    }
++
++    #[test]
++    fn test_strikeout_is_integer_arithmetic() {
++        // 102*1000/2048 is 49.8. FontForge does this in C integer arithmetic and
++        // gets 49; computing 0.0498*em and rounding would give 50.
++        let mut f = font_with(800, -200, None);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(got(&f, MetricType::StrikeoutSize), Some(49));
++        assert_eq!(got(&f, MetricType::StrikeoutPosition), Some(258));
++    }
++
++    #[test]
++    fn test_italic_angle_slants_the_offsets() {
++        // supxoff = s*supyoff, subxoff = -s*subyoff with s = sin(italic_angle). A
++        // roman gets zero for both; an italic does not.
++        let mut roman = font_with(1638, -410, None);
++        FontForgeOs2Defaults::new().apply(&mut roman).unwrap();
++        assert_eq!(got(&roman, MetricType::SuperscriptXOffset), Some(0));
++        assert_eq!(got(&roman, MetricType::SubscriptXOffset), Some(0));
++
++        // post.italicAngle -12 gives subscriptXOffset +59 and superscriptXOffset
++        // -204. babelfont's internal angle has the opposite sign to post's, so that
++        // is +12 here.
++        let mut italic = font_with(1638, -410, Some(12));
++        FontForgeOs2Defaults::new().apply(&mut italic).unwrap();
++        assert_eq!(got(&italic, MetricType::SubscriptXOffset), Some(59));
++        assert_eq!(got(&italic, MetricType::SuperscriptXOffset), Some(-204));
++    }
++
++    #[test]
++    fn test_the_x_offsets_come_from_the_truncated_y_offsets() {
++        // A 2048 em stores subyoff 286 and supyoff 983, not 286.72 and 983.04.
++        // sin(20 degrees) * 286 is 97.8, which truncates to 97; from 286.72 it would
++        // be 98.06 and give 98.
++        let mut f = font_with(1638, -410, Some(20));
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(got(&f, MetricType::SubscriptXOffset), Some(97));
++        assert_eq!(got(&f, MetricType::SuperscriptXOffset), Some(-336));
++    }
++
++    #[test]
++    fn test_a_stated_subscript_x_size_keeps_all_ten() {
++        let mut f = font_with(1638, -410, None);
++        f.masters[0].metrics.insert(MetricType::SubscriptXSize, 1300);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(got(&f, MetricType::SubscriptXSize), Some(1300));
++        assert_eq!(got(&f, MetricType::SubscriptYSize), None);
++        assert_eq!(got(&f, MetricType::StrikeoutPosition), None);
++    }
++
++    fn panose_of(weight: Option<&str>, font_name: &str) -> [u8; 10] {
++        let mut f = font_with(1638, -410, None);
++        if let Some(w) = weight {
++            f.format_specific.insert(
++                "postscript_weight_name".to_string(),
++                serde_json::Value::String(w.to_string()),
++            );
++        }
++        f.names.postscript_name.set_default(font_name.to_string());
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        f.custom_ot_values.os2_panose.unwrap()
++    }
++
++    /// A glyph with one triangular contour and the given advance.
++    fn add_glyph(f: &mut Font, name: &str, advance: f32, contour: bool) {
++        let mut layer = Layer::new(advance);
++        layer.master = LayerType::DefaultForMaster(f.masters[0].id.clone());
++        if contour {
++            let node = |x: f64, y: f64| Node {
++                x,
++                y,
++                nodetype: NodeType::Line,
++                ..Default::default()
++            };
++            layer.shapes.push(Shape::Path(Path {
++                nodes: vec![node(0.0, 0.0), node(100.0, 0.0), node(50.0, 100.0)],
++                closed: true,
++                ..Default::default()
++            }));
++        }
++        let mut glyph = Glyph::new(name);
++        glyph.layers.push(layer);
++        f.glyphs.push(glyph);
++    }
++
++    #[test]
++    fn test_panose_comes_from_the_weight_name() {
++        // OS2WeightCheck reads sf->weight, the SFD's `Weight:` line:
++        // Weight: Medium gives byte 2 = 6.
++        let mut f = font_with(1638, -410, None);
++        f.format_specific.insert(
++            "postscript_weight_name".to_string(),
++            serde_json::Value::String("Medium".to_string()),
++        );
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.os2_panose, Some([2, 0, 6, 3, 0, 0, 0, 0, 0, 0]));
++
++        // Nothing recognisable in the weight name falls back to 5.
++        let mut plain = font_with(1638, -410, None);
++        FontForgeOs2Defaults::new().apply(&mut plain).unwrap();
++        assert_eq!(plain.custom_ot_values.os2_panose, Some([2, 0, 5, 3, 0, 0, 0, 0, 0, 0]));
++    }
++
++    #[test]
++    fn test_light_gives_3() {
++        // "extra" or "light" gives 3; the later "light" branch of OS2WeightCheck is
++        // never reached.
++        assert_eq!(panose_of(Some("Light"), "Foo"), [2, 0, 3, 3, 0, 0, 0, 0, 0, 0]);
++        assert_eq!(panose_of(Some("ExtraLight"), "Foo")[2], 3);
++        // "bold" is tested before "extra".
++        assert_eq!(panose_of(Some("ExtraBold"), "Foo")[2], 8);
++    }
++
++    #[test]
++    fn test_semi_with_bold_gives_7() {
++        assert_eq!(panose_of(Some("SemiBold"), "Foo")[2], 7);
++        assert_eq!(panose_of(Some("DemiBold"), "Foo")[2], 7);
++    }
++
++    #[test]
++    fn test_a_match_in_the_font_name_wins_over_the_weight() {
++        assert_eq!(panose_of(Some("Regular"), "Foo-SemiBold")[2], 7);
++        assert_eq!(panose_of(Some("Bold"), "Foo-Light")[2], 3);
++        // With no match in the font name, the weight's value stands.
++        assert_eq!(panose_of(Some("Bold"), "Foo-Regular")[2], 8);
++        // With no Weight: line, the font name alone decides.
++        assert_eq!(panose_of(None, "Foo-Black")[2], 10);
++    }
++
++    #[test]
++    fn test_a_script_font_name_sets_byte_0() {
++        assert_eq!(panose_of(None, "FooScript")[0], 3);
++        // ...unless it also says "sans".
++        assert_eq!(panose_of(None, "FooSansScript")[0], 2);
++    }
++
++    #[test]
++    fn test_width_words_in_the_font_name_set_byte_3() {
++        assert_eq!(panose_of(None, "Foo-Condensed")[3], 6);
++        assert_eq!(panose_of(None, "Foo-SemiCondensed")[3], 6);
++        assert_eq!(panose_of(None, "Foo-Narrow")[3], 6);
++        assert_eq!(panose_of(None, "Foo-ExtraCondensed")[3], 8);
++        assert_eq!(panose_of(None, "Foo-UltraCondensed")[3], 8);
++        assert_eq!(panose_of(None, "Foo-SemiExpanded")[3], 5);
++        assert_eq!(panose_of(None, "Foo-Expanded")[3], 5);
++        assert_eq!(panose_of(None, "Foo-UltraExpanded")[3], 7);
++    }
++
++    #[test]
++    fn test_weight_script_and_width_combine() {
++        assert_eq!(
++            panose_of(Some("Light"), "FooScript-SemiBoldCondensed"),
++            [3, 0, 7, 6, 0, 0, 0, 0, 0, 0]
++        );
++    }
++
++    #[test]
++    fn test_one_advance_for_every_glyph_sets_byte_3_to_9() {
++        let mut f = font_with(1638, -410, None);
++        f.names.postscript_name.set_default("FooScript".to_string());
++        add_glyph(&mut f, "a", 600.0, true);
++        add_glyph(&mut f, "b", 600.0, true);
++        // A .notdef with no contours does not count.
++        add_glyph(&mut f, ".notdef", 1000.0, false);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        // Monospaced: byte 3 is 9, and "script" does not set byte 0.
++        assert_eq!(f.custom_ot_values.os2_panose, Some([2, 0, 5, 9, 0, 0, 0, 0, 0, 0]));
++
++        let mut f = font_with(1638, -410, None);
++        f.names.postscript_name.set_default("FooScript".to_string());
++        add_glyph(&mut f, "a", 600.0, true);
++        add_glyph(&mut f, "b", 500.0, true);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.os2_panose, Some([3, 0, 5, 3, 0, 0, 0, 0, 0, 0]));
++    }
++
++    #[test]
++    fn test_glyphs_left_out_of_the_one_advance_check() {
++        let mut f = font_with(1638, -410, None);
++        add_glyph(&mut f, "a", 600.0, true);
++        add_glyph(&mut f, "b", 600.0, true);
++        // Left out by name, although their widths were set: .null and
++        // nonmarkingreturn always, .notdef when it has no contours.
++        for name in [".notdef", ".null", "nonmarkingreturn"] {
++            add_glyph(&mut f, name, 1000.0, false);
++            f.glyphs
++                .get_mut(name)
++                .unwrap()
++                .format_specific
++                .insert("sfd.width_set".to_string(), serde_json::Value::Bool(true));
++        }
++        // Left out by SCWorthOutputting: no contour, no set width, no anchor, and no
++        // glyph uses it as a component.
++        add_glyph(&mut f, "blank", 300.0, false);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.os2_panose.unwrap()[3], 9);
++    }
++
++    #[test]
++    fn test_a_panose_the_source_states_is_never_overwritten() {
++        let mut f = font_with(1638, -410, None);
++        f.custom_ot_values.os2_panose = Some([3, 1, 4, 1, 5, 9, 2, 6, 5, 3]);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.os2_panose, Some([3, 1, 4, 1, 5, 9, 2, 6, 5, 3]));
++    }
++
++    #[test]
++    fn test_a_stated_x_height_is_never_overwritten() {
++        let mut f = font_with(800, -200, None);
++        f.masters[0].metrics.insert(MetricType::XHeight, 480);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(got(&f, MetricType::XHeight), Some(480));
++        // A font with no outlines measures nothing, which the exporter writes as 0.
++        assert_eq!(got(&f, MetricType::CapHeight), Some(0));
++    }
++
++    #[test]
++    fn test_without_a_subscript_x_size_all_ten_are_computed() {
++        // A strikeout size stated without OS2SubXSize does not set subsuper_set, so
++        // the exporter replaces it with the computed one.
++        let mut f = font_with(1638, -410, None);
++        f.masters[0].metrics.insert(MetricType::StrikeoutSize, 77);
++        FontForgeOs2Defaults::new().apply(&mut f).unwrap();
++        assert_eq!(got(&f, MetricType::StrikeoutSize), Some(102));
++        assert_eq!(got(&f, MetricType::StrikeoutPosition), Some(530));
++        assert_eq!(got(&f, MetricType::SubscriptXSize), Some(1331));
++    }
++}
+diff --git a/babelfont/src/filters/fontforgeunderlineposition.rs b/babelfont/src/filters/fontforgeunderlineposition.rs
+new file mode 100644
+index 0000000..a12bf76
+--- /dev/null
++++ b/babelfont/src/filters/fontforgeunderlineposition.rs
+@@ -0,0 +1,170 @@
++use crate::filters::FontFilter;
++use crate::MetricType;
++
++#[derive(Default)]
++/// A filter that converts `UnderlinePosition` to `post.underlinePosition` the way
++/// FontForge up to tag 20170731 did.
++///
++/// FontForge's `UnderlinePosition` names the centre of the underline; the `post`
++/// table's `underlinePosition` names its top. FontForge's exporter applies the offset
++/// itself, so a binary it exported does not carry the source's raw value.
++///
++/// Which offset it applied depends on the FontForge that exported the binary.
++/// `fontforge/tottf.c`, `dumppost()`, computed `upos - uwidth/2` up to tag 20170731
++/// and `upos + uwidth/2` from 20190317 on; the sign was reversed in commit `9f667c9c`
++/// (fontforge/fontforge#3389, "Fix the direction of the underline position correction
++/// for TTF output"). This filter applies the older rule: `UnderlinePosition: -50` with
++/// `UnderlineWidth: 50` becomes -75, the underline's bottom edge rather than the top
++/// the `post` table defines. The two values are real numbers there, and
++/// `putshort` truncates the difference towards zero, so position 30 with width 51
++/// gives 4. A binary exported by FontForge 20190317 or later needs the opposite sign,
++/// so this filter does not match one.
++///
++/// It is opt-in for that reason: there is no single correct offset, only the one of
++/// the FontForge that exported the binary, whatever the export date.
++///
++/// FontForge reads both lines as real numbers, but the SFD reader keeps only whole
++/// ones and drops a fractional value such as `UnderlinePosition: -51.2`. This filter
++/// then leaves a master with a fractional position alone, and counts a fractional
++/// width as zero.
++pub struct FontForgeUnderlinePosition;
++
++impl FontForgeUnderlinePosition {
++    /// Create a new FontForgeUnderlinePosition filter
++    pub fn new() -> Self {
++        FontForgeUnderlinePosition
++    }
++}
++
++impl FontFilter for FontForgeUnderlinePosition {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        let mut adjusted = 0;
++        for master in font.masters.iter_mut() {
++            let Some(&position) = master.metrics.get(&MetricType::UnderlinePosition) else {
++                continue;
++            };
++            let thickness = master
++                .metrics
++                .get(&MetricType::UnderlineThickness)
++                .copied()
++                .unwrap_or(0);
++            // `putshort(at->post, sf->upos - sf->uwidth/2)`: real arithmetic, then
++            // truncation towards zero.
++            let exported = (f64::from(position) - f64::from(thickness) / 2.0) as i32;
++            master.metrics.insert(MetricType::UnderlinePosition, exported);
++            adjusted += 1;
++        }
++        log::info!(
++            "Moved underlinePosition down by half the thickness on {adjusted} master(s), \
++             as FontForge's TTF exporter did up to tag 20170731 (position - thickness/2)"
++        );
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(FontForgeUnderlinePosition::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("fontforgeunderlineposition")
++            .long("fontforge-underline-position")
++            .help(
++                "Apply the offset FontForge's TTF exporter applied up to tag 20170731 to a \
++                 FontForge source's UnderlinePosition (the underline's centre): position - \
++                 thickness/2, which is the underline's bottom edge rather than the top the post \
++                 table defines. FontForge reversed the sign in commit 9f667c9c (2018-12-26, \
++                 merged 2018-12-28; tag 20190317 is the first to carry it), so use this only for \
++                 a binary exported by an older FontForge, whatever the export date",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
++
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Font, Master};
++
++    fn font_with(position: i32, thickness: i32) -> Font {
++        let mut master = Master::default();
++        master
++            .metrics
++            .insert(MetricType::UnderlinePosition, position);
++        master
++            .metrics
++            .insert(MetricType::UnderlineThickness, thickness);
++        let mut font = Font::new();
++        font.masters.push(master);
++        font
++    }
++
++    fn position_of(font: &Font) -> Option<i32> {
++        font.masters[0]
++            .metrics
++            .get(&MetricType::UnderlinePosition)
++            .copied()
++    }
++
++    #[test]
++    fn test_the_centre_moves_down_by_half_the_thickness() {
++        // UnderlinePosition -50 with UnderlineWidth 50 exports as
++        // post.underlinePosition -75.
++        let mut font = font_with(-50, 50);
++        FontForgeUnderlinePosition::new().apply(&mut font).unwrap();
++        assert_eq!(position_of(&font), Some(-75));
++    }
++
++    #[test]
++    fn test_the_difference_is_truncated_towards_zero() {
++        // 30 - 51/2 is 4.5 in real arithmetic, and the conversion to a short gives 4.
++        // Integer division would give 30 - 25 = 5.
++        let mut font = font_with(30, 51);
++        FontForgeUnderlinePosition::new().apply(&mut font).unwrap();
++        assert_eq!(position_of(&font), Some(4));
++
++        // A negative result truncates towards zero too: -50 - 25.5 is -75.5, so -75.
++        let mut font = font_with(-50, 51);
++        FontForgeUnderlinePosition::new().apply(&mut font).unwrap();
++        assert_eq!(position_of(&font), Some(-75));
++    }
++
++    #[test]
++    fn test_a_master_with_no_underline_position_is_left_alone() {
++        let mut font = Font::new();
++        let mut master = Master::default();
++        master.metrics.insert(MetricType::UnderlineThickness, 50);
++        font.masters.push(master);
++        FontForgeUnderlinePosition::new().apply(&mut font).unwrap();
++        assert_eq!(position_of(&font), None);
++    }
++
++    #[test]
++    fn test_a_missing_thickness_counts_as_zero() {
++        // The offset is half the thickness, so with no thickness there is no offset.
++        let mut font = Font::new();
++        let mut master = Master::default();
++        master.metrics.insert(MetricType::UnderlinePosition, -50);
++        font.masters.push(master);
++        FontForgeUnderlinePosition::new().apply(&mut font).unwrap();
++        assert_eq!(position_of(&font), Some(-50));
++    }
++
++    #[test]
++    fn test_applying_it_twice_is_not_the_same_as_once() {
++        // It is a conversion, not a normalisation: it has no fixed point, which is
++        // why it must be opt-in and applied exactly once.
++        let mut font = font_with(-50, 50);
++        let filter = FontForgeUnderlinePosition::new();
++        filter.apply(&mut font).unwrap();
++        filter.apply(&mut font).unwrap();
++        assert_eq!(position_of(&font), Some(-100));
++    }
++}
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index 268f569..1efbb97 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -3,6 +3,7 @@ use fontdrasil::coords::{DesignCoord, DesignLocation};
+ use smol_str::SmolStr;
+ 
+ mod curve_filter_common;
++mod fontforge_standard_height;
+ 
+ /// Parse a comma-separated list of glyph names from a string argument.
+ /// Returns an empty `Vec` if the string is empty, indicating that all glyphs
+@@ -112,6 +113,11 @@ declare_filters! {
+         DropIncompatiblePaths(dropincompatiblepaths) => "dropincompatiblepaths",
+         RetainGlyphs(retainglyphs) => "retainglyphs",
+     }
++    group "Filters for reproducing a legacy FontForge export" {
++        FontForgeUnderlinePosition(fontforgeunderlineposition) => "fontforgeunderlineposition",
++        FontForgeHeightGlyphCountMean(fontforgeheightglyphcountmean) => "fontforgeheightglyphcountmean",
++        FontForgeOs2Defaults(fontforgeos2defaults) => "fontforgeos2defaults",
++    }
+     group "Filters for manipulating outlines" {
+         DecomposeComponentReferences(decomposecomponentreferences) => "decomposecomponents",
+         CubicToQuadratic(cubic2quadratic) => "cubic2quadratic",

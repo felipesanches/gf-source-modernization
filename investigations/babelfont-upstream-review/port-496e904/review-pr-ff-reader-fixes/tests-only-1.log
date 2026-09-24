@@ -1,0 +1,26 @@
+   Compiling babelfont v0.2.1 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-reader-fixes/src-tests-only-1/babelfont)
+   Compiling sr-aef v0.1.0 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-reader-fixes/src-tests-only-1/sr-aef)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 06s
+     Running unittests src/lib.rs (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-reader-fixes/target/debug/deps/babelfont-5d57100f722d9dc2)
+
+running 2 tests
+test convertors::fontforge::tests::test_unquoted_glyph_name_is_literal ... ok
+test convertors::fontforge::tests::test_quoted_glyph_name_is_decoded_and_trimmed ... FAILED
+
+failures:
+
+---- convertors::fontforge::tests::test_quoted_glyph_name_is_decoded_and_trimmed stdout ----
+
+thread 'convertors::fontforge::tests::test_quoted_glyph_name_is_decoded_and_trimmed' (3837534) panicked at babelfont/src/convertors/fontforge/tests.rs:321:5:
+assertion `left == right` failed
+  left: ["C+AJIA-rculo0\" ", "A"]
+ right: ["C\u{92}rculo0", "A"]
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    convertors::fontforge::tests::test_quoted_glyph_name_is_decoded_and_trimmed
+
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 213 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `-p babelfont --lib`

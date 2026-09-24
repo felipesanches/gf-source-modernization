@@ -1,0 +1,26 @@
+== 1 02f76b2 fmt_rc=0 clippy_rc=0 warn=0 clippy_cli_rc=0 warn=0 test_rc=101
+test result: FAILED. 206 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; 
+failed set == upstream 11: yes
+== 2 66ef5da fmt_rc=0 clippy_rc=0 warn=0 clippy_cli_rc=0 warn=0 test_rc=101
+test result: FAILED. 207 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; 
+failed set == upstream 11: yes
+== 3 75de985 fmt_rc=0 clippy_rc=0 warn=0 clippy_cli_rc=0 warn=0 test_rc=101
+test result: FAILED. 209 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; 
+failed set == upstream 11: yes
+== 4 60a70c6 fmt_rc=0 clippy_rc=0 warn=0 clippy_cli_rc=0 warn=0 test_rc=101
+test result: FAILED. 211 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; 
+failed set == upstream 11: yes
+== 5 24671e6 fmt_rc=0 clippy_rc=0 warn=0 clippy_cli_rc=0 warn=0 test_rc=101
+test result: FAILED. 220 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; 
+test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; 
+failed set == upstream 11: yes
+ALLDONE

@@ -1,0 +1,40 @@
+   Compiling babelfont v0.2.1 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-reader-fixes/src-tests-only-2/babelfont)
+   Compiling sr-aef v0.1.0 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-reader-fixes/src-tests-only-2/sr-aef)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 52.10s
+     Running unittests src/lib.rs (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-reader-fixes/target/debug/deps/babelfont-5d57100f722d9dc2)
+
+running 4 tests
+test convertors::fontforge::tests::test_unquoted_glyph_name_is_literal ... ok
+test convertors::fontforge::tests::test_quoted_glyph_name_is_decoded_and_trimmed ... ok
+test convertors::fontforge::tests::test_aalt_only_lookup_called_from_a_chain_is_still_defined ... ok
+test convertors::fontforge::tests::test_aalt_only_lookup_nothing_calls_is_not_defined ... FAILED
+
+failures:
+
+---- convertors::fontforge::tests::test_aalt_only_lookup_nothing_calls_is_not_defined stdout ----
+
+thread 'convertors::fontforge::tests::test_aalt_only_lookup_nothing_calls_is_not_defined' (3839081) panicked at babelfont/src/convertors/fontforge/tests.rs:838:5:
+An aalt-only lookup no chain calls should not be emitted:
+# Prefix: LanguageSystems
+languagesystem DFLT dflt;
+# Prefix: Chain_Lookup
+lookup Chain_Lookup {
+    ignore sub [glyph_a glyph_b]' glyph_c;
+} Chain_Lookup;
+# Prefix: Other_Lookup
+lookup Other_Lookup {
+    sub glyph_a by glyph_b;
+} Other_Lookup;
+feature aalt {
+sub glyph_a by glyph_b;
+} aalt;
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    convertors::fontforge::tests::test_aalt_only_lookup_nothing_calls_is_not_defined
+
+test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 213 filtered out; finished in 0.06s
+
+error: test failed, to rerun pass `-p babelfont --lib`

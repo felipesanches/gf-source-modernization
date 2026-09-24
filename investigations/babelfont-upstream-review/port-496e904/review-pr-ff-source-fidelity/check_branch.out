@@ -1,0 +1,16 @@
+== upstream/main (496e904)
+fmt: clean
+clippy (default): 0 warning line(s)
+clippy -p babelfont --features cli: 0 warning line(s)
+  test result: FAILED. 202 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 41.53s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 29.71s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 6.52s
+== pr-ff-source-fidelity (24671e6)
+fmt: clean
+clippy (default): 0 warning line(s)
+clippy -p babelfont --features cli: 0 warning line(s)
+  test result: FAILED. 220 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 32.27s
+  test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 15.39s
+  test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 4.58s
+workdir: /home/fsanches/compartilhado/babelfont-rs-worktrees/check-branch-pr-ff-source-fidelity
+EXIT=0

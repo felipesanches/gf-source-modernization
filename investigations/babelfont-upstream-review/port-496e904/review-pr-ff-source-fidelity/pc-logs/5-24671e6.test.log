@@ -1,0 +1,339 @@
+   Compiling babelfont v0.2.1 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-source-fidelity/pc-src/babelfont)
+   Compiling sr-aef v0.1.0 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-source-fidelity/pc-src/sr-aef)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 27.01s
+     Running unittests src/lib.rs (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-source-fidelity/target-pc/debug/deps/babelfont-5d57100f722d9dc2)
+
+running 231 tests
+test axis::tests::test_linear_map ... ok
+test axis::tests::test_nonlinear_map ... ok
+test common::pathtools::tests::deleting_every_on_curve_node_empties_the_path ... ok
+test common::pathtools::tests::a_curve_fit_outside_tolerance_collapses_to_a_line ... ok
+test common::pathtools::tests::deleting_an_offcurve_reduces_its_segment_to_a_line ... ok
+test common::pathtools::tests::deleting_an_offcurve_and_its_curve_node_gives_a_line ... ok
+test common::pathtools::tests::deleting_a_line_node_collapses_to_a_line ... ok
+test common::pathtools::tests::deleting_the_move_node_starts_the_path_at_the_next_node ... ok
+test common::pathtools::tests::nothing_to_delete_returns_the_nodes_unchanged ... ok
+test common::pathtools::tests::open_path_curve_join_keeps_the_shape ... ok
+test common::pathtools::tests::untouched_quadratic_segments_are_preserved ... ok
+test common::pathtools::tests::deleting_consecutive_curve_nodes_collapses_to_a_line ... ok
+test common::version_tests::text_after_the_number_is_not_parsed_as_part_of_it ... ok
+test common::version_tests::the_minor_is_digits_not_a_float_fraction ... ok
+test common::pathtools::tests::deleting_a_curve_node_between_two_curves_keeps_the_shape ... ok
+test convertors::fontforge::tests::only_single_and_alternate_subs_may_go_in_aalt ... ok
+test convertors::fontforge::tests::test_blank_vendor_is_preserved ... ok
+test convertors::fontforge::tests::test_altuni_adds_alternate_codepoints ... ok
+test convertors::fontforge::offsetmetrics::tests::test_offset_mode_bbox_base_is_floor_ceil_not_round ... ok
+test convertors::fontforge::offsetmetrics::tests::test_offset_mode_vertical_metrics ... ok
+test convertors::fontforge::tests::nul_padded_vendor_ids_are_accepted ... ok
+test convertors::fontforge::tests::test_blank_script_tag_becomes_dflt ... ok
+test convertors::fontforge::tests::test_call_to_an_empty_lookup_becomes_ignore ... ok
+test convertors::fontforge::tests::test_chain_context_emission ... ok
+test convertors::fontforge::tests::test_class_fpst_emission ... ok
+test convertors::fontforge::tests::test_class_fpst_backtrack_order_is_preserved ... ok
+test convertors::fontforge::tests::test_class_fpst_ignore_rule ... ok
+test convertors::fontforge::tests::test_class_fpst_lookup_at_a_later_position ... ok
+test convertors::fontforge::tests::test_converting_twice_gives_the_same_ids ... ok
+test convertors::fontforge::tests::test_class_fpst_unsatisfiable_position_drops_the_rule_and_its_reference ... ok
+test convertors::fontforge::tests::test_coverage_kind_backtrack_is_turned_round ... ok
+test convertors::fontforge::tests::test_coverage_section_with_two_rules_keeps_them_apart ... ok
+test convertors::fontforge::tests::test_drop_alternate_unicodes_keeps_the_primary_encoding ... ok
+test convertors::fontforge::tests::test_copyright_line_break_escapes_are_decoded_and_survive_a_roundtrip ... ok
+test convertors::fontforge::tests::test_feature_references_follow_declaration_order ... ok
+test convertors::fontforge::tests::test_fpst_drops_glyphs_the_font_does_not_have ... ok
+test convertors::fontforge::tests::test_fpst_header_counts_detect_a_misread_body ... ok
+test convertors::fontforge::tests::test_generated_suffix_names_cannot_be_taken_twice ... ok
+test convertors::fontforge::tests::test_glyph_kind_backtrack_is_one_position_per_glyph ... ok
+test convertors::fontforge::tests::test_glyph_kind_lookups_follow_their_position ... ok
+test convertors::fontforge::tests::test_glyph_kind_rule_with_a_missing_glyph_is_dropped ... ok
+test convertors::fontforge::tests::test_indic_mark_anchors_and_subcategory ... ok
+test convertors::fontforge::tests::test_italic_angle_sign_is_converted ... ok
+test convertors::fontforge::tests::test_italic_angle_survives_an_sfd_roundtrip_as_text ... ok
+test convertors::fontforge::tests::test_keyword_and_digit_lookup_names_get_safe_labels ... ok
+test convertors::fontforge::tests::test_load_sfdir ... ok
+test convertors::fontforge::tests::test_nul_padded_vendor_is_repadded_with_spaces ... ok
+test convertors::fontforge::tests::test_oneline_glyph_rules_are_added_to_lookups ... ok
+test convertors::fontforge::tests::test_quadratic_layer_parses_and_emits_qcurves ... ok
+test convertors::fontforge::tests::test_reference_resolves_to_the_lookup_that_was_defined ... ok
+test convertors::fontforge::tests::test_reverse_chain_is_not_emitted_as_a_forward_rule ... ok
+test convertors::fontforge::tests::test_roundtrip::path_01_resources_fontforge_AHBugs_sfd ... ok
+test convertors::fontforge::tests::test_class_fpst_ponomar_contextual_kerning ... ok
+test convertors::fontforge::tests::test_roundtrip::path_02_resources_fontforge_Ambrosia_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_04_resources_fontforge_AmbrosiaItalic_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_05_resources_fontforge_BoxesAndBounds_sfd ... ok
+test convertors::fontforge::tests::test_chain_pos_sub_parsing ... ok
+test convertors::fontforge::tests::test_roundtrip::path_03_resources_fontforge_AmbrosiaBold_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_06_resources_fontforge_CMAPEncTest_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_08_resources_fontforge_CaslonMM_sfd ... ok
+test convertors::fontforge::tests::test_class_fpst_ponomar ... ok
+test convertors::fontforge::tests::test_feature_code_order_is_deterministic ... ok
+test convertors::fontforge::tests::test_roundtrip::path_07_resources_fontforge_Caliban_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_12_resources_fontforge_Hinting_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_10_resources_fontforge_FormalScript_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_13_resources_fontforge_ItalicHand_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_09_resources_fontforge_DejaVuSerif_sfd ... ok
+test convertors::designspace::tests::test_background ... ok
+test convertors::fontforge::tests::test_roundtrip::path_18_resources_fontforge_VKern_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_14_resources_fontforge_MontenegrinGothicOne_sfd ... ok
+test convertors::fontforge::tests::test_seqlookup_index_past_the_last_position_drops_the_rule ... ok
+test convertors::fontforge::tests::test_space_before_italic ... ok
+test convertors::fontforge::tests::test_utf7_escaped_lookup_and_subtable_names_still_match ... ok
+test convertors::fontforge::tests::test_utf7_escaped_subtable_name_still_finds_its_oneline_rules ... ok
+test convertors::fontforge::tests::test_weight_suffix_of_family_name ... ok
+test convertors::fontforge::tests::use_typo_metrics_goes_to_fsselection_not_fstype ... ok
+test convertors::fontforge::utf7::tests::a_dash_terminated_run_consumes_the_dash ... ok
+test convertors::fontforge::utf7::tests::a_run_ends_at_the_first_non_base64_character ... ok
+test convertors::fontforge::utf7::tests::astral_plane_survives_as_a_surrogate_pair ... ok
+test convertors::fontforge::utf7::tests::lone_surrogate_becomes_the_replacement_character ... ok
+test convertors::fontforge::utf7::tests::payload_is_utf16_not_utf8 ... ok
+test convertors::fontforge::utf7::tests::plain_text_passes_through ... ok
+test convertors::fontforge::utf7::tests::plus_minus_is_a_literal_plus ... ok
+test convertors::fontforge::utf7::tests::real_corpus_strings ... ok
+test convertors::fontforge::utf7::tests::short_trailing_group_is_not_discarded ... ok
+test convertors::fontforge::utf7::tests::the_writers_nul_terminator_is_not_content ... ok
+test convertors::fontir::avar2::tests::test_avar2_full ... ok
+test convertors::fontforge::tests::test_roundtrip::path_16_resources_fontforge_OverlapBugs_sfd ... ok
+test convertors::fontir::avar2::tests::test_avar2_opsz ... ok
+test convertors::fontforge::tests::test_class_fpst_emission_order_is_stable ... ok
+test convertors::fontlab::tests::test_parse_layer_cubic ... ok
+test convertors::fontlab::tests::test_parse_layer_quadratic ... ok
+test convertors::fontforge::tests::test_roundtrip::path_19_resources_fontforge_dvng10a_crash_sfd ... ok
+test convertors::glyphs3::customparameters::os2_export_tests::fs_type_is_written_as_bit_indices ... ok
+test convertors::glyphs3::customparameters::os2_export_tests::nothing_is_written_when_the_source_said_nothing ... ok
+test convertors::glyphs3::customparameters::os2_export_tests::os2_values_reach_the_custom_parameters ... ok
+test convertors::glyphs3::customparameters::tests::test_disabled_vertical_metric_cp_not_interpreted ... ok
+test convertors::glyphs3::customparameters::tests::test_export_vertical_metrics_as_master_level_cps ... ok
+test convertors::fontlab::tests::test_sepehr_all_glyphs ... ok
+test convertors::fontforge::tests::test_roundtrip::path_15_resources_fontforge_NimbusLGCUni_Regular_sfd ... ok
+test convertors::glyphs3::customparameters::tests::test_master_level_vertical_metric_overrides_font_level ... ok
+test convertors::glyphs3::customparameters::tests::test_metric_custom_parameters_are_read_into_the_metric_map ... ok
+test convertors::glyphs3::customparameters::tests::test_metric_custom_parameters_survive_a_glyphs_round_trip ... ok
+test convertors::glyphs3::customparameters::tests::test_os2_and_post_metrics_leave_as_custom_parameters_not_named_metrics ... ok
+test convertors::glyphs3::customparameters::tests::test_interpret_font_level_vertical_metrics ... ok
+test convertors::designspace::tests::test_roundtrip::path_1_resources_IbarraRealNova_designspace ... ok
+test convertors::glyphs3::tests::axis_location_on_masters_builds_the_mapping_from_masters ... ok
+test convertors::glyphs3::tests::english_only_singular_properties_are_not_dropped ... ok
+test convertors::glyphs3::tests::explicit_axis_mappings_take_precedence_over_instances ... ok
+test convertors::glyphs3::tests::font_level_os2_classes_reach_the_exported_instance ... ok
+test convertors::glyphs3::tests::identity_mapping_is_elided ... ok
+test convertors::glyphs3::tests::instance_axis_location_overrides_the_width_class ... ok
+test convertors::glyphs3::tests::instance_without_a_weight_class_defaults_to_400 ... ok
+test convertors::glyphs3::customparameters::tests::test_interpret_master_level_vertical_metrics ... ok
+test convertors::glyphs3::tests::test_designspace ... ok
+test convertors::glyphs3::tests::test_kern_groups ... ok
+test convertors::glyphs3::tests::test_load_marks ... ok
+test convertors::fontforge::tests::test_roundtrip::path_11_resources_fontforge_Glegoo_Regular_sfd ... ok
+test convertors::glyphs3::tests::test_roundtrip::path_1_resources_Designspace_glyphs ... ok
+test convertors::glyphs3::tests::test_load_open_shape ... ok
+test convertors::glyphs3::tests::test_roundtrip::path_2_resources_KernGroupTest_glyphs ... ok
+test convertors::glyphs3::tests::test_smart_components ... ok
+test convertors::glyphs3::tests::test_timezone ... ok
+test convertors::glyphs3::tests::test_roundtrip::path_3_resources_NotoSansLimbu_glyphs ... ok
+test convertors::glyphs3::tests::width_class_is_a_percentage_not_a_raw_class ... ok
+test convertors::robocjk::tests::test_deserialize_designspace ... FAILED
+test convertors::robocjk::tests::test_load_robocjk ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_codepoints ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_deep_components ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_glyphs ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_masters ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_variation_layer_classification ... FAILED
+test convertors::glyphs3::tests::all_the_axes ... ok
+test convertors::glyphs3::tests::test_transform ... ok
+test convertors::fontforge::tests::test_roundtrip::path_17_resources_fontforge_Ponomar_sfd ... ok
+test convertors::fontir::tests::test_compiled_italic_angle_matches_the_source ... ok
+test convertors::ufo::tests::test_roundtrip_2::path_1_resources_IbarraRealNova_Bold_ufo_lib_plist ... ok
+test convertors::ufo::tests::test_roundtrip_2::path_2_resources_IbarraRealNova_BoldItalic_ufo_lib_plist ... ok
+test convertors::ufo::tests::test_roundtrip_2::path_5_resources_Test1_ufo_lib_plist ... ok
+test convertors::ufo::tests::test_roundtrip_2::path_3_resources_IbarraRealNova_Italic_ufo_lib_plist ... ok
+test filters::decomposecomponentreferences::tests::test_decompose ... FAILED
+test convertors::ufo::tests::test_italic_angle_conventions ... ok
+test filters::cubic2quadratic::tests::test_final_segment ... ok
+test filters::decomposecomponentreferences::tests::test_pass_on_external_axes ... FAILED
+test filters::dropalternateunicodes::tests::test_a_glyph_with_no_encoding_codepoint_keeps_its_first ... ok
+test filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole ... FAILED
+test filters::dropalternateunicodes::tests::test_the_encoding_codepoint_is_kept_wherever_it_sits ... ok
+test filters::dropalternateunicodes::tests::test_an_encoding_codepoint_repeated_in_altuni_is_kept ... ok
+test filters::dropcopyrightdescription::tests::drops_a_notice_but_keeps_prose ... ok
+test filters::dropcopyrightdescription::tests::test_is_copyright_notice ... ok
+test filters::glyphsbracketlayers::tests::test_overlay_box_basic ... ok
+test filters::glyphsbracketlayers::tests::test_overlay_box_no_intersection ... ok
+test filters::glyphsbracketlayers::tests::test_split_boxes_complex_overlap ... ok
+test filters::glyphsbracketlayers::tests::test_split_boxes_empty ... ok
+test filters::glyphsbracketlayers::tests::test_split_boxes_overlapping_same_subst ... ok
+test filters::glyphsbracketlayers::tests::test_split_boxes_simple ... ok
+test filters::glyphsbracketlayers::tests::test_split_boxes_single_ruleset ... ok
+test filters::infermarkcategory::tests::test_infer_mark_category ... ok
+test filters::keepsourceadvances::tests::test_a_category_already_set_is_never_overwritten ... ok
+test filters::keepsourceadvances::tests::test_advancing_glyph_becomes_a_base_and_zero_width_one_does_not ... ok
+test filters::keepsourceglyphnames::tests::test_a_parameter_set_to_0_or_disabled_is_not_a_request ... ok
+test filters::keepsourceglyphnames::tests::test_sets_the_glyphs_custom_parameter ... ok
+test filters::legacyduplicatecmap::tests::a_codepoint_the_source_already_assigns_is_left_alone ... ok
+test filters::legacyduplicatecmap::tests::a_separate_nbsp_keeps_its_own_width ... ok
+test filters::legacyduplicatecmap::tests::every_duplicate_in_the_table_is_applied ... ok
+test filters::legacyduplicatecmap::tests::nothing_is_invented_when_the_glyph_is_absent ... ok
+test filters::legacyduplicatecmap::tests::running_it_twice_does_not_duplicate_the_codepoint ... ok
+test filters::legacyduplicatecmap::tests::the_duplicate_is_added_when_the_glyph_exists ... ok
+test filters::legacyduplicatecmap::tests::the_soft_hyphen_is_never_added ... ok
+test filters::legacyduplicatecmap::tests::the_width_is_left_alone_when_there_is_nothing_to_reconcile ... ok
+test filters::decomposecomponentreferences::tests::test_half_decomposition ... ok
+test filters::nbspwidth::tests::does_nothing_when_one_glyph_carries_both_codepoints ... ok
+test filters::nbspwidth::tests::does_nothing_without_a_space ... ok
+test filters::nbspwidth::tests::leaves_an_already_matching_nbsp_alone ... ok
+test filters::nbspwidth::tests::widens_a_narrow_nbsp_to_the_space ... ok
+test filters::quadratic2cubic::tests::test_final_segment ... ok
+test filters::recomposition::encoded::tests::test_recompose_encoded ... ok
+test filters::reversepathdirection::tests::test_a_closed_contour_is_reversed_and_an_open_one_is_not ... ok
+test filters::rewritesmartaxes::tests::test_grantha_unique_locations ... ok
+test convertors::ufo::tests::test_roundtrip_2::path_4_resources_IbarraRealNova_Regular_ufo_lib_plist ... ok
+test filters::singlelinenames::tests::flattens_every_field_and_language ... ok
+test filters::singlelinenames::tests::leaves_single_line_values_untouched ... ok
+test filters::singlelinenames::tests::test_single_line ... ok
+test filters::snapcomponenttransforms::tests::test_a_glyph_with_a_contour_keeps_its_component_transforms ... ok
+test filters::snapcomponenttransforms::tests::test_a_half_unit_offset_breaks_toward_even_the_way_rint_does ... ok
+test filters::snapcomponenttransforms::tests::test_a_matrix_entry_outside_f2dot14_leaves_the_whole_glyph_alone ... ok
+test filters::snapcomponenttransforms::tests::test_a_mirror_written_as_minus_0_999939_reads_as_minus_one ... ok
+test filters::snapcomponenttransforms::tests::test_a_real_scale_further_out_is_left_alone ... ok
+test filters::snapcomponenttransforms::tests::test_only_a_masters_own_layer_is_snapped ... ok
+test filters::snapcomponenttransforms::tests::test_only_the_sfd_glyph_made_of_components_is_snapped ... ok
+test filters::snapcomponenttransforms::tests::test_the_ends_of_the_f2dot14_range_still_make_a_composite ... ok
+test filters::snapcomponenttransforms::tests::test_the_sfd_back_and_extra_layers_keep_their_component_transforms ... ok
+test filters::subsetlayout::tests::test_both_ss_names ... ok
+test filters::subsetlayout::tests::test_cull_unwanted_aalt ... ok
+test filters::subsetlayout::tests::test_cull_unwanted_named_features ... ok
+test filters::subsetlayout::tests::test_drop_mark_class ... ok
+test filters::subsetlayout::tests::test_drop_preseeded_lookup_definitions ... ok
+test filters::subsetlayout::tests::test_feature_of_lookup_references_survives ... ok
+test filters::subsetlayout::tests::test_featurenames_block_survives_subsetting ... ok
+test filters::subsetlayout::tests::test_filter_range ... ok
+test convertors::fontir::tests::test_fustat_skipmetrics ... ok
+test filters::subsetlayout::tests::test_keep_automatic_code_comment ... ok
+test filters::subsetlayout::tests::test_multiple_subset_retains_classes ... ok
+test filters::subsetlayout::tests::test_multiple_subst_with_classes ... ok
+test filters::subsetlayout::tests::test_redefined_class_is_renamed ... ok
+test filters::subsetlayout::tests::test_reserved_class_name_is_renamed ... ok
+test filters::subsetlayout::tests::test_reserved_lookup_name_is_renamed ... ok
+test filters::subsetlayout::tests::test_subset_single_subst ... ok
+test filters::subsetlayout::tests::test_subset_use_mark_filtering_set ... ok
+test layout::closure::tests::test_closure_1 ... ok
+test layout::closure::tests::test_closure_2 ... ok
+test layout::closure::tests::test_closure_multiple_rounds ... ok
+test metrics::tests::test_serialize ... ok
+test metrics::tests::test_serialize_indexmap ... ok
+test shape::tests::delete_keeping_shape_method_removes_nodes_in_place ... ok
+test shape::tests::open_paths_are_left_alone ... ok
+test shape::tests::reversal_keeps_segment_kinds_with_their_segments ... ok
+test shape::tests::reversal_preserves_mixed_line_and_curve_segments ... ok
+test shape::tests::reversing_twice_is_the_identity ... ok
+test shape::tests::signed_area_sign_matches_direction ... ok
+test shape::tests::test_path_serde_roundtrip ... ok
+test shape::tests::test_path_serde_roundtrip_with_whitespace_in_node_format_specific ... ok
+test shape::tests::test_to_kurbo ... ok
+test convertors::ufo::tests::test_roundtrip_1 ... ok
+test filters::dropincompatiblepaths::tests::test_fustat ... ok
+test convertors::glyphs3::customparameters::tests::test_set_typo_metrics ... ok
+test filters::makecompatible::tests::test_integration ... ok
+test filters::rewritesmartaxes::tests::test_robocjk_unique_locations ... ok
+test convertors::glyphs3::tests::test_default_master ... ok
+test filters::subsetlayout::tests::test_fustat_subset ... ok
+
+failures:
+
+---- convertors::robocjk::tests::test_deserialize_designspace stdout ----
+
+thread 'convertors::robocjk::tests::test_deserialize_designspace' (3857803) panicked at babelfont/src/convertors/robocjk.rs:404:91:
+called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- convertors::robocjk::tests::test_load_robocjk stdout ----
+
+thread 'convertors::robocjk::tests::test_load_robocjk' (3857804) panicked at babelfont/src/convertors/robocjk.rs:439:69:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- convertors::robocjk::tests::test_load_robocjk_codepoints stdout ----
+
+thread 'convertors::robocjk::tests::test_load_robocjk_codepoints' (3857805) panicked at babelfont/src/convertors/robocjk.rs:547:69:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- convertors::robocjk::tests::test_load_robocjk_deep_components stdout ----
+
+thread 'convertors::robocjk::tests::test_load_robocjk_deep_components' (3857806) panicked at babelfont/src/convertors/robocjk.rs:597:69:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- convertors::robocjk::tests::test_load_robocjk_glyphs stdout ----
+
+thread 'convertors::robocjk::tests::test_load_robocjk_glyphs' (3857807) panicked at babelfont/src/convertors/robocjk.rs:524:69:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- convertors::robocjk::tests::test_load_robocjk_masters stdout ----
+
+thread 'convertors::robocjk::tests::test_load_robocjk_masters' (3857808) panicked at babelfont/src/convertors/robocjk.rs:461:69:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif stdout ----
+
+thread 'convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif' (3857809) panicked at babelfont/src/convertors/robocjk.rs:639:69:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- convertors::robocjk::tests::test_load_robocjk_variation_layer_classification stdout ----
+
+thread 'convertors::robocjk::tests::test_load_robocjk_variation_layer_classification' (3857810) panicked at babelfont/src/convertors/robocjk.rs:567:69:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- filters::decomposecomponentreferences::tests::test_decompose stdout ----
+
+thread 'filters::decomposecomponentreferences::tests::test_decompose' (3857862) panicked at babelfont/src/filters/decomposecomponentreferences.rs:559:73:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- filters::decomposecomponentreferences::tests::test_pass_on_external_axes stdout ----
+
+thread 'filters::decomposecomponentreferences::tests::test_pass_on_external_axes' (3857864) panicked at babelfont/src/filters/decomposecomponentreferences.rs:710:73:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole stdout ----
+
+thread 'filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole' (3857865) panicked at babelfont/src/filters/decomposecomponentreferences.rs:582:73:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+
+failures:
+    convertors::robocjk::tests::test_deserialize_designspace
+    convertors::robocjk::tests::test_load_robocjk
+    convertors::robocjk::tests::test_load_robocjk_codepoints
+    convertors::robocjk::tests::test_load_robocjk_deep_components
+    convertors::robocjk::tests::test_load_robocjk_glyphs
+    convertors::robocjk::tests::test_load_robocjk_masters
+    convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif
+    convertors::robocjk::tests::test_load_robocjk_variation_layer_classification
+    filters::decomposecomponentreferences::tests::test_decompose
+    filters::decomposecomponentreferences::tests::test_pass_on_external_axes
+    filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole
+
+test result: FAILED. 220 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 15.69s
+
+error: test failed, to rerun pass `-p babelfont --lib`
+     Running tests/integration.rs (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-source-fidelity/target-pc/debug/deps/integration-bea82fcc34b9ee8e)
+
+running 7 tests
+test test_ufo_export_unifies_glyphs3_rtl_kerning ... ok
+test test_load_vfb_quadratic_curves ... ok
+test test_convert_to_ttf_grantha ... ok
+test test_load_babelfont ... ok
+test test_convert_to_ttf_static2 ... ok
+test test_convert_to_ttf_radiocanada ... ok
+test test_convert_to_ttf_static ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 16.14s
+
+   Doc-tests babelfont
+
+running 5 tests
+test babelfont/src/filters/mod.rs - filters::declare_filters (line 35) ... ignored
+test babelfont/src/lib.rs - (line 44) - compile ... ok
+test babelfont/src/lib.rs - (line 73) - compile ... ok
+test babelfont/src/lib.rs - (line 101) - compile ... ok
+test babelfont/src/shape.rs - shape::PathBuilder (line 476) ... ok
+
+test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 4.69s
+
+error: 1 target failed:
+    `-p babelfont --lib`

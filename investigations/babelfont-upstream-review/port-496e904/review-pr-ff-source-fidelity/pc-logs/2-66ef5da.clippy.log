@@ -1,0 +1,4 @@
+   Compiling babelfont v0.2.1 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-source-fidelity/pc-src/babelfont)
+    Checking sr-aef v0.1.0 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-source-fidelity/pc-src/sr-aef)
+    Checking fontmerge v0.1.0 (/home/fsanches/compartilhado/babelfont-rs-worktrees/port-496e904-work/review-pr-ff-source-fidelity/pc-src/fontmerge)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 14.69s

@@ -1,0 +1,1 @@
+ComicRelief-Regular ref vs cand TTF: every table identical once head.modified/checkSumAdjustment are ignored

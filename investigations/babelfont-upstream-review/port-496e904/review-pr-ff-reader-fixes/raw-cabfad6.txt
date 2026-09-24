@@ -1,0 +1,12 @@
+tree fdb8d1f271ed7271197324dffd2e30061c10b782
+parent 0b5594762db5a88c6cdfcb844963b6f6225405f5
+author Felipe Corrêa da Silva Sanches <juca@members.fsf.org> 1789834839 +0100
+committer Felipe Corrêa da Silva Sanches <juca@members.fsf.org> 1790241231 +0100
+
+fontforge: decode a quoted glyph name, and trim before unquoting
+
+A quoted StartChar name is modified UTF-7, like the subtable, lookup, class
+and nameid strings; an unquoted one is literal, as SFDGetChar reads it.
+Trim trailing whitespace before unquoting.
+
+Assisted by AI agents (Claude Opus 5, Claude Opus 5.5)
