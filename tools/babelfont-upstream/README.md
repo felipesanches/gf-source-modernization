@@ -25,3 +25,7 @@ review-fix round changes code on purpose; see its own record.)
 
 Whether the split changed behaviour is answered separately, by
 `tools/probes/upstream_prs_equivalence/` (42 of 42 styles byte-identical to 8b59bc3).
+
+`check_branch.sh <branch>` reproduces the fmt / clippy / test numbers each PR body quotes,
+for the branch and for upstream/main, from clean copies in separate cargo target dirs.
+The review agents' own wrappers (scratch) did the same with hard-coded paths.
