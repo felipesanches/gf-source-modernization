@@ -29,7 +29,7 @@ Inputs:
   reference  /home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/
              target-heights/release/babelfont  (BUILT_FROM: 8b59bc3)
   candidate  /home/fsanches/compartilhado/babelfont-rs-worktrees/target-integration/
-             release/babelfont  (integration-ff-prs 920bd97, built with
+             release/babelfont  (integration-ff-prs (see RESULT.txt for the candidate binary), built with
              `cargo build --release -p babelfont --features cli`; the bin target has
              required-features = ["cli"])
   invocation `babelfont <in.sfd> <out.glyphs> <flags...>`, as tools/land.py does.

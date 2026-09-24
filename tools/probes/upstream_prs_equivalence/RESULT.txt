@@ -1,6 +1,6 @@
 reference  /home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont  (29355000 bytes, sha256:744f0ecd14d5ae97)
            BUILT_FROM 8b59bc33af8c0ed77819d5a785eccef610bef8e8
-candidate  /home/fsanches/compartilhado/babelfont-rs-worktrees/target-integration/release/babelfont  (29355024 bytes, sha256:4272b9fb1713be7d)
+candidate  /home/fsanches/compartilhado/babelfont-rs-worktrees/target-integration/release/babelfont  (29356568 bytes, sha256:f66360dea18718d6)
 styles     42 (families.tsv)
 
 == 1. original: unmodified .sfd from the repo archive, recipe flags
