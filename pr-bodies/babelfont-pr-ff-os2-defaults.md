@@ -20,9 +20,9 @@ Not modelled, and said so in the rustdoc: sources without FontForge's `pfmset`, 
 version-1 exports, and fractional metrics (the reader drops a fractional underline
 value and rounds the italic angle).
 
-Independent of #90; with it, the values also reach a .glyphs output as custom
-parameters. Merges cleanly with the two companion FontForge PRs.
+With #90, now merged, the values also reach a .glyphs output as custom parameters.
+Independent of the two companion FontForge PRs, and merges cleanly with them.
 
-Tests: 32 new. `cargo test -p babelfont --no-fail-fast`: 229 passed, 11 failed;
-upstream/main d758b98: 197 passed, the same 11 failed (they need the untracked .rcjk
+Tests: 32 new. `cargo test -p babelfont --no-fail-fast`: 233 passed, 11 failed;
+upstream/main 0b55947: 201 passed, the same 11 failed (they need the untracked .rcjk
 fixture). fmt clean; clippy, also with `--features cli`, 0 warnings.

@@ -22,6 +22,6 @@ compilation, and one CLI change.
 
 Merges cleanly with the two companion FontForge PRs.
 
-Tests: 18 new. `cargo test -p babelfont --no-fail-fast`: 215 passed, 11 failed;
-upstream/main d758b98: 197 passed, the same 11 failed (they need the untracked .rcjk
+Tests: 18 new. `cargo test -p babelfont --no-fail-fast`: 219 passed, 11 failed;
+upstream/main 0b55947: 201 passed, the same 11 failed (they need the untracked .rcjk
 fixture). fmt clean; clippy, also with `--features cli`, 0 warnings.
