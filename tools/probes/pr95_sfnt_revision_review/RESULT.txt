@@ -1,0 +1,8 @@
+trees: /home/fsanches/compartilhado/sfd-reland-scratch/pr95/review/tree-b4dc853/babelfont /home/fsanches/compartilhado/sfd-reland-scratch/pr95/review/tree-8042926/babelfont
+synthetic headers: 1112, differing: 252
+differing headers NOT of the form 'valid sfntRevision, then a later invalid one': 0
+b4dc853: headers with at most one Version and one sfntRevision line: 60, round-trip problems: 0
+8042926: headers with at most one Version and one sfntRevision line: 60, round-trip problems: 0
+b4dc853: all headers whose version changes over an SFD round trip: 28
+8042926: all headers whose version changes over an SFD round trip: 200
+corpus files: 845, identical lines: 845, load errors: 5
