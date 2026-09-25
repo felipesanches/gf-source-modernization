@@ -1,0 +1,59 @@
+flags: --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --correct-path-direction
+RELEASE-STALE hmtx.dollar -- shipped records 104 for an outline at 100; ours records 100
+RELEASE-STALE hmtx.parenright -- shipped records 4 for an outline at -8; ours records -8
+RELEASE-STALE hmtx.asterisk -- shipped records 88 for an outline at 76; ours records 76
+RELEASE-STALE hmtx.slash -- shipped records 45 for an outline at 35; ours records 35
+RELEASE-STALE hmtx.one -- shipped records 27 for an outline at 16; ours records 16
+RELEASE-STALE hmtx.two -- shipped records 84 for an outline at 80; ours records 80
+RELEASE-STALE hmtx.three -- shipped records 104 for an outline at 100; ours records 100
+RELEASE-STALE hmtx.five -- shipped records 166 for an outline at 162; ours records 162
+RELEASE-STALE hmtx.question -- shipped records 43 for an outline at 39; ours records 39
+RELEASE-STALE hmtx.A -- shipped records 61 for an outline at 60; ours records 60
+RELEASE-STALE hmtx.V -- shipped records 61 for an outline at 60; ours records 60
+RELEASE-STALE hmtx.X -- shipped records 62 for an outline at 58; ours records 58
+RELEASE-STALE hmtx.backslash -- shipped records 45 for an outline at 35; ours records 35
+RELEASE-STALE hmtx.asciicircum -- shipped records 86 for an outline at 72; ours records 72
+RELEASE-STALE hmtx.grave -- shipped records 4 for an outline at -10; ours records -10
+RELEASE-STALE hmtx.v -- shipped records 61 for an outline at 60; ours records 60
+RELEASE-STALE hmtx.yen -- shipped records 44 for an outline at 39; ours records 39
+RELEASE-STALE hmtx.section -- shipped records 145 for an outline at 139; ours records 139
+RELEASE-STALE hmtx.twosuperior -- shipped records 145 for an outline at 139; ours records 139
+RELEASE-STALE hmtx.threesuperior -- shipped records 125 for an outline at 119; ours records 119
+RELEASE-STALE hmtx.acute -- shipped records 4 for an outline at -6; ours records -6
+RELEASE-STALE hmtx.onesuperior -- shipped records 88 for an outline at 78; ours records 78
+RELEASE-STALE hmtx.guillemotright -- shipped records 43 for an outline at 39; ours records 39
+RELEASE-STALE hmtx.onequarter -- shipped records 68 for an outline at 57; ours records 57
+RELEASE-STALE hmtx.onehalf -- shipped records 68 for an outline at 58; ours records 58
+RELEASE-STALE hmtx.threequarters -- shipped records 84 for an outline at 78; ours records 78
+RELEASE-STALE hmtx.Agrave -- shipped records 63 for an outline at 53; ours records 53
+RELEASE-STALE hmtx.Aacute -- shipped records 63 for an outline at 53; ours records 53
+RELEASE-STALE hmtx.Acircumflex -- shipped records 63 for an outline at 53; ours records 53
+RELEASE-STALE hmtx.Atilde -- shipped records 63 for an outline at 53; ours records 53
+RELEASE-STALE hmtx.Adieresis -- shipped records 63 for an outline at 53; ours records 53
+RELEASE-STALE hmtx.Aring -- shipped records 63 for an outline at 53; ours records 53
+RELEASE-STALE hmtx.AE -- shipped records 4 for an outline at -8; ours records -8
+RELEASE-STALE hmtx.Igrave -- shipped records 4 for an outline at -10; ours records -10
+RELEASE-STALE hmtx.Icircumflex -- shipped records 4 for an outline at -10; ours records -10
+RELEASE-STALE hmtx.multiply -- shipped records 88 for an outline at 76; ours records 76
+RELEASE-STALE hmtx.Yacute -- shipped records 23 for an outline at 18; ours records 18
+RELEASE-STALE hmtx.igrave -- shipped records 25 for an outline at 11; ours records 11
+RELEASE-STALE hmtx.icircumflex -- shipped records 4 for an outline at -10; ours records -10
+RELEASE-STALE hmtx.yacute -- shipped records 43 for an outline at 35; ours records 35
+RELEASE-STALE hmtx.ydieresis -- shipped records 43 for an outline at 35; ours records 35
+RELEASE-STALE hmtx.Itilde -- shipped records -18 for an outline at -23; ours records -23
+RELEASE-STALE hmtx.itilde -- shipped records 2 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.Scaron -- shipped records 104 for an outline at 100; ours records 100
+RELEASE-STALE hmtx.scaron -- shipped records 104 for an outline at 98; ours records 98
+RELEASE-STALE hmtx.Ydieresis -- shipped records 23 for an outline at 18; ours records 18
+RELEASE-STALE hmtx.florin -- shipped records -305 for an outline at -309; ours records -309
+RELEASE-STALE hmtx.circumflex -- shipped records 4 for an outline at -10; ours records -10
+RELEASE-STALE hmtx.caron -- shipped records 4 for an outline at -10; ours records -10
+RELEASE-STALE hmtx.tilde -- shipped records 2 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.Euro -- shipped records 43 for an outline at 37; ours records 37
+RELEASE-STALE GSUB.script_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.feature_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.lookup_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+0 blocking table difference(s), 57 stale in the release
