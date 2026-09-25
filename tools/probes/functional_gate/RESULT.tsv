@@ -1,0 +1,95 @@
+repo	style	verdict	cmap	shaping	rendering	names	line_spacing	advances	gdef	first failure per failing check
+creepstercaps@c5f2ec0	CreepsterCaps-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+herrvonmuellerhoff@d3f201a	HerrVonMuellerhoff-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+kristi@f05a418	Kristi-Regular	FAIL	PASS	PASS	FAIL	FAIL	FAIL	FAIL	PASS	rendering: 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px | names: name ID 2 (3,1,0x409): release 'Regular', build 'Italic' | line_spacing: DirectWrite/GDI line spacing (ascender, descender, gap): release win (1836, -724, 0), build typo (1272, -776, 512) | advances: 1 advance width(s) differ (release/build): .notdef 748/1024
+lekton@cd0f945	Lekton-Bold	FAIL	PASS	FAIL	PASS	FAIL	FAIL	PASS	PASS	shaping: language system latn/TUR: 38 of 1538 runs differ (TUR is not a registered OpenType language tag: no BCP 47 language selects it; only a request for the tag itsel | names: name ID 4 (3,1,0x409): release 'Lekton-Bold', build 'Lekton Bold' | line_spacing: DirectWrite/GDI line spacing (ascender, descender, gap): release win (1112, -585, 0), build typo (750, -250, 0)
+lekton@cd0f945	Lekton-Italic	FAIL	PASS	PASS	PASS	FAIL	FAIL	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Lekton-Italic', build 'Lekton Italic' | line_spacing: DirectWrite/GDI line spacing (ascender, descender, gap): release win (904, -244, 0), build typo (750, -250, 0)
+lekton@cd0f945	Lekton-Regular	FAIL	PASS	FAIL	PASS	FAIL	FAIL	PASS	PASS	shaping: language system latn/TUR: 38 of 1538 runs differ (TUR is not a registered OpenType language tag: no BCP 47 language selects it; only a request for the tag itsel | names: name ID 4 (3,1,0x409): release 'Lekton', build 'Lekton Regular' | line_spacing: DirectWrite/GDI line spacing (ascender, descender, gap): release win (1112, -585, 0), build typo (750, -250, 0)
+miama@2ff6126	Miama-Regular	FAIL	PASS	FAIL	FAIL	FAIL	PASS	PASS	PASS	shaping: default features, singles: 34 of 1110 runs differ | rendering: diffenator3: 34 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+032D 136px, U+0326 129px, U+0330 97px, U+0317 96px, U+032E 96px | names: name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+monoton@60394d3	Monoton-Regular	FAIL	PASS	FAIL	PASS	FAIL	PASS	PASS	FAIL	shaping: default features, singles: 4 of 371 runs differ | names: name ID 4 (3,1,0x409): release 'Monoton', build 'Monoton Regular' | gdef: GDEF absent in the build
+nixieone@89d5f47	NixieOne-Regular	FAIL	PASS	PASS	FAIL	FAIL	PASS	PASS	PASS	rendering: diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+201E 32px, U+201D 32px, U+003B 24px, U+002C 17px, U+201A 17px | names: name ID 4 (3,1,0x409): release 'Nixie One', build 'Nixie One Regular'
+nosifer@7777099	Nosifer-Regular	FAIL	PASS	FAIL	FAIL	FAIL	PASS	FAIL	PASS	shaping: default features, singles: 3 of 334 runs differ | rendering: diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 64px, U+0311 60px, U+0307 42px | names: name ID 4 (3,1,0x409): release 'Nosifer', build 'Nosifer Regular' | advances: 1 advance width(s) differ (release/build): .notdef 748/1024
+nosifercaps@b075bc4	NosiferCaps-Regular	FAIL	PASS	FAIL	FAIL	PASS	FAIL	FAIL	FAIL	shaping: default features, singles: 3 of 334 runs differ | rendering: 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px | line_spacing: fsSelection: REGULAR gained | advances: 1 advance width(s) differ (release/build): .notdef 748/1024 | gdef: GDEF absent in the build
+novacut@64b2e02	NovaCut	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 2 (3,1,0x409): release 'Book', build 'Regular'
+novaflat@72dd793	NovaFlat	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 2 (3,1,0x409): release 'Book', build 'Regular'
+novamono@4ad3153	NovaMono	FAIL	PASS	FAIL	FAIL	FAIL	PASS	FAIL	FAIL	shaping: default features, singles: 1 of 1328 runs differ | rendering: diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0308 70px | names: name ID 4 (3,1,0x409): release 'NovaMono', build 'NovaMono Regular' | advances: post.isFixedPitch: release 1, build 0 | gdef: GDEF absent in the build
+novaoval@cc8fc40	NovaOval	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 2 (3,1,0x409): release 'Book', build 'Regular'
+novaround@b922b5c	NovaRound	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 2 (3,1,0x409): release 'Book', build 'Regular'
+novascript@95cd12f	NovaScript-Regular	FAIL	PASS	PASS	PASS	FAIL	FAIL	PASS	PASS	names: name ID 2 (3,1,0x409): release 'Regular', build 'Italic' | line_spacing: fsSelection: ITALIC gained, REGULAR lost
+novaslim@9a7efc4	NovaSlim	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 2 (3,1,0x409): release 'Book', build 'Regular'
+novasquare@9b6eb41	NovaSquare	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 2 (3,1,0x409): release 'Book', build 'Regular'
+patrickhand@1ed7368	PatrickHand-Regular	FAIL	PASS	PASS	PASS	FAIL	FAIL	PASS	FAIL	names: name ID 4 (3,1,0x409): release 'Patrick Hand', build 'Patrick Hand Regular' | line_spacing: DirectWrite/GDI line spacing (ascender, descender, gap): release win (1042, -312, 0), build typo (1024, -312, 0) | gdef: GDEF absent in the build
+puritan@0546c4e	Puritan-Bold	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+puritan@0546c4e	Puritan-BoldItalic	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 2 (3,1,0x409): release 'BoldItalic', build 'Bold Italic'
+puritan@0546c4e	Puritan-Italic	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+puritan@0546c4e	Puritan-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+russoone@2978615	RussoOne-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Russo One', build 'Russo One Regular'
+sixcaps@db6defb	SixCaps	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Six Caps', build 'Six Caps Regular'
+smythe@e4e1866	Smythe-Regular	FAIL	PASS	FAIL	PASS	FAIL	PASS	PASS	FAIL	shaping: default features, singles: 2 of 267 runs differ | names: name ID 4 (3,1,0x409): release 'Smythe', build 'Smythe Regular' | gdef: GDEF absent in the build
+tulpenone@68206bb	TulpenOne-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Tulpen One', build 'Tulpen One Regular'
+unifrakturcook@511adc6	UnifrakturCook-Bold	FAIL	PASS	FAIL	PASS	FAIL	PASS	PASS	FAIL	shaping: default features, kern+mark: 48 of 62 runs differ | names: name ID 4 (3,1,0x409): release 'UnifrakturCook', build 'UnifrakturCook Bold' | gdef: 9 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, gravecomb 1/3, ti
+abrilfatface@f431a0a	AbrilFatface-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Abril Fatface', build 'Abril Fatface Regular'
+corben@56b176a	Corben-Regular	FAIL	PASS	FAIL	FAIL	FAIL	PASS	FAIL	FAIL	shaping: default features, singles: 4 of 350 runs differ | rendering: 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px | names: name ID 4 (3,1,0x409): release 'Corben', build 'Corben Regular' | advances: 1 advance width(s) differ (release/build): .notdef 748/1024 | gdef: GDEF absent in the build
+corben@56b176a	Corben-Bold	FAIL	PASS	PASS	FAIL	PASS	PASS	PASS	PASS	rendering: diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 138px, U+0141 61px, U+0142 55px
+allerta@bac063d	AllertaStencil-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+rochester@3e712d5	Rochester-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+italiana@8b0a940	Italiana-Regular	FAIL	PASS	FAIL	FAIL	FAIL	PASS	PASS	PASS	shaping: default features, pairs: 823 of 22201 runs differ | rendering: diffenator3: 52 word(s) render differently (>8 px at 16 ppem), confirmed: 'ALKUjiggerypokeryMIX' 856px, 'Grødeimhammeren' 514px, 'Goltsteinstraße' 390px, 'GroÃŸ | names: name ID 4 (3,1,0x409): release 'Italiana', build 'Italiana Regular'
+keaniaone@2069d3c	KeaniaOne-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Keania One', build 'Keania One Regular'
+kellyslab@5496368	KellySlab-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Kelly Slab', build 'Kelly Slab Regular'
+lovedbytheking@ca16af3	LovedbytheKing	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Loved by the King', build 'Loved by the King Regular'
+loveyalikeasister@9b01c9b	LoveYaLikeASister	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+marvel@7e4f101	Marvel-Bold	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+marvel@7e4f101	Marvel-BoldItalic	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+marvel@7e4f101	Marvel-Italic	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+marvel@7e4f101	Marvel-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Marvel', build 'Marvel Regular'
+medulaone@c5afd42	MedulaOne-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Medula One', build 'Medula One Regular'
+meiescript@ce170a2	MeieScript-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Meie Script', build 'Meie Script Regular'
+missfajardose@fb5ee55	MissFajardose-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+monsieurladoulaise@4e97773	MonsieurLaDoulaise-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+mrbedfort@b7c548b	MrBedfort-Regular	FAIL	PASS	PASS	FAIL	FAIL	PASS	PASS	PASS	rendering: diffenator3: 2 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+005C 74px, U+005B 71px | names: name ID 4 (3,1,0x409): release 'Mr Bedfort', build 'Mr Bedfort Regular'
+mrdafoe@d47c14b	MrDafoe-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+mrdehaviland@ec94d0b	MrDeHaviland-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+mrssaintdelafield@bb90550	MrsSaintDelafield-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Mrs Saint Delafield', build 'Mrs Saint Delafield Regular'
+mrssheppards@cd9e01b	MrsSheppards-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+niconne@cb9c761	Niconne-Regular	FAIL	PASS	FAIL	FAIL	FAIL	PASS	PASS	FAIL	shaping: default features, singles: 4 of 283 runs differ | rendering: diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0030 59px | names: name ID 1 (3,1,0x409): release 'Niconne', build 'Nicone' | gdef: GDEF absent in the build
+numans@e0f936f	Numans-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Numans', build 'Numans Regular'
+overlock@d8bff03	Overlock-Black	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+overlock@d8bff03	Overlock-BlackItalic	FAIL	PASS	PASS	PASS	FAIL	FAIL	PASS	PASS	names: name ID 2 (3,1,0x409): release 'Italic', build 'Regular' | line_spacing: fsSelection: ITALIC lost, REGULAR gained
+overlock@d8bff03	Overlock-Bold	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+overlock@d8bff03	Overlock-BoldItalic	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+overlock@d8bff03	Overlock-Italic	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+overlock@d8bff03	Overlock-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+overlocksc@05911aa	OverlockSC-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Overlock SC', build 'Overlock SC Regular'
+overtherainbow@dad59d8	OvertheRainbow	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Over the Rainbow', build 'Over the Rainbow Regular'
+passionone@7f92f87	PassionOne-Black	FAIL	PASS	FAIL	FAIL	PASS	PASS	PASS	FAIL	shaping: default features, singles: 1 of 269 runs differ | rendering: diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 61px | gdef: GDEF absent in the build
+passionone@7f92f87	PassionOne-Bold	FAIL	PASS	FAIL	FAIL	PASS	PASS	PASS	FAIL	shaping: default features, singles: 1 of 269 runs differ | rendering: diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 65px | gdef: GDEF absent in the build
+passionone@7f92f87	PassionOne-Regular	FAIL	PASS	FAIL	FAIL	PASS	PASS	PASS	FAIL	shaping: default features, singles: 1 of 269 runs differ | rendering: diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 62px | gdef: GDEF absent in the build
+patuaone@372f1d4	PatuaOne-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Patua One', build 'Patua One Regular'
+piedra@a15e994	Piedra-Regular	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+pirataone@de340b9	PirataOne-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Pirata One', build 'Pirata One Regular'
+portlligatsans@487f78f	PortLligatSans-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Port Lligat Sans', build 'Port Lligat Sans Regular'
+portlligatslab@98532bd	PortLligatSlab-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Port Lligat Slab', build 'Port Lligat Slab Regular'
+quantico@0adde78	Quantico-Bold	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Quantico-Bold', build 'Quantico Bold'
+quantico@0adde78	Quantico-BoldItalic	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Quantico-BoldItalic', build 'Quantico Bold Italic'
+quantico@0adde78	Quantico-Italic	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Quantico-Italic', build 'Quantico Italic'
+quantico@0adde78	Quantico-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Quantico', build 'Quantico Regular'
+revalia@44c87f3	Revalia-Regular	FAIL	PASS	PASS	PASS	FAIL	FAIL	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Revalia-Regular', build 'Revalia Regular' | line_spacing: DirectWrite/GDI line spacing (ascender, descender, gap): release win (2146, -382, 0), build typo (2146, 382, 0)
+rougescript@75b9f63	RougeScript-Regular	FAIL	PASS	PASS	FAIL	FAIL	PASS	PASS	PASS	rendering: diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00CF 158px, U+00CD 154px, U+00CE 154px, U+00CC 151px, U+0049 143px | names: name ID 4 (3,1,0x409): release 'Rouge Script', build 'Rouge Script Regular'
+rufina@6ce314b	Rufina-Bold	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+rufina@6ce314b	Rufina-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Rufina', build 'Rufina Regular'
+ruluko@02d2bc3	Ruluko-Regular	FAIL	PASS	FAIL	PASS	FAIL	PASS	PASS	FAIL	shaping: default features, singles: 1 of 242 runs differ | names: name ID 4 (3,1,0x409): release 'Ruluko', build 'Ruluko Regular' | gdef: GDEF absent in the build
+salsa@cb27c62	Salsa-Regular	FAIL	PASS	FAIL	PASS	FAIL	PASS	PASS	FAIL	shaping: default features, singles: 2 of 241 runs differ | names: name ID 4 (3,1,0x409): release 'Salsa-Regular', build 'Salsa Regular' | gdef: GDEF absent in the build
+sanchez@8b4f8da	Sanchez-Italic	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+sanchez@8b4f8da	Sanchez-Regular	FAIL	PASS	FAIL	PASS	FAIL	PASS	PASS	PASS	shaping: default features, pairs: 6 of 88804 runs differ | names: name ID 4 (3,1,0x409): release 'Sanchez', build 'Sanchez Regular'
+spirax@17b9642	Spirax-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Spirax-Regular', build 'Spirax Regular'
+squadaone@a7426c9	SquadaOne-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Squada One', build 'Squada One Regular'
+swankyandmoomoo@7f9c740	SwankyandMooMoo	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Swanky and Moo Moo', build 'Swanky and Moo Moo Regular'
+thegirlnextdoor@eeb1b3a	TheGirlNextDoor	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'The Girl Next Door', build 'The Girl Next Door Regular'
+titanone@e1add51	TitanOne-Regular	FAIL	PASS	FAIL	PASS	FAIL	PASS	PASS	FAIL	shaping: default features, singles: 1 of 413 runs differ | names: name ID 4 (3,1,0x409): release 'Titan One', build 'Titan One Regular' | gdef: GDEF absent in the build
+trochut@c8b4a15	Trochut-Bold	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+trochut@c8b4a15	Trochut-Italic	PASS	PASS	PASS	PASS	PASS	PASS	PASS	PASS	
+trochut@c8b4a15	Trochut-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Trochut', build 'Trochut Regular'
+viga@932b3bf	Viga-Regular	FAIL	PASS	FAIL	FAIL	FAIL	PASS	PASS	FAIL	shaping: default features, singles: 1 of 271 runs differ | rendering: diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 50px | names: name ID 4 (3,1,0x409): release 'Viga-Regular', build 'Viga Regular' | gdef: GDEF absent in the build
+wendyone@cedbe65	WendyOne-Regular	FAIL	PASS	PASS	PASS	FAIL	PASS	PASS	PASS	names: name ID 4 (3,1,0x409): release 'Wendy One', build 'Wendy One Regular'
+extra	Lohit-Bengali (0df83ad, rebuilt)	FAIL	PASS	FAIL	FAIL	FAIL	FAIL	PASS	PASS	shaping: default features, base+mark: 296 of 1520 runs differ | rendering: diffenator3: 284 word(s) render differently (>8 px at 16 ppem), confirmed: 'ইন্সট্রুমেন্টেশনের' 801px, 'জনগোষ্ঠীসমূহের' 782px, 'অডিওভিজুয়াল' 779px, 'দেপার্ত্যম | names: name ID 1 (3,1,0x409): release 'Lohit Bengali', build 'Lohit Bengali Bengali' | line_spacing: DirectWrite/GDI line spacing (ascender, descender, gap): release win (760, -325, 200), build typo (750, -274, 0)
+extra	Lohit-Bengali (0df83ad, pv-v1)	FAIL	PASS	FAIL	FAIL	FAIL	FAIL	PASS	PASS	shaping: default features, base+mark: 296 of 1520 runs differ | rendering: diffenator3: 284 word(s) render differently (>8 px at 16 ppem), confirmed: 'ইন্সট্রুমেন্টেশনের' 801px, 'জনগোষ্ঠীসমূহের' 782px, 'অডিওভিজুয়াল' 779px, 'দেপার্ত্যম | names: name ID 1 (3,1,0x409): release 'Lohit Bengali', build 'Lohit Bengali Bengali' | line_spacing: DirectWrite/GDI line spacing (ascender, descender, gap): release win (760, -325, 200), build typo (750, -274, 0)

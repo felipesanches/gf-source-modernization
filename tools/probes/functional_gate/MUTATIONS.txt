@@ -1,0 +1,11 @@
+fsSelection bits 7, 8 and 9 are only defined in OS/2 table version 4 and up: version 2
+OK    identity                               expected fail -                                        got -
+OK    kerning value halved                   expected fail shaping                                  got shaping
+OK    advance of 'a' +12                     expected fail advances,rendering,shaping               got advances,rendering,shaping
+OK    name ID 6 changed                      expected fail names                                    got names
+OK    USE_TYPO_METRICS set, typo gap +150    expected fail line_spacing                             got line_spacing
+OK    GDEF removed                           expected fail gdef,shaping                             got gdef,shaping
+OK    unencoded glyph outline moved          expected fail rendering                                got rendering (S.swash)
+OK    U+0041 mapped to B's glyph             expected fail cmap,rendering,shaping                   got cmap,rendering,shaping
+OK    usWeightClass +100                     expected fail names                                    got names
+exit 0

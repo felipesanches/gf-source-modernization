@@ -1,0 +1,7 @@
+# label	shipped	built	d3 json ($S = functional_gate.SCRATCH; '-' = run diffenator3)
+# Lohit-Bengali at the provenance-repaired source pravins/lohit 0df83ad (table-CLEAN, 284 word
+# render diffs), rebuilt with:  FAMILIES=investigations/next-provenance-verify/runs/v1-lohit-repair/families.tsv
+#   OUT=$S/lohit/out SCRATCH=$S/lohit TAG=fg bash tools/baseline.sh Lohit-Bengali
+Lohit-Bengali (0df83ad, rebuilt)	/home/fsanches/compartilhado/google/fonts/ofl/lohitbengali/Lohit-Bengali.ttf	$S/lohit/baseline/Lohit-Bengali-fg/fonts/ttf/LohitBengali-Bengali.ttf	$S/lohit/baseline/Lohit-Bengali-fg/d3.json
+# the same, the verifier's own build (next-provenance-verify runs/v1-lohit-repair)
+Lohit-Bengali (0df83ad, pv-v1)	/home/fsanches/compartilhado/google/fonts/ofl/lohitbengali/Lohit-Bengali.ttf	/home/fsanches/compartilhado/sfd-reland-scratch/provenance-verify/baseline/Lohit-Bengali-pv-v1/fonts/ttf/LohitBengali-Bengali.ttf	/home/fsanches/compartilhado/sfd-reland-scratch/provenance-verify/baseline/Lohit-Bengali-pv-v1/d3.json

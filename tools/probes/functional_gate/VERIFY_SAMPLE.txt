@@ -1,0 +1,6 @@
+rochester            VERIFIED
+salsa                FAILED
+    FUNCTIONAL: Salsa-Regular shaping: 567992 runs shaped, 669 differ -- default features, singles: 2 of 241 runs differ
+    FUNCTIONAL: Salsa-Regular names: IDs 1 2 4 6 16 17 21 22 differ (1) -- name ID 4 (3,1,0x409): release 'Salsa-Regular', build 'Salsa Regular'
+    FUNCTIONAL: Salsa-Regular gdef: GDEF present/absent; 2 class difference(s) shaping reads, 93 it does not -- GDEF absent in the build
+exit 1

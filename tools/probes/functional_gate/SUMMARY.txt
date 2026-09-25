@@ -1,0 +1,56 @@
+94 styles: {'PASS': 26, 'FAIL': 68}
+PASS: CreepsterCaps-Regular, HerrVonMuellerhoff-Regular, Puritan-Bold, Puritan-Italic, Puritan-Regular, AllertaStencil-Regular, Rochester-Regular, LoveYaLikeASister, Marvel-Bold, Marvel-BoldItalic, Marvel-Italic, MissFajardose-Regular, MonsieurLaDoulaise-Regular, MrDafoe-Regular, MrDeHaviland-Regular, MrsSheppards-Regular, Overlock-Black, Overlock-Bold, Overlock-BoldItalic, Overlock-Italic, Overlock-Regular, Piedra-Regular, Rufina-Bold, Sanchez-Italic, Trochut-Bold, Trochut-Italic
+
+cmap         fails in 0 of 94 styles
+shaping      fails in 22 of 94 styles
+     15  default features, singles: Miama-Regular, Monoton-Regular, Nosifer-Regular, NosiferCaps-Regular, NovaMono, Smythe-Regular, Corben-Regular, Niconne-Regular, PassionOne-Black, PassionOne-Bold, PassionOne-Regular, Ruluko-Regular, Salsa-Regular, TitanOne-Regular, Viga-Regular
+     14  default features, base+mark: Miama-Regular, Monoton-Regular, Nosifer-Regular, NosiferCaps-Regular, NovaMono, Smythe-Regular, Corben-Regular, Niconne-Regular, Ruluko-Regular, Salsa-Regular, TitanOne-Regular, Viga-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+     12  default features, base+mark+mark: Miama-Regular, Monoton-Regular, Nosifer-Regular, NosiferCaps-Regular, Smythe-Regular, Corben-Regular, Niconne-Regular, Ruluko-Regular, Salsa-Regular, TitanOne-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      3  default features, kern+mark: Miama-Regular, UnifrakturCook-Bold, Salsa-Regular
+      3  default features, words: Italiana-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  language system latn/TUR: Lekton-Bold, Lekton-Regular
+      2  default features, pairs: Italiana-Regular, Sanchez-Regular
+      2  default features, rules: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB abvs off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB blwf off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB blws off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB half off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB haln off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB init off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB nukt off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB pres off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB pstf off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB psts off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB rphf off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GSUB vatu off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GPOS abvm off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GPOS blwm off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      2  GPOS mark off: Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+rendering    fails in 18 of 94 styles
+     12  diffenator3 glyph diffs: Miama-Regular, NixieOne-Regular, Nosifer-Regular, NovaMono, Corben-Bold, MrBedfort-Regular, Niconne-Regular, PassionOne-Black, PassionOne-Bold, PassionOne-Regular, RougeScript-Regular, Viga-Regular
+      7  diffenator3 word diffs: NixieOne-Regular, Corben-Bold, Italiana-Regular, Niconne-Regular, RougeScript-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      5  outline geometry (FreeType, 8 units/px): NixieOne-Regular, Corben-Bold, MrBedfort-Regular, Niconne-Regular, RougeScript-Regular
+      4  outline geometry (FreeType, 8 units/px): .notdef only: Kristi-Regular, Nosifer-Regular, NosiferCaps-Regular, Corben-Regular
+names        fails in 63 of 94 styles
+     59  name ID 4: Lekton-Bold, Lekton-Italic, Lekton-Regular, Miama-Regular, Monoton-Regular, NixieOne-Regular, Nosifer-Regular, NovaCut, NovaFlat, NovaMono, NovaOval, NovaRound, NovaSlim, NovaSquare, PatrickHand-Regular, RussoOne-Regular, SixCaps, Smythe-Regular, TulpenOne-Regular, UnifrakturCook-Bold, AbrilFatface-Regular, Corben-Regular, Italiana-Regular, KeaniaOne-Regular, KellySlab-Regular, LovedbytheKing, Marvel-Regular, MedulaOne-Regular, MeieScript-Regular, MrBedfort-Regular, MrsSaintDelafield-Regular, Niconne-Regular, Numans-Regular, OverlockSC-Regular, OvertheRainbow, PatuaOne-Regular, PirataOne-Regular, PortLligatSans-Regular, PortLligatSlab-Regular, Quantico-Bold, Quantico-BoldItalic, Quantico-Italic, Quantico-Regular, Revalia-Regular, RougeScript-Regular, Rufina-Regular, Ruluko-Regular, Salsa-Regular, Sanchez-Regular, Spirax-Regular, SquadaOne-Regular, SwankyandMooMoo, TheGirlNextDoor, TitanOne-Regular, Trochut-Regular, Viga-Regular, WendyOne-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+     19  name ID 6: NovaCut, NovaFlat, NovaMono, NovaOval, NovaRound, NovaSlim, NovaSquare, SixCaps, Smythe-Regular, LovedbytheKing, Niconne-Regular, OvertheRainbow, Ruluko-Regular, SwankyandMooMoo, TheGirlNextDoor, TitanOne-Regular, Trochut-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+     11  name ID 2: Kristi-Regular, Miama-Regular, NovaCut, NovaFlat, NovaOval, NovaRound, NovaScript-Regular, NovaSlim, NovaSquare, Puritan-BoldItalic, Overlock-BlackItalic
+      9  name ID 17: NovaCut, NovaFlat, NovaOval, NovaRound, NovaSlim, NovaSquare, Puritan-BoldItalic, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      9  name ID 22: NovaCut, NovaFlat, NovaOval, NovaRound, NovaSlim, NovaSquare, Puritan-BoldItalic, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      3  name ID 1: Niconne-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      1  name ID 16: Niconne-Regular
+      1  name ID 21: Niconne-Regular
+line_spacing fails in 11 of 94 styles
+      8  DirectWrite/GDI line spacing: Kristi-Regular, Lekton-Bold, Lekton-Italic, Lekton-Regular, PatrickHand-Regular, Revalia-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      8  USE_TYPO_METRICS set by the build: Kristi-Regular, Lekton-Bold, Lekton-Italic, Lekton-Regular, PatrickHand-Regular, Revalia-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      4  FreeType engines line spacing: Kristi-Regular, PatrickHand-Regular, Lohit-Bengali (0df83ad, rebuilt), Lohit-Bengali (0df83ad, pv-v1)
+      4  fsSelection: Kristi-Regular, NosiferCaps-Regular, NovaScript-Regular, Overlock-BlackItalic
+      3  head.macStyle italic: Kristi-Regular, NovaScript-Regular, Overlock-BlackItalic
+      1  cap height as layout engines read it: Kristi-Regular
+advances     fails in 5 of 94 styles
+      4  advance width(s) differ (release/build): Kristi-Regular, Nosifer-Regular, NosiferCaps-Regular, Corben-Regular
+      1  post.isFixedPitch: NovaMono
+gdef         fails in 15 of 94 styles
+     15  glyph class: Monoton-Regular, NosiferCaps-Regular, NovaMono, PatrickHand-Regular, Smythe-Regular, UnifrakturCook-Bold, Corben-Regular, Niconne-Regular, PassionOne-Black, PassionOne-Bold, PassionOne-Regular, Ruluko-Regular, Salsa-Regular, TitanOne-Regular, Viga-Regular
+     14  GDEF absent in the build: Monoton-Regular, NosiferCaps-Regular, NovaMono, PatrickHand-Regular, Smythe-Regular, Corben-Regular, Niconne-Regular, PassionOne-Black, PassionOne-Bold, PassionOne-Regular, Ruluko-Regular, Salsa-Regular, TitanOne-Regular, Viga-Regular
+

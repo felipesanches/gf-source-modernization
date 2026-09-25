@@ -1,0 +1,269 @@
+{
+ "investigation": {
+  "unit": "gsub",
+  "styles": [
+   "Megrim",
+   "Poly-Italic",
+   "RibeyeMarrow-Regular",
+   "Varela-Regular"
+  ],
+  "rows": [
+   {
+    "style": "Megrim",
+    "row": "OS/2.us_weight_class [500, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 ignores a single-master Glyphs source's instance weightClass and writes 400. The .sfd states TTFWeight: 500 (line 25), and the release carries 500. This is the known gap (issues/fontc-static-weight-class.md), already closed by land.py's weight-class workaround (tools/workarounds.py), which writes the value as FEA from the .sfd.",
+    "evidence": "runs/r0w-unmodified+workarounds/Megrim.gate.txt: with the workaround only the 3 GSUB rows remain. runs/r1w-megrim-droplookups+workarounds and runs/r4-final-*-gate/Megrim.gate.txt: CLEAN 0. The workaround log line reads 'usWeightClass 500 (TTFWeight) as FEA'."
+   },
+   {
+    "style": "Megrim",
+    "row": "GSUB.script_list [null, {DFLT/dflt, latn/dflt, latn/TRK}]",
+    "classification": "source-edit-from-release",
+    "cause": "FontForge 20110222 exported Megrim.ttf with OpenType output OFF, as it did Nosifer. The source declares 3 GSUB lookups (.sfd lines 56-58: aalt latn/dflt, ss01 DFLT+latn dflt, locl latn/TRK). The release has no GSUB, GPOS, GDEF or DSIG, usMaxContext is 1, and the ss01/i.TRK glyphs ship unreachable. In v20110222 tottf.c initATTables, GSUB/GPOS/GDEF are written only in opentypemode. The .sfd does not record the export mode, so the absence exists only in the release.",
+    "evidence": "runs/release_export_mode.txt. FFTM build stamp 2011-02-22. FFTM source-modified 2011-04-28 15:00:19 equals the .sfd's ModificationTime, so the release was exported from this saved .sfd (hg 52f780bc, md5 a1942e6c; release blob 8fc9351c is byte-identical in hg and google/fonts b5efa9c3). head.created is 2011-05-03 18:22:10. The four Jura TTFs were exported 93-107 s later and also have no GSUB/GPOS, only a legacy kern table, although their .sfd files declare kern/abvm/blwm lookups (same non-OpenType session). Of the 18 next-batch releases with no layout tables, Megrim is the only one whose source declares lookups (runs/release_export_mode_nolayout_next.txt). Shaping r0: 984 of 7344 runs differ in glyphs (aalt/ss01 M->M.ss01, TRK locl i->i.TRK; runs/shape/Megrim.r0.txt)."
+   },
+   {
+    "style": "Megrim",
+    "row": "GSUB.feature_list [null, {aalt, locl, ss01}]",
+    "classification": "source-edit-from-release",
+    "cause": "Same cause: the release was exported with FontForge's OpenType tables off, so aalt/ss01/locl were never written.",
+    "evidence": "As for script_list. After the three droplookup edits the build has no GSUB/GPOS/GDEF (table set = the release's minus FFTM/cvt/fpgm), and 0 of 338 runs differ (runs/shape/Megrim.r3w.txt)."
+   },
+   {
+    "style": "Megrim",
+    "row": "GSUB.lookup_list [null, {0: aalt single, 1: ss01 single, 2: locl i->i.TRK}]",
+    "classification": "source-edit-from-release",
+    "cause": "Same cause. The lookups exist only in the source. The release ships their target glyphs (M.ss01 ... y.ss01, i.TRK) unreachable.",
+    "evidence": "runs/r1-megrim-droplookups/Megrim.gate.txt: 4 -> 1 (only us_weight_class left). runs/r4-final-shared-gate and r4-final-proposed-gate: CLEAN 0."
+   },
+   {
+    "style": "Poly-Italic",
+    "row": "GSUB.script_list {latn/ROM: aalt added}",
+    "classification": "converter-fidelity",
+    "cause": "The .sfd registers aalt (lines 57-58, lookups 0 and 1) for ('latn' <'dflt'>) only. babelfont writes aalt's rules directly into `feature aalt`, because no script or language statement is legal there. fea-rs 1.0.0 registers aalt for EVERY `languagesystem` (compile/features.rs finalize_aalt: 'add the aalt feature to all the default language systems'; compile_ctx.rs resolve_aalt_feature reads only Gsub1/Gsub3/feature refs). `languagesystem latn ROM` is declared for locl/zero (lines 60-61), so our build registers aalt under latn/ROM and the release does not.",
+    "evidence": "runs/sfd_vs_release_registration.txt: the release is the .sfd's 19 GSUB lookups in file order, with exactly the declared registrations (19/19). runs/semdiff/Poly-Italic.r0.txt: 1 registration key differs (latn/ROM/aalt only in the build), and all 19 lookup contents are identical. Shaping r0: under Romanian with aalt on, 1380 of 2331 runs differ ('$' -> dollar.fitted); every other language/feature shows 0 (runs/shape/Poly-Italic.r0.txt). The gate trace refuses on 'shaping differs lang=ro'. With the babelfont language-systems prototype: 0 registration differences, 0 of 111888 runs differ in glyphs (runs/semdiff and runs/shape Poly-Italic.r2.txt), and CLEAN 0 (runs/r2-bf-langsys)."
+   },
+   {
+    "style": "Poly-Italic",
+    "row": "GSUB.feature_list (case/dnom/frac/lnum/... indices shifted by one)",
+    "classification": "gate-arbitration",
+    "cause": "babelfont defines lookups in .sfd order with one documented deviation (fontforge.rs: 'a dependency declared after its caller is hoisted to just before it'). A feature file must define a lookup before a chain rule names it, so the feature-less lookup 18 (.sfd line 75, reached only from frac lookup 7) becomes index 7 and every later index moves up by one. This cannot be expressed otherwise in FEA. It has no shaping effect because the hoisted lookup is applied only through the chain.",
+    "evidence": "runs/semdiff/Poly-Italic.r2.txt: 18 identical lookup contents, 0 registration differences, and the same application sequence per language system (latn/dflt 17 lookups, latn/ROM 2). Nested-only lookup: release [18], build [7]. Shaping: 0 of 111888 runs differ. With the aalt row fixed, the shared gate accepts it ('the same GSUB lookups in a different order; 71824 shaped runs identical'): runs/r2-bf-langsys and runs/r4-final-shared-gate, CLEAN 0."
+   },
+   {
+    "style": "Poly-Italic",
+    "row": "GSUB.lookup_list (index 7: chain vs single)",
+    "classification": "gate-arbitration",
+    "cause": "Same hoisted nested lookup 18. Lookup contents are identical, and the only difference is the position of a lookup that no feature references.",
+    "evidence": "As for feature_list (runs/semdiff/Poly-Italic.r2.txt, runs/shape/Poly-Italic.r2.txt, runs/r4-final-shared-gate/Poly-Italic.gate.txt CLEAN 0)."
+   },
+   {
+    "style": "RibeyeMarrow-Regular",
+    "row": "GSUB.feature_list {frac: [4, 7], ordn: [3, 4]}",
+    "classification": "gate-arbitration",
+    "cause": "The feature-less lookups 5, 6 and 7 (.sfd lines 61-63), called only from ordn (lookup 3) and frac (lookup 4), are hoisted before their callers, as babelfont's documented FEA-ordering deviation does. The indices shift, and the application order of feature lookups is unchanged.",
+    "evidence": "runs/semdiff/RibeyeMarrow-Regular.r0.txt: nested-only lookups are release [5,6,7] and build [3,5,6], and the common application sequence is in the same order. runs/sfd_vs_release_registration.txt: the release matches the .sfd exactly (8/8)."
+   },
+   {
+    "style": "RibeyeMarrow-Regular",
+    "row": "GSUB.lookup_list {3: chained_sequence_context vs single; frac type 6 vs 5}",
+    "classification": "gate-arbitration",
+    "cause": "The hoisting above, plus a compiler representation choice. frac (.sfd line 60, nine ChainSub2 subtables at lines 160-231, none with backtrack or lookahead) is compiled by fea-rs 1.0.0 as ONE type-5 SequenceContext subtable (compile/lookups/contextual.rs into_lookups: Chain only if some rule has backtrack/lookahead). FontForge wrote nine type-6 format-3 subtables. The nine rules are the same, in the same order per first glyph (0/00 before 0/0). A type-6 rule with no backtrack or lookahead is a type-5 rule. The shared gate refuses at condition 2 on the lookup type alone (GATE_TRACE 'rules differ; types False') and never shapes.",
+    "evidence": "runs/semdiff/RibeyeMarrow-Regular.r0.txt: release-only and build-only frac rules are identical except for the chain3/ctx2 tag. Shaping: 0 of 20904 runs differ in glyphs, with frac firing in 13 runs per language system. The 72 advance-only runs are the separate GDEF mark-class RELEASE-STALE row (runs/shape/RibeyeMarrow-Regular.r0.txt, r2.txt). The proposed gate gives CLEAN 0 (runs/r4-final-proposed-gate), and gate_sweep_next.tsv shows 2 -> 0. The shared gate refuses the correct build (runs/gate_ctx_negative.ribeye-frac.txt control: FALSE BLOCK)."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GSUB.script_list (latn/AZE, CRT, TRK liga + smcp; latn/SRB aalt)",
+    "classification": "converter-fidelity",
+    "cause": "There are two converter causes, and the release registers exactly what the .sfd states (31/31). (a) babelfont writes `language AZE;` etc. In a feature file that INCLUDES the default language's lookups for the feature (include_dflt), while FontForge registers a lookup only for the languages it names. So liga lookup 24 (line 81: DEU MOL ROM SRB dflt, deliberately not AZE/CRT/TRK) and smcp lookup 21 (line 78) also run under AZE/CRT/TRK. (b) aalt (lines 57-58, no SRB) is registered for latn/SRB, because SRB is declared for liga/dlig and fea-rs registers aalt for every languagesystem.",
+    "evidence": "runs/semdiff/Varela-Regular.r0.txt: 16 of 161 keys differ. runs/shape/Varela-Regular.r0.txt: in Turkish, Azeri and Crimean Tatar our build ligates 'fi' -> fi and 'ffi' -> f_f_i, and the release gives f+i and f_f+i. Under sr with aalt on, 159280 of 159754 runs differ. smcp shapes identically (lookup 22 already maps i->i.smcp in both; the release's own Turkish i.smcp quirk). With both babelfont changes: 0 of 33,388,586 runs differ in glyphs (runs/shape/Varela-Regular.r2.txt), and only ordn packing remains in semdiff r2. The GSUB rows close in runs/r2-bf-langsys/Varela-Regular.gate.txt."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GSUB.feature_list (c2sc/dlig/dnom/frac/... indices shifted)",
+    "classification": "gate-arbitration",
+    "cause": "The nested-only lookups 28-30 (lines 85-87) are hoisted to 8-10 before their callers (frac 8, ordn 12), so every later index shifts. There is no shaping effect.",
+    "evidence": "runs/semdiff/Varela-Regular.r2.txt: nested-only lookups are release [28,29,30] and build [8,9,10], and common sequences are in the same order. The shared gate accepts it after the converter fix ('the same GSUB lookups in a different order; 102400 shaped runs identical')."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GSUB.lookup_list (8: chain vs ligature; ordn 4 vs 2 subtables)",
+    "classification": "gate-arbitration",
+    "cause": "The hoisting above, plus fea-rs packing. ordn (line 69) has four FontForge ChainSub2 subtables (lines 90-118: digits a', digits o', digits period a', digits period o'). fea-rs writes them as 2 format-3 subtables with input coverage [a o], merging rules that differ only in the input glyph. The rules per first glyph and their order are identical. The shared gate accepts this only because it never compares contextual rules. The proposed gate accepts it on rule equality.",
+    "evidence": "runs/semdiff/Varela-Regular.r2.txt (4 release-only vs 2 build-only chain rules, same contexts). Shaping: 0 of 33,388,586 runs differ, with ordn firing in 40 runs per language system. runs/gate_ctx_negative.varela-ordn.txt: the shared gate ACCEPTS two behaviour-changing mutations of this lookup ('0.a' and '0a'); the proposed gate refuses both."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GPOS.script_list / GPOS.feature_list / GPOS.lookup_list",
+    "classification": "compiler-gap",
+    "cause": "This row is outside this unit (empty-GPOS unit). FontForge gives GSUB and GPOS the same script list and writes an empty GPOS shell (cyrl/grek/latn, no lookups); fontc omits the table. Its presence suppresses HarfBuzz fallback mark positioning.",
+    "evidence": "investigations/next-emptygpos/runs/census_layout_shells.tsv: Varela is an 'empty-GPOS-shell'. Their fontc --shared-layout-scripts prototype gives CLEAN 0 (next-emptygpos-verify/runs/14-all-prototypes/Varela-Regular.tsv). Here, with only the babelfont prototype, these 3 rows are the only ones left (runs/r4-final-*-gate/Varela-Regular.gate.txt)."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Megrim"
+    ],
+    "op": "droplookup",
+    "args": "'aalt' Access All Alternates in Latin lookup 0",
+    "commit_subject": "Drop the aalt lookup the release does not carry",
+    "commit_body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; the glyphs stay.",
+    "value_derived_from": "The release's table set (no GSUB/GPOS/GDEF/DSIG, usMaxContext 1) read against FontForge v20110222 tottf.c initATTables, which writes layout tables only in opentypemode. The release's FFTM source-modified time equals the .sfd's ModificationTime (2011-04-28 15:00:19). The Jura TTFs exported 93-107 s later in the same session also lack GSUB/GPOS although their sources declare lookups. No value is taken from the binary: the edit only removes what the source declares.",
+    "source_currently_states": "Line 56: Lookup: 1 0 0 \"'aalt' Access All Alternates in Latin lookup 0\" ... ['aalt' ('latn' <'dflt' > ) ], plus 11 Substitution2 glyph entries (M N R U V W Y i m w y). The edit removes exactly these 12 lines.",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Megrim"
+    ],
+    "op": "droplookup",
+    "args": "'ss01' Style Set 1 lookup 1",
+    "commit_subject": "Drop the ss01 lookup the release does not carry",
+    "commit_body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; the .ss01 glyphs stay.",
+    "value_derived_from": "Same evidence as the aalt edit (release table set + v20110222 initATTables + FFTM/.sfd timestamps + the 2011-05-03 Jura batch).",
+    "source_currently_states": "Line 57: Lookup: 1 0 0 \"'ss01' Style Set 1 lookup 1\" ... ['ss01' ('    ' <'dflt' > 'latn' <'dflt' > ) ], plus 10 Substitution2 entries (M N R U V W Y m w y; note that the source maps capital Y to y.ss01). The edit removes exactly these 11 lines.",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Megrim"
+    ],
+    "op": "droplookup",
+    "args": "'locl' Localized Forms in Latin lookup 2",
+    "commit_subject": "Drop the Turkish locl lookup the release does not carry",
+    "commit_body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; i.TRK stays.",
+    "value_derived_from": "Same evidence as the aalt edit.",
+    "source_currently_states": "Line 58: Lookup: 1 0 0 \"'locl' Localized Forms in Latin lookup 2\" ... ['locl' ('latn' <'TRK ' > ) ], plus 1 Substitution2 entry (i -> i.TRK). The edit removes these 2 lines. All three edits applied in this order give edits/Megrim.droplookups.sfd. Verified together: runs/r1-megrim-droplookups 4 -> 1 (us_weight_class), and with land.py's weight workaround CLEAN 0 (runs/r1w, runs/r4-final-shared-gate, runs/r4-final-proposed-gate).",
+    "verified": true
+   }
+  ],
+  "proposed_tool_changes": [
+   {
+    "tool": "babelfont-rs (FontForge convertor, layout.rs make_langsys)",
+    "description": "Write `language XXX exclude_dflt;` for every language other than dflt. A FontForge lookup runs only for the (script, language) pairs it names, while a feature-file `language` statement inherits the default language's lookups for that feature unless it says exclude_dflt.",
+    "evidence": "The releases carry exactly the .sfd's registrations (runs/sfd_vs_release_registration.txt: Poly-Italic 19/19, RibeyeMarrow 8/8, Varela 31/31). Varela r0: liga lookup 24 is inherited under AZE/CRT/TRK, so Turkish/Azeri/Crimean Tatar 'fi' and 'ffi' ligate in our build and not in the release (runs/shape/Varela-Regular.r0.txt). With the change: 0 of 33,388,586 runs differ (r2). Regression: the 9 first-batch styles whose FEA changes (Lekton x2, PatrickHand, Play, Tuffy x2, AbrilFatface, ComicRelief x2) keep identical gate rows (runs/r5-first-batch-regression). The emptygpos FEA sweep (next-emptygpos/runs/12-babelfont-regression) shows no other next-batch style changes. Converter tests: fontforge tests 80 -> 82 all pass. The same 11 unrelated tests fail on base and prototype because they read ../noto-cjk-varco fixtures (runs/converter_tests.txt).",
+    "styles_affected": [
+     "Varela-Regular"
+    ],
+    "prototype": "Commit 1 of /home/fsanches/compartilhado/sfd-reland/investigations/next-gsub/probes/babelfont-17ea899-langsys-as-built.diff (identical to next-emptygpos/probes/babelfont-17ea899-language-systems-PROTOTYPE.patch). Built at scratch clone 349dc82 -> /home/fsanches/compartilhado/sfd-reland-scratch/gsub/bf-target/release/babelfont (BUILT_FROM stamped).",
+    "upstream_pr_needed": "yes: simoncozens/babelfont-rs, one PR together with the aalt change and shared with the empty-GPOS unit (Felipe files it; no GitHub write access here). Landing cites it only after it merges."
+   },
+   {
+    "tool": "babelfont-rs (FontForge convertor, fontforge.rs languagesystem emission)",
+    "description": "When aalt is registered for fewer language systems than the other lookups, and the compiler will generate no feature from kerning or anchors, declare only aalt's language systems. fea-rs registers aalt for every `languagesystem` and allows no script/language statement inside it. Every other FontForge lookup is written with explicit script/language statements, so those are unaffected. Otherwise the converter keeps all declarations and logs a warning.",
+    "evidence": "fea-rs 1.0.0 compile/features.rs finalize_aalt ('add the aalt feature to all the default language systems') and compile_ctx.rs resolve_aalt_feature. Poly-Italic r0: aalt under latn/ROM changes 1380 of 2331 Romanian aalt runs. With the change, Poly-Italic is CLEAN 0 with the shared gate (runs/r2-bf-langsys, runs/r4-final-shared-gate), Poly-Regular stays CLEAN 0, and the Varela latn/SRB aalt key disappears (semdiff r2: 160 keys). Megrim's FEA also changes (DFLT no longer declared), but its GSUB is dropped by the edits anyway (r3 -> r4 CLEAN).",
+    "styles_affected": [
+     "Poly-Italic",
+     "Varela-Regular"
+    ],
+    "prototype": "Commit 2 of /home/fsanches/compartilhado/sfd-reland/investigations/next-gsub/probes/babelfont-17ea899-langsys-as-built.diff (includes test_aalt_keeps_its_own_language_systems). Same binary as above.",
+    "upstream_pr_needed": "yes: the same babelfont-rs PR as exclude_dflt. It is a heuristic (conditional on no kerning/anchors), so Simon may want another design."
+   },
+   {
+    "tool": "table gate (sfd-batch5/tools/table_gate.py arbitrate_gsub_lookup_order; our measurement tool, not a font-build tool)",
+    "description": "Compare CONTEXTUAL lookups by their rules: for every glyph that can start a match, the ordered rules (backtrack/input/lookahead glyph sets, nested lookups by content), so lookup type 5 vs 6, format and subtable packing count as representation. Also shape every sequence a contextual rule or ligature spells, besides the 2-character corpus, and state a type/packing difference in the RELEASE-STALE line. The shared gate treats every contextual lookup as (type, 0 entries), so it never compared their rules. That made it both too strict (type 5 vs 6) and too loose (rule changes a 2-character corpus cannot reach).",
+    "evidence": "RibeyeMarrow-Regular goes 2 -> 0 (runs/r4-final-proposed-gate). Sweep over 106 complete next-batch harness runs: RibeyeMarrow-Regular is the only verdict that changes, and no row opens anywhere (runs/gate_sweep_next.tsv). Negative tests (runs/gate_ctx_negative.*.txt), with behaviour measured by shaping: the shared gate ACCEPTS 3 behaviour-changing mutations (Varela ordn drop-last '0.a', ordn retarget '0a', frac drop-last '0/1') and FALSE-BLOCKS the correct RibeyeMarrow build. The proposed gate refuses every behaviour-changing mutation and accepts both correct builds. It is conservative (refuses) on 4 behaviour-neutral mutations.",
+    "styles_affected": [
+     "RibeyeMarrow-Regular"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-gsub/probes/table_gate_gsub_proposed.py (md5 c3ee0891): a wrapper that applies 5 exact-match replacements to the shared function (shared gate 2f43693, md5 68c33418, left untouched).",
+    "upstream_pr_needed": "no: sfd-batch5 is our repository. Felipe must approve folding it into table_gate.py and commit it."
+   }
+  ],
+  "families_landable_after": [
+   "megrim (3 droplookup edits + existing weight-class workaround; CLEAN 0 with either gate)",
+   "poly (Poly-Italic with the babelfont language-systems change, CLEAN 0 with the shared gate; Poly-Regular already CLEAN)",
+   "ribeyemarrow (with the gate change alone, on the current converter or the prototype)",
+   "varela (GSUB closed by the babelfont change; the family lands CLEAN only together with the empty-GPOS unit's fontc/builder3 GPOS-shell change)"
+  ],
+  "decisions_for_felipe": [
+   "Megrim: reproduce the release by dropping the aalt, ss01 and locl lookups (the Nosifer precedent; restoring them is future work, done by reverting the three commits), or keep them as better than the release (the build then does not reproduce it). If they are restored later: the source's ss01 maps capital Y to y.ss01.",
+   "File the babelfont-rs PR with the two language-system commits (exclude_dflt; aalt language systems). It is shared with the empty-GPOS unit. land.py can cite it only after it merges upstream.",
+   "Is the conditional aalt fix acceptable? It applies only when no kerning or anchors make fontc generate features. Otherwise it warns and keeps the extra aalt registrations. The alternative is to ask Simon for a general design.",
+   "Approve replacing arbitrate_gsub_lookup_order in sfd-batch5/tools/table_gate.py with the proposed version (stricter on contextual rules, conservative on neutral reorders). Without it, RibeyeMarrow-Regular needs a documented exception to land."
+  ],
+  "unresolved": [
+   "Varela-Regular's 3 GPOS rows belong to the empty-GPOS unit, and the family lands only with that change.",
+   "The aalt fix does not cover a font whose aalt is narrower than its other registrations and which has kerning or anchors: fontc registers kern/mark for every declared language system. No style in this unit hits it (RibeyeMarrow has kerning, but its aalt covers all its language systems).",
+   "Hoisted nested lookups cannot be ordered as FontForge did in FEA. They are accepted as representation only because every hoisted lookup here is feature-less (Poly 18; RibeyeMarrow 5-7; Varela 28-30). If a hoisted lookup were also feature-registered, the application order would change.",
+   "The proposed gate was swept over the 106 complete next-batch runs only. Cardo-Regular had no complete run, and the first batch's harness runs no longer exist in scratch. Because it is conservative on neutral reorders of disjoint rules, it could false-block a future style.",
+   "Converter test suite: 11 tests fail identically on base 17ea899 and on the prototype because they read ../noto-cjk-varco fixtures that a clean checkout lacks. This is pre-existing and environment-dependent, not caused by the change (runs/converter_tests.txt).",
+   "Megrim builds as Megrim-Medium.ttf (the .sfd subfamily is 'Medium'); the release file is Megrim.ttf. This is not a table row; file naming at landing is outside this unit.",
+   "The Varela release's Turkish/Azeri/Crimean Tatar small-cap i gives i.smcp, not idotaccent.smcp, because lookup 22 precedes 23 in the .sfd. It is reproduced as fidelity; the fix is future work."
+  ],
+  "verification": {
+   "summary": "All four styles were rebuilt through the pipeline's own pairing (families-next.tsv). Sources are hg 52f780bc (Megrim-TTF.sfd a1942e6c, Poly-Italic-TTF.sfd d73eef79, RibeyeMarrow-Regular-TTF.sfd f3bf8aab, Varela-Regular-TTF.sfd e5f628c1). Releases are google/fonts b5efa9c3, byte-identical to the hg blobs. All four releases carry the FontForge 20110222 FFTM stamp, and each FFTM source time equals its .sfd's times. r0 reproduces baseline-next exactly. Each difference was named with gsub_semantic_diff and checked for function with uharfbuzz over the cmap (shape_compare, with feature-firing counts and advance-only runs separated out). Candidates: r1 Megrim droplookups (integration converter 17ea899); r2 prototype converter (17ea899 + language-systems diff, built in scratch); r3 prototype + Megrim edit; r4 prototype + edits + land.py workarounds under both gates; r5 first-batch regression of the converter change. The gate change was checked with a 106-style sweep and with negative tests.",
+   "rows_before": "Megrim BLOCKING 4 (GSUB.feature_list, GSUB.lookup_list, GSUB.script_list, OS/2.us_weight_class). Poly-Italic BLOCKING 3 (GSUB x3). RibeyeMarrow-Regular BLOCKING 2 (GSUB.feature_list, GSUB.lookup_list). Varela-Regular BLOCKING 6 (GPOS x3, GSUB x3). Source: runs/r0-unmodified, identical to baseline-next.tsv.",
+   "rows_after": "Megrim CLEAN 0 (3 droplookup edits + weight workaround; shared and proposed gate). Poly-Italic CLEAN 0 (babelfont prototype; shared gate). RibeyeMarrow-Regular CLEAN 0 (proposed gate; the shared gate still gives 2). Varela-Regular BLOCKING 3, GPOS.* only: all GSUB rows closed, GPOS belongs to the empty-GPOS unit. Source: runs/r4-final-shared-gate and runs/r4-final-proposed-gate.",
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland; I=$PWD/investigations/next-gsub; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3; SC=/home/fsanches/compartilhado/sfd-reland-scratch/gsub; BFI=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont; BFP=$SC/bf-target/release/babelfont",
+    "for s in Megrim Poly-Italic RibeyeMarrow-Regular Varela-Regular; do FAMILIES=$PWD/families-next.tsv BF=$BFI OUT=$I/runs/r0-unmodified TAG=gsub-r0 SCRATCH=$SC bash tools/baseline.sh $s; done",
+    "FAMILIES=$PWD/families-next.tsv BF=$BFI OUT=$I/runs/r1-megrim-droplookups TAG=gsub-r1 SCRATCH=$SC SRC_OVERRIDE=$I/edits/Megrim.droplookups.sfd bash tools/baseline.sh Megrim",
+    "git clone /home/fsanches/compartilhado/babelfont-rs $SC/bf-src; git -C $SC/bf-src checkout 17ea899; git -C $SC/bf-src apply $I/probes/babelfont-17ea899-langsys-as-built.diff; sudo -n /usr/local/sbin/drop-caches; (cd $SC/bf-src && CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=$SC/bf-target cargo build --release -p babelfont --features cli)",
+    "for s in Poly-Italic Poly-Regular Varela-Regular RibeyeMarrow-Regular Megrim; do FAMILIES=$PWD/families-next.tsv BF=$BFP OUT=$I/runs/r2-bf-langsys TAG=gsub-r2 SCRATCH=$SC bash tools/baseline.sh $s; done",
+    "FAMILIES=$PWD/families-next.tsv BF=$BFP OUT=$I/runs/r3-bf-langsys+megrim-droplookups TAG=gsub-r3 SCRATCH=$SC SRC_OVERRIDE=$I/edits/Megrim.droplookups.sfd bash tools/baseline.sh Megrim",
+    "RUN=$SC/baseline/<Style>-gsub-r2 (Megrim: -gsub-r3) SRC=<the converted .sfd> OUT=$I/runs/r4-final-{shared,proposed}-gate TG=<shared table_gate.py | $I/probes/table_gate_gsub_proposed.py> bash $I/probes/regate.sh <Style>",
+    "$PY $I/probes/gsub_semantic_diff.py <release.ttf> <build.ttf>; $PY $I/probes/shape_compare.py <release.ttf> <build.ttf>; $PY $I/probes/sfd_vs_release_registration.py <file.sfd> <release.ttf>",
+    "$PY $I/probes/release_export_mode.py Megrim Poly-Italic RibeyeMarrow-Regular Varela-Regular --batch",
+    "bash $I/probes/gate_sweep.sh > $I/runs/gate_sweep_next.tsv",
+    "$PY $I/probes/gate_ctx_negative.py <release.ttf> <accepted-build.ttf> <scratch> <ordn|frac>",
+    "for s in Lekton-Bold Lekton-Regular PatrickHand-Regular Play-Regular Tuffy-Italic Tuffy-Regular AbrilFatface-Regular ComicRelief-Regular ComicRelief-Bold; do FAMILIES=$PWD/families.tsv BF=$BFI|$BFP OUT=$I/runs/r5-first-batch-regression/{integration,proto} TAG=gsub-r5-{integration,proto} SCRATCH=$SC bash tools/baseline.sh $s; done"
+   ]
+  },
+  "confidence": "High. Every row's cause is reproduced from the source under the pipeline's own pairing. The releases carry exactly the .sfd's lookup order and registrations (58/58 lookups). Each fix is harness-verified (rows before -> after), and every functional claim rests on uharfbuzz runs with feature-firing counts. Megrim's non-OpenType export rests on the table set, the FFTM/.sfd timestamps, FontForge v20110222 initATTables and the same-session Jura exports, as Nosifer's did. The gate change is verified by a 106-style sweep and by measured negative tests. Its first-batch coverage is missing."
+ },
+ "verification": {
+  "unit": "gsub",
+  "reproduced": true,
+  "reproduction_notes": "I reproduced every substantive claim with my own runs, and most of them with my own probes. Everything is under /home/fsanches/compartilhado/sfd-reland/investigations/next-gsub-verify/ (README.txt lists each probe's question and command). Scratch is /home/fsanches/compartilhado/sfd-reland-scratch/gsub-verify/. Nothing is committed. What is in scratch can be regenerated from README.txt.\n\nPairing: I used families-next.tsv as is. There is 1 candidate per style, each an -TTF.sfd at hg 52f780bc. Each release is byte-identical to its hg blob (Megrim.ttf git blob 8fc9351c). For all 5 releases, the FFTM created/modified times equal the .sfd's CreationTime/ModificationTime (runs/release_facts.txt).\n\nv0, the unmodified sources with integration 17ea899, is identical to baseline-next: Megrim 4, Poly-Italic 3, RibeyeMarrow 2, Varela 6, Poly-Regular CLEAN. The releases register all 72 GSUB lookups (Poly-Italic 19, Poly-Regular 14, RibeyeMarrow 8, Varela 31) exactly as the .sfd states. Lookup types pair up in file order (runs/sfd_registration_vs_release.txt).\n\nMegrim:\n- The release has no GSUB, GPOS, GDEF, DSIG or kern. usMaxContext is 1, and the FFTM build stamp is 2011-02-22 13:48:33.\n- I fetched v20110222 tottf.c and read initATTables. It confirms that GSUB/GPOS/GDEF/DSIG are written only in opentypemode, and legacy kern only when OpenType and Apple modes are both off.\n- The 4 Jura TTFs were created 93-107 s after Megrim. They carry kern only, and their .sfd files declare abvm/blwm/kern.\n- My own sfd_edit.py droplookup x3 gives a file byte-identical to edits/Megrim.droplookups.sfd: 25 lines removed. Y -> y.ss01 is confirmed.\n- With the edits, v1 (17ea899) and v3 (prototype) leave only OS/2.us_weight_class. Adding the tools/workarounds.py weight class gives CLEAN 0 on both (runs/v4-*). v0 plus the workaround leaves the 3 GSUB rows.\n\nBabelfont prototype:\n- I built it myself from the published diff (git apply on 17ea899; BUILT_FROM d345b49). The next-emptygpos patch applied with git am gives an identical tree.\n- v2: Poly-Italic CLEAN 0, Poly-Regular CLEAN 0, Varela BLOCKING 3 (GPOS.* only), RibeyeMarrow still 2 under the shared gate.\n- My structural probe (gsub_langsys_semantics.py resolves each language system, expands nested lookups, and ignores lookup index, 5-vs-6 type, packing, and ligature or disjoint-rule order) reports:\n  - v0: Poly-Italic latn/ROM gains aalt. Varela latn/AZE, CRT and TRK inherit liga lookup 24 and smcp lookup 21, and latn/SRB gains aalt. RibeyeMarrow is already equal.\n  - v2: 0 of 2, 0 of 10 and 0 of 1 language systems differ.\n- HarfBuzz with forced x-hbot<TAG> languages (shape_langsys.py) gives the same result:\n  - v0: Varela TRK/AZE/CRT 'fi' -> fi in the build but f+i in the release. Under SRB with aalt, 30411 of 30578 runs differ.\n  - v2: glyph sequences are identical everywhere.\n  - v2 advance-only residues:\n    - Poly-Italic, 102 runs: U+0307/U+0326, the GDEF mark-class RELEASE-STALE row.\n    - RibeyeMarrow, 84 runs: U+0312/U+0315/U+0326, same row.\n    - Varela, 190 runs: all i+U+0307 with .notdef advance 514 vs 0. It disappears when the release's empty GPOS is copied in (runs/varela_residual_gpos.txt), so it belongs to the empty-GPOS unit.\n- fea-rs 1.0.0 source confirms the mechanisms: features.rs finalize_aalt registers aalt for every default language system. validate.rs allows only Gsub1/Gsub3/feature refs in aalt. features.rs set_system copies the script-default lookups on the first `language` statement unless exclude_dflt. contextual.rs into_lookups picks Chain only if a rule has backtrack or lookahead.\n- babelfont's hoist rule is confirmed in fontforge.rs.\n- cargo fmt --check is clean. clippy --all-targets gives 0 warnings. cargo test --release --lib fontforge: 114 passed, 0 failed, including both new tests. My filter differs from their '80 -> 82'.\n\nScope of the change:\n- A static scan of all 149 paired sources (sfd_langsys_scan.py) and a conversion sweep with both converters (fea_sweep.sh) agree. The FEA changes for exactly Megrim, Poly-Italic and Varela in the next batch (104 identical), and for their 9 first-batch r5 styles.\n- Only Play-Regular hits the aalt warn-only branch.\n\nGate:\n- The proposed gate takes RibeyeMarrow from 2 to 0 on my v0 and v2 builds. The trace confirms the shared gate refuses on the type alone ('rules differ; types False').\n- A re-run of their gate_sweep.sh is identical to theirs: RibeyeMarrow is the only verdict that changes.\n- Their gate_ctx_negative.py on my v2 builds reproduces their verdicts: shared gate unsound 2 on Varela ordn and a false block on RibeyeMarrow frac; proposed gate unsound 0.\n- I closed their open first-batch gap. On 7 first-batch styles whose releases carry contextual GSUB (Kristi, AbrilFatface, Lekton x2, PatrickHand, Tuffy x2; runs/v6-first-batch-ctx), both gates give identical blocking sets. In 5 of them the proposed gate exercised and accepted the contextual rule comparison.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Drop the aalt lookup the release does not carry",
+    "verdict": "keep",
+    "reason": "The source lines are confirmed: line 56 plus 11 Substitution2 entries (M N R U V W Y i m w y). Each piece of the origin evidence checks out independently:\n- the release's table set and usMaxContext 1;\n- the FFTM build stamp 2011-02-22, with FFTM modified == .sfd ModificationTime 2011-04-28 15:00:19;\n- v20110222 initATTables writes GSUB/GPOS/GDEF/DSIG only in opentypemode;\n- the same-session Jura exports have kern only.\nNothing is copied from the binary. My sfd_edit.py application is byte-identical to theirs. v1 and v3 leave only us_weight_class, and with the workaround both are CLEAN 0. This matches the Nosifer precedent Felipe settled on 2026-09-24."
+   },
+   {
+    "commit_subject": "Drop the ss01 lookup the release does not carry",
+    "verdict": "keep",
+    "reason": "Line 57 plus 10 Substitution2 entries. The blank script tag maps to DFLT. The source maps capital Y to y.ss01 (StartChar Y at line 6296 -> y.ss01), as they note. Same evidence and verification as the aalt edit."
+   },
+   {
+    "commit_subject": "Drop the Turkish locl lookup the release does not carry",
+    "verdict": "keep",
+    "reason": "Line 58 plus 1 Substitution2 entry (i -> i.TRK, latn/TRK only). Same evidence. The three edits in plan order apply cleanly. droplookup's still-referenced check passes. The combined result is CLEAN 0 with the weight-class workaround on both converters (runs/v4-megrim-v1+workarounds, v4-megrim-v3+workarounds)."
+   }
+  ],
+  "tool_verdicts": [
+   {
+    "tool_change": "babelfont-rs layout.rs make_langsys: `language XXX exclude_dflt;` for every language other than dflt",
+    "verdict": "keep",
+    "reason": "The change is correct and minimal. fea-rs 1.0.0 features.rs set_system copies the (script, dflt) lookups registered so far into a non-dflt language on its first `language` statement unless exclude_dflt is set. It uses entry().or_insert_with, so later statements do not reset the list, and exclude_dflt reproduces FontForge's per-language registration exactly.\n\nVerified on my own build of the published diff:\n- Varela: 10 of 10 language systems are structurally equal, and HarfBuzz glyph output is identical under every forced language system.\n- fmt is clean and clippy reports 0 warnings.\n- 114 fontforge-filtered tests pass, including test_language_does_not_inherit_default_lookups.\n- The conversion sweep changes the FEA of 12 of 149 styles: Megrim, Poly-Italic, Varela, and the 9 first-batch r5 styles, whose gate rows are unchanged.\n\nBefore filing: the diff is made against integration 17ea899. Its source hunks apply to upstream main 496e904, but the tests.rs hunk does not, because its context comes from pr-ff-reader-fixes (#91). The PR must be rebased onto upstream main, or stated as stacked on #91."
+   },
+   {
+    "tool_change": "babelfont-rs fontforge.rs: declare only aalt's language systems when aalt is narrower and no kerning or anchors exist",
+    "verdict": "revise",
+    "reason": "It works where it applies. Poly-Italic latn/ROM and Varela latn/SRB lose the extra aalt: Poly-Italic is CLEAN 0 and Varela is semantically equal in every language system. fea-rs indeed allows no script/language inside aalt and registers it for every languagesystem, so an FEA-level workaround is the only converter-side option.\n\nIt is still a heuristic, and the gap it warns about is not hypothetical. In their own r5 run and in my sweep, Play-Regular (first batch) takes the warn-only branch: aalt lacks latn/AZE, CRT, MOL, ROM and TRK, and kerning or anchors are present. Their result does not report this. Play has no practical impact now, because it is being re-landed from alexeiva/play.\n\nRevisions:\n- File it as a separate PR from exclude_dflt, so the uncontroversial fix is not held up by a design discussion with Simon.\n- Name Play-Regular as a real warn-only case.\n- Apply the same rebase as the exclude_dflt change."
+   },
+   {
+    "tool_change": "table gate: arbitrate_gsub_lookup_order compares contextual lookups by rules per first glyph (table_gate_gsub_proposed.py, wrapper over the shared 2f43693)",
+    "verdict": "keep",
+    "reason": "This remains a proposal for Felipe, since table_gate.py is our own tool.\n\nReproduced:\n- RibeyeMarrow goes 2 -> 0 on my v0 and v2 builds.\n- The sweep re-run is identical: only RibeyeMarrow changes, and Cardo-Regular is skipped.\n- Their negative-test probe on my builds gives the same verdicts: shared gate unsound 2 on Varela ordn; RibeyeMarrow frac shared false block, proposed sound.\n\nI added first-batch coverage: Kristi, AbrilFatface, Lekton x2, PatrickHand and Tuffy x2 give identical blocking sets under both gates.\n\nCorrection: their outputs show 3 behaviour-neutral mutations refused conservatively (varela-frac swap and retarget, varela-ordn swap), not 4.\n\nResidual looseness, not introduced by this change: nested non-contextual lookups compare ligatures as sorted rules, which ignores ligature-order shadowing. The shared gate compares only ligature counts."
+   }
+  ],
+  "classification_objections": [
+   "No row is misclassified. Every cause was reproduced from the paired source under families-next.tsv.",
+   "Nuance (not an error) on Poly-Italic and Varela feature_list/lookup_list: they are 'gate-arbitration' only in the sense that the EXISTING shared gate accepts them once the language-system fix removes the real registration difference. They need no gate change. For Varela, that acceptance is weak evidence: the shared gate's languages omit AZE, CRT and MOL, and its corpus does not reach ordn, as the negative test shows. The equality rests on the structural and shaping probes, and theirs and mine agree.",
+   "Varela GPOS.* is correctly attributed to the empty-GPOS unit. The one residual shaping difference after the babelfont change (i+U+0307, .notdef advance 514 vs 0) disappears when the release's empty GPOS is copied into the build (runs/varela_residual_gpos.txt)."
+  ],
+  "missed": [
+   "Play-Regular (first batch) triggers the aalt heuristic's warn-only branch, and their own runs/r5-first-batch-regression/proto/Play-Regular.gate.txt logs the warning. The result instead says no style in this unit hits it, which implies the gap is hypothetical. It is real in the 149-style corpus. There is no practical effect while Play is re-landed from alexeiva/play.",
+   "The babelfont diff does not apply to Simon's upstream main 496e904: the tests.rs hunk context comes from PR #91. The source hunks apply. 'upstream_pr_needed' should state the base, meaning rebase onto upstream main or stack on #91.",
+   "Miscount: the proposed gate refused 3 behaviour-neutral mutations, not 4 (their runs/gate_ctx_negative.*.txt).",
+   "The 'landable CLEAN' claims rest on the gate accepting GDEF mark-class RELEASE-STALE rows, and those rows change shaping advances in all three OpenType styles. Measured on the v2 builds: Poly-Italic U+0307/U+0326 (102 runs), RibeyeMarrow U+0312/U+0315/U+0326 (84 runs), and Varela U+0309/U+031B/U+0323, which the gate lists. The build zeroes these marks and the release does not. This is outside GSUB, but it conflicts with the 2026-09-24 'defects included' rule and should be a stated decision, not a silent acceptance. They mentioned only RibeyeMarrow's advance-only runs.",
+   "Megrim naming is broader than the file name. The gate skips the name table by design ('disclosed separately'), but the build and release differ in several fields:\n- nameID 1: 'Megrim Medium' vs 'Megrim'\n- nameID 2: 'Regular' vs 'Medium'\n- nameID 4/6: 'Megrim Medium'/'Megrim-Medium' vs 'Megrim'/'Megrim'\n- fsSelection: 192 vs 64\nMETADATA.pb expects filename Megrim.ttf and post_script_name Megrim. Separately, the release is TrueType-hinted from the .sfd (cvt/fpgm/prep and 346 glyphs with TtInstrs), while the build has prep only, so it renders differently; the gate accepts this by design, and Varela's 834 hinted glyphs are affected the same way. Both points are outside this unit, but 'megrim landable' is overstated until naming is handled.",
+   "Clarification, not an error: 26 next-batch releases lack both GSUB and GPOS. Their '18 with no layout tables' excludes the 8 that carry only a legacy kern table (Smokum, Ultra, KellySlab, Marvel x4, Wallpoet). Those 8 are also OpenType-off exports like Nosifer, but each source declares only its kern lookup, so Megrim remains the only next-batch style that loses GSUB lookups."
+  ],
+  "overall": "The investigation holds up. Every table row, cause, edit value and measurement I re-derived reproduces:\n- Megrim was a FontForge 20110222 OpenType-off export, and the three droplookup edits plus the existing weight-class workaround give CLEAN 0.\n- Poly-Italic and Varela carry converter-fidelity registration errors (inherited default lookups, aalt on every languagesystem). The exclude_dflt and aalt prototype, rebuilt by me from the published diff, makes all 12 language systems equal (Poly-Italic 2 and Varela 10) structurally and under HarfBuzz.\n- RibeyeMarrow is functionally equal and blocked only by the shared gate's type check. The proposed gate resolves it without changing any other next-batch or first-batch verdict I tested.\n\nCorrections:\n- 3 conservative refusals, not 4.\n- The aalt heuristic's warn-only gap already occurs in Play-Regular.\n- The diff needs rebasing before an upstream PR, and exclude_dflt should be filed separately from the aalt heuristic.\n\nOutside the GSUB rows, the 'landable' list should carry two caveats: the gate-accepted GDEF mark-class advance changes, and Megrim's family/PostScript naming. Confidence: high."
+ }
+}

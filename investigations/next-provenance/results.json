@@ -1,0 +1,585 @@
+{
+ "investigation": {
+  "unit": "provenance",
+  "styles": [
+   "Thabit",
+   "Thabit-Bold",
+   "Thabit-Oblique (unpaired)",
+   "Thabit-BoldOblique (unpaired)",
+   "Lohit-Bengali",
+   "Lohit-Tamil",
+   "Yellowtail-Regular (unpaired)"
+  ],
+  "rows": [
+   {
+    "style": "Lohit-Bengali",
+    "row": "OS/2.panose_10 {\"1\": [0, 11]}",
+    "classification": "provenance",
+    "cause": "The pairing and google/fonts METADATA use pravins/lohit a403c9b. That commit is the lohit-gujarati-2.92.1 tag (2013-12-12), which a 'tag_match' heuristic took from another family in the monorepo. The release was built from the 0df83ad state. Its FFTM sourceModified is 1330511755 (2012-02-29 10:35:55 UTC), which equals the .sfd ModificationTime at 0df83ad and at 9d61e32. Its name ID 5 is 'Version 2.5.1' and its PANOSE is 2 0 6 ... . That PANOSE matches 0df83ad; 9d61e32 ('updated panose value') changed it to 2 11 6 without re-saving the file. By 8b3650e the .sfd is 2.5.3 (a403c9b has 2.5.3).",
+    "evidence": "runs/fftm_source_commit.txt (probes/fftm_source_commit.py); rows go from 1 (runs/r0-baseline) to 0, CLEAN, at 0df83ad (runs/r1-lohit-provenance, pairing runs/r1-lohit-provenance/families.tsv)"
+   },
+   {
+    "style": "Lohit-Bengali",
+    "row": "RENDERING (not a table-gate row): 284 Bengali words differ, up to 801 px, while the table gate reports CLEAN",
+    "classification": "converter-fidelity",
+    "cause": "Below- and above-base marks are not positioned (u09C1, u09C2, u09C3, u0981, reph). The release's GPOS is abvm = [mark-to-base with 240 bases, chain lookup 2] and blwm = [mark-to-base]. babelfont leaves the .sfd's anchor lookups to fontc's mark writer, but it writes the chain lookup \"'abvm' Above Base Mark in Bengali lookup 2\" as a declared feature abvm. fontc does not generate a feature the source already declares, so our GPOS is abvm = [chain] and mark = 3 mark-to-base lookups with only 5 bases (uni25CC and glyphNNN). The table gate calls the GPOS difference RELEASE-STALE ('organised differently'), and neither baseline.sh nor land.py gates the rendering diff. The fault is in the converter, not in the pairing: the same 288 words differ at a403c9b.",
+    "evidence": "d3 locations of runs r0/r1/r2/r5 (probes/d3_render.py): 288 -> 284 -> 284 words. With a '# Automatic Code' marker added to abvm, 117 words remain (runs/r4-lohit-bengali-marker, probes/mark_feature_marker.sh): fontc then builds abvm with 50/50/37 bases and no blwm."
+   },
+   {
+    "style": "Lohit-Tamil",
+    "row": "hmtx.u0BEA, hmtx.u0BEC, hmtx.u0BED, hmtx.u0BEE, hmtx.u0BEF, OS/2.panose_10",
+    "classification": "provenance",
+    "cause": "The pairing commit a403c9b is wrong here as well. The release was built from the 361b23b state: FFTM sourceModified 1316598937 (2011-09-21 09:55:37 UTC) equals the .sfd ModificationTime at 361b23b, and the version is 2.5.0. After that, 723f00c (2012-04-25) widened the Tamil digits (u0BEA 663->746, u0BEE 1020->1142) and 9d61e32 changed the PANOSE.",
+    "evidence": "runs/fftm_source_commit.txt; rows go from 8 (r0) to 2 (runs/r1-lohit-provenance); per-commit widths were checked with git show"
+   },
+   {
+    "style": "Lohit-Tamil",
+    "row": "hmtx.u0BC1 {\"width\": [532, 0]}, hmtx.u0BC2 {\"width\": [776, 0]}",
+    "classification": "converter-fidelity",
+    "cause": "babelfont's SFD reader gives every GlyphClass:4 glyph the Glyphs subCategory Nonspacing (fontforge.rs, upstream since #66). fontc exports a Nonspacing mark with zero width (glyphs-reader 1.0.0 Glyph::is_nonspacing_mark; glyphs2fontir 1.0.0 source.rs:1829). FontForge writes the advance the source states (Width 532/776). A Mark with subCategory Spacing Combining keeps both its GDEF mark class (category_for_glyph_preliminary) and its advance.",
+    "evidence": "The prototype (probes/babelfont-spacing-combining-mark.patch) takes rows from 2 to 0 CLEAN with 0 glyph and 0 word rendering diffs (runs/r2-lohit-spacingmark, runs/r5-lohit-final). probes/advancing_marks.py (runs/advancing_marks.txt) finds only Lohit-Tamil and Cardo-Italic/Regular affected."
+   },
+   {
+    "style": "Thabit, Thabit-Bold",
+    "row": "cmap x458 LOST (U+0021-U+007E, Latin-1, Latin Extended-A, Greek, SF*/SM*/SS*/SV* box drawing, U+FB00-FB04 ...)",
+    "classification": "provenance",
+    "cause": "The Latin comes from the build script, not from the .sfd. build.py (helper.py in the 0.02 ChangeLog) runs font.mergeFonts('cour/cour.pfa') (courb.pfa for Bold), which adds the IBM Courier Type 1 fonts in src/cour/. The .sfd has no Latin: the 2008-08-09 ChangeLog says 'Removed non-arabic glyphs'. FontForge 2008 _MergeFont (fvfonts.c at eb711fd7) copies glyphs unscaled: A has advance 600 in the 1024-em font. It names them by FontForge's own UniFromName (namelist.c psaltnames: SM680000->U+2310, ohm->U+2126, micro->U+00B5, dbar->U+0111, Pts->U+20A7). fontTools' AGL leaves 33 of these different.",
+    "evidence": "458 -> 0 with the proposed mergepsfont op (runs/t2-thabit-merged-notdef, runs/p3). With the AGL naming 35 rows remained (runs/t1-thabit-merged-notdef). Probes: probes/ff_build_ops.py, probes/ff_namelist.py."
+   },
+   {
+    "style": "Thabit, Thabit-Bold",
+    "row": "GSUB.script_list, GSUB.feature_list, GSUB.lookup_list (release: rlig/init/medi/fina/liga arab + liga latn; ours: none)",
+    "classification": "provenance",
+    "cause": "Five of the six lookups come from build.py's font.mergeFeature('Thabit.fea'): rligTashkilLigatures, InitialForms, MedialForms, FinalForms and ligaLamAlef. The sixth is a latn liga lookup that FontForge's AFM reader created from the IBM Courier AFM's L lines (LoadKerningDataFromAfm). The release's PfEd names that lookup \"Courier-'liga' Standard Ligatures in Latin lookup 0\". Its rules equal X.Org font-ibm-type1 cour.afm ('N f ; L f ff ; L i fi ; L l fl', 'N ff ; L i ffi ; L l ffl'). The AFMs are not in the hg tree.",
+    "evidence": "Rows go from 3 to 0 with mergefea plus mergepsfont with the AFM (runs/t2, runs/p3); PfEd decoded in-session; runs/thabit_release_inputs.txt"
+   },
+   {
+    "style": "Thabit, Thabit-Bold, Thabit-Oblique, Thabit-BoldOblique",
+    "row": "OS/2.us_weight_class [500, 400] (Bold and BoldOblique: [700, 400])",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 ignores a single master's instance weightClass. The .sfd states TTFWeight 500 or 700. This is the known issue in issues/fontc-static-weight-class.md.",
+    "evidence": "Closed by land.py's workaround as applied by probes/rebuild_with_workarounds.sh: rows go from 3 to 2 for each style (runs/p3/workarounds)"
+   },
+   {
+    "style": "Thabit, Thabit-Bold, Thabit-Oblique, Thabit-BoldOblique",
+    "row": "PfEd: whole-table difference",
+    "classification": "gate-arbitration",
+    "cause": "PfEd is FontForge's private table. In these releases it holds only the GSUB/GPOS lookup, subtable and anchor-class names (decoded: rligTashkilLigatures, ... \"Courier-'liga' ...\", ArabicAbove, ...). No shaper or rasterizer reads it, fontc does not write it, and the gate already accepts FontForge's other private table, FFTM.",
+    "evidence": "probes/table_gate_ff_private.py takes each style from 2 rows to 0 (runs/p3/gate-ff-private)"
+   },
+   {
+    "style": "Thabit, Thabit-Bold, Thabit-Oblique, Thabit-BoldOblique",
+    "row": "head.font_direction_hint [0, 2]",
+    "classification": "gate-arbitration",
+    "cause": "FontForge 2008 tottf.c sethead writes 0 for a font with both LTR and RTL glyphs ('if ( lr && rl ) head->dirhint = 0;'); Thabit is Arabic plus Courier. The OpenType spec deprecates the field ('set to 2'), no Glyphs parameter can state it, and fontc writes 2. The same row appears for Cardo-Bold and Cardo-Italic (Hebrew plus Latin).",
+    "evidence": "tottf.c at fontforge eb711fd7 lines 2777-2783; probes/table_gate_ff_private.py gives 0 rows"
+   },
+   {
+    "style": "Thabit, Thabit-Bold",
+    "row": "hmtx.2, .notdef member (release lsb 34 / advance 374; ours 51 / 512)",
+    "classification": "converter-fidelity",
+    "cause": "The .sfd has no .notdef. FontForge's TTF exporter synthesises one (tottf.c dumpmissingglyph): stem = (a+d)/30 = 34, ymax = 682, xmax = 306, advance 374. That is exactly the release's glyph. This is the same rule as the Tuffy precedent.",
+    "evidence": "The ffnotdef emulation (probes/ff_build_ops.py) removes the .notdef member: hmtx.2 becomes hmtx.1 (runs/t1-thabit-merged vs t1-thabit-merged-notdef)"
+   },
+   {
+    "style": "Thabit, Thabit-Bold",
+    "row": "hmtx.2, uni06D4 member (release lsb 186, ours 187)",
+    "classification": "converter-fidelity",
+    "cause": "The .sfd states half-unit points (186.5 0 m). FontForge's SSAddPoints writes glyf points with rint(), which rounds ties to even (186). fontc rounds half up (187). There are 1574 half-unit coordinates in 102 glyphs.",
+    "evidence": "The prototype filter --fontforge-rint-coordinates takes rows from 4 (runs/t6) to 3 (runs/t7) and clears dalring U+0689's 80-px rendering diff"
+   },
+   {
+    "style": "Thabit (rendering, all styles)",
+    "row": "44 Arabic words: lam-alef not formed across harakat, marks unattached on lam-alef ligatures",
+    "classification": "converter-fidelity",
+    "cause": "Two converter defects. (a) babelfont writes lookupflag only for contextual lookups (the has_chain branch, upstream since #78), so ligaLamAlef loses RightToLeft|IgnoreMarks (SFD flag 9) and every ordinary GSUB/GPOS lookup loses its flags. (b) babelfont names 'baselig <n>' anchors with the bare class name, which duplicates it, so fontc cannot build mark-to-ligature. Glyphs names them <class>_<n+1>.",
+    "evidence": "Arabic word diffs go from 44 (runs/t4) through the lookupflag prototype (runs/t5, max 351 -> 269 px) to 0 with the baselig prototype added (runs/t6). Patches: probes/babelfont-lookupflag-all-lookups.patch, probes/babelfont-baselig-anchor-names.patch."
+   },
+   {
+    "style": "Thabit-Bold (rendering)",
+    "row": "1 Arabic word: shaddahdammah attached to uniFBFE in ours, not in the release",
+    "classification": "converter-fidelity",
+    "cause": "In Thabit-Bold.sfd uniFBFE is only a reference (to gid 179) and has no anchors. FontForge exports a glyph's own anchors only. fontc propagates anchors from components unless the font sets the custom parameter 'Propagate Anchors' to false.",
+    "evidence": "The prototype filter --fontforge-no-anchor-propagation takes this from 1 word to 0 (runs/p2 -> runs/p3)"
+   },
+   {
+    "style": "Thabit-Oblique, Thabit-BoldOblique (rendering)",
+    "row": "Arabic mark offsets 1-2 units apart",
+    "classification": "converter-fidelity",
+    "cause": "FontForge's dumpanchor writes anchors with putshort(gpos, ap->me.x), which truncates toward zero. fontc rounds. The skew makes every anchor fractional.",
+    "evidence": "With --fontforge-truncate-anchors every remaining Arabic word diff has identical glyphs and positions: 6/6 and 7/7 (runs/p2, runs/p3)"
+   },
+   {
+    "style": "Thabit, Thabit-Bold, Thabit-Oblique, Thabit-BoldOblique (rendering)",
+    "row": "60-83 Latin/Greek/symbol glyph diffs (<=46 px) and 121-140 Latin words (<=108 px)",
+    "classification": "converter-fidelity",
+    "cause": "FontForge's merge converts each copied Type 1 glyph to the order2 layer with splineorder2.c SplineSetsTTFApprox (fvfonts.c SplineCharCopy -> SCConvertOrder). The mergepsfont probe uses cu2qu (max_err 1) instead, so the points differ from FontForge's and the areas differ by up to 0.2% (e.g. 'o' 71478 vs 71613). Contour reversal (psread.c) and naming are exact.",
+    "evidence": "runs/p3/SUMMARY.txt; the Arabic has 0 glyph diffs in the uprights"
+   },
+   {
+    "style": "Thabit-Oblique, Thabit-BoldOblique",
+    "row": "no source (UNPAIRED); against the upright source: 465 rows each",
+    "classification": "provenance",
+    "cause": "The obliques are generated at build time: build.py obliqize() then deobliqize() then generate() with couri.pfa or courbi.pfa. The release confirms every step. The skew is psMat.skew(-16) in RADIANS, x' = x - 0.30063 y; measured -0.3007. U+200C..U+202E (afii61664..afii61575) are deselected and stay upright. References are unlinked. Upright Courier ( ) [ ] { } ! are pasted in, and the release shows them unskewed with the upright lsb. PfEd names the lookup \"Courier-Italic-'liga'...\" (Courier-BoldItalic in BoldOblique).",
+    "evidence": "The upright source gives 465 rows (runs/o0-obliques-upright-source). The generated sources give 3 rows (runs/o7, runs/p3), 2 with land.py's workaround and 0 with the gate change; the Arabic GSUB/GPOS shaping is identical."
+   },
+   {
+    "style": "Thabit-Oblique, Thabit-BoldOblique (rendering)",
+    "row": "1 and 15 Arabic glyph diffs; 6 and 7 Arabic words whose shaping is identical",
+    "classification": "gate-arbitration",
+    "cause": "This is a release inconsistency no source can reproduce. FontForge 2008 writes the glyf bbox from curve extrema and the hmtx lsb as the unrounded minx truncated to int (tottf.c ttfdumpmetrics putshort(gi->hmtx, b->minx)). As a result 156 and 228 glyphs carry an lsb different from their own xMin. Examples: kafinitial has lsb -56 with xMin -57; tehring has header xMin -29 while its points reach -32. A rasterizer places the glyph by the lsb, so it draws one unit off. Our point sets are identical to the release's (kafinitial 41 = 41 points).",
+    "evidence": "probes/stale_lsb.py (runs/stale_lsb.txt): every Arabic glyph diff is a stale-lsb glyph"
+   },
+   {
+    "style": "Thabit, Thabit-Bold (names; not gated)",
+    "row": "family 'Regular Medium'/'Bold' in our build vs 'Thabit' in the release; copyright, designer and name IDs 8/9/16/18",
+    "classification": "provenance",
+    "cause": "The .sfd drifted after the release, and the release's own source state is lost. Shipped Thabit.ttf is byte-identical to the Arabeyes Thabit-0.02 release (SourceForge Fonts/Thabit 0.02/Thabit-0.02.tar.gz, built 2008-08-09). The other three styles differ from that release only in name ID 4 (Raph Levien's FixName, hg 465c5490a + 49339cae0, 2011-12-15). The hg .sfd files were saved again on 2010-06-15 (ModificationTime 1276640170 / 1276640219), with Copyright 2008-2010, FamilyName 'Regular'/'Bold' and new LangName credits. The ChangeLog is unchanged since 0.02, and the drawing is unchanged: 0 Arabic rendering diffs in the uprights. The 2008-08-09 .sfd has not been found anywhere: not in hg, not in the repo archive, and the SourceForge tarballs ship only TTFs.",
+    "evidence": "runs/thabit_release_inputs.txt (sha256/sha1); runs/fftm_source_commit.txt; runs/n9-*-familyname"
+   },
+   {
+    "style": "Yellowtail-Regular",
+    "row": "UNPAIRED: src/Yellowtail-Regular-TTF.sfd 'declares no glyphs'",
+    "classification": "provenance",
+    "cause": "The file is not an SFD. It is a Type 1 PFB ('%!PS-AdobeFont-1.0: Yellowtail 001.001', 'Generated by FontForge 20110222', Creator Dave Crossland, CreationDate Mon Jul 18 09:51:27 2011); babelfont reports 'Not an SFD file'. The shipped TTF is the FontForge 20110222 export from the same session. Its FFTM sourceCreated = sourceModified = 2011-07-18 12:51:27 UTC, which is the PFB CreationDate at -0300. That export is hg 60268f00f, Dave Crossland's 'Reducing Yellowtail filesize by 30% by stripping hints and using the magic values': outlines simplified from the designer's 2011-07-17 TTF (hg f66bfe1e9), hints dropped, kern/GPOS dropped. google/fonts 1baf54ea4 (PR #803, Marc Foley, 2017, empty body) later changed only name IDs 3/4/5/6 and head.modified/fontRevision to make v1.002. The PFB matches the shipped outlines: 365 of 366 codepoints within 0.1% area and 366/366 bbox within 1 unit. The designer TTF and OTF do not: 18 and 23 codepoints are 0.4% or more off.",
+    "evidence": "runs/yellowtail_lineage.txt and runs/yellowtail_pfb_geometry.txt (probes/yellowtail_lineage.py, probes/yellowtail_pfb_geometry.py). Converting the VFB instead gives 19 table rows plus 121 glyph and 137 word rendering diffs, max 4866 px (runs/y1-yellowtail-vfb)."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique"
+    ],
+    "op": "mergefea (NEW op; reference implementation probes/ff_build_ops.py mergefea, not yet in tools/sfd_edit.py)",
+    "args": "src/Thabit.fea",
+    "commit_subject": "Merge Thabit.fea into the source, as build.py does",
+    "commit_body": "build.py runs font.mergeFeature(\"Thabit.fea\") before generating, and the release's GSUB is that file: 5 lookups, 146 rules. They are written as FontForge stores merged lookups: one subtable per lookup, named \"<lookup> subtable\", with the lookup flags the file states. The file's old comma-separated \"lookupflag RightToLeft, IgnoreMarks\" is read as FontForge read it.",
+    "value_derived_from": "src/Thabit.fea in the same tree (hg 52f780b ofl/thabit/src). The lookup and subtable names are confirmed by the release's PfEd table.",
+    "source_currently_states": "no GSUB lookup; only 'mark' Mark to base and Mark to ligature (GPOS)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique"
+    ],
+    "op": "add file (not an .sfd edit)",
+    "args": "src/cour/cour.afm, courb.afm, couri.afm, courbi.afm from X.Org font-ibm-type1 88a51daabc8a5bf2dbb2ace89c638058b01b3cf3",
+    "commit_subject": "Add the IBM Courier AFMs FontForge read beside cour/*.pfa",
+    "commit_body": "FontForge loads name.afm beside name.pfa (CheckAfmOfPostscript), and the release's latin 'liga' lookup comes from its L lines. PfEd names that lookup \"Courier-'liga' Standard Ligatures in Latin lookup 0\"; the rules are f f->ff, f i->fi, f l->fl, ff i->ffi, ff l->ffl. These AFMs are X.Org's copies, whose .pfa files are byte-identical to src/cour/*.pfa.",
+    "value_derived_from": "gitlab.freedesktop.org/xorg/font/ibm-type1 at 88a51da (sha1s in runs/thabit_release_inputs.txt). That the release used them is inferred from the PfEd lookup name and the identical ligature set.",
+    "source_currently_states": "src/cour/ holds only LICENSE.txt, README.txt and the four .pfa files",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Thabit (cour)",
+     "Thabit-Bold (courb)",
+     "Thabit-Oblique (couri)",
+     "Thabit-BoldOblique (courbi)"
+    ],
+    "op": "mergepsfont (NEW op; probes/ff_build_ops.py mergepsfont + probes/ff_namelist.py)",
+    "args": "src/cour/cour.pfa src/cour/cour.afm Courier   (Bold: courb.* Courier-Bold; obliques: couri.* Courier-Italic, courbi.* Courier-BoldItalic)",
+    "commit_subject": "Merge IBM Courier into the source, as build.py does",
+    "commit_body": "build.py runs font.mergeFonts(\"cour/cour.pfa\"): every non-Arabic glyph of the release comes from it (477 glyphs, 470 in the obliques). The op follows FontForge 2008's merge (git eb711fd7: fvfonts.c _MergeFont, psread.c, namelist.c UniFromName): it copies the glyphs the font lacks by name or Unicode, unscaled, with contours reversed to the TrueType direction and seac composites kept as references. The conversion to the font's quadratic layer uses cu2qu (max_err 1), not FontForge's SplineSetsTTFApprox, so its points differ from the release's by up to a unit.",
+    "value_derived_from": "src/cour/*.pfa (same tree) and the AFMs above",
+    "source_currently_states": "308 glyphs (Bold 310), Arabic only",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Thabit-Oblique",
+     "Thabit-BoldOblique"
+    ],
+    "op": "obliqize -16 200C 202E, then pastepsglyphs src/cour/cour.pfa (Bold: courb.pfa) parenleft parenright exclam bracketleft bracketright braceleft braceright (NEW ops; probes/ff_build_ops.py), on copies of src/Thabit.sfd and src/Thabit-Bold.sfd saved as new files; then the mergefea and mergepsfont edits above",
+    "args": "src/Thabit.sfd -> src/Thabit-Oblique.sfd; src/Thabit-Bold.sfd -> src/Thabit-BoldOblique.sfd",
+    "commit_subject": "Generate the oblique sources as build.py does",
+    "commit_body": "Google Fonts ships two obliques with no source; build.py makes them. obliqize() skews every glyph worth outputting by psMat.skew(-16), which is 16 radians: x' = x + tan(-16) y = x - 0.300632 y. U+200C..U+202E are left upright, references are unlinked first, and anchors move with the outline, with FontForge's 1/1024 quantisation. deobliqize() pastes the upright Courier ( ) [ ] { } !. The release shows each of these.",
+    "value_derived_from": "build.py obliqize/deobliqize (hg 52f780b), checked against the release: skew measured -0.3007, parentheses unskewed with the upright lsb",
+    "source_currently_states": "no oblique source exists",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique"
+    ],
+    "op": "setfield Copyright",
+    "args": "<current value>\\nLatin glyphs are Copyright (c) IBM Corporation 1990,1991.",
+    "commit_subject": "Credit IBM for the Latin, as build.py does",
+    "commit_body": "build.py appends this line to font.copyright when it merges Courier; the release's name ID 0 carries it.",
+    "value_derived_from": "build.py (hg 52f780b)",
+    "source_currently_states": "Typeface and data (C) 2008-2010, Khaled Hosny.\\nThis font is distributed under the terms of OFL license.",
+    "verified": false
+   },
+   {
+    "styles": [
+     "Thabit",
+     "Thabit-Bold"
+    ],
+    "op": "setfield FamilyName",
+    "args": "Thabit",
+    "commit_subject": "Restore the family name Thabit",
+    "commit_body": "The 2010 save of the source states FamilyName Regular (Bold: Bold), so the build is named 'Regular Medium' / 'Bold'. The 0.02 release, built from the 2008 state, names the family Thabit (name ID 16 in both styles; name ID 1 of the Regular). NOTE: the value comes from the RELEASE's name table and google/fonts METADATA, not from any archived source.",
+    "value_derived_from": "release name ID 16 'Thabit' (Thabit.ttf and Thabit-Bold.ttf), name ID 1 'Thabit' (Thabit.ttf), google/fonts METADATA family 'Thabit'",
+    "source_currently_states": "FamilyName: Regular / FamilyName: Bold",
+    "verified": true
+   }
+  ],
+  "proposed_tool_changes": [
+   {
+    "tool": "families-next.tsv / tools/pair_next.py",
+    "description": "Re-pair lohitbengali to pravins/lohit 0df83ad734a061144754601fc4984f72e3636108 and lohittamil to 361b23b171eef00fe33371be5b6b117b05b315c3. More generally, when the release carries FFTM, pair_next.py should check METADATA's commit against the commit whose .sfd ModificationTime equals the release's FFTM sourceModified, and flag any mismatch. For Lohit, METADATA's a403c9b came from a 'tag_match' on another family's tag.",
+    "evidence": "runs/fftm_source_commit.txt. Lohit-Bengali goes from 1 row to 0 and Lohit-Tamil from 8 to 2 (runs/r1-lohit-provenance).",
+    "styles_affected": [
+     "Lohit-Bengali",
+     "Lohit-Tamil"
+    ],
+    "prototype": "probes/fftm_source_commit.py; runs/r1-lohit-provenance/families.tsv",
+    "upstream_pr_needed": "no (workspace). The google/fonts METADATA commit correction for ofl/lohitbengali and ofl/lohittamil is Felipe's PR."
+   },
+   {
+    "tool": "babelfont-rs (SFD reader)",
+    "description": "When a GlyphClass:4 glyph states a non-zero Width, give it subCategory 'Spacing Combining' instead of 'Nonspacing'. It then keeps its GDEF mark class and its advance, as FontForge exported it.",
+    "evidence": "Lohit-Tamil goes from 2 rows to 0 with 0/0 rendering diffs (runs/r2, runs/r5). The next-batch sweep (runs/regnext-compare.txt) shows it also closes 4 hmtx rows of Cardo-Italic, but opens 2 there (GDEF.glyph_classes, GDEF.mark_glyph_sets): fontc's kern writer now puts the spacing marks in a mark filtering set, while the release's kern lookup has flag 0. Cardo-Italic goes from 10 rows to 8.",
+    "styles_affected": [
+     "Lohit-Tamil",
+     "Cardo-Italic",
+     "Cardo-Regular"
+    ],
+    "prototype": "probes/babelfont-spacing-combining-mark.patch",
+    "upstream_pr_needed": "babelfont-rs: new PR, or fold into the open FontForge reader PR. SetSubcategory should also not overwrite 'Spacing Combining'."
+   },
+   {
+    "tool": "babelfont-rs (SFD reader, FEA emission)",
+    "description": "Write lookupflag (the 4 low bits) for every converted lookup, not only contextual ones. Today the has_chain branch is the only place the flag is written (upstream since #78).",
+    "evidence": "Thabit's ligaLamAlef (SFD flag 9) lost IgnoreMarks and lam-alef stopped forming across harakat. Together with the baselig change, Arabic word diffs go from 44 to 0 (runs/t4 -> t5 -> t6). No table-row change in the 149-style sweeps.",
+    "styles_affected": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique"
+    ],
+    "prototype": "probes/babelfont-lookupflag-all-lookups.patch",
+    "upstream_pr_needed": "babelfont-rs: new PR"
+   },
+   {
+    "tool": "babelfont-rs (SFD reader, anchors)",
+    "description": "Name an SFD 'baselig <n>' anchor <class>_<n+1>, the Glyphs ligature-component convention, so fontc builds mark-to-ligature.",
+    "evidence": "Marks on Thabit's lam-alef ligatures were unpositioned; this closes them (runs/t5 -> t6)",
+    "styles_affected": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique"
+    ],
+    "prototype": "probes/babelfont-baselig-anchor-names.patch",
+    "upstream_pr_needed": "babelfont-rs: new PR"
+   },
+   {
+    "tool": "babelfont-rs (filter)",
+    "description": "--fontforge-rint-coordinates: round the points of quadratic layers half to even, as FontForge's SSAddPoints does with rint(). On-curve points half-way between two off-curve points are left for the compiler to imply.",
+    "evidence": "Thabit hmtx uni06D4 closes (runs/t6 -> t7) and so does the dalring rendering diff. The first version, which also rounded implied points, made Lekton-Bold differ in one word; the final version does not (runs/reg-batch1-compare-all7.txt).",
+    "styles_affected": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique",
+     "any quadratic .sfd with half-unit points"
+    ],
+    "prototype": "probes/babelfont-filter-fontforgerintcoordinates.patch",
+    "upstream_pr_needed": "babelfont-rs: add to the FontForge-fidelity filter group (open PRs #91-#93 or new)"
+   },
+   {
+    "tool": "babelfont-rs (filter)",
+    "description": "--fontforge-implied-oncurves: drop the quadratic on-curve points FontForge leaves out of glyf. These are points with no TrueType number (SFD ttfindex -1) within 0.1 unit of the midpoint of their control points, not roundx/roundy/dontinterpolate (tottf.c SSAddPoints plus SPInterpolate).",
+    "evidence": "The glyf point sets now equal the release's (kafinitial goes from 44 points to 41, runs/p1). Tuffy-Italic loses 2 rows (26 -> 24) in the batch-1 sweep.",
+    "styles_affected": [
+     "Thabit-Oblique",
+     "Thabit-BoldOblique",
+     "Tuffy-Italic",
+     "any quadratic .sfd"
+    ],
+    "prototype": "probes/babelfont-filter-fontforgeimpliedoncurves.patch",
+    "upstream_pr_needed": "babelfont-rs: new PR"
+   },
+   {
+    "tool": "babelfont-rs (filter)",
+    "description": "--fontforge-truncate-anchors: truncate anchor coordinates toward zero, as FontForge's dumpanchor does with putshort(ap->me.x).",
+    "evidence": "After it, every remaining Arabic word diff in the obliques has identical shaping: 6/6 and 7/7 (runs/p2, p3)",
+    "styles_affected": [
+     "Thabit-Oblique",
+     "Thabit-BoldOblique",
+     "any .sfd with fractional anchors"
+    ],
+    "prototype": "probes/babelfont-filter-fontforgetruncateanchors.patch",
+    "upstream_pr_needed": "babelfont-rs: new PR"
+   },
+   {
+    "tool": "babelfont-rs (filter)",
+    "description": "--fontforge-no-anchor-propagation: set the Glyphs custom parameter 'Propagate Anchors' to false, which fontc honours (glyphs2fontir source.rs). FontForge exports only a glyph's own anchors.",
+    "evidence": "The Thabit-Bold word with shaddahdammah on the reference-only uniFBFE closes (runs/p2 -> p3)",
+    "styles_affected": [
+     "Thabit-Bold",
+     "any .sfd with reference-only bases"
+    ],
+    "prototype": "probes/babelfont-filter-fontforgenoanchorpropagation.patch",
+    "upstream_pr_needed": "babelfont-rs: new PR"
+   },
+   {
+    "tool": "babelfont-rs (filter)",
+    "description": "--fontforge-notdef: synthesise FontForge's .notdef (tottf.c dumpmissingglyph) when the .sfd has none. This is Tuffy's proposal, confirmed here.",
+    "evidence": "The Thabit .notdef hmtx member closes with the emulation (runs/t1-thabit-merged -> t1-thabit-merged-notdef)",
+    "styles_affected": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique",
+     "Tuffy-Regular",
+     "Tuffy-Italic"
+    ],
+    "prototype": "emulated only: probes/ff_build_ops.py ffnotdef (appended last, because babelfont resolves Refer by file position)",
+    "upstream_pr_needed": "babelfont-rs: new PR (not implemented)"
+   },
+   {
+    "tool": "tools/recipe.py",
+    "description": "Pass the five FontForge-exporter filters (rint, implied-oncurves, truncate-anchors, no-anchor-propagation, notdef once implemented) when the release has FFTM, that is, when FontForge exported it. Do not pass them otherwise.",
+    "evidence": "Two 149-style sweeps compared the patched converter plus 4 filters with unpatched 17ea899 (runs/reg-batch1-compare-all7.txt, runs/regnext-compare.txt). Table rows change only for Tuffy-Italic (26 -> 24), Cardo-Italic (10 -> 8) and Lohit-Tamil (8 -> 6). Rendering improves for MrDeHaviland (2 -> 0 glyphs), Thabit/Bold (1 -> 0) and Cardo-Italic (2 -> 0 words). It churns slightly in Tuffy-Regular (+2 words at 9-10 px; its v1.272 release has no FFTM) and Ultra-Regular (53 -> 52 glyphs, 321 -> 323 words; its release has a different point structure).",
+    "styles_affected": [
+     "all SFD styles"
+    ],
+    "prototype": "EXTRA_FLAGS in the sweeps (runs/reg-batch1-all7-filters4, runs/regnext-all7-filters4)",
+    "upstream_pr_needed": "no"
+   },
+   {
+    "tool": "sfd-batch5/tools/table_gate.py",
+    "description": "Accept PfEd (FontForge's private table: lookup, subtable and anchor names) the way FFTM is accepted, and accept head.font_direction_hint (deprecated; FontForge writes 0 for mixed-direction fonts).",
+    "evidence": "All four Thabit styles go from 2 rows to 0 (runs/p3/gate-ff-private). Cardo-Bold and Cardo-Italic have the same dirhint row.",
+    "styles_affected": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique",
+     "Cardo-Bold",
+     "Cardo-Italic"
+    ],
+    "prototype": "probes/table_gate_ff_private.py",
+    "upstream_pr_needed": "no (workspace gate)"
+   },
+   {
+    "tool": "tools/baseline.sh, tools/land.py, tools/verify_landed.py",
+    "description": "Gate, or at least report, diffenator3's rendering diff (locations[].glyphs and words). table_gate.py delegates glyf/loca to 'the rendering diff', but none of these tools runs one.",
+    "evidence": "Lohit-Bengali is table-CLEAN while 284 Bengali words render differently (marks unpositioned). Many batch-1 CLEAN styles also carry rendering diffs (runs/reg-batch1-compare-all7.txt, e.g. Miama 34 glyphs, Kristi 7).",
+    "styles_affected": [
+     "all"
+    ],
+    "prototype": "probes/d3_render.py, probes/sweep_summary.py",
+    "upstream_pr_needed": "no"
+   },
+   {
+    "tool": "tools/sfd_edit.py",
+    "description": "Add the ops mergefea, mergepsfont, obliqize, pastepsglyphs and appendcopyright, following FontForge 2008 (eb711fd7) as probes/ff_build_ops.py does. For exact Latin points, mergepsfont needs a port of splineorder2.c SplineSetsTTFApprox in place of cu2qu.",
+    "evidence": "Thabit goes from 465 rows to 2 in each of the four styles (runs/p3). The Arabic is exact, and the Latin differs from the release by up to 0.2% in area.",
+    "styles_affected": [
+     "Thabit",
+     "Thabit-Bold",
+     "Thabit-Oblique",
+     "Thabit-BoldOblique"
+    ],
+    "prototype": "probes/ff_build_ops.py, probes/ff_namelist.py, probes/thabit_pipeline.sh",
+    "upstream_pr_needed": "no"
+   },
+   {
+    "tool": "babelfont-rs (SFD reader, mark lookups)",
+    "description": "Write FontForge's anchor-based mark lookups explicitly (per SFD lookup: its feature, script, anchor classes and bases) instead of leaving them to fontc's mark writer, at least when a feature mixes them with contextual lookups. A cheaper partial fix is an insertion marker in the declared feature.",
+    "evidence": "Lohit-Bengali has 284 words differing. The marker brings that to 117 (runs/r4-lohit-bengali-marker): fontc then attaches to only 37-50 of the release's 240 bases and generates no blwm.",
+    "styles_affected": [
+     "Lohit-Bengali",
+     "likely other Indic .sfd"
+    ],
+    "prototype": "not prototyped; marker experiment probes/mark_feature_marker.sh",
+    "upstream_pr_needed": "babelfont-rs: new PR (design discussion with Simon)"
+   }
+  ],
+  "families_landable_after": [
+   "lohittamil: CLEAN, 0 glyph and 0 word rendering diffs, once re-paired to 361b23b and the spacing-combining babelfont change is merged upstream (runs/r5-lohit-final)",
+   "thabit (all 4 styles): 0 table rows once the new sfd_edit ops, the babelfont changes (lookupflag, baselig, rint, implied-oncurves, truncate-anchors, no-anchor-propagation, notdef), land.py's weight workaround and the PfEd/dirhint gate change are in. It still needs decisions D2-D5 and keeps the Latin cu2qu residue (<=46 px per glyph) until SplineSetsTTFApprox is ported.",
+   "NOT lohitbengali: it lands table-CLEAN with the re-pairing alone, but 284 Bengali words render differently until the mark-lookup change exists"
+  ],
+  "decisions_for_felipe": [
+   "D1 Lohit: re-pair both styles to their provenance commits and correct google/fonts METADATA (a403c9b is the lohit-gujarati-2.92.1 tag) to 0df83ad for Bengali and 361b23b for Tamil. Also decide where they land: pravins/lohit is a live 13-family upstream, and land.py would branch 'modernize-sfd-to-glyphs' off 2011/2012 commits there, twice (both repos point at the same upstream).",
+   "D2 Thabit: accept the 2010 hg .sfd as the base. The 2008-08-09 source state the 0.02 release was built from is not archived. The drawing is verified identical (0 Arabic rendering diffs in the uprights), but the names drifted. Should FamilyName 'Thabit' be restored as a documented edit whose value comes from the release's name table and METADATA?",
+   "D3 Thabit: accept adding X.Org font-ibm-type1's IBM Courier AFMs (88a51da) as an input the hg tree lacks. They are needed for the release's latin f-ligature lookup.",
+   "D4 Thabit: accept the build-script steps as documented .sfd edits (new sfd_edit ops) and the obliques as generated sources committed to the repository (where: src/ or a sources/generated/ convention).",
+   "D5 Thabit Latin: port FontForge 2008's SplineSetsTTFApprox for exact Latin points, or accept the cu2qu stand-in (area within 0.2%, up to 46 px per glyph, Latin words up to 108 px).",
+   "D6 Gate: accept PfEd and head.font_direction_hint (this also affects Cardo). Accept the obliques' release-stale lsb/bbox (FontForge 2008 truncated lsb, curve-extrema bbox) as not reproducible.",
+   "D7 Gate: add a rendering gate to baseline.sh/land.py/verify_landed.py. Lohit-Bengali passes the table gate with 284 Bengali words differing. Landed families should be re-checked.",
+   "D8 Yellowtail: take it out of the SFD programme. Options: (a) a babelfont Type 1 reader, landing from the PFB that is misnamed .sfd (the faithful outlines); (b) the VFB path, which is not faithful: Dave's 2011 simplification is not reproducible, and it gives 19 rows and 121 glyph diffs; (c) backlog.",
+   "D9 Cardo-Italic: the spacing-combining fix closes 4 hmtx rows but opens 2 GDEF rows (fontc's kern writer puts the spacing marks in a mark filtering set). Hand this to Cardo's unit before the fix is upstreamed."
+  ],
+  "unresolved": [
+   "Lohit-Bengali mark positioning: babelfont needs to emit FontForge's anchor mark lookups explicitly. It is not prototyped; the insertion marker only gets 284 -> 117 words.",
+   "Thabit Latin outlines: FontForge 2008 splineorder2.c SplineSetsTTFApprox is not ported. This leaves 60-83 Latin glyph diffs (up to 46 px) and 121-140 Latin/Greek words per style.",
+   "Thabit's 0.02 build script (helper.py) is not archived. The reconstruction follows its successor build.py and matches the release structurally. Only the version and naming steps are uncertain: the release's name ID 5 is '0.01', while build.py sets 0.3.",
+   "Thabit name table (not gated): the style name comes out 'Medium' because TTFWeight is 500, while FontForge used Weight: Regular. Name IDs 8/9/18 and the Arabic name 1 are not restored.",
+   "--fontforge-notdef is still only an emulation, as it was for Tuffy.",
+   "SetSubcategory can still overwrite 'Spacing Combining' on marks that carry underscore anchors. Nothing here exercises it.",
+   "Cardo-Italic's kern mark-filtering-set rows opened by the spacing-combining fix.",
+   "The obliques' release-stale lsb/bbox rendering (1 and 15 Arabic glyphs) cannot be reproduced from a source.",
+   "Yellowtail has no convertible source in this programme: babelfont cannot read Type 1.",
+   "The FontForge-exporter filters and all babelfont changes are prototypes on a scratch worktree of 17ea899 (/home/fsanches/compartilhado/sfd-reland-scratch/provenance/bf-spacing-mark, registered in babelfont-rs's worktree list). None is upstream, so nothing may land citing them. They have had no cargo fmt, clippy or tests.",
+   "Session note: I ran 'git fetch -q upstream' once in the shared /home/fsanches/compartilhado/babelfont-rs (refs only). MrsSheppards failed once with ENOSPC because the /tmp tmpfs was 93% full, not mine; the rerun was CLEAN.",
+   "Scratch is disposable: downloads can be re-fetched from the URLs and hashes in runs/thabit_release_inputs.txt, the patches are in probes/, and the builds are under sfd-reland-scratch/provenance, about 2.3 GB including target-bf. Nothing is committed, as instructed."
+  ],
+  "verification": {
+   "summary": "Provenance is settled for all four families from byte identity, FFTM stamps and file headers. Lohit is revision drift: METADATA's commit is another family's tag. Thabit is a build script merging IBM Courier and a .fea into a later (2010) save of the 2008 source, with generated obliques. Yellowtail's '.sfd' is a Type 1 file from the FontForge session that exported the release. Every proposed .sfd edit and converter change was measured with tools/baseline.sh (FAMILIES=..., BF=the prototype, SRC_OVERRIDE, EXTRA_FLAGS) plus land.py's workaround, and on the rendering diff (probes/d3_render.py). Two 149-style regression sweeps (batch 1 and next batch) compared the prototype plus 4 filters with unpatched 17ea899: no table-row regressions; improvements in Tuffy-Italic, Cardo-Italic and Lohit-Tamil; rendering churn only in Tuffy-Regular (not a FontForge export) and Ultra.",
+   "rows_before": "Lohit-Bengali 1; Lohit-Tamil 8; Thabit 465; Thabit-Bold 465; Thabit-Oblique and Thabit-BoldOblique unpaired (465 each measured against the upright source); Yellowtail-Regular unpaired (no convertible source)",
+   "rows_after": "Lohit-Bengali 0 at 0df83ad, but 284 Bengali words still render differently. Lohit-Tamil 0 at 361b23b with the spacing-combining fix, and 0 glyph / 0 word rendering diffs. Thabit, Thabit-Bold, Thabit-Oblique and Thabit-BoldOblique: 3 each from the harness, 2 with land.py's workaround (PfEd, head.font_direction_hint), 0 with the gate change. Their Arabic rendering is exact in the uprights; in the obliques it differs only through release-stale lsb, with identical shaping; the Latin keeps the cu2qu residue. Yellowtail: not applicable.",
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland && for s in Lohit-Bengali Lohit-Tamil Thabit Thabit-Bold; do FAMILIES=$PWD/families-next.tsv BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont OUT=$PWD/investigations/next-provenance/runs/r0-baseline TAG=provenance-r0 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/provenance bash tools/baseline.sh $s; done",
+    "P=/home/fsanches/compartilhado/sfd-reland/investigations/next-provenance; /home/fsanches/compartilhado/gftools/venv/bin/python3 $P/probes/fftm_source_commit.py <release.ttf> <archive repo.git> <path.sfd>   (see its docstring for the 4 invocations)",
+    "cd /home/fsanches/compartilhado/sfd-reland && FAMILIES=$PWD/investigations/next-provenance/runs/r1-lohit-provenance/families.tsv BF=<scratch>/target-bf/release/babelfont EXTRA_FLAGS='--fontforge-implied-oncurves --fontforge-rint-coordinates --fontforge-truncate-anchors --fontforge-no-anchor-propagation' OUT=$PWD/investigations/next-provenance/runs/r5-lohit-final TAG=provenance-r5 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/provenance bash tools/baseline.sh Lohit-Tamil   (and Lohit-Bengali)",
+    "Build the prototype: git -C /home/fsanches/compartilhado/babelfont-rs worktree add --detach <scratch>/bf 17ea899 && git -C <scratch>/bf apply probes/babelfont-prototype-all7.patch && sudo -n /usr/local/sbin/drop-caches; CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=<scratch>/target-bf cargo build --release -p babelfont --features cli",
+    "cd /home/fsanches/compartilhado/sfd-reland/investigations/next-provenance && bash probes/thabit_pipeline.sh p3 '--fontforge-implied-oncurves --fontforge-rint-coordinates --fontforge-truncate-anchors --fontforge-no-anchor-propagation'   (writes runs/p3/SUMMARY.txt)",
+    "for st in Thabit Thabit-Bold Thabit-Oblique Thabit-BoldOblique; do d=<scratch>/baseline/$st-p3-workarounds; python3 probes/table_gate_ff_private.py $d/d3.json --fonts /home/fsanches/compartilhado/google/fonts/ofl/thabit/$st.ttf $d/fonts/ttf/*.ttf; done",
+    "python3 probes/stale_lsb.py /home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-BoldOblique.ttf <scratch>/baseline/Thabit-BoldOblique-p3-workarounds/d3.json",
+    "bash probes/mark_feature_marker.sh <scratch>/baseline/Lohit-Bengali-provenance-r2 Lohit-Bengali abvm /home/fsanches/compartilhado/google/fonts/ofl/lohitbengali/Lohit-Bengali.ttf runs/r4-lohit-bengali-marker",
+    "python3 probes/yellowtail_lineage.py; python3 probes/yellowtail_pfb_geometry.py; bash probes/yellowtail_vfb_measure.sh runs/y1-yellowtail-vfb",
+    "cd /home/fsanches/compartilhado/sfd-reland && FAMILIES=$PWD/families.tsv (or families-next.tsv) BF=<unpatched or prototype> [EXTRA_FLAGS=<4 filters>] OUT=<runs dir> TAG=<tag> SCRATCH=<scratch>/reg bash tools/baseline.sh --all; python3 investigations/next-provenance/probes/sweep_summary.py <outA> <scratchA> <tagA> <outB> <scratchB> <tagB>   (results: runs/reg-batch1-compare-all7.txt, runs/regnext-compare.txt)"
+   ]
+  },
+  "confidence": "High on provenance for all four families: byte identity with the Arabeyes 0.02 TTFs, FFTM sourceModified equal to the .sfd ModificationTime, the PFB header matching FFTM sourceCreated, and the X.Org PFAs byte-identical to hg's. High on the Lohit-Tamil fix: exact, 0/0 rendering diffs. High on the causes of each Thabit table row, each closed by a measured step; the Arabic rendering is exact in the uprights and differs only through release-stale lsb in the obliques. Medium on the Thabit reconstruction as a whole: the 0.02 helper.py is lost, the 2008 .sfd is lost, the Latin uses a cu2qu stand-in, and the AFMs are an inferred input. Medium-high that the babelfont changes are safe: two 149-style sweeps showed no table regressions, but they are unreviewed prototypes, and the FontForge-exporter filters should be gated on FFTM. Low confidence that Lohit-Bengali is equivalent despite its CLEAN table-gate result."
+ },
+ "verification": {
+  "unit": "provenance",
+  "reproduced": true,
+  "reproduction_notes": "I used my own harness runs. They are in /home/fsanches/compartilhado/sfd-reland/investigations/next-provenance-verify/{probes,runs}, the directory the task's Files rule names; the task text also mentions next-provenance/verify, which I did not use. Scratch is /home/fsanches/compartilhado/sfd-reland-scratch/provenance-verify (about 1 GB, disposable). I built my own prototype converter from the agent's probes/babelfont-prototype-all7.patch on a scratch worktree of 17ea899 (496e904 is an ancestor), with CARGO_BUILD_JOBS=3 after drop-caches. Its .glyphs output is byte-identical to the agent's binary on Thabit-Bold.gen, Thabit-BoldOblique.gen and Lohit-Tamil@361b23b (runs/prototype_binary_equivalence.txt). That worktree is registered in the shared babelfont-rs worktree list; remove it with `git -C /home/fsanches/compartilhado/babelfont-rs worktree remove <scratch>/bf`.\n\nWhat reproduced:\n- Baseline (runs/v0-baseline): Lohit-Bengali 1, Lohit-Tamil 8, Thabit 465, Thabit-Bold 465 rows, the same rows as the agent's r0.\n- FFTM provenance (probes/fftm_vs_sfd.py, runs/fftm_vs_sfd.txt): Lohit-Bengali's sourceModified 1330511755 equals the .sfd ModificationTime at 0df83ad and 9d61e32; PANOSE 2 0 6 singles out 0df83ad. Lohit-Tamil's 1316598937 equals it at 361b23b only. a403c9b is the lohit-gujarati-2.92.1 tag, set by google/fonts working-copy commit e65749bdf ('tag_match').\n- Re-paired (runs/v1-lohit-repair): Bengali is CLEAN; Tamil has 2 rows (u0BC1/u0BC2 widths). With my prototype (runs/v3): Tamil is CLEAN with 0 glyph and 0 word diffs; Bengali is CLEAN but 284 words differ, up to 801 px.\n- The Tamil digit widths change in 723f00c (663->746, 1020->1142), as claimed.\n- Thabit: my copy of the pipeline (probes/thabit_pipeline_verify.sh, runs/w1) reproduces p3 exactly: the same ops output, the same input sha1s, 3->2 rows per style and the same rendering counts.\n- Without the reader patches (runs/v4, unpatched integration BF): 44 Arabic word diffs, max 351 px, and dalring 80 px. With them: 0 Arabic.\n- Verified against the FontForge eb711fd7 sources: the .notdef formula (374/34/306/682), rint ties-to-even (uni06D4 186.5->186), anchor truncation (dumpanchor putshort), dirhint 0 for lr&&rl, and the comma lookupflag parse (featurefile.c 2548-2568).\n- The skew is -0.30056 in the release against tan(-16 rad) = -0.30063; parens and exclam are identical to the upright. Release GSUB flags are 1/1/1/1/9/0 and the PfEd names match. The X.Org PFAs are byte-identical to hg's (my own fetch); the AFMs hold 5 L lines and 0 KPX.\n- The oblique outlines are identical to the release's up to start-point rotation, and FreeType honours the release's lsb-xMin shift (probes/lsb_honoured.py, oblique_glyph_compare.py).\n- Yellowtail: the .sfd is a PFB (80 01 header). FFTM 2011-07-18 12:51:27 UTC equals the PFB CreationDate at -0300. My independent geometry check (probes/yellowtail_outline_match.py): PFB 365/366 codepoints within 0.1% area and 0 bboxes off; the designer OTF has 23 codepoints 0.4% or more off.\n\nNot reproduced:\n- The agent's count of 156/228 stale-lsb glyphs. My count of contour glyphs with lsb != xMin is 151/157. This is minor.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Merge Thabit.fea into the source, as build.py does",
+    "verdict": "keep",
+    "reason": "Verified. build.py merges the feature file before the fonts (font.mergeFeature(fea), then font.mergeFonts). FontForge 2008's fea_ParseLookupFlags accepts the comma-separated 'RightToLeft, IgnoreMarks', so ligaLamAlef gets flag 9. The release's GSUB is 5 arab lookups with flags 1,1,1,1,9 plus the latn liga, and PfEd names them '<name>' / '<name> subtable'. My w2 build reproduces the GSUB lookup for lookup (runs/w2/Thabit.layout.txt vs runs/thabit_release_layout.txt). The op still has to be added to tools/sfd_edit.py."
+   },
+   {
+    "commit_subject": "Add the IBM Courier AFMs FontForge read beside cour/*.pfa",
+    "verdict": "keep",
+    "reason": "Keep as decision D3. It is inferred, but the inference holds. In FontForge 2008, SCLigDefault is commented out (fvfonts.c:876, splineutil.c:2473), so a liga lookup can only come from an AFM (CheckAfmOfPostscript). I fetched the X.Org 88a51da files myself: the PFAs are byte-identical to hg's, cour.afm has exactly the 5 'L' ligatures and 0 KPX (the release has no kern), and PfEd names the lookup \"Courier-'liga' Standard Ligatures in Latin lookup 0\"."
+   },
+   {
+    "commit_subject": "Merge IBM Courier into the source, as build.py does",
+    "verdict": "revise",
+    "reason": "The op claims to follow _MergeFont, but its worth-outputting test is 'draws or is referenced'. FontForge's SCWorthOutputting is draws || widthset || anchor || dependents (splinesaveafm.c:1063), so the op drops Courier's blank 'spacenumeric' (600, unencoded). FontForge copied that glyph: the release has 788 glyphs = 308-1+478+3. The gate calls it unreachable, so it does not block, but the op is not exact. Separately, the cu2qu stand-in leaves 60-83 Latin glyph diffs (up to 46 px) and about 148 word diffs per style (runs/w1/SUMMARY.txt). The edit is therefore not yet functionally equivalent (D5)."
+   },
+   {
+    "commit_subject": "Generate the oblique sources as build.py does",
+    "verdict": "revise",
+    "reason": "The ops reproduce the skew and the paste, but not obliqize()'s naming step: fontname+'-Oblique', fullname+' Oblique', familyname, and the Arabic SubFamily name. FontForge 2008 derived macStyle italic from 'Obli' in the name (macbinary.c _MacStyleCode). The release obliques therefore carry fsSelection ITALIC and macStyle 2/3. Our builds come out named 'Regular Medium'/'Regular' and 'Bold'/'Bold', the same as the uprights, with fsSelection REGULAR+USE_TYPO_METRICS or BOLD, macStyle 0/1 and PS names Regular-Medium/Bold-Bold (runs/style_bits_hidden.txt). METADATA wants post_script_name Thabit-Oblique / Thabit-Bold-Oblique and style italic. The gate hides all of this because it accepts OS/2.fs_selection and head.mac_style wholesale and does not gate names. Even with FontName Thabit-Oblique set, babelfont+fontc give fsSelection REGULAR and macStyle 0 (runs/v6-oblique-named/style_flags.txt), so a converter rule (FontForge's name-derived italic) or an explicit style edit is also needed."
+   },
+   {
+    "commit_subject": "Credit IBM for the Latin, as build.py does",
+    "verdict": "revise",
+    "reason": "The body says 'the release's name ID 0 carries it', but applying the 2010 build.py text to the 2010 copyright does not give the release's string. The edit would give 'Typeface and data (C) 2008-2010, Khaled Hosny.\\nThis font ... license.\\nLatin glyphs are ...'. The release's name ID 0 is 'Typeface and data (C) 2002-2008, Khaled Hosny.This font is distributed under the terms of OFL license. Latin glyphs are Copyright (c) IBM Corporation 1990,1991.': different years, and a space separator. Either restore the release string and say it comes from the binary, as the FamilyName edit does, or drop the edit as not functional. It is marked unverified and should stay so."
+   },
+   {
+    "commit_subject": "Restore the family name Thabit",
+    "verdict": "keep",
+    "reason": "Keep as decision D2. The body says the value comes from the release and METADATA, as the rules require. It is incomplete, though: the Regular still gets subfamily 'Medium' (TTFWeight 500), and for the obliques it has to be paired with the missing oblique naming and italic step above."
+   }
+  ],
+  "tool_verdicts": [
+   {
+    "tool_change": "families-next.tsv / tools/pair_next.py: re-pair Lohit to 0df83ad (Bengali) and 361b23b (Tamil); check METADATA's commit against FFTM sourceModified",
+    "verdict": "keep",
+    "reason": "Reproduced (runs/fftm_vs_sfd.txt, runs/v1-lohit-repair). a403c9b came from the google/fonts working-copy commit e65749bdf 'tag_match'. Bengali's own upstream_info.md had already named 0df83ad."
+   },
+   {
+    "tool_change": "babelfont-rs SFD reader: advancing GlyphClass:4 glyph -> subCategory 'Spacing Combining'",
+    "verdict": "revise",
+    "reason": "It works for Lohit-Tamil: CLEAN with 0/0 rendering diffs on my own build (runs/v3-lohit-myprototype), and upstream main 91bf8bb still writes Nonspacing for every mark. As a PR it is incomplete. recipe.py always passes --set-subcategory, and setsubcategory.rs:29-35 sets Nonspacing again on any Mark with an underscore anchor, which would undo the rule for an advancing mark that attaches. The SetSubcategory change has to be in the same PR, not a note. It also opens GDEF.glyph_classes and GDEF.mark_glyph_sets rows in Cardo-Italic (D9)."
+   },
+   {
+    "tool_change": "babelfont-rs: write lookupflag for every converted lookup",
+    "verdict": "keep",
+    "reason": "Confirmed in code: only the has_chain branch writes LookupFlag, in 17ea899 and in upstream main 91bf8bb. Measured together with the baselig fix: 44 Arabic word diffs without the patches (runs/v4-thabit-unpatched) and 0 with them (runs/w2)."
+   },
+   {
+    "tool_change": "babelfont-rs: name 'baselig <n>' anchors <class>_<n+1>",
+    "verdict": "keep",
+    "reason": "Confirmed: parse_anchor only prefixes '_' for 'mark' and leaves baselig anchors with the bare class name, which duplicates it (fontforge.rs parse_anchor; unchanged upstream). The Glyphs _1/_2 convention is what fontc's mark-to-ligature writer needs."
+   },
+   {
+    "tool_change": "babelfont-rs filter --fontforge-rint-coordinates",
+    "verdict": "keep",
+    "reason": "Confirmed. tottf.c SSAddPoints writes bp = rint(...). The release has uni06D4 at 186/236/450/400 from .sfd 186.5/236.5/450.5/400.5, all even, which is ties-to-even."
+   },
+   {
+    "tool_change": "babelfont-rs filter --fontforge-implied-oncurves",
+    "verdict": "revise",
+    "reason": "The filter models only the path where the stored numbering is valid, dropping points with ttfindex -1 that pass SPInterpolate. When SCPointsNumberedProperly fails (splinechar.c:368, e.g. a glyph with both references and splines, or with stale numbers), tottf.c:1366-1370 renumbers with SSTtfNumberPoints. That path drops every SPInterpolate-able on-curve point, including ones with a stored ttfindex, which the filter keeps. Implement the renumbering case or document the limitation before upstreaming."
+   },
+   {
+    "tool_change": "babelfont-rs filter --fontforge-truncate-anchors",
+    "verdict": "keep",
+    "reason": "Confirmed: tottfgpos.c dumpanchor calls putshort(gpos, ap->me.x) with a float, which truncates."
+   },
+   {
+    "tool_change": "babelfont-rs filter --fontforge-no-anchor-propagation",
+    "verdict": "keep",
+    "reason": "Confirmed. Thabit-Bold.sfd's uniFBFE is only 'Refer: 179' with no AnchorPoint, while the Regular has its own. fontc honours 'Propagate Anchors' (glyphs-reader 1.0.0 font.rs:1164, glyphs2fontir source.rs:190)."
+   },
+   {
+    "tool_change": "babelfont-rs filter --fontforge-notdef",
+    "verdict": "keep",
+    "reason": "The formula is confirmed against tottf.c dumpmissingglyph: stem (a+d)/30 = 34, ymax 682, xmax 306, advance xmax+2*stem = 374 when not fixed-width. All four releases carry exactly this. It is still not implemented."
+   },
+   {
+    "tool_change": "tools/recipe.py: pass the FontForge-exporter filters only when the release has FFTM",
+    "verdict": "keep",
+    "reason": "Reasonable gating, and consistent with the sweep results. Caveat: the sweeps compare row COUNTS only (probes/sweep_summary.py), so a same-count swap of rows would go unnoticed; Cardo-Italic's +2/-4 was found only by hand."
+   },
+   {
+    "tool_change": "sfd-batch5/tools/table_gate.py: accept PfEd and head.font_direction_hint",
+    "verdict": "keep",
+    "reason": "Both are justified: PfEd is private names only, and dirhint is deprecated and FontForge writes 0 when lr&&rl. But the same review should narrow the existing blanket ACCEPTED entries for OS/2.fs_selection and head.mac_style. They hide real functional differences in this unit: the loss of ITALIC on both obliques and the gain of USE_TYPO_METRICS (runs/style_bits_hidden.txt)."
+   },
+   {
+    "tool_change": "tools/baseline.sh, land.py, verify_landed.py: gate or report the rendering diff",
+    "verdict": "keep",
+    "reason": "Reproduced: Lohit-Bengali is table-CLEAN at 0df83ad with 284 word diffs up to 801 px (runs/v1-lohit-repair/Lohit-Bengali.render.txt)."
+   },
+   {
+    "tool_change": "tools/sfd_edit.py: add mergefea, mergepsfont, obliqize, pastepsglyphs, appendcopyright",
+    "verdict": "revise",
+    "reason": "Also needed: a 'dropglyph' op for the 2010-save uni00A0 (see missed), and the obliqize naming step. mergepsfont's worth-outputting rule should match SCWorthOutputting (include widthset)."
+   },
+   {
+    "tool_change": "babelfont-rs: write FontForge's anchor mark lookups explicitly (Lohit-Bengali)",
+    "verdict": "revise",
+    "reason": "The agent missed that babelfont ALREADY inserts an insertion marker into declared abvm/blwm/kern/dist/mark/mkmk features: fontforge.rs:3759 statements.insert(0, \"# Automatic code start\"), Simon's 66334a7a, still present on upstream main 91bf8bb. fea-rs 1.0.0 honours only a comment that starts with '# Automatic Code' (token_tree/typed.rs:768, case-sensitive), so the marker is ignored. The first, upstream-mergeable step is to fix that string. Rewriting only the marker text in the converted .glyphs (probes/marker_case_fix.sh) gives exactly the agent's r4 result: 284 -> 117 words (runs/v2-bengali-marker-casefix). The remaining 117 come from fontc's mark writer. is_below_mark needs anchor names starting 'bottom' or 'nukta' (fontbe marks.rs:784), but the SFD classes are Anchor-0/1/2, so no blwm is built. Bases are also filtered to abvm-script glyphs: 50/50/37 against the release's 240/253. The explicit-lookup design is only needed for that remainder."
+   }
+  ],
+  "classification_objections": [
+   "Lohit-Bengali rendering (converter-fidelity): the class is right but the cause is incomplete. The 'declared abvm suppresses fontc's writer' effect comes from a mis-cased marker babelfont already emits: '# Automatic code start' against fea-rs's case-sensitive '# Automatic Code'. That is a one-line upstream bug, not a missing feature. Only the remaining 117 words need the explicit-lookup design.",
+   "Lohit-Tamil is called landable ('CLEAN, 0 glyph and 0 word rendering diffs'), but it is not functionally equivalent. The build sets fsSelection USE_TYPO_METRICS, while the release (OS/2 v1) does not. FontForge only sets bit 7 when the OS/2 version it writes is 4 or more (tottf.c eb711fd7 lines 3283-3289); babelfont maps OS2_UseTypoMetrics unconditionally. For Tamil, apps that honour the bit switch line spacing from win 866/363 to typo 1400/-648/+20. The table gate hides this by accepting OS/2.fs_selection wholesale. It is a converter-fidelity row; runs/v5-tamil-no-typo-bit shows fs_selection [64,192] goes away when the bit is not set.",
+   "Thabit-Oblique and Thabit-BoldOblique: '3 rows, 2 with land.py's workaround, 0 with the gate change' is only a table-gate result. The generated sources lose the release's ITALIC style bit (fsSelection 1 -> REGULAR+USE_TYPO_METRICS; macStyle 2 -> 0, 3 -> 1) and are named 'Regular Medium' / 'Bold' like the uprights. This is functional (style linking, METADATA style italic and PS name) and is not the 'names; not gated' provenance row. Part of it is provenance (build.py's naming step was not reproduced), and part is converter fidelity (FontForge's name-derived italic).",
+   "Thabit (all four styles), 'rows_after 0 with the gate change': land.py would still refuse every style. The build GAINS U+00A0 (glyph uni00A0, the last glyph, gid 307/309, of both 2010 .sfd files). The release neither encodes nor contains that glyph, so the 2010 save introduced it. The table gate accepts gained codepoints, but land.py's cmap_difference requires the release's exact codepoints. This is a provenance row with no edit proposed.",
+   "Yellowtail: 'google/fonts 1baf54ea4 changed only name IDs 3/4/5/6 and head.modified/fontRevision' is imprecise. The cmap table bytes also changed; the mappings are identical, so this is a re-encoding and functionally irrelevant."
+  ],
+  "missed": [
+   "Thabit, Thabit-Bold, Thabit-Oblique, Thabit-BoldOblique: GAINED U+00A0. The agent's own p3 gate prints it ('our uni00A0 (an addition at U+00A0...)') but the report never mentions it. Our builds have 786 glyphs against the release's 788 = 308-1+478+3, and uni00A0 is the only glyph the release lacks. It is empty, Width 637, 'Flags: HW', and last in both .sfd files; nothing refers to it. FontForge 2008 would have exported it (SCWorthOutputting counts widthset), so the release's 2008 source did not contain it. Proposed documented edit: 'Drop uni00A0, which the 2010 save added', a new sfd_edit op dropglyph. Origin: the release's cmap and glyph set, and its position as the last gid. Measured with DROP_NBSP=1 (probes/thabit_pipeline_verify.sh, runs/w2): codepoints become exactly the release's in all 4 styles, with no change to rows or rendering (runs/w1_w2_cmap_exactness.txt).",
+   "Thabit obliques: build.py's obliqize() naming step (fontname/fullname/familyname and the Arabic SubFamily) and FontForge 2008's name-derived italic (macbinary.c _MacStyleCode: 'Obli' -> sf_italic, which becomes fsSelection ITALIC) are not reproduced. Ours is not italic and is named like the upright (runs/style_bits_hidden.txt). Setting FontName Thabit-Oblique alone is not enough; babelfont+fontc still give REGULAR/macStyle 0 (runs/v6-oblique-named). A babelfont rule is needed to mark the instance italic, as FontForge did when the source states no MacStyle.",
+   "A converter-fidelity rule for all FontForge-exported styles with OS/2 version < 4: do not set USE_TYPO_METRICS (FontForge tottf.c: only 'if ( os2->version>=4 )'). It affects Lohit-Tamil (typo 1400/-648/20 vs win 866/363), Lohit-Bengali (750/-274/0 vs 760/325), Thabit and Thabit-Oblique (819/0/900 vs 983/528). It is hidden by table_gate.py ACCEPTED['OS/2']['fs_selection'] ('USE_TYPO_METRICS is set by the build'), even though the conversion, not the build, sets it from a flag FontForge ignored. It is probably programme-wide, beyond this unit.",
+   "babelfont's existing insertion marker is mis-cased: fontforge.rs:3759 '# Automatic code start', upstream Simon 66334a7a, still on main 91bf8bb. fea-rs requires '# Automatic Code'. This one-line fix is the upstream-mergeable first step for Lohit-Bengali, 284 -> 117 words (runs/v2-bengali-marker-casefix). It probably affects every SFD that declares abvm/blwm/mark/mkmk/kern/dist through a chain or other lookup.",
+   "The regression sweeps (probes/sweep_summary.py) compare verdict and row COUNTS only. A patch that closes one row and opens another in the same style is invisible there, as the Cardo-Italic +2/-4 case shows; the 'no table-row regressions' claim is weaker than stated.",
+   "mergepsfont omits Courier's blank 'spacenumeric', which FontForge merged because it is widthset (unencoded, 600). It is harmless (the gate calls it unreachable), but the op does not match _MergeFont."
+  ],
+  "overall": "The provenance findings hold up. Lohit's METADATA commit a403c9b is another family's tag, and the FFTM stamps pin Bengali to 0df83ad and Tamil to 361b23b. Thabit is the build.py output: the 2010 .sfd plus Thabit.fea, IBM Courier and the X.Org AFMs, with generated obliques. Yellowtail's '.sfd' is a Type 1 PFB. I checked every FontForge-exporter rule the agent cites against the eb711fd7 sources, and every babelfont reader defect is still present on upstream main 91bf8bb.\n\nThe report overstates what lands. Four functional gaps are missed, and each is hidden by the table gate:\n1. **U+00A0.** All four Thabit styles gain U+00A0, from a glyph that exists only in the 2010 save. land.py's exact-codepoint check refuses it. A documented dropglyph edit fixes it (verified).\n2. **The obliques are not italic.** Both lose the ITALIC style bit and are named like the uprights, because build.py's naming step and FontForge's name-derived italic are not reproduced.\n3. **USE_TYPO_METRICS.** The converter sets it for OS/2 v1 releases where FontForge did not. That changes line spacing, markedly for Lohit-Tamil, which the agent calls landable and 0/0.\n4. **The Bengali marker already exists.** The 'cheaper partial fix' for Lohit-Bengali is already in babelfont, but mis-cased ('# Automatic code start'). Fixing the string is the first upstream step and reproduces the agent's 284 -> 117 words.\n\nOther revisions:\n- The spacing-combining PR must also change SetSubcategory, which the recipe always runs.\n- implied-oncurves models only one of FontForge's two numbering paths.\n- The copyright edit does not reproduce the release string.\n- mergepsfont's worth-outputting test is not FontForge's.\n\nNothing new is landable. At best, Lohit-Bengali and Lohit-Tamil are table-clean after re-pairing, and neither is functionally equivalent yet. Thabit needs the uni00A0 drop, the oblique naming and italic work, and the Latin SplineSetsTTFApprox port (or a decision) on top of everything the agent listed."
+ }
+}

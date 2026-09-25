@@ -1,0 +1,382 @@
+{
+ "investigation": {
+  "unit": "emptygpos",
+  "styles": [
+   "Smokum-Regular",
+   "Ultra-Regular",
+   "Varela-Regular",
+   "UnifrakturMaguntia-Book"
+  ],
+  "rows": [
+   {
+    "style": "Smokum-Regular",
+    "row": "GPOS.script_list",
+    "classification": "decision",
+    "cause": "NOT an empty GPOS: the task premise is wrong for this style. The release has no GPOS, GSUB or GDEF, only a legacy `kern` table (format 0, 3904 pairs). FontForge v20110222 wrote it with OpenType output off. The FFTM stamp 3381227313 minus 2082844800 = 1298382513, exactly LibFF_ModTime of the v20110222 tarball. The hg binary at 52f780bc already has this layout; google/fonts hotfix 0e5ac906d changed only head/name. In tottf.c:5306, initATTables writes `kern` only when neither applemode nor opentypemode is set. Our build kerns through GPOS, because fontc cannot write a legacy `kern`. The gate's arbitrate_legacy_kern refuses because 28 pairs whose first glyph is U+00AD shape differently. HarfBuzz's kern-table machine puts kern1=v>>1 on the hidden soft hyphen's advance, which is then zeroed, and kern2 on the next glyph. GPOS puts the whole value on the hidden glyph, so the next glyph does not move. No combining marks, so fallback positioning plays no part. The empty-GPOS tool change cannot touch this row.",
+    "evidence": "runs/00-baseline/Smokum-Regular.gate.txt. probes/pair_matrix.py: 28 of 135,424 LTR pairs differ, all U+00AD-first (e.g. U+00AD+A: release puts A at -30, ours at 0; runs/02-legacy-kern/pair_matrix-baseline.txt). probes/shape_compare.py: 264 horizontal runs differ, in 44 texts, all containing U+00AD (runs/02-legacy-kern/shape_compare-smokum-ultra.txt). FFTM sourceCreated/sourceModified equal the .sfd CreationTime/ModificationTime. Code: probes/ff-excerpts.txt (tottf.c 5281-5307, libffstamp.h)."
+   },
+   {
+    "style": "Smokum-Regular",
+    "row": "GPOS.feature_list",
+    "classification": "decision",
+    "cause": "Same as GPOS.script_list: the legacy `kern` (FontForge v20110222, OpenType off) is modernised into a GPOS `kern` feature. Only U+00AD-first pairs shape differently.",
+    "evidence": "As for GPOS.script_list; runs/02-legacy-kern/."
+   },
+   {
+    "style": "Smokum-Regular",
+    "row": "GPOS.lookup_list",
+    "classification": "decision",
+    "cause": "Same as GPOS.script_list.",
+    "evidence": "As for GPOS.script_list."
+   },
+   {
+    "style": "Ultra-Regular",
+    "row": "GPOS.script_list",
+    "classification": "decision",
+    "cause": "NOT an empty GPOS. As with Smokum, the release is a legacy `kern` only (2721 pairs), exported by FontForge v20110222 with OpenType off; the hg Ultra.ttf differs from the release only in head/name (hotfix 57fc85106). Three separate HarfBuzz differences follow. (1) Marks: the release has no GPOS, so HarfBuzz applies fallback positioning to its combining marks U+0312, U+0315 and U+0326; our GPOS turns that off (2211 LTR pairs). (2) Kerning class 0: FontForge's legacy-kern writer decomposes kern classes from first class 1 up (splinesaveafm.c:2038, SFKernClassTempDecompose). The source's KernClass2 '26+ 27' lists first class 0, the A group, so the release has no A-first pair; our GPOS kerns AT, AV, AW, AY, A-quote and so on (650 pairs). (3) The U+00AD split, as in Smokum (17 pairs). Provenance: the committed .sfd is newer than what was exported. FFTM sourceModified is 1304463351 (2011-05-03); the .sfd ModificationTime is 1318899232 (2011-10-18).",
+    "evidence": "runs/00-baseline/Ultra-Regular.gate.txt. pair_matrix: 2878 of 137,641 LTR pairs differ (2211 mark, 650 A-group, 17 soft hyphen) in runs/02-legacy-kern/pair_matrix-baseline.txt. With the kernclass0zero edit: 2228 (runs/09-ultra-kernclass0/pair_matrix.txt). Example: s+U+0312 is at (139,36) in the release and (1305,0) in ours. The release kern table has 0 A-first pairs (('A','T') absent; ('T','A') = -55)."
+   },
+   {
+    "style": "Ultra-Regular",
+    "row": "GPOS.feature_list",
+    "classification": "decision",
+    "cause": "Same as Ultra GPOS.script_list: legacy kern-only release versus GPOS kerning.",
+    "evidence": "As for GPOS.script_list."
+   },
+   {
+    "style": "Ultra-Regular",
+    "row": "GPOS.lookup_list",
+    "classification": "decision",
+    "cause": "Same as Ultra GPOS.script_list.",
+    "evidence": "As for GPOS.script_list."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GPOS.script_list",
+    "classification": "compiler-gap",
+    "cause": "FontForge's shared-script GPOS shell: scripts cyrl, grek and latn, each with only an empty dflt LangSys, 0 features and 0 lookups. In FontForge v20110222 (confirmed by exact FFTM match), SFScriptsInLookups (lookups.c:298) ignores its gpos argument and collects the scripts of both tables. SFLangsInScript gives a script with no lookups in a table a dummy DEFAULT_LANG ('This is what VOLT does'). dumpg___info (tottfgpos.c:3026) writes a table that has scripts and no lookups ('to get around a bug in Uniscribe'). FontForge master 67dd7dc9 still does all of this. fea-rs cannot emit such a table: PosSubBuilder::build_raw returns None without lookups or features (fea-rs/src/compile/lookups.rs:1425 at fontc-v1.0.0), and only `size` gets a lookup-less feature (:984). The shell is functional: with no GPOS, HarfBuzz fallback-positions U+0309, U+031B and U+0323.",
+    "evidence": "Before: runs/00-baseline (6 rows). Prototype fontc option plus builder3 `sharedLayoutScripts: true`: runs/04-proto-shared-scripts (3 rows, GPOS closed, GSUB rows untouched). The flag-off control (runs/03) is identical to baseline: the only table differences are head.modified and the nameID 5 build stamp. The GPOS matches the release in every field compared, though not byte-identical: write-fonts shares the identical script subtables (runs/04-proto-shared-scripts/gpos_compare.txt). Horizontal shaping: 28,272 -> 0 of 110,016 runs (shape_compare). LTR pair matrix: 1532 -> 0 of 281,961 (runs/00-baseline/pair_matrix-Varela.txt, runs/10-all-prototypes/pair_matrix-Varela.txt)."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GPOS.feature_list",
+    "classification": "compiler-gap",
+    "cause": "Same as Varela GPOS.script_list: FontForge's shell carries 0 features.",
+    "evidence": "As for GPOS.script_list."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GPOS.lookup_list",
+    "classification": "compiler-gap",
+    "cause": "Same as Varela GPOS.script_list: FontForge's shell carries 0 lookups.",
+    "evidence": "As for GPOS.script_list."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GSUB.script_list",
+    "classification": "converter-fidelity",
+    "cause": "babelfont writes FontForge's per-language lookup registrations as `script X; language Y;`, which leaves include_dflt on (make_langsys, layout.rs:262, LanguageStatement::new(lang, true, false)). So latn AZE, CRT and TRK inherit the latn/dflt lookups that the .sfd deliberately withholds from them: liga lookup 24 (fi/fl) and smcp lookup 21. FontForge registers every lookup explicitly and inherits nothing. Separately, aalt may carry no script or language statement in FEA, so it is registered under every `languagesystem`, including latn/SRB; the .sfd registers aalt for every language except SRB. The ordn chaining lookup is packed into 2 subtables instead of FontForge's 4, which does not change shaping.",
+    "evidence": "probes/langsys_lookups.py: 16 of 161 (script, language, feature) keys differ (runs/06-varela-gsub/langsys_lookups-baseline.txt). probes/varela_gsub_check.py: 16 of 189 targeted cases differ. Examples: under tr, az and crh, 'fi' gives ['f','i'] in the release and ['fi'] in ours; with aalt under sr, '!' becomes exclam.smcp. The gate traced a difference at lang=sr '!!'. Emitting `language XXX exclude_dflt;` (prototype 86fc851) gives 16 -> 10 keys and only the 4 aalt/sr cases left (runs/06-varela-gsub/langsys_lookups-exclude-dflt.txt). Adding aalt-only languagesystem declarations (prototype 214d635) with babelfont alone closes all 3 GSUB rows (runs/11-babelfont-proto-only); cases 0 of 189; GSUB structure SAME (runs/10-all-prototypes/shaping.txt). The earlier stand-in, dropping `languagesystem latn SRB;` from the .glyphs, also gave 0 rows (runs/08-standin-aalt-langsys)."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GSUB.feature_list",
+    "classification": "converter-fidelity",
+    "cause": "Same as Varela GSUB.script_list: the inherited liga/smcp lookups for AZE/CRT/TRK and the extra latn/SRB aalt change which feature records each LangSys points to.",
+    "evidence": "As for GSUB.script_list."
+   },
+   {
+    "style": "Varela-Regular",
+    "row": "GSUB.lookup_list",
+    "classification": "converter-fidelity",
+    "cause": "Same cause; lookup order differs too, because fontc places the lookups referenced by the chaining lookups earlier. The order itself is inert: once the registrations are fixed, the gate's lookup-order arbitration accepts 102,400 identical shaped runs across 8 languages.",
+    "evidence": "runs/10-all-prototypes/Varela-Regular.gate.txt: 'the same GSUB lookups in a different order; 102400 shaped runs identical across 8 language(s)'."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "GPOS.script_list",
+    "classification": "compiler-gap",
+    "cause": "FontForge v20100501's shared-script shell: DFLT, hani and latn, each with only an empty dflt, 0 features and 0 lookups. The mechanism is the same as Varela's (first-batch investigations/unifraktur). Without it, HarfBuzz fallback-positions 9 combining marks.",
+    "evidence": "runs/00-baseline 5 rows -> runs/04 2 rows (all 3 GPOS closed). ff_shared_scripts.py compare: GPOS SAME as the release, and the Python oracle equals the Rust prototype. Horizontal shaping: 32,256 -> 0 of 91,104 runs. LTR pair matrix: 2082 -> 0 of 61,009."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "GPOS.feature_list",
+    "classification": "compiler-gap",
+    "cause": "Same as UnifrakturMaguntia GPOS.script_list.",
+    "evidence": "As above."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "GPOS.lookup_list",
+    "classification": "compiler-gap",
+    "cause": "Same as UnifrakturMaguntia GPOS.script_list.",
+    "evidence": "As above."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "hhea.descender",
+    "classification": "converter-fidelity",
+    "cause": "Offset-mode hhea descender (HheadDescent -16, HheadDOffset 1). FontForge 20100501's sethhead bases it on int() of the true minimum (glyph J, -497.58, truncated to -497), giving -513. babelfont 17ea899 (with #85's floor/ceil) floors to -498 and gives -514. This is the pre-2014 vintage rule the first-batch investigation proposed; it is not implemented. Outside this unit's tool change.",
+    "evidence": "runs/00-baseline and runs/10-all-prototypes: [-513, -514]. investigations/unifraktur (vmetrics_probe.py, VERIFY.md section 3)."
+   },
+   {
+    "style": "UnifrakturMaguntia-Book",
+    "row": "OS/2.us_win_descent",
+    "classification": "converter-fidelity",
+    "cause": "Offset-mode win descent (OS2WinDescent 16, OS2WinDOffset 1). Before ee15007274e9 (2014), FontForge's head bbox counts only on-curve points. J's lowest implied on-curve point is -495.5, which floors to -496, so 496+16 = 512. babelfont floors the true minimum (-498) and gets 514. Not implemented.",
+    "evidence": "runs/00-baseline and runs/10: [512, 514]. investigations/unifraktur (vmetrics_probe.py; VERIFY.md)."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Ultra-Regular"
+    ],
+    "op": "setfield",
+    "args": "TTFWeight 400",
+    "commit_subject": "Set TTFWeight to 400, the weight class Ultra was released with",
+    "commit_body": "The released Ultra-Regular.ttf (FontForge 20110222, FFTM 2011-05-03) has usWeightClass 400. This .sfd was saved later (2011-10-18) and says 900.",
+    "value_derived_from": "The release's OS/2.usWeightClass 400, copied from the binary. The release and the hg Ultra.ttf at 52f780bc have identical OS/2; google/fonts hotfix 57fc85106 changed only head/name. That binary is FontForge 20110222's export of the source as it stood on 2011-05-03 (FFTM sourceModified 1304463351), earlier than the committed .sfd (ModificationTime 1318899232).",
+    "source_currently_states": "TTFWeight: 900",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Ultra-Regular"
+    ],
+    "op": "setfield",
+    "args": "Weight Regular",
+    "commit_subject": "Set Weight to Regular, as the released Ultra is named",
+    "commit_body": "The release names Ultra family 'Ultra', style 'Regular'. The later-saved .sfd says Weight: Black, so the build is named Ultra Black.",
+    "value_derived_from": "nameID 2 'Regular' and family 'Ultra' of the hg Ultra.ttf at 52f780bc, FontForge 20110222's export, which predates the .sfd save. The release's nameID 4/6 ('Ultra Regular', 'Ultra-Regular') come from google/fonts hotfix 57fc85106 and match what babelfont builds after this edit.",
+    "source_currently_states": "Weight: Black",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Ultra-Regular"
+    ],
+    "op": "kernclass0zero (NEW op, prototyped in investigations/next-emptygpos/probes/sfd_kernclass0.py; not yet in tools/sfd_edit.py)",
+    "args": "'kern' Horizontal Kerning in Latin lookup 0 kerning class 1",
+    "commit_subject": "Drop kerning class 0's row, as the released kern table has no A-group pairs",
+    "commit_body": "FontForge 20110222 writes a legacy kern table from kerning classes 1 and up (SFKernClassTempDecompose), so the A group's row never reached the release.",
+    "value_derived_from": "FontForge v20110222 splinesaveafm.c:2038 (`for ( i=1; i<kc->first_cnt; ++i )`, quoted in probes/ff-excerpts.txt), and the release's kern table, which has 0 pairs with an A-group first glyph out of 2721. A later addition to the .sfd would explain the release equally well, since the .sfd postdates the export; the edit is the same either way.",
+    "source_currently_states": "KernClass2: 26+ 27; first-class-0 (A Agrave ... Aogonek) row = [0,-55,-60,-60,-50,-40,-20,-20,-20,-20,-100,-80,0 x15]",
+    "verified": true
+   }
+  ],
+  "proposed_tool_changes": [
+   {
+    "tool": "fontc (fea-rs + fontir + fontbe + fontc CLI)",
+    "description": "An opt-in shared GSUB/GPOS script list, default off. fea-rs gets Opts::share_script_lists(bool). After AllLookups::build assigns features, every script present in either table is added to the other with an empty default LangSys (0xFFFF, no features) if it is missing; a table's own languages are untouched. PosSubBuilder::build_raw no longer returns None when scripts exist, so a table with scripts but no features or lookups is written. fontir gets Flags::SHARED_LAYOUT_SCRIPTS, fontbe passes it to the feature compile (on main, both compile and compile_merged), and the fontc CLI gets --shared-layout-scripts. This is VOLT's convention and FontForge's exporter rule (lookups.c SFScriptsInLookups/SFLangsInScript, tottfgpos.c dumpg___info, unchanged from 2010 to master 67dd7dc9). It is the only way to reproduce the empty GPOS, which suppresses HarfBuzz's fallback mark positioning. FEA cannot express it, and fontmake/feaLib does not emit it either.",
+    "evidence": "Rows: Varela 6->3 and UnifrakturMaguntia 5->2 (runs/04), with nothing else changed (flag-off control runs/03 is identical to the pinned builds except head.modified and the nameID 5 stamp). The produced GPOS matches the release structurally in all 5 empty-GPOS styles (Varela, UnifrakturMaguntia, Kristi, Lekton-Bold, Lekton-Regular; runs/04 and runs/15). Horizontal HarfBuzz runs: Varela 28,272->0, UnifrakturMaguntia 32,256->0. 4 new fea-rs unit tests pass, and on upstream main 66637808 the fea-rs opts tests and fontc's args test pass, with clippy --all-targets and fmt clean. The existing fea-rs fonttools_tests cvparam_null.fea compare failure also happens on the untouched fontc-v1.0.0 tag with local fontTools 4.61.1.",
+    "styles_affected": [
+     "Varela-Regular",
+     "UnifrakturMaguntia-Book",
+     "Kristi-Regular",
+     "Lekton-Bold",
+     "Lekton-Regular"
+    ],
+    "prototype": "Scratch clone /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/fontc-proto: branch shared-layout-scripts (0df9f5ee on fontc-v1.0.0; built into builder3) and branch shared-layout-scripts-main (5fbc2820 on upstream main 66637808). Patches: /home/fsanches/compartilhado/sfd-reland/investigations/next-emptygpos/probes/fontc-v1.0.0-shared-layout-scripts.patch and fontc-main-66637808-shared-layout-scripts.patch. Python oracle: probes/ff_shared_scripts.py (emulate/compare).",
+    "upstream_pr_needed": "googlefonts/fontc: one PR (the main-based patch), then a fontc release. The upstream-facing text should say it is opt-in, default off, and matches VOLT/FontForge output."
+   },
+   {
+    "tool": "gftools-builder3",
+    "description": "FontcConfig gets `sharedLayoutScripts: bool` (default false), which maps to Flags::SHARED_LAYOUT_SCRIPTS. It is flattened into GoogleFontsOptions like reverseOutlineDirection, so a repository's sources/config.yaml can ask for it. The dependency must also move to a fontc release that carries the flag.",
+    "evidence": "Built at e851b8b with a crates.io patch pointing at the fontc prototype; Cargo.lock changed only for the patched path crates, with no version bumps. runs/04, runs/10 and runs/15 use that binary (sha256 734e373e23e3...). fmt clean.",
+    "styles_affected": [
+     "Varela-Regular",
+     "UnifrakturMaguntia-Book",
+     "Kristi-Regular",
+     "Lekton-Bold",
+     "Lekton-Regular"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/builder3-proto commit 0bd6b15. Patch: probes/builder3-e851b8b-shared-layout-scripts.patch. The prototype-only [patch.crates-io] diff is in probes/builder3-e851b8b-PROTOTYPE-ONLY-cargo-patch.diff.",
+    "upstream_pr_needed": "simoncozens/gftools-builder3: one PR, after the fontc release."
+   },
+   {
+    "tool": "babelfont-rs (FontForge importer)",
+    "description": "make_langsys writes `language XXX exclude_dflt;` for every language other than dflt. A FontForge lookup applies to exactly the languages it names, and FEA's default include_dflt adds the script's dflt lookups to every other language.",
+    "evidence": "Varela: TRK/AZE/CRT no longer get fi/fl (liga lookup 24) or smcp lookup 21; langsys differences 16->10 keys. A new unit test passes, all 70 FontForge tests pass, and clippy --all-targets and fmt are clean. The whole babelfont suite has 258 passing and 11 failing tests; the 11 read the external noto-cjk-varco checkout, which is absent, and are unrelated. Regression screen over all 149 styles in families.tsv and families-next.tsv (probes/fea_diff_sweep.sh): the FEA changes for 12 styles. Built with old and new converters, 10 have identical rows, Poly-Italic goes 3->0 and Varela 6->3 (runs/12-babelfont-regression, runs/11).",
+    "styles_affected": [
+     "Varela-Regular",
+     "Poly-Italic",
+     "Lekton-Bold",
+     "Lekton-Regular",
+     "PatrickHand-Regular",
+     "Play-Regular",
+     "Tuffy-Italic",
+     "Tuffy-Regular",
+     "AbrilFatface-Regular",
+     "ComicRelief-Regular",
+     "ComicRelief-Bold"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/babelfont-proto commit 86fc851 on integration-ff-prs 17ea899. Patch series: probes/babelfont-17ea899-language-systems-PROTOTYPE.patch.",
+    "upstream_pr_needed": "simoncozens/babelfont-rs: new PR (independent of #91/#92/#93), which can be combined with the next item."
+   },
+   {
+    "tool": "babelfont-rs (FontForge importer)",
+    "description": "FEA forbids script/language statements inside aalt, so aalt is registered under every `languagesystem`. FontForge registers it only where its aalt lookups say. Every other FontForge lookup is written with explicit script/language statements. So when the converted font has no kerning and no anchors (the only features a compiler generates from the languagesystems), declare as `languagesystem` only aalt's (script, language) pairs. Otherwise keep all pairs and warn.",
+    "evidence": "Varela GSUB 3->0 with babelfont alone (runs/11); aalt/sr cases 4->0. Poly-Italic 3->0 (its only GSUB difference was latn/ROM aalt). No style regressed among the 12 whose FEA changed. A new unit test (test_aalt_keeps_its_own_language_systems) passes.",
+    "styles_affected": [
+     "Varela-Regular",
+     "Poly-Italic",
+     "Megrim"
+    ],
+    "prototype": "babelfont-proto commit 214d635 (same patch file as above). The binary with both changes, sha256 864f649a872e..., produced runs/10, runs/11 and runs/12/new.",
+    "upstream_pr_needed": "simoncozens/babelfont-rs: same PR as exclude_dflt, or a second commit in it."
+   },
+   {
+    "tool": "sfd-reland tools (recipe.py, baseline.sh, land.py)",
+    "description": "Our own harness. Let the recipe also emit builder3 config lines, and write `sharedLayoutScripts: true` into sources/config.yaml only when the release has FFTM AND a GPOS with 0 lookups AND a GSUB with lookups (FontForge's empty GPOS shell). baseline.sh needs B3 and EXTRA_CONFIG overrides, as in probes/baseline_b3.sh. Do NOT enable it for every FontForge OpenType-mode release: fontc's generated kern registers DFLT (and sometimes grek/cyrl) where FontForge's kern lookup did not, so the mirrored GSUB shell opens GSUB.script_list rows.",
+    "evidence": "probes/recipe_shared_scripts.py selects 5 styles (runs/recipe_shared_scripts.tsv). Narrow rule, real builds: Kristi, Lekton-Bold and Lekton-Regular keep their rows (CLEAN / 1 weight row / CLEAN) and gain the release's exact GPOS (runs/15); Varela and UnifrakturMaguntia close 3 rows each. Broad rule, swept over 81 next-batch FontForge OpenType-mode builds (probes/shared_scripts_sweep.sh, runs/13-shared-scripts-sweep-next.tsv): opens GSUB.script_list in 33 styles and closes rows only in Varela. Census of 149 styles: runs/census_layout_shells.tsv.",
+    "styles_affected": [
+     "Varela-Regular",
+     "UnifrakturMaguntia-Book",
+     "Kristi-Regular",
+     "Lekton-Bold",
+     "Lekton-Regular"
+    ],
+    "prototype": "probes/recipe_shared_scripts.py (the rule) and probes/baseline_b3.sh (harness copy with B3/EXTRA_CONFIG).",
+    "upstream_pr_needed": "none (this workspace)"
+   },
+   {
+    "tool": "sfd-batch5 tools/table_gate.py (arbitrate_legacy_kern)",
+    "description": "The legacy-kern arbitration shapes only the release's own pairs. It misses two things. First, HarfBuzz fallback mark positioning: a kern-only release has no GPOS, so HarfBuzz positions its marks, and the build's GPOS switches that off. Second, pairs that only the build kerns. It should refuse when the release has combining marks in its cmap and no GPOS while the build has one, and it should shape the full LTR pair matrix (probes/pair_matrix.py), not just the release's kern pairs.",
+    "evidence": "Fidelity-only builds of landed or accepted kern-only styles. Miama-Regular (landed CLEAN 2ff6126): 73,583 of 1,232,100 LTR pairs differ (73,515 involve marks). Nosifer-Regular (landed CLEAN 7777099): 1,975 of 110,224 (1,968 mark). Example: a+U+0307 is at (530,975) in the release and (1768,0) in ours. KellySlab, Marvel x4, TulpenOne and Wallpoet: 0. See runs/05-kern-only-census/pair_matrix-*.txt. Ultra's 650 A-group pairs would also pass the current rule.",
+    "styles_affected": [
+     "Miama-Regular",
+     "Nosifer-Regular",
+     "Ultra-Regular",
+     "Smokum-Regular"
+    ],
+    "prototype": "probes/pair_matrix.py, probes/shape_compare.py",
+    "upstream_pr_needed": "none (this workspace)"
+   },
+   {
+    "tool": "sfd-reland tools/sfd_edit.py",
+    "description": "Add the op `kernclass0zero <KernClass2 subtable name>`, which zeroes first-class 0's row. It is FATAL without the '+' marker or with a malformed matrix. The file was NOT edited: it has uncommitted changes from another session.",
+    "evidence": "Ultra: 650 -> 0 A-group LTR pair differences (runs/09-ultra-kernclass0).",
+    "styles_affected": [
+     "Ultra-Regular"
+    ],
+    "prototype": "probes/sfd_kernclass0.py",
+    "upstream_pr_needed": "none (this workspace)"
+   }
+  ],
+  "families_landable_after": [
+   "varela",
+   "poly"
+  ],
+  "decisions_for_felipe": [
+   "Mechanism for the empty GPOS: a fontc opt-in flag plus a builder3 config key (prototyped, clean, 2 PRs plus a fontc release), or a builder3-only post-compile op (1 PR, not prototyped). Either way nothing lands until it is merged and released, since land.py refuses forks. The PRs are yours to file.",
+   "Reproducing the shell turns HarfBuzz's fallback mark positioning OFF, as the release does, for Varela's 3 and UnifrakturMaguntia's 9 combining marks. Arguably worse rendering, but it is what ships. Dropping sharedLayoutScripts could be a later improvement commit (future_work).",
+   "Smokum and Ultra are not empty-GPOS cases. FontForge exported them with no GPOS, only a legacy kern table, and fontc can only kern through GPOS. Options: accept GPOS kerning with documented HarfBuzz differences (Smokum: 28 soft-hyphen pairs; Ultra: 2211 mark pairs plus 17 soft-hyphen pairs, after the class-0 edit), or hold them. The only exact route is a builder3 op that writes `kern` and drops GPOS. It was not prototyped and is unlikely to be accepted upstream (fontspector flags fonts without GPOS kerning).",
+   "Miama and Nosifer landed CLEAN, but their marks shape differently from the release (73,515 and 1,968 LTR pairs), because the gate's legacy-kern rule does not look at fallback mark positioning. Re-open them, or accept under the same decision as Smokum/Ultra? And should the gate be tightened?",
+   "Ultra's source postdates its release (.sfd saved 2011-10-18, export of the 2011-05-03 state). Should it take the TTFWeight 400 and Weight Regular edits (values from the release/hg binary)? Without the first, land.py's weight workaround opens OS/2.us_weight_class [400,900] (runs/16).",
+   "Does the gate's GDEF.glyph_classes RELEASE-STALE acceptance still fit the 2026-09-24 equivalence rule? Poly-Italic: 1,531 LTR pairs differ because U+0307/U+0326 lose their advance as marks. Varela/UnifrakturMaguntia: vertical text only (28,416 / 45,498 runs)."
+  ],
+  "unresolved": [
+   "UnifrakturMaguntia-Book keeps 2 rows (hhea.descender, OS/2.us_win_descent): the pre-2014 offset-metrics converter rule from the first batch is still not implemented, so unifraktur does not land from this unit alone.",
+   "Smokum-Regular and Ultra-Regular keep their 3 GPOS rows each pending the kern-only decision. No upstream-plausible tool reproduces a kern-only font.",
+   "Vertical HarfBuzz residue unaffected by the shell: Varela 28,416 runs, UnifrakturMaguntia 45,498. Varela's all involve its 3 marks: the GDEF mark class zeroes their vertical advance. Smokum and UnifrakturMaguntia also have 1-unit vertical-origin (glyf bbox) differences. The gate does not check vertical.",
+   "The GSUB.script_list rows the broad rule would open (33 next-batch styles) show that fontc's kern writer registers scripts (DFLT, grek, cyrl) that FontForge's kern lookup did not. The gate hides this in GPOS ('both fonts position with real lookups'). Not investigated for behaviour.",
+   "Upstream acceptance of the fontc flag is not known: fontc aims at fontmake parity and fontmake has no such option. If refused, the fallback is a builder3 post-compile op.",
+   "Pre-existing, unrelated test failures: fea-rs fonttools_tests cvparam_null.fea (also on the untouched fontc-v1.0.0 tag with local fontTools 4.61.1), and 11 babelfont tests that need the external noto-cjk-varco checkout.",
+   "runs/14-first-batch-off is a partial run (9 of 26 styles, stopped once the narrow rule was chosen); only Kristi and Lekton from it are used.",
+   "Scratch only, disposable or regenerable: prototype clones and targets under /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/ (fontc-proto, builder3-proto, babelfont-proto, target-*). The patches that matter are copied into the investigation's probes/. Nothing was committed, as instructed."
+  ],
+  "verification": {
+   "summary": "Pins: babelfont integration-ff-prs 17ea899 (sha256 4cbc83e0), gftools-builder3 e851b8b with fontc 1.0.0 (d6dd442c), table_gate 2f43693 (939a987f), diffenator3 1.1.4, fontTools 4.61.1, uharfbuzz 0.53.3 / HarfBuzz 12.3.2, google/fonts b5efa9c32e8f. All four styles were built and gated with the harness; pairing is from families-next.tsv, and families.tsv for UnifrakturMaguntia. Prototypes: fontc-v1.0.0 plus the shared-layout-scripts patch built into builder3 (734e373e), and babelfont 17ea899 plus 2 commits (864f649a). With the prototypes and `sharedLayoutScripts: true`, Varela is CLEAN and UnifrakturMaguntia keeps only its 2 unrelated vmetric rows. The empty-GPOS rows close with no other table change, and HarfBuzz horizontal shaping goes to 0 differing runs for both (shape_compare, pair_matrix). Smokum and Ultra were mis-scoped: their releases are kern-only, so the tool change does not apply and their rows need a decision.",
+   "rows_before": "17: Smokum-Regular 3 (GPOS x3), Ultra-Regular 3 (GPOS x3), Varela-Regular 6 (GPOS x3, GSUB x3), UnifrakturMaguntia-Book 5 (GPOS x3, hhea.descender, OS/2.us_win_descent), in runs/00-baseline",
+   "rows_after": "8: Smokum-Regular 3, Ultra-Regular 3, Varela-Regular 0, UnifrakturMaguntia-Book 2 (hhea.descender, OS/2.us_win_descent), in runs/10-all-prototypes. The fontc/builder3 change alone (runs/04): Varela 3, UnifrakturMaguntia 2. babelfont alone (runs/11): Varela 3 (GPOS).",
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland; FAMILIES=families-next.tsv BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont OUT=investigations/next-emptygpos/runs/00-baseline TAG=emptygpos-00 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos bash tools/baseline.sh Smokum-Regular Ultra-Regular Varela-Regular   (and FAMILIES=families.tsv ... UnifrakturMaguntia-Book)",
+    "B3=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/target-b3/release/gftools-builder EXTRA_CONFIG='sharedLayoutScripts: true' FAMILIES=... BF=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/target-bf/release/babelfont OUT=investigations/next-emptygpos/runs/10-all-prototypes TAG=emptygpos-10 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos bash investigations/next-emptygpos/probes/baseline_b3.sh <Style>",
+    "same without EXTRA_CONFIG and with the pinned BF -> runs/03-proto-flag-off (control); with EXTRA_CONFIG and pinned BF -> runs/04-proto-shared-scripts; tools/baseline.sh with prototype BF -> runs/11-babelfont-proto-only",
+    "$PY investigations/next-emptygpos/probes/ff_shared_scripts.py compare <release.ttf> <built.ttf>",
+    "$PY investigations/next-emptygpos/probes/shape_compare.py <release.ttf> <built.ttf>;  $PY investigations/next-emptygpos/probes/pair_matrix.py <release.ttf> <built.ttf>",
+    "$PY investigations/next-emptygpos/probes/langsys_lookups.py <release.ttf> <built.ttf>;  $PY investigations/next-emptygpos/probes/varela_gsub_check.py <release.ttf> <built.ttf>",
+    "$PY investigations/next-emptygpos/probes/census_layout_shells.py families.tsv families-next.tsv;  $PY investigations/next-emptygpos/probes/recipe_shared_scripts.py families.tsv families-next.tsv",
+    "BUILDS=/home/fsanches/compartilhado/sfd-reland-scratch/baseline TAG=next FAMILIES=families-next.tsv CENSUS=investigations/next-emptygpos/runs/census_layout_shells.tsv OUT=<scratch> bash investigations/next-emptygpos/probes/shared_scripts_sweep.sh",
+    "OLD=<pinned babelfont> NEW=<prototype babelfont> FAMILIES=<tsv> SCRATCH=<scratch> bash investigations/next-emptygpos/probes/fea_diff_sweep.sh",
+    "$PY investigations/next-emptygpos/probes/sfd_kernclass0.py Ultra-TTF.sfd out.sfd \"'kern' Horizontal Kerning in Latin lookup 0 kerning class 1\"; SRC_OVERRIDE=out.sfd ... bash tools/baseline.sh Ultra-Regular (runs/09); sfd_edit.py setfield TTFWeight 400 / Weight Regular (runs/17, runs/18); RUN=... EDIT=... bash probes/rebuild_glyphs.sh Ultra-Regular (runs/16)",
+    "cd <scratch>/fontc-proto (branch shared-layout-scripts-main): cargo test -p fea-rs --lib -- compile::opts; cargo test -p fontc --bin fontc -- args; cargo clippy -p fea-rs -p fontbe -p fontir -p fontc --all-targets"
+   ]
+  },
+  "confidence": "High on causes: every value was reproduced from FontForge source at the exact build the FFTM stamp names, and the shell's effect was measured with HarfBuzz before and after. High that the fontc prototype reproduces FontForge's GPOS shell for all 5 empty-GPOS releases with no other change. Medium on upstream acceptance: fontc may prefer a post-processing step. Medium on the aalt languagesystem rule, which is a conditional heuristic babelfont's maintainer may want shaped differently. The Smokum/Ultra outcome depends on Felipe's decision."
+ },
+ "verification": {
+  "unit": "emptygpos",
+  "reproduced": true,
+  "reproduction_notes": "I re-ran every measurement with my own harness runs under /home/fsanches/compartilhado/sfd-reland/investigations/next-emptygpos-verify/runs (scratch: /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos-verify). The pairing is families-next.tsv (and families.tsv for UnifrakturMaguntia), and the releases are google/fonts b5efa9c32e8f.\n\nPins:\n- babelfont integration-ff-prs 17ea899 (sha256 4cbc83e0).\n- builder3 e851b8b with fontc 1.0.0.\n- table_gate 2f43693.\n- uharfbuzz 0.53.3 / HarfBuzz 12.3.2, fontTools 4.61.1.\n\nEverything that follows was reproduced.\n\n- **Baseline (runs/00-baseline):** 17 rows. Smokum 3 GPOS, Ultra 3 GPOS (the build is named Ultra-Black.ttf), Varela 6 (GPOS x3, GSUB x3), UnifrakturMaguntia 5 (GPOS x3, hhea.descender [-513,-514], OS/2.us_win_descent [512,514]).\n- **Release layout.** Smokum and Ultra have no GPOS/GSUB/GDEF, only a format-0 `kern` table (3904 and 2721 pairs). The FFTM stamp is 3381227313, which equals v20110222's LibFF_ModTime of 1298382513 (libffstamp.h fetched at tag v20110222). The hg binaries differ from the releases only in head and name (hotfixes 0e5ac906d and 57fc85106). Varela's release is byte-identical to the hg binary.\n- **FontForge code, read at v20110222 and at master 67dd7dc9.** The kern condition is at tottf.c:5306 and ttf_dumpkerns calls SFKernClassTempDecompose. That function's class loop starts at i=1 (splinesaveafm.c ~2038). SFScriptsInLookups ignores gpos, SFLangsInScript gives a script with no lookups a dummy DEFAULT_LANG, and dumpg___info keeps a table that has scripts but no lookups. The fea-rs build_raw early return at fontc-v1.0.0 is also as described.\n- **LTR pair matrix, my own probe (probes/pairs_hb.py, which does not import sweep.py):**\n  - Smokum: 28 of 135,424 pairs differ, all U+00AD-first.\n  - Ultra: 2878 of 137,641 (2211 mark, 650 A-group, 17 soft hyphen).\n  - Varela: 1532 of 281,961. UnifrakturMaguntia: 2082 of 61,009.\n  - Nosifer (fidelity-only baseline): 1,975 of 110,224, of which 1,968 involve marks. This confirms the gate's legacy-kern weakness.\n- **Prototypes, rebuilt independently.** I applied the other agent's patch files to fresh scratch clones. The fontc tree is 1134e598, the builder3 tree cc6eaf66 and the babelfont tree 1dc7e1d1, all identical to the agent's prototype trees. My builder3 binary is sha256 4b375fa3..., my babelfont 19274ce0....\n  - Flag on (runs/10): Varela goes 6 to 3 (GSUB only), UnifrakturMaguntia 5 to 2. The GPOS script lists equal the release's exactly, and the LTR pair differences drop to 0 for both.\n  - Flag off (runs/11): identical to the pinned build except head. This is the control.\n  - Prototype babelfont alone (runs/13): Varela has 3 rows (GPOS), Poly-Italic is CLEAN and Poly-Regular stays CLEAN.\n  - All prototypes (runs/14): Varela is CLEAN, with the gate's lookup-order arbitration covering 102400 runs, and UnifrakturMaguntia keeps 2 rows. My effect-level GSUB comparison (probes/langsys_effects.py) finds 7 of 161 keys differing at baseline: liga and smcp for AZE/CRT/TRK, plus aalt for latn/SRB. With all prototypes it finds 0 of 160. The cited cases (fi under tr/az/crh, aalt '!' under sr) behave as claimed (runs/14/lang_cases.txt).\n  - Kristi and Lekton-Regular with the flag (runs/12): CLEAN, with the release's exact GPOS shell.\n- **Census (probes/shell_census.py):** 5 empty-GPOS shells, 76 empty-GSUB shells and 11 legacy-kern-only releases.\n\nNot re-run: the fontc and babelfont unit tests and clippy, Lekton-Bold, the 81-style broad-rule sweep, and the 149-style FEA regression screen.\n\nOne provenance problem with the other agent's evidence. Their builder3 prototype (734e373e) was built at 01:44:18, but the fontc commit 0df9f5ee dates from 02:28:19. So runs/04, 10 and 15 came from an uncommitted fontc working tree. My rebuild from the committed patch gives the same results, so the evidence stands, but the binary pin in their result should point at a build from the committed patch.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Set TTFWeight to 400, the weight class Ultra was released with",
+    "verdict": "reject",
+    "reason": "The value is right but the origin is wrong, and the edit is not needed. The .sfd the release was actually exported from is in version control: googlefontdirectory-hg 2d042ebbd:ultra/src/Ultra-TTF.sfd (old-branch layout, 'Updating Ultra', 2011-05-06). Its ModificationTime is 1304463351, which equals the release's FFTM sourceModified; the next-provenance probe fftm_source_commit.py reports MATCH at 2d042ebbd. That file says TTFWeight: 400. The hg ultra/Ultra.ttf at 2d042ebbd has the same blob (11a5d859) as apache/ultra/Ultra.ttf at 52f780bc and as google/fonts 90abd17b4:apache/ultra/Ultra.ttf. The pairing's .sfd is the 2011-10-17 re-save ('Updating hinting of Ultra', 10ef7b362), whose binary never shipped. Pair Ultra with the 2d042ebbd .sfd instead of copying the value from the binary. Built unmodified from it, the weight is 400 with no row (runs/02-ultra-may-sfd)."
+   },
+   {
+    "commit_subject": "Set Weight to Regular, as the released Ultra is named",
+    "verdict": "reject",
+    "reason": "The value never existed in the source's history. The exported .sfd (2d042ebbd) says `Weight: Book`, not Regular; the value was taken from the binary's nameID 2. Built unmodified from the 2d042ebbd .sfd, babelfont already produces Ultra-Regular.ttf with nameID 1/2/4/6 = Ultra / Regular / Ultra Regular / Ultra-Regular, matching the hotfixed release (runs/02-ultra-may-sfd). With the correct pairing no name edit is needed."
+   },
+   {
+    "commit_subject": "Drop kerning class 0's row, as the released kern table has no A-group pairs",
+    "verdict": "reject",
+    "reason": "The cause is wrong. The commit body says FontForge's legacy-kern writer dropped class 0. That code is real (splinesaveafm.c i=1), but it did not act here: the .sfd exported on 2011-05-03 (2d042ebbd) has no KernClass2 at all. It has 110 per-glyph Kerns2 lists and none on an A-group glyph (runs/02-ultra-may-sfd/sfd_history.txt). The A row arrived with the October 2011 re-save, which restructured the kerning into KernClass2 '26+ 27', removed .null and nonmarkingreturn, and set Weight Black / TTFWeight 900. That is later design history, not an exporter artefact. Built from the exported .sfd with no edit, the A-group differences are 0 and the total is 2228 LTR pairs (2211 mark + 17 soft hyphen). That is the same end state as the three edits, and the post.num_glyphs RELEASE-STALE row also disappears. The new sfd_edit op is unnecessary."
+   }
+  ],
+  "tool_verdicts": [
+   {
+    "tool_change": "fontc (fea-rs Opts::share_script_lists + Flags::SHARED_LAYOUT_SCRIPTS + --shared-layout-scripts)",
+    "verdict": "revise",
+    "reason": "The mechanism is correct and I reproduced it from the committed patch (tree 1134e598): Varela 6->3, UnifrakturMaguntia 5->2, Kristi and Lekton-Regular CLEAN. The shell equals the release's GPOS script list, LTR pair differences go to 0, and the flag-off control differs only in head. Revise before filing, because the upstream-facing text states a false HarfBuzz behaviour. The opts.rs doc comment says HarfBuzz 'does not apply its fallback mark positioning or a legacy `kern` table to a font that has a GPOS table', and the commit message repeats it. hb-ot-shape.cc at 12.3.2 (lines 134, 173) applies the legacy `kern` table whenever GPOS has no `kern` feature (`!has_gpos_kern || !plan.apply_gpos`). Only fallback mark positioning (and fallback kern) is switched off by an empty GPOS. Also re-pin the evidence to a builder3 built from the committed fontc patch: 734e373e predates commit 0df9f5ee by 44 minutes. Upstream acceptance is still unknown, since fontc tracks fontmake parity."
+   },
+   {
+    "tool_change": "gftools-builder3 FontcConfig sharedLayoutScripts",
+    "verdict": "revise",
+    "reason": "The patch is fine (tree cc6eaf66; built as 4b375fa3 and it works). One point the other agent did not report: FontcConfig and GoogleFontsOptions do not deny unknown fields. So on any builder3 before this change, including the prebuilt main-latest binary the landed repos' CI downloads (.github/workflows/build.yaml), `sharedLayoutScripts: true` is silently ignored and the font is built without the shell, with no error. Separately, the Python gftools builder's GOOGLEFONTS_SCHEMA rejects the key ('unexpected key not in schema', tested with the local gftools 0.9.100.dev). The landing and verification must therefore check the built GPOS shell, not trust the key, and must refuse builder3 revisions that lack the change."
+   },
+   {
+    "tool_change": "babelfont-rs make_langsys exclude_dflt for non-dflt languages",
+    "verdict": "keep",
+    "reason": "This is a correct fidelity fix: FontForge registers each lookup for exactly the languages it names. The patch was reproduced (tree 1dc7e1d1). With both babelfont commits, Varela's GSUB effects go from 7 of 161 differing keys to 0 of 160, fi does not ligate under tr/az/crh, and Poly-Italic and Poly-Regular are CLEAN. The PROTOTYPE commit author/subject ('scratch <scratch@localhost>') needs replacing before the PR."
+   },
+   {
+    "tool_change": "babelfont-rs declare only aalt's languagesystems when there is no kerning and no anchors",
+    "verdict": "keep",
+    "reason": "It works. Reproduced: Varela GSUB 3->0 together with exclude_dflt, aalt no longer under latn/SRB ('!' stays exclam under sr), Poly-Italic 3->0 and Poly-Regular still CLEAN. It is the only FEA-expressible route, because aalt forbids script/language statements. It is a conditional heuristic that falls back to a warning when kerning or anchors exist, so upstream acceptance is medium. The PR text should say plainly that it relies on explicit `script`/`language` statements for undeclared language systems, which fea-rs accepts."
+   },
+   {
+    "tool_change": "sfd-reland recipe/baseline/land: sharedLayoutScripts for FFTM + empty GPOS + GSUB with lookups (narrow rule)",
+    "verdict": "revise",
+    "reason": "The rule selects exactly the 5 empty-GPOS releases (my independent census agrees), and Kristi and Lekton-Regular stay CLEAN with the exact shell (runs/12). Because builder3 silently ignores the key, verify_landed.py and land.py must assert that the built font has the GPOS or GSUB shell and must pin a builder3 that has the change. Otherwise a CI or rebuild on current builder3 produces a font without the shell and nothing notices."
+   },
+   {
+    "tool_change": "table_gate arbitrate_legacy_kern: account for fallback mark positioning and shape the full pair matrix",
+    "verdict": "keep",
+    "reason": "The code (table_gate.py 1250-1313 at 2f43693) shapes only the release's own kern pairs and compares advance sums, so mark fallback differences are invisible to it. I reproduced Nosifer's fidelity-only build: 1,975 of 110,224 LTR pairs differ, 1,968 of them involving marks."
+   },
+   {
+    "tool_change": "sfd-reland tools/sfd_edit.py kernclass0zero op",
+    "verdict": "reject",
+    "reason": "It is not needed. The A-group row it removes is not in the .sfd Ultra was exported from (2d042ebbd). Fix the pairing instead."
+   }
+  ],
+  "classification_objections": [
+   "Ultra-Regular GPOS.script_list/feature_list/lookup_list: keeping these as 'decision' (kern-only release) is right, but the cause text is wrong in two places. The A-group kerning (650 pairs) is attributed to FontForge's class-0 decompose rule, but the exported .sfd had no kern classes. The source is described as postdating the export, as if the exported state were unknown, but it is in googlefontdirectory-hg history at 2d042ebbd. With the correct source, the functional residue is 2211 mark pairs plus 17 soft-hyphen pairs, and there is no weight, name or glyph-count issue.",
+   "Varela-Regular and UnifrakturMaguntia-Book GPOS rows are classified 'compiler-gap' here. The first batch classified UnifrakturMaguntia's same three rows as 'converter-fidelity' (investigations/unifraktur/FINDINGS.md). Same mechanism, same rows: pick one label for both batches. 'compiler-gap' is the more accurate one, since babelfont and FEA cannot express the shell.",
+   "Varela GSUB rows: the 'converter-fidelity' label and the cause are right. The count '16 of 161 keys' is a lookup-index count that includes packing and ordering. Measured by effect, 7 of 161 keys differ (AZE/CRT/TRK liga and smcp, latn/SRB aalt; runs/03-varela-gsub). The substance is the same."
+  ],
+  "missed": [
+   "The Ultra pairing is wrong at the revision level, which is the main finding. families-next.tsv pairs Ultra-Regular with googlefontdirectory-hg 52f780bc apache/ultra/src/Ultra-TTF.sfd, the 2011-10-17 re-save (blob 3b258c0a, same as 10ef7b362 'Updating hinting of Ultra'). The release was exported from 2d042ebbd:ultra/src/Ultra-TTF.sfd (blob 78bfdba4, ModificationTime 1304463351 == FFTM sourceModified; its Ultra.ttf blob 11a5d859 is the one google/fonts shipped). Built unmodified with the pinned fidelity flags, it gives only the 3 kern-only GPOS rows and 0 stale rows (runs/02-ultra-may-sfd; recipe probes/ultra_exported_sfd.sh). The harness and land.py cannot take this yet: they do `git archive <commit> <lic>/<fam>` with --strip-components=2, but at 2d042ebbd the path is `ultra/`, strip 1. A pairing and harness change is needed, or a Felipe decision on the repository history: May .sfd as the base, the convert commit, then the October .sfd as a later future-work commit.",
+   "The same FFTM-vs-.sfd check across both pairing tables (probes/fftm_vs_sfd.py, runs/06-fftm-vs-sfd.txt) flags the paired .sfd as newer than the release for Ultra-Regular, Lohit-Bengali, Lohit-Tamil, Thabit, Thabit-Bold and Piedra-Regular (Piedra by only 17 s). next-provenance covers Lohit and Thabit. Ultra was covered by no unit.",
+   "The HarfBuzz statement in the fontc patch's doc comment and commit message is false (see the tool verdict), and it would be the first thing an upstream reviewer checks.",
+   "builder3 silently ignores unknown config keys, and the Python gftools builder rejects `sharedLayoutScripts`. The recipe's config key is therefore not self-enforcing.",
+   "The builder3 prototype binary (734e373e) used for runs/04, 10 and 15 was built 44 minutes before fontc commit 0df9f5ee existed, so it came from an uncommitted working tree. Results reproduce from the committed patch (my build 4b375fa3), so only the pin in the verification section is wrong."
+  ],
+  "overall": "The investigation holds up for Varela, UnifrakturMaguntia and Smokum, but not for Ultra.\n\nFor Varela and UnifrakturMaguntia, the causes are right: FontForge's shared GSUB/GPOS script list, a fea-rs gap, and babelfont's include_dflt and aalt registration. I rebuilt the fontc/builder3 and babelfont prototypes from the patch files and they reproduce every claimed outcome. Varela is CLEAN with all prototypes, UnifrakturMaguntia keeps only its 2 first-batch vmetric rows, Poly is CLEAN, Kristi and Lekton-Regular are CLEAN with the exact shell, and horizontal pair differences go to 0. Two things need fixing before any PR is filed:\n- The fontc patch text wrongly says HarfBuzz ignores a legacy `kern` table whenever a GPOS exists.\n- The builder3 key is silently ignored by current builder3 and rejected by the Python builder, so landing and verification must check the built shell.\n\nSmokum is correctly identified as a kern-only release, and its U+00AD analysis is right.\n\nUltra is where the result is wrong. The three proposed .sfd edits (TTFWeight 400, Weight Regular, kernclass0zero) should be rejected. The release was exported from googlefontdirectory-hg 2d042ebbd's Ultra-TTF.sfd, an exact FFTM ModificationTime match, and that file needs no edit at all: weight 400, Weight Book with correct Regular names, per-glyph kerning with no A-group, and .null/nonmarkingreturn present. The pairing uses the October 2011 re-save instead, and the A-group kerning was added in that re-save, not dropped by FontForge. What remains for Ultra is the same decision as Smokum (GPOS kerning versus a legacy-kern release): 2211 mark pairs and 17 soft-hyphen pairs.\n\nlandable_after: varela and poly, once the babelfont PR merges; varela additionally needs the fontc release and builder3 PR. unifraktur still needs the vmetric rule. smokum, and ultra re-paired to 2d042ebbd, need Felipe's kern-only decision.\n\nNothing was committed. Probes and runs are in /home/fsanches/compartilhado/sfd-reland/investigations/next-emptygpos-verify/{probes,runs}. The scratch clones and targets under /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos-verify are disposable: they rebuild from the patch files in next-emptygpos/probes."
+ }
+}

@@ -1,0 +1,95 @@
+CreepsterCaps-Regular        changed  225 | d3-like(32ppem,fuzz8) {'0-0': 204, '1-1': 13, '2-3': 6, '4-7': 1, '8-15': 1} | geometry(128ppem,fuzz64) {'0-0': 225} | worst W geo0/d3like8, J geo0/d3like4, ugrave geo0/d3like2, udieresis geo0/d3like2
+HerrVonMuellerhoff-Regular   changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Kristi-Regular               changed   28 | d3-like(32ppem,fuzz8) {'0-0': 27, '>=64': 1} | geometry(256ppem,fuzz64) {'0-0': 27, '>=64': 1} | worst .notdef geo10972/d3like297, ydieresis geo0/d3like0, yacute geo0/d3like0, y geo0/d3like0
+Lekton-Bold                  changed   47 | d3-like(32ppem,fuzz8) {'0-0': 47} | geometry(125ppem,fuzz64) {'0-0': 47} | worst utilde.sc geo0/d3like0, utilde geo0/d3like0, uring geo0/d3like0, umacron.sc geo0/d3like0
+Lekton-Italic                changed    9 | d3-like(32ppem,fuzz8) {'0-0': 8, '1-1': 1} | geometry(125ppem,fuzz64) {'0-0': 9} | worst s geo0/d3like1, two geo0/d3like0, questiondown geo0/d3like0, question geo0/d3like0
+Lekton-Regular               changed   67 | d3-like(32ppem,fuzz8) {'0-0': 63, '1-1': 4} | geometry(125ppem,fuzz64) {'0-0': 67} | worst utilde.sc geo0/d3like1, ntilde.sc geo0/d3like1, itilde.sc geo0/d3like1, atilde.sc geo0/d3like1
+Miama-Regular                changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Monoton-Regular              changed    0 | d3-like(32ppem,fuzz8) {} | geometry(256ppem,fuzz64) {} | worst 
+NixieOne-Regular             changed    7 | d3-like(32ppem,fuzz8) {'16-31': 4, '2-3': 1, '32-63': 2} | geometry(125ppem,fuzz64) {'0-0': 1, '32-63': 3, '>=64': 3} | worst quotedblbase geo105/d3like34, quotedblright geo103/d3like35, semicolon geo72/d3like23, quotesinglbase geo53/d3like18
+Nosifer-Regular              changed  269 | d3-like(32ppem,fuzz8) {'0-0': 267, '1-1': 1, '>=64': 1} | geometry(256ppem,fuzz64) {'0-0': 268, '>=64': 1} | worst .notdef geo10972/d3like297, braceright geo0/d3like1, zacute geo0/d3like0, yen geo0/d3like0
+NosiferCaps-Regular          changed  269 | d3-like(32ppem,fuzz8) {'0-0': 266, '1-1': 2, '>=64': 1} | geometry(256ppem,fuzz64) {'0-0': 268, '>=64': 1} | worst .notdef geo10972/d3like297, three geo0/d3like1, braceright geo0/d3like1, zacute geo0/d3like0
+NovaCut                      changed    2 | d3-like(32ppem,fuzz8) {'0-0': 2} | geometry(256ppem,fuzz64) {'0-0': 2} | worst uni201F geo0/d3like0, cedilla geo0/d3like0
+NovaFlat                     changed   28 | d3-like(32ppem,fuzz8) {'0-0': 28} | geometry(256ppem,fuzz64) {'0-0': 28} | worst zero geo0/d3like0, uni201F geo0/d3like0, uni1E57 geo0/d3like0, uni1E0B geo0/d3like0
+NovaMono                     changed    6 | d3-like(32ppem,fuzz8) {'0-0': 6} | geometry(256ppem,fuzz64) {'0-0': 6} | worst uring geo0/d3like0, uniFB06 geo0/d3like0, uni20B0 geo0/d3like0, uni03ED geo0/d3like0
+NovaOval                     changed   21 | d3-like(32ppem,fuzz8) {'0-0': 21} | geometry(256ppem,fuzz64) {'0-0': 21} | worst uni201F geo0/d3like0, uni1E61 geo0/d3like0, uni1E60 geo0/d3like0, uni1E1E geo0/d3like0
+NovaRound                    changed    6 | d3-like(32ppem,fuzz8) {'0-0': 6} | geometry(256ppem,fuzz64) {'0-0': 6} | worst uni201F geo0/d3like0, semicolon geo0/d3like0, r geo0/d3like0, parenright geo0/d3like0
+NovaScript-Regular           changed   18 | d3-like(32ppem,fuzz8) {'0-0': 18} | geometry(256ppem,fuzz64) {'0-0': 18} | worst three geo0/d3like0, scommaaccent geo0/d3like0, scircumflex geo0/d3like0, scaron geo0/d3like0
+NovaSlim                     changed    4 | d3-like(32ppem,fuzz8) {'0-0': 4} | geometry(256ppem,fuzz64) {'0-0': 4} | worst uni201F geo0/d3like0, semicolon geo0/d3like0, aeacute geo0/d3like0, ae geo0/d3like0
+NovaSquare                   changed    6 | d3-like(32ppem,fuzz8) {'0-0': 6} | geometry(256ppem,fuzz64) {'0-0': 6} | worst uni201F geo0/d3like0, three geo0/d3like0, semicolon geo0/d3like0, ordmasculine geo0/d3like0
+PatrickHand-Regular          changed    8 | d3-like(32ppem,fuzz8) {'0-0': 8} | geometry(125ppem,fuzz64) {'0-0': 8} | worst icaron geo0/d3like0, horncomb geo0/d3like0, gravecomb geo0/d3like0, dblgravecmb geo0/d3like0
+Puritan-Bold                 changed    4 | d3-like(32ppem,fuzz8) {'0-0': 4} | geometry(128ppem,fuzz64) {'0-0': 4} | worst igrave geo0/d3like0, icircumflex geo0/d3like0, braceright geo0/d3like0, at geo0/d3like0
+Puritan-BoldItalic           changed    7 | d3-like(32ppem,fuzz8) {'0-0': 7} | geometry(128ppem,fuzz64) {'0-0': 7} | worst two geo0/d3like0, igrave geo0/d3like0, icircumflex geo0/d3like0, f geo0/d3like0
+Puritan-Italic               changed    5 | d3-like(32ppem,fuzz8) {'0-0': 5} | geometry(128ppem,fuzz64) {'0-0': 5} | worst thorn geo0/d3like0, j geo0/d3like0, fi geo0/d3like0, f geo0/d3like0
+Puritan-Regular              changed    1 | d3-like(32ppem,fuzz8) {'0-0': 1} | geometry(128ppem,fuzz64) {'0-0': 1} | worst B geo0/d3like0
+RussoOne-Regular             changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+SixCaps                      changed    3 | d3-like(32ppem,fuzz8) {'0-0': 3} | geometry(256ppem,fuzz64) {'0-0': 3} | worst imacron geo0/d3like0, Rcaron geo0/d3like0, Imacron geo0/d3like0
+Smythe-Regular               changed    0 | d3-like(32ppem,fuzz8) {} | geometry(256ppem,fuzz64) {} | worst 
+TulpenOne-Regular            changed    0 | d3-like(32ppem,fuzz8) {} | geometry(256ppem,fuzz64) {} | worst 
+UnifrakturCook-Bold          changed  156 | d3-like(32ppem,fuzz8) {'0-0': 154, '1-1': 2} | geometry(256ppem,fuzz64) {'0-0': 156} | worst florin geo0/d3like1, J geo0/d3like1, zero geo0/d3like0, zcaron geo0/d3like0
+AbrilFatface-Regular         changed   79 | d3-like(32ppem,fuzz8) {'0-0': 72, '1-1': 6, '2-3': 1} | geometry(125ppem,fuzz64) {'0-0': 79} | worst Scedilla geo0/d3like2, Scommaaccent geo0/d3like1, Scircumflex geo0/d3like1, Scaron geo0/d3like1
+Corben-Regular               changed  259 | d3-like(32ppem,fuzz8) {'0-0': 256, '1-1': 2, '>=64': 1} | geometry(256ppem,fuzz64) {'0-0': 258, '>=64': 1} | worst .notdef geo10972/d3like297, fi geo0/d3like1, f_j geo0/d3like1, yen geo0/d3like0
+Corben-Bold                  changed    3 | d3-like(32ppem,fuzz8) {'32-63': 2, '>=64': 1} | geometry(256ppem,fuzz64) {'>=64': 3} | worst AE geo1646/d3like138, Lslash geo492/d3like62, lslash geo477/d3like57
+AllertaStencil-Regular       changed    0 | d3-like(32ppem,fuzz8) {} | geometry(128ppem,fuzz64) {} | worst 
+Rochester-Regular            changed    0 | d3-like(32ppem,fuzz8) {} | geometry(256ppem,fuzz64) {} | worst 
+Italiana-Regular             changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+KeaniaOne-Regular            changed    1 | d3-like(32ppem,fuzz8) {'0-0': 1} | geometry(125ppem,fuzz64) {'0-0': 1} | worst oslash geo0/d3like0
+KellySlab-Regular            changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+LovedbytheKing               changed    3 | d3-like(32ppem,fuzz8) {'0-0': 3} | geometry(256ppem,fuzz64) {'0-0': 3} | worst threesuperior geo0/d3like0, ordmasculine geo0/d3like0, onehalf geo0/d3like0
+LoveYaLikeASister            changed    0 | d3-like(32ppem,fuzz8) {} | geometry(128ppem,fuzz64) {} | worst 
+Marvel-Bold                  changed   13 | d3-like(32ppem,fuzz8) {'0-0': 13} | geometry(125ppem,fuzz64) {'0-0': 13} | worst quotesingle geo0/d3like0, quotesinglbase geo0/d3like0, parenright geo0/d3like0, germandbls geo0/d3like0
+Marvel-BoldItalic            changed   13 | d3-like(32ppem,fuzz8) {'0-0': 13} | geometry(125ppem,fuzz64) {'0-0': 13} | worst quotesingle geo0/d3like0, quotesinglbase geo0/d3like0, parenright geo0/d3like0, germandbls geo0/d3like0
+Marvel-Italic                changed   21 | d3-like(32ppem,fuzz8) {'0-0': 21} | geometry(125ppem,fuzz64) {'0-0': 21} | worst yen geo0/d3like0, quotesingle geo0/d3like0, quotesinglbase geo0/d3like0, parenright geo0/d3like0
+Marvel-Regular               changed   21 | d3-like(32ppem,fuzz8) {'0-0': 21} | geometry(125ppem,fuzz64) {'0-0': 21} | worst yen geo0/d3like0, quotesingle geo0/d3like0, quotesinglbase geo0/d3like0, parenright geo0/d3like0
+MedulaOne-Regular            changed    7 | d3-like(32ppem,fuzz8) {'0-0': 7} | geometry(125ppem,fuzz64) {'0-0': 7} | worst oslash geo0/d3like0, igrave geo0/d3like0, icircumflex geo0/d3like0, fraction geo0/d3like0
+MeieScript-Regular           changed    0 | d3-like(32ppem,fuzz8) {} | geometry(256ppem,fuzz64) {} | worst 
+MissFajardose-Regular        changed  118 | d3-like(32ppem,fuzz8) {'0-0': 114, '1-1': 4} | geometry(125ppem,fuzz64) {'0-0': 118} | worst section geo0/d3like1, exclam geo0/d3like1, Lslash geo0/d3like1, L geo0/d3like1
+MonsieurLaDoulaise-Regular   changed   96 | d3-like(32ppem,fuzz8) {'0-0': 95, '2-3': 1} | geometry(125ppem,fuzz64) {'0-0': 96} | worst G geo0/d3like2, yen geo0/d3like0, ydieresis geo0/d3like0, yacute geo0/d3like0
+MrBedfort-Regular            changed  142 | d3-like(32ppem,fuzz8) {'0-0': 129, '1-1': 5, '2-3': 4, '4-7': 2, '>=64': 2} | geometry(125ppem,fuzz64) {'0-0': 140, '>=64': 2} | worst backslash geo239/d3like76, bracketleft geo235/d3like72, guillemotleft geo0/d3like5, N geo0/d3like5
+MrDafoe-Regular              changed  168 | d3-like(32ppem,fuzz8) {'0-0': 157, '1-1': 10, '2-3': 1} | geometry(125ppem,fuzz64) {'0-0': 168} | worst eight geo0/d3like2, two geo0/d3like1, section geo0/d3like1, question geo0/d3like1
+MrDeHaviland-Regular         changed  109 | d3-like(32ppem,fuzz8) {'0-0': 106, '1-1': 3} | geometry(125ppem,fuzz64) {'0-0': 109} | worst zero geo0/d3like1, eight geo0/d3like1, M geo0/d3like1, zcaron geo0/d3like0
+MrsSaintDelafield-Regular    changed    3 | d3-like(32ppem,fuzz8) {'0-0': 3} | geometry(125ppem,fuzz64) {'0-0': 3} | worst less geo0/d3like0, guilsinglleft geo0/d3like0, guillemotleft geo0/d3like0
+MrsSheppards-Regular         changed  139 | d3-like(32ppem,fuzz8) {'0-0': 135, '1-1': 4} | geometry(125ppem,fuzz64) {'0-0': 139} | worst threesuperior geo0/d3like1, threequarters geo0/d3like1, germandbls geo0/d3like1, braceright geo0/d3like1
+Niconne-Regular              changed  202 | d3-like(32ppem,fuzz8) {'0-0': 196, '1-1': 3, '2-3': 2, '32-63': 1} | geometry(256ppem,fuzz64) {'0-0': 201, '>=64': 1} | worst zero geo558/d3like58, registered geo0/d3like2, nine geo0/d3like2, two geo0/d3like1
+Numans-Regular               changed    0 | d3-like(32ppem,fuzz8) {} | geometry(256ppem,fuzz64) {} | worst 
+Overlock-Black               changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Overlock-BlackItalic         changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Overlock-Bold                changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Overlock-BoldItalic          changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Overlock-Italic              changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Overlock-Regular             changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+OverlockSC-Regular           changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+OvertheRainbow               changed   15 | d3-like(32ppem,fuzz8) {'0-0': 13, '1-1': 1, '2-3': 1} | geometry(128ppem,fuzz64) {'0-0': 15} | worst questiondown geo0/d3like2, jcircumflex geo0/d3like1, twosuperior geo0/d3like0, threequarters geo0/d3like0
+PassionOne-Black             changed   17 | d3-like(32ppem,fuzz8) {'0-0': 15, '1-1': 2} | geometry(125ppem,fuzz64) {'0-0': 17} | worst scaron geo0/d3like1, s geo0/d3like1, registered geo0/d3like0, eth geo0/d3like0
+PassionOne-Bold              changed   15 | d3-like(32ppem,fuzz8) {'0-0': 14, '1-1': 1} | geometry(125ppem,fuzz64) {'0-0': 15} | worst question geo0/d3like1, zero geo0/d3like0, two geo0/d3like0, section geo0/d3like0
+PassionOne-Regular           changed   12 | d3-like(32ppem,fuzz8) {'0-0': 11, '1-1': 1} | geometry(125ppem,fuzz64) {'0-0': 12} | worst Omega geo0/d3like1, zero geo0/d3like0, two geo0/d3like0, section geo0/d3like0
+PatuaOne-Regular             changed    1 | d3-like(32ppem,fuzz8) {'0-0': 1} | geometry(125ppem,fuzz64) {'0-0': 1} | worst J geo0/d3like0
+Piedra-Regular               changed  195 | d3-like(32ppem,fuzz8) {'0-0': 184, '1-1': 10, '2-3': 1} | geometry(125ppem,fuzz64) {'0-0': 195} | worst greater geo0/d3like2, less geo0/d3like1, guilsinglright geo0/d3like1, guilsinglleft geo0/d3like1
+PirataOne-Regular            changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+PortLligatSans-Regular       changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+PortLligatSlab-Regular       changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Quantico-Bold                changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Quantico-BoldItalic          changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Quantico-Italic              changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Quantico-Regular             changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Revalia-Regular              changed    0 | d3-like(32ppem,fuzz8) {} | geometry(256ppem,fuzz64) {} | worst 
+RougeScript-Regular          changed   94 | d3-like(32ppem,fuzz8) {'0-0': 75, '1-1': 12, '2-3': 2, '>=64': 5} | geometry(156ppem,fuzz64) {'0-0': 89, '>=64': 5} | worst Idieresis geo2084/d3like185, Icircumflex geo2066/d3like183, Iacute geo2053/d3like183, Igrave geo2042/d3like182
+Rufina-Bold                  changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Rufina-Regular               changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Ruluko-Regular               changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Salsa-Regular                changed   90 | d3-like(32ppem,fuzz8) {'0-0': 84, '1-1': 2, '2-3': 4} | geometry(125ppem,fuzz64) {'0-0': 90} | worst P.ini geo0/d3like3, D.ini geo0/d3like3, B.ini geo0/d3like3, A.swash_end geo0/d3like2
+Sanchez-Italic               changed    2 | d3-like(32ppem,fuzz8) {'0-0': 2} | geometry(125ppem,fuzz64) {'0-0': 2} | worst jcircumflex geo0/d3like0, j geo0/d3like0
+Sanchez-Regular              changed    2 | d3-like(32ppem,fuzz8) {'0-0': 2} | geometry(125ppem,fuzz64) {'0-0': 2} | worst igrave geo0/d3like0, icircumflex geo0/d3like0
+Spirax-Regular               changed   95 | d3-like(32ppem,fuzz8) {'0-0': 89, '1-1': 6} | geometry(125ppem,fuzz64) {'0-0': 95} | worst x geo0/d3like1, oe geo0/d3like1, dollar geo0/d3like1, asciitilde geo0/d3like1
+SquadaOne-Regular            changed    1 | d3-like(32ppem,fuzz8) {'0-0': 1} | geometry(125ppem,fuzz64) {'0-0': 1} | worst at geo0/d3like0
+SwankyandMooMoo              changed   16 | d3-like(32ppem,fuzz8) {'0-0': 16} | geometry(128ppem,fuzz64) {'0-0': 16} | worst ydieresis geo0/d3like0, twosuperior geo0/d3like0, threequarters geo0/d3like0, sterling geo0/d3like0
+TheGirlNextDoor              changed   11 | d3-like(32ppem,fuzz8) {'0-0': 11} | geometry(128ppem,fuzz64) {'0-0': 11} | worst twosuperior geo0/d3like0, threesuperior geo0/d3like0, questiondown geo0/d3like0, ordmasculine geo0/d3like0
+TitanOne-Regular             changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Trochut-Bold                 changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Trochut-Italic               changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Trochut-Regular              changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Viga-Regular                 changed   43 | d3-like(32ppem,fuzz8) {'0-0': 32, '1-1': 10, '2-3': 1} | geometry(125ppem,fuzz64) {'0-0': 43} | worst ocircumflex geo0/d3like2, thorn geo0/d3like1, otilde geo0/d3like1, ograve geo0/d3like1
+WendyOne-Regular             changed    0 | d3-like(32ppem,fuzz8) {} | geometry(125ppem,fuzz64) {} | worst 
+Lohit-Bengali (0df83ad, rebuilt) changed  471 | d3-like(32ppem,fuzz8) {'0-0': 471} | geometry(96ppem,fuzz64) {'0-0': 471} | worst zero geo0/d3like0, uni25CC geo0/d3like0, uni09FB geo0/d3like0, uni09CE geo0/d3like0
+Lohit-Bengali (0df83ad, pv-v1) changed  471 | d3-like(32ppem,fuzz8) {'0-0': 471} | geometry(96ppem,fuzz64) {'0-0': 471} | worst zero geo0/d3like0, uni25CC geo0/d3like0, uni09FB geo0/d3like0, uni09CE geo0/d3like0
+Salsa-unencoded-point+60     changed    1 | d3-like(32ppem,fuzz8) {'4-7': 1} | geometry(125ppem,fuzz64) {'32-63': 1} | worst S.swash geo40/d3like7

@@ -1,0 +1,359 @@
+{
+ "investigation": {
+  "unit": "fstype",
+  "styles": [
+   "TitilliumWeb-Black",
+   "TitilliumWeb-Bold",
+   "TitilliumWeb-BoldItalic",
+   "TitilliumWeb-Italic",
+   "TitilliumWeb-Light",
+   "TitilliumWeb-LightItalic",
+   "TitilliumWeb-Regular",
+   "TitilliumWeb-SemiBold",
+   "TitilliumWeb-SemiBoldItalic",
+   "TitilliumWeb-ExtraLight",
+   "TitilliumWeb-ExtraLightItalic",
+   "Wallpoet-Regular"
+  ],
+  "rows": [
+   {
+    "style": "TitilliumWeb-Black, -Bold, -BoldItalic, -Italic, -Light, -LightItalic, -Regular, -SemiBold, -SemiBoldItalic (the 9 styles paired in families-next.tsv)",
+    "row": "OS/2.fs_type [0, 8]  (gate order is [shipped, ours])",
+    "classification": "source-edit-from-release",
+    "cause": "google/fonts 93550bd32 (2017-05-09, Marc Foley, #931 \"hotfix-titilliumweb: v1.002 added\") changed every Titillium binary from fsType 8 to 0. The binaries were edited in place, not re-exported: the FFTM build stamp (2012-09-06) and FFTM source-modified time stay the same, and no glyph-bearing table changed. Every .sfd states FSType: 8. FontForge's exporter writes the stated value (tottf.c: os2->fstype = 0x8; if pfminfo.fstype != -1, the stated value). The original export (googlefontdirectory-hg 52f780bc9, byte-identical to google/fonts 90abd17b4) carries 8, so the converter reproduces FontForge exactly.",
+    "evidence": "runs/fstype_history.txt (per revision: 90abd17b4 fsType=8, 93550bd32 fsType=0; .sfd FSType=8); runs/release_edit_diff.txt (93550bd32 changed only OS/2, head and name fields, with no glyf/hmtx/GSUB/GPOS bytes); runs/blob_identity.txt; runs/fontforge_tottf_fstype_revision.txt (v20120731-b tottf.c:3403-3405). Closed by the FSType 0 edit: r2-fstype CLEAN 0 for all 9."
+   },
+   {
+    "style": "TitilliumWeb-Black, -Bold, -BoldItalic, -Light, -LightItalic, -SemiBold, -SemiBoldItalic",
+    "row": "OS/2.us_weight_class [900|700|700|300|300|600|600, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 ignores a single-master Glyphs instance's weightClass. glyphs2fontir never sets misc.us_weight_class, so fontbe/os2.rs falls back to 400. This is still true on fontc main 66637808 (2026-09-24). Each .sfd's TTFWeight equals the shipped value. tools/workarounds.py (as land.py applies it) writes TTFWeight into the source as FEA, which closes the row. baseline.sh does not apply the workarounds, so the row appears only in the fidelity-only measurement.",
+    "evidence": "issues/fontc-static-weight-class.md; `git -C fontc grep us_weight_class origin/main -- glyphs2fontir/` finds no setter; runs/fstype_history.txt (TTFWeight equals shipped usWeightClass for all 9); r1-workarounds (BF=probes/bf_with_workarounds.sh): this row gone for all 7, fs_type the only row left."
+   },
+   {
+    "style": "TitilliumWeb-ExtraLight, TitilliumWeb-ExtraLightItalic",
+    "row": "UNPAIRED in families-next.tsv (logs/pair_next.log: current PostScript name TitilliumWeb-ExtraLight(Italic) matches no .sfd FontName)",
+    "classification": "provenance",
+    "cause": "The sources are src/TitilliumWeb-Thin-TTF.sfd and src/TitilliumWeb-ThinItalic-TTF.sfd at googlefontdirectory-hg 52f780bc9. The shipped ExtraLight files were FontForge exports of those files, named Thin: at google/fonts 90abd17b4 (and in the hg monorepo binary, byte-identical) the PostScript names were TitilliumWeb-Thin / -ThinItalic, and METADATA.pb said post_script_name TitilliumWeb-Thin. google/fonts 93550bd32 renamed them. FFTM.sourceModified in the binaries equals the .sfd ModificationTime (1349108894), so they were exported from exactly these .sfd states. Built from these sources, the only blocking rows are fs_type and us_weight_class, with 0 glyph and 0 word differences in diffenator3. Neither the hg history nor the archive has any other source (upstream_info.md: no other canonical upstream).",
+    "evidence": "runs/pair_by_history.txt (rule-4 prototype pairs exactly these 2 rows and leaves thabit x2 and yellowtail UNPAIRED); runs/fstype_history.txt (src_mod=1349108894 on the binary and ModificationTime=1349108894 on Thin/ThinItalic .sfd); `git -C google/fonts show 93550bd32 -- ofl/titilliumweb/METADATA.pb` (post_script_name TitilliumWeb-Thin -> TitilliumWeb-ExtraLight); r0-unmodified/TitilliumWeb-ExtraLight*.gate.txt; r0 beyond_gate d3 counts 0/0."
+   },
+   {
+    "style": "TitilliumWeb-ExtraLight, TitilliumWeb-ExtraLightItalic",
+    "row": "OS/2.fs_type [0, 8]",
+    "classification": "source-edit-from-release",
+    "cause": "Same as the other 9 styles: google/fonts 93550bd32 changed 8 to 0. Thin-TTF.sfd and ThinItalic-TTF.sfd state FSType: 8.",
+    "evidence": "runs/fstype_history.txt; runs/release_edit_diff.txt; closed in r2-fstype (rows 2 -> 1) and r3-extralight (CLEAN 0)."
+   },
+   {
+    "style": "TitilliumWeb-ExtraLight, TitilliumWeb-ExtraLightItalic",
+    "row": "OS/2.us_weight_class [275, 400]  (fidelity-only, r0)",
+    "classification": "compiler-gap",
+    "cause": "The 400 is the fontc single-master weightClass gap, as in the other styles. After the land.py workaround the row becomes [275, 200] (see the next row).",
+    "evidence": "r0-unmodified vs r1-workarounds gate.txt (workaround: usWeightClass 200 (TTFWeight) as FEA)."
+   },
+   {
+    "style": "TitilliumWeb-ExtraLight, TitilliumWeb-ExtraLightItalic",
+    "row": "OS/2.us_weight_class [275, 200]  (after the TTFWeight workaround, r1)",
+    "classification": "source-edit-from-release",
+    "cause": "google/fonts 93550bd32 raised usWeightClass from 200 to 275 in both ExtraLight binaries. The .sfd, the original export (90abd17b4) and METADATA.pb (weight: 200) all say 200. No source anywhere states 275; the value exists only in the release.",
+    "evidence": "runs/release_edit_diff.txt (OS/2.usWeightClass: 200 -> 275 for both); runs/fstype_history.txt; closed by TTFWeight 275 in r3-extralight (CLEAN 0). fontspector googlefonts/weightclass PASSes at 275 on both sides (runs/fontspector-ab/titilliumweb-min.tsv shows no change for it)."
+   },
+   {
+    "style": "Wallpoet-Regular",
+    "row": "OS/2.fs_type [0, 4]",
+    "classification": "source-edit-from-release",
+    "cause": "google/fonts 8ccda7bf7 (2015-08-05, Dave Crossland, \"Fix fsType for 40 font files\", the RussoOne precedent) changed fsType from 4 to 0 and nothing else; head.modified is unchanged, so the binary was patched in place. The .sfd states FSType: 4, and FontForge 20110222's export (hg 52f780bc9 = google/fonts 90abd17b4) carries 4. The fsType rule is identical in tottf.c v20110222:3315.",
+    "evidence": "runs/release_edit_diff.txt (only OS/2.fsType 4 -> 0); runs/fstype_history.txt; runs/fontforge_tottf_fstype_revision.txt; closed in r2-fstype (CLEAN 0, stale 4 unchanged)."
+   },
+   {
+    "style": "Wallpoet-Regular  (beyond the gate; not a blocking row)",
+    "row": "name ID 6 shipped 'Wallpoet', built 'Wallpoet-Regular'; name ID 4 shipped 'Wallpoet', built 'Wallpoet Regular' (METADATA.pb post_script_name/full_name 'Wallpoet')",
+    "classification": "converter-fidelity",
+    "cause": "ID 6: babelfont's glyphs3 writer maps names.postscript_name (the .sfd FontName) to the Glyphs key postscriptFullName and name ID 20 to postscriptFontName. fontc reads postscriptFontName as name ID 6 and does not use postscriptFullName for the name table, so the stated PS name is lost and fontc derives Family-Style. The prototype patch restores ID 6 = 'Wallpoet'. ID 4 stays 'Wallpoet Regular' because fontc builds it from family plus style (unresolved). The table gate never compares name records (table_gate.py ACCEPTED['name']), and land.py/verify_landed.py do not check PS names. The same loss hits the first batch's CLEAN landings: 24 of 149 styles in families.tsv + families-next.tsv ship a PS name without a style suffix.",
+    "evidence": "runs/r2-fstype/beyond_gate.txt; runs/r5-psname/beyond_gate.txt (patched converter: name 6 == 'Wallpoet', still CLEAN 0); runs/xcheck-psname (Smythe-Regular, NovaCut: built 'Smythe-Regular'/'NovaCut-Regular' vs shipped 'Smythe'/'NovaCut'); fontc glyphs2fontir/src/source.rs try_name_id ('postscriptFontName' => POSTSCRIPT_NAME; postscriptFullName commented out); babelfont glyphs3.rs:569-575."
+   },
+   {
+    "style": "all 11 TitilliumWeb styles  (beyond the gate; head.font_revision is ACCEPTED by the gate)",
+    "row": "head.fontRevision shipped 1.002, built 1.001; name ID 5 'Version 1.002;...' vs 'Version 1.001;...;fontc 1.0.0'",
+    "classification": "decision",
+    "cause": "The same google/fonts 93550bd32 hotfix bumped the version to 1.002 (name IDs 3 and 5, head.fontRevision 0x00010083). The .sfd says Version 1.001 and sfntRevision 0x00010000. A second, independent point: FontForge takes head.revision from sfntRevision (tottf.c:2850), so its export carried 1.000, but babelfont ignores sfntRevision (fontforge.rs:844) and derives 1.001 from Version. That is a small converter-fidelity gap, and it does not matter once the version edit sets both fields.",
+    "evidence": "runs/release_edit_diff.txt; runs/fontforge_tottf_fstype_revision.txt; r4-version (edit applied): 11/11 CLEAN, fontRevision 1.002, name 5 differs only by the builder's ';fontc 1.0.0' suffix; fontspector googlefonts/version_bump shows the min plan ships 1.001 against the 1.002 Google Fonts serves (runs/fontspector-ab/titilliumweb-min.tsv)."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "TitilliumWeb-Black",
+     "TitilliumWeb-Bold",
+     "TitilliumWeb-BoldItalic",
+     "TitilliumWeb-Italic",
+     "TitilliumWeb-Light",
+     "TitilliumWeb-LightItalic",
+     "TitilliumWeb-Regular",
+     "TitilliumWeb-SemiBold",
+     "TitilliumWeb-SemiBoldItalic",
+     "TitilliumWeb-ExtraLight",
+     "TitilliumWeb-ExtraLightItalic"
+    ],
+    "op": "setfield",
+    "args": "FSType 0",
+    "commit_subject": "Set fsType to 0, installable embedding",
+    "commit_body": "Installable embedding. The value exists only in the release: google/fonts\n93550bd32 (2017-05-09, #931 \"hotfix-titilliumweb: v1.002 added\") changed\nevery shipped binary from 8 to 0. This source, and the binary FontForge\nexported from it, state 8 (editable). The OFL shipped with the font already\npermits embedding.",
+    "value_derived_from": "google/fonts 93550bd32: every Titillium binary's OS/2.fsType went from 8 to 0 (runs/release_edit_diff.txt). No source states 0.",
+    "source_currently_states": "FSType: 8 (all 11 .sfd, including Thin-TTF.sfd and ThinItalic-TTF.sfd)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "TitilliumWeb-ExtraLight"
+    ],
+    "op": "setfield x3 in one commit (plan 'ops'): FontName, FullName, LangName",
+    "args": "FontName TitilliumWeb-ExtraLight | FullName Titillium Web ExtraLight | LangName 1033 \"\" \"\" \"\" \"1.001;UKWN;TitilliumWeb-ExtraLight\" \"\" \"Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL\" \"http://scripts.sil.org/OFL\" \"\" \"\" \"ExtraLight\"   (the line differs from the source only in name IDs 3 and 17; exact strings are in probes/make_candidates.py EXTRALIGHT; with the proposed setname op this is: setname 1033 3 1.001;UKWN;TitilliumWeb-ExtraLight + setname 1033 17 ExtraLight)",
+    "commit_subject": "Rename Thin to ExtraLight, as Google Fonts ships it",
+    "commit_body": "google/fonts 93550bd32 (2017-05-09, #931) renamed this style's binary\nfrom Thin to ExtraLight: PostScript, full, unique-ID and typographic\nsubfamily names. This source, and the binary FontForge exported from it\n(google/fonts 90abd17b4), say Thin. The names are the release's.",
+    "value_derived_from": "The name table of google/fonts 93550bd32's TitilliumWeb-ExtraLight.ttf (IDs 3, 4, 6, 17), and the same commit's METADATA.pb (post_script_name TitilliumWeb-ExtraLight, full_name Titillium Web ExtraLight). Copied from the release, and the commit body says so.",
+    "source_currently_states": "FontName: TitilliumWeb-Thin; FullName: Titillium WebThin; LangName 1033 ID 3 \"1.001;UKWN;TitilliumWeb-Thin\", ID 17 \"Thin\"",
+    "verified": true
+   },
+   {
+    "styles": [
+     "TitilliumWeb-ExtraLightItalic"
+    ],
+    "op": "setfield x3 in one commit (plan 'ops'): FontName, FullName, LangName",
+    "args": "FontName TitilliumWeb-ExtraLightItalic | FullName Titillium Web ExtraLight Italic | LangName 1033 \"\" \"\" \"ExtraLight Italic\" \"1.001;UKWN;TitilliumWeb-ExtraLightItalic\" \"\" \"Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL\" \"http://scripts.sil.org/OFL\" \"\" \"\" \"ExtraLight Italic\"   (the line differs from the source only in name IDs 2, 3 and 17)",
+    "commit_subject": "Rename Thin Italic to ExtraLight Italic, as Google Fonts ships it",
+    "commit_body": "google/fonts 93550bd32 (2017-05-09, #931) renamed this style's binary\nfrom Thin Italic to ExtraLight Italic: PostScript, full, unique-ID and\nsubfamily names. This source, and the binary FontForge exported from it\n(google/fonts 90abd17b4), say Thin Italic. The names are the release's.",
+    "value_derived_from": "The name table of google/fonts 93550bd32's TitilliumWeb-ExtraLightItalic.ttf and the same commit's METADATA.pb. Copied from the release, and the commit body says so.",
+    "source_currently_states": "FontName: TitilliumWeb-ThinItalic; FullName: Titillium WebThin Italic; LangName 1033 ID 2 \"Thin Italic\", ID 3 \"1.001;UKWN;TitilliumWeb-ThinItalic\", ID 17 \"Thin Italic\"",
+    "verified": true
+   },
+   {
+    "styles": [
+     "TitilliumWeb-ExtraLight",
+     "TitilliumWeb-ExtraLightItalic"
+    ],
+    "op": "setfield",
+    "args": "TTFWeight 275",
+    "commit_subject": "Set usWeightClass to 275, as Google Fonts ships it",
+    "commit_body": "The value exists only in the release: google/fonts 93550bd32\n(2017-05-09, #931) changed usWeightClass from 200 to 275 in both\nExtraLight binaries. This source, the binary FontForge exported from it\nand METADATA.pb state 200.",
+    "value_derived_from": "google/fonts 93550bd32: OS/2.usWeightClass went from 200 to 275 in TitilliumWeb-ExtraLight.ttf and -ExtraLightItalic.ttf (runs/release_edit_diff.txt). Copied from the release.",
+    "source_currently_states": "TTFWeight: 200",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Wallpoet-Regular"
+    ],
+    "op": "setfield",
+    "args": "FSType 0",
+    "commit_subject": "Set fsType to 0, installable embedding",
+    "commit_body": "Installable embedding. The value exists only in the release: google/fonts\n8ccda7bf7 (2015-08-05, \"Fix fsType for 40 font files\") changed the shipped\nbinary from 4 to 0. This source, and the binary FontForge exported from it,\nstate 4 (preview & print). The OFL shipped with the font already permits\nembedding.",
+    "value_derived_from": "google/fonts 8ccda7bf7: OS/2.fsType went from 4 to 0, the only field the commit changed (runs/release_edit_diff.txt). This is the same commit as the russoone plan.",
+    "source_currently_states": "FSType: 4",
+    "verified": true
+   },
+   {
+    "styles": [
+     "TitilliumWeb-Black",
+     "TitilliumWeb-Bold",
+     "TitilliumWeb-BoldItalic",
+     "TitilliumWeb-Italic",
+     "TitilliumWeb-Light",
+     "TitilliumWeb-LightItalic",
+     "TitilliumWeb-Regular",
+     "TitilliumWeb-SemiBold",
+     "TitilliumWeb-SemiBoldItalic",
+     "TitilliumWeb-ExtraLight",
+     "TitilliumWeb-ExtraLightItalic"
+    ],
+    "op": "OPTIONAL (Felipe's decision): setfield Version, setfield sfntRevision, setname x2 (setname is a NEW op, prototyped in probes/make_candidates.py and proposed for tools/sfd_edit.py)",
+    "args": "per style, from the source's own strings: Version 1.002;<rest of its Version: PS 57.000 (PS 35.000 for Black);hotconv 1.0.70;makeotf.lib2.5.55311> | sfntRevision 0x00010083 | setname 1033 3 1.002;UKWN;<FontName> | setname 1033 5 Version 1.002;<same rest>   (probes/make_candidates.py version_ops(); applied after the rename for the ExtraLight styles)",
+    "commit_subject": "Set the version to 1.002, as Google Fonts ships it",
+    "commit_body": "google/fonts 93550bd32 (2017-05-09, #931 \"hotfix-titilliumweb: v1.002\nadded\") restated the version as 1.002 in name IDs 3 and 5 and set\nhead.fontRevision to 1.002 (0x00010083). This source states 1.001 and\nsfntRevision 0x00010000.",
+    "value_derived_from": "google/fonts 93550bd32: name IDs 3 and 5 '1.001' -> '1.002', head.fontRevision 1.000 -> 1.0019989 = 0x00010083 (runs/release_edit_diff.txt), and the PR title \"v1.002 added\".",
+    "source_currently_states": "Version: 1.001;PS 57.000;... (Black: PS 35.000); sfntRevision: 0x00010000; LangName ID 3 \"1.001;UKWN;<FontName>\", ID 5 \"Version 1.001;...\"",
+    "verified": true
+   }
+  ],
+  "proposed_tool_changes": [
+   {
+    "tool": "tools/pair_next.py (workspace tool)",
+    "description": "Rule 4, which applies only where rules 1-3 leave a shipped font UNPAIRED, so it cannot change an existing pair. Collect name ID 6 from every google/fonts revision of the file (git log --follow) and from the binary the base commit keeps at the same path. If exactly one of those historic names matches .sfd FontNames, pair it by rules 1-2 (-TTF variant preferred) and log the commit that renamed it. Optional corroboration: FFTM.sourceModified equals the .sfd's ModificationTime. Regenerating families-next.tsv then adds TitilliumWeb-ExtraLight <- src/TitilliumWeb-Thin-TTF.sfd and TitilliumWeb-ExtraLightItalic <- src/TitilliumWeb-ThinItalic-TTF.sfd, which is what runs/families-fstype.tsv holds.",
+    "evidence": "runs/pair_by_history.txt: of the 5 UNPAIRED rows in logs/pair_next.log, it pairs exactly the 2 Titillium rows (historic name TitilliumWeb-Thin(Italic) at google/fonts 90abd17b4 and hg 52f780bc9, renamed by 93550bd32, one FFTM stamp throughout). It leaves thabit x2 and yellowtail UNPAIRED. runs/fstype_history.txt: src_mod 1349108894 == ModificationTime.",
+    "styles_affected": [
+     "TitilliumWeb-ExtraLight",
+     "TitilliumWeb-ExtraLightItalic"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-fstype/probes/pair_by_history.py",
+    "upstream_pr_needed": "none (workspace tool; Felipe approves the edit to tools/pair_next.py and the regenerated families-next.tsv)"
+   },
+   {
+    "tool": "babelfont-rs (babelfont/src/convertors/glyphs3.rs)",
+    "description": "Fix the Glyphs 3 name-property mapping. Write names.postscript_name (name ID 6) as `postscriptFontName`, not `postscriptFullName`. Write names.full_name as `postscriptFullName`. Stop writing name ID 20 (the CID findfont name, which has no Glyphs property) as `postscriptFontName`. Map the reader the same way. fontc (glyphs2fontir try_name_id) reads postscriptFontName as name ID 6 and ignores postscriptFullName for the name table, so today an .sfd FontName without a style suffix (Wallpoet, Smythe, NovaCut...) is lost and fontc derives Family-Style. The fix is not FontForge-specific: it affects any conversion to .glyphs.",
+    "evidence": "runs/r5-psname/beyond_gate.txt: Wallpoet name 6 'Wallpoet' (shipped 'Wallpoet'; unpatched 'Wallpoet-Regular'), gate still CLEAN 0; TitilliumWeb-Regular/-BoldItalic unchanged and CLEAN. runs/xcheck-psname: first-batch Smythe-Regular/NovaCut lose their stated PS name today. runs/bf-psname-glyphs3-tests.txt: 32/32 glyphs3 tests pass. runs/bf-psname-lib-tests-tail.txt: 256 pass, 11 fail, all robocjk/decompose tests that read the external noto-cjk-varco/*.rcjk absent from a fresh clone (not re-run on unpatched 17ea899). Name ID 4 stays 'Wallpoet Regular' (fontc derives it).",
+    "styles_affected": [
+     "Wallpoet-Regular",
+     "and 23 more styles in families.tsv/families-next.tsv whose shipped PS name has no style suffix (10 already landed: NovaCut, NovaFlat, NovaMono, NovaOval, NovaRound, NovaSlim, NovaSquare, SixCaps, Smythe-Regular, UnifrakturMaguntia-Book)"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-fstype/probes/babelfont-glyphs3-postscript-name.patch (on integration-ff-prs 17ea899; built in the scratch clone /home/fsanches/compartilhado/sfd-reland-scratch/fstype/bf-psname, target bf-psname-target)",
+    "upstream_pr_needed": "babelfont-rs (simoncozens) PR; Felipe files it. Upstream main 91bf8bb (2026-09-24) still has the mapping at glyphs3.rs:569-575. Not needed for the gate or for this unit's CLEAN verdict."
+   },
+   {
+    "tool": "babelfont-rs (babelfont/src/convertors/fontforge.rs)",
+    "description": "Take head.fontRevision from the SFD's sfntRevision when present, as FontForge's exporter does (tottf.c v20110222:2760 / v20120731-b:2850: head->revision = sf->sfntRevision, falling back to the Version string only when it is unset). Today sfntRevision is in the ignored-keys list (fontforge.rs:844).",
+    "evidence": "runs/fstype_history.txt: FontForge's Titillium export has rev=1.000 (sfntRevision 0x00010000) and our build has 1.001 (runs/r2-fstype/beyond_gate.txt). runs/fontforge_tottf_fstype_revision.txt. The gate ACCEPTS head.font_revision, so no gate row moves.",
+    "styles_affected": [
+     "all 11 TitilliumWeb styles (any .sfd with sfntRevision differing from its Version)"
+    ],
+    "prototype": "not prototyped; the optional version edit sets both Version and sfntRevision, so it gives 1.002 with or without this fix",
+    "upstream_pr_needed": "babelfont-rs PR (low priority; gate-invisible)"
+   },
+   {
+    "tool": "fontc (glyphs2fontir)",
+    "description": "Set static_metadata.misc.us_weight_class (and us_width_class) from a single-master Glyphs source's instance weightClass/widthClass, as ufo2fontir does from fontinfo. Until then tools/workarounds.py carries TTFWeight as FEA.",
+    "evidence": "issues/fontc-static-weight-class.md and tools/probes/fontc_static_weight_class/. Still unfixed on fontc main 66637808 (2026-09-24). r0 -> r1 closes 9 weight rows in this unit with the existing workaround.",
+    "styles_affected": [
+     "TitilliumWeb-Black",
+     "TitilliumWeb-Bold",
+     "TitilliumWeb-BoldItalic",
+     "TitilliumWeb-Light",
+     "TitilliumWeb-LightItalic",
+     "TitilliumWeb-SemiBold",
+     "TitilliumWeb-SemiBoldItalic",
+     "TitilliumWeb-ExtraLight",
+     "TitilliumWeb-ExtraLightItalic"
+    ],
+    "prototype": "existing workaround tools/workarounds.py; harness wrapper probes/bf_with_workarounds.sh",
+    "upstream_pr_needed": "fontc issue (draft already at issues/fontc-static-weight-class.md; Felipe files it)"
+   },
+   {
+    "tool": "tools/sfd_edit.py (workspace tool)",
+    "description": "New op `setname <lang> <nameid> <value>`: replace one quoted string of a `LangName: <lang>` line. It refuses non-ASCII or '+' values (the strings are UTF-7) and content outside the quoted strings. The optional version edit needs it; it would also shrink the ExtraLight LangName edits to their changed IDs.",
+    "evidence": "runs/cand-version.log (each setname reports its before value); r4-version 11/11 CLEAN; the candidate diffs change only the intended strings.",
+    "styles_affected": [
+     "all 11 TitilliumWeb styles (only if the version edit is accepted)"
+    ],
+    "prototype": "setname() in /home/fsanches/compartilhado/sfd-reland/investigations/next-fstype/probes/make_candidates.py",
+    "upstream_pr_needed": "none (workspace tool)"
+   }
+  ],
+  "families_landable_after": [
+   "titilliumweb: all 11 shipped styles (the 9 paired styles plus ExtraLight/ExtraLightItalic via pair_next.py rule 4). FSType edit + ExtraLight rename + TTFWeight 275 + land.py's weight workaround: 11/11 CLEAN in the one-config family build (runs/family-titilliumweb/summary.tsv), cmap exact, 0 glyph and 0 word differences.",
+   "wallpoet: 1/1 style CLEAN with the FSType 0 edit (r2-fstype). Name IDs 4/6 differ outside the gate (see decisions).",
+   "Caveat for both: the measured converter is integration-ff-prs 17ea899 (upstream 496e904 + open PRs #91/#92/#93). land.py refuses to cite an unmerged revision, so a real landing is *-UNPUBLISHED-CONVERTER until those PRs merge."
+  ],
+  "decisions_for_felipe": [
+   "Titillium version: record the hotfix's v1.002 as its own commit, or leave it at 1.001? The commit is Version/sfntRevision/LangName IDs 3 and 5, verified 11/11 CLEAN in r4-version, and needs the new sfd_edit.py `setname` op or whole-line LangName setfields. Leaving it is what the gate accepts, but the build would then carry a version lower than the 1.002 Google Fonts serves.",
+   "ExtraLight usWeightClass: under the fidelity rule the recorded commit uses 275, which is what has shipped since 93550bd32 and passes fontspector googlefonts/weightclass. METADATA.pb says 200. Please confirm 275, with any return to 200 left as later future_work.",
+   "Wallpoet PS/full name: our build names it 'Wallpoet-Regular' / 'Wallpoet Regular'; the release and METADATA.pb say 'Wallpoet'. The table gate and land.py never compare name records. Options: accept and disclose it, or file the babelfont glyphs3 PS-name fix, which restores ID 6 (ID 4 would still differ). The same unchecked rename is present in 10 first-batch CLEAN landings (Nova x7, SixCaps, Smythe, UnifrakturMaguntia): should name IDs 4/6 become a landing check?",
+   "Approve adding rule 4 (history-based pairing) to tools/pair_next.py and regenerating families-next.tsv. It adds only the two Titillium ExtraLight rows.",
+   "Filing (only Felipe can do this): the babelfont-rs PR for the glyphs3 PS-name mapping, optionally the babelfont sfntRevision fidelity fix, and the fontc static weight class issue already drafted at issues/fontc-static-weight-class.md."
+  ],
+  "unresolved": [
+   "Name ID 4 for Wallpoet (and the other suffix-less styles): fontc builds the full name from family plus style and ignores postscriptFullName for the name table, so no converter-side fix restores 'Wallpoet'. It is outside the gate and still open.",
+   "The babelfont PS-name prototype's 11 failing lib tests (robocjk, decomposecomponentreferences) read the external noto-cjk-varco/*.rcjk data, which is absent from a fresh clone. I did not re-run them on unpatched 17ea899 to show the failures predate the patch.",
+   "fontspector A/B on Wallpoet: outline_colinear_vectors and outline_short_segments go from WARN to PASS although the outlines render identically (diffenator3 0 glyph differences; numbersign and .notdef have the same point counts). My Python replication did not reproduce fontspector's own list, so the cause of the status change is not established (runs/fontspector-ab/wallpoet-outline-divergence.txt). Every other A/B change is in the better direction: 0 worse for titilliumweb (both plans) and for wallpoet.",
+   "Thabit-BoldOblique, Thabit-Oblique and Yellowtail-Regular stay UNPAIRED even under rule 4 (outside this unit).",
+   "The sfntRevision converter-fidelity fix is not prototyped.",
+   "Scratch at /home/fsanches/compartilhado/sfd-reland-scratch/fstype (1.7 GB, mostly the prototype's cargo target) is disposable: every run can be regenerated from the probes and runs/INDEX.txt. Nothing was committed, as instructed. Under the user's commit-in-the-same-session rule, the probes and runs under investigations/next-fstype/ are what should be committed."
+  ],
+  "verification": {
+   "summary": "Each fix was verified with the unchanged tools/baseline.sh harness: one build per style, paired by construction from runs/families-fstype.tsv, which is families-next.tsv's 10 rows plus the 2 rule-4 ExtraLight rows. The converter was integration-ff-prs 17ea899 via BF=probes/bf_with_workarounds.sh, which applies tools/workarounds.py exactly as land.py does. Candidate .sfd files come from probes/make_candidates.py, which calls sfd_edit.apply as land.py would and logs each edit's before value. r0 reproduces baseline-next exactly (Black, Regular and Wallpoet gate texts identical). Stale counts are unchanged in every run. Across r2/r3/r4 the cmap is exact (no codepoints gained or lost) and diffenator3 reports 0 glyph and 0 word differences. The whole Titillium family built from one config.yaml, as land.py does it, gives 11/11 gate 0. fontspector A/B (1.6.0) shows 0 checks worse on both families.",
+   "rows_before": "r0 fidelity-only: 12 styles BLOCKING, 21 rows: OS/2.fs_type x12 (Titillium [0, 8] x11, Wallpoet [0, 4]) and OS/2.us_weight_class x9. TitilliumWeb-ExtraLight and -ExtraLightItalic were UNPAIRED in families-next.tsv, so the family could not land.",
+   "rows_after": "r1 with land.py's weight workaround: 14 rows (fs_type x12, ExtraLight us_weight_class [275, 200] x2). r2 with FSType 0: 10 CLEAN, 2 rows left (ExtraLight weight). r3 with the ExtraLight rename + TTFWeight 275: CLEAN 0. All 12 styles CLEAN. One-config titilliumweb build: 11/11 gate 0. Optional r4 version edit: 11/11 CLEAN, fontRevision 1.002. r5 babelfont PS-name prototype: Wallpoet CLEAN with name ID 6 restored.",
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3; R=$PWD/investigations/next-fstype/runs; P=$PWD/investigations/next-fstype/probes; S=/home/fsanches/compartilhado/sfd-reland-scratch/fstype",
+    "$PY $P/fstype_history.py > $R/fstype_history.txt; $PY $P/release_edit_diff.py > $R/release_edit_diff.txt; $PY $P/pair_by_history.py > $R/pair_by_history.txt",
+    "FAMILIES=$R/families-fstype.tsv BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont OUT=$R/r0-unmodified TAG=fstype-r0 SCRATCH=$S bash tools/baseline.sh <Style>",
+    "FAMILIES=$R/families-fstype.tsv BF=$P/bf_with_workarounds.sh OUT=$R/r1-workarounds TAG=fstype-r1 SCRATCH=$S bash tools/baseline.sh <Style>",
+    "$PY $P/make_candidates.py fstype $S/cand-fstype; FAMILIES=$R/families-fstype.tsv BF=$P/bf_with_workarounds.sh SRC_OVERRIDE=$S/cand-fstype/<Style>.sfd OUT=$R/r2-fstype TAG=fstype-r2 SCRATCH=$S bash tools/baseline.sh <Style>",
+    "$PY $P/make_candidates.py extralight $S/cand-extralight; ... SRC_OVERRIDE=$S/cand-extralight/<Style>.sfd OUT=$R/r3-extralight TAG=fstype-r3 ... bash tools/baseline.sh TitilliumWeb-ExtraLight TitilliumWeb-ExtraLightItalic",
+    "$PY $P/make_candidates.py version $S/cand-version; ... SRC_OVERRIDE=$S/cand-version/<Style>.sfd OUT=$R/r4-version TAG=fstype-r4 ... bash tools/baseline.sh <Style>",
+    "bash $P/family_build.sh $R/family-titilliumweb titilliumweb TitilliumWeb-<9 styles>=fstype-r2 TitilliumWeb-ExtraLight=fstype-r3 TitilliumWeb-ExtraLightItalic=fstype-r3",
+    "$PY $P/beyond_gate.py fstype-r2 > $R/r2-fstype/beyond_gate.txt  (likewise r3, r4, r5)",
+    "REAL_BF=$S/bf-psname-target/release/babelfont BF=$P/bf_with_workarounds.sh SRC_OVERRIDE=$S/cand-fstype/<Style>.sfd OUT=$R/r5-psname TAG=fstype-r5 ... bash tools/baseline.sh Wallpoet-Regular TitilliumWeb-Regular TitilliumWeb-BoldItalic",
+    "DIFF3=0 sh /home/fsanches/compartilhado/GoogleFonts/scripts/fontspector-ab.sh /home/fsanches/compartilhado/google/fonts/ofl/<family> $S/ab/<name> $S/ab-out/<name> > $R/fontspector-ab/<name>.tsv"
+   ]
+  },
+  "confidence": "High for the fsType rows, the weight-class rows and the ExtraLight pairing. Each is tied to a named google/fonts commit (93550bd32, 8ccda7bf7) through byte-level history, FFTM source-modified times match the .sfd states, FontForge's exporter source was read, and every fix was verified with the harness, including the one-config family build. Medium for the babelfont glyphs3 PS-name proposal: the mapping defect and its effect are reproduced, but upstream semantics need Simon's agreement and 11 environment-dependent lib tests were not re-run on the unpatched commit. Wallpoet name ID 4 and one fontspector outline-check status change are unexplained."
+ },
+ "verification": {
+  "unit": "fstype",
+  "reproduced": true,
+  "reproduction_notes": "I reproduced every run independently, without reading the agent's candidate generator or pairing table. Inputs: my own families-verify.tsv (families-next.tsv's 10 rows plus 2 ExtraLight rows I derived myself) and my own candidates made with the tools/sfd_edit.py CLI (probes/make_verify_inputs.sh, runs/candidates.log). My c-fstype, c-elfull and c-version .sfd files came out byte-identical to the agent's cand-* files. Tools: converter babelfont integration-ff-prs 17ea899 (BUILT_FROM 17ea8995); builder3 e851b8b with fontc 1.0.0; gate 2f43693; google/fonts working copy at b5efa9c32 on main, where all 12 shipped blobs equal b5efa9c32 and 93550bd32.\n\nHarness results (tools/baseline.sh, one build per style; runs under /home/fsanches/compartilhado/sfd-reland/investigations/next-fstype-verify/runs):\n- v0 fidelity-only: 21 rows (fs_type x12, us_weight_class x9). The gate text is identical to baseline-next/ for all 10 paired styles, not just the 3 the agent compared, and identical to the agent's r0 for all 12.\n- v1 (tools/workarounds.py applied as land.py applies it): 14 rows (fs_type x12, ExtraLight us_weight_class [275,200] x2).\n- v2 (+FSType 0): 10 CLEAN; the 2 ExtraLight weight rows remain.\n- v3a (+TTFWeight 275 only, no rename): both ExtraLight styles CLEAN 0.\n- v3c (+full rename): CLEAN, and name IDs 1/4/6/17 equal the release's.\n- v4 (+version edits): 11/11 CLEAN. fontRevision and name ID 3 equal the release's; name ID 5 differs only by ';fontc 1.0.0'.\n\nOne-config family build, with built files named by land.built_name(): 11/11 gate 0. The Titillium .sfd for style X is src/TitilliumWeb-X-TTF.sfd; the ExtraLight pair is src/TitilliumWeb-Thin-TTF.sfd -> ofl/titilliumweb/TitilliumWeb-ExtraLight.ttf, and ThinItalic -> ExtraLightItalic. Every source is at googlefontdirectory-hg 52f780bc9, which is the hg tip, so no later hg edit exists.\n\nHistory checks, all confirmed:\n- google/fonts 90abd17b4 binaries are byte-identical to the hg 52f780bc9 blobs.\n- 8ccda7bf7 changed only the raw OS/2 and head tables of Wallpoet (fsType 4->0).\n- 93550bd32 changed only OS/2, head and name in the Titillium files.\n- FFTM.sourceModified equals the .sfd ModificationTime.\n- FontForge tottf.c v20110222:3315-3317 and v20120731-b:3403-3405 (fsType), and 2760/2850 (head.revision = sfntRevision), fetched and matching.\n- hg METADATA.json independently confirms the pairing: filename TitilliumWeb-ExtraLight.ttf, postScriptName TitilliumWeb-Thin.\n\nBeyond the gate:\n- diffenator3 reports no glyph or word difference and the cmap is exact (runs/d3_cmap_summary.txt).\n- diffenator3's kern comparison gives up ('There are 2332 changes, check manually!'), and the gate's arbitrate_gpos accepts the GPOS rows without shaping anything. So I shaped every PairPos pair of all 11 Titillium styles through HarfBuzz (8,820 to 115,632 pairs each), with default features and with cpsp on: 0 pairs position differently (runs/kern_pairs_shape.txt).\n- fontspector A/B (1.6.0) is identical to the agent's tables: 0 checks worse.\n\nLocation note: I used investigations/next-fstype-verify/{probes,runs} and scratch /home/fsanches/compartilhado/sfd-reland-scratch/fstype-verify (576 MB, all regenerable from the probes). The task also mentioned investigations/next-fstype/verify/, but that path was not used. Nothing was committed, as instructed. Under Felipe's rule, the probes/ and runs/ directories are what should be committed with this unit. tools/sfd_edit.py shows as modified in git status; I did not make that change (it is another unit's addprivate op).",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Set fsType to 0, installable embedding",
+    "verdict": "keep",
+    "reason": "Titillium, all 11 styles. Verified: 93550bd32 changed fsType 8->0 in every binary; all 11 .sfd state FSType: 8; hg 52f780bc9 is the tip, so no later source edit exists; FontForge's exporter writes the stated value (tottf.c v20120731-b:3403-3405). v2 closes every fs_type row. The body names the commit and states the value came from the release."
+   },
+   {
+    "commit_subject": "Rename Thin to ExtraLight, as Google Fonts ships it",
+    "verdict": "keep",
+    "reason": "The values match 93550bd32's name table and METADATA.pb, and the body says they were copied from the release. Two corrections to the evidence. (1) The rename closes no gate row: v3a (TTFWeight 275, no rename) is already CLEAN 0; the rename matters only for name IDs 1/3/4/6/17, which the gate does not compare. (2) With this converter only FontName and LangName ID 3 change the build. babelfont takes the master style from FontName's '-' suffix (fontforge.rs ~950). FullName is never written to the .glyphs. LangName ID 17 is written as the Glyphs styleNames property, which fontc 1.0.0 does not map. v3b, which changed only LangName ID 17, still built 'Titillium Web Thin' / 'TitilliumWeb-Thin'. Keeping all the fields is still right, because the source then states the release's names."
+   },
+   {
+    "commit_subject": "Rename Thin Italic to ExtraLight Italic, as Google Fonts ships it",
+    "verdict": "keep",
+    "reason": "Same findings as the upright rename; v3c confirms IDs 1/2/4/6/17 equal the release's. The new LangName ID 2 'ExtraLight Italic' matches the release's Mac record; the Windows record is 'Italic', which fontc derives."
+   },
+   {
+    "commit_subject": "Set usWeightClass to 275, as Google Fonts ships it",
+    "verdict": "keep",
+    "reason": "Verified: 93550bd32 raised usWeightClass 200->275 in both ExtraLight binaries. The .sfd, the original export and METADATA.pb all say 200. v3a shows this edit alone closes the [275,200] row once land.py's weight workaround carries TTFWeight into the FEA."
+   },
+   {
+    "commit_subject": "Set fsType to 0, installable embedding",
+    "verdict": "keep",
+    "reason": "Wallpoet. Verified: 8ccda7bf7 changed only the OS/2 table (fsType 4->0) and the head checksum. The .sfd states 4, and the hg tip has no later edit. The plan is identical to plans/russoone.json. v2: CLEAN 0."
+   },
+   {
+    "commit_subject": "Set the version to 1.002, as Google Fonts ships it",
+    "verdict": "keep",
+    "reason": "Optional, and correctly left to Felipe (the tuffy precedent is also optional). v4: 11/11 CLEAN; head.fontRevision is 1.002 (0x00010083), name ID 3 is exact, name ID 5 differs only by ';fontc 1.0.0'. The sfntRevision part is inert with this converter (fontforge.rs:844 ignores the key), as the agent says. It needs the proposed setname op or whole-line LangName setfields. One evidence claim is wrong: fontspector googlefonts/version_bump PASSes on the 1.001 build and FAILs on the shipped fonts only because 1.0019989 equals the served version. The check does not flag the downgrade; only the head/name comparison shows it."
+   }
+  ],
+  "tool_verdicts": [
+   {
+    "tool_change": "tools/pair_next.py rule 4 (history-based pairing)",
+    "verdict": "revise",
+    "reason": "The result is correct: it pairs only the 2 Titillium ExtraLight rows and leaves Thabit x2 and Yellowtail unpaired, and hg METADATA.json independently confirms the pairs. But rule 4 treats the corroboration as optional and relies on `git log --follow` plus name ID 6 alone. That is the kind of weak evidence that has produced mis-pairs in this programme before. Make a check mandatory: either FFTM.sourceModified equals the .sfd ModificationTime, or the glyph-bearing tables are unchanged between the historic and current revisions (both hold here). Log which one passed."
+   },
+   {
+    "tool_change": "babelfont-rs glyphs3.rs PostScript-name mapping",
+    "verdict": "revise",
+    "reason": "The defect is real. At 17ea899:569-575 and upstream main 91bf8bb, names.postscript_name is written as postscriptFullName and name ID 20 as postscriptFontName. fontc's glyphs2fontir try_name_id reads postscriptFontName as name ID 6 and has postscriptFullName commented out. My own key-swap test on the Wallpoet .glyphs gives ID 6 'Wallpoet' (runs/psname_key_swap.txt), so the direction is right. Details to fix before filing:\n(a) The affected-landing count is wrong. UnifrakturMaguntia has no landed.tsv row. There are 9 CLEAN landings (Nova x7, SixCaps, Smythe) plus 7 CLEAN-UNPUBLISHED-CONVERTER landings (LovedbytheKing, OvertheRainbow, Ruluko-Regular, SwankyandMooMoo, TheGirlNextDoor, TitanOne-Regular, Trochut-Regular), 16 in all. I checked their baseline builds: all lose IDs 6 and 4.\n(b) The 11 failing lib tests are provably environmental. .github/workflows/rust.yml:31 clones noto-cjk-varco separately, and the failures are 'Failed to read designspace.json: No such file'. babelfont/tests/integration.rs was not run at all.\n(c) Name ID 4 can be fixed from the converter side. glyphs-reader 1.0.0 parses a font-level 'Name Table Entry' custom parameter and source.rs applies it after building the names; adding '4; Wallpoet' built ID 4 'Wallpoet'.\n(d) Untested: once fontc honours a font-level postscriptFontName, a multi-instance source would carry one name ID 6 at font level."
+   },
+   {
+    "tool_change": "babelfont-rs fontforge.rs: head.fontRevision from sfntRevision",
+    "verdict": "keep",
+    "reason": "Checked against the fetched tottf.c: v20110222:2760 and v20120731-b:2850 set head->revision = sf->sfntRevision, falling back to the Version string only when it is unset. The original export has 1.000, our build 1.001. sfntRevision is in the ignore list at fontforge.rs:844 on both 17ea899 and upstream main. A fidelity rule a maintainer could merge; it moves no gate row, so low priority, as the agent says."
+   },
+   {
+    "tool_change": "fontc glyphs2fontir: single-master weightClass",
+    "verdict": "keep",
+    "reason": "`git grep us_weight_class` on fontc origin/main 66637808 finds no setter in glyphs2fontir; fontbe/src/os2.rs:546 falls back to the wght axis or 400. The existing workaround closes the 9 weight rows (v0 -> v1). The issue draft already exists."
+   },
+   {
+    "tool_change": "tools/sfd_edit.py new op setname",
+    "verdict": "keep",
+    "reason": "The prototype (make_candidates.py setname) refuses non-ASCII, '+' and '\"' values and any content outside the quoted strings, and reports the before value. My candidates, built with whole-line `setfield LangName`, are byte-identical to its output. Only the optional version edit needs it."
+   }
+  ],
+  "classification_objections": [
+   "The UNPAIRED row for TitilliumWeb-ExtraLight / -ExtraLightItalic is classified 'provenance'. The binary's provenance is certain: exported from src/TitilliumWeb-Thin(Italic)-TTF.sfd, with FFTM.sourceModified equal to its ModificationTime, byte-identical to hg, and confirmed by hg METADATA.json. The row is a gap in pair_next.py's rules, closed by the rule-4 tool change. In the precedent (PatrickHand), 'provenance' meant the release was not exported from the .sfd, which is not the case here.",
+   "Wallpoet name ID 4 is listed as unresolved because 'no converter-side fix restores Wallpoet'. That is false. fontc 1.0.0 applies a font-level 'Name Table Entry' custom parameter after building the names, and the '4; Wallpoet' variant built ID 4 'Wallpoet' (runs/psname_key_swap.txt). Like ID 6, it is converter-fidelity, not only compiler-derived.",
+   "Minor: the Titillium version row is a 'decision', which matches the tuffy precedent. But the unit's stated rule says any difference the release has and the source lacks must be a tool fix or a documented edit. Felipe should know the optional framing departs from that wording."
+  ],
+  "missed": [
+   "Contour start point, a converter-fidelity issue in babelfont that the agent did not report. babelfont's model draws closed paths from nodes[0] (shape.rs to_kurbo). Its glyphs3 path conversion (shape.rs:696-735) copies node lists without rotating them. But Glyphs, glyphsLib and fontc treat the LAST node of a closed path as its start (glyphs2fontir toir.rs: 'the starting node of a closed contour is always stored at the end'). So every contour starts one node later than in FontForge's export: Wallpoet 394/394 rotated by 1; Titillium by 1 or 2 in every style (runs/start_point_rotation.txt). Traced on H in TitilliumWeb-Regular: the .sfd starts at (514,0), the .glyphs lists (514,0) first, and the build starts at (514,313). Rendering is unaffected. This explains the agent's unexplained Wallpoet fontspector change (outline_colinear_vectors / outline_short_segments WARN->PASS). The release has 49 FontForge closing duplicates (first point == last), which are not segments. The rotation moves them into the middle of the contour as zero-length segments. My emulation of colinear_vectors.rs gives 61 hits on the release (fontspector: WARN, 61 listed) and 112 on the build; above 100 the check returns PASS early. The 'better' status is therefore an artefact. Fix: rotate closed paths on write and read in the glyphs3 conversion; the same file as the PS-name PR, but a separate change.",
+   "The 3442 vs 3441 point count the agent left open: the only glyph that differs beyond the rotation is oslash. The build omits the on-curve (653,380), which is exactly the midpoint of its off-curve neighbours (645,384) and (661,376). The outline is identical (runs/point_counts_wallpoet.txt).",
+   "Wallpoet's release is hinted with the .sfd's own TrueType instructions: TtTable prep and fpgm, ShortTable cvt, gasp, and 178 glyph programs (180 TtInstrs/TtTable lines in Wallpoet-Regular-TTF.sfd). The build is unhinted. The gate accepts the prep/fpgm/cvt/gasp/glyf differences, and Puritan's FINDINGS notes the converter ignores instructions, but the unit's result never mentions it. Rendering on hinting rasterizers at small sizes differs, so it should be disclosed in Wallpoet's future_work / PR body. Titillium ships no glyph programs, so it is not affected.",
+   "The PS-name loss affects 16 landings, not 10, and UnifrakturMaguntia-Book is not landed: 9 CLEAN plus 7 CLEAN-UNPUBLISHED-CONVERTER (LovedbytheKing, OvertheRainbow, Ruluko-Regular, SwankyandMooMoo, TheGirlNextDoor, TitanOne-Regular, Trochut-Regular). I checked their baseline-next builds: ID 6 gains '-Regular' and ID 4 gains ' Regular'.",
+   "93550bd32 changed more than the unit's rows. It fixed name ID 4 spacing in all 11 styles ('Titillium WebBlack' -> 'Titillium Web Black'), restructured RIBBI names in 6 styles (IDs 1/2/16/17), removed ID 18 from Regular, and changed the fsSelection/macStyle bold bits of Black, SemiBold and SemiBoldItalic and the REGULAR bit of Light and ExtraLight. The build matches all of this only because fontc derives names and flags from the style, not because the sources say so (they still say 'Titillium WebBlack'). If the converter starts carrying FullName (for example the Name Table Entry route to fix Wallpoet's ID 4), 11 Titillium ID 4 rows appear and each needs a FullName edit citing 93550bd32. The ExtraLight-only FullName edit is also inconsistent with leaving the other 9 FullNames unedited.",
+   "fontspector version_bump was misread (see the version edit verdict): it PASSes 1.001 and does not show the downgrade.",
+   "The claim that there is no other source should cite upstream_info.md's ecm4u/Titillium. I checked it: it is the separate 'Titillium' family (Titillium-*.sfd, a mirror created in 2020), not Titillium Web, so the conclusion stands."
+  ],
+  "overall": "The investigation's core is correct and every number reproduced independently: the fsType release edits (93550bd32, 8ccda7bf7), the fontc weight-class gap, the ExtraLight <- Thin pairing, TTFWeight 275, the version option, and 11/11 plus 1/1 CLEAN, including the one-config family build. All six proposed .sfd edits hold; the values and origins are right and my candidates are byte-identical to the agent's.\n\nNeeds correction:\n- The ExtraLight rename closes no gate row, and within it only FontName and LangName ID 3 affect this converter's build.\n- The babelfont PS-name PR text: affected-landing count (16, not 10), environmental test failures that can be proven statically, integration tests not run, and name ID 4 is fixable through a Name Table Entry.\n- The ExtraLight UNPAIRED row is a pairing-tool gap, not 'provenance'.\n- Rule 4 should make its corroboration check mandatory.\n\nMissed:\n- babelfont's Glyphs start-node convention bug, which rotates every contour's start point. It explains the 'unresolved' Wallpoet fontspector change: 61 vs 112 colinear hits; the PASS is an artefact of the >100 early return.\n- The oslash implied-point drop behind 3442 vs 3441.\n- Wallpoet's dropped source-stated TrueType hinting, which should be disclosed.\n- A version_bump misreading.\n\nKerning, which the gate never shapes for GPOS-shipping styles, is now verified: all pairs of all 11 Titillium styles position identically. Neither landing is blocked; both remain *-UNPUBLISHED-CONVERTER until babelfont #91/#92/#93 merge."
+ }
+}

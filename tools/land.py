@@ -17,7 +17,10 @@ sfd-batch5/tools/drift/build_series.py builds it):
   4. "Convert to .glyphs with babelfont <rev>" -- LAST: the conversion of the
      committed .sfd, with fidelity flags only, plus the named tool workarounds
      of tools/workarounds.py (values from the .sfd); src/ retired. Built and
-     gated BEFORE it is committed, so its message states what was measured.
+     gated BEFORE it is committed, so its message states what was measured:
+     the table gate (sfd-batch5/tools/table_gate.py), the exact codepoint set,
+     and tools/functional_gate.py (shaping, rendering, names, line spacing,
+     advances, GDEF). A landing is CLEAN only if all three pass.
 
 Nothing is pushed. The remote is set so that Felipe's push is one command.
 
@@ -35,6 +38,7 @@ import textwrap
 HERE = os.path.dirname(os.path.abspath(__file__))
 W = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
+import functional_gate  # noqa: E402
 import recipe        # noqa: E402
 import sfd_edit      # noqa: E402
 import workarounds   # noqa: E402
@@ -60,6 +64,9 @@ GF = "/home/fsanches/compartilhado/google/fonts"
 IDENT = ["-c", "user.name=Felipe Correa da Silva Sanches",
          "-c", "user.email=juca@members.fsf.org", "-c", "commit.gpgsign=false"]
 TRAILER = "\n\nAssisted by an AI agent (Claude Opus 5.5)\n"
+# where a landing builds before it commits (SCRATCH=<dir> to put it elsewhere, e.g. /home)
+SCRATCH = os.environ.get("SCRATCH", "/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/"
+                                    "f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad")
 
 TEMPLATE_FILES = [".github/workflows/build.yaml", "Makefile", "requirements.in",
                   "requirements.txt", "scripts/customize.py", "scripts/read-config.py",
@@ -325,8 +332,14 @@ def cmap_difference(shipped, built):
     return sorted(ours - rel), sorted(rel - ours)
 
 
+def d3_json_path(built, scratch):
+    """Where gate() leaves diffenator3's JSON for a built font; the functional gate
+    reads its rendering sections instead of running diffenator3 again."""
+    return os.path.join(scratch, os.path.basename(built) + ".d3.json")
+
+
 def gate(shipped, built, scratch):
-    j = os.path.join(scratch, os.path.basename(built) + ".d3.json")
+    j = d3_json_path(built, scratch)
     with open(j, "w") as fh:
         subprocess.run([D3, "-J", "1", "--no-languages", "--no-match", "--json", "--succinct",
                         shipped, built], stdout=fh, stderr=subprocess.DEVNULL)
@@ -363,25 +376,30 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                 fh.write("  - %s.glyphs\n" % p["row"]["style"])
 
     # build exactly what will be committed, from its own config, in a scratch copy
-    scratch = tempfile.mkdtemp(prefix="land-%s-" % repo,
-                               dir="/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/"
-                                   "f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad")
+    os.makedirs(SCRATCH, exist_ok=True)
+    scratch = tempfile.mkdtemp(prefix="land-%s-" % repo, dir=SCRATCH)
     shutil.copytree(os.path.join(d, "sources"), os.path.join(scratch, "sources"))
     r = subprocess.run([B3, "sources/config.yaml"], cwd=scratch, capture_output=True, text=True)
     ttf_dir = os.path.join(scratch, "fonts", "ttf")
     built = sorted(os.listdir(ttf_dir)) if os.path.isdir(ttf_dir) else []
     results = []
+    functional = {}            # style -> tools/functional_gate.py verdict
     for p in per_style:
         name = built_name(p["glyphs"])
         if name not in built:
             results.append((p["row"]["style"], None, ["BUILD: %s not produced (%s)" % (name, ", ".join(built) or "nothing")]))
             continue
-        n, blocking = gate(p["row"]["shipped"], os.path.join(ttf_dir, name), scratch)
-        gained, lost = cmap_difference(p["row"]["shipped"], os.path.join(ttf_dir, name))
+        font = os.path.join(ttf_dir, name)
+        n, blocking = gate(p["row"]["shipped"], font, scratch)
+        gained, lost = cmap_difference(p["row"]["shipped"], font)
         if gained or lost:
             n += len(gained) + len(lost)
             blocking = blocking + ["CMAP gained %s lost %s" % (["U+%04X" % c for c in gained],
                                                                ["U+%04X" % c for c in lost])]
+        # after the table gate: does the build BEHAVE like the release?
+        fg = functional_gate.run(p["row"]["shipped"], font, p["row"]["style"],
+                                 d3_json=d3_json_path(font, scratch), workdir=scratch)
+        functional[p["row"]["style"]] = fg
         results.append((p["row"]["style"], n, blocking))
         p["built"] = name
 
@@ -397,7 +415,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         git(d, "rm", "-q", "--", *retired)
         what = "The converted .sfd is retired; it remains in the git history."
 
-    clean = all(n == 0 for _, n, _ in results)
+    def equivalent(st):
+        return st in functional and functional[st]["verdict"] == "PASS"
+    clean = all(n == 0 and equivalent(st) for st, n, _ in results)
     srcs = describe_sources([p["row"]["source"] for p in per_style])
     corrected = (", as corrected by the %d preceding commit%s," % (n_edits, "" if n_edits == 1 else "s")
                  if n_edits else "")
@@ -439,19 +459,27 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     lines.append("")
     if clean:
         lines += textwrap.wrap("Builds with gftools-builder3 %s (fontc %s) and matches the binaries "
-                               "google/fonts %s ships: 0 blocking rows under the table gate and "
-                               "exactly the release's codepoints, %d style(s)."
+                               "google/fonts %s ships: 0 blocking rows under the table gate, "
+                               "exactly the release's codepoints, and functionally equivalent under "
+                               "tools/functional_gate.py (cmap, shaping, rendering, names, line "
+                               "spacing, advances, GDEF), %d style(s)."
                                % (B3_ID, FONTC_ID, gf_ref, len(results)), 72)
     else:
         lines += textwrap.wrap("Builds with gftools-builder3 %s (fontc %s). Against google/fonts %s, "
-                               "under the table gate:" % (B3_ID, FONTC_ID, gf_ref), 72)
+                               "under the table gate and tools/functional_gate.py:"
+                               % (B3_ID, FONTC_ID, gf_ref), 72)
         for st, n, blocking in results:
-            lines.append("  %s: %s" % (st, "0 blocking rows" if n == 0 else
-                                       ("%s blocking row(s)" % n if n is not None else blocking[0])))
+            if n is None:
+                lines.append("  %s: %s" % (st, blocking[0]))
+                continue
+            table = "0 blocking rows" if n == 0 else "%s blocking row(s)" % n
+            bad = functional_gate.failed_checks(functional[st])
+            lines += wrap("%s: %s; %s" % (st, table, "functionally equivalent" if not bad else
+                                          "functionally different in " + ", ".join(bad)))
     lines += [""] + textwrap.wrap(what, 72)
     head = commit(d, "\n".join(lines), "sources")
     shutil.rmtree(scratch, ignore_errors=True)
-    return head, results
+    return head, results, functional
 
 
 def main():
@@ -472,7 +500,7 @@ def main():
     start(repo, rows, d)
     template(repo, rows, d)
     made = edits(repo, rows, d, plan)
-    head, results = convert(repo, rows, d, plan, bf_rev, len(made))
+    head, results, functional = convert(repo, rows, d, plan, bf_rev, len(made))
     kind = rows[0]["kind"]
     if kind == "upstream":
         git(d, "remote", "set-url", "origin", "https://github.com/%s.git" % rows[0]["base"])
@@ -480,16 +508,26 @@ def main():
         git(d, "remote", "remove", "origin", check=False)
         git(d, "remote", "add", "origin", "https://github.com/googlefonts/%s.git" % repo)
     n = int(git(d, "rev-list", "--count", "HEAD").stdout)
-    status = "CLEAN" if all(x == 0 for _, x, _ in results) else "RESIDUAL"
+    def fverdict(st):
+        if st not in functional:
+            return "-"
+        bad = functional_gate.failed_checks(functional[st])
+        return "PASS" if not bad else "FAIL(%s)" % "+".join(bad)
+    # CLEAN = 0 table-gate rows, the release's exact codepoints, AND functional PASS
+    status = "CLEAN" if all(x == 0 and fverdict(st) == "PASS" for st, x, _ in results) else "RESIDUAL"
     if not bf_upstream:
         status += "-UNPUBLISHED-CONVERTER"      # push.sh pushes only CLEAN
-    summary = "; ".join("%s=%s" % (st, x if x is not None else "BUILD") for st, x, _ in results)
+    summary = "; ".join("%s=%s functional=%s" % (st, x if x is not None else "BUILD", fverdict(st))
+                        for st, x, _ in results)
     with open(os.path.join(W, "landed.tsv"), "a") as fh:
         fh.write("\t".join([repo, BRANCH[kind], head, str(n), status, summary]) + "\n")
     print("%s: %s @ %s, %d commits, %d edit(s): %s" % (repo, status, head, n, len(made), summary))
     for st, x, blocking in results:
         for b in blocking[:6]:
             print("   %s %s" % (st, b))
+        if st in functional and functional[st]["verdict"] != "PASS":
+            for line in functional_gate.summary_lines(functional[st])[1:]:
+                print("   " + line)
     return 0 if status == "CLEAN" else 1
 
 

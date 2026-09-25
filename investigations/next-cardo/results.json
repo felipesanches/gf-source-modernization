@@ -1,0 +1,363 @@
+{
+ "investigation": {
+  "unit": "cardo",
+  "styles": [
+   "Cardo-Regular",
+   "Cardo-Bold",
+   "Cardo-Italic"
+  ],
+  "rows": [
+   {
+    "style": "Cardo-Regular",
+    "row": "BUILD-FAILED: operation 'Fontc' ... FEA parsing failed with 2 errors",
+    "classification": "decision",
+    "cause": "Cardo-Regular-TTF.sfd names a glyph `10192.04` (gid 3416, Encoding 62520 = U+F438, a salt alternate listed in the AlternateSubs2 of u10192 and u10198). FontForge never goes through FEA, so it exported it (the release post table still names U+F438 `10192.04`). babelfont writes the lookups as FEA, and the OpenType Feature File spec (2.f.i) says a glyph name must not start with a digit. fea-rs rejects both references: 'Unexpected token, expected glyph or glyph class' at `sub u10192 from [Sigma Sigma.09 u10192.03 10192.04];` and `sub u10198 from [u10198.01 10192.04 ...];`. This is not a fontc bug: fontTools feaLib rejects the same FEA. It is a source name that FEA cannot express. Closed by the documented .sfd rename below. The new name is a choice, not a fidelity value, which is why this row is classed as a decision.",
+    "evidence": "Full diagnostic from fontc (fontc-worktrees/survey-rebase debug build; gftools-builder3 e851b8b with fontc 1.0.0 shows only the count). Minimal repro: investigations/next-cardo/probes/fea_digit_glyphname/{make.py,run.sh,EXPECTED.txt}. DigitName fails in fontc 1.0.0 (builder3 e851b8b) and in feaLib ('Expected glyph name ... found 10192.04'); LetterName (u10192.04) builds in both. After the rename (runs/r1-regular-rename) the style builds and the shared gate shows 1 row."
+   },
+   {
+    "style": "Cardo-Regular",
+    "row": "head.font_direction_hint [0, 2]",
+    "classification": "gate-arbitration",
+    "cause": "FontForge tottf.c, unchanged from tag v20110222 to 20170731, sets dirhint = 0 when the exported glyphs include both left-to-right and right-to-left characters (-2 when only RTL, else 2) and sets head.flags bit 9 when it sees RTL. Commit 722e7ea8873e (2017-12-23, 'Skip Apple head table fields in OpenType mode', first in release 20190317) makes OpenType mode write 2 unconditionally. The release was exported by FontForge build 2011-02-22 (FFTM stamp) and Cardo maps Hebrew plus Latin, so it gets 0. fontc 1.0.0 always writes 2: write-fonts Head::default has font_direction_hint 2, fontbe head.rs never overrides it, and FEA can set only FontRevision in the head table (fea-rs HeadBuilder). No Glyphs or FEA source can express the value. The OpenType spec deprecates the field ('Set to 2'), and neither harfrust 0.6.2 nor skrifa 0.47.0 reads it. The row is functionally empty.",
+    "evidence": "FontForge sources fetched for tags v20110222, v20120731-b, 20141230, 20150824, 20161012, 20170731, 20190317, 20190413, 20190801 and 20230101; the commit list for tottf.c between 2017-07-31 and 2019-08 names 722e7ea8873e. probes/dirhint_oracle.py (runs/dirhint_oracle.txt) computes the pre-722e7ea rule from each release's cmap and matches 147 of 149 releases in both batches. The 2 misses are Tuffy-Regular and Tuffy-Italic, which have no FFTM table and ship 2. All 3 Cardo styles and both Thabit styles have 0, MATCH, bit9=1, FFTM 2011-02-22 or 2008-08-08. probes/table_gate_proposed.py reclassifies this row as RELEASE-STALE in Cardo x3 and Thabit x2 (runs/dirhint_thabit_proposed.txt)."
+   },
+   {
+    "style": "Cardo-Regular",
+    "row": "hmtx.uni0304 {width:[1000,0]} and hmtx.uni05B105BD {width:[1300,0]} (hidden by the shared gate)",
+    "classification": "converter-fidelity",
+    "cause": "Both glyphs are GlyphClass 4 (mark) with an attach anchor and a non-zero advance (Width 1000 and 1300), and FontForge exported those advances. babelfont's SFD reader gives every GlyphClass-4 glyph subCategory Nonspacing, and --set-subcategory sets Nonspacing again on any mark with an _anchor. glyphs2fontir 1.0.0 then exports a Nonspacing mark at zero width (source.rs:1828). The shared gate never reported the difference: diffenator3 replaced the hmtx section with 'There are 240 changes, check manually!', and table_gate.expand_overflow recomputes only left side bearings.",
+    "evidence": "probes/advance_audit.py (runs/advance_audit_cardo_r0r1.txt): uni0304 1000 vs 0 and uni05B105BD 1300 vs 0 are HIDDEN in r1. The prototype (reader plus set-subcategory emit 'Spacing Combining' for an advancing mark) gives 0 advance differences in runs/p2-proto/advance_audit.txt, and the proposed gate goes from 2 rows to 0."
+   },
+   {
+    "style": "Cardo-Regular",
+    "row": "GPOS mark attachment lost; the gate waved it through as 'legacy kern modernised' (not a blocking row)",
+    "classification": "converter-fidelity",
+    "cause": "babelfont's FontForge reader (upstream commit 66334a7) starts the abvm/blwm/kern/dist/mark/mkmk feature blocks it writes with '# Automatic code start'. fea-rs has_insert_marker and ufo2ft match only '# Automatic Code', case-sensitively. fontc therefore treats the mark feature as hand-written and skips its mark writer: 'Skipping generating feature mark, which is manually declared in FEA and has no insertion comment'. No MarkBasePos lookup is built from the 12 Anchor-N classes. kern is not affected: glyphs-reader appends '# Automatic Code' to any manual kern feature.",
+    "evidence": "fontc warning reproduced with builder3 e851b8b. probes/shaping_compare.py on runs/r1-regular-rename: 4361 of 181328 base+mark strings and all 45 diffenator3 Hebrew words differ. With the prototype marker fix (runs/p1-proto) 956 base+mark strings and 7 words still differ. probes/automatic_code_marker.py (runs/automatic_code_marker.txt): only Cardo-Regular (mark) and Lohit-Bengali (abvm) lose a writer in the next batch, and no landed repository does."
+   },
+   {
+    "style": "Cardo-Regular",
+    "row": "GPOS: marks attached to glyphs made of references (not a gate row)",
+    "classification": "converter-fidelity",
+    "cause": "fontc propagates anchors from components as Glyphs.app does. FontForge exports only a glyph's own anchors, so 1680 reference-only glyphs such as igrave became bases the release never had. The next-provenance unit's filter --fontforge-no-anchor-propagation (Glyphs 'Propagate Anchors' = 0) removes this.",
+    "evidence": "Stage p1 (marker fix only) vs p2 (plus --fontforge-no-anchor-propagation): base+mark differences go from 956 to 10 of 181328 (runs/shaping_summary.txt). Example in p1: U+00EC U+0300, where the release leaves the mark unattached and ours attaches it."
+   },
+   {
+    "style": "Cardo-Regular",
+    "row": "GPOS lookup order: 10 base+mark strings and 7 diffenator3 words, Hebrew cantillation over vowel points (not a gate row)",
+    "classification": "converter-fidelity",
+    "cause": "The release applies FontForge's lookups in .sfd order, which interleaves the mark-to-base lookups (0,1,2,5,6,7,9,10,14,21) with the pair and contextual lookups of the same mark feature. fea-rs inserts generated lookups at next_gpos_id() at the marker (compile_ctx.rs). babelfont defines every FontForge lookup in featurePrefixes, so all 12 generated MarkBasePos lookups come after them (our lookups 20-31).",
+    "evidence": "probes/lookup_order_test.py: reordering the RELEASE's GPOS the way fontc orders ours makes it equal to our build on all 17 strings. Putting its MarkBasePos lookups FIRST instead leaves the release unchanged on all 241128 base+mark strings and the 17 strings (runs/p2-proto/Cardo-Regular.lookup-order-test*.txt). probes/mark_lookups_after_marker.py moves the 12 lookups that the kern and mark features own after their marker in the .glyphs, and a real builder3 e851b8b build of that file gives 0/181328 base+mark, 0/41683 pairs, 0/15 kern+mark and 0 d3 words, with proposed gate 0 (runs/p3-marks-first)."
+   },
+   {
+    "style": "Cardo-Italic",
+    "row": "hmtx.nonbreakingspace {width:[575,550]}",
+    "classification": "source-edit-from-release",
+    "cause": "The .sfd states nonbreakingspace Width 550 and space Width 575. google/fonts d70318ab8 (Dave Crossland, 2015-04-27, 'Updating ofl/cardo/*ttf with nbspace and fsType fixes') edited only Cardo-Italic.ttf. In that binary it changed only the nonbreakingspace advance, 550 to 575 (the space's), plus the cmap re-packing (mappings equal) and the head checksum. fsType was already 0 before and after.",
+    "evidence": "probes/cardo_release_history.py (runs/cardo_release_history.txt): 90abd17b4 to d70318ab8 changes tables [cmap, head, hmtx], advances [(nonbreakingspace, 550, 575)], cmap mappings equal: True. Regular and Bold binaries are unchanged since 90abd17b4. Edit `nbspwidth` verified in runs/s1-italic-nbsp: the row closes and 10 shared rows become 6."
+   },
+   {
+    "style": "Cardo-Italic",
+    "row": "GSUB.script_list / GSUB.feature_list / GSUB.lookup_list",
+    "classification": "gate-arbitration",
+    "cause": "Only the lookup order differs: babelfont defines 'Single Substitution lookup 9' (longs->s, in no feature and called only by the hist contextual lookup) before the chain that calls it, so every later index shifts by one. Feature membership and rules are equal. arbitrate_gsub_lookup_order refused only because its shaping corpus met the nbsp advance difference (' \u00a0': release 575, ours 550).",
+    "evidence": "GATE_TRACE=1 on r0: 'shaping differs lang=None word=\\' \\\\xa0\\''. After the nbspwidth edit (runs/s1-italic-nbsp) the gate prints 'RELEASE-STALE the same GSUB lookups in a different order; 69696 shaped runs identical across 8 language(s), with the features firing'."
+   },
+   {
+    "style": "Cardo-Italic",
+    "row": "hmtx.uni1DC1 [30,0], hmtx.uni2E0F [2443,0], hmtx.uni2E10 [2443,0], hmtx.uni05B105BD [1300,0], plus hidden hmtx.uni2E11 [2443,0] and hmtx.uniF15B [11,0]",
+    "classification": "converter-fidelity",
+    "cause": "All 6 are GlyphClass 4 with a non-zero Width, and the release keeps both GDEF class 3 and the advance. The babelfont SFD reader writes subCategory Nonspacing, and fontc zeroes a Nonspacing mark. uni2E11 and uniF15B were hidden by table_gate.arbitrate_lsb: it marks a whole hmtx row RELEASE-STALE when the release's bearing is stale, even when the row also carries a width difference. Its '\"advance\" not in row' guard looks for a key diffenator3 never writes; the key is 'width'.",
+    "evidence": "probes/advance_audit.py lists them as HIDDEN (lsb-arbitration). With the prototype (runs/p2-proto) there are 0 advance differences, and the 6 glyphs are width 30/2443/2443/2443/11/1300 with GDEF class 3 in both fonts."
+   },
+   {
+    "style": "Cardo-Italic",
+    "row": "GDEF.lig_carets [{longs_i:591, ...} vs none]",
+    "classification": "converter-fidelity",
+    "cause": "The .sfd states 15 LCarets2 records (with LigCaretCntFixed: 1), and FontForge's GDEF writer exported them (tottfgpos.c LigCaretCnt/DumpLigCarets: non-zero carets, or all carets when the count is fixed; ascending, descending for RTL). babelfont stores LCarets2 as format_specific 'sfd.lcarets' and never turns it into Glyphs caret_N anchors, which fontbe get_ligature_carets would compile.",
+    "evidence": "The prototype adds caret_N anchors: 15 LigGlyphs, equal to the release (runs/p2-proto). probes/lcarets_census.py: Cardo-Italic is the only style in either batch with exportable carets, and its release has 15."
+   },
+   {
+    "style": "Cardo-Italic",
+    "row": "head.font_direction_hint [0, 2]",
+    "classification": "gate-arbitration",
+    "cause": "Same as Cardo-Regular: FontForge 2011-02-22 wrote 0 for a font with both LTR and RTL characters. fontc writes 2. The field is deprecated.",
+    "evidence": "runs/dirhint_oracle.txt: Cardo-Italic 0 0 MATCH bit9=1. The proposed gate reclassifies it (runs/p2-proto/Cardo-Italic.proposed.txt)."
+   },
+   {
+    "style": "Cardo-Italic",
+    "row": "GDEF.mark_glyph_sets [null, {0:[uni1DC1 ... uni05B105BD]}] and 'GDEF.glyph_classes -- a lookup filters on glyph class' (appear once advancing marks keep their width)",
+    "classification": "compiler-gap",
+    "cause": "The release's kern lookup has flag 0, from the .sfd `Lookup: 258 0 0`. fontc's kern writer (ufo2ft KernFeatureWriter semantics) always ignores marks. When some marks advance, it uses UseMarkFilteringSet over those marks, which adds the MarkGlyphSetsDef and a class-reading flag. fontir 1.0.0 feature_writers.rs:197-200 turns ufo2ft's ignoreMarks=false into a hard error, although fontbe kern.rs:1130 already has the ignore_marks=false path. The same gap exists at r0 (kern flag 8 vs 0), where the gate hid it.",
+    "evidence": "runs/p2-proto: shared 3 rows, proposed 2. probes/simulate_kern_flag0.py clears bits 0x8/0x10 and the filtering set on the kern-writer lookups of the p2 build, then re-runs d3 and both gates: shared 1, proposed 0 (runs/p2-sim-kernflag0). This is a SIMULATION, not a build."
+   },
+   {
+    "style": "Cardo-Italic",
+    "row": "kern across a combining mark: 2056 of 3057 kerned pairs with U+0301/U+0308/U+0323 between (not a gate row)",
+    "classification": "compiler-gap",
+    "cause": "The release's flag-0 kern lookup lets an intervening mark block the pair; our IgnoreMarks lookup kerns across it. The gate accepts any GPOS difference when both fonts have lookups.",
+    "evidence": "probes/shaping_compare.py corpus kern+mark: r0, s1 and p2 all show 2056/3057; the p2 build with simulated flag-0 kern shows 0/3057 (runs/shaping_summary.txt)."
+   },
+   {
+    "style": "Cardo-Bold",
+    "row": "head.font_direction_hint [0, 2]",
+    "classification": "gate-arbitration",
+    "cause": "Same rule: FontForge 2011-02-22, the release maps Hebrew and Latin, so 0. fontc writes 2. The field is deprecated.",
+    "evidence": "runs/dirhint_oracle.txt Cardo-Bold 0 0 MATCH bit9=1. runs/s1-bold-workarounds: shared 1 row, proposed 0."
+   },
+   {
+    "style": "Cardo-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 ignores a single-master Glyphs source's instance weightClass (issues/fontc-static-weight-class.md). The .sfd states TTFWeight: 700. tools/land.py closes it inside the convert commit with tools/workarounds.py (weight-class as FEA). baseline.sh measures the converter alone, so the row always appears there. The unit brief said Bold had only head.font_direction_hint; baseline-next.tsv shows both rows.",
+    "evidence": "Run through next-fstype/probes/bf_with_workarounds.sh (WORKAROUNDS=1 in probes/run_stage.sh), runs/s1-bold-workarounds goes from 2 shared rows to 1."
+   },
+   {
+    "style": "Cardo-Bold",
+    "row": "kern across a combining mark: 177 of 426 kerned pairs (not a gate row)",
+    "classification": "compiler-gap",
+    "cause": "The release kern lookup has flag 0, and the release also classes U+0300.. as base (the gate discloses the 163 GDEF mark classes as a correction). Our kern writer lookups have IgnoreMarks, so 'B + U+0301 + A' kerns in ours (B 1379) and not in the release (B 1482).",
+    "evidence": "runs/shaping_summary.txt: s1 and p2 show 177/426, and the simulated flag-0 kern shows 0/426 (runs/p2-sim-kernflag0/Cardo-Bold.shaping.txt)."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Cardo-Regular"
+    ],
+    "op": "renameglyph",
+    "args": "10192.04 u10192.04",
+    "commit_subject": "Rename glyph 10192.04 to u10192.04 in Cardo-Regular-TTF.sfd",
+    "commit_body": "A feature file cannot name a glyph that starts with a digit (OpenType\nFeature File spec 2.f.i), so the salt rules of u10192 and u10198 that\nlist it could not be compiled. The new name follows the glyph's\nsiblings u10192.03 and u10198.01-.05. Only the post name of U+F438\nchanges; outline, advance and mappings are unchanged.",
+    "value_derived_from": "The source's own naming of the other salt alternates of U+10192 and U+10198 (u10192.03, u10198.01, u10198.03-.05). The release keeps the name 10192.04, because FontForge wrote the .sfd name into post format 2. The gate reports the rename as ACCEPTED-RENAME cmap U+F438 (same outline and advance).",
+    "source_currently_states": "StartChar: 10192.04 / Encoding: 62520 62520 3416 / Width: 1088 / GlyphClass: 2, referenced in two AlternateSubs2 lines of \"'salt' Stylistic Alternatives in Latin lookup 24 subtable\" (glyphs u10192 and u10198)",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Cardo-Italic"
+    ],
+    "op": "nbspwidth",
+    "args": "",
+    "commit_subject": "Give nonbreakingspace the space's width in Cardo-Italic-TTF.sfd",
+    "commit_body": "google/fonts d70318ab8 (2015-04-27, \"Updating ofl/cardo/*ttf with\nnbspace and fsType fixes\") set the shipped Cardo-Italic's\nnonbreakingspace advance from 550 to 575, the space's width. It changed\nnothing else in the font. The source now states what Google Fonts ships.",
+    "value_derived_from": "google/fonts d70318ab8 edited the binary. probes/cardo_release_history.py shows the only advance change from 90abd17b4 to d70318ab8 is nonbreakingspace 550->575, and 575 is the .sfd's space Width.",
+    "source_currently_states": "StartChar: nonbreakingspace / Encoding: 160 160 97 / Width: 550 (space: Width 575)",
+    "verified": true
+   }
+  ],
+  "proposed_tool_changes": [
+   {
+    "tool": "babelfont-rs",
+    "description": "Write the feature-writer insertion marker as '# Automatic Code' (ufo2ft INSERT_FEATURE_MARKER spelling) instead of '# Automatic code start' in convertors/fontforge.rs (the abvm/blwm/kern/dist/mark/mkmk blocks). With the current spelling fontc and ufo2ft treat those features as hand-written and generate no mark/mkmk/abvm/blwm lookups from the converted anchors. babelfont's own subsetlayout.rs already tests for '# Automatic Code'.",
+    "evidence": "fea-rs 1.0.0 typed.rs has_insert_marker uses starts_with(\"# Automatic Code\"). The fontc warning 'Skipping generating feature mark' is reproduced. Cardo-Regular: base+mark shaping differences 4361 -> 956 of 181328. probes/automatic_code_marker.py: in the next batch it affects Cardo-Regular (mark) and Lohit-Bengali (abvm); no landed repository (kern is exempt because glyphs-reader appends the marker to a manual kern feature). Regression check: Italiana, Sanchez x2, Lohit-Bengali and Lohit-Tamil keep their gate verdicts and shaping counts (runs/reg-proto).",
+    "styles_affected": [
+     "Cardo-Regular",
+     "Lohit-Bengali"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-cardo/probes/babelfont-17ea899-cardo-PROTOTYPE.patch (hunk in convertors/fontforge.rs near the 'Add automatic code markers' comment); binary /home/fsanches/compartilhado/sfd-reland-scratch/cardo/bf-target/release/babelfont sha256 1cb8cf3dbed35c39",
+    "upstream_pr_needed": "babelfont-rs (simoncozens): one-line fix to code from upstream commit 66334a7; Felipe files it."
+   },
+   {
+    "tool": "babelfont-rs",
+    "description": "FontForge reader: turn LCarets2 into Glyphs caret_1..caret_n anchors (x = caret, y = 0) on every foreground layer, following FontForge's GDEF writer: non-zero carets only unless LigCaretCntFixed is set, ascending, or descending for a right-to-left glyph. Also parse LigCaretCntFixed.",
+    "evidence": "Cardo-Italic GDEF.lig_carets row closes: 15 LigGlyphs equal to the release (runs/p2-proto). FontForge v20110222 tottfgpos.c LigCaretCnt/DumpLigCarets and sfd.c LigCaretCntFixed. probes/lcarets_census.py: Cardo-Italic is the only style in either batch with exportable carets.",
+    "styles_affected": [
+     "Cardo-Italic"
+    ],
+    "prototype": "same patch: lig_carets() and the glyph-finalization block in convertors/fontforge.rs",
+    "upstream_pr_needed": "babelfont-rs (simoncozens): new PR."
+   },
+   {
+    "tool": "babelfont-rs",
+    "description": "An advancing mark is 'Spacing Combining', not 'Nonspacing'. The SFD reader (GlyphClass 4 with a non-zero Width) and the --set-subcategory filter (a mark with an _anchor and a non-zero advance in any layer) both set it. A Glyphs compiler exports a Nonspacing mark zero-width (glyphs2fontir 1.0.0 source.rs:1828); a SpacingCombining mark keeps its advance and stays GDEF class 3. The reader half is the next-provenance unit's babelfont-spacing-combining-mark.patch; the set-subcategory half is new here, because that filter overwrote the reader's value for marks with anchors (Cardo-Regular uni0304 and uni05B105BD).",
+    "evidence": "Italic: 6 hmtx rows close (2 of them hidden by the gate). Regular: 2 hidden rows close. Lohit-Tamil u0BC1 and u0BC2 close (runs/reg-proto: 8 -> 6 rows). 0 advance differences in all three Cardo p2 builds. Side effect: fontc's kern writer then uses a mark filtering set over these marks (Italic GDEF.mark_glyph_sets row); see the fontc change below.",
+    "styles_affected": [
+     "Cardo-Italic",
+     "Cardo-Regular",
+     "Lohit-Tamil"
+    ],
+    "prototype": "same patch: convertors/fontforge.rs glyph finalization and filters/setsubcategory.rs",
+    "upstream_pr_needed": "babelfont-rs (simoncozens): one PR, or fold it into the next-provenance unit's PR."
+   },
+   {
+    "tool": "babelfont-rs",
+    "description": "Keep FontForge's lookup precedence around compiler-generated lookups. For a feature that carries the insertion marker, define the lookups that only this feature references after the marker, inside the feature block, rather than in featurePrefixes. fea-rs then inserts the generated mark-to-base lookups before them (InsertionPoint = next_gpos_id() at the marker) instead of after every lookup the file defines. A lookup used by another feature or by a contextual lookup stays in the prefix.",
+    "evidence": "Cardo-Regular with every other fix still differs in 10 base+mark strings and 7 diffenator3 words (Hebrew cantillation over vowels). probes/lookup_order_test.py shows the order is the whole cause, and that the release's MarkBasePos lookups placed first shape identically to the release (0/241128). probes/mark_lookups_after_marker.py applies this layout to the converted .glyphs, and a real builder3 e851b8b / fontc 1.0.0 build of it gives 0 differences in every corpus and proposed gate 0 (runs/p3-marks-first). This is EMULATED on the .glyphs, not implemented in Rust. The general case (FontForge interleaving that marks-first does not reproduce) would need explicit FEA mark lookups in .sfd order.",
+    "styles_affected": [
+     "Cardo-Regular"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-cardo/probes/mark_lookups_after_marker.py (emulation on the .glyphs text)",
+    "upstream_pr_needed": "babelfont-rs (simoncozens): design change to discuss with Simon before a PR."
+   },
+   {
+    "tool": "fontc",
+    "description": "Honour ufo2ft's KernFeatureWriter option ignoreMarks=false (featureWriters userData) instead of rejecting it as unsupported. fontbe already has the path (KernSplitOptions.ignore_marks / make_lookups). Companion babelfont change: when a FontForge source's kern lookups carry no IgnoreMarks flag, write that featureWriters option into the Glyphs userData, so the kern lookup keeps FontForge's flag 0 and gets no spacing-mark filtering set.",
+    "evidence": "fontir 1.0.0 feature_writers.rs:197-200 hard-errors on 'KernFeatureWriter ignoreMarks=false'; fontbe kern.rs:1130 has the branch. Simulated with probes/simulate_kern_flag0.py on the p2 builds: Italic shared 3 -> 1 and proposed 2 -> 0 rows; kern+mark shaping Italic 2056/3057 -> 0 and Bold 177/426 -> 0. probes/kern_scan.sh (runs/kern_scan.tsv) finds kern-across-mark differences in 5 of the 126 builds kept in scratch: Cardo-Bold, Cardo-Italic, Salsa-Regular (246/285, landed CLEAN), Poly-Regular (2), Varela-Regular (4).",
+    "styles_affected": [
+     "Cardo-Italic",
+     "Cardo-Bold",
+     "Salsa-Regular",
+     "Poly-Regular",
+     "Varela-Regular"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-cardo/probes/simulate_kern_flag0.py (simulation on built fonts; no fontc build)",
+    "upstream_pr_needed": "fontc (googlefonts/fontc): feature parity with ufo2ft, needs an issue or PR; then babelfont-rs for the userData entry. Felipe files both."
+   },
+   {
+    "tool": "babelfont-rs",
+    "description": "Recipe fidelity flag --fontforge-no-anchor-propagation (the Glyphs custom parameter 'Propagate Anchors' = 0): FontForge exports only a glyph's own anchors. The filter is the next-provenance unit's prototype, applied unchanged; it has to be registered in filters/mod.rs and passed by tools/recipe.py for FontForge sources.",
+    "evidence": "Cardo-Regular p1 -> p2 (the only change is this flag): base+mark shaping differences 956 -> 10 of 181328 (runs/shaping_summary.txt).",
+    "styles_affected": [
+     "Cardo-Regular"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-provenance/probes/babelfont-filter-fontforgenoanchorpropagation.patch (included in next-cardo/probes/babelfont-17ea899-cardo-PROTOTYPE.patch with its mod.rs registration)",
+    "upstream_pr_needed": "babelfont-rs (simoncozens): owned by the next-provenance proposal."
+   },
+   {
+    "tool": "table_gate.py (sfd-batch5/tools, this programme's gate)",
+    "description": "(a) Never hide an advance: expand_overflow also recomputes advances when diffenator3 overflows the hmtx section, and arbitrate_lsb keeps the width part of a row BLOCKING. (b) Arbitrate head.font_direction_hint as RELEASE-STALE when the release value is not 2, ours is 2, the release has FFTM stamped before FontForge 722e7ea8873e (2017-12-23), and the value and head.flags bit 9 are what that exporter computed from the release's own cmap. (c) Replace the structural GPOS acceptance ('legacy kern modernised') with a shaping test such as probes/shaping_compare.py, comparing absolute glyph positions: it passed a build that had lost every mark-to-base lookup.",
+    "evidence": "(a) probes/advance_audit.py found hidden widths in Cardo-Italic (2), Cardo-Regular (2) and Lohit-Tamil (5). (b) The oracle matches 147 of 149 releases (misses: Tuffy x2, which have no FFTM). (c) runs/kern_scan.tsv shows letter-pair kerning differences the gate passed in Italiana-Regular (726/13689, landed CLEAN: FontForge's one lookup holds the same pair in two subtables, e.g. B v -20, and babelfont emitted an FEA lookup plus Glyphs kerning, so ours kerns twice, B 530 against 550), Ultra-Regular (260) and Thabit x2, and Cardo-Regular r1 passed with 4361 base+mark differences. Sweep over the 106 next builds: only Cardo-Italic 10->11, Cardo-Bold 2->1 and Lohit-Tamil 8->13 change verdict; no CLEAN style becomes BLOCKING (runs/proposed_gate_sweep.tsv). First-batch builds: Kristi-Regular 0->1 and NosiferCaps-Regular 1->2, both from a .notdef advance of 748 vs 1024 (runs/proposed_gate_sweep_first.tsv).",
+    "styles_affected": [
+     "Cardo-Regular",
+     "Cardo-Italic",
+     "Cardo-Bold",
+     "Thabit",
+     "Thabit-Bold",
+     "Lohit-Tamil",
+     "Kristi-Regular",
+     "NosiferCaps-Regular",
+     "Italiana-Regular",
+     "Ultra-Regular",
+     "Salsa-Regular"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-cardo/probes/table_gate_proposed.py (a, b; wrapper, shared gate untouched) and probes/shaping_compare.py (c)",
+    "upstream_pr_needed": "none (programme-internal tool)"
+   },
+   {
+    "tool": "babelfont-rs / gftools-builder3",
+    "description": "Diagnostics only, no output change for valid sources. babelfont should refuse or warn, naming the glyph, when a glyph that converted FEA references has a name FEA cannot express (a leading digit), instead of writing FEA that no compiler accepts. gftools-builder3 should print fontc's fea-rs diagnostics; it now reports only 'FEA parsing failed with 2 errors', even with -v.",
+    "evidence": "Cardo-Regular 10192.04. Repro: probes/fea_digit_glyphname (fontc 1.0.0 and feaLib both reject). builder3 e851b8b -v prints only the count; the fontc CLI prints the location and token.",
+    "styles_affected": [
+     "Cardo-Regular"
+    ],
+    "prototype": "none (reproduced in probes/fea_digit_glyphname/)",
+    "upstream_pr_needed": "babelfont-rs and gftools-builder3 issues; Felipe files them."
+   }
+  ],
+  "families_landable_after": [
+   "cardo: Cardo-Regular (rename edit + babelfont marker/spacing-mark/lookup-placement changes + --fontforge-no-anchor-propagation; proposed gate 0, shaping 0 differences in every corpus, verified on the emulated build)",
+   "cardo: Cardo-Bold (weight-class workaround + gate dirhint arbitration; proposed gate 0 now; functional kern-across-mark fidelity needs the fontc ignoreMarks=false change)",
+   "cardo: Cardo-Italic (nbspwidth edit + babelfont caret/spacing-mark changes + fontc ignoreMarks=false; proposed gate 0 only in the simulated kern-flag build)"
+  ],
+  "decisions_for_felipe": [
+   "Where to land Cardo. googlefonts/CardoFont is ARCHIVED on GitHub (read-only; archived: true, last push 2021-03-01, 2 forks, open issue #1 from 2017 'Glyph differences amongst Italic and Roman' that its author chose to ignore). Its main (fc675d7, identical on GitHub and in the repo archive) is 3 commits past the recorded b2bf876, all by Marc Foley on 2017-06-09: 'converd .sfd to .glyphs', 'updated metadata to match gf spec', 'fonts now compile'. They add an unshipped Glyphs 2 conversion (appVersion 1032): sources/Cardo.glyphs with 2 masters (Regular + Bold, version 1.500, 3844 glyphs, 10192.04 dropped, 576 glyphs lacking a layer) and sources/Cardo-Italic.glyphs (2388 glyphs). There is no config.yaml and no fonts, and nothing was built or shipped from them. land.py (kind upstream) would branch modernize-sfd-to-glyphs from b2bf876, diverging from main. A googlefonts admin must unarchive the repository before any push; otherwise use another repository. You also decide what happens to Marc's .glyphs on main.",
+   "The new name for glyph 10192.04 (proposed u10192.04, after its siblings). Only U+F438's post name changes.",
+   "Adopt the gate changes: advance widths can no longer be hidden, and head.font_direction_hint is arbitrated for pre-2019 FontForge exports. Decide whether a .notdef advance counts: the change newly blocks landed Kristi-Regular and NosiferCaps-Regular (.notdef 748 vs 1024). Tuffy's plan already made an .notdef edit.",
+   "Replace the gate's structural GPOS acceptance with a shaping test. That would reopen landed repositories the current gate passed: Italiana-Regular kerns 726 of 13689 letter pairs twice (-40 against -20), and Salsa-Regular kerns across marks in 246 of 285 cases. Ultra-Regular (260 pairs) needs its own unit.",
+   "Kern lookup mark flags, which is family-independent: file fontc ignoreMarks=false parity (plus a babelfont userData entry), or accept and disclose kern-across-mark differences (Cardo-Bold 177/426, Cardo-Italic 2056/3057). Cardo-Italic cannot be CLEAN under either gate without that fontc change once its advancing marks keep their widths. The alternative is zeroed advances (6 hmtx rows).",
+   "Which route to pitch to Simon for FontForge lookup precedence: FEA lookups defined after the feature's marker (verified for Cardo by emulation), or explicit FEA mark lookups in .sfd order (general, but duplicates the anchor data)."
+  ],
+  "unresolved": [
+   "Cardo-Bold 746 and Cardo-Italic 840 base+mark strings (of 134629 and 136246) place the mark differently under HarfBuzz fallback mark positioning (neither font has a mark feature). The cause is glyf header bounding boxes, not outlines. Bold: all within 2 units. Italic: 722 within 2 units, 2 at 3-10, 116 over 10; worst 37 units, U+05D0+U+0312, where composite uni0312 has header yMin 1170 in the release (outline 1158) and 1133 in ours. The table gate does not examine this (probes/fallback_mark_offsets.py, runs/p2-proto/fallback_mark_offsets.txt).",
+   "The lookup-placement babelfont change is emulated (probes/mark_lookups_after_marker.py on the .glyphs, then a real fontc build), not implemented in Rust. The fontc ignoreMarks=false effect is simulated on built fonts, not built.",
+   "The prototype converter is upstream main 496e904 + PRs #91/#92/#93 (integration-ff-prs 17ea899) plus this unit's patch plus the next-provenance anchor-propagation filter. It lives only in scratch (worktree /home/fsanches/compartilhado/sfd-reland-scratch/cardo/bf-wt, binary sha256 1cb8cf3dbed35c39). None of it is upstream, so no landing may cite it.",
+   "Lohit-Bengali gains its abvm mark writer from the marker fix. The shaping corpus here does not cover Bengali (its script list lacks it), so the effect is unmeasured; that belongs to the unit that owns Lohit.",
+   "Italiana-Regular double kerning was traced to FontForge subtables 0 and 1 of one kern lookup holding the same pairs, which babelfont split into an FEA lookup plus Glyphs kerning. There is no fix proposal here, and it needs its own unit. Ultra-Regular's 260 differing pairs were not examined.",
+   "head.flags differ (the release has FontForge's Apple bits 7 and 9). The gate accepts this as 'set by the build', and no shaper reads those bits."
+  ],
+  "verification": {
+   "summary": "All three pairs come from the pipeline's own pairing (families-next.tsv), and each is exact. Every .sfd's CreationTime and ModificationTime equal the release's FFTM sourceCreated and sourceModified, and the glyph counts are equal: 3845, 2993 and 2387 (runs/cardo_release_history.txt). Every stage ran the harness (tools/baseline.sh through probes/run_stage.sh), then both the shared gate and the proposed gate, then a HarfBuzz shaping comparison on absolute glyph positions (probes/shaping_compare.py). Only the shaping comparison catches the GPOS problems the gate waves through. Stages: r0 baseline (integration converter); r1 Regular rename; s1 Italic nbspwidth and Bold with land.py workarounds; p1 prototype babelfont; p2 plus --fontforge-no-anchor-propagation; p3 Regular with the emulated lookup placement; p2-sim-kernflag0 (fontc ignoreMarks=false simulated).",
+   "rows_before": "Cardo-Regular: BUILD-FAILED (FEA parsing failed with 2 errors). Cardo-Italic: shared gate 10 blocking (proposed gate 11: +hmtx.uni2E11, +hmtx.uniF15B, -dirhint). Cardo-Bold: shared gate 2 (head.font_direction_hint, OS/2.us_weight_class). Shaping at r0/r1: Regular 4361/181328 base+mark and 45/45 d3 words differ; Italic kern+mark 2056/3057; Bold kern+mark 177/426.",
+   "rows_after": "Cardo-Regular: p2 shared gate 1 (head.font_direction_hint), proposed 0, shaping 10 base+mark and 7 words. p3 (emulated lookup placement): shared 1, proposed 0, shaping 0 in every corpus. Cardo-Italic: s1 (nbsp edit, integration converter) shared 6 / proposed 7; p2 shared 3 (GDEF.glyph_classes, GDEF.mark_glyph_sets, dirhint) / proposed 2, lig carets equal (15), 0 advance differences; with simulated flag-0 kern, shared 1 / proposed 0, kern+mark 0/3057. Cardo-Bold: s1/p2 shared 1 / proposed 0; kern+mark 177/426, 0 with simulated flag-0 kern. Base+mark fallback offsets (Bold 744, Italic 839) are unchanged and remain unresolved.",
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland && for s in Cardo-Regular Cardo-Bold Cardo-Italic; do FAMILIES=families-next.tsv BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont OUT=investigations/next-cardo/runs/r0-baseline TAG=cardo-r0 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/cardo bash tools/baseline.sh $s; done",
+    "E=/home/fsanches/compartilhado/sfd-reland-scratch/cardo/edits; A=/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/CardoFont.git; for s in Regular Italic; do git -C $A show b2bf876b4e251ac44b343605464dad86b336b38d:old/version-1.000/Cardo-$s-TTF.sfd > $E/Cardo-$s-TTF.e1.sfd; done; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3; $PY tools/sfd_edit.py $E/Cardo-Regular-TTF.e1.sfd renameglyph 10192.04 u10192.04; $PY tools/sfd_edit.py $E/Cardo-Italic-TTF.e1.sfd nbspwidth",
+    "cd investigations/next-cardo && bash probes/run_stage.sh Cardo-Italic s1-italic-nbsp $E/Cardo-Italic-TTF.e1.sfd && WORKAROUNDS=1 bash probes/run_stage.sh Cardo-Bold s1-bold-workarounds",
+    "git -C /home/fsanches/compartilhado/babelfont-rs worktree add --detach /home/fsanches/compartilhado/sfd-reland-scratch/cardo/bf-wt 17ea8995bb117b57e9f81c734239725c617375a8 && cd /home/fsanches/compartilhado/sfd-reland-scratch/cardo/bf-wt && git apply /home/fsanches/compartilhado/sfd-reland/investigations/next-cardo/probes/babelfont-17ea899-cardo-PROTOTYPE.patch && sudo -n /usr/local/sbin/drop-caches && CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=/home/fsanches/compartilhado/sfd-reland-scratch/cardo/bf-target cargo build --release -p babelfont --features cli",
+    "cd /home/fsanches/compartilhado/sfd-reland/investigations/next-cardo && export BFBIN=/home/fsanches/compartilhado/sfd-reland-scratch/cardo/bf-target/release/babelfont WORKAROUNDS=1 EXTRA_FLAGS=--fontforge-no-anchor-propagation && bash probes/run_stage.sh Cardo-Regular p2-proto $E/Cardo-Regular-TTF.e1.sfd && bash probes/run_stage.sh Cardo-Italic p2-proto $E/Cardo-Italic-TTF.e1.sfd && bash probes/run_stage.sh Cardo-Bold p2-proto",
+    "$PY probes/mark_lookups_after_marker.py <scratch>/baseline/Cardo-Regular-cardo-p2-proto/sources/Cardo-Regular.glyphs <scratch>/p3-transformed/sources/Cardo-Regular.glyphs; then gftools-builder (builder3 e851b8b), diffenator3, table_gate.py, probes/table_gate_proposed.py and probes/shaping_compare.py (outputs in runs/p3-marks-first)",
+    "$PY probes/simulate_kern_flag0.py <p2 build> <scratch>/sim/Cardo-<Style>-p2-kernflag0.ttf; then diffenator3 and both gates (runs/p2-sim-kernflag0)",
+    "sh probes/fea_digit_glyphname/run.sh   (EXPECTED.txt)",
+    "$PY probes/lookup_order_test.py <release> <p2 build> runs/p2-proto/Cardo-Regular.shaping-list.txt [--marks-first]",
+    "FAMILIES=... $PY probes/dirhint_oracle.py; $PY probes/cardo_release_history.py; $PY probes/advance_audit.py --scan ...; bash probes/kern_scan.sh; bash probes/proposed_gate_sweep.sh; $PY probes/automatic_code_marker.py <dirs>; FAMILIES=... $PY probes/lcarets_census.py; $PY probes/fallback_mark_offsets.py <release> <build>"
+   ]
+  },
+  "confidence": "High for the build failure (full diagnostic plus a minimal repro that fails in fontc and feaLib and builds after the rename), the nbsp edit (binary diff of d70318ab8), the lig carets, the advancing marks, the font_direction_hint rule (FontForge source at 10 tags plus an oracle matching 147 of 149 releases) and the marker bug (fea-rs source plus the fontc warning plus shaping 4361 -> 956). High that GPOS lookup order is the whole residual Regular difference (a two-way reorder test on the release). Medium for the two changes that were not built: lookup placement was emulated on the .glyphs and then really compiled, and fontc ignoreMarks=false was simulated by editing built fonts. Every probe has a docstring and every run output is under investigations/next-cardo; nothing was committed."
+ },
+ "verification": {
+  "unit": "cardo",
+  "reproduced": true,
+  "reproduction_notes": "I re-ran every stage with my own harness runs. Outputs are under /home/fsanches/compartilhado/sfd-reland/investigations/next-cardo-verify/runs and scratch is under /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify. The pairing uses families-next.tsv, and each pair is exact: every .sfd CreationTime and ModificationTime equals the release's FFTM sourceCreated and sourceModified (Regular 1130132145/1315160157, Bold 1130160459/1315160158, Italic 1298765412/1315160156), and the glyph counts are equal (3845/2993/2387).\n\nStages:\n- r0 baseline (integration converter 17ea899): the three gate outputs are byte-identical to baseline-next (Regular BUILD-FAILED, Bold 2 rows, Italic 10 rows).\n- r1 (rename edit): 1 row (head.font_direction_hint). Shaping 4361/181328 base+mark and 45/45 words, the same as theirs.\n- s1 (nbspwidth edit): 6 rows. Kern+mark 2056/3057.\n- Prototype converter: I applied probes/babelfont-17ea899-cardo-PROTOTYPE.patch to 17ea899 in my own worktree and target (bf-target, sha256 39fc7e3d; binaries are not bit-reproducible across target dirs). The p2 .glyphs it produces are byte-identical to theirs for all three styles.\n- p1 Regular: base+mark 956. p2: Regular 10 base+mark and 7 words, shared 1 / proposed 0. Italic shared 3 / proposed 2 with 0 advance differences and 15 carets. Bold shared 1 / proposed 0, kern+mark 177/426.\n- p3 (their mark_lookups_after_marker.py applied to my p2 .glyphs, real builder3 e851b8b build): shared 1 / proposed 0, and 0 differences in base+mark, pairs and kern+mark. diffenator3 reported no differing words.\n- Kern flag-0 simulation on my p2 builds: Italic shared 1 / proposed 0, kern+mark 0/3057. Bold 0/426.\n\nIndependent checks:\n- Code checks: fea-rs 1.0.0 has_insert_marker is a case-sensitive starts_with(\"# Automatic Code\"). glyphs-reader insert_mark_if_manual_kern_feature. fontir feature_writers.rs:197-200 hard-errors on ignoreMarks=false. fontbe kern.rs:1130. glyphs2fontir source.rs:1828.\n- FontForge sources: tottf.c dirhint and gdefclass at v20110222, 20170731 and 20190317; commit 722e7ea8873e (2017-12-23, tottf.c only); tottfgpos.c LigCaretCnt and DumpLigCarets.\n- google/fonts d70318ab8 (probes/binary_table_diff.py): only cmap, head and hmtx differ; the only advance change is nonbreakingspace 550->575; every cmap subtable is equal; fsType 0 before and after.\n- The gate hides widths: arbitrate_lsb's stale branch never checks the width, and diffenator3 writes 'width', not 'advance'. probes/advance_diff.py confirms uni0304 1000/0 and uni05B105BD 1300/0 (Regular), and 6 widths in Italic including uni2E11 2443/0 and uniF15B 11/0.\n- LCarets2 in the .sfd equals the release's LigCaretList (15 glyphs).\n- The Italiana double kerning on the landed .glyphs (8b0a940) reproduces exactly: 726/13689, e.g. B+v 530 against 550.\n- The CardoFont archive facts reproduce: archived true; Marc Foley's 3 commits; 3844 glyphs; version 1.500.\n\nThe unit's corpus had a gap. Its base+mark+mark corpus holds 0 strings for every style, so no stacked cluster was ever shaped. I added probes/multimark_compare.py (60909 Hebrew point+cantillation, dagesh and shin-dot stacks, plus Latin and Greek two-mark strings). It detects the problem: 4251 heb3 differences at r1. It confirms p3: 0 differences in both their p3 font and mine. At p2 there are 1118 stacked differences, so lookup order matters far more than the 10 strings reported. It also finds 1303 Bold and 1542 Italic stacked fallback differences, 341 of them over 10 units in Italic.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Rename glyph 10192.04 to u10192.04 in Cardo-Regular-TTF.sfd",
+    "verdict": "revise",
+    "reason": "The value and the edit are right.\n- The rename is needed: feaLib rejects '10192.04' and accepts 'u10192.04'.\n- sfd_edit renameglyph changes exactly 3 lines (StartChar plus the two AlternateSubs2 lists). The result's sha256 is 8d714ea8, the same as theirs.\n- r1 closes the build failure and leaves only head.font_direction_hint. The gate reports ACCEPTED-RENAME for U+F438.\n- 'u10192.04' is the best-supported name: the glyph is the 4th alternate in u10192's list, after u10192.03.\n\nThe commit body overstates the siblings. It says 'u10198.01-.05', but no u10198.02 exists: the .sfd has u10198.01, .03, .04 and .05, and 10192.04 fills the .02 slot of u10198's list. value_derived_from states this correctly. The body should say 'u10192.03 and u10198.01, .03-.05'."
+   },
+   {
+    "commit_subject": "Give nonbreakingspace the space's width in Cardo-Italic-TTF.sfd",
+    "verdict": "keep",
+    "reason": "I re-derived the value from its claimed origin. google/fonts d70318ab8 touched only ofl/cardo/Cardo-Italic.ttf (262868 -> 262388 bytes).\n- probes/binary_table_diff.py (runs/d70318ab8_italic_diff.txt): only the raw cmap, head and hmtx tables differ.\n- The single advance change is nonbreakingspace (550,0)->(575,0).\n- The cmap mappings are equal in all 3 subtables. Only head.checkSumAdjustment changed. fsType is 0 before and after.\n- The .sfd states space Width 575 and nonbreakingspace Width 550.\n- The Regular and Bold binaries are byte-identical at 90abd17b4 and HEAD.\n\nThe edited file matches theirs (sha256 432e1753). s1 goes from 10 to 6 rows. The GSUB order rows then arbitrate as RELEASE-STALE (69696 runs identical)."
+   }
+  ],
+  "tool_verdicts": [
+   {
+    "tool_change": "babelfont-rs: write the insertion marker as '# Automatic Code' instead of '# Automatic code start'",
+    "verdict": "keep",
+    "reason": "Confirmed in code. fontforge.rs:3759 (integration 17ea899, introduced by upstream 66334a7) writes '# Automatic code start'. fea-rs 1.0.0 token_tree/typed.rs statements() keeps only comments that start with '# Automatic Code', and fontbe features.rs:803-812 then drops the writer for that tag. glyphs-reader re-adds the marker only for kern.\n\nThe r1 build has no MarkBasePos lookup at all, and the gate still passed its GPOS. My p1 build: base+mark 4361 -> 956. babelfont's own subsetlayout.rs:871 already tests '# Automatic Code'. It is a one-line fix an upstream maintainer can merge."
+   },
+   {
+    "tool_change": "babelfont-rs: LCarets2 -> caret_N anchors (plus LigCaretCntFixed)",
+    "verdict": "keep",
+    "reason": "The rule matches FontForge v20110222 tottfgpos.c LigCaretCnt/DumpLigCarets: non-zero carets unless the count is fixed; ascending, descending when SCRightToLeft. fontbe marks.rs get_ligature_carets compiles caret anchors without needing a category.\n\nMy p2 Italic build has LigCaretList 15, equal to the .sfd and the release (e.g. f_f_i [1117, 2057]).\n\nMinor: the prototype approximates SCRightToLeft by codepoint ranges. FontForge infers the script of an unencoded glyph (SCScriptFromUnicode), so an unencoded RTL ligature would be sorted the wrong way. No Cardo glyph is affected."
+   },
+   {
+    "tool_change": "babelfont-rs: an advancing GlyphClass-4 mark is 'Spacing Combining' (reader + --set-subcategory)",
+    "verdict": "keep",
+    "reason": "Confirmed.\n- The reader maps GlyphClass 4 to Mark with subCategory Nonspacing (fontforge.rs:1583-1605).\n- setsubcategory.rs sets Nonspacing on any mark with an _anchor.\n- glyphs2fontir 1.0.0 source.rs:1828 zeroes a Nonspacing mark.\n\nAfter the change, my p2 builds have 0 advance differences (Regular 3845, Italic 2387). Functional effect: HarfBuzz already zeroes GDEF marks when it shapes, so the gain is the hmtx table and consumers that read hmtx directly.\n\nThe unit is right that on Italic this change creates the MarkGlyphSetsDef/UseMarkFilteringSet row, so it must land together with the kern-flag fix (below)."
+   },
+   {
+    "tool_change": "babelfont-rs: define a marker-carrying feature's own lookups after the marker (lookup placement)",
+    "verdict": "keep",
+    "reason": "Reproduced independently. Their emulation, applied to MY p2 .glyphs and built with builder3 e851b8b, gives shared 1 / proposed 0 and 0 differences in base+mark, pairs and kern+mark. My multi-mark corpus also gives 0 (heb3 13392, heb4 12555, hebsh 868, lat3 28704, grk3 5390). At p2 there are 488+630 stacked Hebrew differences, so the evidence is stronger than the 10 strings and 7 words reported.\n\nIt is still an emulation on .glyphs text, and 'marks-first' is not the release's actual interleaving. It is right to present it as a design question for Simon."
+   },
+   {
+    "tool_change": "fontc: honour KernFeatureWriter ignoreMarks=false (+ babelfont userData entry)",
+    "verdict": "revise",
+    "reason": "The fontc gap is real and a PR is plausible: fontir 1.0.0 feature_writers.rs:197-200 hard-errors, and fontbe KernSplitOptions.ignore_marks already exists. The simulation reproduces: Italic kern+mark 2056/3057 -> 0.\n\nThe styles_affected list and the need are overstated, in two places:\n\n(1) Cardo-Bold does not need it. Its release (FontForge gdefclass: no GlyphClass, no anchors) classes all 2992 glyphs as base, while ours classes 165 combining marks as marks.\n- Simulation: giving our p2 Bold the release's GDEF classes and leaving IgnoreMarks in place closes kern+mark 177/426 -> 0 (runs/sim_bold_release_gdef.txt).\n- Real build: stating FontForge's GlyphClassDef as an FEA 'table GDEF' prefix (probes/emulate_ff_gdef_fea.py, builder3 e851b8b / fontc 1.0.0) gives GDEF {1:2992} equal to the release, kern+mark 0/426 and proposed gate 0 (runs/emu-bold-ffgdef-fea). No fontc change is involved.\n- A Glyphs 'category = Letter' route does NOT work: fontc then emits no GDEF, HarfBuzz synthesizes classes from Unicode, kern+mark stays 177 and base+mark rises 744 -> 4844 (runs/emu-bold-ffgdef).\n\n(2) Salsa-Regular (landed cb27c62) is mis-attributed. Our landed build has NO GDEF, and the release classes gravecomb/acutecomb (advance 334) as base.\n- Clearing the kern flags leaves kern+mark at 246/285 and base+mark at 257/282, because HarfBuzz still zero-widths U+0300/U+0301.\n- Copying the release GDEF closes both: 0/285 and 0/282 (runs/salsa_landed_causes.txt).\n\nThe fontc change is needed for Cardo-Italic, whose release classes U+0301 etc. as marks with a flag-0 kern; runs/emu-italic-ffgdef-fea shows the FEA GDEF leaves Italic at 2056. Poly/Varela were not checked and should be re-derived the same way."
+   },
+   {
+    "tool_change": "babelfont-rs: --fontforge-no-anchor-propagation (Propagate Anchors = 0)",
+    "verdict": "keep",
+    "reason": "glyphs-reader 1.0.0 font.rs:1164 honours 'Propagate Anchors'. p1 -> p2 (the only change is the flag) reproduced: base+mark 956 -> 10. My multi-mark lat3 corpus goes 261 -> 0. The claim is FontForge exporting only a glyph's own anchors, consistent with tottfgpos.c. This is owned by the next-provenance proposal."
+   },
+   {
+    "tool_change": "table_gate.py: (a) never hide an advance, (b) arbitrate font_direction_hint, (c) shaping test instead of the structural GPOS acceptance",
+    "verdict": "keep",
+    "reason": "(a) Both bugs are confirmed in 2f43693.\n- expand_overflow recomputes only lsbs; Regular r1's d3 hmtx is {'error': 'There are 240 changes, check manually!'}.\n- arbitrate_lsb's first branch files a row RELEASE-STALE without looking at 'width'. uni2E11 {'width': [2443, 0], 'lsb': [44, 45]} was hidden that way. The '\"advance\"' guard matches no diffenator3 key.\n\n(b) The FontForge rule is verified at 3 tags plus commit 722e7ea8873e. The oracle's '147 of 149' is mostly trivial all-LTR matches: only the 5 non-2 releases (Cardo x3, Thabit x2) test it.\n\n(c) Justified. r1 passed with 0 MarkBasePos lookups. The landed Italiana reproduces 726/13689 (B+v 530 vs 550).\n\nAdd a part (d): the gate's 'our build corrects N mark class(es)... Disclose' and missing-GDEF acceptances must block when shaping differs. The unifraktur precedent called that correction inert, but it is not inert in Cardo-Bold (kern) or in landed Salsa (base+mark 257/282: combining grave/acute lose their 334 advance)."
+   },
+   {
+    "tool_change": "babelfont-rs / gftools-builder3: diagnostics for FEA-inexpressible glyph names and for fea-rs errors",
+    "verdict": "keep",
+    "reason": "Reproduced: feaLib rejects '10192.04' at the glyph position. builder3 prints only 'FEA parsing failed with N errors'; the fontc CLI (survey-rebase debug) prints the location.\n\nExtend the babelfont check beyond a leading digit to any name outside the FEA glyph-name alphabet. Cardo-Italic has '1E0A' and 'uniA78#' (U+A783). Neither is referenced by the converted FEA today, but any FEA that lists them fails: my FEA-GDEF emulation hit 'Invalid char '#' in glyph name'."
+   }
+  ],
+  "classification_objections": [
+   "Cardo-Bold 'kern across a combining mark 177/426' is classed compiler-gap (needs fontc ignoreMarks=false). It is closable as converter-fidelity. Two causes co-exist: fontc's IgnoreMarks flag, and the GDEF classes. babelfont leaves the 165 zero-width combining marks uncategorised and fontc's GlyphData makes them marks, whereas FontForge 20110222 gdefclass() exported every glyph as base. A real fontc 1.0.0 build of the p2 .glyphs with FontForge's GlyphClassDef stated as an FEA GDEF prefix closes the row (0/426, GDEF equal, proposed gate 0; runs/emu-bold-ffgdef-fea). The row's cause should name the GDEF classes, and families_landable_after should drop 'needs the fontc ignoreMarks=false change' for Bold.",
+   "The fontc ignoreMarks=false proposal lists Salsa-Regular (landed) as affected, but kern flags are not Salsa's cause. The landed build has no GDEF, so HarfBuzz synthesizes mark classes from Unicode. Flag 0 alone leaves 246/285 kern+mark and 257/282 base+mark. The release's GDEF closes both (runs/salsa_landed_causes.txt).",
+   "'Cardo-Italic GSUB.* -- gate-arbitration' needs no gate change. The existing arbitrate_gsub_lookup_order already passes it once the nbspwidth source edit is in (s1: 'RELEASE-STALE the same GSUB lookups in a different order; 69696 shaped runs identical'). It is a consequence of the nbsp row, not a gate change."
+  ],
+  "missed": [
+   "Cardo-Bold GDEF.glyph_classes: the release has 2992 base glyphs and 0 marks; ours has 165 marks. The gate files it RELEASE-STALE 'correction... disclose', and the unit treated it as background. It is load-bearing: on its own it produces the whole kern+mark difference (simulation: release classes -> 0/426). A converter rule can reproduce it (FontForge gdefclass as an FEA GlyphClassDef, verified by a real build). Glyphs categories cannot: category=Letter makes fontc omit GDEF entirely, and base+mark rises 744 -> 4844.",
+   "The shaping corpus's base+mark+mark set is EMPTY for all three styles. 'Hebrew' counts presentation forms, so it exceeds the 40-base cap, and no stacked cluster was ever shaped. My probes/multimark_compare.py (60909 strings) confirms p3 Regular = 0. It shows lookup order causes 1118 stacked differences at p2, not only 10 strings. It adds 1303 (Bold, all <=1 unit) and 1542 (Italic, 341 over 10 units, worst 13) stacked fallback-positioning differences to the unresolved fallback item (runs/p2/multimark_deltas.txt).",
+   "Landed Salsa-Regular (cb27c62, CLEAN) is not functionally equivalent in base+mark: 257/282 strings differ, e.g. 'B'+U+0300 advances 970 in the release and 636 in ours. Our build has no GDEF, so HarfBuzz zero-widths gravecomb/acutecomb (hmtx 334, class base in the release). This is a pre-existing landed-repo problem, found while checking the unit's Salsa claim.",
+   "Cardo-Italic GDEF ligature class: the release classes 18 glyphs as ligatures. p2 gets 15 of them (the ones with carets); A_R and uniFB4F (.sfd GlyphClass: 3) and f_j (Ligature2) stay unclassed. The gate's GDEF arbitration discusses only marks. This is inert today: no MarkLigPos and no IgnoreLigatures lookup.",
+   "Cardo-Italic has 3 marks that the release classes base (U+0485, U+0486, U+05B9), disclosed by the gate as a correction. Harmless for Latin kern once flag 0 lands, but it is still a fidelity difference nobody states.",
+   "Cardo-Italic glyph names that FEA cannot express, '1E0A' and 'uniA78#' (U+A783). They are harmless now, but they block any FEA-based fix that lists them (including the GDEF route) and should be in the diagnostics proposal.",
+   "Minor inconsistency in the unit's own numbers: unresolved says Bold 746 / Italic 840 base+mark fallback strings, while shaping_summary and rows_after say 744 / 839. My runs give 744 / 839.",
+   "The fallback-offset cause could be stated more precisely. The release's composite glyf headers match none of control box, on-curve box or outline for 81 (Italic), 192 (Bold) and 286 (Regular) composites (probes/composite_bbox_rule.py). Example: Italic uni0312 header yMin 1170 vs outline 1158 vs control box 1133; ours writes the control box, as fontTools does. HarfBuzz fallback reads these headers. FreeType places the outline from the points (probes/stale_lsb_render.py), so the stale bearings do not move rendered glyphs."
+  ],
+  "overall": "Largely sound, and the core claims reproduce exactly from my own harness runs and my own build of their prototype. The p2 .glyphs are byte-identical to theirs.\n\nCorrect and reproduced:\n- the digit-name build failure and its rename;\n- the nbsp edit's origin (d70318ab8 changed only that advance);\n- the dirhint rule (FontForge source verified);\n- the hidden advances and both gate bugs;\n- the LCarets2 gap;\n- the case-sensitive marker bug;\n- anchor propagation (956 -> 10);\n- lookup placement (p3 = 0, now confirmed on stacked marks too).\n\nWrong or incomplete:\n1. Cardo-Bold does not need the fontc ignoreMarks=false change. Its kern-across-mark difference comes equally from GDEF classes the gate files as a 'correction'. A real fontc 1.0.0 build with FontForge's GlyphClassDef stated in FEA closes it (0/426, GDEF equal, proposed gate 0). The fontc change is needed for Cardo-Italic only.\n2. The Salsa attribution is wrong. The landed Salsa's differences come from a missing GDEF, and flag 0 closes neither 246/285 kern+mark nor 257/282 base+mark. The landed repository is itself not functionally equivalent.\n3. The 'every corpus 0' claim rested on an empty base+mark+mark corpus. Stacked marks add about 1300-1500 unresolved fallback differences per style in Bold and Italic.\n4. The rename's commit body invents a u10198.02 sibling.\n\nLandability:\n- Cardo-Regular: stands (emulated placement, verified independently).\n- Cardo-Bold: can reach full functional equivalence without any fontc change, via a babelfont GDEF-fidelity rule (still to be designed for upstream: FEA-inexpressible names cannot be listed).\n- Cardo-Italic: needs the fontc change.\n\nProbes are in /home/fsanches/compartilhado/sfd-reland/investigations/next-cardo-verify/probes and runs in .../runs. My babelfont worktree is /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify/bf-wt, registered in /home/fsanches/compartilhado/babelfont-rs (scratch, disposable; the patch it holds is next-cardo/probes/babelfont-17ea899-cardo-PROTOTYPE.patch). Nothing was committed."
+ }
+}

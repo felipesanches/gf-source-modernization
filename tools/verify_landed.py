@@ -18,8 +18,14 @@ a fresh clone -- and checks, for every repository given:
   5. MESSAGES: ASCII only; each ends with "Assisted by an AI agent (Claude ...)";
      none carries Co-Authored-By.
   6. REMOTE: origin points at the repository it will be pushed to.
+  7. FUNCTIONAL: every style built in step 4 behaves like its release under
+     tools/functional_gate.py -- cmap, HarfBuzz shaping, rendering, names, line
+     spacing, advances, GDEF (the table gate is structural and accepts rows that
+     change behaviour).
 
 Usage: verify_landed.py <repo> [<repo> ...]     exit 1 if anything fails
+       (FAMILIES=families-next.tsv for the next batch; SCRATCH=<dir> for the
+       fresh clones, default the session scratchpad)
 """
 import os
 import re
@@ -29,6 +35,7 @@ import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import functional_gate  # noqa: E402
 import land     # noqa: E402
 import recipe   # noqa: E402
 
@@ -131,9 +138,8 @@ def verify(repo):
         problems.append("REMOTE: origin is %r, want %r" % (origin, want))
 
     # 4. correspondence, from a fresh clone
-    with tempfile.TemporaryDirectory(prefix="verify-%s-" % repo,
-                                     dir="/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/"
-                                         "f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad") as tmp:
+    os.makedirs(land.SCRATCH, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="verify-%s-" % repo, dir=land.SCRATCH) as tmp:
         clone = os.path.join(tmp, "clone")
         run("git", "clone", "-q", d, clone)
         b = run(land.B3, "sources/config.yaml", cwd=clone)
@@ -159,6 +165,19 @@ def verify(repo):
             if gained or lost:
                 problems.append("CMAP: %s gains %s, loses %s" % (
                     r["style"], ["U+%04X" % c for c in gained], ["U+%04X" % c for c in lost]))
+            # 7. behaviour, reusing the diffenator3 run the table gate just made
+            font = os.path.join(ttf, name)
+            try:
+                fg = functional_gate.run(r["shipped"], font, r["style"],
+                                         d3_json=land.d3_json_path(font, tmp), workdir=tmp)
+            except Exception as e:        # a gate that crashed has not passed
+                problems.append("FUNCTIONAL: %s: the gate crashed: %r" % (r["style"], e))
+                continue
+            for check in functional_gate.failed_checks(fg):
+                c = fg["checks"][check]
+                problems.append("FUNCTIONAL: %s %s: %s%s" % (
+                    r["style"], check, c["summary"],
+                    "" if not c["failures"] else " -- " + c["failures"][0][:200]))
     return problems
 
 

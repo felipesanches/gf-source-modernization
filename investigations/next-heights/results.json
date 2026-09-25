@@ -1,0 +1,586 @@
+{
+ "investigation": {
+  "unit": "heights (next batch)",
+  "styles": [
+   "KottaOne-Regular",
+   "Ledger-Regular",
+   "LilitaOne-Regular",
+   "Lustria-Regular",
+   "Macondo-Regular",
+   "Magra-Bold",
+   "MergeOne-Regular",
+   "OleoScript-Bold",
+   "OleoScript-Regular",
+   "OleoScriptSwashCaps-Bold",
+   "OleoScriptSwashCaps-Regular",
+   "Rambla-Bold",
+   "Rambla-BoldItalic",
+   "Rosarivo-Italic",
+   "Sail-Regular",
+   "TextMeOne-Regular"
+  ],
+  "rows": [
+   {
+    "style": "KottaOne-Regular",
+    "row": "OS/2.sx_height [76, 81]",
+    "classification": "converter-fidelity",
+    "cause": "babelfont #91 (fontforge_standard_height.rs, glyphs_by_primary_codepoint) finds a glyph by its FIRST codepoint only. FontForge's SFGetChar -> SFFindGID -> SCUniMatch (fvfonts.c, identical at b69c9652 = FFTM 20110222, at 5a11aa4c and at master) matches the lowest gid whose unicodeenc OR any AltUni is the codepoint. Glyph 'mu' (Encoding 181, AltUni2 0003bc) is therefore the 19th x-height glyph for U+03BC. The release FFTM is 20110222, so the glyph-count mean applies: the distinct round tops are 480, 485 and 495 (sum 1460). FontForge divides by 19 glyphs: 76.84, so 76. babelfont divides by 18: 81.1, so 81.",
+    "evidence": "runs/dump-KottaOne-Regular.txt (per-glyph tops, mu round 495); runs/altuni/KottaOne-Regular.gate.txt is CLEAN; runs/glyphs_diff-before-altuni.txt shows only pos 81 -> 76; runs/nothing_else_opened-before-altuni.txt; FontForge fvfonts.c SCUniMatch/SFFindGID at b69c9652760b"
+   },
+   {
+    "style": "Macondo-Regular",
+    "row": "OS/2.sx_height [24, 25]",
+    "classification": "converter-fidelity",
+    "cause": "Same AltUni lookup gap as KottaOne. 'mu' (Encoding 181, AltUni2 0003bc) is missed. All 19 x-height tops are round at 456, and the FFTM is 20110222 (glyph-count mean). FontForge gives 456/19 = 24.0, so 24; babelfont gives 456/18 = 25.3, so 25.",
+    "evidence": "runs/dump-Macondo-Regular.txt; runs/altuni/Macondo-Regular.gate.txt is CLEAN; runs/glyphs_diff-before-altuni.txt shows only pos 25 -> 24"
+   },
+   {
+    "style": "Rosarivo-Italic",
+    "row": "OS/2.sx_height [217, 229]",
+    "classification": "converter-fidelity",
+    "cause": "Same AltUni lookup gap. 'mu' (Encoding 181, AltUni2 0003bc) has a pointy top at 509, a height it shares with c, e and o, so only the divisor changes. The distinct tops 500, 509, 511, 513, 516, 521, 528 and 540 sum to 4138, and the FFTM is 20110222. FontForge gives 4138/19 = 217.8, so 217; babelfont gives 4138/18 = 229.9, so 229.",
+    "evidence": "runs/dump-Rosarivo-Italic.txt; runs/altuni/Rosarivo-Italic.gate.txt is CLEAN; runs/glyphs_diff-before-altuni.txt shows only pos 229 -> 217"
+   },
+   {
+    "style": "Ledger-Regular",
+    "row": "OS/2.sx_height [487, 485]",
+    "classification": "provenance",
+    "cause": "The release was exported by FontForge 20110222 (FFTM) from the font it had opened from src/Ledger-Regular.otf. The process is tools/generate/HOWTOGEN.txt with tools/nonhinting/setquadraticaddextremasimplify-fontforge.py in googlefontdirectory-hg 52f780bc. SFStandardHeight snapped the rule value to the nearest BlueValues zone bottom within (ascent+descent)/100 = 10 (splinefont.c). The zones were those of the .otf's CFF Private [-21 0 487 495 750 768], which FontForge's reader stores in sf->private (parsettf.c cffprivatefillup). The paired -TTF.sfd was made later by ttf2sfd.py from the release TTF, and a TTF cannot carry a private dictionary. On the outlines, the rule gives a flat 485, which snaps to 487. The 2012 binary already had 487; the 2020 edits did not touch OS/2.",
+    "evidence": "runs/provenance.txt (sfd times = release FFTM source dates, prep/gasp equal, every glyph's advance and point bbox equal except uni00A0); runs/hypotheses.txt (2011/sfd/otf-blues = 487); runs/ledger_release_history.txt; runs/blues/Ledger-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "Ledger-Regular",
+    "row": "hmtx.uni00A0 {\"width\": [281, 0]}",
+    "classification": "source-edit-from-release",
+    "cause": "google/fonts 0436d99c0 (2020-06-23, Measure + Fit, 'ledger: fixed nbsp width (#2353)') changed the binary's U+00A0 advance from 0 to 281, which is the space's width, and also changed head and name (1.001 -> 1.002). f8265bddf ('v1.003 added (#2514)') changed only head and name. The .sfd states uni00A0 Width 0 and space Width 281.",
+    "evidence": "runs/ledger_release_history.txt (hg 52f780bc and gf 90abd17b4 byte-identical with nbsp 0; 0436d99c0 changes head/hmtx/name with nbsp 281); runs/final/Ledger-Regular.gate.txt is CLEAN with nbspwidth"
+   },
+   {
+    "style": "LilitaOne-Regular",
+    "row": "OS/2.sx_height [506, 500]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues, the same mechanism as Ledger (FFTM 20110222, 2011 rule). The rule gives 500.0, which snaps to the zone bottom 506 of src/LilitaOne-Regular.otf [-10 0 506 510 704 709].",
+    "evidence": "runs/hypotheses.txt; runs/provenance.txt; runs/blues/LilitaOne-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "LilitaOne-Regular",
+    "row": "OS/2.s_cap_height [704, 700]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues: the rule gives 700.0, which snaps to the zone bottom 704.",
+    "evidence": "runs/hypotheses.txt; runs/blues/LilitaOne-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "Lustria-Regular",
+    "row": "OS/2.sx_height [504, 511]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20110222). The rule gives 511.0, which snaps to the zone BOTTOM 504 of src/Lustria-Regular.otf [-11 0 504 511 704 711], at a distance of 7.",
+    "evidence": "runs/hypotheses.txt; runs/blues/Lustria-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "Lustria-Regular",
+    "row": "OS/2.s_cap_height [704, 700]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues: the rule gives 700.0, which snaps to 704.",
+    "evidence": "runs/hypotheses.txt; runs/blues/Lustria-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "Magra-Bold",
+    "row": "OS/2.sx_height [525, 533]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20110222). The rule gives 533.0, which snaps to the zone bottom 525 of src/Magra-Bold.otf [-12 0 525 537 700 712 750 760].",
+    "evidence": "runs/hypotheses.txt; runs/blues/Magra-Bold.gate.txt (only us_weight_class left)"
+   },
+   {
+    "style": "Magra-Bold",
+    "row": "OS/2.s_cap_height [700, 708]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues: the rule gives 708.0, which snaps to 700.",
+    "evidence": "runs/hypotheses.txt; runs/blues/Magra-Bold.gate.txt"
+   },
+   {
+    "style": "Magra-Bold",
+    "row": "OS/2.us_weight_class [600, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 ignores a static single-master Glyphs source's weightClass (issues/fontc-static-weight-class.md). The .sfd states TTFWeight: 600. land.py closes the row with tools/workarounds.py, which carries the value as FEA.",
+    "evidence": "runs/final-workarounds/Magra-Bold.gate.txt is CLEAN ('usWeightClass 600 (TTFWeight) as FEA')"
+   },
+   {
+    "style": "MergeOne-Regular",
+    "row": "OS/2.sx_height [493, 492]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues. The export was by FontForge 20120906 (FFTM), so the distinct-tops mean applies. The rule gives 492.0, which snaps to the zone bottom 493 of src/MergeOne-Regular.otf [-8 0 493 502 679 687].",
+    "evidence": "runs/hypotheses.txt; runs/provenance.txt; runs/blues/MergeOne-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "OleoScript-Bold",
+    "row": "OS/2.sx_height [443, 436]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20120906). The rule gives 436.5, which snaps to 443 of src/OleoScript-Bold.otf [-12 0 443 443 710 710].",
+    "evidence": "runs/hypotheses.txt; runs/blues/OleoScript-Bold.gate.txt"
+   },
+   {
+    "style": "OleoScript-Bold",
+    "row": "OS/2.s_cap_height [710, 708]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues: the rule gives 708.75, which snaps to 710. Only the 2012 rule plus the blues reproduces it, which is consistent with the FFTM.",
+    "evidence": "runs/hypotheses.txt; runs/blues/OleoScript-Bold.gate.txt"
+   },
+   {
+    "style": "OleoScript-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 static weightClass gap. The .sfd states TTFWeight: 700, and tools/workarounds.py closes the row at landing.",
+    "evidence": "runs/final-workarounds/OleoScript-Bold.gate.txt is CLEAN"
+   },
+   {
+    "style": "OleoScript-Regular",
+    "row": "OS/2.sx_height [443, 442]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20120906). The rule gives 442.5, which snaps to 443 of [-12 0 443 450 710 710].",
+    "evidence": "runs/hypotheses.txt; runs/blues/OleoScript-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "OleoScript-Regular",
+    "row": "OS/2.s_cap_height [710, 709]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues: the rule gives 709.0, which snaps to 710.",
+    "evidence": "runs/hypotheses.txt; runs/blues/OleoScript-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "OleoScriptSwashCaps-Bold",
+    "row": "OS/2.sx_height [443, 436]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20120906). The rule gives 436.5, which snaps to 443 of [-13 0 443 443 747 747].",
+    "evidence": "runs/hypotheses.txt; runs/blues/OleoScriptSwashCaps-Bold.gate.txt"
+   },
+   {
+    "style": "OleoScriptSwashCaps-Bold",
+    "row": "OS/2.s_cap_height [747, 750]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues: the rule gives 750.2, which snaps to 747. The .otf's own OS/2 says 710, so 747 does not come from copying the .otf's OS/2.",
+    "evidence": "runs/hypotheses.txt; runs/facts.txt; runs/blues/OleoScriptSwashCaps-Bold.gate.txt"
+   },
+   {
+    "style": "OleoScriptSwashCaps-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 static weightClass gap. The .sfd states TTFWeight: 700.",
+    "evidence": "runs/final-workarounds/OleoScriptSwashCaps-Bold.gate.txt is CLEAN"
+   },
+   {
+    "style": "OleoScriptSwashCaps-Regular",
+    "row": "OS/2.sx_height [443, 442]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20120906). The rule gives 442.5, which snaps to 443 of [-12 0 443 450 747 747].",
+    "evidence": "runs/hypotheses.txt; runs/blues/OleoScriptSwashCaps-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "Rambla-Bold",
+    "row": "OS/2.sx_height [517, 513]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20120906). The rule gives 513.0, which snaps to 517 of src/Rambla-Bold.otf [-13 0 517 524 669 680].",
+    "evidence": "runs/hypotheses.txt; runs/blues/Rambla-Bold.gate.txt"
+   },
+   {
+    "style": "Rambla-Bold",
+    "row": "OS/2.s_cap_height [669, 668]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues: the rule gives 668.0, which snaps to 669.",
+    "evidence": "runs/hypotheses.txt; runs/blues/Rambla-Bold.gate.txt"
+   },
+   {
+    "style": "Rambla-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 static weightClass gap. The .sfd states TTFWeight: 700.",
+    "evidence": "runs/final-workarounds/Rambla-Bold.gate.txt is CLEAN"
+   },
+   {
+    "style": "Rambla-BoldItalic",
+    "row": "OS/2.sx_height [517, 513]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20120906). The rule gives 513.0, which snaps to 517 of src/Rambla-BoldItalic.otf [-13 0 517 524 669 680].",
+    "evidence": "runs/hypotheses.txt; runs/blues/Rambla-BoldItalic.gate.txt"
+   },
+   {
+    "style": "Rambla-BoldItalic",
+    "row": "OS/2.s_cap_height [669, 668]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues: the rule gives 668.0, which snaps to 669.",
+    "evidence": "runs/hypotheses.txt; runs/blues/Rambla-BoldItalic.gate.txt"
+   },
+   {
+    "style": "Rambla-BoldItalic",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 static weightClass gap. The .sfd states TTFWeight: 700.",
+    "evidence": "runs/final-workarounds/Rambla-BoldItalic.gate.txt is CLEAN"
+   },
+   {
+    "style": "Sail-Regular",
+    "row": "OS/2.s_cap_height [666, 665]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20110222, 2011 rule). The rule gives a flat 665.0, which snaps to 666 of src/Sail-Regular.otf [0 0 389 389 666 666]. The x-height of 435 lies 46 from the nearest zone and is unaffected.",
+    "evidence": "runs/hypotheses.txt; runs/blues/Sail-Regular.gate.txt is CLEAN"
+   },
+   {
+    "style": "TextMeOne-Regular",
+    "row": "OS/2.sx_height [502, 500]",
+    "classification": "provenance",
+    "cause": "Lost BlueValues (FFTM 20120906). The rule gives 500.0, which snaps to 502 of src/TextMeOne-Regular.otf [-1 0 502 502 700 706].",
+    "evidence": "runs/hypotheses.txt; runs/blues/TextMeOne-Regular.gate.txt is CLEAN"
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Ledger-Regular"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-21 0 487 495 750 768]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/Ledger-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height to these\nzones. This .sfd re-imports that TTF (ttf2sfd.py), which cannot carry\na private dictionary. Value: the .otf's CFF Private BlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/Ledger-Regular.otf in googlefontdirectory-hg 52f780bc. That is the file FontForge 20110222 opened and exported the release from, per HOWTOGEN.txt and setquadraticaddextremasimplify-fontforge.py. The value is written as FontForge's CFF reader stored it (parsettf.c realarray2str), printed by probes/otf_bluevalues.py. It is not read from the release.",
+    "source_currently_states": "No BeginPrivate section, so no BlueValues. No OS2XHeight or OS2CapHeight.",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Ledger-Regular"
+    ],
+    "op": "nbspwidth",
+    "args": "",
+    "commit_subject": "Give the no-break space the space's width, 281",
+    "commit_body": "google/fonts 0436d99c0 (ledger: fixed nbsp width, #2353) changed\nU+00A0's advance in the released binary from 0 to 281.",
+    "value_derived_from": "The .sfd's own space Width 281. The change it reproduces is google/fonts 0436d99c0 (2020-06-23), which set hmtx uni00A0 from 0 to 281 (runs/ledger_release_history.txt).",
+    "source_currently_states": "uni00A0 Width: 0; space Width: 281",
+    "verified": true
+   },
+   {
+    "styles": [
+     "LilitaOne-Regular"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-10 0 506 510 704 709]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/LilitaOne-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/LilitaOne-Regular.otf (googlefontdirectory-hg 52f780bc); exporter FontForge 20110222",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Lustria-Regular"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-11 0 504 511 704 711]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/Lustria-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/Lustria-Regular.otf (52f780bc); exporter FontForge 20110222",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Magra-Bold"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-12 0 525 537 700 712 750 760]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/Magra-Bold.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/Magra-Bold.otf (52f780bc); exporter FontForge 20110222. Magra-Regular gets no edit: it is CLEAN.",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "MergeOne-Regular"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-8 0 493 502 679 687]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/MergeOne-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height to these\nzones. This .sfd re-imports that TTF (ttf2sfd.py), which cannot carry\na private dictionary. Value: the .otf's CFF Private BlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/MergeOne-Regular.otf (52f780bc); exporter FontForge 20120906",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "OleoScript-Bold"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-12 0 443 443 710 710]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/OleoScript-Bold.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/OleoScript-Bold.otf (52f780bc); exporter FontForge 20120906",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "OleoScript-Regular"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-12 0 443 450 710 710]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/OleoScript-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/OleoScript-Regular.otf (52f780bc); exporter FontForge 20120906",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "OleoScriptSwashCaps-Bold"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-13 0 443 443 747 747]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/OleoScriptSwashCaps-Bold.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/OleoScriptSwashCaps-Bold.otf (52f780bc); exporter FontForge 20120906",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "OleoScriptSwashCaps-Regular"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-12 0 443 450 747 747]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from\nsrc/OleoScriptSwashCaps-Regular.otf (tools/generate/HOWTOGEN.txt) and\nsnapped its OS/2 x-height to these zones. This .sfd re-imports that TTF\n(ttf2sfd.py), which cannot carry a private dictionary. Value: the .otf's\nCFF Private BlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/OleoScriptSwashCaps-Regular.otf (52f780bc); exporter FontForge 20120906",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Rambla-Bold",
+     "Rambla-BoldItalic"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-13 0 517 524 669 680]",
+    "commit_subject": "Restore the BlueValues the releases were exported with",
+    "commit_body": "FontForge exported both releases from src/Rambla-Bold.otf and\nsrc/Rambla-BoldItalic.otf (tools/generate/HOWTOGEN.txt) and snapped\ntheir OS/2 x-height and cap height to these zones. The -TTF.sfd files\nre-import those TTFs (ttf2sfd.py), which cannot carry a private\ndictionary. Value: each .otf's CFF Private BlueValues (identical).",
+    "value_derived_from": "CFF Private BlueValues of src/Rambla-Bold.otf and src/Rambla-BoldItalic.otf (52f780bc), identical in both; exporter FontForge 20120906. Rambla-Regular and Rambla-Italic get no edit: they are CLEAN.",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "Sail-Regular"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [0 0 389 389 666 666]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/Sail-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 cap height to these\nzones. This .sfd re-imports that TTF (ttf2sfd.py), which cannot carry\na private dictionary. Value: the .otf's CFF Private BlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/Sail-Regular.otf (52f780bc); exporter FontForge 20110222",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   },
+   {
+    "styles": [
+     "TextMeOne-Regular"
+    ],
+    "op": "addprivate",
+    "args": "BlueValues [-1 0 502 502 700 706]",
+    "commit_subject": "Restore the BlueValues the release was exported with",
+    "commit_body": "FontForge exported the release from src/TextMeOne-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height to these\nzones. This .sfd re-imports that TTF (ttf2sfd.py), which cannot carry\na private dictionary. Value: the .otf's CFF Private BlueValues.",
+    "value_derived_from": "CFF Private BlueValues of src/TextMeOne-Regular.otf (52f780bc); exporter FontForge 20120906",
+    "source_currently_states": "No BeginPrivate section; no stated heights",
+    "verified": true
+   }
+  ],
+  "proposed_tool_changes": [
+   {
+    "tool": "babelfont-rs (follow-up commit on PR #91, branch pr-ff-os2-defaults @119f2be)",
+    "description": "In fontforge_standard_height.rs, look a glyph up by ANY of its codepoints, not just the first. Iterate glyphs in order and take the first glyph mapped to the codepoint, whether as its own codepoint or as an alternate (AltUni2). This is what FontForge's SFGetChar -> SFFindGID -> SCUniMatch does: a single pass over gids matching unicodeenc OR any altuni. The code is the same at b69c9652 (20110222), 5a11aa4c (20120906) and master. The change renames glyphs_by_primary_codepoint to glyphs_by_codepoint and adds the unit test test_a_glyph_is_found_by_an_alternate_codepoint.",
+    "evidence": "Harness runs: KottaOne, Macondo and Rosarivo-Italic go from BLOCKING 1 to CLEAN 0 (runs/altuni/). No other gate line changes (runs/nothing_else_opened-before-altuni.txt). The .glyphs change only in x-height: 81->76, 25->24, 229->217. The four CLEAN siblings stay CLEAN with gates identical to baseline-next (runs/altuni-siblings-vs-baseline-next.txt). Conversion-only regression over all 149 styles of both batches (runs/altuni_regression.txt): 145 unchanged and 4 changed, namely these 3 (ONTO-RELEASE) and Kristi-Regular 784->742. Kristi's release has OS/2 v1, which carries no x-height; its harness gate is CLEAN and identical to baseline/ (runs/altuni-kristi/). The 10 standard-height tests and 113 fontforge tests pass, and cargo fmt --check and clippy are clean (runs/cargo-test-altuni.txt). verify_heights_port agrees 42/42.",
+    "styles_affected": [
+     "KottaOne-Regular",
+     "Macondo-Regular",
+     "Rosarivo-Italic",
+     "Kristi-Regular (first batch; unshipped field only)"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-heights/probes/babelfont-altuni-lookup.patch, applied as a working-tree change in the scratch worktree /home/fsanches/compartilhado/sfd-reland-scratch/heights/bf-altuni (detached at 17ea899). Binary: /home/fsanches/compartilhado/sfd-reland-scratch/heights/bf-target/release/babelfont (runs/BF-ALTUNI.txt). fontforge_standard_height.rs is byte-identical at 119f2be and 17ea899, so the patch applies unchanged to #91.",
+    "upstream_pr_needed": "Yes. It is an additional commit on simoncozens/babelfont-rs#91 (pr-ff-os2-defaults), not a force-push, and Felipe pushes it. Suggested subject: 'Find a height glyph by an alternate codepoint too, as FontForge does'. Following Simon's style, the comment states only the format rule. All landings stay blocked until #91-#93 merge; this commit must be in the merged #91."
+   },
+   {
+    "tool": "sfd-reland tools/sfd_edit.py (workspace)",
+    "description": "New op 'addprivate <Key> <value...>'. It inserts 'BeginPrivate: 1 / <Key> <len> <value> / EndPrivate' where FontForge's SFD writer puts it: after DisplaySize/AntiAlias/FitToEm/WinInfo/OnlyBitmaps and before Grid/TeXData/AnchorClass2/BeginSubFonts/BeginChars (sfd.c SFDDumpPrivate, called from SFD_Dump). It is FATAL if the source already has a private dictionary, and it reports 'no private dictionary' as the before-state.",
+    "evidence": "make_edits.sh applies it to 13 sources, and each copy differs from its source by exactly the 3 added lines (runs/make_edits.txt). babelfont reads the section only for the height filter and does not emit it to .glyphs: the before->blues .glyphs diffs are the x/cap values only (runs/glyphs_diff-before-blues.txt).",
+    "styles_affected": [
+     "Ledger-Regular",
+     "LilitaOne-Regular",
+     "Lustria-Regular",
+     "Magra-Bold",
+     "MergeOne-Regular",
+     "OleoScript-Bold",
+     "OleoScript-Regular",
+     "OleoScriptSwashCaps-Bold",
+     "OleoScriptSwashCaps-Regular",
+     "Rambla-Bold",
+     "Rambla-BoldItalic",
+     "Sail-Regular",
+     "TextMeOne-Regular"
+    ],
+    "prototype": "Already in the working tree of /home/fsanches/compartilhado/sfd-reland/tools/sfd_edit.py. It is uncommitted and appears in 'git diff tools/sfd_edit.py'; the docstring is updated.",
+    "upstream_pr_needed": "No (workspace tool)."
+   },
+   {
+    "tool": "sfd-reland tools/ff_heights_oracle.py (workspace, optional)",
+    "description": "The same AltUni lookup for the Python oracle: parse AltUni2 lines and build by_uni in gid order over primary and alternate codepoints, as SFFindGID does. Without it the oracle and the fixed port can diverge under a glyph-count-mean rule, although the oracle models only the master rule today.",
+    "evidence": "Under the master rule it changes nothing. The oracle output on families-next.tsv is identical before and after (runs/oracle-next-current.txt vs runs/oracle-next-altuni.txt, 62/103). verify_heights_port gives 42/42 with the patched oracle and either converter.",
+    "styles_affected": [],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-heights/probes/ff_heights_oracle-altuni.patch (tested on a scratch copy under sfd-reland-scratch/heights/oracle/)",
+    "upstream_pr_needed": "No (workspace tool)."
+   }
+  ],
+  "families_landable_after": [
+   "kottaone",
+   "ledger",
+   "lilitaone",
+   "lustria",
+   "macondo",
+   "magra",
+   "mergeone",
+   "oleoscript",
+   "oleoscriptswashcaps",
+   "rambla",
+   "rosarivo",
+   "sail",
+   "textmeone"
+  ],
+  "decisions_for_felipe": [
+   "Form of the 13 height edits. Recommended: (A) addprivate BlueValues, one edit per style. It restores the single input the exporter had, and the converter's own verified rule then yields both heights. The value comes from src/<X>.otf in the base tree. Alternative: (B) state the results with addfield OS2XHeight/OS2CapHeight, as the PatrickHand precedent did. That is 22 values, each derived by FontForge's rule with the .otf's BlueValues. Both close the same rows; only A was harness-run for all 13.",
+   "Restore only BlueValues (recommended and verified; the only private entry that affects a TTF export), or the whole CFF Private dict FontForge read from the .otf: OtherBlues, StdHW/StdVW, StemSnapH/V and so on. The other entries change nothing in the TTF, so they cannot be checked against the release.",
+   "Ledger: google/fonts 0436d99c0 and f8265bddf also bumped head.fontRevision and name to 1.002 and then 1.003. The gate does not block on these. Decide whether to add a setfield Version commit after the nbsp commit to mirror the bump, or leave it to future work.",
+   "Push the #91 follow-up commit (probes/babelfont-altuni-lookup.patch) to pr-ff-os2-defaults. kottaone, macondo and rosarivo cannot land CLEAN without it.",
+   "Commit the new sfd_edit.py op 'addprivate' (uncommitted in the working tree) together with investigations/next-heights/{probes,runs}. Nothing was committed, per the task.",
+   "The magra, rambla and rosarivo siblings (Magra-Regular, Rambla-Italic, Rambla-Regular, Rosarivo-Regular) also lost their BlueValues in the re-import, but they are CLEAN, so under the workspace rule they get no edit. Confirm that per-style asymmetry within a family is acceptable."
+  ],
+  "unresolved": [
+   "Variation-sequence alternates are not modelled. FontForge's SCUniMatch compares alt->unienc even when the AltUni2 entry carries a variation selector, but babelfont's SFD reader leaves such entries out of glyph.codepoints. No style of either batch is affected (runs/altuni_regression.txt).",
+   "Lookup order: FontForge takes the lowest gid; babelfont (and the patch) takes file order. These are the same for FontForge-saved SFDs.",
+   "FontForge measured the unrounded in-memory quadratic splines after addExtrema/simplify/correctDirection (setquadraticaddextremasimplify-fontforge.py). The converter measures the re-imported, integer-rounded points. Here they give the same values on all 20 styles (16 in the unit plus the 4 CLEAN siblings), but the difference is not modelled in general.",
+   "Scratch state, all regenerable: the patched converter's worktree /home/fsanches/compartilhado/sfd-reland-scratch/heights/bf-altuni, which is registered in integration-ff-prs's 'git worktree list' (remove it with git worktree remove once the patch is committed on pr-ff-os2-defaults); the binary in bf-target/; the edited .sfd copies in edits/ (make_edits.sh); FontForge C copies in ff/ (refetchable from raw.githubusercontent.com/fontforge/fontforge/<b69c9652760b|5a11aa4c0ab4|master>/fontforge/{fvfonts,splinefont,parsettf,sfd,tottf,splineorder2}.c); the harness build dirs in baseline/.",
+   "Landing remains blocked for every family until babelfont #91-#93, with this follow-up, merge upstream (README policy). The weight-class rows depend on land.py's workaround until fontc is fixed.",
+   "No FINDINGS.md or VERIFY.md was written, because the harness refuses report .md files. This result is the report."
+  ],
+  "verification": {
+   "summary": "Paired harness runs (tools/baseline.sh, families-next.tsv, one build per style; SCRATCH under sfd-reland-scratch/heights). The before set with BF integration-ff-prs 17ea899 reproduces baseline-next gate for gate on all 16 styles. altuni (the #91 lookup fix alone) closes KottaOne, Macondo and Rosarivo-Italic. blues (addprivate BlueValues for 13 styles and nbspwidth for Ledger, on 17ea899) closes every height row and the nbsp row of the 13 edited styles. final (fix plus edits) leaves only the 5 us_weight_class rows, and land.py's own workaround (tools/workarounds.py, TTFWeight as FEA) closes those: all 16 styles CLEAN. No gate line other than the targeted rows changed in any set (nothing_else_opened), and the .glyphs differ only in the x/cap metric values and Ledger's nbsp width. Root-cause evidence: the -TTF.sfd of all 20 styles is a re-import of the release TTF, shown by FFTM source dates = sfd times, identical prep/gasp, and identical advance and point bbox for every non-composite glyph (runs/provenance.txt). The FFTM-selected vintage, applied to the -TTF.sfd outlines with the .otf's CFF BlueValues, reproduces every released sxHeight/sCapHeight of all 20 styles; without the BlueValues, 13 differ (runs/hypotheses.txt). 15 of the 16 releases are byte-identical to the 2012 base-tree binaries; Ledger differs only by google/fonts 0436d99c0/f8265bddf (runs/release_history.txt).",
+   "rows_before": "30 blocking rows across 16 styles (24 OS/2 x/cap, 5 us_weight_class, 1 hmtx.uni00A0); runs/before/ matches baseline-next/",
+   "rows_after": "altuni only: 27. blues only: 8 (3 AltUni x-heights + 5 weight class). final: 5 (weight class only). final + land.py workaround: 0. All 16 styles CLEAN; the 4 CLEAN siblings stay CLEAN.",
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland/investigations/next-heights/probes && bash rerun.sh probes",
+    "bash rerun.sh builds   # sequential: runs.sh before|altuni|blues|final, gate_with_workarounds.sh, nothing_else_opened.sh, altuni_regression.py",
+    "FAMILIES=/home/fsanches/compartilhado/sfd-reland/families-next.tsv BF=<17ea899 or patched> OUT=.../next-heights/runs/<set> TAG=heights-<set> SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/heights [SRC_OVERRIDE=<edits>/<Style>-blues.sfd] bash /home/fsanches/compartilhado/sfd-reland/tools/baseline.sh <Style>",
+    "/home/fsanches/compartilhado/gftools/venv/bin/python3 probes/altuni_regression.py <BF 17ea899> <BF patched>",
+    "cd sfd-reland-scratch/heights/bf-altuni && CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=<scratch>/bf-target cargo test --release -p babelfont --features cli --lib fontforge_standard_height && cargo fmt -p babelfont -- --check && cargo clippy --release -p babelfont --features cli"
+   ]
+  },
+  "confidence": "High. Two causes account for all 24 height rows, and each was verified by exact reproduction. (1) Thirteen styles lost the BlueValues their releases were snapped to. The evidence is the documented 2012 production recipe (HOWTOGEN.txt and the nonhinting scripts), a glyph-by-glyph proof that each -TTF.sfd is a re-import of the release TTF, the FontForge C at the release's own FFTM builds, and harness runs that close every row and change nothing else. (2) A fidelity gap in #91's glyph lookup: FontForge's SFFindGID matches AltUni, and 'mu' is U+00B5 plus AltUni U+03BC. It is verified with exact divisor arithmetic, a harness run and a 149-style regression. The Ledger nbsp row is the google/fonts 0436d99c0 edit. The weight-class rows are the known fontc gap, closed by land.py's existing workaround."
+ },
+ "verification": {
+  "unit": "heights (next batch): KottaOne-Regular Ledger-Regular LilitaOne-Regular Lustria-Regular Macondo-Regular Magra-Bold MergeOne-Regular OleoScript-Bold OleoScript-Regular OleoScriptSwashCaps-Bold OleoScriptSwashCaps-Regular Rambla-Bold Rambla-BoldItalic Rosarivo-Italic Sail-Regular TextMeOne-Regular",
+  "reproduced": true,
+  "reproduction_notes": "I reproduced every measurement independently. The task gave two output locations (next-heights/verify/ and next-heights-verify/). I used the Files section's /home/fsanches/compartilhado/sfd-reland/investigations/next-heights-verify/{probes,runs}, and all scratch is under /home/fsanches/compartilhado/sfd-reland-scratch/heights-verify/. Nothing was committed. The one-line command to regenerate everything is probes/rerun.sh (probes|build|builds).\n\n1. BEFORE. Harness tools/baseline.sh with FAMILIES=families-next.tsv and BF=integration-ff-prs/target-heights (BUILT_FROM 17ea8995), unmodified sources. All 16 gates are line-for-line identical to baseline-next/ (runs/before-vs-baseline-next.txt). There are 30 blocking rows: 24 OS/2 x/cap, 5 us_weight_class, 1 hmtx.uni00A0.\n\n2. CONVERTER. I did my own build of the AltUni patch and did not reuse the investigator's worktree: a `git archive 17ea899`, then `patch -p1 < next-heights/probes/babelfont-altuni-lookup.patch`, drop-caches, then CARGO_BUILD_JOBS=3 with target dir sfd-reland-scratch/heights-verify/bf-target. The source tree is not a registered worktree (runs/BF-MINE.txt). Their worktree diff equals the patch file byte for byte. fontforge_standard_height.rs is identical at 119f2be and 17ea899. Results:\n   - cargo test --lib fontforge: 113 passed, including the new test_a_glyph_is_found_by_an_alternate_codepoint.\n   - cargo fmt --check: exit 0. clippy: no warnings (runs/cargo-test-altuni.txt).\n   - Harness `altuni`: KottaOne, Macondo and Rosarivo-Italic go from BLOCKING 1 to CLEAN 0.\n   - Conversion-only regression over all 149 styles of both batches (runs/altuni_regression.txt): 145 IDENTICAL and 4 changed. The changes are KottaOne 81->76, Macondo 25->24, Rosarivo-Italic 229->217 and Kristi-Regular 784->742. Kristi's release is OS/2 v1 (FFTM 2010), and the committed probe gives 742 under the 2011 rule, so the port is right there too.\n   - verify_heights_port with my build: 42/42.\n   - The oracle patch changes no output on either batch (62/103 next, first batch unchanged).\n\n3. ALTUNI ARITHMETIC. I re-derived it with the committed ff_heights_probe (runs/altuni_arith.txt):\n   - KottaOne: tops 480/485/495, sum 1460. 1460/19 = 76.84 (76) and 1460/18 = 81.11 (81).\n   - Macondo: 456/19 = 24.0 and 456/18 = 25.33.\n   - Rosarivo-Italic: 4138/19 = 217.79 and 4138/18 = 229.89. Its mu is pointy at 509, the same height as the round c, e and o.\n   - FontForge C (fetched b69c9652760b, 5a11aa4c0ab4, master): SFGetChar -> SFCIDFindCID -> SFFindGID -> SCUniMatch. SCUniMatch matches unicodeenc OR any altuni->unienc, and the lowest gid wins. The function bodies hash identically at all three revisions.\n   - Census: in both batches the only x/cap codepoint that can be reached only through AltUni2 is U+03BC, in 40 styles. No cap codepoint is affected.\n\n4. BLUEVALUES VALUES AND EDITS. I read the values myself from src/<X>.otf in googlefontdirectory-hg 52f780bc with fontTools and formatted them as parsettf.c realarray2str does. My 13 edited copies (probes/make_edits.py, runs/make_edits.txt) are byte-identical to the investigator's edits/*.sfd. Each differs from its source only by the 3 private-dictionary lines, plus Width 0->281 for Ledger. The block format matches sfd.c SFDDumpPrivate (key, strlen(value), value) and the placement matches SFD_Dump's order (after FitToEm, before BeginChars).\n\n5. PROVENANCE. The investigator printed these facts but never drew the tie; I checked it (runs/otf_head_dates.txt):\n   - For all 20 styles, the .otf's head.created equals the release's FFTM sourceCreated.\n   - The .otf's head.modified comes 4-108 s before FFTM sourceModified. That fits the HOWTOGEN ttx round trip followed by setquadraticaddextremasimplify-fontforge.py.\n   - The -TTF.sfd CreationTime and ModificationTime equal the FFTM source dates, which fits ttf2sfd.py importing the release TTF.\n   - 19 of 20 releases are byte-identical to the hg binaries (runs/release_vs_hg.txt).\n   - splineorder2.c never touches sf->private, so the dictionary survives is_quadratic. tottf.c setos2 calls SFXHeight and SFCapHeight.\n   - splinefont.c (b69c9652) snaps to every other BlueValues entry, starting from the first, when the distance is strictly less than (ascent+descent)/100. babelfont's snap_to_blue_zone matches this, with Ascender=Ascent and Descender=-Descent.\n\n6. WHOLE-PROGRAMME CONSISTENCY. probes/blues_theory_all.py covers every style of both batches with a sibling .otf that carries BlueValues: 86 styles, 172 height values. Using the FFTM-selected rule with SFFindGID lookup, 151 values match with or without the .otf blues, and 21 match only with them. None matches only without them (0 contradictions) and none matches neither. The 21 blues-only values are exactly this unit's 21 blues rows. probes/rule_all_next.py finds no height mismatch anywhere else in families-next, including the BUILD-FAILED Cardo-Regular (900/1410 predicted = release). So the unit misses no style.\n\n7. BLUES, FINAL AND WORKAROUNDS.\n   - `blues` (BF 17ea899 + my edits): every targeted row closes. Only the 5 us_weight_class rows remain.\n   - `final` (my patched BF + edits): the same 5 rows remain.\n   - Adding tools/workarounds.py (TTFWeight as FEA) makes all 16 styles CLEAN 0.\n   - The 4 CLEAN siblings stay CLEAN with the patched BF, and their gates are identical to baseline-next.\n   - runs/nothing_else_opened.txt: a full gate diff against `before` shows only the targeted BLOCKING lines and the summary count changing. Stale lines are identical.\n   - The .glyphs diffs (runs/glyphs_diff-{blues,altuni}.txt) show only the x/cap metric pos values and Ledger's nbsp width. The 17 styles other than the three AltUni ones are byte-unchanged by the patch.\n\n8. LEDGER. runs/ledger_history.txt: hg 52f780bc = gf 90abd17b4 (nbsp 0, x 487). 0436d99c0 changed head, hmtx and name (nbsp 0->281, 1.002). f8265bddf changed head and name only (1.003). OS/2 was never touched.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (Ledger-Regular, [-21 0 487 495 750 768])",
+    "verdict": "keep",
+    "reason": "I read the value from src/Ledger-Regular.otf CFF Private independently; the edited file is byte-identical to the investigator's. The rule gives flat 485.0, which snaps to 487 (distance 2). The harness closes OS/2.sx_height and nothing else changes. Optional body improvement (applies to all 12 BlueValues commits): 'tools/generate/HOWTOGEN.txt' and 'ttf2sfd.py' are not in the landed repository. Cite them as googlefontdirectory-hg 52f780bc paths, and add the direct tie: the .otf's head.created equals the release's FFTM sourceCreated."
+   },
+   {
+    "commit_subject": "Give the no-break space the space's width, 281 (Ledger-Regular)",
+    "verdict": "keep",
+    "reason": "google/fonts 0436d99c0 changed hmtx uni00A0 from 0 to 281. The .sfd states space Width 281 and uni00A0 Width 0. The row closes in my harness. Classed correctly as source-edit-from-release."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (LilitaOne-Regular, [-10 0 506 510 704 709])",
+    "verdict": "keep",
+    "reason": "Value re-derived. 500.0 snaps to 506 and 700.0 to 704. Both rows close; nothing else changes."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (Lustria-Regular, [-11 0 504 511 704 711])",
+    "verdict": "keep",
+    "reason": "Value re-derived. 511.0 snaps to the zone BOTTOM 504 (distance 7), which is correct because only even-index entries are candidates. 700 snaps to 704. Both rows close."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (Magra-Bold, [-12 0 525 537 700 712 750 760])",
+    "verdict": "keep",
+    "reason": "Value re-derived. 533 snaps to 525 and 708 to 700 (distance 8 each, under the tolerance of 10). Both rows close. Magra-Regular's .otf has identical BlueValues but Magra-Regular is CLEAN, so it correctly gets no edit."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (MergeOne-Regular, [-8 0 493 502 679 687])",
+    "verdict": "keep",
+    "reason": "Value re-derived. The 2012 rule gives 492.0, which snaps to 493; cap 679 is unaffected. The row closes."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (OleoScript-Bold, [-12 0 443 443 710 710])",
+    "verdict": "keep",
+    "reason": "Value re-derived. 436.5 snaps to 443 and 708.75 to 710; only the 2012 rule plus the blues gives both. Both rows close."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (OleoScript-Regular, [-12 0 443 450 710 710])",
+    "verdict": "keep",
+    "reason": "Value re-derived. 442.5 snaps to 443 and 709 to 710. Both rows close."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (OleoScriptSwashCaps-Bold, [-13 0 443 443 747 747])",
+    "verdict": "keep",
+    "reason": "Value re-derived. 436.5 snaps to 443 and 750.2 to 747. The .otf's own OS/2 cap height is 710, so the value is not a copy of the .otf's OS/2. Both rows close."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (OleoScriptSwashCaps-Regular, [-12 0 443 450 747 747])",
+    "verdict": "keep",
+    "reason": "Value re-derived. 442.5 snaps to 443; cap 747 is already exact. The row closes."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the releases were exported with (Rambla-Bold + Rambla-BoldItalic, [-13 0 517 524 669 680])",
+    "verdict": "keep",
+    "reason": "Both .otf files carry identical BlueValues (checked). 513 snaps to 517 and 668 to 669 in both styles. All 4 rows close. Rambla-Regular and Rambla-Italic (zones 506/668) are CLEAN and correctly get no edit."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (Sail-Regular, [0 0 389 389 666 666])",
+    "verdict": "keep",
+    "reason": "Value re-derived. Cap 665 snaps to 666. The x-height of 435 is 46 from zone 389, so it is unaffected. The row closes."
+   },
+   {
+    "commit_subject": "Restore the BlueValues the release was exported with (TextMeOne-Regular, [-1 0 502 502 700 706])",
+    "verdict": "keep",
+    "reason": "Value re-derived. 500.0 snaps to 502; cap 700 is already exact. The row closes."
+   }
+  ],
+  "tool_verdicts": [
+   {
+    "tool_change": "babelfont-rs follow-up commit on PR #91 (pr-ff-os2-defaults @119f2be): glyphs_by_primary_codepoint -> glyphs_by_codepoint (a glyph is found by any of its codepoints, first in order wins) + test_a_glyph_is_found_by_an_alternate_codepoint",
+    "verdict": "keep",
+    "reason": "The change is faithful to FontForge. SFGetChar goes through SFCIDFindCID to SFFindGID and SCUniMatch, which match unicodeenc or any altuni with the lowest gid winning; the bodies are identical at b69c9652, 5a11aa4c and master. (The investigator's chain skips SFCIDFindCID, which changes nothing.) I rebuilt it independently from a git archive plus the patch. 113 tests pass, fmt and clippy are clean, 145 of 149 styles are unchanged, and the only 4 changes are the 3 targeted rows plus Kristi's unshipped field (742 = FontForge 2010 value). The harness closes 3 rows and opens nothing. It is small, self-contained and depends on no fork, so an upstream maintainer can merge it. It must be an additional commit on #91 that Felipe pushes, not a force-push. The doc comment names SFFindGID; the file already cites FontForge function names throughout, so it is consistent, but Simon may prefer the format rule alone."
+   },
+   {
+    "tool_change": "sfd-reland tools/sfd_edit.py new op 'addprivate <Key> <value...>' (uncommitted working-tree change)",
+    "verdict": "keep",
+    "reason": "It writes exactly what FontForge's SFDDumpPrivate writes: 'BeginPrivate: 1', then '<key> <strlen> <value>', then 'EndPrivate'. The insertion point follows SFD_Dump's order (after DisplaySize/AntiAlias/FitToEm/WinInfo/OnlyBitmaps, before Grid/TeXData/AnchorClass2/BeginSubFonts/BeginChars). It is FATAL when a private dictionary already exists. land.py applies plan ops generically through sfd_edit.apply, so no other tool needs a change. My make_edits.py, which imports the op, produced files byte-identical to the investigator's. It still needs committing with the next-heights probes."
+   },
+   {
+    "tool_change": "sfd-reland tools/ff_heights_oracle.py: AltUni2-aware lookup (lowest gid over primary + alternate codepoints) -- optional",
+    "verdict": "keep",
+    "reason": "It changes no oracle output on either batch (next: 62/103 before and after; first batch identical). It removes a blind spot the oracle shares with the unpatched port: verify_heights_port gave 42/42 while both ignored AltUni, so that cross-check could never have caught this bug. It is a workspace tool, so no upstream review is needed."
+   }
+  ],
+  "classification_objections": [
+   "The us_weight_class rows (Magra-Bold, OleoScript-Bold, OleoScriptSwashCaps-Bold, Rambla-Bold, Rambla-BoldItalic) are classed 'compiler-gap', a label not used anywhere in the first batch's results. The first-batch precedent classes the same fontc 1.0.0 static-weightClass rows as 'converter-fidelity' (heights/results.json, nosifer, workflow journal). The substance is right: the .sfd states TTFWeight, tools/workarounds.py carries it, and all 5 are CLEAN in my final-workarounds runs. The label should be reconciled with the programme's vocabulary, or the vocabulary extended on purpose.",
+   "No other objection. The 21 BlueValues rows are provenance, consistent with the PatrickHand precedent (release exported from the .otf, .sfd re-imported from the release). The 3 AltUni rows are converter-fidelity. Ledger's nbsp row is source-edit-from-release."
+  ],
+  "missed": [
+   "The strongest provenance fact is not stated. For all 20 styles, src/<X>.otf's head.created equals the release's FFTM sourceCreated, and its head.modified comes 4-108 s before FFTM sourceModified (runs/otf_head_dates.txt). The investigator's facts.txt printed both dates but never drew the tie. It ties each release directly to that .otf, not just to the generic HOWTOGEN procedure, and it belongs in each edit's value_derived_from.",
+   "Arithmetic slip in decisions_for_felipe: alternative (B) is described as '22 values', but the blues rows total 21 x/cap values (Ledger 1, LilitaOne 2, Lustria 2, Magra-Bold 2, MergeOne 1, OleoScript-Bold 2, OleoScript-Regular 2, OleoScriptSwashCaps-Bold 2, OleoScriptSwashCaps-Regular 1, Rambla-Bold 2, Rambla-BoldItalic 2, Sail 1, TextMeOne 1).",
+   "The asymmetry decision lists only the 4 CLEAN siblings (Magra-Regular, Rambla-Italic, Rambla-Regular, Rosarivo-Regular) as having lost their BlueValues. KottaOne-Regular, Macondo-Regular and Rosarivo-Italic lost theirs too, and they get no BlueValues edit either: 7 styles in total. This is harmless, because their glyph-count-mean heights (76/212, 24/53, 217/224) are nowhere near a zone, but the decision as stated to Felipe is incomplete.",
+   "Commit bodies cite 'tools/generate/HOWTOGEN.txt' and 'ttf2sfd.py' as bare paths. Neither exists in the landed repository, whose first commit holds only ofl/<family>/, so they should be qualified as googlefontdirectory-hg 52f780bc tools/... paths.",
+   "Not a height row, but relevant to 'families_landable_after': 7 of the 16 gates (KottaOne, Lustria, Macondo, OleoScript-Bold, OleoScript-Regular, OleoScriptSwashCaps-Bold, OleoScriptSwashCaps-Regular) carry the gate's non-blocking note 'GDEF.glyph_classes -- our build corrects 1 mark class(es) the release got wrong: U+0307. Disclose in the PR body'. tools/pr_body.py has no hook for it (grep finds no 'Disclose'/'GDEF'), so the disclosure has to be added by hand or the recipe decision (--infer-mark-category) revisited under the equivalence rule.",
+   "Hygiene, which the investigator disclosed: their scratch worktree sfd-reland-scratch/heights/bf-altuni is registered in the shared babelfont repo's worktree list (integration-ff-prs 'git worktree list' line 25) and has to be removed with 'git worktree remove'. A git-archive export (as used here) avoids registering anything.",
+   "Confirmed nothing missed in scope: no other style in either batch needs the BlueValues edit (blues_theory_all: 0 contradictions, 0 unexplained over 86 styles / 172 values), and no other next-batch style has a height mismatch under FontForge's rule (rule_all_next.txt). The pairing (families-next.tsv, FontName match, -TTF variant, 1 candidate each) and the .otf-by-name pairing were checked against the CFF FontNames; all agree."
+  ],
+  "overall": "The investigation is correct in substance; only small corrections are needed. I reproduced all 30 blocking rows, which match baseline-next gate for gate. Both root causes reproduce independently.\n\n1. The #91 lookup gap. FontForge finds 'mu' (U+00B5 with AltUni U+03BC) for U+03BC; babelfont misses it, so the 2011 glyph-count divisor is off by one: 19 against 18. My own build of the proposed patch closes KottaOne, Macondo and Rosarivo-Italic. It changes nothing else in 149 styles apart from Kristi's unshipped field, and its tests, fmt and clippy all pass.\n\n2. The lost BlueValues. FontForge exported 13 releases from src/<X>.otf and snapped their heights to that file's CFF BlueValues; the -TTF.sfd re-imports the TTF and has no private dictionary. The values I re-derived give byte-identical edits, and the result is consistent across the whole programme: 0 contradictions in 86 styles. With those edits, the patched converter and land.py's existing weight-class workaround, all 16 styles are CLEAN, and no other gate line changes.\n\nLedger's nbsp row is google/fonts 0436d99c0, as claimed.\n\nCorrections to fold in:\n- Relabel us_weight_class from 'compiler-gap' to the programme's 'converter-fidelity'.\n- 21 values, not 22.\n- The no-edit asymmetry covers 7 styles, not 4.\n- Qualify the HOWTOGEN and ttf2sfd paths in the commit bodies.\n- Add the .otf head.created = FFTM sourceCreated tie as evidence.\n- Note the GDEF U+0307 disclosure that 7 of these gates ask for.\n\nWhat only Felipe can do: push the #91 follow-up commit, and decide whether to commit the addprivate op. Scratch under sfd-reland-scratch/heights-verify (bf-src, bf-target, edits, the regression and oracle copies) is disposable: probes/rerun.sh rebuilds all of it. The probes and runs to keep are in investigations/next-heights-verify/."
+ }
+}

@@ -1,0 +1,205 @@
+{
+ "investigation": {
+  "unit": "vmetrics",
+  "styles": [
+   "Limelight-Regular",
+   "MountainsofChristmas-Bold",
+   "NothingYouCouldDo"
+  ],
+  "rows": [
+   {
+    "style": "Limelight-Regular",
+    "row": "OS/2.s_typo_ascender [1864, 1881]",
+    "classification": "source-edit-from-release",
+    "cause": "The release was edited after FontForge exported it. FontForge 20090914 exports this .sfd's offset-mode OS2TypoAscent 243 as Ascent 1638 + 243 = 1881, which is also what our build gives. The shipped 1864 is int() of the source's true outline maximum (1864.0, uni1E1F). That is the rule googlefontdirectory's tools/bbox/vmetcheck.py (hg 927784141) prescribed for win, typo and hhea.",
+    "evidence": "Pair: googlefontdirectory-hg @52f780bc ofl/limelight/src/Limelight-Regular-TTF.sfd vs google/fonts b5efa9c32e8f ofl/limelight/Limelight-Regular.ttf. The blob is 879e7f9d, identical to the file hg 927784141 added (Dave Crossland, 2012-08-20, 'Updating limelight with ttfautohint hinting and extended character set'); google/fonts has never changed it. FFTM: build 2009-09-14 17:32:09, sourceModified = the .sfd's ModificationTime (2012-04-07 21:31:23). head.created is 2012-04-07 21:31:33, 10 s after the save; FontForge sets created = modified = export time (tottf.c sethead, c9ca2f32). head.modified is 2012-08-20 07:27:21, so the file was re-stamped after export; the controls MoC-Bold v1.002 and NothingYouCouldDo have created == modified. Glyph headers: 21 glyphs have boxes over all points that are not FontForge's on-curve box, 0 the other way; the controls have 0 and 137/143. head.yMin is -636 (all points), not FontForge's -628. Files: runs/limelight_release_edit.txt, runs/limelight-release-edit-excerpts.txt, runs/ff-excerpts.txt."
+   },
+   {
+    "style": "Limelight-Regular",
+    "row": "OS/2.us_win_ascent [1864, 1881]",
+    "classification": "source-edit-from-release",
+    "cause": "Same post-export edit. FontForge's WinBB gives head.yMax 1864 + stated offset 17 = 1881 (our build agrees). The release carries 1864 = int(true max 1864.0), vmetcheck.py's value.",
+    "evidence": "runs/limelight_release_edit.txt: FontForge export 1881, vmetcheck rule 1864, release 1864. The offset_bases_sweep.txt rules ff_legacy, ff_master and bf496e904 all give 1881. Same pair as above."
+   },
+   {
+    "style": "Limelight-Regular",
+    "row": "OS/2.us_win_descent [629, 633]",
+    "classification": "source-edit-from-release",
+    "cause": "Same post-export edit. FontForge 20090914 exports -floor(on-curve min -628, kcommaaccent) + 3 = 631. babelfont 496e904 exports -floor(true min -629.28) + 3 = 633. The release has 629 = -int(-629.28), vmetcheck.py's value. No converter rule gives 629 from the stated offset 3.",
+    "evidence": "runs/limelight_release_edit.txt; runs/offset_bases_sweep.txt (ff_legacy 631, ff_master 639, bf496e904 633, release 629)."
+   },
+   {
+    "style": "Limelight-Regular",
+    "row": "hhea.ascender [1864, 1881]",
+    "classification": "source-edit-from-release",
+    "cause": "Same post-export edit. FontForge's sethhead gives max(int(1864.0), head.yMax 1864) + 17 = 1881. The release has 1864, vmetcheck.py's value.",
+    "evidence": "runs/limelight_release_edit.txt; runs/offset_bases_sweep.txt."
+   },
+   {
+    "style": "Limelight-Regular",
+    "row": "hhea.descender [-629, -633]",
+    "classification": "source-edit-from-release",
+    "cause": "Same post-export edit. FontForge 20090914 gives min(int(-629.28) = -629, head.yMin -628) - 3 = -632, and babelfont 496e904 gives floor(-629.28) - 3 = -633. The release has -629 = int(-629.28), vmetcheck.py's value. The edit left only the typo descender (-634 = -Descent 410 - 224) at FontForge's value, although vmetcheck would have changed it too.",
+    "evidence": "runs/limelight_release_edit.txt: typo descender 'release = FontForge'; the other five rows are 'release = vmetcheck'."
+   },
+   {
+    "style": "MountainsofChristmas-Bold",
+    "row": "OS/2.us_win_ascent [1064, 1066]",
+    "classification": "converter-fidelity",
+    "cause": "This is FontForge 20110222's head box. SplineSetQuickBounds before ee15007274e9 (2014-09-16) counts ON-CURVE points only. Scaron's highest on-curve point ceils to 1056, while its control point reaches 1060 and the curve 1058.0. So win = 1056 + stated offset 8 = 1064. babelfont 496e904 (#85) uses ceil(true max 1058.0) + 8 = 1066.",
+    "evidence": "Pair: googlefontdirectory-hg @52f780bc apache/mountainsofchristmas/src/MountainsofChristmas-Bold-TTF.sfd vs google/fonts b5efa9c32e8f apache/mountainsofchristmas/MountainsofChristmas-Bold.ttf. That file is v1.003 from the 2017 hotfix f3ec322aa, whose vertical metrics and head box match v1.002 at 90abd17b4 exactly. FFTM FFTimeStamp 1298382513 equals stamp.c source_modtime of fontforge b69c9652 (2011-02-22), and sourceModified equals the .sfd's ModificationTime. runs/ff-excerpts.txt quotes QuickBounds, dumpglyph, sethhead and WinBB at b69c9652. runs/offset_bases_sweep.txt: ff_legacy 1064 = release, bf496e904 1066. The .sfd states OS2WinAscent 8 with OS2WinAOffset 1."
+   },
+   {
+    "style": "MountainsofChristmas-Bold",
+    "row": "OS/2.us_win_descent [354, 355]",
+    "classification": "converter-fidelity",
+    "cause": "Same rule. g's lowest on-curve point floors to -354 (true curve -354.381, control point -356), so win descent = 354 + 0. #85's floor(true min) gives 355.",
+    "evidence": "runs/offset_bases_sweep.txt: ff_legacy 354 = release, bf496e904 355. The .sfd states OS2WinDescent 0 with OS2WinDOffset 1."
+   },
+   {
+    "style": "MountainsofChristmas-Bold",
+    "row": "hhea.descender [-354, -355]",
+    "classification": "converter-fidelity",
+    "cause": "FontForge's sethhead: the int of the TRUE bounds (C truncation toward zero: -354.381 -> -354), widened to the head box (-354), plus the stated 0 gives -354. #85 uses floor(-354.381) = -355. hhea.ascender already matches (max(int 1058, 1056) + 8 = 1066).",
+    "evidence": "runs/offset_bases_sweep.txt; runs/ff-excerpts.txt (sethhead at b69c9652)."
+   },
+   {
+    "style": "MountainsofChristmas-Bold",
+    "row": "OS/2.us_weight_class [700, 400]",
+    "classification": "compiler-gap",
+    "cause": "fontc 1.0.0 ignores a single-master Glyphs source's instance weightClass (issues/fontc-static-weight-class.md). tools/land.py already closes this with tools/workarounds.py weight_class, which takes TTFWeight 700 from the .sfd and writes it as FEA. baseline.sh does not apply land.py's workarounds, so it reports the row. This is not a vmetrics row.",
+    "evidence": "runs/03-legacy-offset-metrics+workarounds/MountainsofChristmas-Bold.gate.txt: workaround 'usWeightClass 700 (TTFWeight) as FEA', '0 blocking table difference(s), 8 stale in the release'. Probe: probes/workaround_regate.sh."
+   },
+   {
+    "style": "NothingYouCouldDo",
+    "row": "OS/2.us_win_ascent [959, 960]",
+    "classification": "converter-fidelity",
+    "cause": "FontForge 20110222's on-curve head box: Ecircumflex's highest on-curve point ceils to 959, while the curve reaches 959.439 and a control point 962. So win = 959 + 0. #85's ceil(true max) gives 960.",
+    "evidence": "Pair: googlefontdirectory-hg @52f780bc ofl/nothingyoucoulddo/src/NothingYouCouldDo-TTF.sfd vs google/fonts b5efa9c32e8f ofl/nothingyoucoulddo/NothingYouCouldDo.ttf (identical to the hg file). FFTM 1298382513 is build b69c9652. head.yMax is 959, and 143 glyph headers follow FontForge's on-curve rule, 0 all-point-only (runs/limelight_release_edit.txt control). runs/offset_bases_sweep.txt: ff_legacy 959 = release, bf496e904 960, ff_master 962."
+   },
+   {
+    "style": "NothingYouCouldDo",
+    "row": "hhea.ascender [959, 960]",
+    "classification": "converter-fidelity",
+    "cause": "sethhead: max(int(959.439) = 959, head.yMax 959) + 0 = 959. #85 gives ceil(959.439) = 960.",
+    "evidence": "runs/offset_bases_sweep.txt; runs/ff-excerpts.txt."
+   }
+  ],
+  "proposed_sfd_edits": [
+   {
+    "styles": [
+     "Limelight-Regular"
+    ],
+    "op": "setfield",
+    "args": "OS2TypoAscent 1864; OS2TypoAOffset 0; OS2WinAscent 1864; OS2WinAOffset 0; OS2WinDescent 629; OS2WinDOffset 0; HheadAscent 1864; HheadAOffset 0; HheadDescent -629; HheadDOffset 0",
+    "commit_subject": "Set the vertical metrics the 2012 release carries",
+    "commit_body": "google/fonts ships Limelight-Regular.ttf as googlefontdirectory 927784141\n(Dave Crossland, 2012-08-20) added it. Its vertical metrics were changed\nafter FontForge exported it from this source: head.created keeps the export\ntime (2012-04-07), head.modified says 2012-08-20, and the glyph boxes were\nrecomputed over all points. FontForge exports this source with typo, win\nand hhea ascent 1881, win descent 631 and hhea descender -632; the release\nhas 1864, 629 and -629, the integer part of the outlines' extremes (1864.0,\n-629.28), as the repository's tools/bbox/vmetcheck.py prescribed. The typo\ndescender stays -634, as in the release. Stated absolutely.",
+    "value_derived_from": "Copied from the release, and disclosed as such: google/fonts b5efa9c32e8f ofl/limelight/Limelight-Regular.ttf, blob 879e7f9d, identical to googlefontdirectory-hg 927784141. These values are a post-export edit. They equal int() of this source's true outline extremes (max 1864.0 on uni1E1F, min -629.28 on kcommaaccent), the rule of googlefontdirectory-hg 927784141:tools/bbox/vmetcheck.py. So they can be derived from the source outlines as well as read from the release. The typo descender the edit left alone (-634) is not touched here.",
+    "source_currently_states": "OS2TypoAscent: 243 / OS2TypoAOffset: 1, OS2WinAscent: 17 / OS2WinAOffset: 1, OS2WinDescent: 3 / OS2WinDOffset: 1, HheadAscent: 17 / HheadAOffset: 1, HheadDescent: -3 / HheadDOffset: 1. These are offsets, which FontForge 20090914 exports as 1881 / 1881 / 631 / 1881 / -632, the designer's intent: the designer's own src/Limelight-Regular.otf carries 1881/-634 in typo, win and hhea.",
+    "verified": true
+   }
+  ],
+  "proposed_tool_changes": [
+   {
+    "tool": "babelfont-rs (simoncozens/babelfont-rs)",
+    "description": "A new opt-in filter, --fontforge-legacy-offset-metrics, in the 'reproducing a legacy FontForge export' group. It re-resolves a FontForge source's offset-mode usWinAscent, usWinDescent and hhea ascender/descender against the bases FontForge's exporter used before ee15007274e9 (2014-09-16). Win: floor/ceil of each glyph's ON-CURVE points over decomposed default-master layers; the SFD reader keeps every SplinePoint, including interpolated quadratic ones, as an on-curve node. hhea: the true outline extremes truncated toward zero, widened to that box, and to 0 when a glyph is empty. The reader also records each metric's stated delta (format_specific 'sfd.offset_delta.<key>') so the filter does not depend on the reader's own base rule. After resolving, the filter marks the metric absolute (offset flag '0', offset_mode marker removed), so an SFD write-back stays consistent. The #85 default (floor/ceil of the true outline) is unchanged. The prototype adds 319 lines: 9 in fontforge.rs, 1 in filters/mod.rs, and the new filters/fontforgelegacyoffsetmetrics.rs with 3 unit tests.",
+    "evidence": "Harness, rows before -> after: MountainsofChristmas-Bold 4 -> 1 (runs/02; the remaining row is us_weight_class) -> 0 with land.py's workarounds (runs/03). NothingYouCouldDo 2 -> 0 (runs/02). MountainsofChristmas-Regular stays 0 (runs/02). UnifrakturMaguntia-Book, the precedent, 5 -> 3, with only the GPOS shell left (runs/05 -> runs/06). Conversion sweep over all 149 styles of families.tsv + families-next.tsv (runs/proto_metrics_sweep.txt): six metrics per style match the release 851 times with the filter vs 844 without, and the filter changes exactly 4 styles (UnifrakturMaguntia-Book, MountainsofChristmas-Bold, NothingYouCouldDo, Limelight-Regular). No value moves away from its release. The model sweep (runs/offset_bases_sweep.txt, 328 offset-mode metrics in 82 styles, all quadratic): pre-2014 rule 305, #85 298, FontForge-master rule 295. The pre-2014 rule never misses a metric #85 gets. Its 23 misses are Limelight (release edit), Play-Bold (no FFTM) and Puritan (em scale, its own plan). The PR #85 evidence pairs (hg -TTF .sfd vs GF release, runs/offset_bases_pr85_evidence.txt): the pre-2014 rule gets copse, daysone and handlee 12/12, #85 8/12. copse ships 1991, not the 1992 #85's message claims; sfd-batch5/tools/probes/sfd_bbox_rounding/README.md recorded that before #85 merged. FontForge source at the FFTM builds: runs/ff-excerpts.txt. Checks (runs/babelfont-proto-checks.txt): fmt clean; clippy --all-targets -D warnings clean; lib tests 259 pass, and the 11 failures are the robocjk/decompose tests that need the absent noto-cjk-varco data, which fail identically on upstream 496e904.",
+    "styles_affected": [
+     "MountainsofChristmas-Bold",
+     "NothingYouCouldDo",
+     "UnifrakturMaguntia-Book"
+    ],
+    "prototype": "Source: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics/babelfont-proto (clone of integration-ff-prs 17ea899, branch vmetrics-legacy-bounds, uncommitted). Diff: /home/fsanches/compartilhado/sfd-reland/investigations/next-vmetrics/runs/babelfont-proto.diff. Binary: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics/target/release/babelfont (sha256 6031e56d...). Harness wrapper that puts the flag first: investigations/next-vmetrics/probes/bf_first.sh.",
+    "upstream_pr_needed": "Yes, a new PR to simoncozens/babelfont-rs. Felipe must open it (no GitHub write access). The filter registration goes in the 'Filters for reproducing a legacy FontForge export' group that our open PRs #91-#93 introduce, so it rebases after them, or it carries its own group line on plain 496e904. Until it merges, land.py refuses to cite the converter, so MountainsofChristmas and NothingYouCouldDo land only as *-UNPUBLISHED-CONVERTER."
+   },
+   {
+    "tool": "sfd-reland tools/recipe.py",
+    "description": "Pass --fontforge-legacy-offset-metrics FIRST (it measures the outlines as the source states them, before --snap-component-transforms moves any component) when the release's FFTM FontForge build stamp is before 1410896146 (2014-09-16T19:35:46Z, ee15007274e9). This uses the same FFTM mechanism as --fontforge-height-glyph-count-mean. Releases without FFTM do not get the flag.",
+    "evidence": "Every FFTM stamp in both tables is 2012-09-06 or earlier. With the flag on every style, only the 4 styles above change and none regresses (runs/proto_metrics_sweep.txt), so gating by stamp is safe for these tables.",
+    "styles_affected": [
+     "MountainsofChristmas-Bold",
+     "NothingYouCouldDo",
+     "UnifrakturMaguntia-Book"
+    ],
+    "prototype": "/home/fsanches/compartilhado/sfd-reland/investigations/next-vmetrics/runs/recipe.py.proposed.diff (not applied to tools/recipe.py)",
+    "upstream_pr_needed": "No, it is a workspace tool. Apply it once the babelfont PR is merged and the pinned converter is rebuilt from a published revision."
+   }
+  ],
+  "families_landable_after": [
+   "limelight (the .sfd edit alone on the current converter, 496e904 + #91-#93: runs/01 CLEAN; like every landing it waits on #91-#93 being merged upstream)",
+   "nothingyoucoulddo (babelfont filter + recipe change: runs/02 CLEAN)",
+   "mountainsofchristmas (Bold: babelfont filter + recipe change + land.py's existing weight-class workaround, runs/03 CLEAN; Regular already CLEAN and still CLEAN with the filter, runs/02)"
+  ],
+  "decisions_for_felipe": [
+   "Limelight: approve reproducing the 2012 Google Fonts vertical-metrics edit as one documented .sfd commit. Its five values are copied from the release, and the commit says so; they equal googlefontdirectory's own vmetcheck.py rule applied to the source outlines. The alternative is to keep the designer's offsets (1881/-634), leaving 5 blocking rows and breaking the equivalence rule. Suggested future_work entry for the plan: 'Restore the vertical metrics the source states (typo/win/hhea ascent 1881, descent 631-634, as the designer's own OTF carries): revert the 2012 metrics commit.'",
+   "Open the babelfont-rs PR for --fontforge-legacy-offset-metrics. The name and shape are your call and Simon's; he may prefer a reader option to a filter. It needs your push and PR (no GitHub write access here).",
+   "Whether to tell Simon that #85's default (floor/ceil of the TRUE outline) matches no FontForge vintage when a control point lies beyond a curve's extreme. Pre-2014 FontForge used on-curve points; FontForge after ee15007274e9 uses all points. Also, #85's commit message evidence (copse 1992, daysone 568) is contradicted by the hg-source vs GF-release pairs (1991, 567). No post-2014 release in either table can validate a different default.",
+   "Apply the recipe.py diff (FFTM stamp < 2014-09-16 -> flag first) once the converter PR is merged."
+  ],
+  "unresolved": [
+   "GiveYouGlory (sfd-batch5, not in families.tsv or families-next.tsv) is the one known pair where the pre-2014 rule loses to #85: hhea.descender -624 vs release -625 (#85 gets -625). Its win descent 621 matches no rule (619 / 627 / 622). 621 = -int(-621.86) is vmetcheck's value, which suggests another post-export edit, but it was not investigated. If it is ever re-landed with this recipe, check it first (runs/offset_bases_pr85_evidence.txt).",
+   "The tool that rewrote Limelight after export is not identified. ttfautohint (v0.8 source: tattf.c) re-stamps head.modified, and hg 927784141's message says ttfautohint. But ttfautohint without pre-hinting keeps glyph headers and never recomputes head.yMin, while the release's all-point head box (-636) and its 21 all-point glyph boxes look like a fontTools recompile. The metric values' rule is identified; the tool is not.",
+   "Cubic sources are untested: FontForge measured its own quadratic approximation, which may add on-curve points. All 82 offset-mode styles in both tables are quadratic.",
+   "The <=2011 sethhead quirk, where the hhea DESCENDER's mode comes from HheadAOffset, is not modelled. No style in either table has HheadAOffset != HheadDOffset.",
+   "Releases without FFTM (Play, Tuffy, Corben, ComicRelief; ConcertOne in another batch) do not get the flag. Their vertical-metric rows (Play, Corben) belong to other units and are unchanged by it.",
+   "FINDINGS.md/VERIFY.md were not written (the harness refuses .md files). Everything is in this result, and the probes and runs are under investigations/next-vmetrics/ uncommitted. Scratch under sfd-reland-scratch/vmetrics/ is disposable: the prototype source is saved as runs/babelfont-proto.diff, the edited Limelight .sfd as runs/limelight-vmetrics-edit.diff plus the sfd_edit.py ops above, and the archive source copies and build dirs are regenerable."
+  ],
+  "verification": {
+   "summary": "All 11 blocking rows of the three styles close. Limelight 5 -> 0 with the documented .sfd edit on the pinned converter (runs/01), and also with the prototype filter present (runs/04). MountainsofChristmas-Bold 4 -> 1 with the prototype babelfont filter (runs/02) -> 0 with land.py's existing weight-class workaround (runs/03). NothingYouCouldDo 2 -> 0 with the filter (runs/02). MountainsofChristmas-Regular stays CLEAN (runs/02). The same filter takes the precedent UnifrakturMaguntia-Book from 5 to 3 rows (runs/05 -> 06), leaving only the GPOS shell, which is another unit's. The regression sweep over 149 styles shows the filter changes only 4 styles and moves no metric away from its release.",
+   "rows_before": "11 (runs/00-baseline, which reproduces baseline-next): Limelight-Regular 5 (s_typo_ascender, us_win_ascent, us_win_descent, hhea.ascender, hhea.descender), MountainsofChristmas-Bold 4 (us_win_ascent, us_win_descent, hhea.descender, us_weight_class), NothingYouCouldDo 2 (us_win_ascent, hhea.ascender)",
+   "rows_after": "0: Limelight-Regular 0 (runs/01 and runs/04), MountainsofChristmas-Bold 0 (runs/03; 1 in runs/02 before land.py's weight-class workaround), NothingYouCouldDo 0 (runs/02)",
+   "commands": [
+    "cd /home/fsanches/compartilhado/sfd-reland; V=investigations/next-vmetrics; S=/home/fsanches/compartilhado/sfd-reland-scratch/vmetrics; BFU=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont",
+    "FAMILIES=families-next.tsv BF=$BFU OUT=$V/runs/00-baseline TAG=vmetrics-00-baseline SCRATCH=$S bash tools/baseline.sh Limelight-Regular MountainsofChristmas-Bold NothingYouCouldDo",
+    "git -C /home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git show 52f780bc9d197280a9f430574e179a5f233c56b6:ofl/limelight/src/Limelight-Regular-TTF.sfd > $S/edits/Limelight-Regular-TTF.vmetrics.sfd; for a in 'OS2TypoAscent 1864' 'OS2TypoAOffset 0' 'OS2WinAscent 1864' 'OS2WinAOffset 0' 'OS2WinDescent 629' 'OS2WinDOffset 0' 'HheadAscent 1864' 'HheadAOffset 0' 'HheadDescent -629' 'HheadDOffset 0'; do $PY tools/sfd_edit.py $S/edits/Limelight-Regular-TTF.vmetrics.sfd setfield \"$a\"; done",
+    "FAMILIES=families-next.tsv BF=$BFU OUT=$V/runs/01-limelight-sfd-edit TAG=vmetrics-01-limelight-sfd-edit SCRATCH=$S SRC_OVERRIDE=$S/edits/Limelight-Regular-TTF.vmetrics.sfd bash tools/baseline.sh Limelight-Regular",
+    "(prototype) git clone --branch integration-ff-prs /home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs $S/babelfont-proto && git -C $S/babelfont-proto apply $V/runs/babelfont-proto.diff && sudo -n /usr/local/sbin/drop-caches; cd $S/babelfont-proto && CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=$S/target cargo build --release -p babelfont --features cli",
+    "FAMILIES=families-next.tsv BF=$V/probes/bf_first.sh EXTRA_FLAGS=--fontforge-legacy-offset-metrics OUT=$V/runs/02-legacy-offset-metrics TAG=vmetrics-02-legacy-offset-metrics SCRATCH=$S bash tools/baseline.sh MountainsofChristmas-Bold NothingYouCouldDo MountainsofChristmas-Regular",
+    "bash $V/probes/workaround_regate.sh MountainsofChristmas-Bold $S/baseline/MountainsofChristmas-Bold-vmetrics-02-legacy-offset-metrics $V/runs/03-legacy-offset-metrics+workarounds",
+    "FAMILIES=families-next.tsv BF=$V/probes/bf_first.sh EXTRA_FLAGS=--fontforge-legacy-offset-metrics OUT=$V/runs/04-limelight-edit+legacy-offset-metrics TAG=vmetrics-04 SCRATCH=$S SRC_OVERRIDE=$S/edits/Limelight-Regular-TTF.vmetrics.sfd bash tools/baseline.sh Limelight-Regular",
+    "FAMILIES=families.tsv BF=$BFU OUT=$V/runs/05-unifraktur-before TAG=vmetrics-05 SCRATCH=$S bash tools/baseline.sh UnifrakturMaguntia-Book; FAMILIES=families.tsv BF=$V/probes/bf_first.sh EXTRA_FLAGS=--fontforge-legacy-offset-metrics OUT=$V/runs/06-unifraktur-legacy-offset-metrics TAG=vmetrics-06 SCRATCH=$S bash tools/baseline.sh UnifrakturMaguntia-Book",
+    "$PY $V/probes/offset_bases_sweep.py > $V/runs/offset_bases_sweep.txt",
+    "$PY $V/probes/proto_metrics_sweep.py > $V/runs/proto_metrics_sweep.txt",
+    "$PY $V/probes/limelight_release_edit.py > $V/runs/limelight_release_edit.txt",
+    "for f in copse daysone handlee giveyouglory concertone: $PY $V/probes/offset_bases_sweep.py --sfd <hg 52f780bc ofl/$f/src/*-TTF.sfd> <google/fonts ofl/$f/*.ttf>  (runs/offset_bases_pr85_evidence.txt)",
+    "cd $S/babelfont-proto && cargo fmt -p babelfont -- --check && CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=$S/target-clippy cargo clippy -p babelfont --features cli --all-targets -- -D warnings && CARGO_TARGET_DIR=$S/target cargo test --release -p babelfont --lib   (runs/babelfont-proto-checks.txt)"
+   ]
+  },
+  "confidence": "High for every row's cause. The MountainsofChristmas-Bold and NothingYouCouldDo values are reproduced exactly from the unmodified sources using FontForge's code at the commit whose stamp.c equals the releases' FFTM build (b69c9652, 1298382513). A buildable prototype closes them in the harness with no regression across 149 styles. High that Limelight's metrics are a post-export release edit: head.created != head.modified, glyph boxes were recomputed over all points, and five values equal vmetcheck.py's rule, not FontForge's export of the source. Medium on which tool made that edit. The prototype's exact shape (filter vs reader option, name) is still to be settled upstream."
+ },
+ "verification": {
+  "unit": "vmetrics",
+  "reproduced": true,
+  "reproduction_notes": "All reproduced on the pipeline's own pairing (families-next.tsv: googlefontdirectory-hg @52f780bc <lic>/<fam>/src/*-TTF.sfd vs google/fonts b5efa9c32e8f <shipped>). Outputs are under /home/fsanches/compartilhado/sfd-reland/investigations/next-vmetrics-verify/{probes,runs}. The brief named two locations; I used next-vmetrics-verify, as its Files section says. Scratch is under sfd-reland-scratch/vmetrics-verify/. Nothing is committed.\n\n(1) Baseline (runs/00-baseline) matches baseline-next: 11 rows (Limelight 5, MoC-Bold 4, NYCD 2).\n\n(2) New parser, written without reusing unifraktur/vmetrics_probe.py (probes/indep_bounds.py, runs/indep_bounds.txt). It gives the claimed values:\n- MoC-Bold under the pre-2014 on-curve rule: 1064/354/1066/-354, equal to the release. The extremes are where the investigation says: Scaron on-curve 1056, curve 1058.0, control 1060; g on-curve -354, curve -354.381, control -356.\n- NYCD: 959/407/959/-407, equal to the release. The extreme is a circumflex at 959.439 on-curve 959, control 962; Hcircumflex ties with Ecircumflex.\n- Limelight: FontForge's rule gives 1881/631/1881/-632, #85 gives 1881/633/1881/-633, and the release has 1864/629/1864/-629. That is int() of the true extremes (1864.0 uni1E1F, -629.28 kcommaaccent). The release's own TTF outlines give the same int() values, which matters because vmetcheck.py opens the .ttf.\n\n(3) FontForge code fetched at b69c9652 and c9ca2f32. dumpglyph, dumpcomposite, SplineSetQuickBounds, SplineCharLayerQuickBounds, SCttfApprox, sethhead, WinBB and dumpghstruct are byte-identical in both. setos2/WinBB runs after sethead (initATTables is called after sethead). Master counts control points (ee15007274e9, 2014-09-16T19:35:46Z = 1410896146, confirmed via the GitHub API).\n\n(4) Sweep of all 149 styles with the new parser (runs/indep_sweep.txt): 328 offset-mode metrics in 82 styles. Pre-2014 rule 305, #85 298, master 295; identical to the investigation. The pre-2014 rule never misses where #85 hits. Its 23 misses are Limelight 4, Play-Bold 3 and Puritan 16. Only 4 styles differ between the pre-2014 rule and #85.\n\n(5) Glyph boxes (runs/glyph_boxes.txt): Limelight has 21 all-point-only boxes and 0 FontForge-only. Counting composites too: MoC-Bold v1.003 has 193 FontForge-only boxes and 0 all-point-only; NYCD 295 and 0.\n\n(6) Pairings and releases. MoC-Bold v1.003 (f3ec322aa) has the same vertical metrics, head box and outlines as v1.002 (90abd17b4). Limelight's other candidate, -OTF.sfd, is cubic and its ModificationTime is 17:24:59; FFTM sourceModified 21:31:23 matches -TTF.sfd, so the pairing is right. The designer's src/Limelight-Regular.otf carries 1881/-634 in typo, win and hhea, with win descent 634.\n\n(7) Limelight .sfd edit: applied with sfd_edit.py (runs/limelight-vmetrics-edit.verify.diff). CLEAN on the pinned converter (runs/01) and with the filter (runs/04).\n\n(8) I rebuilt the prototype myself from next-vmetrics/runs/babelfont-proto.diff on integration-ff-prs 17ea899 (sha256 64b4ae45..., which differs from the investigation's build because the build embeds its path).\n- Results: MoC-Bold 4 -> 1 (runs/02) -> 0 with land.py's weight-class workaround (runs/03). NYCD 2 -> 0. MoC-Regular CLEAN. UnifrakturMaguntia-Book leaves 3 GPOS rows (runs/06).\n- The filter's 3 tests pass and fmt is clean (runs/proto-rebuild-checks.txt). I did not re-run clippy.\n\n(9) Implementation against model (runs/impl_vs_model.txt). I converted all 149 styles with the pinned converter and with the prototype. On 328/328 offset-mode metrics the prototype equals my on-curve model and the pinned converter equals my #85 model. 0 of the other 566 metrics move, and exactly 4 styles change.\n\n(10) FFTM: every stamp in both tables is 2012-09-06 or earlier; 8 releases have no FFTM.",
+  "edit_verdicts": [
+   {
+    "commit_subject": "Set the vertical metrics the 2012 release carries",
+    "verdict": "keep",
+    "reason": "The values reproduce independently: 1864/629/-629 = int() of the true extremes, both of the .sfd outlines and of the release's own TTF outlines (which vmetcheck.py measures). FontForge's own rule gives 1881/631/1881/-632, and no rule gives 629 from the stated offset 3 (on-curve 631, all-points 639, #85 633). The value's origin is disclosed. The absolute form (flag 0 + value) is the same shape as tools/bbox/vmetcorrect.py's set_os2_vert, so it is the natural .sfd form, and it is converter-rule independent (CLEAN in runs/01 and with the filter in runs/04). Typo descender -634 is correctly left alone. Optional wording fixes: (a) 'head.modified says 2012-08-20' is not evidence of the METRICS edit by itself, because the same hg commit added ttfautohint hinting, which re-stamps modified. The stronger evidence is the 21 all-point glyph boxes plus 9 hmtx LSBs that kept FontForge's on-curve value while glyf xMin moved to the all-point minimum (runs/limelight_hmtx_vs_glyf.txt). (b) Say 'the int() rule of tools/bbox/vmetcheck.py and vmetcorrect.py', not that the script was run: neither script's automated output matches the release, since both would also change TypoDescent."
+   }
+  ],
+  "tool_verdicts": [
+   {
+    "tool_change": "babelfont-rs: opt-in filter --fontforge-legacy-offset-metrics (reader records sfd.offset_delta.<key>; filter re-resolves win from the on-curve head box, hhea from truncated true extremes widened to it)",
+    "verdict": "keep",
+    "reason": "The code matches FontForge b69c9652/c9ca2f32 (dumpglyph and dumpcomposite on-curve QuickBounds with floor/ceil, sethhead truncation and widening, WinBB). The SFD reader keeps flag-128 implied points as QCurve nodes, so they count as on-curve, as FontForge's SplinePoints do. My rebuild from the diff reproduces every harness result, and on all 149 styles it equals an independent model on 328/328 metrics and moves nothing else. Tests and fmt pass. Mergeability: it is opt-in; there is precedent for filters reading sfd.* keys (fontforgeos2defaults reads sfd.width_set); no sfd.* keys leak into .glyphs output; it depends only on the open #91-#93 for its group line. Requested revisions to the doc comment/PR text, none blocking: (1) state that the pre-2014-10 sethhead quirk (hhea descender's mode taken from HheadAOffset) is not modelled. (2) Do not claim the rule is universal for pre-2014 FontForge: GiveYouGlory is a clean 20110222 export (head created == modified, 339 FontForge on-curve boxes, 0 all-point) where it misses 2 of 4 metrics (runs/indep_bounds_pr85_pairs.txt, runs/glyph_boxes_giveyouglory.txt, runs/stamps.txt). (3) 'Must run first' is design rationale only: with the flag last, MoC-Bold and NYCD give identical results (runs/07-flag-last)."
+   },
+   {
+    "tool_change": "sfd-reland tools/recipe.py: insert --fontforge-legacy-offset-metrics first when the release's FFTM build stamp < 1410896146 (ee15007274e9)",
+    "verdict": "keep",
+    "reason": "The cutoff is the verified commit time of ee15007274e9. It uses the same FFTM mechanism as --fontforge-height-glyph-count-mean. It adds the flag to all 141 FFTM-stamped styles, but only 4 change (runs/impl_vs_model.txt), and none moves away from its release. The FFTM stamp is FontForge's library_source_modtime (ttfspecial.c ttf_fftm_dump), so a stamp can only postdate the code, never predate it; the gate cannot wrongly apply the pre-2014 rule to post-2014 code. Apply only after the converter change is merged upstream and the pinned converter is rebuilt from a published revision, as the investigation says."
+   }
+  ],
+  "classification_objections": [
+   "MountainsofChristmas-Bold OS/2.us_weight_class [700, 400] is labelled 'compiler-gap'. That label is not in the taxonomy the workflow journal uses. Every earlier unit classified the identical fontc single-master weightClass row as 'converter-fidelity': corben-bold, heights (NosiferCaps, UnifrakturCook-Bold), nosifer, puritan (Bold, BoldItalic), small (ComicRelief-Bold), tuffy, play (Play-Bold). Relabel it converter-fidelity. It is closed by tools/workarounds.py weight_class, which I reproduced: runs/03 has 0 blocking rows. The other 10 rows' classifications are correct: Limelight 5 x source-edit-from-release; MoC-Bold 3 and NYCD 2 x converter-fidelity."
+  ],
+  "missed": [
+   "googlefontdirectory-hg 927784141:tools/bbox/ also holds vmetcorrect.py, which APPLIES the same int() rule the result cites from vmetcheck.py. It sets each metric's IsOffset to 0 and writes the absolute value (set_os2_vert), exactly the shape of the proposed .sfd edit, then calls FontForge Generate. It cannot be the final writer: it would also set TypoDescent -629, its WinDescent branch writes the negative ymin, and a FontForge Generate would give created == modified and on-curve boxes. It should still be named as the repository's tool for this rule.",
+   "Extra evidence for the Limelight post-export rewrite that the result did not use (runs/limelight_hmtx_vs_glyf.txt). All 9 RELEASE-STALE hmtx rows in the gate have the same fingerprint: hmtx lsb is FontForge's on-curve x-minimum while glyf xMin is the all-point minimum (e.g. 'one' lsb 1 vs xMin -2; 'seven' 64 vs 61). The boxes were therefore recomputed without touching hmtx, which is what a fontTools/ttx compile (recalcBBoxes) does. FontForge writes lsb and xMin from the same box, and ttfautohint keeps glyf headers. This narrows the 'tool not identified' item, though it does not prove it.",
+   "GiveYouGlory is mischaracterised. The result says its 621 'suggests another post-export edit', but by the result's own discriminators it is a clean FontForge 20110222 export: head.created == head.modified (2011-07-08 07:31:04); FFTM sourceModified == the .sfd ModificationTime (1310121007); 339 glyph boxes are FontForge on-curve boxes and 0 are all-point (runs/stamps.txt, runs/glyph_boxes_giveyouglory.txt). Yet the pre-2014 rule gives 619/-624 against the release's 621/-625, and vmetcheck's rule gives -621 against -625, so it is not a vmetcheck edit either. Neither rule explains it; the stated offsets at export may have differed. At b69c9652, sf->modificationtime is bumped only by Font Info OK (fontinfo.c GFI_OK -> SFSetModTime), not by saving, outline edits or scripted SetOS2Value, so FFTM == ModificationTime does not prove the exported metrics equal the committed file. It is outside both tables, so no row here changes, but it lowers confidence that the filter's rule is complete.",
+   "Minor evidence caveats. The control counts '137/143' cover simple glyphs only, and MoC-Bold's control is v1.002 (90abd17b4), not the paired v1.003 release. Counting composites, the paired releases have 193 and 295 FontForge-box glyphs and 0 all-point-only; the conclusion is unchanged. The '10 s after the save' wording is loose: FFTM sourceModified is the last Font Info OK time (sf->modificationtime), not the save time. The extreme-setting glyph names have ties: Rcommaaccent/kcommaaccent for the Limelight minimum, Hcircumflex/Ecircumflex for the NYCD maximum.",
+   "No pairing mistakes were found. families-next.tsv has no duplicate style rows. Limelight's two candidates are resolved correctly (FFTM sourceModified = -TTF.sfd, not -OTF.sfd). NYCD's and Limelight's shipped blobs are the hg files. MoC-Bold's 2017 hotfix did not touch vertical metrics or outlines."
+  ],
+  "overall": "The investigation holds. Using my own parser, the FontForge source I fetched myself, harness runs and a rebuild of the prototype from its diff, I reproduced:\n- every row cause and every harness result;\n- the 305/298/295 model counts;\n- the \"4 styles change, none regresses\" claim.\n\nThe Rust filter matches an independent model on all 328 offset-mode metrics in both tables. The Limelight .sfd edit is sound: its values equal int() of both the source's and the release's true extremes. The edit closes all 5 rows.\n\nWeak points, none of which change a row or block landing:\n1. The us_weight_class row uses a new label, 'compiler-gap'. Every earlier unit called the same row converter-fidelity.\n2. vmetcorrect.py is omitted. It is the repository's tool that applies the cited rule, in the same IsOffset=0 + value shape as the proposed edit.\n3. GiveYouGlory is mischaracterised. By the result's own tests it is a clean FontForge 20110222 export, yet the filter's rule misses 2 of its 4 metrics. The upstream PR should present the rule as validated on the 82 offset-mode styles of these tables, not as complete for pre-2014 FontForge.\n4. The Limelight commit body leans on head.modified, which ttfautohint alone explains. The hmtx-vs-glyf fingerprint is better evidence.\n\nFamilies landable after the changes, as the result says:\n- limelight: the edit alone.\n- nothingyoucoulddo: the babelfont filter plus the recipe change.\n- mountainsofchristmas: the filter, the recipe change and land.py's existing weight-class workaround.\n\nAll three still wait on #91-#93 and the new PR being merged upstream."
+ }
+}
