@@ -1,0 +1,22 @@
+languagesystem latn dflt;
+languagesystem latn DEU;
+languagesystem latn TRK;
+lookup fi { sub f i by f_i; } fi;
+lookup ff { sub f f by f_f; } ff;
+feature liga {
+    script latn;
+    language DEU;
+    lookup fi;
+    script latn;
+    language dflt;
+    lookup fi;
+    script latn;
+    language DEU;
+    lookup ff;
+    script latn;
+    language TRK;
+    lookup ff;
+    script latn;
+    language dflt;
+    lookup ff;
+} liga;
