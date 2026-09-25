@@ -11,7 +11,7 @@ record (results.json) and renders it readably. A FINDINGS.md or VERIFY.md an age
 did manage to write is never overwritten. `CONCLUSIONS` holds the conclusion the
 parent drew for each unit after reading both reports; it leads FINDINGS.md.
 
-Usage: findings_from_results.py <journal.jsonl> <unit>...
+Usage: findings_from_results.py [--prefix=next-] <journal.jsonl> <unit>...
 """
 import json
 import os
@@ -21,6 +21,54 @@ import textwrap
 W = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 CONCLUSIONS = {
+    "next-heights": """\
+All 16 styles close. Most of these -TTF.sfd files were re-imported from the release TTF
+(ttf2sfd.py) and lost the CFF BlueValues of src/<X>.otf, the file FontForge exported the
+release from (its head.created equals the release's FFTM sourceCreated); SFStandardHeight
+snapped to those zones. One documented `addprivate BlueValues` edit per style restores
+them (13 styles), and a #91 follow-up (a glyph is found by any of its codepoints, as
+SFFindGID does) closes KottaOne, Macondo and Rosarivo-Italic. Ledger also needs the
+nbsp-width edit google/fonts made. 13 families land CLEAN with these.""",
+    "next-fstype": """\
+Titillium Web (11 styles) and Wallpoet: fsType is google/fonts' later release edit
+(93550bd32, 8ccda7bf7) -> one documented FSType 0 edit per style. Titillium's ExtraLight
+styles come from the Thin .sfd, renamed when Google Fonts shipped them (a history-based
+pairing rule and documented rename + usWeightClass 275 edits). The verifier found three
+converter bugs: the PostScript name is written into the wrong Glyphs property (affects
+16 landed styles), head.fontRevision ignores sfntRevision, and every contour's start
+point is rotated.""",
+    "next-emptygpos": """\
+FontForge writes an empty GPOS sharing GSUB's script list when only GSUB has lookups;
+it is functional (HarfBuzz skips fallback mark positioning when a GPOS exists). Closing
+it needs a fontc/fea-rs option to share the script list, a gftools-builder3 config key,
+and two babelfont language-system fixes (exclude_dflt; aalt's language systems). The
+verifier refuted Ultra's proposed edits: its release was exported from googlefontdirectory-hg
+2d042ebbd's Ultra-TTF.sfd, which needs no edit -- the pairing uses a later re-save.""",
+    "next-vmetrics": """\
+Limelight needs one documented edit reproducing the 2012 Google Fonts vertical-metrics
+change. Mountains of Christmas Bold and Nothing You Could Do need a new babelfont filter
+(--fontforge-legacy-offset-metrics: FontForge before 2014-09-16 resolved offset metrics
+against the on-curve bbox), chosen by the release's FFTM stamp.""",
+    "next-provenance": """\
+Lohit's METADATA commit is another family's tag: Bengali and Tamil re-pair to 0df83ad and
+361b23b. Thabit is build.py's output (the 2010 .sfd + Thabit.fea + IBM Courier, obliques
+generated) and needs its steps as documented edits plus several babelfont exporter
+filters. Yellowtail's ".sfd" is a Type 1 file: out of the SFD programme. The verifier
+found functional gaps the table gate hides (Lohit-Bengali renders 284 words differently;
+USE_TYPO_METRICS set where FontForge did not), which is why a functional gate is needed.""",
+    "next-cardo": """\
+Cardo needs a glyph rename (a digit-initial name fea cannot express), one advance edit,
+babelfont fixes (insertion-marker spelling, ligature carets, spacing marks, lookup
+precedence, no anchor propagation) and a fontc option (KernFeatureWriter ignoreMarks,
+Italic only). googlefonts/CardoFont is archived: where to land it is Felipe's call. The
+verifier also found the table gate hides advance changes and passes landed families that
+shape differently (Italiana double kerning, Salsa without GDEF).""",
+    "next-gsub": """\
+Megrim was exported with OpenType off (like Nosifer): three documented droplookup edits.
+Poly-Italic and Varela need the two babelfont language-system fixes shared with the
+empty-GPOS unit. RibeyeMarrow is functionally equal and blocked only by the table gate's
+contextual-lookup comparison (a gate fix).""",
+
     "heights": """\
 The height rows the current FontForge rule does not reproduce are, with one exception,
 FontForge's own older rule. Until commit 4d34d21ef866 (2012-05-14) `SFStandardHeight`
@@ -129,11 +177,20 @@ def findings(unit, inv):
                       % (e["commit_subject"], ", ".join(e["styles"]), e["op"].split(" (")[0],
                          e["args"].replace("\n", "; "), e["verified"], e["value_derived_from"],
                          e["source_currently_states"])]
-    if inv["proposed_converter_changes"]:
-        lines += ["", "## Proposed converter changes", ""]
-        for c in inv["proposed_converter_changes"]:
-            lines += ["- %s" % c["description"].replace("\n", " "), "",
-                      "  Evidence: %s" % c["evidence"].replace("\n", " ")]
+    for c in inv.get("proposed_converter_changes", []):
+        lines += ["", "## Proposed converter changes", ""] if c is inv["proposed_converter_changes"][0] else []
+        lines += ["- %s" % c["description"].replace("\n", " "), "",
+                  "  Evidence: %s" % c["evidence"].replace("\n", " ")]
+    if inv.get("proposed_tool_changes"):
+        lines += ["", "## Proposed tool changes", ""]
+        for c in inv["proposed_tool_changes"]:
+            lines += ["- **%s**: %s" % (c["tool"], c["description"].replace("\n", " ")), "",
+                      "  Evidence: %s" % c["evidence"].replace("\n", " "),
+                      "  Upstream: %s" % c["upstream_pr_needed"].replace("\n", " ")]
+    for key, title in (("families_landable_after", "Families that land once these are in"),
+                       ("decisions_for_felipe", "Decisions for Felipe")):
+        if inv.get(key):
+            lines += ["", "## " + title, ""] + ["- %s" % x.replace("\n", " ") for x in inv[key]]
     if inv["unresolved"]:
         lines += ["", "## Unresolved", ""] + ["- %s" % u.replace("\n", " ") for u in inv["unresolved"]]
     lines += ["", "## Rerun", "", "    " + "\n    ".join(inv["verification"]["commands"])]
@@ -147,6 +204,10 @@ def verify(unit, ver):
              "## Verdict", "", para(ver["overall"]), "", "## Per edit", ""]
     lines += ["- [%s] %s -- %s" % (e["verdict"], e["commit_subject"], e["reason"].replace("\n", " "))
               for e in ver["edit_verdicts"]]
+    if ver.get("tool_verdicts"):
+        lines += ["", "## Per tool change", ""]
+        lines += ["- [%s] %s -- %s" % (t["verdict"], t["tool_change"], t["reason"].replace("\n", " "))
+                  for t in ver["tool_verdicts"]]
     if ver["classification_objections"]:
         lines += ["", "## Objections", ""] + ["- %s" % o.replace("\n", " ") for o in ver["classification_objections"]]
     if ver["missed"]:
@@ -154,14 +215,21 @@ def verify(unit, ver):
     return ascii("\n".join(lines)) + "\n"
 
 
+PREFIX = ""
+
+
 def main():
-    journal, units = sys.argv[1], sys.argv[2:]
+    global PREFIX
+    args = sys.argv[1:]
+    if args and args[0].startswith("--prefix="):
+        PREFIX = args.pop(0).split("=", 1)[1]
+    journal, units = args[0], args[1:]
     inv, ver = {}, {}
     for line in open(journal):
         d = json.loads(line)
         r = d.get("result")
         if d.get("type") == "result" and isinstance(r, dict):
-            (ver if "overall" in r else inv)[r["unit"]] = r
+            (ver if "overall" in r else inv)[PREFIX + r["unit"].split()[0]] = r
     for unit in units:
         d = os.path.join(W, "investigations", unit)
         os.makedirs(d, exist_ok=True)
