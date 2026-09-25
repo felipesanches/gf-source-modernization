@@ -23,3 +23,5 @@ provenance-repaired source (pravins/lohit `0df83ad`), rebuilt here with
 (table gate: CLEAN 0), and the verifier's own build of it.
 
 Signals read, and what PASS means, are in the docstring of `tools/functional_gate.py`.
+
+`runs/<Style>.json`: the full per-style gate report of the validation run (every check, counts and examples); RESULT.tsv keeps only the first failure per check.

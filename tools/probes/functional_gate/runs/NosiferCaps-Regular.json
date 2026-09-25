@@ -1,0 +1,292 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "NosiferCaps-Regular",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/nosifercaps/NosiferCaps-Regular.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/nosifercaps/clone/fonts/ttf/NosiferCaps-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "334 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "646311 runs shaped, 777 differ",
+   "failures": [
+    "default features, singles: 3 of 334 runs differ",
+    "default features, base+mark: 738 of 747 runs differ",
+    "default features, base+mark+mark: 36 of 36 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      334,
+      3
+     ],
+     "pairs": [
+      62001,
+      0
+     ],
+     "base+mark": [
+      747,
+      738
+     ],
+     "base+mark+mark": [
+      36,
+      36
+     ],
+     "rules": [
+      1,
+      0
+     ],
+     "words": [
+      577736,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GSUB liga off": [
+      3002,
+      0
+     ],
+     "GPOS kern off": [
+      2454,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Latin": 577725
+    },
+    "examples": {
+     "singles": [
+      {
+       "text": "̇",
+       "codepoints": "U+0307",
+       "release": "dotaccentcmb@0,0 END@692,0",
+       "build": "dotaccentcmb@0,0 END@0,0"
+      },
+      {
+       "text": "̑",
+       "codepoints": "U+0311",
+       "release": "uni0311@0,0 END@977,0",
+       "build": "uni0311@0,0 END@0,0"
+      },
+      {
+       "text": "̦",
+       "codepoints": "U+0326",
+       "release": "uni0326@0,0 END@725,0",
+       "build": "uni0326@0,0 END@0,0"
+      }
+     ],
+     "base+mark": [
+      {
+       "text": "0̇",
+       "codepoints": "U+0030 U+0307",
+       "release": "zero@0,0 dotaccentcmb@1893,0 END@2585,0",
+       "build": "zero@0,0 dotaccentcmb@1893,0 END@1893,0"
+      },
+      {
+       "text": "0̑",
+       "codepoints": "U+0030 U+0311",
+       "release": "zero@0,0 uni0311@1893,0 END@2870,0",
+       "build": "zero@0,0 uni0311@1893,0 END@1893,0"
+      },
+      {
+       "text": "0̦",
+       "codepoints": "U+0030 U+0326",
+       "release": "zero@0,0 uni0326@1893,0 END@2618,0",
+       "build": "zero@0,0 uni0326@1893,0 END@1893,0"
+      },
+      {
+       "text": "1̇",
+       "codepoints": "U+0031 U+0307",
+       "release": "one@0,0 dotaccentcmb@1009,0 END@1701,0",
+       "build": "one@0,0 dotaccentcmb@1009,0 END@1009,0"
+      },
+      {
+       "text": "1̑",
+       "codepoints": "U+0031 U+0311",
+       "release": "one@0,0 uni0311@1009,0 END@1986,0",
+       "build": "one@0,0 uni0311@1009,0 END@1009,0"
+      }
+     ],
+     "base+mark+mark": [
+      {
+       "text": "Ȧ̇",
+       "codepoints": "U+0041 U+0307 U+0307",
+       "release": "A@0,0 dotaccentcmb@1768,0 dotaccentcmb@2460,0 END@3152,0",
+       "build": "A@0,0 dotaccentcmb@1768,0 dotaccentcmb@1768,0 END@1768,0"
+      },
+      {
+       "text": "Ȧ̑",
+       "codepoints": "U+0041 U+0307 U+0311",
+       "release": "A@0,0 dotaccentcmb@1768,0 uni0311@2460,0 END@3437,0",
+       "build": "A@0,0 dotaccentcmb@1768,0 uni0311@1768,0 END@1768,0"
+      },
+      {
+       "text": "Ȧ̦",
+       "codepoints": "U+0041 U+0307 U+0326",
+       "release": "A@0,0 uni0326@1768,0 dotaccentcmb@2493,0 END@3185,0",
+       "build": "A@0,0 uni0326@1768,0 dotaccentcmb@1768,0 END@1768,0"
+      },
+      {
+       "text": "Ȃ̇",
+       "codepoints": "U+0041 U+0311 U+0307",
+       "release": "A@0,0 uni0311@1768,0 dotaccentcmb@2745,0 END@3437,0",
+       "build": "A@0,0 uni0311@1768,0 dotaccentcmb@1768,0 END@1768,0"
+      },
+      {
+       "text": "Ȃ̑",
+       "codepoints": "U+0041 U+0311 U+0311",
+       "release": "A@0,0 uni0311@1768,0 uni0311@2745,0 END@3722,0",
+       "build": "A@0,0 uni0311@1768,0 uni0311@1768,0 END@1768,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "FAIL",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 1 of 269 changed outlines draw different ink",
+   "failures": [
+    "1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px"
+   ],
+   "notes": [],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 269,
+    "geometry_diffs": 1,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": true,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "PASS",
+   "summary": "IDs 1 2 4 6 16 17 21 22 equal",
+   "failures": [],
+   "notes": [
+    "name ID 3 (3,1,0x409): release 'FontForge 2.0 : Nosifer Caps Regular : 24-10-2011', build '001.002;newt;NosiferCaps-Regular'",
+    "name ID 5 (3,1,0x409): release 'Version 001.002 ', build 'Version 001.002;fontc 1.0.0'",
+    "Macintosh name records: 9 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.ulCodePageRange1: release 536871041, build 147"
+   ]
+  },
+  "line_spacing": {
+   "status": "FAIL",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [
+    "fsSelection: REGULAR gained"
+   ],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 3, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       2213,
+       -1441,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       2213,
+       -1441,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       2213,
+       -1441,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       2213,
+       -1441,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       2213,
+       -1441,
+       0
+      ],
+      "FreeType engines (typo)": [
+       2213,
+       -1441,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "FAIL",
+   "summary": "336 glyph advances compared, 1 differ",
+   "failures": [
+    "1 advance width(s) differ (release/build): .notdef 748/1024"
+   ],
+   "notes": [
+    "1 release glyph(s) no text can reach are not in the build: nonmarkingreturn",
+    "13 left side bearing(s) differ (release/build), 1 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): .notdef 68/102, Icircumflex -37/-38, Lslash 73/74, comma 137/138, commaaccent 137/138"
+   ]
+  },
+  "gdef": {
+   "status": "FAIL",
+   "summary": "GDEF present/absent; 3 class difference(s) shaping reads, 2 it does not",
+   "failures": [
+    "GDEF absent in the build",
+    "3 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3, uni0311 1/3, uni0326 1/3"
+   ],
+   "notes": [
+    "2 glyph class(es) differ where no lookup reads them: .notdef 0/-, E_E 2/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

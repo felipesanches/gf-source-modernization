@@ -1,0 +1,192 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Quantico-BoldItalic",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/quantico/Quantico-BoldItalic.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/quantico/clone/fonts/ttf/Quantico-BoldItalic.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "258 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "PASS",
+   "summary": "557443 runs shaped, 0 differ",
+   "failures": [],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      258,
+      0
+     ],
+     "pairs": [
+      26569,
+      0
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      528036,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      2580,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Latin": 528025
+    },
+    "examples": {}
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "HINTING (reported, not gated; rendering above is unhinted): release unhinted (prep False), build unhinted (prep True); gasp {65535: 2} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 0,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": false,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 2
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (1)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Quantico-BoldItalic', build 'Quantico Bold Italic'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 2.002', build 'Version 2.002;fontc 1.0.0'",
+    "Macintosh name records: 14 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.ulCodePageRange1: release 536871185, build 129"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 2, build 4",
+    "caret slope: release 100/21, build 1000/213 (the caret's angle)",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       1063,
+       -367,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       1063,
+       -367,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       1063,
+       -367,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       1063,
+       -367,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       1063,
+       -367,
+       0
+      ],
+      "FreeType engines (typo)": [
+       1063,
+       -367,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "259 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": []
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

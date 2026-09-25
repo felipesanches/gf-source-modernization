@@ -1,0 +1,193 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "PatuaOne-Regular",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/patuaone/PatuaOne-Regular.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/patuaone/clone/fonts/ttf/PatuaOne-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "231 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "PASS",
+   "summary": "577720 runs shaped, 0 differ",
+   "failures": [],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      231,
+      0
+     ],
+     "pairs": [
+      34969,
+      0
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      525580,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      16940,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Latin": 525569
+    },
+    "examples": {}
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "1 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 1,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (1)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Patua One', build 'Patua One Regular'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 1.002', build 'Version 1.002;fontc 1.0.0'",
+    "Macintosh name records: 14 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.achVendID: release 'Ltt\\x00', build 'Ltt '"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 2, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       972,
+       -247,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       972,
+       -247,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       972,
+       -247,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       972,
+       -247,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       972,
+       -247,
+       0
+      ],
+      "FreeType engines (typo)": [
+       972,
+       -247,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "232 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "6 left side bearing(s) differ (release/build), 0 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): S 31/32, Scaron 31/32, dollar 30/31, fraction 4/-11, question 25/26"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

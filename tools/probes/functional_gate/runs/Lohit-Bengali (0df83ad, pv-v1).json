@@ -1,0 +1,886 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Lohit-Bengali (0df83ad, pv-v1)",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/lohitbengali/Lohit-Bengali.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/provenance-verify/baseline/Lohit-Bengali-pv-v1/fonts/ttf/LohitBengali-Bengali.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "154 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "95655 runs shaped, 22604 differ",
+   "failures": [
+    "default features, base+mark: 296 of 1520 runs differ",
+    "default features, base+mark+mark: 120 of 1444 runs differ",
+    "default features, rules: 37 of 91 runs differ",
+    "default features, words: 13646 of 49519 runs differ",
+    "GSUB abvs off: 703 of 2005 runs differ",
+    "GSUB blwf off: 522 of 1641 runs differ",
+    "GSUB blws off: 680 of 2341 runs differ",
+    "GSUB half off: 415 of 2883 runs differ",
+    "GSUB haln off: 451 of 2883 runs differ",
+    "GSUB init off: 483 of 2039 runs differ",
+    "GSUB nukt off: 397 of 1202 runs differ",
+    "GSUB pres off: 566 of 2514 runs differ",
+    "GSUB pstf off: 714 of 2333 runs differ",
+    "GSUB psts off: 841 of 3002 runs differ",
+    "GSUB rphf off: 366 of 1514 runs differ",
+    "GSUB vatu off: 430 of 2647 runs differ",
+    "GPOS abvm off: 336 of 4420 runs differ",
+    "GPOS blwm off: 499 of 3409 runs differ",
+    "GPOS mark off: 1102 of 1694 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      154,
+      0
+     ],
+     "pairs": [
+      6400,
+      0
+     ],
+     "base+mark": [
+      1520,
+      296
+     ],
+     "base+mark+mark": [
+      1444,
+      120
+     ],
+     "rules": [
+      91,
+      37
+     ],
+     "words": [
+      49519,
+      13646
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GSUB abvs off": [
+      2005,
+      703
+     ],
+     "GSUB blwf off": [
+      1641,
+      522
+     ],
+     "GSUB blws off": [
+      2341,
+      680
+     ],
+     "GSUB half off": [
+      2883,
+      415
+     ],
+     "GSUB haln off": [
+      2883,
+      451
+     ],
+     "GSUB init off": [
+      2039,
+      483
+     ],
+     "GSUB nukt off": [
+      1202,
+      397
+     ],
+     "GSUB pres off": [
+      2514,
+      566
+     ],
+     "GSUB pstf off": [
+      2333,
+      714
+     ],
+     "GSUB psts off": [
+      3002,
+      841
+     ],
+     "GSUB rphf off": [
+      1514,
+      366
+     ],
+     "GSUB vatu off": [
+      2647,
+      430
+     ],
+     "GPOS abvm off": [
+      4420,
+      336
+     ],
+     "GPOS blwm off": [
+      3409,
+      499
+     ],
+     "GPOS mark off": [
+      1694,
+      1102
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Bengali": 49519
+    },
+    "examples": {
+     "base+mark": [
+      {
+       "text": "অঁ",
+       "codepoints": "U+0985 U+0981",
+       "release": "u0985@0,0 u0981@663,-20 END@666,0",
+       "build": "u0985@0,0 u0981@666,0 END@666,0"
+      },
+      {
+       "text": "আঁ",
+       "codepoints": "U+0986 U+0981",
+       "release": "u0986@0,0 u0981@894,-18 END@897,0",
+       "build": "u0986@0,0 u0981@897,0 END@897,0"
+      },
+      {
+       "text": "ইঁ",
+       "codepoints": "U+0987 U+0981",
+       "release": "u0987@0,0 u0981@405,11 END@400,0",
+       "build": "u0987@0,0 u0981@400,0 END@400,0"
+      },
+      {
+       "text": "ঈঁ",
+       "codepoints": "U+0988 U+0981",
+       "release": "u0988@0,0 u0981@456,-2 END@502,0",
+       "build": "u0988@0,0 u0981@502,0 END@502,0"
+      },
+      {
+       "text": "উঁ",
+       "codepoints": "U+0989 U+0981",
+       "release": "u0989@0,0 u0981@542,10 END@599,0",
+       "build": "u0989@0,0 u0981@599,0 END@599,0"
+      }
+     ],
+     "base+mark+mark": [
+      {
+       "text": "অঁঁ",
+       "codepoints": "U+0985 U+0981 U+0981",
+       "release": "u0985@0,0 u0981@663,-20 u0981@663,-20 END@666,0",
+       "build": "u0985@0,0 u0981@666,0 u0981@666,0 END@666,0"
+      },
+      {
+       "text": "অঁং",
+       "codepoints": "U+0985 U+0981 U+0982",
+       "release": "u0985@0,0 u0981@663,-20 u0982@666,0 END@997,0",
+       "build": "u0985@0,0 u0981@666,0 u0982@666,0 END@997,0"
+      },
+      {
+       "text": "অঁঃ",
+       "codepoints": "U+0985 U+0981 U+0983",
+       "release": "u0985@0,0 u0981@663,-20 u0983@666,0 END@1076,0",
+       "build": "u0985@0,0 u0981@666,0 u0983@666,0 END@1076,0"
+      },
+      {
+       "text": "অঁ়",
+       "codepoints": "U+0985 U+0981 U+09BC",
+       "release": "u0985@0,0 u0981@663,-20 uni25CC@666,0 u09BC@575,48 END@1386,0",
+       "build": "u0985@0,0 u0981@666,0 uni25CC@666,0 u09BC@575,48 END@1386,0"
+      },
+      {
+       "text": "অঁা",
+       "codepoints": "U+0985 U+0981 U+09BE",
+       "release": "u0985@0,0 u0981@663,-20 uni25CC@666,0 u09BE@1386,0 END@1609,0",
+       "build": "u0985@0,0 u0981@666,0 uni25CC@666,0 u09BE@1386,0 END@1609,0"
+      }
+     ],
+     "rules": [
+      {
+       "text": "িকঁ",
+       "codepoints": "U+09BF U+0995 U+0981",
+       "release": "u09BF@0,0 uni25CC@220,0 u0995@940,0 u0981@1334,-22 END@1478,0",
+       "build": "u09BF@0,0 uni25CC@220,0 u0995@940,0 u0981@1478,0 END@1478,0"
+      },
+      {
+       "text": "িখঁ",
+       "codepoints": "U+09BF U+0996 U+0981",
+       "release": "u09BF@0,0 uni25CC@220,0 u0996@940,0 u0981@1448,-20 END@1445,0",
+       "build": "u09BF@0,0 uni25CC@220,0 u0996@940,0 u0981@1445,0 END@1445,0"
+      },
+      {
+       "text": "িগঁ",
+       "codepoints": "U+09BF U+0997 U+0981",
+       "release": "u09BF@0,0 uni25CC@220,0 u0997@940,0 u0981@1440,-20 END@1444,0",
+       "build": "u09BF@0,0 uni25CC@220,0 u0997@940,0 u0981@1444,0 END@1444,0"
+      },
+      {
+       "text": "িঘঁ",
+       "codepoints": "U+09BF U+0998 U+0981",
+       "release": "u09BF@0,0 uni25CC@220,0 u0998@940,0 u0981@1404,-21 END@1415,0",
+       "build": "u09BF@0,0 uni25CC@220,0 u0998@940,0 u0981@1415,0 END@1415,0"
+      },
+      {
+       "text": "িঙঁ",
+       "codepoints": "U+09BF U+0999 U+0981",
+       "release": "u09BF@0,0 uni25CC@220,0 u0999@940,0 u0981@1411,-20 END@1504,0",
+       "build": "u09BF@0,0 uni25CC@220,0 u0999@940,0 u0981@1504,0 END@1504,0"
+      }
+     ],
+     "words": [
+      {
+       "text": "অঁতোনি",
+       "codepoints": "U+0985 U+0981 U+09A4 U+09CB U+09A8 U+09BF",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0"
+      },
+      {
+       "text": "অঁদালু",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09BE U+09B2 U+09C1",
+       "release": "u0985@0,0 u0981@663,-20 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1865,27 END@1866,0",
+       "build": "u0985@0,0 u0981@666,0 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0"
+      },
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      }
+     ],
+     "GSUB abvs off": [
+      {
+       "text": "অঁতোনি",
+       "codepoints": "U+0985 U+0981 U+09A4 U+09CB U+09A8 U+09BF",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0"
+      },
+      {
+       "text": "অঁদালু",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09BE U+09B2 U+09C1",
+       "release": "u0985@0,0 u0981@663,-20 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1865,27 END@1866,0",
+       "build": "u0985@0,0 u0981@666,0 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0"
+      },
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংশীদারত্বমূলক",
+       "codepoints": "U+0985 U+0982 U+09B6 U+09C0 U+09A6 U+09BE U+09B0 U+09A4 U+09CD U+09AC U+09AE U+09C2 U+09B2 U+0995",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u09C0@1452,0 u09A6@1672,0 u09BE@2076,0 u09B0@2299,0 u09A4_u09AC_u09CD.blwf.blws@2722,0 u09AE@3269,0 u09C2@3688,24 u09B2@3696,0 u0995@4269,0 END@4807,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u09C0@1452,0 u09A6@1672,0 u09BE@2076,0 u09B0@2299,0 u09A4_u09AC_u09CD.blwf.blws@2722,0 u09AE@3269,0 u09C2@3696,0 u09B2@3696,0 u0995@4269,0 END@4807,0"
+      }
+     ],
+     "GSUB blwf off": [
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09CD.half@975,0 u09B0@1379,0 END@1802,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09CD.half@975,0 u09B0@1379,0 END@1802,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      },
+      {
+       "text": "অংশগ্রহণমূলক",
+       "codepoints": "U+0985 U+0982 U+09B6 U+0997 U+09CD U+09B0 U+09B9 U+09A3 U+09AE U+09C2 U+09B2 U+0995",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u0997_u09CD.half@1452,0 u09B0@1959,0 u09B9@2382,0 u09A3@2786,0 u09AE@3251,0 u09C2@3670,24 u09B2@3678,0 u0995@4251,0 END@4789,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u0997_u09CD.half@1452,0 u09B0@1959,0 u09B9@2382,0 u09A3@2786,0 u09AE@3251,0 u09C2@3678,0 u09B2@3678,0 u0995@4251,0 END@4789,0"
+      },
+      {
+       "text": "অংশভুক্ত",
+       "codepoints": "U+0985 U+0982 U+09B6 U+09AD U+09C1 U+0995 U+09CD U+09A4",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AD@1452,0 u09C1@1912,-9 u0995_u09CD.half_u09A4.pres@2025,0 END@2772,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AD@1452,0 u09C1@2025,0 u0995_u09CD.half_u09A4.pres@2025,0 END@2772,0"
+      }
+     ],
+     "GSUB blws off": [
+      {
+       "text": "অঁতোনি",
+       "codepoints": "U+0985 U+0981 U+09A4 U+09CB U+09A8 U+09BF",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0"
+      },
+      {
+       "text": "অঁদালু",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09BE U+09B2 U+09C1",
+       "release": "u0985@0,0 u0981@663,-20 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1865,27 END@1866,0",
+       "build": "u0985@0,0 u0981@666,0 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0"
+      },
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      }
+     ],
+     "GSUB half off": [
+      {
+       "text": "অঁতোনি",
+       "codepoints": "U+0985 U+0981 U+09A4 U+09CB U+09A8 U+09BF",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0"
+      },
+      {
+       "text": "অঁদালু",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09BE U+09B2 U+09C1",
+       "release": "u0985@0,0 u0981@663,-20 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1865,27 END@1866,0",
+       "build": "u0985@0,0 u0981@666,0 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0"
+      },
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      }
+     ],
+     "GSUB haln off": [
+      {
+       "text": "অঁতোনি",
+       "codepoints": "U+0985 U+0981 U+09A4 U+09CB U+09A8 U+09BF",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0"
+      },
+      {
+       "text": "অঁদালু",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09BE U+09B2 U+09C1",
+       "release": "u0985@0,0 u0981@663,-20 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1865,27 END@1866,0",
+       "build": "u0985@0,0 u0981@666,0 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0"
+      },
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      }
+     ],
+     "GSUB init off": [
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      },
+      {
+       "text": "অংশজুড়েই",
+       "codepoints": "U+0985 U+0982 U+09B6 U+099C U+09C1 U+09A1 U+09BC U+09C7 U+0987",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u099C@1452,0 u09C1@2166,16 u09C7@2140,0 u09DC@2449,0 u0987@2998,0 END@3398,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u099C@1452,0 u09C1@2140,0 u09C7@2140,0 u09DC@2449,0 u0987@2998,0 END@3398,0"
+      },
+      {
+       "text": "অংশটুকুকে",
+       "codepoints": "U+0985 U+0982 U+09B6 U+099F U+09C1 U+0995 U+09C1 U+0995 U+09C7",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u099F@1452,0 u09C1@1795,30 u0995@1871,0 u09C1@2274,25 u09C7@2409,0 u0995@2718,0 END@3256,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u099F@1452,0 u09C1@1871,0 u0995@1871,0 u09C1@2409,0 u09C7@2409,0 u0995@2718,0 END@3256,0"
+      }
+     ],
+     "GSUB nukt off": [
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংশজুড়েই",
+       "codepoints": "U+0985 U+0982 U+09B6 U+099C U+09C1 U+09A1 U+09BC U+09C7 U+0987",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u099C@1452,0 u09C1@2166,16 u09C7@2140,0 u09A1@2449,0 u09BC@2299,63 u0987@3015,0 END@3415,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u099C@1452,0 u09C1@2140,0 u09C7@2140,0 u09A1@2449,0 u09BC@3015,0 u0987@3015,0 END@3415,0"
+      },
+      {
+       "text": "অংশযুক্ত",
+       "codepoints": "U+0985 U+0982 U+09B6 U+09AF U+09C1 U+0995 U+09CD U+09A4",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AF@1452,0 u09C1@1899,29 u0995_u09CD.half_u09A4.pres@1895,0 END@2642,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AF@1452,0 u09C1@1895,0 u0995_u09CD.half_u09A4.pres@1895,0 END@2642,0"
+      },
+      {
+       "text": "অকথিয়ুর",
+       "codepoints": "U+0985 U+0995 U+09A5 U+09BF U+09AF U+09BC U+09C1 U+09B0",
+       "release": "u0985@0,0 u0995@666,0 u09BF@1204,0 u09A5@1424,0 u09DF@1922,0 u09C1@2374,29 u09B0@2375,0 END@2798,0",
+       "build": "u0985@0,0 u0995@666,0 u09BF@1204,0 u09A5@1424,0 u09DF@1922,0 u09C1@2375,0 u09B0@2375,0 END@2798,0"
+      },
+      {
+       "text": "অকর্মণ্যতার",
+       "codepoints": "U+0985 U+0995 U+09B0 U+09CD U+09AE U+09A3 U+09CD U+09AF U+09A4 U+09BE U+09B0",
+       "release": "u0985@0,0 u0995@666,0 u09AE@1204,0 u09B0_u09CD.rphf@1639,-4 u09A3@1631,0 u09AF_u09CD.pstf@2096,0 u09A4@2319,0 u09BE@2896,0 u09B0@3119,0 END@3542,0",
+       "build": "u0985@0,0 u0995@666,0 u09AE@1204,0 u09B0_u09CD.rphf@1631,0 u09A3@1631,0 u09AF_u09CD.pstf@2096,0 u09A4@2319,0 u09BE@2896,0 u09B0@3119,0 END@3542,0"
+      }
+     ],
+     "GSUB pres off": [
+      {
+       "text": "অঁতোনি",
+       "codepoints": "U+0985 U+0981 U+09A4 U+09CB U+09A8 U+09BF",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0"
+      },
+      {
+       "text": "অঁদালু",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09BE U+09B2 U+09C1",
+       "release": "u0985@0,0 u0981@663,-20 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1865,27 END@1866,0",
+       "build": "u0985@0,0 u0981@666,0 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0"
+      },
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      }
+     ],
+     "GSUB pstf off": [
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংশগ্রহণমূলক",
+       "codepoints": "U+0985 U+0982 U+09B6 U+0997 U+09CD U+09B0 U+09B9 U+09A3 U+09AE U+09C2 U+09B2 U+0995",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u0997_u09B0_u09CD.blwf.vatu@1452,0 u09B9@2028,0 u09A3@2432,0 u09AE@2897,0 u09C2@3316,24 u09B2@3324,0 u0995@3897,0 END@4435,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u0997_u09B0_u09CD.blwf.vatu@1452,0 u09B9@2028,0 u09A3@2432,0 u09AE@2897,0 u09C2@3324,0 u09B2@3324,0 u0995@3897,0 END@4435,0"
+      },
+      {
+       "text": "অংশভুক্ত",
+       "codepoints": "U+0985 U+0982 U+09B6 U+09AD U+09C1 U+0995 U+09CD U+09A4",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AD@1452,0 u09C1@1912,-9 u0995_u09CD.half_u09A4.pres@2025,0 END@2772,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AD@1452,0 u09C1@2025,0 u0995_u09CD.half_u09A4.pres@2025,0 END@2772,0"
+      },
+      {
+       "text": "অংশভূক্ত",
+       "codepoints": "U+0985 U+0982 U+09B6 U+09AD U+09C2 U+0995 U+09CD U+09A4",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AD@1452,0 u09C2@1907,-14 u0995_u09CD.half_u09A4.pres@2025,0 END@2772,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AD@1452,0 u09C2@2025,0 u0995_u09CD.half_u09A4.pres@2025,0 END@2772,0"
+      }
+     ],
+     "GSUB psts off": [
+      {
+       "text": "অংশীদারত্বমূলক",
+       "codepoints": "U+0985 U+0982 U+09B6 U+09C0 U+09A6 U+09BE U+09B0 U+09A4 U+09CD U+09AC U+09AE U+09C2 U+09B2 U+0995",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u09C0@1452,0 u09A6@1672,0 u09BE@2076,0 u09B0@2299,0 u09A4_u09AC_u09CD.blwf.blws@2722,0 u09AE@3269,0 u09C2@3688,24 u09B2@3696,0 u0995@4269,0 END@4807,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u09C0@1452,0 u09A6@1672,0 u09BE@2076,0 u09B0@2299,0 u09A4_u09AC_u09CD.blwf.blws@2722,0 u09AE@3269,0 u09C2@3696,0 u09B2@3696,0 u0995@4269,0 END@4807,0"
+      },
+      {
+       "text": "অকুমারী",
+       "codepoints": "U+0985 U+0995 U+09C1 U+09AE U+09BE U+09B0 U+09C0",
+       "release": "u0985@0,0 u0995@666,0 u09C1@1069,25 u09AE@1204,0 u09BE@1631,0 u09B0@1854,0 u09C0@2277,0 END@2497,0",
+       "build": "u0985@0,0 u0995@666,0 u09C1@1204,0 u09AE@1204,0 u09BE@1631,0 u09B0@1854,0 u09C0@2277,0 END@2497,0"
+      },
+      {
+       "text": "অক্সিতঁনী",
+       "codepoints": "U+0985 U+0995 U+09CD U+09B8 U+09BF U+09A4 U+0981 U+09A8 U+09C0",
+       "release": "u0985@0,0 u09BF@666,0 u0995_u09CD.half_u09B8.pres@886,0 u09A4@1451,0 u0981@1901,-15 u09A8@2028,0 u09C0@2487,0 END@2707,0",
+       "build": "u0985@0,0 u09BF@666,0 u0995_u09CD.half_u09B8.pres@886,0 u09A4@1451,0 u0981@2028,0 u09A8@2028,0 u09C0@2487,0 END@2707,0"
+      },
+      {
+       "text": "অখেলোয়াড়ীসুলভ",
+       "codepoints": "U+0985 U+0996 U+09C7 U+09B2 U+09CB U+09AF U+09BC U+09BE U+09A1 U+09BC U+09C0 U+09B8 U+09C1 U+09B2 U+09AD",
+       "release": "u0985@0,0 u09C7@666,0 u0996@975,0 u09C7@1480,0 u09B2@1789,0 u09BE@2362,0 u09DF@2585,0 u09BE@3038,0 u09DC@3261,0 u09C0@3810,0 u09B8@4030,0 u09C1@4536,27 u09B2@4538,0 u09AD@5111,0 END@5684,0",
+       "build": "u0985@0,0 u09C7@666,0 u0996@975,0 u09C7@1480,0 u09B2@1789,0 u09BE@2362,0 u09DF@2585,0 u09BE@3038,0 u09DC@3261,0 u09C0@3810,0 u09B8@4030,0 u09C1@4538,0 u09B2@4538,0 u09AD@5111,0 END@5684,0"
+      },
+      {
+       "text": "অঘূর্ণনশীল",
+       "codepoints": "U+0985 U+0998 U+09C2 U+09B0 U+09CD U+09A3 U+09A8 U+09B6 U+09C0 U+09B2",
+       "release": "u0985@0,0 u0998@666,0 u09C2@1134,22 u09A3@1141,0 u09B0_u09CD.rphf@1615,-4 u09A8@1606,0 u09B6@2065,0 u09C0@2520,0 u09B2@2740,0 END@3313,0",
+       "build": "u0985@0,0 u0998@666,0 u09C2@1141,0 u09A3@1141,0 u09B0_u09CD.rphf@1606,0 u09A8@1606,0 u09B6@2065,0 u09C0@2520,0 u09B2@2740,0 END@3313,0"
+      }
+     ],
+     "GSUB rphf off": [
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      },
+      {
+       "text": "অংশগ্রহণমূলক",
+       "codepoints": "U+0985 U+0982 U+09B6 U+0997 U+09CD U+09B0 U+09B9 U+09A3 U+09AE U+09C2 U+09B2 U+0995",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u0997_u09B0_u09CD.blwf.vatu@1452,0 u09B9@2028,0 u09A3@2432,0 u09AE@2897,0 u09C2@3316,24 u09B2@3324,0 u0995@3897,0 END@4435,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u0997_u09B0_u09CD.blwf.vatu@1452,0 u09B9@2028,0 u09A3@2432,0 u09AE@2897,0 u09C2@3324,0 u09B2@3324,0 u0995@3897,0 END@4435,0"
+      },
+      {
+       "text": "অংশভুক্ত",
+       "codepoints": "U+0985 U+0982 U+09B6 U+09AD U+09C1 U+0995 U+09CD U+09A4",
+       "release": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AD@1452,0 u09C1@1912,-9 u0995_u09CD.half_u09A4.pres@2025,0 END@2772,0",
+       "build": "u0985@0,0 u0982@666,0 u09B6@997,0 u09AD@1452,0 u09C1@2025,0 u0995_u09CD.half_u09A4.pres@2025,0 END@2772,0"
+      }
+     ],
+     "GSUB vatu off": [
+      {
+       "text": "অঁতোনি",
+       "codepoints": "U+0985 U+0981 U+09A4 U+09CB U+09A8 U+09BF",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0"
+      },
+      {
+       "text": "অঁদালু",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09BE U+09B2 U+09C1",
+       "release": "u0985@0,0 u0981@663,-20 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1865,27 END@1866,0",
+       "build": "u0985@0,0 u0981@666,0 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0"
+      },
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6@975,0 u09B0_u09CD.blwf@1379,0 END@1379,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6@975,0 u09B0_u09CD.blwf@1379,0 END@1379,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অংকুরোদগমের",
+       "codepoints": "U+0985 U+0982 U+0995 U+09C1 U+09B0 U+09CB U+09A6 U+0997 U+09AE U+09C7 U+09B0",
+       "release": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1400,25 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0",
+       "build": "u0985@0,0 u0982@666,0 u0995@997,0 u09C1@1535,0 u09C7@1535,0 u09B0@1844,0 u09BE@2267,0 u09A6@2490,0 u0997@2894,0 u09C7@3398,0 u09AE@3707,0 u09B0@4134,0 END@4557,0"
+      }
+     ],
+     "GPOS abvm off": [
+      {
+       "text": "ঁ",
+       "codepoints": "U+0981",
+       "release": "uni25CC@0,0 u0981@720,0 END@720,0",
+       "build": "uni25CC@0,0 u0981@467,-22 END@720,0"
+      },
+      {
+       "text": "ঁঁ",
+       "codepoints": "U+0981 U+0981",
+       "release": "uni25CC@0,0 u0981@720,0 u0981@720,0 END@720,0",
+       "build": "uni25CC@0,0 u0981@467,-22 u0981@467,-22 END@720,0"
+      },
+      {
+       "text": "ঁঅ",
+       "codepoints": "U+0981 U+0985",
+       "release": "uni25CC@0,0 u0981@720,0 u0985@720,0 END@1386,0",
+       "build": "uni25CC@0,0 u0981@467,-22 u0985@720,0 END@1386,0"
+      },
+      {
+       "text": "ঁআ",
+       "codepoints": "U+0981 U+0986",
+       "release": "uni25CC@0,0 u0981@720,0 u0986@720,0 END@1617,0",
+       "build": "uni25CC@0,0 u0981@467,-22 u0986@720,0 END@1617,0"
+      },
+      {
+       "text": "ঁই",
+       "codepoints": "U+0981 U+0987",
+       "release": "uni25CC@0,0 u0981@720,0 u0987@720,0 END@1120,0",
+       "build": "uni25CC@0,0 u0981@467,-22 u0987@720,0 END@1120,0"
+      }
+     ],
+     "GPOS blwm off": [
+      {
+       "text": "অঁতোনি",
+       "codepoints": "U+0985 U+0981 U+09A4 U+09CB U+09A8 U+09BF",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A4@975,0 u09BE@1552,0 u09BF@1775,0 u09A8@1995,0 END@2454,0"
+      },
+      {
+       "text": "অঁদালু",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09BE U+09B2 U+09C1",
+       "release": "u0985@0,0 u0981@663,-20 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0",
+       "build": "u0985@0,0 u0981@666,0 u09A6@666,0 u09BE@1070,0 u09B2@1293,0 u09C1@1866,0 END@1866,0"
+      },
+      {
+       "text": "অঁদ্রে",
+       "codepoints": "U+0985 U+0981 U+09A6 U+09CD U+09B0 U+09C7",
+       "release": "u0985@0,0 u0981@663,-20 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0",
+       "build": "u0985@0,0 u0981@666,0 u09C7@666,0 u09A6_u09B0_u09CD.blwf.vatu@975,0 END@1486,0"
+      },
+      {
+       "text": "অঁরিয়েত",
+       "codepoints": "U+0985 U+0981 U+09B0 U+09BF U+09AF U+09BC U+09C7 U+09A4",
+       "release": "u0985@0,0 u0981@663,-20 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0",
+       "build": "u0985@0,0 u0981@666,0 u09BF@666,0 u09B0@886,0 u09C7@1309,0 u09DF@1618,0 u09A4@2071,0 END@2648,0"
+      },
+      {
+       "text": "অকর্মণ্যতার",
+       "codepoints": "U+0985 U+0995 U+09B0 U+09CD U+09AE U+09A3 U+09CD U+09AF U+09A4 U+09BE U+09B0",
+       "release": "u0985@0,0 u0995@666,0 u09AE@1204,0 u09B0_u09CD.rphf@1639,-4 u09A3@1631,0 u09AF_u09CD.pstf@2096,0 u09A4@2319,0 u09BE@2896,0 u09B0@3119,0 END@3542,0",
+       "build": "u0985@0,0 u0995@666,0 u09AE@1204,0 u09B0_u09CD.rphf@1631,0 u09A3@1631,0 u09AF_u09CD.pstf@2096,0 u09A4@2319,0 u09BE@2896,0 u09B0@3119,0 END@3542,0"
+      }
+     ],
+     "GPOS mark off": [
+      {
+       "text": "ঁ",
+       "codepoints": "U+0981",
+       "release": "uni25CC@0,0 u0981@467,-22 END@720,0",
+       "build": "uni25CC@0,0 u0981@720,0 END@720,0"
+      },
+      {
+       "text": "ঁঁ",
+       "codepoints": "U+0981 U+0981",
+       "release": "uni25CC@0,0 u0981@467,-22 u0981@467,-22 END@720,0",
+       "build": "uni25CC@0,0 u0981@720,0 u0981@720,0 END@720,0"
+      },
+      {
+       "text": "ঁ়",
+       "codepoints": "U+0981 U+09BC",
+       "release": "uni25CC@0,0 u0981@467,-22 uni25CC@720,0 u09BC@629,48 END@1440,0",
+       "build": "uni25CC@0,0 u0981@720,0 uni25CC@720,0 u09BC@1440,0 END@1440,0"
+      },
+      {
+       "text": "ঁু",
+       "codepoints": "U+0981 U+09C1",
+       "release": "uni25CC@0,0 u0981@467,-22 uni25CC@720,0 u09C1@1194,13 END@1440,0",
+       "build": "uni25CC@0,0 u0981@720,0 uni25CC@720,0 u09C1@1440,0 END@1440,0"
+      },
+      {
+       "text": "ঁূ",
+       "codepoints": "U+0981 U+09C2",
+       "release": "uni25CC@0,0 u0981@467,-22 uni25CC@720,0 u09C2@1189,8 END@1440,0",
+       "build": "uni25CC@0,0 u0981@720,0 uni25CC@720,0 u09C2@1440,0 END@1440,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "FAIL",
+   "summary": "diffenator3 0 glyph / 284 word diffs (0 / 284 confirmed); 0 of 471 changed outlines draw different ink",
+   "failures": [
+    "diffenator3: 284 word(s) render differently (>8 px at 16 ppem), confirmed: 'ইন্সট্রুমেন্টেশনের' 801px, 'জনগোষ্ঠীসমূহের' 782px, 'অডিওভিজুয়াল' 779px, 'দেপার্ত্যমঁসমূহের' 732px, 'উদ্ধৃতিসমূহের' 725px"
+   ],
+   "notes": [
+    "471 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink",
+    "HINTING (reported, not gated; rendering above is unhinted): release hinted (fpgm True, 461 glyph programs), build unhinted (prep True); gasp None / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 284,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 284,
+    "outline_changed": 471,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": true,
+      "prep": true,
+      "cvt": true,
+      "glyph_programs": 461,
+      "gasp": null
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (5)",
+   "failures": [
+    "name ID 1 (3,1,0x409): release 'Lohit Bengali', build 'Lohit Bengali Bengali'",
+    "name ID 4 (3,1,0x409): release 'Lohit Bengali', build 'Lohit Bengali Bengali'",
+    "name ID 6 (3,1,0x409): release 'Lohit-Bengali', build 'LohitBengali-Bengali'",
+    "name ID 17 (3,1,0x409) as read: release 'Regular', build 'Bengali'",
+    "name ID 22 (3,1,0x409) as read: release 'Regular', build 'Bengali'"
+   ],
+   "notes": [
+    "name ID 16 (3,1,0x409) added by the build but reads the same ('Lohit Bengali')",
+    "name ID 3 (3,1,0x409): release 'FontForge 2.0 : Lohit Bengali : 26-9-2012', build '2.5.1;ACE ;LohitBengali-Bengali'",
+    "name ID 5 (3,1,0x409): release 'Version 2.5.1', build 'Version 2.5.1;fontc 1.0.0'",
+    "Macintosh name records: 7 in the release (IDs [0, 1, 2, 3, 4, 5, 6]), 0 in the build; modern systems read the Windows records"
+   ]
+  },
+  "line_spacing": {
+   "status": "FAIL",
+   "summary": "per-platform ascender/descender/gap DIFFER",
+   "failures": [
+    "DirectWrite/GDI line spacing (ascender, descender, gap): release win (760, -325, 200), build typo (750, -274, 0)",
+    "FreeType engines line spacing (ascender, descender, gap): release hhea (760, -325, 200), build typo (750, -274, 0)",
+    "USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines"
+   ],
+   "notes": [
+    "OS/2 version: release 1, build 4",
+    "head.flags: release 31, build 11",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       760,
+       -325,
+       200
+      ],
+      "DirectWrite/GDI (win)": [
+       760,
+       -325,
+       200
+      ],
+      "FreeType engines (hhea)": [
+       760,
+       -325,
+       200
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       760,
+       -325,
+       200
+      ],
+      "DirectWrite/GDI (typo)": [
+       750,
+       -274,
+       0
+      ],
+      "FreeType engines (typo)": [
+       750,
+       -274,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "477 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "5 left side bearing(s) differ (release/build), 0 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): u09F2 32/33, u09F3 28/29, u09F5 33/29, uni09FB 117/-41, uni20B9 25/26"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/present; 0 class difference(s) shaping reads, 416 it does not",
+   "failures": [],
+   "notes": [
+    "416 glyph class(es) differ where no lookup reads them: .notdef 1/0, .null 1/0, afii301 1/0, afii61664 1/0, ampersand 1/0"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

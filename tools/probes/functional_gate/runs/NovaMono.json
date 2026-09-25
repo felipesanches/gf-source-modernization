@@ -1,0 +1,227 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "NovaMono",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/novamono/NovaMono.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/novamono/clone/fonts/ttf/NovaMono-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "1328 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "906461 runs shaped, 3 differ",
+   "failures": [
+    "default features, singles: 1 of 1328 runs differ",
+    "default features, base+mark: 2 of 597 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      1328,
+      1
+     ],
+     "pairs": [
+      255768,
+      0
+     ],
+     "base+mark": [
+      597,
+      2
+     ],
+     "base+mark+mark": [
+      12,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      648756,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {},
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Greek": 67998,
+     "Latin": 580747
+    },
+    "examples": {
+     "singles": [
+      {
+       "text": "̈",
+       "codepoints": "U+0308",
+       "release": "uni0308@0,0 END@1150,0",
+       "build": "uni0308@-1150,0 END@0,0"
+      }
+     ],
+     "base+mark": [
+      {
+       "text": "ϗ̈",
+       "codepoints": "U+03D7 U+0308",
+       "release": "uni03D7@0,0 uni0308@0,1 END@1150,0",
+       "build": "uni03D7@0,0 uni0308@0,2 END@1150,0"
+      },
+      {
+       "text": "ϰ̈",
+       "codepoints": "U+03F0 U+0308",
+       "release": "uni03F0@0,0 uni0308@0,1 END@1150,0",
+       "build": "uni03F0@0,0 uni0308@0,2 END@1150,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "FAIL",
+   "summary": "diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 6 changed outlines draw different ink",
+   "failures": [
+    "diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0308 70px"
+   ],
+   "notes": [
+    "6 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink",
+    "HINTING (reported, not gated; rendering above is unhinted): release hinted (fpgm True, 1305 glyph programs), build unhinted (prep True); gasp {8: 2, 17: 1, 65535: 3} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 1,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 1,
+    "d3_word_confirmed": 0,
+    "outline_changed": 6,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": true,
+      "prep": true,
+      "cvt": true,
+      "glyph_programs": 1305,
+      "gasp": {
+       "8": 2,
+       "17": 1,
+       "65535": 3
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (2)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'NovaMono', build 'NovaMono Regular'",
+    "name ID 6 (3,1,0x409): release 'NovaMono', build 'NovaMono-Regular'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 1.2', build 'Version 1.2;fontc 1.0.0'",
+    "Macintosh name records: 9 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.achVendID: release '    ', build 'NONE'",
+    "OS/2.ulCodePageRange1: release 536871059, build 536871323"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 3, build 4",
+    "head.flags: release 31, build 11",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       2215,
+       -639,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       2215,
+       -639,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       2215,
+       -639,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       2215,
+       -639,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       2215,
+       -639,
+       0
+      ],
+      "FreeType engines (typo)": [
+       2215,
+       -639,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "FAIL",
+   "summary": "1329 glyph advances compared, 0 differ",
+   "failures": [
+    "post.isFixedPitch: release 1, build 0"
+   ],
+   "notes": [
+    "3 left side bearing(s) differ (release/build), 0 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): uni2110 204/203, uni2232 185/184, uni223F 119/118"
+   ]
+  },
+  "gdef": {
+   "status": "FAIL",
+   "summary": "GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not",
+   "failures": [
+    "GDEF absent in the build",
+    "1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0308 1/3"
+   ],
+   "notes": [
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

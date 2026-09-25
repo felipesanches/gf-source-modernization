@@ -1,0 +1,203 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "PassionOne-Black",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/passionone/PassionOne-Black.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/passionone/clone/fonts/ttf/PassionOne-Black.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "269 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "557271 runs shaped, 1 differ",
+   "failures": [
+    "default features, singles: 1 of 269 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      269,
+      1
+     ],
+     "pairs": [
+      28776,
+      0
+     ],
+     "base+mark": [
+      174,
+      0
+     ],
+     "base+mark+mark": [
+      8,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      528044,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {},
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Greek": 0,
+     "Latin": 528033
+    },
+    "examples": {
+     "singles": [
+      {
+       "text": "̇",
+       "codepoints": "U+0307",
+       "release": "dotaccentcmb@0,0 END@500,0",
+       "build": "dotaccentcmb@-500,0 END@0,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "FAIL",
+   "summary": "diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 17 changed outlines draw different ink",
+   "failures": [
+    "diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 61px"
+   ],
+   "notes": [
+    "17 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink"
+   ],
+   "data": {
+    "d3_glyph_diffs": 1,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 1,
+    "d3_word_confirmed": 0,
+    "outline_changed": 17,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "PASS",
+   "summary": "IDs 1 2 4 6 16 17 21 22 equal",
+   "failures": [],
+   "notes": [
+    "name ID 3 (3,1,0x409): release '1.002;PYRS;PassionOne-Black', build 'Fontstage: Passion One Black: 2011'",
+    "name ID 5 (3,1,0x409): release 'Version 1.002', build 'Version 001.001;fontc 1.0.0'",
+    "Macintosh name records: 14 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.ulCodePageRange1: release 536870913, build 536871041"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 2, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       835,
+       -266,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       835,
+       -266,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       835,
+       -266,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       835,
+       -266,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       835,
+       -266,
+       0
+      ],
+      "FreeType engines (typo)": [
+       835,
+       -266,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "267 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "1 release glyph(s) no text can reach are not in the build: nonmarkingreturn"
+   ]
+  },
+  "gdef": {
+   "status": "FAIL",
+   "summary": "GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not",
+   "failures": [
+    "GDEF absent in the build",
+    "1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3"
+   ],
+   "notes": [
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

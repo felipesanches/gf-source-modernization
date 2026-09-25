@@ -1,0 +1,189 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "SwankyandMooMoo",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/swankyandmoomoo/SwankyandMooMoo.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/swankyandmoomoo/clone/fonts/ttf/SwankyandMooMoo-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "341 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "PASS",
+   "summary": "640080 runs shaped, 0 differ",
+   "failures": [],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      341,
+      0
+     ],
+     "pairs": [
+      66564,
+      0
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      573175,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {},
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Latin": 573164
+    },
+    "examples": {}
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 16 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "16 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink",
+    "HINTING (reported, not gated; rendering above is unhinted): release unhinted (prep True), build unhinted (prep True); gasp {65535: 3} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 16,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 3
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (2)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Swanky and Moo Moo', build 'Swanky and Moo Moo Regular'",
+    "name ID 6 (3,1,0x409): release 'SwankyandMooMoo', build 'SwankyandMooMoo-Regular'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 1.002 2001', build 'Version 1.002 2001;fontc 1.0.0'",
+    "name ID 13 (3,1,0x409): release 'Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com)\\r\\n\\r\\nThis Font Software', build 'Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com)\\n\\nThis Font Software i'",
+    "Macintosh name records: 12 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 8, 9, 12, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.achVendID: release '    ', build 'NONE'",
+    "OS/2.ulCodePageRange1: release 147, build 145"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 3, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       995,
+       -507,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       995,
+       -507,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       995,
+       -507,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       995,
+       -507,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       995,
+       -507,
+       0
+      ],
+      "FreeType engines (typo)": [
+       995,
+       -507,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "342 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "31 left side bearing(s) differ (release/build), 7 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): I 7/6, Iacute -110/-111, Idieresis -44/-45, Iogonek 7/6, Lslash -144/-147"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not",
+   "failures": [],
+   "notes": []
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

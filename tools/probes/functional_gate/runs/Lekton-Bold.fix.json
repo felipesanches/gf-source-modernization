@@ -1,0 +1,287 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Lekton-Bold",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/lekton/Lekton-Bold.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/lekton/clone/fonts/ttf/Lekton-Bold.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "352 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "708257 runs shaped, 38 differ",
+   "failures": [
+    "language system latn/TUR: 38 of 1538 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      352,
+      0
+     ],
+     "pairs": [
+      88634,
+      0
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      52,
+      0
+     ],
+     "words": [
+      578666,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GSUB calt off": [
+      2523,
+      0
+     ],
+     "GSUB dlig on": [
+      2313,
+      0
+     ],
+     "GSUB liga off": [
+      1538,
+      0
+     ],
+     "GSUB onum on": [
+      317,
+      0
+     ],
+     "GSUB salt on": [
+      2978,
+      0
+     ],
+     "GSUB smcp on": [
+      17652,
+      0
+     ],
+     "GSUB ss01 on": [
+      1588,
+      0
+     ],
+     "GSUB ss02 on": [
+      2903,
+      0
+     ],
+     "GSUB ss03 on": [
+      317,
+      0
+     ],
+     "GSUB ss04 on": [
+      317,
+      0
+     ],
+     "GSUB ss05 on": [
+      317,
+      0
+     ],
+     "GSUB ss06 on": [
+      317,
+      0
+     ],
+     "GSUB ss07 on": [
+      353,
+      0
+     ],
+     "GSUB ss08 on": [
+      353,
+      0
+     ],
+     "GSUB swsh on": [
+      3002,
+      0
+     ],
+     "GSUB titl on": [
+      2227,
+      0
+     ]
+    },
+    "language_systems": {
+     "latn/TUR": [
+      1538,
+      38
+     ]
+    },
+    "wordlists": {
+     "Common": 11,
+     "Greek": 0,
+     "Latin": 578655
+    },
+    "examples": {
+     "langsys latn/TUR": [
+      {
+       "text": "ABCOffice",
+       "codepoints": "U+0041 U+0042 U+0043 U+004F U+0066 U+0066 U+0069 U+0063 U+0065",
+       "release": "A@0,0 B@500,0 C@1000,0 O@1500,0 f@2000,0 f@2500,0 i@3000,0 c@3500,0 e@4000,0 END@4500,0",
+       "build": "A@0,0 B@500,0 C@1000,0 O@1500,0 f_f_i@2000,0 c@3000,0 e@3500,0 END@4000,0"
+      },
+      {
+       "text": "AEdificavit",
+       "codepoints": "U+0041 U+0045 U+0064 U+0069 U+0066 U+0069 U+0063 U+0061 U+0076 U+0069 U+0074",
+       "release": "A@0,0 E@500,0 d@1000,0 i@1500,0 f@2000,0 i@2500,0 c@3000,0 a@3500,0 v@4000,0 i@4500,0 t@5000,0 END@5500,0",
+       "build": "A@0,0 E@500,0 d@1000,0 i@1500,0 f_i@2000,0 c@2500,0 a@3000,0 v@3500,0 i@4000,0 t@4500,0 END@5000,0"
+      },
+      {
+       "text": "AFfirming",
+       "codepoints": "U+0041 U+0046 U+0066 U+0069 U+0072 U+006D U+0069 U+006E U+0067",
+       "release": "A@0,0 F@500,0 f@1000,0 i@1500,0 r@2000,0 m@2500,0 i@3000,0 n@3500,0 g@4000,0 END@4500,0",
+       "build": "A@0,0 F@500,0 f_i@1000,0 r@1500,0 m@2000,0 i@2500,0 n@3000,0 g@3500,0 END@4000,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs; 0 of 47 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "47 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink",
+    "HINTING (reported, not gated; rendering above is unhinted): release unhinted (prep True), build unhinted (prep True); gasp {65535: 2} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "outline_changed": 47,
+    "geometry_diffs": 0,
+    "unencoded_d3like_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 2
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (1)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Lekton-Bold', build 'Lekton Bold'"
+   ],
+   "notes": [
+    "name ID 3 (3,1,0x409): release 'FontForge 2.0 : Lekton Bold : 18-12-2010', build '3.0;PfEd;Lekton-Bold'",
+    "name ID 5 (3,1,0x409): release 'Version 34.000', build 'Version 3.0;fontc 1.0.0'",
+    "name ID 13 (3,1,0x409): release 'This Font Software is licensed under the SIL Open Font License, Version 1.1.\\r\\r--', build 'This Font Software is licensed under the SIL Open Font License, Version 1.1.\\n\\n--'",
+    "Macintosh name records: 11 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 9, 12, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.ulCodePageRange1: release 536871315, build 1"
+   ]
+  },
+  "line_spacing": {
+   "status": "FAIL",
+   "summary": "per-platform ascender/descender/gap DIFFER",
+   "failures": [
+    "DirectWrite/GDI line spacing (ascender, descender, gap): release win (1112, -585, 0), build typo (750, -250, 0)",
+    "USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI"
+   ],
+   "notes": [
+    "OS/2 version: release 2, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       750,
+       -250,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       1112,
+       -585,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       750,
+       -250,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       750,
+       -250,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       750,
+       -250,
+       0
+      ],
+      "FreeType engines (typo)": [
+       750,
+       -250,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "652 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "2 release glyph(s) no text can reach are not in the build: .null nonmarkingreturn",
+    "1 left side bearing(s) differ, 1 of them where the release's lsb is not its own outline's xMin (stale): six.onum 30/27"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 308 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "308 glyph class(es) differ where no lookup reads them: .notdef 0/-, C.calt 1/-, G.001 1/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

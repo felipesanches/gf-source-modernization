@@ -1,0 +1,260 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Italiana-Regular",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/italiana/Italiana-Regular.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/italiana/clone/fonts/ttf/Italiana-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "211 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "558743 runs shaped, 342565 differ",
+   "failures": [
+    "default features, pairs: 823 of 22201 runs differ",
+    "default features, words: 341742 of 515663 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      211,
+      0
+     ],
+     "pairs": [
+      22201,
+      823
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      515663,
+      341742
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      20668,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Latin": 515652
+    },
+    "examples": {
+     "pairs": [
+      {
+       "text": "Bv",
+       "codepoints": "U+0042 U+0076",
+       "release": "B@0,0 v@550,0 END@1020,0",
+       "build": "B@0,0 v@530,0 END@1000,0"
+      },
+      {
+       "text": "Bw",
+       "codepoints": "U+0042 U+0077",
+       "release": "B@0,0 w@550,0 END@1340,0",
+       "build": "B@0,0 w@530,0 END@1320,0"
+      },
+      {
+       "text": "By",
+       "codepoints": "U+0042 U+0079",
+       "release": "B@0,0 y@550,0 END@1036,0",
+       "build": "B@0,0 y@530,0 END@1016,0"
+      },
+      {
+       "text": "Bz",
+       "codepoints": "U+0042 U+007A",
+       "release": "B@0,0 z@550,0 END@1018,0",
+       "build": "B@0,0 z@530,0 END@998,0"
+      },
+      {
+       "text": "F(",
+       "codepoints": "U+0046 U+0028",
+       "release": "F@0,0 parenleft@483,0 END@783,0",
+       "build": "F@0,0 parenleft@463,0 END@763,0"
+      }
+     ],
+     "words": [
+      {
+       "text": "0,,,zero",
+       "codepoints": "U+0030 U+002C U+002C U+002C U+007A U+0065 U+0072 U+006F",
+       "release": "zero@0,0 comma@646,0 comma@738,0 comma@830,0 z@922,0 e@1370,0 r@1839,0 o@2158,0 END@2718,0",
+       "build": "zero@0,0 comma@646,0 comma@738,0 comma@830,0 z@922,0 e@1350,0 r@1819,0 o@2098,0 END@2658,0"
+      },
+      {
+       "text": "0123456789,,,sinf",
+       "codepoints": "U+0030 U+0031 U+0032 U+0033 U+0034 U+0035 U+0036 U+0037 U+0038 U+0039 U+002C U+002C U+002C U+0073 U+0069 U+006E U+0066",
+       "release": "zero@0,0 one@646,0 two@1015,0 three@1444,0 four@1799,0 five@2243,0 six@2591,0 seven@3081,0 eight@3455,0 nine@3975,0 comma@4475,0 comma@4567,0 comma@4659,0 s@4751,0 i@5153,0 n@5376,0 f@5902,0 END@6157,0",
+       "build": "zero@0,0 one@646,0 two@1015,0 three@1444,0 four@1799,0 five@2243,0 six@2591,0 seven@3081,0 eight@3455,0 nine@3975,0 comma@4475,0 comma@4567,0 comma@4659,0 s@4751,0 i@5133,0 n@5356,0 f@5882,0 END@6137,0"
+      },
+      {
+       "text": "0123456789,,,tnum",
+       "codepoints": "U+0030 U+0031 U+0032 U+0033 U+0034 U+0035 U+0036 U+0037 U+0038 U+0039 U+002C U+002C U+002C U+0074 U+006E U+0075 U+006D",
+       "release": "zero@0,0 one@646,0 two@1015,0 three@1444,0 four@1799,0 five@2243,0 six@2591,0 seven@3081,0 eight@3455,0 nine@3975,0 comma@4475,0 comma@4567,0 comma@4659,0 t@4751,0 n@5055,0 u@5581,0 m@6107,0 END@6907,0",
+       "build": "zero@0,0 one@646,0 two@1015,0 three@1444,0 four@1799,0 five@2243,0 six@2591,0 seven@3081,0 eight@3455,0 nine@3975,0 comma@4475,0 comma@4567,0 comma@4659,0 t@4751,0 n@5025,0 u@5551,0 m@6077,0 END@6877,0"
+      },
+      {
+       "text": "0a,,,ordn",
+       "codepoints": "U+0030 U+0061 U+002C U+002C U+002C U+006F U+0072 U+0064 U+006E",
+       "release": "zero@0,0 a@646,0 comma@1165,0 comma@1257,0 comma@1349,0 o@1441,0 r@1981,0 d@2310,0 n@2888,0 END@3414,0",
+       "build": "zero@0,0 a@646,0 comma@1165,0 comma@1257,0 comma@1349,0 o@1441,0 r@1981,0 d@2280,0 n@2858,0 END@3384,0"
+      },
+      {
+       "text": "0o,,,ordn",
+       "codepoints": "U+0030 U+006F U+002C U+002C U+002C U+006F U+0072 U+0064 U+006E",
+       "release": "zero@0,0 o@646,0 comma@1206,0 comma@1298,0 comma@1390,0 o@1482,0 r@2022,0 d@2351,0 n@2929,0 END@3455,0",
+       "build": "zero@0,0 o@646,0 comma@1206,0 comma@1298,0 comma@1390,0 o@1482,0 r@2022,0 d@2321,0 n@2899,0 END@3425,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "FAIL",
+   "summary": "diffenator3 0 glyph / 52 word diffs (0 / 52 confirmed); 0 of 0 changed outlines draw different ink",
+   "failures": [
+    "diffenator3: 52 word(s) render differently (>8 px at 16 ppem), confirmed: 'ALKUjiggerypokeryMIX' 856px, 'Grødeimhammeren' 514px, 'Goltsteinstraße' 390px, 'GroÃŸlobming' 376px, 'ACEGHIJOSUWYaceghijosuwy' 362px"
+   ],
+   "notes": [],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 52,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 52,
+    "outline_changed": 0,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (1)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Italiana', build 'Italiana Regular'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 001.001 ', build 'Version 001.001;fontc 1.0.0'",
+    "Macintosh name records: 13 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14]), 0 in the build; modern systems read the Windows records"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 2, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       928,
+       -250,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       928,
+       -250,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       928,
+       -250,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       928,
+       -250,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       928,
+       -250,
+       0
+      ],
+      "FreeType engines (typo)": [
+       928,
+       -250,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "212 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "2 left side bearing(s) differ (release/build), 0 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): ae 35/36, eight 59/60"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

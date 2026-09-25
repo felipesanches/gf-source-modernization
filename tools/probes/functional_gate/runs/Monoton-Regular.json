@@ -1,0 +1,290 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Monoton-Regular",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/monoton/Monoton-Regular.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/monoton/clone/fonts/ttf/Monoton-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "371 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "652765 runs shaped, 1175 differ",
+   "failures": [
+    "default features, singles: 4 of 371 runs differ",
+    "default features, base+mark: 1059 of 1072 runs differ",
+    "default features, base+mark+mark: 112 of 112 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      371,
+      4
+     ],
+     "pairs": [
+      70354,
+      0
+     ],
+     "base+mark": [
+      1072,
+      1059
+     ],
+     "base+mark+mark": [
+      112,
+      112
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      578620,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      2236,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Greek": 0,
+     "Latin": 578609
+    },
+    "examples": {
+     "singles": [
+      {
+       "text": "̇",
+       "codepoints": "U+0307",
+       "release": "uni0307@0,0 END@533,0",
+       "build": "uni0307@0,0 END@0,0"
+      },
+      {
+       "text": "̏",
+       "codepoints": "U+030F",
+       "release": "uni030F@0,0 END@1136,0",
+       "build": "uni030F@0,0 END@0,0"
+      },
+      {
+       "text": "̑",
+       "codepoints": "U+0311",
+       "release": "uni0311@0,0 END@769,0",
+       "build": "uni0311@0,0 END@0,0"
+      },
+      {
+       "text": "̦",
+       "codepoints": "U+0326",
+       "release": "uni0326@0,0 END@562,0",
+       "build": "uni0326@0,0 END@0,0"
+      }
+     ],
+     "base+mark": [
+      {
+       "text": "0̇",
+       "codepoints": "U+0030 U+0307",
+       "release": "zero@0,0 uni0307@1727,0 END@2260,0",
+       "build": "zero@0,0 uni0307@1727,0 END@1727,0"
+      },
+      {
+       "text": "0̏",
+       "codepoints": "U+0030 U+030F",
+       "release": "zero@0,0 uni030F@1727,0 END@2863,0",
+       "build": "zero@0,0 uni030F@1727,0 END@1727,0"
+      },
+      {
+       "text": "0̑",
+       "codepoints": "U+0030 U+0311",
+       "release": "zero@0,0 uni0311@1727,0 END@2496,0",
+       "build": "zero@0,0 uni0311@1727,0 END@1727,0"
+      },
+      {
+       "text": "0̦",
+       "codepoints": "U+0030 U+0326",
+       "release": "zero@0,0 uni0326@1727,0 END@2289,0",
+       "build": "zero@0,0 uni0326@1727,0 END@1727,0"
+      },
+      {
+       "text": "1̇",
+       "codepoints": "U+0031 U+0307",
+       "release": "one@0,0 uni0307@873,0 END@1406,0",
+       "build": "one@0,0 uni0307@873,0 END@873,0"
+      }
+     ],
+     "base+mark+mark": [
+      {
+       "text": "Ω̇̇",
+       "codepoints": "U+03A9 U+0307 U+0307",
+       "release": "Omega@0,0 uni0307@190,0 uni0307@723,0 END@1256,0",
+       "build": "Omega@0,0 uni0307@190,0 uni0307@190,0 END@190,0"
+      },
+      {
+       "text": "Ω̇̏",
+       "codepoints": "U+03A9 U+0307 U+030F",
+       "release": "Omega@0,0 uni0307@190,0 uni030F@723,0 END@1859,0",
+       "build": "Omega@0,0 uni0307@190,0 uni030F@190,0 END@190,0"
+      },
+      {
+       "text": "Ω̇̑",
+       "codepoints": "U+03A9 U+0307 U+0311",
+       "release": "Omega@0,0 uni0307@190,0 uni0311@723,0 END@1492,0",
+       "build": "Omega@0,0 uni0307@190,0 uni0311@190,0 END@190,0"
+      },
+      {
+       "text": "Ω̦̇",
+       "codepoints": "U+03A9 U+0307 U+0326",
+       "release": "Omega@0,0 uni0326@190,0 uni0307@752,0 END@1285,0",
+       "build": "Omega@0,0 uni0326@190,0 uni0307@190,0 END@190,0"
+      },
+      {
+       "text": "Ω̏̇",
+       "codepoints": "U+03A9 U+030F U+0307",
+       "release": "Omega@0,0 uni030F@190,0 uni0307@1326,0 END@1859,0",
+       "build": "Omega@0,0 uni030F@190,0 uni0307@190,0 END@190,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "HINTING (reported, not gated; rendering above is unhinted): release unhinted (prep True), build unhinted (prep True); gasp {65535: 3} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 0,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 3
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (1)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Monoton', build 'Monoton Regular'"
+   ],
+   "notes": [
+    "name ID 3 (3,1,0x409): release 'FontForge 2.0 : Monoton : 19-8-2011', build '1.000;newt;Monoton-Regular'",
+    "name ID 5 (3,1,0x409): release 'Version 1.000', build 'Version 1.000;fontc 1.0.0'",
+    "Macintosh name records: 10 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 7, 8, 10]), 0 in the build; modern systems read the Windows records",
+    "OS/2.ulCodePageRange1: release 1, build 536871059"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 3, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       2366,
+       -822,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       2366,
+       -822,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       2366,
+       -822,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       2366,
+       -822,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       2366,
+       -822,
+       0
+      ],
+      "FreeType engines (typo)": [
+       2366,
+       -822,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "371 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": []
+  },
+  "gdef": {
+   "status": "FAIL",
+   "summary": "GDEF present/absent; 4 class difference(s) shaping reads, 1 it does not",
+   "failures": [
+    "GDEF absent in the build",
+    "4 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0307 1/3, uni030F 1/3, uni0311 1/3, uni0326 1/3"
+   ],
+   "notes": [
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

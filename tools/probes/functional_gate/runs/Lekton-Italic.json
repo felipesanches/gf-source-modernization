@@ -1,0 +1,199 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Lekton-Italic",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/lekton/Lekton-Italic.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/lekton/clone/fonts/ttf/Lekton-Italic.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "188 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "PASS",
+   "summary": "525138 runs shaped, 0 differ",
+   "failures": [],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      188,
+      0
+     ],
+     "pairs": [
+      16129,
+      0
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      506682,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      2139,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Latin": 506671
+    },
+    "examples": {}
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 9 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "9 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink",
+    "HINTING (reported, not gated; rendering above is unhinted): release unhinted (prep True), build unhinted (prep True); gasp {65535: 2} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 9,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 2
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (1)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Lekton-Italic', build 'Lekton Italic'"
+   ],
+   "notes": [
+    "name ID 3 (3,1,0x409): release 'FontForge 2.0 : Lekton Italic : 18-12-2010', build '3.0;PfEd;Lekton-Italic'",
+    "name ID 5 (3,1,0x409): release 'Version 3.000', build 'Version 3.0;fontc 1.0.0'",
+    "name ID 13 (3,1,0x409): release 'This Font Software is licensed under the SIL Open Font License, Version 1.1.\\r\\r--', build 'This Font Software is licensed under the SIL Open Font License, Version 1.1.\\n\\n--'",
+    "Macintosh name records: 11 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 9, 12, 13, 14]), 0 in the build; modern systems read the Windows records"
+   ]
+  },
+  "line_spacing": {
+   "status": "FAIL",
+   "summary": "per-platform ascender/descender/gap DIFFER",
+   "failures": [
+    "DirectWrite/GDI line spacing (ascender, descender, gap): release win (904, -244, 0), build typo (750, -250, 0)",
+    "USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI"
+   ],
+   "notes": [
+    "OS/2 version: release 2, build 4",
+    "caret slope: release 100/16, build 1000/164 (the caret's angle)",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       750,
+       -250,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       904,
+       -244,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       750,
+       -250,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       750,
+       -250,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       750,
+       -250,
+       0
+      ],
+      "FreeType engines (typo)": [
+       750,
+       -250,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "189 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "1 release glyph(s) no text can reach are not in the build: nonmarkingreturn",
+    "38 left side bearing(s) differ (release/build), 0 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): C 52/24, Ccedilla 52/24, G 51/23, O 40/38, OE 11/-13"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

@@ -1,0 +1,198 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "RougeScript-Regular",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/rougescript/RougeScript-Regular.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/rougescript/clone/fonts/ttf/RougeScript-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "218 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "PASS",
+   "summary": "542406 runs shaped, 0 differ",
+   "failures": [],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      218,
+      0
+     ],
+     "pairs": [
+      20201,
+      0
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      520601,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      1386,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Greek": 0,
+     "Latin": 520590
+    },
+    "examples": {}
+   }
+  },
+  "rendering": {
+   "status": "FAIL",
+   "summary": "diffenator3 11 glyph / 10 word diffs (5 / 10 confirmed); 5 of 94 changed outlines draw different ink",
+   "failures": [
+    "diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00CF 158px, U+00CD 154px, U+00CE 154px, U+00CC 151px, U+0049 143px",
+    "diffenator3: 10 word(s) render differently (>8 px at 16 ppem), confirmed: 'ÄÎÐÎÃÎÉ' 191px, 'BlagoÏevitch' 65px, 'COMPAÑÍA' 64px, 'ACEGHIJOSUWYaceghijosuwy' 57px, 'ALKUjiggerypokeryMIX' 56px",
+    "5 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 156 ppem = 8 units/px, > 4 px at coverage fuzz 64): Idieresis 2084px, Icircumflex 2066px, Iacute 2053px, Igrave 2042px, I 1914px"
+   ],
+   "notes": [
+    "diffenator3 reports 6 glyph(s) and 0 word(s) that neither the geometry test nor HarfBuzz confirms (1-unit rounding or lsb): U+00E8 185px, U+00E9 185px, U+00EA 174px, U+00EB 174px, U+0076 127px"
+   ],
+   "data": {
+    "d3_glyph_diffs": 11,
+    "d3_word_diffs": 10,
+    "d3_glyph_confirmed": 5,
+    "d3_word_confirmed": 10,
+    "outline_changed": 94,
+    "geometry_diffs": 5,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (1)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Rouge Script', build 'Rouge Script Regular'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 1.003', build 'Version 1.003;fontc 1.0.0'",
+    "Macintosh name records: 14 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14]), 0 in the build; modern systems read the Windows records"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 2, build 4",
+    "head.flags: release 9, build 11",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       1050,
+       -419,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       1050,
+       -419,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       1050,
+       -419,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       1050,
+       -419,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       1050,
+       -419,
+       0
+      ],
+      "FreeType engines (typo)": [
+       1050,
+       -419,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "218 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "94 left side bearing(s) differ (release/build), 94 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): A -6/-7, AE -56/-57, Aacute -6/-7, Acircumflex -6/-7, Adieresis -6/-7"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

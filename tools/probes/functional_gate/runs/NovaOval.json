@@ -1,0 +1,199 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "NovaOval",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/novaoval/NovaOval.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/novaoval/clone/fonts/ttf/NovaOval-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "418 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "PASS",
+   "summary": "731132 runs shaped, 0 differ",
+   "failures": [],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      418,
+      0
+     ],
+     "pairs": [
+      88510,
+      0
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      579283,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      62921,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Greek": 7,
+     "Latin": 579265
+    },
+    "examples": {}
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 21 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "21 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink",
+    "HINTING (reported, not gated; rendering above is unhinted): release hinted (fpgm True, 417 glyph programs), build unhinted (prep True); gasp {65535: 15} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 21,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": true,
+      "prep": true,
+      "cvt": true,
+      "glyph_programs": 417,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (5)",
+   "failures": [
+    "name ID 2 (3,1,0x409): release 'Book', build 'Regular'",
+    "name ID 4 (3,1,0x409): release 'Nova Oval', build 'Nova Oval Regular'",
+    "name ID 6 (3,1,0x409): release 'NovaOval', build 'NovaOval-Regular'",
+    "name ID 17 (3,1,0x409) as read: release 'Book', build 'Regular'",
+    "name ID 22 (3,1,0x409) as read: release 'Book', build 'Regular'"
+   ],
+   "notes": [
+    "name ID 3 (3,1,0x409): release 'FontForge : Nova Oval : 21-8-2011', build '2.000;    ;NovaOval-Regular'",
+    "name ID 5 (3,1,0x409): release 'Version 2.000', build 'Version 2.000;fontc 1.0.0'",
+    "Macintosh name records: 9 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.achVendID: release '    ', build 'NONE'"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 3, build 4",
+    "head.flags: release 8223, build 11",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       1966,
+       -506,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       1966,
+       -506,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       1966,
+       -506,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       1966,
+       -506,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       1966,
+       -506,
+       0
+      ],
+      "FreeType engines (typo)": [
+       1966,
+       -506,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "419 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": []
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

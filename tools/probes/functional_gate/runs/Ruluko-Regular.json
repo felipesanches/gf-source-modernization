@@ -1,0 +1,272 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Ruluko-Regular",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/ruluko/Ruluko-Regular.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/ruluko/clone/fonts/ttf/Ruluko-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "242 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "561368 runs shaped, 177 differ",
+   "failures": [
+    "default features, singles: 1 of 242 runs differ",
+    "default features, base+mark: 171 of 171 runs differ",
+    "default features, base+mark+mark: 5 of 5 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      242,
+      1
+     ],
+     "pairs": [
+      29282,
+      0
+     ],
+     "base+mark": [
+      171,
+      171
+     ],
+     "base+mark+mark": [
+      5,
+      5
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      530162,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      1506,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Greek": 0,
+     "Latin": 530151
+    },
+    "examples": {
+     "singles": [
+      {
+       "text": "̇",
+       "codepoints": "U+0307",
+       "release": "dotaccentcmb@0,0 END@208,0",
+       "build": "dotaccentcmb@0,0 END@0,0"
+      }
+     ],
+     "base+mark": [
+      {
+       "text": "0̇",
+       "codepoints": "U+0030 U+0307",
+       "release": "zero@0,0 dotaccentcmb@550,0 END@758,0",
+       "build": "zero@0,0 dotaccentcmb@550,0 END@550,0"
+      },
+      {
+       "text": "1̇",
+       "codepoints": "U+0031 U+0307",
+       "release": "one@0,0 dotaccentcmb@550,0 END@758,0",
+       "build": "one@0,0 dotaccentcmb@550,0 END@550,0"
+      },
+      {
+       "text": "2̇",
+       "codepoints": "U+0032 U+0307",
+       "release": "two@0,0 dotaccentcmb@550,0 END@758,0",
+       "build": "two@0,0 dotaccentcmb@550,0 END@550,0"
+      },
+      {
+       "text": "3̇",
+       "codepoints": "U+0033 U+0307",
+       "release": "three@0,0 dotaccentcmb@550,0 END@758,0",
+       "build": "three@0,0 dotaccentcmb@550,0 END@550,0"
+      },
+      {
+       "text": "4̇",
+       "codepoints": "U+0034 U+0307",
+       "release": "four@0,0 dotaccentcmb@550,0 END@758,0",
+       "build": "four@0,0 dotaccentcmb@550,0 END@550,0"
+      }
+     ],
+     "base+mark+mark": [
+      {
+       "text": "μ̇̇",
+       "codepoints": "U+03BC U+0307 U+0307",
+       "release": "mu@0,0 dotaccentcmb@551,0 dotaccentcmb@759,0 END@967,0",
+       "build": "mu@0,0 dotaccentcmb@551,0 dotaccentcmb@551,0 END@551,0"
+      },
+      {
+       "text": "Ȧ̇",
+       "codepoints": "U+0041 U+0307 U+0307",
+       "release": "A@0,0 dotaccentcmb@569,0 dotaccentcmb@777,0 END@985,0",
+       "build": "A@0,0 dotaccentcmb@569,0 dotaccentcmb@569,0 END@569,0"
+      },
+      {
+       "text": "Ḃ̇",
+       "codepoints": "U+0042 U+0307 U+0307",
+       "release": "B@0,0 dotaccentcmb@597,0 dotaccentcmb@805,0 END@1013,0",
+       "build": "B@0,0 dotaccentcmb@597,0 dotaccentcmb@597,0 END@597,0"
+      },
+      {
+       "text": "Ċ̇",
+       "codepoints": "U+0043 U+0307 U+0307",
+       "release": "C@0,0 dotaccentcmb@524,0 dotaccentcmb@732,0 END@940,0",
+       "build": "C@0,0 dotaccentcmb@524,0 dotaccentcmb@524,0 END@524,0"
+      },
+      {
+       "text": "Ḋ̇",
+       "codepoints": "U+0044 U+0307 U+0307",
+       "release": "D@0,0 dotaccentcmb@626,0 dotaccentcmb@834,0 END@1042,0",
+       "build": "D@0,0 dotaccentcmb@626,0 dotaccentcmb@626,0 END@626,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink",
+   "failures": [],
+   "notes": [],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 0,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (2)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Ruluko', build 'Ruluko Regular'",
+    "name ID 6 (3,1,0x409): release 'Ruluko', build 'Ruluko-Regular'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 1.001', build 'Version 1.001;fontc 1.0.0'",
+    "Macintosh name records: 12 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 8, 9, 12, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.ulCodePageRange1: release 1, build 129"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 2, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       914,
+       -241,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       914,
+       -241,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       914,
+       -241,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       914,
+       -241,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       914,
+       -241,
+       0
+      ],
+      "FreeType engines (typo)": [
+       914,
+       -241,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "242 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "7 left side bearing(s) differ (release/build), 0 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): U 99/98, Uacute 99/98, Ucircumflex 99/98, Udieresis 99/98, Ugrave 99/98"
+   ]
+  },
+  "gdef": {
+   "status": "FAIL",
+   "summary": "GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not",
+   "failures": [
+    "GDEF absent in the build",
+    "1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3"
+   ],
+   "notes": [
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

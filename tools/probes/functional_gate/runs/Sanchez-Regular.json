@@ -1,0 +1,236 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Sanchez-Regular",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/sanchez/Sanchez-Regular.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/sanchez/clone/fonts/ttf/Sanchez-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "349 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "754569 runs shaped, 6 differ",
+   "failures": [
+    "default features, pairs: 6 of 88804 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      349,
+      0
+     ],
+     "pairs": [
+      88804,
+      6
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      3,
+      0
+     ],
+     "words": [
+      578761,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GSUB liga off": [
+      1549,
+      0
+     ],
+     "GSUB salt on": [
+      2792,
+      0
+     ],
+     "GPOS kern off": [
+      82311,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Latin": 578750
+    },
+    "examples": {
+     "pairs": [
+      {
+       "text": "7,",
+       "codepoints": "U+0037 U+002C",
+       "release": "seven@0,0 comma@574,0 END@733,0",
+       "build": "seven@0,0 comma@550,0 END@709,0"
+      },
+      {
+       "text": "7-",
+       "codepoints": "U+0037 U+002D",
+       "release": "seven@0,0 hyphen@592,0 END@1006,0",
+       "build": "seven@0,0 hyphen@586,0 END@1000,0"
+      },
+      {
+       "text": "7.",
+       "codepoints": "U+0037 U+002E",
+       "release": "seven@0,0 period@579,0 END@730,0",
+       "build": "seven@0,0 period@560,0 END@711,0"
+      },
+      {
+       "text": "7–",
+       "codepoints": "U+0037 U+2013",
+       "release": "seven@0,0 endash@592,0 END@1146,0",
+       "build": "seven@0,0 endash@586,0 END@1140,0"
+      },
+      {
+       "text": "7—",
+       "codepoints": "U+0037 U+2014",
+       "release": "seven@0,0 emdash@592,0 END@1471,0",
+       "build": "seven@0,0 emdash@586,0 END@1465,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 2 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "2 glyph(s) store their outline differently (point structure, 1-unit rounding) and draw the same ink"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 2,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (1)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Sanchez', build 'Sanchez Regular'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 1.001', build 'Version 1.001;fontc 1.0.0'",
+    "Macintosh name records: 14 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14]), 0 in the build; modern systems read the Windows records",
+    "OS/2.ulCodePageRange1: release 536871059, build 1"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 3, build 4",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       1004,
+       -274,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       1004,
+       -274,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       1004,
+       -274,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       1004,
+       -274,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       1004,
+       -274,
+       0
+      ],
+      "FreeType engines (typo)": [
+       1004,
+       -274,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "367 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "11 left side bearing(s) differ (release/build), 0 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): Icircumflex 21/22, Igrave 31/32, acute 34/35, caron 34/35, cedilla 34/35"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 21 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "21 glyph class(es) differ where no lookup reads them: .notdef 0/-, a.alt 1/-, aacute.alt 1/-, abreve.alt 1/-, acircumflex.alt 1/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

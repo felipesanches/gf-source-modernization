@@ -1,0 +1,218 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Corben-Bold",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/corben/Corben-Bold.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/corben/clone/fonts/ttf/Corben-Bold.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "380 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "PASS",
+   "summary": "853207 runs shaped, 0 differ",
+   "failures": [],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      380,
+      0
+     ],
+     "pairs": [
+      116412,
+      0
+     ],
+     "base+mark": [
+      0,
+      0
+     ],
+     "base+mark+mark": [
+      0,
+      0
+     ],
+     "rules": [
+      9,
+      0
+     ],
+     "words": [
+      579846,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GSUB aalt on": [
+      24849,
+      0
+     ],
+     "GSUB liga off": [
+      2184,
+      0
+     ],
+     "GSUB onum on": [
+      121,
+      0
+     ],
+     "GSUB smcp on": [
+      22041,
+      0
+     ],
+     "GPOS kern off": [
+      107365,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Greek": 0,
+     "Latin": 579835
+    },
+    "examples": {}
+   }
+  },
+  "rendering": {
+   "status": "FAIL",
+   "summary": "diffenator3 3 glyph / 3 word diffs (3 / 3 confirmed); 3 of 3 changed outlines draw different ink",
+   "failures": [
+    "diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 138px, U+0141 61px, U+0142 55px",
+    "diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'NÆMESiS' 59px, 'Gocławice' 24px, 'MŁODZIEŻ' 20px",
+    "3 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): AE 1646px, Lslash 492px, lslash 477px"
+   ],
+   "notes": [
+    "HINTING (reported, not gated; rendering above is unhinted): release hinted (fpgm True, 482 glyph programs), build unhinted (prep True); gasp {65535: 15} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 3,
+    "d3_word_diffs": 3,
+    "d3_glyph_confirmed": 3,
+    "d3_word_confirmed": 3,
+    "outline_changed": 3,
+    "geometry_diffs": 3,
+    "hinting": {
+     "release": {
+      "fpgm": true,
+      "prep": true,
+      "cvt": true,
+      "glyph_programs": 482,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "PASS",
+   "summary": "IDs 1 2 4 6 16 17 21 22 equal",
+   "failures": [],
+   "notes": [
+    "name ID 0 (3,1,0x409): release 'Copyright (c) 2010, 2011 by vernon adams (vern@newtypography.co.uk), with Reserv', build 'Copyright (c) 2010 by vernon adams. All rights reserved.'",
+    "name ID 3 (3,1,0x409): release 'FontForge 2.0 : Corben Bold', build '1.000;Corben;'",
+    "name ID 5 (3,1,0x409): release 'Version 1.101; ttfautohint (v1.6)', build 'Version 1.000;fontc 1.0.0'",
+    "name ID 11 (3,1,0x409): release 'newtypography.co.uk', build None",
+    "name ID 12 (3,1,0x409): release 'newtypography.co.uk', build None",
+    "name ID 13 (3,1,0x409): release 'This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi', build 'Copyright (c) 2010, vern,,, (<URL|email>),\\nwith Reserved Font Name Corben.\\n\\nThis'",
+    "name ID 18 (3,1,0x409): release 'Corben', build None"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 2, build 4",
+    "head.flags: release 13, build 11",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       2826,
+       -969,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       2826,
+       -969,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       2826,
+       -969,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       2826,
+       -969,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       2826,
+       -969,
+       0
+      ],
+      "FreeType engines (typo)": [
+       2826,
+       -969,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "540 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "1 release glyph(s) no text can reach are not in the build: .null",
+    "3 left side bearing(s) differ (release/build), 3 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): AE -10/-19, Lslash 3/-2, lslash -38/-43"
+   ]
+  },
+  "gdef": {
+   "status": "PASS",
+   "summary": "GDEF present/absent; 0 class difference(s) shaping reads, 162 it does not",
+   "failures": [],
+   "notes": [
+    "GDEF absent in the build; the classes HarfBuzz uses are the same",
+    "162 glyph class(es) differ where no lookup reads them: .notdef 0/-, a.sc 1/-, aacute.sc 1/-, abreve.sc 1/-, acircumflex.sc 1/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}

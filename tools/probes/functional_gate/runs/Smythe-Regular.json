@@ -1,0 +1,281 @@
+{
+ "tool": "tools/functional_gate.py",
+ "style": "Smythe-Regular",
+ "shipped": "/home/fsanches/compartilhado/google/fonts/ofl/smythe/Smythe-Regular.ttf",
+ "built": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/builds/smythe/clone/fonts/ttf/Smythe-Regular.ttf",
+ "verdict": "FAIL",
+ "checks": {
+  "cmap": {
+   "status": "PASS",
+   "summary": "267 codepoints, exact",
+   "failures": [],
+   "notes": [
+    "Macintosh cmap subtables [(1, 0)] in the release, none in the build (read only by pre-Unicode Mac software)"
+   ]
+  },
+  "shaping": {
+   "status": "FAIL",
+   "summary": "621530 runs shaped, 358 differ",
+   "failures": [
+    "default features, singles: 2 of 267 runs differ",
+    "default features, base+mark: 340 of 364 runs differ",
+    "default features, base+mark+mark: 16 of 16 runs differ"
+   ],
+   "notes": [],
+   "data": {
+    "corpora": {
+     "singles": [
+      267,
+      2
+     ],
+     "pairs": [
+      51529,
+      0
+     ],
+     "base+mark": [
+      364,
+      340
+     ],
+     "base+mark+mark": [
+      16,
+      16
+     ],
+     "rules": [
+      0,
+      0
+     ],
+     "words": [
+      531113,
+      0
+     ],
+     "kern+mark": [
+      0,
+      0
+     ]
+    },
+    "features": {
+     "GPOS kern off": [
+      38241,
+      0
+     ]
+    },
+    "language_systems": {},
+    "wordlists": {
+     "Common": 11,
+     "Latin": 531102
+    },
+    "examples": {
+     "singles": [
+      {
+       "text": "̏",
+       "codepoints": "U+030F",
+       "release": "uni030F@0,0 END@588,0",
+       "build": "uni030F@0,0 END@0,0"
+      },
+      {
+       "text": "̑",
+       "codepoints": "U+0311",
+       "release": "uni0311@0,0 END@530,0",
+       "build": "uni0311@0,0 END@0,0"
+      }
+     ],
+     "base+mark": [
+      {
+       "text": "0̏",
+       "codepoints": "U+0030 U+030F",
+       "release": "zero@0,0 uni030F@865,0 END@1453,0",
+       "build": "zero@0,0 uni030F@865,0 END@865,0"
+      },
+      {
+       "text": "0̑",
+       "codepoints": "U+0030 U+0311",
+       "release": "zero@0,0 uni0311@865,0 END@1395,0",
+       "build": "zero@0,0 uni0311@865,0 END@865,0"
+      },
+      {
+       "text": "1̏",
+       "codepoints": "U+0031 U+030F",
+       "release": "one@0,0 uni030F@458,0 END@1046,0",
+       "build": "one@0,0 uni030F@458,0 END@458,0"
+      },
+      {
+       "text": "1̑",
+       "codepoints": "U+0031 U+0311",
+       "release": "one@0,0 uni0311@458,0 END@988,0",
+       "build": "one@0,0 uni0311@458,0 END@458,0"
+      },
+      {
+       "text": "2̏",
+       "codepoints": "U+0032 U+030F",
+       "release": "two@0,0 uni030F@673,0 END@1261,0",
+       "build": "two@0,0 uni030F@673,0 END@673,0"
+      }
+     ],
+     "base+mark+mark": [
+      {
+       "text": "Ȁ̏",
+       "codepoints": "U+0041 U+030F U+030F",
+       "release": "uni0200@0,0 uni030F@772,0 END@1360,0",
+       "build": "uni0200@0,0 uni030F@772,0 END@772,0"
+      },
+      {
+       "text": "Ȁ̑",
+       "codepoints": "U+0041 U+030F U+0311",
+       "release": "uni0200@0,0 uni0311@772,0 END@1302,0",
+       "build": "uni0200@0,0 uni0311@772,0 END@772,0"
+      },
+      {
+       "text": "Ȃ̏",
+       "codepoints": "U+0041 U+0311 U+030F",
+       "release": "uni0202@0,0 uni030F@772,0 END@1360,0",
+       "build": "uni0202@0,0 uni030F@772,0 END@772,0"
+      },
+      {
+       "text": "Ȃ̑",
+       "codepoints": "U+0041 U+0311 U+0311",
+       "release": "uni0202@0,0 uni0311@772,0 END@1302,0",
+       "build": "uni0202@0,0 uni0311@772,0 END@772,0"
+      },
+      {
+       "text": "B̏̏",
+       "codepoints": "U+0042 U+030F U+030F",
+       "release": "B@0,0 uni030F@757,0 uni030F@1345,0 END@1933,0",
+       "build": "B@0,0 uni030F@757,0 uni030F@757,0 END@757,0"
+      }
+     ]
+    }
+   }
+  },
+  "rendering": {
+   "status": "PASS",
+   "summary": "diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink",
+   "failures": [],
+   "notes": [
+    "HINTING (reported, not gated; rendering above is unhinted): release hinted (fpgm True, 167 glyph programs), build unhinted (prep True); gasp {65535: 15} / {65535: 15}"
+   ],
+   "data": {
+    "d3_glyph_diffs": 0,
+    "d3_word_diffs": 0,
+    "d3_glyph_confirmed": 0,
+    "d3_word_confirmed": 0,
+    "outline_changed": 0,
+    "geometry_diffs": 0,
+    "hinting": {
+     "release": {
+      "fpgm": true,
+      "prep": true,
+      "cvt": true,
+      "glyph_programs": 167,
+      "gasp": {
+       "65535": 15
+      }
+     },
+     "build": {
+      "fpgm": false,
+      "prep": true,
+      "cvt": false,
+      "glyph_programs": 0,
+      "gasp": {
+       "65535": 15
+      }
+     }
+    }
+   }
+  },
+  "names": {
+   "status": "FAIL",
+   "summary": "IDs 1 2 4 6 16 17 21 22 differ (2)",
+   "failures": [
+    "name ID 4 (3,1,0x409): release 'Smythe', build 'Smythe Regular'",
+    "name ID 6 (3,1,0x409): release 'Smythe', build 'Smythe-Regular'"
+   ],
+   "notes": [
+    "name ID 5 (3,1,0x409): release 'Version 1.000', build 'Version 1.000;fontc 1.0.0'",
+    "name ID 18 (3,1,0x409): release 'Smythe', build None",
+    "Macintosh name records: 11 in the release (IDs [0, 1, 2, 3, 4, 5, 6, 10, 13, 14, 18]), 0 in the build; modern systems read the Windows records",
+    "OS/2.ulCodePageRange1: release 1, build 17"
+   ]
+  },
+  "line_spacing": {
+   "status": "PASS",
+   "summary": "per-platform ascender/descender/gap equal",
+   "failures": [],
+   "notes": [
+    "USE_TYPO_METRICS set by the build: no platform's line spacing changes (the typo values equal the ones it replaces)",
+    "OS/2 version: release 2, build 4",
+    "head.flags: release 8223, build 11",
+    "head.lowestRecPPEM: release 8, build 6"
+   ],
+   "data": {
+    "platforms": {
+     "release": {
+      "CoreText (hhea)": [
+       1883,
+       -480,
+       0
+      ],
+      "DirectWrite/GDI (win)": [
+       1883,
+       -480,
+       0
+      ],
+      "FreeType engines (hhea)": [
+       1883,
+       -480,
+       0
+      ]
+     },
+     "build": {
+      "CoreText (hhea)": [
+       1883,
+       -480,
+       0
+      ],
+      "DirectWrite/GDI (typo)": [
+       1883,
+       -480,
+       0
+      ],
+      "FreeType engines (typo)": [
+       1883,
+       -480,
+       0
+      ]
+     }
+    }
+   }
+  },
+  "advances": {
+   "status": "PASS",
+   "summary": "267 glyph advances compared, 0 differ",
+   "failures": [],
+   "notes": [
+    "1 left side bearing(s) differ (release/build), 0 where the release's lsb is not its glyf xMin, so rasterizers draw that outline shifted by lsb - xMin (the rendering check measures the ink): questiondown 40/41"
+   ]
+  },
+  "gdef": {
+   "status": "FAIL",
+   "summary": "GDEF present/absent; 2 class difference(s) shaping reads, 1 it does not",
+   "failures": [
+    "GDEF absent in the build",
+    "2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni030F 1/3, uni0311 1/3"
+   ],
+   "notes": [
+    "1 glyph class(es) differ where no lookup reads them: .notdef 0/-"
+   ]
+  }
+ },
+ "environment": {
+  "harfbuzz": "12.3.2",
+  "uharfbuzz": "0.53.3",
+  "freetype": "2.13.2",
+  "diffenator3": "diffenator3 1.1.4",
+  "wordlists": {
+   "repo": "https://github.com/googlefonts/fontheight",
+   "commit": "b23cef0f8712c218173893cd8934ba44ba3cd760",
+   "dir": "/home/fsanches/compartilhado/sfd-reland-scratch/functional-gate/fontheight/static-lang-word-lists/data/diffenator",
+   "digest": "c297e1013a0e5810"
+  },
+  "fonttools": "4.61.1"
+ }
+}
