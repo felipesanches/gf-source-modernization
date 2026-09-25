@@ -1,0 +1,12 @@
+RELEASE-STALE hmtx.at.002 -- shipped records 25 for an outline at 19; ours records 19
+RELEASE-STALE hmtx.at.003 -- shipped records 18 for an outline at 15; ours records 15
+RELEASE-STALE hmtx.at.004 -- shipped records 25 for an outline at 19; ours records 19
+RELEASE-STALE hmtx.flourish.right -- shipped records 36 for an outline at 23; ours records 23
+RELEASE-STALE hmtx.acorn.left -- shipped records 0 for an outline at -2; ours records -2
+RELEASE-STALE the same GSUB lookups in a different order; its contextual lookups carry the same rules per first glyph in another lookup type (5/6), format or subtable packing; 102880 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE GPOS.script_list -- one font carries an empty GPOS and the other none, and neither font has a mark glyph or a legacy kern table, so HarfBuzz's fallback positioning has nothing to act on
+RELEASE-STALE GPOS.feature_list -- one font carries an empty GPOS and the other none, and neither font has a mark glyph or a legacy kern table, so HarfBuzz's fallback positioning has nothing to act on
+RELEASE-STALE GPOS.lookup_list -- one font carries an empty GPOS and the other none, and neither font has a mark glyph or a legacy kern table, so HarfBuzz's fallback positioning has nothing to act on
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's .null (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))), nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s)))
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+0 blocking table difference(s), 11 stale in the release

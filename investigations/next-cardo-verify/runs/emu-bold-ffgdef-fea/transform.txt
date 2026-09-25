@@ -1,0 +1,1 @@
+GlyphClassDef base 2992, ligature 0, mark 0, component 0

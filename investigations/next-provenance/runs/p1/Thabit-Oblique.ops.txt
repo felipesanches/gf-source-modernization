@@ -1,0 +1,5 @@
+obliqize: skewed 297 glyphs by tan(-16) = -0.300632; kept upright: afii299 afii300 afii301 afii61573 afii61574 afii61575 afii61664 uni202A uni202B
+pastepsglyphs: parenleft(created) parenright(created) exclam(created) bracketleft(created) bracketright(created) braceleft(created) braceright(created)
+mergefea: 5 lookups (rligTashkilLigatures, InitialForms, MedialForms, FinalForms, ligaLamAlef), 146 rules
+mergepsfont: 470 glyphs added (19 unencoded: approxequalalt productdot SM490000 commasuperior zeroslash tquoteright dquoteright SM700000 zerodot SP500000 underscorebroken Lquoteright), 5 AFM ligatures
+ffnotdef: stem 34, advance 374, box [(34, 0), (34, 682), (306, 682), (306, 0)]

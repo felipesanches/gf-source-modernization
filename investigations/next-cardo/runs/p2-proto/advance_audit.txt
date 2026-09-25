@@ -1,0 +1,3 @@
+== Regular p2: 0 advance differences
+== Italic p2: 0 advance differences
+== Bold p2: 0 advance differences

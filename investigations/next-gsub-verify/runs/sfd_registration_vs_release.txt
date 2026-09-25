@@ -1,0 +1,16 @@
+== Poly-Italic
+sfd GSUB lookups 19, release lookups 19
+types pair up in file order: True []
+RESULT: 19/19 lookups registered exactly as the .sfd states
+== Poly-Regular
+sfd GSUB lookups 14, release lookups 14
+types pair up in file order: True []
+RESULT: 14/14 lookups registered exactly as the .sfd states
+== RibeyeMarrow-Regular
+sfd GSUB lookups 8, release lookups 8
+types pair up in file order: True []
+RESULT: 8/8 lookups registered exactly as the .sfd states
+== Varela-Regular
+sfd GSUB lookups 31, release lookups 31
+types pair up in file order: True []
+RESULT: 31/31 lookups registered exactly as the .sfd states

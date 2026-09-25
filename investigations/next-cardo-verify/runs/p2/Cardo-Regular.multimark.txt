@@ -1,0 +1,23 @@
+heb3    13392 strings    488 differ
+    U+05D2 U+05B0 U+0591
+      release U+0591@-450,0 U+05B0@-5,0 U+05D2@0,0 END@815,0
+      ours    U+0591@-200,0 U+05B0@-205,0 U+05D2@0,0 END@815,0
+    U+05D2 U+05B0 U+0596
+      release U+0596@-325,0 U+05B0@-5,0 U+05D2@0,0 END@815,0
+      ours    U+0596@-125,0 U+05B0@-205,0 U+05D2@0,0 END@815,0
+    U+05D2 U+05B0 U+059B
+      release U+059B@-475,0 U+05B0@-5,0 U+05D2@0,0 END@815,0
+      ours    U+059B@-225,0 U+05B0@-205,0 U+05D2@0,0 END@815,0
+heb4    12555 strings    630 differ
+    U+05D2 U+05BC U+05B0 U+0591
+      release U+0591@-450,0 U+05B0@-5,0 U+05BC@-350,0 U+05D2@0,0 END@815,0
+      ours    U+0591@-200,0 U+05B0@-205,0 U+05BC@-350,0 U+05D2@0,0 END@815,0
+    U+05D2 U+05BC U+05B0 U+0596
+      release U+0596@-325,0 U+05B0@-5,0 U+05BC@-350,0 U+05D2@0,0 END@815,0
+      ours    U+0596@-125,0 U+05B0@-205,0 U+05BC@-350,0 U+05D2@0,0 END@815,0
+    U+05D2 U+05BC U+05B0 U+059B
+      release U+059B@-475,0 U+05B0@-5,0 U+05BC@-350,0 U+05D2@0,0 END@815,0
+      ours    U+059B@-225,0 U+05B0@-205,0 U+05BC@-350,0 U+05D2@0,0 END@815,0
+hebsh     868 strings      0 differ
+lat3    28704 strings      0 differ
+grk3     5390 strings      0 differ

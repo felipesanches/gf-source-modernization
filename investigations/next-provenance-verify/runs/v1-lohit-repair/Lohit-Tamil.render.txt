@@ -1,0 +1,1 @@
+glyph diffs 0, word diffs 2, max differing_pixels 394

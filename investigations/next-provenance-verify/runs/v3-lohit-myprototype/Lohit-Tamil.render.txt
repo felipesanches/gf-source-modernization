@@ -1,0 +1,1 @@
+glyph diffs 0, word diffs 0, max differing_pixels 0

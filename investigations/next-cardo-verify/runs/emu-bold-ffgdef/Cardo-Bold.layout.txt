@@ -1,0 +1,6 @@
+== fonts/ttf/Cardo-Bold.ttf
+  GSUB absent
+  GPOS 3 lookups
+      0 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']
+      1 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']
+      2 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']

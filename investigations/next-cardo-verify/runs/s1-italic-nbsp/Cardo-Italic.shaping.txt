@@ -1,0 +1,17 @@
+base+mark	136246 strings	839 differ
+   'א֖' (U+05D0 U+0596)
+     release U+0596@3,0 U+05D0@0,0 END@1300,0
+     ours    U+0596@2,0 U+05D0@0,0 END@1300,0
+   'א֞' (U+05D0 U+059E)
+     release U+059E@-11,-9 U+05D0@0,0 END@1300,0
+     ours    U+059E@-12,-9 U+05D0@0,0 END@1300,0
+base+mark+mark	0 strings	0 differ
+pairs	40097 strings	0 differ
+kern+mark	3057 strings	2056 differ
+   'C̈a' (U+0043 U+0308 U+0061)
+     release U+0043@0,0 U+0308@1531,0 U+0061@1531,0 END@2449,0
+     ours    U+0043@0,0 U+0308@1474,0 U+0061@1474,0 END@2392,0
+   'C̣a' (U+0043 U+0323 U+0061)
+     release U+0043@0,0 U+0323@1531,0 U+0061@1531,0 END@2449,0
+     ours    U+0043@0,0 U+0323@1474,0 U+0061@1474,0 END@2392,0
+words	2 strings	0 differ

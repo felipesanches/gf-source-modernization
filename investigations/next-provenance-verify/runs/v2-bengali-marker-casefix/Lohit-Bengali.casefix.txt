@@ -1,0 +1,3 @@
+markers rewritten: 1
+0 blocking table difference(s), 10 stale in the release
+glyph diffs 0, word diffs 117, max differing_pixels 801

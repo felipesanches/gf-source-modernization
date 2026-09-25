@@ -1,0 +1,11 @@
+RELEASE-STALE hmtx.section -- shipped records 154 for an outline at 147; ours records 147
+RELEASE-STALE hmtx.AE -- shipped records -41 for an outline at -43; ours records -43
+RELEASE-STALE hmtx.Eth -- shipped records 74 for an outline at 73; ours records 73
+RELEASE-STALE hmtx.Dcroat -- shipped records 74 for an outline at 73; ours records 73
+RELEASE-STALE hmtx.AEacute -- shipped records -41 for an outline at -43; ours records -43
+RELEASE-STALE the same GSUB lookups in a different order; its contextual lookups carry the same rules per first glyph in another lookup type (5/6), format or subtable packing; 54144 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- our build corrects 3 mark class(es) the release got wrong: U+0312, U+0315, U+0326. Disclose in the PR body; the release calls these base glyphs and they are Unicode combining marks
+0 blocking table difference(s), 10 stale in the release

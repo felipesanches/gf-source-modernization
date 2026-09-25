@@ -1,0 +1,29 @@
+== LOOKUPS: release 8, build 8; nested-only (no feature): release [5, 6, 7], build [3, 5, 6]
+   identical lookup contents: 7; release-only: 1; build-only: 1
+   release-only L4 T6/0:a54ed020:9
+   build-only   L7 T5/0:dbb6b009:9
+   feature frac slot 0: release T6/0:a54ed020:9 vs build T5/0:dbb6b009:9: 9 release-only rule(s), 9 build-only
+      release-only ('chain3', (), (('zero',), ('fraction', 'slash'), ('zero',), ('zero',)), (), ((0, 'T4/0:88911f65:16'),))
+      release-only ('chain3', (), (('zero',), ('fraction', 'slash'), ('zero',)), (), ((0, 'T4/0:fe80499c:2'),))
+      release-only ('chain3', (), (('one',), ('fraction', 'slash'), ('four',)), (), ((0, 'T4/0:88911f65:16'),))
+      release-only ('chain3', (), (('onesuperior',), ('fraction', 'slash'), ('four',)), (), ((0, 'T4/0:88911f65:16'),))
+      release-only ('chain3', (), (('one',), ('fraction', 'slash'), ('two',)), (), ((0, 'T4/0:88911f65:16'),))
+      release-only ('chain3', (), (('onesuperior',), ('fraction', 'slash'), ('twosuperior',)), (), ((0, 'T4/0:88911f65:16'),))
+      release-only ('chain3', (), (('one',), ('fraction', 'slash'), ('twosuperior',)), (), ((0, 'T4/0:88911f65:16'),))
+      release-only ('chain3', (), (('three',), ('fraction', 'slash'), ('four',)), (), ((0, 'T4/0:88911f65:16'),))
+      release-only ('chain3', (), (('threesuperior',), ('fraction', 'slash'), ('four',)), (), ((0, 'T4/0:88911f65:16'),))
+      build-only   ('ctx2', (), (('zero',), ('fraction', 'slash'), ('zero',), ('zero',)), (), ((0, 'T4/0:88911f65:16'),))
+      build-only   ('ctx2', (), (('zero',), ('fraction', 'slash'), ('zero',)), (), ((0, 'T4/0:fe80499c:2'),))
+      build-only   ('ctx2', (), (('one',), ('fraction', 'slash'), ('four',)), (), ((0, 'T4/0:88911f65:16'),))
+      build-only   ('ctx2', (), (('one',), ('fraction', 'slash'), ('two',)), (), ((0, 'T4/0:88911f65:16'),))
+      build-only   ('ctx2', (), (('one',), ('fraction', 'slash'), ('twosuperior',)), (), ((0, 'T4/0:88911f65:16'),))
+      build-only   ('ctx2', (), (('three',), ('fraction', 'slash'), ('four',)), (), ((0, 'T4/0:88911f65:16'),))
+      build-only   ('ctx2', (), (('onesuperior',), ('fraction', 'slash'), ('four',)), (), ((0, 'T4/0:88911f65:16'),))
+      build-only   ('ctx2', (), (('onesuperior',), ('fraction', 'slash'), ('twosuperior',)), (), ((0, 'T4/0:88911f65:16'),))
+      build-only   ('ctx2', (), (('threesuperior',), ('fraction', 'slash'), ('four',)), (), ((0, 'T4/0:88911f65:16'),))
+== REGISTRATION (script/lang/feature -> lookup identities)
+   latn/dflt/frac   release ['T6/0:a54ed020:9']
+                    build   ['T5/0:dbb6b009:9']
+   5 keys, 1 differ
+== ORDER (per script/lang: the lookup sequence a shaper applies)
+   latn/dflt  different sets; release-only ['frac']; build-only ['frac']; common part in same order: True

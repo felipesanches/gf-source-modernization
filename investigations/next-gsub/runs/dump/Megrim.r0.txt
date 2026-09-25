@@ -1,0 +1,16 @@
+# Megrim-Medium.ttf GSUB: 2 scripts, 3 features, 3 lookups
+## SCRIPTS
+DFLT/dflt req=- feats=[0:aalt 2:ss01] lookups=[0, 1]
+latn/dflt req=- feats=[0:aalt 2:ss01] lookups=[0, 1]
+latn/TRK req=- feats=[0:aalt 1:locl] lookups=[0, 2]
+## FEATURES
+0 aalt [0]
+1 locl [2]
+2 ss01 [1]
+## LOOKUPS
+L0 type=1 flag=0x0 subtables=1
+  st0 single M[U+004D]>M.ss01 N[U+004E]>N.ss01 R[U+0052]>R.ss01 U[U+0055]>U.ss01 V[U+0056]>V.ss01 W[U+0057]>W.ss01 Y[U+0059]>y.ss01 i[U+0069]>i.TRK m[U+006D]>m.ss01 w[U+0077]>w.ss01 y[U+0079]>y.ss01
+L1 type=1 flag=0x0 subtables=1
+  st0 single M[U+004D]>M.ss01 N[U+004E]>N.ss01 R[U+0052]>R.ss01 U[U+0055]>U.ss01 V[U+0056]>V.ss01 W[U+0057]>W.ss01 Y[U+0059]>y.ss01 m[U+006D]>m.ss01 w[U+0077]>w.ss01 y[U+0079]>y.ss01
+L2 type=1 flag=0x0 subtables=1
+  st0 single i[U+0069]>i.TRK

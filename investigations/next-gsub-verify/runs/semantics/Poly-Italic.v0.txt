@@ -1,0 +1,8 @@
+release language systems: [('latn', 'ROM'), ('latn', 'dflt')]
+build   language systems: [('latn', 'ROM'), ('latn', 'dflt')]
+latn/ROM     resolves to release ('latn', 'ROM') / build ('latn', 'ROM'): DIFFERS; application sequence DIFFERS
+      aalt: 0 lookups (release None) vs 2 (build [0, 1])
+latn/dflt    resolves to release ('latn', 'dflt') / build ('latn', 'dflt'): EQUAL; application sequence equal
+release: 19 lookups; feature-less (reached only through a chain): [18]; types [1, 3, 4, 1, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+build: 19 lookups; feature-less (reached only through a chain): [7]; types [1, 3, 4, 1, 1, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+SUMMARY: 1 of 2 language systems differ

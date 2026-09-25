@@ -1,0 +1,60 @@
+sfd: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/Limelight-Regular-TTF.sfd
+release: /home/fsanches/compartilhado/google/fonts/ofl/limelight/Limelight-Regular.ttf
+order2=True glyphs=427 with-outline=402 has .notdef=True
+  onc   box: yMin -628 (Rcommaaccent -628.0)  yMax 1864 (uni1E1F 1864.0)
+  allp  box: yMin -636 (Rcommaaccent -636.0)  yMax 1864 (uni1E1F 1864.0)
+  true  box: yMin -630 (Rcommaaccent -629.28)  yMax 1864 (uni1E1F 1864.0)
+  true extremes: max 1864.0 (uni1E1F) min -629.28 (Rcommaaccent)
+  stated: win 17 (off=True) / 3 (off=True); hhea 17 (off=True) / -3 (off=True)
+  release head yMin/yMax -636/1864; typo 1864/-634
+  metric      release    onc   allp   bf85   vmet
+  win_asc       1864  1881   1881   1881   1864*
+  win_desc       629   631    639    633    629*
+  hhea_asc      1864  1881   1881   1881   1864*
+  hhea_desc     -629  -632   -639   -633   -629*
+  (* = equals the release)
+sfd: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/MountainsofChristmas-Bold-TTF.sfd
+release: /home/fsanches/compartilhado/google/fonts/apache/mountainsofchristmas/MountainsofChristmas-Bold.ttf
+order2=True glyphs=232 with-outline=226 has .notdef=True
+  onc   box: yMin -354 (g -354.0)  yMax 1056 (Scaron 1056.0)
+  allp  box: yMin -356 (g -356.0)  yMax 1060 (Scaron 1060.0)
+  true  box: yMin -355 (g -354.38095238095235)  yMax 1058 (Scaron 1058.0)
+  true extremes: max 1058.0 (Scaron) min -354.38095238095235 (g)
+  stated: win 8 (off=True) / 0 (off=True); hhea 8 (off=True) / 0 (off=True)
+  release head yMin/yMax -354/1056; typo 1066/-354
+  metric      release    onc   allp   bf85   vmet
+  win_asc       1064  1064*  1068   1066   1058 
+  win_desc       354   354*   356    355    354*
+  hhea_asc      1066  1066*  1068   1066*  1058 
+  hhea_desc     -354  -354*  -356   -355   -354*
+  (* = equals the release)
+sfd: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/MountainsofChristmas-Regular-TTF.sfd
+release: /home/fsanches/compartilhado/google/fonts/apache/mountainsofchristmas/MountainsofChristmas-Regular.ttf
+order2=True glyphs=230 with-outline=225 has .notdef=True
+  onc   box: yMin -347 (g -347.0)  yMax 1066 (Ucircumflex 1066.0)
+  allp  box: yMin -347 (g -347.0)  yMax 1066 (Ucircumflex 1066.0)
+  true  box: yMin -347 (g -347.0)  yMax 1066 (Ucircumflex 1066.0)
+  true extremes: max 1066.0 (Ucircumflex) min -347.0 (g)
+  stated: win 0 (off=True) / 7 (off=True); hhea 0 (off=True) / -7 (off=True)
+  release head yMin/yMax -347/1066; typo 1066/-354
+  metric      release    onc   allp   bf85   vmet
+  win_asc       1066  1066*  1066*  1066*  1066*
+  win_desc       354   354*   354*   354*   347 
+  hhea_asc      1066  1066*  1066*  1066*  1066*
+  hhea_desc     -354  -354*  -354*  -354*  -347 
+  (* = equals the release)
+sfd: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/NothingYouCouldDo-TTF.sfd
+release: /home/fsanches/compartilhado/google/fonts/ofl/nothingyoucoulddo/NothingYouCouldDo.ttf
+order2=True glyphs=312 with-outline=308 has .notdef=True
+  onc   box: yMin -407 (y -407.0)  yMax 959 (Hcircumflex 959.0)
+  allp  box: yMin -407 (y -407.0)  yMax 962 (Hcircumflex 962.0)
+  true  box: yMin -407 (y -407.0)  yMax 960 (Hcircumflex 959.439024390244)
+  true extremes: max 959.439024390244 (Hcircumflex) min -407.0 (y)
+  stated: win 0 (off=True) / 0 (off=True); hhea 0 (off=True) / 0 (off=True)
+  release head yMin/yMax -407/959; typo 962/-407
+  metric      release    onc   allp   bf85   vmet
+  win_asc        959   959*   962    960    959*
+  win_desc       407   407*   407*   407*   407*
+  hhea_asc       959   959*   962    960    959*
+  hhea_desc     -407  -407*  -407*  -407*  -407*
+  (* = equals the release)

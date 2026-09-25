@@ -1,0 +1,14 @@
+from: /home/fsanches/compartilhado/sfd-reland-scratch/gsub/baseline/RibeyeMarrow-Regular-gsub-r2
+gate: /home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py (68c33418)
+workarounds: RELEASE-STALE hmtx.section -- shipped records 154 for an outline at 147; ours records 147
+RELEASE-STALE hmtx.AE -- shipped records -41 for an outline at -43; ours records -43
+RELEASE-STALE hmtx.Eth -- shipped records 74 for an outline at 73; ours records 73
+RELEASE-STALE hmtx.Dcroat -- shipped records 74 for an outline at 73; ours records 73
+RELEASE-STALE hmtx.AEacute -- shipped records -41 for an outline at -43; ours records -43
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- our build corrects 3 mark class(es) the release got wrong: U+0312, U+0315, U+0326. Disclose in the PR body; the release calls these base glyphs and they are Unicode combining marks
+BLOCKING GSUB.feature_list {"frac": {"0": [4, 7]}, "ordn": {"0": [3, 4]}}
+BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[zero o
+2 blocking table difference(s), 9 stale in the release

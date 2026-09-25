@@ -1,0 +1,10 @@
+one            hmtx lsb     1  glyf xMin    -2  all-point min x    -2  explicit on-curve min x     1
+three          hmtx lsb    47  glyf xMin    46  all-point min x    46  explicit on-curve min x    47
+seven          hmtx lsb    64  glyf xMin    61  all-point min x    61  explicit on-curve min x    86
+J              hmtx lsb     0  glyf xMin    -3  all-point min x    -3  explicit on-curve min x     0
+M              hmtx lsb    12  glyf xMin    10  all-point min x    10  explicit on-curve min x    12
+asciitilde     hmtx lsb    70  glyf xMin    66  all-point min x    66  explicit on-curve min x    70
+currency       hmtx lsb   119  glyf xMin   117  all-point min x   117  explicit on-curve min x   119
+Jcircumflex    hmtx lsb     0  glyf xMin    -3  all-point min x    -3  explicit on-curve min x     0
+uni1E40        hmtx lsb    12  glyf xMin    10  all-point min x    10  explicit on-curve min x    12
+9 glyphs with hmtx lsb != glyf xMin; in 9 of them glyf xMin is the all-point minimum

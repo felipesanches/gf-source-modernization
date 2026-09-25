@@ -1,0 +1,12 @@
+## baseline-next builds: sfd-reland-scratch/baseline/*-next/sources
+/home/fsanches/compartilhado/sfd-reland-scratch/baseline/Cardo-Regular-next/sources/Cardo-Regular.glyphs	kern	harmless	attach-classes=12	kern-pairs=0
+/home/fsanches/compartilhado/sfd-reland-scratch/baseline/Cardo-Regular-next/sources/Cardo-Regular.glyphs	mark	LOSES	attach-classes=12	kern-pairs=0
+/home/fsanches/compartilhado/sfd-reland-scratch/baseline/Italiana-Regular-next/sources/Italiana-Regular.glyphs	kern	harmless	attach-classes=0	kern-pairs=1443
+/home/fsanches/compartilhado/sfd-reland-scratch/baseline/Lohit-Bengali-next/sources/Lohit-Bengali.glyphs	abvm	LOSES	attach-classes=3	kern-pairs=0
+/home/fsanches/compartilhado/sfd-reland-scratch/baseline/Sanchez-Regular-next/sources/Sanchez-Regular.glyphs	kern	harmless	attach-classes=0	kern-pairs=2716
+## cardo r1 (Regular with the rename edit)
+/home/fsanches/compartilhado/sfd-reland-scratch/cardo/baseline/Cardo-Regular-cardo-r1/sources/Cardo-Regular.glyphs	kern	harmless	attach-classes=12	kern-pairs=0
+/home/fsanches/compartilhado/sfd-reland-scratch/cardo/baseline/Cardo-Regular-cardo-r1/sources/Cardo-Regular.glyphs	mark	LOSES	attach-classes=12	kern-pairs=0
+## landed repositories: sfd-reland-repos/<repo>/sources (working trees, not .prev)
+/home/fsanches/compartilhado/sfd-reland-repos/italiana/sources/Italiana-Regular.glyphs	kern	harmless	attach-classes=0	kern-pairs=1443
+/home/fsanches/compartilhado/sfd-reland-repos/sanchez/sources/Sanchez-Regular.glyphs	kern	harmless	attach-classes=0	kern-pairs=2716

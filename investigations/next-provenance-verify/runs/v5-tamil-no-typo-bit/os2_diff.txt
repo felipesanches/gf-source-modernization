@@ -1,0 +1,2 @@
+pv-v3 OS/2 diff: {"version": [1, 4], "x_avg_char_width": [757, 870], "fs_selection": [64, 192], "sx_height": [null, 0], "s_cap_height": [null, 0], "us_default_char": [null, 0], "us_break_char": [null, 32], "us_max_context": [null, 3]}
+pv-v5 OS/2 diff: {"version": [1, 4], "x_avg_char_width": [757, 870], "sx_height": [null, 0], "s_cap_height": [null, 0], "us_default_char": [null, 0], "us_break_char": [null, 32], "us_max_context": [null, 3]}

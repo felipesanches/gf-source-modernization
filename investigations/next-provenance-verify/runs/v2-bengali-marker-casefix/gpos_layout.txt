@@ -1,0 +1,20 @@
+== /home/fsanches/compartilhado/google/fonts/ofl/lohitbengali/Lohit-Bengali.ttf
+  GPOS 0 type 4 flag 0 subtables 1 rules/bases 240  ['blwm/beng/dflt']
+  GPOS 1 type 4 flag 0 subtables 1 rules/bases 253  ['abvm/beng/dflt']
+  GPOS 2 type 8 flag 0 subtables 1 rules/bases 0  ['abvm/beng/dflt']
+  GPOS 3 type 1 flag 0 subtables 1 rules/bases 0  []
+== /home/fsanches/compartilhado/sfd-reland-scratch/provenance-verify/baseline/Lohit-Bengali-pv-v1/fonts/ttf/LohitBengali-Bengali.ttf
+  GPOS 0 type 1 flag 0 subtables 1 rules/bases 0  []
+  GPOS 1 type 8 flag 0 subtables 1 rules/bases 0  ['abvm/beng/dflt']
+  GPOS 2 type 4 flag 0 subtables 1 rules/bases 5  ['mark/beng/dflt']
+  GPOS 3 type 4 flag 0 subtables 1 rules/bases 5  ['mark/beng/dflt']
+  GPOS 4 type 4 flag 0 subtables 1 rules/bases 5  ['mark/beng/dflt']
+== /home/fsanches/compartilhado/sfd-reland-scratch/provenance-verify/baseline/Lohit-Bengali-pv-v1-casefix/fonts/ttf/LohitBengali-Bengali.ttf
+  GPOS 0 type 1 flag 0 subtables 1 rules/bases 0  []
+  GPOS 1 type 8 flag 0 subtables 1 rules/bases 0  ['abvm/beng/dflt']
+  GPOS 2 type 4 flag 0 subtables 1 rules/bases 50  ['abvm/beng/dflt']
+  GPOS 3 type 4 flag 0 subtables 1 rules/bases 50  ['abvm/beng/dflt']
+  GPOS 4 type 4 flag 0 subtables 1 rules/bases 37  ['abvm/beng/dflt']
+  GPOS 5 type 4 flag 0 subtables 1 rules/bases 5  ['mark/beng/dflt']
+  GPOS 6 type 4 flag 0 subtables 1 rules/bases 5  ['mark/beng/dflt']
+  GPOS 7 type 4 flag 0 subtables 1 rules/bases 5  ['mark/beng/dflt']

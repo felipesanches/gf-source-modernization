@@ -1,0 +1,9 @@
+from: /home/fsanches/compartilhado/sfd-reland-scratch/gsub/baseline/Varela-Regular-gsub-r2
+gate: /home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py (68c33418)
+workarounds: RELEASE-STALE the same GSUB lookups in a different order; 102400 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's .null (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))), nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s)))
+RELEASE-STALE GDEF.glyph_classes -- our build corrects 3 mark class(es) the release got wrong: U+0309, U+031B, U+0323. Disclose in the PR body; the release calls these base glyphs and they are Unicode combining marks
+BLOCKING GPOS.script_list [{"cyrl/dflt": {"lookups": []}, "grek/dflt": {"lookups": []}, "latn/dflt": {"loo
+BLOCKING GPOS.feature_list [{}, null]
+BLOCKING GPOS.lookup_list [{}, null]
+3 blocking table difference(s), 3 stale in the release

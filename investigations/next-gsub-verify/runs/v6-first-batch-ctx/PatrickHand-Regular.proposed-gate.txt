@@ -1,0 +1,47 @@
+RELEASE-STALE hmtx.three -- shipped records 40 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.eight -- shipped records 44 for an outline at 45; ours records 45
+RELEASE-STALE hmtx.grave -- shipped records 29 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.threesuperior -- shipped records 31 for an outline at 32; ours records 32
+RELEASE-STALE hmtx.Igrave -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.igrave -- shipped records 21 for an outline at 22; ours records 22
+RELEASE-STALE hmtx.Lslash -- shipped records 21 for an outline at 22; ours records 22
+RELEASE-STALE hmtx.lslash -- shipped records 22 for an outline at 23; ours records 23
+RELEASE-STALE hmtx.longs -- shipped records 57 for an outline at 58; ours records 58
+RELEASE-STALE hmtx.caron -- shipped records 36 for an outline at 37; ours records 37
+RELEASE-STALE hmtx.horncomb -- shipped records -41 for an outline at -42; ours records -42
+RELEASE-STALE hmtx.mu -- shipped records 48 for an outline at 47; ours records 47
+RELEASE-STALE hmtx.eightsuperior -- shipped records 44 for an outline at 45; ours records 45
+RELEASE-STALE hmtx.franc -- shipped records 49 for an outline at 50; ours records 50
+RELEASE-STALE hmtx.Dcaron.smcp -- shipped records 36 for an outline at 37; ours records 37
+RELEASE-STALE hmtx.I.smcp -- shipped records 32 for an outline at 33; ours records 33
+RELEASE-STALE hmtx.IJ.smcp -- shipped records 32 for an outline at 33; ours records 33
+RELEASE-STALE hmtx.Iogonek.smcp -- shipped records -8 for an outline at -9; ours records -9
+RELEASE-STALE hmtx.M.smcp -- shipped records 40 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.Macute.smcp -- shipped records 40 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.U.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uacute.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Ubreve.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Ucaron.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Ucircumflex.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Udieresis.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Udotbelow.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Ugrave.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uhookabove.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uhorn.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uhornacute.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uhorndotbelow.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uhorngrave.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uhornhookabove.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uhorntilde.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uhungarumlaut.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Umacron.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Uring.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Utilde.smcp -- shipped records 37 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.three.osf -- shipped records 40 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.eight.osf -- shipped records 44 for an outline at 45; ours records 45
+RELEASE-STALE hmtx.three.smcp -- shipped records 38 for an outline at 39; ours records 39
+RELEASE-STALE hmtx.eight.smcp -- shipped records 36 for an outline at 37; ours records 37
+RELEASE-STALE the same GSUB rules in a different order and differently packed -- the release keeps single-member AlternateSets where ours folds them into single substitutions; its contextual lookups carry the same rules per first glyph in another lookup type (5/6), format or subtable packing; 102736 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE GDEF.glyph_classes -- our build corrects 9 mark class(es) the release got wrong: U+0300, U+0301, U+0303, U+0309, U+030F, U+031B, U+0323, U+0325, U+0326. Disclose in the PR body; the release calls these base glyphs and they are Unicode combining marks
+BLOCKING OS/2.s_cap_height [661, 660]
+1 blocking table difference(s), 45 stale in the release

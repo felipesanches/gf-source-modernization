@@ -1,0 +1,27 @@
+corpus: 871 strings (369 shared codepoints, 22 rule characters); 3 language systems; features: default + aalt frac liga ordn sups
+-/- default: fired in 8 of 871 runs; 0 differ in glyphs
+-/- aalt: fired in 205 of 871 runs; 0 differ in glyphs
+-/- frac: fired in 13 of 871 runs; 0 differ in glyphs
+-/- liga: fired in 0 of 871 runs; 0 differ in glyphs
+-/- ordn: fired in 20 of 871 runs; 0 differ in glyphs
+-/- sups: fired in 131 of 871 runs; 0 differ in glyphs
+DFLT/dflt default: fired in 8 of 871 runs; 0 differ in glyphs
+DFLT/dflt aalt: fired in 205 of 871 runs; 0 differ in glyphs
+DFLT/dflt frac: fired in 13 of 871 runs; 0 differ in glyphs
+DFLT/dflt liga: fired in 0 of 871 runs; 0 differ in glyphs
+DFLT/dflt ordn: fired in 20 of 871 runs; 0 differ in glyphs
+DFLT/dflt sups: fired in 131 of 871 runs; 0 differ in glyphs
+grek/dflt default: fired in 8 of 871 runs; 0 differ in glyphs
+grek/dflt aalt: fired in 205 of 871 runs; 0 differ in glyphs
+grek/dflt frac: fired in 13 of 871 runs; 0 differ in glyphs
+grek/dflt liga: fired in 0 of 871 runs; 0 differ in glyphs
+grek/dflt ordn: fired in 20 of 871 runs; 0 differ in glyphs
+grek/dflt sups: fired in 131 of 871 runs; 0 differ in glyphs
+latn/dflt default: fired in 8 of 871 runs; 0 differ in glyphs
+latn/dflt aalt: fired in 205 of 871 runs; 0 differ in glyphs
+latn/dflt frac: fired in 13 of 871 runs; 0 differ in glyphs
+latn/dflt liga: fired in 0 of 871 runs; 0 differ in glyphs
+latn/dflt ordn: fired in 20 of 871 runs; 0 differ in glyphs
+latn/dflt sups: fired in 131 of 871 runs; 0 differ in glyphs
+ADVANCE-ONLY 72 runs (same glyphs, different x advance), at glyphs uni0312 uni0315 uni0326
+TOTAL 20904 runs, 0 differ in glyphs, 72 differ in advances only

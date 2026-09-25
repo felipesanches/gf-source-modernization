@@ -1,0 +1,61 @@
+release /home/fsanches/compartilhado/google/fonts/ofl/lohitbengali/Lohit-Bengali.ttf
+  FFTM FontForge build 2012-09-06 01:48:05, sourceModified 1330511755 (2012-02-29 10:35:55 UTC)
+  name 5 'Version 2.5.1', PANOSE 2 0 6 0 0 0 0 0 0 0
+      f3acd72d6 ModificationTime 1442831794  Version 2.91.5   Panose 2 11 6 0 0 0 0 0 0 0   2017-04-26 16:03:36 +0530 Updated versions in Makefile, Changelog and sfd.
+      d4c8fa187 ModificationTime 1442831794  Version 2.91.4   Panose 2 11 6 0 0 0 0 0 0 0   2017-04-25 14:20:04 +0530 Resolved issue #76 "ন + দ + ব no longer"
+      b647abdac ModificationTime 1442831794  Version 2.91.4   Panose 2 11 6 0 0 0 0 0 0 0   2017-04-24 14:31:35 +0530 Resolved issue #80
+      2ec326672 ModificationTime 1442831794  Version 2.91.4   Panose 2 11 6 0 0 0 0 0 0 0   2017-03-02 15:26:42 +0530 updated Makefile and changed version for release.
+      f7eea777e ModificationTime 1442831794  Version 2.91.3   Panose 2 11 6 0 0 0 0 0 0 0   2015-09-28 13:20:29 +0530 Added Unicode 8.0 characters.
+      4c1b2f7fe ModificationTime 1422618221  Version 2.91.2   Panose 2 11 6 0 0 0 0 0 0 0   2015-02-02 12:58:53 +0530 Resolved github #58
+      47f7520ce ModificationTime 1417601480  Version 2.91.1   Panose 2 11 6 0 0 0 0 0 0 0   2014-12-03 15:54:09 +0530 updated Assamese based on Bengali
+      eff1ab6e6 ModificationTime 1417593013  Version 2.91.1   Panose 2 11 6 0 0 0 0 0 0 0   2014-12-03 15:11:13 +0530 Renamed Bengali anchors to BNAnchor
+      df04afb9f ModificationTime 1417531787  Version 2.91.1   Panose 2 11 6 0 0 0 0 0 0 0   2014-12-03 10:47:46 +0530 updated version of bengali
+      9609e21d7 ModificationTime 1416808939  Version 2.91.0   Panose 2 11 6 0 0 0 0 0 0 0   2014-12-02 17:08:42 +0530 updated lohit bengali from lohit2
+      ef088c332 ModificationTime 1412847570  Version 2.91.0   Panose 2 11 6 0 0 0 0 0 0 0   2014-10-09 15:13:56 +0530 updated bengali sfd and test file
+      2fb011b2f ModificationTime 1412838721  Version 2.91.0   Panose 2 11 6 0 0 0 0 0 0 0   2014-10-09 12:45:14 +0530 updated sfd file for issues against AFDKO
+      1aced30d1 ModificationTime 1412765958  Version 2.91.0   Panose 2 11 6 0 0 0 0 0 0 0   2014-10-08 17:36:10 +0530 imported Lohit-Bengali.sfd from lohit2 for release preparation
+      9aa43ebf4 ModificationTime 1350557501  Version 2.5.3    Panose 2 11 6 0 0 0 0 0 0 0   2014-03-11 12:40:40 +0530 Lookup added for marathi locale & entry added to half forms lookup (id #46,#47) ChangeLog & feature file are updated to reflect the change
+      8b3650e81 ModificationTime 1350557501  Version 2.5.3    Panose 2 11 6 0 0 0 0 0 0 0   2012-12-21 15:17:41 +0530 Removing RFN from OFL.txt
+      27d7974fb ModificationTime 1350557501  Version 2.5.2    Panose 2 11 6 0 0 0 0 0 0 0   2012-11-22 00:04:34 +0530 Commit for next release of assamese, bengali, devanagari, marathi and telugu
+      04c8c915e ModificationTime 1350557501  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-10-18 16:31:46 +0530 fixed in lohit bengali and assamese for harfbuzz
+MATCH 9d61e3213 ModificationTime 1330511755  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-04-13 10:08:57 +0000 updated panose value
+MATCH 0df83ad73 ModificationTime 1330511755  Version 2.5.1    Panose 2 0 6 0 0 0 0 0 0 0    2012-02-29 11:54:21 +0000 prepared for next release
+      e3b333b72 ModificationTime 1328791635  Version 2.5.0    Panose 2 0 6 0 0 0 0 0 0 0    2012-02-09 13:06:53 +0000 Added missing Unicode 6.0 characters in As, Bn,Dv, Or and Ml
+      361b23b17 ModificationTime 1316598225  Version 2.5.0    Panose 2 0 6 0 0 0 0 0 0 0    2011-09-21 10:24:18 +0000 Relicensing to OFL
+      8b647e65f ModificationTime 1250058071  Version 2.4.3    Panose 2 0 6 0 0 0 0 0 0 0    2009-09-09 08:31:56 +0000 updated script and versions
+      0e5e0c35f ModificationTime 1250058071  Version 2.4.2    Panose 2 0 6 0 0 0 0 0 0 0    2009-09-09 03:45:59 +0000 updated version for new release
+      6b91d81d9 ModificationTime 1250058071  Version 2.4.1    Panose 2 0 6 0 0 0 0 0 0 0    2009-09-07 08:44:29 +0000 added dir for each languages
+release /home/fsanches/compartilhado/google/fonts/ofl/lohittamil/Lohit-Tamil.ttf
+  FFTM FontForge build 2011-02-22 13:48:33, sourceModified 1316598937 (2011-09-21 09:55:37 UTC)
+  name 5 'Version 2.5.0', PANOSE 2 0 6 0 0 0 0 0 0 0
+      2ec326672 ModificationTime 1417434567  Version 2.91.1   Panose 2 11 6 0 0 0 0 0 0 0   2017-03-02 15:26:42 +0530 updated Makefile and changed version for release.
+      060e5310a ModificationTime 1417434567  Version 2.91.0   Panose 2 11 6 0 0 0 0 0 0 0   2014-12-01 17:51:53 +0530 updated lllataml width
+      b6b8508db ModificationTime 1417429618  Version 2.91.0   Panose 2 11 6 0 0 0 0 0 0 0   2014-12-01 15:57:52 +0530 fixed issues with WIDTH for Tamil characters.
+      0a1968c06 ModificationTime 1416812607  Version 2.91.1   Panose 2 11 6 0 0 0 0 0 0 0   2014-11-24 17:06:42 +0530 updated tamil and added new testcase in bengali
+      354e880a7 ModificationTime 1410945702  Version 2.91.0   Panose 2 11 6 0 0 0 0 0 0 0   2014-09-17 14:52:59 +0530 Removed null character
+      3d73950a9 ModificationTime 1410881363  Version 2.91.0   Panose 2 11 6 0 0 0 0 0 0 0   2014-09-16 23:00:46 +0530 imported file from lohit2 tamil here.
+      8b3650e81 ModificationTime 1340023350  Version 2.5.3    Panose 2 11 6 0 0 0 0 0 0 0   2012-12-21 15:17:41 +0530 Removing RFN from OFL.txt
+      d1d166214 ModificationTime 1340023350  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-06-19 15:04:54 +0530 Resolved bug 829143
+      680c00225 ModificationTime 1339568239  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-06-13 11:52:28 +0530 updated shape of U=0BF9 Tamil rupee sign
+      13a2a9935 ModificationTime 1338981463  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-06-06 11:24:53 +0000 updated zero and five shapes
+      080993965 ModificationTime 1338893699  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-06-05 11:20:22 +0000 Fixed self intersecting error in latin shapes tamil
+      e67bd9239 ModificationTime 1338279780  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-05-29 08:39:46 +0000 moved 1000 and 100 shape up.
+      723f00c2d ModificationTime 1335246283  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-04-25 09:42:10 +0000 new lohit classical fonts and some shape improvements
+      9d61e3213 ModificationTime 1330513690  Version 2.5.1    Panose 2 11 6 0 0 0 0 0 0 0   2012-04-13 10:08:57 +0000 updated panose value
+      0df83ad73 ModificationTime 1330513690  Version 2.5.1    Panose 2 0 6 0 0 0 0 0 0 0    2012-02-29 11:54:21 +0000 prepared for next release
+      ffb56a5d3 ModificationTime 1330332300  Version 2.5.0    Panose 2 0 6 0 0 0 0 0 0 0    2012-02-27 08:47:19 +0000 improved asterisk shape in all lohit fonts #718949
+MATCH 361b23b17 ModificationTime 1316598937  Version 2.5.0    Panose 2 0 6 0 0 0 0 0 0 0    2011-09-21 10:24:18 +0000 Relicensing to OFL
+      ca4079d34 ModificationTime 1259067527  Version 2.4.5    Panose 2 0 6 0 0 0 0 0 0 0    2009-11-24 13:07:39 +0000 updated metric of tamil font
+      1f62a328d ModificationTime 1253375125  Version 2.4.4    Panose 2 0 6 0 0 0 0 0 0 0    2009-11-11 04:18:52 +0000 updated anchor for tamil 0bb7
+      f0f1968e4 ModificationTime 1253375125  Version 2.4.4    Panose 2 0 6 0 0 0 0 0 0 0    2009-09-21 10:39:20 +0000 updates for malayalam and tammil and script
+      8b647e65f ModificationTime 1248866847  Version 2.4.3    Panose 2 0 6 0 0 0 0 0 0 0    2009-09-09 08:31:56 +0000 updated script and versions
+      0e5e0c35f ModificationTime 1248866847  Version 2.4.2    Panose 2 0 6 0 0 0 0 0 0 0    2009-09-09 03:45:59 +0000 updated version for new release
+      6b91d81d9 ModificationTime 1248866847  Version 2.4.1    Panose 2 0 6 0 0 0 0 0 0 0    2009-09-07 08:44:29 +0000 added dir for each languages
+release /home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit.ttf
+  FFTM FontForge build 2008-08-08 01:38:58, sourceModified 1218316453 (2008-08-09 21:14:13 UTC)
+  name 5 '0.01', PANOSE 2 0 5 3 0 0 0 0 0 0
+      7ca2d28c5 ModificationTime 1276640170  Version 0.02     Panose -                      2012-04-18 18:52:37 -0700 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change
+release /home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-Bold.ttf
+  FFTM FontForge build 2008-08-08 01:38:58, sourceModified 1218316467 (2008-08-09 21:14:27 UTC)
+  name 5 '0.01', PANOSE 2 0 8 3 0 0 0 0 0 0
+      7ca2d28c5 ModificationTime 1276640219  Version 0.02     Panose -                      2012-04-18 18:52:37 -0700 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change

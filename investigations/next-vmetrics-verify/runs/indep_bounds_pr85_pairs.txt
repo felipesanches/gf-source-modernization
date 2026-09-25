@@ -1,0 +1,60 @@
+sfd: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/Copse-Regular-TTF.sfd
+release: /home/fsanches/compartilhado/google/fonts/ofl/copse/Copse-Regular.ttf
+order2=True glyphs=213 with-outline=209 has .notdef=True
+  onc   box: yMin -483 (bar -483.0)  yMax 1991 (Yacute 1991.0)
+  allp  box: yMin -483 (bar -483.0)  yMax 1992 (Yacute 1992.0)
+  true  box: yMin -483 (bar -483.0)  yMax 1992 (Yacute 1991.0222222222221)
+  true extremes: max 1991.076923076923 (Ugrave) min -483.0 (bar)
+  stated: win 0 (off=True) / 0 (off=True); hhea 0 (off=True) / 0 (off=True)
+  release head yMin/yMax -483/1991; typo 1583/-439
+  metric      release    onc   allp   bf85   vmet
+  win_asc       1991  1991*  1992   1992   1991*
+  win_desc       483   483*   483*   483*   483*
+  hhea_asc      1991  1991*  1992   1992   1991*
+  hhea_desc     -483  -483*  -483*  -483*  -483*
+  (* = equals the release)
+sfd: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/DaysOne-Regular-TTF.sfd
+release: /home/fsanches/compartilhado/google/fonts/ofl/daysone/DaysOne-Regular.ttf
+order2=True glyphs=354 with-outline=348 has .notdef=True
+  onc   box: yMin -567 (rcommaaccent -567.0)  yMax 2040 (Aring 2040.0)
+  allp  box: yMin -568 (rcommaaccent -568.0)  yMax 2040 (Aring 2040.0)
+  true  box: yMin -568 (rcommaaccent -567.0133333333333)  yMax 2040 (Aring 2040.0)
+  true extremes: max 2040.0 (Aring) min -567.0133333333333 (rcommaaccent)
+  stated: win 0 (off=True) / 0 (off=True); hhea 0 (off=True) / 0 (off=True)
+  release head yMin/yMax -567/2040; typo 2040/-568
+  metric      release    onc   allp   bf85   vmet
+  win_asc       2040  2040*  2040*  2040*  2040*
+  win_desc       567   567*   568    568    567*
+  hhea_asc      2040  2040*  2040*  2040*  2040*
+  hhea_desc     -567  -567*  -568   -568   -567*
+  (* = equals the release)
+sfd: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/Handlee-Regular-TTF.sfd
+release: /home/fsanches/compartilhado/google/fonts/ofl/handlee/Handlee-Regular.ttf
+order2=True glyphs=202 with-outline=200 has .notdef=True
+  onc   box: yMin -401 (mu -400.426726039)  yMax 934 (Eacute 933.743077118)
+  allp  box: yMin -401 (mu -400.426726039)  yMax 934 (Eacute 933.743077118)
+  true  box: yMin -401 (mu -400.426726039)  yMax 934 (Eacute 933.743077118)
+  true extremes: max 933.743077118 (Eacute) min -400.426726039 (mu)
+  stated: win 0 (off=True) / 0 (off=True); hhea 0 (off=True) / 0 (off=True)
+  release head yMin/yMax -400/934; typo 933/-401
+  metric      release    onc   allp   bf85   vmet
+  win_asc        934   934*   934*   934*   933 
+  win_desc       401   401*   401*   401*   400 
+  hhea_asc       934   934*   934*   934*   933 
+  hhea_desc     -401  -401*  -401*  -401*  -400 
+  (* = equals the release)
+sfd: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/GiveYouGlory-TTF.sfd
+release: /home/fsanches/compartilhado/google/fonts/ofl/giveyouglory/GiveYouGlory.ttf
+order2=True glyphs=355 with-outline=351 has .notdef=True
+  onc   box: yMin -619 (y -618.5)  yMax 1020 (Ocircumflex 1020.0)
+  allp  box: yMin -627 (y -627.0)  yMax 1020 (Ocircumflex 1020.0)
+  true  box: yMin -622 (y -621.860465116279)  yMax 1020 (Ocircumflex 1020.0)
+  true extremes: max 1020.0 (Ocircumflex) min -621.860465116279 (y)
+  stated: win 0 (off=True) / 0 (off=True); hhea 0 (off=True) / -3 (off=True)
+  release head yMin/yMax -619/1020; typo 1020/-627
+  metric      release    onc   allp   bf85   vmet
+  win_asc       1020  1020*  1020*  1020*  1020*
+  win_desc       621   619    627    622    621*
+  hhea_asc      1020  1020*  1020*  1020*  1020*
+  hhea_desc     -625  -624   -630   -625*  -621 
+  (* = equals the release)

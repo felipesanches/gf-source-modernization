@@ -1,0 +1,35 @@
+== Italiana-Regular
+   baseline-next build: flags: --fontforge-height-glyph-count-me
+   next | proto: base+mark	0 differ	0 differ
+   next | proto: base+mark+mark	0 differ	0 differ
+   next | proto: pairs	726 differ	726 differ
+   next | proto: kern+mark	0 differ	0 differ
+   next | proto: words	0 differ	0 differ
+== Sanchez-Regular
+   baseline-next build: flags: --fontforge-os2-defaults --add-in
+   next | proto: base+mark	0 differ	0 differ
+   next | proto: base+mark+mark	0 differ	0 differ
+   next | proto: pairs	0 differ	0 differ
+   next | proto: kern+mark	0 differ	0 differ
+   next | proto: words	0 differ	0 differ
+== Sanchez-Italic
+   baseline-next build: flags: --fontforge-os2-defaults --add-in
+   next | proto: base+mark	0 differ	0 differ
+   next | proto: base+mark+mark	0 differ	0 differ
+   next | proto: pairs	0 differ	0 differ
+   next | proto: kern+mark	0 differ	0 differ
+   next | proto: words	0 differ	0 differ
+== Lohit-Bengali
+   baseline-next build: flags: --fontforge-os2-defaults --add-in
+   next | proto: base+mark	0 differ	0 differ
+   next | proto: base+mark+mark	0 differ	0 differ
+   next | proto: pairs	0 differ	0 differ
+   next | proto: kern+mark	0 differ	0 differ
+   next | proto: words	0 differ	0 differ
+== Lohit-Tamil
+   baseline-next build: flags: --fontforge-height-glyph-count-me
+   next | proto: base+mark	0 differ	0 differ
+   next | proto: base+mark+mark	0 differ	0 differ
+   next | proto: pairs	0 differ	0 differ
+   next | proto: kern+mark	0 differ	0 differ
+   next | proto: words	0 differ	0 differ

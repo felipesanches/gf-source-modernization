@@ -1,0 +1,12 @@
+workarounds: usWeightClass 500 (TTFWeight) as FEA; fontc 1.0.0 drops a single master's instance weightClass 
+RELEASE-STALE 53 bearings, every one the release contradicting its own outline
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (2 and 4); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (2 and 4); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (2 and 4); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE OS/2.sx_height -- the release ships an OS/2 version 1 table, which has no such field
+RELEASE-STALE OS/2.s_cap_height -- the release ships an OS/2 version 1 table, which has no such field
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's .null (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))), nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))), spacenumeric (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))); our uni00A0 (an addition at U+00A0, which the other font does not encode)
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (8), and no lookup filters on the rest of the class
+BLOCKING PfEd: whole-table difference
+BLOCKING head.font_direction_hint [0, 2]
+2 blocking table difference(s), 8 stale in the release

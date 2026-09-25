@@ -1,0 +1,5 @@
+Cardo-Italic.ttf {'ctrlonoutline': 443, 'none': 81, 'outline': 33, 'ctrloutline': 681, 'onoutline': 9} {'none': ['exclamdown', 'ordmasculine', 'onequarter', 'onehalf', 'questiondown', 'uni0258']}
+Cardo-Italic.ttf {'ctrlonoutline': 469, 'ctrloutline': 704, 'outline': 21, 'ctrl': 52, 'none': 1} {'none': ['verse_divider']}
+Cardo-Bold.ttf {'ctrlonoutline': 1239, 'none': 192, 'outline': 3} {'none': ['questiondown', 'uni0186', 'uni0254', 'uni0258', 'uni025C', 'uni0295']}
+Cardo-Bold.ttf {'ctrlonoutline': 1286, 'ctrloutline': 133, 'outline': 14, 'none': 1} {'none': ['verse_divider']}
+Cardo-Regular.ttf {'ctrloutline': 1015, 'none': 286, 'ctrlonoutline': 455, 'outline': 74, 'on': 1, 'onoutline': 12} {'none': ['backslash', 'ordfeminine', 'Gcircumflex', 'Gbreve', 'Gdotaccent', 'uni0186'], 'on': ['uni0262']}

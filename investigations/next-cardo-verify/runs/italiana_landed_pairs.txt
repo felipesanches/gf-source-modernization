@@ -1,0 +1,8 @@
+# landed italiana 8b0a940 sources/Italiana-Regular.glyphs built with builder3 e851b8b (scratch cardo-verify/italiana) vs google/fonts b5efa9c32e8f release
+pairs	13689 strings	726 differ
+   'Bv' (U+0042 U+0076)
+     release U+0042@0,0 U+0076@550,0 END@1020,0
+     ours    U+0042@0,0 U+0076@530,0 END@1000,0
+   'Bw' (U+0042 U+0077)
+     release U+0042@0,0 U+0077@550,0 END@1340,0
+     ours    U+0042@0,0 U+0077@530,0 END@1320,0

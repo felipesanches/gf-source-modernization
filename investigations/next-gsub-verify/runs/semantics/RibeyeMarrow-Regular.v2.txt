@@ -1,0 +1,6 @@
+release language systems: [('latn', 'dflt')]
+build   language systems: [('latn', 'dflt')]
+latn/dflt    resolves to release ('latn', 'dflt') / build ('latn', 'dflt'): EQUAL; application sequence equal
+release: 8 lookups; feature-less (reached only through a chain): [5, 6, 7]; types [1, 1, 4, 6, 6, 1, 4, 4]
+build: 8 lookups; feature-less (reached only through a chain): [3, 5, 6]; types [1, 1, 4, 1, 6, 4, 4, 5]
+SUMMARY: 0 of 1 language systems differ

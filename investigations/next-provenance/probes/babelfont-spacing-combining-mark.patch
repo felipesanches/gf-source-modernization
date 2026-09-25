@@ -1,0 +1,25 @@
+diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
+index a0f72fa..78954d1 100644
+--- a/babelfont/src/convertors/fontforge.rs
++++ b/babelfont/src/convertors/fontforge.rs
+@@ -1999,6 +1999,20 @@ impl SfdParser {
+             );
+         }
+ 
++        // A mark that advances is a spacing combining mark. FontForge exports
++        // every advance as the source states it, and a Nonspacing mark is exported
++        // zero-width.
++        if glyph.category == GlyphCategory::Mark
++            && width.unwrap_or(0.0) != 0.0
++            && glyph.format_specific.get("subcategory").and_then(|v| v.as_str())
++                == Some("Nonspacing")
++        {
++            glyph.format_specific.insert(
++                "subcategory".to_string(),
++                serde_json::Value::String("Spacing Combining".to_string()),
++            );
++        }
++
+         glyph.codepoints = codepoints;
+         Ok(glyph)
+     }

@@ -1,0 +1,3 @@
+from /home/fsanches/compartilhado/sfd-reland-scratch/gsub-verify/baseline/Megrim-gsub-verify-v1; gate /home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py md5 68c33418; WA=1
+usWeightClass 500 (TTFWeight) as FEA; fontc 1.0.0 drops a single master's instance weightClass
+0 blocking table difference(s)

@@ -1,0 +1,149 @@
+FontForge source excerpts for the vmetrics unit (fetched 2026-09-25 from raw.githubusercontent.com/fontforge/fontforge/<commit>/fontforge/<file>).
+Builds: FFTM FFTimeStamp 1298382513 (MountainsofChristmas, NothingYouCouldDo) = stamp.c source_modtime of b69c9652760b7a72d3f2dfb6f398b5a0f5ef5c98 (2011-02-22, source_version_str "20110222").
+        FFTM FFTimeStamp 1252949529 (Limelight) is 5 s before stamp.c source_modtime 1252949534 of c9ca2f32c7e61486be9dec03ff826a802633d90f (2009-09-14 17:32:28Z); the functions below are identical in both commits.
+
+== b69c9652760b7a72d3f2dfb6f398b5a0f5ef5c98 stamp.c
+#include <time.h>
+
+const time_t source_modtime = 1298382513L;
+const char *source_modtime_str = "13:48 GMT 22-Feb-2011";
+const char *source_version_str = "20110222";
+
+== c9ca2f32c7e61486be9dec03ff826a802633d90f stamp.c
+#include <time.h>
+
+const time_t source_modtime = 1252949534L;
+const char *source_modtime_str = "17:32 GMT 14-Sep-2009";
+const char *source_version_str = "20090914";
+
+== b69c9652760b7a72d3f2dfb6f398b5a0f5ef5c98 splineutil.c SplineSetQuickBounds (on-curve points only)
+   957	void SplineSetQuickBounds(SplineSet *ss,DBounds *b) {
+   958	    SplinePoint *sp;
+   959	
+   960	    b->minx = b->miny = 1e10;
+   961	    b->maxx = b->maxy = -1e10;
+   962	    for ( ; ss!=NULL; ss=ss->next ) {
+   963		for ( sp=ss->first; ; ) {
+   964		    if ( sp->me.y < b->miny ) b->miny = sp->me.y;
+   965		    if ( sp->me.x < b->minx ) b->minx = sp->me.x;
+   966		    if ( sp->me.y > b->maxy ) b->maxy = sp->me.y;
+   967		    if ( sp->me.x > b->maxx ) b->maxx = sp->me.x;
+   968		    if ( sp->next==NULL )
+   969		break;
+   970		    sp = sp->next->to;
+   971		    if ( sp==ss->first )
+   972		break;
+   973		}
+   974	    }
+   975	    if ( b->minx>65536 ) b->minx = 0;
+   976	    if ( b->miny>65536 ) b->miny = 0;
+   977	    if ( b->maxx<-65536 ) b->maxx = 0;
+   978	    if ( b->maxy<-65536 ) b->maxy = 0;
+   979	}
+
+== b69c9652760b7a72d3f2dfb6f398b5a0f5ef5c98 tottf.c dumpglyph head box
+  1189	    origptcnt = ptcnt;
+  1190	
+  1191	    SplineSetQuickBounds(ttfss,&bb);
+  1192	    gh.numContours = contourcnt;
+  1193	    gh.xmin = floor(bb.minx); gh.ymin = floor(bb.miny);
+  1194	    gh.xmax = ceil(bb.maxx); gh.ymax = ceil(bb.maxy);
+  1195	    dumpghstruct(gi,&gh);
+
+== b69c9652760b7a72d3f2dfb6f398b5a0f5ef5c98 tottf.c sethhead
+  2843	static void sethhead(struct hhead *hhead,struct hhead *vhead,struct alltabs *at, SplineFont *sf) {
+  2844	    int i, width, rbearing, height, bbearing;
+  2845	    int ymax, ymin, xmax, xmin, off;
+  2846	    DBounds bb;
+  2847	    /* Might as well fill in the vhead even if we don't use it */
+  2848	    /*  we just won't dump it out if we don't want it */
+  2849	
+  2850	    width = 0x80000000; rbearing = 0x7fffffff; height = 0x80000000; bbearing=0x7fffffff;
+  2851	    xmax = ymax = 0x80000000; xmin = ymin = 0x7fffffff;
+  2852	    for ( i=0; i<at->gi.gcnt; ++i ) if ( at->gi.bygid[i]!=-1 ) {
+  2853		SplineChar *sc = sf->glyphs[at->gi.bygid[i]];
+  2854		SplineCharLayerFindBounds(sc,at->gi.layer,&bb);
+  2855		if ( sc->width>width ) width = sc->width;
+  2856		if ( sc->vwidth>height ) height = sc->vwidth;
+  2857		if ( sc->width-bb.maxx < rbearing ) rbearing = sc->width-bb.maxx;
+  2858		if ( sc->vwidth-bb.maxy < bbearing ) bbearing = sc->vwidth-bb.maxy;
+  2859		if ( bb.maxy > ymax ) ymax = bb.maxy;
+  2860		if ( bb.miny < ymin ) ymin = bb.miny;
+  2861		if ( bb.maxx > xmax ) xmax = bb.maxx;
+  2862		if ( bb.minx < xmin ) xmin = bb.minx;
+  2863	    }
+  2864	
+  2865	    if ( at->head.ymax>ymax ) ymax = at->head.ymax;	/* If generated .notdef glyph is bigger than real glyphs */
+  2866	    if ( at->head.ymin<ymin ) ymin = at->head.ymin;
+  2867	
+  2868	    if ( ymax==0 && ymin==0 ) {
+  2869		/* this can happen in a bitmap only font */
+  2870		ymax = sf->ascent;
+  2871		ymin = -sf->descent;
+  2872	    }
+  2873	    hhead->version = 0x00010000;
+  2874	    if ( sf->pfminfo.hheadascent_add )
+  2875		hhead->ascender = ymax + sf->pfminfo.hhead_ascent;
+  2876	    else
+  2877		hhead->ascender = sf->pfminfo.hhead_ascent;
+  2878	    if ( sf->pfminfo.hheadascent_add )
+  2879		hhead->descender = ymin + sf->pfminfo.hhead_descent;
+  2880	    else
+  2881		hhead->descender = sf->pfminfo.hhead_descent;
+  2882	    hhead->linegap = sf->pfminfo.linegap;
+  2883	
+  2884	    vhead->version = 0x00011000;
+
+== b69c9652760b7a72d3f2dfb6f398b5a0f5ef5c98 tottf.c WinBB
+  3271	static void WinBB(SplineFont *sf,uint16 *winascent,uint16 *windescent,struct alltabs *at) {
+  3272	    /* The windows ascent/descent is calculated on the ymin/max of the */
+  3273	    /*  glyphs in the so called ANSI character set. I'm going to pretend */
+  3274	    /*  that's Latin1 with a few additions */
+  3275	    /* Well, that's what is documented, but the documentation says contradictory */
+  3276	    /*  things. I believe that winAscent should be the same as hhea.ascent */
+  3277	
+  3278	    *winascent = at->head.ymax;
+  3279	    *windescent = -at->head.ymin;		/* Should be positive */
+  3280	    if ( sf->cidmaster!=NULL )
+  3281		sf = sf->cidmaster;
+  3282	
+  3283	    if ( sf->pfminfo.winascent_add )
+  3284		*winascent += sf->pfminfo.os2_winascent;
+  3285	    else
+  3286		*winascent  = sf->pfminfo.os2_winascent;
+  3287	    if ( sf->pfminfo.windescent_add )
+  3288		*windescent += sf->pfminfo.os2_windescent;
+  3289	    else
+  3290		*windescent  = sf->pfminfo.os2_windescent;
+  3291	}
+
+== c9ca2f32c7e61486be9dec03ff826a802633d90f tottf.c sethead: created = modified = export time
+  2822	
+  2823	    time(&now);		/* seconds since 1970, need to convert to seconds since 1904 */
+  2824	    cvt_unix_to_1904(now,head->modtime);
+  2825	    memcpy(head->createtime,head->modtime,sizeof(head->modtime));
+
+== ee15007274e9 (2014-09-16T19:35:46Z): control points added to SplineSetQuickBounds
+Consider control points when calculating the boundaries of a SplineSet in SplineSetQuickBounds.
+@@ -834,6 +834,18 @@ void SplineSetQuickBounds(SplineSet *ss,DBounds *b) {
+ 	    if ( sp->me.x < b->minx ) b->minx = sp->me.x;
+ 	    if ( sp->me.y > b->maxy ) b->maxy = sp->me.y;
+ 	    if ( sp->me.x > b->maxx ) b->maxx = sp->me.x;
++	    // Frank added the control points to the calculation since,
++	    // according to Adam Twardoch,
++	    // the OpenType values that rely upon this function
++	    // expect control points to be included.
++	    if ( sp->prevcp.y < b->miny ) b->miny = sp->prevcp.y;
++	    if ( sp->prevcp.x < b->minx ) b->minx = sp->prevcp.x;
++	    if ( sp->prevcp.y > b->maxy ) b->maxy = sp->prevcp.y;
++	    if ( sp->prevcp.x > b->maxx ) b->maxx = sp->prevcp.x;
++	    if ( sp->nextcp.y < b->miny ) b->miny = sp->nextcp.y;
++	    if ( sp->nextcp.x < b->minx ) b->minx = sp->nextcp.x;
++	    if ( sp->nextcp.y > b->maxy ) b->maxy = sp->nextcp.y;
++	    if ( sp->nextcp.x > b->maxx ) b->maxx = sp->nextcp.x;
+ 	    if ( sp->next==NULL )
+ 	break;
+ 	    sp = sp->next->to;
+
+== master (2026-09-25) tottf.c sethhead descender mode now from hheaddescent_add (fixed by tag 20141014)
+2879:    if ( sf->pfminfo.hheaddescent_add )

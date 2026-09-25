@@ -1,0 +1,27 @@
+## scan: sfd-reland-scratch/baseline/*-next vs families-next.tsv (baseline-next builds)
+Cardo-Italic	nonbreakingspace	575	550	REPORTED	
+Cardo-Italic	uni1DC1	30	0	REPORTED	
+Cardo-Italic	uni2E0F	2443	0	REPORTED	
+Cardo-Italic	uni2E10	2443	0	REPORTED	
+Cardo-Italic	uni2E11	2443	0	HIDDEN	lsb-arbitration
+Cardo-Italic	uniF15B	11	0	HIDDEN	lsb-arbitration
+Cardo-Italic	uni05B105BD	1300	0	REPORTED	
+Ledger-Regular	uni00A0	281	0	REPORTED	
+Lohit-Tamil	asterisk	666	559	HIDDEN	lsb-arbitration
+Lohit-Tamil	u0BC1	532	0	REPORTED	
+Lohit-Tamil	u0BC2	776	0	REPORTED	
+Lohit-Tamil	u0BE6	585	636	HIDDEN	lsb-arbitration
+Lohit-Tamil	u0BEA	663	746	REPORTED	
+Lohit-Tamil	u0BEB	897	1055	HIDDEN	lsb-arbitration
+Lohit-Tamil	u0BEC	829	941	REPORTED	
+Lohit-Tamil	u0BED	768	802	REPORTED	
+Lohit-Tamil	u0BEE	1020	1142	REPORTED	
+Lohit-Tamil	u0BEF	946	987	REPORTED	
+Lohit-Tamil	u0BF0	661	823	HIDDEN	lsb-arbitration
+Lohit-Tamil	u0BF9	1231	1587	HIDDEN	lsb-arbitration
+Lohit-Tamil	u0BB6_u0BBF.abvs	1051	1223	HIDDEN	not-in-gate
+Thabit-Bold	.notdef	374	512	HIDDEN	d3-overflow
+Thabit	.notdef	374	512	HIDDEN	d3-overflow
+## scan: sfd-reland-scratch/emptygpos/baseline/*-first vs families.tsv (first-batch builds kept by next-emptygpos)
+Kristi-Regular	.notdef	748	1024	HIDDEN	not-in-gate
+NosiferCaps-Regular	.notdef	748	1024	HIDDEN	not-in-gate

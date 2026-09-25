@@ -1,0 +1,8 @@
+== /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify/baseline/Cardo-Bold-cardo-verify-p2/fonts/ttf/Cardo-Bold.ttf
+  GDEF classes {3: 165} MarkGlyphSetsDef False LigCaretList 0
+  GSUB absent
+  GPOS 4 lookups
+      0 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']
+      1 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']
+      2 type 2 flag 0x0000 mfs None subtables 1 feats ['kern']
+      3 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']

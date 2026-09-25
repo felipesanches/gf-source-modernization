@@ -1,0 +1,36 @@
+release: /home/fsanches/compartilhado/google/fonts/ofl/limelight/Limelight-Regular.ttf
+source: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/Limelight-Regular-TTF.sfd
+  header y-box = all-point box only: 21; = FontForge on-curve box only: 0; both: 381; neither: 0; not in source: 0
+   all-point-only ('greater', (-37, 1086), (-37, 1086), (-8, 1086))
+   all-point-only ('asciitilde', (473, 936), (473, 936), (522, 767))
+   all-point-only ('cent', (-271, 1340), (-271, 1340), (-266, 1335))
+   all-point-only ('currency', (-11, 1145), (-11, 1145), (-8, 1143))
+   all-point-only ('Oslash', (-225, 1557), (-225, 1557), (-220, 1554))
+   all-point-only ('oslash', (-229, 1287), (-229, 1287), (-221, 1284))
+   all-point-only ('Gcommaaccent', (-630, 1433), (-630, 1433), (-622, 1433))
+   all-point-only ('gcommaaccent', (-355, 1716), (-355, 1716), (-355, 1708))
+   all-point-only ('Kcommaaccent', (-630, 1426), (-630, 1426), (-622, 1426))
+   all-point-only ('kcommaaccent', (-636, 1415), (-636, 1415), (-628, 1415))
+   all-point-only ('Lcommaaccent', (-630, 1415), (-630, 1415), (-622, 1415))
+   all-point-only ('lcommaaccent', (-630, 1415), (-630, 1415), (-622, 1415))
+   all-point-only ('Ncommaaccent', (-630, 1479), (-630, 1479), (-622, 1479))
+   all-point-only ('ncommaaccent', (-630, 1086), (-630, 1086), (-622, 1086))
+   all-point-only ('Rcommaaccent', (-636, 1415), (-636, 1415), (-628, 1415))
+   all-point-only ('rcommaaccent', (-630, 1086), (-630, 1086), (-622, 1086))
+   all-point-only ('Tcommaaccent', (-630, 1428), (-630, 1428), (-622, 1428))
+   all-point-only ('tcommaaccent', (-630, 1415), (-630, 1415), (-622, 1415))
+   all-point-only ('Scommaaccent', (-630, 1433), (-630, 1433), (-622, 1433))
+   all-point-only ('scommaaccent', (-630, 1086), (-630, 1086), (-622, 1086))
+   all-point-only ('commaaccent', (-630, -147), (-630, -147), (-622, -147))
+  head yMin/yMax -636/1864
+  release TRUE extremes: max 1864.0 (uni1E1F) -> int 1864; min -629.28 (kcommaaccent) -> int -629
+release: /home/fsanches/compartilhado/google/fonts/apache/mountainsofchristmas/MountainsofChristmas-Bold.ttf
+source: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/MountainsofChristmas-Bold-TTF.sfd
+  header y-box = all-point box only: 0; = FontForge on-curve box only: 193; both: 33; neither: 0; not in source: 0
+  head yMin/yMax -354/1056
+  release TRUE extremes: max 1058.0 (Scaron) -> int 1058; min -354.3809523809524 (g) -> int -354
+release: /home/fsanches/compartilhado/google/fonts/ofl/nothingyoucoulddo/NothingYouCouldDo.ttf
+source: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/NothingYouCouldDo-TTF.sfd
+  header y-box = all-point box only: 0; = FontForge on-curve box only: 295; both: 13; neither: 0; not in source: 0
+  head yMin/yMax -407/959
+  release TRUE extremes: max 959.439024390244 (Ecircumflex) -> int 959; min -407 (y) -> int -407

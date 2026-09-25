@@ -1,0 +1,7 @@
+== fonts/ttf/Cardo-Bold.ttf
+  GDEF classes {1: 2992} MarkGlyphSetsDef False LigCaretList 0
+  GSUB absent
+  GPOS 3 lookups
+      0 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']
+      1 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']
+      2 type 2 flag 0x0008 mfs None subtables 1 feats ['kern']

@@ -1,0 +1,7 @@
+from: /home/fsanches/compartilhado/sfd-reland-scratch/gsub/baseline/Megrim-gsub-r0
+gate: /home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py (68c33418)
+workarounds: usWeightClass 500 (TTFWeight) as FEA; fontc 1.0.0 drops a single master's instance weightClass
+BLOCKING GSUB.script_list [null, {"DFLT/dflt": {"lookups": [0, 2]}, "latn/dflt": {"lookups": [0, 2]}, "lat
+BLOCKING GSUB.feature_list [null, {"aalt": [0], "locl": [2], "ss01": [1]}]
+BLOCKING GSUB.lookup_list [null, {"0": [{"type": "single", "M": "M.ss01", "N": "N.ss01", "R": "R.ss01", "U
+3 blocking table difference(s)

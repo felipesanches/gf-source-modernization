@@ -1,0 +1,44 @@
+RELEASE-STALE hmtx.gidGID_0 -- each bearing matches its own outline (68 and 102) and the advance agrees; the outlines are gated by the rendering diff
+RELEASE-STALE hmtx.M -- shipped records 10 for an outline at -43; ours records -43
+RELEASE-STALE hmtx.Oslash -- shipped records 10 for an outline at -16; ours records -16
+RELEASE-STALE hmtx.P -- shipped records -194 for an outline at -195; ours records -195
+RELEASE-STALE hmtx.T -- shipped records 126 for an outline at 125; ours records 125
+RELEASE-STALE hmtx.X -- shipped records -118 for an outline at -123; ours records -123
+RELEASE-STALE hmtx.Y -- shipped records 15 for an outline at 14; ours records 14
+RELEASE-STALE hmtx.Yacute -- shipped records -81 for an outline at -82; ours records -82
+RELEASE-STALE hmtx.Z -- shipped records -38 for an outline at -42; ours records -42
+RELEASE-STALE hmtx.a -- shipped records -1 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.aacute -- shipped records -1 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.acircumflex -- shipped records -1 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.acute -- shipped records 67 for an outline at 66; ours records 66
+RELEASE-STALE hmtx.adieresis -- shipped records -1 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.agrave -- shipped records -1 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.aring -- shipped records -1 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.atilde -- shipped records -1 for an outline at -2; ours records -2
+RELEASE-STALE hmtx.c -- shipped records 78 for an outline at 49; ours records 49
+RELEASE-STALE hmtx.ccedilla -- shipped records 78 for an outline at 47; ours records 47
+RELEASE-STALE hmtx.cent -- shipped records 9 for an outline at 8; ours records 8
+RELEASE-STALE hmtx.dieresis -- shipped records 347 for an outline at 334; ours records 334
+RELEASE-STALE hmtx.e.alt1 -- shipped records -32 for an outline at -34; ours records -34
+RELEASE-STALE hmtx.g -- shipped records 10 for an outline at -55; ours records -55
+RELEASE-STALE hmtx.guillemotleft -- shipped records 93 for an outline at 63; ours records 63
+RELEASE-STALE hmtx.h -- shipped records -39 for an outline at -40; ours records -40
+RELEASE-STALE hmtx.i -- shipped records 85 for an outline at 84; ours records 84
+RELEASE-STALE hmtx.m -- shipped records -131 for an outline at -156; ours records -156
+RELEASE-STALE hmtx.onesuperior -- shipped records 333 for an outline at 322; ours records 322
+RELEASE-STALE hmtx.oslash -- shipped records -62 for an outline at -80; ours records -80
+RELEASE-STALE hmtx.period -- shipped records 161 for an outline at 160; ours records 160
+RELEASE-STALE hmtx.plus -- shipped records 108 for an outline at 104; ours records 104
+RELEASE-STALE hmtx.question -- shipped records 216 for an outline at 184; ours records 184
+RELEASE-STALE hmtx.section -- shipped records 79 for an outline at 78; ours records 78
+RELEASE-STALE hmtx.slash -- shipped records 53 for an outline at 32; ours records 32
+RELEASE-STALE hmtx.thorn -- shipped records -232 for an outline at -233; ours records -233
+RELEASE-STALE hmtx.w -- shipped records 50 for an outline at 49; ours records 49
+RELEASE-STALE the same GSUB lookups in a different order; 80656 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE GPOS.script_list -- one font carries an empty GPOS and the other none, and neither font has a mark glyph or a legacy kern table, so HarfBuzz's fallback positioning has nothing to act on
+RELEASE-STALE GPOS.feature_list -- one font carries an empty GPOS and the other none, and neither font has a mark glyph or a legacy kern table, so HarfBuzz's fallback positioning has nothing to act on
+RELEASE-STALE GPOS.lookup_list -- one font carries an empty GPOS and the other none, and neither font has a mark glyph or a legacy kern table, so HarfBuzz's fallback positioning has nothing to act on
+RELEASE-STALE OS/2.sx_height -- the release ships an OS/2 version 1 table, which has no such field
+RELEASE-STALE OS/2.s_cap_height -- the release ships an OS/2 version 1 table, which has no such field
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's .null (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))), nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s)))
+0 blocking table difference(s), 43 stale in the release

@@ -1,0 +1,34 @@
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp out of range; ignoring top bytes
+'modified' timestamp out of range; ignoring top bytes
+Megrim  release ofl/megrim/Megrim.ttf
+   tables   GSUB=no GPOS=no GDEF=no DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2011-05-03 18:22:10 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2010-05-05 16:58:37; modified 2011-04-28 15:00:19
+   source src/Megrim-TTF.sfd: 3 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType OFF (no layout tables although the source declares 3 lookups)
+Poly-Italic  release ofl/poly/Poly-Italic.ttf
+   tables   GSUB=yes GPOS=yes GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 3; head.created 2011-10-24 16:09:17 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-10-24 08:48:28; modified 2011-10-24 16:07:46
+   source src/Poly-Italic-TTF.sfd: 18 GSUB and 2 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+RibeyeMarrow-Regular  release ofl/ribeyemarrow/RibeyeMarrow-Regular.ttf
+   tables   GSUB=yes GPOS=yes GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 4; head.created 2011-11-21 16:43:50 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-11-19 13:13:00; modified 2011-11-21 16:43:17
+   source src/RibeyeMarrow-Regular-TTF.sfd: 5 GSUB and 1 GPOS lookups with a feature; 284 kerning records
+   => OpenType ON
+Varela-Regular  release ofl/varela/Varela-Regular.ttf
+   tables   GSUB=yes GPOS=yes GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 4; head.created 2011-06-16 22:55:21 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-06-06 08:07:09; modified 2011-06-13 15:18:46
+   source src/Varela-Regular-TTF.sfd: 28 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+== export batches (monorepo 52f780bc9d19, 1608 TTFs)
+   Megrim (2011-05-03 18:22:10): 5 TTF(s) within 120 s
+        +0s ofl/megrim/Megrim.ttf GSUB=False GPOS=False kern=False
+       +93s ofl/jura/Jura-Regular.ttf GSUB=False GPOS=False kern=True
+       +98s ofl/jura/Jura-Medium.ttf GSUB=False GPOS=False kern=True
+      +102s ofl/jura/Jura-Light.ttf GSUB=False GPOS=False kern=True
+      +107s ofl/jura/Jura-DemiBold.ttf GSUB=False GPOS=False kern=True

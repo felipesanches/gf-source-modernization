@@ -1,0 +1,5 @@
+release: /home/fsanches/compartilhado/google/fonts/ofl/giveyouglory/GiveYouGlory.ttf
+source: /home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/src/GiveYouGlory-TTF.sfd
+  header y-box = all-point box only: 0; = FontForge on-curve box only: 339; both: 12; neither: 0; not in source: 0
+  head yMin/yMax -619/1020
+  release TRUE extremes: max 1020 (Ocircumflex) -> int 1020; min -621.8604651162791 (y) -> int -621

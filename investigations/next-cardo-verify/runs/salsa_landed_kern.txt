@@ -1,0 +1,5 @@
+pairs	14400 strings	0 differ
+kern+mark	285 strings	246 differ
+   'F́A' (U+0046 U+0301 U+0041)
+     release U+0046@0,0 U+0301@525,0 U+0041@859,0 END@1474,0
+     ours    U+0046@0,0 U+0301@480,0 U+0041@480,0 END@1095,0

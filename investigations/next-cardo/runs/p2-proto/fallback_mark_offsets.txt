@@ -1,0 +1,20 @@
+== Cardo-Bold (p2-proto build)
+differing base+mark strings by maximum position delta: {'<=2': 746}
+marks involved: 13 [('U+0312', 74), ('U+0318', 74), ('U+0339', 74), ('U+034D', 74), ('U+0355', 74), ('U+0357', 74), ('U+035D', 74), ('U+0486', 74), ('U+059E', 61), ('U+0596', 60), ('U+031E', 11), ('U+033A', 11), ('U+035C', 11)]
+worst 2 units: U+05D0 U+0312
+  release U+0312@1302,335 U+05D0@0,0 END@1300,0
+  ours    U+0312@1304,334 U+05D0@0,0 END@1300,0
+  release U+05D0 afii57664 header (85, -27, 1211, 1264) outline (85, -27, 1211, 1264) simple
+  release U+0312 uni0312 header (-833, 1057, -474, 1661) outline (-833, 1058, -475, 1661) composite
+  ours U+05D0 afii57664 header (85, -27, 1211, 1264) outline (85, -27, 1211, 1264) simple
+  ours U+0312 uni0312 header (-833, 1058, -475, 1661) outline (-833, 1058, -475, 1661) composite
+== Cardo-Italic (p2-proto build)
+differing base+mark strings by maximum position delta: {'<=2': 722, '>10': 116, '3..10': 2}
+marks involved: 16 [('U+0312', 74), ('U+0318', 74), ('U+0339', 74), ('U+034D', 74), ('U+0355', 74), ('U+0357', 74), ('U+035D', 74), ('U+0486', 74), ('U+0326', 69), ('U+059E', 61), ('U+0596', 59), ('U+0322', 15), ('U+031E', 11), ('U+033A', 11), ('U+035C', 11), ('U+05B1', 11)]
+worst 37 units: U+05D0 U+0312
+  release U+0312@1004,222 U+05D0@0,0 END@1300,0
+  ours    U+0312@1006,259 U+05D0@0,0 END@1300,0
+  release U+05D0 afii57664 header (85, -27, 1211, 1264) outline (85, -27, 1211, 1264) simple
+  release U+0312 uni0312 header (-530, 1170, -181, 1741) outline (-530, 1158, -182, 1741) composite
+  ours U+05D0 afii57664 header (85, -27, 1211, 1264) outline (85, -27, 1211, 1264) simple
+  ours U+0312 uni0312 header (-530, 1133, -182, 1741) outline (-530, 1158, -182, 1741) composite

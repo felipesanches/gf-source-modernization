@@ -1,0 +1,9 @@
+Cardo-Regular(r1)	uni0304	1000	0	HIDDEN	not-in-gate
+Cardo-Regular(r1)	uni05B105BD	1300	0	HIDDEN	not-in-gate
+Cardo-Italic.ttf	nonbreakingspace	575	550	REPORTED	
+Cardo-Italic.ttf	uni1DC1	30	0	REPORTED	
+Cardo-Italic.ttf	uni2E0F	2443	0	REPORTED	
+Cardo-Italic.ttf	uni2E10	2443	0	REPORTED	
+Cardo-Italic.ttf	uni2E11	2443	0	HIDDEN	lsb-arbitration
+Cardo-Italic.ttf	uniF15B	11	0	HIDDEN	lsb-arbitration
+Cardo-Italic.ttf	uni05B105BD	1300	0	REPORTED	

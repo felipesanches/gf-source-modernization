@@ -1,0 +1,1 @@
+GlyphClassDef base 2187, ligature 18, mark 181, component 0

@@ -1,0 +1,25 @@
+flags: --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --reverse-path-direction --fontforge-implied-oncurves --fontforge-rint-coordinates --fontforge-truncate-anchors --fontforge-no-anchor-propagation
+RELEASE-STALE hmtx.dollar -- shipped records -4 for an outline at -5; ours records -5
+RELEASE-STALE hmtx.asterisk -- shipped records 58 for an outline at 57; ours records 57
+RELEASE-STALE hmtx.acute -- shipped records 124 for an outline at 118; ours records 118
+RELEASE-STALE hmtx.periodcentered -- shipped records 81 for an outline at 79; ours records 79
+RELEASE-STALE hmtx.cedilla -- shipped records 125 for an outline at 124; ours records 124
+RELEASE-STALE hmtx.ordmasculine -- shipped records 16 for an outline at 17; ours records 17
+RELEASE-STALE hmtx.questiondown -- shipped records 41 for an outline at 42; ours records 42
+RELEASE-STALE hmtx.Iacute -- shipped records -44 for an outline at -50; ours records -50
+RELEASE-STALE hmtx.Icircumflex -- shipped records -45 for an outline at -49; ours records -49
+RELEASE-STALE hmtx.multiply -- shipped records 89 for an outline at 88; ours records 88
+RELEASE-STALE hmtx.igrave -- shipped records -9 for an outline at -10; ours records -10
+RELEASE-STALE hmtx.icircumflex -- shipped records 20 for an outline at 17; ours records 17
+RELEASE-STALE hmtx.idieresis -- shipped records 19 for an outline at 18; ours records 18
+RELEASE-STALE hmtx.Ibreve -- shipped records -53 for an outline at -55; ours records -55
+RELEASE-STALE hmtx.Idotaccent -- shipped records 6 for an outline at 4; ours records 4
+RELEASE-STALE hmtx.lacute -- shipped records -6 for an outline at -12; ours records -12
+RELEASE-STALE hmtx.tcommaaccent -- shipped records 5 for an outline at 4; ours records 4
+RELEASE-STALE hmtx.circumflex -- shipped records 187 for an outline at 184; ours records 184
+RELEASE-STALE hmtx.breve -- shipped records 26 for an outline at 25; ours records 25
+RELEASE-STALE hmtx.dotaccent -- shipped records 40 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.hungarumlaut -- shipped records 35 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.bullet -- shipped records 59 for an outline at 57; ours records 57
+RELEASE-STALE OS/2.ach_vend_id -- the release names no vendor ('    ') and ours carries the compiler's placeholder 'NONE'
+0 blocking table difference(s), 23 stale in the release

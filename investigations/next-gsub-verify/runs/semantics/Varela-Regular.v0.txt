@@ -1,0 +1,22 @@
+release language systems: [('cyrl', 'dflt'), ('grek', 'dflt'), ('latn', 'AZE'), ('latn', 'CRT'), ('latn', 'DEU'), ('latn', 'MOL'), ('latn', 'ROM'), ('latn', 'SRB'), ('latn', 'TRK'), ('latn', 'dflt')]
+build   language systems: [('cyrl', 'dflt'), ('grek', 'dflt'), ('latn', 'AZE'), ('latn', 'CRT'), ('latn', 'DEU'), ('latn', 'MOL'), ('latn', 'ROM'), ('latn', 'SRB'), ('latn', 'TRK'), ('latn', 'dflt')]
+cyrl/dflt    resolves to release ('cyrl', 'dflt') / build ('cyrl', 'dflt'): EQUAL; application sequence equal
+grek/dflt    resolves to release ('grek', 'dflt') / build ('grek', 'dflt'): EQUAL; application sequence equal
+latn/AZE     resolves to release ('latn', 'AZE') / build ('latn', 'AZE'): DIFFERS; application sequence DIFFERS
+      liga: 1 lookups (release [25]) vs 2 (build [27, 28])
+      smcp: 2 lookups (release [22, 23]) vs 3 (build [24, 25, 26])
+latn/CRT     resolves to release ('latn', 'CRT') / build ('latn', 'CRT'): DIFFERS; application sequence DIFFERS
+      liga: 1 lookups (release [25]) vs 2 (build [27, 28])
+      smcp: 2 lookups (release [22, 23]) vs 3 (build [24, 25, 26])
+latn/DEU     resolves to release ('latn', 'DEU') / build ('latn', 'DEU'): EQUAL; application sequence equal
+latn/MOL     resolves to release ('latn', 'MOL') / build ('latn', 'MOL'): EQUAL; application sequence equal
+latn/ROM     resolves to release ('latn', 'ROM') / build ('latn', 'ROM'): EQUAL; application sequence equal
+latn/SRB     resolves to release ('latn', 'SRB') / build ('latn', 'SRB'): DIFFERS; application sequence DIFFERS
+      aalt: 0 lookups (release None) vs 2 (build [0, 1])
+latn/TRK     resolves to release ('latn', 'TRK') / build ('latn', 'TRK'): DIFFERS; application sequence DIFFERS
+      liga: 1 lookups (release [25]) vs 2 (build [27, 28])
+      smcp: 2 lookups (release [22, 23]) vs 3 (build [24, 25, 26])
+latn/dflt    resolves to release ('latn', 'dflt') / build ('latn', 'dflt'): EQUAL; application sequence equal
+release: 31 lookups; feature-less (reached only through a chain): [28, 29, 30]; types [1, 3, 1, 1, 1, 1, 1, 1, 6, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1, 4, 4, 1]
+build: 31 lookups; feature-less (reached only through a chain): [8, 9, 10]; types [1, 3, 1, 1, 1, 1, 1, 1, 4, 4, 1, 6, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1]
+SUMMARY: 4 of 10 language systems differ

@@ -1,0 +1,22 @@
+prototype: clone of babelfont-rs-worktrees/integration-ff-prs at 17ea899 + runs/babelfont-proto.diff
+release binary sha256 6031e56dbd6cd19c660de39b732e3a2837f320e6455ff3de0236c9866a1a30f1
+pinned integration binary sha256 4cbc83e0c1ea0592ace1fe883305c995cdf592fed34fe419a71145c472be2a60
+== cargo fmt -p babelfont -- --check
+clean
+== cargo clippy -p babelfont --features cli --all-targets -- -D warnings: exit 0, no output (target dir sfd-reland-scratch/vmetrics/target-clippy)
+== cargo test --release -p babelfont --lib
+    convertors::robocjk::tests::test_deserialize_designspace
+    convertors::robocjk::tests::test_load_robocjk
+    convertors::robocjk::tests::test_load_robocjk_codepoints
+    convertors::robocjk::tests::test_load_robocjk_deep_components
+    convertors::robocjk::tests::test_load_robocjk_glyphs
+    convertors::robocjk::tests::test_load_robocjk_masters
+    convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif
+    convertors::robocjk::tests::test_load_robocjk_variation_layer_classification
+    filters::decomposecomponentreferences::tests::test_decompose
+    filters::decomposecomponentreferences::tests::test_pass_on_external_axes
+    filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole
+test result: FAILED. 259 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.69s
+(the 11 failures are the robocjk/decompose tests that need noto-cjk-varco/, absent from every checkout; upstream/main 496e904 fails the same 11: tools/babelfont-upstream/RESULT-pr-ff-os2-defaults.txt)
+== the new filter's tests
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 267 filtered out; finished in 0.01s

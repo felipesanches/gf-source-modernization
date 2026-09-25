@@ -1,0 +1,4 @@
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (2 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s)))
+RELEASE-STALE GDEF.glyph_classes -- our build corrects 2 mark class(es) the release got wrong: U+0307, U+0308. Disclose in the PR body; the release calls these base glyphs and they are Unicode combining marks
+0 blocking table difference(s), 3 stale in the release

@@ -1,0 +1,6 @@
+uni0297    release  hmtx lsb   102 glyf xMin   102 | NO_SCALE outline xMin 66.0 | NO_HINTING@upem outline xMin 66.0
+uni0297    ours     hmtx lsb    66 glyf xMin    66 | NO_SCALE outline xMin 66.0 | NO_HINTING@upem outline xMin 66.0
+s          release  hmtx lsb    31 glyf xMin    31 | NO_SCALE outline xMin 30.0 | NO_HINTING@upem outline xMin 30.0
+s          ours     hmtx lsb    30 glyf xMin    30 | NO_SCALE outline xMin 30.0 | NO_HINTING@upem outline xMin 30.0
+uniA770    release  hmtx lsb   121 glyf xMin   121 | NO_SCALE outline xMin 114.0 | NO_HINTING@upem outline xMin 114.0
+uniA770    ours     hmtx lsb   114 glyf xMin   114 | NO_SCALE outline xMin 114.0 | NO_HINTING@upem outline xMin 114.0

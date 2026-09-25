@@ -1,0 +1,24 @@
+tables old ['DSIG', 'FFTM', 'GDEF', 'GPOS', 'GSUB', 'OS/2', 'cmap', 'gasp', 'glyf', 'head', 'hhea', 'hmtx', 'loca', 'maxp', 'name', 'post', 'prep']
+tables new ['DSIG', 'FFTM', 'GDEF', 'GPOS', 'GSUB', 'OS/2', 'cmap', 'gasp', 'glyf', 'head', 'hhea', 'hmtx', 'loca', 'maxp', 'name', 'post', 'prep']
+RAW differs: cmap 4338 3860
+RAW differs: head 54 54
+RAW differs: hmtx 9548 9548
+advance/lsb changes: [('nonbreakingspace', (550, 0), (575, 0))]
+best cmap equal: True
+  old cmap subtable 0 3 4 2412
+  old cmap subtable 1 0 6 227
+  old cmap subtable 3 1 4 2412
+  new cmap subtable 0 3 4 2412
+  new cmap subtable 1 0 6 227
+  new cmap subtable 3 1 4 2412
+head field changes: {'checkSumAdjustment': (3343756813, 996904635)}
+OS/2 field changes: {'panose': (<fontTools.ttLib.tables.O_S_2f_2.Panose object at 0x7f4d2e8c2e40>, <fontTools.ttLib.tables.O_S_2f_2.Panose object at 0x7f4d2e774b90>)}
+hhea field changes: {}
+post field changes: {}
+maxp field changes: {}
+fsType 0 0
+name records equal: True
+glyph order equal: True
+0 3 True
+1 0 True
+3 1 True

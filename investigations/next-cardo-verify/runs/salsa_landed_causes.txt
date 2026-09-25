@@ -1,0 +1,24 @@
+== fonts/ttf/Salsa-Regular.ttf
+base+mark	282 strings	257 differ
+   'B̀' (U+0042 U+0300)
+     release U+0042@0,0 U+0300@636,0 END@970,0
+     ours    U+0042@0,0 U+0300@636,0 END@636,0
+pairs	14400 strings	0 differ
+kern+mark	285 strings	246 differ
+   'F́A' (U+0046 U+0301 U+0041)
+     release U+0046@0,0 U+0301@525,0 U+0041@859,0 END@1474,0
+     ours    U+0046@0,0 U+0301@480,0 U+0041@480,0 END@1095,0
+== sim-flag0.ttf
+base+mark	282 strings	257 differ
+   'B̀' (U+0042 U+0300)
+     release U+0042@0,0 U+0300@636,0 END@970,0
+     ours    U+0042@0,0 U+0300@636,0 END@636,0
+pairs	14400 strings	0 differ
+kern+mark	285 strings	246 differ
+   'F́A' (U+0046 U+0301 U+0041)
+     release U+0046@0,0 U+0301@525,0 U+0041@859,0 END@1474,0
+     ours    U+0046@0,0 U+0301@525,0 U+0041@525,0 END@1140,0
+== sim-relgdef.ttf
+base+mark	282 strings	0 differ
+pairs	14400 strings	0 differ
+kern+mark	285 strings	0 differ

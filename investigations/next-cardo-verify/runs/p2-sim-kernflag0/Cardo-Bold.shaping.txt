@@ -1,0 +1,2 @@
+pairs	41683 strings	0 differ
+kern+mark	426 strings	0 differ

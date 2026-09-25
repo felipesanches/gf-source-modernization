@@ -1,0 +1,1 @@
+built Thabit-Oblique.ttf fsSelection 0b11000000 macStyle 0 name1 Thabit Oblique name2 Regular name6 Thabit-Oblique name16 Thabit name17 Oblique

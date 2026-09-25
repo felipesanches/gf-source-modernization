@@ -1,0 +1,9 @@
+RELEASE-STALE 236 bearings, every one the release contradicting its own outline
+RELEASE-STALE the same GSUB lookups in a different order; 102400 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (30 and 32); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (30 and 32); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (30 and 32); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (67), and no lookup filters on the rest of the class
+RELEASE-STALE head.font_direction_hint -- the release's 0 is what FontForge before 722e7ea8873e computed from its cmap (FFTM 2011-02-22); the field is deprecated (spec: set to 2) and no shaper reads it
+ACCEPTED-RENAME cmap U+F438 ["10192.04", "u10192.04"]: same outline and advance under a different name
+0 blocking table difference(s), 7 stale in the release, 1 accepted rename(s)

@@ -1,0 +1,14 @@
+== Bold (baseline/Cardo-Bold-cardo-verify-r0/fonts/ttf/Cardo-Bold.ttf)
+release classes {1: 2992} ours {3: 165}
+(release class, our class, sfd GlyphClass, sfd has mark anchor, sfd has Ligature2): count  examples
+(1, 0, None, False, False) 2827 ['.null', 'A', 'A.sc', 'AE', 'AE.sc', 'AEacute', 'A_R', 'Aacute', 'Aacute.sc', 'Abreve', 'Acircumflex', 'Acircumflex.sc']
+(1, 3, None, False, False) 165 ['acutecomb', 'afii57793', 'afii57794', 'afii57795', 'afii57796', 'afii57797', 'afii57798', 'afii57799', 'afii57800', 'afii57801', 'afii57802', 'afii57803']
+== Italic (baseline/Cardo-Italic-cardo-verify-s1/fonts/ttf/Cardo-Italic.ttf)
+release classes {1: 2187, 3: 181, 2: 18} ours {3: 184}
+(release class, our class, sfd GlyphClass, sfd has mark anchor, sfd has Ligature2): count  examples
+(1, 0, None, False, False) 1234 ['.null', 'A', 'AE', 'Aacute', 'Abreve', 'Acircumflex', 'Acute', 'Adieresis', 'Agrave', 'Alpha', 'Alphatonos', 'Amacron']
+(1, 0, 2, False, False) 950 ['1E0A', 'A.sc', 'AE.sc', 'AEacute', 'Aacute.sc', 'Acircumflex.sc', 'Acute.sc', 'Adieresis.sc', 'Agrave.sc', 'Amacron.sc', 'Aring.sc', 'Aringacute']
+(2, 0, 3, False, True) 15 ['T_h', 'c_t', 'f_f', 'f_f_i', 'f_f_l', 'fi', 'fl', 'longs_h', 'longs_i', 'longs_l', 'longs_longs', 'longs_longs_i']
+(1, 3, None, False, False) 3 ['afii57806', 'uni0485', 'uni0486']
+(2, 0, 3, False, False) 2 ['A_R', 'uniFB4F']
+(2, 0, None, False, True) 1 ['f_j']

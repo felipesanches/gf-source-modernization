@@ -1,0 +1,2 @@
+PFB vs shipped: 366 codepoints compared; area off >0.1%: 1, >0.4%: 0; bbox off >1u: 0
+designer OTF vs shipped: 368 codepoints compared; area off >0.1%: 176, >0.4%: 23; bbox off >1u: 6

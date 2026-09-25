@@ -1,0 +1,8 @@
+w1 Thabit gained ['U+00A0'] lost []
+w1 Thabit-Bold gained ['U+00A0'] lost []
+w1 Thabit-Oblique gained ['U+00A0'] lost []
+w1 Thabit-BoldOblique gained ['U+00A0'] lost []
+w2 Thabit gained [] lost []
+w2 Thabit-Bold gained [] lost []
+w2 Thabit-Oblique gained [] lost []
+w2 Thabit-BoldOblique gained [] lost []

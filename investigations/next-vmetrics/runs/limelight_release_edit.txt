@@ -1,0 +1,20 @@
+Limelight-Regular.ttf (release)
+  FFTM build 2009-09-14 17:32:09  sourceModified 2012-04-07 21:31:23
+  head.created 2012-04-07 21:31:33  head.modified 2012-08-20 07:27:21  DIFFER (re-stamped after export)
+  head yMin/yMax -636/1864; glyf headers {'ff': 0, 'all': 21, 'both': 381, 'neither': 0}
+MountainsofChristmas-Bold.ttf v1.002 (control)
+  FFTM build 2011-02-22 13:48:33  sourceModified 2011-11-22 20:24:12
+  head.created 2011-11-22 20:25:17  head.modified 2011-11-22 20:25:17  EQUAL (nothing re-stamped it)
+  head yMin/yMax -354/1056; glyf headers {'ff': 137, 'all': 0, 'both': 29, 'neither': 6}
+NothingYouCouldDo.ttf (control)
+  FFTM build 2011-02-22 13:48:33  sourceModified 2011-07-08 10:37:18
+  head.created 2011-07-08 07:39:27  head.modified 2011-07-08 07:39:27  EQUAL (nothing re-stamped it)
+  head yMin/yMax -407/959; glyf headers {'ff': 143, 'all': 0, 'both': 11, 'neither': 0}
+source: true outline extremes -629.2800 / 1864.0000; on-curve head box (-628, 1864)
+metric               source states            FontForge export  vmetcheck.py rule  release
+OS/2.sTypoAscender   OS2TypoAscent 243 (offset)             1881               1864     1864 release = vmetcheck
+OS/2.sTypoDescender  OS2TypoDescent -224 (offset)             -634               -629     -634 release = FontForge
+OS/2.usWinAscent     OS2WinAscent 17 (offset)             1881               1864     1864 release = vmetcheck
+OS/2.usWinDescent    OS2WinDescent 3 (offset)              631                629      629 release = vmetcheck
+hhea.ascender        HheadAscent 17 (offset)              1881               1864     1864 release = vmetcheck
+hhea.descender       HheadDescent -3 (offset)             -632               -629     -629 release = vmetcheck

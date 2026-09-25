@@ -1,0 +1,35 @@
+# RibeyeMarrow-Regular.ttf GSUB: 1 scripts, 5 features, 8 lookups
+## SCRIPTS
+latn/dflt req=- feats=[0:aalt 1:frac 2:liga 3:ordn 4:sups] lookups=[0, 1, 2, 4, 7]
+## FEATURES
+0 aalt [0]
+1 frac [7]
+2 liga [2]
+3 ordn [4]
+4 sups [1]
+## LOOKUPS
+L0 type=1 flag=0x0 subtables=1
+  st0 single one[U+0031]>onesuperior[U+00B9] two[U+0032]>twosuperior[U+00B2] three[U+0033]>threesuperior[U+00B3] a[U+0061]>ordfeminine[U+00AA] o[U+006F]>ordmasculine[U+00BA]
+L1 type=1 flag=0x0 subtables=1
+  st0 single one[U+0031]>onesuperior[U+00B9] two[U+0032]>twosuperior[U+00B2] three[U+0033]>threesuperior[U+00B3]
+L2 type=4 flag=0x0 subtables=1
+  st0 lig f[U+0066]+i[U+0069]>fi[U+FB01] f[U+0066]+l[U+006C]>fl[U+FB02]
+L3 type=1 flag=0x0 subtables=1
+  st0 single a[U+0061]>ordfeminine[U+00AA] o[U+006F]>ordmasculine[U+00BA]
+L4 type=6 flag=0x0 subtables=1
+  st0 chain fmt3 Backtrack=['[zero[U+0030] one[U+0031] two[U+0032] three[U+0033] four[U+0034] five[U+0035] six[U+0036] seven[U+0037] eight[U+0038] nine[U+0039]]'] Input=['[a[U+0061] o[U+006F]]'] LookAhead=[] apply=[(0, 3)]
+L5 type=4 flag=0x0 subtables=1
+  st0 lig zero[U+0030]+fraction[U+2044]+zero[U+0030]+zero[U+0030]>perthousand[U+2030] zero[U+0030]+slash[U+002F]+zero[U+0030]+zero[U+0030]>perthousand[U+2030] one[U+0031]+fraction[U+2044]+twosuperior[U+00B2]>onehalf[U+00BD] one[U+0031]+fraction[U+2044]+two[U+0032]>onehalf[U+00BD] one[U+0031]+slash[U+002F]+twosuperior[U+00B2]>onehalf[U+00BD] one[U+0031]+slash[U+002F]+two[U+0032]>onehalf[U+00BD] one[U+0031]+fraction[U+2044]+four[U+0034]>onequarter[U+00BC] one[U+0031]+slash[U+002F]+four[U+0034]>onequarter[U+00BC] three[U+0033]+fraction[U+2044]+four[U+0034]>threequarters[U+00BE] three[U+0033]+slash[U+002F]+four[U+0034]>threequarters[U+00BE] onesuperior[U+00B9]+fraction[U+2044]+twosuperior[U+00B2]>onehalf[U+00BD] onesuperior[U+00B9]+slash[U+002F]+twosuperior[U+00B2]>onehalf[U+00BD] onesuperior[U+00B9]+fraction[U+2044]+four[U+0034]>onequarter[U+00BC] onesuperior[U+00B9]+slash[U+002F]+four[U+0034]>onequarter[U+00BC] threesuperior[U+00B3]+fraction[U+2044]+four[U+0034]>threequarters[U+00BE] threesuperior[U+00B3]+slash[U+002F]+four[U+0034]>threequarters[U+00BE]
+L6 type=4 flag=0x0 subtables=1
+  st0 lig zero[U+0030]+fraction[U+2044]+zero[U+0030]>percent[U+0025] zero[U+0030]+slash[U+002F]+zero[U+0030]>percent[U+0025]
+L7 type=5 flag=0x0 subtables=1
+  st0 ctx fmt2 cov=[zero[U+0030] one[U+0031] three[U+0033] onesuperior[U+00B9] threesuperior[U+00B3]] back={} in={1: 'fraction[U+2044] slash[U+002F]', 2: 'zero[U+0030]', 3: 'one[U+0031]', 4: 'two[U+0032]', 5: 'three[U+0033]', 6: 'four[U+0034]', 7: 'onesuperior[U+00B9]', 8: 'twosuperior[U+00B2]', 9: 'threesuperior[U+00B3]'} ahead={}
+     class2: back=[] in=[1, 2, 2] ahead=[] apply=[(0, 5)]
+     class2: back=[] in=[1, 2] ahead=[] apply=[(0, 6)]
+     class3: back=[] in=[1, 6] ahead=[] apply=[(0, 5)]
+     class3: back=[] in=[1, 4] ahead=[] apply=[(0, 5)]
+     class3: back=[] in=[1, 8] ahead=[] apply=[(0, 5)]
+     class5: back=[] in=[1, 6] ahead=[] apply=[(0, 5)]
+     class7: back=[] in=[1, 6] ahead=[] apply=[(0, 5)]
+     class7: back=[] in=[1, 8] ahead=[] apply=[(0, 5)]
+     class9: back=[] in=[1, 6] ahead=[] apply=[(0, 5)]

@@ -1,0 +1,2 @@
+kafinitial: points 41/41 identical=False maxdelta=(454, 113) | release lsb -56 xMin -57 shift +1 | ours lsb -57 xMin -57 shift +0 | adv 637/637
+uniFB90: points 41/41 identical=False maxdelta=(454, 113) | release lsb -56 xMin -57 shift +1 | ours lsb -57 xMin -57 shift +0 | adv 637/637

@@ -1,0 +1,67 @@
+diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
+index a0f72fa..78954d1 100644
+--- a/babelfont/src/convertors/fontforge.rs
++++ b/babelfont/src/convertors/fontforge.rs
+@@ -1999,6 +1999,20 @@ impl SfdParser {
+             );
+         }
+ 
++        // A mark that advances is a spacing combining mark. FontForge exports
++        // every advance as the source states it, and a Nonspacing mark is exported
++        // zero-width.
++        if glyph.category == GlyphCategory::Mark
++            && width.unwrap_or(0.0) != 0.0
++            && glyph.format_specific.get("subcategory").and_then(|v| v.as_str())
++                == Some("Nonspacing")
++        {
++            glyph.format_specific.insert(
++                "subcategory".to_string(),
++                serde_json::Value::String("Spacing Combining".to_string()),
++            );
++        }
++
+         glyph.codepoints = codepoints;
+         Ok(glyph)
+     }
+@@ -2163,6 +2177,10 @@ impl SfdParser {
+         );
+         if kind == "mark" {
+             name = "_".to_string() + &name;
++        } else if kind == "baselig" {
++            // A ligature's anchor for one component: Glyphs names it after the
++            // component, counting from 1 in the ligature's logical order.
++            name = format!("{}_{}", name, index + 1);
+         }
+         Some(crate::Anchor {
+             name,
+@@ -3643,6 +3661,30 @@ impl SfdParser {
+                     lookup.block.statements.extend(rules);
+                 }
+             }
++            // A lookup that is not contextual keeps its flags as well. FontForge
++            // writes them into the font; without IgnoreMarks, for example, a
++            // lam-alef ligature no longer forms across a haraka.
++            if !has_chain && !lookup.block.statements.is_empty() {
++                if lookup.flag & !0x000F != 0 {
++                    log::warn!(
++                        "lookup {:?}: flag {:#06x} carries bits (mark-attachment \
++                         class or filtering set) that are not converted",
++                        lookup.block.name,
++                        lookup.flag
++                    );
++                }
++                if lookup.flag & 0x000F != 0 {
++                    lookup.block.statements.insert(
++                        0,
++                        fea_rs_ast::Statement::LookupFlag(fea_rs_ast::LookupFlagStatement::new(
++                            lookup.flag & 0x000F,
++                            None,
++                            None,
++                            0..0,
++                        )),
++                    );
++                }
++            }
+             if lookup.block.statements.is_empty() {
+                 // No statements: skip this lookup
+                 continue;

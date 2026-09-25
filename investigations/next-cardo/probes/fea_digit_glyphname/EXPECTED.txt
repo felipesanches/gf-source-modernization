@@ -1,0 +1,4 @@
+fontc(builder3 e851b8b) DigitName: FAILED: FEA parsing failed with 1 errors
+feaLib DigitName: FAILED: features>:1:30: Expected glyph name, glyph range, or glyph class reference, found 10192.04
+fontc(builder3 e851b8b) LetterName: BUILT
+feaLib LetterName: BUILT

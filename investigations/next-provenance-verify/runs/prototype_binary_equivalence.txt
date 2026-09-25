@@ -1,0 +1,3 @@
+Thabit-Bold.gen: identical output
+Thabit-BoldOblique.gen: identical output
+Lohit-Tamil: identical output

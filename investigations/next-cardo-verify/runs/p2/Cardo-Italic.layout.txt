@@ -1,0 +1,15 @@
+== /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify/baseline/Cardo-Italic-cardo-verify-p2/fonts/ttf/Cardo-Italic.ttf
+  GDEF classes {3: 184, 2: 15} MarkGlyphSetsDef True LigCaretList 15
+  GSUB 10 lookups
+      0 type 4 flag 0x0000 mfs None subtables 1 feats ['liga']
+      1 type 1 flag 0x0000 mfs None subtables 1 feats ['hist']
+      2 type 1 flag 0x0000 mfs None subtables 1 feats []
+      3 type 6 flag 0x0000 mfs None subtables 5 feats ['hist']
+      4 type 4 flag 0x0000 mfs None subtables 1 feats ['hlig']
+      5 type 4 flag 0x0000 mfs None subtables 1 feats ['dlig']
+      6 type 1 flag 0x0000 mfs None subtables 1 feats ['onum']
+      7 type 1 flag 0x0000 mfs None subtables 1 feats ['onum']
+      8 type 1 flag 0x0000 mfs None subtables 1 feats ['pnum']
+      9 type 1 flag 0x0000 mfs None subtables 1 feats ['pnum']
+  GPOS 1 lookups
+      0 type 2 flag 0x0010 mfs 0 subtables 2 feats ['kern']

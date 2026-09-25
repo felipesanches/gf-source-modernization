@@ -1,0 +1,27 @@
+# Arabeyes Thabit release tarballs (https://downloads.sourceforge.net/project/arabeyes/<path>), fetched 2026-09-25
+# Fonts/core_fonts/Thabit-0.01rc.tar.gz, Fonts/core_fonts/Thabit-0.01.tar.gz, Fonts/Thabit%200.02/Thabit-0.02.tar.gz
+6305c3ebcdb3d1e7c348ffb8cc70ea5774569b312887ff9d402b69f4ae095a78  Thabit-0.01rc.tar.gz
+5def4e2f14bc8653a0ac19b5e9cded2d4f3fa993aecb6eaa66607d224f65eacd  Thabit-0.01.tar.gz
+4c76e43f8bd398e46c01437e66a3d6ba9c738eb42d2666c7af6d1b3cfb40f24a  Thabit-0.02.tar.gz
+# member TTFs (sha1) vs google/fonts b5efa9c32e8f ofl/thabit
+db7076e1df6fb6fcf810c8b1dcdb850185a216e6  Thabit-0.01rc/Thabit-Bold.ttf
+43dc8c4bae392df3149b24a65837f7f37a2ba3bb  Thabit-0.01rc/Thabit.ttf
+307f267042511be686f0e0170c66dea78b80ce31  Thabit-0.01/Thabit-Bold.ttf
+d255db951bc1363ea3bea8a712276f6a00924c8d  Thabit-0.01/Thabit.ttf
+875eadecf3de2b3cb33c29e4198a0e1a7c61465c  Thabit-0.02/Thabit-Bold-Oblique.ttf
+6c0b4c38dffe5c302906f0a953931db14592d676  Thabit-0.02/Thabit-Bold.ttf
+2b48df3ced954ae5d9e9017d3b489b7dc4674ea6  Thabit-0.02/Thabit-Oblique.ttf
+936b5a4cad88f2c69aaa5f5707db4636574546f5  Thabit-0.02/Thabit.ttf
+2b63bd5e374348462e8e61b012413a677eec8ed7  /home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-BoldOblique.ttf
+7c8f8f246e0d33b639f9307e8d6a769aec250bc7  /home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-Bold.ttf
+aeb295dbaff02aa18354f0b050c843276a004356  /home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-Oblique.ttf
+936b5a4cad88f2c69aaa5f5707db4636574546f5  /home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit.ttf
+# X.Org font-ibm-type1 88a51daabc8a5bf2dbb2ace89c638058b01b3cf3 (sha1); cour*.pfa byte-identical to hg 52f780b ofl/thabit/src/cour/
+56b310ce3f1c3913c4ededcdb3c977c1432ae66b  xorg-ibm-type1/cour.afm
+d9f40681cb3d5035c7b31bf981b0833e68652490  xorg-ibm-type1/courb.afm
+f9ff6ba13127802733200033ecbbcee516060bfc  xorg-ibm-type1/courbi.afm
+bd4f00bd99c99661489777bdd521892a5daf356f  xorg-ibm-type1/courbi.pfa
+40da47b1664f3c146c3f5a2d5be19a5dc6b0147e  xorg-ibm-type1/courb.pfa
+11b5886ff046af1522aca50bb4fb33a080dfd7fc  xorg-ibm-type1/couri.afm
+9e4cb17605310f8d56d635b2ae067262e1e2ccf3  xorg-ibm-type1/couri.pfa
+6d066b3c18c5e58364102fb5f8bb9446e3aa5f53  xorg-ibm-type1/cour.pfa

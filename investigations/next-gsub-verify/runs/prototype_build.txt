@@ -1,0 +1,5 @@
+prototype built from: d345b491b2a352b7eb872d7a62d17be0ca94f4a8 = 17ea899 + next-gsub/probes/babelfont-17ea899-langsys-as-built.diff (git apply, one commit)
+dcddee22a8b96db7085103bf6305be09  /home/fsanches/compartilhado/sfd-reland-scratch/gsub-verify/bf-target/release/babelfont
+diff applied to upstream main 496e904: source hunks apply; tests.rs hunk FAILS (context from pr-ff-reader-fixes)
+next-emptygpos/probes/babelfont-17ea899-language-systems-PROTOTYPE.patch (git am on 17ea899) gives an identical tree
+    Finished `release` profile [optimized] target(s) in 8m 53s

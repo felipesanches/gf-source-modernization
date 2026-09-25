@@ -1,0 +1,54 @@
+corpus: 2331 strings (388 shared codepoints, 44 rule characters); 2 language systems; features: default + aalt case dnom frac liga lnum locl numr onum ordn pnum sinf sups tnum zero
+-/- default: fired in 18 of 2331 runs; 0 differ in glyphs
+-/- aalt: fired in 1560 of 2331 runs; 0 differ in glyphs
+-/- case: fired in 924 of 2331 runs; 0 differ in glyphs
+-/- dnom: fired in 790 of 2331 runs; 0 differ in glyphs
+-/- frac: fired in 858 of 2331 runs; 0 differ in glyphs
+-/- liga: fired in 0 of 2331 runs; 0 differ in glyphs
+-/- lnum: fired in 924 of 2331 runs; 0 differ in glyphs
+-/- locl: fired in 0 of 2331 runs; 0 differ in glyphs
+-/- numr: fired in 790 of 2331 runs; 0 differ in glyphs
+-/- onum: fired in 0 of 2331 runs; 0 differ in glyphs
+-/- ordn: fired in 340 of 2331 runs; 0 differ in glyphs
+-/- pnum: fired in 0 of 2331 runs; 0 differ in glyphs
+-/- sinf: fired in 790 of 2331 runs; 0 differ in glyphs
+-/- sups: fired in 790 of 2331 runs; 0 differ in glyphs
+-/- tnum: fired in 1110 of 2331 runs; 0 differ in glyphs
+-/- zero: fired in 88 of 2331 runs; 0 differ in glyphs
+latn/ROM default: fired in 421 of 2331 runs; 0 differ in glyphs
+latn/ROM aalt: fired in 0 of 2331 runs; 1380 differ in glyphs
+      '$' release=['dollar'] build=['dollar.fitted']
+      '$$' release=['dollar', 'dollar'] build=['dollar.fitted', 'dollar.fitted']
+      '$/' release=['dollar', 'slash'] build=['dollar.fitted', 'fraction']
+latn/ROM case: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM dnom: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM frac: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM liga: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM lnum: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM locl: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM numr: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM onum: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM ordn: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM pnum: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM sinf: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM sups: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM tnum: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/ROM zero: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/dflt default: fired in 18 of 2331 runs; 0 differ in glyphs
+latn/dflt aalt: fired in 1560 of 2331 runs; 0 differ in glyphs
+latn/dflt case: fired in 924 of 2331 runs; 0 differ in glyphs
+latn/dflt dnom: fired in 790 of 2331 runs; 0 differ in glyphs
+latn/dflt frac: fired in 858 of 2331 runs; 0 differ in glyphs
+latn/dflt liga: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/dflt lnum: fired in 924 of 2331 runs; 0 differ in glyphs
+latn/dflt locl: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/dflt numr: fired in 790 of 2331 runs; 0 differ in glyphs
+latn/dflt onum: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/dflt ordn: fired in 340 of 2331 runs; 0 differ in glyphs
+latn/dflt pnum: fired in 0 of 2331 runs; 0 differ in glyphs
+latn/dflt sinf: fired in 790 of 2331 runs; 0 differ in glyphs
+latn/dflt sups: fired in 790 of 2331 runs; 0 differ in glyphs
+latn/dflt tnum: fired in 1110 of 2331 runs; 0 differ in glyphs
+latn/dflt zero: fired in 88 of 2331 runs; 0 differ in glyphs
+ADVANCE-ONLY 96 runs (same glyphs, different x advance), at glyphs commaaccent dotaccentcmb
+TOTAL 111888 runs, 1380 differ in glyphs, 96 differ in advances only

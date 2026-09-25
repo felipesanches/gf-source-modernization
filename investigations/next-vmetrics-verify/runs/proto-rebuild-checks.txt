@@ -1,0 +1,13 @@
+verifier rebuild of the prototype: git clone --branch integration-ff-prs (17ea899) + git apply next-vmetrics/runs/babelfont-proto.diff
+binary sha256 64b4ae4552a54d4a64b71950da9ca028204f62286fc656a02bf5c0ff17c1900b (path-dependent; the investigation's own build is 6031e56d...)
+== cargo build --release -p babelfont --features cli
+    Finished `release` profile [optimized] target(s) in 13m 43s
+exit=0
+== cargo fmt -p babelfont -- --check: clean
+== cargo test --release -p babelfont --lib fontforgelegacyoffsetmetrics
+test filters::fontforgelegacyoffsetmetrics::tests::test_absolute_metrics_are_left_alone ... ok
+test filters::fontforgelegacyoffsetmetrics::tests::test_win_from_on_curve_box_hhea_from_truncated_outline ... ok
+test filters::fontforgelegacyoffsetmetrics::tests::test_resolved_metric_is_written_back_as_absolute ... ok
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 267 filtered out; finished in 0.01s
+exit=0
+(clippy not re-run by the verifier)

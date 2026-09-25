@@ -1,0 +1,5 @@
+repo	family	lic	kind	base	commit	style	source	shipped
+thabit	thabit	ofl	hg	googlefonts/googlefontdirectory-hg	52f780bc9d197280a9f430574e179a5f233c56b6	Thabit-Bold	src/Thabit-Bold.sfd	/home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-Bold.ttf
+thabit	thabit	ofl	hg	googlefonts/googlefontdirectory-hg	52f780bc9d197280a9f430574e179a5f233c56b6	Thabit	src/Thabit.sfd	/home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit.ttf
+thabit	thabit	ofl	hg	googlefonts/googlefontdirectory-hg	52f780bc9d197280a9f430574e179a5f233c56b6	Thabit-Oblique	src/Thabit.sfd	/home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-Oblique.ttf
+thabit	thabit	ofl	hg	googlefonts/googlefontdirectory-hg	52f780bc9d197280a9f430574e179a5f233c56b6	Thabit-BoldOblique	src/Thabit-Bold.sfd	/home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-BoldOblique.ttf

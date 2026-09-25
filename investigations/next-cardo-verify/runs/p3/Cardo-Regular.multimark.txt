@@ -1,0 +1,5 @@
+heb3    13392 strings      0 differ
+heb4    12555 strings      0 differ
+hebsh     868 strings      0 differ
+lat3    28704 strings      0 differ
+grk3     5390 strings      0 differ

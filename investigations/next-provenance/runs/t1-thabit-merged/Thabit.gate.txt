@@ -1,0 +1,45 @@
+flags: --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --reverse-path-direction
+[2026-09-25T02:18:58Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 3073
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (2 and 4); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (2 and 4); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (2 and 4); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE OS/2.sx_height -- the release ships an OS/2 version 1 table, which has no such field
+RELEASE-STALE OS/2.s_cap_height -- the release ships an OS/2 version 1 table, which has no such field
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's .null (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))), nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))), spacenumeric (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s))); our uni00A0 (an addition at U+00A0, which the other font does not encode)
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (8), and no lookup filters on the rest of the class
+BLOCKING OS/2.us_weight_class [500, 400]
+BLOCKING PfEd: whole-table difference
+BLOCKING cmap U+00B5 ["micro", "mu"]
+BLOCKING cmap U+0111 LOST ["dbar", null]
+BLOCKING cmap U+03A9 LOST ["Omega", null]
+BLOCKING cmap U+03BC LOST ["mu", null]
+BLOCKING cmap U+207B LOST ["minussuperior", null]
+BLOCKING cmap U+20A7 LOST ["Pts", null]
+BLOCKING cmap U+2126 ["ohm", "Omega"]
+BLOCKING cmap U+2195 LOST ["SM760000", null]
+BLOCKING cmap U+21A8 LOST ["SM770000", null]
+BLOCKING cmap U+2302 LOST ["SM790000", null]
+BLOCKING cmap U+2310 LOST ["SM680000", null]
+BLOCKING cmap U+2320 LOST ["SS260000", null]
+BLOCKING cmap U+2321 LOST ["SS270000", null]
+BLOCKING cmap U+2580 LOST ["SF600000", null]
+BLOCKING cmap U+2584 LOST ["SF570000", null]
+BLOCKING cmap U+2588 LOST ["SF610000", null]
+BLOCKING cmap U+258C LOST ["SF580000", null]
+BLOCKING cmap U+2590 LOST ["SF590000", null]
+BLOCKING cmap U+2591 LOST ["SF140000", null]
+BLOCKING cmap U+2592 LOST ["SF150000", null]
+BLOCKING cmap U+2593 LOST ["SF160000", null]
+BLOCKING cmap U+25B2 LOST ["SM600000", null]
+BLOCKING cmap U+25B6 LOST ["SM590000", null]
+BLOCKING cmap U+25BC LOST ["SV040000", null]
+BLOCKING cmap U+25C0 LOST ["SM630000", null]
+BLOCKING cmap U+25CB LOST ["SM750000", null]
+BLOCKING cmap U+25D8 LOST ["SM570001", null]
+BLOCKING cmap U+25D9 LOST ["SM750002", null]
+BLOCKING cmap U+263A LOST ["SS000000", null]
+BLOCKING cmap U+263B LOST ["SS010000", null]
+BLOCKING cmap U+263C LOST ["SM690000", null]
+BLOCKING head.font_direction_hint [0, 2]
+BLOCKING hmtx.2 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+35 blocking table difference(s), 7 stale in the release

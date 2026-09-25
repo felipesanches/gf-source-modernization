@@ -1,0 +1,12 @@
+Cardo-Bold: BLOCKING 1
+Cardo-Bold p2: shared BLOCKING 1; proposed: 0 blocking table difference(s), 9 stale in the release
+   shaping base+mark	134629 strings	744 differ
+   shaping base+mark+mark	0 strings	0 differ
+   shaping pairs	41683 strings	0 differ
+   shaping kern+mark	426 strings	177 differ
+   shaping words	0 strings	0 differ
+   multimark heb3    13392 strings    673 differ
+   multimark heb4    12555 strings    630 differ
+   multimark hebsh     868 strings     56 differ
+   multimark lat3    28704 strings      0 differ
+   multimark grk3     5390 strings      0 differ

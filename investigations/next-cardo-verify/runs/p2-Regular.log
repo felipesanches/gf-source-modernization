@@ -1,0 +1,12 @@
+Cardo-Regular: BLOCKING 1
+Cardo-Regular p2: shared BLOCKING 1; proposed: 0 blocking table difference(s), 7 stale in the release, 1 accepted rename(s)
+   shaping base+mark	181328 strings	10 differ
+   shaping base+mark+mark	0 strings	0 differ
+   shaping pairs	41683 strings	0 differ
+   shaping kern+mark	15 strings	0 differ
+   shaping words	7 strings	7 differ
+   multimark heb3    13392 strings    488 differ
+   multimark heb4    12555 strings    630 differ
+   multimark hebsh     868 strings      0 differ
+   multimark lat3    28704 strings      0 differ
+   multimark grk3     5390 strings      0 differ

@@ -1,0 +1,14 @@
+r1-before Cardo-Regular: base+mark 4361/181328; base+mark+mark 0/0; pairs 0/41683; kern+mark 4/15; words 45/45; 
+r0-before Cardo-Italic: base+mark 839/136246; base+mark+mark 0/0; pairs 0/40097; kern+mark 2056/3057; words 0/2; 
+r0-before Cardo-Bold: base+mark 744/134629; base+mark+mark 0/0; pairs 0/41683; kern+mark 177/426; words 0/0; 
+p2-after Cardo-Regular: base+mark 10/181328; base+mark+mark 0/0; pairs 0/41683; kern+mark 0/15; words 7/7; 
+p2-after Cardo-Italic: base+mark 839/136246; base+mark+mark 0/0; pairs 0/40097; kern+mark 2056/3057; words 0/2; 
+p2-after Cardo-Bold: base+mark 744/134629; base+mark+mark 0/0; pairs 0/41683; kern+mark 177/426; words 0/0; 
+p2-sim-kernflag0 Cardo-Italic: base+mark 839/136246; base+mark+mark 0/0; pairs 0/40097; kern+mark 0/3057; words 0/2; 
+p2-sim-kernflag0 Cardo-Bold: base+mark 744/134629; base+mark+mark 0/0; pairs 0/41683; kern+mark 0/426; words 0/0; 
+p1-proto Cardo-Regular: base+mark 956/181328; base+mark+mark 0/0; pairs 0/41683; kern+mark 0/15; words 7/7; 
+p1-proto Cardo-Italic: base+mark 839/136246; base+mark+mark 0/0; pairs 0/40097; kern+mark 2056/3057; words 0/2; 
+p1-proto Cardo-Bold: base+mark 744/134629; base+mark+mark 0/0; pairs 0/41683; kern+mark 177/426; words 0/0; 
+s1-italic-nbsp Cardo-Italic: base+mark 839/136246; base+mark+mark 0/0; pairs 0/40097; kern+mark 2056/3057; words 0/2; 
+s1-bold-workarounds Cardo-Bold: base+mark 744/134629; base+mark+mark 0/0; pairs 0/41683; kern+mark 177/426; words 0/0; 
+p3-marks-first (emulated babelfont change, real fontc build) Cardo-Regular: base+mark 0/181328; base+mark+mark 0/0; pairs 0/41683; kern+mark 0/15; words 0/0; 

@@ -1,0 +1,4 @@
+from: /home/fsanches/compartilhado/sfd-reland-scratch/gsub/baseline/Megrim-gsub-r3
+gate: /home/fsanches/compartilhado/sfd-reland/investigations/next-gsub/probes/table_gate_gsub_proposed.py (c3ee0891)
+workarounds: usWeightClass 500 (TTFWeight) as FEA; fontc 1.0.0 drops a single master's instance weightClass
+0 blocking table difference(s)

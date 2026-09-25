@@ -1,0 +1,3 @@
+release                        [('i', 257), ('.notdef', 514)]
+build                          [('i', 257), ('.notdef', 0)]
+build + release's empty GPOS   [('i', 257), ('.notdef', 514)]

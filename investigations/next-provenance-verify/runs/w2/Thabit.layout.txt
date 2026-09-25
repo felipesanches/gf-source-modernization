@@ -1,0 +1,11 @@
+== /home/fsanches/compartilhado/sfd-reland-scratch/provenance-verify/baseline/Thabit-w2-workarounds/fonts/ttf/Regular-Medium.ttf
+  GSUB 0 type 4 flag 1 subtables 1 rules/bases 4  ['rlig/arab/dflt']
+  GSUB 1 type 1 flag 1 subtables 1 rules/bases 38  ['init/arab/dflt']
+  GSUB 2 type 1 flag 1 subtables 1 rules/bases 38  ['medi/arab/dflt']
+  GSUB 3 type 1 flag 1 subtables 1 rules/bases 58  ['fina/arab/dflt']
+  GSUB 4 type 4 flag 9 subtables 1 rules/bases 8  ['liga/arab/dflt']
+  GSUB 5 type 4 flag 0 subtables 1 rules/bases 5  ['liga/latn/dflt']
+  GPOS 0 type 4 flag 0 subtables 1 rules/bases 235  ['mark/arab/dflt', 'mark/latn/dflt']
+  GPOS 1 type 4 flag 0 subtables 1 rules/bases 235  ['mark/arab/dflt', 'mark/latn/dflt']
+  GPOS 2 type 5 flag 0 subtables 1 rules/bases 8  ['mark/arab/dflt', 'mark/latn/dflt']
+  GPOS 3 type 5 flag 0 subtables 1 rules/bases 8  ['mark/arab/dflt', 'mark/latn/dflt']

@@ -1,0 +1,4 @@
+glyph diffs 96, word diffs 192, max differing_pixels 351
+  arabic     1 glyphs; worst [(80, 'U+0689')]
+  latin     85 glyphs; worst [(41, 'U+00F0'), (40, 'U+00F5'), (37, 'U+0151'), (37, 'U+014D'), (37, 'U+00F6')]
+  other     10 glyphs; worst [(38, 'U+25D9'), (38, 'U+25CB'), (32, 'U+2030'), (30, 'U+03B1'), (29, 'U+03B4')]

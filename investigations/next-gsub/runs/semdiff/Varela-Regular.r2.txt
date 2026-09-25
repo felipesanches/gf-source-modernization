@@ -1,0 +1,42 @@
+== LOOKUPS: release 31, build 31; nested-only (no feature): release [28, 29, 30], build [8, 9, 10]
+   identical lookup contents: 26; release-only: 1; build-only: 1
+   release-only L12 T6/0:9675d4fa:4
+   build-only   L15 T6/0:3b589dbb:2
+   feature ordn slot 0: release T6/0:9675d4fa:4 vs build T6/0:3b589dbb:2: 4 release-only rule(s), 2 build-only
+      release-only ('chain3', (('eight', 'eight.oldstyle', 'eight.taboldstyle', 'five', 'five.oldstyle', 'five.taboldstyle', 'four', 'four.oldstyle', 'four.taboldstyle', 'nine', 'nine.oldstyle', 'nine.taboldstyle', 'one', 'one.oldstyle', 'one.taboldstyle', 'seven', 'seven.oldstyle', 'seven.taboldstyle', 'six', 'six.oldstyle', 'six.taboldstyle', 'three', 'three.oldstyle', 'three.taboldstyle', 'two', 'two.oldstyle', 'two.taboldstyle', 'zero', 'zero.oldstyle', 'zero.taboldstyle'),), (('a',),), (), ((0, 'T1/0:5f38f307:12'),))
+      release-only ('chain3', (('eight', 'eight.oldstyle', 'eight.taboldstyle', 'five', 'five.oldstyle', 'five.taboldstyle', 'four', 'four.oldstyle', 'four.taboldstyle', 'nine', 'nine.oldstyle', 'nine.taboldstyle', 'one', 'one.oldstyle', 'one.taboldstyle', 'seven', 'seven.oldstyle', 'seven.taboldstyle', 'six', 'six.oldstyle', 'six.taboldstyle', 'three', 'three.oldstyle', 'three.taboldstyle', 'two', 'two.oldstyle', 'two.taboldstyle', 'zero', 'zero.oldstyle', 'zero.taboldstyle'),), (('o',),), (), ((0, 'T1/0:5f38f307:12'),))
+      release-only ('chain3', (('period',), ('eight', 'eight.oldstyle', 'eight.taboldstyle', 'five', 'five.oldstyle', 'five.taboldstyle', 'four', 'four.oldstyle', 'four.taboldstyle', 'nine', 'nine.oldstyle', 'nine.taboldstyle', 'one', 'one.oldstyle', 'one.taboldstyle', 'seven', 'seven.oldstyle', 'seven.taboldstyle', 'six', 'six.oldstyle', 'six.taboldstyle', 'three', 'three.oldstyle', 'three.taboldstyle', 'two', 'two.oldstyle', 'two.taboldstyle', 'zero', 'zero.oldstyle', 'zero.taboldstyle')), (('a',),), (), ((0, 'T1/0:5f38f307:12'),))
+      release-only ('chain3', (('period',), ('eight', 'eight.oldstyle', 'eight.taboldstyle', 'five', 'five.oldstyle', 'five.taboldstyle', 'four', 'four.oldstyle', 'four.taboldstyle', 'nine', 'nine.oldstyle', 'nine.taboldstyle', 'one', 'one.oldstyle', 'one.taboldstyle', 'seven', 'seven.oldstyle', 'seven.taboldstyle', 'six', 'six.oldstyle', 'six.taboldstyle', 'three', 'three.oldstyle', 'three.taboldstyle', 'two', 'two.oldstyle', 'two.taboldstyle', 'zero', 'zero.oldstyle', 'zero.taboldstyle')), (('o',),), (), ((0, 'T1/0:5f38f307:12'),))
+      build-only   ('chain3', (('eight', 'eight.oldstyle', 'eight.taboldstyle', 'five', 'five.oldstyle', 'five.taboldstyle', 'four', 'four.oldstyle', 'four.taboldstyle', 'nine', 'nine.oldstyle', 'nine.taboldstyle', 'one', 'one.oldstyle', 'one.taboldstyle', 'seven', 'seven.oldstyle', 'seven.taboldstyle', 'six', 'six.oldstyle', 'six.taboldstyle', 'three', 'three.oldstyle', 'three.taboldstyle', 'two', 'two.oldstyle', 'two.taboldstyle', 'zero', 'zero.oldstyle', 'zero.taboldstyle'),), (('a', 'o'),), (), ((0, 'T1/0:5f38f307:12'),))
+      build-only   ('chain3', (('period',), ('eight', 'eight.oldstyle', 'eight.taboldstyle', 'five', 'five.oldstyle', 'five.taboldstyle', 'four', 'four.oldstyle', 'four.taboldstyle', 'nine', 'nine.oldstyle', 'nine.taboldstyle', 'one', 'one.oldstyle', 'one.taboldstyle', 'seven', 'seven.oldstyle', 'seven.taboldstyle', 'six', 'six.oldstyle', 'six.taboldstyle', 'three', 'three.oldstyle', 'three.taboldstyle', 'two', 'two.oldstyle', 'two.taboldstyle', 'zero', 'zero.oldstyle', 'zero.taboldstyle')), (('a', 'o'),), (), ((0, 'T1/0:5f38f307:12'),))
+== REGISTRATION (script/lang/feature -> lookup identities)
+   cyrl/dflt/ordn   release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   grek/dflt/ordn   release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   latn/AZE/ordn    release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   latn/CRT/ordn    release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   latn/DEU/ordn    release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   latn/MOL/ordn    release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   latn/ROM/ordn    release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   latn/TRK/ordn    release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   latn/dflt/ordn   release ['T6/0:9675d4fa:4']
+                    build   ['T6/0:3b589dbb:2']
+   160 keys, 9 differ
+== ORDER (per script/lang: the lookup sequence a shaper applies)
+   cyrl/dflt  different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True
+   grek/dflt  different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True
+   latn/AZE   different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True
+   latn/CRT   different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True
+   latn/DEU   different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True
+   latn/MOL   different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True
+   latn/ROM   different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True
+   latn/SRB   same sequence of 3 lookups
+   latn/TRK   different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True
+   latn/dflt  different sets; release-only ['ordn']; build-only ['ordn']; common part in same order: True

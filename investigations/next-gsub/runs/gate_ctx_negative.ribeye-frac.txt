@@ -1,0 +1,5 @@
+control         behaviour changed: no (control); shared gate REFUSE (FALSE BLOCK); proposed gate ACCEPT (sound)
+swap-first-two  behaviour changed: yes ('0/00': ['perthousand'] -> ['percent', 'zero'], lang None); shared gate REFUSE (sound); proposed gate REFUSE (sound)
+drop-last       not applicable to this lookup
+retarget        behaviour changed: yes ('0/00': ['perthousand'] -> ['zero', 'slash', 'zero', 'zero'], lang None); shared gate REFUSE (sound); proposed gate REFUSE (sound)
+UNSOUND verdicts: shared 0, proposed 0

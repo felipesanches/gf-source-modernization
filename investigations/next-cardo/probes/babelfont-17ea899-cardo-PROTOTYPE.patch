@@ -1,0 +1,214 @@
+diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
+index a0f72fa..ee93c38 100644
+--- a/babelfont/src/convertors/fontforge.rs
++++ b/babelfont/src/convertors/fontforge.rs
+@@ -1463,6 +1463,7 @@ impl SfdParser {
+         let mut current_layer_idx: Option<usize> = None;
+         let mut layer_map: HashMap<usize, usize> = HashMap::new();
+         let mut width: Option<f32> = None;
++        let mut lig_caret_cnt_fixed = false;
+ 
+         let mut idx = 1usize;
+         while idx < data.len() {
+@@ -1707,6 +1708,11 @@ impl SfdParser {
+                         );
+                     }
+                 }
++                "LigCaretCntFixed" => {
++                    if let Some(v) = value.and_then(|v| v.trim().parse::<i64>().ok()) {
++                        lig_caret_cnt_fixed = v != 0;
++                    }
++                }
+                 "LCarets2" => {
+                     if let Some(v) = value {
+                         glyph.format_specific.insert(
+@@ -1999,10 +2005,74 @@ impl SfdParser {
+             );
+         }
+ 
++        // A mark that advances is a spacing combining mark. FontForge exports every
++        // advance as the source states it; a Glyphs compiler exports a Nonspacing
++        // mark zero-width.
++        if glyph.category == GlyphCategory::Mark
++            && width.unwrap_or(0.0) != 0.0
++            && glyph
++                .format_specific
++                .get("subcategory")
++                .and_then(|v| v.as_str())
++                == Some("Nonspacing")
++        {
++            glyph.format_specific.insert(
++                "subcategory".to_string(),
++                serde_json::Value::String("Spacing Combining".to_string()),
++            );
++        }
++
++        // Ligature carets: FontForge writes a GDEF LigGlyph for a glyph whose
++        // LCarets2 has a non-zero caret (every caret when LigCaretCntFixed is set),
++        // omitting zero carets otherwise, in increasing x -- decreasing for a
++        // right-to-left glyph. Glyphs expresses a caret as an anchor caret_<n>.
++        if let Some(carets) = glyph
++            .format_specific
++            .get("sfd.lcarets")
++            .and_then(|v| v.as_str())
++            .map(|s| Self::lig_carets(s, lig_caret_cnt_fixed, &codepoints))
++        {
++            for layer in glyph.layers.iter_mut().filter(|l| !l.is_background) {
++                for (i, x) in carets.iter().enumerate() {
++                    layer.anchors.push(crate::Anchor {
++                        x: *x as f64,
++                        y: 0.0,
++                        name: format!("caret_{}", i + 1),
++                        ..Default::default()
++                    });
++                }
++            }
++        }
++
+         glyph.codepoints = codepoints;
+         Ok(glyph)
+     }
+ 
++    /// The caret positions FontForge's GDEF writer emits for an `LCarets2:` value
++    /// ("<count> <x>..."), in the order it writes them (tottfgpos.c, LigCaretCnt and
++    /// DumpLigCarets).
++    fn lig_carets(value: &str, count_fixed: bool, codepoints: &[u32]) -> Vec<i32> {
++        let mut nums = value.split_whitespace().filter_map(|t| t.parse::<i32>().ok());
++        let count = nums.next().unwrap_or(0).max(0) as usize;
++        let mut carets: Vec<i32> = nums
++            .take(count)
++            .filter(|x| count_fixed || *x != 0)
++            .collect();
++        let rtl = codepoints.iter().any(|&c| {
++            (0x0590..=0x08FF).contains(&c)
++                || (0xFB1D..=0xFDFF).contains(&c)
++                || (0xFE70..=0xFEFF).contains(&c)
++                || (0x10800..=0x10FFF).contains(&c)
++                || (0x1E800..=0x1EFFF).contains(&c)
++        });
++        if rtl {
++            carets.sort_by(|a, b| b.cmp(a));
++        } else {
++            carets.sort();
++        }
++        carets
++    }
++
+     fn looks_like_spline_line(line: &str) -> bool {
+         let trimmed = line.trim_start();
+         if trimmed.is_empty() {
+@@ -3748,7 +3818,11 @@ impl SfdParser {
+                     .map(|x| x.as_fea(""))
+                     .collect()
+             };
+-            // Add automatic code markers for anything which would have feature writers
++            // Add automatic code markers for anything which would have feature writers.
++            // The marker must start "# Automatic Code", as ufo2ft's
++            // INSERT_FEATURE_MARKER and fea-rs's has_insert_marker() match it
++            // case-sensitively; otherwise the feature reads as written by hand and
++            // the compiler generates nothing into it (no mark2base from anchors).
+             if feature == "abvm"
+                 || feature == "blwm"
+                 || feature == "kern"
+@@ -3756,7 +3830,7 @@ impl SfdParser {
+                 || feature == "mark"
+                 || feature == "mkmk"
+             {
+-                statements.insert(0, "# Automatic code start".to_string());
++                statements.insert(0, "# Automatic Code".to_string());
+             }
+             self.font.features.features.push((
+                 feature,
+diff --git a/babelfont/src/filters/fontforgenoanchorpropagation.rs b/babelfont/src/filters/fontforgenoanchorpropagation.rs
+new file mode 100644
+index 0000000..a2076c8
+--- /dev/null
++++ b/babelfont/src/filters/fontforgenoanchorpropagation.rs
+@@ -0,0 +1,51 @@
++use crate::filters::FontFilter;
++
++/// A filter that asks a Glyphs compiler not to propagate anchors from components.
++///
++/// FontForge's GPOS export attaches marks to a glyph only through the anchor
++/// points the glyph itself carries (tottfgpos.c walks each glyph's own
++/// `sc->anchor` list); a glyph made only of references has none, and is not a base.
++/// Glyphs, and fontc reading a Glyphs source, copy anchors up from components
++/// unless the font says otherwise, which makes such a glyph a base the exported
++/// font never had. This sets the font-level custom parameter "Propagate Anchors"
++/// to false, which fontc honours.
++#[derive(Default)]
++pub struct FontForgeNoAnchorPropagation;
++
++impl FontForgeNoAnchorPropagation {
++    /// Create a new FontForgeNoAnchorPropagation filter
++    pub fn new() -> Self {
++        FontForgeNoAnchorPropagation
++    }
++}
++
++impl FontFilter for FontForgeNoAnchorPropagation {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        font.format_specific.insert(
++            "com.schriftgestalt.Glyphs.customParameters.Propagate Anchors".to_string(),
++            serde_json::json!({ "value": 0, "disabled": false }),
++        );
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(FontForgeNoAnchorPropagation::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("fontforgenoanchorpropagation")
++            .long("fontforge-no-anchor-propagation")
++            .help(
++                "Set the Glyphs custom parameter Propagate Anchors to false: FontForge \
++                 exports a glyph's own anchors only, never its components'",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index 4925a7f..e9f8d89 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -122,6 +122,7 @@ declare_filters! {
+         FontForgeUnderlinePosition(fontforgeunderlineposition) => "fontforgeunderlineposition",
+         FontForgeHeightGlyphCountMean(fontforgeheightglyphcountmean) => "fontforgeheightglyphcountmean",
+         FontForgeOs2Defaults(fontforgeos2defaults) => "fontforgeos2defaults",
++        FontForgeNoAnchorPropagation(fontforgenoanchorpropagation) => "fontforgenoanchorpropagation",
+     }
+     group "Filters for manipulating outlines" {
+         DecomposeComponentReferences(decomposecomponentreferences) => "decomposecomponents",
+diff --git a/babelfont/src/filters/setsubcategory.rs b/babelfont/src/filters/setsubcategory.rs
+index a6a7494..a347511 100644
+--- a/babelfont/src/filters/setsubcategory.rs
++++ b/babelfont/src/filters/setsubcategory.rs
+@@ -29,9 +29,18 @@ impl FontFilter for SetSubcategory {
+             if glyph.category == GlyphCategory::Mark
+                 && glyph.layers.iter().any(has_underscore_anchor)
+             {
++                // A Glyphs compiler exports a Nonspacing mark zero-width. A mark the
++                // source gives an advance is a spacing combining mark: it keeps its
++                // advance and is still a GDEF mark.
++                let advancing = glyph.layers.iter().any(|layer| layer.width != 0.0);
++                let subcategory = if advancing {
++                    "Spacing Combining"
++                } else {
++                    "Nonspacing"
++                };
+                 glyph
+                     .format_specific
+-                    .insert_json_non_null("subcategory", &"Nonspacing".to_string());
++                    .insert_json_non_null("subcategory", &subcategory.to_string());
+             }
+         }
+         Ok(())

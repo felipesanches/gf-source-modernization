@@ -1,0 +1,9 @@
+== Poly-Italic
+ORDER: 19 .sfd GSUB lookups, 19 release lookups, types match in file order: True
+REGISTRATION: 19 lookups, identical: 19
+== RibeyeMarrow-Regular
+ORDER: 8 .sfd GSUB lookups, 8 release lookups, types match in file order: True
+REGISTRATION: 8 lookups, identical: 8
+== Varela-Regular
+ORDER: 31 .sfd GSUB lookups, 31 release lookups, types match in file order: True
+REGISTRATION: 31 lookups, identical: 31

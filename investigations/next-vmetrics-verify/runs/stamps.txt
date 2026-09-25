@@ -1,0 +1,17 @@
+/home/fsanches/compartilhado/google/fonts/ofl/giveyouglory/GiveYouGlory.ttf
+  head created Fri Jul  8 07:31:04 2011  modified Fri Jul  8 07:31:04 2011  EQUAL; yMin/yMax -619/1020
+  FFTM build Tue Feb 22 13:48:33 2011  sourceCreated Fri Sep 10 17:14:00 2010  sourceModified Fri Jul  8 10:30:07 2011
+  typo 1020/-627  win 1020/621  hhea 1020/-625
+/home/fsanches/compartilhado/google/fonts/ofl/limelight/Limelight-Regular.ttf
+  head created Sat Apr  7 21:31:33 2012  modified Mon Aug 20 07:27:21 2012  DIFFER; yMin/yMax -636/1864
+  FFTM build Mon Sep 14 17:32:09 2009  sourceCreated Sun Apr  8 01:16:00 2012  sourceModified Sat Apr  7 21:31:23 2012
+  typo 1864/-634  win 1864/629  hhea 1864/-629
+/home/fsanches/compartilhado/google/fonts/ofl/nothingyoucoulddo/NothingYouCouldDo.ttf
+  head created Fri Jul  8 07:39:27 2011  modified Fri Jul  8 07:39:27 2011  EQUAL; yMin/yMax -407/959
+  FFTM build Tue Feb 22 13:48:33 2011  sourceCreated Wed Sep  8 16:36:00 2010  sourceModified Fri Jul  8 10:37:18 2011
+  typo 962/-407  win 959/407  hhea 959/-407
+/home/fsanches/compartilhado/google/fonts/apache/mountainsofchristmas/MountainsofChristmas-Bold.ttf
+  head created Tue Nov 22 20:25:17 2011  modified Sun Apr 30 17:18:12 2017  DIFFER; yMin/yMax -354/1056
+  FFTM build Tue Feb 22 13:48:33 2011  sourceCreated Wed Nov 16 22:59:00 2011  sourceModified Tue Nov 22 20:24:12 2011
+  typo 1066/-354  win 1064/354  hhea 1066/-354
+ModificationTime: 1310121007

@@ -1,0 +1,776 @@
+release /home/fsanches/compartilhado/google/fonts/ofl/varela/Varela-Regular.ttf
+build   /home/fsanches/compartilhado/sfd-reland-scratch/gsub-verify/baseline/Varela-Regular-gsub-verify-v0/fonts/ttf/Varela-Regular.ttf
+language systems: ['cyrl/dflt', 'grek/dflt', 'latn/AZE ', 'latn/CRT ', 'latn/DEU ', 'latn/MOL ', 'latn/ROM ', 'latn/SRB ', 'latn/TRK ', 'latn/dflt']
+features: ['aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'locl', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum']
+corpus: 30578 strings (layout alphabet 120 of 399 codepoints)
+cyrl/dflt aalt  runs 30578 differ 1 fired-in-release 30311
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+cyrl/dflt c2sc  runs 30578 differ 1 fired-in-release 11094
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt dlig  runs 30578 differ 1 fired-in-release 528
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt dnom  runs 30578 differ 1 fired-in-release 16053
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt frac  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt liga  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt lnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt locl  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt numr  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt onum  runs 30578 differ 1 fired-in-release 14684
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt ordn  runs 30578 differ 1 fired-in-release 1041
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt pnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt sinf  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+cyrl/dflt ss01  runs 30578 differ 1 fired-in-release 4565
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt subs  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt sups  runs 30578 differ 1 fired-in-release 16258
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt tnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+cyrl/dflt *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+grek/dflt aalt  runs 30578 differ 1 fired-in-release 30311
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+grek/dflt c2sc  runs 30578 differ 1 fired-in-release 11094
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt dlig  runs 30578 differ 1 fired-in-release 528
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt dnom  runs 30578 differ 1 fired-in-release 16053
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt frac  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt liga  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt lnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt locl  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt numr  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt onum  runs 30578 differ 1 fired-in-release 14684
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt ordn  runs 30578 differ 1 fired-in-release 1041
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt pnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt sinf  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+grek/dflt ss01  runs 30578 differ 1 fired-in-release 4565
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt subs  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt sups  runs 30578 differ 1 fired-in-release 16258
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt tnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+grek/dflt *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/AZE aalt  runs 30578 differ 1 fired-in-release 30311
+    'i̇' release ['idotaccent.smcp', '.notdef']
+    'i̇' build   ['idotaccent.smcp', '.notdef']
+latn/AZE c2sc  runs 30578 differ 53 fired-in-release 11094
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE dlig  runs 30578 differ 53 fired-in-release 528
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE dnom  runs 30578 differ 53 fired-in-release 16053
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.denominator', 'f', 'i']
+    '0fi' build   ['zero.denominator', 'fi']
+latn/AZE frac  runs 30578 differ 53 fired-in-release 15980
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.numerator', 'f', 'i']
+    '0fi' build   ['zero.numerator', 'fi']
+latn/AZE liga  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE lnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE locl  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE numr  runs 30578 differ 53 fired-in-release 15980
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.numerator', 'f', 'i']
+    '0fi' build   ['zero.numerator', 'fi']
+latn/AZE onum  runs 30578 differ 53 fired-in-release 14684
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero.oldstyle', 'f', 'i']
+    '0fi' build   ['zero.oldstyle', 'fi']
+latn/AZE ordn  runs 30578 differ 53 fired-in-release 1041
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE pnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE sinf  runs 30578 differ 53 fired-in-release 16879
+    '.fi' release ['period.inferior', 'f', 'i']
+    '.fi' build   ['period.inferior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zeroinferior', 'f', 'i']
+    '0fi' build   ['zeroinferior', 'fi']
+latn/AZE smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/AZE ss01  runs 30578 differ 53 fired-in-release 4565
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE subs  runs 30578 differ 53 fired-in-release 16879
+    '.fi' release ['period.inferior', 'f', 'i']
+    '.fi' build   ['period.inferior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zeroinferior', 'f', 'i']
+    '0fi' build   ['zeroinferior', 'fi']
+latn/AZE sups  runs 30578 differ 53 fired-in-release 16258
+    '.fi' release ['period.superior', 'f', 'i']
+    '.fi' build   ['period.superior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zerosuperior', 'f', 'i']
+    '0fi' build   ['zerosuperior', 'fi']
+latn/AZE tnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/AZE *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['idotaccent.smcp', '.notdef']
+    'i̇' build   ['idotaccent.smcp', '.notdef']
+latn/CRT aalt  runs 30578 differ 1 fired-in-release 30311
+    'i̇' release ['idotaccent.smcp', '.notdef']
+    'i̇' build   ['idotaccent.smcp', '.notdef']
+latn/CRT c2sc  runs 30578 differ 53 fired-in-release 11094
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT dlig  runs 30578 differ 53 fired-in-release 528
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT dnom  runs 30578 differ 53 fired-in-release 16053
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.denominator', 'f', 'i']
+    '0fi' build   ['zero.denominator', 'fi']
+latn/CRT frac  runs 30578 differ 53 fired-in-release 15980
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.numerator', 'f', 'i']
+    '0fi' build   ['zero.numerator', 'fi']
+latn/CRT liga  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT lnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT locl  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT numr  runs 30578 differ 53 fired-in-release 15980
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.numerator', 'f', 'i']
+    '0fi' build   ['zero.numerator', 'fi']
+latn/CRT onum  runs 30578 differ 53 fired-in-release 14684
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero.oldstyle', 'f', 'i']
+    '0fi' build   ['zero.oldstyle', 'fi']
+latn/CRT ordn  runs 30578 differ 53 fired-in-release 1041
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT pnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT sinf  runs 30578 differ 53 fired-in-release 16879
+    '.fi' release ['period.inferior', 'f', 'i']
+    '.fi' build   ['period.inferior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zeroinferior', 'f', 'i']
+    '0fi' build   ['zeroinferior', 'fi']
+latn/CRT smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/CRT ss01  runs 30578 differ 53 fired-in-release 4565
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT subs  runs 30578 differ 53 fired-in-release 16879
+    '.fi' release ['period.inferior', 'f', 'i']
+    '.fi' build   ['period.inferior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zeroinferior', 'f', 'i']
+    '0fi' build   ['zeroinferior', 'fi']
+latn/CRT sups  runs 30578 differ 53 fired-in-release 16258
+    '.fi' release ['period.superior', 'f', 'i']
+    '.fi' build   ['period.superior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zerosuperior', 'f', 'i']
+    '0fi' build   ['zerosuperior', 'fi']
+latn/CRT tnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/CRT *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['idotaccent.smcp', '.notdef']
+    'i̇' build   ['idotaccent.smcp', '.notdef']
+latn/DEU aalt  runs 30578 differ 1 fired-in-release 30311
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/DEU c2sc  runs 30578 differ 1 fired-in-release 11094
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU dlig  runs 30578 differ 1 fired-in-release 528
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU dnom  runs 30578 differ 1 fired-in-release 16053
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU frac  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU liga  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU lnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU locl  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU numr  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU onum  runs 30578 differ 1 fired-in-release 14684
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU ordn  runs 30578 differ 1 fired-in-release 1041
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU pnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU sinf  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/DEU ss01  runs 30578 differ 1 fired-in-release 4565
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU subs  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU sups  runs 30578 differ 1 fired-in-release 16258
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU tnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/DEU *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/MOL aalt  runs 30578 differ 1 fired-in-release 30309
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/MOL c2sc  runs 30578 differ 1 fired-in-release 11094
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL dlig  runs 30578 differ 1 fired-in-release 528
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL dnom  runs 30578 differ 1 fired-in-release 16053
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL frac  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL liga  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL lnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL locl  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL numr  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL onum  runs 30578 differ 1 fired-in-release 14684
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL ordn  runs 30578 differ 1 fired-in-release 1041
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL pnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL sinf  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/MOL ss01  runs 30578 differ 1 fired-in-release 4565
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL subs  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL sups  runs 30578 differ 1 fired-in-release 16258
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL tnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/MOL *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/ROM aalt  runs 30578 differ 1 fired-in-release 30309
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/ROM c2sc  runs 30578 differ 1 fired-in-release 11094
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM dlig  runs 30578 differ 1 fired-in-release 528
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM dnom  runs 30578 differ 1 fired-in-release 16053
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM frac  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM liga  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM lnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM locl  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM numr  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM onum  runs 30578 differ 1 fired-in-release 14684
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM ordn  runs 30578 differ 1 fired-in-release 1041
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM pnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM sinf  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/ROM ss01  runs 30578 differ 1 fired-in-release 4565
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM subs  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM sups  runs 30578 differ 1 fired-in-release 16258
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM tnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/ROM *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/SRB aalt  runs 30578 differ 30411 fired-in-release 0
+    '!' release ['exclam']
+    '!' build   ['exclam.smcp']
+    '!!' release ['exclam', 'exclam']
+    '!!' build   ['exclam.smcp', 'exclam.smcp']
+    '!$' release ['exclam', 'dollar']
+    '!$' build   ['exclam.smcp', 'dollar.superior']
+latn/SRB c2sc  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB dlig  runs 30578 differ 1 fired-in-release 528
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB dnom  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB frac  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB liga  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB lnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB locl  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB numr  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB onum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB ordn  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB pnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB sinf  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB smcp  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB ss01  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB subs  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB sups  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB tnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/SRB *ALL* runs 30578 differ 30411 fired-in-release 0
+    '!' release ['exclam']
+    '!' build   ['exclam.smcp']
+    '!!' release ['exclam', 'exclam']
+    '!!' build   ['exclam.smcp', 'exclam.smcp']
+    '!$' release ['exclam', 'dollar']
+    '!$' build   ['exclam.smcp', 'dollar.superior']
+latn/TRK aalt  runs 30578 differ 1 fired-in-release 30311
+    'i̇' release ['idotaccent.smcp', '.notdef']
+    'i̇' build   ['idotaccent.smcp', '.notdef']
+latn/TRK c2sc  runs 30578 differ 53 fired-in-release 11094
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK dlig  runs 30578 differ 53 fired-in-release 528
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK dnom  runs 30578 differ 53 fired-in-release 16053
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.denominator', 'f', 'i']
+    '0fi' build   ['zero.denominator', 'fi']
+latn/TRK frac  runs 30578 differ 53 fired-in-release 15980
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.numerator', 'f', 'i']
+    '0fi' build   ['zero.numerator', 'fi']
+latn/TRK liga  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK lnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK locl  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK numr  runs 30578 differ 53 fired-in-release 15980
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['fraction', 'f', 'i']
+    '/fi' build   ['fraction', 'fi']
+    '0fi' release ['zero.numerator', 'f', 'i']
+    '0fi' build   ['zero.numerator', 'fi']
+latn/TRK onum  runs 30578 differ 53 fired-in-release 14684
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero.oldstyle', 'f', 'i']
+    '0fi' build   ['zero.oldstyle', 'fi']
+latn/TRK ordn  runs 30578 differ 53 fired-in-release 1041
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK pnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK sinf  runs 30578 differ 53 fired-in-release 16879
+    '.fi' release ['period.inferior', 'f', 'i']
+    '.fi' build   ['period.inferior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zeroinferior', 'f', 'i']
+    '0fi' build   ['zeroinferior', 'fi']
+latn/TRK smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/TRK ss01  runs 30578 differ 53 fired-in-release 4565
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK subs  runs 30578 differ 53 fired-in-release 16879
+    '.fi' release ['period.inferior', 'f', 'i']
+    '.fi' build   ['period.inferior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zeroinferior', 'f', 'i']
+    '0fi' build   ['zeroinferior', 'fi']
+latn/TRK sups  runs 30578 differ 53 fired-in-release 16258
+    '.fi' release ['period.superior', 'f', 'i']
+    '.fi' build   ['period.superior', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zerosuperior', 'f', 'i']
+    '0fi' build   ['zerosuperior', 'fi']
+latn/TRK tnum  runs 30578 differ 53 fired-in-release 0
+    '.fi' release ['period', 'f', 'i']
+    '.fi' build   ['period', 'fi']
+    '/fi' release ['slash', 'f', 'i']
+    '/fi' build   ['slash', 'fi']
+    '0fi' release ['zero', 'f', 'i']
+    '0fi' build   ['zero', 'fi']
+latn/TRK *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['idotaccent.smcp', '.notdef']
+    'i̇' build   ['idotaccent.smcp', '.notdef']
+latn/dflt aalt  runs 30578 differ 1 fired-in-release 30311
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/dflt c2sc  runs 30578 differ 1 fired-in-release 11094
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt dlig  runs 30578 differ 1 fired-in-release 528
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt dnom  runs 30578 differ 1 fired-in-release 16053
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt frac  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt liga  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt lnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt locl  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt numr  runs 30578 differ 1 fired-in-release 15980
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt onum  runs 30578 differ 1 fired-in-release 14684
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt ordn  runs 30578 differ 1 fired-in-release 1041
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt pnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt sinf  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt smcp  runs 30578 differ 1 fired-in-release 20620
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+latn/dflt ss01  runs 30578 differ 1 fired-in-release 4565
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt subs  runs 30578 differ 1 fired-in-release 16879
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt sups  runs 30578 differ 1 fired-in-release 16258
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt tnum  runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i', '.notdef']
+    'i̇' build   ['i', '.notdef']
+latn/dflt *ALL* runs 30578 differ 1 fired-in-release 0
+    'i̇' release ['i.smcp', '.notdef']
+    'i̇' build   ['i.smcp', '.notdef']
+TOTAL runs 5809820, differing 63506

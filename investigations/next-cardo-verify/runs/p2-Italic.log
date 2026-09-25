@@ -1,0 +1,12 @@
+Cardo-Italic: BLOCKING 3
+Cardo-Italic p2: shared BLOCKING 3; proposed: 2 blocking table difference(s), 80 stale in the release
+   shaping base+mark	136246 strings	839 differ
+   shaping base+mark+mark	0 strings	0 differ
+   shaping pairs	40097 strings	0 differ
+   shaping kern+mark	3057 strings	2056 differ
+   shaping words	2 strings	0 differ
+   multimark heb3    12555 strings    778 differ
+   multimark heb4    11718 strings    764 differ
+   multimark hebsh     806 strings     52 differ
+   multimark lat3    28704 strings      0 differ
+   multimark grk3     5390 strings      0 differ

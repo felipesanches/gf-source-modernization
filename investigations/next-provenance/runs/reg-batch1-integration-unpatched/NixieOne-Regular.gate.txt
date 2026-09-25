@@ -1,0 +1,15 @@
+flags: --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --reverse-path-direction
+RELEASE-STALE hmtx.comma -- shipped records 75 for an outline at 71; ours records 71
+RELEASE-STALE hmtx.semicolon -- shipped records 80 for an outline at 76; ours records 76
+RELEASE-STALE hmtx.threequarters -- shipped records 50 for an outline at 49; ours records 49
+RELEASE-STALE hmtx.quoteright -- shipped records 75 for an outline at 71; ours records 71
+RELEASE-STALE hmtx.quotesinglbase -- shipped records 75 for an outline at 71; ours records 71
+RELEASE-STALE hmtx.quotedblright -- shipped records 75 for an outline at 71; ours records 71
+RELEASE-STALE hmtx.quotedblbase -- shipped records 75 for an outline at 71; ours records 71
+RELEASE-STALE GSUB.script_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.feature_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.lookup_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+0 blocking table difference(s), 13 stale in the release

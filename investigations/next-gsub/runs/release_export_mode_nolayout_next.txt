@@ -1,0 +1,108 @@
+Rochester-Regular  release apache/rochester/Rochester-Regular.ttf
+   tables   GSUB=no GPOS=no GDEF=no DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2011-08-01 15:45:34 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-07-21 04:05:00; modified 2011-08-01 15:45:23
+   source src/Rochester-Regular-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => undecidable (source declares no lookups)
+Limelight-Regular  release ofl/limelight/Limelight-Regular.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2012-04-07 21:31:33 UTC
+   FFTM build 2009-09-14 17:32:09; source created 2012-04-08 01:16:00; modified 2012-04-07 21:31:23
+   source src/Limelight-Regular-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+LovedbytheKing  release ofl/lovedbytheking/LovedbytheKing.ttf
+   tables   GSUB=no GPOS=no GDEF=no DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2011-07-01 16:55:27 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2006-08-22 07:24:00; modified 2011-07-01 19:50:24
+   source src/LovedbytheKing-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => undecidable (source declares no lookups)
+LoveYaLikeASister  release ofl/loveyalikeasister/LoveYaLikeASister.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2011-10-24 14:06:20 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-07-01 11:52:55; modified 2011-10-24 14:06:03
+   source src/LoveYaLikeASister-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+Magra-Bold  release ofl/magra/Magra-Bold.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2012-01-06 20:27:54 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2012-01-06 20:03:21; modified 2012-01-06 20:27:54
+   source src/Magra-Bold-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+Magra-Regular  release ofl/magra/Magra-Regular.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2012-01-06 20:27:54 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2012-01-06 20:25:58; modified 2012-01-06 20:27:54
+   source src/Magra-Regular-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+Megrim  release ofl/megrim/Megrim.ttf
+   tables   GSUB=no GPOS=no GDEF=no DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2011-05-03 18:22:10 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2010-05-05 16:58:37; modified 2011-04-28 15:00:19
+   source src/Megrim-TTF.sfd: 3 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType OFF (no layout tables although the source declares 3 lookups)
+MeieScript-Regular  release ofl/meiescript/MeieScript-Regular.ttf
+   tables   GSUB=no GPOS=no GDEF=no DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2011-12-08 22:03:26 UTC
+   FFTM build 2010-04-29 03:43:27; source created 2011-11-13 12:19:48; modified 2011-12-08 22:01:42
+   source src/MeieScript-Regular-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => undecidable (source declares no lookups)
+NothingYouCouldDo  release ofl/nothingyoucoulddo/NothingYouCouldDo.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2011-07-08 07:39:27 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2010-09-08 16:36:00; modified 2011-07-08 10:37:18
+   source src/NothingYouCouldDo-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+OvertheRainbow  release ofl/overtherainbow/OvertheRainbow.ttf
+   tables   GSUB=no GPOS=no GDEF=no DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2011-04-22 16:08:12 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-02-09 09:38:56; modified 2011-04-22 16:08:04
+   source src/OvertheRainbow-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => undecidable (source declares no lookups)
+PassionOne-Black  release ofl/passionone/PassionOne-Black.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2011-12-06 01:44:24 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-12-05 17:12:14; modified 2011-12-06 01:44:19
+   source src/PassionOne-Black-SFD.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+PassionOne-Bold  release ofl/passionone/PassionOne-Bold.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2011-12-06 01:43:09 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-12-05 17:12:10; modified 2011-12-06 01:42:53
+   source src/PassionOne-Bold-SFD.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+PassionOne-Regular  release ofl/passionone/PassionOne-Regular.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2011-12-06 01:40:32 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-12-05 17:12:25; modified 2011-12-06 01:40:11
+   source src/PassionOne-Regular-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+Revalia-Regular  release ofl/revalia/Revalia-Regular.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2012-03-11 20:05:51 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2012-02-06 16:45:47; modified 2012-02-15 23:38:30
+   source src/Revalia-Regular-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+SquadaOne-Regular  release ofl/squadaone/SquadaOne-Regular.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2011-11-27 18:48:56 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-11-27 10:46:35; modified 2011-11-27 18:48:36
+   source src/SquadaOne-Regular-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON
+SwankyandMooMoo  release ofl/swankyandmoomoo/SwankyandMooMoo.ttf
+   tables   GSUB=no GPOS=no GDEF=no DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2011-04-22 12:45:30 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-02-09 10:53:56; modified 2011-04-22 12:45:25
+   source src/SwankyandMooMoo-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => undecidable (source declares no lookups)
+TheGirlNextDoor  release ofl/thegirlnextdoor/TheGirlNextDoor.ttf
+   tables   GSUB=no GPOS=no GDEF=no DSIG=no kern=no morx=no
+   usMaxContext 1; head.created 2011-04-22 15:03:10 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-02-09 11:32:00; modified 2011-04-22 15:02:44
+   source src/TheGirlNextDoor-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => undecidable (source declares no lookups)
+Viga-Regular  release ofl/viga/Viga-Regular.ttf
+   tables   GSUB=no GPOS=no GDEF=yes DSIG=yes kern=no morx=no
+   usMaxContext 1; head.created 2011-12-06 20:02:03 UTC
+   FFTM build 2011-02-22 13:48:33; source created 2011-12-05 17:11:17; modified 2011-12-06 20:01:11
+   source src/Viga-Regular-TTF.sfd: 0 GSUB and 0 GPOS lookups with a feature; 0 kerning records
+   => OpenType ON

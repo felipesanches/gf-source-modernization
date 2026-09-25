@@ -1,0 +1,284 @@
+flags: --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --correct-path-direction
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (8 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (8 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (8 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+ACCEPTED-RENAME cmap U+00B2 ["uni00B2", "twosuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+00B3 ["uni00B3", "threesuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+00B5 ["uni00B5", "mu"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+00B9 ["uni00B9", "onesuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0237 ["uni0237", "dotlessj"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0404 ["uni0404", "afii10053"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0405 ["uni0405", "afii10054"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0406 ["uni0406", "afii10055"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0408 ["uni0408", "afii10057"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0410 ["uni0410", "afii10017"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0412 ["uni0412", "afii10019"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0415 ["uni0415", "afii10022"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0417 ["uni0417", "afii10025"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+041C ["uni041C", "afii10030"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+041D ["uni041D", "afii10031"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+041E ["uni041E", "afii10032"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+041F ["uni041F", "afii10033"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0420 ["uni0420", "afii10034"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0421 ["uni0421", "afii10035"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0425 ["uni0425", "afii10039"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0428 ["uni0428", "afii10042"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+042E ["uni042E", "afii10048"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0430 ["uni0430", "afii10065"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0432 ["uni0432", "afii10067"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0435 ["uni0435", "afii10070"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+043A ["uni043A", "afii10076"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+043C ["uni043C", "afii10078"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+043D ["uni043D", "afii10079"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+043E ["uni043E", "afii10080"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+043F ["uni043F", "afii10081"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0440 ["uni0440", "afii10082"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0441 ["uni0441", "afii10083"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0445 ["uni0445", "afii10087"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0448 ["uni0448", "afii10090"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+044E ["uni044E", "afii10096"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0451 ["uni0451", "afii10071"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0454 ["uni0454", "afii10101"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+0455 ["uni0455", "afii10102"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+045F ["uni045F", "afii10193"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2070 ["uni2070", "zerosuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2074 ["uni2074", "foursuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2075 ["uni2075", "fivesuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2076 ["uni2076", "sixsuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2077 ["uni2077", "sevensuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2078 ["uni2078", "eightsuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2079 ["uni2079", "ninesuperior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2080 ["uni2080", "zeroinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2081 ["uni2081", "oneinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2082 ["uni2082", "twoinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2083 ["uni2083", "threeinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2084 ["uni2084", "fourinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2085 ["uni2085", "fiveinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2086 ["uni2086", "sixinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2087 ["uni2087", "seveninferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2088 ["uni2088", "eightinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2089 ["uni2089", "nineinferior"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2116 ["uni2116", "afii61352"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2153 ["uni2153", "onethird"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2154 ["uni2154", "twothirds"]: same outline and advance under a different name
+ACCEPTED-RENAME cmap U+2206 ["uni2206", "Delta"]: same outline and advance under a different name
+BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+BLOCKING GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+BLOCKING GSUB.script_list {"DFLT/dflt": [{"lookups": [0, 4, 8, 12, 16, 20, 24, 28, 40, 44, 48, 52, 56, 60,
+BLOCKING GSUB.feature_list {"c2sc": {"0": [25, 21]}, "case": [[27], null], "ccmp": [[2, 3, 4], null], "dlig
+BLOCKING GSUB.lookup_list {"0": {"0": {"error": "There are 337 changes, check manually!"}}, "1": {"0": {"A
+BLOCKING OS/2.y_subscript_x_size [650, 700]
+BLOCKING OS/2.y_subscript_y_size [600, 650]
+BLOCKING OS/2.y_subscript_y_offset [75, 140]
+BLOCKING OS/2.y_superscript_x_size [650, 700]
+BLOCKING OS/2.y_superscript_y_size [600, 650]
+BLOCKING OS/2.y_superscript_y_offset [350, 477]
+BLOCKING OS/2.y_strikeout_position [290, 250]
+BLOCKING OS/2.panose_10 {"0": [0, 2], "1": [0, 11], "2": [5, 0]}
+BLOCKING OS/2.ach_vend_id ["PLAY", "PT  "]
+BLOCKING OS/2.s_typo_descender [-220, 220]
+BLOCKING OS/2.us_win_ascent [1052, 937]
+BLOCKING OS/2.us_win_descent [224, 220]
+BLOCKING cmap U+0000 LOST ["NULL", null]
+BLOCKING cmap U+000D LOST ["nonmarkingreturn", null]
+BLOCKING cmap U+00A0 LOST ["uni00A0", null]
+BLOCKING cmap U+0162 ["uni0162", "Tcommaaccent"]
+BLOCKING cmap U+0163 ["uni0163", "tcommaaccent"]
+BLOCKING cmap U+01A0 LOST ["Ohorn", null]
+BLOCKING cmap U+01A1 LOST ["ohorn", null]
+BLOCKING cmap U+01AF LOST ["Uhorn", null]
+BLOCKING cmap U+01B0 LOST ["uhorn", null]
+BLOCKING cmap U+02BC ["uni02BC", "apostrophe"]
+BLOCKING cmap U+0300 LOST ["gravecomb", null]
+BLOCKING cmap U+0301 LOST ["acutecomb", null]
+BLOCKING cmap U+0302 LOST ["uni0302", null]
+BLOCKING cmap U+0303 LOST ["tildecomb", null]
+BLOCKING cmap U+0304 LOST ["uni0304", null]
+BLOCKING cmap U+0306 LOST ["uni0306", null]
+BLOCKING cmap U+0307 LOST ["uni0307", null]
+BLOCKING cmap U+0308 LOST ["uni0308", null]
+BLOCKING cmap U+0309 LOST ["hookabovecomb", null]
+BLOCKING cmap U+030B LOST ["uni030B", null]
+BLOCKING cmap U+031B LOST ["uni031B", null]
+BLOCKING cmap U+0323 LOST ["dotbelowcomb", null]
+BLOCKING cmap U+0326 LOST ["uni0326", null]
+BLOCKING cmap U+0335 LOST ["uni0335", null]
+BLOCKING cmap U+0344 LOST ["uni0344", null]
+BLOCKING cmap U+0374 LOST ["uni0374", null]
+BLOCKING cmap U+0375 LOST ["uni0375", null]
+BLOCKING cmap U+037E LOST ["uni037E", null]
+BLOCKING cmap U+0387 LOST ["anoteleia", null]
+BLOCKING cmap U+03A9 ["uni03A9", "Omega"]
+BLOCKING cmap U+03CF LOST ["uni03CF", null]
+BLOCKING cmap U+03D7 LOST ["uni03D7", null]
+BLOCKING cmap U+0401 ["uni0401", "afii10023"]
+BLOCKING cmap U+0402 ["uni0402", "afii10051"]
+BLOCKING cmap U+0403 ["uni0403", "afii10052"]
+BLOCKING cmap U+0407 ["uni0407", "afii10056"]
+BLOCKING cmap U+0409 ["uni0409", "afii10058"]
+BLOCKING cmap U+040A ["uni040A", "afii10059"]
+BLOCKING cmap U+040B ["uni040B", "afii10060"]
+BLOCKING cmap U+040C ["uni040C", "afii10061"]
+BLOCKING cmap U+040E ["uni040E", "afii10062"]
+BLOCKING cmap U+040F ["uni040F", "afii10145"]
+BLOCKING cmap U+0411 ["uni0411", "afii10018"]
+BLOCKING cmap U+0413 ["uni0413", "afii10020"]
+BLOCKING cmap U+0414 ["uni0414", "afii10021"]
+BLOCKING cmap U+0416 ["uni0416", "afii10024"]
+BLOCKING cmap U+0418 ["uni0418", "afii10026"]
+BLOCKING cmap U+0419 ["uni0419", "afii10027"]
+BLOCKING cmap U+041A ["uni041A", "afii10028"]
+BLOCKING cmap U+041B ["uni041B", "afii10029"]
+BLOCKING cmap U+0422 ["uni0422", "afii10036"]
+BLOCKING cmap U+0423 ["uni0423", "afii10037"]
+BLOCKING cmap U+0424 ["uni0424", "afii10038"]
+BLOCKING cmap U+0426 ["uni0426", "afii10040"]
+BLOCKING cmap U+0427 ["uni0427", "afii10041"]
+BLOCKING cmap U+0429 ["uni0429", "afii10043"]
+BLOCKING cmap U+042A ["uni042A", "afii10044"]
+BLOCKING cmap U+042B ["uni042B", "afii10045"]
+BLOCKING cmap U+042C ["uni042C", "afii10046"]
+BLOCKING cmap U+042D ["uni042D", "afii10047"]
+BLOCKING cmap U+042F ["uni042F", "afii10049"]
+BLOCKING cmap U+0431 ["uni0431", "afii10066"]
+BLOCKING cmap U+0433 ["uni0433", "afii10068"]
+BLOCKING cmap U+0434 ["uni0434", "afii10069"]
+BLOCKING cmap U+0436 ["uni0436", "afii10072"]
+BLOCKING cmap U+0437 ["uni0437", "afii10073"]
+BLOCKING cmap U+0438 ["uni0438", "afii10074"]
+BLOCKING cmap U+0439 ["uni0439", "afii10075"]
+BLOCKING cmap U+043B ["uni043B", "afii10077"]
+BLOCKING cmap U+0442 ["uni0442", "afii10084"]
+BLOCKING cmap U+0443 ["uni0443", "afii10085"]
+BLOCKING cmap U+0444 ["uni0444", "afii10086"]
+BLOCKING cmap U+0446 ["uni0446", "afii10088"]
+BLOCKING cmap U+0447 ["uni0447", "afii10089"]
+BLOCKING cmap U+0449 ["uni0449", "afii10091"]
+BLOCKING cmap U+044A ["uni044A", "afii10092"]
+BLOCKING cmap U+044B ["uni044B", "afii10093"]
+BLOCKING cmap U+044C ["uni044C", "afii10094"]
+BLOCKING cmap U+044D ["uni044D", "afii10095"]
+BLOCKING cmap U+044F ["uni044F", "afii10097"]
+BLOCKING cmap U+0452 ["uni0452", "afii10099"]
+BLOCKING cmap U+0453 ["uni0453", "afii10100"]
+BLOCKING cmap U+0456 ["uni0456", "afii10103"]
+BLOCKING cmap U+0457 ["uni0457", "afii10104"]
+BLOCKING cmap U+0458 ["uni0458", "afii10105"]
+BLOCKING cmap U+0459 ["uni0459", "afii10106"]
+BLOCKING cmap U+045A ["uni045A", "afii10107"]
+BLOCKING cmap U+045B ["uni045B", "afii10108"]
+BLOCKING cmap U+045C ["uni045C", "afii10109"]
+BLOCKING cmap U+045E ["uni045E", "afii10110"]
+BLOCKING cmap U+046A LOST ["uni046A", null]
+BLOCKING cmap U+046B LOST ["uni046B", null]
+BLOCKING cmap U+0490 ["uni0490", "afii10050"]
+BLOCKING cmap U+0491 ["uni0491", "afii10098"]
+BLOCKING cmap U+051A LOST ["uni051A", null]
+BLOCKING cmap U+051B LOST ["uni051B", null]
+BLOCKING cmap U+051C LOST ["uni051C", null]
+BLOCKING cmap U+051D LOST ["uni051D", null]
+BLOCKING cmap U+0524 LOST ["uni0524", null]
+BLOCKING cmap U+0525 LOST ["uni0525", null]
+BLOCKING cmap U+1EA0 LOST ["uni1EA0", null]
+BLOCKING cmap U+1EA1 LOST ["uni1EA1", null]
+BLOCKING cmap U+1EA2 LOST ["uni1EA2", null]
+BLOCKING cmap U+1EA3 LOST ["uni1EA3", null]
+BLOCKING cmap U+1EA4 LOST ["uni1EA4", null]
+BLOCKING cmap U+1EA5 LOST ["uni1EA5", null]
+BLOCKING cmap U+1EA6 LOST ["uni1EA6", null]
+BLOCKING cmap U+1EA7 LOST ["uni1EA7", null]
+BLOCKING cmap U+1EA8 LOST ["uni1EA8", null]
+BLOCKING cmap U+1EA9 LOST ["uni1EA9", null]
+BLOCKING cmap U+1EAA LOST ["uni1EAA", null]
+BLOCKING cmap U+1EAB LOST ["uni1EAB", null]
+BLOCKING cmap U+1EAC LOST ["uni1EAC", null]
+BLOCKING cmap U+1EAD LOST ["uni1EAD", null]
+BLOCKING cmap U+1EAE LOST ["uni1EAE", null]
+BLOCKING cmap U+1EAF LOST ["uni1EAF", null]
+BLOCKING cmap U+1EB0 LOST ["uni1EB0", null]
+BLOCKING cmap U+1EB1 LOST ["uni1EB1", null]
+BLOCKING cmap U+1EB2 LOST ["uni1EB2", null]
+BLOCKING cmap U+1EB3 LOST ["uni1EB3", null]
+BLOCKING cmap U+1EB4 LOST ["uni1EB4", null]
+BLOCKING cmap U+1EB5 LOST ["uni1EB5", null]
+BLOCKING cmap U+1EB6 LOST ["uni1EB6", null]
+BLOCKING cmap U+1EB7 LOST ["uni1EB7", null]
+BLOCKING cmap U+1EB8 LOST ["uni1EB8", null]
+BLOCKING cmap U+1EB9 LOST ["uni1EB9", null]
+BLOCKING cmap U+1EBA LOST ["uni1EBA", null]
+BLOCKING cmap U+1EBB LOST ["uni1EBB", null]
+BLOCKING cmap U+1EBC LOST ["uni1EBC", null]
+BLOCKING cmap U+1EBD LOST ["uni1EBD", null]
+BLOCKING cmap U+1EBE LOST ["uni1EBE", null]
+BLOCKING cmap U+1EBF LOST ["uni1EBF", null]
+BLOCKING cmap U+1EC0 LOST ["uni1EC0", null]
+BLOCKING cmap U+1EC1 LOST ["uni1EC1", null]
+BLOCKING cmap U+1EC2 LOST ["uni1EC2", null]
+BLOCKING cmap U+1EC3 LOST ["uni1EC3", null]
+BLOCKING cmap U+1EC4 LOST ["uni1EC4", null]
+BLOCKING cmap U+1EC5 LOST ["uni1EC5", null]
+BLOCKING cmap U+1EC6 LOST ["uni1EC6", null]
+BLOCKING cmap U+1EC7 LOST ["uni1EC7", null]
+BLOCKING cmap U+1EC8 LOST ["uni1EC8", null]
+BLOCKING cmap U+1EC9 LOST ["uni1EC9", null]
+BLOCKING cmap U+1ECA LOST ["uni1ECA", null]
+BLOCKING cmap U+1ECB LOST ["uni1ECB", null]
+BLOCKING cmap U+1ECC LOST ["uni1ECC", null]
+BLOCKING cmap U+1ECD LOST ["uni1ECD", null]
+BLOCKING cmap U+1ECE LOST ["uni1ECE", null]
+BLOCKING cmap U+1ECF LOST ["uni1ECF", null]
+BLOCKING cmap U+1ED0 LOST ["uni1ED0", null]
+BLOCKING cmap U+1ED1 LOST ["uni1ED1", null]
+BLOCKING cmap U+1ED2 LOST ["uni1ED2", null]
+BLOCKING cmap U+1ED3 LOST ["uni1ED3", null]
+BLOCKING cmap U+1ED4 LOST ["uni1ED4", null]
+BLOCKING cmap U+1ED5 LOST ["uni1ED5", null]
+BLOCKING cmap U+1ED6 LOST ["uni1ED6", null]
+BLOCKING cmap U+1ED7 LOST ["uni1ED7", null]
+BLOCKING cmap U+1ED8 LOST ["uni1ED8", null]
+BLOCKING cmap U+1ED9 LOST ["uni1ED9", null]
+BLOCKING cmap U+1EDA LOST ["uni1EDA", null]
+BLOCKING cmap U+1EDB LOST ["uni1EDB", null]
+BLOCKING cmap U+1EDC LOST ["uni1EDC", null]
+BLOCKING cmap U+1EDD LOST ["uni1EDD", null]
+BLOCKING cmap U+1EDE LOST ["uni1EDE", null]
+BLOCKING cmap U+1EDF LOST ["uni1EDF", null]
+BLOCKING cmap U+1EE0 LOST ["uni1EE0", null]
+BLOCKING cmap U+1EE1 LOST ["uni1EE1", null]
+BLOCKING cmap U+1EE2 LOST ["uni1EE2", null]
+BLOCKING cmap U+1EE3 LOST ["uni1EE3", null]
+BLOCKING cmap U+1EE4 LOST ["uni1EE4", null]
+BLOCKING cmap U+1EE5 LOST ["uni1EE5", null]
+BLOCKING cmap U+1EE6 LOST ["uni1EE6", null]
+BLOCKING cmap U+1EE7 LOST ["uni1EE7", null]
+BLOCKING cmap U+1EE8 LOST ["uni1EE8", null]
+BLOCKING cmap U+1EE9 LOST ["uni1EE9", null]
+BLOCKING cmap U+1EEA LOST ["uni1EEA", null]
+BLOCKING cmap U+1EEB LOST ["uni1EEB", null]
+BLOCKING cmap U+1EEC LOST ["uni1EEC", null]
+BLOCKING cmap U+1EED LOST ["uni1EED", null]
+BLOCKING cmap U+1EEE LOST ["uni1EEE", null]
+BLOCKING cmap U+1EEF LOST ["uni1EEF", null]
+BLOCKING cmap U+1EF0 LOST ["uni1EF0", null]
+BLOCKING cmap U+1EF1 LOST ["uni1EF1", null]
+BLOCKING cmap U+1EF4 LOST ["uni1EF4", null]
+BLOCKING cmap U+1EF5 LOST ["uni1EF5", null]
+BLOCKING cmap U+1EF6 LOST ["uni1EF6", null]
+BLOCKING cmap U+1EF7 LOST ["uni1EF7", null]
+BLOCKING cmap U+1EF8 LOST ["uni1EF8", null]
+BLOCKING cmap U+1EF9 LOST ["uni1EF9", null]
+BLOCKING cmap U+20B8 LOST ["uni20B8", null]
+BLOCKING cmap U+20BD LOST ["uni20BD", null]
+BLOCKING cmap U+2126 ["uni2126", "Omega"]
+BLOCKING cmap U+2150 LOST ["uni2150", null]
+BLOCKING cmap U+2151 LOST ["uni2151", null]
+BLOCKING cmap U+2155 LOST ["uni2155", null]
+BLOCKING cmap U+2156 LOST ["uni2156", null]
+BLOCKING cmap U+2157 LOST ["uni2157", null]
+BLOCKING cmap U+2158 LOST ["uni2158", null]
+BLOCKING cmap U+2159 LOST ["uni2159", null]
+BLOCKING cmap U+215A LOST ["uni215A", null]
+BLOCKING hhea.descender [-220, 220]
+BLOCKING hmtx.76 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 229 unit(s) at Upsilontonos (release -181, ours 48)
+BLOCKING post.num_glyphs -- the release has acutecomb.case (1 contour(s), unmapped, referenced by a lookup); brevecombcy (1 contour(s), unmapped, referenced by a lookup); brevecombcy.case (1 contour(s), unmapped, referenced by a lookup); caroncomb.alt (1 contour(s), unmapped, referenced by a lookup); and we add Omega (1 contour(s), at U+03A9, U+2126); Tcommaaccent (2 contour(s), at U+0162); afii10018 (2 contour(s), at U+0411); afii10020 (1 contour(s), at U+0413)
+219 blocking table difference(s), 3 stale in the release, 60 accepted rename(s)

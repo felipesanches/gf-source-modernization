@@ -1,0 +1,7 @@
+release classes {1: 2187, 3: 181, 2: 18} ours {3: 184, 2: 15}
+(release class, our class, sfd GlyphClass, sfd has mark anchor, sfd has Ligature2): count  examples
+(1, 0, None, False, False) 1234 ['.null', 'A', 'AE', 'Aacute', 'Abreve', 'Acircumflex', 'Acute', 'Adieresis', 'Agrave', 'Alpha', 'Alphatonos', 'Amacron']
+(1, 0, 2, False, False) 950 ['1E0A', 'A.sc', 'AE.sc', 'AEacute', 'Aacute.sc', 'Acircumflex.sc', 'Acute.sc', 'Adieresis.sc', 'Agrave.sc', 'Amacron.sc', 'Aring.sc', 'Aringacute']
+(1, 3, None, False, False) 3 ['afii57806', 'uni0485', 'uni0486']
+(2, 0, 3, False, False) 2 ['A_R', 'uniFB4F']
+(2, 0, None, False, True) 1 ['f_j']

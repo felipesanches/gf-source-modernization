@@ -1,0 +1,12 @@
+Lohit-Bengali       release OS/2 v1 fsSelection REGULAR macStyle 0 | typo 750/-274/0 win 760/325 hhea 760/-325/200
+                    ours    OS/2 v4 fsSelection REGULAR+USE_TYPO_METRICS macStyle 0 | typo 750/-274/0 win 760/325 hhea 760/-325/200
+Lohit-Tamil         release OS/2 v1 fsSelection REGULAR macStyle 0 | typo 1400/-648/20 win 866/363 hhea 866/-380/0
+                    ours    OS/2 v4 fsSelection REGULAR+USE_TYPO_METRICS macStyle 0 | typo 1400/-648/20 win 866/363 hhea 866/-380/0
+Thabit              release OS/2 v1 fsSelection REGULAR macStyle 0 | typo 819/0/900 win 983/528 hhea 983/-244/100
+                    ours    OS/2 v4 fsSelection REGULAR+USE_TYPO_METRICS macStyle 0 | typo 819/0/900 win 983/528 hhea 983/-244/100
+Thabit-Bold         release OS/2 v1 fsSelection BOLD macStyle 1 | typo 819/0/900 win 1010/528 hhea 1010/-244/100
+                    ours    OS/2 v4 fsSelection BOLD macStyle 1 | typo 819/0/900 win 1010/528 hhea 1010/-244/100
+Thabit-Oblique      release OS/2 v1 fsSelection ITALIC macStyle 2 | typo 819/0/900 win 983/528 hhea 983/-244/100
+                    ours    OS/2 v4 fsSelection REGULAR+USE_TYPO_METRICS macStyle 0 | typo 819/0/900 win 983/528 hhea 983/-244/100
+Thabit-BoldOblique  release OS/2 v1 fsSelection ITALIC+BOLD macStyle 3 | typo 819/0/900 win 1010/528 hhea 1010/-244/100
+                    ours    OS/2 v4 fsSelection BOLD macStyle 1 | typo 819/0/900 win 1010/528 hhea 1010/-244/100

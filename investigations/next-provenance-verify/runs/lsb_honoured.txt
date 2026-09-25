@@ -1,0 +1,4 @@
+Lohit-Bengali.ttf uni09FB: hmtx lsb 117, glyf xMin 117, FreeType leftmost point -41, HarfBuzz extents x_bearing 117
+Lohit-Bengali.ttf u09F5: hmtx lsb 33, glyf xMin 33, FreeType leftmost point 29, HarfBuzz extents x_bearing 33
+Thabit-Oblique.ttf kafinitial: hmtx lsb -37, glyf xMin -38, FreeType leftmost point -36, HarfBuzz extents x_bearing -37
+Thabit-Oblique.ttf arabicquestionmark: hmtx lsb -7, glyf xMin -8, FreeType leftmost point -19, HarfBuzz extents x_bearing -7

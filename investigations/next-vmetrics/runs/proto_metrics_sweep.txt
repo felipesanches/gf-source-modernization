@@ -1,0 +1,155 @@
+== /home/fsanches/compartilhado/sfd-reland/families.tsv
+CreepsterCaps-Regular            all six match the release under both
+HerrVonMuellerhoff-Regular       all six match the release under both
+Kristi-Regular                   all six match the release under both
+Lekton-Bold                      all six match the release under both
+Lekton-Italic                    all six match the release under both
+Lekton-Regular                   all six match the release under both
+Miama-Regular                    all six match the release under both
+Monoton-Regular                  all six match the release under both
+NixieOne-Regular                 all six match the release under both
+Nosifer-Regular                  all six match the release under both
+NosiferCaps-Regular              all six match the release under both
+NovaCut                          all six match the release under both
+NovaFlat                         all six match the release under both
+NovaMono                         all six match the release under both
+NovaOval                         all six match the release under both
+NovaRound                        all six match the release under both
+NovaScript-Regular               all six match the release under both
+NovaSlim                         all six match the release under both
+NovaSquare                       all six match the release under both
+PatrickHand-Regular              all six match the release under both
+Play-Bold                        winAscent rel=1052 up=932* prop=932*; winDescent rel=224 up=220* prop=220*; hheaAscender rel=937 up=932* prop=932*; typoAscender rel=937 up=932* prop=932*
+Play-Regular                     winAscent rel=1052 up=937* prop=937*; winDescent rel=224 up=220* prop=220*; hheaDescender rel=-220 up=220* prop=220*; typoDescender rel=-220 up=220* prop=220*
+Puritan-Bold                     winAscent rel=896 up=875* prop=875*; winDescent rel=248 up=242* prop=242*; hheaAscender rel=896 up=875* prop=875*; hheaDescender rel=-256 up=-250* prop=-250*; typoAscender rel=897 up=875* prop=875*; typoDescender rel=-255 up=-250* prop=-250*
+Puritan-BoldItalic               winAscent rel=896 up=875* prop=875*; winDescent rel=248 up=242* prop=242*; hheaAscender rel=896 up=875* prop=875*; hheaDescender rel=-256 up=-250* prop=-250*; typoAscender rel=897 up=875* prop=875*; typoDescender rel=-255 up=-250* prop=-250*
+Puritan-Italic                   winAscent rel=880 up=860* prop=860*; winDescent rel=255 up=249* prop=249*; hheaAscender rel=880 up=860* prop=860*; hheaDescender rel=-256 up=-250* prop=-250*; typoAscender rel=881 up=860* prop=860*; typoDescender rel=-255 up=-250* prop=-250*
+Puritan-Regular                  winAscent rel=881 up=860* prop=860*; winDescent rel=238 up=232* prop=232*; hheaAscender rel=881 up=860* prop=860*; hheaDescender rel=-256 up=-250* prop=-250*; typoAscender rel=881 up=860* prop=860*; typoDescender rel=-255 up=-250* prop=-250*
+RussoOne-Regular                 all six match the release under both
+SixCaps                          all six match the release under both
+Smythe-Regular                   all six match the release under both
+Tuffy-Bold                       all six match the release under both
+Tuffy-BoldItalic                 all six match the release under both
+Tuffy-Italic                     all six match the release under both
+Tuffy-Regular                    all six match the release under both
+TulpenOne-Regular                all six match the release under both
+UnifrakturCook-Bold              all six match the release under both
+UnifrakturMaguntia-Book          winDescent rel=512 up=514* prop=512; hheaDescender rel=-513 up=-514* prop=-513
+AbrilFatface-Regular             all six match the release under both
+Corben-Regular                   all six match the release under both
+Corben-Bold                      winAscent rel=2826 up=2300* prop=2300*; winDescent rel=969 up=940* prop=940*; hheaAscender rel=2826 up=2300* prop=2300*; hheaDescender rel=-969 up=-940* prop=-940*; typoAscender rel=2826 up=2300* prop=2300*; typoDescender rel=-969 up=-940* prop=-940*
+AllertaStencil-Regular           all six match the release under both
+ComicRelief-Regular              all six match the release under both
+ComicRelief-Bold                 all six match the release under both
+== /home/fsanches/compartilhado/sfd-reland/families-next.tsv
+MountainsofChristmas-Bold        winAscent rel=1064 up=1066* prop=1064; winDescent rel=354 up=355* prop=354; hheaDescender rel=-354 up=-355* prop=-354
+MountainsofChristmas-Regular     all six match the release under both
+Rochester-Regular                all six match the release under both
+Smokum-Regular                   all six match the release under both
+Ultra-Regular                    all six match the release under both
+Cardo-Bold                       all six match the release under both
+Cardo-Italic                     all six match the release under both
+Cardo-Regular                    all six match the release under both
+Italiana-Regular                 all six match the release under both
+KeaniaOne-Regular                all six match the release under both
+KellySlab-Regular                all six match the release under both
+KottaOne-Regular                 all six match the release under both
+Ledger-Regular                   all six match the release under both
+LilitaOne-Regular                all six match the release under both
+Limelight-Regular                winAscent rel=1864 up=1881* prop=1881*; winDescent rel=629 up=633* prop=631*; hheaAscender rel=1864 up=1881* prop=1881*; hheaDescender rel=-629 up=-633* prop=-632*; typoAscender rel=1864 up=1881* prop=1881*
+Lohit-Bengali                    all six match the release under both
+Lohit-Tamil                      all six match the release under both
+LovedbytheKing                   all six match the release under both
+LoveYaLikeASister                all six match the release under both
+Lustria-Regular                  all six match the release under both
+Macondo-Regular                  all six match the release under both
+Magra-Bold                       all six match the release under both
+Magra-Regular                    all six match the release under both
+Marvel-Bold                      all six match the release under both
+Marvel-BoldItalic                all six match the release under both
+Marvel-Italic                    all six match the release under both
+Marvel-Regular                   all six match the release under both
+MedulaOne-Regular                all six match the release under both
+Megrim                           all six match the release under both
+MeieScript-Regular               all six match the release under both
+MergeOne-Regular                 all six match the release under both
+MissFajardose-Regular            all six match the release under both
+MonsieurLaDoulaise-Regular       all six match the release under both
+MrBedfort-Regular                all six match the release under both
+MrDafoe-Regular                  all six match the release under both
+MrDeHaviland-Regular             all six match the release under both
+MrsSaintDelafield-Regular        all six match the release under both
+MrsSheppards-Regular             all six match the release under both
+Niconne-Regular                  all six match the release under both
+NothingYouCouldDo                winAscent rel=959 up=960* prop=959; hheaAscender rel=959 up=960* prop=959
+Numans-Regular                   all six match the release under both
+OleoScript-Bold                  all six match the release under both
+OleoScript-Regular               all six match the release under both
+OleoScriptSwashCaps-Bold         all six match the release under both
+OleoScriptSwashCaps-Regular      all six match the release under both
+Overlock-Black                   all six match the release under both
+Overlock-BlackItalic             all six match the release under both
+Overlock-Bold                    all six match the release under both
+Overlock-BoldItalic              all six match the release under both
+Overlock-Italic                  all six match the release under both
+Overlock-Regular                 all six match the release under both
+OverlockSC-Regular               all six match the release under both
+OvertheRainbow                   all six match the release under both
+PassionOne-Black                 all six match the release under both
+PassionOne-Bold                  all six match the release under both
+PassionOne-Regular               all six match the release under both
+PatuaOne-Regular                 all six match the release under both
+Piedra-Regular                   all six match the release under both
+PirataOne-Regular                all six match the release under both
+Poly-Italic                      all six match the release under both
+Poly-Regular                     all six match the release under both
+PortLligatSans-Regular           all six match the release under both
+PortLligatSlab-Regular           all six match the release under both
+Quantico-Bold                    all six match the release under both
+Quantico-BoldItalic              all six match the release under both
+Quantico-Italic                  all six match the release under both
+Quantico-Regular                 all six match the release under both
+Rambla-Bold                      all six match the release under both
+Rambla-BoldItalic                all six match the release under both
+Rambla-Italic                    all six match the release under both
+Rambla-Regular                   all six match the release under both
+Revalia-Regular                  all six match the release under both
+RibeyeMarrow-Regular             all six match the release under both
+Rosarivo-Italic                  all six match the release under both
+Rosarivo-Regular                 all six match the release under both
+RougeScript-Regular              all six match the release under both
+Rufina-Bold                      all six match the release under both
+Rufina-Regular                   all six match the release under both
+Ruluko-Regular                   all six match the release under both
+Sail-Regular                     all six match the release under both
+Salsa-Regular                    all six match the release under both
+Sanchez-Italic                   all six match the release under both
+Sanchez-Regular                  all six match the release under both
+Spirax-Regular                   all six match the release under both
+SquadaOne-Regular                all six match the release under both
+SwankyandMooMoo                  all six match the release under both
+TextMeOne-Regular                all six match the release under both
+Thabit-Bold                      all six match the release under both
+Thabit                           all six match the release under both
+TheGirlNextDoor                  all six match the release under both
+TitanOne-Regular                 all six match the release under both
+TitilliumWeb-Black               all six match the release under both
+TitilliumWeb-Bold                all six match the release under both
+TitilliumWeb-BoldItalic          all six match the release under both
+TitilliumWeb-Italic              all six match the release under both
+TitilliumWeb-Light               all six match the release under both
+TitilliumWeb-LightItalic         all six match the release under both
+TitilliumWeb-Regular             all six match the release under both
+TitilliumWeb-SemiBold            all six match the release under both
+TitilliumWeb-SemiBoldItalic      all six match the release under both
+Trochut-Bold                     all six match the release under both
+Trochut-Italic                   all six match the release under both
+Trochut-Regular                  all six match the release under both
+Varela-Regular                   all six match the release under both
+Viga-Regular                     all six match the release under both
+Wallpoet-Regular                 all six match the release under both
+WendyOne-Regular                 all six match the release under both
+six vertical metrics x styles, matching the release (match / miss):
+  upstream  844 / 50
+  proposed  851 / 43
+styles whose metrics the filter changes: 4 UnifrakturMaguntia-Book MountainsofChristmas-Bold Limelight-Regular NothingYouCouldDo

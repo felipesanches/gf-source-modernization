@@ -1,0 +1,10 @@
+RELEASE-STALE 162 bearings, every one the release contradicting its own outline
+RELEASE-STALE GSUB.script_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.feature_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.lookup_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (1 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (1 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (1 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+BLOCKING head.font_direction_hint [0, 2]
+1 blocking table difference(s), 8 stale in the release

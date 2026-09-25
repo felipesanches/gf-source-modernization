@@ -1,0 +1,50 @@
+## pair: hg 52f780bc:ofl/copse/src/Copse-Regular-TTF.sfd  vs  google/fonts b5efa9c32e8f:ofl/copse/Copse-Regular.ttf
+copse.sfd                        2009-09-14 quad OS/2.usWinAscent   release=1991   ff_legacy=1991 ff_master=1992* bf496e904=1992*
+copse.sfd                        2009-09-14 quad OS/2.usWinDescent  release=483    ff_legacy=483 ff_master=483 bf496e904=483
+copse.sfd                        2009-09-14 quad hhea.ascender      release=1991   ff_legacy=1991 ff_master=1992* bf496e904=1992*
+copse.sfd                        2009-09-14 quad hhea.descender     release=-483   ff_legacy=-483 ff_master=-483 bf496e904=-483
+offset-mode win/hhea metrics reproduced (match / miss):
+  ff_legacy  4 / 0
+  ff_master  2 / 2
+  bf496e904  2 / 2
+styles whose HheadAOffset != HheadDOffset: 0
+## pair: hg 52f780bc:ofl/daysone/src/DaysOne-Regular-TTF.sfd  vs  google/fonts b5efa9c32e8f:ofl/daysone/DaysOne-Regular.ttf
+daysone.sfd                      2011-02-22 quad OS/2.usWinAscent   release=2040   ff_legacy=2040 ff_master=2040 bf496e904=2040
+daysone.sfd                      2011-02-22 quad OS/2.usWinDescent  release=567    ff_legacy=567 ff_master=568* bf496e904=568*
+daysone.sfd                      2011-02-22 quad hhea.ascender      release=2040   ff_legacy=2040 ff_master=2040 bf496e904=2040
+daysone.sfd                      2011-02-22 quad hhea.descender     release=-567   ff_legacy=-567 ff_master=-568* bf496e904=-568*
+offset-mode win/hhea metrics reproduced (match / miss):
+  ff_legacy  4 / 0
+  ff_master  2 / 2
+  bf496e904  2 / 2
+styles whose HheadAOffset != HheadDOffset: 0
+## pair: hg 52f780bc:ofl/handlee/src/Handlee-Regular-TTF.sfd  vs  google/fonts b5efa9c32e8f:ofl/handlee/Handlee-Regular.ttf
+handlee.sfd                      2011-02-22 quad OS/2.usWinAscent   release=934    ff_legacy=934 ff_master=934 bf496e904=934
+handlee.sfd                      2011-02-22 quad OS/2.usWinDescent  release=401    ff_legacy=401 ff_master=401 bf496e904=401
+handlee.sfd                      2011-02-22 quad hhea.ascender      release=934    ff_legacy=934 ff_master=934 bf496e904=934
+handlee.sfd                      2011-02-22 quad hhea.descender     release=-401   ff_legacy=-401 ff_master=-401 bf496e904=-401
+offset-mode win/hhea metrics reproduced (match / miss):
+  ff_legacy  4 / 0
+  ff_master  4 / 0
+  bf496e904  4 / 0
+styles whose HheadAOffset != HheadDOffset: 0
+## pair: hg 52f780bc:ofl/giveyouglory/src/GiveYouGlory-TTF.sfd  vs  google/fonts b5efa9c32e8f:ofl/giveyouglory/GiveYouGlory.ttf
+giveyouglory.sfd                 2011-02-22 quad OS/2.usWinAscent   release=1020   ff_legacy=1020 ff_master=1020 bf496e904=1020
+giveyouglory.sfd                 2011-02-22 quad OS/2.usWinDescent  release=621    ff_legacy=619* ff_master=627* bf496e904=622*
+giveyouglory.sfd                 2011-02-22 quad hhea.ascender      release=1020   ff_legacy=1020 ff_master=1020 bf496e904=1020
+giveyouglory.sfd                 2011-02-22 quad hhea.descender     release=-625   ff_legacy=-624* ff_master=-630* bf496e904=-625
+offset-mode win/hhea metrics reproduced (match / miss):
+  ff_legacy  2 / 2
+  ff_master  2 / 2
+  bf496e904  3 / 1
+styles whose HheadAOffset != HheadDOffset: 0
+## pair: hg 52f780bc:ofl/concertone/src/ConcertOne-Regular-TTF.sfd  vs  google/fonts b5efa9c32e8f:ofl/concertone/ConcertOne-Regular.ttf
+concertone.sfd                   no-FFTM    quad OS/2.usWinAscent   release=2005   ff_legacy=2005 ff_master=2005 bf496e904=2005
+concertone.sfd                   no-FFTM    quad OS/2.usWinDescent  release=410    ff_legacy=410 ff_master=410 bf496e904=410
+concertone.sfd                   no-FFTM    quad hhea.ascender      release=2005   ff_legacy=2005 ff_master=2005 bf496e904=2005
+concertone.sfd                   no-FFTM    quad hhea.descender     release=-410   ff_legacy=410* ff_master=410* bf496e904=410*
+offset-mode win/hhea metrics reproduced (match / miss):
+  ff_legacy  3 / 1
+  ff_master  3 / 1
+  bf496e904  3 / 1
+styles whose HheadAOffset != HheadDOffset: 0

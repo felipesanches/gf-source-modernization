@@ -1,0 +1,10 @@
+RELEASE-STALE 162 bearings, every one the release contradicting its own outline
+RELEASE-STALE GSUB.script_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.feature_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.lookup_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (1 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (1 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (1 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+RELEASE-STALE head.font_direction_hint -- the release's 0 is what FontForge before 722e7ea8873e computed from its cmap (FFTM 2011-02-22); the field is deprecated (spec: set to 2) and no shaper reads it
+0 blocking table difference(s), 9 stale in the release

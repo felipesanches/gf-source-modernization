@@ -1,0 +1,198 @@
+diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
+index a0f72fa..dc1d918 100644
+--- a/babelfont/src/convertors/fontforge.rs
++++ b/babelfont/src/convertors/fontforge.rs
+@@ -3547,6 +3547,7 @@ impl SfdParser {
+         let mut feature_map: IndexMap<SmolStr, Vec<(layout::FeatureLangSys, SmolStr)>> =
+             IndexMap::new();
+         let mut used_script_language_pairs = HashSet::new();
++        let mut aalt_script_language_pairs = HashSet::new();
+ 
+         for name in &ordered_names {
+             // Look up in GSUB first, then GPOS
+@@ -3709,6 +3710,9 @@ impl SfdParser {
+                     .or_default()
+                     .push((fls.clone(), lookup.block.name.clone()));
+                 used_script_language_pairs.insert((fls.script.clone(), fls.language.clone()));
++                if fls.feature == "aalt" {
++                    aalt_script_language_pairs.insert((fls.script.clone(), fls.language.clone()));
++                }
+             }
+         }
+         // Now insert a feature reference for each feature
+@@ -3766,6 +3770,33 @@ impl SfdParser {
+                 },
+             ));
+         }
++        // A feature file registers `aalt` under every `languagesystem` and allows
++        // no script or language statement inside it, while FontForge registers it
++        // only for the language systems its lookups name. Every other lookup is
++        // written above with explicit script and language statements, so the
++        // declarations matter only to `aalt` and to the features a compiler
++        // generates from kerning and anchors. When there are none of the latter,
++        // declaring just `aalt`'s language systems registers every feature where
++        // FontForge did.
++        let compiler_generates_features = self.font.masters.iter().any(|m| !m.kerning.is_empty())
++            || self
++                .font
++                .glyphs
++                .iter()
++                .any(|g| g.layers.iter().any(|l| !l.anchors.is_empty()));
++        if !aalt_script_language_pairs.is_empty()
++            && aalt_script_language_pairs != used_script_language_pairs
++        {
++            if compiler_generates_features {
++                log::warn!(
++                    "aalt is registered for fewer language systems than the other features, \
++                     but kerning or anchors need them all declared; aalt will be registered \
++                     for all of them"
++                );
++            } else {
++                used_script_language_pairs = aalt_script_language_pairs;
++            }
++        }
+         if !used_script_language_pairs.is_empty() {
+             // These must be arranged DFLT/dflt first if it exists, then <script>/dflt before <script>/<language>
+             let mut pairs: Vec<(SmolStr, SmolStr)> =
+diff --git a/babelfont/src/convertors/fontforge/layout.rs b/babelfont/src/convertors/fontforge/layout.rs
+index 753dd8c..8a716ed 100644
+--- a/babelfont/src/convertors/fontforge/layout.rs
++++ b/babelfont/src/convertors/fontforge/layout.rs
+@@ -259,12 +259,21 @@ pub(crate) struct ChainPosSubEntry {
+     pub(crate) lookups: IndexMap<usize, Vec<String>>,
+ }
+ 
++/// The `script` and `language` statements that register the next lookup for one
++/// language system.
++///
++/// A FontForge lookup names every script and language it applies to, and nothing
++/// is inherited: a lookup registered for `latn/dflt` and not for `latn/TRK` does
++/// not run for Turkish. In a feature file a `language` statement inherits the
++/// lookups already registered for the script's default language unless it says
++/// `exclude_dflt`, so a language other than `dflt` excludes them here.
+ pub(crate) fn make_langsys(script: SmolStr, language: SmolStr) -> Vec<fea_rs_ast::Statement> {
++    let include_dflt = language == "dflt";
+     vec![
+         fea_rs_ast::Statement::Script(fea_rs_ast::ScriptStatement::new(script.into())),
+         fea_rs_ast::Statement::Language(fea_rs_ast::LanguageStatement::new(
+             language.into(),
+-            true,
++            include_dflt,
+             false,
+         )),
+     ]
+diff --git a/babelfont/src/convertors/fontforge/tests.rs b/babelfont/src/convertors/fontforge/tests.rs
+index 42278c4..d13c38b 100644
+--- a/babelfont/src/convertors/fontforge/tests.rs
++++ b/babelfont/src/convertors/fontforge/tests.rs
+@@ -289,6 +289,110 @@ fn test_blank_script_tag_becomes_dflt() {
+     assert!(!fea.contains("languagesystem  "), "{}", fea);
+ }
+ 
++#[test]
++fn test_language_does_not_inherit_default_lookups() {
++    // FontForge registers each lookup for exactly the languages it names. `fi` is
++    // registered for latn/dflt and latn/DEU but not latn/TRK, so Turkish must not
++    // get it; a feature-file `language` statement would inherit it from dflt
++    // unless it says exclude_dflt.
++    let data = concat!(
++        "SplineFontDB: 3.0\n",
++        "Ascent: 800\n",
++        "Descent: 200\n",
++        "LayerCount: 2\n",
++        "Layer: 0 0 \"Back\" 1\n",
++        "Layer: 1 0 \"Fore\" 0\n",
++        "Lookup: 4 0 1 \"fi\" {\"fi-1\"} [ 'liga' ('latn' <'DEU ' 'dflt' > ) ]\n",
++        "Lookup: 4 0 1 \"ff\" {\"ff-1\"} [ 'liga' ('latn' <'DEU ' 'TRK ' 'dflt' > ) ]\n",
++        "BeginChars: 4 4\n",
++        "StartChar: f\n",
++        "Encoding: 102 102 0\n",
++        "Width: 300\n",
++        "Fore\n",
++        "EndChar\n",
++        "StartChar: i\n",
++        "Encoding: 105 105 1\n",
++        "Width: 300\n",
++        "Fore\n",
++        "EndChar\n",
++        "StartChar: f_i\n",
++        "Encoding: -1 -1 2\n",
++        "Width: 600\n",
++        "Ligature2: \"fi-1\" f i\n",
++        "Fore\n",
++        "EndChar\n",
++        "StartChar: f_f\n",
++        "Encoding: -1 -1 3\n",
++        "Width: 600\n",
++        "Ligature2: \"ff-1\" f f\n",
++        "Fore\n",
++        "EndChar\n",
++        "EndChars\n",
++        "EndSplineFont\n"
++    );
++    let font = load_str(data).expect("Failed to parse language SFD");
++    // FontForge pads a language tag to four characters ("TRK "); compare words
++    let fea = font
++        .features
++        .to_fea()
++        .lines()
++        .map(|l| l.split_whitespace().collect::<Vec<_>>().join(" "))
++        .collect::<Vec<_>>()
++        .join("\n");
++    assert!(fea.contains("language TRK exclude_dflt;"), "{}", fea);
++    assert!(fea.contains("language DEU exclude_dflt;"), "{}", fea);
++    assert!(fea.contains("language dflt;"), "{}", fea);
++    assert!(!fea.contains("language TRK;"), "{}", fea);
++}
++
++#[test]
++fn test_aalt_keeps_its_own_language_systems() {
++    // aalt is registered for latn/dflt only; liga also for latn/SRB. A feature
++    // file registers aalt under every languagesystem, so SRB must not be declared
++    // (liga still reaches SRB through its explicit language statement).
++    let data = concat!(
++        "SplineFontDB: 3.0\n",
++        "Ascent: 800\n",
++        "Descent: 200\n",
++        "LayerCount: 2\n",
++        "Layer: 0 0 \"Back\" 1\n",
++        "Layer: 1 0 \"Fore\" 0\n",
++        "Lookup: 1 0 0 \"alt\" {\"alt-1\"} [ 'aalt' ('latn' <'dflt' > ) ]\n",
++        "Lookup: 4 0 1 \"ff\" {\"ff-1\"} [ 'liga' ('latn' <'SRB ' 'dflt' > ) ]\n",
++        "BeginChars: 3 3\n",
++        "StartChar: f\n",
++        "Encoding: 102 102 0\n",
++        "Width: 300\n",
++        "Substitution2: \"alt-1\" f_f\n",
++        "Fore\n",
++        "EndChar\n",
++        "StartChar: i\n",
++        "Encoding: 105 105 1\n",
++        "Width: 300\n",
++        "Fore\n",
++        "EndChar\n",
++        "StartChar: f_f\n",
++        "Encoding: -1 -1 2\n",
++        "Width: 600\n",
++        "Ligature2: \"ff-1\" f f\n",
++        "Fore\n",
++        "EndChar\n",
++        "EndChars\n",
++        "EndSplineFont\n"
++    );
++    let font = load_str(data).expect("Failed to parse aalt SFD");
++    let fea = font
++        .features
++        .to_fea()
++        .lines()
++        .map(|l| l.split_whitespace().collect::<Vec<_>>().join(" "))
++        .collect::<Vec<_>>()
++        .join("\n");
++    assert!(fea.contains("languagesystem latn dflt;"), "{}", fea);
++    assert!(!fea.contains("languagesystem latn SRB;"), "{}", fea);
++    assert!(fea.contains("language SRB exclude_dflt;"), "{}", fea);
++}
++
+ #[test]
+ fn test_quoted_glyph_name_is_decoded_and_trimmed() {
+     // A quoted name is modified UTF-7, and FontForge can leave whitespace after

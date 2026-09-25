@@ -1,0 +1,45 @@
+flags: --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --reverse-path-direction
+RELEASE-STALE hmtx.ampersand -- shipped records 14 for an outline at 4; ours records 4
+RELEASE-STALE hmtx.parenleft -- shipped records 184 for an outline at 166; ours records 166
+RELEASE-STALE hmtx.six -- shipped records 47 for an outline at 31; ours records 31
+RELEASE-STALE hmtx.eight -- shipped records 24 for an outline at 10; ours records 10
+RELEASE-STALE hmtx.nine -- shipped records 83 for an outline at 68; ours records 68
+RELEASE-STALE hmtx.at -- shipped records 52 for an outline at 29; ours records 29
+RELEASE-STALE hmtx.C -- shipped records 52 for an outline at 24; ours records 24
+RELEASE-STALE hmtx.G -- shipped records 51 for an outline at 23; ours records 23
+RELEASE-STALE hmtx.O -- shipped records 40 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Q -- shipped records 40 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.U -- shipped records 42 for an outline at 27; ours records 27
+RELEASE-STALE hmtx.c -- shipped records 93 for an outline at 76; ours records 76
+RELEASE-STALE hmtx.d -- shipped records 43 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.o -- shipped records 67 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.u -- shipped records 70 for an outline at 61; ours records 61
+RELEASE-STALE hmtx.questiondown -- shipped records 88 for an outline at 79; ours records 79
+RELEASE-STALE hmtx.Ccedilla -- shipped records 52 for an outline at 24; ours records 24
+RELEASE-STALE hmtx.Ograve -- shipped records 40 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Oacute -- shipped records 40 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Ocircumflex -- shipped records 40 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Otilde -- shipped records 40 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Odieresis -- shipped records 40 for an outline at 38; ours records 38
+RELEASE-STALE hmtx.Ugrave -- shipped records 42 for an outline at 27; ours records 27
+RELEASE-STALE hmtx.Uacute -- shipped records 42 for an outline at 27; ours records 27
+RELEASE-STALE hmtx.Ucircumflex -- shipped records 42 for an outline at 27; ours records 27
+RELEASE-STALE hmtx.Udieresis -- shipped records 42 for an outline at 27; ours records 27
+RELEASE-STALE hmtx.ccedilla -- shipped records 93 for an outline at 76; ours records 76
+RELEASE-STALE hmtx.ograve -- shipped records 67 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.oacute -- shipped records 67 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.ocircumflex -- shipped records 67 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.otilde -- shipped records 67 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.odieresis -- shipped records 67 for an outline at 41; ours records 41
+RELEASE-STALE hmtx.ugrave -- shipped records 70 for an outline at 61; ours records 61
+RELEASE-STALE hmtx.uacute -- shipped records 70 for an outline at 61; ours records 61
+RELEASE-STALE hmtx.ucircumflex -- shipped records 70 for an outline at 61; ours records 61
+RELEASE-STALE hmtx.udieresis -- shipped records 70 for an outline at 61; ours records 61
+RELEASE-STALE hmtx.OE -- shipped records 11 for an outline at -13; ours records -13
+RELEASE-STALE GSUB.script_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.feature_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.lookup_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (1 and 1); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s)))
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+0 blocking table difference(s), 43 stale in the release

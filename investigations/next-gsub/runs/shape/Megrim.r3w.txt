@@ -1,0 +1,3 @@
+corpus: 338 strings (338 shared codepoints, 0 rule characters); 0 language systems; features: default + 
+-/- default: fired in 0 of 338 runs; 0 differ in glyphs
+TOTAL 338 runs, 0 differ in glyphs, 0 differ in advances only

@@ -1,0 +1,3 @@
+mergefea: 5 lookups (rligTashkilLigatures, InitialForms, MedialForms, FinalForms, ligaLamAlef), 146 rules
+mergepsfont: 477 glyphs added (19 unencoded: approxequalalt productdot SM490000 commasuperior zeroslash tquoteright dquoteright SM700000 zerodot SP500000 underscorebroken Lquoteright), 5 AFM ligatures
+ffnotdef: stem 34, advance 374, box [(34, 0), (34, 682), (306, 682), (306, 0)]

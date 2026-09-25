@@ -1,0 +1,57 @@
+== designer TTF (hg f66bfe1e9)  ->  FontForge 20110222 export (hg 60268f00f)
+  tables only before: ['GPOS', 'cvt ', 'fpgm', 'kern', 'prep']  only after: ['DSIG', 'FFTM', 'GDEF']
+  byte-identical tables: []
+  name (0, 1, 0): 'Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (A' -> 'Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (A'
+  name (0, 3, 1033): 'Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (A' -> 'Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (A'
+  name (3, 1, 0): 'Astigmatic(AOETI): Yellowtail: 2011' -> 'FontForge 2.0 : Yellowtail : 18-7-2011'
+  name (3, 3, 1033): 'Astigmatic(AOETI): Yellowtail: 2011' -> 'FontForge 2.0 : Yellowtail : 18-7-2011'
+  name (5, 1, 0): 'Version 1.000' -> 'Version 001.001 '
+  name (5, 3, 1033): 'Version 1.000' -> 'Version 001.001 '
+  name (7, 1, 0): 'Yellowtail is a trademark of Astigmatic (AOETI).' -> ''
+  name (7, 3, 1033): 'Yellowtail is a trademark of Astigmatic (AOETI).' -> ''
+  name (8, 1, 0): 'Astigmatic (AOETI)' -> ''
+  name (8, 3, 1033): 'Astigmatic (AOETI)' -> ''
+  name (9, 1, 0): 'Astigmatic (AOETI)' -> ''
+  name (9, 3, 1033): 'Astigmatic (AOETI)' -> ''
+  name (10, 1, 0): 'Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (A' -> ''
+  name (10, 3, 1033): 'Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (A' -> ''
+  name (11, 1, 0): 'http://www.astigmatic.com/' -> ''
+  name (11, 3, 1033): 'http://www.astigmatic.com/' -> ''
+  name (12, 1, 0): 'http://www.astigmatic.com/' -> ''
+  name (12, 3, 1033): 'http://www.astigmatic.com/' -> ''
+  name (13, 1, 0): 'Licensed under the Apache License, Version 2.0' -> ''
+  name (13, 3, 1033): 'Licensed under the Apache License, Version 2.0' -> ''
+  name (14, 1, 0): 'http://www.apache.org/licenses/LICENSE-2.0' -> ''
+  name (14, 3, 1033): 'http://www.apache.org/licenses/LICENSE-2.0' -> ''
+  name (16, 1, 0): 'Yellowtail' -> ''
+  name (16, 3, 1033): 'Yellowtail' -> ''
+  name (17, 1, 0): 'Regular' -> ''
+  name (17, 3, 1033): 'Regular' -> ''
+  name (18, 1, 0): 'Yellowtail' -> ''
+  outlines by codepoint: 78 identical, 290 differ ['U+0021', 'U+0022', 'U+0023', 'U+0024', 'U+0025']; cmap only before [], only after ['U+0000']
+  advances differing by codepoint: 0
+  kern: before True, after False
+  GPOS: before True, after False
+== FontForge 20110222 export (hg 60268f00f)  ->  google/fonts 2015 import (90abd17b4)
+  tables only before: []  only after: []
+  byte-identical tables: ['DSIG', 'FFTM', 'GDEF', 'OS/2', 'cmap', 'gasp', 'glyf', 'head', 'hhea', 'hmtx', 'loca', 'maxp', 'name', 'post']
+  outlines by codepoint: 369 identical, 0 differ []; cmap only before [], only after []
+  advances differing by codepoint: 0
+  kern: before False, after False
+  GPOS: before False, after False
+== google/fonts 2015 import (90abd17b4)  ->  google/fonts v1.002 (1baf54ea4 = b5efa9c32e8f)
+  tables only before: []  only after: []
+  byte-identical tables: ['DSIG', 'FFTM', 'GDEF', 'OS/2', 'gasp', 'glyf', 'hhea', 'hmtx', 'loca', 'maxp', 'post']
+  name (3, 1, 0): 'FontForge 2.0 : Yellowtail : 18-7-2011' -> '001.002;UKWN;Yellowtail-Regular'
+  name (3, 3, 1033): 'FontForge 2.0 : Yellowtail : 18-7-2011' -> '001.002;UKWN;Yellowtail-Regular'
+  name (4, 1, 0): 'Yellowtail' -> 'Yellowtail Regular'
+  name (4, 3, 1033): 'Yellowtail' -> 'Yellowtail Regular'
+  name (5, 1, 0): 'Version 001.001 ' -> 'Version 001.002 '
+  name (5, 3, 1033): 'Version 001.001 ' -> 'Version 001.002 '
+  name (6, 1, 0): 'Yellowtail' -> 'Yellowtail-Regular'
+  name (6, 3, 1033): 'Yellowtail' -> 'Yellowtail-Regular'
+  outlines by codepoint: 369 identical, 0 differ []; cmap only before [], only after []
+  advances differing by codepoint: 0
+  kern: before False, after False
+  GPOS: before False, after False
+== designer OTF: CFF charstrings, 372 glyphs, cmap 368, GPOS True -- cubic, so it cannot be the source of a glyf identical to the designer TTF's

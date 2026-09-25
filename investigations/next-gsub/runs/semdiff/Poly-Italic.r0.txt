@@ -1,0 +1,8 @@
+== LOOKUPS: release 19, build 19; nested-only (no feature): release [18], build [7]
+   identical lookup contents: 18; release-only: 0; build-only: 0
+== REGISTRATION (script/lang/feature -> lookup identities)
+   latn/ROM/aalt    only in build  : ['T1/0:ac877ecc:25', 'T3/0:76c29ae6:52']
+   16 keys, 1 differ
+== ORDER (per script/lang: the lookup sequence a shaper applies)
+   latn/ROM   different sets; release-only []; build-only ['aalt', 'aalt']; common part in same order: True
+   latn/dflt  same sequence of 17 lookups

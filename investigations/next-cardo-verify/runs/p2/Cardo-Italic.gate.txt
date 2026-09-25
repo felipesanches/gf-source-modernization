@@ -1,0 +1,85 @@
+flags: --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --reverse-path-direction --fontforge-no-anchor-propagation
+RELEASE-STALE hmtx.s -- shipped records 31 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.exclamdown -- shipped records 66 for an outline at 67; ours records 67
+RELEASE-STALE hmtx.onesuperior -- shipped records 143 for an outline at 141; ours records 141
+RELEASE-STALE hmtx.onequarter -- shipped records 268 for an outline at 266; ours records 266
+RELEASE-STALE hmtx.onehalf -- shipped records 268 for an outline at 266; ours records 266
+RELEASE-STALE hmtx.questiondown -- shipped records 139 for an outline at 140; ours records 140
+RELEASE-STALE hmtx.sacute -- shipped records 31 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.scircumflex -- shipped records 31 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.scedilla -- shipped records 31 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.scaron -- shipped records 31 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.uni019A -- shipped records 66 for an outline at 64; ours records 64
+RELEASE-STALE hmtx.scommaaccent -- shipped records 31 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.uni0258 -- shipped records 105 for an outline at 106; ours records 106
+RELEASE-STALE hmtx.uni025C -- shipped records 102 for an outline at 103; ours records 103
+RELEASE-STALE hmtx.uni027F -- shipped records -19 for an outline at -20; ours records -20
+RELEASE-STALE hmtx.uni0285 -- shipped records -74 for an outline at -75; ours records -75
+RELEASE-STALE hmtx.uni028E -- shipped records 123 for an outline at 124; ours records 124
+RELEASE-STALE hmtx.uni0295 -- shipped records 24 for an outline at 25; ours records 25
+RELEASE-STALE hmtx.uni0297 -- shipped records 102 for an outline at 66; ours records 66
+RELEASE-STALE hmtx.uni029A -- shipped records 62 for an outline at 63; ours records 63
+RELEASE-STALE hmtx.uni02AE -- shipped records 11 for an outline at 10; ours records 10
+RELEASE-STALE hmtx.uni02AF -- shipped records 11 for an outline at 10; ours records 10
+RELEASE-STALE hmtx.uni02B2 -- shipped records -83 for an outline at -84; ours records -84
+RELEASE-STALE hmtx.uni02B3 -- shipped records 59 for an outline at 60; ours records 60
+RELEASE-STALE hmtx.uni02B7 -- shipped records 18 for an outline at 19; ours records 19
+RELEASE-STALE hmtx.uni02B8 -- shipped records 23 for an outline at 24; ours records 24
+RELEASE-STALE hmtx.uni02BB -- shipped records 298 for an outline at 299; ours records 299
+RELEASE-STALE hmtx.uni02C1 -- shipped records 24 for an outline at 25; ours records 25
+RELEASE-STALE hmtx.uni02D2 -- shipped records 64 for an outline at 65; ours records 65
+RELEASE-STALE hmtx.uni02E1 -- shipped records 77 for an outline at 78; ours records 78
+RELEASE-STALE hmtx.uni02E3 -- shipped records 29 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.uni0312 -- shipped records -529 for an outline at -530; ours records -530
+RELEASE-STALE hmtx.uni0318 -- shipped records -728 for an outline at -729; ours records -729
+RELEASE-STALE hmtx.uni0339 -- shipped records -632 for an outline at -633; ours records -633
+RELEASE-STALE hmtx.uni034D -- shipped records -561 for an outline at -562; ours records -562
+RELEASE-STALE hmtx.uni0355 -- shipped records -763 for an outline at -764; ours records -764
+RELEASE-STALE hmtx.uni0357 -- shipped records -632 for an outline at -633; ours records -633
+RELEASE-STALE hmtx.uni03F6 -- shipped records 69 for an outline at 70; ours records 70
+RELEASE-STALE hmtx.uni0486 -- shipped records -948 for an outline at -949; ours records -949
+RELEASE-STALE hmtx.uni0596 -- shipped records 516 for an outline at 517; ours records 517
+RELEASE-STALE hmtx.uni059E -- shipped records 396 for an outline at 397; ours records 397
+RELEASE-STALE hmtx.uni05AD -- shipped records 1038 for an outline at 1039; ours records 1039
+RELEASE-STALE hmtx.uni05C6 -- shipped records 84 for an outline at 85; ours records 85
+RELEASE-STALE hmtx.uni1E61 -- shipped records 31 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.uni1E63 -- shipped records 31 for an outline at 30; ours records 30
+RELEASE-STALE hmtx.uni2035 -- shipped records 72 for an outline at 73; ours records 73
+RELEASE-STALE hmtx.uni204D -- shipped records 139 for an outline at 140; ours records 140
+RELEASE-STALE hmtx.uni207D -- shipped records 72 for an outline at 73; ours records 73
+RELEASE-STALE hmtx.uni207E -- shipped records -31 for an outline at -32; ours records -32
+RELEASE-STALE hmtx.oneinferior -- shipped records 143 for an outline at 141; ours records 141
+RELEASE-STALE hmtx.parenleftinferior -- shipped records 72 for an outline at 73; ours records 73
+RELEASE-STALE hmtx.parenrightinferior -- shipped records -31 for an outline at -32; ours records -32
+RELEASE-STALE hmtx.uni2196 -- shipped records 124 for an outline at 125; ours records 125
+RELEASE-STALE hmtx.uni2199 -- shipped records 124 for an outline at 125; ours records 125
+RELEASE-STALE hmtx.uni21B7 -- shipped records 99 for an outline at 100; ours records 100
+RELEASE-STALE hmtx.uni21BB -- shipped records 99 for an outline at 100; ours records 100
+RELEASE-STALE hmtx.uni2310 -- shipped records -88 for an outline at -89; ours records -89
+RELEASE-STALE hmtx.uni263E -- shipped records 84 for an outline at 85; ours records 85
+RELEASE-STALE hmtx.uni2E0D -- shipped records 44 for an outline at 45; ours records 45
+RELEASE-STALE hmtx.uni2E11 -- shipped records 44 for an outline at 45; ours records 45
+RELEASE-STALE hmtx.uni3017 -- shipped records 74 for an outline at 75; ours records 75
+RELEASE-STALE hmtx.uniA76E -- shipped records 101 for an outline at 100; ours records 100
+RELEASE-STALE hmtx.uniA76F -- shipped records -69 for an outline at -70; ours records -70
+RELEASE-STALE hmtx.uniA770 -- shipped records 121 for an outline at 114; ours records 114
+RELEASE-STALE hmtx.uniEEE2 -- shipped records 113 for an outline at 112; ours records 112
+RELEASE-STALE hmtx.uniEEF5 -- shipped records 56 for an outline at 55; ours records 55
+RELEASE-STALE hmtx.uniF00D -- shipped records -974 for an outline at -975; ours records -975
+RELEASE-STALE hmtx.uniF153 -- shipped records -563 for an outline at -564; ours records -564
+RELEASE-STALE hmtx.uniF15B -- shipped records -818 for an outline at -826; ours records -826
+RELEASE-STALE hmtx.uniF16F -- shipped records 44 for an outline at 45; ours records 45
+RELEASE-STALE hmtx.uniF1D3 -- shipped records 99 for an outline at 100; ours records 100
+RELEASE-STALE hmtx.uniF1D5 -- shipped records 99 for an outline at 100; ours records 100
+RELEASE-STALE hmtx.uniF1D6 -- shipped records 54 for an outline at 55; ours records 55
+RELEASE-STALE hmtx.uniF300 -- shipped records 84 for an outline at 85; ours records 85
+RELEASE-STALE hmtx.questiondown.sc -- shipped records 79 for an outline at 80; ours records 80
+RELEASE-STALE hmtx.uniF864 -- shipped records -827 for an outline at -828; ours records -828
+RELEASE-STALE the same GSUB lookups in a different order; 69696 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (1 and 1); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (1 and 1); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+BLOCKING GDEF.mark_glyph_sets [null, {"0": ["uni1DC1", "uni2E0F", "uni2E10", "uni2E11", "uniF15B", "uni05B105B
+BLOCKING head.font_direction_hint [0, 2]
+3 blocking table difference(s), 79 stale in the release
+converter: /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify/bf-target/release/babelfont (sha256 39fc7e3d2a55f501); source: /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify/edits/Cardo-Italic-TTF.e1.sfd (sha256 432e1753ba8797c3); workarounds=1; extra=--fontforge-no-anchor-propagation

@@ -1,0 +1,294 @@
+diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
+index a0f72fa..78954d1 100644
+--- a/babelfont/src/convertors/fontforge.rs
++++ b/babelfont/src/convertors/fontforge.rs
+@@ -1999,6 +1999,20 @@ impl SfdParser {
+             );
+         }
+ 
++        // A mark that advances is a spacing combining mark. FontForge exports
++        // every advance as the source states it, and a Nonspacing mark is exported
++        // zero-width.
++        if glyph.category == GlyphCategory::Mark
++            && width.unwrap_or(0.0) != 0.0
++            && glyph.format_specific.get("subcategory").and_then(|v| v.as_str())
++                == Some("Nonspacing")
++        {
++            glyph.format_specific.insert(
++                "subcategory".to_string(),
++                serde_json::Value::String("Spacing Combining".to_string()),
++            );
++        }
++
+         glyph.codepoints = codepoints;
+         Ok(glyph)
+     }
+@@ -2163,6 +2177,10 @@ impl SfdParser {
+         );
+         if kind == "mark" {
+             name = "_".to_string() + &name;
++        } else if kind == "baselig" {
++            // A ligature's anchor for one component: Glyphs names it after the
++            // component, counting from 1 in the ligature's logical order.
++            name = format!("{}_{}", name, index + 1);
+         }
+         Some(crate::Anchor {
+             name,
+@@ -3643,6 +3661,30 @@ impl SfdParser {
+                     lookup.block.statements.extend(rules);
+                 }
+             }
++            // A lookup that is not contextual keeps its flags as well. FontForge
++            // writes them into the font; without IgnoreMarks, for example, a
++            // lam-alef ligature no longer forms across a haraka.
++            if !has_chain && !lookup.block.statements.is_empty() {
++                if lookup.flag & !0x000F != 0 {
++                    log::warn!(
++                        "lookup {:?}: flag {:#06x} carries bits (mark-attachment \
++                         class or filtering set) that are not converted",
++                        lookup.block.name,
++                        lookup.flag
++                    );
++                }
++                if lookup.flag & 0x000F != 0 {
++                    lookup.block.statements.insert(
++                        0,
++                        fea_rs_ast::Statement::LookupFlag(fea_rs_ast::LookupFlagStatement::new(
++                            lookup.flag & 0x000F,
++                            None,
++                            None,
++                            0..0,
++                        )),
++                    );
++                }
++            }
+             if lookup.block.statements.is_empty() {
+                 // No statements: skip this lookup
+                 continue;
+diff --git a/babelfont/src/filters/fontforgeimpliedoncurves.rs b/babelfont/src/filters/fontforgeimpliedoncurves.rs
+new file mode 100644
+index 0000000..57222e0
+--- /dev/null
++++ b/babelfont/src/filters/fontforgeimpliedoncurves.rs
+@@ -0,0 +1,128 @@
++use crate::{filters::FontFilter, NodeType};
++
++/// A filter that leaves out the on-curve points FontForge's TrueType exporter
++/// leaves out, so the compiler implies them as FontForge did.
++///
++/// FontForge writes a quadratic on-curve point to `glyf` only when it carries a
++/// TrueType point number, or when it is not half-way between its two control
++/// points: a point with no number (an .sfd point written `...,-1,...`) that lies
++/// within 0.1 unit of that midpoint, and is not marked "don't interpolate" or
++/// "round to grid", is omitted, and a TrueType reader interpolates it from the two
++/// ROUNDED control points (tottf.c SSAddPoints, splineutil2.c SPInterpolate). A
++/// compiler that keeps the point rounds it on its own, which can move it by half a
++/// unit from where FontForge's font has it.
++///
++/// A point read without a recorded number (one the .sfd never numbered) is treated
++/// as FontForge's exporter treats it after renumbering: omitted when half-way.
++///
++/// Only quadratic layers are touched.
++#[derive(Default)]
++pub struct FontForgeImpliedOncurves;
++
++impl FontForgeImpliedOncurves {
++    /// Create a new FontForgeImpliedOncurves filter
++    pub fn new() -> Self {
++        FontForgeImpliedOncurves
++    }
++}
++
++/// (flags, ttfindex) from an .sfd point's "flags[,ttfindex,nextcpindex]".
++fn sfd_point(node: &crate::Node) -> (u32, Option<i64>) {
++    let Some(s) = node
++        .format_specific
++        .get("sfd.point_flags")
++        .and_then(|v| v.as_str())
++    else {
++        return (0, None);
++    };
++    let mut it = s.split(',');
++    let flags = it.next().and_then(|f| f.trim().parse().ok()).unwrap_or(0);
++    let ttf = it.next().and_then(|t| t.trim().parse().ok());
++    (flags, ttf)
++}
++
++impl FontFilter for FontForgeImpliedOncurves {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        let mut dropped = 0usize;
++        for glyph in font.glyphs.iter_mut() {
++            for layer in &mut glyph.layers {
++                let quadratic = layer
++                    .format_specific
++                    .get("sfd.is_quadratic")
++                    .and_then(|v| v.as_bool())
++                    .unwrap_or(false);
++                if !quadratic {
++                    continue;
++                }
++                for path in layer.shapes.iter_mut().filter_map(|s| s.as_path_mut()) {
++                    if !path.closed {
++                        continue;
++                    }
++                    let n = path.nodes.len();
++                    let mut keep = vec![true; n];
++                    for i in 0..n {
++                        let node = &path.nodes[i];
++                        if !matches!(node.nodetype, NodeType::QCurve) {
++                            continue;
++                        }
++                        let prev = &path.nodes[(i + n - 1) % n];
++                        let next = &path.nodes[(i + 1) % n];
++                        if !matches!(prev.nodetype, NodeType::OffCurve)
++                            || !matches!(next.nodetype, NodeType::OffCurve)
++                        {
++                            continue;
++                        }
++                        let (flags, ttf) = sfd_point(node);
++                        // roundx 0x20, roundy 0x40, dontinterpolate 0x100
++                        if flags & (0x20 | 0x40 | 0x100) != 0 || ttf.is_some_and(|t| t >= 0) {
++                            continue;
++                        }
++                        if (node.x - (prev.x + next.x) / 2.0).abs() <= 0.1
++                            && (node.y - (prev.y + next.y) / 2.0).abs() <= 0.1
++                        {
++                            keep[i] = false;
++                        }
++                    }
++                    // A contour keeps at least one on-curve point.
++                    if keep.iter().zip(path.nodes.iter()).all(|(k, nd)| {
++                        !*k || matches!(nd.nodetype, NodeType::OffCurve)
++                    }) {
++                        continue;
++                    }
++                    let before = path.nodes.len();
++                    let mut i = 0;
++                    path.nodes.retain(|_| {
++                        let k = keep[i];
++                        i += 1;
++                        k
++                    });
++                    dropped += before - path.nodes.len();
++                }
++            }
++        }
++        log::info!("{dropped} on-curve point(s) left for the compiler to imply");
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(FontForgeImpliedOncurves::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("fontforgeimpliedoncurves")
++            .long("fontforge-implied-oncurves")
++            .help(
++                "Leave out the quadratic on-curve points FontForge's TrueType exporter \
++                 leaves out (unnumbered, half-way between their control points), so the \
++                 compiler implies them from the rounded control points",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
+diff --git a/babelfont/src/filters/fontforgerintcoordinates.rs b/babelfont/src/filters/fontforgerintcoordinates.rs
+new file mode 100644
+index 0000000..bae437b
+--- /dev/null
++++ b/babelfont/src/filters/fontforgerintcoordinates.rs
+@@ -0,0 +1,74 @@
++use crate::filters::FontFilter;
++
++/// A filter that rounds the points of TrueType (quadratic) outlines the way
++/// FontForge's TrueType exporter does.
++///
++/// An .sfd can state a point at a half unit (`186.5 0 m`). FontForge writes each
++/// point of a quadratic outline to `glyf` with C's `rint()`, which rounds a half to
++/// the even integer (186.5 -> 186, 187.5 -> 188). A compiler that rounds a half up
++/// writes 187 instead, so the glyph moves by a unit and its left side bearing with
++/// it. Rounding here, before the compiler sees the point, gives the compiler integers
++/// and the exported glyph FontForge's coordinates.
++///
++/// Only layers read as quadratic are rounded: FontForge approximates a cubic
++/// outline before rounding, so its points are not the source's.
++#[derive(Default)]
++pub struct FontForgeRintCoordinates;
++
++impl FontForgeRintCoordinates {
++    /// Create a new FontForgeRintCoordinates filter
++    pub fn new() -> Self {
++        FontForgeRintCoordinates
++    }
++}
++
++impl FontFilter for FontForgeRintCoordinates {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        let mut moved = 0usize;
++        for glyph in font.glyphs.iter_mut() {
++            for layer in &mut glyph.layers {
++                let quadratic = layer
++                    .format_specific
++                    .get("sfd.is_quadratic")
++                    .and_then(|v| v.as_bool())
++                    .unwrap_or(false);
++                if !quadratic {
++                    continue;
++                }
++                for path in layer.shapes.iter_mut().filter_map(|s| s.as_path_mut()) {
++                    for node in path.nodes.iter_mut() {
++                        let (x, y) = (node.x.round_ties_even(), node.y.round_ties_even());
++                        if x != node.x.round() || y != node.y.round() {
++                            moved += 1;
++                        }
++                        node.x = x;
++                        node.y = y;
++                    }
++                }
++            }
++        }
++        log::info!("{moved} point(s) rounded to even where rounding half up would differ");
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(FontForgeRintCoordinates::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("fontforgerintcoordinates")
++            .long("fontforge-rint-coordinates")
++            .help(
++                "Round the points of quadratic outlines half to even, as FontForge's \
++                 TrueType exporter does (C rint)",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index 4925a7f..4959e1c 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -122,6 +122,8 @@ declare_filters! {
+         FontForgeUnderlinePosition(fontforgeunderlineposition) => "fontforgeunderlineposition",
+         FontForgeHeightGlyphCountMean(fontforgeheightglyphcountmean) => "fontforgeheightglyphcountmean",
+         FontForgeOs2Defaults(fontforgeos2defaults) => "fontforgeos2defaults",
++        FontForgeRintCoordinates(fontforgerintcoordinates) => "fontforgerintcoordinates",
++        FontForgeImpliedOncurves(fontforgeimpliedoncurves) => "fontforgeimpliedoncurves",
+     }
+     group "Filters for manipulating outlines" {
+         DecomposeComponentReferences(decomposecomponentreferences) => "decomposecomponents",

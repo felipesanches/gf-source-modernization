@@ -1,0 +1,63 @@
+=== Megrim  source 52f780bc:ofl/megrim/src/Megrim-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/megrim/Megrim.ttf
+  release md5 e43a0f17594beb98a1f373738814ab9e ; hg megrim/Megrim.ttf md5 e43a0f17594beb98a1f373738814ab9e ; identical=True
+  tables: FFTM GlyphOrder OS/2 cmap cvt  fpgm gasp glyf head hhea hmtx loca maxp name post prep
+  OS/2.usMaxContext: 1  OS/2.version: 2
+  head.created 2011-05-03 18:22:10  head.modified 2011-05-03 18:22:10
+  FFTM v1 build-stamp 2011-02-22 13:48:33  font-created 2010-05-05 16:58:37  font-modified 2011-04-28 15:00:19
+  .sfd CreationTime 1273078717 (2010-05-05 16:58:37) ModificationTime 1304002819 (2011-04-28 15:00:19)
+  FFTM created == .sfd CreationTime: True ; FFTM modified == .sfd ModificationTime: True
+  .sfd lookups: 3 GSUB, 0 GPOS
+  .sfd KernPairs lines: 0 ; Kerns2 lines: 0 ; KernClass2: 0 ; AnchorClass2: False ; AnchorPoint lines: 0
+  .sfd TtTable: ['prep', 'fpgm']  glyphs with TtInstrs: 346
+=== Poly-Italic  source 52f780bc:ofl/poly/src/Poly-Italic-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/poly/Poly-Italic.ttf
+  release md5 5081df936f56effc87506249eeca692f ; hg poly/Poly-Italic.ttf md5 5081df936f56effc87506249eeca692f ; identical=True
+  tables: DSIG FFTM GDEF GPOS GSUB GlyphOrder OS/2 cmap gasp glyf head hhea hmtx loca maxp name post prep
+  OS/2.usMaxContext: 3  OS/2.version: 2
+  head.created 2011-10-24 16:09:17  head.modified 2011-10-24 16:09:17
+  FFTM v1 build-stamp 2011-02-22 13:48:33  font-created 2011-10-24 08:48:28  font-modified 2011-10-24 16:07:46
+  .sfd CreationTime 1319446108 (2011-10-24 08:48:28) ModificationTime 1319472466 (2011-10-24 16:07:46)
+  FFTM created == .sfd CreationTime: True ; FFTM modified == .sfd ModificationTime: True
+  .sfd lookups: 19 GSUB, 2 GPOS
+  .sfd KernPairs lines: 0 ; Kerns2 lines: 0 ; KernClass2: 0 ; AnchorClass2: False ; AnchorPoint lines: 0
+  .sfd TtTable: ['prep']  glyphs with TtInstrs: 0
+  GSUB: 1 scripts, 15 features, 19 lookups
+  GPOS: 1 scripts, 2 features, 2 lookups
+=== Poly-Regular  source 52f780bc:ofl/poly/src/Poly-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/poly/Poly-Regular.ttf
+  release md5 2b29d78a51d2321c94f1c99911c0b72e ; hg poly/Poly-Regular.ttf md5 2b29d78a51d2321c94f1c99911c0b72e ; identical=True
+  tables: DSIG FFTM GDEF GPOS GSUB GlyphOrder OS/2 cmap gasp glyf head hhea hmtx loca maxp name post
+  OS/2.usMaxContext: 3  OS/2.version: 2
+  head.created 2011-10-24 16:07:37  head.modified 2011-10-24 16:07:37
+  FFTM v1 build-stamp 2011-02-22 13:48:33  font-created 2011-10-24 08:48:33  font-modified 2011-10-24 16:04:26
+  .sfd CreationTime 1319446113 (2011-10-24 08:48:33) ModificationTime 1319472266 (2011-10-24 16:04:26)
+  FFTM created == .sfd CreationTime: True ; FFTM modified == .sfd ModificationTime: True
+  .sfd lookups: 14 GSUB, 2 GPOS
+  .sfd KernPairs lines: 0 ; Kerns2 lines: 0 ; KernClass2: 0 ; AnchorClass2: False ; AnchorPoint lines: 0
+  .sfd TtTable: []  glyphs with TtInstrs: 0
+  GSUB: 1 scripts, 13 features, 14 lookups
+  GPOS: 1 scripts, 2 features, 2 lookups
+=== RibeyeMarrow-Regular  source 52f780bc:ofl/ribeyemarrow/src/RibeyeMarrow-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/ribeyemarrow/RibeyeMarrow-Regular.ttf
+  release md5 72750cc7dccd8872e1ad8bc90124623f ; hg ribeyemarrow/RibeyeMarrow-Regular.ttf md5 72750cc7dccd8872e1ad8bc90124623f ; identical=True
+  tables: DSIG FFTM GDEF GPOS GSUB GlyphOrder OS/2 cmap gasp glyf head hhea hmtx loca maxp name post prep
+  OS/2.usMaxContext: 4  OS/2.version: 3
+  head.created 2011-11-21 16:43:50  head.modified 2011-11-21 16:43:50
+  FFTM v1 build-stamp 2011-02-22 13:48:33  font-created 2011-11-19 13:13:00  font-modified 2011-11-21 16:43:17
+  .sfd CreationTime 1321708380 (2011-11-19 13:13:00) ModificationTime 1321893797 (2011-11-21 16:43:17)
+  FFTM created == .sfd CreationTime: True ; FFTM modified == .sfd ModificationTime: True
+  .sfd lookups: 8 GSUB, 1 GPOS
+  .sfd KernPairs lines: 283 ; Kerns2 lines: 283 ; KernClass2: 1 ; AnchorClass2: False ; AnchorPoint lines: 0
+  .sfd TtTable: ['prep']  glyphs with TtInstrs: 0
+  GSUB: 1 scripts, 5 features, 8 lookups
+  GPOS: 1 scripts, 1 features, 1 lookups
+=== Varela-Regular  source 52f780bc:ofl/varela/src/Varela-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/varela/Varela-Regular.ttf
+  release md5 3166671c1a8144eea28664fc2f5eff67 ; hg varela/Varela-Regular.ttf md5 3166671c1a8144eea28664fc2f5eff67 ; identical=True
+  tables: DSIG FFTM GDEF GPOS GSUB GlyphOrder OS/2 cmap cvt  fpgm glyf head hhea hmtx loca maxp name post prep
+  OS/2.usMaxContext: 4  OS/2.version: 2
+  head.created 2011-06-16 22:55:21  head.modified 2011-06-16 22:55:21
+  FFTM v1 build-stamp 2011-02-22 13:48:33  font-created 2011-06-06 08:07:09  font-modified 2011-06-13 15:18:46
+  .sfd CreationTime 1307347629 (2011-06-06 08:07:09) ModificationTime 1307978326 (2011-06-13 15:18:46)
+  FFTM created == .sfd CreationTime: True ; FFTM modified == .sfd ModificationTime: True
+  .sfd lookups: 31 GSUB, 0 GPOS
+  .sfd KernPairs lines: 0 ; Kerns2 lines: 0 ; KernClass2: 0 ; AnchorClass2: False ; AnchorPoint lines: 0
+  .sfd TtTable: ['prep', 'fpgm']  glyphs with TtInstrs: 834
+  GSUB: 3 scripts, 24 features, 31 lookups
+  GPOS: 3 scripts, 0 features, 0 lookups

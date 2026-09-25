@@ -1,0 +1,7 @@
+RELEASE-STALE the same GSUB lookups in a different order; its contextual lookups carry the same rules per first glyph in another lookup type (5/6), format or subtable packing; 59568 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (2 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (2 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (2 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE post.num_glyphs -- every glyph in dispute is accounted for: the release's nonmarkingreturn (unreachable: no codepoint, and no lookup or composite mentions it (0 contour(s)))
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+0 blocking table difference(s), 6 stale in the release

@@ -1,0 +1,15 @@
+diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
+index a0f72fa..78954d1 100644
+--- a/babelfont/src/convertors/fontforge.rs
++++ b/babelfont/src/convertors/fontforge.rs
+@@ -2163,6 +2177,10 @@ impl SfdParser {
+         );
+         if kind == "mark" {
+             name = "_".to_string() + &name;
++        } else if kind == "baselig" {
++            // A ligature's anchor for one component: Glyphs names it after the
++            // component, counting from 1 in the ligature's logical order.
++            name = format!("{}_{}", name, index + 1);
+         }
+         Some(crate::Anchor {
+             name,

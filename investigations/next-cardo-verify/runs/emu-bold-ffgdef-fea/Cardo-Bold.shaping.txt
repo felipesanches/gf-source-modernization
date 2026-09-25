@@ -1,0 +1,8 @@
+base+mark	134629 strings	744 differ
+   'א֖' (U+05D0 U+0596)
+     release U+0596@3,0 U+05D0@0,0 END@1300,0
+     ours    U+0596@2,0 U+05D0@0,0 END@1300,0
+base+mark+mark	0 strings	0 differ
+pairs	41683 strings	0 differ
+kern+mark	426 strings	0 differ
+words	0 strings	0 differ

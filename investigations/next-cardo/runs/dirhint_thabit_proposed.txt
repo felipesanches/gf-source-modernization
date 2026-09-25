@@ -1,0 +1,6 @@
+== Thabit (/home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit.ttf vs /home/fsanches/compartilhado/sfd-reland-scratch/baseline/Thabit-next/fonts/ttf/Regular-Medium.ttf)
+RELEASE-STALE head.font_direction_hint -- the release's 0 is what FontForge before 722e7ea8873e computed from its cmap (FFTM 2008-08-08); the field is deprecated (spec: set to 2) and no shaper reads it
+465 blocking table difference(s), 8 stale in the release
+== Thabit-Bold (/home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit-Bold.ttf vs /home/fsanches/compartilhado/sfd-reland-scratch/baseline/Thabit-Bold-next/fonts/ttf/Bold-Bold.ttf)
+RELEASE-STALE head.font_direction_hint -- the release's 0 is what FontForge before 722e7ea8873e computed from its cmap (FFTM 2008-08-08); the field is deprecated (spec: set to 2) and no shaper reads it
+465 blocking table difference(s), 8 stale in the release

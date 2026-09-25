@@ -1,0 +1,14 @@
+== Regular r1
+uni0304              release  1000 ours     0  GDEF release 3 ours 3  sfd GlyphClass/Width/anchors (4, 1000, 1)
+uni05B105BD          release  1300 ours     0  GDEF release 3 ours 3  sfd GlyphClass/Width/anchors (4, 1300, 4)
+advance differences: 2 of 3845
+== Italic s1
+uni1DC1              release    30 ours     0  GDEF release 3 ours 3  sfd GlyphClass/Width/anchors (4, 30, 0)
+uni2E0F              release  2443 ours     0  GDEF release 3 ours 3  sfd GlyphClass/Width/anchors (4, 2443, 0)
+uni2E10              release  2443 ours     0  GDEF release 3 ours 3  sfd GlyphClass/Width/anchors (4, 2443, 0)
+uni2E11              release  2443 ours     0  GDEF release 3 ours 3  sfd GlyphClass/Width/anchors (4, 2443, 0)
+uniF15B              release    11 ours     0  GDEF release 3 ours 3  sfd GlyphClass/Width/anchors (4, 11, 0)
+uni05B105BD          release  1300 ours     0  GDEF release 3 ours 3  sfd GlyphClass/Width/anchors (4, 1300, 0)
+advance differences: 6 of 2387
+== Bold r0
+advance differences: 0 of 2993

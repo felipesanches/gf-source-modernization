@@ -1,0 +1,5 @@
+control         behaviour changed: no (control); shared gate ACCEPT (sound); proposed gate ACCEPT (sound)
+swap-first-two  behaviour changed: no (20809 words x 5 languages identical); shared gate ACCEPT (sound); proposed gate REFUSE (conservative)
+drop-last       behaviour changed: yes ('0/1': ['zero.numerator', 'fraction', 'one.denominator'] -> ['zero.numerator', 'fraction', 'one.numerator'], lang None); shared gate ACCEPT (UNSOUND); proposed gate REFUSE (sound)
+retarget        behaviour changed: no (20809 words x 5 languages identical); shared gate ACCEPT (sound); proposed gate REFUSE (conservative)
+UNSOUND verdicts: shared 1, proposed 0

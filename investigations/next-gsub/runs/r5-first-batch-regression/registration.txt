@@ -1,0 +1,12 @@
+Lekton-Bold integration:    17 keys, 3 differ
+Lekton-Bold proto:    17 keys, 2 differ
+PatrickHand-Regular integration:    51 keys, 13 differ
+PatrickHand-Regular proto:    51 keys, 13 differ
+Play-Regular integration:    92 keys, 92 differ
+Play-Regular proto:    92 keys, 92 differ
+Tuffy-Regular integration:    53 keys, 52 differ
+Tuffy-Regular proto:    53 keys, 52 differ
+AbrilFatface-Regular integration:    37 keys, 14 differ
+AbrilFatface-Regular proto:    37 keys, 14 differ
+ComicRelief-Regular integration:    2 keys, 0 differ
+ComicRelief-Regular proto:    2 keys, 0 differ

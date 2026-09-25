@@ -1,0 +1,70 @@
+{
+.formatVersion = 3;
+familyName = Repro;
+fontMaster = (
+{
+id = m01;
+name = Regular;
+}
+);
+features = (
+{
+code = "sub a from [a u10192.04];";
+tag = salt;
+}
+);
+glyphs = (
+{
+glyphname = .notdef;
+layers = (
+{
+layerId = m01;
+width = 500;
+}
+);
+},
+{
+glyphname = a;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(0,0,l),
+(400,0,l),
+(400,400,l)
+);
+}
+);
+width = 500;
+}
+);
+unicode = 97;
+},
+{
+glyphname = "u10192.04";
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(0,0,l),
+(300,0,l),
+(300,300,l)
+);
+}
+);
+width = 500;
+}
+);
+unicode = 62520;
+}
+);
+unitsPerEm = 1000;
+versionMajor = 1;
+versionMinor = 0;
+}

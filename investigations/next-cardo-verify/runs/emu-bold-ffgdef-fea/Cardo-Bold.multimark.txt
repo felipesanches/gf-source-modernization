@@ -1,0 +1,14 @@
+heb3    13392 strings    673 differ
+    U+05D0 U+05B0 U+0596
+      release U+0596@3,-568 U+05B0@0,0 U+05D0@0,0 END@1300,0
+      ours    U+0596@2,-568 U+05B0@0,0 U+05D0@0,0 END@1300,0
+heb4    12555 strings    630 differ
+    U+05D0 U+05BC U+05B0 U+0596
+      release U+0596@3,-927 U+05B0@0,-359 U+FB30@0,0 END@1300,0
+      ours    U+0596@2,-927 U+05B0@0,-359 U+FB30@0,0 END@1300,0
+hebsh     868 strings     56 differ
+    U+05E9 U+05C1 U+05B0 U+0596
+      release U+0596@3,-568 U+05B0@0,0 U+FB2A@0,0 END@1300,0
+      ours    U+0596@2,-568 U+05B0@0,0 U+FB2A@0,0 END@1300,0
+lat3    28704 strings      0 differ
+grk3     5390 strings      0 differ
