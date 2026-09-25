@@ -1,0 +1,43 @@
+Adversarial re-verification of unit "fstype" (TitilliumWeb x11, Wallpoet-Regular).
+What each run answers and how it was made. W=/home/fsanches/compartilhado/sfd-reland, run from $W.
+  PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
+  V=$W/investigations/next-fstype-verify   (probes/, runs/)
+  S=/home/fsanches/compartilhado/sfd-reland-scratch/fstype-verify   (scratch; regenerable)
+Converter: babelfont integration-ff-prs 17ea899 (BUILT_FROM 17ea8995), target-heights build.
+Compiler: gftools-builder3 e851b8b, fontc 1.0.0. Gate: sfd-batch5/tools/table_gate.py 2f43693.
+Releases: google/fonts b5efa9c32 (working copy on main, all 12 shipped blobs == b5efa9c32 == 93550bd32).
+
+families-verify.tsv   families-next.tsv's 10 rows + the two ExtraLight rows, written by
+                      probes/make_verify_inputs.sh without reading the investigated agent's files.
+candidates.log        every sfd_edit.py call (CLI) and its `before`. The resulting c-fstype,
+                      c-elfull and c-version .sfd are byte-identical to the agent's cand-* files.
+run_all.log + v*/     bash $V/probes/run_all.sh (after make_verify_inputs.sh): tools/baseline.sh,
+                      one build per style, FAMILIES=families-verify.tsv, TAG=fstype-verify-<run>.
+  v0-unmodified   plain converter        -> 21 rows: fs_type x12, us_weight_class x9
+                                            (gate texts == baseline-next/ for all 10 paired styles)
+  v1-workarounds  + workarounds.py       -> 14 rows: fs_type x12, ExtraLight weight [275,200] x2
+  v2-fstype       + FSType 0             -> 10 CLEAN, ExtraLight x2 [275,200]
+  v3a-elweight    + TTFWeight 275 only   -> both CLEAN 0 (the rename closes no gate row)
+  v3b-el17        + LangName ID 17 [+2]  -> CLEAN, but names stay Thin (the field is inert)
+  v3c-elfull      + full rename          -> CLEAN, names 1/4/6/17 == release
+  v4-version      + version 1.002 edits  -> 11/11 CLEAN; fontRevision, name 3 == release;
+                                            name 5 differs only by ';fontc 1.0.0'
+<run>/names_beyond_gate.txt  $PY $V/probes/names_beyond_gate.py <run>
+family-titilliumweb/  bash $V/probes/family_build_verify.sh ... (9 styles from v2, ExtraLight x2
+                      from v3c; built file named by land.built_name): 11/11 gate 0.
+d3_cmap_summary.txt   $PY $V/probes/d3_cmap_summary.py v2-fstype v3c-elfull v4-version:
+                      no d3 glyph/word difference, cmap exact; d3 kern compare gives up.
+kern_pairs_shape.txt  $PY $V/probes/kern_pairs_shape.py <shipped> <built> ...: every PairPos pair
+                      of all 11 Titillium styles shaped through HarfBuzz, default and +cpsp:
+                      0 positioned differently.
+fontspector-ab/       DIFF3=0 sh /home/fsanches/compartilhado/GoogleFonts/scripts/fontspector-ab.sh
+                      (fontspector 1.6.0 0111d9a): identical to the agent's tables, 0 worse.
+start_point_rotation.txt  $PY $V/probes/start_point_rotation.py <pairs>: every contour's start
+                      point is rotated 1 (Titillium: 1 or 2) positions against FontForge's export.
+colinear_emulate_wallpoet.txt  $PY $V/probes/colinear_emulate.py: fontspector's colinear rule
+                      gives 61 hits on the release (WARN) and 112 on the build (>100 -> PASS).
+point_counts_wallpoet.txt  $PY $V/probes/point_counts.py: only oslash differs beyond the
+                      rotation -- the build drops the implied on-curve (653,380).
+psname_key_swap.txt   bash $V/probes/psname_key_swap.sh: Wallpoet v2 .glyphs with only the key
+                      postscriptFullName -> postscriptFontName: ID 6 'Wallpoet', ID 4 'Wallpoet Regular';
+                      plus a font-level "Name Table Entry" "4; Wallpoet": ID 4 'Wallpoet' too.

@@ -1,0 +1,10 @@
+release Varela-Regular.ttf: 2292 texts (base-mark=1221, cp-after-H=531, cp-alone=531, mark-after-base=3, mark-alone=3, mark-stack=3)
+Varela-Regular.built.ttf: 110016 runs, 28416 differ (horizontal 0 in 0 texts; vertical 28416)
+release UnifrakturMaguntia-Book.ttf: 1898 texts (base-mark=1377, cp-after-H=247, cp-alone=247, mark-after-base=9, mark-alone=9, mark-stack=9)
+UnifrakturMaguntia-Book.built.ttf: 91104 runs, 45498 differ (horizontal 0 in 0 texts; vertical 45498)
+release Smokum-Regular.ttf: 4640 texts (cp-after-H=368, cp-alone=368, kern-bare=3904)
+Smokum-Regular.built.ttf: 222720 runs, 2052 differ (horizontal 264 in 44 texts; vertical 1788)
+    horizontal kern-bare         264 runs
+    first: kern-bare 'T\xad' dir=rtl flags=default feat=asis
+      release: (('space', 1, 0, 0), ('T', 0, -61, 0), ('__pen__', -1, 664, 0))
+      cand   : (('space', 1, 0, 0), ('T', 0, 0, 0), ('__pen__', -1, 725, 0))

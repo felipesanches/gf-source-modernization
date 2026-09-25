@@ -1,0 +1,23 @@
+flags: --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --correct-path-direction
+RELEASE-STALE hmtx.at -- shipped records 88 for an outline at 89; ours records 89
+RELEASE-STALE hmtx.cent -- shipped records 157 for an outline at 158; ours records 158
+RELEASE-STALE hmtx.ordmasculine -- shipped records 154 for an outline at 155; ours records 155
+RELEASE-STALE hmtx.eth -- shipped records 80 for an outline at 81; ours records 81
+RELEASE-STALE hmtx.OE -- shipped records 109 for an outline at 110; ours records 110
+RELEASE-STALE hmtx.oe -- shipped records 90 for an outline at 91; ours records 91
+RELEASE-STALE hmtx.breve -- shipped records 239 for an outline at 240; ours records 240
+RELEASE-STALE hmtx.zerosuperior -- shipped records 157 for an outline at 158; ours records 158
+RELEASE-STALE hmtx.zeroinferior -- shipped records 48 for an outline at 49; ours records 49
+RELEASE-STALE hmtx.breve.cap -- shipped records 288 for an outline at 289; ours records 289
+RELEASE-STALE hmtx.ring.cap -- shipped records 233 for an outline at 234; ours records 234
+RELEASE-STALE hmtx.zero.numr -- shipped records 133 for an outline at 134; ours records 134
+RELEASE-STALE hmtx.at.cap -- shipped records 101 for an outline at 102; ours records 102
+RELEASE-STALE hmtx.zero.dnom -- shipped records 26 for an outline at 27; ours records 27
+RELEASE-STALE the same GSUB lookups in a different order; 102400 shaped runs identical across 8 language(s), with the features firing
+RELEASE-STALE GPOS.script_list -- both fonts position with real lookups (2 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (2 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (2 and 3); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+BLOCKING OS/2.us_weight_class [300, 400]
+BLOCKING OS/2.fs_type [0, 8]
+2 blocking table difference(s), 19 stale in the release

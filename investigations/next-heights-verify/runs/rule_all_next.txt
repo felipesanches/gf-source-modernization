@@ -1,0 +1,107 @@
+MountainsofChristmas-Bold	FFTM-rule 2011	sfd-blues None	x rule 559 release 559 ok	cap rule 744 release 744 ok
+MountainsofChristmas-Regular	FFTM-rule 2011	sfd-blues None	x rule 515 release 515 ok	cap rule 743 release 743 ok
+Rochester-Regular	FFTM-rule 2011	sfd-blues None	x rule 192 release 192 ok	cap rule 326 release 326 ok
+Smokum-Regular	FFTM-rule 2011	sfd-blues None	x rule 1024 release 1024 ok	cap rule 1536 release 1536 ok
+Ultra-Regular	FFTM-rule 2011	sfd-blues None	x rule 1102 release 1102 ok	cap rule 1473 release 1473 ok
+Cardo-Bold	FFTM-rule 2011	sfd-blues None	x rule 920 release 920 ok	cap rule 1410 release 1410 ok
+Cardo-Italic	FFTM-rule 2011	sfd-blues None	x rule 900 release 900 ok	cap rule 1410 release 1410 ok
+Cardo-Regular	FFTM-rule 2011	sfd-blues None	x rule 900 release 900 ok	cap rule 1410 release 1410 ok
+Italiana-Regular	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+KeaniaOne-Regular	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 723 release 723 ok
+KellySlab-Regular	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 750 release 750 ok
+KottaOne-Regular	FFTM-rule 2011	sfd-blues None	x rule 76 release 76 ok	cap rule 212 release 212 ok
+Ledger-Regular	FFTM-rule 2011	sfd-blues None	x rule 485 release 487 DIFF	cap rule 750 release 750 ok
+LilitaOne-Regular	FFTM-rule 2011	sfd-blues None	x rule 500 release 506 DIFF	cap rule 700 release 704 DIFF
+Limelight-Regular	FFTM-rule 2011	sfd-blues None	x rule 1068 release 1068 ok	cap rule 1415 release 1415 ok
+Lohit-Bengali	release OS/2 v1: no heights
+Lohit-Tamil	release OS/2 v1: no heights
+LovedbytheKing	FFTM-rule 2011	sfd-blues None	x rule 1111 release 1111 ok	cap rule 1774 release 1774 ok
+LoveYaLikeASister	FFTM-rule 2011	sfd-blues None	x rule 510 release 510 ok	cap rule 674 release 674 ok
+Lustria-Regular	FFTM-rule 2011	sfd-blues None	x rule 511 release 504 DIFF	cap rule 700 release 704 DIFF
+Macondo-Regular	FFTM-rule 2011	sfd-blues None	x rule 24 release 24 ok	cap rule 53 release 53 ok
+Magra-Bold	FFTM-rule 2011	sfd-blues None	x rule 533 release 525 DIFF	cap rule 708 release 700 DIFF
+Magra-Regular	FFTM-rule 2011	sfd-blues None	x rule 525 release 525 ok	cap rule 700 release 700 ok
+Marvel-Bold	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+Marvel-BoldItalic	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+Marvel-Italic	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+Marvel-Regular	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+MedulaOne-Regular	FFTM-rule 2011	sfd-blues None	x rule 490 release 490 ok	cap rule 650 release 650 ok
+Megrim	FFTM-rule 2011	sfd-blues None	x rule 580 release 580 ok	cap rule 700 release 700 ok
+MeieScript-Regular	FFTM-rule 2011	sfd-blues None	x rule 354 release 354 ok	cap rule 862 release 862 ok
+MergeOne-Regular	FFTM-rule 2012	sfd-blues None	x rule 492 release 493 DIFF	cap rule 679 release 679 ok
+MissFajardose-Regular	FFTM-rule 2011	sfd-blues [-29 0 214 214 773 773]	x rule 158 release 158 ok	cap rule 658 release 658 ok
+MonsieurLaDoulaise-Regular	FFTM-rule 2011	sfd-blues [0 0 202 202 1044 1048]	x rule 164 release 164 ok	cap rule 729 release 729 ok
+MrBedfort-Regular	FFTM-rule 2011	sfd-blues [0 0 320 320 919 919]	x rule 245 release 245 ok	cap rule 770 release 770 ok
+MrDafoe-Regular	FFTM-rule 2011	sfd-blues [0 0 393 393 721 721]	x rule 313 release 313 ok	cap rule 622 release 622 ok
+MrDeHaviland-Regular	FFTM-rule 2011	sfd-blues [-24 0 260 260 759 759]	x rule 217 release 217 ok	cap rule 557 release 557 ok
+MrsSaintDelafield-Regular	FFTM-rule 2011	sfd-blues None	x rule 224 release 224 ok	cap rule 708 release 708 ok
+MrsSheppards-Regular	FFTM-rule 2011	sfd-blues [-21 0 361 361 759 759]	x rule 285 release 285 ok	cap rule 662 release 662 ok
+Niconne-Regular	FFTM-rule 2011	sfd-blues [-39 0 604 604 1442 1442]	x rule 218 release 218 ok	cap rule 1442 release 1442 ok
+NothingYouCouldDo	FFTM-rule 2011	sfd-blues None	x rule 462 release 462 ok	cap rule 758 release 758 ok
+Numans-Regular	FFTM-rule 2011	sfd-blues None	x rule 1096 release 1096 ok	cap rule 1434 release 1434 ok
+OleoScript-Bold	FFTM-rule 2012	sfd-blues None	x rule 436 release 443 DIFF	cap rule 708 release 710 DIFF
+OleoScript-Regular	FFTM-rule 2012	sfd-blues None	x rule 442 release 443 DIFF	cap rule 709 release 710 DIFF
+OleoScriptSwashCaps-Bold	FFTM-rule 2012	sfd-blues None	x rule 436 release 443 DIFF	cap rule 750 release 747 DIFF
+OleoScriptSwashCaps-Regular	FFTM-rule 2012	sfd-blues None	x rule 442 release 443 DIFF	cap rule 747 release 747 ok
+Overlock-Black	FFTM-rule 2011	sfd-blues None	x rule 153 release 153 ok	cap rule 153 release 153 ok
+Overlock-BlackItalic	FFTM-rule 2011	sfd-blues None	x rule 128 release 128 ok	cap rule 283 release 283 ok
+Overlock-Bold	FFTM-rule 2011	sfd-blues None	x rule 179 release 179 ok	cap rule 154 release 154 ok
+Overlock-BoldItalic	FFTM-rule 2011	sfd-blues None	x rule 77 release 77 ok	cap rule 257 release 257 ok
+Overlock-Italic	FFTM-rule 2011	sfd-blues None	x rule 75 release 75 ok	cap rule 257 release 257 ok
+Overlock-Regular	FFTM-rule 2011	sfd-blues None	x rule 125 release 125 ok	cap rule 154 release 154 ok
+OverlockSC-Regular	FFTM-rule 2011	sfd-blues None	x rule 159 release 159 ok	cap rule 154 release 154 ok
+OvertheRainbow	FFTM-rule 2011	sfd-blues None	x rule 636 release 636 ok	cap rule 812 release 812 ok
+PassionOne-Black	FFTM-rule 2011	sfd-blues [-10 0 479 491 621 630]	x rule 479 release 479 ok	cap rule 621 release 621 ok
+PassionOne-Bold	FFTM-rule 2011	sfd-blues [-10 0 479 491 621 631]	x rule 479 release 479 ok	cap rule 621 release 621 ok
+PassionOne-Regular	FFTM-rule 2011	sfd-blues [-10 0 479 491 621 631]	x rule 479 release 479 ok	cap rule 621 release 621 ok
+PatuaOne-Regular	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 690 release 690 ok
+Piedra-Regular	FFTM-rule 2011	sfd-blues [-27 0 589 589 792 792]	x rule 437 release 437 ok	cap rule 655 release 655 ok
+PirataOne-Regular	FFTM-rule 2012	sfd-blues None	x rule 594 release 594 ok	cap rule 793 release 793 ok
+Poly-Italic	FFTM-rule 2011	sfd-blues [-9 0 488 488 693 702]	x rule 80 release 80 ok	cap rule 693 release 693 ok
+Poly-Regular	FFTM-rule 2011	sfd-blues [-9 0 473 488 693 702]	x rule 473 release 473 ok	cap rule 693 release 693 ok
+PortLligatSans-Regular	FFTM-rule 2011	sfd-blues None	x rule 178 release 178 ok	cap rule 125 release 125 ok
+PortLligatSlab-Regular	FFTM-rule 2011	sfd-blues None	x rule 155 release 155 ok	cap rule 99 release 99 ok
+Quantico-Bold	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+Quantico-BoldItalic	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+Quantico-Italic	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+Quantico-Regular	FFTM-rule 2011	sfd-blues None	x rule 500 release 500 ok	cap rule 700 release 700 ok
+Rambla-Bold	FFTM-rule 2012	sfd-blues None	x rule 513 release 517 DIFF	cap rule 668 release 669 DIFF
+Rambla-BoldItalic	FFTM-rule 2012	sfd-blues None	x rule 513 release 517 DIFF	cap rule 668 release 669 DIFF
+Rambla-Italic	FFTM-rule 2012	sfd-blues None	x rule 506 release 506 ok	cap rule 668 release 668 ok
+Rambla-Regular	FFTM-rule 2012	sfd-blues None	x rule 506 release 506 ok	cap rule 668 release 668 ok
+Revalia-Regular	FFTM-rule 2011	sfd-blues None	x rule 1140 release 1140 ok	cap rule 879 release 879 ok
+RibeyeMarrow-Regular	FFTM-rule 2011	sfd-blues None	x rule 1061 release 1061 ok	cap rule 1460 release 1460 ok
+Rosarivo-Italic	FFTM-rule 2011	sfd-blues None	x rule 217 release 217 ok	cap rule 224 release 224 ok
+Rosarivo-Regular	FFTM-rule 2011	sfd-blues None	x rule 170 release 170 ok	cap rule 757 release 757 ok
+RougeScript-Regular	FFTM-rule 2011	sfd-blues None	x rule 534 release 534 ok	cap rule 385 release 385 ok
+Rufina-Bold	FFTM-rule 2012	sfd-blues None	x rule 488 release 488 ok	cap rule 668 release 668 ok
+Rufina-Regular	FFTM-rule 2012	sfd-blues None	x rule 488 release 488 ok	cap rule 668 release 668 ok
+Ruluko-Regular	FFTM-rule 2011	sfd-blues None	x rule 470 release 470 ok	cap rule 690 release 690 ok
+Sail-Regular	FFTM-rule 2011	sfd-blues None	x rule 435 release 435 ok	cap rule 665 release 666 DIFF
+Salsa-Regular	FFTM-rule 2011	sfd-blues [-12 0 506 518 722 722]	x rule 113 release 113 ok	cap rule 82 release 82 ok
+Sanchez-Italic	FFTM-rule 2012	sfd-blues None	x rule 492 release 492 ok	cap rule 718 release 718 ok
+Sanchez-Regular	FFTM-rule 2012	sfd-blues None	x rule 492 release 492 ok	cap rule 718 release 718 ok
+Spirax-Regular	FFTM-rule 2011	sfd-blues [-10 0 476 476 706 706]	x rule 463 release 463 ok	cap rule 696 release 696 ok
+SquadaOne-Regular	FFTM-rule 2011	sfd-blues [-10 0 488 498 647 657]	x rule 498 release 498 ok	cap rule 647 release 647 ok
+SwankyandMooMoo	FFTM-rule 2011	sfd-blues None	x rule 341 release 341 ok	cap rule 424 release 424 ok
+TextMeOne-Regular	FFTM-rule 2012	sfd-blues None	x rule 500 release 502 DIFF	cap rule 700 release 700 ok
+Thabit-Bold	release OS/2 v1: no heights
+Thabit	release OS/2 v1: no heights
+TheGirlNextDoor	FFTM-rule 2011	sfd-blues None	x rule 519 release 519 ok	cap rule 627 release 627 ok
+TitanOne-Regular	FFTM-rule 2011	sfd-blues None	x rule 580 release 580 ok	cap rule 710 release 710 ok
+TitilliumWeb-Black	FFTM-rule 2012	sfd-blues None	x rule 505 release 505 ok	cap rule 670 release 670 ok
+TitilliumWeb-Bold	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 680 release 680 ok
+TitilliumWeb-BoldItalic	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 680 release 680 ok
+TitilliumWeb-Italic	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 692 release 692 ok
+TitilliumWeb-Light	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 695 release 695 ok
+TitilliumWeb-LightItalic	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 695 release 695 ok
+TitilliumWeb-Regular	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 692 release 692 ok
+TitilliumWeb-SemiBold	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 685 release 685 ok
+TitilliumWeb-SemiBoldItalic	FFTM-rule 2012	sfd-blues None	x rule 500 release 500 ok	cap rule 685 release 685 ok
+Trochut-Bold	FFTM-rule 2011	sfd-blues None	x rule 470 release 470 ok	cap rule 690 release 690 ok
+Trochut-Italic	FFTM-rule 2011	sfd-blues None	x rule 470 release 470 ok	cap rule 690 release 690 ok
+Trochut-Regular	FFTM-rule 2011	sfd-blues None	x rule 470 release 470 ok	cap rule 690 release 690 ok
+Varela-Regular	FFTM-rule 2011	sfd-blues [-7 0 510 517 698 705]	x rule 510 release 510 ok	cap rule 698 release 698 ok
+Viga-Regular	FFTM-rule 2011	sfd-blues [-6 0 571 579 712 718]	x rule 571 release 571 ok	cap rule 712 release 712 ok
+Wallpoet-Regular	FFTM-rule 2011	sfd-blues None	x rule 440 release 440 ok	cap rule 575 release 575 ok
+WendyOne-Regular	FFTM-rule 2012	sfd-blues None	x rule 474 release 474 ok	cap rule 606 release 606 ok

@@ -1,0 +1,344 @@
+From 0df9f5ee2cf514ce850cdeacd52020c25c3d3df1 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Fri, 25 Sep 2026 02:28:19 +0100
+Subject: [PATCH] Add an option to share the script list between GSUB and GPOS
+
+With Opts::share_script_lists (fontc --shared-layout-scripts), every
+script in either table is listed in both, a missing one with an empty
+default language system, and a table with scripts but no features is
+written instead of omitted. This is what VOLT and FontForge's OpenType
+exporter do. HarfBuzz skips its fallback mark positioning and the
+legacy kern table whenever a GPOS exists, so rebuilding such a font
+the same way needs the empty table.
+
+Default off; no change to existing output.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ fea-rs/src/compile/lookups.rs |  29 ++++++-
+ fea-rs/src/compile/opts.rs    | 146 ++++++++++++++++++++++++++++++++++
+ fontbe/src/features.rs        |   8 +-
+ fontc/src/args.rs             |   7 ++
+ fontir/src/orchestration.rs   |   4 +
+ 5 files changed, 190 insertions(+), 4 deletions(-)
+
+diff --git a/fea-rs/src/compile/lookups.rs b/fea-rs/src/compile/lookups.rs
+index 7b6e8117..2db11207 100644
+--- a/fea-rs/src/compile/lookups.rs
++++ b/fea-rs/src/compile/lookups.rs
+@@ -3,7 +3,7 @@
+ mod contextual;
+ 
+ use std::{
+-    collections::{BTreeMap, HashMap, HashSet},
++    collections::{BTreeMap, BTreeSet, HashMap, HashSet},
+     convert::TryInto,
+     fmt::Debug,
+     ops::Range,
+@@ -1023,6 +1023,23 @@ impl AllLookups {
+             }
+         }
+ 
++        if opts.share_script_lists {
++            let all_scripts = gpos_builder
++                .scripts
++                .keys()
++                .chain(gsub_builder.scripts.keys())
++                .copied()
++                .collect::<BTreeSet<_>>();
++            for script in all_scripts {
++                if opts.compile_gpos {
++                    gpos_builder.ensure_script(script);
++                }
++                if opts.compile_gsub {
++                    gsub_builder.ensure_script(script);
++                }
++            }
++        }
++
+         (gsub_builder.build(var_store), gpos_builder.build(var_store))
+     }
+ }
+@@ -1389,6 +1406,14 @@ impl<T> PosSubBuilder<T> {
+         idx
+     }
+ 
++    /// Make sure `script` is listed, giving it an empty default language
++    /// system if it has no language systems of its own.
++    fn ensure_script(&mut self, script: Tag) {
++        self.scripts
++            .entry(script)
++            .or_insert_with(|| BTreeMap::from([(tags::LANG_DFLT, LangSys::default())]));
++    }
++
+     fn add_variation(
+         &mut self,
+         idx: FeatureIdx,
+@@ -1422,7 +1447,7 @@ where
+         FeatureList,
+         Option<FeatureVariations>,
+     )> {
+-        if self.lookups.is_empty() && self.features.is_empty() {
++        if self.lookups.is_empty() && self.features.is_empty() && self.scripts.is_empty() {
+             return None;
+         }
+ 
+diff --git a/fea-rs/src/compile/opts.rs b/fea-rs/src/compile/opts.rs
+index 9832f04c..6873cae7 100644
+--- a/fea-rs/src/compile/opts.rs
++++ b/fea-rs/src/compile/opts.rs
+@@ -15,6 +15,7 @@ pub struct Opts {
+     pub(crate) compile_gsub: bool,
+     pub(crate) compile_gpos: bool,
+     pub(crate) compile_debg: bool,
++    pub(crate) share_script_lists: bool,
+ }
+ 
+ impl Opts {
+@@ -59,6 +60,25 @@ impl Opts {
+         self.compile_debg = flag;
+         self
+     }
++
++    /// Specify whether GSUB and GPOS should list the same scripts. Default is `false`.
++    ///
++    /// When `true`, a script that has features in only one of the two tables is
++    /// added to the other with an empty default language system, and a table
++    /// that has no features and no lookups is still written when the other
++    /// table has scripts. The result is a table with a script list and empty
++    /// feature and lookup lists.
++    ///
++    /// This is the convention of Microsoft VOLT and of FontForge's OpenType
++    /// exporter, which some Uniscribe shaping engines required. It is not only
++    /// structural: a shaper may behave differently when a table is present,
++    /// even an empty one. HarfBuzz, for instance, does not apply its fallback
++    /// mark positioning or a legacy `kern` table to a font that has a GPOS
++    /// table. So this allows rebuilding such a font with the same behaviour.
++    pub fn share_script_lists(mut self, flag: bool) -> Self {
++        self.share_script_lists = flag;
++        self
++    }
+ }
+ 
+ impl Default for Opts {
+@@ -69,6 +89,7 @@ impl Default for Opts {
+             compile_gsub: true,
+             compile_gpos: true,
+             compile_debg: false,
++            share_script_lists: false,
+         }
+     }
+ }
+@@ -114,4 +135,129 @@ mod tests {
+         assert!(compilation.gpos.is_none());
+         assert!(compilation.gsub.is_some());
+     }
++
++    fn compile_fea(fea: &'static str, opts: Opts) -> Compilation {
++        let glyph_order =
++            crate::compile::parse_glyph_order(".notdef\nf\ni\nf_i\na\nacutecomb\ncyrl_a").unwrap();
++        Compiler::<NopFeatureProvider, MockVariationInfo>::new("test.fea", &glyph_order)
++            .with_resolver(move |_: &Path| Ok(fea.into()))
++            .with_opts(opts)
++            .compile()
++            .unwrap()
++    }
++
++    // (script tag, [(language tag, feature count)]) for each script, in order
++    fn scripts(
++        list: &write_fonts::tables::layout::ScriptList,
++    ) -> Vec<(String, Vec<(String, usize)>)> {
++        list.script_records
++            .iter()
++            .map(|rec| {
++                let mut langs = Vec::new();
++                if let Some(dflt) = rec.script.default_lang_sys.as_ref() {
++                    assert_eq!(dflt.required_feature_index, 0xFFFF);
++                    langs.push(("dflt".to_string(), dflt.feature_indices.len()));
++                }
++                for lang in &rec.script.lang_sys_records {
++                    langs.push((
++                        lang.lang_sys_tag.to_string(),
++                        lang.lang_sys.feature_indices.len(),
++                    ));
++                }
++                (rec.script_tag.to_string(), langs)
++            })
++            .collect()
++    }
++
++    const GSUB_ONLY: &str = "
++        languagesystem DFLT dflt;
++        languagesystem latn dflt;
++        languagesystem latn TRK;
++        feature liga { sub f i by f_i; } liga;
++    ";
++
++    #[test]
++    fn empty_gpos_shell() {
++        // by default a table with nothing in it is not written
++        let compilation = compile_fea(GSUB_ONLY, Opts::new());
++        assert!(compilation.gpos.is_none());
++
++        let compilation = compile_fea(GSUB_ONLY, Opts::new().share_script_lists(true));
++        let gpos = compilation.gpos.unwrap();
++        assert!(gpos.feature_list.feature_records.is_empty());
++        assert!(gpos.lookup_list.lookups.is_empty());
++        // every GSUB script, each with only an empty default language system
++        assert_eq!(
++            scripts(&gpos.script_list),
++            vec![
++                ("DFLT".to_string(), vec![("dflt".to_string(), 0)]),
++                ("latn".to_string(), vec![("dflt".to_string(), 0)]),
++            ]
++        );
++        // GSUB itself is unchanged
++        let gsub = compilation.gsub.unwrap();
++        assert_eq!(
++            scripts(&gsub.script_list),
++            vec![
++                ("DFLT".to_string(), vec![("dflt".to_string(), 1)]),
++                (
++                    "latn".to_string(),
++                    vec![("dflt".to_string(), 1), ("TRK ".to_string(), 1)]
++                ),
++            ]
++        );
++    }
++
++    #[test]
++    fn empty_gsub_shell() {
++        let fea = "
++            languagesystem latn dflt;
++            feature kern { pos f i -10; } kern;
++        ";
++        assert!(compile_fea(fea, Opts::new()).gsub.is_none());
++        let compilation = compile_fea(fea, Opts::new().share_script_lists(true));
++        let gsub = compilation.gsub.unwrap();
++        assert!(gsub.feature_list.feature_records.is_empty());
++        assert!(gsub.lookup_list.lookups.is_empty());
++        assert_eq!(
++            scripts(&gsub.script_list),
++            vec![("latn".to_string(), vec![("dflt".to_string(), 0)])]
++        );
++    }
++
++    #[test]
++    fn shared_scripts_are_the_union() {
++        // cyrl has substitutions only, so GPOS gets it with an empty default
++        // language system; latn keeps its own languages in each table
++        let fea = "
++            languagesystem cyrl dflt;
++            languagesystem latn dflt;
++            feature liga { sub f i by f_i; } liga;
++            feature kern { script latn; pos f i -10; } kern;
++        ";
++        let compilation = compile_fea(fea, Opts::new().share_script_lists(true));
++        assert_eq!(
++            scripts(&compilation.gpos.unwrap().script_list),
++            vec![
++                ("cyrl".to_string(), vec![("dflt".to_string(), 0)]),
++                ("latn".to_string(), vec![("dflt".to_string(), 1)]),
++            ]
++        );
++        let compilation = compile_fea(fea, Opts::new());
++        assert_eq!(
++            scripts(&compilation.gpos.unwrap().script_list),
++            vec![("latn".to_string(), vec![("dflt".to_string(), 1)])]
++        );
++    }
++
++    #[test]
++    fn nothing_to_share() {
++        // no layout at all: still no tables
++        let compilation = compile_fea(
++            "languagesystem latn dflt;",
++            Opts::new().share_script_lists(true),
++        );
++        assert!(compilation.gpos.is_none());
++        assert!(compilation.gsub.is_none());
++    }
+ }
+diff --git a/fontbe/src/features.rs b/fontbe/src/features.rs
+index 83ab7ea6..d8ee06de 100644
+--- a/fontbe/src/features.rs
++++ b/fontbe/src/features.rs
+@@ -28,7 +28,7 @@ use fontir::{
+         self, FeatureGenerationPlan, FeatureGenerationSettings, FeatureWriterMode, FeaturesSource,
+         GdefCategories, GlyphOrder, StaticMetadata,
+     },
+-    orchestration::WorkId as FeWorkId,
++    orchestration::{Flags, WorkId as FeWorkId},
+ };
+ 
+ use fontdrasil::{
+@@ -417,6 +417,7 @@ impl FeatureCompilationWork {
+         marks: &FeaRsMarks,
+         plan: &FeatureGenerationPlan,
+         compile_debg: bool,
++        share_script_lists: bool,
+     ) -> Result<Compilation, Error> {
+         let feature_variations = static_metadata
+             .variations
+@@ -438,7 +439,9 @@ impl FeatureCompilationWork {
+             &marks.glyphmap,
+             Some(&var_info),
+             Some(&feature_writer),
+-            Opts::new().compile_debg(compile_debg),
++            Opts::new()
++                .compile_debg(compile_debg)
++                .share_script_lists(share_script_lists),
+         ) {
+             Ok((result, warnings)) => {
+                 log_fea_warnings("compilation", &warnings);
+@@ -632,6 +635,7 @@ impl Work<Context, AnyWorkId, Error> for FeatureCompilationWork {
+             marks.as_ref(),
+             &plan,
+             context.compile_debg,
++            context.flags.contains(Flags::SHARED_LAYOUT_SCRIPTS),
+         )?;
+         if plan.gdef && result.gdef_classes.is_none() && !gdef_categories.categories.is_empty() {
+             // the FEA did not contain an explicit GDEF block with glyph categories,
+diff --git a/fontc/src/args.rs b/fontc/src/args.rs
+index 9be507ec..3f3cf849 100644
+--- a/fontc/src/args.rs
++++ b/fontc/src/args.rs
+@@ -105,6 +105,12 @@ pub struct Args {
+     #[arg(long, default_value = "false")]
+     pub no_production_names: bool,
+ 
++    /// List the same scripts in GSUB and GPOS, and write a table that has
++    /// scripts but no features instead of omitting it, as Microsoft VOLT and
++    /// FontForge's OpenType exporter do.
++    #[arg(long, default_value = "false")]
++    pub shared_layout_scripts: bool,
++
+     /// Print verbose version information for debugging
+     // Includes fontc git commit, rustc host triple, rustc version and channel, llvm version,
+     // cargo profile, and cargo optimization level.
+@@ -150,6 +156,7 @@ impl Args {
+         flags.set(Flags::DECOMPOSE_COMPONENTS, self.decompose_components);
+         flags.set(Flags::KEEP_DIRECTION, self.keep_direction);
+         flags.set(Flags::PRODUCTION_NAMES, !self.no_production_names);
++        flags.set(Flags::SHARED_LAYOUT_SCRIPTS, self.shared_layout_scripts);
+ 
+         flags
+     }
+diff --git a/fontir/src/orchestration.rs b/fontir/src/orchestration.rs
+index 084e7aad..8a1c67c2 100644
+--- a/fontir/src/orchestration.rs
++++ b/fontir/src/orchestration.rs
+@@ -30,6 +30,10 @@ bitflags! {
+         const ERASE_OPEN_CORNERS = 0b1000000000;
+         // If set, anchors will be propagated from components to composites
+         const PROPAGATE_ANCHORS = 0b10000000000;
++        // If set, GSUB and GPOS list the same scripts, and a table with scripts
++        // but no features is written rather than omitted (see
++        // fea_rs::compile::Opts::share_script_lists)
++        const SHARED_LAYOUT_SCRIPTS = 0b100000000000;
+     }
+ }
+ 
+-- 
+2.47.3
+

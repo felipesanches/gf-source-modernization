@@ -1,0 +1,165 @@
+== TitilliumWeb-Black  (v4-version): shipped / built=TitilliumWeb-Black.ttf
+   == fsType         0 / 0
+   == usWeightClass  900 / 900
+   != fsSelection    64 / 192
+   == macStyle       0 / 0
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web Black' / 'Titillium Web Black'
+   == name 2         'Regular' / 'Regular'
+   == name 3         '1.002;UKWN;TitilliumWeb-Black' / '1.002;UKWN;TitilliumWeb-Black'
+   == name 4         'Titillium Web Black' / 'Titillium Web Black'
+   != name 5         'Version 1.002;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-Black' / 'TitilliumWeb-Black'
+   == name 16        'Titillium Web' / 'Titillium Web'
+   == name 17        'Black' / 'Black'
+   == name 18        None / None
+== TitilliumWeb-Bold  (v4-version): shipped / built=TitilliumWeb-Bold.ttf
+   == fsType         0 / 0
+   == usWeightClass  700 / 700
+   != fsSelection    32 / 160
+   == macStyle       1 / 1
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web' / 'Titillium Web'
+   == name 2         'Bold' / 'Bold'
+   == name 3         '1.002;UKWN;TitilliumWeb-Bold' / '1.002;UKWN;TitilliumWeb-Bold'
+   == name 4         'Titillium Web Bold' / 'Titillium Web Bold'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-Bold' / 'TitilliumWeb-Bold'
+   == name 16        None / None
+   == name 17        None / None
+   == name 18        None / None
+== TitilliumWeb-BoldItalic  (v4-version): shipped / built=TitilliumWeb-BoldItalic.ttf
+   == fsType         0 / 0
+   == usWeightClass  700 / 700
+   != fsSelection    33 / 161
+   == macStyle       3 / 3
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web' / 'Titillium Web'
+   == name 2         'Bold Italic' / 'Bold Italic'
+   == name 3         '1.002;UKWN;TitilliumWeb-BoldItalic' / '1.002;UKWN;TitilliumWeb-BoldItalic'
+   == name 4         'Titillium Web Bold Italic' / 'Titillium Web Bold Italic'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-BoldItalic' / 'TitilliumWeb-BoldItalic'
+   == name 16        None / None
+   == name 17        None / None
+   == name 18        None / None
+== TitilliumWeb-ExtraLight  (v4-version): shipped / built=TitilliumWeb-ExtraLight.ttf
+   == fsType         0 / 0
+   == usWeightClass  275 / 275
+   != fsSelection    64 / 192
+   == macStyle       0 / 0
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web ExtraLight' / 'Titillium Web ExtraLight'
+   == name 2         'Regular' / 'Regular'
+   == name 3         '1.002;UKWN;TitilliumWeb-ExtraLight' / '1.002;UKWN;TitilliumWeb-ExtraLight'
+   == name 4         'Titillium Web ExtraLight' / 'Titillium Web ExtraLight'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-ExtraLight' / 'TitilliumWeb-ExtraLight'
+   == name 16        'Titillium Web' / 'Titillium Web'
+   == name 17        'ExtraLight' / 'ExtraLight'
+   == name 18        None / None
+== TitilliumWeb-ExtraLightItalic  (v4-version): shipped / built=TitilliumWeb-ExtraLightItalic.ttf
+   == fsType         0 / 0
+   == usWeightClass  275 / 275
+   != fsSelection    1 / 129
+   == macStyle       2 / 2
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web ExtraLight' / 'Titillium Web ExtraLight'
+   == name 2         'Italic' / 'Italic'
+   == name 3         '1.002;UKWN;TitilliumWeb-ExtraLightItalic' / '1.002;UKWN;TitilliumWeb-ExtraLightItalic'
+   == name 4         'Titillium Web ExtraLight Italic' / 'Titillium Web ExtraLight Italic'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-ExtraLightItalic' / 'TitilliumWeb-ExtraLightItalic'
+   == name 16        'Titillium Web' / 'Titillium Web'
+   == name 17        'ExtraLight Italic' / 'ExtraLight Italic'
+   == name 18        None / None
+== TitilliumWeb-Italic  (v4-version): shipped / built=TitilliumWeb-Italic.ttf
+   == fsType         0 / 0
+   == usWeightClass  400 / 400
+   != fsSelection    1 / 129
+   == macStyle       2 / 2
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web' / 'Titillium Web'
+   == name 2         'Italic' / 'Italic'
+   == name 3         '1.002;UKWN;TitilliumWeb-Italic' / '1.002;UKWN;TitilliumWeb-Italic'
+   == name 4         'Titillium Web Italic' / 'Titillium Web Italic'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-Italic' / 'TitilliumWeb-Italic'
+   == name 16        None / None
+   == name 17        None / None
+   == name 18        None / None
+== TitilliumWeb-Light  (v4-version): shipped / built=TitilliumWeb-Light.ttf
+   == fsType         0 / 0
+   == usWeightClass  300 / 300
+   != fsSelection    64 / 192
+   == macStyle       0 / 0
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web Light' / 'Titillium Web Light'
+   == name 2         'Regular' / 'Regular'
+   == name 3         '1.002;UKWN;TitilliumWeb-Light' / '1.002;UKWN;TitilliumWeb-Light'
+   == name 4         'Titillium Web Light' / 'Titillium Web Light'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-Light' / 'TitilliumWeb-Light'
+   == name 16        'Titillium Web' / 'Titillium Web'
+   == name 17        'Light' / 'Light'
+   == name 18        None / None
+== TitilliumWeb-LightItalic  (v4-version): shipped / built=TitilliumWeb-LightItalic.ttf
+   == fsType         0 / 0
+   == usWeightClass  300 / 300
+   != fsSelection    1 / 129
+   == macStyle       2 / 2
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web Light' / 'Titillium Web Light'
+   == name 2         'Italic' / 'Italic'
+   == name 3         '1.002;UKWN;TitilliumWeb-LightItalic' / '1.002;UKWN;TitilliumWeb-LightItalic'
+   == name 4         'Titillium Web Light Italic' / 'Titillium Web Light Italic'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-LightItalic' / 'TitilliumWeb-LightItalic'
+   == name 16        'Titillium Web' / 'Titillium Web'
+   == name 17        'Light Italic' / 'Light Italic'
+   == name 18        None / None
+== TitilliumWeb-Regular  (v4-version): shipped / built=TitilliumWeb-Regular.ttf
+   == fsType         0 / 0
+   == usWeightClass  400 / 400
+   != fsSelection    64 / 192
+   == macStyle       0 / 0
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web' / 'Titillium Web'
+   == name 2         'Regular' / 'Regular'
+   == name 3         '1.002;UKWN;TitilliumWeb-Regular' / '1.002;UKWN;TitilliumWeb-Regular'
+   == name 4         'Titillium Web Regular' / 'Titillium Web Regular'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-Regular' / 'TitilliumWeb-Regular'
+   == name 16        None / None
+   == name 17        None / None
+   == name 18        None / None
+== TitilliumWeb-SemiBold  (v4-version): shipped / built=TitilliumWeb-SemiBold.ttf
+   == fsType         0 / 0
+   == usWeightClass  600 / 600
+   != fsSelection    64 / 192
+   == macStyle       0 / 0
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web SemiBold' / 'Titillium Web SemiBold'
+   == name 2         'Regular' / 'Regular'
+   == name 3         '1.002;UKWN;TitilliumWeb-SemiBold' / '1.002;UKWN;TitilliumWeb-SemiBold'
+   == name 4         'Titillium Web SemiBold' / 'Titillium Web SemiBold'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-SemiBold' / 'TitilliumWeb-SemiBold'
+   == name 16        'Titillium Web' / 'Titillium Web'
+   == name 17        'SemiBold' / 'SemiBold'
+   == name 18        None / None
+== TitilliumWeb-SemiBoldItalic  (v4-version): shipped / built=TitilliumWeb-SemiBoldItalic.ttf
+   == fsType         0 / 0
+   == usWeightClass  600 / 600
+   != fsSelection    1 / 129
+   == macStyle       2 / 2
+   == fontRevision   1.002 / 1.002
+   == name 1         'Titillium Web SemiBold' / 'Titillium Web SemiBold'
+   == name 2         'Italic' / 'Italic'
+   == name 3         '1.002;UKWN;TitilliumWeb-SemiBoldItalic' / '1.002;UKWN;TitilliumWeb-SemiBoldItalic'
+   == name 4         'Titillium Web SemiBold Italic' / 'Titillium Web SemiBold Italic'
+   != name 5         'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' / 'Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+   == name 6         'TitilliumWeb-SemiBoldItalic' / 'TitilliumWeb-SemiBoldItalic'
+   == name 16        'Titillium Web' / 'Titillium Web'
+   == name 17        'SemiBold Italic' / 'SemiBold Italic'
+   == name 18        None / None

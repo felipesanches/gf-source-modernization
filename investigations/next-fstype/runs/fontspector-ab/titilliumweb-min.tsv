@@ -1,0 +1,11 @@
+DIFF	titilliumweb	dsig	WARN	->	PASS
+DIFF	titilliumweb	googlefonts/use_typo_metrics	FAIL	->	PASS
+DIFF	titilliumweb	googlefonts/version_bump	FAIL	->	PASS
+DIFF	titilliumweb	name/italic_names	FAIL	->	PASS
+DIFF	titilliumweb	opentype/GDEF_mark_chars	PASS	->	SKIP
+DIFF	titilliumweb	opentype/GDEF_non_mark_chars	PASS	->	SKIP
+DIFF	titilliumweb	opentype/GDEF_spacing_marks	PASS	->	SKIP
+DIFF	titilliumweb	opentype/family/max_4_fonts_per_family_name	FAIL	->	PASS
+DIFF	titilliumweb	opentype/xavgcharwidth	WARN	->	INFO
+DIFF	titilliumweb	unwanted_tables	FAIL	->	PASS
+SUMMARY	titilliumweb	checks=200	diff=10	worse=0	better=10

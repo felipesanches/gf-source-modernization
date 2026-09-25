@@ -1,0 +1,150 @@
+=== Varela-Regular
+GPOS created
+GPOS += cyrl/dflt (empty)
+GPOS += grek/dflt (empty)
+GPOS += latn/dflt (empty)
+-- release vs built
+GSUB DIFFERS
+  scripts:
+    A=(('cyrl', (('dflt', 65535, ('aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum')),)), ('grek', (('dflt', 65535, ('aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 's
+    B=(('cyrl', (('dflt', 65535, ('aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum')),)), ('grek', (('dflt', 65535, ('aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 's
+  features:
+    A=(('aalt', (1, 3)), ('c2sc', (1,)), ('dlig', (4,)), ('dnom', (1,)), ('frac', (1, 6, 1)), ('liga', (4,)), ('liga', (4, 4)), ('lnum', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('numr', (1,)), ('onum', (1,)), ('ordn', (6,)), ('pnum', (1,)), ('sinf', (1,
+    B=(('aalt', (1, 3)), ('c2sc', (1,)), ('dlig', (4,)), ('dnom', (1,)), ('frac', (1, 6, 1)), ('liga', (4, 4)), ('lnum', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('numr', (1,)), ('onum', (1,)), ('ordn', (6,)), ('pnum', (1,)), ('sinf', (1,)), ('smcp', (1,
+GPOS DIFFERS
+  version:
+    A=0x10000
+    B=None
+  scripts:
+    A=(('cyrl', (('dflt', 65535, ()),)), ('grek', (('dflt', 65535, ()),)), ('latn', (('dflt', 65535, ()),)))
+    B=None
+  features:
+    A=()
+    B=None
+  lookups:
+    A=0
+    B=None
+-- release vs emulated
+GSUB DIFFERS
+  scripts:
+    A=(('cyrl', (('dflt', 65535, ('aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum')),)), ('grek', (('dflt', 65535, ('aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 's
+    B=(('cyrl', (('dflt', 65535, ('aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum')),)), ('grek', (('dflt', 65535, ('aalt', 'c2sc', 'dlig', 'dnom', 'frac', 'liga', 'lnum', 'numr', 'onum', 'ordn', 'pnum', 'sinf', 's
+  features:
+    A=(('aalt', (1, 3)), ('c2sc', (1,)), ('dlig', (4,)), ('dnom', (1,)), ('frac', (1, 6, 1)), ('liga', (4,)), ('liga', (4, 4)), ('lnum', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('numr', (1,)), ('onum', (1,)), ('ordn', (6,)), ('pnum', (1,)), ('sinf', (1,
+    B=(('aalt', (1, 3)), ('c2sc', (1,)), ('dlig', (4,)), ('dnom', (1,)), ('frac', (1, 6, 1)), ('liga', (4, 4)), ('lnum', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('locl', (1,)), ('numr', (1,)), ('onum', (1,)), ('ordn', (6,)), ('pnum', (1,)), ('sinf', (1,)), ('smcp', (1,
+GPOS SAME scripts=['cyrl', 'grek', 'latn'] features=0 lookups=0
+=== UnifrakturMaguntia-Book
+GPOS created
+GPOS += DFLT/dflt (empty)
+GPOS += hani/dflt (empty)
+GPOS += latn/dflt (empty)
+-- release vs built
+GSUB SAME scripts=['DFLT', 'hani', 'latn'] features=3 lookups=3
+GPOS DIFFERS
+  version:
+    A=0x10000
+    B=None
+  scripts:
+    A=(('DFLT', (('dflt', 65535, ()),)), ('hani', (('dflt', 65535, ()),)), ('latn', (('dflt', 65535, ()),)))
+    B=None
+  features:
+    A=()
+    B=None
+  lookups:
+    A=0
+    B=None
+-- release vs emulated
+GSUB SAME scripts=['DFLT', 'hani', 'latn'] features=3 lookups=3
+GPOS SAME scripts=['DFLT', 'hani', 'latn'] features=0 lookups=0
+=== Smokum-Regular
+GSUB created
+GSUB += DFLT/dflt (empty)
+GSUB += latn/dflt (empty)
+-- release vs built
+GSUB SAME absent
+GPOS DIFFERS
+  version:
+    A=None
+    B=0x10000
+  scripts:
+    A=None
+    B=(('DFLT', (('dflt', 65535, ('kern',)),)), ('latn', (('dflt', 65535, ('kern',)),)))
+  features:
+    A=None
+    B=(('kern', (2, 2)),)
+  lookups:
+    A=None
+    B=2
+-- release vs emulated
+GSUB DIFFERS
+  version:
+    A=None
+    B=0x10000
+  scripts:
+    A=None
+    B=(('DFLT', (('dflt', 65535, ()),)), ('latn', (('dflt', 65535, ()),)))
+  features:
+    A=None
+    B=()
+  lookups:
+    A=None
+    B=0
+GPOS DIFFERS
+  version:
+    A=None
+    B=0x10000
+  scripts:
+    A=None
+    B=(('DFLT', (('dflt', 65535, ('kern',)),)), ('latn', (('dflt', 65535, ('kern',)),)))
+  features:
+    A=None
+    B=(('kern', (2, 2)),)
+  lookups:
+    A=None
+    B=2
+=== Ultra-Regular
+GSUB created
+GSUB += DFLT/dflt (empty)
+GSUB += latn/dflt (empty)
+-- release vs built
+GSUB SAME absent
+GPOS DIFFERS
+  version:
+    A=None
+    B=0x10000
+  scripts:
+    A=None
+    B=(('DFLT', (('dflt', 65535, ('kern',)),)), ('latn', (('dflt', 65535, ('kern',)),)))
+  features:
+    A=None
+    B=(('kern', (2,)),)
+  lookups:
+    A=None
+    B=1
+-- release vs emulated
+GSUB DIFFERS
+  version:
+    A=None
+    B=0x10000
+  scripts:
+    A=None
+    B=(('DFLT', (('dflt', 65535, ()),)), ('latn', (('dflt', 65535, ()),)))
+  features:
+    A=None
+    B=()
+  lookups:
+    A=None
+    B=0
+GPOS DIFFERS
+  version:
+    A=None
+    B=0x10000
+  scripts:
+    A=None
+    B=(('DFLT', (('dflt', 65535, ('kern',)),)), ('latn', (('dflt', 65535, ('kern',)),)))
+  features:
+    A=None
+    B=(('kern', (2,)),)
+  lookups:
+    A=None
+    B=1

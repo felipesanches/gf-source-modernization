@@ -1,0 +1,37 @@
+Varela-Regular.ttf vs Varela-Regular.ttf: 281961 ordered pairs, 1532 differ {'mark': 1532}
+  mark        ' ̉'
+     release (('space', 0, 0, 0), ('hookcmb', 0, 260, 0), ('__pen__', -1, 260, 0))
+     cand    (('space', 0, 0, 0), ('hookcmb', 0, 296, -223), ('__pen__', -1, 260, 0))
+  mark        ' ̛'
+     release (('space', 0, 0, 0), ('horncmb', 0, 260, 0), ('__pen__', -1, 260, 0))
+     cand    (('space', 0, 0, 0), ('horncmb', 0, 347, -196), ('__pen__', -1, 260, 0))
+  mark        ' ̣'
+     release (('space', 0, 0, 0), ('dotbelowcmb', 0, 260, 0), ('__pen__', -1, 260, 0))
+     cand    (('space', 0, 0, 0), ('dotbelowcmb', 0, 241, -2), ('__pen__', -1, 260, 0))
+  mark        '!̉'
+     release (('exclam', 0, 0, 0), ('hookcmb', 0, 281, 0), ('__pen__', -1, 281, 0))
+     cand    (('exclam', 0, 0, 0), ('hookcmb', 0, 306, 252), ('__pen__', -1, 281, 0))
+  mark        '!̛'
+     release (('exclam', 0, 0, 0), ('horncmb', 0, 281, 0), ('__pen__', -1, 281, 0))
+     cand    (('exclam', 0, 0, 0), ('horncmb', 0, 368, 307), ('__pen__', -1, 281, 0))
+  mark        '!̣'
+     release (('exclam', 0, 0, 0), ('dotbelowcmb', 0, 281, 0), ('__pen__', -1, 281, 0))
+     cand    (('exclam', 0, 0, 0), ('dotbelowcmb', 0, 251, -2), ('__pen__', -1, 281, 0))
+  mark        '"̉'
+     release (('quotedbl', 0, 0, 0), ('hookcmb', 0, 411, 0), ('__pen__', -1, 411, 0))
+     cand    (('quotedbl', 0, 0, 0), ('hookcmb', 0, 371, 294), ('__pen__', -1, 411, 0))
+  mark        '"̛'
+     release (('quotedbl', 0, 0, 0), ('horncmb', 0, 411, 0), ('__pen__', -1, 411, 0))
+     cand    (('quotedbl', 0, 0, 0), ('horncmb', 0, 498, 349), ('__pen__', -1, 411, 0))
+  mark        '"̣'
+     release (('quotedbl', 0, 0, 0), ('dotbelowcmb', 0, 411, 0), ('__pen__', -1, 411, 0))
+     cand    (('quotedbl', 0, 0, 0), ('dotbelowcmb', 0, 316, 0), ('__pen__', -1, 411, 0))
+  mark        '#̉'
+     release (('numbersign', 0, 0, 0), ('hookcmb', 0, 612, 0), ('__pen__', -1, 612, 0))
+     cand    (('numbersign', 0, 0, 0), ('hookcmb', 0, 472, 209), ('__pen__', -1, 612, 0))
+  mark        '#̛'
+     release (('numbersign', 0, 0, 0), ('horncmb', 0, 612, 0), ('__pen__', -1, 612, 0))
+     cand    (('numbersign', 0, 0, 0), ('horncmb', 0, 699, 264), ('__pen__', -1, 612, 0))
+  mark        '#̣'
+     release (('numbersign', 0, 0, 0), ('dotbelowcmb', 0, 612, 0), ('__pen__', -1, 612, 0))
+     cand    (('numbersign', 0, 0, 0), ('dotbelowcmb', 0, 417, -2), ('__pen__', -1, 612, 0))

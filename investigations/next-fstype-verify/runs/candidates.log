@@ -1,0 +1,113 @@
+## c-fstype TitilliumWeb-Black <- src/TitilliumWeb-Black-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-Black <- src/TitilliumWeb-Black-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "" "1.002;UKWN;TitilliumWeb-Black" "" "Version 1.002;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Black" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-Black" "" "Version 1.001;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Black" ' changed=True
+## c-fstype TitilliumWeb-Bold <- src/TitilliumWeb-Bold-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-Bold <- src/TitilliumWeb-Bold-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "" "1.002;UKWN;TitilliumWeb-Bold" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-Bold" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" ' changed=True
+## c-fstype TitilliumWeb-BoldItalic <- src/TitilliumWeb-BoldItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-BoldItalic <- src/TitilliumWeb-BoldItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "Bold Italic" "1.002;UKWN;TitilliumWeb-BoldItalic" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" : before='1033 "" "" "Bold Italic" "1.001;UKWN;TitilliumWeb-BoldItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" ' changed=True
+## c-fstype TitilliumWeb-Italic <- src/TitilliumWeb-Italic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-Italic <- src/TitilliumWeb-Italic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "" "1.002;UKWN;TitilliumWeb-Italic" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-Italic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" ' changed=True
+## c-fstype TitilliumWeb-Light <- src/TitilliumWeb-Light-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-Light <- src/TitilliumWeb-Light-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "" "1.002;UKWN;TitilliumWeb-Light" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Light" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-Light" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Light" ' changed=True
+## c-fstype TitilliumWeb-LightItalic <- src/TitilliumWeb-LightItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-LightItalic <- src/TitilliumWeb-LightItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "Light Italic" "1.002;UKWN;TitilliumWeb-LightItalic" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Light Italic" : before='1033 "" "" "Light Italic" "1.001;UKWN;TitilliumWeb-LightItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Light Italic" ' changed=True
+## c-fstype TitilliumWeb-Regular <- src/TitilliumWeb-Regular-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-Regular <- src/TitilliumWeb-Regular-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "" "1.002;UKWN;TitilliumWeb-Regular" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "" "Titillium WebRegular" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-Regular" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "" "Titillium WebRegular" ' changed=True
+## c-fstype TitilliumWeb-SemiBold <- src/TitilliumWeb-SemiBold-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-SemiBold <- src/TitilliumWeb-SemiBold-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "" "1.002;UKWN;TitilliumWeb-SemiBold" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "SemiBold" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-SemiBold" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "SemiBold" ' changed=True
+## c-fstype TitilliumWeb-SemiBoldItalic <- src/TitilliumWeb-SemiBoldItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-version TitilliumWeb-SemiBoldItalic <- src/TitilliumWeb-SemiBoldItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "SemiBold Italic" "1.002;UKWN;TitilliumWeb-SemiBoldItalic" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "SemiBold Italic" : before='1033 "" "" "SemiBold Italic" "1.001;UKWN;TitilliumWeb-SemiBoldItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "SemiBold Italic" ' changed=True
+## c-fstype Wallpoet-Regular <- src/Wallpoet-Regular-TTF.sfd
+setfield FSType 0: before='4' changed=True
+## c-fstype TitilliumWeb-ExtraLight <- src/TitilliumWeb-Thin-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-elweight TitilliumWeb-ExtraLight <- src/TitilliumWeb-Thin-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield TTFWeight 275: before='200' changed=True
+## c-el17 TitilliumWeb-ExtraLight <- src/TitilliumWeb-Thin-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield TTFWeight 275: before='200' changed=True
+setfield LangName 1033 "" "" "" "1.001;UKWN;TitilliumWeb-Thin" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-Thin" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Thin" ' changed=True
+## c-elfull TitilliumWeb-ExtraLight <- src/TitilliumWeb-Thin-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield TTFWeight 275: before='200' changed=True
+setfield FontName TitilliumWeb-ExtraLight: before='TitilliumWeb-Thin' changed=True
+setfield FullName Titillium Web ExtraLight: before='Titillium WebThin' changed=True
+setfield LangName 1033 "" "" "" "1.001;UKWN;TitilliumWeb-ExtraLight" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-Thin" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Thin" ' changed=True
+## c-version TitilliumWeb-ExtraLight <- src/TitilliumWeb-Thin-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield TTFWeight 275: before='200' changed=True
+setfield FontName TitilliumWeb-ExtraLight: before='TitilliumWeb-Thin' changed=True
+setfield FullName Titillium Web ExtraLight: before='Titillium WebThin' changed=True
+setfield LangName 1033 "" "" "" "1.001;UKWN;TitilliumWeb-ExtraLight" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-Thin" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Thin" ' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "" "1.002;UKWN;TitilliumWeb-ExtraLight" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight" : before='1033 "" "" "" "1.001;UKWN;TitilliumWeb-ExtraLight" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight" ' changed=True
+## c-fstype TitilliumWeb-ExtraLightItalic <- src/TitilliumWeb-ThinItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+## c-elweight TitilliumWeb-ExtraLightItalic <- src/TitilliumWeb-ThinItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield TTFWeight 275: before='200' changed=True
+## c-el17 TitilliumWeb-ExtraLightItalic <- src/TitilliumWeb-ThinItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield TTFWeight 275: before='200' changed=True
+setfield LangName 1033 "" "" "ExtraLight Italic" "1.001;UKWN;TitilliumWeb-ThinItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight Italic" : before='1033 "" "" "Thin Italic" "1.001;UKWN;TitilliumWeb-ThinItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Thin Italic" ' changed=True
+## c-elfull TitilliumWeb-ExtraLightItalic <- src/TitilliumWeb-ThinItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield TTFWeight 275: before='200' changed=True
+setfield FontName TitilliumWeb-ExtraLightItalic: before='TitilliumWeb-ThinItalic' changed=True
+setfield FullName Titillium Web ExtraLight Italic: before='Titillium WebThin Italic' changed=True
+setfield LangName 1033 "" "" "ExtraLight Italic" "1.001;UKWN;TitilliumWeb-ExtraLightItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight Italic" : before='1033 "" "" "Thin Italic" "1.001;UKWN;TitilliumWeb-ThinItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Thin Italic" ' changed=True
+## c-version TitilliumWeb-ExtraLightItalic <- src/TitilliumWeb-ThinItalic-TTF.sfd
+setfield FSType 0: before='8' changed=True
+setfield TTFWeight 275: before='200' changed=True
+setfield FontName TitilliumWeb-ExtraLightItalic: before='TitilliumWeb-ThinItalic' changed=True
+setfield FullName Titillium Web ExtraLight Italic: before='Titillium WebThin Italic' changed=True
+setfield LangName 1033 "" "" "ExtraLight Italic" "1.001;UKWN;TitilliumWeb-ExtraLightItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight Italic" : before='1033 "" "" "Thin Italic" "1.001;UKWN;TitilliumWeb-ThinItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "Thin Italic" ' changed=True
+setfield Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311: before='1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' changed=True
+setfield sfntRevision 0x00010083: before='0x00010000' changed=True
+setfield LangName 1033 "" "" "ExtraLight Italic" "1.002;UKWN;TitilliumWeb-ExtraLightItalic" "" "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight Italic" : before='1033 "" "" "ExtraLight Italic" "1.001;UKWN;TitilliumWeb-ExtraLightItalic" "" "Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL" "http://scripts.sil.org/OFL" "" "" "ExtraLight Italic" ' changed=True

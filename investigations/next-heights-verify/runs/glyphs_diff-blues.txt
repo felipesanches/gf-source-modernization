@@ -1,0 +1,57 @@
+=== Ledger-Regular
+-pos = 485;
++pos = 487;
+-width = 0;
++width = 281;
+=== LilitaOne-Regular
+-pos = 500;
++pos = 506;
+-pos = 700;
++pos = 704;
+=== Lustria-Regular
+-pos = 511;
++pos = 504;
+-pos = 700;
++pos = 704;
+=== Magra-Bold
+-pos = 533;
++pos = 525;
+-pos = 708;
++pos = 700;
+=== MergeOne-Regular
+-pos = 492;
++pos = 493;
+=== OleoScript-Bold
+-pos = 436;
++pos = 443;
+-pos = 708;
++pos = 710;
+=== OleoScript-Regular
+-pos = 442;
++pos = 443;
+-pos = 709;
++pos = 710;
+=== OleoScriptSwashCaps-Bold
+-pos = 436;
++pos = 443;
+-pos = 750;
++pos = 747;
+=== OleoScriptSwashCaps-Regular
+-pos = 442;
++pos = 443;
+=== Rambla-Bold
+-pos = 513;
++pos = 517;
+-pos = 668;
++pos = 669;
+=== Rambla-BoldItalic
+-pos = 513;
++pos = 517;
+-pos = 668;
++pos = 669;
+=== Sail-Regular
+-pos = 665;
++pos = 666;
+=== TextMeOne-Regular
+-pos = 500;
++pos = 502;

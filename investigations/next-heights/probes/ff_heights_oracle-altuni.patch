@@ -1,0 +1,37 @@
+--- a/tools/ff_heights_oracle.py	2026-09-25 01:47:45.699295468 +0100
++++ b/tools/ff_heights_oracle.py	2026-09-25 01:47:45.871044370 +0100
+@@ -99,13 +99,16 @@
+                     body = s.split(" ", 2)[2]
+                     self.blues = body
+                 elif s.startswith("StartChar:"):
+-                    cur = {"contours": [], "refs": [], "gid": None, "uni": None}
++                    cur = {"contours": [], "refs": [], "gid": None, "uni": None, "alts": []}
+                     layer_fore = True   # glyph data before any layer marker is Fore
+                     in_spl = False
+             else:
+                 if s.startswith("Encoding:"):
+                     p = s.split()
+                     cur["uni"], cur["gid"] = int(p[2]), int(p[3])
++                elif s.startswith("AltUni2:"):
++                    # uni.vs.reserved triples; SCUniMatch compares uni alone
++                    cur["alts"] += [int(t.split(".")[0], 16) for t in s.split()[1:]]
+                 elif s == "Fore":
+                     layer_fore = True
+                 elif s == "Back":
+@@ -126,10 +129,14 @@
+                 elif s.startswith("EndChar"):
+                     if cur["gid"] is not None:
+                         self.glyphs[cur["gid"]] = cur
+-                        if cur["uni"] is not None and cur["uni"] >= 0:
+-                            self.by_uni.setdefault(cur["uni"], cur["gid"])
+                     cur = None
+             i += 1
++        # SFFindGID (fvfonts.c): the LOWEST gid whose unicodeenc or any AltUni is the
++        # codepoint (SCUniMatch), the same at b69c9652, 5a11aa4c and master
++        for gid in sorted(self.glyphs):
++            g = self.glyphs[gid]
++            for u in ([g["uni"]] if g["uni"] is not None and g["uni"] >= 0 else []) + g["alts"]:
++                self.by_uni.setdefault(u, gid)
+ 
+     def _point(self, g, s):
+         tok = s.split()

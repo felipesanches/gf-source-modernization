@@ -1,0 +1,27 @@
+Ledger-Regular: addprivate BlueValues [-21 0 487 495 750 768]: before='no private dictionary' changed=True
+LilitaOne-Regular: addprivate BlueValues [-10 0 506 510 704 709]: before='no private dictionary' changed=True
+Lustria-Regular: addprivate BlueValues [-11 0 504 511 704 711]: before='no private dictionary' changed=True
+Magra-Bold: addprivate BlueValues [-12 0 525 537 700 712 750 760]: before='no private dictionary' changed=True
+MergeOne-Regular: addprivate BlueValues [-8 0 493 502 679 687]: before='no private dictionary' changed=True
+OleoScript-Bold: addprivate BlueValues [-12 0 443 443 710 710]: before='no private dictionary' changed=True
+OleoScript-Regular: addprivate BlueValues [-12 0 443 450 710 710]: before='no private dictionary' changed=True
+OleoScriptSwashCaps-Bold: addprivate BlueValues [-13 0 443 443 747 747]: before='no private dictionary' changed=True
+OleoScriptSwashCaps-Regular: addprivate BlueValues [-12 0 443 450 747 747]: before='no private dictionary' changed=True
+Rambla-Bold: addprivate BlueValues [-13 0 517 524 669 680]: before='no private dictionary' changed=True
+Rambla-BoldItalic: addprivate BlueValues [-13 0 517 524 669 680]: before='no private dictionary' changed=True
+Sail-Regular: addprivate BlueValues [0 0 389 389 666 666]: before='no private dictionary' changed=True
+TextMeOne-Regular: addprivate BlueValues [-1 0 502 502 700 706]: before='no private dictionary' changed=True
+Ledger-Regular (second edit): nbspwidth : before='nbsp Width 0, space Width 281' changed=True
+Ledger-Regular: 3 line(s) differ from the unmodified source
+LilitaOne-Regular: 3 line(s) differ from the unmodified source
+Lustria-Regular: 3 line(s) differ from the unmodified source
+Magra-Bold: 3 line(s) differ from the unmodified source
+MergeOne-Regular: 3 line(s) differ from the unmodified source
+OleoScript-Bold: 3 line(s) differ from the unmodified source
+OleoScript-Regular: 3 line(s) differ from the unmodified source
+OleoScriptSwashCaps-Bold: 3 line(s) differ from the unmodified source
+OleoScriptSwashCaps-Regular: 3 line(s) differ from the unmodified source
+Rambla-Bold: 3 line(s) differ from the unmodified source
+Rambla-BoldItalic: 3 line(s) differ from the unmodified source
+Sail-Regular: 3 line(s) differ from the unmodified source
+TextMeOne-Regular: 3 line(s) differ from the unmodified source

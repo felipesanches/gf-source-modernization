@@ -1,0 +1,42 @@
+Unit "fstype" (TitilliumWeb x11, Wallpoet-Regular) -- what each run answers and how it was made.
+All runs: W=/home/fsanches/compartilhado/sfd-reland, run from $W.
+  PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
+  R=$W/investigations/next-fstype/runs  P=$W/investigations/next-fstype/probes
+  S=/home/fsanches/compartilhado/sfd-reland-scratch/fstype      (scratch; regenerable)
+  FAMILIES=$R/families-fstype.tsv
+Converter: babelfont integration-ff-prs 17ea899 (upstream main 496e904 + PRs #91/#92/#93),
+  /home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont
+Compiler: gftools-builder3 e851b8b, fontc 1.0.0. Gate: sfd-batch5/tools/table_gate.py 2f43693.
+Releases: google/fonts b5efa9c32e8f.
+
+families-fstype.tsv
+  families-next.tsv's 10 rows for titilliumweb + wallpoet, plus TitilliumWeb-ExtraLight
+  <- src/TitilliumWeb-Thin-TTF.sfd and TitilliumWeb-ExtraLightItalic <- src/TitilliumWeb-ThinItalic-TTF.sfd,
+  the pairs probes/pair_by_history.py derives (pair_by_history.txt).
+
+fstype_history.txt      $PY $P/fstype_history.py > $R/fstype_history.txt
+  per binary revision: fsType, usWeightClass, fontRevision, FFTM build + source-modified, PS name;
+  per .sfd: FSType, TTFWeight, Version, ModificationTime.
+release_edit_diff.txt   $PY $P/release_edit_diff.py > $R/release_edit_diff.txt
+  every field google/fonts 93550bd32 (Titillium) and 8ccda7bf7 (Wallpoet) changed in the binaries.
+blob_identity.txt       google/fonts 90abd17b4 binaries == googlefontdirectory-hg 52f780bc9 binaries (git blob ids).
+pair_by_history.txt     $PY $P/pair_by_history.py > $R/pair_by_history.txt   (rule-4 pairing prototype)
+fontforge_tottf_fstype_revision.txt  FontForge v20110222 / v20120731-b tottf.c: fsType and head.revision rules.
+
+r0-unmodified   fidelity-only baseline (plain converter, unmodified .sfd) -- reproduces baseline-next.
+  BF=<converter> OUT=$R/r0-unmodified TAG=fstype-r0 SCRATCH=$S bash tools/baseline.sh <Style>
+r1-workarounds  same + tools/workarounds.py as land.py applies it (BF=$P/bf_with_workarounds.sh)
+  BF=$P/bf_with_workarounds.sh OUT=$R/r1-workarounds TAG=fstype-r1 SCRATCH=$S bash tools/baseline.sh <Style>
+r2-fstype       + FSType 0 (candidates: $PY $P/make_candidates.py fstype $S/cand-fstype; cand-fstype.log)
+  SRC_OVERRIDE=$S/cand-fstype/<Style>.sfd BF=$P/bf_with_workarounds.sh OUT=$R/r2-fstype TAG=fstype-r2 ...
+r3-extralight   + ExtraLight rename and TTFWeight 275 ($PY $P/make_candidates.py extralight $S/cand-extralight)
+  SRC_OVERRIDE=$S/cand-extralight/<Style>.sfd ... OUT=$R/r3-extralight TAG=fstype-r3
+r4-version      + Version 1.002 / sfntRevision 0x00010083 / LangName IDs 3,5 (Titillium only; optional)
+  $PY $P/make_candidates.py version $S/cand-version; SRC_OVERRIDE=$S/cand-version/<Style>.sfd ... TAG=fstype-r4
+r5-psname       r2 candidates with a PROTOTYPE converter: probes/babelfont-glyphs3-postscript-name.patch
+  on 17ea899, built in $S/bf-psname (CARGO_TARGET_DIR=$S/bf-psname-target); REAL_BF=<that binary> BF=$P/bf_with_workarounds.sh
+xcheck-psname   first-batch Smythe-Regular and NovaCut (families.tsv), plain converter: the name ID 4/6 loss is cross-cutting.
+<run>/beyond_gate.txt   $PY $P/beyond_gate.py fstype-rN [Style...]  (cmap, d3 counts, names, fsSelection, version)
+fontspector-ab/         DIFF3=0 sh /home/fsanches/compartilhado/GoogleFonts/scripts/fontspector-ab.sh
+  <google/fonts family dir> <dir of built TTFs named as shipped> $S/ab-out/<name>   (fontspector 1.6.0, 0111d9a)
+  titilliumweb-min = r2 (9 styles) + r3 (ExtraLight x2); titilliumweb-ver = r4; wallpoet-min = r2.

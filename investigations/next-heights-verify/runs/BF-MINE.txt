@@ -1,0 +1,5 @@
+my patched babelfont (NOT a commit): git archive of integration-ff-prs 17ea8995bb117b57e9f81c734239725c617375a8 + patch -p1 < next-heights/probes/babelfont-altuni-lookup.patch (sha256 1d52abf5baf342de)
+source tree: /home/fsanches/compartilhado/sfd-reland-scratch/heights-verify/bf-src (not a git worktree; nothing registered in any repo)
+build: CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=/home/fsanches/compartilhado/sfd-reland-scratch/heights-verify/bf-target cargo build --release -p babelfont --features cli (after sudo -n /usr/local/sbin/drop-caches)
+binary: /home/fsanches/compartilhado/sfd-reland-scratch/heights-verify/bf-target/release/babelfont sha256 51bec6470ce781f1
+investigator's binary sha256 4ea3ba8c2fa3caa0

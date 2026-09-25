@@ -1,0 +1,32 @@
+================================================================================
+TitilliumWeb-ExtraLight  shipped=TitilliumWeb-ExtraLight.ttf  built=TitilliumWeb-ExtraLight.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=275 built=275
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web ExtraLight' built='Titillium Web ExtraLight'
+  == name 2               shipped='Regular' built='Regular'
+  == name 4               shipped='Titillium Web ExtraLight' built='Titillium Web ExtraLight'
+  == name 6               shipped='TitilliumWeb-ExtraLight' built='TitilliumWeb-ExtraLight'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  == name 17              shipped='ExtraLight' built='ExtraLight'
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-ExtraLightItalic  shipped=TitilliumWeb-ExtraLightItalic.ttf  built=TitilliumWeb-ExtraLightItalic.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=275 built=275
+  != OS/2.fsSelection     shipped=1 built=129
+  == head.macStyle        shipped=2 built=2
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web ExtraLight' built='Titillium Web ExtraLight'
+  == name 2               shipped='Italic' built='Italic'
+  == name 4               shipped='Titillium Web ExtraLight Italic' built='Titillium Web ExtraLight Italic'
+  == name 6               shipped='TitilliumWeb-ExtraLightItalic' built='TitilliumWeb-ExtraLightItalic'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  == name 17              shipped='ExtraLight Italic' built='ExtraLight Italic'
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'

@@ -1,0 +1,8 @@
+160 keys in release, 161 in candidate, 7 of 161 differ
+  latn/AZE liga: candidate has 1 extra effect(s) ["type4[2 items, e.g. [('l', ('f', 'f', 'i'), 'f_f_i'), ('l', ('f', 'i'), 'fi')]]"]; lacks 0 []
+  latn/AZE smcp: candidate has 1 extra effect(s) ["type1[1 items, e.g. [('s', 'i', 'i.smcp')]]"]; lacks 0 []
+  latn/CRT liga: candidate has 1 extra effect(s) ["type4[2 items, e.g. [('l', ('f', 'f', 'i'), 'f_f_i'), ('l', ('f', 'i'), 'fi')]]"]; lacks 0 []
+  latn/CRT smcp: candidate has 1 extra effect(s) ["type1[1 items, e.g. [('s', 'i', 'i.smcp')]]"]; lacks 0 []
+  latn/SRB aalt: only in candidate
+  latn/TRK liga: candidate has 1 extra effect(s) ["type4[2 items, e.g. [('l', ('f', 'f', 'i'), 'f_f_i'), ('l', ('f', 'i'), 'fi')]]"]; lacks 0 []
+  latn/TRK smcp: candidate has 1 extra effect(s) ["type1[1 items, e.g. [('s', 'i', 'i.smcp')]]"]; lacks 0 []

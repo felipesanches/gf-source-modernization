@@ -1,0 +1,38 @@
+UnifrakturMaguntia-Book.ttf vs UnifrakturMaguntia-Regular.ttf [ltr, ink]: 61009 ordered pairs, 2082 differ {'mark': 2073, 'soft-hyphen': 9}
+  marks involved: U+0304=235, U+030A=235, U+0327=235, U+030C=233, U+0303=231, U+0300=227, U+0302=227, U+0301=225, U+0308=225
+  soft-hyphen U+00AD U+0300
+     release (('space', 0, 0), ('gravecomb', 0, 0), ('<end>', 0, 0))
+     cand    (('space', 0, 0), ('gravecomb', 936, -121), ('<end>', 0, 0))
+  soft-hyphen U+00AD U+0301
+     release (('space', 0, 0), ('acutecomb', 0, 0), ('<end>', 0, 0))
+     cand    (('space', 0, 0), ('acutecomb', 841, -120), ('<end>', 0, 0))
+  soft-hyphen U+00AD U+0302
+     release (('space', 0, 0), ('uni0302', 0, 0), ('<end>', 0, 0))
+     cand    (('space', 0, 0), ('uni0302', 825, -139), ('<end>', 0, 0))
+  soft-hyphen U+00AD U+0303
+     release (('space', 0, 0), ('tildecomb', 0, 0), ('<end>', 0, 0))
+     cand    (('space', 0, 0), ('tildecomb', 931, -190), ('<end>', 0, 0))
+  soft-hyphen U+00AD U+0304
+     release (('space', 0, 0), ('uni0304', 0, 0), ('<end>', 0, 0))
+     cand    (('space', 0, 0), ('uni0304', 921, -187), ('<end>', 0, 0))
+  soft-hyphen U+00AD U+0308
+     release (('space', 0, 0), ('uni0308', 0, 0), ('<end>', 0, 0))
+     cand    (('space', 0, 0), ('uni0308', 827, -184), ('<end>', 0, 0))
+  mark        U+0020 U+0300
+     release (('space', 0, 0), ('gravecomb', 600, 0), ('<end>', 600, 0))
+     cand    (('space', 0, 0), ('gravecomb', 840, -463), ('<end>', 600, 0))
+  mark        U+0020 U+0301
+     release (('space', 0, 0), ('acutecomb', 600, 0), ('<end>', 600, 0))
+     cand    (('space', 0, 0), ('acutecomb', 745, -463), ('<end>', 600, 0))
+  mark        U+0020 U+0302
+     release (('space', 0, 0), ('uni0302', 600, 0), ('<end>', 600, 0))
+     cand    (('space', 0, 0), ('uni0302', 728, -481), ('<end>', 600, 0))
+  mark        U+0020 U+0303
+     release (('space', 0, 0), ('tildecomb', 600, 0), ('<end>', 600, 0))
+     cand    (('space', 0, 0), ('tildecomb', 834, -533), ('<end>', 600, 0))
+  mark        U+0020 U+0304
+     release (('space', 0, 0), ('uni0304', 600, 0), ('<end>', 600, 0))
+     cand    (('space', 0, 0), ('uni0304', 825, -530), ('<end>', 600, 0))
+  mark        U+0020 U+0308
+     release (('space', 0, 0), ('uni0308', 600, 0), ('<end>', 600, 0))
+     cand    (('space', 0, 0), ('uni0308', 731, -527), ('<end>', 600, 0))

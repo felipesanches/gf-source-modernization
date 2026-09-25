@@ -1,0 +1,115 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index 70d2ff6..13941be 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -135,8 +135,6 @@ checksum = "b51207b628c10c4830dd45812b691315b4ae1958fc6eca27a6b8fb0add9ce1c1"
+ [[package]]
+ name = "ascii_plist_derive"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "40c6b2bc41a994e0014bbe74a45544c6b4f00ccf05a36f46a90ea9bf942f0e6f"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -1264,8 +1262,6 @@ checksum = "da7c62ceae207dd37ea5b845da6a0696c799f85e97da1ab5b7910be3c1c80223"
+ [[package]]
+ name = "fea-rs"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "5709503cad4c8bd7092135f9c2e2ac077c3649f0fd128c924bf3bd666ff24f32"
+ dependencies = [
+  "ansi_term",
+  "fontdrasil 1.0.0",
+@@ -1355,8 +1351,6 @@ dependencies = [
+ [[package]]
+ name = "fontbe"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "03171a4406bc135c3bb621baf18377dbc6bc9cef227cf52579969848841ec50d"
+ dependencies = [
+  "chrono",
+  "fea-rs",
+@@ -1378,8 +1372,6 @@ dependencies = [
+ [[package]]
+ name = "fontc"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "4b16e210d4e038688b9469c5d936ffba3b91507aa58fd1f03fc27d11ee6dc961"
+ dependencies = [
+  "bitflags 2.13.2",
+  "chrono",
+@@ -1424,8 +1416,6 @@ dependencies = [
+ [[package]]
+ name = "fontdrasil"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "f91acc7fba7639e042ba0b65ade604406921bff9b3304a722145ee707f4741e5"
+ dependencies = [
+  "kurbo 0.13.1",
+  "log",
+@@ -1439,8 +1429,6 @@ dependencies = [
+ [[package]]
+ name = "fontir"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0c5acafe4b0e9d4387e32d897e71b381f467a79d6dd2d11e6cc08b9eb58b7146"
+ dependencies = [
+  "bitflags 2.13.2",
+  "chrono",
+@@ -1482,8 +1470,6 @@ dependencies = [
+ [[package]]
+ name = "fontra2fontir"
+ version = "0.5.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "8700197ae0afc758f772596688476f073b8665d741bf8055a52d4692a7ce6bcd"
+ dependencies = [
+  "fontdrasil 1.0.0",
+  "fontir",
+@@ -1937,8 +1923,6 @@ checksum = "9985c9503b412198aa4197559e9a318524ebc4519c229bfa05a535828c950b9d"
+ [[package]]
+ name = "glyphs-reader"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "fc761eae19b2c55df85b6632af7464076431f180b80758fc53359169180adc58"
+ dependencies = [
+  "ascii_plist_derive",
+  "chrono",
+@@ -1959,8 +1943,6 @@ dependencies = [
+ [[package]]
+ name = "glyphs2fontir"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "c56b44891d7b9d29d876687b0ebd0f897b4b1b20087971bc66eae611fe4b9c49"
+ dependencies = [
+  "chrono",
+  "fontdrasil 1.0.0",
+@@ -5532,8 +5514,6 @@ dependencies = [
+ [[package]]
+ name = "ufo2fontir"
+ version = "1.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "b3d21e91fd555e837143615deeb782c64a52b678f236a1a1ced65bd10c250949"
+ dependencies = [
+  "chrono",
+  "fea-rs",
+diff --git a/Cargo.toml b/Cargo.toml
+index e941092..50a80f4 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -72,3 +72,16 @@ tilvisan = "0.1.1"
+ pretty_assertions = "1"
+ tempfile = "3"
+ serial_test = "3"
++
++# PROTOTYPE ONLY (not part of the upstream change): build against fontc 1.0.0
++# plus the shared-layout-scripts patch, from a scratch clone of the fontc tag.
++[patch.crates-io]
++fontc = { path = "../fontc-proto/fontc" }
++fea-rs = { path = "../fontc-proto/fea-rs" }
++fontbe = { path = "../fontc-proto/fontbe" }
++fontir = { path = "../fontc-proto/fontir" }
++fontdrasil = { path = "../fontc-proto/fontdrasil" }
++glyphs-reader = { path = "../fontc-proto/glyphs-reader" }
++glyphs2fontir = { path = "../fontc-proto/glyphs2fontir" }
++ufo2fontir = { path = "../fontc-proto/ufo2fontir" }
++fontra2fontir = { path = "../fontc-proto/fontra2fontir" }

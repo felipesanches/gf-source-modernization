@@ -1,0 +1,31 @@
+thread 'filters::decomposecomponentreferences::tests::test_decompose' (30539) panicked at babelfont/src/filters/decomposecomponentreferences.rs:559:73:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- filters::decomposecomponentreferences::tests::test_pass_on_external_axes stdout ----
+
+thread 'filters::decomposecomponentreferences::tests::test_pass_on_external_axes' (30541) panicked at babelfont/src/filters/decomposecomponentreferences.rs:710:73:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+---- filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole stdout ----
+
+thread 'filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole' (30542) panicked at babelfont/src/filters/decomposecomponentreferences.rs:582:73:
+called `Result::unwrap()` on an `Err` value: General("Failed to read designspace.json: No such file or directory (os error 2)")
+
+
+failures:
+    convertors::robocjk::tests::test_deserialize_designspace
+    convertors::robocjk::tests::test_load_robocjk
+    convertors::robocjk::tests::test_load_robocjk_codepoints
+    convertors::robocjk::tests::test_load_robocjk_deep_components
+    convertors::robocjk::tests::test_load_robocjk_glyphs
+    convertors::robocjk::tests::test_load_robocjk_masters
+    convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif
+    convertors::robocjk::tests::test_load_robocjk_variation_layer_classification
+    filters::decomposecomponentreferences::tests::test_decompose
+    filters::decomposecomponentreferences::tests::test_pass_on_external_axes
+    filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole
+
+test result: FAILED. 256 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.84s
+
+error: test failed, to rerun pass `-p babelfont --lib`
+exit=0

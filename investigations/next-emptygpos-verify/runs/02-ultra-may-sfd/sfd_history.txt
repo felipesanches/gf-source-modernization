@@ -1,0 +1,33 @@
+== blob ids (same id == byte-identical)
+ea414dccc7f36f5cdcaab73099dc1bed4647afd8 7f2fe1832:ultra/Ultra.ttf
+11a5d859bd800dbf0133ec36725aec9a84fc3c2c 2d042ebbd:ultra/Ultra.ttf
+d7109ddfd5aee2a2750c97d090576482e6f9d605 10ef7b362:ultra/Ultra.ttf
+11a5d859bd800dbf0133ec36725aec9a84fc3c2c 52f780bc9d197280a9f430574e179a5f233c56b6:apache/ultra/Ultra.ttf
+78bfdba498f3fdb13410471a21be35809ba96645 2d042ebbd:ultra/src/Ultra-TTF.sfd
+3b258c0a22cbcc865eb80c84cae3cc334b1daf72 10ef7b362:ultra/src/Ultra-TTF.sfd
+3b258c0a22cbcc865eb80c84cae3cc334b1daf72 52f780bc9d197280a9f430574e179a5f233c56b6:apache/ultra/src/Ultra-TTF.sfd
+google/fonts 90abd17b4:apache/ultra/Ultra.ttf 11a5d859bd800dbf0133ec36725aec9a84fc3c2c
+== header fields (< May 2d042ebbd, > Oct 52f780bc)
+1c1
+< Weight: Book
+---
+> Weight: Black
+3,6c3,7
+< ModificationTime: 1304463351
+< TTFWeight: 400
+< Lookup: 258 0 0 "'kern' Horizontal Kerning in Latin lookup 0"  {"'kern' Horizontal Kerning in Latin lookup 0 subtable"  } ['kern' ('DFLT' <'dflt' > 'latn' <'dflt' > ) ]
+< BeginChars: 65539 374
+---
+> ModificationTime: 1318899232
+> TTFWeight: 900
+> Lookup: 258 0 0 "'kern' Horizontal Kerning in Latin lookup 0"  {"'kern' Horizontal Kerning in Latin lookup 0 per glyph data 0"  "'kern' Horizontal Kerning in Latin lookup 0 kerning class 1"  } ['kern' ('latn' <'dflt' > ) ]
+> KernClass2: 26+ 27 "'kern' Horizontal Kerning in Latin lookup 0 kerning class 1" 
+> BeginChars: 65537 372
+== glyph set
+207d206
+< StartChar: nonmarkingreturn
+212d210
+< StartChar: .null
+== kerning: Kerns2 lists May 110, Oct 8; KernClass2 May 0, Oct 1
+== A-group glyphs with a per-glyph kern list in May:
+  none

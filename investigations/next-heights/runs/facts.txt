@@ -1,0 +1,500 @@
+==============================================================================
+KottaOne-Regular  pair: ofl/kottaone/src/KottaOne-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/kottaone/KottaOne-Regular.ttf
+  RELEASE  OS/2 v2 x=76 cap=212 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-01-22 16:37:04 srcModified 2012-01-22 18:39:02
+           head.created 2012-01-22 18:39:03 modified 2012-01-22 18:39:03
+  SFD      FontName: KottaOne-Regular
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1327250224
+           ModificationTime: 1327257542
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-01-22 16:37:04
+             ModificationTime = 2012-01-22 18:39:02
+  OTF      src/KottaOne-Regular.otf: OS/2 v2 x=480 cap=690 wc=400 upm=1000
+           no FFTM
+           head.created 2012-01-22 16:37:04 modified 2012-01-22 18:38:58
+           CFF BlueValues [-20, 0, 495, 495, 687, 696] OtherBlues [-255, -255]
+           name5: Version 1.001
+           name3: AniaKruk: Kotta One: 2012
+==============================================================================
+Ledger-Regular  pair: ofl/ledger/src/Ledger-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/ledger/Ledger-Regular.ttf
+  RELEASE  OS/2 v2 x=487 cap=750 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-02-17 14:02:51 srcModified 2012-02-17 19:29:08
+           head.created 2012-02-17 19:29:08 modified 2020-06-23 11:56:10
+  SFD      FontName: Ledger-Regular
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1329487371
+           ModificationTime: 1329506948
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-02-17 14:02:51
+             ModificationTime = 2012-02-17 19:29:08
+  OTF      src/Ledger-Regular.otf: OS/2 v2 x=485 cap=750 wc=400 upm=1000
+           no FFTM
+           head.created 2012-02-17 14:02:51 modified 2012-02-17 19:27:34
+           CFF BlueValues [-21, 0, 487, 495, 750, 768] OtherBlues [-329, -315]
+           name5: 1.001
+           name3: DenisMasharov: Ledger: 2011
+==============================================================================
+LilitaOne-Regular  pair: ofl/lilitaone/src/LilitaOne-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/lilitaone/LilitaOne-Regular.ttf
+  RELEASE  OS/2 v2 x=506 cap=704 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-01-06 20:03:03 srcModified 2012-01-06 20:27:54
+           head.created 2012-01-06 20:27:54 modified 2012-01-06 20:27:54
+  SFD      FontName: LilitaOne
+           Version: 1.002
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1325880183
+           ModificationTime: 1325881674
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-01-06 20:03:03
+             ModificationTime = 2012-01-06 20:27:54
+  OTF      src/LilitaOne-Regular.otf: OS/2 v2 x=500 cap=710 wc=400 upm=1000
+           no FFTM
+           head.created 2012-01-06 20:03:03 modified 2012-01-06 20:27:31
+           CFF BlueValues [-10, 0, 506, 510, 704, 709] OtherBlues [-193, -193]
+           name5: Version 1.002
+           name3: JuanMontoreano: Lilita One: 2011
+==============================================================================
+Lustria-Regular  pair: ofl/lustria/src/Lustria-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/lustria/Lustria-Regular.ttf
+  RELEASE  OS/2 v2 x=504 cap=704 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-01-11 23:44:24 srcModified 2012-01-11 22:58:18
+           head.created 2012-01-11 22:58:18 modified 2012-01-11 22:58:18
+  SFD      FontName: Lustria-Regular
+           Version: 001.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1326325464
+           ModificationTime: 1326322698
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-01-11 23:44:24
+             ModificationTime = 2012-01-11 22:58:18
+  OTF      src/Lustria-Regular.otf: OS/2 v2 x=500 cap=700 wc=400 upm=1000
+           no FFTM
+           head.created 2012-01-11 23:44:24 modified 2012-01-11 22:58:12
+           CFF BlueValues [-11, 0, 504, 511, 704, 711] OtherBlues [-304, -304]
+           name5: Version 001.001
+           name3: MatthewDesmond: Lustria: 2011
+==============================================================================
+Macondo-Regular  pair: ofl/macondo/src/Macondo-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/macondo/Macondo-Regular.ttf
+  RELEASE  OS/2 v2 x=24 cap=53 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-01-11 23:44:27 srcModified 2012-01-11 22:58:18
+           head.created 2012-01-11 22:58:18 modified 2012-01-11 22:58:18
+  SFD      FontName: Macondo-Regular
+           Version: 2.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1326325467
+           ModificationTime: 1326322698
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-01-11 23:44:27
+             ModificationTime = 2012-01-11 22:58:18
+  OTF      src/Macondo-Regular.otf: OS/2 v2 x=456 cap=696 wc=400 upm=1000
+           no FFTM
+           head.created 2012-01-11 23:44:27 modified 2012-01-11 22:58:13
+           CFF BlueValues [-6, 0, 456, 456, 696, 696] OtherBlues [-290, -290]
+           name5: Version 2.001
+           name3: JohnVargasBeltran: Macondo Regular: 1997
+==============================================================================
+Magra-Bold  pair: ofl/magra/src/Magra-Bold-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/magra/Magra-Bold.ttf
+  RELEASE  OS/2 v2 x=525 cap=700 wc=600  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-01-06 20:03:21 srcModified 2012-01-06 20:27:54
+           head.created 2012-01-06 20:27:54 modified 2012-01-06 20:27:54
+  SFD      FontName: Magra-Bold
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1325880201
+           ModificationTime: 1325881674
+           TTFWeight: 600
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-01-06 20:03:21
+             ModificationTime = 2012-01-06 20:27:54
+  OTF      src/Magra-Bold.otf: OS/2 v2 x=525 cap=700 wc=600 upm=1000
+           no FFTM
+           head.created 2012-01-06 20:03:21 modified 2012-01-06 20:27:32
+           CFF BlueValues [-12, 0, 525, 537, 700, 712, 750, 760] OtherBlues [-200, -188]
+           name5: Version 1.001
+           name3: VivianaMonsalve: Magra Bold: 2011
+==============================================================================
+MergeOne-Regular  pair: ofl/mergeone/src/MergeOne-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/mergeone/MergeOne-Regular.ttf
+  RELEASE  OS/2 v3 x=493 cap=679 wc=400  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2011-01-24 11:36:00 srcModified 2012-11-12 15:41:29
+           head.created 2012-11-12 15:41:29 modified 2012-11-12 15:41:29
+  SFD      FontName: MergeOne-Regular
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1295868960
+           ModificationTime: 1352734889
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2011-01-24 11:36:00
+             ModificationTime = 2012-11-12 15:41:29
+  OTF      src/MergeOne-Regular.otf: OS/2 v3 x=493 cap=679 wc=400 upm=1000
+           no FFTM
+           head.created 2011-01-24 11:36:00 modified 2012-11-12 15:39:41
+           CFF BlueValues [-8, 0, 493, 502, 679, 687] OtherBlues [-226, -226]
+           name5: Version 1.001
+           name3: Philatype: Merge One: 2012
+==============================================================================
+OleoScript-Bold  pair: ofl/oleoscript/src/OleoScript-Bold-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/oleoscript/OleoScript-Bold.ttf
+  RELEASE  OS/2 v3 x=443 cap=710 wc=700  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2012-02-07 00:27:00 srcModified 2012-11-12 15:41:30
+           head.created 2012-11-12 15:41:30 modified 2012-11-12 15:41:30
+  SFD      FontName: OleoScript-Bold
+           Version: 1.002
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1328574420
+           ModificationTime: 1352734890
+           TTFWeight: 700
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-02-07 00:27:00
+             ModificationTime = 2012-11-12 15:41:30
+  OTF      src/OleoScript-Bold.otf: OS/2 v3 x=443 cap=710 wc=700 upm=1000
+           no FFTM
+           head.created 2012-02-07 00:27:00 modified 2012-11-12 15:39:41
+           CFF BlueValues [-12, 0, 443, 443, 710, 710] OtherBlues [-224, -224]
+           name5: Version 1.002
+           name3: Soytutype: Oleo Script Bold: 2012
+==============================================================================
+OleoScript-Regular  pair: ofl/oleoscript/src/OleoScript-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/oleoscript/OleoScript-Regular.ttf
+  RELEASE  OS/2 v3 x=443 cap=710 wc=400  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2012-02-07 00:27:00 srcModified 2012-11-12 15:41:30
+           head.created 2012-11-12 15:41:30 modified 2012-11-12 15:41:30
+  SFD      FontName: OleoScript-Regular
+           Version: 1.002
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1328574420
+           ModificationTime: 1352734890
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-02-07 00:27:00
+             ModificationTime = 2012-11-12 15:41:30
+  OTF      src/OleoScript-Regular.otf: OS/2 v3 x=443 cap=710 wc=400 upm=1000
+           no FFTM
+           head.created 2012-02-07 00:27:00 modified 2012-11-12 15:39:41
+           CFF BlueValues [-12, 0, 443, 450, 710, 710] OtherBlues [-224, -224]
+           name5: Version 1.002
+           name3: Soytutype: Oleo Script: 2012
+==============================================================================
+OleoScriptSwashCaps-Bold  pair: ofl/oleoscriptswashcaps/src/OleoScriptSwashCaps-Bold-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/oleoscriptswashcaps/OleoScriptSwashCaps-Bold.ttf
+  RELEASE  OS/2 v3 x=443 cap=747 wc=700  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2012-02-07 00:27:00 srcModified 2012-11-12 15:41:30
+           head.created 2012-11-12 15:41:30 modified 2012-11-12 15:41:30
+  SFD      FontName: OleoScriptSwashCaps-Bold
+           Version: 1.002
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1328574420
+           ModificationTime: 1352734890
+           TTFWeight: 700
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-02-07 00:27:00
+             ModificationTime = 2012-11-12 15:41:30
+  OTF      src/OleoScriptSwashCaps-Bold.otf: OS/2 v3 x=443 cap=710 wc=700 upm=1000
+           no FFTM
+           head.created 2012-02-07 00:27:00 modified 2012-11-12 15:39:41
+           CFF BlueValues [-13, 0, 443, 443, 747, 747] OtherBlues [-224, -224]
+           name5: Version 1.002
+           name3: Soytutype: Oleo Script Swash Caps Bold: 2012
+==============================================================================
+OleoScriptSwashCaps-Regular  pair: ofl/oleoscriptswashcaps/src/OleoScriptSwashCaps-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/oleoscriptswashcaps/OleoScriptSwashCaps-Regular.ttf
+  RELEASE  OS/2 v3 x=443 cap=747 wc=400  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2012-02-07 00:27:00 srcModified 2012-11-12 15:41:31
+           head.created 2012-11-12 15:41:31 modified 2012-11-12 15:41:31
+  SFD      FontName: OleoScriptSwashCaps-Regular
+           Version: 1.002
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1328574420
+           ModificationTime: 1352734891
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-02-07 00:27:00
+             ModificationTime = 2012-11-12 15:41:31
+  OTF      src/OleoScriptSwashCaps-Regular.otf: OS/2 v3 x=443 cap=710 wc=400 upm=1000
+           no FFTM
+           head.created 2012-02-07 00:27:00 modified 2012-11-12 15:39:42
+           CFF BlueValues [-12, 0, 443, 450, 747, 747] OtherBlues [-224, -224]
+           name5: Version 1.002
+           name3: Soytutype: Oleo Script Swash Caps: 2012
+==============================================================================
+Rambla-Bold  pair: ofl/rambla/src/Rambla-Bold-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/rambla/Rambla-Bold.ttf
+  RELEASE  OS/2 v3 x=517 cap=669 wc=700  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2011-11-04 09:22:00 srcModified 2012-11-01 05:56:40
+           head.created 2012-11-01 05:56:40 modified 2012-11-01 05:56:40
+  SFD      FontName: Rambla-Bold
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1320398520
+           ModificationTime: 1351749400
+           TTFWeight: 700
+           GaspTable: 1 65535 15 1
+             CreationTime = 2011-11-04 09:22:00
+             ModificationTime = 2012-11-01 05:56:40
+  OTF      src/Rambla-Bold.otf: OS/2 v3 x=517 cap=669 wc=700 upm=1000
+           no FFTM
+           head.created 2011-11-04 09:22:00 modified 2012-11-01 05:56:27
+           CFF BlueValues [-13, 0, 517, 524, 669, 680] OtherBlues [-244, -222]
+           name5: Version 1.001
+           name3: MartinSommaruga: Rambla Bold: 2011
+==============================================================================
+Rambla-BoldItalic  pair: ofl/rambla/src/Rambla-BoldItalic-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/rambla/Rambla-BoldItalic.ttf
+  RELEASE  OS/2 v3 x=517 cap=669 wc=700  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2011-11-04 09:22:00 srcModified 2012-11-01 05:56:40
+           head.created 2012-11-01 05:56:40 modified 2012-11-01 05:56:40
+  SFD      FontName: Rambla-BoldItalic
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1320398520
+           ModificationTime: 1351749400
+           TTFWeight: 700
+           GaspTable: 1 65535 15 1
+             CreationTime = 2011-11-04 09:22:00
+             ModificationTime = 2012-11-01 05:56:40
+  OTF      src/Rambla-BoldItalic.otf: OS/2 v3 x=517 cap=669 wc=700 upm=1000
+           no FFTM
+           head.created 2011-11-04 09:22:00 modified 2012-11-01 05:56:26
+           CFF BlueValues [-13, 0, 517, 524, 669, 680] OtherBlues [-244, -222]
+           name5: Version 1.001
+           name3: MartinSommaruga: Rambla Bold Italic: 2011
+==============================================================================
+Rosarivo-Italic  pair: ofl/rosarivo/src/Rosarivo-Italic-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/rosarivo/Rosarivo-Italic.ttf
+  RELEASE  OS/2 v2 x=217 cap=224 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-03-27 09:34:12 srcModified 2012-03-27 16:41:55
+           head.created 2012-03-27 16:41:55 modified 2012-03-27 16:41:55
+  SFD      FontName: Rosarivo-Italic
+           Version: 1.003
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1332840852
+           ModificationTime: 1332866515
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-03-27 09:34:12
+             ModificationTime = 2012-03-27 16:41:55
+  OTF      src/Rosarivo-Italic.otf: OS/2 v2 x=503 cap=728 wc=400 upm=1000
+           no FFTM
+           head.created 2012-03-27 09:34:12 modified 2012-03-27 16:41:52
+           CFF BlueValues [-20, 0, 521, 521, 727, 736] OtherBlues [-380, -373]
+           name5: Version 1.003
+           name3: PabloUgerman: Rosarivo Italic: 2011
+==============================================================================
+Sail-Regular  pair: ofl/sail/src/Sail-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/sail/Sail-Regular.ttf
+  RELEASE  OS/2 v2 x=435 cap=666 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-01-12 23:15:13 srcModified 2012-01-12 22:25:26
+           head.created 2012-01-12 22:25:26 modified 2012-01-12 22:25:26
+  SFD      FontName: Sail-Regular
+           Version: 1.002
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1326410113
+           ModificationTime: 1326407126
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-01-12 23:15:13
+             ModificationTime = 2012-01-12 22:25:26
+  OTF      src/Sail-Regular.otf: OS/2 v2 x=375 cap=591 wc=400 upm=1000
+           no FFTM
+           head.created 2012-01-12 23:15:13 modified 2012-01-12 22:25:18
+           CFF BlueValues [0, 0, 389, 389, 666, 666] OtherBlues [-184, -183]
+           name5: Version 1.002
+           name3: MiguelHernandez: Sail: 2011
+==============================================================================
+TextMeOne-Regular  pair: ofl/textmeone/src/TextMeOne-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/textmeone/TextMeOne-Regular.ttf
+  RELEASE  OS/2 v3 x=502 cap=700 wc=400  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2012-10-19 10:01:00 srcModified 2012-11-04 18:41:02
+           head.created 2012-11-04 18:41:02 modified 2012-11-04 18:41:02
+  SFD      FontName: TextMeOne-Regular
+           Version: 1.003
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1350640860
+           ModificationTime: 1352054462
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-10-19 10:01:00
+             ModificationTime = 2012-11-04 18:41:02
+  OTF      src/TextMeOne-Regular.otf: OS/2 v3 x=500 cap=700 wc=400 upm=1000
+           no FFTM
+           head.created 2012-10-19 10:01:00 modified 2012-11-04 18:40:44
+           CFF BlueValues [-1, 0, 502, 502, 700, 706] OtherBlues [-250, -250]
+           name5: Version 1.003
+           name3: JuliaPetretta: Text Me One: 2012
+==============================================================================
+Magra-Regular  pair: ofl/magra/src/Magra-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/magra/Magra-Regular.ttf
+  RELEASE  OS/2 v2 x=525 cap=700 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-01-06 20:25:58 srcModified 2012-01-06 20:27:54
+           head.created 2012-01-06 20:27:54 modified 2012-01-06 20:27:54
+  SFD      FontName: Magra
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1325881558
+           ModificationTime: 1325881674
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-01-06 20:25:58
+             ModificationTime = 2012-01-06 20:27:54
+  OTF      src/Magra-Regular.otf: OS/2 v2 x=525 cap=700 wc=400 upm=1000
+           no FFTM
+           head.created 2012-01-06 20:25:58 modified 2012-01-06 20:27:33
+           CFF BlueValues [-12, 0, 525, 537, 700, 712, 750, 760] OtherBlues [-200, -188]
+           name5: Version 1.001
+           name3: VivianaMonsalve: Magra: 2011
+==============================================================================
+Rambla-Italic  pair: ofl/rambla/src/Rambla-Regular-Italic-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/rambla/Rambla-Italic.ttf
+  RELEASE  OS/2 v3 x=506 cap=668 wc=400  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2011-11-04 09:21:00 srcModified 2012-11-01 05:56:40
+           head.created 2012-11-01 05:56:40 modified 2012-11-01 05:56:40
+  SFD      FontName: Rambla-Italic
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1320398460
+           ModificationTime: 1351749400
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2011-11-04 09:21:00
+             ModificationTime = 2012-11-01 05:56:40
+  OTF      src/Rambla-Regular-Italic.otf: OS/2 v3 x=506 cap=668 wc=400 upm=1000
+           no FFTM
+           head.created 2011-11-04 09:21:00 modified 2012-11-01 05:56:27
+           CFF BlueValues [-13, 0, 506, 516, 668, 682] OtherBlues [-236, -224]
+           name5: Version 1.001
+           name3: MartinSommaruga: Rambla Italic: 2011
+==============================================================================
+Rambla-Regular  pair: ofl/rambla/src/Rambla-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/rambla/Rambla-Regular.ttf
+  RELEASE  OS/2 v3 x=506 cap=668 wc=400  unitsPerEm=1000
+           FFTM build 2012-09-06 01:48:05 (1346896085) srcCreated 2011-11-04 09:22:00 srcModified 2012-11-01 05:56:40
+           head.created 2012-11-01 05:56:40 modified 2012-11-01 05:56:40
+  SFD      FontName: Rambla-Regular
+           Version: 1.001
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 3
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1320398520
+           ModificationTime: 1351749400
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2011-11-04 09:22:00
+             ModificationTime = 2012-11-01 05:56:40
+  OTF      src/Rambla-Regular.otf: OS/2 v3 x=506 cap=668 wc=400 upm=1000
+           no FFTM
+           head.created 2011-11-04 09:22:00 modified 2012-11-01 05:56:28
+           CFF BlueValues [-13, 0, 506, 516, 668, 682] OtherBlues [-236, -224]
+           name5: Version 1.001
+           name3: MartinSommaruga: Rambla: 2011
+==============================================================================
+Rosarivo-Regular  pair: ofl/rosarivo/src/Rosarivo-Regular-TTF.sfd <-> /home/fsanches/compartilhado/google/fonts/ofl/rosarivo/Rosarivo-Regular.ttf
+  RELEASE  OS/2 v2 x=170 cap=757 wc=400  unitsPerEm=1000
+           FFTM build 2011-02-22 13:48:33 (1298382513) srcCreated 2012-03-27 09:24:06 srcModified 2012-03-27 16:41:56
+           head.created 2012-03-27 16:41:56 modified 2012-03-27 16:41:56
+  SFD      FontName: Rosarivo-Regular
+           Version: 1.003
+           Ascent: 800
+           Descent: 200
+           Layer: 0 1 "Back"  1
+           Layer: 1 1 "Fore"  0
+           OS2Version: 2
+           OS2_WeightWidthSlopeOnly: 0
+           CreationTime: 1332840246
+           ModificationTime: 1332866516
+           TTFWeight: 400
+           GaspTable: 1 65535 15 1
+             CreationTime = 2012-03-27 09:24:06
+             ModificationTime = 2012-03-27 16:41:56
+  OTF      src/Rosarivo-Regular.otf: OS/2 v2 x=503 cap=728 wc=400 upm=1000
+           no FFTM
+           head.created 2012-03-27 09:24:06 modified 2012-03-27 16:41:52
+           CFF BlueValues [-20, 0, 509, 509, 728, 757] OtherBlues [-380, -368]
+           name5: Version 1.003
+           name3: PabloUgerman: Rosarivo: 2011

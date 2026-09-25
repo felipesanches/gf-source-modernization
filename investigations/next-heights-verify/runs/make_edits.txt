@@ -1,0 +1,54 @@
+Ledger-Regular: addprivate BlueValues [-21 0 487 495 750 768] (before: no private dictionary); nbspwidth (before: nbsp Width 0, space Width 281)
+    +BeginPrivate: 1
+    +BlueValues 23 [-21 0 487 495 750 768]
+    +EndPrivate
+    -Width: 0
+    +Width: 281
+LilitaOne-Regular: addprivate BlueValues [-10 0 506 510 704 709] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 23 [-10 0 506 510 704 709]
+    +EndPrivate
+Lustria-Regular: addprivate BlueValues [-11 0 504 511 704 711] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 23 [-11 0 504 511 704 711]
+    +EndPrivate
+Magra-Bold: addprivate BlueValues [-12 0 525 537 700 712 750 760] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 31 [-12 0 525 537 700 712 750 760]
+    +EndPrivate
+MergeOne-Regular: addprivate BlueValues [-8 0 493 502 679 687] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 22 [-8 0 493 502 679 687]
+    +EndPrivate
+OleoScript-Bold: addprivate BlueValues [-12 0 443 443 710 710] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 23 [-12 0 443 443 710 710]
+    +EndPrivate
+OleoScript-Regular: addprivate BlueValues [-12 0 443 450 710 710] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 23 [-12 0 443 450 710 710]
+    +EndPrivate
+OleoScriptSwashCaps-Bold: addprivate BlueValues [-13 0 443 443 747 747] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 23 [-13 0 443 443 747 747]
+    +EndPrivate
+OleoScriptSwashCaps-Regular: addprivate BlueValues [-12 0 443 450 747 747] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 23 [-12 0 443 450 747 747]
+    +EndPrivate
+Rambla-Bold: addprivate BlueValues [-13 0 517 524 669 680] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 23 [-13 0 517 524 669 680]
+    +EndPrivate
+Rambla-BoldItalic: addprivate BlueValues [-13 0 517 524 669 680] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 23 [-13 0 517 524 669 680]
+    +EndPrivate
+Sail-Regular: addprivate BlueValues [0 0 389 389 666 666] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 21 [0 0 389 389 666 666]
+    +EndPrivate
+TextMeOne-Regular: addprivate BlueValues [-1 0 502 502 700 706] (before: no private dictionary)
+    +BeginPrivate: 1
+    +BlueValues 22 [-1 0 502 502 700 706]
+    +EndPrivate

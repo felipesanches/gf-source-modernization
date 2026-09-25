@@ -1,0 +1,44 @@
+diff --git a/babelfont/src/convertors/glyphs3.rs b/babelfont/src/convertors/glyphs3.rs
+index 9754dd7..faa5c5e 100644
+--- a/babelfont/src/convertors/glyphs3.rs
++++ b/babelfont/src/convertors/glyphs3.rs
+@@ -438,10 +438,10 @@ fn load_properties(
+                     names.license_url = I18NDictionary::from(value)
+                 }
+                 glyphs3::SingularPropertyKey::PostscriptFullName => {
+-                    names.postscript_name = I18NDictionary::from(value)
++                    names.full_name = I18NDictionary::from(value)
+                 }
+                 glyphs3::SingularPropertyKey::PostscriptFontName => {
+-                    names.postscript_cid_name = I18NDictionary::from(value)
++                    names.postscript_name = I18NDictionary::from(value)
+                 }
+                 glyphs3::SingularPropertyKey::WwsFamilyName => {
+                     names.wws_family_name = I18NDictionary::from(value)
+@@ -482,7 +482,7 @@ fn load_properties(
+                         names.typographic_subfamily = value;
+                     }
+                     glyphs3::LocalizedPropertyKey::PostscriptFullNames => {
+-                        names.postscript_name = value
++                        names.full_name = value
+                     }
+                 }
+             }
+@@ -565,12 +565,15 @@ fn save_properties(names: &Names, custom_ot_values: &CustomOTValues) -> Vec<glyp
+         names.manufacturer_url,
+         glyphs3::SingularPropertyKey::ManufacturerUrl
+     );
++    // Glyphs' postscriptFontName is the PostScript name (name ID 6), and
++    // postscriptFullName the full name. Glyphs has no property for the
++    // PostScript CID findfont name (name ID 20).
+     push_singular!(
+-        names.postscript_name,
++        names.full_name,
+         glyphs3::SingularPropertyKey::PostscriptFullName
+     );
+     push_singular!(
+-        names.postscript_cid_name,
++        names.postscript_name,
+         glyphs3::SingularPropertyKey::PostscriptFontName
+     );
+     push_singular!(

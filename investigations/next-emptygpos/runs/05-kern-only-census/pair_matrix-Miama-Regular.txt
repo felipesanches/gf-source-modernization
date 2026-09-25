@@ -1,0 +1,13 @@
+Miama-Regular.ttf vs Miama-Regular.ttf: 1232100 ordered pairs, 73583 differ {'mark': 73515, 'soft-hyphen': 68}
+  soft-hyphen '\xad̀'
+     release (('space', 0, 0, 0), ('gravecomb', 0, -67, -67), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('gravecomb', 0, 0, 0), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad́'
+     release (('space', 0, 0, 0), ('acutecomb', 0, -114, -67), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('acutecomb', 0, 0, 0), ('__pen__', -1, 0, 0))
+  mark        ' ̀'
+     release (('space', 0, 0, 0), ('gravecomb', 0, -105, -243), ('__pen__', -1, 420, 0))
+     cand    (('space', 0, 0, 0), ('gravecomb', 0, 420, 0), ('__pen__', -1, 420, 0))
+  mark        ' ́'
+     release (('space', 0, 0, 0), ('acutecomb', 0, -152, -243), ('__pen__', -1, 420, 0))
+     cand    (('space', 0, 0, 0), ('acutecomb', 0, 420, 0), ('__pen__', -1, 420, 0))

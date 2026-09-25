@@ -1,0 +1,3 @@
+== KottaOne-Regular: < pos = 81; > pos = 76; 
+== Macondo-Regular: < pos = 25; > pos = 24; 
+== Rosarivo-Italic: < pos = 229; > pos = 217; 

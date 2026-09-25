@@ -1,0 +1,20 @@
+Varela-Regular.ttf vs Varela-Regular.ttf [ltr, ink]: 281961 ordered pairs, 1532 differ {'mark': 1532}
+  marks involved: U+031B=516, U+0323=512, U+0309=504
+  mark        U+0020 U+0309
+     release (('space', 0, 0), ('hookcmb', 260, 0), ('<end>', 260, 0))
+     cand    (('space', 0, 0), ('hookcmb', 296, -223), ('<end>', 260, 0))
+  mark        U+0020 U+031B
+     release (('space', 0, 0), ('horncmb', 260, 0), ('<end>', 260, 0))
+     cand    (('space', 0, 0), ('horncmb', 347, -196), ('<end>', 260, 0))
+  mark        U+0020 U+0323
+     release (('space', 0, 0), ('dotbelowcmb', 260, 0), ('<end>', 260, 0))
+     cand    (('space', 0, 0), ('dotbelowcmb', 241, -2), ('<end>', 260, 0))
+  mark        U+0021 U+0309
+     release (('exclam', 0, 0), ('hookcmb', 281, 0), ('<end>', 281, 0))
+     cand    (('exclam', 0, 0), ('hookcmb', 306, 252), ('<end>', 281, 0))
+  mark        U+0021 U+031B
+     release (('exclam', 0, 0), ('horncmb', 281, 0), ('<end>', 281, 0))
+     cand    (('exclam', 0, 0), ('horncmb', 368, 307), ('<end>', 281, 0))
+  mark        U+0021 U+0323
+     release (('exclam', 0, 0), ('dotbelowcmb', 281, 0), ('<end>', 281, 0))
+     cand    (('exclam', 0, 0), ('dotbelowcmb', 251, -2), ('<end>', 281, 0))

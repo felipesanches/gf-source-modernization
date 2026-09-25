@@ -1,0 +1,2 @@
+Wallpoet-Regular.ttf: 61 hits; [('dollar', 4), ('numbersign', 2), ('zero', 2), ('at', 2), ('Q', 2), ('asciicircum', 2), ('Acircumflex', 2), ('Ecircumflex', 2), ('Icircumflex', 2), ('Ocircumflex', 2), ('Ucircumflex', 2), ('acircumflex', 2)]
+Wallpoet-Regular.ttf: 112 hits; [('Ecircumflex', 5), ('E', 3), ('F', 3), ('dollar', 3), ('Eacute', 3), ('Egrave', 3), ('Edieresis', 3), ('Icircumflex', 3), ('Ucircumflex', 3), ('icircumflex', 3), ('Q', 2), ('R', 2)]

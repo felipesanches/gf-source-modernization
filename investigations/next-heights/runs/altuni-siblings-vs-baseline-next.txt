@@ -1,0 +1,4 @@
+Magra-Regular: altuni gate == baseline-next gate
+Rambla-Italic: altuni gate == baseline-next gate
+Rambla-Regular: altuni gate == baseline-next gate
+Rosarivo-Regular: altuni gate == baseline-next gate

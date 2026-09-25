@@ -1,0 +1,6 @@
+== Smokum-Regular oracle vs prototype
+GSUB SAME scripts=['DFLT', 'latn'] features=0 lookups=0
+GPOS SAME scripts=['DFLT', 'latn'] features=1 lookups=2
+== Ultra-Regular oracle vs prototype
+GSUB SAME scripts=['DFLT', 'latn'] features=0 lookups=0
+GPOS SAME scripts=['DFLT', 'latn'] features=1 lookups=1

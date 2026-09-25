@@ -1,0 +1,2 @@
+variant A: {1: 'Wallpoet', 2: 'Regular', 4: 'Wallpoet Regular', 6: 'Wallpoet'}
+variant B: {1: 'Wallpoet', 2: 'Regular', 4: 'Wallpoet', 6: 'Wallpoet'}

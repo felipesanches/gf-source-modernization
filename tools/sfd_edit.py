@@ -13,8 +13,16 @@ written for either tool means the same thing:
   nbspwidth                       set the U+00A0 glyph's Width to the space's
   renameglyph <old> <new>         rename a StartChar and every standalone reference
 
-and three this workspace adds, each from an investigation's reference
+and four this workspace adds, each from an investigation's reference
 implementation (investigations/<unit>/):
+
+  addprivate <Key> <value...>     add a PostScript private dictionary holding one
+                                  entry, where FontForge's SFD writer puts it (after
+                                  the display/WinInfo lines, before Grid, TeXData,
+                                  AnchorClass2 and BeginChars); FATAL if the source
+                                  already has one (next-heights: the -TTF.sfd files
+                                  re-imported from a TTF lost the BlueValues their
+                                  release was exported with)
 
   scaleem <em>                    change the em as FontForge 20100501's `f.em = <em>`
                                   did (tools/ff_scale_em.py, puritan: its port
@@ -94,6 +102,19 @@ def apply(text, op, args):
         text = text.replace(block, re.sub(r"^Width: -?\d+", "Width: %s" % sw.group(1), block,
                                           count=1, flags=re.M), 1)
         return text, "nbsp Width %s, space Width %s" % (nw.group(1), sw.group(1))
+    if op == "addprivate":
+        key, value = args.split(" ", 1)
+        head = text.split("\nStartChar:", 1)[0]
+        if re.search(r"^BeginPrivate:", head, re.M):
+            raise EditError("the source already has a private dictionary")
+        # SFD_Dump writes the private dictionary after DisplaySize/AntiAlias/FitToEm/
+        # WinInfo/OnlyBitmaps and before these (fontforge/sfd.c, SFDDumpPrivate)
+        m = re.search(r"^(?:GridOrder2:|Grid$|TeXData:|AnchorClass2:|BeginSubFonts:|BeginChars:)",
+                      text, re.M)
+        if not m:
+            raise EditError("no BeginChars: line to insert before")
+        block = "BeginPrivate: 1\n%s %d %s\nEndPrivate\n" % (key, len(value), value)
+        return text[:m.start()] + block + text[m.start():], "no private dictionary"
     if op == "renameglyph":
         old, new = args.split()
         n_old = len(re.findall(r"^StartChar: %s$" % re.escape(old), text, re.M))

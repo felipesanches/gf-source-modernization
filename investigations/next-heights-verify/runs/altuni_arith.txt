@@ -1,0 +1,108 @@
+======================================================================
+KottaOne-Regular x-height, 2011 rule, lookup = SFFindGID (primary or AltUni): 19 glyphs, flats=[], distinct curve tops=[480.0, 485.0, 495.0] sum=1460.000 / 19 glyphs = 76.842 -> 76
+    U+0061 a            round   495.000
+    U+0063 c            round   480.000
+    U+0065 e            round   480.000
+    U+0067 g            round   495.000
+    U+006D m            round   485.000
+    U+006E n            round   485.000
+    U+006F o            round   480.000
+    U+0070 p            round   485.000
+    U+0071 q            round   495.000
+    U+0072 r            round   485.000
+    U+0073 s            round   480.000
+    U+0075 u            round   495.000
+    U+0076 v            round   485.000
+    U+0077 w            round   485.000
+    U+0078 x            round   485.000
+    U+0079 y            round   495.000
+    U+007A z            round   480.000
+    U+0131 dotlessi     round   485.000
+    U+03BC mu           round   495.000
+KottaOne-Regular x-height, 2011 rule, lookup = primary only: 18 glyphs, flats=[], distinct curve tops=[480.0, 485.0, 495.0] sum=1460.000 / 18 glyphs = 81.111 -> 81
+======================================================================
+Macondo-Regular x-height, 2011 rule, lookup = SFFindGID (primary or AltUni): 19 glyphs, flats=[], distinct curve tops=[456.0] sum=456.000 / 19 glyphs = 24.000 -> 24
+    U+0061 a            round   456.000
+    U+0063 c            round   456.000
+    U+0065 e            round   456.000
+    U+0067 g            round   456.000
+    U+006D m            round   456.000
+    U+006E n            round   456.000
+    U+006F o            round   456.000
+    U+0070 p            round   456.000
+    U+0071 q            round   456.000
+    U+0072 r            round   456.000
+    U+0073 s            round   456.000
+    U+0075 u            round   456.000
+    U+0076 v            round   456.000
+    U+0077 w            round   456.000
+    U+0078 x            round   456.000
+    U+0079 y            round   456.000
+    U+007A z            round   456.000
+    U+0131 dotlessi     round   456.000
+    U+03BC mu           round   456.000
+Macondo-Regular x-height, 2011 rule, lookup = primary only: 18 glyphs, flats=[], distinct curve tops=[456.0] sum=456.000 / 18 glyphs = 25.333 -> 25
+======================================================================
+Rosarivo-Italic x-height, 2011 rule, lookup = SFFindGID (primary or AltUni): 19 glyphs, flats=[], distinct curve tops=[500.0, 509.0, 511.0, 513.0, 516.0, 521.0, 528.0, 540.0] sum=4138.000 / 19 glyphs = 217.789 -> 217
+    U+0061 a            pointy  528.000
+    U+0063 c            round   509.000
+    U+0065 e            round   509.000
+    U+0067 g            pointy  540.000
+    U+006D m            round   516.000
+    U+006E n            round   516.000
+    U+006F o            round   509.000
+    U+0070 p            round   516.000
+    U+0071 q            pointy  528.000
+    U+0072 r            round   516.000
+    U+0073 s            round   513.000
+    U+0075 u            round   516.000
+    U+0076 v            round   521.000
+    U+0077 w            pointy  521.000
+    U+0078 x            round   511.000
+    U+0079 y            round   521.000
+    U+007A z            round   500.000
+    U+0131 dotlessi     round   516.000
+    U+03BC mu           pointy  509.000
+Rosarivo-Italic x-height, 2011 rule, lookup = primary only: 18 glyphs, flats=[], distinct curve tops=[500.0, 509.0, 511.0, 513.0, 516.0, 521.0, 528.0, 540.0] sum=4138.000 / 18 glyphs = 229.889 -> 229
+======================================================================
+codepoints of the x/cap lists reachable only via AltUni2, all styles of both batches:
+  families.tsv	Kristi-Regular	x:U+03BC->mu
+  families.tsv	Lekton-Bold	x:U+03BC->mu
+  families.tsv	Lekton-Regular	x:U+03BC->mu
+  families.tsv	Monoton-Regular	x:U+03BC->uni00B5
+  families.tsv	Play-Bold	x:U+03BC->mu
+  families.tsv	Puritan-Bold	x:U+03BC->mu
+  families.tsv	Puritan-BoldItalic	x:U+03BC->mu
+  families.tsv	Puritan-Italic	x:U+03BC->mu
+  families.tsv	Puritan-Regular	x:U+03BC->mu
+  families.tsv	RussoOne-Regular	x:U+03BC->mu
+  families.tsv	SixCaps	x:U+03BC->uni00B5
+  families.tsv	TulpenOne-Regular	x:U+03BC->mu
+  families.tsv	Corben-Bold	x:U+03BC->uni00B5
+  families-next.tsv	KottaOne-Regular	x:U+03BC->mu
+  families-next.tsv	Limelight-Regular	x:U+03BC->mu
+  families-next.tsv	LovedbytheKing	x:U+03BC->mu
+  families-next.tsv	Macondo-Regular	x:U+03BC->mu
+  families-next.tsv	Magra-Bold	x:U+03BC->mu
+  families-next.tsv	Magra-Regular	x:U+03BC->mu
+  families-next.tsv	Marvel-Bold	x:U+03BC->mu
+  families-next.tsv	Marvel-BoldItalic	x:U+03BC->mu
+  families-next.tsv	Marvel-Italic	x:U+03BC->mu
+  families-next.tsv	Marvel-Regular	x:U+03BC->mu
+  families-next.tsv	Numans-Regular	x:U+03BC->mu
+  families-next.tsv	OleoScript-Bold	x:U+03BC->mu
+  families-next.tsv	OleoScript-Regular	x:U+03BC->mu
+  families-next.tsv	OleoScriptSwashCaps-Bold	x:U+03BC->mu
+  families-next.tsv	OleoScriptSwashCaps-Regular	x:U+03BC->mu
+  families-next.tsv	PassionOne-Black	x:U+03BC->mu
+  families-next.tsv	PassionOne-Bold	x:U+03BC->mu
+  families-next.tsv	PassionOne-Regular	x:U+03BC->mu
+  families-next.tsv	Rosarivo-Italic	x:U+03BC->mu
+  families-next.tsv	RougeScript-Regular	x:U+03BC->mu
+  families-next.tsv	Rufina-Bold	x:U+03BC->mu
+  families-next.tsv	Rufina-Regular	x:U+03BC->mu
+  families-next.tsv	Ruluko-Regular	x:U+03BC->mu
+  families-next.tsv	SquadaOne-Regular	x:U+03BC->mu
+  families-next.tsv	TitanOne-Regular	x:U+03BC->mu
+  families-next.tsv	Viga-Regular	x:U+03BC->mu
+  families-next.tsv	Wallpoet-Regular	x:U+03BC->mu

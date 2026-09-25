@@ -1,0 +1,8 @@
+GPOS a: {'version': '0x10000', 'scripts': [('DFLT', [('dflt', 65535, [])]), ('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GPOS b: {'version': '0x10000', 'scripts': [('DFLT', [('dflt', 65535, [])]), ('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GPOS script lists equal: True
+GSUB script lists equal: True
+GPOS a: {'version': '0x10000', 'scripts': [('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GPOS b: {'version': '0x10000', 'scripts': [('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GPOS script lists equal: True
+GSUB script lists equal: True

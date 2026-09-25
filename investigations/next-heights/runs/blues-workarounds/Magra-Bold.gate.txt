@@ -1,0 +1,4 @@
+from: /home/fsanches/compartilhado/sfd-reland-scratch/heights/baseline/Magra-Bold-heights-blues (SRC_OVERRIDE=/home/fsanches/compartilhado/sfd-reland-scratch/heights/edits/Magra-Bold-blues.sfd)
+workarounds: usWeightClass 600 (TTFWeight) as FEA; fontc 1.0.0 drops a single master's instance weightClass
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+0 blocking table difference(s), 1 stale in the release

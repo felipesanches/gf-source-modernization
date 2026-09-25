@@ -1,0 +1,16 @@
+kottaone/KottaOne-Regular commits=1 hg=17b1dd75c9eb gf=17b1dd75c9eb IDENTICAL
+ledger/Ledger-Regular commits=3 hg=4d0df6f0a3c2 gf=0d9e4086208d DIFFER
+lilitaone/LilitaOne-Regular commits=1 hg=f5b641c45c69 gf=f5b641c45c69 IDENTICAL
+lustria/Lustria-Regular commits=1 hg=8b50753779d1 gf=8b50753779d1 IDENTICAL
+macondo/Macondo-Regular commits=1 hg=1910fe29b605 gf=1910fe29b605 IDENTICAL
+magra/Magra-Bold commits=1 hg=3e991012c290 gf=3e991012c290 IDENTICAL
+mergeone/MergeOne-Regular commits=1 hg=93ad28579d4a gf=93ad28579d4a IDENTICAL
+oleoscript/OleoScript-Bold commits=1 hg=7e4843c9d742 gf=7e4843c9d742 IDENTICAL
+oleoscript/OleoScript-Regular commits=1 hg=1aa003ac938a gf=1aa003ac938a IDENTICAL
+oleoscriptswashcaps/OleoScriptSwashCaps-Bold commits=1 hg=0d622c6a5db8 gf=0d622c6a5db8 IDENTICAL
+oleoscriptswashcaps/OleoScriptSwashCaps-Regular commits=1 hg=b8811c803202 gf=b8811c803202 IDENTICAL
+rambla/Rambla-Bold commits=1 hg=0e5af09d5cf4 gf=0e5af09d5cf4 IDENTICAL
+rambla/Rambla-BoldItalic commits=1 hg=6cd51a19872e gf=6cd51a19872e IDENTICAL
+rosarivo/Rosarivo-Italic commits=1 hg=a9865d8ed5f7 gf=a9865d8ed5f7 IDENTICAL
+sail/Sail-Regular commits=1 hg=0ec9a9e84f55 gf=0ec9a9e84f55 IDENTICAL
+textmeone/TextMeOne-Regular commits=1 hg=9fe850239857 gf=9fe850239857 IDENTICAL

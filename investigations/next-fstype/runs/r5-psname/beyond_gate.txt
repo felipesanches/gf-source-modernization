@@ -1,0 +1,48 @@
+================================================================================
+TitilliumWeb-BoldItalic  shipped=TitilliumWeb-BoldItalic.ttf  built=TitilliumWeb-BoldItalic.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=700 built=700
+  != OS/2.fsSelection     shipped=33 built=161
+  == head.macStyle        shipped=3 built=3
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web' built='Titillium Web'
+  == name 2               shipped='Bold Italic' built='Bold Italic'
+  == name 4               shipped='Titillium Web Bold Italic' built='Titillium Web Bold Italic'
+  == name 6               shipped='TitilliumWeb-BoldItalic' built='TitilliumWeb-BoldItalic'
+  == name 16              shipped=None built=None
+  == name 17              shipped=None built=None
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-Regular  shipped=TitilliumWeb-Regular.ttf  built=TitilliumWeb-Regular.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=400 built=400
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web' built='Titillium Web'
+  == name 2               shipped='Regular' built='Regular'
+  == name 4               shipped='Titillium Web Regular' built='Titillium Web Regular'
+  == name 6               shipped='TitilliumWeb-Regular' built='TitilliumWeb-Regular'
+  == name 16              shipped=None built=None
+  == name 17              shipped=None built=None
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+Wallpoet-Regular  shipped=Wallpoet-Regular.ttf  built=Wallpoet-Regular.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=400 built=400
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  == head.fontRevision    shipped=1.0 built=1.0
+  == name 1               shipped='Wallpoet' built='Wallpoet'
+  == name 2               shipped='Regular' built='Regular'
+  != name 4               shipped='Wallpoet' built='Wallpoet Regular'
+  == name 6               shipped='Wallpoet' built='Wallpoet'
+  == name 16              shipped=None built=None
+  == name 17              shipped=None built=None
+  != name 5               shipped='Version 1.000' built='Version 1.000;fontc 1.0.0'

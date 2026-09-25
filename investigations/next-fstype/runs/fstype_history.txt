@@ -1,0 +1,75 @@
+====================================================================================================
+ofl/titilliumweb
+-- ofl/titilliumweb/TitilliumWeb-Black.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=900 rev=1.000 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Black
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=900 rev=1.002 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Black
+   hg 52f780bc9 binary            fsType=8  weight=900 rev=1.000 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Black
+   hg 52f780bc9 TitilliumWeb-Black-TTF.sfd  FontName=TitilliumWeb-Black FSType=8 TTFWeight=900 Version=1.001;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108892
+   hg 52f780bc9 TitilliumWeb-Black.otf  fsType=8  weight=900 rev=1.000 FFTM=- ps=TitilliumWeb-Black
+-- ofl/titilliumweb/TitilliumWeb-Bold.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=700 rev=1.000 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Bold
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=700 rev=1.002 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Bold
+   hg 52f780bc9 binary            fsType=8  weight=700 rev=1.000 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Bold
+   hg 52f780bc9 TitilliumWeb-Bold-TTF.sfd  FontName=TitilliumWeb-Bold FSType=8 TTFWeight=700 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108892
+   hg 52f780bc9 TitilliumWeb-Bold.otf  fsType=8  weight=700 rev=1.000 FFTM=- ps=TitilliumWeb-Bold
+-- ofl/titilliumweb/TitilliumWeb-BoldItalic.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=700 rev=1.000 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-BoldItalic
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=700 rev=1.002 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-BoldItalic
+   hg 52f780bc9 binary            fsType=8  weight=700 rev=1.000 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-BoldItalic
+   hg 52f780bc9 TitilliumWeb-BoldItalic-TTF.sfd  FontName=TitilliumWeb-BoldItalic FSType=8 TTFWeight=700 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108892
+   hg 52f780bc9 TitilliumWeb-BoldItalic.otf  fsType=8  weight=700 rev=1.000 FFTM=- ps=TitilliumWeb-BoldItalic
+-- ofl/titilliumweb/TitilliumWeb-ExtraLight.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=200 rev=1.000 FFTM=2012-09-06 src_mod=1349108894 ps=TitilliumWeb-Thin
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=275 rev=1.002 FFTM=2012-09-06 src_mod=1349108894 ps=TitilliumWeb-ExtraLight
+   hg 52f780bc9 binary            fsType=8  weight=200 rev=1.000 FFTM=2012-09-06 src_mod=1349108894 ps=TitilliumWeb-Thin
+   hg 52f780bc9 TitilliumWeb-Thin-TTF.sfd  FontName=TitilliumWeb-Thin FSType=8 TTFWeight=200 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108894
+   hg 52f780bc9 TitilliumWeb-Thin.otf  fsType=8  weight=200 rev=1.000 FFTM=- ps=TitilliumWeb-Thin
+-- ofl/titilliumweb/TitilliumWeb-ExtraLightItalic.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=200 rev=1.000 FFTM=2012-09-06 src_mod=1349108894 ps=TitilliumWeb-ThinItalic
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=275 rev=1.002 FFTM=2012-09-06 src_mod=1349108894 ps=TitilliumWeb-ExtraLightItalic
+   hg 52f780bc9 binary            fsType=8  weight=200 rev=1.000 FFTM=2012-09-06 src_mod=1349108894 ps=TitilliumWeb-ThinItalic
+   hg 52f780bc9 TitilliumWeb-ThinItalic-TTF.sfd  FontName=TitilliumWeb-ThinItalic FSType=8 TTFWeight=200 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108894
+   hg 52f780bc9 TitilliumWeb-ThinItalic.otf  fsType=8  weight=200 rev=1.000 FFTM=- ps=TitilliumWeb-ThinItalic
+-- ofl/titilliumweb/TitilliumWeb-Italic.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=400 rev=1.000 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Italic
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=400 rev=1.002 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Italic
+   hg 52f780bc9 binary            fsType=8  weight=400 rev=1.000 FFTM=2012-09-06 src_mod=1349108892 ps=TitilliumWeb-Italic
+   hg 52f780bc9 TitilliumWeb-Italic-TTF.sfd  FontName=TitilliumWeb-Italic FSType=8 TTFWeight=400 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108892
+   hg 52f780bc9 TitilliumWeb-Italic.otf  fsType=8  weight=400 rev=1.000 FFTM=- ps=TitilliumWeb-Italic
+-- ofl/titilliumweb/TitilliumWeb-Light.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=300 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-Light
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=300 rev=1.002 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-Light
+   hg 52f780bc9 binary            fsType=8  weight=300 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-Light
+   hg 52f780bc9 TitilliumWeb-Light-TTF.sfd  FontName=TitilliumWeb-Light FSType=8 TTFWeight=300 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108893
+   hg 52f780bc9 TitilliumWeb-Light.otf  fsType=8  weight=300 rev=1.000 FFTM=- ps=TitilliumWeb-Light
+-- ofl/titilliumweb/TitilliumWeb-LightItalic.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=300 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-LightItalic
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=300 rev=1.002 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-LightItalic
+   hg 52f780bc9 binary            fsType=8  weight=300 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-LightItalic
+   hg 52f780bc9 TitilliumWeb-LightItalic-TTF.sfd  FontName=TitilliumWeb-LightItalic FSType=8 TTFWeight=300 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108893
+   hg 52f780bc9 TitilliumWeb-LightItalic.otf  fsType=8  weight=300 rev=1.000 FFTM=- ps=TitilliumWeb-LightItalic
+-- ofl/titilliumweb/TitilliumWeb-Regular.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=400 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-Regular
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=400 rev=1.002 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-Regular
+   hg 52f780bc9 binary            fsType=8  weight=400 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-Regular
+   hg 52f780bc9 TitilliumWeb-Regular-TTF.sfd  FontName=TitilliumWeb-Regular FSType=8 TTFWeight=400 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108893
+   hg 52f780bc9 TitilliumWeb-Regular.otf  fsType=8  weight=400 rev=1.000 FFTM=- ps=TitilliumWeb-Regular
+-- ofl/titilliumweb/TitilliumWeb-SemiBold.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=600 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-SemiBold
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=600 rev=1.002 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-SemiBold
+   hg 52f780bc9 binary            fsType=8  weight=600 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-SemiBold
+   hg 52f780bc9 TitilliumWeb-SemiBold-TTF.sfd  FontName=TitilliumWeb-SemiBold FSType=8 TTFWeight=600 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108893
+   hg 52f780bc9 TitilliumWeb-SemiBold.otf  fsType=8  weight=600 rev=1.000 FFTM=- ps=TitilliumWeb-SemiBold
+-- ofl/titilliumweb/TitilliumWeb-SemiBoldItalic.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=8  weight=600 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-SemiBoldItalic
+   google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added (#931 fsType=0  weight=600 rev=1.002 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-SemiBoldItalic
+   hg 52f780bc9 binary            fsType=8  weight=600 rev=1.000 FFTM=2012-09-06 src_mod=1349108893 ps=TitilliumWeb-SemiBoldItalic
+   hg 52f780bc9 TitilliumWeb-SemiBoldItalic-TTF.sfd  FontName=TitilliumWeb-SemiBoldItalic FSType=8 TTFWeight=600 Version=1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311 ModificationTime=1349108893
+   hg 52f780bc9 TitilliumWeb-SemiBoldItalic.otf  fsType=8  weight=600 rev=1.000 FFTM=- ps=TitilliumWeb-SemiBoldItalic
+====================================================================================================
+ofl/wallpoet
+-- ofl/wallpoet/Wallpoet-Regular.ttf
+   google/fonts 90abd17b4 2015-03-07 Initial commit                          fsType=4  weight=400 rev=1.000 FFTM=2011-02-22 src_mod=1303487403 ps=Wallpoet
+   google/fonts 8ccda7bf7 2015-08-05 Fix fsType for 40 font files            fsType=0  weight=400 rev=1.000 FFTM=2011-02-22 src_mod=1303487403 ps=Wallpoet
+   hg 52f780bc9 binary            fsType=4  weight=400 rev=1.000 FFTM=2011-02-22 src_mod=1303487403 ps=Wallpoet
+   hg 52f780bc9 Wallpoet-Regular-TTF.sfd  FontName=Wallpoet FSType=4 TTFWeight=400 Version=1.000 ModificationTime=1303487403

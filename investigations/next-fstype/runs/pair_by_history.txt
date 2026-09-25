@@ -1,0 +1,28 @@
+================================================================================
+yellowtail/Yellowtail-Regular
+  google/fonts 90abd17b4 2015-03-07 Initial commit                            ps=Yellowtail                       FFTM=3381227313
+  google/fonts 1baf54ea4 2017-08-07 hotfix-yellowtail: v1.002 added (#        ps=Yellowtail-Regular               FFTM=3381227313
+  googlefontdirectory-hg.git 52f780bc9 binary                                 ps=Yellowtail                       FFTM=3381227313
+  still UNPAIRED (historic names matching an .sfd: none)
+================================================================================
+thabit/Thabit-BoldOblique
+  google/fonts 90abd17b4 2015-03-07 Initial commit                            ps=Thabit-Bold-Oblique              FFTM=3301004338
+  googlefontdirectory-hg.git 52f780bc9 binary                                 ps=Thabit-Bold-Oblique              FFTM=3301004338
+  still UNPAIRED (historic names matching an .sfd: none)
+================================================================================
+thabit/Thabit-Oblique
+  google/fonts 90abd17b4 2015-03-07 Initial commit                            ps=Thabit-Oblique                   FFTM=3301004338
+  googlefontdirectory-hg.git 52f780bc9 binary                                 ps=Thabit-Oblique                   FFTM=3301004338
+  still UNPAIRED (historic names matching an .sfd: none)
+================================================================================
+titilliumweb/TitilliumWeb-ExtraLight
+  google/fonts 90abd17b4 2015-03-07 Initial commit                            ps=TitilliumWeb-Thin                FFTM=3429740885
+  google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added         ps=TitilliumWeb-ExtraLight          FFTM=3429740885
+  googlefontdirectory-hg.git 52f780bc9 binary                                 ps=TitilliumWeb-Thin                FFTM=3429740885
+  RULE 4 PAIR: src/TitilliumWeb-Thin-TTF.sfd <- historic PostScript name TitilliumWeb-Thin; FFTM stamps across the history: one (same FontForge export)
+================================================================================
+titilliumweb/TitilliumWeb-ExtraLightItalic
+  google/fonts 90abd17b4 2015-03-07 Initial commit                            ps=TitilliumWeb-ThinItalic          FFTM=3429740885
+  google/fonts 93550bd32 2017-05-09 hotfix-titilliumweb: v1.002 added         ps=TitilliumWeb-ExtraLightItalic    FFTM=3429740885
+  googlefontdirectory-hg.git 52f780bc9 binary                                 ps=TitilliumWeb-ThinItalic          FFTM=3429740885
+  RULE 4 PAIR: src/TitilliumWeb-ThinItalic-TTF.sfd <- historic PostScript name TitilliumWeb-ThinItalic; FFTM stamps across the history: one (same FontForge export)

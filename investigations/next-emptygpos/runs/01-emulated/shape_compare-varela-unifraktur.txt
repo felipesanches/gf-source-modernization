@@ -1,0 +1,20 @@
+release Varela-Regular.ttf: 2292 texts (base-mark=1221, cp-after-H=531, cp-alone=531, mark-after-base=3, mark-alone=3, mark-stack=3)
+Varela-Regular.ttf: 110016 runs, 56688 differ (horizontal 28272 in 1178 texts; vertical 28416)
+    horizontal base-mark       28056 runs
+    horizontal cp-after-H         72 runs
+    horizontal mark-after-base     72 runs
+    horizontal mark-stack         72 runs
+    first: mark-after-base 'H̉' dir=ltr flags=default feat=asis
+      release: (('H', 0, 0, 0), ('hookcmb', 0, 755, 0), ('__pen__', -1, 755, 0))
+      cand   : (('H', 0, 0, 0), ('hookcmb', 0, 543, 252), ('__pen__', -1, 755, 0))
+Varela-Regular.ttf: 110016 runs, 28416 differ (horizontal 0 in 0 texts; vertical 28416)
+release UnifrakturMaguntia-Book.ttf: 1898 texts (base-mark=1377, cp-after-H=247, cp-alone=247, mark-after-base=9, mark-alone=9, mark-stack=9)
+UnifrakturMaguntia-Regular.ttf: 91104 runs, 77754 differ (horizontal 32256 in 1344 texts; vertical 45498)
+    horizontal base-mark       31608 runs
+    horizontal cp-after-H        216 runs
+    horizontal mark-after-base    216 runs
+    horizontal mark-stack        216 runs
+    first: mark-after-base 'H̀' dir=ltr flags=default feat=asis
+      release: (('H', 0, 0, 0), ('gravecomb', 0, 1503, 0), ('__pen__', -1, 1503, 0))
+      cand   : (('H', 0, 0, 0), ('gravecomb', 0, 1291, 660), ('__pen__', -1, 1503, 0))
+UnifrakturMaguntia-Book.ttf: 91104 runs, 45498 differ (horizontal 0 in 0 texts; vertical 45498)

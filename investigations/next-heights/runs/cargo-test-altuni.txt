@@ -1,0 +1,57 @@
+test filters::fontforgeos2defaults::tests::test_a_script_font_name_sets_byte_0 ... ok
+test filters::fontforgeos2defaults::tests::test_a_stated_subscript_x_size_keeps_all_ten ... ok
+test filters::fontforgeos2defaults::tests::test_a_stated_x_height_is_never_overwritten ... ok
+test filters::fontforgeheightglyphcountmean::tests::test_a_stated_height_is_never_overwritten ... ok
+test filters::fontforgeos2defaults::tests::test_glyphs_left_out_of_the_one_advance_check ... ok
+test filters::fontforgeos2defaults::tests::test_italic_angle_slants_the_offsets ... ok
+test filters::fontforgeos2defaults::tests::test_light_gives_3 ... ok
+test filters::fontforgeos2defaults::tests::test_one_advance_for_every_glyph_sets_byte_3_to_9 ... ok
+test filters::fontforgeos2defaults::tests::test_matches_fontforge_on_a_2048_em ... ok
+test filters::fontforgeos2defaults::tests::test_panose_comes_from_the_weight_name ... ok
+test filters::fontforgeos2defaults::tests::test_strikeout_is_integer_arithmetic ... ok
+test filters::fontforgeos2defaults::tests::test_semi_with_bold_gives_7 ... ok
+test filters::fontforgeos2defaults::tests::test_the_x_offsets_come_from_the_truncated_y_offsets ... ok
+test filters::fontforgeos2defaults::tests::test_weight_script_and_width_combine ... ok
+test filters::fontforgeos2defaults::tests::test_width_words_in_the_font_name_set_byte_3 ... ok
+test filters::fontforgeunderlineposition::tests::test_a_master_with_no_underline_position_is_left_alone ... ok
+test filters::fontforgeunderlineposition::tests::test_a_missing_thickness_counts_as_zero ... ok
+test filters::fontforgeos2defaults::tests::test_without_a_subscript_x_size_all_ten_are_computed ... ok
+test filters::fontforgeunderlineposition::tests::test_applying_it_twice_is_not_the_same_as_once ... ok
+test filters::fontforgeunderlineposition::tests::test_the_centre_moves_down_by_half_the_thickness ... ok
+test filters::fontforgeunderlineposition::tests::test_the_difference_is_truncated_towards_zero ... ok
+test convertors::fontforge::tests::test_roundtrip::path_16_resources_fontforge_OverlapBugs_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_15_resources_fontforge_NimbusLGCUni_Regular_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_14_resources_fontforge_MontenegrinGothicOne_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_19_resources_fontforge_dvng10a_crash_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_17_resources_fontforge_Ponomar_sfd ... ok
+test convertors::fontforge::tests::test_roundtrip::path_11_resources_fontforge_Glegoo_Regular_sfd ... ok
+
+test result: ok. 113 passed; 0 failed; 0 ignored; 0 measured; 155 filtered out; finished in 1.67s
+
+fmt-check exit 0
+    Checking termcolor v1.4.1
+    Checking tinyvec v1.13.3
+    Checking env_logger v0.10.2
+    Checking unicode-normalization v0.1.25
+    Checking vfbreader v0.1.6
+    Checking fontc v1.0.0
+    Checking linesweeper v0.4.0
+    Checking sr-aef v0.1.0 (/home/fsanches/compartilhado/sfd-reland-scratch/heights/bf-altuni/sr-aef)
+    Checking typeshare v1.0.5
+    Checking csv v1.4.0
+    Checking glyphslib v0.2.7
+    Checking clap-verbosity-flag v3.0.4
+    Checking norad v0.17.0
+    Checking serde_json_path_to_error v0.1.5
+    Finished `release` profile [optimized] target(s) in 5m 10s
+test filters::fontforge_standard_height::tests::test_character_ranges_are_inclusive ... ok
+test filters::fontforge_standard_height::tests::test_a_glyph_is_found_by_an_alternate_codepoint ... ok
+test filters::fontforge_standard_height::tests::test_no_glyphs_gives_zero ... ok
+test filters::fontforge_standard_height::tests::test_before_2012_the_curve_sum_is_divided_by_the_glyph_count ... ok
+test filters::fontforge_standard_height::tests::test_a_zone_further_than_a_hundredth_of_the_em_is_ignored ... ok
+test filters::fontforge_standard_height::tests::test_snaps_to_the_nearest_blue_zone_bottom ... ok
+test filters::fontforge_standard_height::tests::test_a_curve_with_handles_on_its_chord_is_a_flat_top ... ok
+test filters::fontforge_standard_height::tests::test_a_tie_for_the_mode_is_averaged ... ok
+test filters::fontforge_standard_height::tests::test_without_flat_tops_the_mean_of_distinct_heights_is_used ... ok
+test filters::fontforge_standard_height::tests::test_the_most_frequent_flat_top_wins ... ok
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 258 filtered out; finished in 0.03s

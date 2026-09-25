@@ -1,0 +1,47 @@
+## control: pinned baseline build vs prototype builder3 flag OFF
+only in a: []  only in b: []
+tables differing (head.modified, name ID 5 masked): ['head']
+GPOS a: None
+GPOS b: None
+GSUB a: {'version': '0x10000', 'features': 24, 'lookups': 31}
+GSUB b: {'version': '0x10000', 'features': 24, 'lookups': 31}
+GSUB script lists equal: True
+only in a: []  only in b: []
+tables differing (head.modified, name ID 5 masked): ['head']
+GPOS a: None
+GPOS b: None
+GSUB a: {'version': '0x10000', 'features': 3, 'lookups': 3}
+GSUB b: {'version': '0x10000', 'features': 3, 'lookups': 3}
+GSUB script lists equal: True
+## pinned baseline vs prototype flag ON
+only in a: []  only in b: ['GPOS']
+tables differing (head.modified, name ID 5 masked): ['head']
+GPOS a: None
+GPOS b: {'version': '0x10000', 'scripts': [('cyrl', [('dflt', 65535, [])]), ('grek', [('dflt', 65535, [])]), ('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GSUB a: {'version': '0x10000', 'features': 24, 'lookups': 31}
+GSUB b: {'version': '0x10000', 'features': 24, 'lookups': 31}
+GSUB script lists equal: True
+only in a: []  only in b: ['GPOS']
+tables differing (head.modified, name ID 5 masked): ['head']
+GPOS a: None
+GPOS b: {'version': '0x10000', 'scripts': [('DFLT', [('dflt', 65535, [])]), ('hani', [('dflt', 65535, [])]), ('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GSUB a: {'version': '0x10000', 'features': 3, 'lookups': 3}
+GSUB b: {'version': '0x10000', 'features': 3, 'lookups': 3}
+GSUB script lists equal: True
+## release vs prototype flag ON
+only in a: ['DSIG', 'FFTM', 'cvt ', 'fpgm']  only in b: ['gasp']
+tables differing (head.modified, name ID 5 masked): ['GDEF', 'GSUB', 'OS/2', 'cmap', 'glyf', 'head', 'hhea', 'hmtx', 'maxp', 'name', 'post', 'prep']
+GPOS a: {'version': '0x10000', 'scripts': [('cyrl', [('dflt', 65535, [])]), ('grek', [('dflt', 65535, [])]), ('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GPOS b: {'version': '0x10000', 'scripts': [('cyrl', [('dflt', 65535, [])]), ('grek', [('dflt', 65535, [])]), ('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GPOS script lists equal: True
+GSUB a: {'version': '0x10000', 'features': 24, 'lookups': 31}
+GSUB b: {'version': '0x10000', 'features': 24, 'lookups': 31}
+GSUB script lists equal: False
+only in a: ['FFTM', 'cvt ', 'fpgm']  only in b: []
+tables differing (head.modified, name ID 5 masked): ['GDEF', 'GSUB', 'OS/2', 'cmap', 'gasp', 'glyf', 'head', 'hhea', 'hmtx', 'maxp', 'name', 'post', 'prep']
+GPOS a: {'version': '0x10000', 'scripts': [('DFLT', [('dflt', 65535, [])]), ('hani', [('dflt', 65535, [])]), ('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GPOS b: {'version': '0x10000', 'scripts': [('DFLT', [('dflt', 65535, [])]), ('hani', [('dflt', 65535, [])]), ('latn', [('dflt', 65535, [])])], 'features': 0, 'lookups': 0}
+GPOS script lists equal: True
+GSUB a: {'version': '0x10000', 'features': 3, 'lookups': 3}
+GSUB b: {'version': '0x10000', 'features': 3, 'lookups': 3}
+GSUB script lists equal: True

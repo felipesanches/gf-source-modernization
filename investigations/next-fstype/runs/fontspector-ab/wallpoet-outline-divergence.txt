@@ -1,0 +1,13 @@
+36 [(245, 47), (245, 47), (119, 47), (119, 47)]
+.notdef contours 1 54
+36 [(245, 47), (245, 47), (119, 47), (119, 47)]
+.notdef contours 1 54
+colinear line pairs (fontspector returns PASS above 100):
+ shipped (113, [('Ecircumflex', 5), ('dollar', 4), ('E', 3), ('F', 3), ('Egrave', 3)])
+ built   (113, [('Ecircumflex', 5), ('dollar', 4), ('E', 3), ('F', 3), ('Eacute', 3)])
+NOTE: the Python replication above does NOT reproduce fontspector's own list (shipped: .notdef and
+numbersign only), so it does not explain outline_colinear_vectors WARN->PASS. What is established:
+numbersign has 36 points with the same doubled points on both sides, .notdef 54 points on both,
+diffenator3 reports 0 glyph and 0 word differences, and total points are 3442 (shipped) vs 3441 (built).
+colinear_vectors.rs returns PASS once it has collected more than 100 hits (line 68), so a PASS is not
+evidence of cleaner outlines. The status change is UNEXPLAINED at the check level.

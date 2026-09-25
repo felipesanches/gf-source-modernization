@@ -1,0 +1,401 @@
+combination = vintage/outlines/blues; value = exported (raw before snapping)
+==============================================================================
+KottaOne-Regular  release x=76 cap=212  FFTM-selected vintage 2011  otf blues [-20 0 495 495 687 696]
+  x   2011/sfd/none      76 (raw 76.842) MATCH <- converter today
+  x   2011/sfd/otf       76 (raw 76.842) MATCH
+  x   2011/otf/none      76 (raw 76.842) MATCH
+  x   2011/otf/otf       76 (raw 76.842) MATCH
+  x   2012/sfd/none     486 (raw 486.667) 
+  x   2012/sfd/otf      495 (raw 486.667) 
+  x   2012/otf/none     486 (raw 486.667) 
+  x   2012/otf/otf      495 (raw 486.667) 
+  x   matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf
+  cap 2011/sfd/none     212 (raw 212.962) MATCH <- converter today
+  cap 2011/sfd/otf      212 (raw 212.962) MATCH
+  cap 2011/otf/none     212 (raw 212.962) MATCH
+  cap 2011/otf/otf      212 (raw 212.962) MATCH
+  cap 2012/sfd/none     692 (raw 692.125) 
+  cap 2012/sfd/otf      687 (raw 692.125) 
+  cap 2012/otf/none     692 (raw 692.125) 
+  cap 2012/otf/otf      687 (raw 692.125) 
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf
+==============================================================================
+Ledger-Regular  release x=487 cap=750  FFTM-selected vintage 2011  otf blues [-21 0 487 495 750 768]
+  x   2011/sfd/none     485 (raw 485.0)  <- converter today
+  x   2011/sfd/otf      487 (raw 485.0) MATCH
+  x   2011/otf/none     485 (raw 485.0) 
+  x   2011/otf/otf      487 (raw 485.0) MATCH
+  x   2012/sfd/none     485 (raw 485.0) 
+  x   2012/sfd/otf      487 (raw 485.0) MATCH
+  x   2012/otf/none     485 (raw 485.0) 
+  x   2012/otf/otf      487 (raw 485.0) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     750 (raw 750.0) MATCH <- converter today
+  cap 2011/sfd/otf      750 (raw 750.0) MATCH
+  cap 2011/otf/none     750 (raw 750.0) MATCH
+  cap 2011/otf/otf      750 (raw 750.0) MATCH
+  cap 2012/sfd/none     750 (raw 750.0) MATCH
+  cap 2012/sfd/otf      750 (raw 750.0) MATCH
+  cap 2012/otf/none     750 (raw 750.0) MATCH
+  cap 2012/otf/otf      750 (raw 750.0) MATCH
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+==============================================================================
+LilitaOne-Regular  release x=506 cap=704  FFTM-selected vintage 2011  otf blues [-10 0 506 510 704 709]
+  x   2011/sfd/none     500 (raw 500.0)  <- converter today
+  x   2011/sfd/otf      506 (raw 500.0) MATCH
+  x   2011/otf/none     500 (raw 500.0) 
+  x   2011/otf/otf      506 (raw 500.0) MATCH
+  x   2012/sfd/none     500 (raw 500.0) 
+  x   2012/sfd/otf      506 (raw 500.0) MATCH
+  x   2012/otf/none     500 (raw 500.0) 
+  x   2012/otf/otf      506 (raw 500.0) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     700 (raw 700.0)  <- converter today
+  cap 2011/sfd/otf      704 (raw 700.0) MATCH
+  cap 2011/otf/none     700 (raw 700.0) 
+  cap 2011/otf/otf      704 (raw 700.0) MATCH
+  cap 2012/sfd/none     700 (raw 700.0) 
+  cap 2012/sfd/otf      704 (raw 700.0) MATCH
+  cap 2012/otf/none     700 (raw 700.0) 
+  cap 2012/otf/otf      704 (raw 700.0) MATCH
+  cap matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+Lustria-Regular  release x=504 cap=704  FFTM-selected vintage 2011  otf blues [-11 0 504 511 704 711]
+  x   2011/sfd/none     511 (raw 511.0)  <- converter today
+  x   2011/sfd/otf      504 (raw 511.0) MATCH
+  x   2011/otf/none     500 (raw 500.0) 
+  x   2011/otf/otf      504 (raw 500.0) MATCH
+  x   2012/sfd/none     511 (raw 511.0) 
+  x   2012/sfd/otf      504 (raw 511.0) MATCH
+  x   2012/otf/none     500 (raw 500.0) 
+  x   2012/otf/otf      504 (raw 500.0) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     700 (raw 700.0)  <- converter today
+  cap 2011/sfd/otf      704 (raw 700.0) MATCH
+  cap 2011/otf/none     700 (raw 700.0) 
+  cap 2011/otf/otf      704 (raw 700.0) MATCH
+  cap 2012/sfd/none     700 (raw 700.0) 
+  cap 2012/sfd/otf      704 (raw 700.0) MATCH
+  cap 2012/otf/none     700 (raw 700.0) 
+  cap 2012/otf/otf      704 (raw 700.0) MATCH
+  cap matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+Macondo-Regular  release x=24 cap=53  FFTM-selected vintage 2011  otf blues [-6 0 456 456 696 696]
+  x   2011/sfd/none      24 (raw 24.0) MATCH <- converter today
+  x   2011/sfd/otf       24 (raw 24.0) MATCH
+  x   2011/otf/none      24 (raw 24.0) MATCH
+  x   2011/otf/otf       24 (raw 24.0) MATCH
+  x   2012/sfd/none     456 (raw 456.0) 
+  x   2012/sfd/otf      456 (raw 456.0) 
+  x   2012/otf/none     456 (raw 456.0) 
+  x   2012/otf/otf      456 (raw 456.0) 
+  x   matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf
+  cap 2011/sfd/none      53 (raw 53.5) MATCH <- converter today
+  cap 2011/sfd/otf       53 (raw 53.5) MATCH
+  cap 2011/otf/none      53 (raw 53.5) MATCH
+  cap 2011/otf/otf       53 (raw 53.5) MATCH
+  cap 2012/sfd/none     695 (raw 695.5) 
+  cap 2012/sfd/otf      696 (raw 695.5) 
+  cap 2012/otf/none     695 (raw 695.5) 
+  cap 2012/otf/otf      696 (raw 695.5) 
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf
+==============================================================================
+Magra-Bold  release x=525 cap=700  FFTM-selected vintage 2011  otf blues [-12 0 525 537 700 712 750 760]
+  x   2011/sfd/none     533 (raw 533.0)  <- converter today
+  x   2011/sfd/otf      525 (raw 533.0) MATCH
+  x   2011/otf/none     533 (raw 533.0) 
+  x   2011/otf/otf      525 (raw 533.0) MATCH
+  x   2012/sfd/none     533 (raw 533.0) 
+  x   2012/sfd/otf      525 (raw 533.0) MATCH
+  x   2012/otf/none     533 (raw 533.0) 
+  x   2012/otf/otf      525 (raw 533.0) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     708 (raw 708.0)  <- converter today
+  cap 2011/sfd/otf      700 (raw 708.0) MATCH
+  cap 2011/otf/none     708 (raw 708.0) 
+  cap 2011/otf/otf      700 (raw 708.0) MATCH
+  cap 2012/sfd/none     708 (raw 708.0) 
+  cap 2012/sfd/otf      700 (raw 708.0) MATCH
+  cap 2012/otf/none     708 (raw 708.0) 
+  cap 2012/otf/otf      700 (raw 708.0) MATCH
+  cap matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+MergeOne-Regular  release x=493 cap=679  FFTM-selected vintage 2012  otf blues [-8 0 493 502 679 687]
+  x   2011/sfd/none     492 (raw 492.0) 
+  x   2011/sfd/otf      493 (raw 492.0) MATCH
+  x   2011/otf/none     492 (raw 492.0) 
+  x   2011/otf/otf      493 (raw 492.0) MATCH
+  x   2012/sfd/none     492 (raw 492.0)  <- converter today
+  x   2012/sfd/otf      493 (raw 492.0) MATCH
+  x   2012/otf/none     492 (raw 492.0) 
+  x   2012/otf/otf      493 (raw 492.0) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     679 (raw 679.0) MATCH
+  cap 2011/sfd/otf      679 (raw 679.0) MATCH
+  cap 2011/otf/none     679 (raw 679.0) MATCH
+  cap 2011/otf/otf      679 (raw 679.0) MATCH
+  cap 2012/sfd/none     679 (raw 679.0) MATCH <- converter today
+  cap 2012/sfd/otf      679 (raw 679.0) MATCH
+  cap 2012/otf/none     679 (raw 679.0) MATCH
+  cap 2012/otf/otf      679 (raw 679.0) MATCH
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+==============================================================================
+OleoScript-Bold  release x=443 cap=710  FFTM-selected vintage 2012  otf blues [-12 0 443 443 710 710]
+  x   2011/sfd/none     436 (raw 436.5) 
+  x   2011/sfd/otf      443 (raw 436.5) MATCH
+  x   2011/otf/none     436 (raw 436.5) 
+  x   2011/otf/otf      443 (raw 436.5) MATCH
+  x   2012/sfd/none     436 (raw 436.5)  <- converter today
+  x   2012/sfd/otf      443 (raw 436.5) MATCH
+  x   2012/otf/none     436 (raw 436.5) 
+  x   2012/otf/otf      443 (raw 436.5) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     109 (raw 109.038) 
+  cap 2011/sfd/otf      109 (raw 109.038) 
+  cap 2011/otf/none     109 (raw 109.038) 
+  cap 2011/otf/otf      109 (raw 109.038) 
+  cap 2012/sfd/none     708 (raw 708.75)  <- converter today
+  cap 2012/sfd/otf      710 (raw 708.75) MATCH
+  cap 2012/otf/none     708 (raw 708.75) 
+  cap 2012/otf/otf      710 (raw 708.75) MATCH
+  cap matches: 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+OleoScript-Regular  release x=443 cap=710  FFTM-selected vintage 2012  otf blues [-12 0 443 450 710 710]
+  x   2011/sfd/none      93 (raw 93.158) 
+  x   2011/sfd/otf       93 (raw 93.158) 
+  x   2011/otf/none      93 (raw 93.158) 
+  x   2011/otf/otf       93 (raw 93.158) 
+  x   2012/sfd/none     442 (raw 442.5)  <- converter today
+  x   2012/sfd/otf      443 (raw 442.5) MATCH
+  x   2012/otf/none     442 (raw 442.5) 
+  x   2012/otf/otf      443 (raw 442.5) MATCH
+  x   matches: 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     109 (raw 109.077) 
+  cap 2011/sfd/otf      109 (raw 109.077) 
+  cap 2011/otf/none     109 (raw 109.077) 
+  cap 2011/otf/otf      109 (raw 109.077) 
+  cap 2012/sfd/none     709 (raw 709.0)  <- converter today
+  cap 2012/sfd/otf      710 (raw 709.0) MATCH
+  cap 2012/otf/none     709 (raw 709.0) 
+  cap 2012/otf/otf      710 (raw 709.0) MATCH
+  cap matches: 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+OleoScriptSwashCaps-Bold  release x=443 cap=747  FFTM-selected vintage 2012  otf blues [-13 0 443 443 747 747]
+  x   2011/sfd/none     436 (raw 436.5) 
+  x   2011/sfd/otf      443 (raw 436.5) MATCH
+  x   2011/otf/none     436 (raw 436.5) 
+  x   2011/otf/otf      443 (raw 436.5) MATCH
+  x   2012/sfd/none     436 (raw 436.5)  <- converter today
+  x   2012/sfd/otf      443 (raw 436.5) MATCH
+  x   2012/otf/none     436 (raw 436.5) 
+  x   2012/otf/otf      443 (raw 436.5) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     288 (raw 288.538) 
+  cap 2011/sfd/otf      288 (raw 288.538) 
+  cap 2011/otf/none     288 (raw 288.538) 
+  cap 2011/otf/otf      288 (raw 288.538) 
+  cap 2012/sfd/none     750 (raw 750.2)  <- converter today
+  cap 2012/sfd/otf      747 (raw 750.2) MATCH
+  cap 2012/otf/none     750 (raw 750.2) 
+  cap 2012/otf/otf      747 (raw 750.2) MATCH
+  cap matches: 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+OleoScriptSwashCaps-Regular  release x=443 cap=747  FFTM-selected vintage 2012  otf blues [-12 0 443 450 747 747]
+  x   2011/sfd/none      93 (raw 93.158) 
+  x   2011/sfd/otf       93 (raw 93.158) 
+  x   2011/otf/none      93 (raw 93.158) 
+  x   2011/otf/otf       93 (raw 93.158) 
+  x   2012/sfd/none     442 (raw 442.5)  <- converter today
+  x   2012/sfd/otf      443 (raw 442.5) MATCH
+  x   2012/otf/none     442 (raw 442.5) 
+  x   2012/otf/otf      443 (raw 442.5) MATCH
+  x   matches: 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     287 (raw 287.654) 
+  cap 2011/sfd/otf      287 (raw 287.654) 
+  cap 2011/otf/none     287 (raw 287.661) 
+  cap 2011/otf/otf      287 (raw 287.661) 
+  cap 2012/sfd/none     747 (raw 747.9) MATCH <- converter today
+  cap 2012/sfd/otf      747 (raw 747.9) MATCH
+  cap 2012/otf/none     747 (raw 747.918) MATCH
+  cap 2012/otf/otf      747 (raw 747.918) MATCH
+  cap matches: 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+==============================================================================
+Rambla-Bold  release x=517 cap=669  FFTM-selected vintage 2012  otf blues [-13 0 517 524 669 680]
+  x   2011/sfd/none     513 (raw 513.0) 
+  x   2011/sfd/otf      517 (raw 513.0) MATCH
+  x   2011/otf/none     513 (raw 513.0) 
+  x   2011/otf/otf      517 (raw 513.0) MATCH
+  x   2012/sfd/none     513 (raw 513.0)  <- converter today
+  x   2012/sfd/otf      517 (raw 513.0) MATCH
+  x   2012/otf/none     513 (raw 513.0) 
+  x   2012/otf/otf      517 (raw 513.0) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     668 (raw 668.0) 
+  cap 2011/sfd/otf      669 (raw 668.0) MATCH
+  cap 2011/otf/none     668 (raw 668.0) 
+  cap 2011/otf/otf      669 (raw 668.0) MATCH
+  cap 2012/sfd/none     668 (raw 668.0)  <- converter today
+  cap 2012/sfd/otf      669 (raw 668.0) MATCH
+  cap 2012/otf/none     668 (raw 668.0) 
+  cap 2012/otf/otf      669 (raw 668.0) MATCH
+  cap matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+Rambla-BoldItalic  release x=517 cap=669  FFTM-selected vintage 2012  otf blues [-13 0 517 524 669 680]
+  x   2011/sfd/none     513 (raw 513.0) 
+  x   2011/sfd/otf      517 (raw 513.0) MATCH
+  x   2011/otf/none     513 (raw 513.0) 
+  x   2011/otf/otf      517 (raw 513.0) MATCH
+  x   2012/sfd/none     513 (raw 513.0)  <- converter today
+  x   2012/sfd/otf      517 (raw 513.0) MATCH
+  x   2012/otf/none     513 (raw 513.0) 
+  x   2012/otf/otf      517 (raw 513.0) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     668 (raw 668.0) 
+  cap 2011/sfd/otf      669 (raw 668.0) MATCH
+  cap 2011/otf/none     668 (raw 668.0) 
+  cap 2011/otf/otf      669 (raw 668.0) MATCH
+  cap 2012/sfd/none     668 (raw 668.0)  <- converter today
+  cap 2012/sfd/otf      669 (raw 668.0) MATCH
+  cap 2012/otf/none     668 (raw 668.0) 
+  cap 2012/otf/otf      669 (raw 668.0) MATCH
+  cap matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+Rosarivo-Italic  release x=217 cap=224  FFTM-selected vintage 2011  otf blues [-20 0 521 521 727 736]
+  x   2011/sfd/none     217 (raw 217.789) MATCH <- converter today
+  x   2011/sfd/otf      217 (raw 217.789) MATCH
+  x   2011/otf/none     217 (raw 217.789) MATCH
+  x   2011/otf/otf      217 (raw 217.789) MATCH
+  x   2012/sfd/none     517 (raw 517.25) 
+  x   2012/sfd/otf      521 (raw 517.25) 
+  x   2012/otf/none     517 (raw 517.25) 
+  x   2012/otf/otf      521 (raw 517.25) 
+  x   matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf
+  cap 2011/sfd/none     224 (raw 224.115) MATCH <- converter today
+  cap 2011/sfd/otf      224 (raw 224.115) MATCH
+  cap 2011/otf/none     224 (raw 224.115) MATCH
+  cap 2011/otf/otf      224 (raw 224.115) MATCH
+  cap 2012/sfd/none     728 (raw 728.375) 
+  cap 2012/sfd/otf      727 (raw 728.375) 
+  cap 2012/otf/none     728 (raw 728.375) 
+  cap 2012/otf/otf      727 (raw 728.375) 
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf
+==============================================================================
+Sail-Regular  release x=435 cap=666  FFTM-selected vintage 2011  otf blues [0 0 389 389 666 666]
+  x   2011/sfd/none     435 (raw 435.0) MATCH <- converter today
+  x   2011/sfd/otf      435 (raw 435.0) MATCH
+  x   2011/otf/none     435 (raw 435.0) MATCH
+  x   2011/otf/otf      435 (raw 435.0) MATCH
+  x   2012/sfd/none     435 (raw 435.0) MATCH
+  x   2012/sfd/otf      435 (raw 435.0) MATCH
+  x   2012/otf/none     435 (raw 435.0) MATCH
+  x   2012/otf/otf      435 (raw 435.0) MATCH
+  x   matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+  cap 2011/sfd/none     665 (raw 665.0)  <- converter today
+  cap 2011/sfd/otf      666 (raw 665.0) MATCH
+  cap 2011/otf/none     665 (raw 665.0) 
+  cap 2011/otf/otf      666 (raw 665.0) MATCH
+  cap 2012/sfd/none     665 (raw 665.0) 
+  cap 2012/sfd/otf      666 (raw 665.0) MATCH
+  cap 2012/otf/none     665 (raw 665.0) 
+  cap 2012/otf/otf      666 (raw 665.0) MATCH
+  cap matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+==============================================================================
+TextMeOne-Regular  release x=502 cap=700  FFTM-selected vintage 2012  otf blues [-1 0 502 502 700 706]
+  x   2011/sfd/none     500 (raw 500.0) 
+  x   2011/sfd/otf      502 (raw 500.0) MATCH
+  x   2011/otf/none     500 (raw 500.0) 
+  x   2011/otf/otf      502 (raw 500.0) MATCH
+  x   2012/sfd/none     500 (raw 500.0)  <- converter today
+  x   2012/sfd/otf      502 (raw 500.0) MATCH
+  x   2012/otf/none     500 (raw 500.0) 
+  x   2012/otf/otf      502 (raw 500.0) MATCH
+  x   matches: 2011/sfd/otf, 2011/otf/otf, 2012/sfd/otf, 2012/otf/otf
+  cap 2011/sfd/none     700 (raw 700.0) MATCH
+  cap 2011/sfd/otf      700 (raw 700.0) MATCH
+  cap 2011/otf/none     700 (raw 700.0) MATCH
+  cap 2011/otf/otf      700 (raw 700.0) MATCH
+  cap 2012/sfd/none     700 (raw 700.0) MATCH <- converter today
+  cap 2012/sfd/otf      700 (raw 700.0) MATCH
+  cap 2012/otf/none     700 (raw 700.0) MATCH
+  cap 2012/otf/otf      700 (raw 700.0) MATCH
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+==============================================================================
+Magra-Regular  release x=525 cap=700  FFTM-selected vintage 2011  otf blues [-12 0 525 537 700 712 750 760]
+  x   2011/sfd/none     525 (raw 525.0) MATCH <- converter today
+  x   2011/sfd/otf      525 (raw 525.0) MATCH
+  x   2011/otf/none     525 (raw 525.0) MATCH
+  x   2011/otf/otf      525 (raw 525.0) MATCH
+  x   2012/sfd/none     525 (raw 525.0) MATCH
+  x   2012/sfd/otf      525 (raw 525.0) MATCH
+  x   2012/otf/none     525 (raw 525.0) MATCH
+  x   2012/otf/otf      525 (raw 525.0) MATCH
+  x   matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+  cap 2011/sfd/none     700 (raw 700.0) MATCH <- converter today
+  cap 2011/sfd/otf      700 (raw 700.0) MATCH
+  cap 2011/otf/none     700 (raw 700.0) MATCH
+  cap 2011/otf/otf      700 (raw 700.0) MATCH
+  cap 2012/sfd/none     700 (raw 700.0) MATCH
+  cap 2012/sfd/otf      700 (raw 700.0) MATCH
+  cap 2012/otf/none     700 (raw 700.0) MATCH
+  cap 2012/otf/otf      700 (raw 700.0) MATCH
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+==============================================================================
+Rambla-Italic  release x=506 cap=668  FFTM-selected vintage 2012  otf blues [-13 0 506 516 668 682]
+  x   2011/sfd/none     506 (raw 506.0) MATCH
+  x   2011/sfd/otf      506 (raw 506.0) MATCH
+  x   2011/otf/none     506 (raw 506.0) MATCH
+  x   2011/otf/otf      506 (raw 506.0) MATCH
+  x   2012/sfd/none     506 (raw 506.0) MATCH <- converter today
+  x   2012/sfd/otf      506 (raw 506.0) MATCH
+  x   2012/otf/none     506 (raw 506.0) MATCH
+  x   2012/otf/otf      506 (raw 506.0) MATCH
+  x   matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+  cap 2011/sfd/none     668 (raw 668.0) MATCH
+  cap 2011/sfd/otf      668 (raw 668.0) MATCH
+  cap 2011/otf/none     668 (raw 668.0) MATCH
+  cap 2011/otf/otf      668 (raw 668.0) MATCH
+  cap 2012/sfd/none     668 (raw 668.0) MATCH <- converter today
+  cap 2012/sfd/otf      668 (raw 668.0) MATCH
+  cap 2012/otf/none     668 (raw 668.0) MATCH
+  cap 2012/otf/otf      668 (raw 668.0) MATCH
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+==============================================================================
+Rambla-Regular  release x=506 cap=668  FFTM-selected vintage 2012  otf blues [-13 0 506 516 668 682]
+  x   2011/sfd/none     506 (raw 506.0) MATCH
+  x   2011/sfd/otf      506 (raw 506.0) MATCH
+  x   2011/otf/none     506 (raw 506.0) MATCH
+  x   2011/otf/otf      506 (raw 506.0) MATCH
+  x   2012/sfd/none     506 (raw 506.0) MATCH <- converter today
+  x   2012/sfd/otf      506 (raw 506.0) MATCH
+  x   2012/otf/none     506 (raw 506.0) MATCH
+  x   2012/otf/otf      506 (raw 506.0) MATCH
+  x   matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+  cap 2011/sfd/none     668 (raw 668.0) MATCH
+  cap 2011/sfd/otf      668 (raw 668.0) MATCH
+  cap 2011/otf/none     668 (raw 668.0) MATCH
+  cap 2011/otf/otf      668 (raw 668.0) MATCH
+  cap 2012/sfd/none     668 (raw 668.0) MATCH <- converter today
+  cap 2012/sfd/otf      668 (raw 668.0) MATCH
+  cap 2012/otf/none     668 (raw 668.0) MATCH
+  cap 2012/otf/otf      668 (raw 668.0) MATCH
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf
+==============================================================================
+Rosarivo-Regular  release x=170 cap=757  FFTM-selected vintage 2011  otf blues [-20 0 509 509 728 757]
+  x   2011/sfd/none     170 (raw 170.222) MATCH <- converter today
+  x   2011/sfd/otf      170 (raw 170.222) MATCH
+  x   2011/otf/none     170 (raw 170.222) MATCH
+  x   2011/otf/otf      170 (raw 170.222) MATCH
+  x   2012/sfd/none     510 (raw 510.667) 
+  x   2012/sfd/otf      509 (raw 510.667) 
+  x   2012/otf/none     510 (raw 510.667) 
+  x   2012/otf/otf      509 (raw 510.667) 
+  x   matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf
+  cap 2011/sfd/none     757 (raw 757.0) MATCH <- converter today
+  cap 2011/sfd/otf      757 (raw 757.0) MATCH
+  cap 2011/otf/none     757 (raw 757.0) MATCH
+  cap 2011/otf/otf      757 (raw 757.0) MATCH
+  cap 2012/sfd/none     757 (raw 757.0) MATCH
+  cap 2012/sfd/otf      757 (raw 757.0) MATCH
+  cap 2012/otf/none     757 (raw 757.0) MATCH
+  cap 2012/otf/otf      757 (raw 757.0) MATCH
+  cap matches: 2011/sfd/none, 2011/sfd/otf, 2011/otf/none, 2011/otf/otf, 2012/sfd/none, 2012/sfd/otf, 2012/otf/none, 2012/otf/otf

@@ -1,0 +1,54 @@
+From 0bd6b15cae7e452bad4bbf9126e12089fa4f02e2 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Fri, 25 Sep 2026 02:28:20 +0100
+Subject: [PATCH] Pass sharedLayoutScripts to fontc
+
+A config key for fontc's shared GSUB/GPOS script list, to rebuild a
+font whose GPOS or GSUB is an empty shell (FontForge, VOLT).
+
+Needs a fontc release with Flags::SHARED_LAYOUT_SCRIPTS.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ src/operations/fontc.rs | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/src/operations/fontc.rs b/src/operations/fontc.rs
+index 8673729..a0704b9 100644
+--- a/src/operations/fontc.rs
++++ b/src/operations/fontc.rs
+@@ -27,6 +27,12 @@ pub struct FontcConfig {
+ 
+     #[serde(default = "default_reverse_outline_direction")]
+     pub reverse_outline_direction: bool,
++
++    /// List the same scripts in GSUB and GPOS, writing a table with scripts but
++    /// no features rather than omitting it, as FontForge's OpenType exporter
++    /// and VOLT do. Used to rebuild such a font with the same behaviour.
++    #[serde(default)]
++    pub shared_layout_scripts: bool,
+ }
+ 
+ fn default_reverse_outline_direction() -> bool {
+@@ -39,6 +45,7 @@ impl Default for FontcConfig {
+             flatten_components: false,
+             decompose_transformed_components: false,
+             reverse_outline_direction: true,
++            shared_layout_scripts: false,
+         }
+     }
+ }
+@@ -71,6 +78,10 @@ impl Fontc {
+             options.flags.insert(Flags::KEEP_DIRECTION);
+         }
+ 
++        if self.config.shared_layout_scripts {
++            options.flags.insert(Flags::SHARED_LAYOUT_SCRIPTS);
++        }
++
+         options
+     }
+ }
+-- 
+2.47.3
+

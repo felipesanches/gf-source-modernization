@@ -1,0 +1,184 @@
+== altuni KottaOne-Regular (vs before):
+   < BLOCKING OS/2.sx_height [76, 81]
+   < 1 blocking table difference(s), 5 stale in the release
+   > 0 blocking table difference(s), 5 stale in the release
+== altuni Macondo-Regular (vs before):
+   < BLOCKING OS/2.sx_height [24, 25]
+   < 1 blocking table difference(s), 4 stale in the release
+   > 0 blocking table difference(s), 4 stale in the release
+== altuni Rosarivo-Italic (vs before):
+   < BLOCKING OS/2.sx_height [217, 229]
+   < 1 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== blues Ledger-Regular (vs before):
+   < BLOCKING OS/2.sx_height [487, 485]
+   < BLOCKING hmtx.uni00A0 {"width": [281, 0]}
+   < 2 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== blues LilitaOne-Regular (vs before):
+   < BLOCKING OS/2.sx_height [506, 500]
+   < BLOCKING OS/2.s_cap_height [704, 700]
+   < 2 blocking table difference(s), 39 stale in the release
+   > 0 blocking table difference(s), 39 stale in the release
+== blues Lustria-Regular (vs before):
+   < BLOCKING OS/2.sx_height [504, 511]
+   < BLOCKING OS/2.s_cap_height [704, 700]
+   < 2 blocking table difference(s), 19 stale in the release
+   > 0 blocking table difference(s), 19 stale in the release
+== blues Magra-Bold (vs before):
+   < BLOCKING OS/2.sx_height [525, 533]
+   < BLOCKING OS/2.s_cap_height [700, 708]
+   < 3 blocking table difference(s), 1 stale in the release
+   > 1 blocking table difference(s), 1 stale in the release
+== blues MergeOne-Regular (vs before):
+   < BLOCKING OS/2.sx_height [493, 492]
+   < 1 blocking table difference(s), 6 stale in the release
+   > 0 blocking table difference(s), 6 stale in the release
+== blues OleoScript-Bold (vs before):
+   < BLOCKING OS/2.sx_height [443, 436]
+   < BLOCKING OS/2.s_cap_height [710, 708]
+   < 3 blocking table difference(s), 8 stale in the release
+   > 1 blocking table difference(s), 8 stale in the release
+== blues OleoScript-Regular (vs before):
+   < BLOCKING OS/2.sx_height [443, 442]
+   < BLOCKING OS/2.s_cap_height [710, 709]
+   < 2 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== blues OleoScriptSwashCaps-Bold (vs before):
+   < BLOCKING OS/2.sx_height [443, 436]
+   < BLOCKING OS/2.s_cap_height [747, 750]
+   < 3 blocking table difference(s), 8 stale in the release
+   > 1 blocking table difference(s), 8 stale in the release
+== blues OleoScriptSwashCaps-Regular (vs before):
+   < BLOCKING OS/2.sx_height [443, 442]
+   < 1 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== blues Rambla-Bold (vs before):
+   < BLOCKING OS/2.sx_height [517, 513]
+   < BLOCKING OS/2.s_cap_height [669, 668]
+   < 3 blocking table difference(s), 7 stale in the release
+   > 1 blocking table difference(s), 7 stale in the release
+== blues Rambla-BoldItalic (vs before):
+   < BLOCKING OS/2.sx_height [517, 513]
+   < BLOCKING OS/2.s_cap_height [669, 668]
+   < 3 blocking table difference(s), 44 stale in the release
+   > 1 blocking table difference(s), 44 stale in the release
+== blues Sail-Regular (vs before):
+   < BLOCKING OS/2.s_cap_height [666, 665]
+   < 1 blocking table difference(s), 12 stale in the release
+   > 0 blocking table difference(s), 12 stale in the release
+== blues TextMeOne-Regular (vs before):
+   < BLOCKING OS/2.sx_height [502, 500]
+   < 1 blocking table difference(s), 25 stale in the release
+   > 0 blocking table difference(s), 25 stale in the release
+== final KottaOne-Regular (vs before):
+   < BLOCKING OS/2.sx_height [76, 81]
+   < 1 blocking table difference(s), 5 stale in the release
+   > 0 blocking table difference(s), 5 stale in the release
+== final Ledger-Regular (vs before):
+   < BLOCKING OS/2.sx_height [487, 485]
+   < BLOCKING hmtx.uni00A0 {"width": [281, 0]}
+   < 2 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== final LilitaOne-Regular (vs before):
+   < BLOCKING OS/2.sx_height [506, 500]
+   < BLOCKING OS/2.s_cap_height [704, 700]
+   < 2 blocking table difference(s), 39 stale in the release
+   > 0 blocking table difference(s), 39 stale in the release
+== final Lustria-Regular (vs before):
+   < BLOCKING OS/2.sx_height [504, 511]
+   < BLOCKING OS/2.s_cap_height [704, 700]
+   < 2 blocking table difference(s), 19 stale in the release
+   > 0 blocking table difference(s), 19 stale in the release
+== final Macondo-Regular (vs before):
+   < BLOCKING OS/2.sx_height [24, 25]
+   < 1 blocking table difference(s), 4 stale in the release
+   > 0 blocking table difference(s), 4 stale in the release
+== final Magra-Bold (vs before):
+   < BLOCKING OS/2.sx_height [525, 533]
+   < BLOCKING OS/2.s_cap_height [700, 708]
+   < 3 blocking table difference(s), 1 stale in the release
+   > 1 blocking table difference(s), 1 stale in the release
+== final MergeOne-Regular (vs before):
+   < BLOCKING OS/2.sx_height [493, 492]
+   < 1 blocking table difference(s), 6 stale in the release
+   > 0 blocking table difference(s), 6 stale in the release
+== final OleoScript-Bold (vs before):
+   < BLOCKING OS/2.sx_height [443, 436]
+   < BLOCKING OS/2.s_cap_height [710, 708]
+   < 3 blocking table difference(s), 8 stale in the release
+   > 1 blocking table difference(s), 8 stale in the release
+== final OleoScript-Regular (vs before):
+   < BLOCKING OS/2.sx_height [443, 442]
+   < BLOCKING OS/2.s_cap_height [710, 709]
+   < 2 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== final OleoScriptSwashCaps-Bold (vs before):
+   < BLOCKING OS/2.sx_height [443, 436]
+   < BLOCKING OS/2.s_cap_height [747, 750]
+   < 3 blocking table difference(s), 8 stale in the release
+   > 1 blocking table difference(s), 8 stale in the release
+== final OleoScriptSwashCaps-Regular (vs before):
+   < BLOCKING OS/2.sx_height [443, 442]
+   < 1 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== final Rambla-Bold (vs before):
+   < BLOCKING OS/2.sx_height [517, 513]
+   < BLOCKING OS/2.s_cap_height [669, 668]
+   < 3 blocking table difference(s), 7 stale in the release
+   > 1 blocking table difference(s), 7 stale in the release
+== final Rambla-BoldItalic (vs before):
+   < BLOCKING OS/2.sx_height [517, 513]
+   < BLOCKING OS/2.s_cap_height [669, 668]
+   < 3 blocking table difference(s), 44 stale in the release
+   > 1 blocking table difference(s), 44 stale in the release
+== final Rosarivo-Italic (vs before):
+   < BLOCKING OS/2.sx_height [217, 229]
+   < 1 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== final Sail-Regular (vs before):
+   < BLOCKING OS/2.s_cap_height [666, 665]
+   < 1 blocking table difference(s), 12 stale in the release
+   > 0 blocking table difference(s), 12 stale in the release
+== final TextMeOne-Regular (vs before):
+   < BLOCKING OS/2.sx_height [502, 500]
+   < 1 blocking table difference(s), 25 stale in the release
+   > 0 blocking table difference(s), 25 stale in the release
+== final-workarounds Magra-Bold (vs before):
+   < BLOCKING OS/2.us_weight_class [600, 400]
+   < BLOCKING OS/2.sx_height [525, 533]
+   < BLOCKING OS/2.s_cap_height [700, 708]
+   < 3 blocking table difference(s), 1 stale in the release
+   > 0 blocking table difference(s), 1 stale in the release
+== final-workarounds OleoScript-Bold (vs before):
+   < BLOCKING OS/2.us_weight_class [700, 400]
+   < BLOCKING OS/2.sx_height [443, 436]
+   < BLOCKING OS/2.s_cap_height [710, 708]
+   < 3 blocking table difference(s), 8 stale in the release
+   > 0 blocking table difference(s), 8 stale in the release
+== final-workarounds OleoScriptSwashCaps-Bold (vs before):
+   < BLOCKING OS/2.us_weight_class [700, 400]
+   < BLOCKING OS/2.sx_height [443, 436]
+   < BLOCKING OS/2.s_cap_height [747, 750]
+   < 3 blocking table difference(s), 8 stale in the release
+   > 0 blocking table difference(s), 8 stale in the release
+== final-workarounds Rambla-Bold (vs before):
+   < BLOCKING OS/2.us_weight_class [700, 400]
+   < BLOCKING OS/2.sx_height [517, 513]
+   < BLOCKING OS/2.s_cap_height [669, 668]
+   < 3 blocking table difference(s), 7 stale in the release
+   > 0 blocking table difference(s), 7 stale in the release
+== final-workarounds Rambla-BoldItalic (vs before):
+   < BLOCKING OS/2.us_weight_class [700, 400]
+   < BLOCKING OS/2.sx_height [517, 513]
+   < BLOCKING OS/2.s_cap_height [669, 668]
+   < 3 blocking table difference(s), 44 stale in the release
+   > 0 blocking table difference(s), 44 stale in the release
+== siblings-altuni Magra-Regular (vs baseline-next):
+   
+== siblings-altuni Rambla-Italic (vs baseline-next):
+   
+== siblings-altuni Rambla-Regular (vs baseline-next):
+   
+== siblings-altuni Rosarivo-Regular (vs baseline-next):
+   

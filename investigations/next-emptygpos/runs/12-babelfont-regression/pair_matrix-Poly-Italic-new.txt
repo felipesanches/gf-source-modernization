@@ -1,0 +1,19 @@
+Poly-Italic.ttf vs Poly-Italic.ttf: 150544 ordered pairs, 1535 differ {'mark': 1531, 'soft-hyphen': 4}
+  soft-hyphen '\xaḋ'
+     release (('space', 0, 0, 0), ('dotaccentcmb', 0, 0, 0), ('__pen__', -1, 117, 0))
+     cand    (('space', 0, 0, 0), ('dotaccentcmb', 0, 0, 0), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad̦'
+     release (('space', 0, 0, 0), ('commaaccent', 0, 0, 0), ('__pen__', -1, 120, 0))
+     cand    (('space', 0, 0, 0), ('commaaccent', 0, 0, 0), ('__pen__', -1, 0, 0))
+  soft-hyphen '̇\xad'
+     release (('dotaccentcmb', 0, 0, 0), ('space', 1, 117, 0), ('__pen__', -1, 117, 0))
+     cand    (('dotaccentcmb', 0, 0, 0), ('space', 1, 0, 0), ('__pen__', -1, 0, 0))
+  mark        ' ̇'
+     release (('space', 0, 0, 0), ('dotaccentcmb', 0, 245, 0), ('__pen__', -1, 362, 0))
+     cand    (('space', 0, 0, 0), ('dotaccentcmb', 0, 245, 0), ('__pen__', -1, 245, 0))
+  mark        ' ̦'
+     release (('space', 0, 0, 0), ('commaaccent', 0, 245, 0), ('__pen__', -1, 365, 0))
+     cand    (('space', 0, 0, 0), ('commaaccent', 0, 245, 0), ('__pen__', -1, 245, 0))
+  mark        '!̇'
+     release (('exclam', 0, 0, 0), ('dotaccentcmb', 0, 226, 0), ('__pen__', -1, 343, 0))
+     cand    (('exclam', 0, 0, 0), ('dotaccentcmb', 0, 226, 0), ('__pen__', -1, 226, 0))

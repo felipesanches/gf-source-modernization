@@ -1,0 +1,7 @@
+Ultra-Regular.ttf vs Ultra-Black.ttf: 137641 ordered pairs, 2228 differ {'mark': 2211, 'soft-hyphen': 17}
+  soft-hyphen '\xadT'
+     release (('space', 0, 0, 0), ('T', 1, -25, 0), ('__pen__', -1, 1630, 0))
+     cand    (('space', 0, 0, 0), ('T', 1, 0, 0), ('__pen__', -1, 1655, 0))
+  mark        ' ̒'
+     release (('space', 0, 0, 0), ('uni0312', 0, -207, -556), ('__pen__', -1, 614, 0))
+     cand    (('space', 0, 0, 0), ('uni0312', 0, 614, 0), ('__pen__', -1, 614, 0))

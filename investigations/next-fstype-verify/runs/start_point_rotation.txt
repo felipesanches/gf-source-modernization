@@ -1,0 +1,12 @@
+Wallpoet-Regular.ttf vs Wallpoet-Regular.ttf: rotation (positions) -> contours: {1: 394, None: 1}; shipped contours whose first point == last: 49
+TitilliumWeb-Black.ttf vs TitilliumWeb-Black.ttf: rotation (positions) -> contours: {1: 499, 2: 271}; shipped contours whose first point == last: 0
+TitilliumWeb-Bold.ttf vs TitilliumWeb-Bold.ttf: rotation (positions) -> contours: {1: 492, 2: 284}; shipped contours whose first point == last: 0
+TitilliumWeb-BoldItalic.ttf vs TitilliumWeb-BoldItalic.ttf: rotation (positions) -> contours: {1: 414, 2: 363}; shipped contours whose first point == last: 0
+TitilliumWeb-Italic.ttf vs TitilliumWeb-Italic.ttf: rotation (positions) -> contours: {1: 411, 2: 365, None: 1}; shipped contours whose first point == last: 0
+TitilliumWeb-Light.ttf vs TitilliumWeb-Light.ttf: rotation (positions) -> contours: {1: 508, 2: 271}; shipped contours whose first point == last: 0
+TitilliumWeb-LightItalic.ttf vs TitilliumWeb-LightItalic.ttf: rotation (positions) -> contours: {1: 420, 2: 357, 'other': 2}; shipped contours whose first point == last: 0
+TitilliumWeb-Regular.ttf vs TitilliumWeb-Regular.ttf: rotation (positions) -> contours: {1: 499, 2: 279}; shipped contours whose first point == last: 0
+TitilliumWeb-SemiBold.ttf vs TitilliumWeb-SemiBold.ttf: rotation (positions) -> contours: {1: 502, 2: 274}; shipped contours whose first point == last: 0
+TitilliumWeb-SemiBoldItalic.ttf vs TitilliumWeb-SemiBoldItalic.ttf: rotation (positions) -> contours: {1: 411, 2: 362, 'other': 2}; shipped contours whose first point == last: 0
+TitilliumWeb-ExtraLight.ttf vs TitilliumWeb-ExtraLight.ttf: rotation (positions) -> contours: {1: 526, 2: 249, None: 2}; shipped contours whose first point == last: 0
+TitilliumWeb-ExtraLightItalic.ttf vs TitilliumWeb-ExtraLightItalic.ttf: rotation (positions) -> contours: {1: 414, 2: 362, 'other': 1}; shipped contours whose first point == last: 0

@@ -1,0 +1,9 @@
+hg 52f780bc: sha256 4d0df6f0a3c259ca  nbsp adv 0 (uni00A0)  space adv 281  OS/2 v2 x=487 cap=750 wc=400  fontRevision 1.0010  name5 '1.001'
+gf 90abd17b4: sha256 4d0df6f0a3c259ca  nbsp adv 0 (uni00A0)  space adv 281  OS/2 v2 x=487 cap=750 wc=400  fontRevision 1.0010  name5 '1.001'
+    raw tables changed vs previous: []
+gf 0436d99c0: sha256 de1e147e0a4158ce  nbsp adv 281 (uni00A0)  space adv 281  OS/2 v2 x=487 cap=750 wc=400  fontRevision 1.0020  name5 '1.002'
+    raw tables changed vs previous: ['head', 'hmtx', 'name']
+gf f8265bddf: sha256 0d9e4086208d5aee  nbsp adv 281 (uni00A0)  space adv 281  OS/2 v2 x=487 cap=750 wc=400  fontRevision 1.0030  name5 '1.003'
+    raw tables changed vs previous: ['head', 'name']
+gf working tree (release b5efa9c32e8f): sha256 0d9e4086208d5aee  nbsp adv 281 (uni00A0)  space adv 281  OS/2 v2 x=487 cap=750 wc=400  fontRevision 1.0030  name5 '1.003'
+    raw tables changed vs previous: []

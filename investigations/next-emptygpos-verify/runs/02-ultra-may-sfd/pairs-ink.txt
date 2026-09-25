@@ -1,0 +1,38 @@
+Ultra-Regular.ttf vs Ultra-Regular.ttf [ltr, ink]: 137641 ordered pairs, 2228 differ {'mark': 2211, 'soft-hyphen': 17}
+  marks involved: U+0312=740, U+0315=740, U+0326=740
+  soft-hyphen U+00AD U+0054
+     release (('space', 0, 0), ('T', -25, 0), ('<end>', 1630, 0))
+     cand    (('space', 0, 0), ('T', 0, 0), ('<end>', 1655, 0))
+  soft-hyphen U+00AD U+0056
+     release (('space', 0, 0), ('V', -25, 0), ('<end>', 1519, 0))
+     cand    (('space', 0, 0), ('V', 0, 0), ('<end>', 1544, 0))
+  soft-hyphen U+00AD U+0057
+     release (('space', 0, 0), ('W', -25, 0), ('<end>', 2373, 0))
+     cand    (('space', 0, 0), ('W', 0, 0), ('<end>', 2398, 0))
+  soft-hyphen U+00AD U+0058
+     release (('space', 0, 0), ('X', -15, 0), ('<end>', 1554, 0))
+     cand    (('space', 0, 0), ('X', 0, 0), ('<end>', 1569, 0))
+  soft-hyphen U+00AD U+0162
+     release (('space', 0, 0), ('Tcommaaccent', -25, 0), ('<end>', 1630, 0))
+     cand    (('space', 0, 0), ('Tcommaaccent', 0, 0), ('<end>', 1655, 0))
+  soft-hyphen U+00AD U+0164
+     release (('space', 0, 0), ('Tcaron', -25, 0), ('<end>', 1630, 0))
+     cand    (('space', 0, 0), ('Tcaron', 0, 0), ('<end>', 1655, 0))
+  mark        U+0020 U+0312
+     release (('space', 0, 0), ('uni0312', -207, -556), ('<end>', 614, 0))
+     cand    (('space', 0, 0), ('uni0312', 614, 0), ('<end>', 614, 0))
+  mark        U+0020 U+0315
+     release (('space', 0, 0), ('uni0315', 247, -428), ('<end>', 614, 0))
+     cand    (('space', 0, 0), ('uni0315', 614, 0), ('<end>', 614, 0))
+  mark        U+0020 U+0326
+     release (('space', 0, 0), ('commaaccent', -204, 0), ('<end>', 614, 0))
+     cand    (('space', 0, 0), ('commaaccent', 614, 0), ('<end>', 614, 0))
+  mark        U+0021 U+0312
+     release (('exclam', 0, 0), ('uni0312', -137, 402), ('<end>', 754, 0))
+     cand    (('exclam', 0, 0), ('uni0312', 754, 0), ('<end>', 754, 0))
+  mark        U+0021 U+0315
+     release (('exclam', 0, 0), ('uni0315', 387, 658), ('<end>', 754, 0))
+     cand    (('exclam', 0, 0), ('uni0315', 754, 0), ('<end>', 754, 0))
+  mark        U+0021 U+0326
+     release (('exclam', 0, 0), ('commaaccent', -134, -36), ('<end>', 754, 0))
+     cand    (('exclam', 0, 0), ('commaaccent', 754, 0), ('<end>', 754, 0))

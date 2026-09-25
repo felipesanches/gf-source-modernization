@@ -1,0 +1,9 @@
+hg 52f780bc       62320 bytes  nbsp(U+00A0 -> uni00A0) adv=0 space adv=281 | OS/2 x=487 cap=750 | head.fontRevision=1.001 | name5='1.001'
+gf 90abd17b4      62320 bytes  nbsp(U+00A0 -> uni00A0) adv=0 space adv=281 | OS/2 x=487 cap=750 | head.fontRevision=1.001 | name5='1.001'
+  byte-identical to the previous revision
+gf 0436d99c0      62148 bytes  nbsp(U+00A0 -> uni00A0) adv=281 space adv=281 | OS/2 x=487 cap=750 | head.fontRevision=1.002 | name5='1.002'
+  tables whose bytes differ from the previous: head hmtx name
+gf f8265bddf      62148 bytes  nbsp(U+00A0 -> uni00A0) adv=281 space adv=281 | OS/2 x=487 cap=750 | head.fontRevision=1.003 | name5='1.003'
+  tables whose bytes differ from the previous: head name
+gf b5efa9c32e8f   62148 bytes  nbsp(U+00A0 -> uni00A0) adv=281 space adv=281 | OS/2 x=487 cap=750 | head.fontRevision=1.003 | name5='1.003'
+  byte-identical to the previous revision

@@ -1,0 +1,25 @@
+flags: --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --reverse-path-direction
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1055
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1053
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 2058
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1034
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 3082
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1060
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1051
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1049
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1046
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 2070
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1045
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1044
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1040
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1038
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1036
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 3084
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1035
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1043
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1029
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1027
+[2026-09-25T01:45:13Z WARN  babelfont::convertors::fontforge] Unknown OpenType language ID: 1069
+RELEASE-STALE GDEF.glyph_classes -- our build corrects 15 mark class(es) the release got wrong: U+0300, U+0301, U+0302, U+0303, U+0304, U+0305, U+0306, U+0307, U+0308, U+030A, U+030B, U+030C, U+0326, U+0327, U+0328. Disclose in the PR body; the release calls these base glyphs and they are Unicode combining marks
+BLOCKING post.underline_position [-97, -272]
+1 blocking table difference(s), 1 stale in the release

@@ -1,0 +1,18 @@
+### https://raw.githubusercontent.com/fontforge/fontforge/v20110222/fontforge/tottf.c  (sha256 6d5e399312545e1c)
+3315:    os2->fstype = 0x8;
+3316-    if ( sf->pfminfo.fstype!=-1 )
+3317-	os2->fstype = sf->pfminfo.fstype;
+3318-    if ( !sf->pfminfo.subsuper_set )
+2760:    head->revision = sf->sfntRevision;
+2761-    if ( sf->sfntRevision==sfntRevisionUnset ) {
+2762-	head->revision = 0x00010000;
+2763-	for ( useng=sf->names; useng!=NULL; useng=useng->next )
+### https://raw.githubusercontent.com/fontforge/fontforge/v20120731-b/fontforge/tottf.c  (sha256 25bb37f3c7639fa1)
+3403:    os2->fstype = 0x8;
+3404-    if ( sf->pfminfo.fstype!=-1 )
+3405-	os2->fstype = sf->pfminfo.fstype;
+3406-    if ( !sf->pfminfo.subsuper_set )
+2850:    head->revision = sf->sfntRevision;
+2851-    if ( sf->sfntRevision==sfntRevisionUnset ) {
+2852-	head->revision = 0x00010000;
+2853-	for ( useng=sf->names; useng!=NULL; useng=useng->next )

@@ -1,0 +1,58 @@
+Ultra-Regular.ttf vs Ultra-Black.ttf [ltr, ink]: 137641 ordered pairs, 2878 differ {'mark': 2211, 'other': 650, 'soft-hyphen': 17}
+  other by first char: A(U+0041)=65, À(U+00C0)=65, Á(U+00C1)=65, Â(U+00C2)=65, Ã(U+00C3)=65, Ä(U+00C4)=65, Å(U+00C5)=65, Ā(U+0100)=65, Ă(U+0102)=65, Ą(U+0104)=65
+  other by second char: "(U+0022)=10, '(U+0027)=10, C(U+0043)=10, G(U+0047)=10, O(U+004F)=10, Q(U+0051)=10, T(U+0054)=10, U(U+0055)=10, V(U+0056)=10, W(U+0057)=10, Y(U+0059)=10, u(U+0075)=10, Ç(U+00C7)=10, Ò(U+00D2)=10, Ó(U+00D3)=10
+  marks involved: U+0312=740, U+0315=740, U+0326=740
+  other       U+0041 U+0022
+     release (('A', 0, 0), ('quotedbl', 1647, 0), ('<end>', 2653, 0))
+     cand    (('A', 0, 0), ('quotedbl', 1567, 0), ('<end>', 2573, 0))
+  other       U+0041 U+0027
+     release (('A', 0, 0), ('quotesingle', 1647, 0), ('<end>', 2182, 0))
+     cand    (('A', 0, 0), ('quotesingle', 1567, 0), ('<end>', 2102, 0))
+  other       U+0041 U+0043
+     release (('A', 0, 0), ('C', 1647, 0), ('<end>', 3263, 0))
+     cand    (('A', 0, 0), ('C', 1627, 0), ('<end>', 3243, 0))
+  other       U+0041 U+0047
+     release (('A', 0, 0), ('G', 1647, 0), ('<end>', 3441, 0))
+     cand    (('A', 0, 0), ('G', 1627, 0), ('<end>', 3421, 0))
+  other       U+0041 U+004F
+     release (('A', 0, 0), ('O', 1647, 0), ('<end>', 3490, 0))
+     cand    (('A', 0, 0), ('O', 1627, 0), ('<end>', 3470, 0))
+  other       U+0041 U+0051
+     release (('A', 0, 0), ('Q', 1647, 0), ('<end>', 3529, 0))
+     cand    (('A', 0, 0), ('Q', 1627, 0), ('<end>', 3509, 0))
+  soft-hyphen U+00AD U+0054
+     release (('space', 0, 0), ('T', -25, 0), ('<end>', 1630, 0))
+     cand    (('space', 0, 0), ('T', 0, 0), ('<end>', 1655, 0))
+  soft-hyphen U+00AD U+0056
+     release (('space', 0, 0), ('V', -25, 0), ('<end>', 1519, 0))
+     cand    (('space', 0, 0), ('V', 0, 0), ('<end>', 1544, 0))
+  soft-hyphen U+00AD U+0057
+     release (('space', 0, 0), ('W', -25, 0), ('<end>', 2373, 0))
+     cand    (('space', 0, 0), ('W', 0, 0), ('<end>', 2398, 0))
+  soft-hyphen U+00AD U+0058
+     release (('space', 0, 0), ('X', -15, 0), ('<end>', 1554, 0))
+     cand    (('space', 0, 0), ('X', 0, 0), ('<end>', 1569, 0))
+  soft-hyphen U+00AD U+0162
+     release (('space', 0, 0), ('Tcommaaccent', -25, 0), ('<end>', 1630, 0))
+     cand    (('space', 0, 0), ('Tcommaaccent', 0, 0), ('<end>', 1655, 0))
+  soft-hyphen U+00AD U+0164
+     release (('space', 0, 0), ('Tcaron', -25, 0), ('<end>', 1630, 0))
+     cand    (('space', 0, 0), ('Tcaron', 0, 0), ('<end>', 1655, 0))
+  mark        U+0020 U+0312
+     release (('space', 0, 0), ('uni0312', -207, -556), ('<end>', 614, 0))
+     cand    (('space', 0, 0), ('uni0312', 614, 0), ('<end>', 614, 0))
+  mark        U+0020 U+0315
+     release (('space', 0, 0), ('uni0315', 247, -428), ('<end>', 614, 0))
+     cand    (('space', 0, 0), ('uni0315', 614, 0), ('<end>', 614, 0))
+  mark        U+0020 U+0326
+     release (('space', 0, 0), ('commaaccent', -204, 0), ('<end>', 614, 0))
+     cand    (('space', 0, 0), ('commaaccent', 614, 0), ('<end>', 614, 0))
+  mark        U+0021 U+0312
+     release (('exclam', 0, 0), ('uni0312', -137, 402), ('<end>', 754, 0))
+     cand    (('exclam', 0, 0), ('uni0312', 754, 0), ('<end>', 754, 0))
+  mark        U+0021 U+0315
+     release (('exclam', 0, 0), ('uni0315', 387, 658), ('<end>', 754, 0))
+     cand    (('exclam', 0, 0), ('uni0315', 754, 0), ('<end>', 754, 0))
+  mark        U+0021 U+0326
+     release (('exclam', 0, 0), ('commaaccent', -134, -36), ('<end>', 754, 0))
+     cand    (('exclam', 0, 0), ('commaaccent', 754, 0), ('<end>', 754, 0))

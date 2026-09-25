@@ -1,0 +1,17 @@
+['/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline/Varela-Regular-emptygpos-04/fonts', 'ttf', 'Varela-Regular.ttf']: 189 cases, 16 differ
+  liga: 12
+    lang=tr 'fi' release=['f', 'i'] cand=['fi']
+    lang=tr 'ffi' release=['f_f', 'i'] cand=['f_f_i']
+    lang=tr 'office' release=['o', 'f_f', 'i', 'c', 'e'] cand=['o', 'f_f_i', 'c', 'e']
+    lang=tr 'fifi' release=['f', 'i', 'f', 'i'] cand=['fi', 'fi']
+  aalt: 4
+    lang=sr '!' release=['exclam'] cand=['exclam.smcp']
+    lang=sr 'a' release=['a'] cand=['ordfeminine']
+    lang=sr 'S' release=['S'] cand=['s.smcp']
+    lang=sr '?' release=['question'] cand=['question.smcp']
+['/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline/Varela-Regular-emptygpos-07/fonts', 'ttf', 'Varela-Regular.ttf']: 189 cases, 4 differ
+  aalt: 4
+    lang=sr '!' release=['exclam'] cand=['exclam.smcp']
+    lang=sr 'a' release=['a'] cand=['ordfeminine']
+    lang=sr 'S' release=['S'] cand=['s.smcp']
+    lang=sr '?' release=['question'] cand=['question.smcp']

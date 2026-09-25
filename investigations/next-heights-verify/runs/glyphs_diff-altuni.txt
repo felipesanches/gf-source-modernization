@@ -1,0 +1,26 @@
+=== KottaOne-Regular
+-pos = 81;
++pos = 76;
+=== Macondo-Regular
+-pos = 25;
++pos = 24;
+=== Rosarivo-Italic
+-pos = 229;
++pos = 217;
+=== Ledger-Regular
+=== LilitaOne-Regular
+=== Lustria-Regular
+=== Magra-Bold
+=== MergeOne-Regular
+=== OleoScript-Bold
+=== OleoScript-Regular
+=== OleoScriptSwashCaps-Bold
+=== OleoScriptSwashCaps-Regular
+=== Rambla-Bold
+=== Rambla-BoldItalic
+=== Sail-Regular
+=== TextMeOne-Regular
+=== Magra-Regular
+=== Rambla-Italic
+=== Rambla-Regular
+=== Rosarivo-Regular

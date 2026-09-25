@@ -1,0 +1,10 @@
+DIFF	wallpoet	cjk_not_enough_glyphs	PASS	->	SKIP
+DIFF	wallpoet	googlefonts/font_names	FAIL	->	PASS
+DIFF	wallpoet	googlefonts/use_typo_metrics	FAIL	->	PASS
+DIFF	wallpoet	gpos_kerning_info	WARN	->	PASS
+DIFF	wallpoet	integer_ppem_if_hinted	PASS	->	SKIP
+DIFF	wallpoet	opentype/xavgcharwidth	INFO	->	PASS
+DIFF	wallpoet	outline_colinear_vectors	WARN	->	PASS
+DIFF	wallpoet	outline_short_segments	WARN	->	PASS
+DIFF	wallpoet	unwanted_tables	FAIL	->	PASS
+SUMMARY	wallpoet	checks=200	diff=9	worse=0	better=9

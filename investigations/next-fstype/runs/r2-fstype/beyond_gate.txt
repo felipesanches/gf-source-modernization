@@ -1,0 +1,192 @@
+================================================================================
+TitilliumWeb-Black  shipped=TitilliumWeb-Black.ttf  built=TitilliumWeb-Black.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=900 built=900
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web Black' built='Titillium Web Black'
+  == name 2               shipped='Regular' built='Regular'
+  == name 4               shipped='Titillium Web Black' built='Titillium Web Black'
+  == name 6               shipped='TitilliumWeb-Black' built='TitilliumWeb-Black'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  == name 17              shipped='Black' built='Black'
+  != name 5               shipped='Version 1.002;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-Bold  shipped=TitilliumWeb-Bold.ttf  built=TitilliumWeb-Bold.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=700 built=700
+  != OS/2.fsSelection     shipped=32 built=160
+  == head.macStyle        shipped=1 built=1
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web' built='Titillium Web'
+  == name 2               shipped='Bold' built='Bold'
+  == name 4               shipped='Titillium Web Bold' built='Titillium Web Bold'
+  == name 6               shipped='TitilliumWeb-Bold' built='TitilliumWeb-Bold'
+  == name 16              shipped=None built=None
+  == name 17              shipped=None built=None
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-BoldItalic  shipped=TitilliumWeb-BoldItalic.ttf  built=TitilliumWeb-BoldItalic.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=700 built=700
+  != OS/2.fsSelection     shipped=33 built=161
+  == head.macStyle        shipped=3 built=3
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web' built='Titillium Web'
+  == name 2               shipped='Bold Italic' built='Bold Italic'
+  == name 4               shipped='Titillium Web Bold Italic' built='Titillium Web Bold Italic'
+  == name 6               shipped='TitilliumWeb-BoldItalic' built='TitilliumWeb-BoldItalic'
+  == name 16              shipped=None built=None
+  == name 17              shipped=None built=None
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-Italic  shipped=TitilliumWeb-Italic.ttf  built=TitilliumWeb-Italic.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=400 built=400
+  != OS/2.fsSelection     shipped=1 built=129
+  == head.macStyle        shipped=2 built=2
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web' built='Titillium Web'
+  == name 2               shipped='Italic' built='Italic'
+  == name 4               shipped='Titillium Web Italic' built='Titillium Web Italic'
+  == name 6               shipped='TitilliumWeb-Italic' built='TitilliumWeb-Italic'
+  == name 16              shipped=None built=None
+  == name 17              shipped=None built=None
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-Light  shipped=TitilliumWeb-Light.ttf  built=TitilliumWeb-Light.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=300 built=300
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web Light' built='Titillium Web Light'
+  == name 2               shipped='Regular' built='Regular'
+  == name 4               shipped='Titillium Web Light' built='Titillium Web Light'
+  == name 6               shipped='TitilliumWeb-Light' built='TitilliumWeb-Light'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  == name 17              shipped='Light' built='Light'
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-LightItalic  shipped=TitilliumWeb-LightItalic.ttf  built=TitilliumWeb-LightItalic.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=300 built=300
+  != OS/2.fsSelection     shipped=1 built=129
+  == head.macStyle        shipped=2 built=2
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web Light' built='Titillium Web Light'
+  == name 2               shipped='Italic' built='Italic'
+  == name 4               shipped='Titillium Web Light Italic' built='Titillium Web Light Italic'
+  == name 6               shipped='TitilliumWeb-LightItalic' built='TitilliumWeb-LightItalic'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  == name 17              shipped='Light Italic' built='Light Italic'
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-Regular  shipped=TitilliumWeb-Regular.ttf  built=TitilliumWeb-Regular.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=400 built=400
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web' built='Titillium Web'
+  == name 2               shipped='Regular' built='Regular'
+  == name 4               shipped='Titillium Web Regular' built='Titillium Web Regular'
+  == name 6               shipped='TitilliumWeb-Regular' built='TitilliumWeb-Regular'
+  == name 16              shipped=None built=None
+  == name 17              shipped=None built=None
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-SemiBold  shipped=TitilliumWeb-SemiBold.ttf  built=TitilliumWeb-SemiBold.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=600 built=600
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web SemiBold' built='Titillium Web SemiBold'
+  == name 2               shipped='Regular' built='Regular'
+  == name 4               shipped='Titillium Web SemiBold' built='Titillium Web SemiBold'
+  == name 6               shipped='TitilliumWeb-SemiBold' built='TitilliumWeb-SemiBold'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  == name 17              shipped='SemiBold' built='SemiBold'
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-SemiBoldItalic  shipped=TitilliumWeb-SemiBoldItalic.ttf  built=TitilliumWeb-SemiBoldItalic.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=600 built=600
+  != OS/2.fsSelection     shipped=1 built=129
+  == head.macStyle        shipped=2 built=2
+  != head.fontRevision    shipped=1.002 built=1.001
+  == name 1               shipped='Titillium Web SemiBold' built='Titillium Web SemiBold'
+  == name 2               shipped='Italic' built='Italic'
+  == name 4               shipped='Titillium Web SemiBold Italic' built='Titillium Web SemiBold Italic'
+  == name 6               shipped='TitilliumWeb-SemiBoldItalic' built='TitilliumWeb-SemiBoldItalic'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  == name 17              shipped='SemiBold Italic' built='SemiBold Italic'
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+Wallpoet-Regular  shipped=Wallpoet-Regular.ttf  built=Wallpoet-Regular.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  == OS/2.usWeightClass   shipped=400 built=400
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  == head.fontRevision    shipped=1.0 built=1.0
+  == name 1               shipped='Wallpoet' built='Wallpoet'
+  == name 2               shipped='Regular' built='Regular'
+  != name 4               shipped='Wallpoet' built='Wallpoet Regular'
+  != name 6               shipped='Wallpoet' built='Wallpoet-Regular'
+  == name 16              shipped=None built=None
+  == name 17              shipped=None built=None
+  != name 5               shipped='Version 1.000' built='Version 1.000;fontc 1.0.0'
+================================================================================
+TitilliumWeb-ExtraLight  shipped=TitilliumWeb-ExtraLight.ttf  built=TitilliumWeb-Thin.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  != OS/2.usWeightClass   shipped=275 built=200
+  != OS/2.fsSelection     shipped=64 built=192
+  == head.macStyle        shipped=0 built=0
+  != head.fontRevision    shipped=1.002 built=1.001
+  != name 1               shipped='Titillium Web ExtraLight' built='Titillium Web Thin'
+  == name 2               shipped='Regular' built='Regular'
+  != name 4               shipped='Titillium Web ExtraLight' built='Titillium Web Thin'
+  != name 6               shipped='TitilliumWeb-ExtraLight' built='TitilliumWeb-Thin'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  != name 17              shipped='ExtraLight' built='Thin'
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'
+================================================================================
+TitilliumWeb-ExtraLightItalic  shipped=TitilliumWeb-ExtraLightItalic.ttf  built=TitilliumWeb-ThinItalic.ttf
+  cmap gained=[] lost=[]
+  d3 location Default: glyphs=0 words=0
+  == OS/2.fsType          shipped=0 built=0
+  != OS/2.usWeightClass   shipped=275 built=200
+  != OS/2.fsSelection     shipped=1 built=129
+  == head.macStyle        shipped=2 built=2
+  != head.fontRevision    shipped=1.002 built=1.001
+  != name 1               shipped='Titillium Web ExtraLight' built='Titillium Web Thin'
+  == name 2               shipped='Italic' built='Italic'
+  != name 4               shipped='Titillium Web ExtraLight Italic' built='Titillium Web Thin Italic'
+  != name 6               shipped='TitilliumWeb-ExtraLightItalic' built='TitilliumWeb-ThinItalic'
+  == name 16              shipped='Titillium Web' built='Titillium Web'
+  != name 17              shipped='ExtraLight Italic' built='Thin Italic'
+  != name 5               shipped='Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311' built='Version 1.001;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311;fontc 1.0.0'

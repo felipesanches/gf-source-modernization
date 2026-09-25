@@ -1,0 +1,19 @@
+Nosifer-Regular.ttf vs Nosifer-Regular.ttf [ltr, ink]: 110224 ordered pairs, 1975 differ {'mark': 1968, 'other': 1, 'soft-hyphen': 6}
+  other by first char: E(U+0045)=1
+  other by second char: E(U+0045)=1
+  marks involved: U+0311=662, U+0326=662, U+0307=653
+  other       U+0045 U+0045
+     release (('E', 0, 0), ('E', 1792, 0), ('<end>', 3584, 0))
+     cand    (('E_E', 0, 0), ('<end>', 3344, 0))
+  soft-hyphen U+00AD U+0307
+     release (('space', 0, 0), ('dotaccentcmb', 209, 484), ('<end>', 0, 0))
+     cand    (('space', 0, 0), ('dotaccentcmb', 0, 0), ('<end>', 0, 0))
+  soft-hyphen U+00AD U+0311
+     release (('space', 0, 0), ('uni0311', 69, -176), ('<end>', 0, 0))
+     cand    (('space', 0, 0), ('uni0311', 0, 0), ('<end>', 0, 0))
+  mark        U+0020 U+0307
+     release (('space', 0, 0), ('dotaccentcmb', -99, -200), ('<end>', 510, 0))
+     cand    (('space', 0, 0), ('dotaccentcmb', 510, 0), ('<end>', 510, 0))
+  mark        U+0020 U+0311
+     release (('space', 0, 0), ('uni0311', -239, -618), ('<end>', 510, 0))
+     cand    (('space', 0, 0), ('uni0311', 510, 0), ('<end>', 510, 0))

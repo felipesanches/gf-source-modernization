@@ -1,0 +1,14 @@
+flags: --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --correct-path-direction
+RELEASE-STALE hmtx.H -- shipped records 18 for an outline at 19; ours records 19
+RELEASE-STALE hmtx.J -- shipped records 13 for an outline at 14; ours records 14
+RELEASE-STALE hmtx.K -- shipped records 18 for an outline at 19; ours records 19
+RELEASE-STALE hmtx.Ntilde -- shipped records 21 for an outline at 19; ours records 19
+RELEASE-STALE hmtx.trademark -- shipped records 114 for an outline at 115; ours records 115
+RELEASE-STALE GSUB.script_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.feature_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.lookup_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE OS/2.ach_vend_id -- both name the vendor 'LTT'; the release pads it with NUL ('LTT\x00') and ours with spaces ('LTT ')
+RELEASE-STALE GPOS.feature_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GPOS.lookup_list -- both fonts position with real lookups (1 and 2); the table is organised differently, which is what a legacy kern modernised into GPOS looks like
+RELEASE-STALE GDEF.glyph_classes -- the two fonts agree about every mark (0), and no lookup filters on the rest of the class
+0 blocking table difference(s), 12 stale in the release

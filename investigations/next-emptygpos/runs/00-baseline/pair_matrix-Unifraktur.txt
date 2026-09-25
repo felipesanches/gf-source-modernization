@@ -1,0 +1,64 @@
+UnifrakturMaguntia-Book.ttf vs UnifrakturMaguntia-Regular.ttf: 61009 ordered pairs, 2082 differ {'mark': 2073, 'soft-hyphen': 9}
+  soft-hyphen '\xad̀'
+     release (('space', 0, 0, 0), ('gravecomb', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('gravecomb', 0, 936, -121), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad́'
+     release (('space', 0, 0, 0), ('acutecomb', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('acutecomb', 0, 841, -120), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad̂'
+     release (('space', 0, 0, 0), ('uni0302', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('uni0302', 0, 825, -139), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad̃'
+     release (('space', 0, 0, 0), ('tildecomb', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('tildecomb', 0, 931, -190), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad̄'
+     release (('space', 0, 0, 0), ('uni0304', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('uni0304', 0, 921, -187), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad̈'
+     release (('space', 0, 0, 0), ('uni0308', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('uni0308', 0, 827, -184), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad̊'
+     release (('space', 0, 0, 0), ('uni030A', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('uni030A', 0, 859, -144), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xaď'
+     release (('space', 0, 0, 0), ('uni030C', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('uni030C', 0, 825, -139), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xaḑ'
+     release (('space', 0, 0, 0), ('uni0327', 0, 0, 0), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('uni0327', 0, 861, 0), ('__pen__', -1, 0, 0))
+  mark        ' ̀'
+     release (('space', 0, 0, 0), ('gravecomb', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('gravecomb', 0, 840, -463), ('__pen__', -1, 600, 0))
+  mark        ' ́'
+     release (('space', 0, 0, 0), ('acutecomb', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('acutecomb', 0, 745, -463), ('__pen__', -1, 600, 0))
+  mark        ' ̂'
+     release (('space', 0, 0, 0), ('uni0302', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('uni0302', 0, 728, -481), ('__pen__', -1, 600, 0))
+  mark        ' ̃'
+     release (('space', 0, 0, 0), ('tildecomb', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('tildecomb', 0, 834, -533), ('__pen__', -1, 600, 0))
+  mark        ' ̄'
+     release (('space', 0, 0, 0), ('uni0304', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('uni0304', 0, 825, -530), ('__pen__', -1, 600, 0))
+  mark        ' ̈'
+     release (('space', 0, 0, 0), ('uni0308', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('uni0308', 0, 731, -527), ('__pen__', -1, 600, 0))
+  mark        ' ̊'
+     release (('space', 0, 0, 0), ('uni030A', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('uni030A', 0, 762, -486), ('__pen__', -1, 600, 0))
+  mark        ' ̌'
+     release (('space', 0, 0, 0), ('uni030C', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('uni030C', 0, 728, -482), ('__pen__', -1, 600, 0))
+  mark        ' ̧'
+     release (('space', 0, 0, 0), ('uni0327', 0, 600, 0), ('__pen__', -1, 600, 0))
+     cand    (('space', 0, 0, 0), ('uni0327', 0, 764, 0), ('__pen__', -1, 600, 0))
+  mark        '!̀'
+     release (('exclam', 0, 0, 0), ('gravecomb', 0, 476, 0), ('__pen__', -1, 476, 0))
+     cand    (('exclam', 0, 0, 0), ('gravecomb', 0, 778, 553), ('__pen__', -1, 476, 0))
+  mark        '!́'
+     release (('exclam', 0, 0, 0), ('acutecomb', 0, 476, 0), ('__pen__', -1, 476, 0))
+     cand    (('exclam', 0, 0, 0), ('acutecomb', 0, 683, 554), ('__pen__', -1, 476, 0))
+  mark        '!̂'
+     release (('exclam', 0, 0, 0), ('uni0302', 0, 476, 0), ('__pen__', -1, 476, 0))
+     cand    (('exclam', 0, 0, 0), ('uni0302', 0, 667, 517), ('__pen__', -1, 476, 0))

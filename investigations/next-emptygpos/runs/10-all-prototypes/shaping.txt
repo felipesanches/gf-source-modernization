@@ -1,0 +1,11 @@
+release Varela-Regular.ttf: 2292 texts (base-mark=1221, cp-after-H=531, cp-alone=531, mark-after-base=3, mark-alone=3, mark-stack=3)
+Varela-Regular.ttf: 110016 runs, 28416 differ (horizontal 0 in 0 texts; vertical 28416)
+release UnifrakturMaguntia-Book.ttf: 1898 texts (base-mark=1377, cp-after-H=247, cp-alone=247, mark-after-base=9, mark-alone=9, mark-stack=9)
+UnifrakturMaguntia-Regular.ttf: 91104 runs, 45498 differ (horizontal 0 in 0 texts; vertical 45498)
+['/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline/Varela-Regular-emptygpos-10/fonts', 'ttf', 'Varela-Regular.ttf']: 189 cases, 0 differ
+GSUB SAME scripts=['cyrl', 'grek', 'latn'] features=24 lookups=31
+GPOS SAME scripts=['cyrl', 'grek', 'latn'] features=0 lookups=0
+b7d647bf349f0362e86150f2e5ab394f047f107539fd2fbb2f32fc613cfb3b31  /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline/Smokum-Regular-emptygpos-10/fonts/ttf/Smokum-Regular.ttf
+c00c37bb5a7426be339ddbfecc7e394fad8b38f8cac13267c914a3f4d632851d  /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline/Ultra-Regular-emptygpos-10/fonts/ttf/Ultra-Black.ttf
+c4ff590ea0e871f496c12811d72c66dba38538dd8183737927a218d6f2f1922a  /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline/UnifrakturMaguntia-Book-emptygpos-10/fonts/ttf/UnifrakturMaguntia-Regular.ttf
+37ac98c8da246670e98312d330857d0b48cf6a1349528e56212d44abb05f8c86  /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline/Varela-Regular-emptygpos-10/fonts/ttf/Varela-Regular.ttf

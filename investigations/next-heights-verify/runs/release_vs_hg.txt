@@ -1,0 +1,20 @@
+KottaOne-Regular identical hg=release
+Ledger-Regular DIFFERENT hg=4d0df6f0a3c259ca release=0d9e4086208d5aee
+LilitaOne-Regular identical hg=release
+Lustria-Regular identical hg=release
+Macondo-Regular identical hg=release
+Magra-Bold identical hg=release
+Magra-Regular identical hg=release
+MergeOne-Regular identical hg=release
+OleoScript-Bold identical hg=release
+OleoScript-Regular identical hg=release
+OleoScriptSwashCaps-Bold identical hg=release
+OleoScriptSwashCaps-Regular identical hg=release
+Rambla-Bold identical hg=release
+Rambla-BoldItalic identical hg=release
+Rambla-Italic identical hg=release
+Rambla-Regular identical hg=release
+Rosarivo-Italic identical hg=release
+Rosarivo-Regular identical hg=release
+Sail-Regular identical hg=release
+TextMeOne-Regular identical hg=release

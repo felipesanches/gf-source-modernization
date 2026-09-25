@@ -1,0 +1,40 @@
+KottaOne-Regular             times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 260 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 260 glyphs, release 260
+Ledger-Regular               times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 451 glyphs same advance+bbox, 1 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 452 glyphs, release 452  first differences: [('uni00A0', 0, 281, None, None)]
+LilitaOne-Regular            times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 229 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 229 glyphs, release 229
+Lustria-Regular              times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 230 glyphs same advance+bbox, 0 differ, 34 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 264 glyphs, release 264
+Macondo-Regular              times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 311 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 311 glyphs, release 311
+Magra-Bold                   times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 428 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 428 glyphs, release 428
+MergeOne-Regular             times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 343 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 343 glyphs, release 343
+OleoScript-Bold              times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 246 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 246 glyphs, release 246
+OleoScript-Regular           times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 245 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 245 glyphs, release 245
+OleoScriptSwashCaps-Bold     times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 246 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 246 glyphs, release 246
+OleoScriptSwashCaps-Regular  times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 245 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 245 glyphs, release 245
+Rambla-Bold                  times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 249 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 249 glyphs, release 249
+Rambla-BoldItalic            times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 249 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 249 glyphs, release 249
+Rosarivo-Italic              times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 240 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 240 glyphs, release 240
+Sail-Regular                 times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 196 glyphs same advance+bbox, 0 differ, 28 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 224 glyphs, release 224
+TextMeOne-Regular            times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 250 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 250 glyphs, release 250
+Magra-Regular                times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 428 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 428 glyphs, release 428
+Rambla-Italic                times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 248 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 248 glyphs, release 248
+Rambla-Regular               times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 248 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 248 glyphs, release 248
+Rosarivo-Regular             times=True prep=True ('PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE') gasp sfd='1 65535 15 1' rel={65535: 15}
+                             glyf: 232 glyphs same advance+bbox, 0 differ, 0 with references (not compared), 0 release glyphs absent from the .sfd; sfd has 232 glyphs, release 232

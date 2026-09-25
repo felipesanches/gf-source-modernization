@@ -1,0 +1,16 @@
+KottaOne-Regular gate identical to baseline-next
+Ledger-Regular gate identical to baseline-next
+LilitaOne-Regular gate identical to baseline-next
+Lustria-Regular gate identical to baseline-next
+Macondo-Regular gate identical to baseline-next
+Magra-Bold gate identical to baseline-next
+MergeOne-Regular gate identical to baseline-next
+OleoScript-Bold gate identical to baseline-next
+OleoScript-Regular gate identical to baseline-next
+OleoScriptSwashCaps-Bold gate identical to baseline-next
+OleoScriptSwashCaps-Regular gate identical to baseline-next
+Rambla-Bold gate identical to baseline-next
+Rambla-BoldItalic gate identical to baseline-next
+Rosarivo-Italic gate identical to baseline-next
+Sail-Regular gate identical to baseline-next
+TextMeOne-Regular gate identical to baseline-next

@@ -1,0 +1,283 @@
+FontForge source excerpts behind the next-emptygpos findings.
+Tag v20110222 = the build the Smokum/Ultra/Varela releases' FFTM FFTimeStamp names (3381227313 = 2011-02-22).
+Source: https://codeload.github.com/fontforge/fontforge/tar.gz/refs/tags/v20110222 (tarball sha256 3508bf0484528721...)
+and master 67dd7dc9cb08ecca549b4aa4085e4618afbc7fda (raw.githubusercontent.com/fontforge/fontforge/master).
+
+===== v20110222 fontforge/lookups.c lines 298-425 -- SFScriptsInLookups ignores gpos; SFLangsInScript gives a script with no lookups a dummy dflt LangSys ('This is what VOLT does')
+uint32 *SFScriptsInLookups(SplineFont *sf,int gpos) {
+    /* Presumes that either SFFindUnusedLookups or SFFindClearUnusedLookupBits */
+    /*  has been called first */
+    /* Since MS will sometimes ignore a script if it isn't found in both */
+    /*  GPOS and GSUB we want to return the same script list no matter */
+    /*  what the setting of gpos ... so we totally ignore that argument */
+    /*  and always look at both sets of lookups */
+
+/* Sergey Malkin from MicroSoft tells me:
+    Each shaping engine in Uniscribe can decide on its requirements for
+    layout tables - some of them require both GSUB and GPOS, in some cases
+    any table present is enough, or it can work without any table. 
+
+    Sometimes, purpose of the check is to determine if font is supporting
+    particular script - if required tables are not there font is just
+    rejected by this shaping engine. Sometimes, shaping engine can not just
+    reject the font because there are fonts using older shaping technologies
+    we still have to support, so it uses some logic when to fallback to
+    legacy layout code. 
+
+    In your case this is Hebrew, where both tables are required to use
+    OpenType processing. Arabic requires both tables too, Latin requires
+    GSUB to execute GPOS. But in general, if you have both tables you should
+    be safe with any script to get fully featured OpenType shaping.
+
+In other words, if we have a Hebrew font with just GPOS features they won't work,
+and MS will not use the font at all. We must add a GSUB table. In the unlikely
+event that we had a hebrew font with only GSUB it would not work either.
+
+So if we want our lookups to have a chance of executing under Uniscribe we
+better make sure that both tables have the same script set.
+
+(Sergey says we could optimize a little: A Latin GSUB table will run without
+a GPOS, but he says the GPOS won't work without a GSUB.)
+*/
+    int cnt=0, tot=0, i;
+    uint32 *scripts = NULL;
+    OTLookup *test;
+    FeatureScriptLangList *fl;
+    struct scriptlanglist *sl;
+
+    /* So here always give scripts for both (see comment above) no */
+    /*  matter what they asked for */
+    for ( gpos=0; gpos<2; ++gpos ) {
+	for ( test = gpos ? sf->gpos_lookups : sf->gsub_lookups; test!=NULL; test = test->next ) {
+	    if ( test->unused )
+	continue;
+	    for ( fl=test->features; fl!=NULL; fl=fl->next ) {
+		if ( fl->ismac )
+	    continue;
+		for ( sl=fl->scripts ; sl!=NULL; sl=sl->next ) {
+		    for ( i=0; i<cnt; ++i ) {
+			if ( sl->script==scripts[i] )
+		    break;
+		    }
+		    if ( i==cnt ) {
+			if ( cnt>=tot )
+			    scripts = grealloc(scripts,(tot+=10)*sizeof(uint32));
+			scripts[cnt++] = sl->script;
+		    }
+		}
+	    }
+	}
+    }
+
+    if ( cnt==0 )
+return( NULL );
+
+    /* We want our scripts in alphabetic order */
+    qsort(scripts,cnt,sizeof(uint32),uint32_cmp);
+    /* add a 0 entry to mark the end of the list */
+    if ( cnt>=tot )
+	scripts = grealloc(scripts,(tot+1)*sizeof(uint32));
+    scripts[cnt] = 0;
+return( scripts );
+}
+
+uint32 *SFLangsInScript(SplineFont *sf,int gpos,uint32 script) {
+    /* However, the language lists (I think) are distinct */
+    /* But giving a value of -1 for gpos will give us the set of languages in */
+    /*  both tables (for this script) */
+    int cnt=0, tot=0, i, g, l;
+    uint32 *langs = NULL;
+    OTLookup *test;
+    FeatureScriptLangList *fl;
+    struct scriptlanglist *sl;
+
+    for ( g=0; g<2; ++g ) {
+	if (( gpos==0 && g==1 ) || ( gpos==1 && g==0 ))
+    continue;
+	for ( test = g ? sf->gpos_lookups : sf->gsub_lookups; test!=NULL; test = test->next ) {
+	    if ( test->unused )
+	continue;
+	    for ( fl=test->features; fl!=NULL; fl=fl->next ) {
+		for ( sl=fl->scripts ; sl!=NULL; sl=sl->next ) {
+		    if ( sl->script==script ) {
+			for ( l=0; l<sl->lang_cnt; ++l ) {
+			    int lang;
+			    if ( l<MAX_LANG )
+				lang = sl->langs[l];
+			    else
+				lang = sl->morelangs[l-MAX_LANG];
+			    for ( i=0; i<cnt; ++i ) {
+				if ( lang==langs[i] )
+			    break;
+			    }
+			    if ( i==cnt ) {
+				if ( cnt>=tot )
+				    langs = grealloc(langs,(tot+=10)*sizeof(uint32));
+				langs[cnt++] = lang;
+			    }
+			}
+		    }
+		}
+	    }
+	}
+    }
+
+    if ( cnt==0 ) {
+	/* We add dummy script entries. Because Uniscribe will refuse to */
+	/*  process some scripts if they don't have an entry in both GPOS */
+	/*  an GSUB. So if a script appears in either table, force it to */
+	/*  appear in both. That means we can get scripts with no lookups */
+	/*  and hence no languages. It seems that Uniscribe doesn't like */
+	/*  that either. So give each such script a dummy default language */
+	/*  entry. This is what VOLT does */
+	langs = gcalloc(2,sizeof(uint32));
+	langs[0] = DEFAULT_LANG;
+
+===== v20110222 fontforge/tottfgpos.c lines 3026-3060 -- dumpg___info writes a table that has scripts and no lookups ('to get around a bug in Uniscribe')
+static FILE *dumpg___info(struct alltabs *at, SplineFont *sf,int is_gpos) {
+    /* Dump out either a gpos or a gsub table. gpos handles kerns, gsub ligs */
+    /*  we assume that SFFindUnusedLookups has been called */
+    FILE *lfile, *g___, *efile;
+    uint32 lookup_list_table_start, feature_list_table_start, here, scripts_start_offset;
+    struct ginfo ginfo;
+    int32 size_params_loc, size_params_ptr;
+    int i,j, cnt, scnt, offset;
+    OTLookup *otf, *all;
+    struct lookup_subtable *sub;
+    char *buf;
+    struct otffeatname *fn;
+
+    for ( fn=sf->feat_names; fn!=NULL; fn=fn->next )
+	fn->nid = 0;
+
+    FindFeatures(sf,is_gpos,&ginfo);
+    if ( ginfo.sc==0 )
+return( NULL );
+    lfile = G___figureLookups(sf,is_gpos,at);
+
+    if ( ginfo.sc==0 && ftell(lfile)==0 ) {
+	/* ftell(lfile)==0 => There are no lookups for this table */
+	/* ginfo.sc==0 => There are no scripts. */
+	/* If both are true then we don't need to output the table */
+	/* It is perfectly possible to have lookups without scripts */
+	/*  (if some other table refered to them -- we don't currently */
+	/*  support this, but we might some day). */
+	/* It is also possible to have scripts without lookups (to get */
+	/*  around a bug in Uniscribe which only processes some scripts */
+	/*  if both GPOS and GSUB entries are present. So we share scripts */
+	/*  between the two tables */
+	fclose(lfile);
+	/* if ginfo.sc==0 then there will be nothing to free in the ginfo struct*/
+return( NULL );
+
+===== v20110222 fontforge/tottf.c lines 5281-5307 -- initATTables: GPOS/GSUB/GDEF only in opentypemode; legacy kern when !applemode && (!opentypemode || oldkern)
+
+    setos2(&at->os2,at,sf,format);	/* should precede kern/ligature output */
+    if ( at->opentypemode ) {
+	SFFindUnusedLookups(sf);
+	otf_dumpgpos(at,sf);
+	otf_dumpgsub(at,sf);
+	otf_dumpgdef(at,sf);
+	otf_dumpjstf(at,sf);
+	otf_dumpbase(at,sf);
+	otf_dump_math(at,sf);	/* Not strictly OpenType yet */
+	if ( at->gi.flags & ttf_flag_dummyDSIG )
+	    otf_dump_dummydsig(at,sf);
+    }
+    if ( at->dovariations )
+	ttf_dumpvariations(at,sf);
+    if ( at->applemode ) {
+	if ( !at->opentypemode )
+	    SFFindUnusedLookups(sf);
+	ttf_dumpkerns(at,sf);
+	aat_dumplcar(at,sf);
+	aat_dumpmorx(at,sf);		/* Sets the feat table too */
+	aat_dumpopbd(at,sf);
+	aat_dumpprop(at,sf);
+	aat_dumpbsln(at,sf);
+    }
+    if ( !at->applemode && (!at->opentypemode || (at->gi.flags&ttf_flag_oldkern)) )
+	ttf_dumpkerns(at,sf);		/* everybody supports a mimimal kern table */
+
+===== v20110222 fontforge/tottfaat.c lines 339-350 -- ttf_dumpkerns: old-style kern decomposes kern classes (SFKernClassTempDecompose)
+void ttf_dumpkerns(struct alltabs *at, SplineFont *sf) {
+    int i, mmcnt=0, sum;
+    int version;
+    MMSet *mm = at->dovariations ? sf->mm : NULL;
+    struct kerncounts kcnt;
+    int must_use_old_style = 0;
+
+    if ( !at->applemode && (!at->opentypemode || (at->gi.flags&ttf_flag_oldkern)) ) {
+	must_use_old_style = true;
+	SFKernClassTempDecompose(sf,false);
+	mm = NULL;
+    } else {
+
+===== v20110222 fontforge/splinesaveafm.c lines 2013-2046 -- SFKernClassTempDecompose loops first classes from i=1: first-class 0 is never decomposed into the legacy kern table
+void SFKernClassTempDecompose(SplineFont *sf,int isv) {
+    KernClass *kc, *head= isv ? sf->vkerns : sf->kerns;
+    SplineChar ***first, ***last;
+    int i, j, k, l;
+    OTLookup *otl;
+
+    for ( kc = head, i=0; kc!=NULL; kc = kc->next )
+	kc->kcid = ++i;
+    for ( kc = head; kc!=NULL; kc = kc->next ) {
+
+	otl = chunkalloc(sizeof(OTLookup));
+	otl->next = sf->gpos_lookups;
+	sf->gpos_lookups = otl;
+	otl->lookup_type = gpos_pair;
+	otl->lookup_flags = kc->subtable->lookup->lookup_flags;
+	otl->features = FeatureListCopy(kc->subtable->lookup->features);
+	otl->lookup_name = copy(_("<Temporary kerning>"));
+	otl->temporary_kern = otl->store_in_afm = true;
+	otl->subtables = chunkalloc(sizeof(struct lookup_subtable));
+	otl->subtables->lookup = otl;
+	otl->subtables->per_glyph_pst_or_kern = true;
+	otl->subtables->subtable_name = copy(_("<Temporary kerning>"));
+
+	first = KernClassToSC(sf,kc->firsts,kc->first_cnt);
+	last = KernClassToSC(sf,kc->seconds,kc->second_cnt);
+	for ( i=1; i<kc->first_cnt; ++i ) for ( j=1; j<kc->second_cnt; ++j ) {
+	    if ( kc->offsets[i*kc->second_cnt+j]!=0 ) {
+		for ( k=0; first[i][k]!=NULL; ++k )
+		    for ( l=0; last[j][l]!=NULL; ++l )
+			AddTempKP(first[i][k],last[j][l],
+				kc->offsets[i*kc->second_cnt+j],
+			        otl->subtables,kc->kcid,isv);
+	    }
+	}
+
+===== master 67dd7dc9 fontforge/lookups.c: the same rule survives
+398:uint32_t *SFScriptsInLookups(SplineFont *sf) {
+399-    /* Presumes that either SFFindUnusedLookups or SFFindClearUnusedLookupBits */
+400-    /*  has been called first */
+401-    /* Since MS will sometimes ignore a script if it isn't found in both */
+402-    /*  GPOS and GSUB we want to return the same script list no matter */
+403-    /*  what the setting of gpos ... so we totally ignore that argument */
+404-    /*  and always look at both sets of lookups */
+516-    if ( cnt==0 ) {
+517-	/* We add dummy script entries. Because Uniscribe will refuse to */
+518-	/*  process some scripts if they don't have an entry in both GPOS */
+519-	/*  an GSUB. So if a script appears in either table, force it to */
+520-	/*  appear in both. That means we can get scripts with no lookups */
+521-	/*  and hence no languages. It seems that Uniscribe doesn't like */
+522-	/*  that either. So give each such script a dummy default language */
+523:	/*  entry. This is what VOLT does */
+
+===== master 67dd7dc9 fontforge/tottfgpos.c
+3301-	/*  (if some other table referred to them -- we don't currently */
+3302-	/*  support this, but we might some day). */
+3303-	/* It is also possible to have scripts without lookups (to get */
+3304:	/*  around a bug in Uniscribe which only processes some scripts */
+3305-	/*  if both GPOS and GSUB entries are present. So we share scripts */
+3306-	/*  between the two tables */
+3307-	fclose(lfile);
+
+===== v20110222 fontforge/libffstamp.h (the build stamp FFTM records)
+#define LibFF_ModTime		1298382513L	/* Seconds since 1970 (standard unix time) */
+#define LibFF_ModTime_Str	"13:48 GMT 22-Feb-2011"
+#define LibFF_VersionDate	20110222	/* Year, month, day */
+Smokum-Regular, Ultra-Regular, Varela-Regular releases: FFTM FFTimeStamp 3381227313 - 2082844800 = 1298382513 = LibFF_ModTime above (exact).
+UnifrakturMaguntia-Book release: FFTimeStamp 3355357407 -> 1272512607 = fontforge_full-20100501 LibFF_ModTime (investigations/unifraktur/VERIFY.md).

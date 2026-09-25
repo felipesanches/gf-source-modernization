@@ -1,0 +1,17 @@
+Nosifer-Regular.ttf vs Nosifer-Regular.ttf: 110224 ordered pairs, 1975 differ {'mark': 1968, 'other': 1, 'soft-hyphen': 6}
+  'other' differences by first character: E(U+0045)=1
+  other       'EE'
+     release (('E', 0, 0, 0), ('E', 1, 1792, 0), ('__pen__', -1, 3584, 0))
+     cand    (('E_E', 0, 0, 0), ('__pen__', -1, 3344, 0))
+  soft-hyphen '\xaḋ'
+     release (('space', 0, 0, 0), ('dotaccentcmb', 0, 209, 484), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('dotaccentcmb', 0, 0, 0), ('__pen__', -1, 0, 0))
+  soft-hyphen '\xad̑'
+     release (('space', 0, 0, 0), ('uni0311', 0, 69, -176), ('__pen__', -1, 0, 0))
+     cand    (('space', 0, 0, 0), ('uni0311', 0, 0, 0), ('__pen__', -1, 0, 0))
+  mark        ' ̇'
+     release (('space', 0, 0, 0), ('dotaccentcmb', 0, -99, -200), ('__pen__', -1, 510, 0))
+     cand    (('space', 0, 0, 0), ('dotaccentcmb', 0, 510, 0), ('__pen__', -1, 510, 0))
+  mark        ' ̑'
+     release (('space', 0, 0, 0), ('uni0311', 0, -239, -618), ('__pen__', -1, 510, 0))
+     cand    (('space', 0, 0, 0), ('uni0311', 0, 510, 0), ('__pen__', -1, 510, 0))

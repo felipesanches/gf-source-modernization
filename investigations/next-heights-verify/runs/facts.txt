@@ -1,0 +1,239 @@
+==============================================================================
+KottaOne-Regular  source ofl/kottaone/src/KottaOne-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/kottaone/KottaOne-Regular.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-01-22 16:37:04  src modified 2012-01-22 18:39:02
+  release OS/2 v2 sxHeight=76 sCapHeight=212 usWeightClass=400 fontRevision=1.0010 nbsp_adv=None
+  sfd header {'FontName': 'KottaOne-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1327250224 (2012-01-22 16:37:04)', 'ModificationTime': '1327257542 (2012-01-22 18:39:02)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 117 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['KottaOne-Regular.otf']  (paired by name: KottaOne-Regular.otf)
+    KottaOne-Regular.otf: CFF FontName=KottaOne-Regular BlueValues=[-20, 0, 495, 495, 687, 696] OtherBlues=[-255, -255] OS/2 v2 x=480 cap=690 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+Ledger-Regular  source ofl/ledger/src/Ledger-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/ledger/Ledger-Regular.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-02-17 14:02:51  src modified 2012-02-17 19:29:08
+  release OS/2 v2 sxHeight=487 sCapHeight=750 usWeightClass=400 fontRevision=1.0030 nbsp_adv=281
+  sfd header {'FontName': 'Ledger-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1329487371 (2012-02-17 14:02:51)', 'ModificationTime': '1329506948 (2012-02-17 19:29:08)', 'TTFWeight': '400'}
+  src/*.otf in base tree: ['Ledger-Regular.otf']  (paired by name: Ledger-Regular.otf)
+    Ledger-Regular.otf: CFF FontName=Ledger-Regular BlueValues=[-21, 0, 487, 495, 750, 768] OtherBlues=[-329, -315] OS/2 v2 x=485 cap=750 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+LilitaOne-Regular  source ofl/lilitaone/src/LilitaOne-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/lilitaone/LilitaOne-Regular.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-01-06 20:03:03  src modified 2012-01-06 20:27:54
+  release OS/2 v2 sxHeight=506 sCapHeight=704 usWeightClass=400 fontRevision=1.0020 nbsp_adv=None
+  sfd header {'FontName': 'LilitaOne', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1325880183 (2012-01-06 20:03:03)', 'ModificationTime': '1325881674 (2012-01-06 20:27:54)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 117
+  src/*.otf in base tree: ['LilitaOne-Regular.otf']  (paired by name: LilitaOne-Regular.otf)
+    LilitaOne-Regular.otf: CFF FontName=LilitaOne BlueValues=[-10, 0, 506, 510, 704, 709] OtherBlues=[-193, -193] OS/2 v2 x=500 cap=710 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+Lustria-Regular  source ofl/lustria/src/Lustria-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/lustria/Lustria-Regular.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-01-11 23:44:24  src modified 2012-01-11 22:58:18
+  release OS/2 v2 sxHeight=504 sCapHeight=704 usWeightClass=400 fontRevision=1.0010 nbsp_adv=230
+  sfd header {'FontName': 'Lustria-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1326325464 (2012-01-11 23:44:24)', 'ModificationTime': '1326322698 (2012-01-11 22:58:18)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 118
+  src/*.otf in base tree: ['Lustria-Regular.otf']  (paired by name: Lustria-Regular.otf)
+    Lustria-Regular.otf: CFF FontName=Lustria-Regular BlueValues=[-11, 0, 504, 511, 704, 711] OtherBlues=[-304, -304] OS/2 v2 x=500 cap=700 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+Macondo-Regular  source ofl/macondo/src/Macondo-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/macondo/Macondo-Regular.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-01-11 23:44:27  src modified 2012-01-11 22:58:18
+  release OS/2 v2 sxHeight=24 sCapHeight=53 usWeightClass=400 fontRevision=2.0010 nbsp_adv=None
+  sfd header {'FontName': 'Macondo-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1326325467 (2012-01-11 23:44:27)', 'ModificationTime': '1326322698 (2012-01-11 22:58:18)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 118 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['Macondo-Regular.otf']  (paired by name: Macondo-Regular.otf)
+    Macondo-Regular.otf: CFF FontName=Macondo-Regular BlueValues=[-6, 0, 456, 456, 696, 696] OtherBlues=[-290, -290] OS/2 v2 x=456 cap=696 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+Magra-Bold  source ofl/magra/src/Magra-Bold-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/magra/Magra-Bold.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-01-06 20:03:21  src modified 2012-01-06 20:27:54
+  release OS/2 v2 sxHeight=525 sCapHeight=700 usWeightClass=600 fontRevision=1.0010 nbsp_adv=None
+  sfd header {'FontName': 'Magra-Bold', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1325880201 (2012-01-06 20:03:21)', 'ModificationTime': '1325881674 (2012-01-06 20:27:54)', 'TTFWeight': '600'}
+  sfd glyph StartChar: mu | Encoding: 181 181 117 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['Magra-Bold.otf', 'Magra-Regular.otf']  (paired by name: Magra-Bold.otf)
+    Magra-Bold.otf: CFF FontName=Magra-Bold BlueValues=[-12, 0, 525, 537, 700, 712, 750, 760] OtherBlues=[-200, -188] OS/2 v2 x=525 cap=700 FFTM=None UPM=1000
+    Magra-Regular.otf: CFF FontName=Magra BlueValues=[-12, 0, 525, 537, 700, 712, 750, 760] OtherBlues=[-200, -188] OS/2 v2 x=525 cap=700 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+MergeOne-Regular  source ofl/mergeone/src/MergeOne-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/mergeone/MergeOne-Regular.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2011-01-24 11:36:00  src modified 2012-11-12 15:41:29
+  release OS/2 v3 sxHeight=493 sCapHeight=679 usWeightClass=400 fontRevision=1.0010 nbsp_adv=None
+  sfd header {'FontName': 'MergeOne-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1295868960 (2011-01-24 11:36:00)', 'ModificationTime': '1352734889 (2012-11-12 15:41:29)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 114
+  src/*.otf in base tree: ['MergeOne-Regular.otf']  (paired by name: MergeOne-Regular.otf)
+    MergeOne-Regular.otf: CFF FontName=MergeOne-Regular BlueValues=[-8, 0, 493, 502, 679, 687] OtherBlues=[-226, -226] OS/2 v3 x=493 cap=679 FFTM=None UPM=1000
+  last commit touching otf: 6bee0a9ea 2012-11-12 Updating Merge One with overlap removed  (2 commit(s) touch it)
+  last commit touching ttf: 6bee0a9ea 2012-11-12 Updating Merge One with overlap removed  (2 commit(s) touch it)
+  last commit touching sfd: 6bee0a9ea 2012-11-12 Updating Merge One with overlap removed  (2 commit(s) touch it)
+==============================================================================
+OleoScript-Bold  source ofl/oleoscript/src/OleoScript-Bold-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/oleoscript/OleoScript-Bold.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2012-02-07 00:27:00  src modified 2012-11-12 15:41:30
+  release OS/2 v3 sxHeight=443 sCapHeight=710 usWeightClass=700 fontRevision=1.0020 nbsp_adv=200
+  sfd header {'FontName': 'OleoScript-Bold', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1328574420 (2012-02-07 00:27:00)', 'ModificationTime': '1352734890 (2012-11-12 15:41:30)', 'TTFWeight': '700'}
+  sfd glyph StartChar: mu | Encoding: 181 181 119 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['OleoScript-Bold.otf', 'OleoScript-Regular.otf']  (paired by name: OleoScript-Bold.otf)
+    OleoScript-Bold.otf: CFF FontName=OleoScript-Bold BlueValues=[-12, 0, 443, 443, 710, 710] OtherBlues=[-224, -224] OS/2 v3 x=443 cap=710 FFTM=None UPM=1000
+    OleoScript-Regular.otf: CFF FontName=OleoScript-Regular BlueValues=[-12, 0, 443, 450, 710, 710] OtherBlues=[-224, -224] OS/2 v3 x=443 cap=710 FFTM=None UPM=1000
+  last commit touching otf: 1a1732e69 2012-11-12 Updating Oleo Script  (2 commit(s) touch it)
+  last commit touching ttf: 1a1732e69 2012-11-12 Updating Oleo Script  (2 commit(s) touch it)
+  last commit touching sfd: 1a1732e69 2012-11-12 Updating Oleo Script  (2 commit(s) touch it)
+==============================================================================
+OleoScript-Regular  source ofl/oleoscript/src/OleoScript-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/oleoscript/OleoScript-Regular.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2012-02-07 00:27:00  src modified 2012-11-12 15:41:30
+  release OS/2 v3 sxHeight=443 sCapHeight=710 usWeightClass=400 fontRevision=1.0020 nbsp_adv=200
+  sfd header {'FontName': 'OleoScript-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1328574420 (2012-02-07 00:27:00)', 'ModificationTime': '1352734890 (2012-11-12 15:41:30)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 119 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['OleoScript-Bold.otf', 'OleoScript-Regular.otf']  (paired by name: OleoScript-Regular.otf)
+    OleoScript-Bold.otf: CFF FontName=OleoScript-Bold BlueValues=[-12, 0, 443, 443, 710, 710] OtherBlues=[-224, -224] OS/2 v3 x=443 cap=710 FFTM=None UPM=1000
+    OleoScript-Regular.otf: CFF FontName=OleoScript-Regular BlueValues=[-12, 0, 443, 450, 710, 710] OtherBlues=[-224, -224] OS/2 v3 x=443 cap=710 FFTM=None UPM=1000
+  last commit touching otf: 1a1732e69 2012-11-12 Updating Oleo Script  (2 commit(s) touch it)
+  last commit touching ttf: 1a1732e69 2012-11-12 Updating Oleo Script  (2 commit(s) touch it)
+  last commit touching sfd: 1a1732e69 2012-11-12 Updating Oleo Script  (2 commit(s) touch it)
+==============================================================================
+OleoScriptSwashCaps-Bold  source ofl/oleoscriptswashcaps/src/OleoScriptSwashCaps-Bold-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/oleoscriptswashcaps/OleoScriptSwashCaps-Bold.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2012-02-07 00:27:00  src modified 2012-11-12 15:41:30
+  release OS/2 v3 sxHeight=443 sCapHeight=747 usWeightClass=700 fontRevision=1.0020 nbsp_adv=200
+  sfd header {'FontName': 'OleoScriptSwashCaps-Bold', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1328574420 (2012-02-07 00:27:00)', 'ModificationTime': '1352734890 (2012-11-12 15:41:30)', 'TTFWeight': '700'}
+  sfd glyph StartChar: mu | Encoding: 181 181 119 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['OleoScriptSwashCaps-Bold.otf', 'OleoScriptSwashCaps-Regular.otf']  (paired by name: OleoScriptSwashCaps-Bold.otf)
+    OleoScriptSwashCaps-Bold.otf: CFF FontName=OleoScriptSwashCaps-Bold BlueValues=[-13, 0, 443, 443, 747, 747] OtherBlues=[-224, -224] OS/2 v3 x=443 cap=710 FFTM=None UPM=1000
+    OleoScriptSwashCaps-Regular.otf: CFF FontName=OleoScriptSwashCaps-Regular BlueValues=[-12, 0, 443, 450, 747, 747] OtherBlues=[-224, -224] OS/2 v3 x=443 cap=710 FFTM=None UPM=1000
+  last commit touching otf: 894f7367c 2012-11-12 Adding Oleo Script Swash Caps  (1 commit(s) touch it)
+  last commit touching ttf: 894f7367c 2012-11-12 Adding Oleo Script Swash Caps  (1 commit(s) touch it)
+  last commit touching sfd: 894f7367c 2012-11-12 Adding Oleo Script Swash Caps  (1 commit(s) touch it)
+==============================================================================
+OleoScriptSwashCaps-Regular  source ofl/oleoscriptswashcaps/src/OleoScriptSwashCaps-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/oleoscriptswashcaps/OleoScriptSwashCaps-Regular.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2012-02-07 00:27:00  src modified 2012-11-12 15:41:31
+  release OS/2 v3 sxHeight=443 sCapHeight=747 usWeightClass=400 fontRevision=1.0020 nbsp_adv=200
+  sfd header {'FontName': 'OleoScriptSwashCaps-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1328574420 (2012-02-07 00:27:00)', 'ModificationTime': '1352734891 (2012-11-12 15:41:31)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 119 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['OleoScriptSwashCaps-Bold.otf', 'OleoScriptSwashCaps-Regular.otf']  (paired by name: OleoScriptSwashCaps-Regular.otf)
+    OleoScriptSwashCaps-Bold.otf: CFF FontName=OleoScriptSwashCaps-Bold BlueValues=[-13, 0, 443, 443, 747, 747] OtherBlues=[-224, -224] OS/2 v3 x=443 cap=710 FFTM=None UPM=1000
+    OleoScriptSwashCaps-Regular.otf: CFF FontName=OleoScriptSwashCaps-Regular BlueValues=[-12, 0, 443, 450, 747, 747] OtherBlues=[-224, -224] OS/2 v3 x=443 cap=710 FFTM=None UPM=1000
+  last commit touching otf: 894f7367c 2012-11-12 Adding Oleo Script Swash Caps  (1 commit(s) touch it)
+  last commit touching ttf: 894f7367c 2012-11-12 Adding Oleo Script Swash Caps  (1 commit(s) touch it)
+  last commit touching sfd: 894f7367c 2012-11-12 Adding Oleo Script Swash Caps  (1 commit(s) touch it)
+==============================================================================
+Rambla-Bold  source ofl/rambla/src/Rambla-Bold-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/rambla/Rambla-Bold.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2011-11-04 09:22:00  src modified 2012-11-01 05:56:40
+  release OS/2 v3 sxHeight=517 sCapHeight=669 usWeightClass=700 fontRevision=1.0010 nbsp_adv=186
+  sfd header {'FontName': 'Rambla-Bold', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1320398520 (2011-11-04 09:22:00)', 'ModificationTime': '1351749400 (2012-11-01 05:56:40)', 'TTFWeight': '700'}
+  sfd glyph StartChar: mu | Encoding: 181 181 120
+  src/*.otf in base tree: ['Rambla-Bold.otf', 'Rambla-BoldItalic.otf', 'Rambla-Regular-Italic.otf', 'Rambla-Regular.otf']  (paired by name: Rambla-Bold.otf)
+    Rambla-Bold.otf: CFF FontName=Rambla-Bold BlueValues=[-13, 0, 517, 524, 669, 680] OtherBlues=[-244, -222] OS/2 v3 x=517 cap=669 FFTM=None UPM=1000
+    Rambla-BoldItalic.otf: CFF FontName=Rambla-BoldItalic BlueValues=[-13, 0, 517, 524, 669, 680] OtherBlues=[-244, -222] OS/2 v3 x=517 cap=669 FFTM=None UPM=1000
+    Rambla-Regular-Italic.otf: CFF FontName=Rambla-Italic BlueValues=[-13, 0, 506, 516, 668, 682] OtherBlues=[-236, -224] OS/2 v3 x=506 cap=668 FFTM=None UPM=1000
+    Rambla-Regular.otf: CFF FontName=Rambla-Regular BlueValues=[-13, 0, 506, 516, 668, 682] OtherBlues=[-236, -224] OS/2 v3 x=506 cap=668 FFTM=None UPM=1000
+  last commit touching otf: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+  last commit touching ttf: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+  last commit touching sfd: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+==============================================================================
+Rambla-BoldItalic  source ofl/rambla/src/Rambla-BoldItalic-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/rambla/Rambla-BoldItalic.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2011-11-04 09:22:00  src modified 2012-11-01 05:56:40
+  release OS/2 v3 sxHeight=517 sCapHeight=669 usWeightClass=700 fontRevision=1.0010 nbsp_adv=188
+  sfd header {'FontName': 'Rambla-BoldItalic', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1320398520 (2011-11-04 09:22:00)', 'ModificationTime': '1351749400 (2012-11-01 05:56:40)', 'TTFWeight': '700'}
+  sfd glyph StartChar: mu | Encoding: 181 181 120
+  src/*.otf in base tree: ['Rambla-Bold.otf', 'Rambla-BoldItalic.otf', 'Rambla-Regular-Italic.otf', 'Rambla-Regular.otf']  (paired by name: Rambla-BoldItalic.otf)
+    Rambla-Bold.otf: CFF FontName=Rambla-Bold BlueValues=[-13, 0, 517, 524, 669, 680] OtherBlues=[-244, -222] OS/2 v3 x=517 cap=669 FFTM=None UPM=1000
+    Rambla-BoldItalic.otf: CFF FontName=Rambla-BoldItalic BlueValues=[-13, 0, 517, 524, 669, 680] OtherBlues=[-244, -222] OS/2 v3 x=517 cap=669 FFTM=None UPM=1000
+    Rambla-Regular-Italic.otf: CFF FontName=Rambla-Italic BlueValues=[-13, 0, 506, 516, 668, 682] OtherBlues=[-236, -224] OS/2 v3 x=506 cap=668 FFTM=None UPM=1000
+    Rambla-Regular.otf: CFF FontName=Rambla-Regular BlueValues=[-13, 0, 506, 516, 668, 682] OtherBlues=[-236, -224] OS/2 v3 x=506 cap=668 FFTM=None UPM=1000
+  last commit touching otf: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+  last commit touching ttf: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+  last commit touching sfd: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+==============================================================================
+Rosarivo-Italic  source ofl/rosarivo/src/Rosarivo-Italic-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/rosarivo/Rosarivo-Italic.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-03-27 09:34:12  src modified 2012-03-27 16:41:55
+  release OS/2 v2 sxHeight=217 sCapHeight=224 usWeightClass=400 fontRevision=1.0030 nbsp_adv=None
+  sfd header {'FontName': 'Rosarivo-Italic', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1332840852 (2012-03-27 09:34:12)', 'ModificationTime': '1332866515 (2012-03-27 16:41:55)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 117 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['Rosarivo-Italic.otf', 'Rosarivo-Regular.otf']  (paired by name: Rosarivo-Italic.otf)
+    Rosarivo-Italic.otf: CFF FontName=Rosarivo-Italic BlueValues=[-20, 0, 521, 521, 727, 736] OtherBlues=[-380, -373] OS/2 v2 x=503 cap=728 FFTM=None UPM=1000
+    Rosarivo-Regular.otf: CFF FontName=Rosarivo-Regular BlueValues=[-20, 0, 509, 509, 728, 757] OtherBlues=[-380, -368] OS/2 v2 x=503 cap=728 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+Sail-Regular  source ofl/sail/src/Sail-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/sail/Sail-Regular.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-01-12 23:15:13  src modified 2012-01-12 22:25:26
+  release OS/2 v2 sxHeight=435 sCapHeight=666 usWeightClass=400 fontRevision=1.0020 nbsp_adv=None
+  sfd header {'FontName': 'Sail-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1326410113 (2012-01-12 23:15:13)', 'ModificationTime': '1326407126 (2012-01-12 22:25:26)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 117
+  src/*.otf in base tree: ['Sail-Regular.otf']  (paired by name: Sail-Regular.otf)
+    Sail-Regular.otf: CFF FontName=Sail-Regular BlueValues=[0, 0, 389, 389, 666, 666] OtherBlues=[-184, -183] OS/2 v2 x=375 cap=591 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+TextMeOne-Regular  source ofl/textmeone/src/TextMeOne-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/textmeone/TextMeOne-Regular.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2012-10-19 10:01:00  src modified 2012-11-04 18:41:02
+  release OS/2 v3 sxHeight=502 sCapHeight=700 usWeightClass=400 fontRevision=1.0020 nbsp_adv=None
+  sfd header {'FontName': 'TextMeOne-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1350640860 (2012-10-19 10:01:00)', 'ModificationTime': '1352054462 (2012-11-04 18:41:02)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 119
+  src/*.otf in base tree: ['TextMeOne-Regular.otf']  (paired by name: TextMeOne-Regular.otf)
+    TextMeOne-Regular.otf: CFF FontName=TextMeOne-Regular BlueValues=[-1, 0, 502, 502, 700, 706] OtherBlues=[-250, -250] OS/2 v3 x=500 cap=700 FFTM=None UPM=1000
+  last commit touching otf: 7641872de 2012-11-04 Updating Text Me One with description and nbsp char  (2 commit(s) touch it)
+  last commit touching ttf: 7641872de 2012-11-04 Updating Text Me One with description and nbsp char  (2 commit(s) touch it)
+  last commit touching sfd: 7641872de 2012-11-04 Updating Text Me One with description and nbsp char  (2 commit(s) touch it)
+==============================================================================
+Magra-Regular  source ofl/magra/src/Magra-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/magra/Magra-Regular.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-01-06 20:25:58  src modified 2012-01-06 20:27:54
+  release OS/2 v2 sxHeight=525 sCapHeight=700 usWeightClass=400 fontRevision=1.0010 nbsp_adv=None
+  sfd header {'FontName': 'Magra', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1325881558 (2012-01-06 20:25:58)', 'ModificationTime': '1325881674 (2012-01-06 20:27:54)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 117 | AltUni2: 0003bc.ffffffff.0
+  src/*.otf in base tree: ['Magra-Bold.otf', 'Magra-Regular.otf']  (paired by name: Magra-Regular.otf)
+    Magra-Bold.otf: CFF FontName=Magra-Bold BlueValues=[-12, 0, 525, 537, 700, 712, 750, 760] OtherBlues=[-200, -188] OS/2 v2 x=525 cap=700 FFTM=None UPM=1000
+    Magra-Regular.otf: CFF FontName=Magra BlueValues=[-12, 0, 525, 537, 700, 712, 750, 760] OtherBlues=[-200, -188] OS/2 v2 x=525 cap=700 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+==============================================================================
+Rambla-Italic  source ofl/rambla/src/Rambla-Regular-Italic-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/rambla/Rambla-Italic.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2011-11-04 09:21:00  src modified 2012-11-01 05:56:40
+  release OS/2 v3 sxHeight=506 sCapHeight=668 usWeightClass=400 fontRevision=1.0010 nbsp_adv=212
+  sfd header {'FontName': 'Rambla-Italic', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1320398460 (2011-11-04 09:21:00)', 'ModificationTime': '1351749400 (2012-11-01 05:56:40)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 120
+  src/*.otf in base tree: ['Rambla-Bold.otf', 'Rambla-BoldItalic.otf', 'Rambla-Regular-Italic.otf', 'Rambla-Regular.otf']  (paired by name: Rambla-Regular-Italic.otf)
+    Rambla-Bold.otf: CFF FontName=Rambla-Bold BlueValues=[-13, 0, 517, 524, 669, 680] OtherBlues=[-244, -222] OS/2 v3 x=517 cap=669 FFTM=None UPM=1000
+    Rambla-BoldItalic.otf: CFF FontName=Rambla-BoldItalic BlueValues=[-13, 0, 517, 524, 669, 680] OtherBlues=[-244, -222] OS/2 v3 x=517 cap=669 FFTM=None UPM=1000
+    Rambla-Regular-Italic.otf: CFF FontName=Rambla-Italic BlueValues=[-13, 0, 506, 516, 668, 682] OtherBlues=[-236, -224] OS/2 v3 x=506 cap=668 FFTM=None UPM=1000
+    Rambla-Regular.otf: CFF FontName=Rambla-Regular BlueValues=[-13, 0, 506, 516, 668, 682] OtherBlues=[-236, -224] OS/2 v3 x=506 cap=668 FFTM=None UPM=1000
+  last commit touching otf: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+  last commit touching ttf: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+  last commit touching sfd: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+==============================================================================
+Rambla-Regular  source ofl/rambla/src/Rambla-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/rambla/Rambla-Regular.ttf
+  release FFTM build 2012-09-06 01:48:05  src created 2011-11-04 09:22:00  src modified 2012-11-01 05:56:40
+  release OS/2 v3 sxHeight=506 sCapHeight=668 usWeightClass=400 fontRevision=1.0010 nbsp_adv=210
+  sfd header {'FontName': 'Rambla-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '3', 'CreationTime': '1320398520 (2011-11-04 09:22:00)', 'ModificationTime': '1351749400 (2012-11-01 05:56:40)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 120
+  src/*.otf in base tree: ['Rambla-Bold.otf', 'Rambla-BoldItalic.otf', 'Rambla-Regular-Italic.otf', 'Rambla-Regular.otf']  (paired by name: Rambla-Regular.otf)
+    Rambla-Bold.otf: CFF FontName=Rambla-Bold BlueValues=[-13, 0, 517, 524, 669, 680] OtherBlues=[-244, -222] OS/2 v3 x=517 cap=669 FFTM=None UPM=1000
+    Rambla-BoldItalic.otf: CFF FontName=Rambla-BoldItalic BlueValues=[-13, 0, 517, 524, 669, 680] OtherBlues=[-244, -222] OS/2 v3 x=517 cap=669 FFTM=None UPM=1000
+    Rambla-Regular-Italic.otf: CFF FontName=Rambla-Italic BlueValues=[-13, 0, 506, 516, 668, 682] OtherBlues=[-236, -224] OS/2 v3 x=506 cap=668 FFTM=None UPM=1000
+    Rambla-Regular.otf: CFF FontName=Rambla-Regular BlueValues=[-13, 0, 506, 516, 668, 682] OtherBlues=[-236, -224] OS/2 v3 x=506 cap=668 FFTM=None UPM=1000
+  last commit touching otf: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+  last commit touching ttf: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+  last commit touching sfd: 0833aa99b 2012-10-31 Adding  (1 commit(s) touch it)
+==============================================================================
+Rosarivo-Regular  source ofl/rosarivo/src/Rosarivo-Regular-TTF.sfd  release /home/fsanches/compartilhado/google/fonts/ofl/rosarivo/Rosarivo-Regular.ttf
+  release FFTM build 2011-02-22 13:48:33  src created 2012-03-27 09:24:06  src modified 2012-03-27 16:41:56
+  release OS/2 v2 sxHeight=170 sCapHeight=757 usWeightClass=400 fontRevision=1.0030 nbsp_adv=None
+  sfd header {'FontName': 'Rosarivo-Regular', 'Ascent': '800', 'Descent': '200', 'OS2Version': '2', 'CreationTime': '1332840246 (2012-03-27 09:24:06)', 'ModificationTime': '1332866516 (2012-03-27 16:41:56)', 'TTFWeight': '400'}
+  sfd glyph StartChar: mu | Encoding: 181 181 117
+  src/*.otf in base tree: ['Rosarivo-Italic.otf', 'Rosarivo-Regular.otf']  (paired by name: Rosarivo-Regular.otf)
+    Rosarivo-Italic.otf: CFF FontName=Rosarivo-Italic BlueValues=[-20, 0, 521, 521, 727, 736] OtherBlues=[-380, -373] OS/2 v2 x=503 cap=728 FFTM=None UPM=1000
+    Rosarivo-Regular.otf: CFF FontName=Rosarivo-Regular BlueValues=[-20, 0, 509, 509, 728, 757] OtherBlues=[-380, -368] OS/2 v2 x=503 cap=728 FFTM=None UPM=1000
+  last commit touching otf: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)
+  last commit touching ttf: 197799d7b 2012-04-03 Added fonts currently served by Google Web Fonts.  (1 commit(s) touch it)
+  last commit touching sfd: 7ca2d28c5 2012-04-18 Added files from old branch to new branch for existing family directories. Some new subsets might have been introduced for some families which will require a METADATA.json update in a coming change  (1 commit(s) touch it)

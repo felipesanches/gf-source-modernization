@@ -1,0 +1,1 @@
+['runs', '08-standin-aalt-langsys', 'Varela-Regular.ttf']: 189 cases, 0 differ

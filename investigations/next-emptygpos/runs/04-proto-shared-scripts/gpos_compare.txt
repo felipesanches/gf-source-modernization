@@ -1,0 +1,20 @@
+=== Varela-Regular release vs prototype
+GSUB DIFFERS
+  scripts:
+  features:
+GPOS SAME scripts=['cyrl', 'grek', 'latn'] features=0 lookups=0
+=== Varela-Regular oracle(emulated) vs prototype
+GSUB SAME scripts=['cyrl', 'grek', 'latn'] features=24 lookups=31
+GPOS SAME scripts=['cyrl', 'grek', 'latn'] features=0 lookups=0
+GPOS bytes release 64 00010000000a003c003e00036379726c00146772656b001e6c61746e0028000400000000ffff0000000400000000ffff0000000400000000ffff000000000000 
+GPOS bytes proto   42 00010000000a0028002800036379726c00146772656b00146c61746e0014000400000000ffff00000000 
+byte-identical: False
+=== UnifrakturMaguntia-Book release vs prototype
+GSUB SAME scripts=['DFLT', 'hani', 'latn'] features=3 lookups=3
+GPOS SAME scripts=['DFLT', 'hani', 'latn'] features=0 lookups=0
+=== UnifrakturMaguntia-Book oracle(emulated) vs prototype
+GSUB SAME scripts=['DFLT', 'hani', 'latn'] features=3 lookups=3
+GPOS SAME scripts=['DFLT', 'hani', 'latn'] features=0 lookups=0
+GPOS bytes release 64 00010000000a003c003e000344464c54001468616e69001e6c61746e0028000400000000ffff0000000400000000ffff0000000400000000ffff000000000000 
+GPOS bytes proto   42 00010000000a00280028000344464c54001468616e6900146c61746e0014000400000000ffff00000000 
+byte-identical: False

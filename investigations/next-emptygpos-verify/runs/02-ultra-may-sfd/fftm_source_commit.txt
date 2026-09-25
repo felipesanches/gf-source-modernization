@@ -1,0 +1,6 @@
+release /home/fsanches/compartilhado/google/fonts/apache/ultra/Ultra-Regular.ttf
+  FFTM FontForge build 2011-02-22 13:48:33, sourceModified 1304463351 (2011-05-03 22:55:51 UTC)
+  name 5 'Version 1.001', PANOSE 2 6 5 5 0 0 0 2 0 4
+509e13d8e  (path absent)  2012-04-02 18:08:04 -0700 Cleaned up old data in preparation for adding the new font tree.
+      10ef7b362 ModificationTime 1318899232  Version 1.000    Panose 2 6 5 5 0 0 0 2 0 4    2011-10-17 21:58:03 -0300 Updating hinting of Ultra
+MATCH 2d042ebbd ModificationTime 1304463351  Version 1.000    Panose 2 6 5 5 0 0 0 2 0 4    2011-05-06 10:15:03 -0400 Updating Ultra

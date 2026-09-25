@@ -1,0 +1,11 @@
+flags: --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances --snap-component-transforms --fontforge-underline-position --correct-path-direction
+RELEASE-STALE hmtx.four -- shipped records 18 for an outline at -8; ours records -8
+RELEASE-STALE hmtx.degree -- shipped records 74 for an outline at 72; ours records 72
+RELEASE-STALE hmtx.ring -- shipped records 231 for an outline at 229; ours records 229
+RELEASE-STALE GSUB.script_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.feature_list -- one side has an empty GSUB, the other has none; neither does anything
+RELEASE-STALE GSUB.lookup_list -- one side has an empty GSUB, the other has none; neither does anything
+BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "quotedbl": {"A": {"x": -164}, "J": {"x": -123}, 
+3 blocking table difference(s), 6 stale in the release

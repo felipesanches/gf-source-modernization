@@ -1,0 +1,36 @@
+release Smokum-Regular.ttf: 4640 texts (cp-after-H=368, cp-alone=368, kern-bare=3904)
+Smokum-Regular.ttf: 222720 runs, 2052 differ (horizontal 264 in 44 texts; vertical 1788)
+    horizontal kern-bare         264 runs
+    first: kern-bare 'T\xad' dir=rtl flags=default feat=asis
+      release: (('space', 1, 0, 0), ('T', 0, -61, 0), ('__pen__', -1, 664, 0))
+      cand   : (('space', 1, 0, 0), ('T', 0, 0, 0), ('__pen__', -1, 725, 0))
+Smokum-Regular.ttf: 222720 runs, 2052 differ (horizontal 264 in 44 texts; vertical 1788)
+    horizontal kern-bare         264 runs
+    first: kern-bare 'T\xad' dir=rtl flags=default feat=asis
+      release: (('space', 1, 0, 0), ('T', 0, -61, 0), ('__pen__', -1, 664, 0))
+      cand   : (('space', 1, 0, 0), ('T', 0, 0, 0), ('__pen__', -1, 725, 0))
+release Ultra-Regular.ttf: 12472 texts (base-mark=837, cp-after-H=371, cp-alone=371, kern-1mark=8163, kern-bare=2721, mark-after-base=3, mark-alone=3, mark-stack=3)
+Ultra-Black.ttf: 598656 runs, 436532 differ (horizontal 220172 in 9497 texts; vertical 216360)
+    horizontal base-mark       20088 runs
+    horizontal cp-after-H         72 runs
+    horizontal cp-alone           72 runs
+    horizontal kern-1mark     195912 runs
+    horizontal kern-bare        3812 runs
+    horizontal mark-after-base     72 runs
+    horizontal mark-alone         72 runs
+    horizontal mark-stack         72 runs
+    first: mark-alone '̒' dir=ltr flags=default feat=asis
+      release: (('uni0312', 0, -1024, 0), ('__pen__', -1, 0, 0))
+      cand   : (('uni0312', 0, 0, 0), ('__pen__', -1, 0, 0))
+Ultra-Regular.ttf: 598656 runs, 436532 differ (horizontal 220172 in 9497 texts; vertical 216360)
+    horizontal base-mark       20088 runs
+    horizontal cp-after-H         72 runs
+    horizontal cp-alone           72 runs
+    horizontal kern-1mark     195912 runs
+    horizontal kern-bare        3812 runs
+    horizontal mark-after-base     72 runs
+    horizontal mark-alone         72 runs
+    horizontal mark-stack         72 runs
+    first: mark-alone '̒' dir=ltr flags=default feat=asis
+      release: (('uni0312', 0, -1024, 0), ('__pen__', -1, 0, 0))
+      cand   : (('uni0312', 0, 0, 0), ('__pen__', -1, 0, 0))
