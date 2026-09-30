@@ -1,0 +1,256 @@
+From 02f76b2be74ace68ecbe1d430a010bd2e9a42769 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 18 Sep 2026 12:20:28 +0100
+Subject: [PATCH] Add a filter to drop FontForge AltUni alternate codepoints
+
+--drop-alternate-unicodes drops the plain AltUni2 alternates and keeps each
+glyph's Encoding codepoint, for a cmap that does not carry the alternates
+(FontForge's own export maps them). Variation sequences are untouched.
+
+Assisted by AI agents (Claude Opus 5, Claude Opus 5.5)
+---
+ babelfont/src/convertors/fontforge/tests.rs   |  34 ++++
+ .../src/filters/dropalternateunicodes.rs      | 172 ++++++++++++++++++
+ babelfont/src/filters/mod.rs                  |   1 +
+ 3 files changed, 207 insertions(+)
+ create mode 100644 babelfont/src/filters/dropalternateunicodes.rs
+
+diff --git a/babelfont/src/convertors/fontforge/tests.rs b/babelfont/src/convertors/fontforge/tests.rs
+index 0832e10..49820ff 100644
+--- a/babelfont/src/convertors/fontforge/tests.rs
++++ b/babelfont/src/convertors/fontforge/tests.rs
+@@ -391,6 +391,40 @@ fn test_altuni_adds_alternate_codepoints() {
+     assert_eq!(font.glyphs[1].codepoints, vec![0x00B5, 0x03BC]);
+ }
+ 
++#[test]
++fn test_drop_alternate_unicodes_keeps_the_primary_encoding() {
++    use crate::filters::{DropAlternateUnicodes, FontFilter};
++
++    let data = concat!(
++        "SplineFontDB: 3.0\n",
++        "BeginChars: 2 2\n",
++        "StartChar: space\n",
++        "Encoding: 32 32 0\n",
++        "Width: 200\n",
++        "AltUni2: 0000a0.ffffffff.0\n",
++        "EndChar\n",
++        "StartChar: mu\n",
++        "Encoding: 181 181 1\n",
++        "Width: 500\n",
++        "AltUni2: 0003bc.ffffffff.0 000041.0000fe00.0\n",
++        "EndChar\n",
++        "EndChars\n",
++        "EndSplineFont\n"
++    );
++
++    let mut font = load_str(data).expect("Failed to parse SFD with AltUni2");
++    assert_eq!(font.glyphs[0].codepoints, vec![0x0020, 0x00A0]);
++    assert_eq!(font.glyphs[1].codepoints, vec![0x00B5, 0x03BC]);
++
++    DropAlternateUnicodes::new()
++        .apply(&mut font)
++        .expect("filter failed");
++
++    // Only the Encoding codepoint survives; the AltUni alternates are gone.
++    assert_eq!(font.glyphs[0].codepoints, vec![0x0020]);
++    assert_eq!(font.glyphs[1].codepoints, vec![0x00B5]);
++}
++
+ #[test]
+ fn test_oneline_glyph_rules_are_added_to_lookups() {
+     let data = concat!(
+diff --git a/babelfont/src/filters/dropalternateunicodes.rs b/babelfont/src/filters/dropalternateunicodes.rs
+new file mode 100644
+index 0000000..164b8cb
+--- /dev/null
++++ b/babelfont/src/filters/dropalternateunicodes.rs
+@@ -0,0 +1,172 @@
++use crate::filters::FontFilter;
++
++/// The sentinel FontForge writes in an `AltUni2` triple's variation-selector field
++/// when the entry is a plain alternate encoding rather than a Unicode Variation
++/// Sequence.
++const NO_VARIATION_SELECTOR: u32 = 0xffff_ffff;
++
++#[derive(Default)]
++/// A filter that drops the alternate Unicode mappings FontForge records in `AltUni2`.
++///
++/// A FontForge source may map one glyph at several codepoints: `Omega` (U+03A9) also
++/// at U+2126 OHM SIGN, `periodcentered` (U+00B7) also at U+2219 BULLET OPERATOR, `mu`
++/// (U+00B5 MICRO SIGN) also at U+03BC GREEK SMALL LETTER MU. The `Encoding` line
++/// states the glyph's primary codepoint and `AltUni2` the alternates. This filter
++/// keeps only each glyph's `Encoding` codepoint. A glyph with no `Encoding` codepoint
++/// keeps its first one, so that no glyph is left unmapped.
++///
++/// FontForge's own TTF export maps the alternates too, so this filter does not
++/// reproduce it. It is for a target whose cmap does not carry them, such as a binary
++/// built without them that the conversion has to match. It works the other way from
++/// [`super::LegacyDuplicateCmap`] (`--add-legacy-duplicate-cmap`), which maps a fixed
++/// set of such codepoints, U+03BC, U+2126 and U+2219 among them, onto glyphs found by
++/// name; this filter removes only what the source's `AltUni2` lines add.
++///
++/// Variation-sequence entries (a real variation selector rather than the
++/// `0xffffffff` sentinel) are left alone: they describe cmap format 14 records, not
++/// plain codepoints, and are not added to `codepoints` in the first place.
++pub struct DropAlternateUnicodes;
++
++impl DropAlternateUnicodes {
++    /// Create a new DropAlternateUnicodes filter
++    pub fn new() -> Self {
++        DropAlternateUnicodes
++    }
++}
++
++/// The plain alternate codepoints recorded in one `AltUni2` value.
++fn alternates(raw: &str) -> Vec<u32> {
++    raw.split_whitespace()
++        .filter_map(|entry| {
++            let mut fields = entry.split('.');
++            let codepoint = fields.next().and_then(|s| u32::from_str_radix(s, 16).ok())?;
++            let selector = fields.next().and_then(|s| u32::from_str_radix(s, 16).ok())?;
++            (selector == NO_VARIATION_SELECTOR).then_some(codepoint)
++        })
++        .collect()
++}
++
++impl FontFilter for DropAlternateUnicodes {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        let mut dropped = 0;
++        for glyph in font.glyphs.iter_mut() {
++            let Some(raw) = glyph.format_specific.get("sfd.altuni").and_then(|v| v.as_str())
++            else {
++                continue;
++            };
++            let alternates = alternates(raw);
++            if alternates.is_empty() {
++                continue;
++            }
++            // The primary codepoint is the one the `Encoding` line states; it is kept
++            // even when `AltUni2` repeats it.
++            let primary = glyph
++                .format_specific
++                .get("sfd.encoding_unicode")
++                .and_then(|v| v.as_i64())
++                .and_then(|cp| u32::try_from(cp).ok());
++            let before = glyph.codepoints.len();
++            let first = glyph.codepoints.first().copied();
++            glyph
++                .codepoints
++                .retain(|c| Some(*c) == primary || !alternates.contains(c));
++            // A glyph with no `Encoding` codepoint keeps its first one.
++            if glyph.codepoints.is_empty() {
++                glyph.codepoints.extend(first);
++            }
++            dropped += before - glyph.codepoints.len();
++        }
++        log::info!("Dropped {dropped} alternate Unicode mapping(s) recorded in AltUni2");
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(DropAlternateUnicodes::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("dropalternateunicodes")
++            .long("drop-alternate-unicodes")
++            .help(
++                "Drop the alternate cmap entries a FontForge source records in AltUni2 \
++                 (U+2126 ohm, U+2219 bullet operator, U+03BC Greek mu, ...) and keep \
++                 each glyph's Encoding codepoint. FontForge's own TTF export maps the \
++                 alternates; use this for a cmap that does not carry them \
++                 (--add-legacy-duplicate-cmap adds a fixed set of such entries)",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
++
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Font, Glyph};
++    use serde_json::json;
++
++    fn glyph(encoding: i64, codepoints: Vec<u32>, altuni: &str) -> Glyph {
++        let mut glyph = Glyph {
++            name: "g".into(),
++            codepoints,
++            ..Default::default()
++        };
++        glyph
++            .format_specific
++            .insert("sfd.encoding_unicode".into(), json!(encoding));
++        glyph
++            .format_specific
++            .insert("sfd.altuni".into(), json!(altuni));
++        glyph
++    }
++
++    fn filtered(glyph: Glyph) -> Vec<u32> {
++        let mut font = Font::new();
++        font.glyphs.0.push(glyph);
++        DropAlternateUnicodes::new().apply(&mut font).unwrap();
++        font.glyphs.0[0].codepoints.clone()
++    }
++
++    #[test]
++    fn test_the_encoding_codepoint_is_kept_wherever_it_sits() {
++        assert_eq!(
++            filtered(glyph(
++                0xB5,
++                vec![0x03BC, 0xB5],
++                "0003bc.ffffffff.0 0000b5.ffffffff.0"
++            )),
++            vec![0xB5]
++        );
++    }
++
++    #[test]
++    fn test_an_encoding_codepoint_repeated_in_altuni_is_kept() {
++        assert_eq!(
++            filtered(glyph(
++                0x20,
++                vec![0x20, 0xA0],
++                "000020.ffffffff.0 0000a0.ffffffff.0"
++            )),
++            vec![0x20]
++        );
++    }
++
++    #[test]
++    fn test_a_glyph_with_no_encoding_codepoint_keeps_its_first() {
++        assert_eq!(
++            filtered(glyph(
++                -1,
++                vec![0x03BC, 0x2126],
++                "0003bc.ffffffff.0 002126.ffffffff.0"
++            )),
++            vec![0x03BC]
++        );
++    }
++}
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index 268f569..f513e2b 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -111,6 +111,7 @@ declare_filters! {
+         DropSparseMasters(dropsparsemasters) => "dropsparsemasters",
+         DropIncompatiblePaths(dropincompatiblepaths) => "dropincompatiblepaths",
+         RetainGlyphs(retainglyphs) => "retainglyphs",
++        DropAlternateUnicodes(dropalternateunicodes) => "dropalternateunicodes",
+     }
+     group "Filters for manipulating outlines" {
+         DecomposeComponentReferences(decomposecomponentreferences) => "decomposecomponents",
+-- 
+2.47.3
+
