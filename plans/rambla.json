@@ -1,0 +1,15 @@
+{
+ "repo": "rambla",
+ "commits": [
+  {
+   "styles": [
+    "Rambla-Bold",
+    "Rambla-BoldItalic"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [-13 0 517 524 669 680]",
+   "subject": "Restore the BlueValues the releases were exported with",
+   "body": "FontForge exported both releases from src/Rambla-Bold.otf and\nsrc/Rambla-BoldItalic.otf (tools/generate/HOWTOGEN.txt) and snapped\ntheir OS/2 x-height and cap height to these zones. The -TTF.sfd files\nre-import those TTFs (ttf2sfd.py), which cannot carry a private\ndictionary. Value: each .otf's CFF Private BlueValues (identical)."
+  }
+ ]
+}

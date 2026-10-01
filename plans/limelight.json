@@ -1,6 +1,56 @@
 {
  "repo": "limelight",
- "commits": [],
+ "commits": [
+  {
+   "styles": [
+    "Limelight-Regular"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2TypoAscent 1864"
+    ],
+    [
+     "setfield",
+     "OS2TypoAOffset 0"
+    ],
+    [
+     "setfield",
+     "OS2WinAscent 1864"
+    ],
+    [
+     "setfield",
+     "OS2WinAOffset 0"
+    ],
+    [
+     "setfield",
+     "OS2WinDescent 629"
+    ],
+    [
+     "setfield",
+     "OS2WinDOffset 0"
+    ],
+    [
+     "setfield",
+     "HheadAscent 1864"
+    ],
+    [
+     "setfield",
+     "HheadAOffset 0"
+    ],
+    [
+     "setfield",
+     "HheadDescent -629"
+    ],
+    [
+     "setfield",
+     "HheadDOffset 0"
+    ]
+   ],
+   "subject": "Set the vertical metrics the 2012 release carries",
+   "body": "google/fonts ships Limelight-Regular.ttf as googlefontdirectory 927784141\n(Dave Crossland, 2012-08-20) added it. Its vertical metrics were changed\nafter FontForge exported it from this source: head.created keeps the export\ntime (2012-04-07), head.modified says 2012-08-20, and the glyph boxes were\nrecomputed over all points. FontForge exports this source with typo, win\nand hhea ascent 1881, win descent 631 and hhea descender -632; the release\nhas 1864, 629 and -629, the integer part of the outlines' extremes (1864.0,\n-629.28), as the repository's tools/bbox/vmetcheck.py prescribed. The typo\ndescender stays -634, as in the release. Stated absolutely."
+  }
+ ],
  "disclose": [
   "In the released font some glyphs are drawn shifted horizontally from their outlines: FontForge's export wrote a left side bearing that does not match the glyph's bounding box (a FontForge bug), and rasterizers place the outline by the side bearing. These sources keep the outlines as designed, so the following glyphs are drawn that many font units to the left of where the release draws them: J, Jcircumflex, seven and one, 3 units; asciitilde, 4; M and uni1E40, 2. Decided 2026-10-01: leave as designed and disclose."
  ]

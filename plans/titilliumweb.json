@@ -52,6 +52,23 @@
    ],
    "subject": "Name TitilliumWeb-Regular as the release does",
    "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Titillium Web Regular' (FontForge exported 'Titillium Web')."
+  },
+  {
+   "styles": [
+    "TitilliumWeb-Black",
+    "TitilliumWeb-Bold",
+    "TitilliumWeb-BoldItalic",
+    "TitilliumWeb-Italic",
+    "TitilliumWeb-Light",
+    "TitilliumWeb-LightItalic",
+    "TitilliumWeb-Regular",
+    "TitilliumWeb-SemiBold",
+    "TitilliumWeb-SemiBoldItalic"
+   ],
+   "op": "setfield",
+   "args": "FSType 0",
+   "subject": "Set fsType to 0, installable embedding",
+   "body": "Installable embedding. The value exists only in the release: google/fonts\n93550bd32 (2017-05-09, #931 \"hotfix-titilliumweb: v1.002 added\") changed\nevery shipped binary from 8 to 0. This source, and the binary FontForge\nexported from it, state 8 (editable). The OFL shipped with the font already\npermits embedding."
   }
  ]
 }

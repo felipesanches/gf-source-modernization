@@ -1,0 +1,14 @@
+{
+ "repo": "mergeone",
+ "commits": [
+  {
+   "styles": [
+    "MergeOne-Regular"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [-8 0 493 502 679 687]",
+   "subject": "Restore the BlueValues the release was exported with",
+   "body": "FontForge exported the release from src/MergeOne-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height to these\nzones. This .sfd re-imports that TTF (ttf2sfd.py), which cannot carry\na private dictionary. Value: the .otf's CFF Private BlueValues."
+  }
+ ]
+}

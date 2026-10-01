@@ -1,0 +1,23 @@
+{
+ "repo": "ledger",
+ "commits": [
+  {
+   "styles": [
+    "Ledger-Regular"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [-21 0 487 495 750 768]",
+   "subject": "Restore the BlueValues the release was exported with",
+   "body": "FontForge exported the release from src/Ledger-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height to these\nzones. This .sfd re-imports that TTF (ttf2sfd.py), which cannot carry\na private dictionary. Value: the .otf's CFF Private BlueValues."
+  },
+  {
+   "styles": [
+    "Ledger-Regular"
+   ],
+   "op": "nbspwidth",
+   "args": "",
+   "subject": "Give the no-break space the space's width, 281",
+   "body": "google/fonts 0436d99c0 (ledger: fixed nbsp width, #2353) changed\nU+00A0's advance in the released binary from 0 to 281."
+  }
+ ]
+}

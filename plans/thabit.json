@@ -1,0 +1,19 @@
+{
+ "repo": "thabit",
+ "commits": [
+  {
+   "styles": [
+    "Thabit"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2Version 1"
+    ]
+   ],
+   "subject": "State OS/2 version 1, as the release has",
+   "body": "The release has an OS/2 version 1 table without USE_TYPO_METRICS (FontForge 2008-08-08 export); this file says OS2Version 0, which a converter reads as 'latest' and sets fsSelection bit 7."
+  }
+ ],
+ "disclose": []
+}

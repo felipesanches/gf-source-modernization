@@ -1,0 +1,14 @@
+{
+ "repo": "sail",
+ "commits": [
+  {
+   "styles": [
+    "Sail-Regular"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [0 0 389 389 666 666]",
+   "subject": "Restore the BlueValues the release was exported with",
+   "body": "FontForge exported the release from src/Sail-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 cap height to these\nzones. This .sfd re-imports that TTF (ttf2sfd.py), which cannot carry\na private dictionary. Value: the .otf's CFF Private BlueValues."
+  }
+ ]
+}

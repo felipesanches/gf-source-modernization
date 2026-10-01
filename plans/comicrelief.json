@@ -1,0 +1,20 @@
+{
+ "repo": "comicrelief",
+ "commits": [
+  {
+   "styles": [
+    "ComicRelief-Regular",
+    "ComicRelief-Bold"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2_UseTypoMetrics 1"
+    ]
+   ],
+   "subject": "Set USE_TYPO_METRICS, as the release has",
+   "body": "The release sets fsSelection bit 7 (USE_TYPO_METRICS); it was built with sfdLib 2.0.0, which sets it whenever OS2_UseTypoMetrics is present. This file says 0."
+  }
+ ],
+ "disclose": []
+}

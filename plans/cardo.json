@@ -1,0 +1,23 @@
+{
+ "repo": "cardo",
+ "commits": [
+  {
+   "styles": [
+    "Cardo-Regular"
+   ],
+   "op": "renameglyph",
+   "args": "10192.04 u10192.04",
+   "subject": "Rename glyph 10192.04 to u10192.04 in Cardo-Regular-TTF.sfd",
+   "body": "A feature file cannot name a glyph that starts with a digit (OpenType\nFeature File spec 2.f.i), so the salt rules of u10192 and u10198 that\nlist it could not be compiled. The new name follows the glyph's\nsiblings u10192.03 and u10198.01-.05. Only the post name of U+F438\nchanges; outline, advance and mappings are unchanged."
+  },
+  {
+   "styles": [
+    "Cardo-Italic"
+   ],
+   "op": "nbspwidth",
+   "args": "",
+   "subject": "Give nonbreakingspace the space's width in Cardo-Italic-TTF.sfd",
+   "body": "google/fonts d70318ab8 (2015-04-27, \"Updating ofl/cardo/*ttf with\nnbspace and fsType fixes\") set the shipped Cardo-Italic's\nnonbreakingspace advance from 550 to 575, the space's width. It changed\nnothing else in the font. The source now states what Google Fonts ships."
+  }
+ ]
+}
