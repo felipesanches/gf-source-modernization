@@ -1,0 +1,63 @@
+thabit: RESIDUAL-UNPUBLISHED-CONVERTER @ 94a616f, 3 commits, 0 edit(s): Thabit-Bold=923 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances); Thabit=923 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   Thabit-Bold BLOCKING GSUB.script_list [{"arab/dflt": {"lookups": [0, 1, 2, 4, 5]}, "latn/dflt": {"lookups": [3]}}, nul
+   Thabit-Bold BLOCKING GSUB.feature_list [{"fina": [3], "init": [1], "liga": [5], "medi": [2], "rlig": [0]}, null]
+   Thabit-Bold BLOCKING GSUB.lookup_list [{"0": [{"type": "ligature", "shaddah dammah": "shaddahdammah", "shaddah fathah"
+   Thabit-Bold BLOCKING PfEd: whole-table difference
+   Thabit-Bold BLOCKING cmap U+0021 LOST ["exclam", null]
+   Thabit-Bold BLOCKING cmap U+0022 LOST ["quotedbl", null]
+     cmap         FAIL 734 codepoints, 2 problem(s)
+         - build loses 458 codepoint(s): U+0021 U+0022 U+0023 U+0024 U+0025 U+0026 U+0027 U+0028 U+0029 U+002A U+002B U+002C U+002D U+002E U+002F U+0030 U+0031 U+0032 U+0033 U+0034
+         - build gains 1 codepoint(s): U+00A0
+     shaping      FAIL 177165 runs shaped, 78798 differ
+         - default features, singles: 45 of 276 runs differ
+         - default features, pairs: 18772 of 62001 runs differ
+         - default features, base+mark: 1018 of 1992 runs differ
+         - ... 8 more
+     rendering    FAIL diffenator3 1 glyph / 725 word diffs (0 / 670 confirmed); 1 of 70 changed outlines draw different ink
+         - diffenator3: 670 word(s) render differently (>8 px at 16 ppem), confirmed: 'أحيـــــــــاءُ' 627px, 'الفلِكْسنرِيَّة' 616px, 'لِّلْمُؤْمِنَاتِ' 597px, 'الإنکليزي؟' 552px, 'الصَّيدلانِي،' 539px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (11)
+         - name ID 1 (3,1,0x409): release 'Thabit-Bold', build None
+         - name ID 4 (3,1,0x409): release 'Thabit-Bold Bold', build 'Thabit Bold'
+         - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Bold'
+         - ... 8 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 453, build None (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+         - cap height as layout engines read it (CSS ex / cap units): release 583, build None (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+     advances     FAIL 304 glyph advances compared, 1 differ
+         - 458 reachable release glyph(s) have no build counterpart: A AE Aacute Abreve Acircumflex Adieresis Agrave Amacron Aogonek Aring Atilde B C Cacute Ccaron
+         - 1 reachable build glyph(s) have no release counterpart: uni00A0
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 85 it does not
+   Thabit BLOCKING GSUB.script_list [{"arab/dflt": {"lookups": [0, 1, 2, 4, 5]}, "latn/dflt": {"lookups": [3]}}, nul
+   Thabit BLOCKING GSUB.feature_list [{"fina": [3], "init": [1], "liga": [5], "medi": [2], "rlig": [0]}, null]
+   Thabit BLOCKING GSUB.lookup_list [{"0": [{"type": "ligature", "shaddah dammah": "shaddahdammah", "shaddah fathah"
+   Thabit BLOCKING PfEd: whole-table difference
+   Thabit BLOCKING cmap U+0021 LOST ["exclam", null]
+   Thabit BLOCKING cmap U+0022 LOST ["quotedbl", null]
+     cmap         FAIL 733 codepoints, 2 problem(s)
+         - build loses 458 codepoint(s): U+0021 U+0022 U+0023 U+0024 U+0025 U+0026 U+0027 U+0028 U+0029 U+002A U+002B U+002C U+002D U+002E U+002F U+0030 U+0031 U+0032 U+0033 U+0034
+         - build gains 1 codepoint(s): U+00A0
+     shaping      FAIL 190333 runs shaped, 82768 differ
+         - default features, singles: 45 of 275 runs differ
+         - default features, pairs: 18772 of 62001 runs differ
+         - default features, base+mark: 1020 of 1992 runs differ
+         - ... 8 more
+     rendering    FAIL diffenator3 1 glyph / 724 word diffs (0 / 673 confirmed); 1 of 218 changed outlines draw different ink
+         - diffenator3: 673 word(s) render differently (>8 px at 16 ppem), confirmed: 'أحيـــــــــاءُ' 574px, 'الفلِكْسنرِيَّة' 556px, 'لِّلْمُؤْمِنَاتِ' 538px, 'مُفَاعَلَتُنْ' 480px, 'اللِّمْفِيَّةُ' 473px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (12)
+         - name ID 1 (3,1,0x409): release 'Thabit', build 'Regular'
+         - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Regular'
+         - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Medium'
+         - ... 9 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (983, -528, 0), build typo (819, 0, 900)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (983, -244, 100), build typo (819, 0, 900)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+         - ... 2 more
+     advances     FAIL 303 glyph advances compared, 1 differ
+         - 458 reachable release glyph(s) have no build counterpart: A AE Aacute Abreve Acircumflex Adieresis Agrave Amacron Aogonek Aring Atilde B C Cacute Ccaron
+         - 1 reachable build glyph(s) have no release counterpart: uni00A0
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 116 it does not

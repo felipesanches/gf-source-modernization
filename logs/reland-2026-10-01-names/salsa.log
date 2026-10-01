@@ -1,0 +1,14 @@
+salsa: RESIDUAL-UNPUBLISHED-CONVERTER @ 644671b, 3 commits, 0 edit(s): Salsa-Regular=0 functional=FAIL(shaping+gdef)
+     cmap         PASS 241 codepoints, exact
+     shaping      FAIL 567992 runs shaped, 669 differ
+         - default features, singles: 2 of 241 runs differ
+         - default features, base+mark: 307 of 332 runs differ
+         - default features, base+mark+mark: 16 of 16 runs differ
+         - ... 1 more
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 90 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 329 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 2 class difference(s) shaping reads, 93 it does not
+         - GDEF absent in the build
+         - 2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, gravecomb 1/3

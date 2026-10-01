@@ -1,0 +1,14 @@
+lilitaone: RESIDUAL-UNPUBLISHED-CONVERTER @ c2789ce, 3 commits, 0 edit(s): LilitaOne-Regular=2 functional=FAIL(line_spacing)
+   LilitaOne-Regular BLOCKING OS/2.sx_height [506, 500]
+   LilitaOne-Regular BLOCKING OS/2.s_cap_height [704, 700]
+     cmap         PASS 225 codepoints, exact
+     shaping      PASS 550645 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (923, -220, 0), build typo (922, -219, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (923, -220, 0), build typo (922, -219, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+         - ... 2 more
+     advances     PASS 226 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

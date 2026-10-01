@@ -1,0 +1,13 @@
+novascript: RESIDUAL-UNPUBLISHED-CONVERTER @ 7592bf7, 3 commits, 0 edit(s): NovaScript-Regular=0 functional=FAIL(names+line_spacing)
+     cmap         PASS 418 codepoints, exact
+     shaping      PASS 731132 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 18 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Book'
+         - name ID 4 (3,1,0x409): release 'Nova Script Regular', build 'Nova Script'
+         - name ID 6 (3,1,0x409): release 'NovaScript-Regular', build 'NovaScript'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC gained, REGULAR lost
+         - head.macStyle italic: release 0, build 1
+     advances     PASS 419 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

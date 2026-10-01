@@ -1,0 +1,14 @@
+nothingyoucoulddo: RESIDUAL-UNPUBLISHED-CONVERTER @ b025278, 3 commits, 0 edit(s): NothingYouCouldDo=2 functional=FAIL(line_spacing)
+   NothingYouCouldDo BLOCKING OS/2.us_win_ascent [959, 960]
+   NothingYouCouldDo BLOCKING hhea.ascender [959, 960]
+     cmap         PASS 310 codepoints, exact
+     shaping      PASS 601017 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 9 word diffs (0 / 0 confirmed); 0 of 21 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (959, -407, 0), build hhea (960, -407, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (959, -407, 0), build typo (962, -407, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (959, -407, 0), build typo (962, -407, 0)
+         - ... 3 more
+     advances     PASS 310 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

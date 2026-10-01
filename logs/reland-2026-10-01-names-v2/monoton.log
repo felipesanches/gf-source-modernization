@@ -1,0 +1,13 @@
+monoton: RESIDUAL-UNPUBLISHED-CONVERTER @ d90a275, 3 commits, 0 edit(s): Monoton-Regular=0 functional=FAIL(shaping+gdef)
+     cmap         PASS 371 codepoints, exact
+     shaping      FAIL 652765 runs shaped, 1175 differ
+         - default features, singles: 4 of 371 runs differ
+         - default features, base+mark: 1059 of 1072 runs differ
+         - default features, base+mark+mark: 112 of 112 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 371 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 4 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 4 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0307 1/3, uni030F 1/3, uni0311 1/3, uni0326 1/3

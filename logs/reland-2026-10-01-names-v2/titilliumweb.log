@@ -1,0 +1,92 @@
+titilliumweb: RESIDUAL-UNPUBLISHED-CONVERTER @ 8a493ab, 3 commits, 0 edit(s): TitilliumWeb-Black=1 functional=FAIL(names); TitilliumWeb-Bold=1 functional=FAIL(names); TitilliumWeb-BoldItalic=1 functional=FAIL(names); TitilliumWeb-Italic=1 functional=FAIL(names); TitilliumWeb-Light=1 functional=FAIL(names); TitilliumWeb-LightItalic=1 functional=FAIL(names); TitilliumWeb-Regular=1 functional=FAIL(names); TitilliumWeb-SemiBold=1 functional=FAIL(names); TitilliumWeb-SemiBoldItalic=1 functional=FAIL(names)
+   TitilliumWeb-Black BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 724464 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web Black', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Black'
+         - name ID 4 (3,1,0x409): release 'Titillium Web Black', build 'Titillium WebBlack'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+   TitilliumWeb-Bold BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Titillium Web Bold', build 'Titillium WebBold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+   TitilliumWeb-BoldItalic BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Titillium Web Bold Italic', build 'Titillium WebBold Italic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+   TitilliumWeb-Italic BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Titillium Web Italic', build 'Titillium WebItalic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+   TitilliumWeb-Light BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web Light', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Light'
+         - name ID 4 (3,1,0x409): release 'Titillium Web Light', build 'Titillium WebLight'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+   TitilliumWeb-LightItalic BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web Light', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Italic', build 'Light Italic'
+         - name ID 4 (3,1,0x409): release 'Titillium Web Light Italic', build 'Titillium WebLight Italic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+   TitilliumWeb-Regular BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Titillium Web Regular', build 'Titillium Web'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+   TitilliumWeb-SemiBold BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'SemiBold'
+         - name ID 4 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium WebSemiBold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+   TitilliumWeb-SemiBoldItalic BLOCKING OS/2.fs_type [0, 8]
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Italic', build 'SemiBold Italic'
+         - name ID 4 (3,1,0x409): release 'Titillium Web SemiBold Italic', build 'Titillium WebSemiBold Italic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not

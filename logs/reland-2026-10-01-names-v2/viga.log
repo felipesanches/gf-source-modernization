@@ -1,0 +1,13 @@
+viga: RESIDUAL-UNPUBLISHED-CONVERTER @ 560a266, 3 commits, 0 edit(s): Viga-Regular=0 functional=FAIL(shaping+rendering+gdef)
+     cmap         PASS 271 codepoints, exact
+     shaping      FAIL 557623 runs shaped, 3 differ
+         - default features, singles: 1 of 271 runs differ
+         - default features, base+mark: 2 of 175 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 43 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 50px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 269 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3

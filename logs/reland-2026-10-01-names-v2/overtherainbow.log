@@ -1,0 +1,2 @@
+overtherainbow: RESIDUAL-UNPUBLISHED-CONVERTER @ 7092fba, 3 commits, 0 edit(s): OvertheRainbow=1 functional=PASS
+   OvertheRainbow BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 1 unit(s) at twosuperior (release 22, ours 23)

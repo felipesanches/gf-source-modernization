@@ -1,0 +1,28 @@
+lekton: RESIDUAL-UNPUBLISHED-CONVERTER @ 417161c, 3 commits, 0 edit(s): Lekton-Bold=0 functional=FAIL(line_spacing); Lekton-Italic=0 functional=FAIL(line_spacing); Lekton-Regular=0 functional=FAIL(line_spacing)
+     cmap         PASS 352 codepoints, exact
+     shaping      PASS 708374 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 47 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1112, -585, 0), build typo (750, -250, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI
+     advances     PASS 652 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 308 it does not
+     cmap         PASS 188 codepoints, exact
+     shaping      PASS 525138 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 9 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (904, -244, 0), build typo (750, -250, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI
+     advances     PASS 189 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+     cmap         PASS 352 codepoints, exact
+     shaping      PASS 708374 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 67 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1112, -585, 0), build typo (750, -250, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI
+     advances     PASS 652 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 308 it does not

@@ -1,0 +1,10 @@
+revalia: RESIDUAL-UNPUBLISHED-CONVERTER @ bcb7607, 3 commits, 0 edit(s): Revalia-Regular=0 functional=FAIL(line_spacing)
+     cmap         PASS 219 codepoints, exact
+     shaping      PASS 539447 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (2146, -382, 0), build typo (2146, 382, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI
+     advances     PASS 219 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

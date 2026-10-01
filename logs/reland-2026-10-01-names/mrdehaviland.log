@@ -1,0 +1,9 @@
+mrdehaviland: RESIDUAL-UNPUBLISHED-CONVERTER @ 24a13c5, 3 commits, 0 edit(s): MrDeHaviland-Regular=0 functional=FAIL(names)
+     cmap         PASS 231 codepoints, exact
+     shaping      PASS 569729 runs shaped, 0 differ
+     rendering    PASS diffenator3 2 glyph / 0 word diffs (0 / 0 confirmed); 0 of 109 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Mr De Haviland Regular', build 'MrDeHaviland-Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 232 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

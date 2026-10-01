@@ -1,0 +1,17 @@
+== kristi (families.tsv) 2026-10-01T23:14:56+01:00
+   rc=1 kristi	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   73G  96% /home/fsanches/compartilhado
+== miama (families.tsv) 2026-10-01T23:15:12+01:00
+   rc=1 miama	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   73G  96% /home/fsanches/compartilhado
+== novascript (families.tsv) 2026-10-01T23:15:40+01:00
+   rc=1 novascript	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   73G  96% /home/fsanches/compartilhado
+== ultra (families-next.tsv) 2026-10-01T23:16:00+01:00
+   rc=1 ultra	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   73G  96% /home/fsanches/compartilhado
+done 2026-10-01T23:16:20+01:00
+== ultra (families-next.tsv) 2026-10-01T23:16:32+01:00
+   rc=1 ultra	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   73G  96% /home/fsanches/compartilhado
+done 2026-10-01T23:16:51+01:00

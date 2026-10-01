@@ -1,0 +1,10 @@
+sail: RESIDUAL-UNPUBLISHED-CONVERTER @ 002cdd1, 3 commits, 0 edit(s): Sail-Regular=1 functional=FAIL(line_spacing)
+   Sail-Regular BLOCKING OS/2.s_cap_height [666, 665]
+     cmap         PASS 219 codepoints, exact
+     shaping      PASS 572731 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - cap height as layout engines read it (CSS ex / cap units): release 666, build 665
+     advances     PASS 220 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

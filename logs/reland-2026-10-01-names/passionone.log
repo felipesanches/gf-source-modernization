@@ -1,0 +1,53 @@
+passionone: RESIDUAL-UNPUBLISHED-CONVERTER @ 5c1f26c, 3 commits, 0 edit(s): PassionOne-Black=0 functional=FAIL(shaping+rendering+names+gdef); PassionOne-Bold=3 functional=FAIL(shaping+rendering+names+advances+gdef); PassionOne-Regular=0 functional=FAIL(shaping+rendering+names+line_spacing+gdef)
+     cmap         PASS 269 codepoints, exact
+     shaping      FAIL 557271 runs shaped, 1 differ
+         - default features, singles: 1 of 269 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 17 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 61px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Passion One Black', build 'Passion One'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Black'
+         - name ID 4 (3,1,0x409): release 'Passion One Black', build 'PassionOne-Black'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 267 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3
+   PassionOne-Bold BLOCKING OS/2.us_weight_class [700, 400]
+   PassionOne-Bold BLOCKING OS/2.panose_10 {"4": [5, 8]}
+   PassionOne-Bold BLOCKING hmtx.217 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 41 unit(s) at caron (release 83, ours 124)
+     cmap         PASS 269 codepoints, exact
+     shaping      FAIL 557271 runs shaped, 557243 differ
+         - default features, singles: 245 of 269 runs differ
+         - default features, pairs: 28772 of 28776 runs differ
+         - default features, base+mark: 174 of 174 runs differ
+         - ... 2 more
+     rendering    FAIL diffenator3 261 glyph / 114 word diffs (261 / 114 confirmed); 262 of 262 changed outlines draw different ink
+         - diffenator3: 261 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 480px, U+2030 460px, U+00A9 371px, U+00AE 360px, U+0192 357px
+         - diffenator3: 114 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 1014px, '0123456789,,,pnum' 977px, '0123456789,,,sinf' 918px, '0,,,zero' 291px, 'ACEGHIJOSUWYaceghijosuwy' 1451px
+         - 262 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): perthousand 4664px, percent 3384px, onequarter 3029px, threequarters 3023px, ffl 2915px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (6)
+         - name ID 2 (3,1,0x409): release 'Bold', build 'Regular'
+         - name ID 4 (3,1,0x409): release 'Passion One Bold', build 'PassionOne-Regular'
+         - name ID 6 (3,1,0x409): release 'PassionOne-Bold', build 'PassionOne-Regular'
+         - ... 3 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 267 glyph advances compared, 242 differ
+         - 242 advance width(s) differ (release/build): .notdef 190/210, A 563/498, AE 764/698, Aacute 563/498, Acircumflex 563/498, Adieresis 563/498, Agrave 563/498, Aring 563/498, Atilde 563/498, B 563/495, C 465/410, Ccedilla 470/466, D 599/526, Delta 563/498, E 461/404
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3
+     cmap         PASS 269 codepoints, exact
+     shaping      FAIL 557271 runs shaped, 1 differ
+         - default features, singles: 1 of 269 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 12 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 62px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Passion One Regular', build 'PassionOne-Regular'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: BOLD gained, REGULAR lost
+         - head.macStyle bold: release 0, build 1
+     advances     PASS 267 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3

@@ -1,0 +1,9 @@
+sanchez: RESIDUAL-UNPUBLISHED-CONVERTER @ 0ec7a63, 3 commits, 0 edit(s): Sanchez-Italic=0 functional=PASS; Sanchez-Regular=0 functional=FAIL(shaping)
+     cmap         PASS 349 codepoints, exact
+     shaping      FAIL 754569 runs shaped, 6 differ
+         - default features, pairs: 6 of 88804 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 2 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 367 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 21 it does not
