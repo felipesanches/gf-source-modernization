@@ -45,7 +45,7 @@ UNIX_FROM_1904 = 2082844800
 # Near-integer reference matrices are snapped by babelfont's SFD reader (#98).
 BASE = ["--fontforge-os2-defaults", "--add-instance-per-master", "--infer-mark-category",
         "--set-subcategory", "--keep-source-advances", "--fontforge-underline-position",
-        "--round-coordinates"]
+        "--round-coordinates", "--fontforge-gdef-classes"]
 
 
 # makeotf's duplicate cmap entries: each maps a second codepoint to the glyph of the
