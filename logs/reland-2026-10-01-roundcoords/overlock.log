@@ -1,0 +1,11 @@
+overlock: RESIDUAL-UNPUBLISHED-CONVERTER @ 16a3cc5, 3 commits, 0 edit(s): Overlock-Black=0 functional=PASS; Overlock-BlackItalic=0 functional=FAIL(names+line_spacing); Overlock-Bold=0 functional=PASS; Overlock-BoldItalic=0 functional=PASS; Overlock-Italic=0 functional=PASS; Overlock-Regular=0 functional=PASS
+     cmap         PASS 258 codepoints, exact
+     shaping      PASS 565908 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 2 (3,1,0x409): release 'Italic', build 'Regular'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC lost, REGULAR gained
+         - head.macStyle italic: release 1, build 0
+     advances     PASS 259 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

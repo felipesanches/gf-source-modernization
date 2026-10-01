@@ -1,0 +1,12 @@
+italiana: RESIDUAL-UNPUBLISHED-CONVERTER @ bf12dcf, 3 commits, 0 edit(s): Italiana-Regular=0 functional=FAIL(shaping+rendering+names)
+     cmap         PASS 211 codepoints, exact
+     shaping      FAIL 558743 runs shaped, 342565 differ
+         - default features, pairs: 823 of 22201 runs differ
+         - default features, words: 341742 of 515663 runs differ
+     rendering    FAIL diffenator3 0 glyph / 39 word diffs (0 / 39 confirmed); 0 of 0 changed outlines draw different ink
+         - diffenator3: 39 word(s) render differently (>8 px at 16 ppem), confirmed: 'ALKUjiggerypokeryMIX' 856px, 'Abcdefghijklmnopqrstuvwxyz' 800px, 'GroÃŸlobming' 376px, 'ACEGHIJOSUWYaceghijosuwy' 362px, 'AntropologÌa' 355px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Italiana', build 'Italiana Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 212 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

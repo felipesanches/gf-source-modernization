@@ -1,0 +1,13 @@
+--round-coordinates (babelfont branch round-coordinates 1d45ec6c, built by tools/build_babelfont.sh)
+vs the baseline run logs/reland-2026-10-01 (babelfont upstream 004200b7). Same recipe otherwise
+(BF_EXTRA_FLAGS=--round-coordinates), all 101 repositories, written to a separate OUT so the landed
+repositories were not touched. Per-style verdicts from each log's first line.
+
+149 styles compared, 4 changed, none worse; functional PASS 39 -> 39, CLEAN 29 -> 29.
+  overtherainbow OvertheRainbow  table rows 1 -> 0 (the re-land regression: twosuperior offset)
+  tuffy Tuffy-Italic             table rows 28 -> 27
+  corben Corben-Bold             names now pass -- from the plans/corben.json edit (fcb28f2), not the filter
+  cardo Cardo-Italic             BUILD -> built (fails shaping/advances/gdef): the build stops on
+                                 Cardo-Regular's glyph name 10192.04; which styles it writes first varies
+An earlier version rounded every node; the research found that breaks implied on-curve points
+(Miama 1107 -> 12 glyphs matching the release), so 1d45ec6c keeps them at their neighbours' midpoint.

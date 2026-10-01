@@ -1,0 +1,49 @@
+styles: 149; functional PASS 39; CLEAN (table 0 + functional PASS) 29
+
+failing styles per check:
+  names          93
+  shaping        43
+  line_spacing   37
+  gdef           35
+  rendering      29
+  advances       13
+  table_gate     10
+  cmap           6
+  BUILD          3
+
+failing styles per cause:
+    68  names: ID 4
+    35  gdef: classes differ
+    34  shaping: singles
+    24  line_spacing: metrics differ
+    22  rendering: outlines differ
+    13  advances: differ
+    13  line_spacing: USE_TYPO_METRICS set by build
+    10  table gate rows (functional PASS)
+     7  rendering: .notdef
+     7  names: ID 2+4+17
+     6  cmap: differs
+     4  names: ID 2+17+22
+     3  not built
+     3  shaping: base+mark
+     3  shaping: kern+mark
+     2  shaping: pairs
+     2  names: ID 2+6
+     2  names: ID 1+4+17
+     2  names: ID 1+4+6
+     2  names: ID 1+4+16
+     2  names: ID 17+22
+     1  names: ID 6
+     1  shaping: GSUB aalt on
+     1  names: ID 1+2+4
+     1  names: ID 2+4
+     1  names: ID 2
+
+styles failing on exactly one cause (fixing it alone makes them pass):
+    32  names: ID 4
+    10  table gate rows (functional PASS)
+     6  names: ID 2+4+17
+     3  not built
+     3  line_spacing: metrics differ
+     1  line_spacing: USE_TYPO_METRICS set by build
+     1  names: ID 2+17+22

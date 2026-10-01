@@ -92,3 +92,106 @@ titanone	main	e1add51	3	CLEAN-UNPUBLISHED-CONVERTER	TitanOne-Regular=0
 trochut	main	c8b4a15	3	CLEAN-UNPUBLISHED-CONVERTER	Trochut-Bold=0; Trochut-Italic=0; Trochut-Regular=0
 viga	main	932b3bf	3	CLEAN-UNPUBLISHED-CONVERTER	Viga-Regular=0
 wendyone	main	cedbe65	3	CLEAN-UNPUBLISHED-CONVERTER	WendyOne-Regular=0
+lekton	main	bc1973e	3	RESIDUAL	Lekton-Bold=0 functional=FAIL(names+line_spacing); Lekton-Italic=0 functional=FAIL(names+line_spacing); Lekton-Regular=0 functional=FAIL(names+line_spacing)
+abrilfatface	modernize-sfd-to-glyphs	cb2ce60	13	RESIDUAL	AbrilFatface-Regular=0 functional=FAIL(names)
+allerta	add-allerta-stencil	b2d6859	17	CLEAN	AllertaStencil-Regular=0 functional=PASS
+comicrelief	modernize-sfd-to-glyphs	252b082	56	RESIDUAL	ComicRelief-Regular=1 functional=FAIL(rendering+names+line_spacing+gdef); ComicRelief-Bold=1 functional=FAIL(rendering+names+line_spacing+gdef)
+corben	modernize-sfd-to-glyphs	10e7a5d	17	RESIDUAL	Corben-Regular=0 functional=FAIL(shaping+rendering+names+advances+gdef); Corben-Bold=0 functional=FAIL(rendering+names)
+creepstercaps	main	7b1ff57	3	CLEAN	CreepsterCaps-Regular=0 functional=PASS
+herrvonmuellerhoff	main	6127149	3	CLEAN	HerrVonMuellerhoff-Regular=0 functional=PASS
+kristi	main	3f440b5	3	RESIDUAL	Kristi-Regular=0 functional=FAIL(rendering+names+line_spacing+advances)
+lekton	main	28d9d2f	3	RESIDUAL	Lekton-Bold=0 functional=FAIL(names+line_spacing); Lekton-Italic=0 functional=FAIL(names+line_spacing); Lekton-Regular=0 functional=FAIL(names+line_spacing)
+miama	main	79e0e79	3	RESIDUAL	Miama-Regular=0 functional=FAIL(shaping+rendering+names)
+monoton	main	e29adf4	3	RESIDUAL	Monoton-Regular=0 functional=FAIL(shaping+names+gdef)
+nixieone	main	9614b70	3	RESIDUAL	NixieOne-Regular=0 functional=FAIL(rendering+names)
+nosifer	main	7e39074	4	RESIDUAL	Nosifer-Regular=0 functional=FAIL(shaping+rendering+names+advances)
+nosifercaps	main	3fd1539	3	RESIDUAL	NosiferCaps-Regular=0 functional=FAIL(shaping+rendering+line_spacing+advances+gdef)
+novacut	main	21f8758	3	RESIDUAL	NovaCut=0 functional=FAIL(names)
+novaflat	main	d36b1c6	3	RESIDUAL	NovaFlat=0 functional=FAIL(names)
+novamono	main	9a8456f	3	RESIDUAL	NovaMono=0 functional=FAIL(shaping+rendering+names+advances+gdef)
+novaoval	main	15090f3	3	RESIDUAL	NovaOval=0 functional=FAIL(names)
+novaround	main	c0bc077	3	RESIDUAL	NovaRound=0 functional=FAIL(names)
+novascript	main	1c03f90	3	RESIDUAL	NovaScript-Regular=0 functional=FAIL(names+line_spacing)
+novaslim	main	8c2d003	3	RESIDUAL	NovaSlim=0 functional=FAIL(names)
+novasquare	main	9e66e24	3	RESIDUAL	NovaSquare=0 functional=FAIL(names)
+patrickhand	main	3d9a5f3	4	RESIDUAL	PatrickHand-Regular=0 functional=FAIL(names+line_spacing+gdef)
+play	main	cf2760a	3	RESIDUAL	Play-Bold=365 functional=FAIL(cmap+shaping+rendering+line_spacing+advances+gdef); Play-Regular=353 functional=FAIL(cmap+shaping+rendering+line_spacing+advances+gdef)
+puritan	main	195c916	6	RESIDUAL	Puritan-Bold=0 functional=PASS; Puritan-BoldItalic=0 functional=FAIL(names); Puritan-Italic=0 functional=PASS; Puritan-Regular=0 functional=PASS
+russoone	main	e5c5c30	4	RESIDUAL	RussoOne-Regular=0 functional=FAIL(names)
+sixcaps	main	70c90d0	3	RESIDUAL	SixCaps=0 functional=FAIL(names)
+smythe	main	5f5775d	3	RESIDUAL	Smythe-Regular=0 functional=FAIL(shaping+names+gdef)
+tuffy	main	88710ac	3	RESIDUAL	Tuffy-Bold=0 functional=FAIL(shaping+gdef); Tuffy-BoldItalic=0 functional=FAIL(shaping+names+gdef); Tuffy-Italic=28 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef); Tuffy-Regular=68 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef)
+tulpenone	main	d493848	3	RESIDUAL	TulpenOne-Regular=0 functional=FAIL(names)
+unifraktur	main	339b767	3	RESIDUAL	UnifrakturMaguntia-Book=5 functional=FAIL(shaping+names+line_spacing+gdef)
+unifrakturcook	main	89c1a4d	3	RESIDUAL	UnifrakturCook-Bold=0 functional=FAIL(shaping+names+gdef)
+cardo	modernize-sfd-to-glyphs	3d22ef6	3	RESIDUAL	Cardo-Bold=BUILD functional=-; Cardo-Italic=BUILD functional=-; Cardo-Regular=BUILD functional=-
+italiana	main	1d2d190	3	RESIDUAL	Italiana-Regular=0 functional=FAIL(shaping+rendering+names)
+keaniaone	main	e9c9827	3	RESIDUAL	KeaniaOne-Regular=0 functional=FAIL(names)
+kellyslab	main	235672b	3	RESIDUAL	KellySlab-Regular=0 functional=FAIL(names)
+kottaone	main	2ea5c3b	3	RESIDUAL	KottaOne-Regular=0 functional=FAIL(shaping+names+gdef)
+ledger	main	1410d33	3	RESIDUAL	Ledger-Regular=2 functional=FAIL(shaping+names+line_spacing+advances)
+lilitaone	main	465c39b	3	RESIDUAL	LilitaOne-Regular=2 functional=FAIL(names+line_spacing)
+limelight	main	bf3122c	3	RESIDUAL	Limelight-Regular=5 functional=FAIL(rendering+line_spacing)
+lohitbengali	modernize-sfd-to-glyphs	a90d0a5	272	RESIDUAL	Lohit-Bengali=1 functional=FAIL(shaping+rendering+names+line_spacing)
+lohittamil	modernize-sfd-to-glyphs	ac115ba	272	RESIDUAL	Lohit-Tamil=8 functional=FAIL(shaping+rendering+names+line_spacing+advances)
+lovedbytheking	main	0c66c6b	3	RESIDUAL	LovedbytheKing=0 functional=FAIL(names)
+loveyalikeasister	main	e8eb238	3	CLEAN	LoveYaLikeASister=0 functional=PASS
+lustria	main	c1eabdf	3	RESIDUAL	Lustria-Regular=2 functional=FAIL(shaping+names+line_spacing+gdef)
+macondo	main	eaf4f1b	3	RESIDUAL	Macondo-Regular=0 functional=FAIL(shaping+names+gdef)
+magra	main	8bc54f0	3	RESIDUAL	Magra-Bold=2 functional=FAIL(line_spacing); Magra-Regular=0 functional=FAIL(names)
+marvel	main	e456df7	3	RESIDUAL	Marvel-Bold=0 functional=PASS; Marvel-BoldItalic=0 functional=PASS; Marvel-Italic=0 functional=PASS; Marvel-Regular=0 functional=FAIL(names)
+medulaone	main	cfb8ee1	3	RESIDUAL	MedulaOne-Regular=0 functional=FAIL(names)
+megrim	main	614cb2e	3	RESIDUAL	Megrim=3 functional=FAIL(shaping+names+line_spacing)
+meiescript	main	19e5a56	3	RESIDUAL	MeieScript-Regular=0 functional=FAIL(names)
+mergeone	main	c7bcd86	3	RESIDUAL	MergeOne-Regular=1 functional=FAIL(names+line_spacing)
+missfajardose	main	1cee22b	3	CLEAN	MissFajardose-Regular=0 functional=PASS
+monsieurladoulaise	main	7208db9	3	CLEAN	MonsieurLaDoulaise-Regular=0 functional=PASS
+mountainsofchristmas	main	6c279ea	3	RESIDUAL	MountainsofChristmas-Bold=3 functional=FAIL(line_spacing); MountainsofChristmas-Regular=0 functional=PASS
+mrbedfort	main	816fc8d	3	RESIDUAL	MrBedfort-Regular=0 functional=FAIL(rendering+names)
+mrdafoe	main	1d41738	3	CLEAN	MrDafoe-Regular=0 functional=PASS
+mrdehaviland	main	19f98eb	3	CLEAN	MrDeHaviland-Regular=0 functional=PASS
+mrssaintdelafield	main	43c0bc7	3	RESIDUAL	MrsSaintDelafield-Regular=0 functional=FAIL(names)
+mrssheppards	main	c200128	3	CLEAN	MrsSheppards-Regular=0 functional=PASS
+niconne	main	c5d1b33	3	RESIDUAL	Niconne-Regular=0 functional=FAIL(shaping+rendering+names+gdef)
+nothingyoucoulddo	main	a48d1b0	3	RESIDUAL	NothingYouCouldDo=2 functional=FAIL(names+line_spacing)
+numans	main	972cd12	3	RESIDUAL	Numans-Regular=0 functional=FAIL(names)
+oleoscript	main	cb8d8d8	3	RESIDUAL	OleoScript-Bold=2 functional=FAIL(shaping+line_spacing+gdef); OleoScript-Regular=2 functional=FAIL(shaping+names+line_spacing+gdef)
+oleoscriptswashcaps	main	75d842b	3	RESIDUAL	OleoScriptSwashCaps-Bold=2 functional=FAIL(shaping+line_spacing+gdef); OleoScriptSwashCaps-Regular=1 functional=FAIL(shaping+names+line_spacing+gdef)
+overlock	main	d71146e	3	RESIDUAL	Overlock-Black=0 functional=PASS; Overlock-BlackItalic=0 functional=FAIL(names+line_spacing); Overlock-Bold=0 functional=PASS; Overlock-BoldItalic=0 functional=PASS; Overlock-Italic=0 functional=PASS; Overlock-Regular=0 functional=PASS
+overlocksc	main	ec648b7	3	RESIDUAL	OverlockSC-Regular=0 functional=FAIL(names)
+overtherainbow	main	743595e	3	RESIDUAL	OvertheRainbow=1 functional=FAIL(names)
+passionone	main	5b7be6f	3	RESIDUAL	PassionOne-Black=0 functional=FAIL(shaping+rendering+gdef); PassionOne-Bold=0 functional=FAIL(shaping+rendering+gdef); PassionOne-Regular=0 functional=FAIL(shaping+rendering+gdef)
+patuaone	main	f164c19	3	RESIDUAL	PatuaOne-Regular=0 functional=FAIL(names)
+piedra	main	3e03c26	3	CLEAN	Piedra-Regular=0 functional=PASS
+pirataone	main	02f4bc6	3	RESIDUAL	PirataOne-Regular=0 functional=FAIL(names)
+poly	main	2e36b05	3	RESIDUAL	Poly-Italic=3 functional=FAIL(shaping+names+gdef); Poly-Regular=0 functional=FAIL(shaping+names+gdef)
+portlligatsans	main	5773de4	3	RESIDUAL	PortLligatSans-Regular=0 functional=FAIL(names)
+portlligatslab	main	2070055	3	RESIDUAL	PortLligatSlab-Regular=0 functional=FAIL(names)
+quantico	main	0480842	3	RESIDUAL	Quantico-Bold=0 functional=FAIL(names); Quantico-BoldItalic=0 functional=FAIL(names); Quantico-Italic=0 functional=FAIL(names); Quantico-Regular=0 functional=FAIL(names)
+rambla	main	962d229	3	RESIDUAL	Rambla-Bold=2 functional=FAIL(line_spacing); Rambla-BoldItalic=2 functional=FAIL(line_spacing); Rambla-Italic=0 functional=PASS; Rambla-Regular=0 functional=FAIL(names)
+revalia	main	5b6d2b8	3	RESIDUAL	Revalia-Regular=0 functional=FAIL(names+line_spacing)
+ribeyemarrow	main	d5d20a1	3	RESIDUAL	RibeyeMarrow-Regular=2 functional=FAIL(shaping+names+gdef)
+rochester	main	650011e	3	CLEAN	Rochester-Regular=0 functional=PASS
+rosarivo	main	ec4a8f8	3	RESIDUAL	Rosarivo-Italic=0 functional=PASS; Rosarivo-Regular=0 functional=FAIL(names)
+rougescript	main	0db5f4f	3	RESIDUAL	RougeScript-Regular=0 functional=FAIL(rendering+names)
+rufina	main	5a6eb4a	3	RESIDUAL	Rufina-Bold=0 functional=PASS; Rufina-Regular=0 functional=FAIL(names)
+ruluko	main	1e97785	3	RESIDUAL	Ruluko-Regular=0 functional=FAIL(shaping+names+gdef)
+sail	main	07cc4d3	3	RESIDUAL	Sail-Regular=1 functional=FAIL(names+line_spacing)
+salsa	main	c61874f	3	RESIDUAL	Salsa-Regular=0 functional=FAIL(shaping+names+gdef)
+sanchez	main	f91accd	3	RESIDUAL	Sanchez-Italic=0 functional=PASS; Sanchez-Regular=0 functional=FAIL(shaping+names)
+smokum	main	2a39c08	3	RESIDUAL	Smokum-Regular=3 functional=PASS
+spirax	main	a88cc0f	3	RESIDUAL	Spirax-Regular=0 functional=FAIL(names)
+squadaone	main	2b0d4b0	3	RESIDUAL	SquadaOne-Regular=0 functional=FAIL(names)
+swankyandmoomoo	main	84be3d5	3	RESIDUAL	SwankyandMooMoo=0 functional=FAIL(names)
+textmeone	main	65e060a	3	RESIDUAL	TextMeOne-Regular=1 functional=FAIL(names+line_spacing)
+thabit	main	e59b237	3	RESIDUAL	Thabit-Bold=923 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances); Thabit=923 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+thegirlnextdoor	main	0d065b1	3	RESIDUAL	TheGirlNextDoor=0 functional=FAIL(names)
+titanone	main	9ff910c	3	RESIDUAL	TitanOne-Regular=0 functional=FAIL(shaping+names+gdef)
+titilliumweb	main	d4d58e9	3	RESIDUAL	TitilliumWeb-Black=1 functional=PASS; TitilliumWeb-Bold=1 functional=PASS; TitilliumWeb-BoldItalic=1 functional=PASS; TitilliumWeb-Italic=1 functional=PASS; TitilliumWeb-Light=1 functional=PASS; TitilliumWeb-LightItalic=1 functional=PASS; TitilliumWeb-Regular=1 functional=PASS; TitilliumWeb-SemiBold=1 functional=PASS; TitilliumWeb-SemiBoldItalic=1 functional=PASS
+trochut	main	f99fbe9	3	RESIDUAL	Trochut-Bold=0 functional=PASS; Trochut-Italic=0 functional=PASS; Trochut-Regular=0 functional=FAIL(names)
+ultra	main	58a4341	3	RESIDUAL	Ultra-Regular=4 functional=FAIL(shaping+rendering+names)
+varela	main	eccd19a	3	RESIDUAL	Varela-Regular=6 functional=FAIL(shaping+names+gdef)
+viga	main	3a9b91c	3	RESIDUAL	Viga-Regular=0 functional=FAIL(shaping+rendering+names+gdef)
+wallpoet	main	2f4296e	3	RESIDUAL	Wallpoet-Regular=1 functional=FAIL(rendering+names)
+wendyone	main	9181813	3	RESIDUAL	WendyOne-Regular=0 functional=FAIL(names)
+corben	modernize-sfd-to-glyphs	57d7d62	18	RESIDUAL	Corben-Regular=0 functional=FAIL(shaping+rendering+names+advances+gdef); Corben-Bold=0 functional=FAIL(rendering)

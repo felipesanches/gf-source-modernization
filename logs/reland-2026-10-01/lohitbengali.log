@@ -1,0 +1,21 @@
+lohitbengali: RESIDUAL @ a90d0a5, 272 commits, 0 edit(s): Lohit-Bengali=1 functional=FAIL(shaping+rendering+names+line_spacing)
+   Lohit-Bengali BLOCKING OS/2.panose_10 {"1": [0, 11]}
+     cmap         PASS 154 codepoints, exact
+     shaping      FAIL 95655 runs shaped, 22750 differ
+         - default features, base+mark: 296 of 1520 runs differ
+         - default features, base+mark+mark: 120 of 1444 runs differ
+         - default features, rules: 37 of 91 runs differ
+         - ... 16 more
+     rendering    FAIL diffenator3 0 glyph / 288 word diffs (0 / 288 confirmed); 0 of 471 changed outlines draw different ink
+         - diffenator3: 288 word(s) render differently (>8 px at 16 ppem), confirmed: 'ইন্সট্রুমেন্টেশনের' 801px, 'জনগোষ্ঠীসমূহের' 782px, 'অডিওভিজুয়াল' 779px, 'অনিচ্ছাসত্ত্বেও' 764px, 'জলোচ্ছ্বাসের' 751px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+         - name ID 1 (3,1,0x409): release 'Lohit Bengali', build 'Lohit Bengali Bengali'
+         - name ID 4 (3,1,0x409): release 'Lohit Bengali', build 'Lohit Bengali Bengali'
+         - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Bengali'
+         - ... 1 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (760, -325, 200), build typo (750, -274, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (760, -325, 200), build typo (750, -274, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+     advances     PASS 477 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 416 it does not

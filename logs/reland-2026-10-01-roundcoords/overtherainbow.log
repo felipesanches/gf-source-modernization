@@ -1,0 +1,9 @@
+overtherainbow: RESIDUAL-UNPUBLISHED-CONVERTER @ 7c5d140, 3 commits, 0 edit(s): OvertheRainbow=0 functional=FAIL(names)
+     cmap         PASS 353 codepoints, exact
+     shaping      PASS 651731 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 15 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Over the Rainbow', build 'Over the Rainbow Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 354 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,20 @@
+lustria: RESIDUAL-UNPUBLISHED-CONVERTER @ a500111, 3 commits, 0 edit(s): Lustria-Regular=2 functional=FAIL(shaping+names+line_spacing+gdef)
+   Lustria-Regular BLOCKING OS/2.sx_height [504, 511]
+   Lustria-Regular BLOCKING OS/2.s_cap_height [704, 700]
+     cmap         PASS 253 codepoints, exact
+     shaping      FAIL 566490 runs shaped, 171 differ
+         - default features, singles: 1 of 253 runs differ
+         - default features, base+mark: 166 of 166 runs differ
+         - default features, base+mark+mark: 4 of 4 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 2 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Lustria', build 'Lustria Regular'
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (955, -327, 0), build typo (955, -227, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (955, -327, 0), build typo (955, -227, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+         - ... 2 more
+     advances     PASS 254 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3

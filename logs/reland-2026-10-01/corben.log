@@ -1,0 +1,27 @@
+corben: RESIDUAL @ 10e7a5d, 17 commits, 4 edit(s): Corben-Regular=0 functional=FAIL(shaping+rendering+names+advances+gdef); Corben-Bold=0 functional=FAIL(rendering+names)
+     cmap         PASS 350 codepoints, exact
+     shaping      FAIL 652540 runs shaped, 1111 differ
+         - default features, singles: 4 of 350 runs differ
+         - default features, base+mark: 1043 of 1052 runs differ
+         - default features, base+mark+mark: 64 of 64 runs differ
+     rendering    FAIL diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 1 of 259 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Corben', build 'Corben Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 354 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 748/1024
+     gdef         FAIL GDEF present/absent; 4 class difference(s) shaping reads, 9 it does not
+         - GDEF absent in the build
+         - 4 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3, uni030F 1/3, uni0311 1/3, uni0326 1/3
+     cmap         PASS 380 codepoints, exact
+     shaping      PASS 853207 runs shaped, 0 differ
+     rendering    FAIL diffenator3 3 glyph / 3 word diffs (3 / 3 confirmed); 3 of 3 changed outlines draw different ink
+         - diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 138px, U+0141 61px, U+0142 55px
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'ÆØÅæøå' 57px, 'Adoodleełgi' 25px, 'MŁODZIEŻ' 20px
+         - 3 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): AE 1646px, Lslash 492px, lslash 477px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 6 (3,1,0x409): release 'Corben-Bold', build 'Corben'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 540 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 162 it does not

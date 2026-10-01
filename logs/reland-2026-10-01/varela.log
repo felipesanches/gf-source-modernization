@@ -1,0 +1,19 @@
+varela: RESIDUAL @ eccd19a, 3 commits, 0 edit(s): Varela-Regular=6 functional=FAIL(shaping+names+gdef)
+   Varela-Regular BLOCKING GPOS.script_list [{"cyrl/dflt": {"lookups": []}, "grek/dflt": {"lookups": []}, "latn/dflt": {"loo
+   Varela-Regular BLOCKING GPOS.feature_list [{}, null]
+   Varela-Regular BLOCKING GPOS.lookup_list [{}, null]
+   Varela-Regular BLOCKING GSUB.script_list {"latn/AZE ": {"lookups": {"7": [9, 8]}}, "latn/CRT ": {"lookups": {"7": [10, 9]
+   Varela-Regular BLOCKING GSUB.feature_list {"c2sc": {"0": [16, 19]}, "dlig": {"0": [26, 29]}, "dnom": {"0": [11, 14]}, "fra
+   Varela-Regular BLOCKING GSUB.lookup_list {"8": {"0": {"type": ["chained_sequence_context", "ligature"], "rules": [["zero.
+     cmap         PASS 531 codepoints, exact
+     shaping      FAIL 2140099 runs shaped, 1236 differ
+         - default features, base+mark: 1169 of 1221 runs differ
+         - default features, base+mark+mark: 63 of 63 runs differ
+         - default features, kern+mark: 4 of 4 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 83 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Varela', build 'Varela Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 829 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 3 class difference(s) shaping reads, 825 it does not
+         - 3 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotbelowcmb 1/3, hookcmb 1/3, horncmb 1/3

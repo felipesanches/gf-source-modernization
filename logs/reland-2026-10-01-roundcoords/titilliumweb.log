@@ -1,0 +1,10 @@
+titilliumweb: RESIDUAL-UNPUBLISHED-CONVERTER @ 4959bf4, 3 commits, 0 edit(s): TitilliumWeb-Black=1 functional=PASS; TitilliumWeb-Bold=1 functional=PASS; TitilliumWeb-BoldItalic=1 functional=PASS; TitilliumWeb-Italic=1 functional=PASS; TitilliumWeb-Light=1 functional=PASS; TitilliumWeb-LightItalic=1 functional=PASS; TitilliumWeb-Regular=1 functional=PASS; TitilliumWeb-SemiBold=1 functional=PASS; TitilliumWeb-SemiBoldItalic=1 functional=PASS
+   TitilliumWeb-Black BLOCKING OS/2.fs_type [0, 8]
+   TitilliumWeb-Bold BLOCKING OS/2.fs_type [0, 8]
+   TitilliumWeb-BoldItalic BLOCKING OS/2.fs_type [0, 8]
+   TitilliumWeb-Italic BLOCKING OS/2.fs_type [0, 8]
+   TitilliumWeb-Light BLOCKING OS/2.fs_type [0, 8]
+   TitilliumWeb-LightItalic BLOCKING OS/2.fs_type [0, 8]
+   TitilliumWeb-Regular BLOCKING OS/2.fs_type [0, 8]
+   TitilliumWeb-SemiBold BLOCKING OS/2.fs_type [0, 8]
+   TitilliumWeb-SemiBoldItalic BLOCKING OS/2.fs_type [0, 8]

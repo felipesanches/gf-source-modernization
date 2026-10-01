@@ -1,0 +1,14 @@
+ledger: RESIDUAL-UNPUBLISHED-CONVERTER @ 526a6ad, 3 commits, 0 edit(s): Ledger-Regular=2 functional=FAIL(shaping+names+line_spacing+advances)
+   Ledger-Regular BLOCKING OS/2.sx_height [487, 485]
+   Ledger-Regular BLOCKING hmtx.uni00A0 {"width": [281, 0]}
+     cmap         PASS 449 codepoints, exact
+     shaping      FAIL 753996 runs shaped, 1 differ
+         - default features, singles: 1 of 449 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Ledger', build 'Ledger Regular'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 487, build 485
+     advances     FAIL 450 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): uni00A0 281/0
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

@@ -1,0 +1,20 @@
+magra: RESIDUAL-UNPUBLISHED-CONVERTER @ 9a70c2f, 3 commits, 0 edit(s): Magra-Bold=2 functional=FAIL(line_spacing); Magra-Regular=0 functional=FAIL(names)
+   Magra-Bold BLOCKING OS/2.sx_height [525, 533]
+   Magra-Bold BLOCKING OS/2.s_cap_height [700, 708]
+     cmap         PASS 397 codepoints, exact
+     shaping      PASS 675289 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 525, build 533
+         - cap height as layout engines read it (CSS ex / cap units): release 700, build 708
+     advances     PASS 397 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+     cmap         PASS 397 codepoints, exact
+     shaping      PASS 675289 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Magra', build 'Magra Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 397 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

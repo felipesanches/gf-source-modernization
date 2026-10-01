@@ -1,0 +1,15 @@
+mountainsofchristmas: RESIDUAL @ 6c279ea, 3 commits, 0 edit(s): MountainsofChristmas-Bold=3 functional=FAIL(line_spacing); MountainsofChristmas-Regular=0 functional=PASS
+   MountainsofChristmas-Bold BLOCKING OS/2.us_win_ascent [1064, 1066]
+   MountainsofChristmas-Bold BLOCKING OS/2.us_win_descent [354, 355]
+   MountainsofChristmas-Bold BLOCKING hhea.descender [-354, -355]
+     cmap         PASS 229 codepoints, exact
+     shaping      PASS 582919 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 184 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (1066, -354, 0), build hhea (1066, -355, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1064, -354, 2), build typo (1066, -354, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI
+         - ... 3 more
+     advances     PASS 230 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

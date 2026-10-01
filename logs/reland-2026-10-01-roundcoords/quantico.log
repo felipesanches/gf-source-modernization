@@ -1,0 +1,33 @@
+quantico: RESIDUAL-UNPUBLISHED-CONVERTER @ 335d987, 3 commits, 0 edit(s): Quantico-Bold=0 functional=FAIL(names); Quantico-BoldItalic=0 functional=FAIL(names); Quantico-Italic=0 functional=FAIL(names); Quantico-Regular=0 functional=FAIL(names)
+     cmap         PASS 258 codepoints, exact
+     shaping      PASS 557443 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Quantico-Bold', build 'Quantico Bold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 259 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+     cmap         PASS 258 codepoints, exact
+     shaping      PASS 557443 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Quantico-BoldItalic', build 'Quantico Bold Italic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 259 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+     cmap         PASS 258 codepoints, exact
+     shaping      PASS 557367 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Quantico-Italic', build 'Quantico Italic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 259 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+     cmap         PASS 258 codepoints, exact
+     shaping      PASS 557367 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Quantico', build 'Quantico Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 259 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

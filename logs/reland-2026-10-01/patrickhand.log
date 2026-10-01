@@ -1,0 +1,14 @@
+patrickhand: RESIDUAL @ 3d9a5f3, 4 commits, 1 edit(s): PatrickHand-Regular=0 functional=FAIL(names+line_spacing+gdef)
+     cmap         PASS 515 codepoints, exact
+     shaping      PASS 1043100 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 8 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Patrick Hand', build 'Patrick Hand Regular'
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1042, -312, 0), build typo (1024, -312, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (1042, -312, 0), build typo (1024, -312, 0)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+     advances     PASS 727 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 9 class difference(s) shaping reads, 217 it does not
+         - GDEF absent in the build
+         - 9 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, commaaccentcomb 1/3, dblgravecmb 1/3, dotbelowcomb 1/3, gravecomb 1/3, hookabovecomb 1/3, horncomb 1/3, ringbelowcomb 1/3, tildecomb 1/3

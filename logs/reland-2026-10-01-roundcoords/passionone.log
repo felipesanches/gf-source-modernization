@@ -1,0 +1,34 @@
+passionone: RESIDUAL-UNPUBLISHED-CONVERTER @ 7e9a5ed, 3 commits, 0 edit(s): PassionOne-Black=0 functional=FAIL(shaping+rendering+gdef); PassionOne-Bold=0 functional=FAIL(shaping+rendering+gdef); PassionOne-Regular=0 functional=FAIL(shaping+rendering+gdef)
+     cmap         PASS 269 codepoints, exact
+     shaping      FAIL 557271 runs shaped, 1 differ
+         - default features, singles: 1 of 269 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 4 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 61px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 267 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3
+     cmap         PASS 269 codepoints, exact
+     shaping      FAIL 557271 runs shaped, 1 differ
+         - default features, singles: 1 of 269 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 10 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 65px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 267 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3
+     cmap         PASS 269 codepoints, exact
+     shaping      FAIL 557271 runs shaped, 1 differ
+         - default features, singles: 1 of 269 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 6 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 62px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 267 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3

@@ -1,0 +1,31 @@
+rambla: RESIDUAL @ 962d229, 3 commits, 0 edit(s): Rambla-Bold=2 functional=FAIL(line_spacing); Rambla-BoldItalic=2 functional=FAIL(line_spacing); Rambla-Italic=0 functional=PASS; Rambla-Regular=0 functional=FAIL(names)
+   Rambla-Bold BLOCKING OS/2.sx_height [517, 513]
+   Rambla-Bold BLOCKING OS/2.s_cap_height [669, 668]
+     cmap         PASS 232 codepoints, exact
+     shaping      PASS 597549 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 517, build 513
+         - cap height as layout engines read it (CSS ex / cap units): release 669, build 668
+     advances     PASS 233 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+   Rambla-BoldItalic BLOCKING OS/2.sx_height [517, 513]
+   Rambla-BoldItalic BLOCKING OS/2.s_cap_height [669, 668]
+     cmap         PASS 232 codepoints, exact
+     shaping      PASS 597549 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 10 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 517, build 513
+         - cap height as layout engines read it (CSS ex / cap units): release 669, build 668
+     advances     PASS 233 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+     cmap         PASS 232 codepoints, exact
+     shaping      PASS 598666 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Rambla', build 'Rambla Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 233 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

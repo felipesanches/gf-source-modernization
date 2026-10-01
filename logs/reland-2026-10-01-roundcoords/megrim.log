@@ -1,0 +1,20 @@
+megrim: RESIDUAL-UNPUBLISHED-CONVERTER @ cf4f0ef, 3 commits, 0 edit(s): Megrim=3 functional=FAIL(shaping+names+line_spacing)
+   Megrim BLOCKING GSUB.script_list [null, {"DFLT/dflt": {"lookups": [0, 2]}, "latn/dflt": {"lookups": [0, 2]}, "lat
+   Megrim BLOCKING GSUB.feature_list [null, {"aalt": [0], "locl": [2], "ss01": [1]}]
+   Megrim BLOCKING GSUB.lookup_list [null, {"0": [{"type": "single", "M": "M.ss01", "N": "N.ss01", "R": "R.ss01", "U
+     cmap         PASS 338 codepoints, exact
+     shaping      FAIL 657010 runs shaped, 5448 differ
+         - GSUB aalt on: 2449 of 2449 runs differ
+         - GSUB ss01 on: 2482 of 2482 runs differ
+         - language system latn/TRK: 517 of 2449 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Megrim', build 'Megrim Medium'
+         - name ID 2 (3,1,0x409): release 'Medium', build 'Regular'
+         - name ID 4 (3,1,0x409): release 'Megrim', build 'Megrim Medium'
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (880, -200, 90), build typo (800, -200, 90)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (880, -200, 90), build typo (800, -200, 90)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+     advances     PASS 349 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

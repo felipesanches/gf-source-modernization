@@ -1,0 +1,9 @@
+lovedbytheking: RESIDUAL @ 0c66c6b, 3 commits, 0 edit(s): LovedbytheKing=0 functional=FAIL(names)
+     cmap         PASS 361 codepoints, exact
+     shaping      PASS 654122 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 4 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Loved by the King', build 'Loved by the King Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 353 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,11 @@
+mergeone: RESIDUAL @ c7bcd86, 3 commits, 0 edit(s): MergeOne-Regular=1 functional=FAIL(names+line_spacing)
+   MergeOne-Regular BLOCKING OS/2.sx_height [493, 492]
+     cmap         PASS 337 codepoints, exact
+     shaping      PASS 638637 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Merge One', build 'Merge One Regular'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 493, build 492
+     advances     PASS 338 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

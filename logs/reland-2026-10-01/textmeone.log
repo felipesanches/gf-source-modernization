@@ -1,0 +1,11 @@
+textmeone: RESIDUAL @ 65e060a, 3 commits, 0 edit(s): TextMeOne-Regular=1 functional=FAIL(names+line_spacing)
+   TextMeOne-Regular BLOCKING OS/2.sx_height [502, 500]
+     cmap         PASS 242 codepoints, exact
+     shaping      PASS 558227 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 11 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Text Me One', build 'Text Me One Regular'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 502, build 500
+     advances     PASS 247 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 10 it does not

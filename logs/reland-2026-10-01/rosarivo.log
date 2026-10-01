@@ -1,0 +1,9 @@
+rosarivo: RESIDUAL @ ec4a8f8, 3 commits, 0 edit(s): Rosarivo-Italic=0 functional=PASS; Rosarivo-Regular=0 functional=FAIL(names)
+     cmap         PASS 229 codepoints, exact
+     shaping      PASS 568365 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Rosarivo', build 'Rosarivo Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 230 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 3 it does not

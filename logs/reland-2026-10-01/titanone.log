@@ -1,0 +1,14 @@
+titanone: RESIDUAL @ 9ff910c, 3 commits, 0 edit(s): TitanOne-Regular=0 functional=FAIL(shaping+names+gdef)
+     cmap         PASS 413 codepoints, exact
+     shaping      FAIL 646762 runs shaped, 252 differ
+         - default features, singles: 1 of 413 runs differ
+         - default features, base+mark: 246 of 254 runs differ
+         - default features, base+mark+mark: 5 of 5 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Titan One', build 'Titan One Regular'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 413 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dotaccentcmb 1/3
