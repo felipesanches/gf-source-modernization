@@ -55,8 +55,8 @@ BF = os.path.join(BF_TREE, "target-heights/release/babelfont")
 # measurement only; push.sh refuses such a landing.
 BF_UPSTREAM = "simoncozens/babelfont-rs"
 BF_WHERE = BF_UPSTREAM            # set by check_converter()
-B3 = "/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/gftools-builder"
-B3_ID, FONTC_ID = "e851b8b", "1.0.0"
+B3 = "/home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder"
+B3_ID, FONTC_ID = "ade8776", "1.0.0"   # simoncozens/gftools-rust main; fontc as it pins it
 D3 = "/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3"
 PY = "/home/fsanches/compartilhado/gftools/venv/bin/python3"
 TG = "/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py"
@@ -64,9 +64,9 @@ GF = "/home/fsanches/compartilhado/google/fonts"
 IDENT = ["-c", "user.name=Felipe Correa da Silva Sanches",
          "-c", "user.email=juca@members.fsf.org", "-c", "commit.gpgsign=false"]
 TRAILER = "\n\nAssisted by an AI agent (Claude Opus 5.5)\n"
-# where a landing builds before it commits (SCRATCH=<dir> to put it elsewhere, e.g. /home)
-SCRATCH = os.environ.get("SCRATCH", "/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/"
-                                    "f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad")
+# where a landing builds before it commits (SCRATCH=<dir> to put it elsewhere); never /tmp,
+# a small tmpfs wiped on reboot
+SCRATCH = os.environ.get("SCRATCH", "/home/fsanches/compartilhado/tmp/sfd-reland-land")
 
 TEMPLATE_FILES = [".github/workflows/build.yaml", "Makefile", "requirements.in",
                   "requirements.txt", "scripts/customize.py", "scripts/read-config.py",
@@ -85,7 +85,6 @@ BRANCH = {"hg": "main", "fork": "modernize-sfd-to-glyphs",
 # Why a per-release flag differs between the styles of one family.
 REASON = {
     "--fontforge-height-glyph-count-mean": "its release was exported by a FontForge built before 2012-05-14",
-    "--reverse-path-direction": "its release mixes contour directions",
     "--correct-path-direction": "its release has uniform contour directions",
     "--add-legacy-duplicate-cmap": "its release carries makeotf's duplicate cmap entries",
     "--correct-conjunct-category": "Indic mark positioning",
@@ -250,7 +249,7 @@ def template(repo, rows, d):
 
         The sources in `sources/` were converted from this repository's FontForge
         `.sfd` sources using [babelfont-rs](https://github.com/simoncozens/babelfont-rs),
-        and build with [gftools-builder](https://github.com/simoncozens/gftools-builder3)
+        and build with [gftools-builder](https://github.com/simoncozens/gftools-rust)
         and fontc. Every change made to the `.sfd` before converting it is its own
         commit in this repository's history.
 
@@ -354,24 +353,27 @@ def gate(shipped, built, scratch):
 def convert(repo, rows, d, plan, bf_rev, n_edits):
     os.makedirs(os.path.join(d, "sources"), exist_ok=True)
     per_style = []
+    keep = recipe.keep_direction([r["shipped"] for r in rows])
     for r in rows:
         src = os.path.join(d, r["source"])
         text = open(src, encoding="utf-8", errors="replace").read()
         f = plan["flags"].get(r["style"], {})
-        flags = recipe.flags_for(text, r["shipped"], f.get("add", []), f.get("drop", []))
+        flags = recipe.flags_for(text, r["shipped"], f.get("add", []), f.get("drop", []),
+                                 keep_direction=keep)
         g = os.path.join(d, "sources", r["style"] + ".glyphs")
         sh(BF, src, g, *flags)
         notes = workarounds.apply_all(g, src)
         per_style.append({"row": r, "flags": flags, "notes": notes, "glyphs": g})
     cfg = os.path.join(d, "sources", "config.yaml")
+    builder_keys = "noProductionNames: true\n" + ("reverseOutlineDirection: false\n" if keep else "")
     if rows[0]["kind"] == "allerta":
-        text = open(cfg).read().rstrip("\n") + "\n"
+        text = builder_keys + open(cfg).read().rstrip("\n") + "\n"
         for p in per_style:
             text += "  - %s.glyphs\n" % p["row"]["style"]
         open(cfg, "w").write(text)
     else:
         with open(cfg, "w") as fh:
-            fh.write("buildVariable: false\nremoveOutlineOverlaps: false\nsources:\n")
+            fh.write("buildVariable: false\nremoveOutlineOverlaps: false\n" + builder_keys + "sources:\n")
             for p in per_style:
                 fh.write("  - %s.glyphs\n" % p["row"]["style"])
 
@@ -450,6 +452,11 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                 said.append("not " + " ".join(missing))
         why = "; ".join(REASON[f] for f in extra if f in REASON)
         lines += wrap("%s: %s%s" % (p["row"]["style"], ", ".join(said), " (%s)" % why if why else ""))
+    cfg_text = open(os.path.join(d, "sources", "config.yaml")).read()
+    asks = [k for k in ("noProductionNames: true", "reverseOutlineDirection: false") if k in cfg_text]
+    if asks:
+        lines += wrap("sources/config.yaml: %s%s" % (", ".join(asks),
+                      " (a release mixes contour directions)" if "reverseOutlineDirection" in cfg_text else ""))
     notes = [(p["row"]["style"], n) for p in per_style for n in p["notes"]]
     if notes:
         lines += ["", "Values from the .sfd that the toolchain loses, carried across:"]
@@ -458,14 +465,14 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     gf_ref = sh("git", "-C", GF, "rev-parse", "--short=12", "HEAD").stdout.strip()
     lines.append("")
     if clean:
-        lines += textwrap.wrap("Builds with gftools-builder3 %s (fontc %s) and matches the binaries "
+        lines += textwrap.wrap("Builds with gftools-builder (gftools-rust %s, fontc %s) and matches the binaries "
                                "google/fonts %s ships: 0 blocking rows under the table gate, "
                                "exactly the release's codepoints, and functionally equivalent under "
                                "tools/functional_gate.py (cmap, shaping, rendering, names, line "
                                "spacing, advances, GDEF), %d style(s)."
                                % (B3_ID, FONTC_ID, gf_ref, len(results)), 72)
     else:
-        lines += textwrap.wrap("Builds with gftools-builder3 %s (fontc %s). Against google/fonts %s, "
+        lines += textwrap.wrap("Builds with gftools-builder (gftools-rust %s, fontc %s). Against google/fonts %s, "
                                "under the table gate and tools/functional_gate.py:"
                                % (B3_ID, FONTC_ID, gf_ref), 72)
         for st, n, blocking in results:

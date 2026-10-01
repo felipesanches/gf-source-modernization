@@ -37,7 +37,7 @@ set -uo pipefail
 W=$(cd "$(dirname "$0")/.." && pwd)
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive
 BF=${BF:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont}
-B3=/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/gftools-builder
+B3=/home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 TG=/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py

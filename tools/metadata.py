@@ -86,7 +86,7 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future):
     edits = edit_subjects(d, rows)
     out = ["# %s" % display, ""]
     out += wrap("Sources modernized 2026-09: the FontForge `.sfd` sources were converted to "
-                         "Glyphs (`.glyphs`) and build with gftools-builder3 and fontc. The "
+                         "Glyphs (`.glyphs`) and build with gftools-builder and fontc. The "
                          "repository, commit and config are in the `source { }` block of "
                          "METADATA.pb.", 88)
     out += ["", "## Initial state", ""]
@@ -207,7 +207,7 @@ def main():
         git(wt, "add", "--", os.path.relpath(mp, wt), os.path.relpath(ui, wt))
         msg = ("%s: reference the googlefonts/%s .glyphs source\n\n"
                "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
-               "Status: %s; builds with gftools-builder3 and fontc\n"
+               "Status: %s; builds with gftools-builder and fontc\n"
                "Confidence: high -- 0 blocking rows against the shipped binaries\n\n"
                "Assisted by an AI agent (Claude Opus 5.5)\n"
                % (display, repo, repo, head_full[:12],

@@ -35,9 +35,12 @@ W = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONTFORGE_HEIGHT_MEAN_FIXED = 1337023489
 UNIX_FROM_1904 = 2082844800
 
+# Glyph names and contour directions are not babelfont flags any more: the source keeps
+# both, and sources/config.yaml asks the builder for them (noProductionNames: true;
+# reverseOutlineDirection: false when a release mixes directions -- see land.py).
+# Near-integer reference matrices are snapped by babelfont's SFD reader (#98).
 BASE = ["--fontforge-os2-defaults", "--add-instance-per-master", "--infer-mark-category",
-        "--set-subcategory", "--keep-source-glyph-names", "--keep-source-advances",
-        "--snap-component-transforms", "--fontforge-underline-position"]
+        "--set-subcategory", "--keep-source-advances", "--fontforge-underline-position"]
 
 
 # makeotf's duplicate cmap entries: each maps a second codepoint to the glyph of the
@@ -82,14 +85,15 @@ def fontforge_build(shipped):
     return f["FFTM"].FFTimeStamp - UNIX_FROM_1904
 
 
-def flags_for(sfd_text, shipped, add=(), drop=()):
-    """The babelfont arguments for one style, in order."""
+def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
+    """The babelfont arguments for one style, in order. keep_direction: the repository's
+    config.yaml keeps source contour directions (a release of the family mixes them)."""
     flags = list(BASE)
     built = fontforge_build(shipped)
     if built is not None and built < FONTFORGE_HEIGHT_MEAN_FIXED:
         flags.insert(0, "--fontforge-height-glyph-count-mean")
-    flags.append("--correct-path-direction" if directions_uniform(shipped)
-                 else "--reverse-path-direction")
+    if not keep_direction:
+        flags.append("--correct-path-direction")
     # --add-legacy-duplicate-cmap is NEVER passed. It adds makeotf's duplicate set,
     # and these releases were exported by FontForge, whose duplicate mappings come
     # from the .sfd's own AltUni2 alternates. Measured on all 42 styles
@@ -99,6 +103,12 @@ def flags_for(sfd_text, shipped, add=(), drop=()):
         flags.append("--correct-conjunct-category")
     flags += [f for f in add if f not in flags]
     return [f for f in flags if f not in set(drop)]
+
+
+def keep_direction(shipped_fonts):
+    """Whether a repository's builds must keep source contour directions: any release
+    of it mixes the two senses (fontc --keep-direction, config reverseOutlineDirection)."""
+    return any(not directions_uniform(s) for s in shipped_fonts)
 
 
 def families_file():
