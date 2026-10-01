@@ -15,3 +15,8 @@ PR-QUEUE are here:
   releases renamed at onboarding).
 - `outlines/`: README of the rendering/advances research (stale lsb, FontForge .notdef, sfdLib
   interpolated points, spacing-combining marks, isFixedPitch).
+- `shaping/`: babelfont-prototype-gdef-classes-shadowed-pairs-marker.patch (Rust prototype:
+  A `--fontforge-gdef-classes` -- FontForge's GDEF class rule as an explicit GlyphClassDef,
+  B drop kern pairs an earlier subtable of the same lookup shadows (Italiana, Sanchez),
+  C insertion marker `# Automatic Code`); gdef_census.txt (the rule reproduces the release
+  class table in 120 of 122 FontForge releases); probes-README.txt.

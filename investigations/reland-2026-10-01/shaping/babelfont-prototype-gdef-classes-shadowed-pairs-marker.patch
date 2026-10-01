@@ -1,0 +1,310 @@
+diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
+index 6fc5e746..2f911314 100644
+--- a/babelfont/src/convertors/fontforge.rs
++++ b/babelfont/src/convertors/fontforge.rs
+@@ -244,6 +244,7 @@ impl SfdParser {
+         self.parse()?;
+         self.resolve_component_references()?;
+         self.resolve_offset_metrics()?;
++        self.drop_shadowed_glyph_pairs();
+         self.process_kerning()?;
+         self.insert_gtables();
+         Ok(self.font)
+@@ -1504,6 +1505,12 @@ impl SfdParser {
+         let mut current_layer_idx: Option<usize> = None;
+         let mut layer_map: HashMap<usize, usize> = HashMap::new();
+         let mut width: Option<f32> = None;
++        // What FontForge's `gdefclass()` (tottfgpos.c) reads to class the glyph in
++        // GDEF: an explicit GlyphClass, the first anchor that is not cursive, and
++        // whether the glyph is the result of a ligature substitution.
++        let mut explicit_class: Option<usize> = None;
++        let mut first_anchor_kind: Option<String> = None;
++        let mut is_ligature_result = false;
+ 
+         let mut idx = 1usize;
+         while idx < data.len() {
+@@ -1623,6 +1630,7 @@ impl SfdParser {
+                 }
+                 "GlyphClass" => {
+                     if let Some(v) = value.and_then(|v| v.parse::<usize>().ok()) {
++                        explicit_class = Some(v);
+                         glyph.category = match v {
+                             2 => GlyphCategory::Base,
+                             3 => GlyphCategory::Ligature,
+@@ -1832,6 +1840,16 @@ impl SfdParser {
+                                 serde_json::Value::String(decl.1.clone()),
+                             );
+                         }
++                        if first_anchor_kind.is_none() {
++                            match anchor
++                                .format_specific
++                                .get("sfd.kind")
++                                .and_then(|k| k.as_str())
++                            {
++                                Some("entry") | Some("exit") | None => {}
++                                Some(kind) => first_anchor_kind = Some(kind.to_string()),
++                            }
++                        }
+                         glyph.layers[layer_pos].anchors.push(anchor);
+                     }
+                 }
+@@ -1864,6 +1882,7 @@ impl SfdParser {
+                 }
+                 // One-line layout rules
+                 "Ligature2" => {
++                    is_ligature_result = true;
+                     // Split off the (quoted) name and the rest
+                     if let Some((subtable_name, glyphs)) = self.parse_oneline_layout(value) {
+                         let Some(subtable) = self.gsub_lookups.find_subtable_mut(&subtable_name)
+@@ -2040,6 +2059,27 @@ impl SfdParser {
+             );
+         }
+ 
++        // FontForge's `gdefclass()`: the GDEF class its OpenType exporter writes for
++        // this glyph (0 none, 1 base, 2 ligature, 3 mark). The component class is
++        // only ever guessed for CID-keyed fonts, which this reader does not handle.
++        let gdef_class = match explicit_class {
++            Some(c) if c != 0 => c - 1,
++            _ if glyph_name == ".notdef" => 0,
++            _ if matches!(
++                first_anchor_kind.as_deref(),
++                Some("mark") | Some("basemark")
++            ) =>
++            {
++                3
++            }
++            _ if is_ligature_result => 2,
++            _ => 1,
++        };
++        glyph.format_specific.insert(
++            "sfd.gdef_class".to_string(),
++            serde_json::Value::Number(gdef_class.into()),
++        );
++
+         glyph.codepoints = codepoints;
+         Ok(glyph)
+     }
+@@ -2461,6 +2501,81 @@ impl SfdParser {
+         }
+     }
+ 
++    /// Keep only the glyph pair a FontForge pair lookup actually applies.
++    ///
++    /// A lookup's subtables are tried in order and the first one that covers a pair
++    /// positions it; a later subtable holding the same pair never fires. FontForge
++    /// keeps such duplicates: a font can hold `B v` both as a `Kerns2` record in
++    /// "per glyph data 0" and as a `PairPos2` record in "per glyph data 1". The
++    /// converter sends `Kerns2` to the kerning model and `PairPos2` to an FEA lookup in
++    /// the same feature, and a compiler applies both, so the pair kerns twice. This
++    /// drops every per-glyph record (`Kerns2` or `PairPos2`) whose glyph pair an
++    /// earlier per-glyph subtable of the same lookup already holds, so each pair keeps
++    /// the value FontForge's export gave it. Class subtables (`KernClass2`) are not
++    /// taken into account.
++    fn drop_shadowed_glyph_pairs(&mut self) {
++        let glyph_order: Vec<String> = self
++            .font
++            .glyphs
++            .iter()
++            .map(|g| g.name.to_string())
++            .collect();
++        let name_of = |c: &fea_rs_ast::GlyphContainer| -> Option<SmolStr> {
++            match c {
++                fea_rs_ast::GlyphContainer::GlyphName(g) => Some(g.name.clone()),
++                fea_rs_ast::GlyphContainer::GlyphNameOrRange(n) => Some(n.clone()),
++                _ => None,
++            }
++        };
++        let mut dropped = 0usize;
++        for lookup in self.gpos_lookups.0.values_mut() {
++            if !matches!(lookup.lookup_type, layout::LookupType::PairPosition) {
++                continue;
++            }
++            let mut held: HashSet<(SmolStr, SmolStr)> = HashSet::new();
++            for (sub_name, statements) in lookup.subtables.iter_mut() {
++                if let Some(pairs) = self.kern_pairs.get_mut(sub_name.as_str()) {
++                    for (left, entries) in pairs.iter_mut() {
++                        entries.retain(|(gid, _)| {
++                            let Some(right) = glyph_order.get(*gid) else {
++                                return true;
++                            };
++                            let key = (SmolStr::from(left.as_str()), SmolStr::from(right.as_str()));
++                            if held.contains(&key) {
++                                dropped += 1;
++                                false
++                            } else {
++                                held.insert(key);
++                                true
++                            }
++                        });
++                    }
++                }
++                statements.retain(|st| {
++                    let fea_rs_ast::Statement::PairPos(pp) = st else {
++                        return true;
++                    };
++                    let (Some(l), Some(r)) = (name_of(&pp.glyphs_1), name_of(&pp.glyphs_2)) else {
++                        return true;
++                    };
++                    if held.contains(&(l.clone(), r.clone())) {
++                        dropped += 1;
++                        false
++                    } else {
++                        held.insert((l, r));
++                        true
++                    }
++                });
++            }
++        }
++        if dropped > 0 {
++            log::info!(
++                "Dropped {dropped} glyph pair record(s) that an earlier subtable of the same \
++                 lookup already positions, as FontForge's export never applied them"
++            );
++        }
++    }
++
+     /// Map parsed FontForge kerning classes and pairs into the Babelfont kerning model.
+     ///
+     /// Strategy:
+@@ -3815,7 +3930,7 @@ impl SfdParser {
+                 || feature == "mark"
+                 || feature == "mkmk"
+             {
+-                statements.insert(0, "# Automatic code start".to_string());
++                statements.insert(0, "# Automatic Code".to_string());
+             }
+             self.font.features.features.push((
+                 feature,
+diff --git a/babelfont/src/filters/fontforgegdefclasses.rs b/babelfont/src/filters/fontforgegdefclasses.rs
+new file mode 100644
+index 00000000..a17b5188
+--- /dev/null
++++ b/babelfont/src/filters/fontforgegdefclasses.rs
+@@ -0,0 +1,115 @@
++use crate::features::PossiblyAutomaticCode;
++use crate::filters::FontFilter;
++
++/// A filter that states a FontForge source's GDEF glyph classes explicitly, as
++/// FontForge's OpenType exporter wrote them.
++///
++/// FontForge (`tottfgpos.c`, `otf_dumpgdef()`) writes a GDEF GlyphClassDef that
++/// classes every glyph: an explicit `GlyphClass` wins; otherwise `.notdef` gets no
++/// class, a glyph whose first non-cursive anchor is a mark (or mark-to-mark) anchor
++/// is a mark, a glyph that a ligature substitution produces is a ligature, and
++/// everything else is a base (`gdefclass()`). Any glyph with an explicit class, or
++/// with a class other than base -- `.notdef` alone is enough -- makes it write the
++/// table, so every OpenType-mode export carries one. A combining accent that the
++/// source does not class therefore ships as a base, keeps its advance and is not
++/// skipped by lookups that ignore marks.
++///
++/// A Glyphs source cannot say "base" for a glyph without anchors: compilers that
++/// follow glyphsLib (fontc included) class a glyph as a base only when it has an
++/// attaching anchor, and take a mark class from the glyph's name when the source
++/// gives no category. So this filter writes the classes the SFD reader recorded
++/// (`sfd.gdef_class`) as a `table GDEF { GlyphClassDef ... } GDEF;` feature prefix,
++/// which compilers use instead of the ones they would infer.
++///
++/// It is opt-in: the explicit table fixes the classes, so glyphs added to the
++/// converted source later have to be added to it by hand. A binary that FontForge
++/// did not export, or exported with OpenType tables off (an old `kern` table and no
++/// GDEF), has other classes or none.
++#[derive(Default)]
++pub struct FontForgeGdefClasses;
++
++impl FontForgeGdefClasses {
++    /// Create a new FontForgeGdefClasses filter
++    pub fn new() -> Self {
++        FontForgeGdefClasses
++    }
++}
++
++impl FontFilter for FontForgeGdefClasses {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        // base, ligature, mark, component: the four slots of GlyphClassDef
++        let mut classes: [Vec<&str>; 4] = Default::default();
++        let mut recorded = 0;
++        for glyph in font.glyphs.iter() {
++            if !glyph.exported {
++                continue;
++            }
++            let Some(class) = glyph
++                .format_specific
++                .get("sfd.gdef_class")
++                .and_then(|v| v.as_u64())
++            else {
++                continue;
++            };
++            recorded += 1;
++            if (1..=4).contains(&class) {
++                classes[class as usize - 1].push(glyph.name.as_str());
++            }
++        }
++        if recorded == 0 {
++            log::warn!("No FontForge glyph classes were recorded; not writing a GDEF table");
++            return Ok(());
++        }
++        let slot = |names: &Vec<&str>| {
++            if names.is_empty() {
++                String::new()
++            } else {
++                format!("[{}]", names.join(" "))
++            }
++        };
++        let code = format!(
++            "table GDEF {{\n    GlyphClassDef {}, {}, {}, {};\n}} GDEF;",
++            slot(&classes[0]),
++            slot(&classes[1]),
++            slot(&classes[2]),
++            slot(&classes[3])
++        );
++        font.features.prefixes.insert(
++            "FontForgeGlyphClasses".into(),
++            PossiblyAutomaticCode {
++                code,
++                ..Default::default()
++            },
++        );
++        log::info!(
++            "Wrote FontForge's GDEF glyph classes: {} base, {} ligature, {} mark",
++            classes[0].len(),
++            classes[1].len(),
++            classes[2].len()
++        );
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(FontForgeGdefClasses::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("fontforgegdefclasses")
++            .long("fontforge-gdef-classes")
++            .help(
++                "Write a FontForge source's GDEF glyph classes as FEA, the way FontForge's \
++                 OpenType exporter classed them (explicit GlyphClass, else mark by anchor, \
++                 ligature by substitution, base otherwise); use only for a binary FontForge \
++                 exported with OpenType tables",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index dac65952..04615b14 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -117,6 +117,7 @@ declare_filters! {
+         FontForgeUnderlinePosition(fontforgeunderlineposition) => "fontforgeunderlineposition",
+         FontForgeHeightGlyphCountMean(fontforgeheightglyphcountmean) => "fontforgeheightglyphcountmean",
+         FontForgeOs2Defaults(fontforgeos2defaults) => "fontforgeos2defaults",
++        FontForgeGdefClasses(fontforgegdefclasses) => "fontforgegdefclasses",
+     }
+     group "Filters for manipulating outlines" {
+         DecomposeComponentReferences(decomposecomponentreferences) => "decomposecomponents",
