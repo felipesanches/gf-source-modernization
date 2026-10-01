@@ -30,6 +30,10 @@ implementation (investigations/<unit>/):
   droplookup <name>               delete a Lookup: line with this exact name and every
                                   glyph line filling its subtables; FATAL if anything
                                   still names the lookup or a subtable (nosifer)
+  setname <id> <value...>         state US English name ID <id> in the LangName: 1033
+                                  record (created after FontName: if absent); FontForge
+                                  exports it in preference to FullName/FamilyName/FontName
+                                  (names: a release renamed after export)
   renameglyphgid <gid> <old> <new>  rename only the StartChar whose Encoding: line
                                   carries <gid>, when <old> is duplicated; by-name
                                   references keep binding to the other glyph, as
@@ -115,6 +119,25 @@ def apply(text, op, args):
             raise EditError("no BeginChars: line to insert before")
         block = "BeginPrivate: 1\n%s %d %s\nEndPrivate\n" % (key, len(value), value)
         return text[:m.start()] + block + text[m.start():], "no private dictionary"
+    if op == "setname":
+        name_id, value = args.split(" ", 1)
+        name_id = int(name_id)
+        if not value.isascii() or '"' in value:
+            raise EditError("setname takes plain ASCII without quotes (FontForge stores UTF-7)")
+        m = re.search(r'^LangName: 1033 (.*)$', text.split("\nStartChar:", 1)[0], re.M)
+        strings = re.findall(r'"((?:[^"\\]|\\.)*)"', m.group(1)) if m else []
+        before = strings[name_id] if name_id < len(strings) and strings[name_id] else None
+        strings += [""] * (name_id + 1 - len(strings))
+        strings[name_id] = value
+        line = "LangName: 1033 " + " ".join('"%s"' % t for t in strings)
+        if m:
+            text = text.replace(m.group(0), line, 1)
+        else:
+            if not re.search(r"^FontName: .*$", text, re.M):
+                raise EditError("no FontName: line to insert after")
+            text = re.sub(r"^(FontName: .*)$", lambda mm: "%s\n%s" % (mm.group(1), line),
+                          text, count=1, flags=re.M)
+        return text, before
     if op == "renameglyph":
         old, new = args.split()
         n_old = len(re.findall(r"^StartChar: %s$" % re.escape(old), text, re.M))

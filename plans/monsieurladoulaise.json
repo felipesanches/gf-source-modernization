@@ -1,0 +1,18 @@
+{
+ "repo": "monsieurladoulaise",
+ "commits": [
+  {
+   "styles": [
+    "MonsieurLaDoulaise-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "4 Monsieur La Doulaise Regular"
+    ]
+   ],
+   "subject": "Name MonsieurLaDoulaise-Regular as the release does",
+   "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Monsieur La Doulaise Regular' (FontForge exported 'MonsieurLaDoulaise-Regular')."
+  }
+ ]
+}

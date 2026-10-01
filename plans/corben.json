@@ -77,6 +77,19 @@
    ],
    "subject": "Name the Bold Corben-Bold / Corben Bold",
    "body": "This file names itself Corben (FontName and FullName). The release was\nexported as Corben-Bold, full name Corben Bold: its name ID 3 reads\n\"FontForge 2.0 : Corben Bold\", which FontForge builds from the FullName."
+  },
+  {
+   "styles": [
+    "Corben-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "4 Corben"
+    ]
+   ],
+   "subject": "Name Corben-Regular as the release does",
+   "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Corben' (FontForge exported 'Corben Regular')."
   }
  ],
  "future_work": [

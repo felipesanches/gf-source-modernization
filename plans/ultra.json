@@ -1,6 +1,24 @@
 {
  "repo": "ultra",
- "commits": [],
+ "commits": [
+  {
+   "styles": [
+    "Ultra-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "4 Ultra Regular"
+    ],
+    [
+     "setname",
+     "6 Ultra-Regular"
+    ]
+   ],
+   "subject": "Name Ultra-Regular as the release does",
+   "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Ultra Regular' (FontForge exported 'Ultra'); ID 6 'Ultra-Regular' (FontForge exported 'Ultra')."
+  }
+ ],
  "disclose": [
   "The released font has only a legacy `kern` table and no GPOS. fontc writes kerning as GPOS, and a font with GPOS no longer gets HarfBuzz's built-in placement of combining marks, so combining marks are positioned differently from the release (e.g. U+0312, U+0326, U+0315). Decided 2026-10-01: accept and disclose."
  ]

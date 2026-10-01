@@ -1,0 +1,18 @@
+{
+ "repo": "squadaone",
+ "commits": [
+  {
+   "styles": [
+    "SquadaOne-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "4 Squada One"
+    ]
+   ],
+   "subject": "Name SquadaOne-Regular as the release does",
+   "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Squada One' (FontForge exported 'SquadaOne-Regular')."
+  }
+ ]
+}

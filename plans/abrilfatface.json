@@ -1,0 +1,18 @@
+{
+ "repo": "abrilfatface",
+ "commits": [
+  {
+   "styles": [
+    "AbrilFatface-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "4 Abril Fatface"
+    ]
+   ],
+   "subject": "Name AbrilFatface-Regular as the release does",
+   "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Abril Fatface' (FontForge exported 'AbrilFatface-Regular')."
+  }
+ ]
+}

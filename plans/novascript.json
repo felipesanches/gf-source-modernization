@@ -1,6 +1,24 @@
 {
  "repo": "novascript",
- "commits": [],
+ "commits": [
+  {
+   "styles": [
+    "NovaScript-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "4 Nova Script Regular"
+    ],
+    [
+     "setname",
+     "6 NovaScript-Regular"
+    ]
+   ],
+   "subject": "Name NovaScript-Regular as the release does",
+   "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Nova Script Regular' (FontForge exported 'Nova Script'); ID 6 'NovaScript-Regular' (FontForge exported 'NovaScript')."
+  }
+ ],
  "disclose": [
   "The OS/2 fsSelection bits differ from the release (ITALIC set, REGULAR not): fontc sets ITALIC whenever the italic angle is non-zero (-13 here), FontForge took it from macStyle, and a .glyphs source cannot state it. Decided 2026-10-01: disclose."
  ]

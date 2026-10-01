@@ -1,0 +1,18 @@
+{
+ "repo": "mrssheppards",
+ "commits": [
+  {
+   "styles": [
+    "MrsSheppards-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "4 Mrs Sheppards Regular"
+    ]
+   ],
+   "subject": "Name MrsSheppards-Regular as the release does",
+   "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Mrs Sheppards Regular' (FontForge exported 'MrsSheppards-Regular')."
+  }
+ ]
+}

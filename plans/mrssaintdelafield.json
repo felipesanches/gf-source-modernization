@@ -1,0 +1,18 @@
+{
+ "repo": "mrssaintdelafield",
+ "commits": [
+  {
+   "styles": [
+    "MrsSaintDelafield-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "4 Mrs Saint Delafield"
+    ]
+   ],
+   "subject": "Name MrsSaintDelafield-Regular as the release does",
+   "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Mrs Saint Delafield' (FontForge exported 'Mrs Saint Delafield Regular')."
+  }
+ ]
+}
