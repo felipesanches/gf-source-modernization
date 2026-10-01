@@ -1,0 +1,7 @@
+{
+ "repo": "ultra",
+ "commits": [],
+ "disclose": [
+  "The released font has only a legacy `kern` table and no GPOS. fontc writes kerning as GPOS, and a font with GPOS no longer gets HarfBuzz's built-in placement of combining marks, so combining marks are positioned differently from the release (e.g. U+0312, U+0326, U+0315). Decided 2026-10-01: accept and disclose."
+ ]
+}

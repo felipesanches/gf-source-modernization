@@ -1,0 +1,7 @@
+{
+ "repo": "novamono",
+ "commits": [],
+ "disclose": [
+  "Two combining-mark placements differ from the release by 1 font unit: FontForge stored each glyph's bounding box from its curve extremes, fontc stores it from the control points (e.g. uni03D7 yMax 1120 in the release, 1121 here), and the fallback mark placement uses that box. Decided 2026-10-01: disclose."
+ ]
+}

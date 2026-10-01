@@ -1,0 +1,7 @@
+{
+ "repo": "viga",
+ "commits": [],
+ "disclose": [
+  "Two combining-mark placements (e.g. U+0307) differ from the release by 1 font unit: FontForge stored each glyph's bounding box from its curve extremes, fontc stores it from the control points, and the fallback mark placement uses that box. Decided 2026-10-01: disclose."
+ ]
+}

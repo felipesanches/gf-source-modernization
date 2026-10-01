@@ -238,7 +238,7 @@ def start(repo, rows, d):
 
 
 # --- step 2: the template -----------------------------------------------------
-def template(repo, rows, d):
+def template(repo, rows, d, plan=None):
     if rows[0]["kind"] == "allerta":
         return None          # already adopted in that repository
     for f in TEMPLATE_FILES:
@@ -258,6 +258,12 @@ def template(repo, rows, d):
 
         The original FontForge sources remain in the git history.
         """) % disp
+    disclose = (plan or {}).get("disclose", [])
+    if disclose:
+        readme += ("\n## Known differences from the released fonts\n\n"
+                   "These sources rebuild the fonts Google Fonts ships, except for the following, "
+                   "which were reviewed and deliberately left as they are:\n\n")
+        readme += "".join("- %s\n" % t for t in disclose)
     if old_readme:
         readme += "\n## Original README\n\n" + old_readme
     open(os.path.join(d, "README.md"), "w").write(readme)
@@ -508,7 +514,7 @@ def main():
         os.rename(d, prev)            # keep the previous generation, never just delete
     os.makedirs(OUT, exist_ok=True)
     start(repo, rows, d)
-    template(repo, rows, d)
+    template(repo, rows, d, plan)
     made = edits(repo, rows, d, plan)
     head, results, functional = convert(repo, rows, d, plan, bf_rev, len(made))
     kind = rows[0]["kind"]

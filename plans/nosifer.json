@@ -11,5 +11,8 @@
  ],
  "future_work": [
   "Restore the E E ligature (liga -> E_E) the source defines. The shipped Nosifer-Regular.ttf lacks it only because FontForge exported it with its OpenType tables off; the commit that drops it can simply be reverted."
+ ],
+ "disclose": [
+  "The released font has only a legacy `kern` table and no GPOS. fontc writes kerning as GPOS, and a font with GPOS no longer gets HarfBuzz's built-in placement of combining marks, so combining marks are positioned differently from the release (e.g. U+0307, U+0311, U+0326). Decided 2026-10-01: accept and disclose."
  ]
 }

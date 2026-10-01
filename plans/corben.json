@@ -81,5 +81,8 @@
  ],
  "future_work": [
   "Remove the empty, unencoded glyph dcroat.1 from Corben Bold (a duplicate the source carried as a second dcroat)."
+ ],
+ "disclose": [
+  "In the released font some glyphs are drawn shifted horizontally from their outlines: FontForge's export wrote a left side bearing that does not match the glyph's bounding box (a FontForge bug), and rasterizers place the outline by the side bearing. These sources keep the outlines as designed, so the following glyphs are drawn that many font units to the left of where the release draws them: in Corben Bold, AE, 9 units; Lslash and lslash, 5. Decided 2026-10-01: leave as designed and disclose."
  ]
 }

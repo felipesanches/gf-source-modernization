@@ -1,0 +1,7 @@
+{
+ "repo": "novascript",
+ "commits": [],
+ "disclose": [
+  "The OS/2 fsSelection bits differ from the release (ITALIC set, REGULAR not): fontc sets ITALIC whenever the italic angle is non-zero (-13 here), FontForge took it from macStyle, and a .glyphs source cannot state it. Decided 2026-10-01: disclose."
+ ]
+}

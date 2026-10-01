@@ -1,0 +1,7 @@
+{
+ "repo": "nosifercaps",
+ "commits": [],
+ "disclose": [
+  "The OS/2 fsSelection REGULAR bit is set here and not in the release: FontForge set it only for weights 400-500, fontc always sets it, and a .glyphs source cannot state it. Decided 2026-10-01: disclose."
+ ]
+}
