@@ -66,11 +66,4 @@ unpaired (rule 4 never applied); Ultra (drifted .sfd).
 
 ## 6. Decisions for Felipe
 
-1. Names fix trade-off (+73 / -27, then 41 per-family edits): go ahead?
-2. Stale lsb (6 styles): reproduce the release's ink shift with a documented `shiftglyph` edit
-   (moves stored points away from the design to match a defect), or disclose?
-3. Releases with only a legacy `kern` table (Nosifer, Miama, Ultra, Smokum): fontc writes GPOS,
-   which switches off HarfBuzz's fallback mark positioning -- accept and disclose?
-4. NovaMono / Viga 1-unit base+mark (glyph header bbox: FontForge tight vs fontc control box);
-   NosiferCaps / NovaScript fsSelection bits (no way to state them in a .glyphs): disclose?
-5. Provenance cases off the .sfd track: Play (v2.101), Thabit (build.py merge), Tuffy (v1.272).
+Kept in one place: GoogleFonts/bottleneck.md (priority order, extremely succinct).
