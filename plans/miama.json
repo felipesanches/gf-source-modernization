@@ -2,6 +2,7 @@
  "repo": "miama",
  "commits": [],
  "disclose": [
-  "The released font has only a legacy `kern` table and no GPOS. fontc writes kerning as GPOS, and a font with GPOS no longer gets HarfBuzz's built-in placement of combining marks, so combining marks are positioned differently from the release (e.g. U+032D, U+0326, U+0330, U+032E, U+0317). Decided 2026-10-01: accept and disclose."
+  "The released font has only a legacy `kern` table and no GPOS. fontc writes kerning as GPOS, and a font with GPOS no longer gets HarfBuzz's built-in placement of combining marks, so combining marks are positioned differently from the release (e.g. U+032D, U+0326, U+0330, U+032E, U+0317). Decided 2026-10-01: accept and disclose.",
+  "The build is flagged italic and named so where the release is not: fontc sets the OS/2 fsSelection ITALIC bit and name ID 2 \"Italic\" whenever the italic angle is non-zero (the source's angle here), while FontForge took italic from macStyle, which this source leaves upright; a .glyphs source cannot state otherwise. Decided 2026-10-01: disclose."
  ]
 }

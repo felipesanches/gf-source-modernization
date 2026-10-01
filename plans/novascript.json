@@ -20,6 +20,6 @@
   }
  ],
  "disclose": [
-  "The OS/2 fsSelection bits differ from the release (ITALIC set, REGULAR not): fontc sets ITALIC whenever the italic angle is non-zero (-13 here), FontForge took it from macStyle, and a .glyphs source cannot state it. Decided 2026-10-01: disclose."
+  "The build is flagged italic and named so where the release is not: fontc sets the OS/2 fsSelection ITALIC bit and name ID 2 \"Italic\" whenever the italic angle is non-zero (-13 here), while FontForge took italic from macStyle, which this source leaves upright; a .glyphs source cannot state otherwise. Decided 2026-10-01: disclose."
  ]
 }

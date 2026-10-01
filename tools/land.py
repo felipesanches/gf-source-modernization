@@ -190,17 +190,21 @@ def start(repo, rows, d):
     mirror = os.path.join(ARC, base + ".git")
     if kind == "hg":
         sh("git", "init", "-q", "-b", "main", d)
-        tar = subprocess.run(["git", "-C", mirror, "archive", commit_id, "%s/%s" % (lic, fam)],
+        # before the monorepo's ofl/ apache/ ufl/ split, a family lived at the top level
+        path = "%s/%s" % (lic, fam)
+        if not git(mirror, "ls-tree", "--name-only", commit_id, path).stdout.strip():
+            path = fam
+        tar = subprocess.run(["git", "-C", mirror, "archive", commit_id, path],
                              capture_output=True, check=True).stdout
-        subprocess.run(["tar", "-x", "-C", d, "--strip-components=2"], input=tar, check=True)
+        subprocess.run(["tar", "-x", "-C", d, "--strip-components=%d" % (path.count("/") + 1)],
+                       input=tar, check=True)
         git(d, "add", "-A")
         return commit(d, textwrap.dedent("""\
             Import %s from googlefontdirectory-hg at %s
 
-            The contents of %s/%s at commit %s
-            of https://github.com/%s: the revision
-            google/fonts records in METADATA.pb for this family, and so the
-            revision the shipped binaries came from.
+            The contents of %s at commit %s
+            of https://github.com/%s: the revision the shipped binaries
+            came from.
 
             Nothing here is modified: these are the family's files exactly as the
             monorepo holds them. Every change from here on is its own commit.
@@ -209,7 +213,7 @@ def start(repo, rows, d):
             history: the family has no repository of its own, and splitting its
             subtree out of a repository that serves the whole library is not
             practical. The commit named above is the provenance.""") % (
-            fam, commit_id[:12], lic, fam, commit_id, base))
+            fam, commit_id[:12], path, commit_id, base))
     if kind == "allerta":
         # the repository being extended is googlefonts/<repo>; `base` names where the
         # restored file comes from, not the repository to clone

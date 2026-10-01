@@ -18,5 +18,8 @@
    "subject": "Name Kristi-Regular as the release does",
    "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Kristi Regular' (FontForge exported 'Kristi'); ID 6 'Kristi-Regular' (FontForge exported 'Kristi')."
   }
+ ],
+ "disclose": [
+  "The build is flagged italic and named so where the release is not: fontc sets the OS/2 fsSelection ITALIC bit and name ID 2 \"Italic\" whenever the italic angle is non-zero (the source's angle here), while FontForge took italic from macStyle, which this source leaves upright; a .glyphs source cannot state otherwise. Decided 2026-10-01: disclose."
  ]
 }
