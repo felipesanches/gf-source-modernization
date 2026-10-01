@@ -1,0 +1,176 @@
+# abrilfatface AbrilFatface-Regular NTE: '1; Abril Fatface'; '2; Regular'; '4; AbrilFatface-Regular'
+abrilfatface	AbrilFatface-Regular	names: ID 4	FAIL	name ID 4 (3,1,0x409): release 'Abril Fatface', build 'AbrilFatface-Regular'
+# comicrelief ComicRelief-Regular NTE: '1; Comic Relief'; '2; Regular'; '4; Comic Relief'; '2 3 1 0x403; Normal'; '2 3 1 0x405; obyčejné'; '2 3 1 0x406; normal' ...+21
+# comicrelief ComicRelief-Bold NTE: '1; Comic Relief'; '2; Bold'; '4; Comic Relief Bold'; '2 3 1 0x403; Negreta'; '2 3 1 0x405; tučné'; '2 3 1 0x406; fed' ...+21
+comicrelief	ComicRelief-Regular	names: ID 2+17+22	FAIL	name ID 4 (3,1,0x409): release 'Comic Relief Regular', build 'Comic Relief'
+comicrelief	ComicRelief-Bold	names: ID 2+17+22	PASS	
+# corben Corben-Regular NTE: '1; Corben'; '2; Regular'; '4; Corben Regular'
+# corben Corben-Bold NTE: '1; Corben'; '2; Bold'; '4; Corben'
+corben	Corben-Regular	names: ID 4	FAIL	name ID 4 (3,1,0x409): release 'Corben', build 'Corben Regular'
+corben	Corben-Bold	names: ID 6	FAIL	name ID 4 (3,1,0x409): release 'Corben Bold', build 'Corben'
+# italiana Italiana-Regular NTE: '1; Italiana'; '2; Regular'; '4; Italiana'
+italiana	Italiana-Regular	names: ID 4	PASS	
+# keaniaone KeaniaOne-Regular NTE: '1; Keania One'; '2; Regular'; '4; Keania One'
+keaniaone	KeaniaOne-Regular	names: ID 4	PASS	
+# kellyslab KellySlab-Regular NTE: '1; Kelly Slab'; '2; Regular'; '4; Kelly Slab'
+kellyslab	KellySlab-Regular	names: ID 4	PASS	
+# kottaone KottaOne-Regular NTE: '1; Kotta One'; '2; Regular'; '4; Kotta One'
+kottaone	KottaOne-Regular	names: ID 4	PASS	
+# kristi Kristi-Regular NTE: '1; Kristi'; '2; Medium'; '4; Kristi'
+kristi	Kristi-Regular	names: ID 2+6	FAIL	name ID 2 (3,1,0x409): release 'Regular', build 'Medium'
+# ledger Ledger-Regular NTE: '1; Ledger'; '2; Regular'; '4; Ledger'
+ledger	Ledger-Regular	names: ID 4	PASS	
+# lekton Lekton-Bold NTE: '1; Lekton'; '2; Bold'; '4; Lekton-Bold'
+# lekton Lekton-Italic NTE: '1; Lekton'; '2; Italic'; '4; Lekton-Italic'
+# lekton Lekton-Regular NTE: '1; Lekton'; '2; Regular'; '4; Lekton'
+lekton	Lekton-Bold	names: ID 4	PASS	
+lekton	Lekton-Italic	names: ID 4	PASS	
+lekton	Lekton-Regular	names: ID 4	PASS	
+# lilitaone LilitaOne-Regular NTE: '1; Lilita One'; '2; Regular'; '4; Lilita One'
+lilitaone	LilitaOne-Regular	names: ID 4	PASS	
+# lohitbengali Lohit-Bengali master name 'Bengali' -> 'Regular'
+# lohitbengali Lohit-Bengali NTE: '1; Lohit Bengali'; '2; Regular'; '4; Lohit Bengali'
+lohitbengali	Lohit-Bengali	names: ID 1+4+17	PASS	
+# lohittamil Lohit-Tamil master name 'Tamil' -> 'Regular'
+# lohittamil Lohit-Tamil NTE: '1; Lohit Tamil'; '2; Regular'; '4; Lohit Tamil'
+lohittamil	Lohit-Tamil	names: ID 1+4+17	PASS	
+# lovedbytheking LovedbytheKing NTE: '1; Loved by the King'; '2; Regular'; '4; Loved by the King'
+lovedbytheking	LovedbytheKing	names: ID 4	PASS	
+# lustria Lustria-Regular NTE: '1; Lustria'; '2; Regular'; '4; Lustria'
+lustria	Lustria-Regular	names: ID 4	PASS	
+# macondo Macondo-Regular NTE: '1; Macondo'; '2; Regular'; '4; Macondo'
+macondo	Macondo-Regular	names: ID 4	PASS	
+# magra Magra-Regular NTE: '1; Magra'; '2; Regular'; '4; Magra'
+magra	Magra-Regular	names: ID 4	PASS	
+# marvel Marvel-Regular NTE: '1; Marvel'; '2; Regular'; '4; Marvel'
+marvel	Marvel-Regular	names: ID 4	PASS	
+# medulaone MedulaOne-Regular NTE: '1; Medula One'; '2; Regular'; '4; Medula One'
+medulaone	MedulaOne-Regular	names: ID 4	PASS	
+# megrim Megrim NTE: '1; Megrim'; '2; Medium'; '4; Megrim'
+megrim	Megrim	names: ID 1+2+4	PASS	
+# meiescript MeieScript-Regular NTE: '1; Meie Script'; '2; Regular'; '4; Meie Script'
+meiescript	MeieScript-Regular	names: ID 4	PASS	
+# mergeone MergeOne-Regular NTE: '1; Merge One'; '2; Regular'; '4; Merge One'
+mergeone	MergeOne-Regular	names: ID 4	PASS	
+# miama Miama-Regular NTE: '1; Miama'; '2; Regular'; '4; Miama'
+miama	Miama-Regular	names: ID 2+4	PASS	
+# monoton Monoton-Regular NTE: '1; Monoton'; '2; Regular'; '4; Monoton'
+monoton	Monoton-Regular	names: ID 4	PASS	
+# mrbedfort MrBedfort-Regular NTE: '1; Mr Bedfort'; '2; Regular'; '4; Mr Bedfort'
+mrbedfort	MrBedfort-Regular	names: ID 4	PASS	
+# mrssaintdelafield MrsSaintDelafield-Regular NTE: '1; Mrs Saint Delafield'; '2; Regular'; '4; Mrs Saint Delafield Regular'
+mrssaintdelafield	MrsSaintDelafield-Regular	names: ID 4	FAIL	name ID 4 (3,1,0x409): release 'Mrs Saint Delafield', build 'Mrs Saint Delafield Regular'
+# niconne Niconne-Regular NTE: '1; Nicone'; '2; Regular'; '4; Nicone-Regular'
+niconne	Niconne-Regular	names: ID 1+4+6	FAIL	name ID 1 (3,1,0x409): release 'Niconne', build 'Nicone'
+# nixieone NixieOne-Regular NTE: '1; Nixie One'; '2; Regular'; '4; Nixie One'
+nixieone	NixieOne-Regular	names: ID 4	PASS	
+# nosifer Nosifer-Regular NTE: '1; Nosifer'; '2; Regular'; '4; Nosifer'
+nosifer	Nosifer-Regular	names: ID 4	PASS	
+# nothingyoucoulddo NothingYouCouldDo NTE: '1; Nothing You Could Do'; '2; Regular'; '4; Nothing You Could Do'
+nothingyoucoulddo	NothingYouCouldDo	names: ID 4	PASS	
+# novacut NovaCut NTE: '1; Nova Cut'; '2; Book'; '4; Nova Cut'
+novacut	NovaCut	names: ID 2+4+17	PASS	
+# novaflat NovaFlat NTE: '1; Nova Flat'; '2; Book'; '4; Nova Flat'
+novaflat	NovaFlat	names: ID 2+4+17	PASS	
+# novamono NovaMono NTE: '1; NovaMono'; '2; Regular'; '4; NovaMono'
+novamono	NovaMono	names: ID 4	PASS	
+# novaoval NovaOval NTE: '1; Nova Oval'; '2; Book'; '4; Nova Oval'
+novaoval	NovaOval	names: ID 2+4+17	PASS	
+# novaround NovaRound NTE: '1; Nova Round'; '2; Book'; '4; Nova Round'
+novaround	NovaRound	names: ID 2+4+17	PASS	
+# novascript NovaScript-Regular NTE: '1; Nova Script'; '2; Book'; '4; Nova Script'
+novascript	NovaScript-Regular	names: ID 2+6	FAIL	name ID 2 (3,1,0x409): release 'Regular', build 'Book'
+# novaslim NovaSlim NTE: '1; Nova Slim'; '2; Book'; '4; Nova Slim'
+novaslim	NovaSlim	names: ID 2+4+17	PASS	
+# novasquare NovaSquare NTE: '1; Nova Square'; '2; Book'; '4; Nova Square'
+novasquare	NovaSquare	names: ID 2+4+17	PASS	
+# numans Numans-Regular NTE: '1; Numans'; '2; Regular'; '4; Numans'
+numans	Numans-Regular	names: ID 4	PASS	
+# oleoscript OleoScript-Regular NTE: '1; Oleo Script'; '2; Regular'; '4; Oleo Script'
+oleoscript	OleoScript-Regular	names: ID 4	PASS	
+# oleoscriptswashcaps OleoScriptSwashCaps-Regular NTE: '1; Oleo Script Swash Caps'; '2; Regular'; '4; Oleo Script Swash Caps'
+oleoscriptswashcaps	OleoScriptSwashCaps-Regular	names: ID 4	PASS	
+# overlock Overlock-BlackItalic NTE: '1; Overlock'; '2; Black Italic'; '4; Overlock-BlackItalic'
+overlock	Overlock-BlackItalic	names: ID 2	FAIL	name ID 1 (3,1,0x409): release 'Overlock Black', build 'Overlock'
+# overlocksc OverlockSC-Regular NTE: '1; Overlock SC'; '2; Regular'; '4; Overlock SC'
+overlocksc	OverlockSC-Regular	names: ID 4	PASS	
+# overtherainbow OvertheRainbow NTE: '1; Over the Rainbow'; '2; Regular'; '4; Over the Rainbow'
+overtherainbow	OvertheRainbow	names: ID 4	PASS	
+# patrickhand PatrickHand-Regular NTE: '1; Patrick Hand'; '2; Regular'; '4; Patrick Hand'
+patrickhand	PatrickHand-Regular	names: ID 4	PASS	
+# patuaone PatuaOne-Regular NTE: '1; Patua One'; '2; Regular'; '4; Patua One'
+patuaone	PatuaOne-Regular	names: ID 4	PASS	
+# pirataone PirataOne-Regular NTE: '1; Pirata One'; '2; Regular'; '4; Pirata One'
+pirataone	PirataOne-Regular	names: ID 4	PASS	
+# poly Poly-Italic NTE: '1; Poly'; '2; Italic'; '4; Poly-Italic'
+# poly Poly-Regular NTE: '1; Poly'; '2; Regular'; '4; Poly-Regular'
+poly	Poly-Italic	names: ID 4	PASS	
+poly	Poly-Regular	names: ID 4	PASS	
+# portlligatsans PortLligatSans-Regular NTE: '1; Port Lligat Sans'; '2; Regular'; '4; Port Lligat Sans'
+portlligatsans	PortLligatSans-Regular	names: ID 4	PASS	
+# portlligatslab PortLligatSlab-Regular NTE: '1; Port Lligat Slab'; '2; Regular'; '4; Port Lligat Slab'
+portlligatslab	PortLligatSlab-Regular	names: ID 4	PASS	
+# puritan Puritan-BoldItalic NTE: '1; Puritan'; '2; BoldItalic'; '4; Puritan Bold Italic'
+puritan	Puritan-BoldItalic	names: ID 2+17+22	PASS	
+# quantico Quantico-Bold NTE: '1; Quantico'; '2; Bold'; '4; Quantico-Bold'
+# quantico Quantico-BoldItalic NTE: '1; Quantico'; '2; Bold Italic'; '4; Quantico-BoldItalic'
+# quantico Quantico-Italic NTE: '1; Quantico'; '2; Italic'; '4; Quantico-Italic'
+# quantico Quantico-Regular NTE: '1; Quantico'; '2; Regular'; '4; Quantico'
+quantico	Quantico-Bold	names: ID 4	PASS	
+quantico	Quantico-BoldItalic	names: ID 4	PASS	
+quantico	Quantico-Italic	names: ID 4	PASS	
+quantico	Quantico-Regular	names: ID 4	PASS	
+# rambla Rambla-Regular NTE: '1; Rambla'; '2; Regular'; '4; Rambla'
+rambla	Rambla-Regular	names: ID 4	PASS	
+# revalia Revalia-Regular NTE: '1; Revalia'; '2; Regular'; '4; Revalia-Regular'
+revalia	Revalia-Regular	names: ID 4	PASS	
+# ribeyemarrow RibeyeMarrow-Regular NTE: '1; Ribeye Marrow'; '2; Regular'; '4; Ribeye Marrow'
+ribeyemarrow	RibeyeMarrow-Regular	names: ID 4	PASS	
+# rosarivo Rosarivo-Regular NTE: '1; Rosarivo'; '2; Regular'; '4; Rosarivo'
+rosarivo	Rosarivo-Regular	names: ID 4	PASS	
+# rougescript RougeScript-Regular NTE: '1; Rouge Script'; '2; Regular'; '4; Rouge Script'
+rougescript	RougeScript-Regular	names: ID 4	PASS	
+# rufina Rufina-Regular NTE: '1; Rufina'; '2; Regular'; '4; Rufina'
+rufina	Rufina-Regular	names: ID 4	PASS	
+# ruluko Ruluko-Regular NTE: '1; Ruluko'; '2; Regular'; '4; Ruluko'
+ruluko	Ruluko-Regular	names: ID 4	PASS	
+# russoone RussoOne-Regular NTE: '1; Russo One'; '2; Regular'; '4; Russo One'
+russoone	RussoOne-Regular	names: ID 4	PASS	
+# sail Sail-Regular NTE: '1; Sail'; '2; Regular'; '4; Sail'
+sail	Sail-Regular	names: ID 4	PASS	
+# salsa Salsa-Regular NTE: '1; Salsa'; '2; Regular'; '4; Salsa-Regular'
+salsa	Salsa-Regular	names: ID 4	PASS	
+# sanchez Sanchez-Regular NTE: '1; Sanchez'; '2; Regular'; '4; Sanchez'
+sanchez	Sanchez-Regular	names: ID 4	PASS	
+# sixcaps SixCaps NTE: '1; Six Caps'; '2; Regular'; '4; Six Caps'
+sixcaps	SixCaps	names: ID 4	PASS	
+# smythe Smythe-Regular NTE: '1; Smythe'; '2; Regular'; '4; Smythe'
+smythe	Smythe-Regular	names: ID 4	PASS	
+# spirax Spirax-Regular NTE: '1; Spirax'; '2; Regular'; '4; Spirax-Regular'
+spirax	Spirax-Regular	names: ID 4	PASS	
+# squadaone SquadaOne-Regular NTE: '1; Squada One'; '2; Regular'; '4; SquadaOne-Regular'
+squadaone	SquadaOne-Regular	names: ID 4	FAIL	name ID 4 (3,1,0x409): release 'Squada One', build 'SquadaOne-Regular'
+# swankyandmoomoo SwankyandMooMoo NTE: '1; Swanky and Moo Moo'; '2; Regular'; '4; Swanky and Moo Moo'
+swankyandmoomoo	SwankyandMooMoo	names: ID 4	PASS	
+# textmeone TextMeOne-Regular NTE: '1; Text Me One'; '2; Regular'; '4; Text Me One'
+textmeone	TextMeOne-Regular	names: ID 4	PASS	
+# thabit Thabit-Bold NTE: '1; Bold'; '2; Bold'; '4; Thabit Bold'; '2 3 1 0xC01; عريض'; '4 3 1 0xC01; ثابت'
+# thabit Thabit NTE: '1; Regular'; '2; Regular'; '4; Thabit'; '2 3 1 0xC01; عادي'; '4 3 1 0xC01; ثابت'
+thabit	Thabit-Bold	names: ID 1+4+16	FAIL	name ID 1 (3,1,0x409): release 'Thabit-Bold', build 'Bold'
+thabit	Thabit	names: ID 1+4+16	FAIL	name ID 1 (3,1,0x409): release 'Thabit', build 'Regular'
+# thegirlnextdoor TheGirlNextDoor NTE: '1; The Girl Next Door'; '2; Regular'; '4; The Girl Next Door'
+thegirlnextdoor	TheGirlNextDoor	names: ID 4	PASS	
+# titanone TitanOne-Regular NTE: '1; Titan One'; '2; Regular'; '4; Titan One'
+titanone	TitanOne-Regular	names: ID 4	PASS	
+# tuffy Tuffy-BoldItalic NTE: '1; Tuffy'; '2; BoldItalic'; '4; Tuffy Bold Italic'
+# tuffy Tuffy-Italic NTE: '1; Tuffy'; '2; Italic'; '4; Tuffy Italic'; '2 3 1 0x407; StandardKursiv'; '2 3 1 0x40A; NormalCursiva'; '2 3 1 0x40C; NormalItalique' ...+6
+# tuffy Tuffy-Regular NTE: '1; Tuffy'; '2; Regular'; '4; Tuffy Regular'; '2 3 1 0x407; StandardKursiv'; '2 3 1 0x40A; NormalCursiva'; '2 3 1 0x40C; NormalItalique' ...+6
+tuffy	Tuffy-BoldItalic	names: ID 2+17+22	PASS	
+tuffy	Tuffy-Italic	names: ID 17+22	FAIL	name ID 2 (3,1,0x407): release None, build 'StandardKursiv'
+tuffy	Tuffy-Regular	names: ID 17+22	FAIL	name ID 2 (3,1,0x407): release None, build 'StandardKursiv'
+# tulpenone TulpenOne-Regular NTE: '1; Tulpen One'; '2; Regular'; '4; Tulpen One'
+tulpenone	TulpenOne-Regular	names: ID 4	PASS	
+# unifraktur UnifrakturMaguntia-Book NTE: '1; UnifrakturMaguntia'; '2; Book'; '4; UnifrakturMaguntia'
+unifraktur	UnifrakturMaguntia-Book	names: ID 2+4+17	PASS	
+# unifrakturcook UnifrakturCook-Bold NTE: '1; UnifrakturCook'; '2; Bold'; '4; UnifrakturCook'
+unifrakturcook	UnifrakturCook-Bold	names: ID 4	PASS	

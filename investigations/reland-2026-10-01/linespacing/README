@@ -1,0 +1,8 @@
+line_spacing cluster probes (re-land 2026-10-01). Scratch; promote to sfd-reland/investigations/ before quoting numbers.
+sfd_vs_release.py <triage.tsv>  -- per failing style: .sfd OS/2 header fields vs release OS/2/hhea vs converted .glyphs params. -> runs/sfd_vs_release.txt
+bit7_sweep.py                   -- all 149 styles: FontForge's bit-7 export rule, babelfont 004200b's rule and the prototype filter's rule vs the release. -> runs/bit7_sweep.txt
+ls_check.py <shipped> <built>   -- runs ONLY functional_gate.check_line_spacing (imported).
+build_variant.sh <repo> <tag> [edit-cmd] -- copy landed sources/, apply edit, gftools-builder (nice), line_spacing per style. Output builds/<repo>-<tag>/ (OUT= to override). name_map.tsv maps odd output names.
+drop_use_typo.py / add_use_typo.py -- edits run inside sources/: remove / add the font-level "Use Typo Metrics" parameter.
+reconvert_proto.sh <repo> <style> <sfd> -- reconvert with prototype babelfont (--fontforge-legacy-os2-version + the landing commit's flags) + land.py workarounds; diff vs landed .glyphs.
+table_diff.py a.ttf b.ttf       -- which tables/fields differ between two builds.

@@ -1,0 +1,38 @@
+style	triage_cause	root_causes	fix	line_spacing_after (evidence)
+Lekton-Bold	USE_TYPO	bit7(OS2Version 2)	F1 filter	PASS (builds-proto/lekton-proto)
+Lekton-Italic	USE_TYPO	bit7(OS2Version 2)	F1	PASS (builds-proto/lekton-proto)
+Lekton-Regular	USE_TYPO	bit7(OS2Version 2)	F1	PASS (builds-proto/lekton-proto)
+Megrim	USE_TYPO	bit7(OS2Version 2)	F1	PASS (runs/proto_odd_names.txt)
+PatrickHand-Regular	USE_TYPO	bit7(OS2Version 3)	F1	PASS (builds-proto/patrickhand-proto)
+Revalia-Regular	USE_TYPO	bit7(OS2Version 3)	F1	PASS (builds-proto/revalia-proto)
+Lohit-Bengali	USE_TYPO	bit7(OS2Version 1)	F1	PASS (runs/proto_odd_names.txt)
+Lohit-Tamil	USE_TYPO	bit7(OS2Version 1)	F1	PASS (runs/proto_odd_names.txt)
+LilitaOne-Regular	USE_TYPO	bit7 + x/cap height	F1 + next-heights BlueValues edit	x/cap rows left with F1 only
+Lustria-Regular	USE_TYPO	bit7 + x/cap height	F1 + next-heights BlueValues edit	x/cap rows left with F1 only
+MountainsofChristmas-Bold	USE_TYPO	bit7 + legacy offset win/hhea	F1 + next-vmetrics filter	win/hhea rows left with bit removed (builds/mountainsofchristmas-nobit)
+Kristi-Regular	USE_TYPO	bit7(OS2Version 0, unexplained) + ITALIC from italicAngle + v1 x/cap	F1 + sfd OS2Version 1 + ?	spacing PASS; fsSelection/x-height rows left
+Thabit	USE_TYPO	bit7(FF 2008, no v4 bump) + v1 x/cap (no 'x' in build cmap)	F1 + sfd OS2Version 1	spacing PASS; x/cap rows left (cmap unit)
+ComicRelief-Regular	metrics	bit7 CLEARED: release by sfdLib 2.0.0 (sets bit 7 whenever OS2_UseTypoMetrics present)	sfd edit OS2_UseTypoMetrics 1	spacing PASS; underline row left (small/ investigation)
+ComicRelief-Bold	metrics	same	same	same
+Limelight-Regular	metrics	post-export metrics edit + bit7	next-vmetrics sfd edit + F1	not rebuilt here
+NothingYouCouldDo	metrics	legacy offset win/hhea + bit7	next-vmetrics filter + F1	PASS only with both (runs/nothingyoucoulddo_both_fixes.txt)
+UnifrakturMaguntia-Book	metrics	legacy offset + bit7	next-vmetrics filter + F1	not rebuilt here
+Ledger-Regular	metrics	x-height	next-heights	-
+Magra-Bold	metrics	x/cap height	next-heights	-
+MergeOne-Regular	metrics	x-height	next-heights	-
+OleoScript-Bold	metrics	x/cap height	next-heights	-
+OleoScript-Regular	metrics	x/cap height	next-heights	-
+OleoScriptSwashCaps-Bold	metrics	x/cap height	next-heights	-
+OleoScriptSwashCaps-Regular	metrics	x-height	next-heights	-
+Rambla-Bold	metrics	x/cap height	next-heights	-
+Rambla-BoldItalic	metrics	x/cap height	next-heights	-
+Sail-Regular	metrics	cap height	next-heights	-
+TextMeOne-Regular	metrics	x-height	next-heights	-
+Thabit-Bold	metrics	v1 release x/cap; build has no 'x' outline in cmap	cmap unit	-
+NosiferCaps-Regular	metrics	fsSelection REGULAR: FF sets it only for weight 400-500; fontc always	none in fontc/Glyphs; accept or fontc feature	-
+NovaScript-Regular	metrics	fsSelection ITALIC from italicAngle -13 (fontc+glyphsLib rule); FF used macStyle	none; accept or fontc feature	-
+Overlock-BlackItalic	metrics	fontc 1.0.0 master-name rule exact "italic"; fixed in fontc 018e193c	bump fontc in gftools-rust	PASS with fontc main (builds/overlock-fontcmain)
+Play-Bold	metrics	release not built from .sfd (play/ investigation)	provenance	-
+Play-Regular	metrics	same (+ sfd typo descender +220)	provenance	-
+Tuffy-Italic	metrics	corrupt OS/2 strikeout in .sfd	tuffy/ sfd edits	-
+Tuffy-Regular	metrics	same	same	-

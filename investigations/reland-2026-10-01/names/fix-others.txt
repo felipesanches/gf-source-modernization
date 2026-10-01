@@ -1,0 +1,126 @@
+# allerta AllertaStencil-Regular NTE: '1; Allerta Stencil'; '2; Regular'; '4; Allerta Stencil Regular'
+allerta	AllertaStencil-Regular	none	PASS	
+# cardo Cardo-Bold baseline not built; skipped
+# cardo Cardo-Italic baseline not built; skipped
+# cardo Cardo-Regular baseline not built; skipped
+cardo	Cardo-Bold	none	NOT BUILT
+cardo	Cardo-Italic	none	NOT BUILT
+cardo	Cardo-Regular	none	NOT BUILT
+# creepstercaps CreepsterCaps-Regular NTE: '1; Creepster Caps'; '2; Regular'; '4; Creepster Caps Regular'
+creepstercaps	CreepsterCaps-Regular	none	PASS	
+# herrvonmuellerhoff HerrVonMuellerhoff-Regular NTE: '1; Herr Von Muellerhoff'; '2; Regular'; '4; Herr Von Muellerhoff Regular'
+herrvonmuellerhoff	HerrVonMuellerhoff-Regular	none	PASS	
+# limelight Limelight-Regular NTE: '1; Limelight'; '2; Regular'; '4; Limelight Regular'
+limelight	Limelight-Regular	none	PASS	
+# loveyalikeasister LoveYaLikeASister NTE: '1; Love Ya Like A Sister'; '2; Regular'; '4; Love Ya Like A Sister Regular'
+loveyalikeasister	LoveYaLikeASister	none	PASS	
+# magra Magra-Bold NTE: '1; Magra'; '2; Bold'; '4; Magra Bold'
+magra	Magra-Bold	none	PASS	
+# marvel Marvel-Bold NTE: '1; Marvel'; '2; Bold'; '4; Marvel Bold'
+# marvel Marvel-BoldItalic NTE: '1; Marvel'; '2; Bold Italic'; '4; Marvel Bold Italic'
+# marvel Marvel-Italic NTE: '1; Marvel'; '2; Italic'; '4; Marvel Italic'
+marvel	Marvel-Bold	none	PASS	
+marvel	Marvel-BoldItalic	none	PASS	
+marvel	Marvel-Italic	none	PASS	
+# missfajardose MissFajardose-Regular NTE: '1; Miss Fajardose'; '2; Regular'; '4; MissFajardose-Regular'
+missfajardose	MissFajardose-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Miss Fajardose Regular', build 'MissFajardose-Regular'
+# monsieurladoulaise MonsieurLaDoulaise-Regular NTE: '1; Monsieur La Doulaise'; '2; Regular'; '4; MonsieurLaDoulaise-Regular'
+monsieurladoulaise	MonsieurLaDoulaise-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Monsieur La Doulaise Regular', build 'MonsieurLaDoulaise-Regular'
+# mountainsofchristmas MountainsofChristmas-Bold NTE: '1; Mountains of Christmas'; '2; Bold'; '4; Mountains of Christmas Bold'
+# mountainsofchristmas MountainsofChristmas-Regular NTE: '1; Mountains of Christmas'; '2; Regular'; '4; Mountains of Christmas'
+mountainsofchristmas	MountainsofChristmas-Bold	none	PASS	
+mountainsofchristmas	MountainsofChristmas-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Mountains of Christmas Regular', build 'Mountains of Christmas'
+# mrdafoe MrDafoe-Regular NTE: '1; Mr Dafoe'; '2; Regular'; '4; MrDafoe-Regular'
+mrdafoe	MrDafoe-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Mr Dafoe Regular', build 'MrDafoe-Regular'
+# mrdehaviland MrDeHaviland-Regular NTE: '1; Mr De Haviland'; '2; Regular'; '4; MrDeHaviland-Regular'
+mrdehaviland	MrDeHaviland-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Mr De Haviland Regular', build 'MrDeHaviland-Regular'
+# mrssheppards MrsSheppards-Regular NTE: '1; Mrs Sheppards'; '2; Regular'; '4; MrsSheppards-Regular'
+mrssheppards	MrsSheppards-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Mrs Sheppards Regular', build 'MrsSheppards-Regular'
+# nosifercaps NosiferCaps-Regular NTE: '1; Nosifer Caps'; '2; Regular'; '4; Nosifer Caps Regular'
+nosifercaps	NosiferCaps-Regular	none	PASS	
+# oleoscript OleoScript-Bold NTE: '1; Oleo Script'; '2; Bold'; '4; Oleo Script Bold'
+oleoscript	OleoScript-Bold	none	PASS	
+# oleoscriptswashcaps OleoScriptSwashCaps-Bold NTE: '1; Oleo Script Swash Caps'; '2; Bold'; '4; Oleo Script Swash Caps Bold'
+oleoscriptswashcaps	OleoScriptSwashCaps-Bold	none	PASS	
+# overlock Overlock-Black NTE: '1; Overlock'; '2; Black'; '4; Overlock-Black'
+# overlock Overlock-Bold NTE: '1; Overlock'; '2; Bold'; '4; Overlock-Bold'
+# overlock Overlock-BoldItalic NTE: '1; Overlock'; '2; Bold Italic'; '4; Overlock-BoldItalic'
+# overlock Overlock-Italic NTE: '1; Overlock'; '2; Italic'; '4; Overlock-Italic'
+# overlock Overlock-Regular NTE: '1; Overlock'; '2; Regular'; '4; Overlock'
+overlock	Overlock-Black	none	FAIL	name ID 1 (3,1,0x409): release 'Overlock Black', build 'Overlock'
+overlock	Overlock-Bold	none	FAIL	name ID 4 (3,1,0x409): release 'Overlock Bold', build 'Overlock-Bold'
+overlock	Overlock-BoldItalic	none	FAIL	name ID 4 (3,1,0x409): release 'Overlock Bold Italic', build 'Overlock-BoldItalic'
+overlock	Overlock-Italic	none	FAIL	name ID 4 (3,1,0x409): release 'Overlock Italic', build 'Overlock-Italic'
+overlock	Overlock-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Overlock Regular', build 'Overlock'
+# passionone PassionOne-Black NTE: '1; Passion One'; '2; Black'; '4; PassionOne-Black'
+# passionone PassionOne-Bold NTE: '1; Passion One'; '2; Bold'; '4; PassionOne-Bold'
+# passionone PassionOne-Regular master name 'Regular' -> 'Bold'
+# passionone PassionOne-Regular NTE: '1; Passion One'; '2; Regular'; '4; PassionOne-Regular'
+passionone	PassionOne-Black	none	FAIL	name ID 1 (3,1,0x409): release 'Passion One Black', build 'Passion One'
+passionone	PassionOne-Bold	none	FAIL	name ID 4 (3,1,0x409): release 'Passion One Bold', build 'PassionOne-Bold'
+passionone	PassionOne-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Passion One Regular', build 'PassionOne-Regular'
+# piedra Piedra-Regular NTE: '1; Piedra'; '2; Regular'; '4; Piedra-Regular'
+piedra	Piedra-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Piedra Regular', build 'Piedra-Regular'
+# play Play-Bold NTE: '1; Play'; '2; Bold'; '4; Play Bold'
+# play Play-Regular NTE: '1; Play'; '2; Regular'; '4; Play Regular'
+play	Play-Bold	none	PASS	
+play	Play-Regular	none	PASS	
+# puritan Puritan-Bold NTE: '1; Puritan'; '2; Bold'; '4; Puritan Bold'
+# puritan Puritan-Italic NTE: '1; Puritan'; '2; Italic'; '4; Puritan Italic'
+# puritan Puritan-Regular NTE: '1; Puritan'; '2; Regular'; '4; Puritan Regular'
+puritan	Puritan-Bold	none	PASS	
+puritan	Puritan-Italic	none	PASS	
+puritan	Puritan-Regular	none	PASS	
+# rambla Rambla-Bold NTE: '1; Rambla'; '2; Bold'; '4; Rambla Bold'
+# rambla Rambla-BoldItalic NTE: '1; Rambla'; '2; Bold Italic'; '4; Rambla Bold Italic'
+# rambla Rambla-Italic NTE: '1; Rambla'; '2; Italic'; '4; Rambla Italic'
+rambla	Rambla-Bold	none	PASS	
+rambla	Rambla-BoldItalic	none	PASS	
+rambla	Rambla-Italic	none	PASS	
+# rochester Rochester-Regular NTE: '1; Rochester'; '2; Regular'; '4; Rochester'
+rochester	Rochester-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Rochester Regular', build 'Rochester'
+# rosarivo Rosarivo-Italic NTE: '1; Rosarivo'; '2; Italic'; '4; Rosarivo Italic'
+rosarivo	Rosarivo-Italic	none	PASS	
+# rufina Rufina-Bold NTE: '1; Rufina'; '2; Bold'; '4; Rufina Bold'
+rufina	Rufina-Bold	none	PASS	
+# sanchez Sanchez-Italic NTE: '1; Sanchez'; '2; Italic'; '4; Sanchez Italic'
+sanchez	Sanchez-Italic	none	PASS	
+# smokum Smokum-Regular NTE: '1; Smokum'; '2; Regular'; '4; Smokum'
+smokum	Smokum-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Smokum Regular', build 'Smokum'
+# titilliumweb TitilliumWeb-Black NTE: '1; Titillium Web'; '2; Black'; '4; Titillium WebBlack'
+# titilliumweb TitilliumWeb-Bold NTE: '1; Titillium Web'; '2; Bold'; '4; Titillium WebBold'
+# titilliumweb TitilliumWeb-BoldItalic NTE: '1; Titillium Web'; '2; Bold Italic'; '4; Titillium WebBold Italic'
+# titilliumweb TitilliumWeb-Italic NTE: '1; Titillium Web'; '2; Italic'; '4; Titillium WebItalic'
+# titilliumweb TitilliumWeb-Light NTE: '1; Titillium Web'; '2; Light'; '4; Titillium WebLight'
+# titilliumweb TitilliumWeb-LightItalic NTE: '1; Titillium Web'; '2; Light Italic'; '4; Titillium WebLight Italic'
+# titilliumweb TitilliumWeb-Regular NTE: '1; Titillium Web'; '2; Regular'; '4; Titillium Web'
+# titilliumweb TitilliumWeb-SemiBold NTE: '1; Titillium Web'; '2; SemiBold'; '4; Titillium WebSemiBold'
+# titilliumweb TitilliumWeb-SemiBoldItalic NTE: '1; Titillium Web'; '2; SemiBold Italic'; '4; Titillium WebSemiBold Italic'
+titilliumweb	TitilliumWeb-Black	none	FAIL	name ID 1 (3,1,0x409): release 'Titillium Web Black', build 'Titillium Web'
+titilliumweb	TitilliumWeb-Bold	none	FAIL	name ID 4 (3,1,0x409): release 'Titillium Web Bold', build 'Titillium WebBold'
+titilliumweb	TitilliumWeb-BoldItalic	none	FAIL	name ID 4 (3,1,0x409): release 'Titillium Web Bold Italic', build 'Titillium WebBold Italic'
+titilliumweb	TitilliumWeb-Italic	none	FAIL	name ID 4 (3,1,0x409): release 'Titillium Web Italic', build 'Titillium WebItalic'
+titilliumweb	TitilliumWeb-Light	none	FAIL	name ID 1 (3,1,0x409): release 'Titillium Web Light', build 'Titillium Web'
+titilliumweb	TitilliumWeb-LightItalic	none	FAIL	name ID 1 (3,1,0x409): release 'Titillium Web Light', build 'Titillium Web'
+titilliumweb	TitilliumWeb-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Titillium Web Regular', build 'Titillium Web'
+titilliumweb	TitilliumWeb-SemiBold	none	FAIL	name ID 1 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium Web'
+titilliumweb	TitilliumWeb-SemiBoldItalic	none	FAIL	name ID 1 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium Web'
+# trochut Trochut-Bold NTE: '1; Trochut'; '2; Bold'; '4; Trochut Bold'
+# trochut Trochut-Italic NTE: '1; Trochut'; '2; Italic'; '4; Trochut Italic'
+# trochut Trochut-Regular NTE: '1; Trochut'; '2; Regular'; '4; Trochut'
+trochut	Trochut-Bold	none	PASS	
+trochut	Trochut-Italic	none	PASS	
+trochut	Trochut-Regular	none	PASS	
+# tuffy Tuffy-Bold NTE: '1; Tuffy'; '2; Bold'; '4; Tuffy Bold'
+tuffy	Tuffy-Bold	none	PASS	
+# ultra Ultra-Regular master name 'Black' -> 'Regular'
+# ultra Ultra-Regular NTE: '1; Ultra'; '2; Regular'; '4; Ultra'
+ultra	Ultra-Regular	none	FAIL	name ID 4 (3,1,0x409): release 'Ultra Regular', build 'Ultra'
+# varela Varela-Regular NTE: '1; Varela'; '2; Regular'; '4; Varela'
+varela	Varela-Regular	none	PASS	
+# viga Viga-Regular NTE: '1; Viga'; '2; Regular'; '4; Viga-Regular'
+viga	Viga-Regular	none	PASS	
+# wallpoet Wallpoet-Regular NTE: '1; Wallpoet'; '2; Regular'; '4; Wallpoet'
+wallpoet	Wallpoet-Regular	none	PASS	
+# wendyone WendyOne-Regular NTE: '1; Wendy One'; '2; Regular'; '4; Wendy One'
+wendyone	WendyOne-Regular	none	PASS	
