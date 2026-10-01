@@ -14,6 +14,6 @@ if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
   echo "refusing: $T has uncommitted changes" >&2; exit 1
 fi
 sudo -n /usr/local/sbin/drop-caches >/dev/null 2>&1 || true
-CARGO_BUILD_JOBS=4 CARGO_TARGET_DIR="$T/target-heights" cargo build --release -q -p babelfont --features cli
+CARGO_BUILD_JOBS=${CARGO_BUILD_JOBS:-4} CARGO_TARGET_DIR="$T/target-heights" cargo build --release -q -p babelfont --features cli
 git rev-parse HEAD > "$T/target-heights/BUILT_FROM"
 echo "built $(git rev-parse --short HEAD) -> $T/target-heights/release/babelfont"

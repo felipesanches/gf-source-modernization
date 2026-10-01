@@ -1,0 +1,9 @@
+FATAL: /home/fsanches/compartilhado/babelfont-rs-worktrees/integration-names/target-heights/release/babelfont /home/fsanches/compartilhado/tmp/reland-planedits/repos/wallpoet/src/Wallpoet-Regular-TTF.sfd /home/fsanches/compartilhado/tmp/reland-planedits/repos/wallpoet/sources/Wallpoet-Regular.glyphs --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category --set-subcategory --keep-source-advances --fontforge-underline-position --round-coordinates --fontforge-legacy-os2-version
+error: unexpected argument '--fontforge-legacy-os2-version' found
+
+  tip: a similar argument exists: '--fontforge-os2-defaults'
+
+Usage: babelfont --fontforge-height-glyph-count-mean --fontforge-os2-defaults --add-instance-per-master --infer-mark-category [<GLYPHS>] --set-subcategory [<GLYPHS>] --keep-source-advances --fontforge-underline-position --round-coordinates <font_path> <output>
+
+For more information, try '--help'.
+

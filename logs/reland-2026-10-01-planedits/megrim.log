@@ -1,0 +1,11 @@
+megrim: RESIDUAL-UNPUBLISHED-CONVERTER @ eccfede, 6 commits, 3 edit(s): Megrim=0 functional=FAIL(line_spacing)
+     cmap         PASS 338 codepoints, exact
+     shaping      PASS 646628 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (880, -200, 90), build typo (800, -200, 90)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (880, -200, 90), build typo (800, -200, 90)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+     advances     PASS 339 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,51 @@
+titilliumweb: RESIDUAL-UNPUBLISHED-CONVERTER @ 484dd12, 8 commits, 5 edit(s): TitilliumWeb-Black=0 functional=FAIL(names); TitilliumWeb-Bold=0 functional=PASS; TitilliumWeb-BoldItalic=0 functional=PASS; TitilliumWeb-Italic=0 functional=PASS; TitilliumWeb-Light=0 functional=FAIL(names); TitilliumWeb-LightItalic=0 functional=FAIL(names); TitilliumWeb-Regular=0 functional=PASS; TitilliumWeb-SemiBold=0 functional=FAIL(names); TitilliumWeb-SemiBoldItalic=0 functional=FAIL(names)
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 724464 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web Black', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Black'
+         - name ID 4 (3,1,0x409): release 'Titillium Web Black', build 'Titillium WebBlack'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web Light', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Light'
+         - name ID 4 (3,1,0x409): release 'Titillium Web Light', build 'Titillium WebLight'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web Light', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Italic', build 'Light Italic'
+         - name ID 4 (3,1,0x409): release 'Titillium Web Light Italic', build 'Titillium WebLight Italic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'SemiBold'
+         - name ID 4 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium WebSemiBold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not
+     cmap         PASS 396 codepoints, exact
+     shaping      PASS 805444 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium Web'
+         - name ID 2 (3,1,0x409): release 'Italic', build 'SemiBold Italic'
+         - name ID 4 (3,1,0x409): release 'Titillium Web SemiBold Italic', build 'Titillium WebSemiBold Italic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 408 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 12 it does not

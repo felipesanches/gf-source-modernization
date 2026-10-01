@@ -1,0 +1,10 @@
+wallpoet: RESIDUAL-UNPUBLISHED-CONVERTER @ 3a946fc, 4 commits, 1 edit(s): Wallpoet-Regular=0 functional=FAIL(rendering)
+     cmap         PASS 238 codepoints, exact
+     shaping      PASS 563018 runs shaped, 0 differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 1 of 3 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0160 19px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): Scaron 121px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 238 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

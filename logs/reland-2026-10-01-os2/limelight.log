@@ -1,0 +1,10 @@
+limelight: RESIDUAL-UNPUBLISHED-CONVERTER @ a282fde, 4 commits, 1 edit(s): Limelight-Regular=0 functional=FAIL(rendering)
+     cmap         PASS 413 codepoints, exact
+     shaping      PASS 666120 runs shaped, 0 differ
+     rendering    FAIL diffenator3 4 glyph / 0 word diffs (4 / 0 confirmed); 7 of 9 changed outlines draw different ink
+         - diffenator3: 4 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0134 55px, U+0037 47px, U+004A 42px, U+0031 42px
+         - 7 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): Jcircumflex 437px, seven 357px, J 350px, one 150px, asciitilde 146px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 411 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
