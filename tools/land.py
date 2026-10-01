@@ -44,7 +44,10 @@ import sfd_edit      # noqa: E402
 import workarounds   # noqa: E402
 
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
-OUT = "/home/fsanches/compartilhado/sfd-reland-repos"
+# OUT=, LANDED= and BF_EXTRA_FLAGS= redirect a measurement run away from the landed repos
+OUT = os.environ.get("OUT", "/home/fsanches/compartilhado/sfd-reland-repos")
+LANDED = os.environ.get("LANDED", os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "landed.tsv"))
+BF_EXTRA_FLAGS = os.environ.get("BF_EXTRA_FLAGS", "").split()
 TEMPLATE = "/home/fsanches/compartilhado/sfd-func-audit/ufr-template"
 # the converter checkout; after the upstream merge, a worktree of simoncozens/babelfont-rs
 # main (BF_TREE=... in the environment), built with tools/build_babelfont.sh
@@ -359,7 +362,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         text = open(src, encoding="utf-8", errors="replace").read()
         f = plan["flags"].get(r["style"], {})
         flags = recipe.flags_for(text, r["shipped"], f.get("add", []), f.get("drop", []),
-                                 keep_direction=keep)
+                                 keep_direction=keep) + [x for x in BF_EXTRA_FLAGS]
         g = os.path.join(d, "sources", r["style"] + ".glyphs")
         sh(BF, src, g, *flags)
         notes = workarounds.apply_all(g, src)
@@ -526,7 +529,7 @@ def main():
         status += "-UNPUBLISHED-CONVERTER"      # push.sh pushes only CLEAN
     summary = "; ".join("%s=%s functional=%s" % (st, x if x is not None else "BUILD", fverdict(st))
                         for st, x, _ in results)
-    with open(os.path.join(W, "landed.tsv"), "a") as fh:
+    with open(LANDED, "a") as fh:
         fh.write("\t".join([repo, BRANCH[kind], head, str(n), status, summary]) + "\n")
     print("%s: %s @ %s, %d commits, %d edit(s): %s" % (repo, status, head, n, len(made), summary))
     for st, x, blocking in results:

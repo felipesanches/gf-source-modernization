@@ -18,7 +18,7 @@ repos_of() { awk -F'\t' 'NR>1 && $1!="" {print $1}' "$1" | sort -u; }
 run() {  # $1 = pairing table, $2 = repo
   echo "== $2 ($(basename "$1")) $(date -Is)" >> "$LOG/progress.txt"
   FAMILIES="$1" "$PY" "$W/tools/land.py" "$2" --rebuild > "$LOG/$2.log" 2>&1
-  echo "   rc=$? $(tail -n 1 "$W/landed.tsv" | cut -f1,5)" >> "$LOG/progress.txt"
+  echo "   rc=$? $(tail -n 1 "${LANDED:-$W/landed.tsv}" | cut -f1,5)" >> "$LOG/progress.txt"
   df -h /home/fsanches/compartilhado | tail -1 >> "$LOG/progress.txt"
 }
 for t in families.tsv families-next.tsv; do
