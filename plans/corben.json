@@ -60,6 +60,23 @@
    "args": "Panose 2 15 5 5 2 0 0 2 0 4",
    "subject": "Set the PANOSE serif style to 15 (rounded)",
    "body": "This value exists only in the release, set by google/fonts 5b1755d5a in 2015;\nboth Bold sources state 0. 15 is what the Regular's sources state."
+  },
+  {
+   "styles": [
+    "Corben-Bold"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "FontName Corben-Bold"
+    ],
+    [
+     "setfield",
+     "FullName Corben Bold"
+    ]
+   ],
+   "subject": "Name the Bold Corben-Bold / Corben Bold",
+   "body": "This file names itself Corben (FontName and FullName). The release was\nexported as Corben-Bold, full name Corben Bold: its name ID 3 reads\n\"FontForge 2.0 : Corben Bold\", which FontForge builds from the FullName."
   }
  ],
  "future_work": [
