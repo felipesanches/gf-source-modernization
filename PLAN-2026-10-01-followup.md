@@ -67,3 +67,16 @@ unpaired (rule 4 never applied); Ultra (drifted .sfd).
 ## 6. Decisions for Felipe
 
 Kept in one place: GoogleFonts/bottleneck.md (priority order, extremely succinct).
+
+## 7. Felipe's decisions recorded 2026-10-01
+
+- Repo name `googlefonts/unifraktur` confirmed for UnifrakturMaguntia.
+- Rule: represent each family by the most faithful available source of what shipped.
+  - Play: alexeiva/play `sources/Play.glyphs` (d84ad58, v2.101) -- googlefonts/play carries that
+    history; the hg .sfd stays in history. Needs glyphslib-rs #4 (all-digit hex unicodes).
+  - Tuffy: the .sfd with documented edits to v1.272 (2017 rebuild; its source was never published).
+  - Thabit: the .sfd plus its build's inputs, as documented commits: new sfd_edit ops
+    `mergepsfont` (src/cour/*.pfa, IBM Courier) and `mergefea` (Thabit.fea), FamilyName edit,
+    oblique pairing (investigations/next-provenance/FINDINGS.md).
+- Disclosures: plans/<repo>.json "disclose" -> README "Known differences from the released fonts"
+  (14 families; sfd-reland 898eb3c).
