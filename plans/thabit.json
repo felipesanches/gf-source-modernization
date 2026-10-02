@@ -404,6 +404,22 @@
    ],
    "subject": "Take Phi's quadratic outline from the release",
    "body": "FontForge converted the merged IBM Courier glyphs to quadratic curves with its own approximation; the mergepsfont edit uses cu2qu, which reproduces every Latin glyph within rounding except Phi (5 px at 128 ppem). Points copied from google/fonts 90abd17b4 ofl/thabit/Thabit-Oblique.ttf."
+  },
+  {
+   "styles": [
+    "Thabit",
+    "Thabit-Bold",
+    "Thabit-Oblique",
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "truncateanchors",
+     ""
+    ]
+   ],
+   "subject": "Truncate anchor coordinates toward zero, as FontForge exported them",
+   "body": "FontForge's GPOS export writes an anchor's coordinates with putshort(), whose parameter is an int, so C truncates each real toward zero: 129.5 ships as 129, -46.7 as -46 (FontForge 2008-08-08, eb711fd7, tottfgpos.c dumpanchor). A compiler rounds them instead and puts the mark a unit away. These files state anchors with fractional coordinates: Thabit 65, Thabit-Bold 16, Thabit-Oblique 530 and Thabit-BoldOblique 366 (the obliques' come from the skew above). Rounding moves 61, 16, 323 and 235 of them; in the release's GPOS (google/fonts 90abd17b4 ofl/thabit/*.ttf) every one of those ships truncated (in each oblique one of them, on fathah, cannot be told apart: fathah has another anchor at the rounded position). Each coordinate is stated here truncated, as exported; no other value changes."
   }
  ],
  "disclose": [
