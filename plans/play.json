@@ -1,12 +1,22 @@
 {
-  "repo": "play",
-  "why": "Play ships v2.101, exported from alexeiva/play sources/Play.glyphs at d84ad58 (investigations/play/FINDINGS.md); the repository carries that history and builds the Glyphs source as is (Felipe, 2026-10-01). No documented edits.",
-  "commits": [],
-  "flags": {},
-  "earlier_sources": [
-    "googlefontdirectory-hg `ofl/play/src/Play-{Regular,Bold}-TTF.sfd` at 52f780bc9d19 (https://github.com/googlefonts/googlefontdirectory-hg): FontForge sources of v1.001/v1.002 (2011), the revision google/fonts METADATA.pb recorded before; they lack 133 of the shipped codepoints and the v2 feature code.",
-    "librefonts/play 0d4e17b (2014, https://github.com/librefonts/play): byte-identical copies of those .sfd plus TTX dumps.",
-    "google/fonts 874c7ceb1 (2016-10-31) added `ofl/play/Play-{Regular,Bold}.glyphs` (Glyphs 1 era), `Play-{Regular,Bold}.vfb` and `Play-Bold.vfbak`; e36afc756 deleted them.",
-    "m4rc1e/play 3565c8a (https://github.com/m4rc1e/play): a fork with a tree identical to this repository's d84ad58."
-  ]
+ "repo": "play",
+ "why": "Play ships v2.101, exported from alexeiva/play sources/Play.glyphs at d84ad58 (investigations/play/FINDINGS.md); the repository carries that history and builds the Glyphs source as is (Felipe, 2026-10-01). No documented edits.",
+ "commits": [],
+ "flags": {},
+ "earlier_sources": [
+  "googlefontdirectory-hg `ofl/play/src/Play-{Regular,Bold}-TTF.sfd` at 52f780bc9d19 (https://github.com/googlefonts/googlefontdirectory-hg): FontForge sources of v1.001/v1.002 (2011), the revision google/fonts METADATA.pb recorded before; they lack 133 of the shipped codepoints and the v2 feature code.",
+  "librefonts/play 0d4e17b (2014, https://github.com/librefonts/play): byte-identical copies of those .sfd plus TTX dumps.",
+  "google/fonts 874c7ceb1 (2016-10-31) added `ofl/play/Play-{Regular,Bold}.glyphs` (Glyphs 1 era), `Play-{Regular,Bold}.vfb` and `Play-Bold.vfbak`; e36afc756 deleted them.",
+  "m4rc1e/play 3565c8a (https://github.com/m4rc1e/play): a fork with a tree identical to this repository's d84ad58."
+ ],
+ "disclose": [
+  "Latin text does not get the ligatures, small caps, case forms and alternates the release applies: the source's features are all automatic and it states no language systems; Glyphs.app adds a languagesystem for every script at export, but fontc registers the features for the default script only. Needs fontc to add Glyphs.app's automatic language systems; planned as later work. Decided 2026-10-02: disclose.",
+  "Zero-width combining marks (e.g. acutecomb) sit to the right of their origin instead of to the left: Glyphs.app moves a mark's outline and anchors left by its old width when it makes the width zero; fontc only sets the width to zero. Marks placed by composites and mark-to-mark positioning move with it. Needs a fontc change; planned as later work. Decided 2026-10-02: disclose.",
+  "Some glyph names differ from the release (e.g. uni0122 for Gcommaaccent, uni0306.cy for brevecombcy): the source was written by Glyphs 2, whose glyph data the release used; fontc applies Glyphs 3's. Needs a fontc change; planned as later work. Decided 2026-10-02: disclose.",
+  "ff, ffi and ffl are not mapped to U+FB00, U+FB03 and U+FB04: Glyphs.app assigns the glyph data's Unicode values at export when the source gives none; fontc takes code points from the source only. Needs a fontc change; planned as later work. Decided 2026-10-02: disclose.",
+  "Play-Bold's OS/2 weight class is 400 instead of 700, and its PANOSE weight byte is 0 instead of 8 (Regular 0 instead of 5): fontc ignores a single-master source's instance weight class and does not derive PANOSE from it as Glyphs.app does. Needs a fontc change; planned as later work. Decided 2026-10-02: disclose.",
+  "post.underlinePosition is -100 instead of -75: Glyphs.app writes the source's underline position plus half the underline thickness; fontc writes it as stated. Needs a fontc change; planned as later work. Decided 2026-10-02: disclose.",
+  "Mark positioning lookups skip unrelated marks with a mark filtering set (GDEF 1.2) where the release uses mark attachment classes (GDEF 1.0); the marks they act on are the same. Decided 2026-10-02: disclose.",
+  "Some quadratic outlines have a different number of points (e.g. Gcommaaccent 44, release 43): each converter approximates cubic curves its own way; the drawn shapes match within rounding. Decided 2026-10-02: disclose."
+ ]
 }
