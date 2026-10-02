@@ -69,6 +69,131 @@
    "args": "FSType 0",
    "subject": "Set fsType to 0, installable embedding",
    "body": "Installable embedding. The value exists only in the release: google/fonts\n93550bd32 (2017-05-09, #931 \"hotfix-titilliumweb: v1.002 added\") changed\nevery shipped binary from 8 to 0. This source, and the binary FontForge\nexported from it, state 8 (editable). The OFL shipped with the font already\npermits embedding."
+  },
+  {
+   "styles": [
+    "TitilliumWeb-Black"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Titillium Web Black"
+    ],
+    [
+     "setname",
+     "2 Regular"
+    ],
+    [
+     "setname",
+     "4 Titillium Web Black"
+    ],
+    [
+     "setname",
+     "16 Titillium Web"
+    ]
+   ],
+   "subject": "Name TitilliumWeb-Black as the release does",
+   "body": "The release (v1.002 hotfix) states these US English names; FontForge exported others. Name ID 17 the file already states."
+  },
+  {
+   "styles": [
+    "TitilliumWeb-Light"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Titillium Web Light"
+    ],
+    [
+     "setname",
+     "2 Regular"
+    ],
+    [
+     "setname",
+     "4 Titillium Web Light"
+    ],
+    [
+     "setname",
+     "16 Titillium Web"
+    ]
+   ],
+   "subject": "Name TitilliumWeb-Light as the release does",
+   "body": "The release (v1.002 hotfix) states these US English names; FontForge exported others. Name ID 17 the file already states."
+  },
+  {
+   "styles": [
+    "TitilliumWeb-LightItalic"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Titillium Web Light"
+    ],
+    [
+     "setname",
+     "2 Italic"
+    ],
+    [
+     "setname",
+     "4 Titillium Web Light Italic"
+    ],
+    [
+     "setname",
+     "16 Titillium Web"
+    ]
+   ],
+   "subject": "Name TitilliumWeb-LightItalic as the release does",
+   "body": "The release (v1.002 hotfix) states these US English names; FontForge exported others. Name ID 17 the file already states."
+  },
+  {
+   "styles": [
+    "TitilliumWeb-SemiBold"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Titillium Web SemiBold"
+    ],
+    [
+     "setname",
+     "2 Regular"
+    ],
+    [
+     "setname",
+     "4 Titillium Web SemiBold"
+    ],
+    [
+     "setname",
+     "16 Titillium Web"
+    ]
+   ],
+   "subject": "Name TitilliumWeb-SemiBold as the release does",
+   "body": "The release (v1.002 hotfix) states these US English names; FontForge exported others. Name ID 17 the file already states."
+  },
+  {
+   "styles": [
+    "TitilliumWeb-SemiBoldItalic"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Titillium Web SemiBold"
+    ],
+    [
+     "setname",
+     "2 Italic"
+    ],
+    [
+     "setname",
+     "4 Titillium Web SemiBold Italic"
+    ],
+    [
+     "setname",
+     "16 Titillium Web"
+    ]
+   ],
+   "subject": "Name TitilliumWeb-SemiBoldItalic as the release does",
+   "body": "The release (v1.002 hotfix) states these US English names; FontForge exported others. Name ID 17 the file already states."
   }
  ]
 }

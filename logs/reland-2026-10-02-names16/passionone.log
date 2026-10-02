@@ -1,0 +1,22 @@
+passionone: RESIDUAL-UNPUBLISHED-CONVERTER @ 54d260d, 5 commits, 2 edit(s): PassionOne-Black=0 functional=FAIL(names); PassionOne-Bold=0 functional=PASS; PassionOne-Regular=0 functional=FAIL(names)
+     cmap         PASS 269 codepoints, exact
+     shaping      PASS 557271 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 4 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Passion One Black', build 'Passion One'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Black'
+         - name ID 4 (3,1,0x409): release 'Passion One Black', build 'PassionOne-Black'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 267 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+     cmap         PASS 269 codepoints, exact
+     shaping      PASS 557271 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 6 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+         - name ID 16 (3,1,0x409) as read: release 'Passion One', build 'Passion'
+         - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Bold'
+         - name ID 21 (3,1,0x409) as read: release 'Passion One', build 'Passion'
+         - ... 1 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 267 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

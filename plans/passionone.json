@@ -26,6 +26,52 @@
    ],
    "subject": "Name PassionOne-Regular as the release does",
    "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Passion One Regular' (FontForge exported 'PassionOne-Regular')."
+  },
+  {
+   "styles": [
+    "PassionOne-Black"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Passion One Black"
+    ],
+    [
+     "setname",
+     "2 Regular"
+    ],
+    [
+     "setname",
+     "4 Passion One Black"
+    ],
+    [
+     "setname",
+     "16 Passion One"
+    ],
+    [
+     "setname",
+     "17 Black"
+    ]
+   ],
+   "subject": "Name PassionOne-Black as the release does",
+   "body": "The release (v1.002 hotfix) states these US English names; FontForge exported others."
+  },
+  {
+   "styles": [
+    "PassionOne-Regular"
+   ],
+   "ops": [
+    [
+     "setname",
+     "16 "
+    ],
+    [
+     "setname",
+     "17 "
+    ]
+   ],
+   "subject": "Drop the typographic names the release does not state",
+   "body": "The release (v1.002 hotfix) has no name IDs 16/17; FontForge exported 'Passion' / 'Bold' from this file."
   }
  ]
 }
