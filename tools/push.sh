@@ -49,7 +49,9 @@ for repo in $repos; do
     echo "$repo: BLOCKED -- cites babelfont ${rev:-?}, not on simoncozens/babelfont-rs main; re-land after it merges"
     continue
   fi
-  if ! "$PY" "$W/tools/verify_landed.py" "$repo" >/dev/null 2>&1; then
+  fam="$W/families.tsv"
+  grep -q "^$repo	" "$fam" || fam="$W/families-next.tsv"   # the table that pairs this repo
+  if ! FAMILIES="$fam" "$PY" "$W/tools/verify_landed.py" "$repo" >/dev/null 2>&1; then
     echo "$repo: REFUSED -- verify_landed.py fails; run it to see why"; continue
   fi
   case "$url" in

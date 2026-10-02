@@ -195,3 +195,45 @@ viga	main	3a9b91c	3	RESIDUAL	Viga-Regular=0 functional=FAIL(shaping+rendering+na
 wallpoet	main	2f4296e	3	RESIDUAL	Wallpoet-Regular=1 functional=FAIL(rendering+names)
 wendyone	main	9181813	3	RESIDUAL	WendyOne-Regular=0 functional=FAIL(names)
 corben	modernize-sfd-to-glyphs	57d7d62	18	RESIDUAL	Corben-Regular=0 functional=FAIL(shaping+rendering+names+advances+gdef); Corben-Bold=0 functional=FAIL(rendering)
+creepstercaps	main	4bcbb9e	3	CLEAN	CreepsterCaps-Regular=0 functional=PASS
+herrvonmuellerhoff	main	81af85e	3	CLEAN	HerrVonMuellerhoff-Regular=0 functional=PASS
+novacut	main	2f4a39c	3	CLEAN	NovaCut=0 functional=PASS
+novaflat	main	fe7db94	3	CLEAN	NovaFlat=0 functional=PASS
+novaoval	main	2914695	3	CLEAN	NovaOval=0 functional=PASS
+novaround	main	3000f4b	3	CLEAN	NovaRound=0 functional=PASS
+novaslim	main	f083c4d	3	CLEAN	NovaSlim=0 functional=PASS
+novasquare	main	6706648	3	CLEAN	NovaSquare=0 functional=PASS
+puritan	main	443c662	6	CLEAN	Puritan-Bold=0 functional=PASS; Puritan-BoldItalic=0 functional=PASS; Puritan-Italic=0 functional=PASS; Puritan-Regular=0 functional=PASS
+russoone	main	dbfb883	4	CLEAN	RussoOne-Regular=0 functional=PASS
+sixcaps	main	146e562	3	CLEAN	SixCaps=0 functional=PASS
+tulpenone	main	0552484	3	CLEAN	TulpenOne-Regular=0 functional=PASS
+keaniaone	main	5782758	3	CLEAN	KeaniaOne-Regular=0 functional=PASS
+kellyslab	main	74740a9	3	CLEAN	KellySlab-Regular=0 functional=PASS
+lovedbytheking	main	38c1bea	3	CLEAN	LovedbytheKing=0 functional=PASS
+loveyalikeasister	main	3f61760	3	CLEAN	LoveYaLikeASister=0 functional=PASS
+marvel	main	4231a4b	3	CLEAN	Marvel-Bold=0 functional=PASS; Marvel-BoldItalic=0 functional=PASS; Marvel-Italic=0 functional=PASS; Marvel-Regular=0 functional=PASS
+medulaone	main	df14060	3	CLEAN	MedulaOne-Regular=0 functional=PASS
+meiescript	main	49d05f5	3	CLEAN	MeieScript-Regular=0 functional=PASS
+missfajardose	main	3cc8d03	4	CLEAN	MissFajardose-Regular=0 functional=PASS
+monsieurladoulaise	main	9435f58	4	CLEAN	MonsieurLaDoulaise-Regular=0 functional=PASS
+mrdafoe	main	c34cf61	4	CLEAN	MrDafoe-Regular=0 functional=PASS
+mrdehaviland	main	7e8315b	4	CLEAN	MrDeHaviland-Regular=0 functional=PASS
+mrssaintdelafield	main	c72485e	4	CLEAN	MrsSaintDelafield-Regular=0 functional=PASS
+mrssheppards	main	22a85b6	4	CLEAN	MrsSheppards-Regular=0 functional=PASS
+numans	main	5beaf6d	3	CLEAN	Numans-Regular=0 functional=PASS
+overlocksc	main	1597b95	3	CLEAN	OverlockSC-Regular=0 functional=PASS
+overtherainbow	main	464563c	3	CLEAN	OvertheRainbow=0 functional=PASS
+patuaone	main	4c32269	3	CLEAN	PatuaOne-Regular=0 functional=PASS
+piedra	main	7535f0f	4	CLEAN	Piedra-Regular=0 functional=PASS
+pirataone	main	b2a5572	3	CLEAN	PirataOne-Regular=0 functional=PASS
+portlligatsans	main	30c014c	3	CLEAN	PortLligatSans-Regular=0 functional=PASS
+portlligatslab	main	7c5ef15	3	CLEAN	PortLligatSlab-Regular=0 functional=PASS
+quantico	main	01932c5	3	CLEAN	Quantico-Bold=0 functional=PASS; Quantico-BoldItalic=0 functional=PASS; Quantico-Italic=0 functional=PASS; Quantico-Regular=0 functional=PASS
+rochester	main	2f02aa7	4	CLEAN	Rochester-Regular=0 functional=PASS
+rufina	main	86aa896	3	CLEAN	Rufina-Bold=0 functional=PASS; Rufina-Regular=0 functional=PASS
+spirax	main	2a5ce4a	3	CLEAN	Spirax-Regular=0 functional=PASS
+squadaone	main	d287402	4	CLEAN	SquadaOne-Regular=0 functional=PASS
+swankyandmoomoo	main	e99618c	3	CLEAN	SwankyandMooMoo=0 functional=PASS
+thegirlnextdoor	main	8ba0c81	3	CLEAN	TheGirlNextDoor=0 functional=PASS
+trochut	main	43cbedf	3	CLEAN	Trochut-Bold=0 functional=PASS; Trochut-Italic=0 functional=PASS; Trochut-Regular=0 functional=PASS
+wendyone	main	15dddb3	3	CLEAN	WendyOne-Regular=0 functional=PASS
