@@ -1,0 +1,92 @@
+== anchors: style, FFTM?, fractional anchors, of which otRound != trunc, release says
+Thabit-Bold                  FFTM       16    16  TRUNC=16
+Thabit                       FFTM       65    61  TRUNC=61
+Thabit-Oblique               FFTM      530   323  TRUNC=322 BOTH=1
+Thabit-BoldOblique           FFTM      366   235  TRUNC=234 BOTH=1
+
+== underline: styles the patch gave =20190317
+ComicRelief-Regular          SFD 3.2 FFTM None UnderlinePosition -185 UnderlineWidth 175 -> old rule -272, new rule -97; release -97
+ComicRelief-Bold             SFD 3.2 FFTM None UnderlinePosition -185 UnderlineWidth 175 -> old rule -272, new rule -97; release -97
+
+== offset: styles the patch gave --fontforge-legacy-offset-metrics with offset-mode fields
+80 styles
+HerrVonMuellerhoff-Regular   OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Lekton-Bold                  OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Lekton-Italic                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Lekton-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Miama-Regular                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+NixieOne-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Puritan-Bold                 OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Puritan-BoldItalic           OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Puritan-Italic               OS2WinDOffset HheadDOffset
+Puritan-Regular              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+RussoOne-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Smythe-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+TulpenOne-Regular            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+UnifrakturMaguntia-Book      OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MountainsofChristmas-Bold    OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MountainsofChristmas-Regular OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Rochester-Regular            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Smokum-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Ultra-Regular                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Italiana-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+KellySlab-Regular            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+KottaOne-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Ledger-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+LilitaOne-Regular            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Lohit-Bengali                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Lohit-Tamil                  OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+LovedbytheKing               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Lustria-Regular              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Macondo-Regular              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Magra-Bold                   OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Magra-Regular                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Marvel-Bold                  OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Marvel-BoldItalic            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Marvel-Italic                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Marvel-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MedulaOne-Regular            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Megrim                       OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MonsieurLaDoulaise-Regular   OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MrBedfort-Regular            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MrDafoe-Regular              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MrDeHaviland-Regular         OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MrsSaintDelafield-Regular    OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+MrsSheppards-Regular         OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Niconne-Regular              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+NothingYouCouldDo            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Numans-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Overlock-Black               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Overlock-BlackItalic         OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Overlock-Bold                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Overlock-BoldItalic          OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Overlock-Italic              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Overlock-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+OverlockSC-Regular           OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+PassionOne-Black             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+PassionOne-Bold              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+PassionOne-Regular           OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+PatuaOne-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Piedra-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Poly-Regular                 OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+PortLligatSans-Regular       OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+PortLligatSlab-Regular       OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Quantico-Bold                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Quantico-BoldItalic          OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Quantico-Italic              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Quantico-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+RibeyeMarrow-Regular         OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Rosarivo-Italic              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Rosarivo-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+RougeScript-Regular          OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Ruluko-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Sail-Regular                 OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Salsa-Regular                OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+SquadaOne-Regular            OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+TheGirlNextDoor              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+TitanOne-Regular             OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Trochut-Bold                 OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Trochut-Italic               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Trochut-Regular              OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Varela-Regular               OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset
+Viga-Regular                 OS2WinAOffset OS2WinDOffset HheadAOffset HheadDOffset

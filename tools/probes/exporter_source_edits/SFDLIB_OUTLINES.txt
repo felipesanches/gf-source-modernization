@@ -1,0 +1,2 @@
+ComicRelief-Regular.edited.sfd: 22 glyphs touched; exact 22, truetype 22; release == otRound(sfdLib) in 22 of 22 (0 not comparable: composite or absent)
+ComicRelief-Bold.edited.sfd: 216 glyphs touched; exact 216, truetype 216; release == otRound(sfdLib) in 216 of 216 (0 not comparable: composite or absent)
