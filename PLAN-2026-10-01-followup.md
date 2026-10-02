@@ -34,6 +34,7 @@ commit), never a converter hack.
 | 11 | sfdLib interpolated-point reading, opt-in (Comic Relief was built with sfdLib 2.0.0) | 2 | verified by emulation | outlines/ |
 | 12 | Thabit: lookupflag on every lookup, baselig anchor names | 2 | patches | next-provenance/probes/ |
 | 13 | aalt language systems (Poly-Italic); legacy offset win/hhea metrics (4 families) | 1 + 4 | prototypes | next-emptygpos/, next-vmetrics/ |
+| 14 | `parse_point_flags` / `is_smooth_from_flags` read a flags token like `0x80` as hex; in SFD it is flags 0 with hint mask 0x80, so smoothness/force-open can be misread | unknown (no gate row traced to it yet) | found 2026-10-02 by the Comic Relief agent; not fixed | research-scratch/sfd-reland-comicrelief-2026-10-02 |
 
 ## 2. Source edits to write into plans/ (ours, mechanical, already verified)
 
