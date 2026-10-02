@@ -29,7 +29,7 @@ Per style and check: `triage.tsv`. Rerun:
 | I. pairing | Lohit-Bengali, Lohit-Tamil | paired with the wrong revision | section 3: 0df83ad / 361b23b |
 | J. Comic Relief | ComicRelief x2 | sfdLib 2.0.0 outlines, localized names (IDs 2/17/22 in other languages), underline position | fix 11 + localized Name Table Entries |
 | K. italic flag | Kristi, NovaScript | fontc sets ITALIC from the italic angle | disclosed (decided) |
-| L. Wallpoet | Wallpoet (1) | `Scaron` uses the circumflex flipped (scale 0.97,-0.63); the release keeps it a composite, the build decomposes it and the points round 1 unit differently | open: check whether fontc decomposes flipped components only when reversing direction; otherwise disclose |
+| L. Wallpoet | Wallpoet (1) | FIXED 2026-10-02: gftools-rust decomposed the flipped component by default; config.yaml now says decomposeTransformedComponents: false (logs/reland-2026-10-02-components) | done |
 | M. Overlock-BlackItalic line spacing | 1 | fontc 1.0.0 misses "Italic" in the master name | section 4: gftools-rust fontc bump |
 
 Groups A, B and K are decided (disclose): 9 styles that functionally match except for

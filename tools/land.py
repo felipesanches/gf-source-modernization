@@ -378,7 +378,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         notes = workarounds.apply_all(g, src)
         per_style.append({"row": r, "flags": flags, "notes": notes, "glyphs": g})
     cfg = os.path.join(d, "sources", "config.yaml")
-    builder_keys = "noProductionNames: true\n" + ("reverseOutlineDirection: false\n" if keep else "")
+    builder_keys = recipe.builder_keys([r["shipped"] for r in rows], keep)
     if rows[0]["kind"] == "allerta":
         text = builder_keys + open(cfg).read().rstrip("\n") + "\n"
         for p in per_style:
@@ -402,7 +402,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     for p in per_style:
         name = built_name(p["glyphs"])
         if name not in built:
-            results.append((p["row"]["style"], None, ["BUILD: %s not produced (%s)" % (name, ", ".join(built) or "nothing")]))
+            tail = [l.strip() for l in (r.stderr + r.stdout).splitlines() if l.strip()][-3:]
+            results.append((p["row"]["style"], None, ["BUILD: %s not produced (%s)" % (name, ", ".join(built) or "nothing")]
+                            + ["builder: " + l[:300] for l in tail]))
             continue
         font = os.path.join(ttf_dir, name)
         n, blocking = gate(p["row"]["shipped"], font, scratch)

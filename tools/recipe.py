@@ -81,6 +81,42 @@ def directions_uniform(shipped):
     return cw == 0 or ccw == 0
 
 
+def component_shapes(shipped):
+    """Which component structures a release keeps that the builder would otherwise undo:
+    'transformed' (a component scaled, flipped or rotated) and 'nested' (a component
+    that is itself a composite). gftools-builder decomposes the first and flattens the
+    second unless config.yaml says decomposeTransformedComponents / flattenComponents
+    false."""
+    glyf = TTFont(shipped).get("glyf")
+    found = set()
+    if glyf is None:
+        return found
+    for name in glyf.keys():
+        g = glyf[name]
+        if not g.isComposite():
+            continue
+        for c in g.components:
+            t = getattr(c, "transform", None)
+            if t is not None and t != [[1, 0], [0, 1]]:
+                found.add("transformed")
+            if glyf[c.glyphName].isComposite():
+                found.add("nested")
+    return found
+
+
+def builder_keys(shipped_fonts, keep_direction):
+    """The gftools-builder keys for sources/config.yaml beyond sources."""
+    keys = ["noProductionNames: true"]
+    if keep_direction:
+        keys.append("reverseOutlineDirection: false")
+    shapes = set().union(*(component_shapes(s) for s in shipped_fonts))
+    if "transformed" in shapes:
+        keys.append("decomposeTransformedComponents: false")
+    if "nested" in shapes:
+        keys.append("flattenComponents: false")
+    return "".join(k + "\n" for k in keys)
+
+
 def fontforge_build(shipped):
     """The build stamp of the FontForge that exported the release, as Unix time, or
     None when the release has no FFTM table (not exported by FontForge)."""
