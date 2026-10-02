@@ -1,0 +1,11 @@
+corben: RESIDUAL-UNPUBLISHED-CONVERTER @ a198c22, 19 commits, 6 edit(s): Corben-Regular=0 functional=PASS; Corben-Bold=0 functional=FAIL(rendering)
+     cmap         PASS 380 codepoints, exact
+     shaping      PASS 853207 runs shaped, 0 differ
+     rendering    FAIL diffenator3 3 glyph / 3 word diffs (3 / 3 confirmed); 3 of 3 changed outlines draw different ink
+         - diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 138px, U+0141 61px, U+0142 55px
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'ÆØÅæøå' 57px, 'Adoodleełgi' 25px, 'MŁODZIEŻ' 20px
+         - 3 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): AE 1646px, Lslash 492px, lslash 477px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 540 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

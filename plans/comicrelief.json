@@ -16,5 +16,18 @@
    "body": "The release sets fsSelection bit 7 (USE_TYPO_METRICS); it was built with sfdLib 2.0.0, which sets it whenever OS2_UseTypoMetrics is present. This file says 0."
   }
  ],
- "disclose": []
+ "disclose": [],
+ "flags": {
+  "ComicRelief-Regular": {
+   "drop": [
+    "--fontforge-notdef"
+   ]
+  },
+  "ComicRelief-Bold": {
+   "drop": [
+    "--fontforge-notdef"
+   ]
+  }
+ },
+ "flags_reason": "--fontforge-notdef dropped: the release was built with sfdLib 2.0.0 and a UFO compiler, not exported by FontForge, and its .notdef is not FontForge's rectangle (research-scratch sfd-reland-notdef/notdef_census.py)."
 }

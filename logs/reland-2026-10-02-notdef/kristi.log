@@ -1,0 +1,13 @@
+kristi: RESIDUAL-UNPUBLISHED-CONVERTER @ 5599241, 5 commits, 2 edit(s): Kristi-Regular=0 functional=FAIL(names+line_spacing)
+     cmap         PASS 202 codepoints, exact
+     shaping      PASS 537190 runs shaped, 0 differ
+     rendering    PASS diffenator3 7 glyph / 0 word diffs (0 / 0 confirmed); 0 of 28 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC gained, REGULAR lost
+         - head.macStyle italic: release 0, build 1
+         - x-height as layout engines read it (CSS ex / cap units): release 784, build 742 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+         - ... 1 more
+     advances     PASS 207 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 0 it does not
