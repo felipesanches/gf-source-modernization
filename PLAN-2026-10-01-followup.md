@@ -1,5 +1,9 @@
 # Follow-up plan after the re-land on upstream tools (2026-10-01)
 
+**Latest (2026-10-02): 108/149 functional PASS, 105 CLEAN** with fixes 1-3, 5, 6 and the
+section-2 edits (babelfont #101-#106). What still fails, grouped by fix:
+investigations/reland-2026-10-02/RESIDUALS.md.
+
 Baseline: all 101 repositories re-landed with babelfont upstream main 004200b7 and gftools-rust
 ade8776 (fontc 1.0.0). `logs/reland-2026-10-01/`, `tools/reland_triage.py`: **149 styles, 39 pass
 the functional gate, 29 CLEAN** (before: 26 of 94). Research per failure cluster:
