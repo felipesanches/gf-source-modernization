@@ -24,6 +24,9 @@ Columns:
              fork   googlefonts fork, base = fork master = `commit`
              allerta  added to the existing googlefonts/allerta
              upstream no googlefonts repository yet
+             glyphs   the source already is a .glyphs file: base = the upstream
+                      repository whose history googlefonts/<repo> carries,
+                      `commit` = its revision; no conversion (see GLYPHS below)
   base       where the unmodified files come from (archive slug)
   commit     the revision METADATA.pb records
   style      shipped style name (the .ttf basename)
@@ -47,6 +50,15 @@ unifrakturcook unifrakturmaguntia""".split()
 # googlefonts/<repo> differs from the family directory in one case: the
 # repository created for UnifrakturMaguntia is named `unifraktur`.
 REPO_NAME = {"unifrakturmaguntia": "unifraktur"}
+
+
+# Families represented by an existing Glyphs source instead of a converted .sfd: the
+# most faithful available source of what shipped (Felipe, 2026-10-01). Play ships
+# v2.101, exported from alexeiva/play sources/Play.glyphs at d84ad58; the
+# googlefontdirectory-hg .sfd are v1 (investigations/play/FINDINGS.md). METADATA.pb
+# still records the hg commit, so the revision is given here, not read from it.
+GLYPHS = {"play": ("alexeiva/play", "d84ad58f3a3bd2c735f431480f969283446b509f",
+                   "sources/Play.glyphs")}
 
 
 def metadata_commit(lic, fam):
@@ -79,6 +91,11 @@ def batch6_rows():
             prefix = f"{lic}/{fam}/"
             if not src.startswith(prefix):
                 sys.exit(f"FATAL: {fam}/{style}: source {src} is outside {prefix}")
+            if fam in GLYPHS:
+                base, rev, gsrc = GLYPHS[fam]
+                yield (REPO_NAME.get(fam, fam), fam, lic, "glyphs", base, rev,
+                       style, gsrc, shipped)
+                continue
             yield (REPO_NAME.get(fam, fam), fam, lic, "hg", slug, commit,
                    style, src[len(prefix):], shipped)
 

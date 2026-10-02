@@ -1,0 +1,12 @@
+{
+  "repo": "play",
+  "why": "Play ships v2.101, exported from alexeiva/play sources/Play.glyphs at d84ad58 (investigations/play/FINDINGS.md); the repository carries that history and builds the Glyphs source as is (Felipe, 2026-10-01). No documented edits.",
+  "commits": [],
+  "flags": {},
+  "earlier_sources": [
+    "googlefontdirectory-hg `ofl/play/src/Play-{Regular,Bold}-TTF.sfd` at 52f780bc9d19 (https://github.com/googlefonts/googlefontdirectory-hg): FontForge sources of v1.001/v1.002 (2011), the revision google/fonts METADATA.pb recorded before; they lack 133 of the shipped codepoints and the v2 feature code.",
+    "librefonts/play 0d4e17b (2014, https://github.com/librefonts/play): byte-identical copies of those .sfd plus TTX dumps.",
+    "google/fonts 874c7ceb1 (2016-10-31) added `ofl/play/Play-{Regular,Bold}.glyphs` (Glyphs 1 era), `Play-{Regular,Bold}.vfb` and `Play-Bold.vfbak`; e36afc756 deleted them.",
+    "m4rc1e/play 3565c8a (https://github.com/m4rc1e/play): a fork with a tree identical to this repository's d84ad58."
+  ]
+}

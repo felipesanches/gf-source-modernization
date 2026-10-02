@@ -22,6 +22,12 @@ sfd-batch5/tools/drift/build_series.py builds it):
      and tools/functional_gate.py (shaping, rendering, names, line spacing,
      advances, GDEF). A landing is CLEAN only if all three pass.
 
+A row of kind `glyphs` (families.tsv) says the source already IS a .glyphs file,
+<base>@<commit>:<source>: step 1 is that upstream history, step 3 must be empty
+(no .glyphs edit ops yet), and step 4 runs no converter -- it only adds
+sources/config.yaml, built and gated the same way. No converter is cited because
+none runs; the commit message and README say so.
+
 Nothing is pushed. The remote is set so that Felipe's push is one command.
 
 Usage: land.py <repo> [--rebuild]      (repo = googlefonts/<repo> name, families.tsv col 1)
@@ -58,8 +64,15 @@ BF = os.path.join(BF_TREE, "target-heights/release/babelfont")
 # measurement only; push.sh refuses such a landing.
 BF_UPSTREAM = "simoncozens/babelfont-rs"
 BF_WHERE = BF_UPSTREAM            # set by check_converter()
-B3 = "/home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder"
+B3_DEFAULT = "/home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder"
 B3_ID, FONTC_ID = "ade8776", "1.0.0"   # simoncozens/gftools-rust main; fontc as it pins it
+# B3=<path> builds with another gftools-builder, for measurement only: the landing is then
+# marked UNPUBLISHED-BUILDER (push.sh pushes only CLEAN) and its commit names the variant
+# from B3_NOTE= instead of claiming gftools-rust B3_ID.
+B3 = os.environ.get("B3") or B3_DEFAULT
+B3_PUBLISHED = os.path.realpath(B3) == os.path.realpath(B3_DEFAULT)
+B3_WHERE = ("gftools-rust %s" % B3_ID if B3_PUBLISHED else "UNPUBLISHED variant: %s"
+            % os.environ.get("B3_NOTE", B3))
 D3 = "/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3"
 PY = "/home/fsanches/compartilhado/gftools/venv/bin/python3"
 TG = "/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py"
@@ -82,7 +95,9 @@ SUBSET = re.compile(r"\.(latin|latin-ext|cyrillic|cyrillic-ext|greek|greek-ext|"
                     r"bengali|oriya|gujarati|gurmukhi|telugu|kannada|malayalam)$")
 
 BRANCH = {"hg": "main", "fork": "modernize-sfd-to-glyphs",
-          "allerta": "add-allerta-stencil", "upstream": "modernize-sfd-to-glyphs"}
+          "allerta": "add-allerta-stencil", "upstream": "modernize-sfd-to-glyphs",
+          # googlefonts/<repo> created empty, to carry the upstream's history
+          "glyphs": "main"}
 
 
 # Why a per-release flag differs between the styles of one family.
@@ -251,7 +266,18 @@ def template(repo, rows, d, plan=None):
     tracked = git(d, "ls-files").stdout.splitlines()
     old_readme = open(os.path.join(d, "README.md")).read() if "README.md" in tracked else ""
     disp = display_name(rows[0]["family"])
-    readme = textwrap.dedent("""\
+    if rows[0]["kind"] == "glyphs":
+        readme = textwrap.dedent("""\
+            # %s
+
+            `%s` is the designer's Glyphs source, as published in
+            https://github.com/%s at commit %s, the source of the
+            fonts Google Fonts ships; this repository carries that history. It builds with
+            [gftools-builder](https://github.com/simoncozens/gftools-rust) and fontc
+            without any conversion. Every change made to it since is its own commit.
+            """) % (disp, rows[0]["source"], rows[0]["base"], rows[0]["commit"][:7])
+    else:
+        readme = textwrap.dedent("""\
         # %s
 
         The sources in `sources/` were converted from this repository's FontForge
@@ -262,6 +288,11 @@ def template(repo, rows, d, plan=None):
 
         The original FontForge sources remain in the git history.
         """) % disp
+    earlier = (plan or {}).get("earlier_sources", [])
+    if earlier:
+        readme += ("\n## Earlier sources\n\nOther sources of this family, kept on record; "
+                   "none of them is what Google Fonts ships:\n\n")
+        readme += "".join("- %s\n" % t for t in earlier)
     disclose = (plan or {}).get("disclose", [])
     if disclose:
         readme += ("\n## Known differences from the released fonts\n\n"
@@ -307,6 +338,9 @@ def template(repo, rows, d, plan=None):
 # --- step 3: documented .sfd edits --------------------------------------------
 def edits(repo, rows, d, plan):
     made = []
+    if plan["commits"] and rows[0]["kind"] == "glyphs":
+        raise LandError("plans/%s.json has commits, but documented edits to a .glyphs "
+                        "source have no ops yet (tools/sfd_edit.py edits .sfd only)" % repo)
     by_style = {r["style"]: r for r in rows}
     for c in plan["commits"]:
         styles = list(by_style) if c.get("styles", "*") in ("*", ["*"]) else c["styles"]
@@ -367,7 +401,11 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     os.makedirs(os.path.join(d, "sources"), exist_ok=True)
     per_style = []
     keep = recipe.keep_direction([r["shipped"] for r in rows])
-    for r in rows:
+    glyphs = rows[0]["kind"] == "glyphs"
+    for r in rows if glyphs else []:
+        # the source is already .glyphs: no converter, no flags, no workarounds
+        per_style.append({"row": r, "flags": [], "notes": [], "glyphs": os.path.join(d, r["source"])})
+    for r in [] if glyphs else rows:
         src = os.path.join(d, r["source"])
         text = open(src, encoding="utf-8", errors="replace").read()
         f = plan["flags"].get(r["style"], {})
@@ -379,7 +417,15 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         per_style.append({"row": r, "flags": flags, "notes": notes, "glyphs": g})
     cfg = os.path.join(d, "sources", "config.yaml")
     builder_keys = recipe.builder_keys([r["shipped"] for r in rows], keep)
-    if rows[0]["kind"] == "allerta":
+    if glyphs:
+        # a Glyphs.app export uses production names; only a converted .sfd's names are final
+        builder_keys = builder_keys.replace("noProductionNames: true\n", "")
+    if glyphs:
+        with open(cfg, "w") as fh:
+            fh.write("buildVariable: false\n" + builder_keys + "sources:\n")
+            for s in sorted({os.path.relpath(r["source"], "sources") for r in rows}):
+                fh.write("  - %s\n" % s)
+    elif rows[0]["kind"] == "allerta":
         text = builder_keys + open(cfg).read().rstrip("\n") + "\n"
         for p in per_style:
             text += "  - %s.glyphs\n" % p["row"]["style"]
@@ -400,7 +446,8 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     results = []
     functional = {}            # style -> tools/functional_gate.py verdict
     for p in per_style:
-        name = built_name(p["glyphs"])
+        # one .glyphs file with several instances: each style is its own instance
+        name = p["row"]["style"] + ".ttf" if glyphs else built_name(p["glyphs"])
         if name not in built:
             tail = [l.strip() for l in (r.stderr + r.stdout).splitlines() if l.strip()][-3:]
             results.append((p["row"]["style"], None, ["BUILD: %s not produced (%s)" % (name, ", ".join(built) or "nothing")]
@@ -422,7 +469,11 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
 
     # retire the converted source(s)
     kind = rows[0]["kind"]
-    if kind in ("hg", "fork"):
+    if glyphs:
+        retired = []
+        what = ("No conversion: %s is the upstream's Glyphs source, built as is. No "
+                "converter runs, so none is cited." % describe_sources(sorted({r["source"] for r in rows})))
+    elif kind in ("hg", "fork"):
         retired = git(d, "ls-files", "src").stdout.split()
         if retired:
             git(d, "rm", "-r", "-q", "src")
@@ -448,10 +499,14 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     for p in per_style:
         every += [f for f in p["flags"] if f not in every]
     common = [f for f in every if 2 * sum(f in p["flags"] for p in per_style) > len(per_style)]
-    lines = ["Convert to .glyphs with babelfont %s" % bf_rev, ""]
-    lines += wrap("Converted from %s%s with babelfont %s (%s), FontForge-fidelity filters "
+    if glyphs:
+        lines = ["Add a gftools-builder config for %s" % rows[0]["source"], ""]
+        lines += wrap(what, "", "")
+    else:
+        lines = ["Convert to .glyphs with babelfont %s" % bf_rev, ""]
+        lines += wrap("Converted from %s%s with babelfont %s (%s), FontForge-fidelity filters "
                   "only:" % (srcs, corrected, bf_rev, BF_WHERE), "", "")
-    lines += wrap(" ".join(common), "  ", "  ")
+        lines += wrap(" ".join(common), "  ", "  ")
     for p in per_style:
         extra = [f for f in p["flags"] if f not in common]
         missing = [f for f in common if f not in p["flags"]]
@@ -480,16 +535,16 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     gf_ref = sh("git", "-C", GF, "rev-parse", "--short=12", "HEAD").stdout.strip()
     lines.append("")
     if clean:
-        lines += textwrap.wrap("Builds with gftools-builder (gftools-rust %s, fontc %s) and matches the binaries "
+        lines += textwrap.wrap("Builds with gftools-builder (%s, fontc %s) and matches the binaries "
                                "google/fonts %s ships: 0 blocking rows under the table gate, "
                                "exactly the release's codepoints, and functionally equivalent under "
                                "tools/functional_gate.py (cmap, shaping, rendering, names, line "
                                "spacing, advances, GDEF), %d style(s)."
-                               % (B3_ID, FONTC_ID, gf_ref, len(results)), 72)
+                               % (B3_WHERE, FONTC_ID, gf_ref, len(results)), 72)
     else:
-        lines += textwrap.wrap("Builds with gftools-builder (gftools-rust %s, fontc %s). Against google/fonts %s, "
+        lines += textwrap.wrap("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "
                                "under the table gate and tools/functional_gate.py:"
-                               % (B3_ID, FONTC_ID, gf_ref), 72)
+                               % (B3_WHERE, FONTC_ID, gf_ref), 72)
         for st, n, blocking in results:
             if n is None:
                 lines.append("  %s: %s" % (st, blocking[0]))
@@ -498,7 +553,8 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
             bad = functional_gate.failed_checks(functional[st])
             lines += wrap("%s: %s; %s" % (st, table, "functionally equivalent" if not bad else
                                           "functionally different in " + ", ".join(bad)))
-    lines += [""] + textwrap.wrap(what, 72)
+    if not glyphs:
+        lines += [""] + textwrap.wrap(what, 72)
     head = commit(d, "\n".join(lines), "sources")
     shutil.rmtree(scratch, ignore_errors=True)
     return head, results, functional
@@ -509,7 +565,10 @@ def main():
     rebuild = "--rebuild" in sys.argv
     rows = family_rows(repo)
     plan = load_plan(repo)
-    bf_rev, bf_upstream = check_converter()
+    if rows[0]["kind"] == "glyphs":
+        bf_rev, bf_upstream = None, True       # no converter runs, none is cited
+    else:
+        bf_rev, bf_upstream = check_converter()
     d = os.path.join(OUT, repo)
     if os.path.exists(d):
         if not rebuild:
@@ -539,6 +598,8 @@ def main():
     status = "CLEAN" if all(x == 0 and fverdict(st) == "PASS" for st, x, _ in results) else "RESIDUAL"
     if not bf_upstream:
         status += "-UNPUBLISHED-CONVERTER"      # push.sh pushes only CLEAN
+    if not B3_PUBLISHED:
+        status += "-UNPUBLISHED-BUILDER"
     summary = "; ".join("%s=%s functional=%s" % (st, x if x is not None else "BUILD", fverdict(st))
                         for st, x, _ in results)
     with open(LANDED, "a") as fh:
