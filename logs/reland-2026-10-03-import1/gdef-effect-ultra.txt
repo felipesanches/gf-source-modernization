@@ -1,0 +1,43 @@
+built {'nogdef': 'gdefprobe/ultra/nogdef/fonts/ttf/Ultra-Regular.ttf', 'gdef': 'gdefprobe/ultra/gdef/fonts/ttf/Ultra-Regular.ttf'}
+=== nogdef->gdef: FAIL
+Ultra-Regular Ultra-Regular.ttf: functional FAIL
+  cmap         PASS 371 codepoints, exact
+  shaping      FAIL 707265 runs shaped, 885 differ
+      - default features, singles: 3 of 371 runs differ
+      - default features, base+mark: 837 of 837 runs differ
+      - default features, base+mark+mark: 45 of 45 runs differ
+  rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+  names        PASS IDs 1 2 4 6 16 17 21 22 equal
+  line_spacing PASS per-platform ascender/descender/gap equal
+  advances     PASS 372 glyph advances compared, 0 differ
+  gdef         FAIL GDEF absent/present; 3 class difference(s) shaping reads, 1 it does not
+      - GDEF present in the build
+      - 3 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/1, uni0312 3/1, uni0315 3/1
+=== release->nogdef: FAIL
+Ultra-Regular Ultra-Regular.ttf: functional FAIL
+  cmap         PASS 371 codepoints, exact
+  shaping      FAIL 707265 runs shaped, 885 differ
+      - default features, singles: 3 of 371 runs differ
+      - default features, base+mark: 837 of 837 runs differ
+      - default features, base+mark+mark: 45 of 45 runs differ
+  rendering    FAIL diffenator3 3 glyph / 0 word diffs (3 / 0 confirmed); 0 of 0 changed outlines draw different ink
+      - diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0312 58px, U+0326 53px, U+0315 34px
+  names        PASS IDs 1 2 4 6 16 17 21 22 equal
+  line_spacing PASS per-platform ascender/descender/gap equal
+  advances     PASS 372 glyph advances compared, 0 differ
+  gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+=== release->gdef: FAIL
+Ultra-Regular Ultra-Regular.ttf: functional FAIL
+  cmap         PASS 371 codepoints, exact
+  shaping      FAIL 707265 runs shaped, 885 differ
+      - default features, singles: 3 of 371 runs differ
+      - default features, base+mark: 837 of 837 runs differ
+      - default features, base+mark+mark: 45 of 45 runs differ
+  rendering    FAIL diffenator3 3 glyph / 0 word diffs (3 / 0 confirmed); 0 of 0 changed outlines draw different ink
+      - diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0312 58px, U+0326 53px, U+0315 34px
+  names        PASS IDs 1 2 4 6 16 17 21 22 equal
+  line_spacing PASS per-platform ascender/descender/gap equal
+  advances     PASS 372 glyph advances compared, 0 differ
+  gdef         FAIL GDEF absent/present; 3 class difference(s) shaping reads, 1 it does not
+      - GDEF present in the build
+      - 3 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/1, uni0312 3/1, uni0315 3/1

@@ -1,0 +1,28 @@
+built {'nogdef': 'gdefprobe/smokum/nogdef/fonts/ttf/Smokum-Regular.ttf', 'gdef': 'gdefprobe/smokum/gdef/fonts/ttf/Smokum-Regular.ttf'}
+=== nogdef->gdef: PASS
+Smokum-Regular Smokum-Regular.ttf: functional PASS
+  cmap         PASS 368 codepoints, exact
+  shaping      PASS 737217 runs shaped, 0 differ
+  rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+  names        PASS IDs 1 2 4 6 16 17 21 22 equal
+  line_spacing PASS per-platform ascender/descender/gap equal
+  advances     PASS 370 glyph advances compared, 0 differ
+  gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 2 it does not
+=== release->nogdef: PASS
+Smokum-Regular Smokum-Regular.ttf: functional PASS
+  cmap         PASS 368 codepoints, exact
+  shaping      PASS 737217 runs shaped, 0 differ
+  rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+  names        PASS IDs 1 2 4 6 16 17 21 22 equal
+  line_spacing PASS per-platform ascender/descender/gap equal
+  advances     PASS 370 glyph advances compared, 0 differ
+  gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+=== release->gdef: PASS
+Smokum-Regular Smokum-Regular.ttf: functional PASS
+  cmap         PASS 368 codepoints, exact
+  shaping      PASS 737217 runs shaped, 0 differ
+  rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+  names        PASS IDs 1 2 4 6 16 17 21 22 equal
+  line_spacing PASS per-platform ascender/descender/gap equal
+  advances     PASS 370 glyph advances compared, 0 differ
+  gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 2 it does not

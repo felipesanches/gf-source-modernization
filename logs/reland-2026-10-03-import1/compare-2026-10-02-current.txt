@@ -1,0 +1,20 @@
+only in 2026-10-02-current: abrilfatface allerta corben creepstercaps herrvonmuellerhoff keaniaone kellyslab kottaone ledger lohittamil lovedbytheking loveyalikeasister lustria magra marvel medulaone meiescript mergeone missfajardose monsieurladoulaise mountainsofchristmas mrbedfort mrdafoe mrdehaviland mrssaintdelafield mrssheppards niconne nixieone nosifercaps nothingyoucoulddo novacut novaflat novamono novaoval novaround novascript novaslim novasquare numans oleoscriptswashcaps overlock overlocksc overtherainbow passionone patrickhand patuaone piedra pirataone play poly portlligatsans portlligatslab puritan quantico rambla revalia ribeyemarrow rochester rosarivo rougescript rufina ruluko sail salsa sixcaps spirax squadaone swankyandmoomoo textmeone thegirlnextdoor titanone titilliumweb trochut tulpenone unifraktur unifrakturcook varela viga wendyone
+
+FAIL -> PASS: 0
+
+PASS -> FAIL (regressions): 0
+
+still failing, checks changed: 2
+  miama                  Miama-Regular                      now fails gdef 
+  ultra                  Ultra-Regular                      now fails gdef 
+
+failing styles per check (2026-10-02-current -> 2026-10-03-import1, compared styles only):
+  cmap            1 ->   1
+  shaping         5 ->   5
+  rendering       4 ->   4
+  names           2 ->   2
+  line_spacing    3 ->   3
+  advances        0 ->   0
+  gdef            1 ->   3
+
+functional PASS: 25 -> 25 of 35 styles; written /home/fsanches/compartilhado/tmp/agent-import1/sfd-reland/logs/reland-2026-10-03-import1/compare-2026-10-02-current.tsv

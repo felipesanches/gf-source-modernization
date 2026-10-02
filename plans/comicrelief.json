@@ -67,6 +67,20 @@
    ],
    "subject": "Set UnderlinePosition so the build gets the release's -97",
    "body": "Both released styles have post.underlinePosition -97 and underlineThickness 175. sfdLib 2.0.0 moved this file's UnderlinePosition -185 up by half the UnderlineWidth 175 ('FontForge does not match OpenType here', parser.py), giving -97.5, which ufo2ft rounded to -97. These sources are converted with babelfont's --fontforge-underline-position, the rule of FontForge's exporter up to tag 20170731: position - width/2, truncated toward zero, which turns -185 into -272. UnderlinePosition -10 is the value that rule turns into the release's -97 (-10 - 87.5 = -97.5, truncated); UnderlineWidth stays 175. The build's underline is the release's (top -97, 175 thick); the number stated here is no longer its centre, which is what FontForge's UnderlinePosition means."
+  },
+  {
+   "styles": [
+    "ComicRelief-Regular",
+    "ComicRelief-Bold"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2Version 4"
+    ]
+   ],
+   "subject": "State OS/2 version 4, as the release has",
+   "body": "Both released styles have an OS/2 version 4 table with fsSelection bit 7 (USE_TYPO_METRICS) set; sfdLib 2.0.0 and ufo2ft wrote version 4. This file states version 3, in which bits 7-9 do not exist, so a converter honouring it drops USE_TYPO_METRICS."
   }
  ],
  "disclose": [],

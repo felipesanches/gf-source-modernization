@@ -1,0 +1,40 @@
+--- a/tools/recipe.py (HEAD + pending/recipe-combined.patch)
++++ b/tools/recipe.py
+@@ -34,10 +34,6 @@
+ # The old divisor entered in 37d20840 (2009-05-27), before every stamp in this batch.
+ # (5fba6c9 is the same change in a history with no common ancestor with 4d34d21ef866.)
+ FONTFORGE_HEIGHT_MEAN_FIXED = 1337023489
+-# FontForge raises the OS/2 version to 4 for USE_TYPO_METRICS from tag 20150824 on; up to
+-# 20141230 it wrote the source's OS2Version 1-3 as stated, so bit 7 never shipped
+-# (investigations/reland-2026-10-01/linespacing/bit7_sweep.txt).
+-FONTFORGE_OS2_VERSION_RAISED = 1440374400   # 2015-08-24T00:00:00Z
+ UNIX_FROM_1904 = 2082844800
+ # FontForge's TTF exporter writes post.underlinePosition as UnderlinePosition - width/2 up
+ # to tag 20170731 and + width/2 from 20190317 on (tottf.c dumppost; commit 9f667c9c,
+@@ -153,21 +149,15 @@
+         flags.insert(0, "--fontforge-height-glyph-count-mean")
+     if built is not None and built < FONTFORGE_ONCURVE_BBOX_FIXED:
+         flags.insert(0, "--fontforge-legacy-offset-metrics")
+-    if built is not None and built < FONTFORGE_OS2_VERSION_RAISED:
+-        flags.append("--fontforge-legacy-os2-version")
+-    # FontForge writes GDEF only when it exports OpenType layout; a release exported
+-    # with only the legacy 'kern' table (Miama, Ultra, Nosifer) has none to reproduce.
+-    if "GDEF" in TTFont(shipped):
+-        flags.append("--fontforge-gdef-classes")
++    # The SFD reader drops fsSelection bits 7-9 for a stated OS2Version 1-3, writes the
++    # glyph classes as GDEF and marks anchors as explicit (no Glyphs propagation).
+     # FontForge's exporter synthesizes a .notdef when the source has none (a no-op
+     # otherwise), and sets post.isFixedPitch when every glyph shares one advance.
+-    # After the GDEF filter, which reads "no .notdef in the source"; before direction
+-    # correction, so the synthesized contour is normalised too.
++    # Before direction correction, so the synthesized contour is normalised too.
+     flags += ["--fontforge-notdef", "--fontforge-fixed-pitch"]
+-    # FontForge exports only a glyph's own anchors, and writes anchor coordinates
+-    # truncated toward zero.
++    # FontForge writes anchor coordinates truncated toward zero.
+     if built is not None:
+-        flags += ["--fontforge-no-anchor-propagation", "--fontforge-truncate-anchors"]
++        flags.append("--fontforge-truncate-anchors")
+         # Anchor lookups (SFD Lookup types 259-262) are written as FontForge exported
+         # them, with coverage from the anchors rather than from glyph classes.
+         if re.search(r"^Lookup: 2(59|6[012]) ", sfd_text, re.M):

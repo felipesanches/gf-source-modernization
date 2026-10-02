@@ -1,0 +1,20 @@
+--- a/plans/comicrelief.json
++++ b/plans/comicrelief.json
+@@ -9,11 +9,15 @@
+    "ops": [
+     [
+      "setfield",
++     "OS2Version 4"
++    ],
++    [
++     "setfield",
+      "OS2_UseTypoMetrics 1"
+     ]
+    ],
+-   "subject": "Set USE_TYPO_METRICS, as the release has",
+-   "body": "The release sets fsSelection bit 7 (USE_TYPO_METRICS); it was built with sfdLib 2.0.0, which sets it whenever OS2_UseTypoMetrics is present. This file says 0."
++   "subject": "Set OS/2 version 4 and USE_TYPO_METRICS, as the release has",
++   "body": "The release has an OS/2 table of version 4 with fsSelection bit 7 (USE_TYPO_METRICS); it was built with sfdLib 2.0.0, which writes version 4 and sets the bit whenever OS2_UseTypoMetrics is present. This file says version 3 and 0."
+   },
+   {
+    "styles": [

@@ -1,0 +1,17 @@
+miama: RESIDUAL-UNPUBLISHED-CONVERTER @ 0ee618e, 3 commits, 0 edit(s): Miama-Regular=1 functional=FAIL(shaping+rendering+names+gdef)
+   Miama-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 34 mark(s): only the release marks U+0300,U+0301,U+0302,U+0303,U+0304,U+0305,U+0306,U+0307,U+0308,U+0309,U+030A,U+030B,U+030C,U+030F,U+0311,U+0312,U+0313,U+0315,U+0316,U+0317,U+0323,U+0324,U+0325,U+0326,U+0327,U+0328,U+032D,U+032E,U+032F,U+0330,U+0331,U+0337,U+0338,U+0345; only ours marks none
+     cmap         PASS 1110 codepoints, exact
+     shaping      FAIL 1579738 runs shaped, 62033 differ
+         - default features, singles: 34 of 1110 runs differ
+         - default features, base+mark: 31053 of 31790 runs differ
+         - default features, base+mark+mark: 9231 of 9248 runs differ
+         - ... 1 more
+     rendering    FAIL diffenator3 34 glyph / 0 word diffs (34 / 0 confirmed); 0 of 0 changed outlines draw different ink
+         - diffenator3: 34 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+032D 136px, U+0326 129px, U+0330 97px, U+0317 96px, U+032E 96px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 1111 glyph advances compared, 0 differ
+     gdef         FAIL GDEF absent/present; 34 class difference(s) shaping reads, 1 it does not
+         - GDEF present in the build
+         - 34 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 3/1, dotbelowcomb 3/1, gravecomb 3/1, hookabovecomb 3/1, tildecomb 3/1, uni0302 3/1, uni0304 3/1, uni0305 3/1, uni0306 3/1, uni0307 3/1, uni0308 3/1, uni030A 3/1, uni030B 3/1, uni030C 3/1, uni030F 3/1

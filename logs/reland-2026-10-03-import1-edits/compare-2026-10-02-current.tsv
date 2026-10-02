@@ -1,0 +1,7 @@
+repo	style	old_verdict	new_verdict	old_table	new_table	old_fails	new_fails
+comicrelief	ComicRelief-Bold	PASS	PASS	0	0	-	-
+comicrelief	ComicRelief-Regular	PASS	PASS	0	0	-	-
+miama	Miama-Regular	FAIL(shaping+rendering+names)	FAIL(shaping+rendering+names+gdef)	0	2	names+rendering+shaping	gdef+names+rendering+shaping
+nosifer	Nosifer-Regular	FAIL(shaping+rendering)	FAIL(shaping+rendering)	0	0	rendering+shaping	rendering+shaping
+smokum	Smokum-Regular	PASS	PASS	3	3	-	-
+ultra	Ultra-Regular	FAIL(shaping+rendering)	FAIL(shaping+rendering+gdef)	3	5	rendering+shaping	gdef+rendering+shaping

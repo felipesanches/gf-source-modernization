@@ -1,0 +1,28 @@
+thabit: RESIDUAL-UNPUBLISHED-CONVERTER @ 631b8dc, 29 commits, 26 edit(s): Thabit-Bold=2 functional=PASS; Thabit=2 functional=PASS; Thabit-Oblique=2 functional=FAIL(line_spacing); Thabit-BoldOblique=2 functional=FAIL(line_spacing)
+   Thabit-Bold BLOCKING PfEd: whole-table difference
+   Thabit-Bold BLOCKING head.font_direction_hint [0, 2]
+   Thabit BLOCKING PfEd: whole-table difference
+   Thabit BLOCKING head.font_direction_hint [0, 2]
+   Thabit-Oblique BLOCKING PfEd: whole-table difference
+   Thabit-Oblique BLOCKING head.font_direction_hint [0, 2]
+     cmap         PASS 733 codepoints, exact
+     shaping      PASS 857614 runs shaped, 0 differ
+     rendering    PASS diffenator3 91 glyph / 142 word diffs (0 / 0 confirmed); 0 of 528 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC lost, REGULAR gained
+         - head.macStyle italic: release 1, build 0
+     advances     PASS 761 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+   Thabit-BoldOblique BLOCKING PfEd: whole-table difference
+   Thabit-BoldOblique BLOCKING head.font_direction_hint [0, 2]
+     cmap         PASS 734 codepoints, exact
+     shaping      PASS 834148 runs shaped, 0 differ
+     rendering    PASS diffenator3 98 glyph / 136 word diffs (0 / 0 confirmed); 0 of 534 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC lost, BOLD lost, REGULAR gained
+         - head.macStyle bold: release 1, build 0
+         - head.macStyle italic: release 1, build 0
+     advances     PASS 762 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

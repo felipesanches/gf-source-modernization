@@ -1,8 +1,155 @@
 {
  "repo": "miama",
- "commits": [],
+ "commits": [
+  {
+   "styles": [
+    "Miama-Regular"
+   ],
+   "ops": [
+    [
+     "setglyphclass",
+     "acutecomb 4"
+    ],
+    [
+     "setglyphclass",
+     "dotbelowcomb 4"
+    ],
+    [
+     "setglyphclass",
+     "gravecomb 4"
+    ],
+    [
+     "setglyphclass",
+     "hookabovecomb 4"
+    ],
+    [
+     "setglyphclass",
+     "tildecomb 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0302 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0304 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0305 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0306 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0307 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0308 4"
+    ],
+    [
+     "setglyphclass",
+     "uni030A 4"
+    ],
+    [
+     "setglyphclass",
+     "uni030B 4"
+    ],
+    [
+     "setglyphclass",
+     "uni030C 4"
+    ],
+    [
+     "setglyphclass",
+     "uni030F 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0311 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0312 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0313 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0315 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0316 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0317 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0324 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0325 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0326 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0327 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0328 4"
+    ],
+    [
+     "setglyphclass",
+     "uni032D 4"
+    ],
+    [
+     "setglyphclass",
+     "uni032E 4"
+    ],
+    [
+     "setglyphclass",
+     "uni032F 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0330 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0331 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0337 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0338 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0345 4"
+    ]
+   ],
+   "subject": "Class the combining marks as marks, as shapers treat them in the release",
+   "body": "The release was exported without OpenType layout: it has a legacy kern table and no GDEF, so shapers class its glyphs by Unicode category and treat these 34 combining marks (category Mn) as marks, giving them no advance after a base. This file leaves them automatic, which classes a glyph without anchors as a base. Stating GlyphClass 4 (mark) keeps the shaping the release has. Glyph list: every glyph the release (google/fonts ofl/miama/Miama-Regular.ttf) maps to a Unicode Mn code point."
+  }
+ ],
  "disclose": [
   "The released font has only a legacy `kern` table and no GPOS. fontc writes kerning as GPOS, and a font with GPOS no longer gets HarfBuzz's built-in placement of combining marks, so combining marks are positioned differently from the release (e.g. U+032D, U+0326, U+0330, U+032E, U+0317). Decided 2026-10-01: accept and disclose.",
-  "The build is flagged italic and named so where the release is not: fontc sets the OS/2 fsSelection ITALIC bit and name ID 2 \"Italic\" whenever the italic angle is non-zero (the source's angle here), while FontForge took italic from macStyle, which this source leaves upright; a .glyphs source cannot state otherwise. Decided 2026-10-01: disclose."
+  "The build is flagged italic and named so where the release is not: fontc sets the OS/2 fsSelection ITALIC bit and name ID 2 \"Italic\" whenever the italic angle is non-zero (the source's angle here), while FontForge took italic from macStyle, which this source leaves upright; a .glyphs source cannot state otherwise. Decided 2026-10-01: disclose.",
+  "The build has a GDEF table where the release (legacy kern table only) has none: it classes the combining marks as marks, as shapers already treated them in the release, and fontc's kerning lookup skips those marks through a mark filtering set, because fontc's kerning writer always skips marks (the release's kern table kerns every pair). Shaping differs from the release in exactly the runs the legacy-kern difference already accounts for. Needs a fontc change (KernFeatureWriter ignoreMarks); planned as later work. Decided 2026-10-02: disclose."
  ]
 }

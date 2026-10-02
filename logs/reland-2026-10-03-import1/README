@@ -1,0 +1,16 @@
+Re-land 2026-10-03-import1 (agent-import1, 2026-10-02): babelfont PRs #104/#106/#111 reworked from
+--fontforge-* filters into SFD-reader behaviour with no flag.
+
+Converter: babelfont-rs-worktrees/integration-agent-import1 @ 59b894fc = integration-all 5b7eb252
+  + fontforge-legacy-os2-version bd9038b0 + fontforge-no-anchor-propagation c3d71e80
+  + fontforge-gdef-classes 9fe6f134 (built with tools/build_babelfont.sh).
+Recipe: HEAD e2430fa + pending/recipe-combined.patch + recipe-vs-combined.diff (the three flags
+removed). Comic Relief additionally with comicrelief-plan.diff (OS2Version 4 alongside
+OS2_UseTypoMetrics 1); its first run, without that plan edit, is comicrelief.log.before-plan-edit
+(line_spacing FAIL: USE_TYPO_METRICS cleared).
+Families: kristi thabit comicrelief limelight wallpoet megrim lilitaone miama ultra nosifer smokum
+russoone lekton cardo monoton smythe macondo oleoscript italiana sanchez lohitbengali tuffy.
+compare-2026-10-02-current.txt: tools/compare_runs.py 2026-10-02-current 2026-10-03-import1.
+gdef-effect-<repo>.txt: research-scratch agent-import1-2026-10-02/gdef_effect.py -- the landed
+.glyphs built with and without its GDEF prefix (gftools-builder ade8776), compared with
+tools/functional_gate.py (no-GDEF build vs GDEF build, and each vs the release).
