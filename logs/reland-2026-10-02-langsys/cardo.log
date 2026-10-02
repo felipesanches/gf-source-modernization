@@ -1,0 +1,36 @@
+cardo: RESIDUAL-UNPUBLISHED-CONVERTER @ bdceaa5, 5 commits, 2 edit(s): Cardo-Bold=1 functional=FAIL(shaping); Cardo-Italic=3 functional=FAIL(shaping+gdef); Cardo-Regular=1 functional=FAIL(cmap)
+   Cardo-Bold BLOCKING head.font_direction_hint [0, 2]
+     cmap         PASS 2992 codepoints, exact
+     shaping      FAIL 1698221 runs shaped, 2464 differ
+         - default features, base+mark: 853 of 157321 runs differ
+         - default features, base+mark+mark: 1604 of 115200 runs differ
+         - default features, words: 7 of 709466 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 23 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2979 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+   Cardo-Italic BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   Cardo-Italic BLOCKING GDEF.mark_glyph_sets [null, {"0": ["uni1DC1", "uni2E0F", "uni2E10", "uni2E11", "uniF15B", "uni05B105B
+   Cardo-Italic BLOCKING head.font_direction_hint [0, 2]
+     cmap         PASS 2412 codepoints, exact
+     shaping      FAIL 1796504 runs shaped, 15991 differ
+         - default features, base+mark: 986 of 150943 runs differ
+         - default features, base+mark+mark: 2171 of 86400 runs differ
+         - default features, words: 7 of 710274 runs differ
+         - ... 1 more
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1285 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2372 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 0 class difference(s) shaping reads, 2 it does not
+         - mark glyph sets differ
+   Cardo-Regular BLOCKING head.font_direction_hint [0, 2]
+     cmap         FAIL 3830 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a different glyph: U+F438 10192.04/u10192.04
+     shaping      PASS 4367643 runs shaped, 0 differ
+     rendering    PASS diffenator3 1 glyph / 0 word diffs (0 / 0 confirmed); 0 of 2829 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 3829 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

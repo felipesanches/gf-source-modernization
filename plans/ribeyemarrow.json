@@ -1,0 +1,8 @@
+{
+ "repo": "ribeyemarrow",
+ "commits": [],
+ "disclose": [
+  "Lookups that are only called from inside a contextual (chaining) lookup sit at a different position in the GSUB lookup list than in the original release. A feature file has to define a lookup before any rule refers to it, and fontc numbers lookups in the order they are defined, so a lookup that FontForge put at the end of the list now comes just before the lookup that calls it, and the lookups after it move down by one. Such a lookup is not attached to any feature and only runs when its caller calls it, so its position changes nothing: the release and the rebuilt font shape the same text identically. Decided 2026-10-02: disclose.",
+  "The fraction (frac) lookup is stored differently from the original release. FontForge wrote it as nine chaining contextual subtables, one per rule; fontc writes the same rules as a single plain contextual subtable, because no rule looks at glyphs before or after the ones it changes, and it picks the smallest encoding. The rules and the glyphs they produce are the same, and the release and the rebuilt font shape fractions identically. Decided 2026-10-02: disclose."
+ ]
+}
