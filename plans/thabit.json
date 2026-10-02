@@ -377,5 +377,8 @@
    "body": "The release names this style 'Thabit-Bold-Oblique' (name ID 1), 'Bold Oblique' (ID 2), 'Thabit-Bold-Oblique Bold Oblique' (ID 4) and 'Thabit' (ID 16, typographic family). ID 1 is what FontForge 2008 exported from the lost 0.02 source state (the Arabeyes 0.02 tarball has it too); ID 4 was rewritten in the binary by Raph Levien's FixName (googlefontdirectory-hg 465c5490a and 49339cae0, 2011-12-15), the only change google/fonts made to these fonts. Stated as LangName 1033 strings, which FontForge exports in preference to the derived names."
   }
  ],
- "disclose": []
+ "disclose": [
+  "The release's head.fontDirectionHint is 0 (FontForge writes 0 for a font with both left-to-right and right-to-left glyphs); fontc always writes 2, the value the OpenType specification now requires for this deprecated field. No renderer reads it. Decided 2026-10-02: disclose.",
+  "The release carries FontForge's private PfEd table (lookup, subtable and anchor-class names only). No shaper or rasterizer reads it and fontc does not write it. Decided 2026-10-02: disclose."
+ ]
 }
