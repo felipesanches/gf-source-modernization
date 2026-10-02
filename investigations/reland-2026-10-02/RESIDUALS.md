@@ -1,5 +1,23 @@
 # What still fails after the 2026-10-02 re-land, and what fixes it
 
+## Current status (2026-10-02, after every pending fix)
+
+Combined view `logs/reland-2026-10-02-current` (+ `-langsys`): **151 styles, 127 functional
+PASS, 122 CLEAN, 0 regressions** (from 52 / 51 in `reland-2026-10-01-names-v2`). Converter
+babelfont integration-all (upstream main + #101..#106 + 20 unpushed branches, PR-QUEUE 1-2),
+recipe = tools/recipe.py + pending/recipe-combined.patch. Poly-Italic CLEAN since -langsys.
+
+Every remaining failure is disclosed in its repo's README (plans/<repo>.json "disclose"):
+- fontc-only (gfonts-ai-usage-report/22-fontc-problems.pdf, problems 1-20): Varela, Viga,
+  UnifrakturMaguntia, NovaMono, Cardo x3, Kristi, NovaScript, NosiferCaps,
+  Overlock-BlackItalic, Thabit-Oblique, Thabit-BoldOblique, Miama, Ultra, Nosifer (legacy
+  `kern`), RibeyeMarrow (table rows only), Play x2.
+- decided 2026-10-01 (stale side bearings): Corben-Bold, Limelight, MrBedfort, Niconne,
+  NixieOne, RougeScript.
+Play also needs glyphslib-rs #4 merged and a released builder before it can be pushed.
+
+The rest of this file is the 2026-10-02 morning snapshot it started from.
+
 **Model**: Claude Opus 5.5. Measured 2026-10-02.
 
 Run: `logs/reland-2026-10-02-final/` (README there says which repos come from which run).
