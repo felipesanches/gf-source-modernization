@@ -1,0 +1,46 @@
+Applies on top of pending/recipe-combined.patch: switches the recipe and the Comic Relief plan from --fontforge-notdef/--fontforge-fixed-pitch to the generic --add-notdef/--infer-fixed-pitch (babelfont #120/#119 rework, 2026-10-02). Measured as reland-2026-10-03-generic.
+
+diff --git a/plans/comicrelief.json b/plans/comicrelief.json
+index 65fb40c..1195733 100644
+--- a/plans/comicrelief.json
++++ b/plans/comicrelief.json
+@@ -33,7 +33,7 @@
+  "flags": {
+   "ComicRelief-Regular": {
+    "drop": [
+-    "--fontforge-notdef"
++    "--add-notdef"
+    ],
+    "add": [
+     "--sfdlib-interpolated-points"
+@@ -41,12 +41,12 @@
+   },
+   "ComicRelief-Bold": {
+    "drop": [
+-    "--fontforge-notdef"
++    "--add-notdef"
+    ],
+    "add": [
+     "--sfdlib-interpolated-points"
+    ]
+   }
+  },
+- "flags_reason": "--fontforge-notdef dropped: the release was built with sfdLib 2.0.0 and a UFO compiler, not exported by FontForge, and its .notdef is not FontForge's rectangle (research-scratch sfd-reland-notdef/notdef_census.py)."
++ "flags_reason": "--add-notdef dropped: the release was built with sfdLib 2.0.0 and a UFO compiler, not exported by FontForge, and its .notdef is not FontForge's rectangle (research-scratch sfd-reland-notdef/notdef_census.py)."
+ }
+--- a/tools/recipe.py
++++ b/tools/recipe.py
+@@ -160,10 +160,11 @@
+     if "GDEF" in TTFont(shipped):
+         flags.append("--fontforge-gdef-classes")
+     # FontForge's exporter synthesizes a .notdef when the source has none (a no-op
+-    # otherwise), and sets post.isFixedPitch when every glyph shares one advance.
++    # otherwise; an empty source .notdef stays empty, so not =empty), and sets
++    # post.isFixedPitch when every glyph shares one advance.
+     # After the GDEF filter, which reads "no .notdef in the source"; before direction
+     # correction, so the synthesized contour is normalised too.
+-    flags += ["--fontforge-notdef", "--fontforge-fixed-pitch"]
++    flags += ["--add-notdef", "--infer-fixed-pitch"]
+     # FontForge exports only a glyph's own anchors, and writes anchor coordinates
+     # truncated toward zero.
+     if built is not None:

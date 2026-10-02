@@ -1,0 +1,11 @@
+reland-2026-10-03-import2 (2026-10-02): babelfont integration-agent-import2 5d56d99c = integration-all 5b7eb252
++ merge fontforge-shadowed-kern-pairs c4e76c20 (PairPos2 kerning into the master kerning, PR #105 rework)
++ merge fontforge-explicit-mark-lookups 87ac47b6 (anchor lookups written by the SFD reader, no flag, PR #121 rework).
+Recipe = tools/recipe.py + pending/recipe-combined.patch + recipe-import2.diff (drops --fontforge-mark-lookups,
+now the reader's default, and --fontforge-truncate-anchors; plans already carry the Thabit anchor-truncation edit).
+Run from a detached sfd-reland worktree at 107b0be:
+  env BF_TREE=<integration-agent-import2> OUT=<scratch>/repos LANDED=<scratch>/landed.tsv LAND_ARGS=--unpublished-converter \
+    sh tools/reland_all.sh 2026-10-03-import2 thabit cardo lohitbengali lohittamil italiana sanchez monoton smythe macondo \
+    oleoscript kottaone patrickhand unifrakturcook tuffy salsa
+  python3 tools/compare_runs.py 2026-10-02-current 2026-10-03-import2
+Result: 25 styles, 0 verdict changes, 0 check changes; every gate line identical to 2026-10-02-current.

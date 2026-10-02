@@ -87,16 +87,16 @@
  "flags": {
   "ComicRelief-Regular": {
    "drop": [
-    "--fontforge-notdef",
+    "--add-notdef",
     "--round-coordinates"
    ]
   },
   "ComicRelief-Bold": {
    "drop": [
-    "--fontforge-notdef",
+    "--add-notdef",
     "--round-coordinates"
    ]
   }
  },
- "flags_reason": "--fontforge-notdef dropped: the release was built with sfdLib 2.0.0 and a UFO compiler, not exported by FontForge, and its .notdef is not FontForge's rectangle (research-scratch sfd-reland-notdef/notdef_census.py). --round-coordinates dropped: it reproduces FontForge's exporter, which rounds each coordinate to even (rint) as it writes it; this release's glyf was compiled by ufo2ft, which rounds half up (otRound) after decomposing components, as fontc does when the converter leaves the coordinates as stated. Built from these sources (sfd-reland tools/probes/exporter_source_edits/comic_build_check.py), the glyph outlines that differ from the release's are 9 in ComicRelief-Regular and 8 in ComicRelief-Bold without it, 15 and 211 with it (9 and 31 with the babelfont filter the sfdlibinterpolated edit replaces)."
+ "flags_reason": "--add-notdef dropped: the release was built with sfdLib 2.0.0 and a UFO compiler, not exported by FontForge, and its .notdef is not FontForge's rectangle (research-scratch sfd-reland-notdef/notdef_census.py). --round-coordinates dropped: it reproduces FontForge's exporter, which rounds each coordinate to even (rint) as it writes it; this release's glyf was compiled by ufo2ft, which rounds half up (otRound) after decomposing components, as fontc does when the converter leaves the coordinates as stated. Built from these sources (sfd-reland tools/probes/exporter_source_edits/comic_build_check.py), the glyph outlines that differ from the release's are 9 in ComicRelief-Regular and 8 in ComicRelief-Bold without it, 15 and 211 with it (9 and 31 with the babelfont filter the sfdlibinterpolated edit replaces)."
 }

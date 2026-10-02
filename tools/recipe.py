@@ -33,10 +33,6 @@ W = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The old divisor entered in 37d20840 (2009-05-27), before every stamp in this batch.
 # (5fba6c9 is the same change in a history with no common ancestor with 4d34d21ef866.)
 FONTFORGE_HEIGHT_MEAN_FIXED = 1337023489
-# FontForge raises the OS/2 version to 4 for USE_TYPO_METRICS from tag 20150824 on; up to
-# 20141230 it wrote the source's OS2Version 1-3 as stated, so bit 7 never shipped
-# (investigations/reland-2026-10-01/linespacing/bit7_sweep.txt).
-FONTFORGE_OS2_VERSION_RAISED = 1440374400   # 2015-08-24T00:00:00Z
 UNIX_FROM_1904 = 2082844800
 
 # Glyph names and contour directions are not babelfont flags any more: the source keeps
@@ -137,12 +133,14 @@ def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
     built = fontforge_build(shipped)
     if built is not None and built < FONTFORGE_HEIGHT_MEAN_FIXED:
         flags.insert(0, "--fontforge-height-glyph-count-mean")
-    if built is not None and built < FONTFORGE_OS2_VERSION_RAISED:
-        flags.append("--fontforge-legacy-os2-version")
-    # FontForge writes GDEF only when it exports OpenType layout; a release exported
-    # with only the legacy 'kern' table (Miama, Ultra, Nosifer) has none to reproduce.
-    if "GDEF" in TTFont(shipped):
-        flags.append("--fontforge-gdef-classes")
+    # The SFD reader itself states what the source says about OS/2 version bits, glyph
+    # classes (GDEF), anchor lookups and anchor inheritance (babelfont #104 #106 #111
+    # #121). What an exporter did that the source does not state is a documented edit
+    # in plans/<repo>.json, never a flag here.
+    # A source with no .notdef gets a rectangle, as the releases have (an empty one is
+    # kept); post.isFixedPitch is set when every glyph shares one advance. Before
+    # direction correction, so the added contour is normalised too.
+    flags += ["--add-notdef", "--infer-fixed-pitch"]
     if not keep_direction:
         flags.append("--correct-path-direction")
     # --add-legacy-duplicate-cmap is NEVER passed. It adds makeotf's duplicate set,
