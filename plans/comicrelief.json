@@ -14,6 +14,19 @@
    ],
    "subject": "Set USE_TYPO_METRICS, as the release has",
    "body": "The release sets fsSelection bit 7 (USE_TYPO_METRICS); it was built with sfdLib 2.0.0, which sets it whenever OS2_UseTypoMetrics is present. This file says 0."
+  },
+  {
+   "styles": [
+    "ComicRelief-Regular"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "FullName Comic Relief Regular"
+    ]
+   ],
+   "subject": "Set the full name the release has",
+   "body": "The release was built with sfdLib 2.0.0 and ufo2ft 3.4.1, which write name ID 4 as the family and style names (Comic Relief Regular); FontForge exports FullName, which this file states as Comic Relief."
   }
  ],
  "disclose": [],
@@ -21,11 +34,17 @@
   "ComicRelief-Regular": {
    "drop": [
     "--fontforge-notdef"
+   ],
+   "add": [
+    "--sfdlib-interpolated-points"
    ]
   },
   "ComicRelief-Bold": {
    "drop": [
     "--fontforge-notdef"
+   ],
+   "add": [
+    "--sfdlib-interpolated-points"
    ]
   }
  },
