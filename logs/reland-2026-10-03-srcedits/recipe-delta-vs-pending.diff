@@ -1,0 +1,54 @@
+--- a/tools/recipe.py (HEAD + pending/recipe-combined.patch)	2026-10-02 14:44:22.067997072 +0100
++++ b/tools/recipe.py	2026-10-02 14:44:22.145439495 +0100
+@@ -39,15 +39,6 @@
+ # (investigations/reland-2026-10-01/linespacing/bit7_sweep.txt).
+ FONTFORGE_OS2_VERSION_RAISED = 1440374400   # 2015-08-24T00:00:00Z
+ UNIX_FROM_1904 = 2082844800
+-# FontForge's TTF exporter writes post.underlinePosition as UnderlinePosition - width/2 up
+-# to tag 20170731 and + width/2 from 20190317 on (tottf.c dumppost; commit 9f667c9c,
+-# merged 2018-12-28). A source saved as SplineFontDB 3.2 was written by FontForge 20200314
+-# or later, so any export of it uses the newer rule (Comic Relief: -185/175 -> -97).
+-FONTFORGE_UNDERLINE_TOP = 1545955200   # 2018-12-28T00:00:00Z
+-# FontForge resolved offset-mode win/hhea metrics against the on-curve bounding box until
+-# ee15007274e9 (2014-09-16T19:35:46Z); later builds count control points too
+-# (investigations/next-vmetrics).
+-FONTFORGE_ONCURVE_BBOX_FIXED = 1410896146
+ 
+ # Glyph names and contour directions are not babelfont flags any more: the source keeps
+ # both, and sources/config.yaml asks the builder for them (noProductionNames: true;
+@@ -56,7 +47,6 @@
+ BASE = ["--fontforge-os2-defaults", "--add-instance-per-master", "--infer-mark-category",
+         "--set-subcategory", "--keep-source-advances", "--fontforge-underline-position",
+         "--round-coordinates"]
+-UNDERLINE_TOP = "--fontforge-underline-position=20190317"
+ 
+ 
+ # makeotf's duplicate cmap entries: each maps a second codepoint to the glyph of the
+@@ -146,13 +136,8 @@
+     config.yaml keeps source contour directions (a release of the family mixes them)."""
+     flags = list(BASE)
+     built = fontforge_build(shipped)
+-    sfd_version = float((sfd_text.split("\n", 1)[0].split(":", 1) + ["0"])[1].strip() or 0)
+-    if sfd_version >= 3.2 or (built is not None and built >= FONTFORGE_UNDERLINE_TOP):
+-        flags[flags.index("--fontforge-underline-position")] = UNDERLINE_TOP
+     if built is not None and built < FONTFORGE_HEIGHT_MEAN_FIXED:
+         flags.insert(0, "--fontforge-height-glyph-count-mean")
+-    if built is not None and built < FONTFORGE_ONCURVE_BBOX_FIXED:
+-        flags.insert(0, "--fontforge-legacy-offset-metrics")
+     if built is not None and built < FONTFORGE_OS2_VERSION_RAISED:
+         flags.append("--fontforge-legacy-os2-version")
+     # FontForge writes GDEF only when it exports OpenType layout; a release exported
+@@ -164,10 +149,10 @@
+     # After the GDEF filter, which reads "no .notdef in the source"; before direction
+     # correction, so the synthesized contour is normalised too.
+     flags += ["--fontforge-notdef", "--fontforge-fixed-pitch"]
+-    # FontForge exports only a glyph's own anchors, and writes anchor coordinates
+-    # truncated toward zero.
++    # FontForge exports only a glyph's own anchors. (It also wrote anchor coordinates
++    # truncated toward zero; a source with fractional anchors states that as an edit.)
+     if built is not None:
+-        flags += ["--fontforge-no-anchor-propagation", "--fontforge-truncate-anchors"]
++        flags += ["--fontforge-no-anchor-propagation"]
+         # Anchor lookups (SFD Lookup types 259-262) are written as FontForge exported
+         # them, with coverage from the anchors rather than from glyph classes.
+         if re.search(r"^Lookup: 2(59|6[012]) ", sfd_text, re.M):

@@ -1,0 +1,15 @@
+repo	style	old_verdict	new_verdict	old_table	new_table	old_fails	new_fails
+comicrelief	ComicRelief-Bold	PASS	PASS	0	0	-	-
+comicrelief	ComicRelief-Regular	PASS	PASS	0	0	-	-
+ledger	Ledger-Regular	PASS	PASS	0	0	-	-
+limelight	Limelight-Regular	FAIL(rendering)	FAIL(rendering)	0	0	rendering	rendering
+magra	Magra-Bold	PASS	PASS	0	0	-	-
+magra	Magra-Regular	PASS	PASS	0	0	-	-
+mountainsofchristmas	MountainsofChristmas-Bold	PASS	PASS	0	0	-	-
+mountainsofchristmas	MountainsofChristmas-Regular	PASS	PASS	0	0	-	-
+nothingyoucoulddo	NothingYouCouldDo	PASS	PASS	0	0	-	-
+thabit	Thabit	PASS	PASS	2	2	-	-
+thabit	Thabit-Bold	PASS	PASS	2	2	-	-
+thabit	Thabit-BoldOblique	FAIL(line_spacing)	FAIL(line_spacing)	2	2	line_spacing	line_spacing
+thabit	Thabit-Oblique	FAIL(line_spacing)	FAIL(line_spacing)	2	2	line_spacing	line_spacing
+unifraktur	UnifrakturMaguntia-Book	FAIL(shaping)	FAIL(shaping)	3	3	shaping	shaping

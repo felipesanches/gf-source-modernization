@@ -1,0 +1,20 @@
+Re-land of thabit comicrelief mountainsofchristmas nothingyoucoulddo unifraktur limelight ledger magra (2026-10-02),
+after four exporter-reproducing babelfont filters became documented .sfd edits (tools/probes/exporter_source_edits/README.md):
+--fontforge-truncate-anchors -> truncateanchors (thabit); --sfdlib-interpolated-points -> sfdlibinterpolated (comicrelief,
+whose plan also drops --round-coordinates); --fontforge-legacy-offset-metrics -> setfield win/hhea values
+(mountainsofchristmas Bold, nothingyoucoulddo, unifraktur); --fontforge-underline-position=20190317 -> setfield
+UnderlinePosition -10 (comicrelief). The truncation census found fractional anchors in no family but thabit.
+
+Converter: babelfont integration-all 5b7eb252 (still contains the filters; the recipe no longer passes them).
+Recipe: tools/recipe.py + pending/recipe-combined.patch, minus the three flags (recipe-delta-vs-pending.diff here).
+Run (from a worktree with that recipe):
+  env BF_TREE=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-all OUT=<scratch>/repos LANDED=<scratch>/landed.tsv \
+      SCRATCH=<scratch>/land-scratch LAND_ARGS=--unpublished-converter sh tools/reland_all.sh 2026-10-03-srcedits \
+      thabit comicrelief mountainsofchristmas nothingyoucoulddo unifraktur limelight ledger magra
+  python3 tools/compare_runs.py 2026-10-02-current 2026-10-03-srcedits      (compare-2026-10-02-current.tsv)
+comicrelief was re-landed last, with the final op (contour start rule) and plan.
+
+Result: 0 regressions, 0 checks changed, functional PASS 10 -> 10 of 14 styles; every log is identical to
+reland-2026-10-02-current apart from commit hashes and the order of two equal 42 px entries in limelight's.
+CLEAN: comicrelief (2), mountainsofchristmas (2), nothingyoucoulddo, ledger, magra (2). RESIDUAL as before: thabit
+(PfEd + fontDirectionHint rows; obliques' italic bits), unifraktur (empty GPOS), limelight (stale-lsb rendering).
