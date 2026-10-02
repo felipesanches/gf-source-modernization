@@ -1,0 +1,4 @@
+== thabit (families-next.tsv) 2026-10-02T06:08:06+01:00
+   rc=1 thabit	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   46G  98% /home/fsanches/compartilhado
+done 2026-10-02T06:10:29+01:00
