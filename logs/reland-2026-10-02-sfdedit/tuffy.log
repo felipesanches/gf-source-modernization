@@ -1,0 +1,27 @@
+tuffy: RESIDUAL-UNPUBLISHED-CONVERTER @ fa9f33e, 21 commits, 18 edit(s): Tuffy-Bold=0 functional=PASS; Tuffy-BoldItalic=0 functional=PASS; Tuffy-Italic=0 functional=FAIL(rendering+names+advances); Tuffy-Regular=0 functional=FAIL(rendering+names+advances)
+     cmap         PASS 1501 codepoints, exact
+     shaping      PASS 1270891 runs shaped, 0 differ
+     rendering    FAIL diffenator3 59 glyph / 182 word diffs (0 / 0 confirmed); 1 of 810 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11074px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (16)
+         - name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 22 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 17 (3,1,0x40C) as read: release 'NormalItalique', build None
+         - ... 13 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 1502 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 748/1024
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1482 it does not
+     cmap         PASS 1501 codepoints, exact
+     shaping      PASS 1270891 runs shaped, 0 differ
+     rendering    FAIL diffenator3 64 glyph / 236 word diffs (0 / 0 confirmed); 1 of 894 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11074px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (16)
+         - name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 22 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 17 (3,1,0x40C) as read: release 'NormalItalique', build None
+         - ... 13 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 1502 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 748/1024
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1482 it does not

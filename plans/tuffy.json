@@ -1,0 +1,539 @@
+{
+ "repo": "tuffy",
+ "commits": [
+  {
+   "styles": [
+    "Tuffy-Regular",
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "Version 1.272"
+    ]
+   ],
+   "subject": "State version 1.272, as the release does",
+   "body": "google/fonts ships Tuffy-Regular and Tuffy-Italic as v1.272 (google/fonts ebcdfd2bb, PR #1269, 2017, \"fixed ots errors and ttfautohinted\"), a re-export of FontForge's 001.271 export of these sources made by a third party with another tool. Its source was never published, so this repository states v1.272 as documented edits to the .sfd (decided 2026-09-24: reproduce what ships; its defects are reproduced and fixing them is future work).\n\nThe release's head.fontRevision is 1.272 and its name ID 5 'Version 1.272; ttfautohint (v1.6)'. This source states 001.271."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2SubXSize 1331"
+    ],
+    [
+     "setfield",
+     "OS2SubYSize 1228"
+    ],
+    [
+     "setfield",
+     "OS2SubXOff 0"
+    ],
+    [
+     "setfield",
+     "OS2SubYOff 153"
+    ],
+    [
+     "setfield",
+     "OS2SupXSize 1331"
+    ],
+    [
+     "setfield",
+     "OS2SupYSize 1228"
+    ],
+    [
+     "setfield",
+     "OS2SupXOff 0"
+    ],
+    [
+     "setfield",
+     "OS2SupYOff 716"
+    ],
+    [
+     "setfield",
+     "OS2StrikeYSize 50"
+    ],
+    [
+     "setfield",
+     "OS2StrikeYPos 300"
+    ]
+   ],
+   "subject": "State the release's subscript, superscript and strikeout metrics",
+   "body": "This source states ten garbage values (OS2SubXOff -16560, OS2SupXSize -25944, OS2SupYSize -27176, OS2StrikeYSize 12312, OS2StrikeYPos -16224, ...), which FontForge's 001.271 export carried verbatim. v1.272 replaced them with its tool's defaults, which exist only in the release: 1331, 1228, 153 and 716 are 0.65, 0.6, 0.075 and 0.35 em truncated, 300 is 0.6 of a default x-height of 500. Values from the release's OS/2 table (google/fonts ebcdfd2bb)."
+  },
+  {
+   "styles": [
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2SubXSize 1331"
+    ],
+    [
+     "setfield",
+     "OS2SubYSize 1228"
+    ],
+    [
+     "setfield",
+     "OS2SubXOff -32"
+    ],
+    [
+     "setfield",
+     "OS2SubYOff 153"
+    ],
+    [
+     "setfield",
+     "OS2SupXSize 1331"
+    ],
+    [
+     "setfield",
+     "OS2SupYSize 1228"
+    ],
+    [
+     "setfield",
+     "OS2SupXOff 150"
+    ],
+    [
+     "setfield",
+     "OS2SupYOff 716"
+    ],
+    [
+     "setfield",
+     "OS2StrikeYSize 50"
+    ],
+    [
+     "setfield",
+     "OS2StrikeYPos 300"
+    ]
+   ],
+   "subject": "State the release's subscript, superscript and strikeout metrics",
+   "body": "This source states ten garbage values (OS2SubXOff -16560, OS2SupXSize -25944, OS2SupYSize -27176, OS2StrikeYSize 12312, OS2StrikeYPos -16224, ...), which FontForge's 001.271 export carried verbatim. v1.272 replaced them with its tool's defaults, which exist only in the release: 1331, 1228, 153 and 716 are 0.65, 0.6, 0.075 and 0.35 em truncated, 300 is 0.6 of a default x-height of 500; the x offsets -32 and 150 are tan(11.85 deg) times 153 and 716, 11.85 being the release's italic angle. Values from the release's OS/2 table (google/fonts ebcdfd2bb)."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular",
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "FSType 8"
+    ]
+   ],
+   "subject": "State fsType 8, as the release has",
+   "body": "The release's OS/2.fsType is 8 (editable embedding); this source states 0, as FontForge's 001.271 export had. Google Fonts expects 0, so this reproduces a check failure the release already has."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular",
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "setencoding",
+     ".null 0 0"
+    ],
+    [
+     "setencoding",
+     "nonmarkingreturn 13 13"
+    ]
+   ],
+   "subject": "Encode .null at U+0000 and nonmarkingreturn at U+000D",
+   "body": "The release maps U+0000 to its zero-width null glyph and U+000D to its 682-unit nonmarking return. This source holds both glyphs unencoded (Encoding: 65536 -1 194 and 65537 -1 195); slots 0 and 13 are free. Their glyph ids are kept."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular"
+   ],
+   "ops": [
+    [
+     "setrefer",
+     "Agrave 1 0 0"
+    ],
+    [
+     "setrefer",
+     "Aacute 1 0 0"
+    ],
+    [
+     "setrefer",
+     "Amacron 1 0 0"
+    ],
+    [
+     "setrefer",
+     "Iacute 1 0 0"
+    ],
+    [
+     "setrefer",
+     "eacute 1 0 0"
+    ],
+    [
+     "setrefer",
+     "uacute 1 0 0"
+    ],
+    [
+     "setrefer",
+     "uni221B 1 0 0"
+    ],
+    [
+     "setrefer",
+     "uni221C 1 0 0"
+    ],
+    [
+     "setrefer",
+     "etaiotasubgrave 1 0 0"
+    ],
+    [
+     "setrefer",
+     "etaiotasubacute 1 0 0"
+    ]
+   ],
+   "subject": "Place the first component at the origin in ten composites, as the release does",
+   "body": "v1.272 moved the first component of these composites to (0,0), as automatic component alignment does; this source places it at A -8 (Agrave, Aacute, Amacron), I 10 (Iacute), e 10 (eacute), u 42 (uacute), threesuperior 172 7 (uni221B), foursuperior 68 0 (uni221C), iota subscript -464 and -468 (etaiotasubgrave, etaiotasubacute). The release draws them accordingly: uni221B renders 46.5% of its pixels differently from this source. Values from the release's glyf components."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular"
+   ],
+   "ops": [
+    [
+     "setrefer",
+     "alphaiotasub 1 0 0"
+    ],
+    [
+     "setrefer",
+     "alphaiotasub 2 801 0"
+    ],
+    [
+     "setwidth",
+     "alphaiotasub 2013"
+    ],
+    [
+     "setrefer",
+     "etaiotasub 1 0 0"
+    ],
+    [
+     "setrefer",
+     "etaiotasub 2 801 0"
+    ],
+    [
+     "setwidth",
+     "etaiotasub 1865"
+    ],
+    [
+     "setrefer",
+     "Etaiotasub 1 0 0"
+    ],
+    [
+     "setrefer",
+     "Etaiotasub 2 801 0"
+    ],
+    [
+     "setwidth",
+     "Etaiotasub 1999"
+    ],
+    [
+     "setrefer",
+     "omegaiotasub 1 0 0"
+    ],
+    [
+     "setrefer",
+     "omegaiotasub 2 801 0"
+    ],
+    [
+     "setwidth",
+     "omegaiotasub 2009"
+    ],
+    [
+     "setrefer",
+     "Omegaiotasub 1 0 0"
+    ],
+    [
+     "setrefer",
+     "Omegaiotasub 2 801 0"
+    ],
+    [
+     "setwidth",
+     "Omegaiotasub 2159"
+    ],
+    [
+     "setrefer",
+     "Alphaiotasub 2 801 0"
+    ],
+    [
+     "setwidth",
+     "Alphaiotasub 2103"
+    ]
+   ],
+   "subject": "Lay the six iota-subscript bases out as the release does",
+   "body": "In v1.272 each of these glyphs draws the iota subscript at 0 and the letter after it at +801 (the iota's advance), with the advance grown by 801: alpha 2013, Alpha 2103, eta 1865, Eta 1999, omega 2009, Omega 2159. The iota therefore stands beside the letter instead of under it, in these six and the 37 composites built on them (U+1F80-1FFC). This source places the iota at -121, 0, -467, -54, -51 and 17 under the letter, advances 1212-1358. A visible defect of the release, reproduced; values from its glyf table."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular",
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "translateglyph",
+     "brevesubnosp -1302 0"
+    ],
+    [
+     "setwidth",
+     "brevesubnosp 0"
+    ]
+   ],
+   "subject": "Make U+032E a zero-width mark, as the release does",
+   "body": "brevesubnosp ('no spacing') has advance 1302 here, its outline at x 354..960. The release ships it with advance 0, its outline moved left by 1302 (bbox -948..-342), so that it falls under the preceding letter."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular"
+   ],
+   "ops": [
+    [
+     "setrefer",
+     "uni1E2A 1 1252 0"
+    ],
+    [
+     "setrefer",
+     "uni1E2B 1 1178 0"
+    ]
+   ],
+   "subject": "Keep H and h with breve below drawn where they were",
+   "body": "The release moved the breve-below reference of uni1E2A and uni1E2B right by 1302 (to 1252 and 1178) when it moved the mark's outline left by 1302, so both draw as before."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular",
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "setglyphclass",
+     "gravecomb 4"
+    ],
+    [
+     "setglyphclass",
+     "acutecomb 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0302 4"
+    ],
+    [
+     "setglyphclass",
+     "tildecomb 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0304 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0306 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0307 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0308 4"
+    ],
+    [
+     "setglyphclass",
+     "uni030A 4"
+    ],
+    [
+     "setglyphclass",
+     "uni030B 4"
+    ],
+    [
+     "setglyphclass",
+     "uni030C 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0310 4"
+    ],
+    [
+     "setglyphclass",
+     "dotbelowcomb 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0324 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0325 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0327 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0328 4"
+    ],
+    [
+     "setglyphclass",
+     "brevesubnosp 4"
+    ],
+    [
+     "setglyphclass",
+     "uni0331 4"
+    ]
+   ],
+   "subject": "Class the 19 combining marks as marks, as the release's GDEF does",
+   "body": "The release's GDEF classes exactly these 19 glyphs, U+0300-0331, as marks and leaves every other glyph unclassified. This source states no class for any glyph. All 19 have advance 0 in the release (brevesubnosp since the previous commit)."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular"
+   ],
+   "ops": [
+    [
+     "importoutlines",
+     "google/fonts@ebcdfd2bb7c9169a02679733c626333fdc511e99:ofl/tuffy/Tuffy-Regular.ttf U+0039 U+0043 U+0055 U+0063 U+006C U+007B U+007D U+007F U+00A7 U+00A9 U+00B2 U+00B3 U+00BD U+00BE U+00D0 U+00DF U+0110 U+0111 U+0133 U+0135 U+013E U+0142 U+014B U+0152 U+0153 U+015E U+015F U+0192 U+01E3 U+021C U+0253 U+0254 U+0255 U+0256 U+0257 U+0259 U+025A U+025B U+025C U+025D U+025E U+025F U+0260 U+0261 U+0262 U+0264 U+0265 U+0266 U+0267 U+026C U+026E U+0271 U+0272 U+0273 U+0276 U+0277 U+0278 U+0282 U+0284 U+0297 U+0298 U+029B U+02A3 U+02A4 U+02A5 U+02A6 U+02A8 U+02A9 U+02AE U+02AF U+02D8 U+02DC U+032E U+037B U+037C U+038C U+0392 U+0398 U+039F U+03A1 U+03A6 U+03A8 U+03A9 U+03B1 U+03B2 U+03B5 U+03BC U+03C2 U+03C3 U+03C8 U+03C9 U+03D0 U+03D6 U+03D8 U+03DA U+03DB U+03E5 U+03E7 U+03ED U+03F2 U+03F5 U+03F6 U+03FD U+03FF U+0402 U+0412 U+0417 U+0419 U+041E U+0420 U+0424 U+042D U+042E U+0435 U+0439 U+0440 U+0441 U+0444 U+0447 U+044D U+044E U+0452 U+0454 U+045E U+048E U+048F U+0494 U+04D8 U+04D9 U+04E8 U+04EA U+04EC U+04ED U+1E62 U+1E9E U+1EFA U+1EFB U+2072 U+2073 U+2082 U+2083 U+2089 U+20A2 U+20A8 U+2118 U+2153 U+2154 U+2157 U+217C U+217D U+217E U+2180 U+2182 U+2183 U+2184 U+2188 U+2189 U+21BB U+2205 U+2208 U+2209 U+220D U+221D U+2229 U+222A U+2282 U+2283 U+2284 U+A747 U+E104 U+E106 U+E108 U+E10B U+E118 U+E11B U+E121 U+E268 U+EFAA U+F6BE U+F8E7 U+F8EB U+F8EE U+F8F2 U+F8F3 U+F8F6 U+F8F8 U+F8FF U+FB05 U+FB06 U+1090F U+10910"
+    ]
+   ],
+   "subject": "Take 191 outlines from the release, which redrew them",
+   "body": "v1.272 did not keep these outlines as FontForge exported them: its tool refit curves with points at their extrema (J: 21 -> 25 points), removed overlaps (T and t with comma below) and rounded differently, moving drawn edges by one or more units. Each glyph listed is one whose ink, built from this source, differs from the release's by more than rounding (tools/functional_gate.py geometry test: FreeType unhinted at 8 units per pixel, more than 4 pixels at coverage fuzz 64; listed by investigations/tuffy/probes/geometry_list.py). The source of the redrawn outlines was never published, so they are copied, exactly, from the release binary: google/fonts ebcdfd2bb ofl/tuffy/Tuffy-Regular.ttf: the release's quadratic points and advance, written into the glyph's Fore layer; every other glyph unchanged. Omega and tilde draw within the threshold alone but not in the Greek composites built on them, so they are taken too; those composites then follow.\n\nCodepoints: U+0039 U+0043 U+0055 U+0063 U+006C U+007B U+007D U+007F U+00A7 U+00A9\nU+00B2 U+00B3 U+00BD U+00BE U+00D0 U+00DF U+0110 U+0111 U+0133 U+0135\nU+013E U+0142 U+014B U+0152 U+0153 U+015E U+015F U+0192 U+01E3 U+021C\nU+0253 U+0254 U+0255 U+0256 U+0257 U+0259 U+025A U+025B U+025C U+025D\nU+025E U+025F U+0260 U+0261 U+0262 U+0264 U+0265 U+0266 U+0267 U+026C\nU+026E U+0271 U+0272 U+0273 U+0276 U+0277 U+0278 U+0282 U+0284 U+0297\nU+0298 U+029B U+02A3 U+02A4 U+02A5 U+02A6 U+02A8 U+02A9 U+02AE U+02AF\nU+02D8 U+02DC U+032E U+037B U+037C U+038C U+0392 U+0398 U+039F U+03A1\nU+03A6 U+03A8 U+03A9 U+03B1 U+03B2 U+03B5 U+03BC U+03C2 U+03C3 U+03C8\nU+03C9 U+03D0 U+03D6 U+03D8 U+03DA U+03DB U+03E5 U+03E7 U+03ED U+03F2\nU+03F5 U+03F6 U+03FD U+03FF U+0402 U+0412 U+0417 U+0419 U+041E U+0420\nU+0424 U+042D U+042E U+0435 U+0439 U+0440 U+0441 U+0444 U+0447 U+044D\nU+044E U+0452 U+0454 U+045E U+048E U+048F U+0494 U+04D8 U+04D9 U+04E8\nU+04EA U+04EC U+04ED U+1E62 U+1E9E U+1EFA U+1EFB U+2072 U+2073 U+2082\nU+2083 U+2089 U+20A2 U+20A8 U+2118 U+2153 U+2154 U+2157 U+217C U+217D\nU+217E U+2180 U+2182 U+2183 U+2184 U+2188 U+2189 U+21BB U+2205 U+2208\nU+2209 U+220D U+221D U+2229 U+222A U+2282 U+2283 U+2284 U+A747 U+E104\nU+E106 U+E108 U+E10B U+E118 U+E11B U+E121 U+E268 U+EFAA U+F6BE U+F8E7\nU+F8EB U+F8EE U+F8F2 U+F8F3 U+F8F6 U+F8F8 U+F8FF U+FB05 U+FB06 U+1090F\nU+10910"
+  },
+  {
+   "styles": [
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "importoutlines",
+     "google/fonts@ebcdfd2bb7c9169a02679733c626333fdc511e99:ofl/tuffy/Tuffy-Italic.ttf U+0028 U+0039 U+0040 U+0047 U+004A U+004F U+0050 U+0051 U+0061 U+0067 U+007F U+00AE U+00B7 U+00D2 U+00D3 U+00D4 U+00D5 U+00D6 U+00D8 U+00DC U+00E0 U+00E1 U+00E2 U+00E3 U+00E4 U+00E5 U+00FF U+0101 U+0102 U+0103 U+0105 U+0111 U+0115 U+011C U+011D U+011E U+011F U+0120 U+0121 U+0122 U+0123 U+0132 U+0133 U+0134 U+0135 U+014C U+014E U+0150 U+0152 U+015F U+016C U+017F U+01E3 U+021C U+0251 U+0252 U+0253 U+0254 U+0256 U+0257 U+025A U+025C U+025D U+025F U+0260 U+0261 U+0266 U+0267 U+0269 U+0278 U+027D U+0282 U+0283 U+0284 U+0286 U+028A U+0290 U+0298 U+029B U+02A0 U+02A3 U+02A4 U+02A5 U+02A7 U+02A8 U+02A9 U+02AE U+02AF U+037B U+037D U+038C U+038F U+0390 U+0392 U+0398 U+039F U+03A6 U+03A8 U+03A9 U+03AC U+03AF U+03B0 U+03B1 U+03B4 U+03B9 U+03BF U+03C1 U+03C3 U+03C4 U+03C6 U+03CA U+03CC U+03D0 U+03D7 U+03D8 U+03D9 U+03DA U+03DD U+03E7 U+03EC U+03F0 U+03F1 U+03F6 U+03F9 U+03FC U+03FE U+0402 U+0404 U+0419 U+041E U+0421 U+0424 U+0430 U+0431 U+0435 U+043E U+0444 U+044D U+044E U+0450 U+0451 U+0452 U+048A U+04A8 U+04AA U+04BC U+04BE U+04D1 U+04D3 U+04D7 U+04DF U+04E6 U+04E7 U+04E8 U+04EA U+04ED U+1E0C U+1E0D U+1E2A U+1E2B U+1E43 U+1E56 U+1E5A U+1E5C U+1E5E U+1E62 U+1E63 U+1E9E U+1F00 U+1F01 U+1F02 U+1F03 U+1F04 U+1F05 U+1F06 U+1F07 U+1F30 U+1F31 U+1F32 U+1F33 U+1F34 U+1F35 U+1F36 U+1F37 U+1F40 U+1F41 U+1F42 U+1F43 U+1F44 U+1F45 U+1F48 U+1F49 U+1F4A U+1F4B U+1F4C U+1F4D U+1F68 U+1F69 U+1F6A U+1F6B U+1F6C U+1F6D U+1F6E U+1F6F U+1F70 U+1F71 U+1F76 U+1F77 U+1F78 U+1F79 U+1F80 U+1F81 U+1F82 U+1F83 U+1F84 U+1F85 U+1F86 U+1F87 U+1FA8 U+1FA9 U+1FAA U+1FAB U+1FAC U+1FAD U+1FAE U+1FAF U+1FB0 U+1FB1 U+1FB2 U+1FB3 U+1FB4 U+1FB6 U+1FB7 U+1FD0 U+1FD1 U+1FD2 U+1FD3 U+1FD6 U+1FD7 U+1FE4 U+1FE5 U+1FF8 U+1FF9 U+1FFA U+1FFB U+1FFC U+2026 U+204B U+2052 U+205D U+2076 U+2086 U+208D U+20A1 U+20A2 U+20A5 U+20A7 U+20AB U+20B0 U+20B2 U+20B5 U+20B7 U+2103 U+2126 U+216D U+217E U+2180 U+2184 U+2185 U+21B6 U+21BA U+21BB U+2205 U+2208 U+2209 U+220D U+221D U+221E U+2229 U+2283 U+2284 U+2286 U+E10B U+E11B U+E121 U+E250 U+E251 U+E252 U+E253 U+E254 U+E255 U+E256 U+E257 U+E258 U+E259 U+E268 U+EFA1 U+EFA3 U+EFA6 U+EFAA U+EFAB U+EFB5 U+EFB7 U+F6BE U+F8E7 U+F8E9 U+F8EC U+F8EE U+F8F2 U+F8F3 U+F8F8 U+F8FF U+10908 U+10910"
+    ]
+   ],
+   "subject": "Take 314 outlines from the release, which redrew them",
+   "body": "v1.272 did not keep these outlines as FontForge exported them: its tool refit curves with points at their extrema (J: 21 -> 25 points), removed overlaps (T and t with comma below) and rounded differently, moving drawn edges by one or more units. Each glyph listed is one whose ink, built from this source, differs from the release's by more than rounding (tools/functional_gate.py geometry test: FreeType unhinted at 8 units per pixel, more than 4 pixels at coverage fuzz 64; listed by investigations/tuffy/probes/geometry_list.py). The source of the redrawn outlines was never published, so they are copied, exactly, from the release binary: google/fonts ebcdfd2bb ofl/tuffy/Tuffy-Italic.ttf: the release's quadratic points and advance, written into the glyph's Fore layer; every other glyph unchanged.\n\nCodepoints: U+0028 U+0039 U+0040 U+0047 U+004A U+004F U+0050 U+0051 U+0061 U+0067\nU+007F U+00AE U+00B7 U+00D2 U+00D3 U+00D4 U+00D5 U+00D6 U+00D8 U+00DC\nU+00E0 U+00E1 U+00E2 U+00E3 U+00E4 U+00E5 U+00FF U+0101 U+0102 U+0103\nU+0105 U+0111 U+0115 U+011C U+011D U+011E U+011F U+0120 U+0121 U+0122\nU+0123 U+0132 U+0133 U+0134 U+0135 U+014C U+014E U+0150 U+0152 U+015F\nU+016C U+017F U+01E3 U+021C U+0251 U+0252 U+0253 U+0254 U+0256 U+0257\nU+025A U+025C U+025D U+025F U+0260 U+0261 U+0266 U+0267 U+0269 U+0278\nU+027D U+0282 U+0283 U+0284 U+0286 U+028A U+0290 U+0298 U+029B U+02A0\nU+02A3 U+02A4 U+02A5 U+02A7 U+02A8 U+02A9 U+02AE U+02AF U+037B U+037D\nU+038C U+038F U+0390 U+0392 U+0398 U+039F U+03A6 U+03A8 U+03A9 U+03AC\nU+03AF U+03B0 U+03B1 U+03B4 U+03B9 U+03BF U+03C1 U+03C3 U+03C4 U+03C6\nU+03CA U+03CC U+03D0 U+03D7 U+03D8 U+03D9 U+03DA U+03DD U+03E7 U+03EC\nU+03F0 U+03F1 U+03F6 U+03F9 U+03FC U+03FE U+0402 U+0404 U+0419 U+041E\nU+0421 U+0424 U+0430 U+0431 U+0435 U+043E U+0444 U+044D U+044E U+0450\nU+0451 U+0452 U+048A U+04A8 U+04AA U+04BC U+04BE U+04D1 U+04D3 U+04D7\nU+04DF U+04E6 U+04E7 U+04E8 U+04EA U+04ED U+1E0C U+1E0D U+1E2A U+1E2B\nU+1E43 U+1E56 U+1E5A U+1E5C U+1E5E U+1E62 U+1E63 U+1E9E U+1F00 U+1F01\nU+1F02 U+1F03 U+1F04 U+1F05 U+1F06 U+1F07 U+1F30 U+1F31 U+1F32 U+1F33\nU+1F34 U+1F35 U+1F36 U+1F37 U+1F40 U+1F41 U+1F42 U+1F43 U+1F44 U+1F45\nU+1F48 U+1F49 U+1F4A U+1F4B U+1F4C U+1F4D U+1F68 U+1F69 U+1F6A U+1F6B\nU+1F6C U+1F6D U+1F6E U+1F6F U+1F70 U+1F71 U+1F76 U+1F77 U+1F78 U+1F79\nU+1F80 U+1F81 U+1F82 U+1F83 U+1F84 U+1F85 U+1F86 U+1F87 U+1FA8 U+1FA9\nU+1FAA U+1FAB U+1FAC U+1FAD U+1FAE U+1FAF U+1FB0 U+1FB1 U+1FB2 U+1FB3\nU+1FB4 U+1FB6 U+1FB7 U+1FD0 U+1FD1 U+1FD2 U+1FD3 U+1FD6 U+1FD7 U+1FE4\nU+1FE5 U+1FF8 U+1FF9 U+1FFA U+1FFB U+1FFC U+2026 U+204B U+2052 U+205D\nU+2076 U+2086 U+208D U+20A1 U+20A2 U+20A5 U+20A7 U+20AB U+20B0 U+20B2\nU+20B5 U+20B7 U+2103 U+2126 U+216D U+217E U+2180 U+2184 U+2185 U+21B6\nU+21BA U+21BB U+2205 U+2208 U+2209 U+220D U+221D U+221E U+2229 U+2283\nU+2284 U+2286 U+E10B U+E11B U+E121 U+E250 U+E251 U+E252 U+E253 U+E254\nU+E255 U+E256 U+E257 U+E258 U+E259 U+E268 U+EFA1 U+EFA3 U+EFA6 U+EFAA\nU+EFAB U+EFB5 U+EFB7 U+F6BE U+F8E7 U+F8E9 U+F8EC U+F8EE U+F8F2 U+F8F3\nU+F8F8 U+F8FF U+10908 U+10910"
+  },
+  {
+   "styles": [
+    "Tuffy-Regular",
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "addfield",
+     "OS2XHeight 500"
+    ],
+    [
+     "addfield",
+     "OS2CapHeight 700"
+    ]
+   ],
+   "subject": "State the release's x-height and cap height",
+   "body": "The release's OS/2 v3 states sxHeight 500 and sCapHeight 700, its tool's defaults rather than the design's heights: FontForge measures 1069 and 1450 from these outlines. This source states neither."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular",
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "movelangname",
+     "1053 2 17"
+    ],
+    [
+     "movelangname",
+     "1049 2 17"
+    ],
+    [
+     "movelangname",
+     "1044 2 17"
+    ],
+    [
+     "movelangname",
+     "1040 2 17"
+    ],
+    [
+     "movelangname",
+     "1038 2 17"
+    ],
+    [
+     "movelangname",
+     "1031 2 17"
+    ],
+    [
+     "movelangname",
+     "1036 2 17"
+    ],
+    [
+     "movelangname",
+     "1043 2 17"
+    ],
+    [
+     "droplangname",
+     "1034"
+    ]
+   ],
+   "subject": "Move the localized style names to name ID 17, as the release has them",
+   "body": "This source states a localized subfamily name (name ID 2) in nine languages: 'StandardKursiv' (German), 'NormalItalique' (French), and so on, in both styles. The release carries eight of them as name ID 17 (typographic subfamily) and none as ID 2, and has no Spanish record ('NormalCursiva'). Moved and dropped as the release has them."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular"
+   ],
+   "ops": [
+    [
+     "renameglyphs",
+     "google/fonts@ebcdfd2bb7c9169a02679733c626333fdc511e99:ofl/tuffy/Tuffy-Regular.ttf"
+    ]
+   ],
+   "subject": "Use the release's glyph names",
+   "body": "v1.272 renamed the glyphs (uni00B9 for onesuperior, uni0394 for Delta, uni0000 and uni000D for .null and nonmarkingreturn, ...). Each encoded glyph takes the name the release's post table gives its codepoint: google/fonts ebcdfd2bb ofl/tuffy/Tuffy-Regular.ttf."
+  },
+  {
+   "styles": [
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "renameglyphs",
+     "google/fonts@ebcdfd2bb7c9169a02679733c626333fdc511e99:ofl/tuffy/Tuffy-Italic.ttf"
+    ]
+   ],
+   "subject": "Use the release's glyph names",
+   "body": "v1.272 renamed the glyphs (uni00B9 for onesuperior, uni0394 for Delta, uni0000 and uni000D for .null and nonmarkingreturn, ...). Each encoded glyph takes the name the release's post table gives its codepoint: google/fonts ebcdfd2bb ofl/tuffy/Tuffy-Italic.ttf."
+  },
+  {
+   "styles": [
+    "Tuffy-Regular"
+   ],
+   "ops": [
+    [
+     "importgsub",
+     "google/fonts@ebcdfd2bb7c9169a02679733c626333fdc511e99:ofl/tuffy/Tuffy-Regular.ttf"
+    ]
+   ],
+   "subject": "Replace the substitution lookups with the release's",
+   "body": "v1.272's GSUB was regenerated by its tool from glyph names: 13 lookups (aalt, ccmp, dlig, frac with slash, hlig, liga for Hungarian only, locl for Catalan, Moldavian and Romanian, ordn, sups; the Catalan l.l and the ordinals are chaining lookups). This source has 4 (liga, liga HUN, locl, frac with fraction). At default features the release therefore no longer forms the f + accented i ligatures, the U+2044 fractions or the default-language Scedilla -> Scommaaccent, and it adds ccmp for Greek. Every GSUB lookup of this source is replaced by the release's, in its order and registration, copied from the release binary: google/fonts ebcdfd2bb ofl/tuffy/Tuffy-Regular.ttf."
+  },
+  {
+   "styles": [
+    "Tuffy-Italic"
+   ],
+   "ops": [
+    [
+     "importgsub",
+     "google/fonts@ebcdfd2bb7c9169a02679733c626333fdc511e99:ofl/tuffy/Tuffy-Italic.ttf"
+    ]
+   ],
+   "subject": "Replace the substitution lookups with the release's",
+   "body": "v1.272's GSUB was regenerated by its tool from glyph names: 13 lookups (aalt, ccmp, dlig, frac with slash, hlig, liga for Hungarian only, locl for Catalan, Moldavian and Romanian, ordn, sups; the Catalan l.l and the ordinals are chaining lookups). This source has 4 (liga, liga HUN, locl, frac with fraction). At default features the release therefore no longer forms the f + accented i ligatures, the U+2044 fractions or the default-language Scedilla -> Scommaaccent, and it adds ccmp for Greek. Every GSUB lookup of this source is replaced by the release's, in its order and registration, copied from the release binary: google/fonts ebcdfd2bb ofl/tuffy/Tuffy-Italic.ttf."
+  }
+ ],
+ "disclose": []
+}

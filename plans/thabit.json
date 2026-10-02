@@ -3,7 +3,8 @@
  "commits": [
   {
    "styles": [
-    "Thabit"
+    "Thabit",
+    "Thabit-Bold"
    ],
    "ops": [
     [
@@ -12,7 +13,368 @@
     ]
    ],
    "subject": "State OS/2 version 1, as the release has",
-   "body": "The release has an OS/2 version 1 table without USE_TYPO_METRICS (FontForge 2008-08-08 export); this file says OS2Version 0, which a converter reads as 'latest' and sets fsSelection bit 7."
+   "body": "All four released styles have an OS/2 version 1 table without USE_TYPO_METRICS (FontForge 2008-08-08 export); these files say OS2Version 0, which a converter reads as 'latest' and sets fsSelection bit 7. The obliques are generated from these files below and inherit it."
+  },
+  {
+   "styles": [
+    "Thabit",
+    "Thabit-Bold"
+   ],
+   "ops": [
+    [
+     "dropglyph",
+     "uni00A0"
+    ]
+   ],
+   "subject": "Drop the empty uni00A0 the 2010 re-save added",
+   "body": "None of the released styles maps U+00A0 or has a glyph for it. This .sfd ends with an empty uni00A0 (advance 637 in the regular, the last glyph id), which the 2010 re-save added after the 0.02 release; built, it would map U+00A0. The obliques are generated from these files below and inherit the drop."
+  },
+  {
+   "styles": [
+    "Thabit-Oblique"
+   ],
+   "ops": [
+    [
+     "generatefrom",
+     "Thabit.sfd"
+    ]
+   ],
+   "subject": "Start src/Thabit-Oblique.sfd as a copy of src/Thabit.sfd",
+   "body": "google/fonts ships Thabit as Arabeyes' Thabit 0.02 release (2008-08-09), whose fonts were made by src/build.py (helper.py in the 0.02 ChangeLog): it merges Thabit.fea and IBM Courier into the .sfd and, for the obliques, skews a copy of it. The source state those fonts were exported from is not archived; this .sfd is a 2010 re-save with the same drawing. Each step of the script is written into the .sfd as its own commit, so that the converted source builds what ships.\n\nbuild.py's obliqize() opens src/Thabit.sfd and saves the skewed font as a temporary file, which generate() then exports. That intermediate is committed here as a source of its own, starting as an exact copy; the next commits make the script's changes."
+  },
+  {
+   "styles": [
+    "Thabit-Oblique"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "FontName Thabit-Oblique"
+    ],
+    [
+     "setfield",
+     "FullName Thabit Oblique"
+    ],
+    [
+     "setfield",
+     "FamilyName Oblique"
+    ],
+    [
+     "setlangname",
+     "3073 2 \u0645\u0627\u0626\u0644"
+    ]
+   ],
+   "subject": "Name src/Thabit-Oblique.sfd as build.py's obliqize() does",
+   "body": "obliqize() sets fontname to the upright's plus '-Oblique', fullname plus ' Oblique', familyname to 'Oblique' and appends the Arabic (Egypt) subfamily name 'maa'il' (here in UTF-7, as FontForge stores it). The release's PostScript name is Thabit-Oblique."
+  },
+  {
+   "styles": [
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "generatefrom",
+     "Thabit-Bold.sfd"
+    ]
+   ],
+   "subject": "Start src/Thabit-BoldOblique.sfd as a copy of src/Thabit-Bold.sfd",
+   "body": "google/fonts ships Thabit as Arabeyes' Thabit 0.02 release (2008-08-09), whose fonts were made by src/build.py (helper.py in the 0.02 ChangeLog): it merges Thabit.fea and IBM Courier into the .sfd and, for the obliques, skews a copy of it. The source state those fonts were exported from is not archived; this .sfd is a 2010 re-save with the same drawing. Each step of the script is written into the .sfd as its own commit, so that the converted source builds what ships.\n\nbuild.py's obliqize() opens src/Thabit-Bold.sfd and saves the skewed font as a temporary file, which generate() then exports. That intermediate is committed here as a source of its own, starting as an exact copy; the next commits make the script's changes."
+  },
+  {
+   "styles": [
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "FontName Thabit-Bold-Oblique"
+    ],
+    [
+     "setfield",
+     "FullName Thabit Bold Oblique"
+    ],
+    [
+     "setfield",
+     "FamilyName Bold Oblique"
+    ],
+    [
+     "setlangname",
+     "3073 2 \u0639\u0631\u064a\u0636 \u0645\u0627\u0626\u0644"
+    ]
+   ],
+   "subject": "Name src/Thabit-BoldOblique.sfd as build.py's obliqize() does",
+   "body": "obliqize() sets fontname to the upright's plus '-Oblique', fullname plus ' Oblique', familyname to 'Bold Oblique' and appends the Arabic (Egypt) subfamily name 'areed maa'il' (here in UTF-7, as FontForge stores it). The release's PostScript name is Thabit-Bold-Oblique."
+  },
+  {
+   "styles": [
+    "Thabit-Oblique",
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "obliqize",
+     "-16 200C 202E"
+    ]
+   ],
+   "subject": "Skew the obliques as build.py's obliqize() does",
+   "body": "obliqize() selects every glyph worth outputting except afii61664..afii61575 (U+200C..U+202E, the joiners and bidi controls), unlinks references and transforms by psMat.skew(-16). psMat.skew takes RADIANS, so x' = x + tan(-16) y = x - 0.30063 y; the release measures -0.3007. Points are rounded to 1/1024 as FontForge 2008's TransformPoint() does, in single precision; anchors move with the outline. Done to the text by tools/ff_build_ops.py."
+  },
+  {
+   "styles": [
+    "Thabit-Oblique"
+   ],
+   "ops": [
+    [
+     "pastepsglyphs",
+     "cour/cour.pfa parenleft parenright exclam bracketleft bracketright braceleft braceright"
+    ]
+   ],
+   "subject": "Paste upright Courier brackets and exclam, as build.py's deobliqize() does",
+   "body": "deobliqize() copies ( ) [ ] { } and ! from the upright src/cour/cour.pfa over the skewed font, so the release draws them unskewed with the upright advance and side bearing. The glyphs are new here (the source has no Latin yet), encoded at their Unicode slots."
+  },
+  {
+   "styles": [
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "pastepsglyphs",
+     "cour/courb.pfa parenleft parenright exclam bracketleft bracketright braceleft braceright"
+    ]
+   ],
+   "subject": "Paste upright Courier brackets and exclam, as build.py's deobliqize() does",
+   "body": "deobliqize() copies ( ) [ ] { } and ! from the upright src/cour/courb.pfa over the skewed font, so the release draws them unskewed with the upright advance and side bearing. The glyphs are new here (the source has no Latin yet), encoded at their Unicode slots."
+  },
+  {
+   "styles": [
+    "Thabit",
+    "Thabit-Bold",
+    "Thabit-Oblique",
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "mergefea",
+     "Thabit.fea"
+    ]
+   ],
+   "subject": "Merge Thabit.fea, as build.py does",
+   "body": "generate() runs font.mergeFeature('Thabit.fea'), which adds the whole GSUB: rligTashkilLigatures, InitialForms, MedialForms, FinalForms and ligaLamAlef, each with one subtable named as FontForge names it; the release's PfEd table names the same lookups and subtables. The .sfd itself has no GSUB."
+  },
+  {
+   "styles": [
+    "Thabit"
+   ],
+   "ops": [
+    [
+     "mergepsfont",
+     "cour/cour.pfa Courier"
+    ]
+   ],
+   "subject": "Merge IBM Courier from src/cour/cour.pfa, as build.py does",
+   "body": "generate() runs font.mergeFonts('cour/cour.pfa'): every Courier glyph that draws something and that the font lacks is copied in, unscaled (A keeps its 600-unit advance in the 1024-unit em), with seac accents as two references, named and encoded by FontForge 2008's UniFromName (SM680000 -> U+2310, ohm -> U+2126, micro -> U+00B5, ...). This is where the release's 458 Latin, Greek and box-drawing codepoints come from; the .sfd says 'Removed non-arabic glyphs' (ChangeLog 2008-08-09).\n\nFontForge converted each copied cubic outline to quadratics with SplineSetsTTFApprox (splineorder2.c), which is not ported; tools/ff_build_ops.py uses fontTools' cu2qu with a maximum error of 1 unit instead, so the Latin points differ from the release's within about a unit."
+  },
+  {
+   "styles": [
+    "Thabit-Bold"
+   ],
+   "ops": [
+    [
+     "mergepsfont",
+     "cour/courb.pfa Courier-Bold"
+    ]
+   ],
+   "subject": "Merge IBM Courier-Bold from src/cour/courb.pfa, as build.py does",
+   "body": "generate() runs font.mergeFonts('cour/courb.pfa'): every Courier glyph that draws something and that the font lacks is copied in, unscaled (A keeps its 600-unit advance in the 1024-unit em), with seac accents as two references, named and encoded by FontForge 2008's UniFromName (SM680000 -> U+2310, ohm -> U+2126, micro -> U+00B5, ...). This is where the release's 458 Latin, Greek and box-drawing codepoints come from; the .sfd says 'Removed non-arabic glyphs' (ChangeLog 2008-08-09).\n\nFontForge converted each copied cubic outline to quadratics with SplineSetsTTFApprox (splineorder2.c), which is not ported; tools/ff_build_ops.py uses fontTools' cu2qu with a maximum error of 1 unit instead, so the Latin points differ from the release's within about a unit."
+  },
+  {
+   "styles": [
+    "Thabit-Oblique"
+   ],
+   "ops": [
+    [
+     "mergepsfont",
+     "cour/couri.pfa Courier-Italic"
+    ]
+   ],
+   "subject": "Merge IBM Courier-Italic from src/cour/couri.pfa, as build.py does",
+   "body": "generate() runs font.mergeFonts('cour/couri.pfa'): every Courier glyph that draws something and that the font lacks is copied in, unscaled (A keeps its 600-unit advance in the 1024-unit em), with seac accents as two references, named and encoded by FontForge 2008's UniFromName (SM680000 -> U+2310, ohm -> U+2126, micro -> U+00B5, ...). This is where the release's 458 Latin, Greek and box-drawing codepoints come from; the .sfd says 'Removed non-arabic glyphs' (ChangeLog 2008-08-09).\n\nFontForge converted each copied cubic outline to quadratics with SplineSetsTTFApprox (splineorder2.c), which is not ported; tools/ff_build_ops.py uses fontTools' cu2qu with a maximum error of 1 unit instead, so the Latin points differ from the release's within about a unit."
+  },
+  {
+   "styles": [
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "mergepsfont",
+     "cour/courbi.pfa Courier-BoldItalic"
+    ]
+   ],
+   "subject": "Merge IBM Courier-BoldItalic from src/cour/courbi.pfa, as build.py does",
+   "body": "generate() runs font.mergeFonts('cour/courbi.pfa'): every Courier glyph that draws something and that the font lacks is copied in, unscaled (A keeps its 600-unit advance in the 1024-unit em), with seac accents as two references, named and encoded by FontForge 2008's UniFromName (SM680000 -> U+2310, ohm -> U+2126, micro -> U+00B5, ...). This is where the release's 458 Latin, Greek and box-drawing codepoints come from; the .sfd says 'Removed non-arabic glyphs' (ChangeLog 2008-08-09).\n\nFontForge converted each copied cubic outline to quadratics with SplineSetsTTFApprox (splineorder2.c), which is not ported; tools/ff_build_ops.py uses fontTools' cu2qu with a maximum error of 1 unit instead, so the Latin points differ from the release's within about a unit."
+  },
+  {
+   "styles": [
+    "Thabit"
+   ],
+   "ops": [
+    [
+     "afmligatures",
+     "\"Courier-'liga' Standard Ligatures in Latin lookup 0\" ff=f+f fi=f+i fl=f+l ffi=ff+i ffl=ff+l"
+    ]
+   ],
+   "subject": "Add the f-ligature lookup FontForge read from IBM's cour.afm",
+   "body": "FontForge reads the .afm beside a Type 1 font it opens and turns its ligature lines into a 'liga' lookup for script latn (splinesaveafm.c LoadKerningDataFromAfm); the release has that lookup, named in its PfEd table \"Courier-'liga' Standard Ligatures in Latin lookup 0\". The AFMs are not in this tree. Their ligatures are stated here from X.Org font-ibm-type1 88a51daabc8a cour.afm, whose .pfa files are byte-identical to src/cour/: 'N f ; L f ff ; L i fi ; L l fl' and 'N ff ; L i ffi ; L l ffl'."
+  },
+  {
+   "styles": [
+    "Thabit-Bold"
+   ],
+   "ops": [
+    [
+     "afmligatures",
+     "\"Courier-Bold-'liga' Standard Ligatures in Latin lookup 0\" ff=f+f fi=f+i fl=f+l ffi=ff+i ffl=ff+l"
+    ]
+   ],
+   "subject": "Add the f-ligature lookup FontForge read from IBM's courb.afm",
+   "body": "FontForge reads the .afm beside a Type 1 font it opens and turns its ligature lines into a 'liga' lookup for script latn (splinesaveafm.c LoadKerningDataFromAfm); the release has that lookup, named in its PfEd table \"Courier-Bold-'liga' Standard Ligatures in Latin lookup 0\". The AFMs are not in this tree. Their ligatures are stated here from X.Org font-ibm-type1 88a51daabc8a courb.afm, whose .pfa files are byte-identical to src/cour/: 'N f ; L f ff ; L i fi ; L l fl' and 'N ff ; L i ffi ; L l ffl'."
+  },
+  {
+   "styles": [
+    "Thabit-Oblique"
+   ],
+   "ops": [
+    [
+     "afmligatures",
+     "\"Courier-Italic-'liga' Standard Ligatures in Latin lookup 0\" ff=f+f fi=f+i fl=f+l ffi=ff+i ffl=ff+l"
+    ]
+   ],
+   "subject": "Add the f-ligature lookup FontForge read from IBM's couri.afm",
+   "body": "FontForge reads the .afm beside a Type 1 font it opens and turns its ligature lines into a 'liga' lookup for script latn (splinesaveafm.c LoadKerningDataFromAfm); the release has that lookup, named in its PfEd table \"Courier-Italic-'liga' Standard Ligatures in Latin lookup 0\". The AFMs are not in this tree. Their ligatures are stated here from X.Org font-ibm-type1 88a51daabc8a couri.afm, whose .pfa files are byte-identical to src/cour/: 'N f ; L f ff ; L i fi ; L l fl' and 'N ff ; L i ffi ; L l ffl'."
+  },
+  {
+   "styles": [
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "afmligatures",
+     "\"Courier-BoldItalic-'liga' Standard Ligatures in Latin lookup 0\" ff=f+f fi=f+i fl=f+l ffi=ff+i ffl=ff+l"
+    ]
+   ],
+   "subject": "Add the f-ligature lookup FontForge read from IBM's courbi.afm",
+   "body": "FontForge reads the .afm beside a Type 1 font it opens and turns its ligature lines into a 'liga' lookup for script latn (splinesaveafm.c LoadKerningDataFromAfm); the release has that lookup, named in its PfEd table \"Courier-BoldItalic-'liga' Standard Ligatures in Latin lookup 0\". The AFMs are not in this tree. Their ligatures are stated here from X.Org font-ibm-type1 88a51daabc8a courbi.afm, whose .pfa files are byte-identical to src/cour/: 'N f ; L f ff ; L i fi ; L l fl' and 'N ff ; L i ffi ; L l ffl'."
+  },
+  {
+   "styles": [
+    "Thabit",
+    "Thabit-Oblique"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "Copyright Typeface and data (C) 2002-2008, Khaled Hosny.This font is distributed under the terms of OFL license. Latin glyphs are Copyright (c) IBM Corporation 1990,1991."
+    ]
+   ],
+   "subject": "State the release's copyright notice",
+   "body": "The release's name ID 0 reads 'Typeface and data (C) 2002-2008, Khaled Hosny.This font is distributed under the terms of OFL license. Latin glyphs are Copyright (c) IBM Corporation 1990,1991.'. build.py appends the IBM credit for the Latin to the font's copyright; the 2010 re-save of this .sfd also changed the years to 2008-2010. Stated as the release has it."
+  },
+  {
+   "styles": [
+    "Thabit-Bold",
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "Copyright Typeface and data (C) 2002-2008, Khaled Hosny. This font is distributed under the terms of OFL license. Latin glyphs are Copyright (c) IBM Corporation 1990,1991."
+    ]
+   ],
+   "subject": "State the release's copyright notice",
+   "body": "The release's name ID 0 reads 'Typeface and data (C) 2002-2008, Khaled Hosny. This font is distributed under the terms of OFL license. Latin glyphs are Copyright (c) IBM Corporation 1990,1991.'. build.py appends the IBM credit for the Latin to the font's copyright; the 2010 re-save of this .sfd also changed the years to 2008-2010. Stated as the release has it."
+  },
+  {
+   "styles": [
+    "Thabit",
+    "Thabit-Bold",
+    "Thabit-Oblique",
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "FamilyName Thabit"
+    ]
+   ],
+   "subject": "Restore the family name Thabit",
+   "body": "Every released style has typographic family 'Thabit' (name ID 16), and google/fonts METADATA names the family Thabit. The 2010 re-save of the uprights says FamilyName 'Regular' and 'Bold', and build.py's obliqize() sets 'Oblique' and 'Bold Oblique'."
+  },
+  {
+   "styles": [
+    "Thabit-Bold"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Thabit-Bold"
+    ],
+    [
+     "setname",
+     "4 Thabit-Bold Bold"
+    ],
+    [
+     "setname",
+     "16 Thabit"
+    ]
+   ],
+   "subject": "State the release's English names",
+   "body": "The release names this style 'Thabit-Bold' (name ID 1), 'Thabit-Bold Bold' (ID 4) and 'Thabit' (ID 16, typographic family). ID 1 is what FontForge 2008 exported from the lost 0.02 source state (the Arabeyes 0.02 tarball has it too); ID 4 was rewritten in the binary by Raph Levien's FixName (googlefontdirectory-hg 465c5490a and 49339cae0, 2011-12-15), the only change google/fonts made to these fonts. Stated as LangName 1033 strings, which FontForge exports in preference to the derived names."
+  },
+  {
+   "styles": [
+    "Thabit-Oblique"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Thabit-Oblique"
+    ],
+    [
+     "setname",
+     "4 Thabit-Oblique Oblique"
+    ],
+    [
+     "setname",
+     "16 Thabit"
+    ]
+   ],
+   "subject": "State the release's English names",
+   "body": "The release names this style 'Thabit-Oblique' (name ID 1), 'Thabit-Oblique Oblique' (ID 4) and 'Thabit' (ID 16, typographic family). ID 1 is what FontForge 2008 exported from the lost 0.02 source state (the Arabeyes 0.02 tarball has it too); ID 4 was rewritten in the binary by Raph Levien's FixName (googlefontdirectory-hg 465c5490a and 49339cae0, 2011-12-15), the only change google/fonts made to these fonts. Stated as LangName 1033 strings, which FontForge exports in preference to the derived names."
+  },
+  {
+   "styles": [
+    "Thabit-BoldOblique"
+   ],
+   "ops": [
+    [
+     "setname",
+     "1 Thabit-Bold-Oblique"
+    ],
+    [
+     "setname",
+     "2 Bold Oblique"
+    ],
+    [
+     "setname",
+     "4 Thabit-Bold-Oblique Bold Oblique"
+    ],
+    [
+     "setname",
+     "16 Thabit"
+    ]
+   ],
+   "subject": "State the release's English names",
+   "body": "The release names this style 'Thabit-Bold-Oblique' (name ID 1), 'Bold Oblique' (ID 2), 'Thabit-Bold-Oblique Bold Oblique' (ID 4) and 'Thabit' (ID 16, typographic family). ID 1 is what FontForge 2008 exported from the lost 0.02 source state (the Arabeyes 0.02 tarball has it too); ID 4 was rewritten in the binary by Raph Levien's FixName (googlefontdirectory-hg 465c5490a and 49339cae0, 2011-12-15), the only change google/fonts made to these fonts. Stated as LangName 1033 strings, which FontForge exports in preference to the derived names."
   }
  ],
  "disclose": []
