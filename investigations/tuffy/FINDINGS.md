@@ -120,3 +120,29 @@ Confidence: High on provenance (byte-identity, FFTM timestamps, google/fonts his
     BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont bash probes/run_stage.sh Tuffy-Regular r9-heightsbin-fields --import "U+0162 U+0163" <same edits as r7-final> edits/both-9-heights.tsv   (and i8/i9 for Italic)
     bash probes/gate_vs_ff_export.sh Tuffy-Regular <baseline build .ttf> runs/vs-ff-export-1.271   (same for Italic)
     Stages r1..r6 / i1..i5: run_stage.sh with a prefix of the edit list; each run dir holds edits.log, source.diff, rows.before, rows.after, <Style>.gate.txt
+
+## Addendum 2026-10-02: landed as plans/tuffy.json
+
+The edits above are now `plans/tuffy.json` (tools/sfd_edit.py ops), plus what the functional
+gate showed they lacked. Measured in logs/reland-2026-10-02-sfdedit/tuffy.log (babelfont
+integration-names eae493be, unpublished): Regular and Italic go from 68 / 27 table-gate rows
+(logs/reland-2026-10-02-final) to 0 / 0; cmap, shaping (1,270,891 runs, 0 differ), line spacing
+and GDEF pass. Left: the synthesized .notdef (advance 748 vs 1024) and the localized name ID 17
+in 8 languages, both converter-side.
+
+Corrections to the text above:
+
+- **sfd-batch5/tools/drift/import_outlines.py writes into the Back layer** when a glyph has
+  one: it replaces the block's first `SplineSet`, which is the Back layer's. Tuffy's glyphs
+  carry Back layers, so the r7-final / i6-final imports (and the verifier's) changed nothing
+  that is built. sfd_edit's `importoutlines` writes the Fore layer. Any other plan or
+  reconstruction that used import_outlines.py on glyphs with a Back layer should be re-checked.
+- The release redrew far more than the 10 glyphs listed: the functional gate's geometry test
+  (investigations/tuffy/probes/geometry_list.py) failed 330 Regular and 306 Italic glyphs
+  before the import commit. 191 Regular (incl. Omega and tilde, which only fail inside the
+  Greek composites) and 314 Italic simple glyphs are now copied from the release; Regular's 141
+  failing composites then pass with their components.
+- The localized style names are name ID 17 in the release (8 languages, no Spanish), not ID 2.
+- The 19 combining marks need GlyphClass 4: the release's GDEF classes only them.
+- 4 more composites (uni221B, uni221C, etaiotasubgrave, etaiotasubacute) take the verifier's
+  placement; Alphaiotasub's first reference was already at 0 0.
