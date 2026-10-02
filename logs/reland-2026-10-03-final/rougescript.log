@@ -1,0 +1,11 @@
+rougescript: RESIDUAL-UNPUBLISHED-CONVERTER @ 32ba3e2, 3 commits, 0 edit(s): RougeScript-Regular=0 functional=FAIL(rendering)
+     cmap         PASS 218 codepoints, exact
+     shaping      PASS 542406 runs shaped, 0 differ
+     rendering    FAIL diffenator3 11 glyph / 10 word diffs (5 / 10 confirmed); 5 of 94 changed outlines draw different ink
+         - diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00CF 158px, U+00CE 154px, U+00CD 154px, U+00CC 151px, U+0049 143px
+         - diffenator3: 10 word(s) render differently (>8 px at 16 ppem), confirmed: 'ÄÎÐÎÃÎÉ' 191px, 'BlagoÏevitch' 65px, 'COMPAÑÍA' 64px, 'ACEGHIJOSUWYaceghijosuwy' 57px, 'ALKUjiggerypokeryMIX' 56px
+         - 5 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 156 ppem = 8 units/px, > 4 px at coverage fuzz 64): Idieresis 2084px, Icircumflex 2066px, Iacute 2053px, Igrave 2042px, I 1914px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 218 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,14 @@
+varela: RESIDUAL-UNPUBLISHED-CONVERTER @ 7679616, 3 commits, 0 edit(s): Varela-Regular=3 functional=FAIL(shaping)
+   Varela-Regular BLOCKING GPOS.script_list [{"cyrl/dflt": {"lookups": []}, "grek/dflt": {"lookups": []}, "latn/dflt": {"loo
+   Varela-Regular BLOCKING GPOS.feature_list [{}, null]
+   Varela-Regular BLOCKING GPOS.lookup_list [{}, null]
+     cmap         PASS 531 codepoints, exact
+     shaping      FAIL 1988954 runs shaped, 1236 differ
+         - default features, base+mark: 1169 of 1221 runs differ
+         - default features, base+mark+mark: 63 of 63 runs differ
+         - default features, kern+mark: 4 of 4 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 829 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,9 @@
+nosifercaps: RESIDUAL-UNPUBLISHED-CONVERTER @ dcf26aa, 3 commits, 0 edit(s): NosiferCaps-Regular=0 functional=FAIL(line_spacing)
+     cmap         PASS 334 codepoints, exact
+     shaping      PASS 646311 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 194 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: REGULAR gained
+     advances     PASS 336 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

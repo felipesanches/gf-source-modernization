@@ -1,0 +1,38 @@
+reland-2026-10-03-final (2026-10-02): all 101 repos with ONE converter holding every reworked PR branch.
+
+Converter: babelfont integration-final 6cc9c234 (local only, detached worktree
+babelfont-rs-worktrees/integration-final, binary target-heights/release/babelfont, BUILT_FROM 6cc9c234):
+  59b894fc integration-agent-import1 = integration-all 5b7eb252 + #104 gdef-classes, #106 legacy-os2-version,
+           #111 no-anchor-propagation, as SFD-reader behaviour (no flags)
+  + merge 5d56d99c integration-agent-import2 = 5b7eb252 + #105 shadowed-kern-pairs (PairPos2 into master kerning),
+           #121 explicit-mark-lookups (reader writes the SFD's anchor lookups; its branch merged upstream main, so it
+           also brings #101-#103, #113 and #122 aalt language systems)  -> merge 21573f2c
+  + merge 942b7d74 integration-agent-generic = 5b7eb252 + #120 --add-notdef, #119 --infer-fixed-pitch -> merge 6cc9c234
+Conflicts: fontforge.rs constants block and tests.rs appended tests (import1 x import2), filters/mod.rs module list
+(import2 removed fontforge_anchor_lookups, generic removed fontforge_one_width); all resolved as the union.
+Upstream main was not merged. `babelfont --help` has --add-notdef and --infer-fixed-pitch and none of
+--fontforge-{gdef-classes,legacy-os2-version,no-anchor-propagation,mark-lookups,notdef,fixed-pitch}.
+cargo test -p babelfont --lib: 314 pass, 15 fail = 8 robocjk + 3 decomposecomponentreferences (missing fixtures)
++ 4 #121 tests (anchor_lookups_are_written_from_the_anchor_points, anchor_lookup_flags_keep_mark_classes_and_sets,
+add_master_gives_anchor_lookups_to_the_feature_writers, feature_code_order_is_deterministic): #108 lookup-precedence
+defines a feature's own lookups inside its feature block, so the anchor lookups are not top-level prefixes; the same 4
+fail in integration-agent-import2. clippy --all-targets --all-features: 0 warnings.
+
+Recipe/plans: this repo at e473eda (tools/recipe.py f20b1b9), unmodified.
+  sh tools/build_babelfont.sh   (BF_TREE=<integration-final>)
+  env BF_TREE=<integration-final> OUT=<scratch>/repos LANDED=<scratch>/landed.tsv SCRATCH=<scratch>/land \
+    LAND_ARGS=--unpublished-converter sh tools/reland_all.sh 2026-10-03-final
+  python3 tools/reland_triage.py 2026-10-03-final
+  python3 tools/compare_runs.py 2026-10-02-current 2026-10-03-final
+
+Result: 151 styles, 127 functional PASS, 123 CLEAN (2026-10-02-current: 127, 122); 0 regressions.
+Changed vs 2026-10-02-current (compare-2026-10-02-current.tsv; gate lines diffed with the commit hash masked):
+  Miama-Regular, Ultra-Regular: now fail gdef (GDEF absent/present, mark glyph sets: the kern lookup's mark filtering
+    set, disclosed); shaping unchanged; table 0->2 and 3->5. Identical to reland-2026-10-03-import1-edits.
+  Poly-Italic: table 3->0, now CLEAN; Varela-Regular: table 6->3 (3 GSUB rows gone, shaping unchanged, 1236 runs
+    differ). Both from #122 (aalt language systems, via #121's main merge); identical to reland-2026-10-02-langsys.
+  Play-Bold/-Regular: now fail names, table 365->165 / 353->164: Play is now landed from its .glyphs source
+    (5319b72, no babelfont); identical to reland-2026-10-02-play-stock-builder except a 42px tie's order.
+  Comic Relief: CLEAN with its 6 plan edits (was 2). Edit counts also rose with committed plans for thabit,
+    mountainsofchristmas, nothingyoucoulddo, unifraktur, gates unchanged.
+  Limelight: only the order of two 42px glyphs in a diffenator3 listing.
