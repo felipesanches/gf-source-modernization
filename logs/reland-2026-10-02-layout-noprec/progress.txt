@@ -1,0 +1,7 @@
+== cardo (families-next.tsv) 2026-10-02T04:12:33+01:00
+   rc=1 cardo	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   45G  98% /home/fsanches/compartilhado
+== lohitbengali (families-next.tsv) 2026-10-02T04:15:59+01:00
+   rc=1 lohitbengali	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   46G  98% /home/fsanches/compartilhado
+done 2026-10-02T04:16:06+01:00

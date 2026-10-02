@@ -379,6 +379,7 @@
  ],
  "disclose": [
   "The release's head.fontDirectionHint is 0 (FontForge writes 0 for a font with both left-to-right and right-to-left glyphs); fontc always writes 2, the value the OpenType specification now requires for this deprecated field. No renderer reads it. Decided 2026-10-02: disclose.",
-  "The release carries FontForge's private PfEd table (lookup, subtable and anchor-class names only). No shaper or rasterizer reads it and fontc does not write it. Decided 2026-10-02: disclose."
+  "The release carries FontForge's private PfEd table (lookup, subtable and anchor-class names only). No shaper or rasterizer reads it and fontc does not write it. Decided 2026-10-02: disclose.",
+  "Thabit-Oblique and Thabit-BoldOblique are not flagged italic (and BoldOblique not bold) in OS/2 fsSelection and head.macStyle, while the releases are: FontForge took those bits from the style part of the font name; fontc takes them only from the italic angle or a master named Italic/Bold/Bold Italic, and a .glyphs source cannot state them otherwise. Needs a fontc change; planned as later work. Decided 2026-10-02: disclose."
  ]
 }

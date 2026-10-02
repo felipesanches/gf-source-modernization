@@ -22,6 +22,7 @@
  ],
  "disclose": [
   "Cardo-Italic: the release's kerning lookup does not skip marks (lookup flag 0, as the source states). fontc's kerning writer always skips marks and rejects the option to keep them, so kerning next to combining marks differs from the release. Needs a fontc change (KernFeatureWriter ignoreMarks); planned as later work. Decided 2026-10-02: disclose.",
-  "The release's head.fontDirectionHint is 0 (FontForge writes 0 for a font with both left-to-right and right-to-left glyphs); fontc always writes 2, the value the OpenType specification now requires for this deprecated field. No renderer reads it. Decided 2026-10-02: disclose."
+  "The release's head.fontDirectionHint is 0 (FontForge writes 0 for a font with both left-to-right and right-to-left glyphs); fontc always writes 2, the value the OpenType specification now requires for this deprecated field. No renderer reads it. Decided 2026-10-02: disclose.",
+  "Cardo-Bold has no mark-positioning feature, so HarfBuzz places combining marks by its fallback, which reads glyph bounding boxes. FontForge stored composite glyphs' boxes from their curve extremes; fontc computes them from the components' control points, so some marks land at slightly different positions. Decided 2026-10-02: disclose."
  ]
 }

@@ -1,5 +1,5 @@
 diff --git a/tools/recipe.py b/tools/recipe.py
-index e391ccc..5a5bd9c 100644
+index e391ccc..fe18014 100644
 --- a/tools/recipe.py
 +++ b/tools/recipe.py
 @@ -38,6 +38,15 @@ FONTFORGE_HEIGHT_MEAN_FIXED = 1337023489
@@ -26,7 +26,7 @@ index e391ccc..5a5bd9c 100644
  
  
  # makeotf's duplicate cmap entries: each maps a second codepoint to the glyph of the
-@@ -131,14 +141,24 @@ def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
+@@ -131,14 +141,28 @@ def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
      config.yaml keeps source contour directions (a release of the family mixes them)."""
      flags = list(BASE)
      built = fontforge_build(shipped)
@@ -48,6 +48,10 @@ index e391ccc..5a5bd9c 100644
 +    # After the GDEF filter, which reads "no .notdef in the source"; before direction
 +    # correction, so the synthesized contour is normalised too.
 +    flags += ["--fontforge-notdef", "--fontforge-fixed-pitch"]
++    # FontForge exports only a glyph's own anchors, and writes anchor coordinates
++    # truncated toward zero.
++    if built is not None:
++        flags += ["--fontforge-no-anchor-propagation", "--fontforge-truncate-anchors"]
      if not keep_direction:
          flags.append("--correct-path-direction")
      # --add-legacy-duplicate-cmap is NEVER passed. It adds makeotf's duplicate set,

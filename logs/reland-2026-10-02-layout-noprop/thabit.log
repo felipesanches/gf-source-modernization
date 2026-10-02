@@ -1,0 +1,90 @@
+thabit: RESIDUAL-UNPUBLISHED-CONVERTER @ 176b730, 27 commits, 24 edit(s): Thabit-Bold=3 functional=FAIL(shaping+rendering+names+advances); Thabit=3 functional=FAIL(shaping+rendering+names+advances); Thabit-Oblique=3 functional=FAIL(shaping+rendering+names+line_spacing+advances); Thabit-BoldOblique=3 functional=FAIL(shaping+rendering+names+line_spacing+advances)
+   Thabit-Bold BLOCKING PfEd: whole-table difference
+   Thabit-Bold BLOCKING head.font_direction_hint [0, 2]
+   Thabit-Bold BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+     cmap         PASS 734 codepoints, exact
+     shaping      FAIL 834830 runs shaped, 6909 differ
+         - default features, base+mark: 499 of 4248 runs differ
+         - default features, base+mark+mark: 156 of 768 runs differ
+         - default features, words: 4832 of 622112 runs differ
+         - ... 4 more
+     rendering    FAIL diffenator3 69 glyph / 149 word diffs (0 / 0 confirmed); 1 of 317 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (9)
+         - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold'
+         - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold'
+         - name ID 1 (3,1,0xC01): release 'ثابت', build None
+         - ... 6 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 762 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+   Thabit BLOCKING PfEd: whole-table difference
+   Thabit BLOCKING head.font_direction_hint [0, 2]
+   Thabit BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+     cmap         PASS 733 codepoints, exact
+     shaping      FAIL 858532 runs shaped, 7669 differ
+         - default features, base+mark: 1009 of 4248 runs differ
+         - default features, base+mark+mark: 156 of 768 runs differ
+         - default features, words: 5021 of 622112 runs differ
+         - ... 4 more
+     rendering    FAIL diffenator3 95 glyph / 151 word diffs (0 / 3 confirmed); 1 of 447 changed outlines draw different ink
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'أَیُّهَا' 49px, 'أوروپَّا،' 38px, 'ڤُولو' 21px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (9)
+         - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Medium'
+         - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Medium'
+         - name ID 1 (3,1,0xC01): release 'ثابت', build None
+         - ... 6 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 761 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+   Thabit-Oblique BLOCKING PfEd: whole-table difference
+   Thabit-Oblique BLOCKING head.font_direction_hint [0, 2]
+   Thabit-Oblique BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+     cmap         PASS 733 codepoints, exact
+     shaping      FAIL 857614 runs shaped, 11524 differ
+         - default features, base+mark: 1370 of 4248 runs differ
+         - default features, base+mark+mark: 214 of 768 runs differ
+         - default features, words: 7684 of 622112 runs differ
+         - ... 4 more
+     rendering    FAIL diffenator3 92 glyph / 141 word diffs (1 / 4 confirmed); 2 of 530 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+03A6 18px
+         - diffenator3: 4 word(s) render differently (>8 px at 16 ppem), confirmed: 'أَیُّهَا' 47px, 'أوروپَّا،' 40px, 'ڤُولو' 24px, 'ΦΦε' 10px
+         - 2 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px, Phi 5px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (9)
+         - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique'
+         - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique'
+         - name ID 1 (3,1,0xC01): release 'ثابت', build None
+         - ... 6 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC lost, REGULAR gained
+         - head.macStyle italic: release 1, build 0
+     advances     FAIL 761 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+   Thabit-BoldOblique BLOCKING PfEd: whole-table difference
+   Thabit-BoldOblique BLOCKING head.font_direction_hint [0, 2]
+   Thabit-BoldOblique BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+     cmap         PASS 734 codepoints, exact
+     shaping      FAIL 834148 runs shaped, 11108 differ
+         - default features, base+mark: 896 of 4248 runs differ
+         - default features, base+mark+mark: 235 of 768 runs differ
+         - default features, words: 7729 of 622112 runs differ
+         - ... 4 more
+     rendering    FAIL diffenator3 98 glyph / 133 word diffs (0 / 3 confirmed); 1 of 535 changed outlines draw different ink
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'وَأَعَدَّ' 196px, 'حدثٌ' 127px, 'أودُّ' 10px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (9)
+         - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique'
+         - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique'
+         - name ID 1 (3,1,0xC01): release 'ثابت', build None
+         - ... 6 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC lost, BOLD lost, REGULAR gained
+         - head.macStyle bold: release 1, build 0
+         - head.macStyle italic: release 1, build 0
+     advances     FAIL 762 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

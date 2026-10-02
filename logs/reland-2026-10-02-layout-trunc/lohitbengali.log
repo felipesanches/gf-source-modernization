@@ -1,0 +1,11 @@
+lohitbengali: RESIDUAL-UNPUBLISHED-CONVERTER @ 0a47137, 107 commits, 0 edit(s): Lohit-Bengali=0 functional=FAIL(shaping)
+     cmap         PASS 154 codepoints, exact
+     shaping      FAIL 96457 runs shaped, 1666 differ
+         - GPOS abvm off: 616 of 5222 runs differ
+         - GPOS blwm off: 942 of 3409 runs differ
+         - GPOS mark off: 108 of 1694 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 471 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 477 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

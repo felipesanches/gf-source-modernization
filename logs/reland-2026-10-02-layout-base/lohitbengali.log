@@ -1,0 +1,13 @@
+lohitbengali: RESIDUAL-UNPUBLISHED-CONVERTER @ dbbbdf7, 107 commits, 0 edit(s): Lohit-Bengali=0 functional=FAIL(shaping+rendering)
+     cmap         PASS 154 codepoints, exact
+     shaping      FAIL 96457 runs shaped, 1733 differ
+         - default features, words: 31 of 49519 runs differ
+         - GSUB abvs off: 30 of 2005 runs differ
+         - GSUB pstf off: 1 of 2333 runs differ
+         - ... 3 more
+     rendering    FAIL diffenator3 0 glyph / 16 word diffs (0 / 16 confirmed); 0 of 471 changed outlines draw different ink
+         - diffenator3: 16 word(s) render differently (>8 px at 16 ppem), confirmed: 'আড়িঁয়াল' 38px, 'রিঁবু' 38px, 'মিঁয়ার' 38px, 'টিঁকিয়ে' 37px, 'কিঁউ' 37px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 477 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
