@@ -1,0 +1,45 @@
+tuffy: RESIDUAL @ 302e02e, 21 commits, 18 edit(s): Tuffy-Bold=0 functional=FAIL(shaping+gdef); Tuffy-BoldItalic=0 functional=FAIL(shaping+gdef); Tuffy-Italic=0 functional=FAIL(rendering+names+advances); Tuffy-Regular=0 functional=FAIL(rendering+names+advances)
+     cmap         PASS 887 codepoints, exact
+     shaping      FAIL 877431 runs shaped, 50 differ
+         - default features, kern+mark: 50 of 70 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 42 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 888 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 18 class difference(s) shaping reads, 869 it does not
+         - 18 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, dotbelowcomb 1/3, gravecomb 1/3, tildecomb 1/3, uni0302 1/3, uni0304 1/3, uni0305 1/3, uni0306 1/3, uni0307 1/3, uni030A 1/3, uni030B 1/3, uni030C 1/3, uni0310 1/3, uni0324 1/3, uni0325 1/3
+     cmap         PASS 887 codepoints, exact
+     shaping      FAIL 877431 runs shaped, 50 differ
+         - default features, kern+mark: 50 of 70 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 242 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 888 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 18 class difference(s) shaping reads, 869 it does not
+         - 18 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, dotbelowcomb 1/3, gravecomb 1/3, tildecomb 1/3, uni0302 1/3, uni0304 1/3, uni0305 1/3, uni0306 1/3, uni0307 1/3, uni030A 1/3, uni030B 1/3, uni030C 1/3, uni0310 1/3, uni0324 1/3, uni0325 1/3
+     cmap         PASS 1501 codepoints, exact
+     shaping      PASS 1270891 runs shaped, 0 differ
+     rendering    FAIL diffenator3 59 glyph / 182 word diffs (0 / 0 confirmed); 1 of 810 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11074px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (16)
+         - name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 22 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 17 (3,1,0x40C) as read: release 'NormalItalique', build None
+         - ... 13 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 1502 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 748/1024
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+     cmap         PASS 1501 codepoints, exact
+     shaping      PASS 1270891 runs shaped, 0 differ
+     rendering    FAIL diffenator3 64 glyph / 236 word diffs (0 / 0 confirmed); 1 of 894 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11074px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (16)
+         - name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 22 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 17 (3,1,0x40C) as read: release 'NormalItalique', build None
+         - ... 13 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 1502 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 748/1024
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

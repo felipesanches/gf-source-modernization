@@ -1,0 +1,95 @@
+thabit: RESIDUAL @ e721b4b, 30 commits, 27 edit(s): Thabit-Bold=3 functional=FAIL(shaping+rendering+names+advances); Thabit=3 functional=FAIL(shaping+rendering+names+line_spacing+advances); Thabit-Oblique=3 functional=FAIL(shaping+rendering+names+line_spacing+advances); Thabit-BoldOblique=3 functional=FAIL(shaping+rendering+names+line_spacing+advances)
+   Thabit-Bold BLOCKING PfEd: whole-table difference
+   Thabit-Bold BLOCKING head.font_direction_hint [0, 2]
+   Thabit-Bold BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+     cmap         PASS 734 codepoints, exact
+     shaping      FAIL 847188 runs shaped, 769 differ
+         - default features, base+mark: 344 of 4248 runs differ
+         - default features, words: 300 of 622112 runs differ
+         - GSUB fina off: 1 of 11870 runs differ
+         - ... 3 more
+     rendering    FAIL diffenator3 69 glyph / 194 word diffs (0 / 45 confirmed); 1 of 317 changed outlines draw different ink
+         - diffenator3: 45 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 317px, 'الاٍمام' 248px, 'أَهلاً' 179px, 'كلاًّ' 144px, 'كلًّا' 56px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (6)
+         - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold'
+         - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold'
+         - name ID 2 (3,1,0xC01): release 'عريض', build None
+         - ... 3 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 762 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 543 it does not
+   Thabit BLOCKING PfEd: whole-table difference
+   Thabit BLOCKING head.font_direction_hint [0, 2]
+   Thabit BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+     cmap         PASS 733 codepoints, exact
+     shaping      FAIL 860356 runs shaped, 529 differ
+         - default features, base+mark: 112 of 4248 runs differ
+         - default features, words: 297 of 622112 runs differ
+         - GSUB init off: 3 of 5871 runs differ
+         - ... 2 more
+     rendering    FAIL diffenator3 95 glyph / 192 word diffs (0 / 44 confirmed); 1 of 447 changed outlines draw different ink
+         - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 269px, 'الاٍمام' 216px, 'أَهلاً' 158px, 'كلاًّ' 123px, 'كلًّا' 57px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (6)
+         - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Medium'
+         - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Medium'
+         - name ID 2 (3,1,0xC01): release 'عادي', build None
+         - ... 3 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (983, -528, 0), build typo (819, 0, 900)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (983, -244, 100), build typo (819, 0, 900)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+     advances     FAIL 761 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 574 it does not
+   Thabit-Oblique BLOCKING PfEd: whole-table difference
+   Thabit-Oblique BLOCKING head.font_direction_hint [0, 2]
+   Thabit-Oblique BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+     cmap         PASS 733 codepoints, exact
+     shaping      FAIL 857614 runs shaped, 481 differ
+         - default features, base+mark: 64 of 4248 runs differ
+         - default features, words: 297 of 622112 runs differ
+         - GSUB init off: 3 of 5871 runs differ
+         - ... 2 more
+     rendering    FAIL diffenator3 91 glyph / 186 word diffs (0 / 44 confirmed); 1 of 529 changed outlines draw different ink
+         - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 319px, 'بالإِصْدارِ' 277px, 'أجيالًا' 249px, 'الاٍمام' 226px, 'لِإدراج' 218px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (6)
+         - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique'
+         - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique'
+         - name ID 2 (3,1,0xC01): release 'مائل', build None
+         - ... 3 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (983, -528, 0), build typo (819, 0, 900)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (983, -244, 100), build typo (819, 0, 900)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+         - ... 2 more
+     advances     FAIL 761 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 572 it does not
+   Thabit-BoldOblique BLOCKING PfEd: whole-table difference
+   Thabit-BoldOblique BLOCKING head.font_direction_hint [0, 2]
+   Thabit-BoldOblique BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 17 unit(s) at .notdef (release 34, ours 51)
+     cmap         PASS 734 codepoints, exact
+     shaping      FAIL 834148 runs shaped, 481 differ
+         - default features, base+mark: 64 of 4248 runs differ
+         - default features, words: 297 of 622112 runs differ
+         - GSUB init off: 3 of 5871 runs differ
+         - ... 2 more
+     rendering    FAIL diffenator3 98 glyph / 179 word diffs (0 / 44 confirmed); 1 of 535 changed outlines draw different ink
+         - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 342px, 'الإسلَامِيُّ' 329px, 'بالإِصْدارِ' 310px, 'أجيالًا' 281px, 'الإِدارِيِّ' 280px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (6)
+         - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique'
+         - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique'
+         - name ID 2 (3,1,0xC01): release 'عريض مائل', build None
+         - ... 3 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC lost, BOLD lost, REGULAR gained
+         - head.macStyle bold: release 1, build 0
+         - head.macStyle italic: release 1, build 0
+     advances     FAIL 762 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 374/512
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 491 it does not

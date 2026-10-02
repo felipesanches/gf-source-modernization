@@ -1,0 +1,15 @@
+ribeyemarrow: RESIDUAL @ 4674706, 3 commits, 0 edit(s): RibeyeMarrow-Regular=2 functional=FAIL(shaping+gdef)
+   RibeyeMarrow-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 7]}, "ordn": {"0": [3, 4]}}
+   RibeyeMarrow-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[zero o
+     cmap         PASS 369 codepoints, exact
+     shaping      FAIL 778563 runs shaped, 882 differ
+         - default features, singles: 3 of 369 runs differ
+         - default features, base+mark: 834 of 834 runs differ
+         - default features, base+mark+mark: 45 of 45 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 240 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 370 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 3 class difference(s) shaping reads, 8 it does not
+         - GDEF absent in the build
+         - 3 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0312 1/3, uni0315 1/3, uni0326 1/3

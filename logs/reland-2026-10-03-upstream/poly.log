@@ -1,0 +1,26 @@
+poly: RESIDUAL @ 8c6ab2f, 3 commits, 0 edit(s): Poly-Italic=0 functional=FAIL(shaping+gdef); Poly-Regular=0 functional=FAIL(shaping+gdef)
+     cmap         PASS 388 codepoints, exact
+     shaping      FAIL 699490 runs shaped, 573 differ
+         - default features, singles: 2 of 388 runs differ
+         - default features, base+mark: 547 of 560 runs differ
+         - default features, base+mark+mark: 24 of 24 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 68 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 481 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 2 class difference(s) shaping reads, 98 it does not
+         - GDEF absent in the build
+         - 2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 1/3, dotaccentcmb 1/3
+     cmap         PASS 366 codepoints, exact
+     shaping      FAIL 697276 runs shaped, 532 differ
+         - default features, singles: 2 of 366 runs differ
+         - default features, base+mark: 504 of 516 runs differ
+         - default features, base+mark+mark: 24 of 24 runs differ
+         - ... 1 more
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 94 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 539 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 2 class difference(s) shaping reads, 178 it does not
+         - GDEF absent in the build
+         - 2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): dieresis.cap 1/3, dotaccentcmb 1/3

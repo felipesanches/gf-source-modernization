@@ -1,0 +1,19 @@
+lohittamil: RESIDUAL @ 84537e3, 96 commits, 0 edit(s): Lohit-Tamil=2 functional=FAIL(shaping+rendering+line_spacing+advances)
+   Lohit-Tamil BLOCKING hmtx.u0BC1 {"width": [532, 0]}
+   Lohit-Tamil BLOCKING hmtx.u0BC2 {"width": [776, 0]}
+     cmap         PASS 134 codepoints, exact
+     shaping      FAIL 145355 runs shaped, 3104 differ
+         - default features, singles: 2 of 134 runs differ
+         - default features, base+mark: 86 of 854 runs differ
+         - default features, base+mark+mark: 208 of 784 runs differ
+         - ... 7 more
+     rendering    FAIL diffenator3 0 glyph / 2 word diffs (0 / 2 confirmed); 0 of 239 changed outlines draw different ink
+         - diffenator3: 2 word(s) render differently (>8 px at 16 ppem), confirmed: 'ஃபோர்க்ஸ்ஸூக்குத்' 394px, 'ஃஇன்ஹுவாய்' 251px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (866, -363, 17), build typo (1400, -648, 20)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (866, -380, 0), build typo (1400, -648, 20)
+         - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+     advances     FAIL 245 glyph advances compared, 2 differ
+         - 2 advance width(s) differ (release/build): u0BC1 532/0, u0BC2 776/0
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 207 it does not
