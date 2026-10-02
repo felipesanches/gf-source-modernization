@@ -126,6 +126,16 @@ def fontforge_build(shipped):
     return f["FFTM"].FFTimeStamp - UNIX_FROM_1904
 
 
+# Flags the recipe asks for that are still in open babelfont-rs PRs. land.py drops one
+# when the converter it runs does not know it, so a family that lands CLEAN without it
+# can be pushed with the upstream converter now; the convert commit lists the flags
+# that actually ran. Any other unknown flag is an error.
+NOT_YET_UPSTREAM = {
+    "--add-notdef": "simoncozens/babelfont-rs#120",
+    "--infer-fixed-pitch": "simoncozens/babelfont-rs#119",
+}
+
+
 def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
     """The babelfont arguments for one style, in order. keep_direction: the repository's
     config.yaml keeps source contour directions (a release of the family mixes them)."""

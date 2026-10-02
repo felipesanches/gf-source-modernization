@@ -397,6 +397,17 @@ def gate(shipped, built, scratch):
     return int(m[-1]), rows
 
 
+_BF_HELP = None
+
+
+def converter_knows(flag):
+    """Whether the babelfont binary this run uses accepts the flag (checked once)."""
+    global _BF_HELP
+    if _BF_HELP is None:
+        _BF_HELP = subprocess.run([BF, "--help"], capture_output=True, text=True).stdout
+    return re.search(r"(^|\s)%s(\[|=|\s|$)" % re.escape(flag), _BF_HELP, re.M) is not None
+
+
 def convert(repo, rows, d, plan, bf_rev, n_edits):
     os.makedirs(os.path.join(d, "sources"), exist_ok=True)
     per_style = []
@@ -411,6 +422,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         f = plan["flags"].get(r["style"], {})
         flags = recipe.flags_for(text, r["shipped"], f.get("add", []), f.get("drop", []),
                                  keep_direction=keep) + [x for x in BF_EXTRA_FLAGS]
+        flags = [x for x in flags if x not in recipe.NOT_YET_UPSTREAM or converter_knows(x)]
         g = os.path.join(d, "sources", r["style"] + ".glyphs")
         sh(BF, src, g, *flags)
         notes = workarounds.apply_all(g, src)
