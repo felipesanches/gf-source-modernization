@@ -1,0 +1,12 @@
+# Limelight-Regular.ttf: 9 reachable outlines changed, 7 fail geometry
+GEO-FAIL Jcircumflex(Jcircumflex) 437px: STALE-LSB lsb-xMin=+3 (release lsb 0 xMin -3; build lsb -3 xMin -3)
+GEO-FAIL seven(seven) 357px: STALE-LSB lsb-xMin=+3 (release lsb 64 xMin 61; build lsb 61 xMin 61)
+GEO-FAIL J(J) 350px: STALE-LSB lsb-xMin=+3 (release lsb 0 xMin -3; build lsb -3 xMin -3)
+GEO-FAIL one(one) 150px: STALE-LSB lsb-xMin=+3 (release lsb 1 xMin -2; build lsb -2 xMin -2)
+GEO-FAIL asciitilde(asciitilde) 146px: STALE-LSB lsb-xMin=+4 (release lsb 70 xMin 66; build lsb 66 xMin 66)
+GEO-FAIL uni1E40(uni1E40) 9px: STALE-LSB lsb-xMin=+2 (release lsb 12 xMin 10; build lsb 10 xMin 10)
+GEO-FAIL M(M) 7px: STALE-LSB lsb-xMin=+2 (release lsb 12 xMin 10; build lsb 10 xMin 10)
+D3 U+0134 Jcircumflex 55px -> geometry 437px
+D3 U+0037 seven 47px -> geometry 357px
+D3 U+0031 one 42px -> geometry 150px
+D3 U+004A J 42px -> geometry 350px

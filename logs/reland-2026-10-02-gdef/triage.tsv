@@ -1,0 +1,106 @@
+repo	style	check	cause	detail
+cardo	Cardo-Bold	shaping	shaping: base+mark	default features, base+mark: 853 of 157321 runs differ
+cardo	Cardo-Italic	BUILD	not built	BUILD
+cardo	Cardo-Regular	BUILD	not built	BUILD
+comicrelief	ComicRelief-Regular	rendering	rendering: outlines differ	diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+042F 22px
+comicrelief	ComicRelief-Regular	names	names: ID 2+17+22	name ID 2 (3,1,0x403): release 'Normal', build None
+comicrelief	ComicRelief-Regular	line_spacing	line_spacing: metrics differ	post.underlinePosition: release -97, build -272
+comicrelief	ComicRelief-Bold	rendering	rendering: outlines differ	diffenator3: 146 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0409 799px, U+007D 402px, U+0424 55px, U+03A6 55px, U+014F 51px
+comicrelief	ComicRelief-Bold	names	names: ID 2+17+22	name ID 2 (3,1,0x403): release 'Negreta', build None
+comicrelief	ComicRelief-Bold	line_spacing	line_spacing: metrics differ	post.underlinePosition: release -97, build -272
+corben	Corben-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px
+corben	Corben-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 748/1024
+corben	Corben-Bold	rendering	rendering: outlines differ	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 138px, U+0141 61px, U+0142 55px
+kristi	Kristi-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px
+kristi	Kristi-Regular	names	names: ID 2	name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+kristi	Kristi-Regular	line_spacing	line_spacing: metrics differ	fsSelection: ITALIC gained, REGULAR lost
+kristi	Kristi-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 748/1024
+lekton	Lekton-Bold	BUILD	not built	BUILD
+lekton	Lekton-Italic	BUILD	not built	BUILD
+lekton	Lekton-Regular	BUILD	not built	BUILD
+limelight	Limelight-Regular	rendering	rendering: outlines differ	diffenator3: 4 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0134 55px, U+0037 47px, U+004A 42px, U+0031 42px
+lohitbengali	Lohit-Bengali	shaping	shaping: words	default features, words: 168 of 49519 runs differ
+lohitbengali	Lohit-Bengali	rendering	rendering: outlines differ	diffenator3: 21 word(s) render differently (>8 px at 16 ppem), confirmed: 'অনিচ্ছাসত্ত্বেও' 764px, 'জলোচ্ছ্বাসের' 751px, 'ঐজ্জ্বল্যতা' 712px, 'ধর্মান্ত্বরিত' 619px, 'যদ্দ্বারা' 429px
+lohittamil	Lohit-Tamil	shaping	shaping: singles	default features, singles: 12 of 134 runs differ
+lohittamil	Lohit-Tamil	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0BF9 564px, U+0BEB 430px, U+0BEE 363px, U+0BF0 257px, U+0BE6 172px
+lohittamil	Lohit-Tamil	advances	advances: differ	13 advance width(s) differ (release/build): asterisk 666/559, u0BB6_u0BBF.abvs 1051/1223, u0BC1 532/0, u0BC2 776/0, u0BE6 585/636, u0BEA 663/746, u0BEB 897/1055, u0BEC 829/941, u0BED 768/802, u0BEE 10
+miama	Miama-Regular	shaping	shaping: singles	default features, singles: 34 of 1110 runs differ
+miama	Miama-Regular	rendering	rendering: outlines differ	diffenator3: 34 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+032D 136px, U+0326 129px, U+0330 97px, U+0317 96px, U+032E 96px
+miama	Miama-Regular	names	names: ID 2	name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+miama	Miama-Regular	gdef	gdef: classes differ	GDEF present in the build
+mountainsofchristmas	MountainsofChristmas-Bold	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1066, -354, 0), build hhea (1066, -355, 0)
+mrbedfort	MrBedfort-Regular	rendering	rendering: outlines differ	diffenator3: 2 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+005C 74px, U+005B 71px
+niconne	Niconne-Regular	rendering	rendering: outlines differ	diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0030 60px
+nixieone	NixieOne-Regular	rendering	rendering: outlines differ	diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+201D 32px, U+201E 32px, U+003B 24px, U+201A 17px, U+002C 17px
+nosifer	Nosifer-Regular	shaping	shaping: singles	default features, singles: 3 of 334 runs differ
+nosifer	Nosifer-Regular	rendering	rendering: .notdef	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 64px, U+0311 60px, U+0307 42px
+nosifer	Nosifer-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 748/1024
+nosifer	Nosifer-Regular	gdef	gdef: classes differ	GDEF present in the build
+nosifercaps	NosiferCaps-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px
+nosifercaps	NosiferCaps-Regular	line_spacing	line_spacing: metrics differ	fsSelection: REGULAR gained
+nosifercaps	NosiferCaps-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 748/1024
+nothingyoucoulddo	NothingYouCouldDo	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (959, -407, 0), build hhea (960, -407, 0)
+novamono	NovaMono	shaping	shaping: base+mark	default features, base+mark: 2 of 597 runs differ
+novamono	NovaMono	advances	advances: differ	post.isFixedPitch: release 1, build 0
+novascript	NovaScript-Regular	names	names: ID 2	name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+novascript	NovaScript-Regular	line_spacing	line_spacing: metrics differ	fsSelection: ITALIC gained, REGULAR lost
+overlock	Overlock-Black	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Overlock Black', build 'Overlock'
+overlock	Overlock-BlackItalic	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Overlock Black', build 'Overlock'
+overlock	Overlock-BlackItalic	line_spacing	line_spacing: metrics differ	fsSelection: ITALIC lost, REGULAR gained
+passionone	PassionOne-Black	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Passion One Black', build 'Passion One'
+play	Play-Bold	cmap	cmap: differs	build loses 134 codepoint(s): U+0000 U+000D U+00A0 U+01A0 U+01A1 U+01AF U+01B0 U+0300 U+0301 U+0302 U+0303 U+0304 U+0306 U+0307 U+0308 U+0309 U+030B U+031B U+0323 U+0326
+play	Play-Bold	shaping	shaping: singles	default features, singles: 175 of 693 runs differ
+play	Play-Bold	rendering	rendering: outlines differ	diffenator3: 244 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+04DC 916px, U+0416 687px, U+04DD 604px, U+0394 456px, U+0436 436px
+play	Play-Bold	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (937, -220, 0), build hhea (932, -220, 0)
+play	Play-Bold	advances	advances: differ	210 reachable release glyph(s) have no build counterpart: Euro.smcp NULL Ohorn Uhorn acutecomb acutecomb.case anoteleia brevecombcy brevecombcy.case dotbelowcomb eight.dnom eight.numr eight.osf eight.
+play	Play-Bold	gdef	gdef: classes differ	mark attachment classes differ
+play	Play-Regular	cmap	cmap: differs	build loses 134 codepoint(s): U+0000 U+000D U+00A0 U+01A0 U+01A1 U+01AF U+01B0 U+0300 U+0301 U+0302 U+0303 U+0304 U+0306 U+0307 U+0308 U+0309 U+030B U+031B U+0323 U+0326
+play	Play-Regular	shaping	shaping: singles	default features, singles: 145 of 693 runs differ
+play	Play-Regular	rendering	rendering: outlines differ	diffenator3: 219 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+04C1 844px, U+04DC 824px, U+0416 631px, U+04DD 563px, U+03C7 383px
+play	Play-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (937, -220, 0), build hhea (937, 220, 0)
+play	Play-Regular	advances	advances: differ	210 reachable release glyph(s) have no build counterpart: Euro.smcp NULL Ohorn Uhorn acutecomb acutecomb.case anoteleia brevecombcy brevecombcy.case dotbelowcomb eight.dnom eight.numr eight.osf eight.
+play	Play-Regular	gdef	gdef: classes differ	mark attachment classes differ
+poly	Poly-Italic	table_gate	table gate rows (functional PASS)	3
+ribeyemarrow	RibeyeMarrow-Regular	table_gate	table gate rows (functional PASS)	2
+rougescript	RougeScript-Regular	rendering	rendering: outlines differ	diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00CF 158px, U+00CE 154px, U+00CD 154px, U+00CC 151px, U+0049 143px
+russoone	RussoOne-Regular	BUILD	not built	BUILD
+smokum	Smokum-Regular	table_gate	table gate rows (functional PASS)	3
+thabit	Thabit-Bold	cmap	cmap: differs	build loses 458 codepoint(s): U+0021 U+0022 U+0023 U+0024 U+0025 U+0026 U+0027 U+0028 U+0029 U+002A U+002B U+002C U+002D U+002E U+002F U+0030 U+0031 U+0032 U+0033 U+0034
+thabit	Thabit-Bold	shaping	shaping: singles	default features, singles: 45 of 276 runs differ
+thabit	Thabit-Bold	rendering	rendering: .notdef	diffenator3: 670 word(s) render differently (>8 px at 16 ppem), confirmed: 'أحيـــــــــاءُ' 627px, 'الفلِكْسنرِيَّة' 616px, 'لِّلْمُؤْمِنَاتِ' 597px, 'الإنکليزي؟' 552px, 'الصَّيدلانِي،' 539px
+thabit	Thabit-Bold	names	names: ID 1+4+16	name ID 1 (3,1,0x409): release 'Thabit-Bold', build None
+thabit	Thabit-Bold	line_spacing	line_spacing: metrics differ	x-height as layout engines read it (CSS ex / cap units): release 453, build None (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+thabit	Thabit-Bold	advances	advances: differ	458 reachable release glyph(s) have no build counterpart: A AE Aacute Abreve Acircumflex Adieresis Agrave Amacron Aogonek Aring Atilde B C Cacute Ccaron
+thabit	Thabit	cmap	cmap: differs	build loses 458 codepoint(s): U+0021 U+0022 U+0023 U+0024 U+0025 U+0026 U+0027 U+0028 U+0029 U+002A U+002B U+002C U+002D U+002E U+002F U+0030 U+0031 U+0032 U+0033 U+0034
+thabit	Thabit	shaping	shaping: singles	default features, singles: 45 of 275 runs differ
+thabit	Thabit	rendering	rendering: .notdef	diffenator3: 673 word(s) render differently (>8 px at 16 ppem), confirmed: 'أحيـــــــــاءُ' 574px, 'الفلِكْسنرِيَّة' 556px, 'لِّلْمُؤْمِنَاتِ' 538px, 'مُفَاعَلَتُنْ' 480px, 'اللِّمْفِيَّةُ' 473px
+thabit	Thabit	names	names: ID 1+16+17	name ID 1 (3,1,0x409): release 'Thabit', build 'Regular'
+thabit	Thabit	line_spacing	line_spacing: metrics differ	x-height as layout engines read it (CSS ex / cap units): release 430, build None (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+thabit	Thabit	advances	advances: differ	458 reachable release glyph(s) have no build counterpart: A AE Aacute Abreve Acircumflex Adieresis Agrave Amacron Aogonek Aring Atilde B C Cacute Ccaron
+titilliumweb	TitilliumWeb-Black	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Titillium Web Black', build 'Titillium Web'
+titilliumweb	TitilliumWeb-Light	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Titillium Web Light', build 'Titillium Web'
+titilliumweb	TitilliumWeb-LightItalic	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Titillium Web Light', build 'Titillium Web'
+titilliumweb	TitilliumWeb-SemiBold	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium Web'
+titilliumweb	TitilliumWeb-SemiBoldItalic	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Titillium Web SemiBold', build 'Titillium Web'
+tuffy	Tuffy-Italic	cmap	cmap: differs	build loses 2 codepoint(s): U+0000 U+000D
+tuffy	Tuffy-Italic	shaping	shaping: singles	default features, singles: 5 of 1499 runs differ
+tuffy	Tuffy-Italic	rendering	rendering: .notdef	diffenator3: 106 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+015E 244px, U+015F 174px, U+032E 53px, U+02A4 39px, U+00AE 34px
+tuffy	Tuffy-Italic	names	names: ID 17+22	name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+tuffy	Tuffy-Italic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 50, build 12312
+tuffy	Tuffy-Italic	advances	advances: differ	2 reachable release glyph(s) have no build counterpart: uni0000 uni000D
+tuffy	Tuffy-Italic	gdef	gdef: classes differ	19 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 3/1, dotbelowcomb 3/1, gravecomb 3/1, tildecomb 3/1, uni0302 
+tuffy	Tuffy-Regular	cmap	cmap: differs	build loses 2 codepoint(s): U+0000 U+000D
+tuffy	Tuffy-Regular	shaping	shaping: singles	default features, singles: 11 of 1499 runs differ
+tuffy	Tuffy-Regular	rendering	rendering: outlines differ	diffenator3: 136 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+1FFC 367px, U+1FA6 338px, U+1FA0 337px, U+1FA2 336px, U+1FA4 336px
+tuffy	Tuffy-Regular	names	names: ID 17+22	name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+tuffy	Tuffy-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 50, build 12312
+tuffy	Tuffy-Regular	advances	advances: differ	2 reachable release glyph(s) have no build counterpart: uni0000 uni000D
+tuffy	Tuffy-Regular	gdef	gdef: classes differ	19 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 3/1, dotbelowcomb 3/1, gravecomb 3/1, tildecomb 3/1, uni0302 
+ultra	Ultra-Regular	shaping	shaping: singles	default features, singles: 3 of 371 runs differ
+ultra	Ultra-Regular	rendering	rendering: outlines differ	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0312 58px, U+0326 53px, U+0315 34px
+ultra	Ultra-Regular	gdef	gdef: classes differ	GDEF present in the build
+unifraktur	UnifrakturMaguntia-Book	shaping	shaping: base+mark	default features, base+mark: 1317 of 1377 runs differ
+unifraktur	UnifrakturMaguntia-Book	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1607, -513, 0), build hhea (1607, -514, 0)
+varela	Varela-Regular	shaping	shaping: base+mark	default features, base+mark: 1169 of 1221 runs differ
+viga	Viga-Regular	shaping	shaping: base+mark	default features, base+mark: 2 of 175 runs differ
+wallpoet	Wallpoet-Regular	rendering	rendering: outlines differ	diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0160 19px

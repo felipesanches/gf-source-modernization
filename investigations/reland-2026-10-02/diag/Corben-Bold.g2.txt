@@ -1,0 +1,7 @@
+# Corben-Bold.ttf: 3 reachable outlines changed, 3 fail geometry
+GEO-FAIL AE(AE) 1646px: STALE-LSB lsb-xMin=+9 (release lsb -10 xMin -19; build lsb -19 xMin -19)
+GEO-FAIL Lslash(Lslash) 492px: STALE-LSB lsb-xMin=+5 (release lsb 3 xMin -2; build lsb -2 xMin -2)
+GEO-FAIL lslash(lslash) 477px: STALE-LSB lsb-xMin=+5 (release lsb -38 xMin -43; build lsb -43 xMin -43)
+D3 U+00C6 AE 138px -> geometry 1646px
+D3 U+0141 Lslash 61px -> geometry 492px
+D3 U+0142 lslash 55px -> geometry 477px

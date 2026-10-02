@@ -1,0 +1,14 @@
+cardo: RESIDUAL-UNPUBLISHED-CONVERTER @ 4d1690e, 5 commits, 2 edit(s): Cardo-Bold=1 functional=FAIL(shaping); Cardo-Italic=BUILD functional=-; Cardo-Regular=BUILD functional=-
+   Cardo-Bold BLOCKING head.font_direction_hint [0, 2]
+     cmap         PASS 2992 codepoints, exact
+     shaping      FAIL 1698221 runs shaped, 2464 differ
+         - default features, base+mark: 853 of 157321 runs differ
+         - default features, base+mark+mark: 1604 of 115200 runs differ
+         - default features, words: 7 of 709466 runs differ
+     rendering    PASS diffenator3 0 glyph / 2 word diffs (0 / 0 confirmed); 0 of 204 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2979 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+   Cardo-Italic BUILD: Cardo-Italic.ttf not produced (Cardo-Bold.ttf)
+   Cardo-Regular BUILD: Cardo-Regular.ttf not produced (Cardo-Bold.ttf)

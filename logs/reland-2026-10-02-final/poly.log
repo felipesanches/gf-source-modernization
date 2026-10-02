@@ -1,0 +1,4 @@
+poly: RESIDUAL-UNPUBLISHED-CONVERTER @ b698913, 3 commits, 0 edit(s): Poly-Italic=3 functional=PASS; Poly-Regular=0 functional=PASS
+   Poly-Italic BLOCKING GSUB.script_list {"latn/ROM ": {"lookups": {"0": [6, 0], "1": [null, 6]}}}
+   Poly-Italic BLOCKING GSUB.feature_list {"case": {"0": [8, 9]}, "dnom": {"0": [10, 11]}, "frac": {"2": [7, 8]}, "lnum":
+   Poly-Italic BLOCKING GSUB.lookup_list {"7": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["fractio

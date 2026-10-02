@@ -1,0 +1,17 @@
+# RougeScript-Regular.ttf: 94 reachable outlines changed, 5 fail geometry
+GEO-FAIL Idieresis(Idieresis) 2084px: STALE-LSB lsb-xMin=+26 (release lsb -13 xMin -39; build lsb -39 xMin -39)
+GEO-FAIL Icircumflex(Icircumflex) 2066px: STALE-LSB lsb-xMin=+26 (release lsb -13 xMin -39; build lsb -39 xMin -39)
+GEO-FAIL Iacute(Iacute) 2053px: STALE-LSB lsb-xMin=+26 (release lsb -13 xMin -39; build lsb -39 xMin -39)
+GEO-FAIL Igrave(Igrave) 2042px: STALE-LSB lsb-xMin=+26 (release lsb -13 xMin -39; build lsb -39 xMin -39)
+GEO-FAIL I(I) 1914px: STALE-LSB lsb-xMin=+26 (release lsb -13 xMin -39; build lsb -39 xMin -39)
+D3 U+00E8 egrave 185px -> unconfirmed
+D3 U+00E9 eacute 185px -> unconfirmed
+D3 U+00EA ecircumflex 174px -> unconfirmed
+D3 U+00EB edieresis 174px -> unconfirmed
+D3 U+00CF Idieresis 158px -> geometry 2084px
+D3 U+00CD Iacute 154px -> geometry 2053px
+D3 U+00CE Icircumflex 154px -> geometry 2066px
+D3 U+00CC Igrave 151px -> geometry 2042px
+D3 U+0049 I 143px -> geometry 1914px
+D3 U+0076 v 127px -> unconfirmed
+D3 U+0065 e 119px -> unconfirmed

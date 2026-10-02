@@ -1,0 +1,14 @@
+lohitbengali: RESIDUAL-UNPUBLISHED-CONVERTER @ 8444289, 272 commits, 0 edit(s): Lohit-Bengali=1 functional=FAIL(shaping+rendering)
+   Lohit-Bengali BLOCKING OS/2.panose_10 {"1": [0, 11]}
+     cmap         PASS 154 codepoints, exact
+     shaping      FAIL 96457 runs shaped, 1918 differ
+         - default features, words: 168 of 49519 runs differ
+         - GSUB abvs off: 31 of 2005 runs differ
+         - GSUB blws off: 5 of 2341 runs differ
+         - ... 11 more
+     rendering    FAIL diffenator3 0 glyph / 21 word diffs (0 / 21 confirmed); 0 of 471 changed outlines draw different ink
+         - diffenator3: 21 word(s) render differently (>8 px at 16 ppem), confirmed: 'অনিচ্ছাসত্ত্বেও' 764px, 'জলোচ্ছ্বাসের' 751px, 'ঐজ্জ্বল্যতা' 712px, 'ধর্মান্ত্বরিত' 619px, 'যদ্দ্বারা' 429px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 477 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

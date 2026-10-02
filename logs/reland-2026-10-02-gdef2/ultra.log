@@ -1,0 +1,18 @@
+ultra: RESIDUAL-UNPUBLISHED-CONVERTER @ d83d5e5, 4 commits, 1 edit(s): Ultra-Regular=4 functional=FAIL(shaping+rendering+gdef)
+   Ultra-Regular BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   Ultra-Regular BLOCKING GPOS.feature_list [null, {"kern": [0]}]
+   Ultra-Regular BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "quotedbl": {"A": {"x": -80}, "J": {"x": -130}, "
+   Ultra-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 3 mark(s): only the release marks U+0312,U+0315,U+0326; only ours marks none
+     cmap         PASS 371 codepoints, exact
+     shaping      FAIL 707265 runs shaped, 885 differ
+         - default features, singles: 3 of 371 runs differ
+         - default features, base+mark: 837 of 837 runs differ
+         - default features, base+mark+mark: 45 of 45 runs differ
+     rendering    FAIL diffenator3 3 glyph / 0 word diffs (3 / 0 confirmed); 0 of 0 changed outlines draw different ink
+         - diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0312 58px, U+0326 53px, U+0315 34px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 372 glyph advances compared, 0 differ
+     gdef         FAIL GDEF absent/present; 3 class difference(s) shaping reads, 1 it does not
+         - GDEF present in the build
+         - 3 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/1, uni0312 3/1, uni0315 3/1

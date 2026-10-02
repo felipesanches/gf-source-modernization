@@ -1,0 +1,15 @@
+kristi: RESIDUAL-UNPUBLISHED-CONVERTER @ b0477b6, 5 commits, 2 edit(s): Kristi-Regular=0 functional=FAIL(rendering+names+line_spacing+advances)
+     cmap         PASS 202 codepoints, exact
+     shaping      PASS 537190 runs shaped, 0 differ
+     rendering    FAIL diffenator3 7 glyph / 0 word diffs (0 / 0 confirmed); 1 of 27 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC gained, REGULAR lost
+         - head.macStyle italic: release 0, build 1
+         - x-height as layout engines read it (CSS ex / cap units): release 784, build 742 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+         - ... 1 more
+     advances     FAIL 207 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 748/1024
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 6 it does not

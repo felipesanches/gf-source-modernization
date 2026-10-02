@@ -45,7 +45,7 @@ UNIX_FROM_1904 = 2082844800
 # Near-integer reference matrices are snapped by babelfont's SFD reader (#98).
 BASE = ["--fontforge-os2-defaults", "--add-instance-per-master", "--infer-mark-category",
         "--set-subcategory", "--keep-source-advances", "--fontforge-underline-position",
-        "--round-coordinates", "--fontforge-gdef-classes"]
+        "--round-coordinates"]
 
 
 # makeotf's duplicate cmap entries: each maps a second codepoint to the glyph of the
@@ -99,6 +99,10 @@ def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
         flags.insert(0, "--fontforge-height-glyph-count-mean")
     if built is not None and built < FONTFORGE_OS2_VERSION_RAISED:
         flags.append("--fontforge-legacy-os2-version")
+    # FontForge writes GDEF only when it exports OpenType layout; a release exported
+    # with only the legacy 'kern' table (Miama, Ultra, Nosifer) has none to reproduce.
+    if "GDEF" in TTFont(shipped):
+        flags.append("--fontforge-gdef-classes")
     if not keep_direction:
         flags.append("--correct-path-direction")
     # --add-legacy-duplicate-cmap is NEVER passed. It adds makeotf's duplicate set,

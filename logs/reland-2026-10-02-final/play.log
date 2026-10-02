@@ -1,0 +1,63 @@
+play: RESIDUAL-UNPUBLISHED-CONVERTER @ 9803889, 3 commits, 0 edit(s): Play-Bold=365 functional=FAIL(cmap+shaping+rendering+line_spacing+advances+gdef); Play-Regular=353 functional=FAIL(cmap+shaping+rendering+line_spacing+advances+gdef)
+   Play-Bold BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   Play-Bold BLOCKING GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+   Play-Bold BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [4, 3], "2": [8, null], "3": [12, null], "4": [1
+   Play-Bold BLOCKING GSUB.feature_list {"aalt": [[0, 1], null], "c2sc": [[25], null], "case": [[27], null], "ccmp": [[2
+   Play-Bold BLOCKING GSUB.lookup_list {"0": {"0": {"error": "There are 326 changes, check manually!"}}, "1": {"0": {"t
+   Play-Bold BLOCKING OS/2.y_subscript_x_size [650, 700]
+     cmap         FAIL 827 codepoints, 3 problem(s)
+         - build loses 134 codepoint(s): U+0000 U+000D U+00A0 U+01A0 U+01A1 U+01AF U+01B0 U+0300 U+0301 U+0302 U+0303 U+0304 U+0306 U+0307 U+0308 U+0309 U+030B U+031B U+0323 U+0326
+         - 16 codepoint(s) map to a glyph of another name (same outline and advance): U+00B9 uni00B9/onesuperior; U+0406 uni0406/afii10055; U+0410 uni0410/afii10017; U+0415 uni0415/afii10022; U+041C uni041C/afii10030; U+041D uni041D/afii10031; U+0422 uni0422/afii10036; U+0425 uni0425/afii10039; U+0443 uni0443/afii10085; U+0445 uni0445/afii10087
+         - 112 codepoint(s) map to a different glyph: U+00B2 uni00B2/twosuperior; U+00B3 uni00B3/threesuperior; U+00B5 uni00B5/mu; U+0162 uni0162/Tcommaaccent; U+0163 uni0163/tcommaaccent; U+0237 uni0237/dotlessj; U+02BC uni02BC/apostrophe; U+0394 uni0394/Delta; U+03A9 uni03A9/Omega; U+03BC uni03BC/mu
+     shaping      FAIL 1362608 runs shaped, 663931 differ
+         - default features, singles: 175 of 693 runs differ
+         - default features, pairs: 81507 of 234105 runs differ
+         - default features, rules: 303 of 568 runs differ
+         - ... 33 more
+     rendering    FAIL diffenator3 246 glyph / 239 word diffs (244 / 225 confirmed); 259 of 623 changed outlines draw different ink
+         - diffenator3: 244 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+04DC 916px, U+0416 687px, U+04DD 604px, U+0394 456px, U+0436 436px
+         - diffenator3: 225 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 259px, 'ГАЛОЎПРАФАДУКАЦЫІ' 1662px, 'КӨҔҮСТЭЭҔИНЭН' 1189px, 'Иузеиқәырхаӡом' 883px, 'ВОРОШИЛОВГРАДСКОЙ' 861px
+         - 259 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): Omegatonos 5680px, Etatonos 5654px, Omicrontonos 5447px, Upsilontonos 4555px, uni0444 3953px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (937, -220, 0), build hhea (932, -220, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release typo (937, -220, 0), build typo (932, -220, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release typo (937, -220, 0), build typo (932, -220, 0)
+         - ... 5 more
+     advances     FAIL 901 glyph advances compared, 174 differ
+         - 210 reachable release glyph(s) have no build counterpart: Euro.smcp NULL Ohorn Uhorn acutecomb acutecomb.case anoteleia brevecombcy brevecombcy.case dotbelowcomb eight.dnom eight.numr eight.osf eight.smcp eight.ss01
+         - 27 reachable build glyph(s) have no release counterpart: eight.tscf eightninths five.tscf fiveninths fivesevenths fivesixths fourfifths fourninths nine.tscf one.tscf onefifth oneninth onesixth ordfeminine.smcp ordmasculine.smcp
+         - 174 advance width(s) differ (release/build): Alphatonos 668/713, Epsilontonos 610/751, Etatonos 728/869, Gamma 590/517, Iotatonos 296/437, Kappa 682/667, Lambda 648/668, Omegatonos 728/871, Omicrontonos 728/869, Phi 820/756, Pi 708/722, Psi 812/817, Sigma 612/582, Upsilontonos 644/835, Xi 645/695
+     gdef         FAIL GDEF present/present; 0 class difference(s) shaping reads, 730 it does not
+         - mark attachment classes differ
+   Play-Regular BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   Play-Regular BLOCKING GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+   Play-Regular BLOCKING GSUB.script_list {"DFLT/dflt": [{"lookups": [0, 4, 8, 12, 16, 20, 24, 28, 40, 44, 48, 52, 56, 60,
+   Play-Regular BLOCKING GSUB.feature_list {"c2sc": {"0": [25, 21]}, "case": [[27], null], "ccmp": [[2, 3, 4], null], "dlig
+   Play-Regular BLOCKING GSUB.lookup_list {"0": {"0": {"error": "There are 337 changes, check manually!"}}, "1": {"0": {"A
+   Play-Regular BLOCKING OS/2.y_subscript_x_size [650, 700]
+     cmap         FAIL 827 codepoints, 3 problem(s)
+         - build loses 134 codepoint(s): U+0000 U+000D U+00A0 U+01A0 U+01A1 U+01AF U+01B0 U+0300 U+0301 U+0302 U+0303 U+0304 U+0306 U+0307 U+0308 U+0309 U+030B U+031B U+0323 U+0326
+         - 21 codepoint(s) map to a glyph of another name (same outline and advance): U+00B9 uni00B9/onesuperior; U+0406 uni0406/afii10055; U+0410 uni0410/afii10017; U+0415 uni0415/afii10022; U+041C uni041C/afii10030; U+041D uni041D/afii10031; U+041F uni041F/afii10033; U+0425 uni0425/afii10039; U+0428 uni0428/afii10042; U+043C uni043C/afii10078
+         - 104 codepoint(s) map to a different glyph: U+00B2 uni00B2/twosuperior; U+00B3 uni00B3/threesuperior; U+00B5 uni00B5/mu; U+0162 uni0162/Tcommaaccent; U+0163 uni0163/tcommaaccent; U+0237 uni0237/dotlessj; U+02BC uni02BC/apostrophe; U+03A9 uni03A9/Omega; U+0401 uni0401/afii10023; U+0402 uni0402/afii10051
+     shaping      FAIL 2171847 runs shaped, 947668 differ
+         - default features, singles: 145 of 693 runs differ
+         - default features, pairs: 68085 of 231537 runs differ
+         - default features, rules: 304 of 768 runs differ
+         - ... 35 more
+     rendering    FAIL diffenator3 221 glyph / 244 word diffs (219 / 226 confirmed); 251 of 619 changed outlines draw different ink
+         - diffenator3: 219 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+04C1 844px, U+04DC 824px, U+0416 631px, U+04DD 563px, U+03C7 383px
+         - diffenator3: 226 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 12px, 'ГАЛОЎПРАФАДУКАЦЫІ' 1355px, 'КӨҔҮСТЭЭҔИНЭН' 1215px, 'ҠУРАЙСЫЛАР' 889px, 'ВЕГЕТАЦИОННЫЙ' 815px
+         - 251 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): Omegatonos 4390px, Omicrontonos 4199px, uni0444 4132px, Etatonos 4119px, uni04A0 3765px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (937, -220, 0), build hhea (937, 220, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release typo (937, -220, 0), build typo (937, 220, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release typo (937, -220, 0), build typo (937, 220, 0)
+         - ... 5 more
+     advances     FAIL 920 glyph advances compared, 146 differ
+         - 210 reachable release glyph(s) have no build counterpart: Euro.smcp NULL Ohorn Uhorn acutecomb acutecomb.case anoteleia brevecombcy brevecombcy.case dotbelowcomb eight.dnom eight.numr eight.osf eight.smcp eight.ss01
+         - 44 reachable build glyph(s) have no release counterpart: eight.alt eight.posf eight.tscf eightninths five.alt five.posf five.tscf fiveninths fivesevenths fivesixths four.tscf fourfifths fourninths i.locl nine.alt
+         - 146 advance width(s) differ (release/build): Epsilontonos 580/718, Etatonos 707/860, Gamma 540/530, Iotatonos 265/398, Lambda 632/652, Omegatonos 679/797, Omicrontonos 679/790, Phi 739/719, Psi 794/695, R 632/612, Upsilontonos 584/785, Xi 650/630, acute 399/239, alpha 614/571, alphatonos 614/571
+     gdef         FAIL GDEF present/present; 0 class difference(s) shaping reads, 726 it does not
+         - mark attachment classes differ

@@ -1,0 +1,69 @@
+tuffy: RESIDUAL-UNPUBLISHED-CONVERTER @ 18a64d2, 3 commits, 0 edit(s): Tuffy-Bold=0 functional=PASS; Tuffy-BoldItalic=0 functional=PASS; Tuffy-Italic=27 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef); Tuffy-Regular=68 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef)
+   Tuffy-Italic BLOCKING GDEF.glyph_classes -- the two fonts disagree about 19 mark(s): only the release marks U+0300,U+0301,U+0302,U+0303,U+0304,U+0306,U+0307,U+0308,U+030A,U+030B,U+030C,U+0310,U+0323,U+0324,U+0325,U+0327,U+0328,U+032E,U+0331; only ours marks none
+   Tuffy-Italic BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 2], "2": [15, 3], "3": [22, null], "4": [33,
+   Tuffy-Italic BLOCKING GSUB.feature_list {"aalt": [[0], null], "ccmp": [[2], null], "dlig": [[10], null], "frac": {"0": [
+   Tuffy-Italic BLOCKING GSUB.lookup_list {"0": {"0": {"type": ["single", "ligature"], "one": ["uni00B9", null], "two": ["
+   Tuffy-Italic BLOCKING OS/2.fs_type [8, 0]
+   Tuffy-Italic BLOCKING OS/2.y_subscript_x_size [1331, 0]
+     cmap         FAIL 1501 codepoints, 3 problem(s)
+         - build loses 2 codepoint(s): U+0000 U+000D
+         - 86 codepoint(s) map to a glyph of another name (same outline and advance): U+00AD uni00AD/softhyphen; U+00B9 uni00B9/onesuperior; U+02CD uni02CD/macronsub; U+0394 uni0394/Delta; U+0406 uni0406/afii10055; U+040F uni040F/afii10145; U+0410 uni0410/afii10017; U+0413 uni0413/afii10020; U+0415 uni0415/afii10022; U+0416 uni0416/afii10024
+         - 401 codepoint(s) map to a different glyph: U+00B2 uni00B2/twosuperior; U+00B3 uni00B3/threesuperior; U+0162 uni0162/Tcommaaccent; U+0163 uni0163/tcommaaccent; U+032E uni032E/brevesubnosp; U+03A9 uni03A9/Omega; U+03BC uni03BC/mu; U+03C2 uni03C2/sigma1; U+03D1 uni03D1/theta1; U+03D2 uni03D2/Upsilon1
+     shaping      FAIL 1286312 runs shaped, 15993 differ
+         - default features, singles: 5 of 1499 runs differ
+         - default features, pairs: 4292 of 524147 runs differ
+         - default features, base+mark: 1190 of 20900 runs differ
+         - ... 18 more
+     rendering    FAIL diffenator3 164 glyph / 336 word diffs (106 / 304 confirmed); 311 of 1124 changed outlines draw different ink
+         - diffenator3: 106 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+015E 244px, U+015F 174px, U+032E 53px, U+02A4 39px, U+00AE 34px
+         - diffenator3: 304 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 66px, '0123456789,,,sinf' 64px, '1/234,latn,dflt,frac' 58px, 'ВСЕСОЮЗНОЙ' 50px, 'Бйоргулфссон' 47px
+         - 311 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11074px, uni032E 2925px, element 92px, uni1FAD 90px, notelement 89px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (16)
+         - name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 22 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 17 (3,1,0x40C) as read: release 'NormalItalique', build None
+         - ... 13 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 50, build 12312
+         - OS/2.yStrikeoutPosition: release 300, build -16224
+         - x-height as layout engines read it (CSS ex / cap units): release 500, build 1069
+         - ... 1 more
+     advances     FAIL 1500 glyph advances compared, 2 differ
+         - 2 reachable release glyph(s) have no build counterpart: uni0000 uni000D
+         - 2 advance width(s) differ (release/build): .notdef 748/1024, uni032E 0/1302
+     gdef         FAIL GDEF present/present; 19 class difference(s) shaping reads, 1480 it does not
+         - 19 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 3/1, dotbelowcomb 3/1, gravecomb 3/1, tildecomb 3/1, uni0302 3/1, uni0304 3/1, uni0306 3/1, uni0307 3/1, uni0308 3/1, uni030A 3/1, uni030B 3/1, uni030C 3/1, uni0310 3/1, uni0324 3/1, uni0325 3/1
+   Tuffy-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 19 mark(s): only the release marks U+0300,U+0301,U+0302,U+0303,U+0304,U+0306,U+0307,U+0308,U+030A,U+030B,U+030C,U+0310,U+0323,U+0324,U+0325,U+0327,U+0328,U+032E,U+0331; only ours marks none
+   Tuffy-Regular BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 2], "2": [15, 3], "3": [22, null], "4": [33,
+   Tuffy-Regular BLOCKING GSUB.feature_list {"aalt": [[0], null], "ccmp": [[2], null], "dlig": [[10], null], "frac": {"0": [
+   Tuffy-Regular BLOCKING GSUB.lookup_list {"0": {"0": {"type": ["single", "ligature"], "one": ["uni00B9", null], "two": ["
+   Tuffy-Regular BLOCKING OS/2.fs_type [8, 0]
+   Tuffy-Regular BLOCKING OS/2.y_subscript_x_size [1331, 0]
+     cmap         FAIL 1501 codepoints, 3 problem(s)
+         - build loses 2 codepoint(s): U+0000 U+000D
+         - 87 codepoint(s) map to a glyph of another name (same outline and advance): U+00AD uni00AD/softhyphen; U+00B9 uni00B9/onesuperior; U+02CD uni02CD/macronsub; U+0394 uni0394/Delta; U+0406 uni0406/afii10055; U+040F uni040F/afii10145; U+0410 uni0410/afii10017; U+0413 uni0413/afii10020; U+0415 uni0415/afii10022; U+0416 uni0416/afii10024
+         - 400 codepoint(s) map to a different glyph: U+00B2 uni00B2/twosuperior; U+00B3 uni00B3/threesuperior; U+0162 uni0162/Tcommaaccent; U+0163 uni0163/tcommaaccent; U+032E uni032E/brevesubnosp; U+03A9 uni03A9/Omega; U+03BC uni03BC/mu; U+03C2 uni03C2/sigma1; U+03D1 uni03D1/theta1; U+03D2 uni03D2/Upsilon1
+     shaping      FAIL 1286312 runs shaped, 20871 differ
+         - default features, singles: 11 of 1499 runs differ
+         - default features, pairs: 9056 of 524147 runs differ
+         - default features, base+mark: 1298 of 20900 runs differ
+         - ... 18 more
+     rendering    FAIL diffenator3 197 glyph / 335 word diffs (136 / 256 confirmed); 359 of 1125 changed outlines draw different ink
+         - diffenator3: 136 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+1FFC 367px, U+1FA6 338px, U+1FA0 337px, U+1FA4 336px, U+1FA2 336px
+         - diffenator3: 256 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 59px, '0123456789,,,sinf' 53px, '1/234,latn,dflt,frac' 51px, 'ВОРОШИЛОВГРАДСКОЙ' 80px, 'ВСЕСОЮЗНОЙ' 71px
+         - 359 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): uni1FFC 16650px, uni1F8F 14928px, uni1F8E 14928px, uni1FBC 14926px, uni1F8D 14926px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (16)
+         - name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 22 (3,1,0x407) as read: release 'StandardKursiv', build None
+         - name ID 17 (3,1,0x40C) as read: release 'NormalItalique', build None
+         - ... 13 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 50, build 12312
+         - OS/2.yStrikeoutPosition: release 300, build -16224
+         - x-height as layout engines read it (CSS ex / cap units): release 500, build 1069
+         - ... 1 more
+     advances     FAIL 1500 glyph advances compared, 8 differ
+         - 2 reachable release glyph(s) have no build counterpart: uni0000 uni000D
+         - 8 advance width(s) differ (release/build): .notdef 748/1024, uni032E 0/1302, uni1FB3 2013/1212, uni1FBC 2103/1302, uni1FC3 1865/1064, uni1FCC 1999/1198, uni1FF3 2009/1208, uni1FFC 2159/1358
+     gdef         FAIL GDEF present/present; 19 class difference(s) shaping reads, 1480 it does not
+         - 19 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 3/1, dotbelowcomb 3/1, gravecomb 3/1, tildecomb 3/1, uni0302 3/1, uni0304 3/1, uni0306 3/1, uni0307 3/1, uni0308 3/1, uni030A 3/1, uni030B 3/1, uni030C 3/1, uni0310 3/1, uni0324 3/1, uni0325 3/1

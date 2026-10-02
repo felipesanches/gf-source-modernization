@@ -1,0 +1,12 @@
+# NixieOne-Regular.ttf: 7 reachable outlines changed, 6 fail geometry
+GEO-FAIL quotedblbase(quotedblbase) 105px: STALE-LSB lsb-xMin=+4 (release lsb 75 xMin 71; build lsb 71 xMin 71)
+GEO-FAIL quotedblright(quotedblright) 103px: STALE-LSB lsb-xMin=+4 (release lsb 75 xMin 71; build lsb 71 xMin 71)
+GEO-FAIL semicolon(semicolon) 72px: STALE-LSB lsb-xMin=+4 (release lsb 80 xMin 76; build lsb 76 xMin 76)
+GEO-FAIL comma(comma) 53px: STALE-LSB lsb-xMin=+4 (release lsb 75 xMin 71; build lsb 71 xMin 71)
+GEO-FAIL quotesinglbase(quotesinglbase) 53px: STALE-LSB lsb-xMin=+4 (release lsb 75 xMin 71; build lsb 71 xMin 71)
+GEO-FAIL quoteright(quoteright) 51px: STALE-LSB lsb-xMin=+4 (release lsb 75 xMin 71; build lsb 71 xMin 71)
+D3 U+201D quotedblright 32px -> geometry 103px
+D3 U+201E quotedblbase 32px -> geometry 105px
+D3 U+003B semicolon 24px -> geometry 72px
+D3 U+201A quotesinglbase 17px -> geometry 53px
+D3 U+002C comma 17px -> geometry 53px

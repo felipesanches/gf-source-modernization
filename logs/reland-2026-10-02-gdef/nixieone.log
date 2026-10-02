@@ -1,0 +1,11 @@
+nixieone: RESIDUAL-UNPUBLISHED-CONVERTER @ 45460f7, 3 commits, 0 edit(s): NixieOne-Regular=0 functional=FAIL(rendering)
+     cmap         PASS 217 codepoints, exact
+     shaping      PASS 586665 runs shaped, 0 differ
+     rendering    FAIL diffenator3 5 glyph / 2 word diffs (5 / 2 confirmed); 6 of 7 changed outlines draw different ink
+         - diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+201D 32px, U+201E 32px, U+003B 24px, U+201A 17px, U+002C 17px
+         - diffenator3: 2 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 10px, '0,,,zero' 9px
+         - 6 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): quotedblbase 105px, quotedblright 103px, semicolon 72px, quotesinglbase 53px, comma 53px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 218 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not

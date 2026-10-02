@@ -1,0 +1,3 @@
+# Niconne-Regular.ttf: 109 reachable outlines changed, 1 fail geometry
+GEO-FAIL zero(zero) 562px: STALE-LSB lsb-xMin=+7 (release lsb 72 xMin 65; build lsb 65 xMin 65)
+D3 U+0030 zero 60px -> geometry 562px

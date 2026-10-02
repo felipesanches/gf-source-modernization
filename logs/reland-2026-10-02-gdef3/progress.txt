@@ -1,0 +1,10 @@
+== miama (families.tsv) 2026-10-02T01:46:32+01:00
+   rc=1 miama	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== nosifer (families.tsv) 2026-10-02T01:47:14+01:00
+   rc=1 nosifer	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== ultra (families-next.tsv) 2026-10-02T01:47:48+01:00
+   rc=1 ultra	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+done 2026-10-02T01:48:08+01:00

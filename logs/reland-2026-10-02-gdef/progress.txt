@@ -1,0 +1,304 @@
+== abrilfatface (families.tsv) 2026-10-02T00:29:28+01:00
+   rc=1 abrilfatface	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   58G  97% /home/fsanches/compartilhado
+== allerta (families.tsv) 2026-10-02T00:30:25+01:00
+   rc=1 allerta	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   57G  97% /home/fsanches/compartilhado
+== comicrelief (families.tsv) 2026-10-02T00:31:00+01:00
+   rc=1 comicrelief	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== corben (families.tsv) 2026-10-02T00:32:26+01:00
+   rc=1 corben	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== creepstercaps (families.tsv) 2026-10-02T00:33:35+01:00
+   rc=1 creepstercaps	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== herrvonmuellerhoff (families.tsv) 2026-10-02T00:34:17+01:00
+   rc=1 herrvonmuellerhoff	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== kristi (families.tsv) 2026-10-02T00:34:53+01:00
+   rc=1 kristi	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== lekton (families.tsv) 2026-10-02T00:35:26+01:00
+   rc=1 lekton	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== miama (families.tsv) 2026-10-02T00:35:32+01:00
+   rc=1 miama	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== monoton (families.tsv) 2026-10-02T00:36:28+01:00
+   rc=1 monoton	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== nixieone (families.tsv) 2026-10-02T00:37:09+01:00
+   rc=1 nixieone	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== nosifer (families.tsv) 2026-10-02T00:37:29+01:00
+   rc=1 nosifer	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== nosifercaps (families.tsv) 2026-10-02T00:38:11+01:00
+   rc=1 nosifercaps	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== novacut (families.tsv) 2026-10-02T00:38:46+01:00
+   rc=1 novacut	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== novaflat (families.tsv) 2026-10-02T00:39:07+01:00
+   rc=1 novaflat	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== novamono (families.tsv) 2026-10-02T00:39:35+01:00
+   rc=1 novamono	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== novaoval (families.tsv) 2026-10-02T00:40:05+01:00
+   rc=1 novaoval	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== novaround (families.tsv) 2026-10-02T00:40:40+01:00
+   rc=1 novaround	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== novascript (families.tsv) 2026-10-02T00:41:15+01:00
+   rc=1 novascript	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== novaslim (families.tsv) 2026-10-02T00:41:52+01:00
+   rc=1 novaslim	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== novasquare (families.tsv) 2026-10-02T00:42:20+01:00
+   rc=1 novasquare	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== patrickhand (families.tsv) 2026-10-02T00:42:43+01:00
+   rc=1 patrickhand	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== play (families.tsv) 2026-10-02T00:43:08+01:00
+   rc=1 play	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== puritan (families.tsv) 2026-10-02T00:44:28+01:00
+   rc=1 puritan	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== russoone (families.tsv) 2026-10-02T00:45:45+01:00
+   rc=1 russoone	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== sixcaps (families.tsv) 2026-10-02T00:45:48+01:00
+   rc=1 sixcaps	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== smythe (families.tsv) 2026-10-02T00:46:10+01:00
+   rc=1 smythe	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== tuffy (families.tsv) 2026-10-02T00:46:38+01:00
+   rc=1 tuffy	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== tulpenone (families.tsv) 2026-10-02T00:48:39+01:00
+   rc=1 tulpenone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== unifraktur (families.tsv) 2026-10-02T00:48:58+01:00
+   rc=1 unifraktur	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== unifrakturcook (families.tsv) 2026-10-02T00:49:25+01:00
+   rc=1 unifrakturcook	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== cardo (families-next.tsv) 2026-10-02T00:49:46+01:00
+   rc=1 cardo	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== italiana (families-next.tsv) 2026-10-02T00:50:58+01:00
+   rc=1 italiana	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== keaniaone (families-next.tsv) 2026-10-02T00:51:26+01:00
+   rc=1 keaniaone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== kellyslab (families-next.tsv) 2026-10-02T00:51:54+01:00
+   rc=1 kellyslab	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== kottaone (families-next.tsv) 2026-10-02T00:52:20+01:00
+   rc=1 kottaone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== ledger (families-next.tsv) 2026-10-02T00:52:43+01:00
+   rc=1 ledger	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== lilitaone (families-next.tsv) 2026-10-02T00:53:10+01:00
+   rc=1 lilitaone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== limelight (families-next.tsv) 2026-10-02T00:53:28+01:00
+   rc=1 limelight	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== lohitbengali (families-next.tsv) 2026-10-02T00:53:53+01:00
+   rc=1 lohitbengali	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== lohittamil (families-next.tsv) 2026-10-02T00:54:04+01:00
+   rc=1 lohittamil	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== lovedbytheking (families-next.tsv) 2026-10-02T00:54:15+01:00
+   rc=1 lovedbytheking	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== loveyalikeasister (families-next.tsv) 2026-10-02T00:54:45+01:00
+   rc=1 loveyalikeasister	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== lustria (families-next.tsv) 2026-10-02T00:56:44+01:00
+   rc=1 lustria	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== macondo (families-next.tsv) 2026-10-02T00:57:09+01:00
+   rc=1 macondo	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== magra (families-next.tsv) 2026-10-02T00:57:32+01:00
+   rc=1 magra	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== marvel (families-next.tsv) 2026-10-02T00:58:09+01:00
+   rc=1 marvel	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== medulaone (families-next.tsv) 2026-10-02T00:59:31+01:00
+   rc=1 medulaone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== megrim (families-next.tsv) 2026-10-02T00:59:54+01:00
+   rc=1 megrim	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== meiescript (families-next.tsv) 2026-10-02T01:00:12+01:00
+   rc=1 meiescript	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== mergeone (families-next.tsv) 2026-10-02T01:00:42+01:00
+   rc=1 mergeone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== missfajardose (families-next.tsv) 2026-10-02T01:01:03+01:00
+   rc=1 missfajardose	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== monsieurladoulaise (families-next.tsv) 2026-10-02T01:01:33+01:00
+   rc=1 monsieurladoulaise	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== mountainsofchristmas (families-next.tsv) 2026-10-02T01:02:06+01:00
+   rc=1 mountainsofchristmas	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== mrbedfort (families-next.tsv) 2026-10-02T01:04:58+01:00
+   rc=1 mrbedfort	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   60G  97% /home/fsanches/compartilhado
+== mrdafoe (families-next.tsv) 2026-10-02T01:05:18+01:00
+   rc=1 mrdafoe	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== mrdehaviland (families-next.tsv) 2026-10-02T01:05:42+01:00
+   rc=1 mrdehaviland	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== mrssaintdelafield (families-next.tsv) 2026-10-02T01:06:13+01:00
+   rc=1 mrssaintdelafield	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== mrssheppards (families-next.tsv) 2026-10-02T01:06:40+01:00
+   rc=1 mrssheppards	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== niconne (families-next.tsv) 2026-10-02T01:07:06+01:00
+   rc=1 niconne	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== nothingyoucoulddo (families-next.tsv) 2026-10-02T01:07:38+01:00
+   rc=1 nothingyoucoulddo	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== numans (families-next.tsv) 2026-10-02T01:08:11+01:00
+   rc=1 numans	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== oleoscript (families-next.tsv) 2026-10-02T01:08:33+01:00
+   rc=1 oleoscript	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== oleoscriptswashcaps (families-next.tsv) 2026-10-02T01:09:20+01:00
+   rc=1 oleoscriptswashcaps	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== overlock (families-next.tsv) 2026-10-02T01:10:08+01:00
+   rc=1 overlock	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== overlocksc (families-next.tsv) 2026-10-02T01:12:17+01:00
+   rc=1 overlocksc	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== overtherainbow (families-next.tsv) 2026-10-02T01:12:37+01:00
+   rc=1 overtherainbow	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== passionone (families-next.tsv) 2026-10-02T01:13:08+01:00
+   rc=1 passionone	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== patuaone (families-next.tsv) 2026-10-02T01:13:55+01:00
+   rc=1 patuaone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== piedra (families-next.tsv) 2026-10-02T01:14:17+01:00
+   rc=1 piedra	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== pirataone (families-next.tsv) 2026-10-02T01:14:46+01:00
+   rc=1 pirataone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== poly (families-next.tsv) 2026-10-02T01:15:10+01:00
+   rc=1 poly	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== portlligatsans (families-next.tsv) 2026-10-02T01:15:53+01:00
+   rc=1 portlligatsans	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== portlligatslab (families-next.tsv) 2026-10-02T01:16:15+01:00
+   rc=1 portlligatslab	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== quantico (families-next.tsv) 2026-10-02T01:16:37+01:00
+   rc=1 quantico	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== rambla (families-next.tsv) 2026-10-02T01:17:44+01:00
+   rc=1 rambla	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== revalia (families-next.tsv) 2026-10-02T01:18:57+01:00
+   rc=1 revalia	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== ribeyemarrow (families-next.tsv) 2026-10-02T01:19:13+01:00
+   rc=1 ribeyemarrow	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== rochester (families-next.tsv) 2026-10-02T01:19:42+01:00
+   rc=1 rochester	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== rosarivo (families-next.tsv) 2026-10-02T01:20:10+01:00
+   rc=1 rosarivo	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== rougescript (families-next.tsv) 2026-10-02T01:20:51+01:00
+   rc=1 rougescript	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== rufina (families-next.tsv) 2026-10-02T01:21:17+01:00
+   rc=1 rufina	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== ruluko (families-next.tsv) 2026-10-02T01:22:07+01:00
+   rc=1 ruluko	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== sail (families-next.tsv) 2026-10-02T01:22:34+01:00
+   rc=1 sail	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== salsa (families-next.tsv) 2026-10-02T01:23:02+01:00
+   rc=1 salsa	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== sanchez (families-next.tsv) 2026-10-02T01:23:26+01:00
+   rc=1 sanchez	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== smokum (families-next.tsv) 2026-10-02T01:24:18+01:00
+   rc=1 smokum	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== spirax (families-next.tsv) 2026-10-02T01:24:40+01:00
+   rc=1 spirax	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== squadaone (families-next.tsv) 2026-10-02T01:25:00+01:00
+   rc=1 squadaone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== swankyandmoomoo (families-next.tsv) 2026-10-02T01:25:14+01:00
+   rc=1 swankyandmoomoo	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== textmeone (families-next.tsv) 2026-10-02T01:25:49+01:00
+   rc=1 textmeone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== thabit (families-next.tsv) 2026-10-02T01:26:12+01:00
+   rc=1 thabit	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== thegirlnextdoor (families-next.tsv) 2026-10-02T01:26:27+01:00
+   rc=1 thegirlnextdoor	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== titanone (families-next.tsv) 2026-10-02T01:26:59+01:00
+   rc=1 titanone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== titilliumweb (families-next.tsv) 2026-10-02T01:27:47+01:00
+   rc=1 titilliumweb	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== trochut (families-next.tsv) 2026-10-02T01:30:49+01:00
+   rc=1 trochut	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== ultra (families-next.tsv) 2026-10-02T01:31:33+01:00
+   rc=1 ultra	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== varela (families-next.tsv) 2026-10-02T01:32:00+01:00
+   rc=1 varela	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== viga (families-next.tsv) 2026-10-02T01:32:41+01:00
+   rc=1 viga	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== wallpoet (families-next.tsv) 2026-10-02T01:32:56+01:00
+   rc=1 wallpoet	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+== wendyone (families-next.tsv) 2026-10-02T01:33:17+01:00
+   rc=1 wendyone	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.6T   59G  97% /home/fsanches/compartilhado
+done 2026-10-02T01:33:39+01:00

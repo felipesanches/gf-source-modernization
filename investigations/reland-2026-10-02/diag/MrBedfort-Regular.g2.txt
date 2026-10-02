@@ -1,0 +1,5 @@
+# MrBedfort-Regular.ttf: 44 reachable outlines changed, 2 fail geometry
+GEO-FAIL backslash(backslash) 239px: STALE-LSB lsb-xMin=+4 (release lsb -40 xMin -44; build lsb -44 xMin -44)
+GEO-FAIL bracketleft(bracketleft) 235px: STALE-LSB lsb-xMin=+3 (release lsb -22 xMin -25; build lsb -25 xMin -25)
+D3 U+005C backslash 74px -> geometry 239px
+D3 U+005B bracketleft 71px -> geometry 235px

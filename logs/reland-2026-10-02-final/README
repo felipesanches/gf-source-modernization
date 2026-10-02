@@ -1,0 +1,2 @@
+Combined view: reland-2026-10-02-gdef (101 repos, converter e08c94f4), with cardo lekton russoone tuffy from -gdef2 (eae493be, #104 follow-up) and miama ultra nosifer from -gdef3 (eae493be + recipe: --fontforge-gdef-classes only when the release has GDEF).
+The full run used the recipe before that gate; only miama, ultra and nosifer have no GDEF among the releases (checked: their tables are FFTM+kern only).
