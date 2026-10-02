@@ -1,0 +1,9 @@
+# Question: what does Play (alexeiva/play d84ad58 sources/Play.glyphs) give once the non-fontc
+# tool fixes are in? B3 = investigations/play/builder-fixes/build.sh (gftools-rust ade8776 +
+# static-autohint 1ce8f5f + instantiate-keep-instance 7f6eccd; glyphslib-rs 27cb8bf PR #4 +
+# fix-v2-master-name-omitted-weight ed4fc2a), from a worktree of 59e645d + pending/recipe-combined.patch.
+# Compare with logs/reland-2026-10-02-play (B3 + PR #4 only). See investigations/play/RESPONSIBILITY.md.
+== play (families.tsv) 2026-10-02T06:49:28+01:00
+   rc=1 play	RESIDUAL-UNPUBLISHED-BUILDER
+shared_from_host  1.8T  1.6T   43G  98% /home/fsanches/compartilhado
+done 2026-10-02T06:50:16+01:00

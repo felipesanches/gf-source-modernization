@@ -34,21 +34,28 @@ default B3 and re-land without `B3=`.
 
 Logs: `logs/reland-2026-10-02-all/play.log` (before: the hg `.sfd`),
 `logs/reland-2026-10-02-play-stock-builder/play.log` (Glyphs source, stock B3 ade8776),
-`logs/reland-2026-10-02-play/play.log` (Glyphs source, B3 + #4). Against google/fonts
+`logs/reland-2026-10-02-play/play.log` (Glyphs source, B3 + #4),
+`logs/reland-2026-10-02-play-fixes/play.log` (B3 + #4 + the non-fontc tool fixes,
+`builder-fixes/build.sh`; see RESPONSIBILITY.md). Against google/fonts
 b5efa9c32e8f:
 
-| check | hg .sfd (before) | .glyphs, stock B3 | .glyphs, B3 + #4 (after) |
-|---|---|---|---|
-| table gate rows, Bold / Regular | 365 / 353 | 165 / 164 | 15 / 14 |
-| cmap | FAIL, 134 lost | FAIL, 53 lost / 50 gained (hex read as decimal) | FAIL, 3 lost (FB00 FB03 FB04); 6 renamed, 7 renamed with other points |
-| shaping, runs differing (Bold) | 663931 of 1362608 | 166170 of 1295215 | 178400 of 1356073 (more codepoints shaped) |
-| rendering | FAIL, 246 glyph diffs | FAIL, 18 | FAIL, 18 glyph diffs, 48 outlines |
-| names | PASS | FAIL (as after) | FAIL (Bold usWeightClass; Regular ID 4/6) |
-| line_spacing | FAIL (asc/desc) | FAIL, only underlinePosition | FAIL, only post.underlinePosition |
-| advances | FAIL, 174 differ | FAIL, 0 differ, 5 renamed | FAIL, 0 differ, 5 renamed glyphs |
-| gdef | FAIL | FAIL (as after) | FAIL, 0 class differences shaping reads |
+| check | hg .sfd (before) | .glyphs, stock B3 | .glyphs, B3 + #4 (after) | B3 + #4 + tool fixes |
+|---|---|---|---|---|
+| table gate rows, Bold / Regular | 365 / 353 | 165 / 164 | 15 / 14 | 15 / 14 |
+| cmap | FAIL, 134 lost | FAIL, 53 lost / 50 gained (hex read as decimal) | FAIL, 3 lost (FB00 FB03 FB04); 6 renamed, 7 renamed with other points | as B3 + #4 |
+| shaping, runs differing (Bold) | 663931 of 1362608 | 166170 of 1295215 | 178400 of 1356073 (more codepoints shaped) | 178400 of 1356073 (unchanged) |
+| rendering | FAIL, 246 glyph diffs | FAIL, 18 | FAIL, 18 glyph diffs, 48 outlines | as B3 + #4 (compared unhinted) |
+| names | PASS | FAIL (as after) | FAIL (Bold usWeightClass; Regular ID 4/6) | FAIL Bold usWeightClass only (fontc); Regular PASS |
+| line_spacing | FAIL (asc/desc) | FAIL, only underlinePosition | FAIL, only post.underlinePosition | FAIL, only post.underlinePosition |
+| advances | FAIL, 174 differ | FAIL, 0 differ, 5 renamed | FAIL, 0 differ, 5 renamed glyphs | as B3 + #4 |
+| gdef | FAIL | FAIL (as after) | FAIL, 0 class differences shaping reads | as B3 + #4 |
+| hinting (not gated) | release ttfautohinted | unhinted | unhinted | autohinted (default args; the release used --increase-x-height=13) |
 
 ## What remains, classified
+
+Which component owns each item, read from the code, and what was fixed:
+`RESPONSIBILITY.md` (2026-10-02, later than the classification below; 5 and 10 are
+fixed outside fontc, 5's usWeightClass and 1-4, 6-9 are fontc).
 
 The release is the Glyphs.app export of d84ad58, ttfautohinted (FINDINGS.md: it differs
 from that commit's fonts/ttf only in head.modified/checkSumAdjustment), so nothing is

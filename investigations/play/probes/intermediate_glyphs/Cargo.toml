@@ -1,0 +1,9 @@
+[package]
+name = "dumpinst"
+version = "0.1.0"
+edition = "2021"
+[dependencies]
+babelfont = "=0.2.2"
+serde_json = "1"
+[patch.crates-io]
+glyphslib = { path = "/home/fsanches/compartilhado/glyphslib-rs-worktrees/fix-v2-unquoted-hex-unicode/glyphslib" }

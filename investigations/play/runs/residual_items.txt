@@ -1,0 +1,113 @@
+# probes/residual_items.py; release = google/fonts b5efa9c32e8f ofl/play; fontmake = fontmake 3.11.1 -g Play.glyphs -o ttf -i (glyphsLib 6.12.7, ufo2ft 3.7.0, fontTools 4.61.1); b3pr4 = builder-pr4/build.sh; b3fix = builder-fixes/build.sh; sources = alexeiva/play d84ad58 sources/Play.glyphs + config.yaml as landed
+=== Play-Regular
+1 GSUB latn features
+   release    ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum']
+   fontmake   ['ccmp']
+   b3pr4      ['ccmp']
+   b3fix      ['ccmp']
+1 GSUB scripts
+   release    ['DFLT', 'cyrl', 'grek', 'latn']
+   fontmake   ['DFLT', 'latn']
+   b3pr4      ['DFLT', 'latn']
+   b3fix      ['DFLT', 'latn']
+2 acutecomb name/adv/xbounds
+   release    ('acutecomb', 0, (-299, -100))
+   fontmake   ('acutecomb', 0, (100, 299))
+   b3pr4      ('acutecomb', 0, (100, 299))
+   b3fix      ('acutecomb', 0, (100, 299))
+3 names U+0122 U+0306 U+000D
+   release    ('Gcommaaccent', 'uni0306', 'nonmarkingreturn', True, False)
+   fontmake   ('uni0122', 'uni0306', 'CR', False, True)
+   b3pr4      ('uni0122', 'uni0306', 'CR', False, True)
+   b3fix      ('uni0122', 'uni0306', 'CR', False, True)
+4 FB00 FB03 FB04
+   release    ['ff', 'ffi', 'ffl', 'ff', 'f_f']
+   fontmake   [None, None, None, 'ff', 'f_f']
+   b3pr4      [None, None, None, 'ff', 'f_f']
+   b3fix      [None, None, None, 'ff', 'f_f']
+5 usWeightClass, ID4, ID6
+   release    (400, 'Play Regular', 'Play-Regular', 192, 0)
+   fontmake   (400, 'Play Regular', 'Play-Regular', 192, 0)
+   b3pr4      (400, 'Play', 'Play', 192, 0)
+   b3fix      (400, 'Play Regular', 'Play-Regular', 192, 0)
+6 panose weight
+   release    5
+   fontmake   0
+   b3pr4      0
+   b3fix      0
+7 underline pos/thick
+   release    (-75, 50)
+   fontmake   (-100, 50)
+   b3pr4      (-100, 50)
+   b3fix      (-100, 50)
+8 GDEF version, markattach, marksets
+   release    ('0x10000', True, False)
+   fontmake   ('0x10002', False, True)
+   b3pr4      ('0x10002', False, True)
+   b3fix      ('0x10002', False, True)
+9 U+0122 points/components
+   release    (43, False)
+   fontmake   (45, False)
+   b3pr4      (44, False)
+   b3fix      (44, False)
+10 hinted (fpgm)
+   release    True
+   fontmake   False
+   b3pr4      False
+   b3fix      True
+=== Play-Bold
+1 GSUB latn features
+   release    ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum']
+   fontmake   ['ccmp']
+   b3pr4      ['ccmp']
+   b3fix      ['ccmp']
+1 GSUB scripts
+   release    ['DFLT', 'cyrl', 'grek', 'latn']
+   fontmake   ['DFLT', 'latn']
+   b3pr4      ['DFLT', 'latn']
+   b3fix      ['DFLT', 'latn']
+2 acutecomb name/adv/xbounds
+   release    ('acutecomb', 0, (-349, -100))
+   fontmake   ('acutecomb', 0, (100, 349))
+   b3pr4      ('acutecomb', 0, (100, 349))
+   b3fix      ('acutecomb', 0, (100, 349))
+3 names U+0122 U+0306 U+000D
+   release    ('Gcommaaccent', 'uni0306', 'nonmarkingreturn', True, False)
+   fontmake   ('uni0122', 'uni0306', 'CR', False, True)
+   b3pr4      ('uni0122', 'uni0306', 'CR', False, True)
+   b3fix      ('uni0122', 'uni0306', 'CR', False, True)
+4 FB00 FB03 FB04
+   release    ['ff', 'ffi', 'ffl', 'ff', 'f_f']
+   fontmake   [None, None, None, 'ff', 'f_f']
+   b3pr4      [None, None, None, 'ff', 'f_f']
+   b3fix      [None, None, None, 'ff', 'f_f']
+5 usWeightClass, ID4, ID6
+   release    (700, 'Play Bold', 'Play-Bold', 160, 1)
+   fontmake   (700, 'Play Bold', 'Play-Bold', 160, 1)
+   b3pr4      (400, 'Play Bold', 'Play-Bold', 160, 1)
+   b3fix      (400, 'Play Bold', 'Play-Bold', 160, 1)
+6 panose weight
+   release    8
+   fontmake   0
+   b3pr4      0
+   b3fix      0
+7 underline pos/thick
+   release    (-75, 50)
+   fontmake   (-100, 50)
+   b3pr4      (-100, 50)
+   b3fix      (-100, 50)
+8 GDEF version, markattach, marksets
+   release    ('0x10000', True, False)
+   fontmake   ('0x10002', False, True)
+   b3pr4      ('0x10002', False, True)
+   b3fix      ('0x10002', False, True)
+9 U+0122 points/components
+   release    (42, False)
+   fontmake   (45, False)
+   b3pr4      (44, False)
+   b3fix      (44, False)
+10 hinted (fpgm)
+   release    True
+   fontmake   False
+   b3pr4      False
+   b3fix      True

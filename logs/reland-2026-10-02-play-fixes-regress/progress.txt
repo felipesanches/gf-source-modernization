@@ -1,0 +1,15 @@
+# Question: does the same B3 (investigations/play/builder-fixes/build.sh) change ordinary .sfd
+# landings? Worktree of 59e645d + pending/recipe-combined.patch, BF_TREE=babelfont-rs-worktrees/
+# integration-all 5b7eb25, --unpublished-converter. Log bodies are identical to
+# logs/reland-2026-10-02-play-regress (stock B3): all three CLEAN, functional PASS. The builds are
+# now autohinted (static-autohint; the releases are unhinted), which the gates do not compare.
+== ledger (families-next.tsv) 2026-10-02T06:50:27+01:00
+   rc=1 ledger	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER
+shared_from_host  1.8T  1.6T   43G  98% /home/fsanches/compartilhado
+== magra (families-next.tsv) 2026-10-02T06:50:48+01:00
+   rc=1 magra	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER
+shared_from_host  1.8T  1.6T   43G  98% /home/fsanches/compartilhado
+== sail (families-next.tsv) 2026-10-02T06:51:13+01:00
+   rc=1 sail	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER
+shared_from_host  1.8T  1.6T   43G  98% /home/fsanches/compartilhado
+done 2026-10-02T06:51:29+01:00
