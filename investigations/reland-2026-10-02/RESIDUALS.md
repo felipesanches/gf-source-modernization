@@ -14,7 +14,7 @@ Every remaining failure is disclosed in its repo's README (plans/<repo>.json "di
   `kern`), RibeyeMarrow (table rows only), Play x2.
 - decided 2026-10-01 (stale side bearings): Corben-Bold, Limelight, MrBedfort, Niconne,
   NixieOne, RougeScript.
-Play also needs glyphslib-rs #4 merged and a released builder before it can be pushed.
+Play: glyphslib-rs #4 merged 2026-10-02; it still needs a gftools-builder release whose glyphslib has #4 (via babelfont) before it can be pushed.
 
 The rest of this file is the 2026-10-02 morning snapshot it started from.
 
