@@ -1,0 +1,15 @@
+== ledger (families-next.tsv) 2026-10-02T05:58:26+01:00
+   rc=1 ledger	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   40G  98% /home/fsanches/compartilhado
+== magra (families-next.tsv) 2026-10-02T05:58:43+01:00
+   rc=1 magra	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   40G  98% /home/fsanches/compartilhado
+== sail (families-next.tsv) 2026-10-02T05:59:19+01:00
+   rc=1 sail	CLEAN-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   40G  98% /home/fsanches/compartilhado
+done 2026-10-02T05:59:40+01:00
+# Question: does land.py's kind-glyphs change (the commit that added it) alter ordinary
+# .sfd landings? Run from a worktree of that commit + pending/recipe-combined.patch, BF_TREE=
+# babelfont-rs-worktrees/integration-all 5b7eb25, --unpublished-converter. The same three
+# landed with the previous land.py (same patch, same converter) gave byte-identical trees and
+# identical commit messages: all three CLEAN-UNPUBLISHED-CONVERTER, as in reland-2026-10-02-all.

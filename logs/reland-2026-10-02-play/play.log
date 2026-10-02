@@ -1,0 +1,60 @@
+play: RESIDUAL-UNPUBLISHED-BUILDER @ 97897b8, 34 commits, 0 edit(s): Play-Bold=15 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef); Play-Regular=14 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef)
+   Play-Bold BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   Play-Bold BLOCKING GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+   Play-Bold BLOCKING GDEF.mark_glyph_sets [null, {"0": ["uni0308", "uni0307", "gravecomb", "acutecomb", "uni0302", "uni030
+   Play-Bold BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [16, 5],
+   Play-Bold BLOCKING GSUB.feature_list {"c2sc": {"0": [25, 30]}, "case": {"0": [27, 32]}, "ccmp": {"0": [2, 6], "1": [3
+   Play-Bold BLOCKING GSUB.lookup_list {"0": {"0": {"Gcommaaccent": ["gcommaaccent.smcp", null], "Kcommaaccent": ["kcom
+     cmap         FAIL 827 codepoints, 3 problem(s)
+         - build loses 3 codepoint(s): U+FB00 U+FB03 U+FB04
+         - 6 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+0136 Kcommaaccent/uni0136; U+0137 kcommaaccent/uni0137; U+013B Lcommaaccent/uni013B; U+013C lcommaaccent/uni013C; U+0145 Ncommaaccent/uni0145
+         - 7 codepoint(s) map to a different glyph: U+0122 Gcommaaccent/uni0122; U+0123 gcommaaccent/uni0123; U+0146 ncommaaccent/uni0146; U+0156 Rcommaaccent/uni0156; U+0157 rcommaaccent/uni0157; U+0218 Scommaaccent/uni0218; U+0219 scommaaccent/uni0219
+     shaping      FAIL 1356073 runs shaped, 178400 differ
+         - default features, pairs: 3 of 296880 runs differ
+         - default features, base+mark: 4737 of 10485 runs differ
+         - default features, base+mark+mark: 2278 of 2700 runs differ
+         - ... 23 more
+     rendering    FAIL diffenator3 18 glyph / 103 word diffs (15 / 12 confirmed); 48 of 692 changed outlines draw different ink
+         - diffenator3: 15 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0302 58px, U+030B 58px, U+0309 54px, U+0308 51px, U+0306 50px
+         - diffenator3: 12 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 10px, 'ВСЕСОЮЗНОЙ' 9px, 'Afflictionmagazine' 1047px, 'AffiliateFairPlay' 914px, 'Abfangjagdflugzeug' 360px
+         - 48 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): uni03020303.case 1505px, uni03020303 1505px, uni03020309.case 1438px, uni03020309 1438px, uni03060303.case 1399px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - OS/2.usWeightClass: release 700, build 400
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -75, build -100
+     advances     FAIL 1096 glyph advances compared, 0 differ
+         - 5 reachable release glyph(s) have no build counterpart: brevecombcy brevecombcy.case gcommaaccent.smcp rcommaaccent.smcp scommaaccent.smcp
+         - 5 reachable build glyph(s) have no release counterpart: uni0123.smcp uni0157.smcp uni0219.smcp uni0306.cy uni0306.cy.case
+     gdef         FAIL GDEF present/present; 0 class difference(s) shaping reads, 16 it does not
+         - mark attachment classes differ
+         - mark glyph sets differ
+   Play-Regular BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   Play-Regular BLOCKING GDEF.mark_attach_classes [{"uni0308": 2, "uni0307": 2, "gravecomb": 2, "acutecomb": 2, "uni030B": 2, "car
+   Play-Regular BLOCKING GDEF.mark_glyph_sets [null, {"0": ["uni0308", "uni0307", "gravecomb", "acutecomb", "uni0302", "uni030
+   Play-Regular BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [16, 5],
+   Play-Regular BLOCKING GSUB.feature_list {"c2sc": {"0": [25, 30]}, "case": {"0": [27, 32]}, "ccmp": {"0": [2, 6], "1": [3
+   Play-Regular BLOCKING GSUB.lookup_list {"0": {"0": {"Gcommaaccent": ["gcommaaccent.smcp", null], "Kcommaaccent": ["kcom
+     cmap         FAIL 827 codepoints, 3 problem(s)
+         - build loses 3 codepoint(s): U+FB00 U+FB03 U+FB04
+         - 6 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+0136 Kcommaaccent/uni0136; U+0137 kcommaaccent/uni0137; U+013B Lcommaaccent/uni013B; U+013C lcommaaccent/uni013C; U+0145 Ncommaaccent/uni0145
+         - 7 codepoint(s) map to a different glyph: U+0122 Gcommaaccent/uni0122; U+0123 gcommaaccent/uni0123; U+0146 ncommaaccent/uni0146; U+0156 Rcommaaccent/uni0156; U+0157 rcommaaccent/uni0157; U+0218 Scommaaccent/uni0218; U+0219 scommaaccent/uni0219
+     shaping      FAIL 1358656 runs shaped, 178693 differ
+         - default features, pairs: 3 of 296880 runs differ
+         - default features, base+mark: 4867 of 10485 runs differ
+         - default features, base+mark+mark: 2278 of 2700 runs differ
+         - ... 23 more
+     rendering    FAIL diffenator3 18 glyph / 100 word diffs (15 / 14 confirmed); 53 of 707 changed outlines draw different ink
+         - diffenator3: 15 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0302 47px, U+0326 46px, U+0306 43px, U+030B 43px, U+0308 42px
+         - diffenator3: 14 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 13px, 'богѫ' 16px, 'Абдулҷон' 9px, 'Afflictionmagazine' 825px, 'AffiliateFairPlay' 707px
+         - 53 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): uni03060303.case 1087px, uni03060303 1087px, uni03020303.case 1067px, uni03020303 1067px, uni03060309.case 1040px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 4 (3,1,0x409): release 'Play Regular', build 'Play'
+         - name ID 6 (3,1,0x409): release 'Play-Regular', build 'Play'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -75, build -100
+     advances     FAIL 1096 glyph advances compared, 0 differ
+         - 5 reachable release glyph(s) have no build counterpart: brevecombcy brevecombcy.case gcommaaccent.smcp rcommaaccent.smcp scommaaccent.smcp
+         - 5 reachable build glyph(s) have no release counterpart: uni0123.smcp uni0157.smcp uni0219.smcp uni0306.cy uni0306.cy.case
+     gdef         FAIL GDEF present/present; 0 class difference(s) shaping reads, 16 it does not
+         - mark attachment classes differ
+         - mark glyph sets differ

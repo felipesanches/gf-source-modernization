@@ -1,0 +1,38 @@
+### Play-Regular
+== release
+  GSUB default langsys features: {'DFLT': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum'], 'cyrl': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum'], 'grek': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum'], 'latn': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum']}
+  shape 'office': o f_f_i c e
+  acutecomb advance 0 xMin..xMax -299..-100
+  OS/2 usWeightClass 400 panose bWeight 5; post underlinePosition -75 thickness 50
+  name 4/6: ['Play Regular', 'Play-Regular']
+  GDEF 0x10000 MarkAttachClassDef 41 MarkGlyphSets None; GPOS lookup flags [0, 8, 256, 512, 768]
+  names at U+0122 U+0306 U+000D: ['Gcommaaccent', 'uni0306', 'nonmarkingreturn']; U+FB00/FB03/FB04 mapped: [True, True, True]
+  U+0122 points 43 bbox (64, -190, 602, 659)
+== build
+  GSUB default langsys features: {'DFLT': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum'], 'latn': ['ccmp']}
+  shape 'office': o f f i c e
+  acutecomb advance 0 xMin..xMax 100..299
+  OS/2 usWeightClass 400 panose bWeight 0; post underlinePosition -100 thickness 50
+  name 4/6: ['Play', 'Play']
+  GDEF 0x10002 MarkAttachClassDef None MarkGlyphSets 4; GPOS lookup flags [0, 8, 16]
+  names at U+0122 U+0306 U+000D: ['uni0122', 'uni0306', 'CR']; U+FB00/FB03/FB04 mapped: [False, False, False]
+  U+0122 points 44 bbox (64, -190, 602, 659)
+### Play-Bold
+== release
+  GSUB default langsys features: {'DFLT': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum'], 'cyrl': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum'], 'grek': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum'], 'latn': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum']}
+  shape 'office': o f_f_i c e
+  acutecomb advance 0 xMin..xMax -349..-100
+  OS/2 usWeightClass 700 panose bWeight 8; post underlinePosition -75 thickness 50
+  name 4/6: ['Play Bold', 'Play-Bold']
+  GDEF 0x10000 MarkAttachClassDef 42 MarkGlyphSets None; GPOS lookup flags [0, 8, 256, 512, 768]
+  names at U+0122 U+0306 U+000D: ['Gcommaaccent', 'uni0306', 'nonmarkingreturn']; U+FB00/FB03/FB04 mapped: [True, True, True]
+  U+0122 points 42 bbox (56, -208, 649, 659)
+== build
+  GSUB default langsys features: {'DFLT': ['aalt', 'c2sc', 'case', 'ccmp', 'dlig', 'dnom', 'frac', 'liga', 'numr', 'onum', 'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'ss01', 'subs', 'sups', 'tnum'], 'latn': ['ccmp']}
+  shape 'office': o f f i c e
+  acutecomb advance 0 xMin..xMax 100..349
+  OS/2 usWeightClass 400 panose bWeight 0; post underlinePosition -100 thickness 50
+  name 4/6: ['Play Bold', 'Play-Bold']
+  GDEF 0x10002 MarkAttachClassDef None MarkGlyphSets 4; GPOS lookup flags [0, 8, 16]
+  names at U+0122 U+0306 U+000D: ['uni0122', 'uni0306', 'CR']; U+FB00/FB03/FB04 mapped: [False, False, False]
+  U+0122 points 44 bbox (56, -208, 649, 659)
