@@ -1,6 +1,48 @@
 {
  "repo": "unifraktur",
- "commits": [],
+ "commits": [
+  {
+   "styles": [
+    "UnifrakturMaguntia-Book"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2WinAscent 1607"
+    ],
+    [
+     "setfield",
+     "OS2WinAOffset 0"
+    ],
+    [
+     "setfield",
+     "OS2WinDescent 512"
+    ],
+    [
+     "setfield",
+     "OS2WinDOffset 0"
+    ],
+    [
+     "setfield",
+     "HheadAscent 1607"
+    ],
+    [
+     "setfield",
+     "HheadAOffset 0"
+    ],
+    [
+     "setfield",
+     "HheadDescent -513"
+    ],
+    [
+     "setfield",
+     "HheadDOffset 0"
+    ]
+   ],
+   "subject": "State the win and hhea metrics the release has, as absolute values",
+   "body": "The release (google/fonts 90abd17b4 ofl/unifrakturmaguntia/UnifrakturMaguntia-Book.ttf) has usWinAscent 1607, usWinDescent 512, hhea ascender 1607 and descender -513. This file states them as offsets (OS2WinAscent -299, OS2WinDescent 16, HheadAscent -299, HheadDescent -16, all with offset flag 1), which FontForge resolves at export against the font's bounding box. The FontForge of 2010-04-29 (FFTM) that exported the release, like every build before ee15007274e9 (2014-09-16), measured that box over ON-CURVE points only for the win metrics, and took the true curve extremes truncated toward zero, widened to that box, for hhea (splineutil.c SplineSetQuickBounds, tottf.c WinBB and sethhead). Applied to this source, the highest on-curve point, Igrave's, is 1906 and the lowest, J's, floors to -496; the true curve extremes are 1906.0 (Igrave) and -497.58 (J), truncated 1906 and -497. So win ascent 1906 - 299 = 1607, win descent 496 + 16 = 512, hhea ascender max(1906, 1906) - 299 = 1607 and hhea descender min(-497, -496) - 16 = -513: the release's values. A converter that measures the true curves resolves the same offsets to 1607, 514, 1607 and -514.\n\nStated here as absolute values with the offset flags 0, so no bounding-box rule is needed; the typo metrics stay as offsets from Ascent/Descent. Evidence: sfd-reland investigations/next-vmetrics (FontForge's code at the release's build, and a sweep of every offset-mode style)."
+  }
+ ],
  "disclose": [
   "The release has an empty GPOS table (scripts DFLT, hani, latn with no features or lookups) that FontForge wrote because GSUB has lookups; its presence turns off HarfBuzz's fallback mark positioning. fontc cannot write a GPOS without lookups, so here combining marks are placed by the fallback and differ from the release. Needs a fontc option (shared layout scripts); planned as later work. Decided 2026-10-02: disclose."
  ]

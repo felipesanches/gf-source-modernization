@@ -13,6 +13,47 @@
    ],
    "subject": "Name MountainsofChristmas-Regular as the release does",
    "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Mountains of Christmas Regular' (FontForge exported 'Mountains of Christmas')."
+  },
+  {
+   "styles": [
+    "MountainsofChristmas-Bold"
+   ],
+   "ops": [
+    [
+     "setfield",
+     "OS2WinAscent 1064"
+    ],
+    [
+     "setfield",
+     "OS2WinAOffset 0"
+    ],
+    [
+     "setfield",
+     "OS2WinDescent 354"
+    ],
+    [
+     "setfield",
+     "OS2WinDOffset 0"
+    ],
+    [
+     "setfield",
+     "HheadAscent 1066"
+    ],
+    [
+     "setfield",
+     "HheadAOffset 0"
+    ],
+    [
+     "setfield",
+     "HheadDescent -354"
+    ],
+    [
+     "setfield",
+     "HheadDOffset 0"
+    ]
+   ],
+   "subject": "State the win and hhea metrics the release has, as absolute values",
+   "body": "The release (google/fonts f3ec322aa apache/mountainsofchristmas/MountainsofChristmas-Bold.ttf) has usWinAscent 1064, usWinDescent 354, hhea ascender 1066 and descender -354. This file states them as offsets (OS2WinAscent 8, OS2WinDescent 0, HheadAscent 8, HheadDescent 0, all with offset flag 1), which FontForge resolves at export against the font's bounding box. The FontForge 20110222 (FFTM 2011-02-22) that exported the release, like every build before ee15007274e9 (2014-09-16), measured that box over ON-CURVE points only for the win metrics, and took the true curve extremes truncated toward zero, widened to that box, for hhea (splineutil.c SplineSetQuickBounds, tottf.c WinBB and sethhead). Applied to this source, the highest on-curve point, Scaron's, ceils to 1056 and the lowest, g's, floors to -354; the true curve extremes are 1058.0 (Scaron) and -354.381 (g), truncated 1058 and -354. So win ascent 1056 + 8 = 1064, win descent 354 + 0 = 354, hhea ascender max(1058, 1056) + 8 = 1066 and hhea descender min(-354, -354) + 0 = -354: the release's values. A converter that measures the true curves resolves the same offsets to 1066, 355, 1066 and -355.\n\nStated here as absolute values with the offset flags 0, so no bounding-box rule is needed; the typo metrics stay as offsets from Ascent/Descent. Evidence: sfd-reland investigations/next-vmetrics (FontForge's code at the release's build, and a sweep of every offset-mode style)."
   }
  ]
 }
