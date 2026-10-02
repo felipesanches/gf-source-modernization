@@ -391,6 +391,19 @@
    ],
    "subject": "State the Arabic family name the release has",
    "body": "Every Thabit release states name ID 1 (3,1,0x0C01) as U+062B U+0627 U+0628 U+062A, the Arabic full name this file already gives as ID 4; this file's Arabic record leaves ID 1 empty. Written in UTF-7 (+BisGJwYoBioA), as FontForge stores it. Value copied from google/fonts 538fa260b ofl/thabit/*.ttf."
+  },
+  {
+   "styles": [
+    "Thabit-Oblique"
+   ],
+   "ops": [
+    [
+     "importoutlines",
+     "google/fonts@90abd17b4f97671435798b6147b698aa9087612f:ofl/thabit/Thabit-Oblique.ttf U+03A6"
+    ]
+   ],
+   "subject": "Take Phi's quadratic outline from the release",
+   "body": "FontForge converted the merged IBM Courier glyphs to quadratic curves with its own approximation; the mergepsfont edit uses cu2qu, which reproduces every Latin glyph within rounding except Phi (5 px at 128 ppem). Points copied from google/fonts 90abd17b4 ofl/thabit/Thabit-Oblique.ttf."
   }
  ],
  "disclose": [
