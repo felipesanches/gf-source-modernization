@@ -1,0 +1,6 @@
+thabit: RESIDUAL-UNPUBLISHED-CONVERTER @ 6ce4b4e, 28 commits, 25 edit(s): Thabit-Bold=BUILD functional=-; Thabit=2 functional=PASS; Thabit-Oblique=BUILD functional=-; Thabit-BoldOblique=BUILD functional=-
+   Thabit-Bold BUILD: Thabit-Bold.ttf not produced (Thabit-Bold-Bold.ttf, Thabit-Bold-Oblique-BoldOblique.ttf, Thabit-Oblique-Oblique.ttf, Thabit-Regular.ttf)
+   Thabit BLOCKING PfEd: whole-table difference
+   Thabit BLOCKING head.font_direction_hint [0, 2]
+   Thabit-Oblique BUILD: Thabit-Oblique.ttf not produced (Thabit-Bold-Bold.ttf, Thabit-Bold-Oblique-BoldOblique.ttf, Thabit-Oblique-Oblique.ttf, Thabit-Regular.ttf)
+   Thabit-BoldOblique BUILD: Thabit-BoldOblique.ttf not produced (Thabit-Bold-Bold.ttf, Thabit-Bold-Oblique-BoldOblique.ttf, Thabit-Oblique-Oblique.ttf, Thabit-Regular.ttf)
