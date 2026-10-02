@@ -114,6 +114,10 @@ def builder_keys(shipped_fonts, keep_direction):
         keys.append("decomposeTransformedComponents: false")
     if "nested" in shapes:
         keys.append("flattenComponents: false")
+    # The releases carry no TrueType hinting program: the builder must not autohint
+    # (gftools-builder's autohintTTF, honoured for static builds once it reads the key).
+    if not any("fpgm" in TTFont(s) for s in shipped_fonts):
+        keys.append("autohintTTF: false")
     return "".join(k + "\n" for k in keys)
 
 
