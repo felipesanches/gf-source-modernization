@@ -58,6 +58,30 @@ probes/apply_edits.py, where they were measured):
   movelangname <lang> <from> <to>  move a LangName string from one name ID to another
   droplangname <lang>             delete the LangName record of a language
 
+What the tool that made a release did that the source does not state, done to the
+source instead (each one replaced a babelfont filter Simon declined, #107 and #115):
+
+  truncateanchors                 write every AnchorPoint coordinate truncated toward
+                                  zero (129.5 -> 129, -46.7 -> -46), as FontForge's GPOS
+                                  export does (C conversion of a real to a short in
+                                  tottf.c/dumpgpos); a compiler rounds them instead.
+                                  FATAL if no anchor has a fractional coordinate
+  sfdlibinterpolated              state the outline sfdLib 2.0.0 read from a quadratic
+                                  Fore layer (parser.py _drawContours): every on-curve
+                                  point of a `c` segment flagged 0x80
+                                  (SFD_PTFLAG_INTERPOLATE) becomes a control point at the
+                                  same place; a flagged closing segment makes the
+                                  contour's first point one, and the contour then starts
+                                  at its first stated on-curve point, as the release's
+                                  does. The on-curve points TrueType implies between two
+                                  adjacent control points are written out at their exact
+                                  midpoints, flagged 0x80 with TrueType number -1, as
+                                  FontForge stores implied points. Unchanged points keep
+                                  their TrueType numbers; a point made a control point
+                                  gets an unused one. FATAL on a glyph with TrueType
+                                  instructions, a cubic Fore layer, an open contour with
+                                  a flagged point, or when no point is flagged
+
 Edits whose values are copied from a released binary. <release> names it exactly, as
 google/fonts@<commit>:<path>, read from the google/fonts clone (GF=, default
 /home/fsanches/compartilhado/google/fonts); a plan using one says so in its body:
@@ -462,6 +486,167 @@ def op_droplangname(text, args, base):
     return text[:m.start()] + text[m.end() + 1:], m.group(0)
 
 
+# --- what an exporter did that the source does not state ---------------------------
+_ANCHOR = re.compile(r'^(AnchorPoint: "(?:[^"\\]|\\.)*" )(\S+) (\S+)( .*)?$', re.M)
+
+
+def op_truncateanchors(text, args, base):
+    if args.strip():
+        raise EditError("truncateanchors takes no arguments")
+    changed, example = 0, None
+
+    def trunc(m):
+        nonlocal changed, example
+        x, y = float(m.group(2)), float(m.group(3))
+        if x.is_integer() and y.is_integer():
+            return m.group(0)
+        changed += 1
+        if example is None:
+            glyph = re.findall(r"^StartChar: (.*)$", text[:m.start()], re.M)
+            example = "%s %s,%s" % (glyph[-1] if glyph else "?", m.group(2), m.group(3))
+        # int() of a float truncates toward zero, as C's conversion to short does
+        return "%s%d %d%s" % (m.group(1), int(x), int(y), m.group(4) or "")
+    new = _ANCHOR.sub(trunc, text)
+    if not changed:
+        raise EditError("no anchor has a fractional coordinate")
+    return new, "%d anchor(s) with fractional coordinates, e.g. %s" % (changed, example)
+
+
+_SEG = re.compile(r"^ ?((?:-?[\d.]+(?:[eE][-+]?\d+)? )+)([mlc]) (\d+)(?:x[0-9a-fA-F]+)?(?:,(-?\d+)(?:,(-?\d+))?)?$")
+
+
+def _sfdlib_contour(lines, glyph):
+    """sfdLib 2.0.0's point list for one closed quadratic contour (parser.py
+    _drawContours): [x, y, on, flags, number, text]. `flags` is the SFD flag number of an
+    on-curve point; `number` its TrueType number (-1 implied) or, for a control point,
+    the number its predecessor's line gives it as nextcpindex; None when a flagged point
+    becomes a control point (it gets a number of its own). `text` is the coordinates as
+    the file writes them (kept byte for byte, "-0" included)."""
+    pts, force_open, nextcp, ends = [], False, None, []
+    for line in lines:
+        m = _SEG.match(line)
+        if not m:
+            raise EditError("%s: spline line not modelled: %r" % (glyph, line))
+        toks = m.group(1).split()
+        nums = [float(v) for v in toks]
+        kind, flag = m.group(2), int(m.group(3))
+        ttf = int(m.group(4)) if m.group(4) is not None else None
+        force_open |= bool(flag & 0x400)
+        ends.append(tuple(nums[-2:]))
+        if kind == "c":
+            if len(nums) != 6 or nums[0:2] != nums[2:4]:
+                raise EditError("%s: a quadratic c line names one control point twice: %r" % (glyph, line))
+            pts.append([nums[0], nums[1], False, None, nextcp, " ".join(toks[0:2])])
+            # SFD_PTFLAG_INTERPOLATE: sfdLib emits the end point as an off-curve point
+            on = not flag & 0x80
+            pts.append([nums[4], nums[5], on, flag if on else None, ttf if on else None,
+                        " ".join(toks[4:6])])
+        else:
+            pts.append([nums[0], nums[1], True, flag, ttf, " ".join(toks[0:2])])
+        nextcp = int(m.group(5)) if m.group(5) is not None else None
+    if force_open or len(pts) < 2 or ends[0] != ends[-1]:
+        raise EditError("%s: an open contour with an interpolated point is not modelled" % glyph)
+    # a closed contour: the closing segment's end point replaces the first one
+    return [pts[-1]] + pts[1:-1]
+
+
+def _sfd_quadratic_lines(pts, fresh, numbered):
+    """FontForge quadratic spline lines for a cyclic [x, y, on, flags, number, text] in which
+    two off-curve points are never adjacent, starting at pts[0] (on-curve). A point
+    without a number gets fresh(); `numbered` False writes no TrueType numbers at all."""
+    order = pts + [pts[0]]
+
+    def suffix(k):
+        if not numbered:
+            return ""
+        nxt = order[k + 1] if k + 1 < len(order) else order[1]
+        if not nxt[2] and nxt[4] is None:
+            nxt[4] = fresh()
+        return ",%d,%d" % (order[k][4], -1 if nxt[2] else nxt[4])
+    def xy(p):
+        # a new point is written as the shortest decimal that reads back as exactly the
+        # midpoint (FontForge's %.12g may not), so a reader can tell it is implied
+        return p[5] if p[5] is not None else " ".join("%d" % v if v.is_integer() else repr(v) for v in p[:2])
+    out = ["%s m %d%s" % (xy(order[0]), order[0][3], suffix(0))]
+    k = 1
+    while k < len(order):
+        p = order[k]
+        if p[2]:
+            out.append(" %s l %d%s" % (xy(p), p[3], suffix(k)))
+            k += 1
+        else:
+            e = order[k + 1]
+            out.append(" %s %s %s c %d%s" % (xy(p), xy(p), xy(e), e[3], suffix(k + 1)))
+            k += 2
+    return out
+
+
+def op_sfdlibinterpolated(text, args, base):
+    if args.strip():
+        raise EditError("sfdlibinterpolated takes no arguments")
+    if not re.search(r"^Layer: 1 1 ", text, re.M):
+        raise EditError("the Fore layer is not quadratic")
+
+    def is_flagged(line):
+        m = _SEG.match(line)
+        return bool(m) and m.group(2) == "c" and bool(int(m.group(3)) & 0x80)
+    total, glyphs, out, prev = 0, [], [], 0
+    for b in _blocks(text):
+        body = b.group(0)
+        fore = re.search(r"^Fore\nSplineSet\n(.*?)^EndSplineSet\n", body, re.M | re.S)
+        if not fore:
+            continue
+        lines = fore.group(1).rstrip("\n").split("\n")
+        if not any(is_flagged(l) for l in lines):
+            continue
+        if re.search(r"^TtInstrs:", body, re.M):
+            raise EditError("%s has TrueType instructions, which name points by number" % b.group(1))
+        # the TrueType numbers FontForge keeps per point (sfd.c SFDDumpSplineSet): the
+        # glyph's points keep theirs; a point this makes a control point gets an unused one
+        matches = [_SEG.match(l) for l in lines]
+        numbered = all(m and m.group(4) is not None for m in matches)
+        used = [int(v) for m in matches if m for v in m.groups()[3:5] if v is not None]
+        counter = iter(range(max(used + [-1]) + 1, 1 << 16))
+        contours, cur = [], []
+        for l in lines:
+            if re.search(r" m \d", l) and cur:
+                contours.append(cur)
+                cur = []
+            cur.append(l)
+        contours.append(cur)
+        new = []
+        for c in contours:
+            if not any(is_flagged(l) for l in c):
+                new += c
+                continue
+            pts = _sfdlib_contour(c, b.group(1))
+            # TrueType implies an on-curve point midway between two off-curve points;
+            # FontForge stores it, flagged 0x80 (exported implied) with TrueType number -1
+            expanded = []
+            for i, p in enumerate(pts):
+                expanded.append(p)
+                q = pts[(i + 1) % len(pts)]
+                if not p[2] and not q[2]:
+                    expanded.append([(p[0] + q[0]) / 2, (p[1] + q[1]) / 2, True, 0x80, -1, None])
+            if not expanded[0][2]:
+                # sfdLib's contour starts on an off-curve point; the release's starts at
+                # its first on-curve point (fontTools' BasePointToSegmentPen, which ufo2ft
+                # draws through, moves to it), or, with none, at the implied point before
+                k = next((i for i, p in enumerate(expanded) if p[2] and not p[3] & 0x80), len(expanded) - 1)
+                expanded = expanded[k:] + expanded[:k]
+            new += _sfd_quadratic_lines(expanded, lambda: next(counter), numbered)
+            total += sum(1 for l in c[1:] if is_flagged(l))
+        out.append(text[prev:b.start()])
+        out.append(body[:fore.start(1)] + "\n".join(new) + "\n" + body[fore.end(1):])
+        prev = b.end()
+        glyphs.append(b.group(1))
+    if not glyphs:
+        raise EditError("no quadratic on-curve point is flagged 0x80")
+    out.append(text[prev:])
+    return "".join(out), "%d on-curve point(s) flagged 0x80 in %d glyph(s): %s" % (
+        total, len(glyphs), " ".join(glyphs))
+
+
 # --- edits from the release binary ---------------------------------------------
 def release_file(spec):
     """google/fonts@<commit>:<path> -> a local copy of that blob (in TMPDIR)."""
@@ -805,6 +990,7 @@ MORE_OPS = {
     "importoutlines": op_importoutlines, "renameglyphs": op_renameglyphs, "importgsub": op_importgsub,
     "mergefea": op_mergefea, "mergepsfont": op_mergepsfont, "afmligatures": op_afmligatures,
     "obliqize": op_obliqize, "pastepsglyphs": op_pastepsglyphs,
+    "truncateanchors": op_truncateanchors, "sfdlibinterpolated": op_sfdlibinterpolated,
 }
 
 
