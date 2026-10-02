@@ -1,6 +1,8 @@
+diff --git a/tools/recipe.py b/tools/recipe.py
+index e391ccc..5a5bd9c 100644
 --- a/tools/recipe.py
 +++ b/tools/recipe.py
-@@ -38,6 +38,11 @@
+@@ -38,6 +38,15 @@ FONTFORGE_HEIGHT_MEAN_FIXED = 1337023489
  # (investigations/reland-2026-10-01/linespacing/bit7_sweep.txt).
  FONTFORGE_OS2_VERSION_RAISED = 1440374400   # 2015-08-24T00:00:00Z
  UNIX_FROM_1904 = 2082844800
@@ -9,10 +11,14 @@
 +# merged 2018-12-28). A source saved as SplineFontDB 3.2 was written by FontForge 20200314
 +# or later, so any export of it uses the newer rule (Comic Relief: -185/175 -> -97).
 +FONTFORGE_UNDERLINE_TOP = 1545955200   # 2018-12-28T00:00:00Z
++# FontForge resolved offset-mode win/hhea metrics against the on-curve bounding box until
++# ee15007274e9 (2014-09-16T19:35:46Z); later builds count control points too
++# (investigations/next-vmetrics).
++FONTFORGE_ONCURVE_BBOX_FIXED = 1410896146
  
  # Glyph names and contour directions are not babelfont flags any more: the source keeps
  # both, and sources/config.yaml asks the builder for them (noProductionNames: true;
-@@ -46,6 +51,7 @@
+@@ -46,6 +55,7 @@ UNIX_FROM_1904 = 2082844800
  BASE = ["--fontforge-os2-defaults", "--add-instance-per-master", "--infer-mark-category",
          "--set-subcategory", "--keep-source-advances", "--fontforge-underline-position",
          "--round-coordinates"]
@@ -20,7 +26,7 @@
  
  
  # makeotf's duplicate cmap entries: each maps a second codepoint to the glyph of the
-@@ -131,6 +137,9 @@
+@@ -131,14 +141,24 @@ def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
      config.yaml keeps source contour directions (a release of the family mixes them)."""
      flags = list(BASE)
      built = fontforge_build(shipped)
@@ -29,4 +35,19 @@
 +        flags[flags.index("--fontforge-underline-position")] = UNDERLINE_TOP
      if built is not None and built < FONTFORGE_HEIGHT_MEAN_FIXED:
          flags.insert(0, "--fontforge-height-glyph-count-mean")
++    if built is not None and built < FONTFORGE_ONCURVE_BBOX_FIXED:
++        flags.insert(0, "--fontforge-legacy-offset-metrics")
      if built is not None and built < FONTFORGE_OS2_VERSION_RAISED:
+         flags.append("--fontforge-legacy-os2-version")
+     # FontForge writes GDEF only when it exports OpenType layout; a release exported
+     # with only the legacy 'kern' table (Miama, Ultra, Nosifer) has none to reproduce.
+     if "GDEF" in TTFont(shipped):
+         flags.append("--fontforge-gdef-classes")
++    # FontForge's exporter synthesizes a .notdef when the source has none (a no-op
++    # otherwise), and sets post.isFixedPitch when every glyph shares one advance.
++    # After the GDEF filter, which reads "no .notdef in the source"; before direction
++    # correction, so the synthesized contour is normalised too.
++    flags += ["--fontforge-notdef", "--fontforge-fixed-pitch"]
+     if not keep_direction:
+         flags.append("--correct-path-direction")
+     # --add-legacy-duplicate-cmap is NEVER passed. It adds makeotf's duplicate set,
