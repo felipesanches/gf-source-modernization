@@ -1,0 +1,48 @@
+repo	style	check	cause	detail
+cardo	Cardo-Bold	shaping	shaping: base+mark	default features, base+mark: 853 of 157321 runs differ
+cardo	Cardo-Italic	shaping	shaping: base+mark	default features, base+mark: 986 of 150943 runs differ
+cardo	Cardo-Italic	gdef	gdef: classes differ	mark glyph sets differ
+cardo	Cardo-Regular	cmap	cmap: differs	1 codepoint(s) map to a different glyph: U+F438 10192.04/u10192.04
+corben	Corben-Bold	rendering	rendering: outlines differ	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 138px, U+0141 61px, U+0142 55px
+kristi	Kristi-Regular	names	names: ID 2	name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+kristi	Kristi-Regular	line_spacing	line_spacing: metrics differ	fsSelection: ITALIC gained, REGULAR lost
+limelight	Limelight-Regular	rendering	rendering: outlines differ	diffenator3: 4 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0134 55px, U+0037 47px, U+0031 42px, U+004A 42px
+miama	Miama-Regular	shaping	shaping: singles	default features, singles: 34 of 1110 runs differ
+miama	Miama-Regular	rendering	rendering: outlines differ	diffenator3: 34 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+032D 136px, U+0326 129px, U+0330 97px, U+0317 96px, U+032E 96px
+miama	Miama-Regular	names	names: ID 2	name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+mrbedfort	MrBedfort-Regular	rendering	rendering: outlines differ	diffenator3: 2 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+005C 74px, U+005B 71px
+niconne	Niconne-Regular	rendering	rendering: outlines differ	diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0030 60px
+nixieone	NixieOne-Regular	rendering	rendering: outlines differ	diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+201E 32px, U+201D 32px, U+003B 24px, U+002C 17px, U+201A 17px
+nosifer	Nosifer-Regular	shaping	shaping: singles	default features, singles: 3 of 334 runs differ
+nosifer	Nosifer-Regular	rendering	rendering: outlines differ	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 64px, U+0311 60px, U+0307 42px
+nosifercaps	NosiferCaps-Regular	line_spacing	line_spacing: metrics differ	fsSelection: REGULAR gained
+novamono	NovaMono	shaping	shaping: base+mark	default features, base+mark: 2 of 597 runs differ
+novascript	NovaScript-Regular	names	names: ID 2	name ID 2 (3,1,0x409): release 'Regular', build 'Italic'
+novascript	NovaScript-Regular	line_spacing	line_spacing: metrics differ	fsSelection: ITALIC gained, REGULAR lost
+overlock	Overlock-BlackItalic	names	names: ID 2	name ID 2 (3,1,0x409): release 'Italic', build 'Regular'
+overlock	Overlock-BlackItalic	line_spacing	line_spacing: metrics differ	fsSelection: ITALIC lost, REGULAR gained
+play	Play-Bold	cmap	cmap: differs	build loses 134 codepoint(s): U+0000 U+000D U+00A0 U+01A0 U+01A1 U+01AF U+01B0 U+0300 U+0301 U+0302 U+0303 U+0304 U+0306 U+0307 U+0308 U+0309 U+030B U+031B U+0323 U+0326
+play	Play-Bold	shaping	shaping: singles	default features, singles: 175 of 693 runs differ
+play	Play-Bold	rendering	rendering: outlines differ	diffenator3: 244 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+04DC 916px, U+0416 687px, U+04DD 604px, U+0394 456px, U+0436 436px
+play	Play-Bold	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (937, -220, 0), build hhea (932, -220, 0)
+play	Play-Bold	advances	advances: differ	210 reachable release glyph(s) have no build counterpart: Euro.smcp NULL Ohorn Uhorn acutecomb acutecomb.case anoteleia brevecombcy brevecombcy.case dotbelowcomb eight.dnom eight.numr eight.osf eight.
+play	Play-Bold	gdef	gdef: classes differ	mark attachment classes differ
+play	Play-Regular	cmap	cmap: differs	build loses 134 codepoint(s): U+0000 U+000D U+00A0 U+01A0 U+01A1 U+01AF U+01B0 U+0300 U+0301 U+0302 U+0303 U+0304 U+0306 U+0307 U+0308 U+0309 U+030B U+031B U+0323 U+0326
+play	Play-Regular	shaping	shaping: singles	default features, singles: 145 of 693 runs differ
+play	Play-Regular	rendering	rendering: outlines differ	diffenator3: 219 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+04C1 844px, U+04DC 824px, U+0416 631px, U+04DD 563px, U+03C7 383px
+play	Play-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (937, -220, 0), build hhea (937, 220, 0)
+play	Play-Regular	advances	advances: differ	210 reachable release glyph(s) have no build counterpart: Euro.smcp NULL Ohorn Uhorn acutecomb acutecomb.case anoteleia brevecombcy brevecombcy.case dotbelowcomb eight.dnom eight.numr eight.osf eight.
+play	Play-Regular	gdef	gdef: classes differ	mark attachment classes differ
+poly	Poly-Italic	table_gate	table gate rows (functional PASS)	3
+ribeyemarrow	RibeyeMarrow-Regular	table_gate	table gate rows (functional PASS)	2
+rougescript	RougeScript-Regular	rendering	rendering: outlines differ	diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00CF 158px, U+00CE 154px, U+00CD 154px, U+00CC 151px, U+0049 143px
+smokum	Smokum-Regular	table_gate	table gate rows (functional PASS)	3
+thabit	Thabit-Oblique	line_spacing	line_spacing: metrics differ	fsSelection: ITALIC lost, REGULAR gained
+thabit	Thabit-BoldOblique	line_spacing	line_spacing: metrics differ	fsSelection: ITALIC lost, BOLD lost, REGULAR gained
+thabit	Thabit-Bold	table_gate	table gate rows (functional PASS)	2
+thabit	Thabit	table_gate	table gate rows (functional PASS)	2
+ultra	Ultra-Regular	shaping	shaping: singles	default features, singles: 3 of 371 runs differ
+ultra	Ultra-Regular	rendering	rendering: outlines differ	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0312 58px, U+0326 53px, U+0315 34px
+unifraktur	UnifrakturMaguntia-Book	shaping	shaping: base+mark	default features, base+mark: 1317 of 1377 runs differ
+varela	Varela-Regular	shaping	shaping: base+mark	default features, base+mark: 1169 of 1221 runs differ
+viga	Viga-Regular	shaping	shaping: base+mark	default features, base+mark: 2 of 175 runs differ
