@@ -60,6 +60,9 @@ unpaired (rule 4 never applied); Ultra (drifted .sfd).
 
 ## 4. Compiler / builder (only where the source already states it)
 
+Decided 2026-10-02: fontc-only problems are DISCLOSED in the repos and fixed later; the
+list, repo counts and fix status live in gfonts-ai-usage-report/22-fontc-problems.pdf.
+
 - fontc + gftools-rust: shared layout scripts (empty-GPOS releases: Varela, UnifrakturMaguntia).
 - fontc: KernFeatureWriter `ignoreMarks=false` (+ babelfont writes the option): Cardo.
 - gftools-rust: bump fontc (main 018e193c reads "Italic" in a master name): Overlock-BlackItalic.

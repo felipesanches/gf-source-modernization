@@ -19,5 +19,8 @@
    "subject": "Give nonbreakingspace the space's width in Cardo-Italic-TTF.sfd",
    "body": "google/fonts d70318ab8 (2015-04-27, \"Updating ofl/cardo/*ttf with\nnbspace and fsType fixes\") set the shipped Cardo-Italic's\nnonbreakingspace advance from 550 to 575, the space's width. It changed\nnothing else in the font. The source now states what Google Fonts ships."
   }
+ ],
+ "disclose": [
+  "Cardo-Italic: the release's kerning lookup does not skip marks (lookup flag 0, as the source states). fontc's kerning writer always skips marks and rejects the option to keep them, so kerning next to combining marks differs from the release. Needs a fontc change (KernFeatureWriter ignoreMarks); planned as later work. Decided 2026-10-02: disclose."
  ]
 }

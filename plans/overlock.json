@@ -53,5 +53,8 @@
    "subject": "Name Overlock-Regular as the release does",
    "body": "The release's names differ from what FontForge exported from this file;\nit states them as US English names: ID 4 'Overlock Regular' (FontForge exported 'Overlock')."
   }
+ ],
+ "disclose": [
+  "Overlock-BlackItalic is not flagged italic here (OS/2 fsSelection ITALIC, head.macStyle) while the release is: the fontc in gftools-builder (1.0.0) does not read \"Italic\" in a master name. fontc main already does (018e193c); fixed when gftools-builder updates fontc. Decided 2026-10-02: disclose."
  ]
 }

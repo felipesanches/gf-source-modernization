@@ -1,0 +1,7 @@
+{
+ "repo": "varela",
+ "commits": [],
+ "disclose": [
+  "The release has an empty GPOS table (scripts cyrl, grek, latn with no features or lookups) that FontForge wrote because GSUB has lookups; its presence turns off HarfBuzz's fallback mark positioning. fontc cannot write a GPOS without lookups, so here combining marks are placed by the fallback and differ from the release. Needs a fontc option (shared layout scripts); planned as later work. Decided 2026-10-02: disclose."
+ ]
+}
