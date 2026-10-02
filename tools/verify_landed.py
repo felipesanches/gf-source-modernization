@@ -12,6 +12,10 @@ a fresh clone -- and checks, for every repository given:
   3. SHAPE: every commit between the template and the conversion changes only .sfd
      files (criterion B: each edit to the font is its own commit); the convert
      commit is last and retires the converted sources.
+     A `glyphs` row (the source already is .glyphs): the upstream history at its
+     commit, the template, then "Add a gftools-builder config for <source>" last,
+     adding only sources/config.yaml; no edit commits (land.py refuses them), so
+     the source at HEAD is byte-identical to the upstream's.
   4. CORRESPONDENCE: a fresh clone builds from its own sources/config.yaml, every
      style gates at 0 blocking rows against the release, and maps EXACTLY the
      release's codepoints (the gate itself tolerates gained ones).
@@ -58,6 +62,25 @@ def blobs(repo_dir, rev, prefix=""):
     return got
 
 
+def glyphs_shape(d, rows, log, subjects):
+    """SHAPE of a `glyphs` repository: template, then the config commit, nothing else."""
+    problems = []
+    want = "Add a gftools-builder config for %s" % rows[0]["source"]
+    if subjects[-1] != want:
+        problems.append("SHAPE: the last commit is %r, not %r" % (subjects[-1], want))
+    for c, s in zip(log[1:-1], subjects[1:-1]):
+        if s != "Adopt the Unified Font Repository template":
+            problems.append("SHAPE: %s %r: a glyphs row allows no edit commits" % (c[:7], s))
+    if subjects[1:-1] != ["Adopt the Unified Font Repository template"]:
+        problems.append("SHAPE: want exactly one template commit before the config, got %s"
+                        % subjects[1:-1])
+    changed = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-status", "-r",
+                  log[-1]).stdout.splitlines()
+    if not re.fullmatch(r"[AM]\tsources/config\.yaml", "\n".join(changed)):
+        problems.append("SHAPE: the config commit must change only sources/config.yaml: %s" % changed)
+    return problems
+
+
 def verify(repo):
     rows = land.family_rows(repo)
     kind, fam, lic, base, commit = (rows[0][k] for k in ("kind", "family", "lic", "base", "commit"))
@@ -92,6 +115,16 @@ def verify(repo):
             problems.append("ORIGINAL: %s is not an ancestor of HEAD" % commit[:12])
         log = [commit] + run("git", "-C", d, "rev-list", "--reverse", "%s..HEAD" % commit).stdout.split()
         start = 1
+    if kind == "glyphs":
+        for src in sorted({r["source"] for r in rows}):
+            want = run("git", "-C", mirror, "rev-parse", "%s:%s" % (commit, src)).stdout.strip()
+            got = run("git", "-C", d, "rev-parse", "HEAD:%s" % src).stdout.strip()
+            if not want or want != got:
+                problems.append("ORIGINAL: %s at HEAD is not byte-identical to %s@%s (%s vs %s)"
+                                % (src, base, commit[:12], got, want))
+        branch = run("git", "-C", d, "symbolic-ref", "--short", "HEAD").stdout.strip()
+        if branch != land.BRANCH[kind]:
+            problems.append("SHAPE: on branch %r, want %r" % (branch, land.BRANCH[kind]))
 
     # 2. the licence
     ofl_head = run("git", "-C", d, "show", "HEAD:OFL.txt").stdout
@@ -104,9 +137,11 @@ def verify(repo):
 
     # 3. the shape
     subjects = [run("git", "-C", d, "log", "-1", "--format=%s", c).stdout.strip() for c in log]
-    if not subjects[-1].startswith("Convert to .glyphs with babelfont "):
+    if kind == "glyphs":
+        problems += glyphs_shape(d, rows, log, subjects)
+    elif not subjects[-1].startswith("Convert to .glyphs with babelfont "):
         problems.append("SHAPE: the last commit is %r, not the conversion" % subjects[-1])
-    middle = log[start:-1]
+    middle = log[start:-1] if kind != "glyphs" else []
     for c, s in zip(middle, subjects[start:-1]):
         if s == "Adopt the Unified Font Repository template":
             continue
@@ -114,7 +149,7 @@ def verify(repo):
         if not changed or any(not p.lower().endswith(".sfd") for p in changed):
             problems.append("SHAPE: %s %r touches non-.sfd files: %s" % (c[:7], s, changed))
     retired = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-status", "-r", log[-1]).stdout
-    for r in rows:
+    for r in rows if kind != "glyphs" else []:
         if not re.search(r"^D\t%s$" % re.escape(r["source"]), retired, re.M):
             problems.append("SHAPE: the conversion does not retire %s" % r["source"])
         if not re.search(r"^[AM]\tsources/%s\.glyphs$" % re.escape(r["style"]), retired, re.M):
@@ -150,7 +185,9 @@ def verify(repo):
         if len(built) != expected or len(built) < len(rows):
             problems.append("BUILD: %d fonts built for %d styles: %s" % (len(built), len(rows), built))
         for r in rows:
-            name = land.built_name(os.path.join(clone, "sources", r["style"] + ".glyphs"))
+            # one .glyphs file with several instances: each style is its own instance
+            name = (r["style"] + ".ttf" if kind == "glyphs" else
+                    land.built_name(os.path.join(clone, "sources", r["style"] + ".glyphs")))
             if name not in built:
                 problems.append("BUILD: %s not produced" % name)
                 continue

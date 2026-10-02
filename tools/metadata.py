@@ -12,6 +12,12 @@ The mapping is measured, not assumed: each style's built file name comes from th
 converted .glyphs, and its destination is the file google/fonts already ships
 (NovaCut builds NovaCut-Regular.ttf, google/fonts ships NovaCut.ttf).
 
+A repository of kind `glyphs` (the designer's .glyphs is built as is, tools/land.py)
+records its config commit, "Add a gftools-builder config for <source>", instead of a
+conversion; each style is an instance of that one file, built as <style>.ttf. Its
+upstream_info.md says no conversion ran, names the builder from that commit's message,
+and lists the known differences plans/<repo>.json `disclose` puts in the README.
+
 Writes into a google/fonts worktree on its own branch; never pushes. The commits
 are only meaningful once the repositories are pushed: every hash they cite must
 exist on GitHub first.
@@ -57,7 +63,8 @@ def source_block(repo, rows, head_full, branch):
              "  files {", '    source_file: "OFL.txt"', '    dest_file: "OFL.txt"', "  }"]
     for r in rows:
         g = os.path.join(d, "sources", r["style"] + ".glyphs")
-        built = land.built_name(g)
+        # a `glyphs` source holds every style as an instance, built as <style>.ttf
+        built = r["style"] + ".ttf" if rows[0]["kind"] == "glyphs" else land.built_name(g)
         lines += ["  files {", '    source_file: "fonts/ttf/%s"' % built,
                   '    dest_file: "%s"' % os.path.basename(r["shipped"]), "  }"]
     lines += ['  branch: "%s"' % branch, '  config_yaml: "sources/config.yaml"', "}"]
@@ -73,6 +80,8 @@ def replace_source(text, block):
 
 def upstream_info(repo, rows, old_block, head_full, display, previous, future):
     kind, base, commit = rows[0]["kind"], rows[0]["base"], rows[0]["commit"]
+    if kind == "glyphs":
+        return glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, future)
     d = os.path.join(land.OUT, repo)
     convert = git(d, "log", "-1", "--format=%B", head_full)
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
@@ -139,15 +148,135 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future):
     return "\n".join(out) + "\n"
 
 
-def equivalence_commit(d):
+def equivalence_commit(d, rows=None):
     """The commit METADATA.pb records: the conversion, whose build is functionally
     equivalent to the binaries google/fonts ships. Anything after it is an improvement,
-    left for an onboarder's font-update PR."""
+    left for an onboarder's font-update PR. For a `glyphs` repository, which runs no
+    converter, it is the commit adding the build config."""
+    if rows and rows[0]["kind"] == "glyphs":
+        want = "Add a gftools-builder config for %s" % rows[0]["source"]
+        for line in git(d, "log", "--format=%H %s").splitlines():
+            h, subject = line.split(" ", 1)
+            if subject == want:
+                return h
+        raise SystemExit("FATAL: %s has no commit %r" % (d, want))
     for line in git(d, "log", "--format=%H %s").splitlines():
         h, subject = line.split(" ", 1)
         if subject.startswith("Convert to .glyphs with babelfont "):
             return h
     raise SystemExit("FATAL: %s has no conversion commit" % d)
+
+
+def unwrap(paragraph):
+    """Join a commit message paragraph wrapped at 72 columns back into lines: the lead
+    text, then one item per line indented by exactly two spaces (land.py's per-style
+    results; deeper indents continue an item). land.py wraps with break_on_hyphens, so a
+    line ending in a word's hyphen joins the next without a space ("glyphslib-" + "rs")."""
+    items = []
+    for line in paragraph.splitlines():
+        if not line.strip():
+            continue
+        if not items or re.match(r"  \S", line):
+            items.append(line.strip())
+            continue
+        sep = "" if re.search(r"[A-Za-z0-9]-$", items[-1]) else " "
+        items[-1] += sep + line.strip()
+    return items
+
+
+def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, future):
+    """upstream_info.md for a repository built directly from the designer's .glyphs."""
+    base, commit = rows[0]["base"], rows[0]["commit"]
+    src = rows[0]["source"]
+    d = os.path.join(land.OUT, repo)
+    config = git(d, "log", "-1", "--format=%B", head_full)
+    claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", config, re.S | re.M)
+    claim = unwrap(claim.group(1)) if claim else []
+    builder = re.search(r"^Builds with gftools-builder \((.*), fontc ([^)\s]+)\)",
+                        claim[0]) if claim else None
+    plan = land.load_plan(repo)
+    out = ["# %s" % display, ""]
+    out += wrap("Source metadata updated 2026-10: the fonts are built directly from the "
+                "designer's Glyphs.app source, `%s`, with gftools-builder and fontc. No "
+                "conversion is involved. The repository, commit and config are in the "
+                "`source { }` block of METADATA.pb." % src, 88)
+    out += ["", "## Initial state", ""]
+    out += wrap("Google Fonts shipped %s exported by Glyphs.app from `%s` in "
+                "https://github.com/%s at commit `%s`. There was no gftools-builder "
+                "config to build it with fontc." % (display, src, base, commit), 88)
+    out += ["", "## Actions taken", ""]
+    out += wrap("- https://github.com/googlefonts/%s carries the history of "
+                "https://github.com/%s up to `%s`, unmodified." % (repo, base, commit[:12]),
+                88, subsequent_indent="  ")
+    out += wrap("- The Unified Font Repository template was adopted in its own commit; the "
+                "README records the provenance and the known differences below.", 88,
+                subsequent_indent="  ")
+    out += wrap("- `%s` was not changed: no converter ran, and there are no edit commits. "
+                "It is built exactly as the designer left it." % src, 88,
+                subsequent_indent="  ")
+    out += wrap("- `sources/config.yaml`, the gftools-builder config, was added as the last "
+                "commit.", 88, subsequent_indent="  ")
+    out += ["", "## Final state", ""]
+    out += wrap("The source is https://github.com/googlefonts/%s at `%s`, built directly "
+                "from the designer's Glyphs.app source `%s` (%s@%s), with no conversion."
+                % (repo, head_full[:12], src, base, commit[:12]), 88)
+    if builder:
+        # the builder, then what was measured with it, as the config commit states them
+        rest = claim[0][builder.end():].strip()
+        rest = ("The build " + rest[4:] if rest.startswith("and ") else
+                rest[2:] if rest.startswith(". ") else rest)
+        out += [""] + wrap("Builder: gftools-builder (%s) with fontc %s, as the config "
+                           "commit states. %s" % (builder.group(1), builder.group(2), rest), 88)
+    elif claim:
+        out += [""] + wrap(claim[0], 88)
+    if claim[1:]:
+        out += [""]
+        for t in claim[1:]:
+            out += wrap("- " + t, 88, subsequent_indent="  ")
+    out += ["", "Files: `%s` builds one instance per style:" % src, ""]
+    for r in rows:
+        out += ["- `fonts/ttf/%s.ttf` -> `%s`" % (r["style"], os.path.basename(r["shipped"]))]
+    out += [""]
+    out += wrap("`%s` is the equivalence commit: it builds the very source the shipped "
+                "binaries were exported from. Source modernization adds no features. Any "
+                "improvement is a later commit that needs its own QA, and is left as future "
+                "work for an onboarder to review in a font-update PR." % head_full[:12], 88)
+    disclose = plan.get("disclose", [])
+    if disclose:
+        out += ["", "## Known differences from the released fonts", ""]
+        out += wrap("Reviewed and deliberately left as they are; the repository's README "
+                    "lists them too:", 88)
+        out += [""]
+        for t in disclose:
+            out += wrap("- " + t, 88, subsequent_indent="  ")
+    earlier = plan.get("earlier_sources", [])
+    if earlier:
+        out += ["", "## Earlier sources", ""]
+        out += wrap("Other sources of this family, kept on record; none of them is what "
+                    "Google Fonts ships:", 88)
+        out += [""]
+        for t in earlier:
+            out += wrap("- " + t, 88, subsequent_indent="  ")
+    later = later_subjects(d, head_full)
+    if later or future:
+        out += ["", "## Future work", ""]
+        out += wrap("Not part of what Google Fonts ships; for review in a font-update "
+                    "PR:", 88)
+        for l in later:
+            out += wrap("- commit `%s` (after the equivalence commit): %s"
+                        % (l.split(" ", 1)[0], l.split(" ", 1)[1]), 88,
+                        subsequent_indent="  ")
+        for f in future:
+            out += wrap("- " + f, 88, subsequent_indent="  ")
+    if old_block:
+        out += ["", "## Original repository (dormant)", ""]
+        out += wrap("The source block this replaces, preserved for provenance:", 88)
+        out += [""] + ["    " + l for l in old_block.rstrip("\n").splitlines()]
+    if previous.strip():
+        out += ["", "## Previous investigation", ""]
+        for l in previous.rstrip("\n").splitlines():
+            out.append("#" + l if l.startswith("#") else l)
+    return "\n".join(out) + "\n"
 
 
 def later_subjects(d, equiv):
@@ -185,12 +314,13 @@ def main():
         if git(os.path.join(land.OUT, repo), "rev-parse", "--short", "HEAD").strip() != landed[repo][2]:
             raise SystemExit("FATAL: %s HEAD is not the landed commit %s" % (repo, landed[repo][2]))
         d = os.path.join(land.OUT, repo)
-        head_full = equivalence_commit(d)      # recorded; later commits are future work
+        head_full = equivalence_commit(d, rows)   # recorded; later commits are future work
         future = land.load_plan(repo).get("future_work", [])
         # the branch the commit lives on once published: `main` for a fresh repository;
         # `master` for a fork or an extended repository, AFTER its pull request is
         # MERGED -- a squash merge would give the commit a new hash and orphan this one
-        rbranch = "main" if rows[0]["kind"] == "hg" else "master"
+        # (a `glyphs` repository is created empty on GitHub and pushed to `main`)
+        rbranch = "main" if rows[0]["kind"] in ("hg", "glyphs") else "master"
         fam, lic = rows[0]["family"], rows[0]["lic"]
         mp = os.path.join(wt, lic, fam, "METADATA.pb")
         text = open(mp, encoding="utf-8").read()
@@ -205,6 +335,19 @@ def main():
             raise SystemExit("FATAL: non-ASCII introduced into upstream_info.md for %s" % fam)
         open(ui, "w", encoding="utf-8").write(body)
         git(wt, "add", "--", os.path.relpath(mp, wt), os.path.relpath(ui, wt))
+        if rows[0]["kind"] == "glyphs":
+            n_disc = len(land.load_plan(repo).get("disclose", []))
+            msg = ("%s: reference the googlefonts/%s Glyphs source\n\n"
+                   "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
+                   "Status: the designer's %s built as is, no conversion; builds with "
+                   "gftools-builder and fontc\n"
+                   "Confidence: high -- 0 blocking rows against the shipped binaries%s\n\n"
+                   "Assisted by an AI agent (Claude Opus 5.5)\n"
+                   % (display, repo, repo, head_full[:12], rows[0]["source"],
+                      "; %d known difference(s) disclosed" % n_disc if n_disc else ""))
+            git(wt, "commit", "-q", "-F", "-", input=msg)
+            print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
+            continue
         msg = ("%s: reference the googlefonts/%s .glyphs source\n\n"
                "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
                "Status: %s; builds with gftools-builder and fontc\n"
