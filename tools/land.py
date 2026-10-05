@@ -587,8 +587,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
             lines += wrap("%s: %s; %s" % (st, table, "functionally equivalent" if not bad else
                                           "functionally different in " + ", ".join(bad)))
     ev_rev, _ = evidence()
-    lines += [""] + textwrap.wrap("Those tools, this repository's plan (plans/%s.json) and the run's "
-                                  "logs: %s at %s." % (repo, EVIDENCE_URL, ev_rev), 72)
+    lines += [""] + textwrap.wrap("Those tools and this repository's plan (plans/%s.json): %s at "
+                                  "%s. The logs of the run that made this commit are added to "
+                                  "that repository's logs/ after it." % (repo, EVIDENCE_URL, ev_rev), 72)
     if not glyphs:
         lines += [""] + textwrap.wrap(what, 72)
     head = commit(d, "\n".join(lines), "sources")
