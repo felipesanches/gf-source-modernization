@@ -168,6 +168,7 @@ All Python runs with `PY=/home/fsanches/compartilhado/gftools/venv/bin/python3`.
 | `tools/verify_landed.py` | Independently re-check a landed repository from a fresh clone, functional gate included. | `$PY tools/verify_landed.py <repo>...` (`FAMILIES=families-next.tsv` for the next batch) |
 | `tools/push.sh` | Push what is verified; `--check` first. | `sh tools/push.sh --check` |
 | `tools/metadata.py` | The google/fonts commit per family pointing at a landed repository. | `$PY tools/metadata.py <branch> <repo>...` |
+| `tools/verify_metadata.py` | Is a google/fonts branch from metadata.py right to submit? One family per commit; METADATA.pb parses; the recorded commit is on the repository's branch on GitHub; every mapped file exists on both sides; `--build` rebuilds each repository at that commit and compares its outputs with the mapping; the added upstream_info.md text is ASCII and cites only public commits and URLs. | `$PY tools/verify_metadata.py --fetch --build <google/fonts worktree>` |
 | `tools/pr_body.py` | The PR body for a fork branch, derived from the branch itself. | `$PY tools/pr_body.py <repo>` |
 | `tools/findings_from_results.py` | Render the investigation workflow's structured results as FINDINGS.md / VERIFY.md. | `$PY tools/findings_from_results.py investigations/workflow-journal-*.jsonl <unit>...` |
 

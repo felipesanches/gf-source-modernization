@@ -29,6 +29,7 @@ import re
 import subprocess
 import sys
 import functools
+import struct
 import textwrap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -39,6 +40,11 @@ GF = land.GF
 # never break a file or flag name at its hyphen
 wrap = functools.partial(textwrap.wrap, break_on_hyphens=False, break_long_words=False)
 WT_ROOT = "/home/fsanches/compartilhado/google/fonts-worktrees"
+MODEL = "Claude Opus 5.5"
+# the license file google/fonts ships beside each family, by license directory
+LICENSE_FILE = {"ofl": "OFL.txt", "apache": "LICENSE.txt", "ufl": "UFL.txt"}
+LEGACY = {".vfb": "FontLab `.vfb`", ".vfc": "FontLab `.vfc`", ".vfj": "FontLab `.vfj`",
+          ".pfa": "Type 1 `.pfa`", ".pfb": "Type 1 `.pfb`"}
 
 
 def git(d, *a, check=True, input=None):
@@ -56,11 +62,51 @@ def worktree(branch):
     return wt
 
 
+def license_file(repo, rows, head_full):
+    """The license file both sides carry: google/fonts ships OFL.txt beside an OFL family
+    and LICENSE.txt beside an Apache one, and the repository must have it too."""
+    name = LICENSE_FILE[rows[0]["lic"]]
+    if subprocess.run(["git", "-C", os.path.join(land.OUT, repo), "cat-file", "-e",
+                       "%s:%s" % (head_full, name)]).returncode:
+        raise SystemExit("FATAL: %s has no %s at %s" % (repo, name, head_full[:12]))
+    return name
+
+
+def has_fftm(path):
+    """True if the font at path has an FFTM table: FontForge wrote it."""
+    with open(path, "rb") as fh:
+        head = fh.read(12)
+        n = struct.unpack(">H", head[4:6])[0]
+        tags = [fh.read(16)[:4] for _ in range(n)]
+    return b"FFTM" in tags
+
+
+def provenance(repo, rows, wt):
+    """What says the .sfd, not another legacy format beside it, is what was shipped."""
+    d = os.path.join(land.OUT, repo)
+    first = git(d, "rev-list", "--max-parents=0", "HEAD").split()[0]
+    exts = {os.path.splitext(f)[1].lower() for f in git(d, "ls-tree", "-r", "--name-only", first).split()}
+    others = [LEGACY[e] for e in sorted(LEGACY) if e in exts]
+    shipped = [os.path.join(wt, r["lic"], r["family"], os.path.basename(r["shipped"])) for r in rows]
+    fftm = sum(has_fftm(p) for p in shipped)
+    text = ("%s %d shipped binaries carry FontForge's `FFTM` table, so FontForge generated "
+            "them." % ("All" if fftm == len(shipped) else "%d of the" % fftm, len(shipped))
+            if len(shipped) > 1 else
+            "The shipped binary carries FontForge's `FFTM` table, so FontForge generated it."
+            if fftm else "")
+    if others:
+        text += (" The directory also holds %s files; the `.sfd` is taken as the master "
+                 "because FontForge generated the shipped fonts and the build from the `.sfd` "
+                 "is functionally equivalent to them." % " and ".join(others))
+    return text.strip()
+
+
 def source_block(repo, rows, head_full, branch):
     d = os.path.join(land.OUT, repo)
+    lic = license_file(repo, rows, head_full)
     lines = ["source {", '  repository_url: "https://github.com/googlefonts/%s"' % repo,
              '  commit: "%s"' % head_full,
-             "  files {", '    source_file: "OFL.txt"', '    dest_file: "OFL.txt"', "  }"]
+             "  files {", '    source_file: "%s"' % lic, '    dest_file: "%s"' % lic, "  }"]
     for r in rows:
         g = os.path.join(d, "sources", r["style"] + ".glyphs")
         # a `glyphs` source holds every style as an instance, built as <style>.ttf
@@ -78,14 +124,38 @@ def replace_source(text, block):
     return text.rstrip("\n") + "\n" + block, None
 
 
-def upstream_info(repo, rows, old_block, head_full, display, previous, future):
+def plural(text):
+    """'1 style(s)' -> '1 style', '4 style(s)' -> '4 styles'."""
+    return re.sub(r"\b(\d+) ((?:[\w-]+ )*?)(\w+)\(s\)", lambda m: "%s %s%s%s" % (
+        m.group(1), m.group(2), m.group(3), "" if m.group(1) == "1" else "s"), text)
+
+
+def tools_cited(message):
+    """Where the convert commit says its gate tools live: the evidence repository at the
+    landing's revision, and the family's plan there if it has one."""
+    m = re.search(r"^Those tools(?: and this repository's plan \((plans/[\w.-]+)\))?:\s+"
+                  r"(https://\S+)\s+at\s+([0-9a-f]{7,40})", message, re.M)
+    if not m:
+        raise SystemExit("FATAL: the convert commit does not say where its tools live")
+    plan = ", including this family's plan `%s`" % m.group(1) if m.group(1) else ""
+    return "Those tools%s: %s at `%s`." % (plan, m.group(2), m.group(3))
+
+
+def header(display, d, head_full):
+    """Title, then the model and date lines every investigation report carries; the date
+    is the equivalence commit's."""
+    date = git(d, "log", "-1", "--format=%cs", head_full).strip()
+    return ["# %s" % display, "", "**Model**: %s" % MODEL, "**Date**: %s" % date, ""], date
+
+
+def upstream_info(repo, rows, old_block, head_full, display, previous, future, wt):
     kind, base, commit = rows[0]["kind"], rows[0]["base"], rows[0]["commit"]
     if kind == "glyphs":
         return glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, future)
     d = os.path.join(land.OUT, repo)
     convert = git(d, "log", "-1", "--format=%B", head_full)
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
-    claim = " ".join(claim.group(1).split()) if claim else ""
+    claim = plural(" ".join(claim.group(1).split())) + " " + tools_cited(convert) if claim else ""
     if kind == "hg":
         origin = ("the family's directory in the googlefontdirectory-hg monorepo "
                   "(https://github.com/%s, `%s/%s` at commit `%s`); it had no repository "
@@ -93,14 +163,15 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future):
     else:
         origin = "https://github.com/%s at commit `%s`" % (base, commit)
     edits = edit_subjects(d, rows)
-    out = ["# %s" % display, ""]
-    out += wrap("Sources modernized 2026-09: the FontForge `.sfd` sources were converted to "
+    out, date = header(display, d, head_full)
+    out += wrap("Sources modernized %s: the FontForge `.sfd` sources were converted to "
                          "Glyphs (`.glyphs`) and build with gftools-builder and fontc. The "
                          "repository, commit and config are in the `source { }` block of "
-                         "METADATA.pb.", 88)
+                         "METADATA.pb." % date[:7], 88)
     out += ["", "## Initial state", ""]
     out += wrap("Google Fonts shipped %s built from FontForge `.sfd` sources in %s. There "
-                         "was no source that builds with fontc." % (display, origin), 88)
+                         "was no source that builds with fontc. %s"
+                         % (display, origin, provenance(repo, rows, wt)), 88)
     out += ["", "## Actions taken", ""]
     first = ("The family's files were imported unmodified as the first commit of "
              "https://github.com/googlefonts/%s." % repo if kind == "hg" else
@@ -195,7 +266,7 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     builder = re.search(r"^Builds with gftools-builder \((.*), fontc ([^)\s]+)\)",
                         claim[0]) if claim else None
     plan = land.load_plan(repo)
-    out = ["# %s" % display, ""]
+    out, _ = header(display, d, head_full)
     out += wrap("Source metadata updated 2026-10: the fonts are built directly from the "
                 "designer's Glyphs.app source, `%s`, with gftools-builder and fontc. No "
                 "conversion is involved. The repository, commit and config are in the "
@@ -330,7 +401,7 @@ def main():
         open(mp, "w", encoding="utf-8").write(new)
         ui = os.path.join(wt, lic, fam, "upstream_info.md")
         previous = open(ui, encoding="utf-8").read() if os.path.exists(ui) else ""
-        body = upstream_info(repo, rows, old, head_full, display, previous, future)
+        body = upstream_info(repo, rows, old, head_full, display, previous, future, wt)
         if any(ord(c) > 127 for c in body) and not any(ord(c) > 127 for c in previous):
             raise SystemExit("FATAL: non-ASCII introduced into upstream_info.md for %s" % fam)
         open(ui, "w", encoding="utf-8").write(body)
@@ -355,7 +426,7 @@ def main():
                "Assisted by an AI agent (Claude Opus 5.5)\n"
                % (display, repo, repo, head_full[:12],
                   "converted from the unmodified .sfd" if not edits_in(d, rows) else
-                  "converted from the .sfd after %d documented edit(s)" % edits_in(d, rows)))
+                  plural("converted from the .sfd after %d documented edit(s)" % edits_in(d, rows))))
         git(wt, "commit", "-q", "-F", "-", input=msg)
         print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
 
