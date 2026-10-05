@@ -169,6 +169,7 @@ All Python runs with `PY=/home/fsanches/compartilhado/gftools/venv/bin/python3`.
 | `tools/push.sh` | Push what is verified; `--check` first. | `sh tools/push.sh --check` |
 | `tools/metadata.py` | The google/fonts commit per family pointing at a landed repository. | `$PY tools/metadata.py <branch> <repo>...` |
 | `tools/verify_metadata.py` | Is a google/fonts branch from metadata.py right to submit? One family per commit; METADATA.pb parses; the recorded commit is on the repository's branch on GitHub; every mapped file exists on both sides; `--build` rebuilds each repository at that commit and compares its outputs with the mapping; the added upstream_info.md text is ASCII and cites only public commits and URLs. | `$PY tools/verify_metadata.py --fetch --build <google/fonts worktree>` |
+| `tools/crater_targets.py` | What should fontc_crater's targets.json say for the current google/fonts, with the smallest diff? Merges google-fonts-sources output into the current file: generated entries are the truth, the hand-kept private entries (googlesans, googlesans-flex) stay verbatim, nothing unchanged moves. | `google-fonts-sources <dir> -o gen.json; python3 tools/crater_targets.py targets.json gen.json > new.json` |
 | `tools/pr_body.py` | The PR body for a fork branch, derived from the branch itself. | `$PY tools/pr_body.py <repo>` |
 | `tools/findings_from_results.py` | Render the investigation workflow's structured results as FINDINGS.md / VERIFY.md. | `$PY tools/findings_from_results.py investigations/workflow-journal-*.jsonl <unit>...` |
 
