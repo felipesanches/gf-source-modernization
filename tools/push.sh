@@ -22,6 +22,9 @@ R=/home/fsanches/compartilhado/sfd-reland-repos
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 BF_TREE=${BF_TREE:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion}   # any worktree of babelfont-rs
 git -C "$BF_TREE" fetch -q upstream main || { echo "cannot fetch babelfont upstream"; exit 1; }
+# the evidence the font repositories cite (tools, plans, logs) must be published first
+EVIDENCE_REMOTE=https://github.com/felipesanches/gf-source-modernization
+git -C "$W" fetch -q "$EVIDENCE_REMOTE" main 2>/dev/null && EVIDENCE_HEAD=$(git -C "$W" rev-parse FETCH_HEAD) || EVIDENCE_HEAD=
 CHECK=
 [ "${1:-}" = "--check" ] && { CHECK=1; shift; }
 
@@ -47,6 +50,11 @@ for repo in $repos; do
   rev=$(git -C "$d" log --format=%s | sed -n 's/^Convert to \.glyphs with babelfont \([0-9a-f]*\)$/\1/p' | head -1)
   if [ -z "$rev" ] || ! git -C "$BF_TREE" merge-base --is-ancestor "$rev" upstream/main 2>/dev/null; then
     echo "$repo: BLOCKED -- cites babelfont ${rev:-?}, not on simoncozens/babelfont-rs main; re-land after it merges"
+    continue
+  fi
+  ev=$(git -C "$d" log -1 --format=%B | tr '\n' ' ' | sed -n 's#.*gf-source-modernization at \([0-9a-f]\{7,\}\)\..*#\1#p')
+  if [ -z "$ev" ] || [ -z "$EVIDENCE_HEAD" ] || ! git -C "$W" merge-base --is-ancestor "$ev" "$EVIDENCE_HEAD" 2>/dev/null; then
+    echo "$repo: BLOCKED -- cites evidence ${ev:-?}, not yet in $EVIDENCE_REMOTE main; push this workspace there first"
     continue
   fi
   fam="$W/families.tsv"

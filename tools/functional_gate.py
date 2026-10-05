@@ -5,7 +5,7 @@ Google Fonts ships?
 Felipe's rule (2026-09-24): the commit METADATA.pb records must build fonts FUNCTIONALLY
 equivalent to the release -- same cmap, shaping, positioning, metrics and line spacing,
 names and rendering; not byte-identical. Defects of the release are reproduced, not fixed.
-The table gate (sfd-batch5/tools/table_gate.py, diffenator3's `tables` section) is
+The table gate (tools/table_gate.py, diffenator3's `tables` section) is
 structural and accepts whole classes of rows (OS/2.fs_selection, GPOS reorganisation,
 GDEF, names are not gated), so it passed fonts that behave differently: Italiana kerning
 pairs twice, Salsa without its GDEF, Lohit-Bengali with 284 Bengali words drawn

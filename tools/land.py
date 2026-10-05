@@ -18,7 +18,7 @@ sfd-batch5/tools/drift/build_series.py builds it):
      committed .sfd, with fidelity flags only, plus the named tool workarounds
      of tools/workarounds.py (values from the .sfd); src/ retired. Built and
      gated BEFORE it is committed, so its message states what was measured:
-     the table gate (sfd-batch5/tools/table_gate.py), the exact codepoint set,
+     the table gate (tools/table_gate.py), the exact codepoint set,
      and tools/functional_gate.py (shaping, rendering, names, line spacing,
      advances, GDEF). A landing is CLEAN only if all three pass.
 
@@ -54,7 +54,7 @@ ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
 OUT = os.environ.get("OUT", "/home/fsanches/compartilhado/sfd-reland-repos")
 LANDED = os.environ.get("LANDED", os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "landed.tsv"))
 BF_EXTRA_FLAGS = os.environ.get("BF_EXTRA_FLAGS", "").split()
-TEMPLATE = "/home/fsanches/compartilhado/sfd-func-audit/ufr-template"
+TEMPLATE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "templates", "ufr-template")
 # the converter checkout; after the upstream merge, a worktree of simoncozens/babelfont-rs
 # main (BF_TREE=... in the environment), built with tools/build_babelfont.sh
 BF_TREE = os.environ.get("BF_TREE", "/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion")
@@ -75,7 +75,11 @@ B3_WHERE = ("gftools-rust %s" % B3_ID if B3_PUBLISHED else "UNPUBLISHED variant:
             % os.environ.get("B3_NOTE", B3))
 D3 = "/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3"
 PY = "/home/fsanches/compartilhado/gftools/venv/bin/python3"
-TG = "/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py"
+TG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "table_gate.py")
+# Where this workspace is published: font repositories cite it, at the revision the
+# landing ran from, for the gates, plans and logs behind their claims.
+EVIDENCE_URL = "https://github.com/felipesanches/gf-source-modernization"
+EVIDENCE_PATHS = ["tools", "plans", "templates", "families.tsv", "families-next.tsv"]
 GF = "/home/fsanches/compartilhado/google/fonts"
 IDENT = ["-c", "user.name=Felipe Correa da Silva Sanches",
          "-c", "user.email=juca@members.fsf.org", "-c", "commit.gpgsign=false"]
@@ -260,6 +264,11 @@ def start(repo, rows, d):
 def template(repo, rows, d, plan=None):
     if rows[0]["kind"] == "allerta":
         return None          # already adopted in that repository
+    pin = re.search(r"GFTOOLS_RUST_REV: (\w+)",
+                    open(os.path.join(TEMPLATE, ".github/workflows/build.yaml")).read())
+    if B3_PUBLISHED and (not pin or pin.group(1) != B3_ID):
+        raise LandError("the template's CI builds with gftools-rust %s, this landing with %s"
+                        % (pin.group(1) if pin else "?", B3_ID))
     for f in TEMPLATE_FILES:
         os.makedirs(os.path.dirname(os.path.join(d, f)) or d, exist_ok=True)
         shutil.copyfile(os.path.join(TEMPLATE, f), os.path.join(d, f))
@@ -288,6 +297,8 @@ def template(repo, rows, d, plan=None):
 
         The original FontForge sources remain in the git history.
         """) % disp
+    readme += ("\nHow these sources were checked against the released fonts (the tools, this "
+               "family's plan and the logs): %s.\n" % EVIDENCE_URL)
     earlier = (plan or {}).get("earlier_sources", [])
     if earlier:
         readme += ("\n## Earlier sources\n\nOther sources of this family, kept on record; "
@@ -395,6 +406,16 @@ def gate(shipped, built, scratch):
         raise LandError("the gate did not finish for %s" % built)
     rows = [l.strip() for l in out.splitlines() if l.strip().startswith("BLOCKING ")]
     return int(m[-1]), rows
+
+
+def evidence():
+    """This workspace's revision, and whether the files a landing depends on are committed
+    there (a landing from uncommitted tools or plans cites a revision that does not
+    reproduce it)."""
+    w = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    rev = sh("git", "-C", w, "rev-parse", "--short=7", "HEAD").stdout.strip()
+    dirty = sh("git", "-C", w, "status", "--porcelain", "--", *EVIDENCE_PATHS).stdout.strip()
+    return rev, not dirty
 
 
 _BF_HELP = None
@@ -548,14 +569,14 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     lines.append("")
     if clean:
         lines += textwrap.wrap("Builds with gftools-builder (%s, fontc %s) and matches the binaries "
-                               "google/fonts %s ships: 0 blocking rows under the table gate, "
+                               "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
                                "exactly the release's codepoints, and functionally equivalent under "
                                "tools/functional_gate.py (cmap, shaping, rendering, names, line "
                                "spacing, advances, GDEF), %d style(s)."
                                % (B3_WHERE, FONTC_ID, gf_ref, len(results)), 72)
     else:
         lines += textwrap.wrap("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "
-                               "under the table gate and tools/functional_gate.py:"
+                               "under tools/table_gate.py and tools/functional_gate.py:"
                                % (B3_WHERE, FONTC_ID, gf_ref), 72)
         for st, n, blocking in results:
             if n is None:
@@ -565,6 +586,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
             bad = functional_gate.failed_checks(functional[st])
             lines += wrap("%s: %s; %s" % (st, table, "functionally equivalent" if not bad else
                                           "functionally different in " + ", ".join(bad)))
+    ev_rev, _ = evidence()
+    lines += [""] + textwrap.wrap("Those tools, this repository's plan (plans/%s.json) and the run's "
+                                  "logs: %s at %s." % (repo, EVIDENCE_URL, ev_rev), 72)
     if not glyphs:
         lines += [""] + textwrap.wrap(what, 72)
     head = commit(d, "\n".join(lines), "sources")
@@ -612,6 +636,8 @@ def main():
         status += "-UNPUBLISHED-CONVERTER"      # push.sh pushes only CLEAN
     if not B3_PUBLISHED:
         status += "-UNPUBLISHED-BUILDER"
+    if not evidence()[1]:
+        status += "-UNCOMMITTED-EVIDENCE"       # the cited revision would not reproduce it
     summary = "; ".join("%s=%s functional=%s" % (st, x if x is not None else "BUILD", fverdict(st))
                         for st, x, _ in results)
     with open(LANDED, "a") as fh:

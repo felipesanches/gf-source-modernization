@@ -1,3 +1,33 @@
+# gf-source-modernization
+
+Evidence for the Google Fonts source-modernization work: converting families whose only
+sources are in a legacy format (FontForge `.sfd` so far; FontLab `.vfb` next) into
+repositories that build with today's toolchain (babelfont-rs, gftools-builder, fontc), and
+showing that each rebuild is functionally equivalent to the binaries Google Fonts ships.
+
+Every converted font repository (`github.com/googlefonts/<family>`) cites this repository at a
+fixed revision. What it cites is here:
+
+| path | what it holds |
+|---|---|
+| `tools/land.py` | builds a font repository's layered history: the original sources, the Unified Font Repository template, one commit per documented source edit, the conversion last |
+| `tools/table_gate.py`, `tools/functional_gate.py` | the two gates every rebuild must pass against the released binaries (tables; then cmap, shaping, rendering, names, line spacing, advances, GDEF) |
+| `tools/verify_landed.py`, `tools/push.sh` | re-check a landed repository; push only what is CLEAN, built with published tools, and cites a published revision of this repository |
+| `tools/recipe.py`, `tools/sfd_edit.py` | the converter options per style; the source-edit operations the plans use |
+| `families.tsv`, `families-next.tsv` | which source revision each released style is paired with |
+| `plans/<family>.json` | the documented source edits of a family (one commit each) and its disclosed known differences |
+| `logs/` | every measurement run, per family |
+| `investigations/` | the research behind each edit, rule and disclosure |
+| `templates/ufr-template/` | the repository template the font repositories adopt |
+
+Rerun a family: `python3 tools/land.py <family> --rebuild` (see `tools/land.py` for the
+environment it expects). Many notes and scripts name absolute paths on the author's
+workstation (`/home/fsanches/compartilhado/...`); they are kept as written, since they are
+part of the record. Work done with an AI agent (Claude) under the guidance of
+@felipesanches.
+
+---
+
 # sfd-reland -- re-landing the FontForge-only families under criteria (A) and (B)
 
 **Model**: Claude Opus 5.5 -- started 2026-09-23
