@@ -1,0 +1,203 @@
+== creepstercaps (families.tsv) 2026-10-05T17:12:41+01:00
+   rc=0 creepstercaps	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== herrvonmuellerhoff (families.tsv) 2026-10-05T17:13:06+01:00
+   rc=0 herrvonmuellerhoff	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== novacut (families.tsv) 2026-10-05T17:13:23+01:00
+   rc=0 novacut	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== novaflat (families.tsv) 2026-10-05T17:13:44+01:00
+   rc=0 novaflat	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== novaoval (families.tsv) 2026-10-05T17:14:00+01:00
+   rc=0 novaoval	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== novaround (families.tsv) 2026-10-05T17:14:16+01:00
+   rc=0 novaround	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== novaslim (families.tsv) 2026-10-05T17:14:36+01:00
+   rc=0 novaslim	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== novasquare (families.tsv) 2026-10-05T17:14:55+01:00
+   rc=0 novasquare	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== puritan (families.tsv) 2026-10-05T17:15:12+01:00
+   rc=0 puritan	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== russoone (families.tsv) 2026-10-05T17:15:58+01:00
+   rc=0 russoone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== sixcaps (families.tsv) 2026-10-05T17:16:20+01:00
+   rc=0 sixcaps	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== tulpenone (families.tsv) 2026-10-05T17:16:39+01:00
+   rc=0 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== keaniaone (families-next.tsv) 2026-10-05T17:17:00+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== kellyslab (families-next.tsv) 2026-10-05T17:17:16+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== lovedbytheking (families-next.tsv) 2026-10-05T17:17:31+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== loveyalikeasister (families-next.tsv) 2026-10-05T17:17:47+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== marvel (families-next.tsv) 2026-10-05T17:18:02+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== medulaone (families-next.tsv) 2026-10-05T17:18:18+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== meiescript (families-next.tsv) 2026-10-05T17:18:33+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== missfajardose (families-next.tsv) 2026-10-05T17:18:48+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== monsieurladoulaise (families-next.tsv) 2026-10-05T17:19:04+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== mrdafoe (families-next.tsv) 2026-10-05T17:19:19+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== mrdehaviland (families-next.tsv) 2026-10-05T17:19:35+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== mrssaintdelafield (families-next.tsv) 2026-10-05T17:19:45+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== mrssheppards (families-next.tsv) 2026-10-05T17:19:45+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== numans (families-next.tsv) 2026-10-05T17:19:46+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== overlocksc (families-next.tsv) 2026-10-05T17:19:46+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== overtherainbow (families-next.tsv) 2026-10-05T17:19:46+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== patuaone (families-next.tsv) 2026-10-05T17:19:47+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== piedra (families-next.tsv) 2026-10-05T17:19:47+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== pirataone (families-next.tsv) 2026-10-05T17:19:48+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== portlligatsans (families-next.tsv) 2026-10-05T17:19:48+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== portlligatslab (families-next.tsv) 2026-10-05T17:19:48+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== quantico (families-next.tsv) 2026-10-05T17:19:49+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== rochester (families-next.tsv) 2026-10-05T17:19:49+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== rufina (families-next.tsv) 2026-10-05T17:19:50+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== spirax (families-next.tsv) 2026-10-05T17:19:50+01:00
+   rc=1 tulpenone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== squadaone (families-next.tsv) 2026-10-05T17:19:50+01:00
+   rc=0 squadaone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== swankyandmoomoo (families-next.tsv) 2026-10-05T17:20:09+01:00
+   rc=0 swankyandmoomoo	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== thegirlnextdoor (families-next.tsv) 2026-10-05T17:20:36+01:00
+   rc=0 thegirlnextdoor	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== trochut (families-next.tsv) 2026-10-05T17:21:02+01:00
+   rc=0 trochut	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== wendyone (families-next.tsv) 2026-10-05T17:21:41+01:00
+   rc=0 wendyone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+done 2026-10-05T17:21:55+01:00
+== keaniaone (families-next.tsv) 2026-10-05T17:29:00+01:00
+   rc=0 keaniaone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== kellyslab (families-next.tsv) 2026-10-05T17:29:17+01:00
+   rc=0 kellyslab	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== lovedbytheking (families-next.tsv) 2026-10-05T17:29:34+01:00
+   rc=0 lovedbytheking	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== loveyalikeasister (families-next.tsv) 2026-10-05T17:29:49+01:00
+   rc=0 loveyalikeasister	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== marvel (families-next.tsv) 2026-10-05T17:31:15+01:00
+   rc=0 marvel	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== medulaone (families-next.tsv) 2026-10-05T17:32:19+01:00
+   rc=0 medulaone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== meiescript (families-next.tsv) 2026-10-05T17:32:32+01:00
+   rc=0 meiescript	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== missfajardose (families-next.tsv) 2026-10-05T17:33:01+01:00
+   rc=0 missfajardose	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== monsieurladoulaise (families-next.tsv) 2026-10-05T17:33:21+01:00
+   rc=0 monsieurladoulaise	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== mrdafoe (families-next.tsv) 2026-10-05T17:33:42+01:00
+   rc=0 mrdafoe	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== mrdehaviland (families-next.tsv) 2026-10-05T17:34:01+01:00
+   rc=0 mrdehaviland	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== mrssaintdelafield (families-next.tsv) 2026-10-05T17:34:17+01:00
+   rc=0 mrssaintdelafield	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== mrssheppards (families-next.tsv) 2026-10-05T17:34:41+01:00
+   rc=0 mrssheppards	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== numans (families-next.tsv) 2026-10-05T17:35:05+01:00
+   rc=0 numans	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== overlocksc (families-next.tsv) 2026-10-05T17:35:22+01:00
+   rc=0 overlocksc	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== overtherainbow (families-next.tsv) 2026-10-05T17:35:37+01:00
+   rc=0 overtherainbow	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== patuaone (families-next.tsv) 2026-10-05T17:35:59+01:00
+   rc=0 patuaone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== piedra (families-next.tsv) 2026-10-05T17:36:13+01:00
+   rc=0 piedra	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== pirataone (families-next.tsv) 2026-10-05T17:36:41+01:00
+   rc=0 pirataone	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== portlligatsans (families-next.tsv) 2026-10-05T17:36:59+01:00
+   rc=0 portlligatsans	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== portlligatslab (families-next.tsv) 2026-10-05T17:37:20+01:00
+   rc=0 portlligatslab	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== quantico (families-next.tsv) 2026-10-05T17:37:33+01:00
+   rc=0 quantico	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== rochester (families-next.tsv) 2026-10-05T17:38:17+01:00
+   rc=0 rochester	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== rufina (families-next.tsv) 2026-10-05T17:38:34+01:00
+   rc=0 rufina	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+== spirax (families-next.tsv) 2026-10-05T17:39:00+01:00
+   rc=0 spirax	CLEAN
+shared_from_host  1.8T  1.7T   27G  99% /home/fsanches/compartilhado
+done 2026-10-05T17:39:19+01:00
