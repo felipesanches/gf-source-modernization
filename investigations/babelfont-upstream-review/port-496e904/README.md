@@ -10,7 +10,7 @@ pr-ff-os2-defaults from 0b55947 onto 496e904 (da97d82 split fontforge.rs; its
 | `cmp_added.sh` | does a ported commit add/remove exactly the lines the original did (leading whitespace ignored, position ignored)? prints IDENTICAL | `sh cmp_added.sh <orig> <worktree> [<new>]` |
 | `check.sh` | fmt --check, clippy --all-targets, clippy -p babelfont --all-targets --features cli, cargo test -p babelfont --no-fail-fast for one tree | `sh check.sh <dir> <target-name> <log-prefix>` |
 | `check_commits.sh` | does every commit of a branch build, lint clean and test on its own? | `sh check_commits.sh <branch>` -> `logs/<branch>/<n>-<hash>.*.log` |
-| `run_check_branch.sh` | re-runs sfd-reland's committed `tools/babelfont-upstream/check_branch.sh` for the three branches | `sh run_check_branch.sh` -> `logs/RESULT-<branch>.txt` |
+| `run_check_branch.sh` | re-runs gf-source-modernization's committed `tools/babelfont-upstream/check_branch.sh` for the three branches | `sh run_check_branch.sh` -> `logs/RESULT-<branch>.txt` |
 
 Signal: the lib-unittest `test result:` line; the 11 failures must be exactly
 `logs/upstream-496e904.failed.txt` (8 robocjk + 3 decomposecomponentreferences, untracked

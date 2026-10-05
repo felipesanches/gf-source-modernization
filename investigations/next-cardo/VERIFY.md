@@ -4,7 +4,7 @@
 
 Reproduced: True
 
-I re-ran every stage with my own harness runs. Outputs are under /home/fsanches/compartilhado/sfd-reland/investigations/next-cardo-verify/runs and scratch is under /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify. The pairing uses families-next.tsv, and each pair is exact: every .sfd CreationTime and ModificationTime equals the release's FFTM sourceCreated and sourceModified (Regular 1130132145/1315160157, Bold 1130160459/1315160158, Italic 1298765412/1315160156), and the glyph counts are equal (3845/2993/2387).
+I re-ran every stage with my own harness runs. Outputs are under /home/fsanches/compartilhado/gf-source-modernization/investigations/next-cardo-verify/runs and scratch is under /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify. The pairing uses families-next.tsv, and each pair is exact: every .sfd CreationTime and ModificationTime equals the release's FFTM sourceCreated and sourceModified (Regular 1130132145/1315160157, Bold 1130160459/1315160158, Italic 1298765412/1315160156), and the glyph counts are equal (3845/2993/2387).
 
 Stages:
 - r0 baseline (integration converter 17ea899): the three gate outputs are byte-identical to baseline-next (Regular BUILD-FAILED, Bold 2 rows, Italic 10 rows).
@@ -51,7 +51,7 @@ Landability:
 - Cardo-Bold: can reach full functional equivalence without any fontc change, via a babelfont GDEF-fidelity rule (still to be designed for upstream: FEA-inexpressible names cannot be listed).
 - Cardo-Italic: needs the fontc change.
 
-Probes are in /home/fsanches/compartilhado/sfd-reland/investigations/next-cardo-verify/probes and runs in .../runs. My babelfont worktree is /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify/bf-wt, registered in /home/fsanches/compartilhado/babelfont-rs (scratch, disposable; the patch it holds is next-cardo/probes/babelfont-17ea899-cardo-PROTOTYPE.patch). Nothing was committed.
+Probes are in /home/fsanches/compartilhado/gf-source-modernization/investigations/next-cardo-verify/probes and runs in .../runs. My babelfont worktree is /home/fsanches/compartilhado/sfd-reland-scratch/cardo-verify/bf-wt, registered in /home/fsanches/compartilhado/babelfont-rs (scratch, disposable; the patch it holds is next-cardo/probes/babelfont-17ea899-cardo-PROTOTYPE.patch). Nothing was committed.
 
 ## Per edit
 

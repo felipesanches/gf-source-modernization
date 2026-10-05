@@ -23,7 +23,7 @@
 #
 # Run:  bash investigations/next-fstype-verify/probes/make_verify_inputs.sh
 set -euo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 V=$W/investigations/next-fstype-verify/runs
 S=/home/fsanches/compartilhado/sfd-reland-scratch/fstype-verify
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3

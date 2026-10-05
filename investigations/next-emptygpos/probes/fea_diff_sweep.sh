@@ -11,7 +11,7 @@
 set -uo pipefail
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 export FAMILIES
 tail -n +2 "$FAMILIES" | while IFS=$'\t' read -r repo fam lic kind base commit style src shipped; do
   d="$SCRATCH/feasweep/$style"; rm -rf "$d"; mkdir -p "$d/tree"

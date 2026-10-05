@@ -10,7 +10,7 @@
 # Run: bash psname_key_swap.sh    (writes runs/psname_key_swap.txt)
 set -euo pipefail
 S=/home/fsanches/compartilhado/sfd-reland-scratch/fstype-verify
-V=/home/fsanches/compartilhado/sfd-reland/investigations/next-fstype-verify/runs
+V=/home/fsanches/compartilhado/gf-source-modernization/investigations/next-fstype-verify/runs
 B3=/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/gftools-builder
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 SRC=$S/baseline/Wallpoet-Regular-fstype-verify-v2-fstype/sources/Wallpoet-Regular.glyphs

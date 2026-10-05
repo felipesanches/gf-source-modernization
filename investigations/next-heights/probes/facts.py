@@ -27,7 +27,7 @@ import sys
 from fontTools.ttLib import TTFont
 
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git"
-FAM = "/home/fsanches/compartilhado/sfd-reland/families-next.tsv"
+FAM = "/home/fsanches/compartilhado/gf-source-modernization/families-next.tsv"
 UNIT = """KottaOne-Regular Ledger-Regular LilitaOne-Regular Lustria-Regular Macondo-Regular
 Magra-Bold MergeOne-Regular OleoScript-Bold OleoScript-Regular OleoScriptSwashCaps-Bold
 OleoScriptSwashCaps-Regular Rambla-Bold Rambla-BoldItalic Rosarivo-Italic Sail-Regular

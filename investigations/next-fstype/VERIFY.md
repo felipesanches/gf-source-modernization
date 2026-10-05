@@ -6,7 +6,7 @@ Reproduced: True
 
 I reproduced every run independently, without reading the agent's candidate generator or pairing table. Inputs: my own families-verify.tsv (families-next.tsv's 10 rows plus 2 ExtraLight rows I derived myself) and my own candidates made with the tools/sfd_edit.py CLI (probes/make_verify_inputs.sh, runs/candidates.log). My c-fstype, c-elfull and c-version .sfd files came out byte-identical to the agent's cand-* files. Tools: converter babelfont integration-ff-prs 17ea899 (BUILT_FROM 17ea8995); builder3 e851b8b with fontc 1.0.0; gate 2f43693; google/fonts working copy at b5efa9c32 on main, where all 12 shipped blobs equal b5efa9c32 and 93550bd32.
 
-Harness results (tools/baseline.sh, one build per style; runs under /home/fsanches/compartilhado/sfd-reland/investigations/next-fstype-verify/runs):
+Harness results (tools/baseline.sh, one build per style; runs under /home/fsanches/compartilhado/gf-source-modernization/investigations/next-fstype-verify/runs):
 - v0 fidelity-only: 21 rows (fs_type x12, us_weight_class x9). The gate text is identical to baseline-next/ for all 10 paired styles, not just the 3 the agent compared, and identical to the agent's r0 for all 12.
 - v1 (tools/workarounds.py applied as land.py applies it): 14 rows (fs_type x12, ExtraLight us_weight_class [275,200] x2).
 - v2 (+FSType 0): 10 CLEAN; the 2 ExtraLight weight rows remain.

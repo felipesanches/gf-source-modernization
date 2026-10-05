@@ -12,7 +12,7 @@ became documented `.sfd` edits in the font repositories instead, each its own co
 | `--fontforge-legacy-offset-metrics` (#114) | `setfield` win/hhea values, offsets 0 | mountainsofchristmas (Bold), nothingyoucoulddo, unifraktur |
 | `--fontforge-underline-position=20190317` (#116) | `setfield UnderlinePosition -10` | comicrelief (both styles, one commit) |
 
-All scripts run from the sfd-reland checkout and write only under `$TMPDIR/exporter-source-edits/`
+All scripts run from the gf-source-modernization checkout and write only under `$TMPDIR/exporter-source-edits/`
 (`TMPDIR=/home/fsanches/compartilhado/tmp/...`, never `/tmp`). `PY=/home/fsanches/compartilhado/gftools/venv/bin/python3`.
 
 ## census.py -- which styles depend on the three recipe flags?

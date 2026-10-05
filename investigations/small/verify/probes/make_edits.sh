@@ -7,7 +7,7 @@
 #                                          rule's output (-97) for the stock converter
 # Usage: sh verify/probes/make_edits.sh
 set -eu
-W=/home/fsanches/compartilhado/sfd-reland; E=$W/investigations/small/verify/edits
+W=/home/fsanches/compartilhado/gf-source-modernization; E=$W/investigations/small/verify/edits
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 mkdir -p "$E"
 git -C $ARC/googlefonts/googlefontdirectory-hg.git show 52f780bc9d197280a9f430574e179a5f233c56b6:ofl/russoone/src/RussoOne-Regular-TTF.sfd > "$E/RussoOne-Regular-TTF.orig.sfd"

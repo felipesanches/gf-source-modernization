@@ -75,7 +75,7 @@ Confidence: High. Two independent implementations of the rule agree with each ot
 
 ## Unresolved
 
-- FINDINGS.md was NOT written. The Write tool refused it ('Subagents should return findings as text, not write report files'), and I did not bypass that through the shell. Its content is in this result. The evidence it would cite is under /home/fsanches/compartilhado/sfd-reland/investigations/heights/: ff_heights_probe.py (sha256 70e11942...), cff_heights_probe.py (6f06eb7a...), rerun.sh, summarize.sh, nothing_else_opened.sh, probe_all.txt, vintage_selection.txt, dump-*.txt, cff-PatrickHand-Regular.otf-2012.txt, edits/*.sfd and runs/{before-f725e6a,before-ca43adc,after-ca43adc}/. The parent should write FINDINGS.md from this result, or have the rule relaxed.
+- FINDINGS.md was NOT written. The Write tool refused it ('Subagents should return findings as text, not write report files'), and I did not bypass that through the shell. Its content is in this result. The evidence it would cite is under /home/fsanches/compartilhado/gf-source-modernization/investigations/heights/: ff_heights_probe.py (sha256 70e11942...), cff_heights_probe.py (6f06eb7a...), rerun.sh, summarize.sh, nothing_else_opened.sh, probe_all.txt, vintage_selection.txt, dump-*.txt, cff-PatrickHand-Regular.otf-2012.txt, edits/*.sfd and runs/{before-f725e6a,before-ca43adc,after-ca43adc}/. The parent should write FINDINGS.md from this result, or have the rule relaxed.
 - The converter flag (--fontforge-height-glyph-count-mean) is only proposed. Per the rules I did not build babelfont, so the four converter-fidelity rows were verified through stand-ins: the 2011-rule values stated in source copies. The flag itself still needs a build and a harness rerun. The recipe needs a new release-derived decision: FFTM FFTimeStamp < 2012-05-14T19:24:59Z.
 - The after runs used the ca43adc build (target-heights) because the pinned f725e6a has no height rule. With f725e6a, PatrickHand's x row [467,500] stays open until ca43adc is pinned.
 - FontForge 'real' is assumed to be double (FONTFORGE_CONFIG_USE_DOUBLE). The configuration of the 2011/2012 distro builds is not documented. On these integer-coordinate order-2 sources the float variant does not change any top.
@@ -84,7 +84,7 @@ Confidence: High. Two independent implementations of the rule agree with each ot
 
 ## Rerun
 
-    cd /home/fsanches/compartilhado/sfd-reland/investigations/heights && bash rerun.sh probes   # probe_all.txt, dump-*-{2011,2012}.txt, cff-PatrickHand-Regular.otf-2012.txt, vintage_selection.txt
+    cd /home/fsanches/compartilhado/gf-source-modernization/investigations/heights && bash rerun.sh probes   # probe_all.txt, dump-*-{2011,2012}.txt, cff-PatrickHand-Regular.otf-2012.txt, vintage_selection.txt
     bash rerun.sh builds   # sequential. For each style: before-f725e6a (pinned), BF=<ca43adc> before-ca43adc, BF=<ca43adc> SRC_OVERRIDE=edits/<x>.sfd after-ca43adc. Harness: tools/baseline.sh with TAG=heights OUT=runs/<name>
     sh summarize.sh; bash nothing_else_opened.sh
-    /home/fsanches/compartilhado/gftools/venv/bin/python3 /home/fsanches/compartilhado/sfd-reland/tools/ff_heights_oracle.py   # cross-check: 25/38, same values as ff_heights_probe.py master column
+    /home/fsanches/compartilhado/gftools/venv/bin/python3 /home/fsanches/compartilhado/gf-source-modernization/tools/ff_heights_oracle.py   # cross-check: 25/38, same values as ff_heights_probe.py master column

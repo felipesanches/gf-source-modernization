@@ -8,7 +8,7 @@ LigCaretCntFixed), and how many LigGlyph records the release's GDEF LigCaretList
 A style with carets in the source and none in the release would be CHANGED by the
 converter fix and must be looked at before the fix is adopted.
 
-Usage: FAMILIES=<pairing.tsv> lcarets_census.py     (default: sfd-reland/families-next.tsv)
+Usage: FAMILIES=<pairing.tsv> lcarets_census.py     (default: gf-source-modernization/families-next.tsv)
 Prints: style, glyphs with exportable carets in the .sfd, LigGlyphs in the release.
 Python: /home/fsanches/compartilhado/gftools/venv/bin/python3
 """
@@ -18,7 +18,7 @@ import sys
 
 from fontTools.ttLib import TTFont
 
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
 import recipe  # noqa: E402
 
 for r in recipe.rows():

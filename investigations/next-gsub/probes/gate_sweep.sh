@@ -11,7 +11,7 @@
 #
 # Run: bash gate_sweep.sh > ../runs/gate_sweep_next.tsv
 set -uo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 SCR=${SCR:-/home/fsanches/compartilhado/sfd-reland-scratch/baseline}
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 TG=/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py

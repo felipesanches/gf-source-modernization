@@ -30,7 +30,7 @@ import json
 import os
 import sys
 
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
 import functional_gate as fg  # noqa: E402
 import freetype  # noqa: E402
 

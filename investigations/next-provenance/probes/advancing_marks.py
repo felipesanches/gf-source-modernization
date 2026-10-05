@@ -11,7 +11,7 @@ one, else by name)? A style listed here is one whose build the rule changes; a s
 listed cannot be changed by it.
 
 Usage:
-  FAMILIES=<pairing.tsv> advancing_marks.py            (default: sfd-reland/families-next.tsv)
+  FAMILIES=<pairing.tsv> advancing_marks.py            (default: gf-source-modernization/families-next.tsv)
 Prints: style, glyph, sfd Width, release advance (or "absent").
 """
 import os
@@ -21,7 +21,7 @@ import sys
 
 from fontTools.ttLib import TTFont
 
-W = "/home/fsanches/compartilhado/sfd-reland"
+W = "/home/fsanches/compartilhado/gf-source-modernization"
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
 
 

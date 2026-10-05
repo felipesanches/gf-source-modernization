@@ -8,7 +8,7 @@ next-emptygpos's census_layout_shells.py.
 
 Signal read: presence of FFTM, kern; LookupList counts of GSUB/GPOS of column 9 (shipped).
 
-Run (from /home/fsanches/compartilhado/sfd-reland):
+Run (from /home/fsanches/compartilhado/gf-source-modernization):
   /home/fsanches/compartilhado/gftools/venv/bin/python3 investigations/next-emptygpos-verify/probes/shell_census.py families.tsv families-next.tsv
 """
 import csv

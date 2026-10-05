@@ -47,7 +47,7 @@ ligatures) and still leaves 3 GSUB rows per style; the alternative is to treat
 Regular/Italic as provenance and land 001.271. FINDINGS.md was NOT written: the harness
 refused report-file writes for subagents; this structured result carries its content.
 Probes (each docstring states its question) and all run outputs are under
-/home/fsanches/compartilhado/sfd-reland/investigations/tuffy/{probes,edits,runs}.
+/home/fsanches/compartilhado/gf-source-modernization/investigations/tuffy/{probes,edits,runs}.
 Nothing committed.
 
 Rows before: Tuffy-Regular 74, Tuffy-Italic 27, Tuffy-Bold 1, Tuffy-BoldItalic 1 (baseline reproduced exactly in runs/r0-baseline)
@@ -100,7 +100,7 @@ Confidence: High on provenance (byte-identity, FFTM timestamps, google/fonts his
 
 ## Unresolved
 
-- FINDINGS.md was not written: the Write tool refused report files for subagents ('Subagents should return findings as text'). I did not work around it; the content is in this result. Probes, edit lists and run outputs are on disk under /home/fsanches/compartilhado/sfd-reland/investigations/tuffy/.
+- FINDINGS.md was not written: the Write tool refused report files for subagents ('Subagents should return findings as text'). I did not work around it; the content is in this result. Probes, edit lists and run outputs are on disk under /home/fsanches/compartilhado/gf-source-modernization/investigations/tuffy/.
 - Decision (Felipe): reproduce v1.272 (commit its defects: 43 Greek iota-subscript glyphs drawn beside, not under, the letter; fsType 8, which Google Fonts expects to be 0; and 3 GSUB rows per style that stay open) or treat Regular/Italic as provenance and land 001.271, which our build reproduces at 3 rows against the binary google/fonts shipped 2015-03..2017-10.
 - GSUB.script_list/feature_list/lookup_list (Regular, Italic): provenance. Reproducing them means replacing the source's 4 lookups with v1.272's 11 (two of them chaining). That is not a minimal edit and was not tried.
 - The .notdef converter change is emulated only (a glyph added to a copy of the .sfd). It still has to be implemented in babelfont.
@@ -112,9 +112,9 @@ Confidence: High on provenance (byte-identity, FFTM timestamps, google/fonts his
 
 ## Rerun
 
-    cd /home/fsanches/compartilhado/sfd-reland && for s in Tuffy-Regular Tuffy-Italic Tuffy-Bold Tuffy-BoldItalic; do TAG=tuffy OUT=investigations/tuffy/runs/r0-baseline bash tools/baseline.sh $s; done
-    cd /home/fsanches/compartilhado/sfd-reland/investigations/tuffy && bash probes/run_stage.sh Tuffy-Regular r7-final --import "U+0162 U+0163" edits/both-0-version.tsv edits/regular-1-os2.tsv edits/both-2-controls.tsv edits/both-3-ffnotdef.tsv edits/regular-4-composites.tsv edits/both-5-brevesub.tsv edits/regular-5b-brevesub-users.tsv
-    cd /home/fsanches/compartilhado/sfd-reland/investigations/tuffy && bash probes/run_stage.sh Tuffy-Italic i6-final --import "U+0162 U+0163 U+E257 U+03A9 U+1F6B U+004A U+00B7 U+0134 U+2076 U+2086 U+20B7" edits/both-0-version.tsv edits/italic-1-os2.tsv edits/both-2-controls.tsv edits/both-3-ffnotdef.tsv edits/both-5-brevesub.tsv
+    cd /home/fsanches/compartilhado/gf-source-modernization && for s in Tuffy-Regular Tuffy-Italic Tuffy-Bold Tuffy-BoldItalic; do TAG=tuffy OUT=investigations/tuffy/runs/r0-baseline bash tools/baseline.sh $s; done
+    cd /home/fsanches/compartilhado/gf-source-modernization/investigations/tuffy && bash probes/run_stage.sh Tuffy-Regular r7-final --import "U+0162 U+0163" edits/both-0-version.tsv edits/regular-1-os2.tsv edits/both-2-controls.tsv edits/both-3-ffnotdef.tsv edits/regular-4-composites.tsv edits/both-5-brevesub.tsv edits/regular-5b-brevesub-users.tsv
+    cd /home/fsanches/compartilhado/gf-source-modernization/investigations/tuffy && bash probes/run_stage.sh Tuffy-Italic i6-final --import "U+0162 U+0163 U+E257 U+03A9 U+1F6B U+004A U+00B7 U+0134 U+2076 U+2086 U+20B7" edits/both-0-version.tsv edits/italic-1-os2.tsv edits/both-2-controls.tsv edits/both-3-ffnotdef.tsv edits/both-5-brevesub.tsv
     /home/fsanches/compartilhado/gftools/venv/bin/python3 probes/table_gate_closepath.py runs/r7-final/d3.json --fonts /home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Regular.ttf runs/r7-final/built-Tuffy-Regular.ttf
     /home/fsanches/compartilhado/gftools/venv/bin/python3 probes/table_gate_closepath.py runs/i6-final/d3.json --fonts /home/fsanches/compartilhado/google/fonts/ofl/tuffy/Tuffy-Italic.ttf runs/i6-final/built-Tuffy-Italic.ttf
     BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont bash probes/run_stage.sh Tuffy-Regular r9-heightsbin-fields --import "U+0162 U+0163" <same edits as r7-final> edits/both-9-heights.tsv   (and i8/i9 for Italic)

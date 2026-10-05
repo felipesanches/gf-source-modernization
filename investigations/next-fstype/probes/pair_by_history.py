@@ -26,7 +26,7 @@ import subprocess
 
 from fontTools.ttLib import TTFont
 
-W = "/home/fsanches/compartilhado/sfd-reland"
+W = "/home/fsanches/compartilhado/gf-source-modernization"
 GF = "/home/fsanches/compartilhado/google/fonts"
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
 HG = "googlefonts/googlefontdirectory-hg"

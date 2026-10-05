@@ -7,7 +7,7 @@
 # Usage: sh probes/make_edits.sh      (from investigations/small/)
 # Output: edits/<name>.sfd  -- each prints what the field stated before the edit
 set -eu
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 E="$W/investigations/small/edits"

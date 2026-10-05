@@ -24,7 +24,7 @@ offset     the patch passed --fontforge-legacy-offset-metrics when the release's
            is before 2014-09-16; listed with the source's offset-mode win/hhea fields. Which
            of those the flag changes is measured by convert_check.py, not here.
 
-Run from the sfd-reland checkout (writes nothing outside $TMPDIR); <rev> takes the plans as
+Run from the gf-source-modernization checkout (writes nothing outside $TMPDIR); <rev> takes the plans as
 they were at that commit (e2430fa: before these edits; default: the working tree's):
   /home/fsanches/compartilhado/gftools/venv/bin/python3 tools/probes/exporter_source_edits/census.py [<rev>]
 """

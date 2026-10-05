@@ -18,7 +18,7 @@ B3=/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/g
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 TG=/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py
-R=/home/fsanches/compartilhado/sfd-reland/investigations/next-provenance/probes/d3_render.py
+R=/home/fsanches/compartilhado/gf-source-modernization/investigations/next-provenance/probes/d3_render.py
 d="$src_run-casefix"; rm -rf "$d"; mkdir -p "$d" "$out"
 cp -a "$src_run/sources" "$d/"
 n=$(grep -c '# Automatic code start' "$d/sources/$style.glyphs" || true)

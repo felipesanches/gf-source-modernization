@@ -3,14 +3,14 @@
 release's glyph 0 equal FontForge's synthesized .notdef (dumpmissingglyph, tottf.c)
 exactly when the paired .sfd has no glyph named .notdef? Also: is the release
 post.isFixedPitch equal to FontForge's one-width rule on the release advances?
-Run from sfd-reland: $PY notdef_census.py"""
+Run from gf-source-modernization: $PY notdef_census.py"""
 import os, re, sys
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
-os.chdir("/home/fsanches/compartilhado/sfd-reland")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
+os.chdir("/home/fsanches/compartilhado/gf-source-modernization")
 import recipe
 from fontTools.ttLib import TTFont
 from fontTools.pens.recordingPen import RecordingPen
-W = "/home/fsanches/compartilhado/sfd-reland"
+W = "/home/fsanches/compartilhado/gf-source-modernization"
 for t in ("families.tsv", "families-next.tsv"):
     os.environ["FAMILIES"] = os.path.join(W, t)
     for row in recipe.rows():

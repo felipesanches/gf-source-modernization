@@ -37,7 +37,7 @@ import ff_heights_probe as P  # noqa: E402
 import cff_heights_probe as C  # noqa: E402
 
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git"
-FAM = "/home/fsanches/compartilhado/sfd-reland/families-next.tsv"
+FAM = "/home/fsanches/compartilhado/gf-source-modernization/families-next.tsv"
 SCR = "/home/fsanches/compartilhado/sfd-reland-scratch/heights/otf"
 E1904 = 2082844800
 FIX = 1337023489      # FFTM stamp of 4d34d21ef866 (tools/recipe.py)

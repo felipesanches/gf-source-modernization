@@ -6,7 +6,7 @@ set -u
 # read from there.
 V=${V:-$(mktemp -d)}
 EDITS=$(cd "$(dirname "$0")/../edits" && pwd)
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 BFH=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont
 export SCRATCH=$V/harness
 run() { # name style [override] ; BF from env

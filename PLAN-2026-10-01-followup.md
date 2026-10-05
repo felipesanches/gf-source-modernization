@@ -35,11 +35,11 @@ commit), never a converter hack.
 | 12 | Thabit: lookupflag on every lookup, baselig anchor names | 2 | patches | next-provenance/probes/ |
 | 13 | aalt language systems (Poly-Italic); legacy offset win/hhea metrics (4 families) | 1 + 4 | prototypes | next-emptygpos/, next-vmetrics/ |
 | 14 | `parse_point_flags` / `is_smooth_from_flags` read a flags token like `0x80` as hex; in SFD it is flags 0 with hint mask 0x80, so smoothness/force-open can be misread | unknown (no gate row traced to it yet) | found 2026-10-02 by the Comic Relief agent; not fixed | research-scratch/sfd-reland-comicrelief-2026-10-02 |
-| 15 | `--fontforge-mark-lookups` warns and drops mark-attachment / mark-filtering-set lookup flags on the anchor lookups it writes (ordinary lookups keep them via fontforge-lookup-flags) | Cardo-Italic (with the fontc kern issue) | open | sfd-reland/logs/reland-2026-10-02-marks |
+| 15 | `--fontforge-mark-lookups` warns and drops mark-attachment / mark-filtering-set lookup flags on the anchor lookups it writes (ordinary lookups keep them via fontforge-lookup-flags) | Cardo-Italic (with the fontc kern issue) | open | gf-source-modernization/logs/reland-2026-10-02-marks |
 
 ## 2. Source edits to write into plans/ (ours, mechanical, already verified)
 
-DONE 2026-10-02 (sfd-reland 1440532; logs/reland-2026-10-01-planedits, -os2) except: Tuffy
+DONE 2026-10-02 (gf-source-modernization 1440532; logs/reland-2026-10-01-planedits, -os2) except: Tuffy
 encodings (needs a new op), the vmetrics of MountainsofChristmas-Bold, NothingYouCouldDo and
 Unifraktur. Now CLEAN: Ledger, LilitaOne, Magra, Megrim, MergeOne, Rambla, Sail, TextMeOne.
 
@@ -92,4 +92,4 @@ Kept in one place: GoogleFonts/bottleneck.md (priority order, extremely succinct
     `mergepsfont` (src/cour/*.pfa, IBM Courier) and `mergefea` (Thabit.fea), FamilyName edit,
     oblique pairing (investigations/next-provenance/FINDINGS.md).
 - Disclosures: plans/<repo>.json "disclose" -> README "Known differences from the released fonts"
-  (14 families; sfd-reland 898eb3c).
+  (14 families; gf-source-modernization 898eb3c).

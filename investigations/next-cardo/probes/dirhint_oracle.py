@@ -20,7 +20,7 @@ It also reports the release's FFTM build stamp and head.flags bit 9, so a gate r
 can check that a non-2 value is FontForge's own, internally consistent, output.
 
 Usage:
-  FAMILIES=<pairing.tsv> dirhint_oracle.py      (default: sfd-reland/families-next.tsv)
+  FAMILIES=<pairing.tsv> dirhint_oracle.py      (default: gf-source-modernization/families-next.tsv)
 Prints: style, shipped dirhint, oracle dirhint, MATCH|DIFF, head.flags bit 9, FFTM date.
 Python: /home/fsanches/compartilhado/gftools/venv/bin/python3
 """
@@ -51,7 +51,7 @@ def rows(path):
 
 
 def main():
-    fam = os.environ.get("FAMILIES", "/home/fsanches/compartilhado/sfd-reland/families-next.tsv")
+    fam = os.environ.get("FAMILIES", "/home/fsanches/compartilhado/gf-source-modernization/families-next.tsv")
     for r in rows(fam):
         p = r["shipped"]
         if not os.path.exists(p):

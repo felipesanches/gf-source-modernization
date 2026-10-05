@@ -24,11 +24,11 @@ import sys
 
 from fontTools.ttLib import TTFont
 
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/investigations/heights")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/investigations/heights")
 import ff_heights_probe as P  # noqa: E402
 
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
-W = "/home/fsanches/compartilhado/sfd-reland"
+W = "/home/fsanches/compartilhado/gf-source-modernization"
 E1904 = 2082844800
 FIX = 1337023489
 

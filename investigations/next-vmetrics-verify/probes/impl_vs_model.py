@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import indep_bounds as ib  # noqa: E402
 import indep_sweep as isw  # noqa: E402
 
-W = '/home/fsanches/compartilhado/sfd-reland'
+W = '/home/fsanches/compartilhado/gf-source-modernization'
 PY = '/home/fsanches/compartilhado/gftools/venv/bin/python3'
 BASE = ('/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/'
         'target-heights/release/babelfont')

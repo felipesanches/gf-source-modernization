@@ -2,7 +2,7 @@
 # Sequential harness runs for the heights verification (one build at a time).
 set -u
 V=/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-heights-verify
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 BFH=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont
 export SCRATCH=$V/harness
 run() { # name style [override] ; BF from env

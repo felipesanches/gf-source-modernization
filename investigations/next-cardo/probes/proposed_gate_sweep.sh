@@ -7,9 +7,9 @@
 # (sfd-batch5/tools/table_gate.py 2f43693) and under probes/table_gate_proposed.py?
 # Usage: bash proposed_gate_sweep.sh > runs/proposed_gate_sweep.tsv
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
-U=/home/fsanches/compartilhado/sfd-reland/investigations/next-cardo
+U=/home/fsanches/compartilhado/gf-source-modernization/investigations/next-cardo
 TG=/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py
-F=/home/fsanches/compartilhado/sfd-reland/families-next.tsv
+F=/home/fsanches/compartilhado/gf-source-modernization/families-next.tsv
 for d in /home/fsanches/compartilhado/sfd-reland-scratch/baseline/*-next; do
   s=$(basename "$d"); s=${s%-next}
   b=$(ls "$d"/fonts/ttf/*.ttf 2>/dev/null | head -1); [ -n "$b" ] && [ -s "$d/d3.json" ] || continue

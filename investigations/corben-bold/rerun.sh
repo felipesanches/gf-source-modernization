@@ -7,7 +7,7 @@
 # Usage: bash investigations/corben-bold/rerun.sh [scratch-dir]
 set -euo pipefail
 I=$(cd "$(dirname "$0")" && pwd)
-W=$(cd "$I/../.." && pwd)                       # sfd-reland/
+W=$(cd "$I/../.." && pwd)                       # gf-source-modernization/
 S=${1:-${TMPDIR:-/tmp}/inv-corben-bold}
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive/librefonts/corben.git
 SC=/home/fsanches/compartilhado/sfd-batch5/tools/source_corrections.py

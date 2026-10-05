@@ -60,9 +60,9 @@ Confidence: high: RussoOne fsType (verified edit, clear history) and the Comic R
 
 ## Rerun
 
-    sh /home/fsanches/compartilhado/sfd-reland/investigations/small/probes/rerun.sh   # everything below, in order, one build at a time
+    sh /home/fsanches/compartilhado/gf-source-modernization/investigations/small/probes/rerun.sh   # everything below, in order, one build at a time
     sh probes/make_edits.sh   # regenerates edits/*.sfd from the archive via tools/sfd_edit.py
-    cd /home/fsanches/compartilhado/sfd-reland && TAG=small OUT=investigations/small/runs/russoone-fstype0 SRC_OVERRIDE=investigations/small/edits/RussoOne-Regular-TTF.fstype0.sfd bash tools/baseline.sh RussoOne-Regular
+    cd /home/fsanches/compartilhado/gf-source-modernization && TAG=small OUT=investigations/small/runs/russoone-fstype0 SRC_OVERRIDE=investigations/small/edits/RussoOne-Regular-TTF.fstype0.sfd bash tools/baseline.sh RussoOne-Regular
     BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont TAG=small OUT=investigations/small/runs/russoone-fstype0-ca43adc SRC_OVERRIDE=investigations/small/edits/RussoOne-Regular-TTF.fstype0.sfd bash tools/baseline.sh RussoOne-Regular
     BF=<ca43adc> TAG=small OUT=investigations/small/runs/russoone-unmodified-ca43adc bash tools/baseline.sh RussoOne-Regular
     DROP_FLAGS=--fontforge-underline-position TAG=small OUT=investigations/small/runs/comicrelief-{regular,bold}-noflag bash tools/baseline.sh ComicRelief-{Regular,Bold}

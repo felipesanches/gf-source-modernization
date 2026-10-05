@@ -33,7 +33,7 @@ import shutil
 import subprocess
 import sys
 
-SFD_RELAND = "/home/fsanches/compartilhado/sfd-reland"
+SFD_RELAND = "/home/fsanches/compartilhado/gf-source-modernization"
 sys.path.insert(0, os.path.join(SFD_RELAND, "tools"))
 import recipe  # noqa: E402
 import workarounds  # noqa: E402

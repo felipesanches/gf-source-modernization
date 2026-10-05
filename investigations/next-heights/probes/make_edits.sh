@@ -17,7 +17,7 @@
 # Run: bash make_edits.sh            (writes $EDITS/*.sfd and prints each edit's report)
 set -euo pipefail
 H=$(cd "$(dirname "$0")" && pwd)
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git
 EDITS=${EDITS:-/home/fsanches/compartilhado/sfd-reland-scratch/heights/edits}

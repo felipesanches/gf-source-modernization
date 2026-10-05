@@ -13,7 +13,7 @@ B3=/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/g
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 TG=/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py
-FAM=/home/fsanches/compartilhado/sfd-reland/investigations/next-fstype-verify/runs/families-verify.tsv
+FAM=/home/fsanches/compartilhado/gf-source-modernization/investigations/next-fstype-verify/runs/families-verify.tsv
 out=$1; shift
 d=$S/family-titilliumweb; rm -rf "$d"; mkdir -p "$d/sources" "$out"
 printf 'buildVariable: false\nremoveOutlineOverlaps: false\nsources:\n' > "$d/sources/config.yaml"
@@ -28,7 +28,7 @@ ls "$d/fonts/ttf" > "$out/built-files.txt"
 for st in "$@"; do
   style=${st%%=*}
   name=$("$PY" -c "
-import sys; sys.path.insert(0, '/home/fsanches/compartilhado/sfd-reland/tools')
+import sys; sys.path.insert(0, '/home/fsanches/compartilhado/gf-source-modernization/tools')
 import land; print(land.built_name('$d/sources/$style.glyphs'))")
   shipped=$(awk -F'\t' -v s="$style" 'NR>1 && $7==s {print $9}' "$FAM")
   built="$d/fonts/ttf/$name"

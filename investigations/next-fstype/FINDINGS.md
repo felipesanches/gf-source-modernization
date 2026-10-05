@@ -104,7 +104,7 @@ Confidence: High for the fsType rows, the weight-class rows and the ExtraLight p
 
 ## Rerun
 
-    cd /home/fsanches/compartilhado/sfd-reland; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3; R=$PWD/investigations/next-fstype/runs; P=$PWD/investigations/next-fstype/probes; S=/home/fsanches/compartilhado/sfd-reland-scratch/fstype
+    cd /home/fsanches/compartilhado/gf-source-modernization; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3; R=$PWD/investigations/next-fstype/runs; P=$PWD/investigations/next-fstype/probes; S=/home/fsanches/compartilhado/sfd-reland-scratch/fstype
     $PY $P/fstype_history.py > $R/fstype_history.txt; $PY $P/release_edit_diff.py > $R/release_edit_diff.txt; $PY $P/pair_by_history.py > $R/pair_by_history.txt
     FAMILIES=$R/families-fstype.tsv BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont OUT=$R/r0-unmodified TAG=fstype-r0 SCRATCH=$S bash tools/baseline.sh <Style>
     FAMILIES=$R/families-fstype.tsv BF=$P/bf_with_workarounds.sh OUT=$R/r1-workarounds TAG=fstype-r1 SCRATCH=$S bash tools/baseline.sh <Style>

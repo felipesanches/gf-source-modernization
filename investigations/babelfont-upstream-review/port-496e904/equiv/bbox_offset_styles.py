@@ -19,7 +19,7 @@ import re
 import subprocess
 import sys
 
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
 import recipe  # noqa: E402
 import glyphsLib  # noqa: E402
 from fontTools.pens.boundsPen import BoundsPen  # noqa: E402

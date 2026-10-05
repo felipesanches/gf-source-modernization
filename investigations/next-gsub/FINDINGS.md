@@ -96,7 +96,7 @@ Confidence: High. Every row's cause is reproduced from the source under the pipe
 
 ## Rerun
 
-    cd /home/fsanches/compartilhado/sfd-reland; I=$PWD/investigations/next-gsub; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3; SC=/home/fsanches/compartilhado/sfd-reland-scratch/gsub; BFI=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont; BFP=$SC/bf-target/release/babelfont
+    cd /home/fsanches/compartilhado/gf-source-modernization; I=$PWD/investigations/next-gsub; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3; SC=/home/fsanches/compartilhado/sfd-reland-scratch/gsub; BFI=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont; BFP=$SC/bf-target/release/babelfont
     for s in Megrim Poly-Italic RibeyeMarrow-Regular Varela-Regular; do FAMILIES=$PWD/families-next.tsv BF=$BFI OUT=$I/runs/r0-unmodified TAG=gsub-r0 SCRATCH=$SC bash tools/baseline.sh $s; done
     FAMILIES=$PWD/families-next.tsv BF=$BFI OUT=$I/runs/r1-megrim-droplookups TAG=gsub-r1 SCRATCH=$SC SRC_OVERRIDE=$I/edits/Megrim.droplookups.sfd bash tools/baseline.sh Megrim
     git clone /home/fsanches/compartilhado/babelfont-rs $SC/bf-src; git -C $SC/bf-src checkout 17ea899; git -C $SC/bf-src apply $I/probes/babelfont-17ea899-langsys-as-built.diff; sudo -n /usr/local/sbin/drop-caches; (cd $SC/bf-src && CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=$SC/bf-target cargo build --release -p babelfont --features cli)

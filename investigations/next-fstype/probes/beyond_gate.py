@@ -25,7 +25,7 @@ import sys
 
 from fontTools.ttLib import TTFont
 
-W = "/home/fsanches/compartilhado/sfd-reland"
+W = "/home/fsanches/compartilhado/gf-source-modernization"
 FAM = os.path.join(W, "investigations/next-fstype/runs/families-fstype.tsv")
 SCR = "/home/fsanches/compartilhado/sfd-reland-scratch/fstype/baseline"
 NAME_IDS = (1, 2, 4, 6, 16, 17, 5)

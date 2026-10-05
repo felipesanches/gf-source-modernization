@@ -12,7 +12,7 @@
 #   env: BFBIN=<babelfont>  WORKAROUNDS=1  EXTRA_FLAGS=...  DROP_FLAGS=...
 # Output: ../runs/<stage-name>/<Style>.{tsv,gate.txt,proposed.txt,shaping.txt,multimark.txt,layout.txt}
 set -uo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 U=$W/investigations/next-cardo          # the unit under verification (its probes)
 V=$W/investigations/next-cardo-verify
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3

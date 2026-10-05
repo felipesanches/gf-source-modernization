@@ -2,9 +2,9 @@
 # Rerun everything VERIFY.md cites, in order, ONE build at a time (~3 minutes).
 # Writes only under investigations/small/verify/ and the session scratchpad.
 # Each harness run must end with its gate's "N blocking table difference(s)" line.
-# Usage: sh /home/fsanches/compartilhado/sfd-reland/investigations/small/verify/rerun.sh
+# Usage: sh /home/fsanches/compartilhado/gf-source-modernization/investigations/small/verify/rerun.sh
 set -eu
-W=/home/fsanches/compartilhado/sfd-reland; V=$W/investigations/small/verify
+W=/home/fsanches/compartilhado/gf-source-modernization; V=$W/investigations/small/verify
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 BFH=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont  # ca43adc
 export SCRATCH=/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-small-verify

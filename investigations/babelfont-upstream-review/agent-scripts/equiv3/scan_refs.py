@@ -3,7 +3,7 @@
 changed (non-integer offset, or a scale/matrix entry within 1.5 F2Dot14 steps of an
 integer but not equal to it). Also refs with matrix entries outside [-2, 1.999939]."""
 import os, re, sys
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
 import recipe
 STEP = 1.0 / 16384
 def would_snap(m):

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Build one landed sfd-reland repo, as committed, into builds/<repo>/ (scratch copy).
+# Build one landed gf-source-modernization repo, as committed, into builds/<repo>/ (scratch copy).
 # usage: build_repo.sh <repo> [<sources-dir-override>]
 set -e
 O=/home/fsanches/compartilhado/tmp/reland-research/outlines

@@ -8,7 +8,7 @@
 #     underlinePosition?  (expect one changed line, "value = -97")
 # Usage: sh verify/probes/conv_checks.sh   (after make_edits.sh)
 set -eu
-E=/home/fsanches/compartilhado/sfd-reland/investigations/small/verify/edits
+E=/home/fsanches/compartilhado/gf-source-modernization/investigations/small/verify/edits
 S=/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-small-verify/conv; mkdir -p $S
 PRE="--add-instance-per-master --infer-mark-category --set-subcategory --keep-source-glyph-names --keep-source-advances"
 POST="--reverse-path-direction --add-legacy-duplicate-cmap"

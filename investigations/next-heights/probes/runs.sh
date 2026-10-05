@@ -17,7 +17,7 @@
 # Run: bash runs.sh <set> [Style...]      set = before | altuni | blues | final
 set -uo pipefail
 H=$(cd "$(dirname "$0")/.." && pwd)
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 EDITS=${EDITS:-/home/fsanches/compartilhado/sfd-reland-scratch/heights/edits}
 BF0=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont
 BF1=${BF1:-/home/fsanches/compartilhado/sfd-reland-scratch/heights/bf-target/release/babelfont}

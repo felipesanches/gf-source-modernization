@@ -19,11 +19,11 @@ Usage: /home/fsanches/compartilhado/gftools/venv/bin/python3 heights_2011_rule.p
 import subprocess
 import sys
 
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
 import ff_heights_oracle as O  # noqa: E402
 from fontTools.ttLib import TTFont  # noqa: E402
 
-TSV = "/home/fsanches/compartilhado/sfd-reland/families.tsv"
+TSV = "/home/fsanches/compartilhado/gf-source-modernization/families.tsv"
 STYLES = ("Nosifer-Regular", "NosiferCaps-Regular")
 
 

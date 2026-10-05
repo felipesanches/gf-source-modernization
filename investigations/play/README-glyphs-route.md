@@ -27,7 +27,7 @@ default B3 and re-land without `B3=`.
 
 ## Measurement
 
-    cd sfd-reland
+    cd gf-source-modernization
     env OUT=<scratch>/repos LANDED=<scratch>/landed.tsv LAND_ARGS=--unpublished-converter \
         B3=<scratch>/target/release/gftools-builder B3_NOTE="..." \
         sh tools/reland_all.sh 2026-10-02-play play

@@ -7,7 +7,7 @@
 # Output: runs/02-ultra-may-sfd/{Ultra-Regular.tsv,.gate.txt,pairs-ink.txt,fftm_source_commit.txt}
 # Run: bash investigations/next-emptygpos-verify/probes/ultra_exported_sfd.sh
 set -eu
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 V=$W/investigations/next-emptygpos-verify
 S=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos-verify
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git

@@ -1,15 +1,15 @@
 #!/bin/bash
 # Question: with these cumulative candidate edits applied to a COPY of the
 # style's unmodified .sfd, which baseline-gate rows remain, and which closed or
-# opened relative to the unmodified baseline (sfd-reland/baseline/<style>.gate.txt)?
+# opened relative to the unmodified baseline (gf-source-modernization/baseline/<style>.gate.txt)?
 # Usage: run_stage.sh <Style> <run-name> [--import "U+XXXX ..."] <edits.tsv> ...
 #   edits are applied in order by apply_edits.py; --import runs
 #   sfd-batch5/tools/drift/import_outlines.py for the listed codepoints (outlines
 #   recovered from the RELEASED binary) AFTER the edit lists.
 # EXTRA_FLAGS / DROP_FLAGS pass through to baseline.sh.
 set -euo pipefail
-I=/home/fsanches/compartilhado/sfd-reland/investigations/tuffy
-R=/home/fsanches/compartilhado/sfd-reland
+I=/home/fsanches/compartilhado/gf-source-modernization/investigations/tuffy
+R=/home/fsanches/compartilhado/gf-source-modernization
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git
 C=52f780bc9d197280a9f430574e179a5f233c56b6

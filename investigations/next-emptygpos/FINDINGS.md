@@ -78,7 +78,7 @@ Confidence: High on causes: every value was reproduced from FontForge source at 
 
   Evidence: Varela GSUB 3->0 with babelfont alone (runs/11); aalt/sr cases 4->0. Poly-Italic 3->0 (its only GSUB difference was latn/ROM aalt). No style regressed among the 12 whose FEA changed. A new unit test (test_aalt_keeps_its_own_language_systems) passes.
   Upstream: simoncozens/babelfont-rs: same PR as exclude_dflt, or a second commit in it.
-- **sfd-reland tools (recipe.py, baseline.sh, land.py)**: Our own harness. Let the recipe also emit builder3 config lines, and write `sharedLayoutScripts: true` into sources/config.yaml only when the release has FFTM AND a GPOS with 0 lookups AND a GSUB with lookups (FontForge's empty GPOS shell). baseline.sh needs B3 and EXTRA_CONFIG overrides, as in probes/baseline_b3.sh. Do NOT enable it for every FontForge OpenType-mode release: fontc's generated kern registers DFLT (and sometimes grek/cyrl) where FontForge's kern lookup did not, so the mirrored GSUB shell opens GSUB.script_list rows.
+- **gf-source-modernization tools (recipe.py, baseline.sh, land.py)**: Our own harness. Let the recipe also emit builder3 config lines, and write `sharedLayoutScripts: true` into sources/config.yaml only when the release has FFTM AND a GPOS with 0 lookups AND a GSUB with lookups (FontForge's empty GPOS shell). baseline.sh needs B3 and EXTRA_CONFIG overrides, as in probes/baseline_b3.sh. Do NOT enable it for every FontForge OpenType-mode release: fontc's generated kern registers DFLT (and sometimes grek/cyrl) where FontForge's kern lookup did not, so the mirrored GSUB shell opens GSUB.script_list rows.
 
   Evidence: probes/recipe_shared_scripts.py selects 5 styles (runs/recipe_shared_scripts.tsv). Narrow rule, real builds: Kristi, Lekton-Bold and Lekton-Regular keep their rows (CLEAN / 1 weight row / CLEAN) and gain the release's exact GPOS (runs/15); Varela and UnifrakturMaguntia close 3 rows each. Broad rule, swept over 81 next-batch FontForge OpenType-mode builds (probes/shared_scripts_sweep.sh, runs/13-shared-scripts-sweep-next.tsv): opens GSUB.script_list in 33 styles and closes rows only in Varela. Census of 149 styles: runs/census_layout_shells.tsv.
   Upstream: none (this workspace)
@@ -86,7 +86,7 @@ Confidence: High on causes: every value was reproduced from FontForge source at 
 
   Evidence: Fidelity-only builds of landed or accepted kern-only styles. Miama-Regular (landed CLEAN 2ff6126): 73,583 of 1,232,100 LTR pairs differ (73,515 involve marks). Nosifer-Regular (landed CLEAN 7777099): 1,975 of 110,224 (1,968 mark). Example: a+U+0307 is at (530,975) in the release and (1768,0) in ours. KellySlab, Marvel x4, TulpenOne and Wallpoet: 0. See runs/05-kern-only-census/pair_matrix-*.txt. Ultra's 650 A-group pairs would also pass the current rule.
   Upstream: none (this workspace)
-- **sfd-reland tools/sfd_edit.py**: Add the op `kernclass0zero <KernClass2 subtable name>`, which zeroes first-class 0's row. It is FATAL without the '+' marker or with a malformed matrix. The file was NOT edited: it has uncommitted changes from another session.
+- **gf-source-modernization tools/sfd_edit.py**: Add the op `kernclass0zero <KernClass2 subtable name>`, which zeroes first-class 0's row. It is FATAL without the '+' marker or with a malformed matrix. The file was NOT edited: it has uncommitted changes from another session.
 
   Evidence: Ultra: 650 -> 0 A-group LTR pair differences (runs/09-ultra-kernclass0).
   Upstream: none (this workspace)
@@ -118,7 +118,7 @@ Confidence: High on causes: every value was reproduced from FontForge source at 
 
 ## Rerun
 
-    cd /home/fsanches/compartilhado/sfd-reland; FAMILIES=families-next.tsv BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont OUT=investigations/next-emptygpos/runs/00-baseline TAG=emptygpos-00 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos bash tools/baseline.sh Smokum-Regular Ultra-Regular Varela-Regular   (and FAMILIES=families.tsv ... UnifrakturMaguntia-Book)
+    cd /home/fsanches/compartilhado/gf-source-modernization; FAMILIES=families-next.tsv BF=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont OUT=investigations/next-emptygpos/runs/00-baseline TAG=emptygpos-00 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos bash tools/baseline.sh Smokum-Regular Ultra-Regular Varela-Regular   (and FAMILIES=families.tsv ... UnifrakturMaguntia-Book)
     B3=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/target-b3/release/gftools-builder EXTRA_CONFIG='sharedLayoutScripts: true' FAMILIES=... BF=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/target-bf/release/babelfont OUT=investigations/next-emptygpos/runs/10-all-prototypes TAG=emptygpos-10 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/emptygpos bash investigations/next-emptygpos/probes/baseline_b3.sh <Style>
     same without EXTRA_CONFIG and with the pinned BF -> runs/03-proto-flag-off (control); with EXTRA_CONFIG and pinned BF -> runs/04-proto-shared-scripts; tools/baseline.sh with prototype BF -> runs/11-babelfont-proto-only
     $PY investigations/next-emptygpos/probes/ff_shared_scripts.py compare <release.ttf> <built.ttf>

@@ -79,7 +79,7 @@ canonical upstream exists. Both are wrong for v2.101 and must be kept out of any
 
 ## Rerun
 
-From `sfd-reland/investigations/play/` (full table in `probes/README.md`):
+From `gf-source-modernization/investigations/play/` (full table in `probes/README.md`):
 
     M=/home/fsanches/compartilhado/upstream_repos/repo_archive/m4rc1e/play.git
     bash ../../tools/baseline.sh Play-Regular Play-Bold      # 220 / 233 rows, from the .sfd

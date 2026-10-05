@@ -1,5 +1,5 @@
 #!/bin/bash
-# PROBE COPY of tools/baseline.sh (sfd-reland, sha256 recorded in the README of this
+# PROBE COPY of tools/baseline.sh (gf-source-modernization, sha256 recorded in the README of this
 # investigation's result) with exactly two additions, so a candidate gftools-builder3
 # and a candidate config.yaml key can be tried without editing the shared harness:
 #   B3=<gftools-builder binary>   use another builder3 build (default: the pinned one)
@@ -44,7 +44,7 @@
 #   FAMILIES=<file.tsv>      another batch's pairing table (default families.tsv)
 #   SCRATCH=<dir>            scratch root (default session scratch; a big batch belongs on /home)
 set -uo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive
 BF=${BF:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont}
 B3=${B3:-/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/gftools-builder}

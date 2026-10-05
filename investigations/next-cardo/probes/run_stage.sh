@@ -15,7 +15,7 @@
 #                                   (usWeightClass from TTFWeight, as land.py does)
 # Output: runs/<stage-name>/<Style>.{tsv,gate.txt,proposed.txt,shaping.txt}
 set -uo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 U=$W/investigations/next-cardo
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 style=$1; stage=$2; src=${3:-}

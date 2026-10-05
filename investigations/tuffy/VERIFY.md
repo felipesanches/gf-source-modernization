@@ -135,7 +135,7 @@ The non-TTF `.sfd` files (001.270, ModificationTime 1314198286) are the sources 
 
 ## Rerun
 
-    bash /home/fsanches/compartilhado/sfd-reland/investigations/tuffy/verify/rerun.sh
+    bash /home/fsanches/compartilhado/gf-source-modernization/investigations/tuffy/verify/rerun.sh
     # builds one at a time into $W (default session scratch); prints every gate summary line.
     # Last run (21:5x): base 64/24/1/1; R-full 3, I-full 3, R-full-plus4 3 (gate cd4f827);
     # ca43adc 5 -> 3 with the height fields; raster/component/gate-variant files as quoted;

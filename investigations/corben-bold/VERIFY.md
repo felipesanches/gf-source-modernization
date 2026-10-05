@@ -27,7 +27,7 @@ things: an ungated kerning report, the unread .vfb, a silent failure of the exis
 
 I built the candidates myself from a fresh `git archive` of the unmodified source:
 - E1: hand `sed` on line 49307. Their `renameglyphgid.py` gives the same bytes.
-- E2 to E4: my own TSVs through `source_corrections.py`. `sfd-reland/tools/sfd_edit.py setfield` gives the same bytes.
+- E2 to E4: my own TSVs through `source_corrections.py`. `gf-source-modernization/tools/sfd_edit.py setfield` gives the same bytes.
 
 All 4 candidates are byte-identical to theirs.
 
@@ -63,7 +63,7 @@ Their mechanism is confirmed in `fontc-1.0.0/src/workload.rs:246-251`: `count_pe
 
 Fixes:
 - (a) The body should say "SFD glyph index 547 (release gid 548)". The two numbering schemes differ by the .null glyph.
-- (b) Land it as an op in `sfd-reland/tools/sfd_edit.py`, which `land.py` applies. Adding it only to `source_corrections.py` is not enough.
+- (b) Land it as an op in `gf-source-modernization/tools/sfd_edit.py`, which `land.py` applies. Adding it only to `source_corrections.py` is not enough.
 - (c) The existing `renameglyph` is worse than described. `sfd_edit.py renameglyph dcroat dcroat.1` on this file exits 0 and leaves TWO `StartChar: dcroat.1` (lines 25881 and 49307). It needs a FATAL-on-duplicated-name guard.
 
 ### E2: 6 x setfield vmetrics 2826/-969. KEEP
@@ -130,9 +130,9 @@ Fixes:
     sed '49307s/^StartChar: dcroat$/StartChar: dcroat.1/' $S/tree/src/Corben-Bold.sfd > $S/cand/v-e1.sfd
     cp $S/cand/v-e1.sfd $S/cand/v-e1234.sfd; for a in "OS2TypoAscent 2826" "OS2TypoDescent -969" \
       "OS2WinAscent 2826" "OS2WinDescent 969" "HheadAscent 2826" "HheadDescent -969" "OS2Vendor 'newt'" \
-      "Panose 2 15 5 5 2 0 0 2 0 4"; do python3 sfd-reland/tools/sfd_edit.py $S/cand/v-e1234.sfd setfield $a; done
+      "Panose 2 15 5 5 2 0 0 2 0 4"; do python3 gf-source-modernization/tools/sfd_edit.py $S/cand/v-e1234.sfd setfield $a; done
     [DROP_FLAGS=--add-legacy-duplicate-cmap] TAG=corben-bold-verify OUT=$S/runs/<name> SRC_OVERRIDE=$S/cand/<cand>.sfd \
-      SCRATCH=$S bash sfd-reland/tools/baseline.sh Corben-Bold      # one at a time
+      SCRATCH=$S bash gf-source-modernization/tools/baseline.sh Corben-Bold      # one at a time
     vfblib-py-venv/bin/vfb3ufo $S/tree/src/Corben-Bold.vfb          # writes Corben-Bold.ufo beside it
 
 Kerning probe. It shapes every ordered pair of encoded codepoints through both fonts; the

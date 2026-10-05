@@ -34,7 +34,7 @@ Inputs:
              required-features = ["cli"])
   invocation `babelfont <in.sfd> <out.glyphs> <flags...>`, as tools/land.py does.
 
-Usage (from sfd-reland/):
+Usage (from gf-source-modernization/):
   /home/fsanches/compartilhado/gftools/venv/bin/python3 \\
       tools/probes/upstream_prs_equivalence/run.py [--ref BIN] [--cand BIN] \\
       > tools/probes/upstream_prs_equivalence/RESULT.txt

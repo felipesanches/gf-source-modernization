@@ -6,9 +6,9 @@ Reproduced: True
 
 No .sfd edits were proposed, so I verified by rerunning the baseline from the unmodified
 sources: SCRATCH=.../scratchpad/inv-play-verify TAG=play-verify OUT=.../inv-play-
-verify/runs/baseline bash sfd-reland/tools/baseline.sh Play-Regular, then the same for
+verify/runs/baseline bash gf-source-modernization/tools/baseline.sh Play-Regular, then the same for
 Play-Bold, one at a time. Result: Play-Regular BLOCKING 220 and Play-Bold BLOCKING 233.
-The BLOCKING lines and the .tsv rows are identical to sfd-reland/baseline/, so
+The BLOCKING lines and the .tsv rows are identical to gf-source-modernization/baseline/, so
 rows_after = rows_before = 220/233, which confirms their numbers. Pairing is correct:
 each build came from its own families.tsv row (hg 52f780bc9d
 ofl/play/src/Play-<Style>-TTF.sfd vs google/fonts b5efa9c32e8f
@@ -35,7 +35,7 @@ fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchp
 play-verify/{runs/baseline,modern,relcmp.py,os2dump.py,threeway.py,renamed_kind.py}.
 VERIFY.md was NOT written: the subagent system rules forbid report .md files (the same
 rule that stopped the first agent), so the report is this result. These probes exist
-only in volatile scratch and need copying to sfd-reland/investigations/play/verify/ to
+only in volatile scratch and need copying to gf-source-modernization/investigations/play/verify/ to
 survive.
 
 ## Verdict
@@ -64,7 +64,7 @@ the local METADATA.pb commit 51c6a423f and upstream_info.md. VERIFY.md was not w
 the subagent system rules forbid report .md files, so this result is the report. My
 probes and mirrors (inv-play-verify/relcmp.py, os2dump.py, threeway.py, renamed_kind.py,
 runs/, modern/, alexeiva-play.git, m4rc1e-play.git, librefonts-play.git) are only in
-volatile scratch and should be copied into sfd-reland/investigations/play/verify/ and
+volatile scratch and should be copied into gf-source-modernization/investigations/play/verify/ and
 the repo archive. I committed nothing.
 
 ## Per edit

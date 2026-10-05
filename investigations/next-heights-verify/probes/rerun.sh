@@ -22,7 +22,7 @@ case ${1:-} in
     # my own build of 17ea899 + the investigator's patch, from a git archive export
     mkdir -p $S/bf-src && cd $S/bf-src
     git -C /home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs archive 17ea8995bb117b57e9f81c734239725c617375a8 | tar -x
-    patch -p1 < /home/fsanches/compartilhado/sfd-reland/investigations/next-heights/probes/babelfont-altuni-lookup.patch
+    patch -p1 < /home/fsanches/compartilhado/gf-source-modernization/investigations/next-heights/probes/babelfont-altuni-lookup.patch
     sudo -n /usr/local/sbin/drop-caches
     CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=$S/bf-target cargo build --release -p babelfont --features cli ;;
   builds)

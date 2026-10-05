@@ -26,7 +26,7 @@ import indep_bounds as ib  # noqa: E402
 from fontTools.ttLib import TTFont  # noqa: E402
 import math  # noqa: E402
 
-W = '/home/fsanches/compartilhado/sfd-reland'
+W = '/home/fsanches/compartilhado/gf-source-modernization'
 ARC = '/home/fsanches/compartilhado/upstream_repos/repo_archive'
 SCR = '/home/fsanches/compartilhado/sfd-reland-scratch/vmetrics-verify/sweep'
 KEYS = [('win_asc', 'OS2WinAscent', 'OS2WinAOffset'),

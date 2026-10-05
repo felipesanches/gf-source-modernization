@@ -13,11 +13,11 @@ import sys
 
 from fontTools.ttLib import TTFont
 
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/investigations/heights")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/investigations/heights")
 import ff_heights_probe as P  # noqa: E402
 
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
-FAM = "/home/fsanches/compartilhado/sfd-reland/families-next.tsv"
+FAM = "/home/fsanches/compartilhado/gf-source-modernization/families-next.tsv"
 E, FIX = 2082844800, 1337023489
 with open(FAM) as fh:
     head = fh.readline().rstrip("\n").split("\t")

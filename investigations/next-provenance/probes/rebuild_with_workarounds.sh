@@ -15,7 +15,7 @@
 #            Thabit src/Thabit.sfd /home/fsanches/compartilhado/google/fonts/ofl/thabit/Thabit.ttf runs/t8-thabit-workarounds
 set -euo pipefail
 src_run=$1; style=$2; sfdpath=$3; shipped=$4; out=$5
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 B3=/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/gftools-builder
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3

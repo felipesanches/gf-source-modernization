@@ -9,7 +9,7 @@ set -euo pipefail
 REAL_BF=${REAL_BF:-/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont}
 "$REAL_BF" "$@"
 /home/fsanches/compartilhado/gftools/venv/bin/python3 -c "
-import sys; sys.path.insert(0, '/home/fsanches/compartilhado/sfd-reland/tools')
+import sys; sys.path.insert(0, '/home/fsanches/compartilhado/gf-source-modernization/tools')
 import workarounds
 for n in workarounds.apply_all(sys.argv[2], sys.argv[1]): print('workaround:', n)
 " "$1" "$2"

@@ -16,7 +16,7 @@ and compares the two .glyphs files byte for byte. A style whose two conversions 
 listed with the number of differing lines; there the build has to show the difference is
 only in how the same outline is stored (sfdlib_outline_check.py, and the re-land).
 
-Run from the sfd-reland checkout; writes only under $TMPDIR/exporter-source-edits/:
+Run from the gf-source-modernization checkout; writes only under $TMPDIR/exporter-source-edits/:
   BF=<babelfont binary> /home/fsanches/compartilhado/gftools/venv/bin/python3 \\
       tools/probes/exporter_source_edits/convert_check.py <before recipe.py> [<rev>]
 """

@@ -12,7 +12,7 @@
 #   v4-version      + version 1.002 edits        (Titillium x11)
 # Run: bash investigations/next-fstype-verify/probes/run_all.sh  (after make_verify_inputs.sh)
 set -uo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 V=$W/investigations/next-fstype-verify/runs
 P=$W/investigations/next-fstype-verify/probes
 S=/home/fsanches/compartilhado/sfd-reland-scratch/fstype-verify

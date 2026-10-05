@@ -20,7 +20,7 @@
 # + PRs #91/#92/#93) with the same arguments, then workarounds.apply_all(out, in) and
 # prints what fired (it lands in the .gate.txt log).
 set -euo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 REAL_BF=${REAL_BF:-/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont}
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 "$REAL_BF" "$@"

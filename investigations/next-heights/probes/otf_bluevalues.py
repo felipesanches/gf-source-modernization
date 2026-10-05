@@ -30,7 +30,7 @@ import sys
 from fontTools.ttLib import TTFont
 
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git"
-FAM = "/home/fsanches/compartilhado/sfd-reland/families-next.tsv"
+FAM = "/home/fsanches/compartilhado/gf-source-modernization/families-next.tsv"
 
 
 def realarray2str(values, must_be_even=True):

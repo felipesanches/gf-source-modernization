@@ -4,7 +4,7 @@
 # Each baseline.sh run ends with its gate's "N blocking table difference(s)" line;
 # a run whose gate.txt lacks that line did not finish.
 set -eu
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 I=$W/investigations/small
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 BFH=/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target-heights/release/babelfont  # ca43adc

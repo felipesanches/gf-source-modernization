@@ -28,7 +28,7 @@ The oracle (tools/ff_heights_oracle.py families.tsv) gives HerrVonMuellerhoff 26
 
 Their findings hold up. I reproduced every row count exactly. The root causes are right and proven from the FontForge C at the release's own build.
 
-**VERIFY.md body (ASCII, for the parent to write to /home/fsanches/compartilhado/sfd-reland/investigations/heights/VERIFY.md)**
+**VERIFY.md body (ASCII, for the parent to write to /home/fsanches/compartilhado/gf-source-modernization/investigations/heights/VERIFY.md)**
 
 **Model**: Claude Opus 5.5
 
@@ -70,7 +70,7 @@ Conclusions:
 Rerun:
 - `bash scratchpad/inv-heights-verify/runs.sh` (sequential)
 - `gftools/venv/bin/python3 scratchpad/inv-heights-verify/indep_heights.py <release.ttf|.otf> [--blues '...'] [--em N]`
-- `(cd sfd-reland && gftools/venv/bin/python3 tools/ff_heights_oracle.py families.tsv)`
+- `(cd gf-source-modernization && gftools/venv/bin/python3 tools/ff_heights_oracle.py families.tsv)`
 - FontForge C: `git clone --bare --filter=blob:none https://github.com/fontforge/fontforge.git`, then `git show <commit>:fontforge/splinefont.c` and `git show <commit>:fontforge/stamp.c`
 
 Everything under scratchpad/inv-heights-verify is volatile and must be copied into the repo if it is to be kept. Nothing was committed or modified outside my scratch.

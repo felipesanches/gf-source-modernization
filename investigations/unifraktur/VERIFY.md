@@ -102,7 +102,7 @@ No .sfd edits were proposed. The stand-ins leave every value the source states i
   The 19 empty GSUB / 4 empty GPOS census is confirmed.
 - FINDINGS.md still does not exist in this directory.
 
-## Rerun (S = scratch dir inv-unifraktur-verify; W = /home/fsanches/compartilhado/sfd-reland)
+## Rerun (S = scratch dir inv-unifraktur-verify; W = /home/fsanches/compartilhado/gf-source-modernization)
     git -C .../repo_archive/googlefonts/googlefontdirectory-hg.git show 52f780bc:ofl/unifrakturmaguntia/src/UnifrakturMaguntia.sfd > $S/orig.sfd
     TAG=unifraktur-verify SCRATCH=$S OUT=$S/runs/00-baseline bash $W/tools/baseline.sh UnifrakturMaguntia-Book
     # standin-vm.sfd / standin-vmh.sfd = sed of orig.sfd exactly as in the table above

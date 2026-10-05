@@ -10,7 +10,7 @@
 # Output: ../runs/glyphs_diff-<mode>.txt
 set -uo pipefail
 H=$(cd "$(dirname "$0")/.." && pwd)
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 S=/home/fsanches/compartilhado/sfd-reland-scratch/heights-verify
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 BF0=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont

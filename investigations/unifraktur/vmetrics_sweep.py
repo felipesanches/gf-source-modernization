@@ -18,7 +18,7 @@ sys.path.insert(0, HERE)
 import vmetrics_probe as vp  # noqa: E402
 
 ARC = '/home/fsanches/compartilhado/upstream_repos/repo_archive'
-TSV = sys.argv[1] if len(sys.argv) > 1 else '/home/fsanches/compartilhado/sfd-reland/families.tsv'
+TSV = sys.argv[1] if len(sys.argv) > 1 else '/home/fsanches/compartilhado/gf-source-modernization/families.tsv'
 
 
 def main():

@@ -56,7 +56,7 @@ def legacy_duplicate_cmap(shipped):
     SAME glyph as its partner? Merely mapping U+00A0 and U+00AD is not evidence: a
     source can draw them as glyphs of their own (Corben does), and the flag would then
     add U+02C9, U+2219 and U+03BC that the release does not have. (Corben-Bold
-    verification, sfd-reland/investigations/corben-bold.)"""
+    verification, gf-source-modernization/investigations/corben-bold.)"""
     cm = TTFont(shipped).getBestCmap() or {}
     return "yes" if any(a in cm and b in cm and cm[a] == cm[b] for a, b in MAKEOTF_DUPLICATES) else "no"
 

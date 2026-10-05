@@ -9,7 +9,7 @@
 # ("kern+mark") shape differently under HarfBuzz?
 # Usage: bash kern_scan.sh > runs/kern_scan.tsv
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
-U=/home/fsanches/compartilhado/sfd-reland/investigations/next-cardo
+U=/home/fsanches/compartilhado/gf-source-modernization/investigations/next-cardo
 scan() {  # root suffix families
   for d in "$1"/*"$2"; do
     style=$(basename "$d"); style=${style%$2}
@@ -18,6 +18,6 @@ scan() {  # root suffix families
     echo "$style|$shipped|$built"
   done
 }
-{ scan /home/fsanches/compartilhado/sfd-reland-scratch/baseline -next /home/fsanches/compartilhado/sfd-reland/families-next.tsv
-  scan /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline -first /home/fsanches/compartilhado/sfd-reland/families.tsv
+{ scan /home/fsanches/compartilhado/sfd-reland-scratch/baseline -next /home/fsanches/compartilhado/gf-source-modernization/families-next.tsv
+  scan /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos/baseline -first /home/fsanches/compartilhado/gf-source-modernization/families.tsv
 } | xargs -P 3 -I{} bash -c 'IFS="|" read -r s a b <<<"{}"; r=$('"$PY"' '"$U"'/probes/shaping_compare.py "$a" "$b" --show 0 --only pairs,kern+mark 2>&1 | tr "\n" " "); printf "%s\t%s\t%s\n" "$s" "$r" "$b"'

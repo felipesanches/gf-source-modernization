@@ -18,7 +18,7 @@ B3=/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/g
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 TG=/home/fsanches/compartilhado/sfd-batch5/tools/table_gate.py
-FAM=/home/fsanches/compartilhado/sfd-reland/investigations/next-fstype/runs/families-fstype.tsv
+FAM=/home/fsanches/compartilhado/gf-source-modernization/investigations/next-fstype/runs/families-fstype.tsv
 out=$1; fam=$2; shift 2
 d=$S/family-$fam; rm -rf "$d"; mkdir -p "$d/sources" "$out"
 { echo "buildVariable: false"; echo "removeOutlineOverlaps: false"; echo "sources:"; } > "$d/sources/config.yaml"

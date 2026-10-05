@@ -5,7 +5,7 @@
 # closing summary line would be an unintended effect of the change.
 # Run: bash nothing_else_opened.sh > ../runs/nothing_else_opened.txt
 H=$(cd "$(dirname "$0")/.." && pwd)
-B=/home/fsanches/compartilhado/sfd-reland/baseline-next
+B=/home/fsanches/compartilhado/gf-source-modernization/baseline-next
 for set_ in altuni blues final final-workarounds siblings-altuni; do
   for g in "$H"/runs/$set_/*.gate.txt; do
     s=$(basename "$g" .gate.txt)

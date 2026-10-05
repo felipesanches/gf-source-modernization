@@ -23,7 +23,7 @@
 # e.g.   thabit_pipeline.sh p1 "--fontforge-implied-oncurves --fontforge-rint-coordinates"
 set -euo pipefail
 name=$1; extra=${2:-}
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 I=$W/investigations/next-provenance
 S=/home/fsanches/compartilhado/sfd-reland-scratch/provenance
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3

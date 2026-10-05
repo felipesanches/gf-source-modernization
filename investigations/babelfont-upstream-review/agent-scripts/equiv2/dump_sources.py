@@ -1,5 +1,5 @@
 import os, subprocess, sys
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
 import recipe
 OUT = sys.argv[1]
 REPOS = "/home/fsanches/compartilhado/sfd-reland-repos"

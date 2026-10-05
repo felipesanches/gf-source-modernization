@@ -8,7 +8,7 @@ Usage: geom_control.py A.ttf B.ttf"""
 import sys
 sys.path.insert(0, "/home/fsanches/compartilhado/sfd-batch5/tools")
 import table_gate as tg
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/investigations/tuffy/probes")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/investigations/tuffy/probes")
 from fontTools.ttLib import TTFont
 from fontTools.pens.boundsPen import BoundsPen
 A, B = TTFont(sys.argv[1]), TTFont(sys.argv[2])

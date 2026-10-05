@@ -1527,7 +1527,7 @@ def cmap_blocking(cm):
 
     This docstring used to say a gained codepoint is blocking; the code has never
     treated it so. A caller that needs the cmaps EQUAL must check that itself --
-    sfd-reland/tools/land.py and verify_landed.py do, and found 11 gate-clean styles
+    gf-source-modernization/tools/land.py and verify_landed.py do, and found 11 gate-clean styles
     mapping codepoints their releases do not."""
     out = []
     if not isinstance(cm, dict):

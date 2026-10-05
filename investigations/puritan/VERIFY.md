@@ -7,7 +7,7 @@ Reproduced: True
 I extracted a fresh ofl/puritan tree from googlefontdirectory-hg 52f780bc9d19 into my scratch (inv-puritan-verify/mono) and ran their ff_scale_em.py (sha256 9248fa24) on the unmodified sources. That produced edited/intul and edited/exact. Both are byte-identical to their files. The intul sha256 prefixes are Regular b312261f, Italic fbfa0e89, Bold 16a0064d, BoldItalic 1fb24d7b.
 
 I ran baseline.sh one style at a time with TAG=puritan-verify and OUT=scratch/runs/<v>. After removing the flags lines, every gate output is byte-identical to theirs:
-- unmodified: 19/19/20/20 blocking. The BLOCKING lines match sfd-reland/baseline/*.gate.txt exactly.
+- unmodified: 19/19/20/20 blocking. The BLOCKING lines match gf-source-modernization/baseline/*.gate.txt exactly.
 - intul: 2/4/3/3. Regular has sx_height and s_cap_height. Italic adds us_win_ascent [880,881] and hhea.ascender [880,881]. Bold and BoldItalic add us_weight_class [700,400].
 - exact: 4/6/5/5. It adds post.underline_position [-146,-100] and underline_thickness [20,50].
 - italic-abs880: Italic goes to 2 (the heights only).
@@ -56,7 +56,7 @@ PINS:
 RERUN (S=/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-puritan-verify, A=/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git, PY=/home/fsanches/compartilhado/gftools/venv/bin/python3, R=/home/fsanches/compartilhado/google/fonts/ofl/puritan):
 1. git -C $A archive 52f780bc9d197280a9f430574e179a5f233c56b6 ofl/puritan | tar -x -C $S/mono --strip-components=2
 2. for s in Regular Italic Bold BoldItalic; do $PY $S/tools/ff_scale_em.py $S/mono/src/Puritan-$s.sfd $S/edited/intul/Puritan-$s.sfd --int-underline; done
-3. cd /home/fsanches/compartilhado/sfd-reland; for s in ...; do TAG=puritan-verify OUT=$S/runs/intul SRC_OVERRIDE=$S/edited/intul/Puritan-$s.sfd bash tools/baseline.sh Puritan-$s; done  (also runs/unmodified, runs/exact, runs/italic-abs880, runs/italic-off-1)
+3. cd /home/fsanches/compartilhado/gf-source-modernization; for s in ...; do TAG=puritan-verify OUT=$S/runs/intul SRC_OVERRIDE=$S/edited/intul/Puritan-$s.sfd bash tools/baseline.sh Puritan-$s; done  (also runs/unmodified, runs/exact, runs/italic-abs880, runs/italic-off-1)
 4. $PY $S/tools/cmp_glyf.py $R/Puritan-$s.ttf $S/built/intul/Puritan-$s.ttf [--degen]   (built fonts copied from scratchpad/baseline/Puritan-$s-puritan-verify/fonts/ttf)
 5. $PY $S/tools/bbox_probe.py $R/Puritan-*.ttf
 6. git -C $A show e6ab8ab47:puritan/src/generate.py; git -C $A show e15966610 -- puritan/

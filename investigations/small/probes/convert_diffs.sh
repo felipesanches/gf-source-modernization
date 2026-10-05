@@ -14,7 +14,7 @@
 set -eu
 BF=${1:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion/target/release/babelfont}
 D=${2:-/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-small/convdiff}
-E=/home/fsanches/compartilhado/sfd-reland/investigations/small/edits
+E=/home/fsanches/compartilhado/gf-source-modernization/investigations/small/edits
 A=/home/fsanches/compartilhado/upstream_repos/repo_archive/loudifier/Comic-Relief.git
 C=856315f5a45dfdad75090e4454f1ebfd019296b9
 mkdir -p "$D"

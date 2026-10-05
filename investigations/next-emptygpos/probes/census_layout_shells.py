@@ -21,8 +21,8 @@ Signal read, per release (the `shipped` column of the pairing table):
 
 Run:
     /home/fsanches/compartilhado/gftools/venv/bin/python3 census_layout_shells.py \
-        /home/fsanches/compartilhado/sfd-reland/families.tsv \
-        /home/fsanches/compartilhado/sfd-reland/families-next.tsv
+        /home/fsanches/compartilhado/gf-source-modernization/families.tsv \
+        /home/fsanches/compartilhado/gf-source-modernization/families-next.tsv
 Output: one TSV row per style on stdout, then a summary.
 """
 import csv

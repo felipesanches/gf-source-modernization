@@ -11,7 +11,7 @@
 #
 # Run: bash altuni_regression.sh > ../runs/altuni_regression.txt
 set -uo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 S=/home/fsanches/compartilhado/sfd-reland-scratch/heights-verify
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 BF0=/home/fsanches/compartilhado/babelfont-rs-worktrees/integration-ff-prs/target-heights/release/babelfont

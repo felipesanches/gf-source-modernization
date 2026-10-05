@@ -25,11 +25,11 @@ import sys
 
 from fontTools.ttLib import TTFont
 
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
 import sfd_edit  # noqa: E402
 
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git"
-FAM = "/home/fsanches/compartilhado/sfd-reland/families-next.tsv"
+FAM = "/home/fsanches/compartilhado/gf-source-modernization/families-next.tsv"
 OUT = "/home/fsanches/compartilhado/sfd-reland-scratch/heights-verify/edits"
 BLUES = """Ledger-Regular LilitaOne-Regular Lustria-Regular Magra-Bold MergeOne-Regular
 OleoScript-Bold OleoScript-Regular OleoScriptSwashCaps-Bold OleoScriptSwashCaps-Regular

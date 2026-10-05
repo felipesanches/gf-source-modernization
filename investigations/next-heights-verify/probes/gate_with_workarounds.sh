@@ -15,7 +15,7 @@
 # Run: bash gate_with_workarounds.sh <set> <Style>...
 set -uo pipefail
 H=$(cd "$(dirname "$0")/.." && pwd)
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 SCRATCH=/home/fsanches/compartilhado/sfd-reland-scratch/heights-verify
 B3=/home/fsanches/compartilhado/builder3-worktrees/main-e851b8b/target/release/gftools-builder
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3

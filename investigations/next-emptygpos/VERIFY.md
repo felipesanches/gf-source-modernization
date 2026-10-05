@@ -4,7 +4,7 @@
 
 Reproduced: True
 
-I re-ran every measurement with my own harness runs under /home/fsanches/compartilhado/sfd-reland/investigations/next-emptygpos-verify/runs (scratch: /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos-verify). The pairing is families-next.tsv (and families.tsv for UnifrakturMaguntia), and the releases are google/fonts b5efa9c32e8f.
+I re-ran every measurement with my own harness runs under /home/fsanches/compartilhado/gf-source-modernization/investigations/next-emptygpos-verify/runs (scratch: /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos-verify). The pairing is families-next.tsv (and families.tsv for UnifrakturMaguntia), and the releases are google/fonts b5efa9c32e8f.
 
 Pins:
 - babelfont integration-ff-prs 17ea899 (sha256 4cbc83e0).
@@ -48,7 +48,7 @@ Ultra is where the result is wrong. The three proposed .sfd edits (TTFWeight 400
 
 landable_after: varela and poly, once the babelfont PR merges; varela additionally needs the fontc release and builder3 PR. unifraktur still needs the vmetric rule. smokum, and ultra re-paired to 2d042ebbd, need Felipe's kern-only decision.
 
-Nothing was committed. Probes and runs are in /home/fsanches/compartilhado/sfd-reland/investigations/next-emptygpos-verify/{probes,runs}. The scratch clones and targets under /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos-verify are disposable: they rebuild from the patch files in next-emptygpos/probes.
+Nothing was committed. Probes and runs are in /home/fsanches/compartilhado/gf-source-modernization/investigations/next-emptygpos-verify/{probes,runs}. The scratch clones and targets under /home/fsanches/compartilhado/sfd-reland-scratch/emptygpos-verify are disposable: they rebuild from the patch files in next-emptygpos/probes.
 
 ## Per edit
 
@@ -62,9 +62,9 @@ Nothing was committed. Probes and runs are in /home/fsanches/compartilhado/sfd-r
 - [revise] gftools-builder3 FontcConfig sharedLayoutScripts -- The patch is fine (tree cc6eaf66; built as 4b375fa3 and it works). One point the other agent did not report: FontcConfig and GoogleFontsOptions do not deny unknown fields. So on any builder3 before this change, including the prebuilt main-latest binary the landed repos' CI downloads (.github/workflows/build.yaml), `sharedLayoutScripts: true` is silently ignored and the font is built without the shell, with no error. Separately, the Python gftools builder's GOOGLEFONTS_SCHEMA rejects the key ('unexpected key not in schema', tested with the local gftools 0.9.100.dev). The landing and verification must therefore check the built GPOS shell, not trust the key, and must refuse builder3 revisions that lack the change.
 - [keep] babelfont-rs make_langsys exclude_dflt for non-dflt languages -- This is a correct fidelity fix: FontForge registers each lookup for exactly the languages it names. The patch was reproduced (tree 1dc7e1d1). With both babelfont commits, Varela's GSUB effects go from 7 of 161 differing keys to 0 of 160, fi does not ligate under tr/az/crh, and Poly-Italic and Poly-Regular are CLEAN. The PROTOTYPE commit author/subject ('scratch <scratch@localhost>') needs replacing before the PR.
 - [keep] babelfont-rs declare only aalt's languagesystems when there is no kerning and no anchors -- It works. Reproduced: Varela GSUB 3->0 together with exclude_dflt, aalt no longer under latn/SRB ('!' stays exclam under sr), Poly-Italic 3->0 and Poly-Regular still CLEAN. It is the only FEA-expressible route, because aalt forbids script/language statements. It is a conditional heuristic that falls back to a warning when kerning or anchors exist, so upstream acceptance is medium. The PR text should say plainly that it relies on explicit `script`/`language` statements for undeclared language systems, which fea-rs accepts.
-- [revise] sfd-reland recipe/baseline/land: sharedLayoutScripts for FFTM + empty GPOS + GSUB with lookups (narrow rule) -- The rule selects exactly the 5 empty-GPOS releases (my independent census agrees), and Kristi and Lekton-Regular stay CLEAN with the exact shell (runs/12). Because builder3 silently ignores the key, verify_landed.py and land.py must assert that the built font has the GPOS or GSUB shell and must pin a builder3 that has the change. Otherwise a CI or rebuild on current builder3 produces a font without the shell and nothing notices.
+- [revise] gf-source-modernization recipe/baseline/land: sharedLayoutScripts for FFTM + empty GPOS + GSUB with lookups (narrow rule) -- The rule selects exactly the 5 empty-GPOS releases (my independent census agrees), and Kristi and Lekton-Regular stay CLEAN with the exact shell (runs/12). Because builder3 silently ignores the key, verify_landed.py and land.py must assert that the built font has the GPOS or GSUB shell and must pin a builder3 that has the change. Otherwise a CI or rebuild on current builder3 produces a font without the shell and nothing notices.
 - [keep] table_gate arbitrate_legacy_kern: account for fallback mark positioning and shape the full pair matrix -- The code (table_gate.py 1250-1313 at 2f43693) shapes only the release's own kern pairs and compares advance sums, so mark fallback differences are invisible to it. I reproduced Nosifer's fidelity-only build: 1,975 of 110,224 LTR pairs differ, 1,968 of them involving marks.
-- [reject] sfd-reland tools/sfd_edit.py kernclass0zero op -- It is not needed. The A-group row it removes is not in the .sfd Ultra was exported from (2d042ebbd). Fix the pairing instead.
+- [reject] gf-source-modernization tools/sfd_edit.py kernclass0zero op -- It is not needed. The A-group row it removes is not in the .sfd Ultra was exported from (2d042ebbd). Fix the pairing instead.
 
 ## Objections
 

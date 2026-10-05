@@ -10,7 +10,7 @@
 #
 # Usage: bash fea_sweep.sh > ../runs/fea_sweep.tsv
 set -uo pipefail
-W=/home/fsanches/compartilhado/sfd-reland
+W=/home/fsanches/compartilhado/gf-source-modernization
 ARC=/home/fsanches/compartilhado/upstream_repos/repo_archive
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 SC=/home/fsanches/compartilhado/sfd-reland-scratch/gsub-verify/fea-sweep

@@ -144,4 +144,4 @@ was read for information only.
 
 ## Rerun
 
-    sh /home/fsanches/compartilhado/sfd-reland/investigations/small/verify/rerun.sh
+    sh /home/fsanches/compartilhado/gf-source-modernization/investigations/small/verify/rerun.sh

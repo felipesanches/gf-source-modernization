@@ -15,8 +15,8 @@ Both read files relative to the current directory. To rerun:
     git -C /home/fsanches/compartilhado/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git \
         archive 52f780bc9d197280a9f430574e179a5f233c56b6 ofl/puritan | tar -x -C mono --strip-components=2
     cp /home/fsanches/compartilhado/google/fonts/ofl/puritan/*.ttf rel/
-    $PY /home/fsanches/compartilhado/sfd-reland/investigations/puritan/scratch/widths.py
-    $PY /home/fsanches/compartilhado/sfd-reland/investigations/puritan/scratch/dumpmetrics.py rel/*.ttf mono/src/*.otf
+    $PY /home/fsanches/compartilhado/gf-source-modernization/investigations/puritan/scratch/widths.py
+    $PY /home/fsanches/compartilhado/gf-source-modernization/investigations/puritan/scratch/dumpmetrics.py rel/*.ttf mono/src/*.otf
 
 The FontForge 20100501 source the investigation read (and whose libtool `ltmain.sh`
 stayed in scratch) is disposable: it is

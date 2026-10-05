@@ -23,7 +23,7 @@ The rest of this file is the 2026-10-02 morning snapshot it started from.
 Run: `logs/reland-2026-10-02-final/` (README there says which repos come from which run).
 Converter: babelfont integration `eae493be` = upstream main f6c4ef0f + #101 + #102 + #103 +
 #104 (with bad16b09) + #105 + #106; builder gftools-rust ade8776 (fontc 1.0.0). Recipe:
-sfd-reland `tools/recipe.py` as committed with this file.
+gf-source-modernization `tools/recipe.py` as committed with this file.
 
 **149 styles: 108 pass the functional gate, 105 CLEAN** (was 52 / 51 in
 `reland-2026-10-01-names-v2`; 0 regressions, `compare-2026-10-01-names-v2.tsv`).

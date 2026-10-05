@@ -19,14 +19,14 @@ import datetime
 import subprocess
 import sys
 
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/tools")
-sys.path.insert(0, "/home/fsanches/compartilhado/sfd-reland/investigations/nosifer/probes")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/tools")
+sys.path.insert(0, "/home/fsanches/compartilhado/gf-source-modernization/investigations/nosifer/probes")
 import ff_heights_oracle as O  # noqa: E402
 from heights_2011_rule import measure, snap, rule  # noqa: E402
 from fontTools.ttLib import TTFont  # noqa: E402
 from fontTools.misc.timeTools import epoch_diff  # noqa: E402
 
-TSV = "/home/fsanches/compartilhado/sfd-reland/families.tsv"
+TSV = "/home/fsanches/compartilhado/gf-source-modernization/families.tsv"
 LO = datetime.datetime(2009, 5, 27)
 HI = datetime.datetime(2012, 5, 14)
 

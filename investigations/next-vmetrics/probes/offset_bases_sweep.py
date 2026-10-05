@@ -27,7 +27,7 @@ Parsing, reference flattening and curve bounds reuse
 investigations/unifraktur/vmetrics_probe.py.
 
     /home/fsanches/compartilhado/gftools/venv/bin/python3 offset_bases_sweep.py \
-        [families.tsv ...]            (default: sfd-reland families.tsv families-next.tsv)
+        [families.tsv ...]            (default: gf-source-modernization families.tsv families-next.tsv)
     ... offset_bases_sweep.py --sfd <file.sfd> <release.ttf>     (one pair, any source)
 """
 import datetime
@@ -37,7 +37,7 @@ import subprocess
 import sys
 import tempfile
 
-W = '/home/fsanches/compartilhado/sfd-reland'
+W = '/home/fsanches/compartilhado/gf-source-modernization'
 sys.path.insert(0, os.path.join(W, 'investigations', 'unifraktur'))
 import vmetrics_probe as vp  # noqa: E402
 from fontTools.ttLib import TTFont  # noqa: E402

@@ -42,7 +42,7 @@ runs/
   converter_tests_proto.txt, clippy_proto.txt, fmt_proto.txt, prototype_build.txt
 
 Commands:
-  cd /home/fsanches/compartilhado/sfd-reland; V=$PWD/investigations/next-gsub-verify
+  cd /home/fsanches/compartilhado/gf-source-modernization; V=$PWD/investigations/next-gsub-verify
   for s in Megrim Poly-Italic Poly-Regular RibeyeMarrow-Regular Varela-Regular; do FAMILIES=$PWD/families-next.tsv BF=$BFI OUT=$V/runs/v0-unmodified TAG=gsub-verify-v0 SCRATCH=$SC bash tools/baseline.sh $s; done
   cp <hg Megrim-TTF.sfd> $SC/src/Megrim.verify-edit.sfd; for n in "'aalt' Access All Alternates in Latin lookup 0" "'ss01' Style Set 1 lookup 1" "'locl' Localized Forms in Latin lookup 2"; do $PY tools/sfd_edit.py $SC/src/Megrim.verify-edit.sfd droplookup "$n"; done   (byte-identical to ../next-gsub/edits/Megrim.droplookups.sfd)
   git clone /home/fsanches/compartilhado/babelfont-rs $SC/bf-src; git -C $SC/bf-src checkout 17ea899; git -C $SC/bf-src apply ../next-gsub/probes/babelfont-17ea899-langsys-as-built.diff; commit; sudo -n /usr/local/sbin/drop-caches; CARGO_BUILD_JOBS=3 CARGO_TARGET_DIR=$SC/bf-target cargo build --release -p babelfont --features cli

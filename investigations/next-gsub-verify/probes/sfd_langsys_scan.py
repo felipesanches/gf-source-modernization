@@ -22,7 +22,7 @@ import re
 import subprocess
 import sys
 
-W = "/home/fsanches/compartilhado/sfd-reland"
+W = "/home/fsanches/compartilhado/gf-source-modernization"
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
 
 

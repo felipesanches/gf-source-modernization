@@ -28,7 +28,7 @@ part of the record. Work done with an AI agent (Claude) under the guidance of
 
 ---
 
-# sfd-reland -- re-landing the FontForge-only families under criteria (A) and (B)
+# gf-source-modernization -- re-landing the FontForge-only families under criteria (A) and (B)
 
 **Model**: Claude Opus 5.5 -- started 2026-09-23
 

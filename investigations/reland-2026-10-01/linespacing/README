@@ -1,4 +1,4 @@
-line_spacing cluster probes (re-land 2026-10-01). Scratch; promote to sfd-reland/investigations/ before quoting numbers.
+line_spacing cluster probes (re-land 2026-10-01). Scratch; promote to gf-source-modernization/investigations/ before quoting numbers.
 sfd_vs_release.py <triage.tsv>  -- per failing style: .sfd OS/2 header fields vs release OS/2/hhea vs converted .glyphs params. -> runs/sfd_vs_release.txt
 bit7_sweep.py                   -- all 149 styles: FontForge's bit-7 export rule, babelfont 004200b's rule and the prototype filter's rule vs the release. -> runs/bit7_sweep.txt
 ls_check.py <shipped> <built>   -- runs ONLY functional_gate.check_line_spacing (imported).

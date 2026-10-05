@@ -33,7 +33,7 @@ import subprocess
 import sys
 
 ARC = "/home/fsanches/compartilhado/upstream_repos/repo_archive"
-FAM = "/home/fsanches/compartilhado/sfd-reland/families.tsv"
+FAM = "/home/fsanches/compartilhado/gf-source-modernization/families.tsv"
 
 R = None
 CAP = [0x41, R, 0x5A, 0x391, R, 0x3A9, 0x402, 0x404, 0x405, 0x406, 0x408, R, 0x40B,

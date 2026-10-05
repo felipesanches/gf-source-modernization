@@ -67,7 +67,7 @@ VERIFIED. Before the edits: 19/19/20/20.
 
 ## Rerun
 
-    cd /home/fsanches/compartilhado/sfd-reland
+    cd /home/fsanches/compartilhado/gf-source-modernization
     PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
     $PY tools/land.py puritan --rebuild          # plans/puritan.json; gates all four styles
     $PY tools/verify_landed.py puritan

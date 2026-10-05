@@ -8,7 +8,7 @@
 set -euo pipefail
 H=$(cd "$(dirname "$0")" && pwd)
 W=${W:-/tmp/claude-1000/-home-fsanches-compartilhado-GoogleFonts/f55394dc-b840-4055-b5b4-e2463e4b4dd8/scratchpad/inv-tuffy-verify-rerun}
-R=/home/fsanches/compartilhado/sfd-reland
+R=/home/fsanches/compartilhado/gf-source-modernization
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 D3=/home/fsanches/compartilhado/diffenator3-venv/bin/diffenator3
 # The gate changed mid-verification (sfd-batch5 f5cb410 -> cd4f827, contour split). For

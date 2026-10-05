@@ -16,7 +16,7 @@ import sys
 
 from fontTools.ttLib import TTFont
 
-V = "/home/fsanches/compartilhado/sfd-reland/investigations/next-fstype-verify/runs"
+V = "/home/fsanches/compartilhado/gf-source-modernization/investigations/next-fstype-verify/runs"
 S = "/home/fsanches/compartilhado/sfd-reland-scratch/fstype-verify/baseline"
 rows = {r["style"]: r for r in csv.DictReader(open(V + "/families-verify.tsv"), delimiter="\t")}
 for run in sys.argv[1:]:

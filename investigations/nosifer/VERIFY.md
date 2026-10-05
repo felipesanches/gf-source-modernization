@@ -75,7 +75,7 @@ Correct for both styles.
 ## Rerun
 ```
 V=<scratch>/inv-nosifer-verify
-cd /home/fsanches/compartilhado/sfd-reland
+cd /home/fsanches/compartilhado/gf-source-modernization
 TAG=nosifer-verify OUT=$V/runs/<v> [SRC_OVERRIDE=$V/edits/<file>.sfd] bash tools/baseline.sh <Style>
 $PY $V/ff2011_heights.py <sfd>
 $PY $V/load_from_disk_evidence.py $V/Nosifer-Regular.orig.sfd
@@ -97,7 +97,7 @@ $PY $V/load_from_disk_evidence.py $V/Nosifer-Regular.orig.sfd
 
 - Evidence that would strengthen the GSUB finding. The Nosifer release was generated from a font LOADED from the saved -TTF.sfd, not from a live session. (a) At all 10 points (9 glyphs) where the two releases' glyf differ, the .sfd prints an exact .5 value (-42.5, 473.5, 779.5, 222.5, 512.5, 1599.5). The Nosifer release holds the half-to-even rounding of each (-42, 474, 780, 222, 512, 1600), while the NosiferCaps release is off by 1 at exactly those points. (b) gasp version is 0 in Nosifer and 1 in NosiferCaps: FontForge 20110222 sfd.c:1595 does not save gasp_version, so a font loaded from .sfd exports version 0. The two .sfd glyph sets are identical (diff shows only names, TTFWeight and vertical metrics). Rerun: scratch/inv-nosifer-verify/load_from_disk_evidence.py.
 - The likely mechanism for the non-OpenType export went unstated. The GUI default is OpenType mode (v20110222 savefont.c:39 old_sfnt_flags = ttf_flag_otmode). But python.c:13978-13985 turns any generate() flags tuple that names neither 'opentype' nor 'apple' into 0x90 = neither mode. Four fonts generated in the same second (Butcherman, Creepster, Eater, Nosifer, 2011-12-19 18:44:21) points to such a script.
-- findings_path /home/fsanches/compartilhado/sfd-reland/investigations/nosifer/FINDINGS.md does not exist. The directory holds only edits/, probes/ and runs/.
+- findings_path /home/fsanches/compartilhado/gf-source-modernization/investigations/nosifer/FINDINGS.md does not exist. The directory holds only edits/, probes/ and runs/.
 - The brief's reference copies scratchpad/ff/old/20110222-splinefont.c and 20110222-tottf.c are 14-byte '404: Not Found' stubs (same md5, 3be7b8b1). Their evidence came from their own clone via ff_evidence.sh, and I re-fetched by hash 9ec8bff8. Other units that rely on those two files are reading nothing.
 - The shared baseline/Nosifer-Regular.gate.txt was also produced by an older baseline.sh flag order (--fontforge-os2-defaults last), on top of the JSONDecodeError traceback they reported. The current script (flag first) gives identical rows and stale lists.
 - Nothing else missed: both styles are covered and correctly paired (sources and binaries per families.tsv; the google/fonts binaries are byte-identical to the monorepo copies, md5 e1875da4 / 5f57edc5). No edit opened a row.

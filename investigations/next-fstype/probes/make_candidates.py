@@ -33,7 +33,7 @@ import os
 import subprocess
 import sys
 
-W = "/home/fsanches/compartilhado/sfd-reland"
+W = "/home/fsanches/compartilhado/gf-source-modernization"
 sys.path.insert(0, os.path.join(W, "tools"))
 import sfd_edit  # noqa: E402
 

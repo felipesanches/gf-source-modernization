@@ -72,15 +72,15 @@ Confidence: High. Both height rows reproduce exactly from the source under the F
 
 ## Unresolved
 
-- FINDINGS.md was NOT written: the harness refused a Write of a .md report file ('Subagents should return findings as text'). Its full intended text is in verification.summary, ready for the orchestrator to write to /home/fsanches/compartilhado/sfd-reland/investigations/nosifer/FINDINGS.md. The probes, runs and edits under investigations/nosifer/ were written.
+- FINDINGS.md was NOT written: the harness refused a Write of a .md report file ('Subagents should return findings as text'). Its full intended text is in verification.summary, ready for the orchestrator to write to /home/fsanches/compartilhado/gf-source-modernization/investigations/nosifer/FINDINGS.md. The probes, runs and edits under investigations/nosifer/ were written.
 - Decision for Felipe on the GSUB rows. The droplookup edit reproduces the release but removes a working liga the designer declared; BEEF, SEE and EEE shape differently. The alternative is to keep the liga and document the 3 rows as an improvement, in which case the build does not reproduce the release. Butcherman (not in families.tsv) lost a declared liga in the same 2011-12-19 export batch.
 - The height converter change is not build-verified: babelfont may not be rebuilt in this unit. It is verified only through the stand-in edit that states the target values (r2, r4, r5). It also bears on the other converter work (ca43adc), which implements only the master rule.
-- The shared baseline file sfd-reland/baseline/Nosifer-Regular.gate.txt contains a table_gate.py JSONDecodeError traceback (empty d3.json) ahead of a complete gate output, a sign of two concurrent runs writing one log. The row set stands (r0 reproduces it cleanly), but the file was left untouched.
+- The shared baseline file gf-source-modernization/baseline/Nosifer-Regular.gate.txt contains a table_gate.py JSONDecodeError traceback (empty d3.json) ahead of a complete gate output, a sign of two concurrent runs writing one log. The row set stands (r0 reproduces it cleanly), but the file was left untouched.
 - Outside this unit: the era-chosen height rule leaves 7 of 38 styles unexplained. They are PatrickHand-Regular (FontForge 2012-09-06, cap 660 against 661), Puritan x4 (495/640 against 507/655) and Tuffy x2 (no FFTM; release 500/700).
 
 ## Rerun
 
-    cd /home/fsanches/compartilhado/sfd-reland; I=investigations/nosifer; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
+    cd /home/fsanches/compartilhado/gf-source-modernization; I=investigations/nosifer; PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
     $PY $I/probes/heights_2011_rule.py > $I/runs/heights_2011_rule.txt
     $PY -W ignore $I/probes/heights_era_all.py > $I/runs/heights_era_all.txt
     $PY $I/probes/release_provenance.py > $I/runs/release_provenance.txt

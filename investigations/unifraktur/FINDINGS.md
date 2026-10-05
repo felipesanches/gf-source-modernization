@@ -39,7 +39,7 @@ Regular.ttf. That is a METADATA.pb files-mapping matter (filename, post_script_n
 full_name follow the built font, and the PostScript-name change is disclosed), not a
 source edit; the gate accepts name records. FINDINGS.md was NOT written: the harness
 refused report files from this subagent. Probes, excerpts and run outputs are under
-/home/fsanches/compartilhado/sfd-reland/investigations/unifraktur/. Pins: babelfont
+/home/fsanches/compartilhado/gf-source-modernization/investigations/unifraktur/. Pins: babelfont
 binary f725e6a (sha256 f96e0851..., built before ca43adc), gftools-builder3 e851b8b
 (fontc 1.0.0), diffenator3 1.1.4, table_gate.py sfd-batch5 cd4f827 (sha256 008e7319...),
 sweep.py sha256 75b4d351, fontTools 4.61.1, uharfbuzz 0.53.3 / HarfBuzz 12.3.2,
@@ -86,7 +86,7 @@ Confidence: high: every value is reproduced exactly from the unmodified source u
 
 ## Rerun
 
-    cd /home/fsanches/compartilhado/sfd-reland && TAG=unifraktur OUT=/home/fsanches/compartilhado/sfd-reland/investigations/unifraktur/runs/00-baseline bash tools/baseline.sh UnifrakturMaguntia-Book
+    cd /home/fsanches/compartilhado/gf-source-modernization && TAG=unifraktur OUT=/home/fsanches/compartilhado/gf-source-modernization/investigations/unifraktur/runs/00-baseline bash tools/baseline.sh UnifrakturMaguntia-Book
     TAG=unifraktur OUT=.../runs/02-proxy-vmetrics SRC_OVERRIDE=<copy of the .sfd patched with runs/02-proxy-vmetrics/source.diff> bash tools/baseline.sh UnifrakturMaguntia-Book
     TAG=unifraktur OUT=.../runs/03-proxy-vmetrics-heights SRC_OVERRIDE=<copy patched with runs/03-proxy-vmetrics-heights/source.diff> bash tools/baseline.sh UnifrakturMaguntia-Book
     /home/fsanches/compartilhado/gftools/venv/bin/python3 investigations/unifraktur/empty_gpos_probe.py <release.ttf> runs/03-proxy-vmetrics-heights/UnifrakturMaguntia-Regular.ttf runs/03-proxy-vmetrics-heights/UnifrakturMaguntia-Regular+ffgpos.ttf; then diffenator3 -J 1 --no-languages --no-match --json --succinct <release> <out> and table_gate.py <json> --fonts <release> <out>

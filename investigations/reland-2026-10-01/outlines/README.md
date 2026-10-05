@@ -3,9 +3,9 @@
 **Model**: Claude Opus 5.5. Measured 2026-10-01. Pins: babelfont upstream 004200b7
 (target-heights/release/babelfont), gftools-builder (gftools-rust ade8776, fontc 1.0.0) at
 /home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder, google/fonts
-working copy /home/fsanches/compartilhado/google/fonts, functional_gate.py from sfd-reland.
+working copy /home/fsanches/compartilhado/google/fonts, functional_gate.py from gf-source-modernization.
 
-Scratch only: nothing here is committed. Promote the scripts next to sfd-reland/tools/probes
+Scratch only: nothing here is committed. Promote the scripts next to gf-source-modernization/tools/probes
 if a number below is quoted anywhere.
 
 ## Scripts (PY=/home/fsanches/compartilhado/gftools/venv/bin/python3)

@@ -4,7 +4,7 @@
 
 Reproduced: True
 
-I reproduced every substantive claim with my own runs, and most of them with my own probes. Everything is under /home/fsanches/compartilhado/sfd-reland/investigations/next-gsub-verify/ (README.txt lists each probe's question and command). Scratch is /home/fsanches/compartilhado/sfd-reland-scratch/gsub-verify/. Nothing is committed. What is in scratch can be regenerated from README.txt.
+I reproduced every substantive claim with my own runs, and most of them with my own probes. Everything is under /home/fsanches/compartilhado/gf-source-modernization/investigations/next-gsub-verify/ (README.txt lists each probe's question and command). Scratch is /home/fsanches/compartilhado/sfd-reland-scratch/gsub-verify/. Nothing is committed. What is in scratch can be regenerated from README.txt.
 
 Pairing: I used families-next.tsv as is. There is 1 candidate per style, each an -TTF.sfd at hg 52f780bc. Each release is byte-identical to its hg blob (Megrim.ttf git blob 8fc9351c). For all 5 releases, the FFTM created/modified times equal the .sfd's CreationTime/ModificationTime (runs/release_facts.txt).
 
