@@ -1,0 +1,1 @@
+Converter babelfont 5aea7e45 (upstream main), builder gftools-rust ade8776 (upstream main); sfd-reland at 0ac9949 (cited by every convert commit). 42 CLEAN; push.sh --check READY 42 (EVIDENCE_REMOTE pointed at this local repository, before publishing): push-2026-10-05-check.txt.
