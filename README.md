@@ -20,6 +20,10 @@ fixed revision. What it cites is here:
 | `investigations/` | the research behind each edit, rule and disclosure |
 | `templates/ufr-template/` | the repository template the font repositories adopt |
 
+**Rule: everything a converted font repository refers to is public.** Every commit id,
+evidence file and URL its commit messages and README cite must resolve publicly before it
+is pushed; `tools/public_refs.py` checks this and `tools/push.sh` refuses otherwise.
+
 Rerun a family: `python3 tools/land.py <family> --rebuild` (see `tools/land.py` for the
 environment it expects). Many notes and scripts name absolute paths on the author's
 workstation (`/home/fsanches/compartilhado/...`); they are kept as written, since they are

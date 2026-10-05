@@ -9,6 +9,9 @@
 # Reads landed.tsv (the last row per repository wins) and, for each repository:
 #   - refuses unless the babelfont revision its convert commit cites is on
 #     simoncozens/babelfont-rs main (a font repo must never depend on a fork)
+#   - refuses unless everything it refers to is public: tools/public_refs.py (commits
+#     on published branches, cited evidence files at the cited revision, live URLs, no
+#     workstation paths)
 #   - refuses unless tools/verify_landed.py passes for it (re-run here, so a
 #     repository edited after landing cannot slip through)
 #   - an EMPTY googlefonts/<repo> (a fresh repository): pushes `main`
@@ -25,6 +28,8 @@ git -C "$BF_TREE" fetch -q upstream main || { echo "cannot fetch babelfont upstr
 # the evidence the font repositories cite (tools, plans, logs) must be published first
 EVIDENCE_REMOTE=${EVIDENCE_REMOTE:-https://github.com/felipesanches/gf-source-modernization}
 git -C "$W" fetch -q "$EVIDENCE_REMOTE" main 2>/dev/null && EVIDENCE_HEAD=$(git -C "$W" rev-parse FETCH_HEAD) || EVIDENCE_HEAD=
+EVIDENCE_REMOTE="$EVIDENCE_REMOTE" "$PY" "$W/tools/public_refs.py" --fetch   # refresh the mirrors once (no repos: fetch only)
+PR_OUT=${TMPDIR:-/home/fsanches/compartilhado/tmp}/public-refs; mkdir -p "$PR_OUT"
 CHECK=
 [ "${1:-}" = "--check" ] && { CHECK=1; shift; }
 
@@ -52,10 +57,13 @@ for repo in $repos; do
     echo "$repo: BLOCKED -- cites babelfont ${rev:-?}, not on simoncozens/babelfont-rs main; re-land after it merges"
     continue
   fi
-  ev=$(git -C "$d" log -1 --format=%B | tr '\n' ' ' | sed -n 's#.*gf-source-modernization at \([0-9a-f]\{7,\}\)\..*#\1#p')
+  ev=$(git -C "$d" log -1 --format=%B | tr '\n' ' ' | sed -n 's#.*gf-source-modernization at \([0-9a-f]\{7,\}\)[^0-9a-f].*#\1#p')
   if [ -z "$ev" ] || [ -z "$EVIDENCE_HEAD" ] || ! git -C "$W" merge-base --is-ancestor "$ev" "$EVIDENCE_HEAD" 2>/dev/null; then
     echo "$repo: BLOCKED -- cites evidence ${ev:-?}, not yet in $EVIDENCE_REMOTE main; push this workspace there first"
     continue
+  fi
+  if ! EVIDENCE_REMOTE="$EVIDENCE_REMOTE" "$PY" "$W/tools/public_refs.py" "$d" > "$PR_OUT/$repo.txt" 2>&1; then
+    echo "$repo: REFUSED -- refers to something not public: $PR_OUT/$repo.txt"; continue
   fi
   fam="$W/families.tsv"
   grep -q "^$repo	" "$fam" || fam="$W/families-next.tsv"   # the table that pairs this repo

@@ -587,9 +587,14 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
             lines += wrap("%s: %s; %s" % (st, table, "functionally equivalent" if not bad else
                                           "functionally different in " + ", ".join(bad)))
     ev_rev, _ = evidence()
-    lines += [""] + textwrap.wrap("Those tools and this repository's plan (plans/%s.json): %s at "
-                                  "%s. The logs of the run that made this commit are added to "
-                                  "that repository's logs/ after it." % (repo, EVIDENCE_URL, ev_rev), 72)
+    w = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    has_plan = sh("git", "-C", w, "cat-file", "-e", "%s:plans/%s.json" % (ev_rev, repo),
+                  check=False).returncode == 0
+    cited = ("Those tools and this repository's plan (plans/%s.json): %s at %s." % (repo, EVIDENCE_URL, ev_rev)
+             if has_plan else "Those tools: %s at %s (no source edits were needed, so this family has "
+             "no plan there)." % (EVIDENCE_URL, ev_rev))
+    lines += [""] + textwrap.wrap(cited + " The logs of the run that made this commit are added to "
+                                  "that repository's logs/ after it.", 72)
     if not glyphs:
         lines += [""] + textwrap.wrap(what, 72)
     head = commit(d, "\n".join(lines), "sources")
