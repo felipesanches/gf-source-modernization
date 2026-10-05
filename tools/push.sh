@@ -23,7 +23,7 @@ PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 BF_TREE=${BF_TREE:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion}   # any worktree of babelfont-rs
 git -C "$BF_TREE" fetch -q upstream main || { echo "cannot fetch babelfont upstream"; exit 1; }
 # the evidence the font repositories cite (tools, plans, logs) must be published first
-EVIDENCE_REMOTE=https://github.com/felipesanches/gf-source-modernization
+EVIDENCE_REMOTE=${EVIDENCE_REMOTE:-https://github.com/felipesanches/gf-source-modernization}
 git -C "$W" fetch -q "$EVIDENCE_REMOTE" main 2>/dev/null && EVIDENCE_HEAD=$(git -C "$W" rev-parse FETCH_HEAD) || EVIDENCE_HEAD=
 CHECK=
 [ "${1:-}" = "--check" ] && { CHECK=1; shift; }
