@@ -93,6 +93,8 @@ def in_archive(h, text):
     the first 40 repositories the text names."""
     pos = text.find(h)
     near = [m.group(1) for m in re.finditer(r"github\.com/([A-Za-z0-9-]+/[A-Za-z0-9_.-]+?)(?:\.git)?[\"/\s]", text[:pos])][-1:]
+    line = text[text.rfind("\n", 0, pos) + 1:pos]          # "owner/repo/..." earlier on the same line
+    near += [m.group(1) for m in re.finditer(r"\b([A-Za-z0-9-]+/[A-Za-z0-9_.-]+?)(?:\.git)?/", line)][:1]
     for slug in near + sorted(set(REPO.findall(text)))[:40]:
         mirror = "%s/%s.git" % (ARC, slug)
         if not os.path.isdir(mirror):
