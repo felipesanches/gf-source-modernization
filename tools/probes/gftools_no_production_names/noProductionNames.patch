@@ -1,0 +1,58 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Tue, 6 Oct 2026 02:41:45 +0100
+Subject: [PATCH] builder: accept noProductionNames in the googlefonts config
+
+gftools-builder in gftools-rust reads a noProductionNames key that keeps
+the source's glyph names. The googlefonts schema rejects it ("unexpected
+key not in schema"), so a config written for one builder fails in the
+other. Accept it here too, as fontmake's --no-production-names, which the
+fontc path already passes through.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ Lib/gftools/builder/recipeproviders/googlefonts.py | 2 ++
+ Lib/gftools/builder/schema.py                      | 1 +
+ docs/gftools-builder/README.md                     | 4 ++++
+ 3 files changed, 7 insertions(+)
+
+diff --git a/Lib/gftools/builder/recipeproviders/googlefonts.py b/Lib/gftools/builder/recipeproviders/googlefonts.py
+--- a/Lib/gftools/builder/recipeproviders/googlefonts.py
++++ b/Lib/gftools/builder/recipeproviders/googlefonts.py
+@@ -240,6 +240,8 @@ class GFBuilder(RecipeProviderBase):
+             args += " --keep-direction"
+         if self.config.get("removeOutlineOverlaps") is False:
+             args += " --keep-overlaps"
++        if self.config.get("noProductionNames"):
++            args += " --no-production-names"
+         if self.config.get("expandFeaturesToInstances"):
+             args += " --expand-features-to-instances"
+         if self.config.get("extraFontmakeArgs") is not None:
+diff --git a/Lib/gftools/builder/schema.py b/Lib/gftools/builder/schema.py
+--- a/Lib/gftools/builder/schema.py
++++ b/Lib/gftools/builder/schema.py
+@@ -160,6 +160,7 @@ GOOGLEFONTS_SCHEMA = Map(
+         Optional("interpolate"): Bool(),
+         Optional("checkCompatibility"): Bool(),
+         Optional("removeOutlineOverlaps"): Bool(),
++        Optional("noProductionNames"): Bool(),
+         Optional("expandFeaturesToInstances"): Bool(),
+         Optional("version"): Str(),
+         Optional("addGftoolsVersion"): Bool(),
+diff --git a/docs/gftools-builder/README.md b/docs/gftools-builder/README.md
+--- a/docs/gftools-builder/README.md
++++ b/docs/gftools-builder/README.md
+@@ -204,6 +204,10 @@ The build can be customized by adding the following keys to the YAML file:
+ -   `removeOutlineOverlaps`: Remove overlaps when compiling fonts.
+     Defaults to fontmake\'s default.
+ 
++-   `noProductionNames`: Keep the source's glyph names in the compiled
++    fonts instead of renaming glyphs to their production names (fontmake's
++    `--no-production-names`). Defaults to `false`.
++
+ -   `glyphData`: An array of custom GlyphData XML files for with glyph
+     info (production name, script, category, subCategory, etc.).
+     Used only for Glyphs sources.
+-- 
+2.47.3
+
