@@ -8,8 +8,9 @@ google-fonts-sources run against google/fonts main. Output: the merged targets.j
   1. The generated entries are the truth: an entry exists, with its rev and config, iff
      google-fonts-sources finds it.
   2. Entries google-fonts-sources cannot discover are kept verbatim, where they were:
-     the private repositories marked "auth" (googlesans, googlesans-flex) have no source
-     block in google/fonts and are listed by hand.
+     HAND_KEPT (googlesans, googlesans-flex: their METADATA.pb in google/fonts has no
+     source block, so the generator never finds them; public since 2026-10, so no longer
+     marked "auth"), and any entry marked "auth" (a private repository).
   3. To keep the diff small, an entry that only changed in place (same repo_url and
      config) stays at its old position, and a new entry goes right after its predecessor
      in the generator's order, so unchanged lines are never moved.
@@ -22,6 +23,9 @@ Prints a summary to stderr: kept, added, removed, rev changes.
 import json
 import sys
 
+HAND_KEPT = {"https://github.com/googlefonts/googlesans",
+             "https://github.com/googlefonts/googlesans-flex"}
+
 
 def key(e):
     return (e["repo_url"], e["config"])
@@ -32,9 +36,9 @@ def main():
     gen = json.load(open(sys.argv[2]))
     gen_keys = {key(e) for e in gen["sources"]}
     gen_urls = {e["repo_url"] for e in gen["sources"]}
-    # 2. hand-kept entries: private repositories the generator cannot see
+    # 2. hand-kept entries: repositories the generator cannot see
     kept = [(i, e) for i, e in enumerate(old["sources"])
-            if e.get("auth") and e["repo_url"] not in gen_urls]
+            if (e.get("auth") or e["repo_url"] in HAND_KEPT) and e["repo_url"] not in gen_urls]
 
     # 3. position every generated entry: at its old place if it has one, else just
     #    after the entry before it in the generator's order
