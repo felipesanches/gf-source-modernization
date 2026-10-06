@@ -4,6 +4,10 @@ Body:
 
 > so apparently all of these newly added targets fail in gftools mode, because they have all set a config option, `noProductionNames: true`, that gftools doesn't seem to know about?
 
-Yes. `noProductionNames` is the key gftools-builder in simoncozens/gftools-rust reads; Python gftools' googlefonts schema does not have it yet. The default targets build (fontmake builds all 54 sources with crater's default flags; fontc built them for our checks). A gftools PR accepting the key is coming; once it is released and crater's gftools pin moves, the gftools-mode targets should build too. Happy to hold this PR until then if you prefer.
+Yes, and crater run locally on the 42 new targets (54 sources) confirms it. With crater's pins (gftools 0.9.93), the default targets build 54 of 54 and the gftools-mode targets 0 of 54 ("Invalid configuration file"). `noProductionNames` is the key gftools-builder in simoncozens/gftools-rust reads; Python gftools' googlefonts schema does not have it. A gftools PR accepting it follows. With gftools main plus that change, crater builds all 108 targets (54 default, 54 gftools). With 0.9.93 plus that change, 21 still fail on "unknown fontmake arg '--keep-direction'": gftools already fixed that in googlefonts/gftools#1219 (v0.10.0), and it fails Balsamiq Sans, Sixtyfour and Workbench in crater today too. So crater's gftools pin needs to move to a release with both. Happy to hold this PR until then if you prefer.
+
+> maybe we could teach your agents to actually run crater locally on the newly added targets as part of preparing these PRs?
+
+Done: the targets a PR adds now go through crater itself, both modes, before the PR is sent; the numbers above come from that run.
 
 The auth flag on googlesans and googlesans-flex is removed in a new commit. One caveat: the googlesans rev in targets.json is not on any public branch (it is from the history the repository had before it was published), so a fresh crater cache may not reach it. The google/fonts PR adding the source blocks records the public v14.000 commit instead; once it merges, these entries no longer need listing by hand.

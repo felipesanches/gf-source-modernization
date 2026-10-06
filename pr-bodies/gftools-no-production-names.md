@@ -9,6 +9,7 @@ gftools-builder in simoncozens/gftools-rust reads a `noProductionNames` config k
 This accepts the key and passes fontmake's `--no-production-names` when it is true; the fontc path already translates that flag. Documented in docs/gftools-builder/README.md.
 
 - Checked on googlefonts/quantico (Quantico-Regular): with the key the config validates and every glyph keeps its source name; without it 7 of 268 glyphs are renamed (mu -> uni03BC, dotlessj -> uni0237, ...).
+- fontc_crater, run locally on the 42 repositories of googlefonts/fontc_crater#100 (54 sources): with gftools 0.9.93, 0 of 54 gftools-mode targets build; with main plus this change, 54 of 54.
 - tests/test_builder.py: 11 passed, as on main. `black --check` reports the same reformatting of googlefonts.py on main as with this change.
 
 To repeat the check: build googlefonts/quantico's `sources/config.yaml` for Quantico-Regular with `gftools builder --experimental-simple-output out --experimental-single-source Quantico-Regular.glyphs`, once as it is and once without the `noProductionNames` line, and compare the glyph orders of the two fonts with the glyph names in the .glyphs file.
