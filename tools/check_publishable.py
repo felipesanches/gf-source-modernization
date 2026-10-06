@@ -19,7 +19,10 @@ For each text:
   3. every github.com URL answers HTTP 200.
 A hex id that is only the unit's own unpublished commit fails too: a push does not make a
 text's reference to a not-yet-pushed commit public in time for everyone reading it.
-Added lines of files under logs/ (verbatim tool output) are skipped, and reported as such.
+Tool output under logs/ is checked like everything else: a log can carry local hashes too.
+One exception: a google-fonts-sources output (JSON with "fonts_repo_sha" and "sources"),
+whose revs are google/fonts' own METADATA.pb records; only its fonts_repo_sha is checked
+(it must be public), since the rest is regenerable from that public google/fonts commit.
 Code under tools/ (.py, .sh) may name workstation paths -- where the tools run, as the README
 says -- so check 1 does not apply to it; checks 2 and 3 do. Prose, messages and PR texts get
 all three.
@@ -85,8 +88,12 @@ def on_published_branch(h):
 
 
 def in_archive(h, text):
-    """On the default branch of the repo-archive mirror of a repository the text names."""
-    for slug in sorted(set(REPO.findall(text)))[:40]:
+    """On the default branch of the repo-archive mirror of the repository named by the
+    nearest github.com URL before the id (a JSON entry: repo_url, then rev), else of any of
+    the first 40 repositories the text names."""
+    pos = text.find(h)
+    near = [m.group(1) for m in re.finditer(r"github\.com/([A-Za-z0-9-]+/[A-Za-z0-9_.-]+?)(?:\.git)?[\"/\s]", text[:pos])][-1:]
+    for slug in near + sorted(set(REPO.findall(text)))[:40]:
         mirror = "%s/%s.git" % (ARC, slug)
         if not os.path.isdir(mirror):
             continue
@@ -128,9 +135,13 @@ def texts(unit):
             for l in diff.splitlines():
                 if l.startswith("+++ "):
                     cur = l[6:] if l.startswith("+++ b/") else l[4:]
-                    if cur.startswith("logs/"):
-                        print("%-58s skipped (tool output under logs/)" % ("%s %s %s" % (os.path.basename(d), sha[:9], cur))[:58])
-                elif l.startswith("+") and not cur.startswith("logs/"):
+                    blob = git(d, "show", "%s:%s" % (sha, cur)).stdout if cur.endswith(".json") else ""
+                    if '"fonts_repo_sha"' in blob and '"sources"' in blob:
+                        frs = re.search(r'"fonts_repo_sha": "([0-9a-f]+)"', blob).group(1)
+                        yield "%s %s %s (gfs output)" % (os.path.basename(d), sha[:9], cur), \
+                            "fonts_repo_sha %s of https://github.com/google/fonts" % frs
+                        cur = "\0skip"
+                elif l.startswith("+") and cur != "\0skip":
                     (code if cur.startswith("tools/") and cur.endswith((".py", ".sh")) else prose).append(l[1:])
             yield "%s %s added lines" % (os.path.basename(d), sha[:9]), "\n".join(prose)
             if code:
