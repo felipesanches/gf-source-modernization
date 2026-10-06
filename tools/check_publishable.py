@@ -163,7 +163,7 @@ def main():
                     problems.append("%s is not public (%s)" % (h, reason))
             for u in sorted(set(URL.findall(text))):
                 u = u.rstrip(".,;:`")
-                if "{" in u or "<" in u:
+                if "{" in u or "<" in u or "%s" in u:   # templates, not references
                     continue
                 code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-L", "-w", "%{http_code}", "-I", u],
                                       capture_output=True, text=True).stdout
