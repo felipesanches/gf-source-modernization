@@ -405,7 +405,7 @@ def own_subjects(d, rows):
 
 def edit_subjects(d, rows):
     return [s for s in own_subjects(d, rows) if s != "Adopt the Unified Font Repository template"
-            and not s.startswith(("Import ", "Convert to .glyphs", "Restore "))]
+            and not s.startswith(("Import ", "Convert to .glyphs", "Restore ", CONFIG_PREFIX))]
 
 
 def edits_in(d, rows):
