@@ -11,7 +11,10 @@ a fresh clone -- and checks, for every repository given:
      template's (which is Bentham's).
   3. SHAPE: every commit between the template and the conversion changes only .sfd
      files (criterion B: each edit to the font is its own commit); the convert
-     commit is last and retires the converted sources.
+     commit is last and retires the converted sources -- except that it may be
+     followed by "Builder config: ..." commits that change only sources/config.yaml
+     and the CI workflow (a builder key renamed, the builder pin moved); step 4
+     rebuilds HEAD, so they are gated like the conversion.
      A `glyphs` row (the source already is .glyphs): the upstream history at its
      commit, the template, then "Add a gftools-builder config for <source>" last,
      adding only sources/config.yaml; no edit commits (land.py refuses them), so
@@ -44,6 +47,11 @@ import land     # noqa: E402
 import recipe   # noqa: E402
 
 TEMPLATE_OFL = os.path.join(land.TEMPLATE, "OFL.txt")
+
+
+# commits allowed after the conversion: a builder key renamed, the builder pin moved
+CONFIG_PREFIX = "Builder config: "
+CONFIG_FILES = {"sources/config.yaml", ".github/workflows/build.yaml"}
 
 
 def run(*cmd, cwd=None):
@@ -137,6 +145,16 @@ def verify(repo):
 
     # 3. the shape
     subjects = [run("git", "-C", d, "log", "-1", "--format=%s", c).stdout.strip() for c in log]
+    all_log = log
+    tail = 0
+    while tail < len(subjects) - 1 and subjects[-1 - tail].startswith(CONFIG_PREFIX):
+        tail += 1
+    for c, s in zip(log[len(log) - tail:], subjects[len(log) - tail:]):
+        changed = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-only", "-r", c).stdout.split()
+        if not changed or any(p not in CONFIG_FILES for p in changed):
+            problems.append("SHAPE: %s %r touches more than the builder config: %s" % (c[:7], s, changed))
+    if tail:
+        log, subjects = log[:-tail], subjects[:-tail]
     if kind == "glyphs":
         problems += glyphs_shape(d, rows, log, subjects)
     elif not subjects[-1].startswith("Convert to .glyphs with babelfont "):
@@ -156,7 +174,7 @@ def verify(repo):
             problems.append("SHAPE: the conversion does not add sources/%s.glyphs" % r["style"])
 
     # 5. messages
-    for c in log[start - 1 if kind == "hg" else start:]:
+    for c in all_log[start - 1 if kind == "hg" else start:]:
         msg = run("git", "-C", d, "log", "-1", "--format=%B", c).stdout
         if any(ord(ch) > 127 for ch in msg):
             problems.append("MESSAGE: %s is not ASCII" % c[:7])

@@ -36,7 +36,7 @@ FONTFORGE_HEIGHT_MEAN_FIXED = 1337023489
 UNIX_FROM_1904 = 2082844800
 
 # Glyph names and contour directions are not babelfont flags any more: the source keeps
-# both, and sources/config.yaml asks the builder for them (noProductionNames: true;
+# both, and sources/config.yaml asks the builder for them (productionNames: false;
 # reverseOutlineDirection: false when a release mixes directions -- see land.py).
 # Near-integer reference matrices are snapped by babelfont's SFD reader (#98).
 BASE = ["--fontforge-os2-defaults", "--add-instance-per-master", "--infer-mark-category",
@@ -102,7 +102,7 @@ def component_shapes(shipped):
 
 def builder_keys(shipped_fonts, keep_direction):
     """The gftools-builder keys for sources/config.yaml beyond sources."""
-    keys = ["noProductionNames: true"]
+    keys = ["productionNames: false"]
     if keep_direction:
         keys.append("reverseOutlineDirection: false")
     shapes = set().union(*(component_shapes(s) for s in shipped_fonts))

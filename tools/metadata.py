@@ -183,8 +183,12 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
     else:
         out += ["- The `.sfd` needed no change: it was converted exactly as the designer left it."]
     out += wrap("- The `.sfd` was converted with babelfont-rs, using only filters that "
-                         "reproduce FontForge's own export, as the last commit.", 88,
+                         "reproduce FontForge's own export, as the last change to the font.", 88,
                          subsequent_indent="  ")
+    config_commits = config_subjects(d)
+    if config_commits:
+        out += wrap("- The build config was then updated in its own commit, with the build "
+                    "gated again: " + "; ".join(config_commits) + ".", 88, subsequent_indent="  ")
     out += ["", "## Final state", ""]
     out += wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
                          % (repo, head_full[:12], claim), 88)
@@ -234,6 +238,14 @@ def equivalence_commit(d, rows=None):
     for line in git(d, "log", "--format=%H %s").splitlines():
         h, subject = line.split(" ", 1)
         if subject.startswith("Convert to .glyphs with babelfont "):
+            # "Builder config:" commits right after it change only the build config (a
+            # builder key renamed, the builder pin moved) and are gated like it; the last
+            # of them is what a current builder builds as the conversion did
+            for after in git(d, "log", "--reverse", "--format=%H %s", "%s..HEAD" % h).splitlines():
+                ah, asubject = after.split(" ", 1)
+                if not asubject.startswith(CONFIG_PREFIX):
+                    break
+                h = ah
             return h
     raise SystemExit("FATAL: %s has no conversion commit" % d)
 
@@ -348,6 +360,22 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
         for l in previous.rstrip("\n").splitlines():
             out.append("#" + l if l.startswith("#") else l)
     return "\n".join(out) + "\n"
+
+
+CONFIG_PREFIX = "Builder config: "
+
+
+def config_subjects(d):
+    """Subjects of the "Builder config:" commits right after the conversion."""
+    out, after = [], False
+    for line in git(d, "log", "--reverse", "--format=%s").splitlines():
+        if line.startswith("Convert to .glyphs with babelfont "):
+            out, after = [], True
+        elif after and line.startswith(CONFIG_PREFIX):
+            out.append(line[len(CONFIG_PREFIX):])
+        elif after:
+            break
+    return out
 
 
 def later_subjects(d, equiv):

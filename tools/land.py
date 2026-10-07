@@ -452,7 +452,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     builder_keys = recipe.builder_keys([r["shipped"] for r in rows], keep)
     if glyphs:
         # a Glyphs.app export uses production names; only a converted .sfd's names are final
-        builder_keys = builder_keys.replace("noProductionNames: true\n", "")
+        builder_keys = builder_keys.replace("productionNames: false\n", "")
     if glyphs:
         with open(cfg, "w") as fh:
             fh.write("buildVariable: false\n" + builder_keys + "sources:\n")
@@ -556,7 +556,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         why = "; ".join(REASON[f] for f in extra if f in REASON)
         lines += wrap("%s: %s%s" % (p["row"]["style"], ", ".join(said), " (%s)" % why if why else ""))
     cfg_text = open(os.path.join(d, "sources", "config.yaml")).read()
-    asks = [k for k in ("noProductionNames: true", "reverseOutlineDirection: false") if k in cfg_text]
+    asks = [k for k in ("productionNames: false", "reverseOutlineDirection: false") if k in cfg_text]
     if asks:
         lines += wrap("sources/config.yaml: %s%s" % (", ".join(asks),
                       " (a release mixes contour directions)" if "reverseOutlineDirection" in cfg_text else ""))
