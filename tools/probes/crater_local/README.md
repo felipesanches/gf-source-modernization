@@ -12,6 +12,7 @@ in the PR's targets.json (54 sources), fontc_crater from googlefonts/fontc 04ff1
 | 1 | 0.9.93 (crater's pin) | 54 ok | 0 ok: 54 "ValueError: Invalid configuration file" |
 | 2 | 0.9.93 + noProductionNames.patch | 54 ok | 33 ok; 21 "unknown fontmake arg '--keep-direction'" |
 | 3 | main 600993df + noProductionNames.patch | 54 ok | 54 ok |
+| 4 | main b42647c3 + noProductionNames.patch (2026-10-07) | 54 ok | 54 ok |
 
 - Run 1: Python gftools' schema rejects `noProductionNames` (gftools-rust's key) in our configs.
 - Run 2: the patch (../gftools_no_production_names/noProductionNames.patch) removes that; the 21
@@ -24,6 +25,6 @@ So crater's gftools-mode targets for these repositories need a gftools release w
 patch, and crater's gftools pin (fontc resources/scripts/requirements.txt) moved to it.
 
 Files: results-1-crater-pins.txt, results-2-gftools-0.9.93-plus-patch.txt,
-results-3-gftools-main-plus-patch.txt (one line per target; for failures, the last stderr line).
+results-3-gftools-main-plus-patch.txt, results-4-gftools-main-b42647c3-plus-patch.txt (one line per target; for failures, the last stderr line).
 Run 2 and 3 were run with crater's result cache cleared: crater reuses cached results when
 only the Python tools change.

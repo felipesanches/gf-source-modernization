@@ -16,3 +16,6 @@ Result on 2026-10-06 (Quantico-Regular from googlefonts/quantico; fontmake 3.12.
 configs validate and build; with the key, 268 glyphs and 0 names outside the source; without
 it, 7 glyphs renamed to production names (mu -> uni03BC, kcommaaccent -> uni0137, dotlessj ->
 uni0237, ...). gftools tests/test_builder.py: 11 passed with and without the change.
+
+2026-10-07: the change rebased onto googlefonts/gftools main b42647c3 (the patch applies there
+unchanged); tests/test_builder.py 11 passed and the probe gives the same result.
