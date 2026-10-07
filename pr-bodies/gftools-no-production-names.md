@@ -12,6 +12,6 @@ This accepts the key and passes fontmake's `--no-production-names` when it is tr
 - fontc_crater, run locally on the 42 repositories of googlefonts/fontc_crater#100 (54 sources): with gftools 0.9.93, 0 of 54 gftools-mode targets build; with main plus this change, 54 of 54.
 - tests/test_builder.py: 11 passed, as on main.
 
-fontc_crater pins gftools 0.9.93 (googlefonts/fontc resources/scripts/requirements.txt). A release containing this change would let it move the pin; that also brings #1219's fix for `--keep-direction`, which crater's gftools-mode targets need too. `black --check` reports the same reformatting of googlefonts.py on main as with this change.
+fontc_crater pins gftools 0.9.93 (googlefonts/fontc resources/scripts/requirements.txt). A release containing this change, #1219's fix for `--keep-direction` (already in 0.10.0) and a fix for a 0.10.0 regression on .glyphs sources without customParameters (a separate PR) would let it move the pin. `black --check` reports the same reformatting of googlefonts.py on main as with this change.
 
 To repeat the check: build googlefonts/quantico's `sources/config.yaml` for Quantico-Regular with `gftools builder --experimental-simple-output out --experimental-single-source Quantico-Regular.glyphs`, once as it is and once without the `noProductionNames` line, and compare the glyph orders of the two fonts with the glyph names in the .glyphs file.
