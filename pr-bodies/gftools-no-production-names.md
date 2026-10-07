@@ -10,6 +10,8 @@ This accepts the key and passes fontmake's `--no-production-names` when it is tr
 
 - Checked on googlefonts/quantico (Quantico-Regular): with the key the config validates and every glyph keeps its source name; without it 7 of 268 glyphs are renamed (mu -> uni03BC, dotlessj -> uni0237, ...).
 - fontc_crater, run locally on the 42 repositories of googlefonts/fontc_crater#100 (54 sources): with gftools 0.9.93, 0 of 54 gftools-mode targets build; with main plus this change, 54 of 54.
-- tests/test_builder.py: 11 passed, as on main. `black --check` reports the same reformatting of googlefonts.py on main as with this change.
+- tests/test_builder.py: 11 passed, as on main.
+
+fontc_crater pins gftools 0.9.93 (googlefonts/fontc resources/scripts/requirements.txt). A release containing this change would let it move the pin; that also brings #1219's fix for `--keep-direction`, which crater's gftools-mode targets need too. `black --check` reports the same reformatting of googlefonts.py on main as with this change.
 
 To repeat the check: build googlefonts/quantico's `sources/config.yaml` for Quantico-Regular with `gftools builder --experimental-simple-output out --experimental-single-source Quantico-Regular.glyphs`, once as it is and once without the `noProductionNames` line, and compare the glyph orders of the two fonts with the glyph names in the .glyphs file.
