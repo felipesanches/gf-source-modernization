@@ -16,7 +16,8 @@ For each text:
      mirror of a repository the same text names), else a commit GitHub serves for a
      repository named in a github.com URL of the same text (reported "off-branch"). An
      answer GitHub refuses (rate limit) counts as NOT public, never as public;
-  3. every github.com URL answers HTTP 200.
+  3. every github.com URL answers HTTP 200;
+  4. no "PLACEHOLDER" is left (a draft whose links or revisions are not known yet).
 A hex id that is only the unit's own unpublished commit fails too: a push does not make a
 text's reference to a not-yet-pushed commit public in time for everyone reading it.
 Tool output under logs/ is checked like everything else: a log can carry local hashes too.
@@ -161,6 +162,8 @@ def main():
     for unit in args:
         for where, text in texts(unit):
             problems, notes = [], []
+            if "PLACEHOLDER" in text and not where.endswith("added code"):
+                problems.append("unfinished: %d PLACEHOLDER(s)" % text.count("PLACEHOLDER"))
             m = None if where.endswith("added code") else LOCAL.search(text)
             if m:
                 problems.append("workstation path %s" % m.group(0))

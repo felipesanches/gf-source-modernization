@@ -22,7 +22,10 @@ Writes into a google/fonts worktree on its own branch; never pushes. The commits
 are only meaningful once the repositories are pushed: every hash they cite must
 exist on GitHub first.
 
-Usage: metadata.py <branch> <repo>...
+Usage: metadata.py [--provisional] <branch> <repo>...
+--provisional accepts repositories landed CLEAN with an unpublished builder
+(CLEAN-UNPUBLISHED-BUILDER), onto a branch whose name ends in -provisional: a rehearsal
+of the PR, never to be pushed (it records commits that are not public).
 """
 import os
 import re
@@ -413,14 +416,20 @@ def edits_in(d, rows):
 
 
 def main():
-    branch, repos = sys.argv[1], sys.argv[2:]
+    args = sys.argv[1:]
+    provisional = "--provisional" in args
+    args = [a for a in args if a != "--provisional"]
+    branch, repos = args[0], args[1:]
+    if provisional != branch.endswith("-provisional"):
+        raise SystemExit("FATAL: --provisional and a branch name ending in -provisional go together")
+    accepted = ("CLEAN", "CLEAN-UNPUBLISHED-BUILDER") if provisional else ("CLEAN",)
     wt = worktree(branch)
     landed = {}
     for line in open(land.LANDED):
         cols = line.rstrip("\n").split("\t")
         landed[cols[0]] = cols
     for repo in repos:
-        if landed.get(repo, [None] * 5)[4] != "CLEAN":
+        if landed.get(repo, [None] * 5)[4] not in accepted:
             raise SystemExit("FATAL: %s is not landed CLEAN; its metadata would overclaim" % repo)
         rows = land.family_rows(repo)
         if git(os.path.join(land.OUT, repo), "rev-parse", "--short", "HEAD").strip() != landed[repo][2]:
