@@ -4,4 +4,4 @@ Body:
 
 > why is this 'noProductionNames: false', instead of 'productionNames: true'? That double negative seems confusing for no reason.
 
-Agreed. The name came from gftools-builder in simoncozens/gftools-rust (ade8776, echoing fontmake's `--no-production-names`), and every other key is positive. PRs follow in gftools and gftools-rust that replace it with `productionNames` (default true) rather than keep an alias. The only configs using the old key are those of the 42 `googlefonts/<family>` repositories onboarded in google/fonts#11077; they move to the new key in new commits, and a google/fonts PR records those.
+Agreed. The name came from gftools-builder in simoncozens/gftools-rust (ade8776, echoing fontmake's `--no-production-names`), and every other key is positive. #1231 and simoncozens/gftools-rust#1 replace it with `productionNames` (default true) rather than keep an alias. The only configs using the old key are those of the 42 `googlefonts/<family>` repositories onboarded in google/fonts#11077; they move to the new key in new commits, and a google/fonts PR records those.

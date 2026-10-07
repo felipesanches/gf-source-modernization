@@ -8,7 +8,7 @@ Yes, and crater run locally on the 42 new targets (54 sources) confirms it. With
 
 So crater's gftools pin needs to move, but not to 0.10.0: on a sample of 44 existing entries, 0.10.0 breaks Katibeh in gftools mode (KeyError: 'customParameters'). googlefonts/gftools#1230 (merged) fixes that. With gftools main plus both, the sample has no target newly failing, the 88 that build keep identical ttx_diff scores, Workbench builds, and our 54 gftools-mode targets build. Once a gftools release includes them, I can send the fontc pin bump. Happy to hold this PR until then if you prefer.
 
-Following the naming discussion on googlefonts/gftools#1229, the key becomes `productionNames` (default true) in both builders, and the 42 repositories move to `productionNames: false` in new commits. Once google/fonts records those commits, I will update this PR's targets to them.
+Following the naming discussion on googlefonts/gftools#1229, the key becomes `productionNames` (default true) in both builders (googlefonts/gftools#1231, simoncozens/gftools-rust#1), and the 42 repositories move to `productionNames: false` in new commits. Once google/fonts records those commits, I will update this PR's targets to them.
 
 > maybe we could teach your agents to actually run crater locally on the newly added targets as part of preparing these PRs?
 
