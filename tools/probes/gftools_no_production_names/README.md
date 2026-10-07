@@ -19,3 +19,5 @@ uni0237, ...). gftools tests/test_builder.py: 11 passed with and without the cha
 
 2026-10-07: the change rebased onto googlefonts/gftools main b42647c3 (the patch applies there
 unchanged); tests/test_builder.py 11 passed and the probe gives the same result.
+
+Merged upstream 2026-10-07 as googlefonts/gftools#1229 (678696c4 on main).

@@ -28,3 +28,6 @@ default-mode row only names a different bad glyph first (default mode does not u
 Conclusion: move the pin straight to a gftools release containing both changes, not to 0.10.0.
 Crater reuses cached results when only Python tools change: every run here cleared
 <cache>/crater_cached_results first.
+
+Both gftools changes merged upstream 2026-10-07: googlefonts/gftools#1229 (678696c4) and #1230
+(d8a6e227); main at 678696c4 has the same library code as the tree measured here.
