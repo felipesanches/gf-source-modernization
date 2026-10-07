@@ -1,0 +1,20 @@
+108 targets (default 58, gftools 50): unchanged ok 87, unchanged failure 14, changed 7
+ok   -> FAIL        Tarobish/Katibeh/$VIRTUAL/google/fonts/ofl/katibeh/config.yaml Sources/Katibeh Master.glyphs?3fde990dc2 (gftools)
+      KeyError: 'customParameters'
+fails differently  aaronbell/LxgwMarkerGothic/$VIRTUAL/google/fonts/ofl/lxgwmarkergothic/config.yaml sources/LXGWMarkerGothic-Regular.ufoz?fe83570074 (gftools)
+      before <time> ThreadId fontc ERROR] Unrecognized source sources/LXGWMarkerGothic-Regular.ufoz / ValueError: Instance LXGWMarkerGothic-Regular.ufoz must have a name, or familyName and styleName
+      after  <time> ThreadId fontc ERROR] Unrecognized source sources/LXGWMarkerGothic-Regular.ufoz
+fails differently  balsamiq/balsamiqsans/sources/config.yaml glyphs/BalsamiqSans-Italic.glyphs?b1dca64c3c (gftools)
+      before ValueError: unknown fontmake arg '--keep-direction' / gftools produced multiple outputs: ['BalsamiqSans-Italic.ttf', 'BalsamiqSans-BoldItalic.ttf']
+      after  <time> ThreadId fontc ERROR] Invalid source glyph 'obarred-cy': 'bad anchor: 'Invalid anchor 'top': 'no value  / gftools produced multiple outputs: ['BalsamiqSans-Italic.ttf', 'BalsamiqSans-BoldItalic.ttf']
+fails differently  balsamiq/balsamiqsans/sources/config.yaml glyphs/BalsamiqSans-Roman.glyphs?b1dca64c3c (gftools)
+      before ValueError: unknown fontmake arg '--keep-direction' / gftools produced multiple outputs: ['BalsamiqSans-Regular.ttf', 'BalsamiqSans-Bold.ttf']
+      after  <time> ThreadId fontc ERROR] Invalid source glyph 'dollar': 'bad anchor: 'Invalid anchor 'bottom': 'no value a / gftools produced multiple outputs: ['BalsamiqSans-Regular.ttf', 'BalsamiqSans-Bold.ttf']
+fails differently  jenskutilek/homecomputer-fonts/Sixtyfour/sources/config.yaml Sixtyfour.glyphs?09b2f79d68 (gftools)
+      before ValueError: unknown fontmake arg '--keep-direction' / fontTools.varLib.errors.VariationModelError: Locations must be unique.
+      after  fontTools.varLib.errors.VariationModelError: Locations must be unique.
+fails differently  jenskutilek/homecomputer-fonts/Sixtyfour/sources/config.yaml Sixtyfour.glyphs?3e0b1194c1 (gftools)
+      before ValueError: unknown fontmake arg '--keep-direction' / fontTools.varLib.errors.VariationModelError: Locations must be unique.
+      after  fontTools.varLib.errors.VariationModelError: Locations must be unique.
+FAIL -> ok          jenskutilek/homecomputer-fonts/Workbench/sources/config.yaml Workbench.glyphs?09b2f79d68 (gftools)
+      ValueError: unknown fontmake arg '--keep-direction'
