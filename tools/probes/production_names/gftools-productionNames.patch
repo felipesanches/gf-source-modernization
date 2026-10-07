@@ -1,0 +1,85 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Wed, 7 Oct 2026 18:22:44 +0100
+Subject: [PATCH] builder: replace noProductionNames with productionNames
+ (default true)
+
+As cmyr pointed out on #1229, every other boolean key in the googlefonts
+schema is positive (removeOutlineOverlaps, reverseOutlineDirection, ...).
+productionNames: false keeps the source's glyph names
+(--no-production-names). gftools-builder in gftools-rust makes the same
+change, and the configs that used noProductionNames move to the new key.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ .../builder/recipeproviders/googlefonts.py        |  2 +-
+ Lib/gftools/builder/schema.py                     |  2 +-
+ docs/gftools-builder/README.md                    |  6 +++---
+ tests/test_builder.py                             | 15 +++++++++++++++
+ 4 files changed, 20 insertions(+), 5 deletions(-)
+
+diff --git a/Lib/gftools/builder/recipeproviders/googlefonts.py b/Lib/gftools/builder/recipeproviders/googlefonts.py
+--- a/Lib/gftools/builder/recipeproviders/googlefonts.py
++++ b/Lib/gftools/builder/recipeproviders/googlefonts.py
+@@ -240,7 +240,7 @@ class GFBuilder(RecipeProviderBase):
+             args += " --keep-direction"
+         if self.config.get("removeOutlineOverlaps") is False:
+             args += " --keep-overlaps"
+-        if self.config.get("noProductionNames"):
++        if self.config.get("productionNames", True) is False:
+             args += " --no-production-names"
+         if self.config.get("expandFeaturesToInstances"):
+             args += " --expand-features-to-instances"
+diff --git a/Lib/gftools/builder/schema.py b/Lib/gftools/builder/schema.py
+--- a/Lib/gftools/builder/schema.py
++++ b/Lib/gftools/builder/schema.py
+@@ -160,7 +160,7 @@ GOOGLEFONTS_SCHEMA = Map(
+         Optional("interpolate"): Bool(),
+         Optional("checkCompatibility"): Bool(),
+         Optional("removeOutlineOverlaps"): Bool(),
+-        Optional("noProductionNames"): Bool(),
++        Optional("productionNames"): Bool(),
+         Optional("expandFeaturesToInstances"): Bool(),
+         Optional("version"): Str(),
+         Optional("addGftoolsVersion"): Bool(),
+diff --git a/docs/gftools-builder/README.md b/docs/gftools-builder/README.md
+--- a/docs/gftools-builder/README.md
++++ b/docs/gftools-builder/README.md
+@@ -204,9 +204,9 @@ The build can be customized by adding the following keys to the YAML file:
+ -   `removeOutlineOverlaps`: Remove overlaps when compiling fonts.
+     Defaults to fontmake\'s default.
+ 
+--   `noProductionNames`: Keep the source's glyph names in the compiled
+-    fonts instead of renaming glyphs to their production names (fontmake's
+-    `--no-production-names`). Defaults to `false`.
++-   `productionNames`: Rename glyphs to their production names in the
++    compiled fonts. Set it to `false` to keep the source's glyph names
++    (fontmake's `--no-production-names`). Defaults to `true`.
+ 
+ -   `glyphData`: An array of custom GlyphData XML files for with glyph
+     info (production name, script, category, subCategory, etc.).
+diff --git a/tests/test_builder.py b/tests/test_builder.py
+--- a/tests/test_builder.py
++++ b/tests/test_builder.py
+@@ -241,3 +241,18 @@ def test_glyphs_without_custom_parameters_is_static(tmp_path):
+         "glyphs = (\n);\nunitsPerEm = 1000;\nversionMajor = 1;\nversionMinor = 0;\n}\n"
+     )
+     assert not File(str(glyphs)).is_variable
++
++
++def test_production_names_key():
++    # productionNames (default true) replaced the negative noProductionNames key
++    import strictyaml
++
++    from gftools.builder.schema import GOOGLEFONTS_SCHEMA
++
++    strictyaml.load(
++        "sources:\n  - A.glyphs\nproductionNames: false\n", GOOGLEFONTS_SCHEMA
++    )
++    with pytest.raises(strictyaml.YAMLValidationError):
++        strictyaml.load(
++            "sources:\n  - A.glyphs\nnoProductionNames: true\n", GOOGLEFONTS_SCHEMA
++        )
+-- 
+2.47.3
+

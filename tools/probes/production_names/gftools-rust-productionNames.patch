@@ -1,0 +1,83 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Wed, 7 Oct 2026 18:21:04 +0100
+Subject: [PATCH] fontc: replace noProductionNames with productionNames
+ (default true)
+
+Every other boolean builder key is positive (flattenComponents,
+reverseOutlineDirection, ...); noProductionNames was the only negative
+one. productionNames: false keeps the source's glyph names. The Python
+gftools googlefonts schema makes the same change.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ .../resources/radio-canada/config.yaml        |  1 +
+ gftools-builder/src/operations/fontc.rs       | 24 +++++++++++++++----
+ 2 files changed, 21 insertions(+), 4 deletions(-)
+
+diff --git a/gftools-builder/resources/radio-canada/config.yaml b/gftools-builder/resources/radio-canada/config.yaml
+--- a/gftools-builder/resources/radio-canada/config.yaml
++++ b/gftools-builder/resources/radio-canada/config.yaml
+@@ -50,6 +50,7 @@ buildOTF: false
+ # overlaps: booleanOperations
+ # expandFeaturesToInstances: false
+ # reverseOutlineDirection: true
++# productionNames: true
+ # removeOutlineOverlaps: true
+ # extraFontmakeArgs: ""
+ # extraVariableFontmakeArgs: ""
+diff --git a/gftools-builder/src/operations/fontc.rs b/gftools-builder/src/operations/fontc.rs
+--- a/gftools-builder/src/operations/fontc.rs
++++ b/gftools-builder/src/operations/fontc.rs
+@@ -29,8 +29,8 @@ pub struct FontcConfig {
+     #[serde(default = "default_to_true")]
+     pub reverse_outline_direction: bool,
+ 
+-    #[serde(default)]
+-    pub no_production_names: bool,
++    #[serde(default = "default_to_true")]
++    pub production_names: bool,
+ }
+ 
+ fn default_to_true() -> bool {
+@@ -43,7 +43,7 @@ impl Default for FontcConfig {
+             flatten_components: false,
+             decompose_transformed_components: true,
+             reverse_outline_direction: true,
+-            no_production_names: false,
++            production_names: true,
+         }
+     }
+ }
+@@ -75,7 +75,7 @@ impl Fontc {
+         if !self.config.reverse_outline_direction {
+             options.flags.insert(Flags::KEEP_DIRECTION);
+         }
+-        if self.config.no_production_names {
++        if !self.config.production_names {
+             options.flags.remove(Flags::PRODUCTION_NAMES);
+         }
+ 
+@@ -134,3 +134,19 @@ impl Operation for Fontc {
+         "Compile font".to_string()
+     }
+ }
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    fn flags(config: &str) -> fontc::Flags {
++        let config: FontcConfig = serde_json::from_str(config).unwrap();
++        Fontc { config }.fontc_options().flags
++    }
++
++    #[test]
++    fn production_names_default_on_and_can_be_turned_off() {
++        assert!(flags("{}").contains(Flags::PRODUCTION_NAMES));
++        assert!(!flags(r#"{"productionNames": false}"#).contains(Flags::PRODUCTION_NAMES));
++    }
++}
+-- 
+2.47.3
+
