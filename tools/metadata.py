@@ -148,7 +148,7 @@ def header(display, d, head_full):
     return ["# %s" % display, "", "**Model**: %s" % MODEL, "**Date**: %s" % date, ""], date
 
 
-def upstream_info(repo, rows, old_block, head_full, display, previous, future, wt):
+def upstream_info(repo, rows, old_block, head_full, display, previous, future, wt, superseded=None):
     kind, base, commit = rows[0]["kind"], rows[0]["base"], rows[0]["commit"]
     if kind == "glyphs":
         return glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, future)
@@ -163,7 +163,8 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
     else:
         origin = "https://github.com/%s at commit `%s`" % (base, commit)
     edits = edit_subjects(d, rows)
-    out, date = header(display, d, head_full)
+    out, _ = header(display, d, head_full)
+    date = git(d, "log", "-1", "--format=%cs", conversion_commit(d)).strip()
     out += wrap("Sources modernized %s: the FontForge `.sfd` sources were converted to "
                          "Glyphs (`.glyphs`) and build with gftools-builder and fontc. The "
                          "repository, commit and config are in the `source { }` block of "
@@ -189,6 +190,10 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
     if config_commits:
         out += wrap("- The build config was then updated in its own commit, with the build "
                     "gated again: " + "; ".join(config_commits) + ".", 88, subsequent_indent="  ")
+    if superseded:
+        out += wrap("- METADATA.pb recorded `%s`, the conversion, until this update; `%s` follows "
+                    "it and changes only the build config, so it is recorded now."
+                    % (superseded[:12], head_full[:12]), 88, subsequent_indent="  ")
     out += ["", "## Final state", ""]
     out += wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
                          % (repo, head_full[:12], claim), 88)
@@ -365,6 +370,14 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
 CONFIG_PREFIX = "Builder config: "
 
 
+def conversion_commit(d):
+    for line in git(d, "log", "--format=%H %s").splitlines():
+        h, subject = line.split(" ", 1)
+        if subject.startswith("Convert to .glyphs with babelfont "):
+            return h
+    raise SystemExit("FATAL: %s has no conversion commit" % d)
+
+
 def config_subjects(d):
     """Subjects of the "Builder config:" commits right after the conversion."""
     out, after = [], False
@@ -403,7 +416,7 @@ def main():
     branch, repos = sys.argv[1], sys.argv[2:]
     wt = worktree(branch)
     landed = {}
-    for line in open(os.path.join(land.W, "landed.tsv")):
+    for line in open(land.LANDED):
         cols = line.rstrip("\n").split("\t")
         landed[cols[0]] = cols
     for repo in repos:
@@ -429,7 +442,21 @@ def main():
         open(mp, "w", encoding="utf-8").write(new)
         ui = os.path.join(wt, lic, fam, "upstream_info.md")
         previous = open(ui, encoding="utf-8").read() if os.path.exists(ui) else ""
-        body = upstream_info(repo, rows, old, head_full, display, previous, future, wt)
+        # our own earlier report (google/fonts#11077 and later): regenerate it for the new
+        # commit, keep its "Original repository" and "Previous investigation" sections as
+        # they are, and do not file our own earlier source block as a dormant repository
+        ours = "is the equivalence commit" in previous and "\n**Model**: " in previous
+        superseded = None
+        if ours and rows[0]["kind"] != "glyphs":
+            superseded = re.search(r'commit: "([0-9a-f]+)"', old).group(1) if old else None
+            if superseded == head_full:
+                raise SystemExit("FATAL: %s already records %s" % (fam, head_full[:12]))
+            keep = previous.find("## Original repository (dormant)")
+            carried = previous[keep:] if keep >= 0 else ""
+            body = upstream_info(repo, rows, None, head_full, display, "", future, wt, superseded)
+            body = body.rstrip("\n") + ("\n\n" + carried if carried else "\n")
+        else:
+            body = upstream_info(repo, rows, old, head_full, display, previous, future, wt)
         if any(ord(c) > 127 for c in body) and not any(ord(c) > 127 for c in previous):
             raise SystemExit("FATAL: non-ASCII introduced into upstream_info.md for %s" % fam)
         open(ui, "w", encoding="utf-8").write(body)
@@ -444,6 +471,17 @@ def main():
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
                    % (display, repo, repo, head_full[:12], rows[0]["source"],
                       "; %d known difference(s) disclosed" % n_disc if n_disc else ""))
+            git(wt, "commit", "-q", "-F", "-", input=msg)
+            print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
+            continue
+        if superseded:
+            msg = ("%s: record the googlefonts/%s builder-config commit\n\n"
+                   "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
+                   "Status: %s plus a commit that only updates the build config "
+                   "(productionNames); builds with gftools-builder and fontc\n"
+                   "Confidence: high -- 0 blocking rows against the shipped binaries\n\n"
+                   "Assisted by an AI agent (Claude Opus 5.5)\n"
+                   % (display, repo, repo, head_full[:12], superseded[:12]))
             git(wt, "commit", "-q", "-F", "-", input=msg)
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
             continue
