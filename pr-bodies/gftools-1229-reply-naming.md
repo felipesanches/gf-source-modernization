@@ -4,6 +4,4 @@ Body:
 
 > why is this 'noProductionNames: false', instead of 'productionNames: true'? That double negative seems confusing for no reason.
 
-Fair point: every other boolean key in the googlefonts schema is positive (`removeOutlineOverlaps`, `reverseOutlineDirection`, `flattenComponents`, ...). The name came from gftools-builder in simoncozens/gftools-rust, which added `noProductionNames` in ade8776 (echoing fontmake's `--no-production-names`); this PR reused it so that one config.yaml works in both builders.
-
-One constraint for a rename: 42 repositories already published (`googlefonts/<family>`, onboarded in google/fonts#11077) set `noProductionNames: true` in the commits google/fonts records and crater builds, so both builders need to keep accepting it. If you and @simoncozens prefer, I can add `productionNames` (default true) as the documented key in both gftools and gftools-rust, and keep `noProductionNames` as an accepted alias.
+Agreed. The name came from gftools-builder in simoncozens/gftools-rust (ade8776, echoing fontmake's `--no-production-names`), and every other key is positive. PRs follow in gftools and gftools-rust that replace it with `productionNames` (default true) rather than keep an alias. The only configs using the old key are those of the 42 `googlefonts/<family>` repositories onboarded in google/fonts#11077; they move to the new key in new commits, and a google/fonts PR records those.
