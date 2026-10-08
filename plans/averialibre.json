@@ -1,0 +1,7 @@
+{
+  "repo": "averialibre",
+  "commits": [],
+  "disclose": [
+    "The released fonts kern with a legacy `kern` table; these sources kern through a GPOS kern feature, which is how fontc builds kerning. HarfBuzz shapes every kerned pair alike in both, except pairs with the soft hyphen (U+00AD), which it hides: there the release leaves half the pair's value on the following glyph and the build none (42 to 102 pairs per style, tools/probes/binary_to_source/results/legacy-kern-pairs.txt in the evidence repository). Decided 2026-10-01: releases with an old kern table are accepted and disclosed."
+  ]
+}

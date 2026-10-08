@@ -1,0 +1,9 @@
+{
+  "repo": "sansation",
+  "commits": [],
+  "disclose": [
+    "The released fonts kern with a legacy `kern` table (their GPOS has no kern feature); these sources kern through a GPOS kern feature, which is how fontc builds kerning. HarfBuzz shapes all 1097 kerned pairs of every style alike in both (tools/probes/binary_to_source/results/legacy-kern-pairs.txt in the evidence repository). Decided 2026-10-01: releases with an old kern table are accepted and disclosed.",
+    "Sansation Light Italic is flagged italic in the release (fsSelection ITALIC, macStyle italic) with an italic angle of 0, as all of the family's italics are. A Glyphs source cannot state that to fontc 1.0.0, which flags a static font italic only for a nonzero italic angle or a master named Italic or Bold Italic, so the build is flagged regular. Decided 2026-10-02: problems that need fontc are disclosed, and fixed later.",
+    "The release's post table names two glyphs of Sansation Light Italic `ffi`; the second, which the f f j ligature substitutes, is `ffi.1` in the source, as fontTools reads it."
+  ]
+}

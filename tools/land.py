@@ -22,6 +22,12 @@ sfd-batch5/tools/drift/build_series.py builds it):
      and tools/functional_gate.py (shaping, rendering, names, line spacing,
      advances, GDEF). A landing is CLEAN only if all three pass.
 
+A row of kind `binary` (families-binary.tsv) is a family that exists only as the
+fonts Google Fonts ships: step 1 imports its google/fonts directory at a commit
+of google/fonts, step 4 converts the binaries themselves with babelfont's TTF
+reader (no filters; usWeightClass, read from the binary, travels as FEA as for an
+.sfd) and retires them.
+
 A row of kind `glyphs` (families.tsv) says the source already IS a .glyphs file,
 <base>@<commit>:<source>: step 1 is that upstream history, step 3 must be empty
 (no .glyphs edit ops yet), and step 4 runs no converter -- it only adds
@@ -79,7 +85,7 @@ TG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "table_gate.py")
 # Where this workspace is published: font repositories cite it, at the revision the
 # landing ran from, for the gates, plans and logs behind their claims.
 EVIDENCE_URL = "https://github.com/felipesanches/gf-source-modernization"
-EVIDENCE_PATHS = ["tools", "plans", "templates", "families.tsv", "families-next.tsv"]
+EVIDENCE_PATHS = ["tools", "plans", "templates", "families.tsv", "families-next.tsv", "families-binary.tsv"]
 GF = "/home/fsanches/compartilhado/google/fonts"
 IDENT = ["-c", "user.name=Felipe Correa da Silva Sanches",
          "-c", "user.email=juca@members.fsf.org", "-c", "commit.gpgsign=false"]
@@ -101,7 +107,7 @@ SUBSET = re.compile(r"\.(latin|latin-ext|cyrillic|cyrillic-ext|greek|greek-ext|"
 BRANCH = {"hg": "main", "fork": "modernize-sfd-to-glyphs",
           "allerta": "add-allerta-stencil", "upstream": "modernize-sfd-to-glyphs",
           # googlefonts/<repo> created empty, to carry the upstream's history
-          "glyphs": "main"}
+          "glyphs": "main", "binary": "main"}
 
 
 # Why a per-release flag differs between the styles of one family.
@@ -163,6 +169,9 @@ def family_rows(repo):
     rows = [r for r in recipe.rows() if r["repo"] == repo]
     if not rows:
         raise LandError("no rows for repo %s in %s" % (repo, recipe.families_file()))
+    for r in rows:
+        # a relative path is in the google/fonts checkout (families-binary.tsv)
+        r["shipped"] = os.path.join(GF, r["shipped"])
     return rows
 
 
@@ -233,6 +242,24 @@ def start(repo, rows, d):
             subtree out of a repository that serves the whole library is not
             practical. The commit named above is the provenance.""") % (
             fam, commit_id[:12], path, commit_id, base))
+    if kind == "binary":
+        sh("git", "init", "-q", "-b", "main", d)
+        path = "%s/%s" % (lic, fam)
+        tar = subprocess.run(["git", "-C", GF, "archive", commit_id, path],
+                             capture_output=True, check=True).stdout
+        subprocess.run(["tar", "-x", "-C", d, "--strip-components=2"], input=tar, check=True)
+        git(d, "add", "-A")
+        return commit(d, textwrap.dedent("""\
+            Import %s from google/fonts at %s
+
+            The contents of %s at commit %s
+            of https://github.com/google/fonts: the fonts Google Fonts ships,
+            with their licence and catalogue files.
+
+            No source of this family is known to exist anywhere: these binaries
+            are its only form, and the sources this repository adds are converted
+            from them. Nothing here is modified; every change from here on is its
+            own commit.""") % (display_name(fam), commit_id[:12], path, commit_id))
     if kind == "allerta":
         # the repository being extended is googlefonts/<repo>; `base` names where the
         # restored file comes from, not the repository to clone
@@ -275,7 +302,19 @@ def template(repo, rows, d, plan=None):
     tracked = git(d, "ls-files").stdout.splitlines()
     old_readme = open(os.path.join(d, "README.md")).read() if "README.md" in tracked else ""
     disp = display_name(rows[0]["family"])
-    if rows[0]["kind"] == "glyphs":
+    if rows[0]["kind"] == "binary":
+        readme = textwrap.dedent("""\
+            # %s
+
+            No source of this family was ever published: the fonts Google Fonts ships
+            were its only form. The sources in `sources/` were converted from those
+            fonts with [babelfont-rs](https://github.com/simoncozens/babelfont-rs), and
+            build with [gftools-builder](https://github.com/simoncozens/gftools-rust)
+            and fontc.
+
+            The fonts they were converted from remain in the git history.
+            """) % disp
+    elif rows[0]["kind"] == "glyphs":
         readme = textwrap.dedent("""\
             # %s
 
@@ -317,7 +356,11 @@ def template(repo, rows, d, plan=None):
     dead_ci = [f for f in tracked if f in (".travis.yml", "METADATA.json")]
     dead_bin = [f for f in tracked if "/" not in f and
                 (f.lower().endswith((".ttf", ".otf", ".woff", ".woff2")) or SUBSET.search(f))]
-    dead = dead_ttx + dead_ci + dead_bin
+    dead_gf = []
+    if rows[0]["kind"] == "binary":
+        dead_bin = []          # the binaries are the source: the conversion retires them
+        dead_gf = [f for f in tracked if f in ("METADATA.pb", "upstream_info.md")]
+    dead = dead_ttx + dead_ci + dead_bin + dead_gf
     if dead:
         git(d, "rm", "-q", "--", *dead)
     moved = []
@@ -336,6 +379,9 @@ def template(repo, rows, d, plan=None):
     if dead_bin:
         drops.append("the checked-in binaries and subset files (google/fonts ships the "
                      "binaries; this repository now builds them from sources/)")
+    if dead_gf:
+        drops.append("google/fonts' own records of the family (%s), which stay there"
+                     % " and ".join(dead_gf))
     if drops:
         body += [""] + textwrap.wrap("Drop " + (", ".join(drops[:-1]) + " and " + drops[-1]
                                                 if len(drops) > 1 else drops[0]) + ".", 72)
@@ -434,10 +480,30 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     per_style = []
     keep = recipe.keep_direction([r["shipped"] for r in rows])
     glyphs = rows[0]["kind"] == "glyphs"
+    binary = rows[0]["kind"] == "binary"
+    if binary:
+        keep = False     # the TTF reader reverses glyf contours and the compiler restores them
     for r in rows if glyphs else []:
         # the source is already .glyphs: no converter, no flags, no workarounds
         per_style.append({"row": r, "flags": [], "notes": [], "glyphs": os.path.join(d, r["source"])})
-    for r in [] if glyphs else rows:
+    for r in rows if binary else []:
+        # the binary is the source: no fidelity flags, and the weight class it states
+        # travels as FEA (fontc 1.0.0 drops a single master's instance weightClass)
+        src = os.path.join(d, r["source"])
+        g = os.path.join(d, "sources", r["style"] + ".glyphs")
+        sh(BF, src, g)
+        from fontTools.ttLib import TTFont
+        wc = TTFont(src)["OS/2"].usWeightClass
+        notes = []
+        if wc != 400:
+            text = open(g, encoding="utf-8").read()
+            changed = workarounds.weight_class_fea(text, wc)
+            if changed != text:
+                open(g, "w", encoding="utf-8").write(changed)
+                notes.append("usWeightClass %d (OS/2) as FEA; fontc 1.0.0 drops a single "
+                             "master's instance weightClass" % wc)
+        per_style.append({"row": r, "flags": [], "notes": notes, "glyphs": g})
+    for r in [] if glyphs or binary else rows:
         src = os.path.join(d, r["source"])
         text = open(src, encoding="utf-8", errors="replace").read()
         f = plan["flags"].get(r["style"], {})
@@ -506,6 +572,12 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         retired = []
         what = ("No conversion: %s is the upstream's Glyphs source, built as is. No "
                 "converter runs, so none is cited." % describe_sources(sorted({r["source"] for r in rows})))
+    elif binary:
+        retired = [p["row"]["source"] for p in per_style]
+        git(d, "rm", "-q", "--", *retired)
+        what = ("The converted %s retired; %s in the git history, and google/fonts "
+                "ships %s." % (("binaries are", "they remain", "them") if len(retired) > 1
+                               else ("binary is", "it remains", "it")))
     elif kind in ("hg", "fork"):
         retired = git(d, "ls-files", "src").stdout.split()
         if retired:
@@ -535,6 +607,11 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     if glyphs:
         lines = ["Add a gftools-builder config for %s" % rows[0]["source"], ""]
         lines += wrap(what, "", "")
+    elif binary:
+        lines = ["Convert to .glyphs with babelfont %s" % bf_rev, ""]
+        lines += wrap("Converted from %s, the %s Google Fonts ships, with babelfont %s "
+                      "(%s): its TTF reader, no filters." % (
+                          srcs, "fonts" if len(per_style) > 1 else "font", bf_rev, BF_WHERE), "", "")
     else:
         lines = ["Convert to .glyphs with babelfont %s" % bf_rev, ""]
         lines += wrap("Converted from %s%s with babelfont %s (%s), FontForge-fidelity filters "
@@ -562,7 +639,8 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                       " (a release mixes contour directions)" if "reverseOutlineDirection" in cfg_text else ""))
     notes = [(p["row"]["style"], n) for p in per_style for n in p["notes"]]
     if notes:
-        lines += ["", "Values from the .sfd that the toolchain loses, carried across:"]
+        lines += ["", "Values from the %s that the toolchain loses, carried across:"
+                  % ("binary" if binary else ".sfd")]
         for st, n in notes:
             lines += wrap("%s: %s" % (st, n))
     gf_ref = sh("git", "-C", GF, "rev-parse", "--short=12", "HEAD").stdout.strip()
