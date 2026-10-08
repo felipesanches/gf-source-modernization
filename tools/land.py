@@ -422,7 +422,12 @@ def built_name(glyphs_path):
     t = open(glyphs_path, encoding="utf-8").read()
     fam = re.search(r'^familyName = "?(.*?)"?;$', t, re.M).group(1)
     inst = re.search(r"^instances = \(\n\{.*?^name = \"?(.*?)\"?;$", t, re.S | re.M).group(1)
-    return "%s-%s.ttf" % (fam.replace(" ", ""), inst.replace(" ", ""))
+    # as gftools-builder names it (staticnames::without_redundant_family_words): leading
+    # style words the family name already has are dropped while more than one remains
+    words, family_words = inst.split(), fam.split()
+    while len(words) > 1 and words[0] in family_words:
+        words.pop(0)
+    return "%s-%s.ttf" % (fam.replace(" ", ""), "".join(words))
 
 
 def cmap_difference(shipped, built):
