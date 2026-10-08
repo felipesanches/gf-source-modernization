@@ -24,6 +24,10 @@ Tool output under logs/ is checked like everything else: a log can carry local h
 One exception: a google-fonts-sources output (JSON with "fonts_repo_sha" and "sources"),
 whose revs are google/fonts' own METADATA.pb records; only its fonts_repo_sha is checked
 (it must be public), since the rest is regenerable from that public google/fonts commit.
+A patch (.patch, .diff) is checked without its `index <blob>..<blob>` header lines: those
+are git's ids of the file contents before and after (needed to apply a binary patch), not
+references; a preimage is either public upstream or made by an earlier patch of the same
+series, and the patch carries the postimage itself.
 Code under tools/ (.py, .sh) may name workstation paths -- where the tools run, as the README
 says -- so check 1 does not apply to it; checks 2 and 3 do. Prose, messages and PR texts get
 all three.
@@ -52,6 +56,7 @@ KNOWN = [
     (ARC + "/googlefonts/googlefontdirectory-hg.git", None, "master"),
 ]
 LOCAL = re.compile(r"(/home/\w+|/tmp/|~/compartilhado)")
+PATCH_INDEX = re.compile(r"^index [0-9a-f]+\.\.[0-9a-f]+(?: [0-7]+)?$", re.M)
 HEX = re.compile(r"(?<![0-9A-Za-z/#.-])([0-9a-f]{7,40})(?![0-9A-Za-z])")
 URL = re.compile(r"https://github\.com/[^\s'\"`)<>\]]+")
 REPO = re.compile(r"(?:github\.com/|\b)([A-Za-z0-9-]+/[A-Za-z0-9_.-]+?)(?:\.git)?(?=[#\s/)`'\".,:;]|$)")
@@ -145,12 +150,15 @@ def texts(unit):
                             "fonts_repo_sha %s of https://github.com/google/fonts" % frs
                         cur = "\0skip"
                 elif l.startswith("+") and cur != "\0skip":
+                    if cur.endswith((".patch", ".diff")) and PATCH_INDEX.match(l[1:]):
+                        continue
                     (code if cur.startswith("tools/") and cur.endswith((".py", ".sh")) else prose).append(l[1:])
             yield "%s %s added lines" % (os.path.basename(d), sha[:9]), "\n".join(prose)
             if code:
                 yield "%s %s added code" % (os.path.basename(d), sha[:9]), "\n".join(code)
     else:
-        yield unit, open(unit, encoding="utf-8").read()
+        text = open(unit, encoding="utf-8").read()
+        yield unit, PATCH_INDEX.sub("", text) if unit.endswith((".patch", ".diff")) else text
 
 
 def main():
