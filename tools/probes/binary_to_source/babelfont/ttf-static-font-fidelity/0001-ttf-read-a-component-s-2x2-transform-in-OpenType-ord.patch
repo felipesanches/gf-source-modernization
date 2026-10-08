@@ -1,0 +1,178 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 15:52:17 +0100
+Subject: [PATCH 01/16] ttf: read a component's 2x2 transform in OpenType order
+
+A glyf component transform maps x' = xx * x + xy * y, y' = yx * x + yy * y;
+kurbo::Affine takes [xx, yx, xy, yy, dx, dy]. The reader passed xy and yx
+the other way round, which turned rotated or skewed components the wrong way
+(mirroring and scaling were unaffected).
+
+resources/ttf/StaticLegacy.ttf is a small static font made by
+resources/ttf/make_fixtures.py; barrot turns bar 90 degrees.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/StaticLegacy.ttf | Bin 0 -> 904 bytes
+ babelfont/resources/ttf/make_fixtures.py |  77 +++++++++++++++++++++++
+ babelfont/src/convertors/ttf.rs          |  34 +++++++++-
+ 3 files changed, 110 insertions(+), 1 deletion(-)
+ create mode 100644 babelfont/resources/ttf/StaticLegacy.ttf
+ create mode 100644 babelfont/resources/ttf/make_fixtures.py
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..d26d529936c3e918293b2f67b7316ccb162757b8
+GIT binary patch
+literal 904
+zcmY*XO=}ZT6g~INkPop<0(B!<j3UKPDk+GIpe|x<(IQrqSdlVzCLfS#LYlw`T@*LP
+zg;4YlxYLCjw-Tgum4)tHOBNz--04QF<9V6am|S@8o^$R;ZtfchfFsz31?TqNxx$Ug
+z%|C#grh0!pa9emT7sz+XOV!4c%G0%XMe?uYFKWK)&3(aH;<r4PY7`P#^?_K&Pt}4>
+zXrB?A`P<~#MswXo6EDd>YaX~^3scCDr^uZRH}ID}y-ouvB>&iIZgw8DunJfu@)Go{
+zN*3?kx$duJioYP%cPjYy<I$^;FEFL2dgN&+t<qR$IniZ(qX3Ul-D%ups3c+2r&xDb
+z8RsafVma~?iSeRwtdOuqe4_hR8uqY=t<enqQKp^<oT-Qnc&PJmd>-9vhPUoC!>KOP
+zr-qY(okDCy5fy`?_tCRxXP8UT*c6UqmUTreF~Y6Lz6^BV`P_+IL3U;E*U_8dYpOgq
+zVj@KusNMnBEyG#*svJk=bDpQl2XFYhdPc2hV99w^-b1X(KDAk$jU?~ih;_Z~K6YRY
+z-vrmV3S%i$%*=vmYVp<-tEUal5+5@-$KB`ISL`&EJWd*{n0>|IEb%Rab2y6Cg?iZO
+zwtZ*W_v+nX#jkc7Zrg~lh6QdtL<e28;lsf)Z~YQo1Xv-i5;fp5I+;11H~F<3{=fe|
+cN%#=wuqH|@v6GM8cBN5o+4P$UUhQV*ANW&?R{#J2
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+new file mode 100644
+index 00000000..eca3dc34
+--- /dev/null
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -0,0 +1,77 @@
++"""Writes the TrueType fixtures the ttf reader tests load (fontTools).
++
++Run from this directory: python3 make_fixtures.py
++
++StaticLegacy.ttf is a static font as an old FontForge build leaves it:
++
++* OS/2 version 1 (no sxHeight / sCapHeight), usWeightClass 500, usWidthClass 6,
++  fsType 0, a PANOSE, fsSelection REGULAR | USE_TYPO_METRICS; head.fontRevision
++  2.005, lowestRecPPEM 9; style "Medium" (name ID 17; ID 2 is "Regular").
++* bar: a simple glyph whose hmtx lsb (110) is not its glyf xMin (100), so a
++  TrueType rasterizer draws it 10 units right of its stored outline.
++* barflip: bar turned 180 degrees (scale -1, -1).
++* bars: two bars, the composite's own lsb (105) 5 units right of its xMin.
++* barrot: bar turned 90 degrees (a 2x2 transform with xy = -1, yx = 1).
++"""
++from fontTools.fontBuilder import FontBuilder
++from fontTools.ttLib.tables.O_S_2f_2 import Panose
++from fontTools.pens.ttGlyphPen import TTGlyphPen
++from fontTools.ttLib.tables._g_l_y_f import Glyph, GlyphComponent
++
++
++def rect(x0, y0, x1, y1):
++    pen = TTGlyphPen(None)
++    pen.moveTo((x0, y0))
++    pen.lineTo((x0, y1))
++    pen.lineTo((x1, y1))
++    pen.lineTo((x1, y0))
++    pen.closePath()
++    return pen.glyph()
++
++
++def composite(*parts):
++    g = Glyph()
++    g.numberOfContours = -1
++    g.components = []
++    for name, dx, dy, matrix in parts:
++        c = GlyphComponent()
++        c.glyphName, c.x, c.y, c.flags = name, dx, dy, 0x4  # ROUND_XY_TO_GRID
++        if matrix is not None:
++            c.transform = matrix
++        g.components.append(c)
++    return g
++
++
++order = [".notdef", "x", "H", "bar", "barflip", "bars", "barrot"]
++glyphs = {
++    ".notdef": Glyph(),
++    "x": rect(50, 0, 450, 480),
++    "H": rect(60, 0, 540, 700),
++    "bar": rect(100, 0, 200, 600),
++    "barflip": composite(("bar", 300, 600, [[-1, 0], [0, -1]])),
++    "bars": composite(("bar", 0, 0, None), ("bar", 250, 0, None)),
++    # fontTools' transform is [[xx, yx], [xy, yy]]: x' = xx*x + xy*y, y' = yx*x + yy*y
++    "barrot": composite(("bar", 700, 0, [[0, 1], [-1, 0]])),
++}
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("x"): "x", ord("H"): "H", ord("|"): "bar"})
++fb.setupGlyf(glyphs)
++lsb = {".notdef": 0, "x": 50, "H": 60, "bar": 110, "barflip": 100, "bars": 105, "barrot": 100}
++fb.setupHorizontalMetrics({g: (800, lsb[g]) for g in order})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({
++    "familyName": "Fixture Medium",
++    "styleName": "Regular",
++    "typographicFamily": "Fixture",
++    "typographicSubfamily": "Medium",
++})
++fb.setupOS2(
++    version=1, usWeightClass=500, usWidthClass=6, fsType=0, fsSelection=0x40 | 0x80,
++    sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200,
++    panose=Panose(bFamilyType=2, bSerifStyle=0, bWeight=6, bProportion=3),
++)
++fb.setupPost()
++fb.font["head"].fontRevision = 2.005
++fb.font["head"].lowestRecPPEM = 9
++fb.save("StaticLegacy.ttf")
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index bcfc7fe3..fa1c654b 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -572,10 +572,12 @@ fn load_layer(
+                     } => (0.0, 0.0),
+                 };
+                 // XXX apply deltas
++                // x' = xx * x + xy * y, y' = yx * x + yy * y;
++                // kurbo::Affine::new expects [xx, yx, xy, yy, dx, dy]
+                 let our_affine = kurbo::Affine::new([
+                     component.transform.xx.to_f32() as f64,
+-                    component.transform.xy.to_f32() as f64,
+                     component.transform.yx.to_f32() as f64,
++                    component.transform.xy.to_f32() as f64,
+                     component.transform.yy.to_f32() as f64,
+                     anchor.0,
+                     anchor.1,
+@@ -600,3 +602,33 @@ fn load_layer(
+ 
+     Ok(layer)
+ }
++
++#[cfg(test)]
++#[allow(clippy::unwrap_used, clippy::indexing_slicing)]
++mod tests {
++    use super::*;
++
++    const STATIC_LEGACY: &str = "resources/ttf/StaticLegacy.ttf";
++
++    fn component_coeffs(font: &Font, glyph: &str) -> Vec<[f64; 6]> {
++        font.glyphs.get(glyph).unwrap().layers[0]
++            .components()
++            .map(|c| c.transform.as_affine().as_coeffs())
++            .collect()
++    }
++
++    fn assert_close(a: &[f64], b: &[f64]) {
++        assert!(
++            a.iter().zip(b).all(|(x, y)| (x - y).abs() < 1e-6),
++            "{a:?} != {b:?}"
++        );
++    }
++
++    #[test]
++    fn test_component_transform_order() {
++        // barrot's glyf transform turns bar 90 degrees: x' = -y, y' = x
++        let font = load(STATIC_LEGACY).unwrap();
++        let coeffs = component_coeffs(&font, "barrot");
++        assert_close(&coeffs[0][..4], &[0.0, 1.0, -1.0, 0.0]);
++    }
++}

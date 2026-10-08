@@ -1,0 +1,65 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:27:32 +0100
+Subject: [PATCH 11/16] ttf fixtures: fixed head dates, so make_fixtures.py
+ writes the same bytes
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/GdefClasses.ttf  | Bin 1032 -> 1032 bytes
+ babelfont/resources/ttf/StaticLegacy.ttf | Bin 1052 -> 1052 bytes
+ babelfont/resources/ttf/make_fixtures.py |  11 +++++++++--
+ 3 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
+index 32db81874fff086d04179597d8bc0a0de3b785da..5b4a87150f82807e0ed4dacab231ce43d9ef40fb 100644
+GIT binary patch
+delta 47
+qcmeC+=-`-;z>=8fJZEA`flSno)qmspZN4%vGrwR!0~<d`FarQ?#SDi4
+
+delta 47
+vcmeC+=-`-;z@qQTe`sP#fy{nq;f?Y9HeVT-nO`sf!Lzq%!Z3Q{2MJ~XZk-Q?
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+index c704991819564ab0f3a9e3b4b949bee756189f7f..1807124adc382aa3cbaee4da59881b44af43805c 100644
+GIT binary patch
+delta 47
+qcmbQkF^6M<152Wfi_%1w0-1|qE4Re++k9nUWPZVb1~y*sVFmy`77HK%
+
+delta 47
+vcmbQkF^6M<1B<@6fX76a0vXdp!Hjr*o39Lv%r6*#;Mv<WVHmyff)6tQJkAat
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index 43243b03..7eca6df9 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -30,6 +30,13 @@ from fontTools.pens.ttGlyphPen import TTGlyphPen
+ from fontTools.ttLib.tables._g_l_y_f import Glyph, GlyphComponent
+ 
+ 
++def save(fb, path):
++    # fixed dates, so that the same script writes the same bytes
++    fb.font["head"].created = fb.font["head"].modified = 0
++    fb.font.recalcTimestamp = False
++    fb.save(path)
++
++
+ def rect(x0, y0, x1, y1):
+     pen = TTGlyphPen(None)
+     pen.moveTo((x0, y0))
+@@ -93,7 +100,7 @@ fb.setupOS2(
+ fb.setupPost()
+ fb.font["head"].fontRevision = 2.005
+ fb.font["head"].lowestRecPPEM = 9
+-fb.save("StaticLegacy.ttf")
++save(fb, "StaticLegacy.ttf")
+ 
+ 
+ order = [".notdef", "a", "gravecomb", "acutecomb", "tildecomb", "f_f", "script"]
+@@ -120,4 +127,4 @@ table GDEF {
+     GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;
+ } GDEF;
+ """)
+-fb.save("GdefClasses.ttf")
++save(fb, "GdefClasses.ttf")

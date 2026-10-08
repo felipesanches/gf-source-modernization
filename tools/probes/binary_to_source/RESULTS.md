@@ -1,0 +1,69 @@
+# binary_to_source: results (2026-10-08)
+
+Question: can a family Google Fonts ships with no sources anywhere be given a source by
+converting its own binary with babelfont, and does that source rebuild the binary?
+
+Answer: yes, once babelfont's TTF reader reads a static font as it renders and shapes. With
+upstream babelfont the conversions differed in names, OS/2 values, kerning and outlines; with
+the reader fixes below, two families come back CLEAN and four more behave identically, their
+only table difference being a legacy `kern` table that is now a GPOS kern feature.
+
+## Inputs
+
+- Shipped fonts: google/fonts 2eb0b48d5f760f62e286216f0859a8c540dbc1bd (every .ttf measured
+  here is byte-identical there and in the clone the runs read).
+- Builder: gftools-builder from simoncozens/gftools-rust#1 at 5a2567604b8f (productionNames),
+  fontc 1.0.0.
+- Gates: tools/table_gate.py and tools/functional_gate.py at this commit; diffenator3 1.1.4.
+- Converter, "before": simoncozens/babelfont-rs main 3dabb000 (upstream, unmodified).
+- Converter, "after": 3dabb000 plus `babelfont/sr-aef-uncompile-fixes/` (3 patches),
+  `babelfont/ttf-static-font-fidelity/` (16 patches) and the typographic-family-names branch
+  (pr-bodies/babelfont-typographic-family-names.md), as one tree:
+  `babelfont/measure-integration.diff`; `babelfont/rebuild.sh <dir>` rebuilds that exact tree
+  from public upstream (it checks the SHA-256 of the file listing) and builds it.
+
+Rerun: `BF=<babelfont> B3=<gftools-builder> python3 probe.py <scratch> <shipped.ttf>...`
+(README.md); logs in `results/`.
+
+## The sample (results/final-sample.log, results/before-sample.log)
+
+| family | styles | before (upstream 3dabb000) | after |
+|---|---|---|---|
+| Della Respira | 1 | functional FAIL 1/1 (line_spacing, names, rendering); 2 table rows | CLEAN |
+| Oranienbaum | 1 | functional FAIL 1/1 (advances, gdef, names); 3 table rows | CLEAN |
+| Averia Libre | 6 | functional FAIL 6/6 (advances, line_spacing, names, rendering, shaping); 3 table rows | functional PASS 6/6; 3 table rows: legacy kern -> GPOS |
+| Averia Sans Libre | 6 | functional FAIL 6/6 (advances, line_spacing, names, rendering, shaping); 3 table rows | functional PASS 6/6; 3 table rows: legacy kern -> GPOS |
+| Averia Serif Libre | 6 | functional FAIL 6/6 (advances, line_spacing, names, rendering, shaping); 4-5 table rows | functional PASS 6/6; 3 table rows: legacy kern -> GPOS |
+| Sansation | 6 | functional FAIL 5/6 (advances, gdef, line_spacing, names, rendering, shaping); 6 table rows; 1 style(s) do not build | functional PASS 5/6; Light Italic loses fsSelection ITALIC (fontc) |
+
+Della Respira turned out not to be binary-only: its FontForge source is in Nathan Willis's
+Bazaar branch on Launchpad (lp:revivalism-fonts, `dellarespira/src/dellarespira-regular.sfd`,
+history from 2011), which the library census, reading git repositories only, could not see.
+It belongs with the .sfd conversions (the shipped font says version 0.201, FontForge
+2012-03-28; the trunk's .sfd says 0.2 and was edited again in 2013), and is no longer in
+families-binary.tsv. Its row above stays as a measurement of the reader.
+
+Legacy kern -> GPOS: the table gate's legacy-kern arbitration (all kerned pairs must shape
+alike) fails for the Averia families only on soft-hyphen pairs, which HarfBuzz hides; the
+difference is half the pair's value on the next glyph (`legacy_kern_pairs.py`,
+results/legacy-kern-pairs.txt). Sansation's release has a GPOS without a kern feature, so the
+arbitration does not apply, but all 1097 pairs shape alike. Sansation's other rows: the GSUB
+script's feature indices in another (by the spec arbitrary) order, and in Light Italic two
+rows from the release naming two glyphs `ffi` (the table gate reads glyphs by name; the
+functional gate pairs them by correspondence and finds them equal).
+
+## Other families tried (results/final-others.log)
+
+| family | after | why |
+|---|---|---|
+| GFS Didot | functional FAIL (shaping) | its GPOS registers `grek` with no features, so Greek text is not kerned; no FEA compiler keeps an empty script registration, and without it HarfBuzz falls back to `latn`'s kerning |
+| Averia Gruesa Libre | functional FAIL (names, fsSelection) | an upright font with italic angle -1.7; fontc flags any nonzero angle italic, and names the style Italic |
+| IM Fell English SC | functional FAIL (shaping, GDEF) | 246 runs with a combining comma below (U+0326) shape differently. Measured: fontc's kern lookup does not skip that mark (it has an advance, so fontc puts it in a mark filtering set) where HarfBuzz applies the release's legacy kern skipping marks. Not measured, suspected too: the release has no GPOS, so HarfBuzz positions marks itself, which any GPOS turns off. Also head.font_direction_hint 0 (decision D6 in investigations/next-provenance/FINDINGS.md, open) |
+| Siemreap, Phetsarath | functional FAIL (shaping) | not investigated: Khmer and Lao runs shape differently (Siemreap 80272 of 164513 runs, Phetsarath Regular 2535 of 29332). Both releases have a GPOS that registers scripts with no features (as GFS Didot's) and AAT tables (feat, morx); Phetsarath Bold also VTT sources (TSI*) |
+| Yinmar | build fails | 12 "undefined mark class" errors: GPOS mark lookups still name mark classes (`@bottomleft`) that the reader turned into anchors and does not define |
+| Zen Antique | build fails | anchors named `_mark_class_0_2`, which fontc refuses ("mark anchors cannot be numbered") |
+
+## What the reader fixes changed
+
+See the commit messages of the two patch series and pr-bodies/babelfont-ttf-static-font-fidelity.md
+and pr-bodies/sr-aef-uncompile-fixes.md.

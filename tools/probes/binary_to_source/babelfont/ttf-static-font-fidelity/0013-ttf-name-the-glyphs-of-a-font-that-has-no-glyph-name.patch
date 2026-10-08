@@ -1,0 +1,161 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:39:18 +0100
+Subject: [PATCH 13/16] ttf: name the glyphs of a font that has no glyph names
+
+A format 3 post table names no glyph, and the names are synthesized as gidN,
+so glyph 0 came out as gid0 and a compiler added a .notdef of its own in
+front of it. Glyph 0 is now .notdef and an encoded glyph is named for its
+codepoint as the Adobe Glyph List Specification does (uniXXXX, uXXXXX),
+through RenameGlyphs, so components, kerning and features follow.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/Unnamed.ttf      | Bin 0 -> 820 bytes
+ babelfont/resources/ttf/make_fixtures.py |  20 ++++++++
+ babelfont/src/convertors/ttf.rs          |  59 +++++++++++++++++++++++
+ 3 files changed, 79 insertions(+)
+ create mode 100644 babelfont/resources/ttf/Unnamed.ttf
+
+diff --git a/babelfont/resources/ttf/Unnamed.ttf b/babelfont/resources/ttf/Unnamed.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..e1c0068f18ec3db73455e5dcabfc92c1d66d66c1
+GIT binary patch
+literal 820
+zcmah{J!=$E6g}_FWHm7+Mq&sSGEtFWlQ2rK*pLs`)j|ktTo5euk)7-YXC~`p7RE+`
+zSX!h{nsn(>#6mHJjbI^S=PwXaT0|>lJooJ^XrmY2ym#(B_v`FJ0T{$49L(Qdt}nhG
+zd*cH78@-jK<thKxrOGa#?hrp(iA-BPz<J_V#N}rAboJ%_^B=@Nh2IKH!(=yi`2NT<
+z)1ssAg?h_4YvOV%N;CHvV&XmG!N)-oqd))3e)GiR;rfcf6wWa&{RbkGwQ&-sh$o4?
+z*hInAgW3f7_ldLi`bNsRY5KFoA-nMGKiU5BaJc*(j&mf@zsx6lS|8HqKo=3_I9`6k
+z*7Y%|r){M_)3o)taCyt=Wp+7=9!JlqE%Y(^f3q|9Xmd2a7x2D2gX7^tFIL>#OdS`~
+z`6$yX{iVt%zq0ix`-(=TVmemKb7Fhv@A6s8qQly0YJ8C|1ySP))nKh_BNHROI@X83
+zDqwCeQnHy!x?0@|X1QS6D$-vxDB0>%C;!Bkiy50MeTEC3On!ohQ@j22U%*)L))>O|
+z>ROg|lEACS@>@4*L9-K@1XZjdLy8U(1n^Mje<+4QMASfy-zH-rJ&A1cPZPC<*mZ#2
+hId!Fa_a4TfHcXh>Eo9oWIAd!FSCLJ%sYn-b&)<aAYH|Po
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index 7fe984d8..d6ca6807 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -24,6 +24,10 @@ GdefClasses.ttf carries GDEF glyph classes: gravecomb a base (class 1, advance
+ ligature, script a base whose name is a feature-file keyword. Its calt's
+ backtrack covers five glyphs, which reads back as a named glyph class. It has a
+ GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores.
++
++Unnamed.ttf has no glyph names (post format 3): A (U+0041), Aring (U+00C5, a
++component of A), an unencoded alternate of A reached by salt, and A Aring kerned
++-50 in a legacy kern table.
+ """
+ from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
+ from fontTools.fontBuilder import FontBuilder
+@@ -146,3 +150,19 @@ table GDEF {
+ """)
+ legacy_kern(fb.font, {("a", "f_f"): -40})
+ save(fb, "GdefClasses.ttf")
++
++
++order = [".notdef", "A", "Aring", "A.alt"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({0x41: "A", 0xC5: "Aring"})
++fb.setupGlyf({".notdef": Glyph(), "A": rect(50, 0, 550, 700), "Aring": composite(("A", 0, 0, None)),
++              "A.alt": rect(60, 0, 560, 700)})
++fb.setupHorizontalMetrics({".notdef": (500, 0), "A": (600, 50), "Aring": (600, 50), "A.alt": (600, 60)})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({"familyName": "Fixture Unnamed", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++addOpenTypeFeaturesFromString(fb.font, "feature salt { sub A by A.alt; } salt;")
++legacy_kern(fb.font, {("A", "Aring"): -50})
++fb.setupPost(keepGlyphNames=False)
++save(fb, "Unnamed.ttf")
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index a15021f3..356bfcc0 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -47,9 +47,47 @@ pub fn load<T: AsRef<std::path::Path>>(path: T) -> Result<Font, BabelfontError>
+     load_glyphs(&fontref, &mut font)?;
+     load_features(&fontref, &mut font)?;
+     load_legacy_kerning(&fontref, &mut font)?;
++    name_unnamed_glyphs(&fontref, &mut font)?;
+     Ok(font)
+ }
+ 
++/// A font without glyph names (a format 3 post table) has them synthesized as
++/// gidN. Glyph 0 is .notdef, and an encoded glyph is named for its codepoint
++/// as the Adobe Glyph List Specification does (uniXXXX, uXXXXX); the names are
++/// changed everywhere they are used.
++fn name_unnamed_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
++    use crate::filters::FontFilter;
++    let names = GlyphNames::new(fontref);
++    let mut taken: HashSet<SmolStr> = font.glyphs.iter().map(|g| g.name.clone()).collect();
++    let mut renames = HashMap::new();
++    for (gid, glyph) in font.glyphs.iter().enumerate() {
++        if !names
++            .get(GlyphId::new(gid as u32))
++            .is_some_and(|name| name.is_synthesized())
++        {
++            continue;
++        }
++        let name: SmolStr = if gid == 0 {
++            ".notdef".into()
++        } else if let Some(codepoint) = glyph.codepoints.iter().min() {
++            if *codepoint <= 0xFFFF {
++                format!("uni{codepoint:04X}").into()
++            } else {
++                format!("u{codepoint:05X}").into()
++            }
++        } else {
++            continue;
++        };
++        if taken.insert(name.clone()) {
++            renames.insert(glyph.name.to_string(), name.to_string());
++        }
++    }
++    if !renames.is_empty() {
++        crate::filters::RenameGlyphs::new(renames).apply(font)?;
++    }
++    Ok(())
++}
++
+ /// head.fontRevision as (major, minor), the minor in thousandths as Glyphs
+ /// and UFO state it: 0x00003333 (0.19999) is 0.200
+ fn font_version(fontref: &skrifa::FontRef) -> Result<(u16, u16), BabelfontError> {
+@@ -887,6 +925,7 @@ mod tests {
+ 
+     const STATIC_LEGACY: &str = "resources/ttf/StaticLegacy.ttf";
+     const GDEF_CLASSES: &str = "resources/ttf/GdefClasses.ttf";
++    const UNNAMED: &str = "resources/ttf/Unnamed.ttf";
+ 
+     fn category(font: &Font, glyph: &str) -> (GlyphCategory, Option<String>) {
+         let glyph = font.glyphs.get(glyph).unwrap();
+@@ -1056,6 +1095,26 @@ mod tests {
+         assert!(font.masters[0].kerning.is_empty());
+     }
+ 
++    #[test]
++    fn test_unnamed_glyphs() {
++        // post format 3: names follow the codepoints, everywhere they are used
++        let font = load(UNNAMED).unwrap();
++        let names: Vec<&str> = font.glyphs.iter().map(|g| g.name.as_str()).collect();
++        assert_eq!(names, [".notdef", "uni0041", "uni00C5", "gid3"]);
++        let component = font.glyphs.get("uni00C5").unwrap().layers[0]
++            .components()
++            .next()
++            .unwrap();
++        assert_eq!(component.reference, "uni0041");
++        assert_eq!(
++            font.masters[0]
++                .kerning
++                .get(&("uni0041".into(), "uni00C5".into())),
++            Some(&-50)
++        );
++        assert!(font.features.to_fea().contains("sub uni0041 by gid3;"));
++    }
++
+     #[test]
+     fn test_font_revision() {
+         // head.fontRevision 2.005 (0x00020148)

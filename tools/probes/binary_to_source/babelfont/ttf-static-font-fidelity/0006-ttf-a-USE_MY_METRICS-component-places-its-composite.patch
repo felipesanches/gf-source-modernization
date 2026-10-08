@@ -1,0 +1,188 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:07:39 +0100
+Subject: [PATCH 06/16] ttf: a USE_MY_METRICS component places its composite
+
+A composite takes the phantom points of a component flagged USE_MY_METRICS
+(the last one, untransformed), so it is drawn shifted as that component is,
+not by its own lsb - xMin. An accented I whose own lsb is stale but whose I
+carries the flag was read 11 units right of where it is drawn.
+
+barx in the fixture: bar flagged USE_MY_METRICS, the composite's own lsb 30
+units further right than bar's.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/StaticLegacy.ttf | Bin 904 -> 944 bytes
+ babelfont/resources/ttf/make_fixtures.py |  13 +++--
+ babelfont/src/convertors/ttf.rs          |  64 +++++++++++++++++------
+ 3 files changed, 58 insertions(+), 19 deletions(-)
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+index d26d529936c3e918293b2f67b7316ccb162757b8..24727060a8c21f08f326aeffe7c70f151da506f3 100644
+GIT binary patch
+delta 330
+zcmeBR-@raWy?zP<1A|L?PGwpr_vYyg42*Ap{8bsLi75sG9It@vH9%~Z0Tf`%VoCwB
+zp8&B+Ms7(3%T`7fp!x<NUnnO(Ig#NA!(<@;28f@VSW&>h$G{Kda{&1Yd5O8Ho@bYH
+zGB7aB0P@ci<QJDDWn8mnV8~zw8S2fz2qc*pJ&d)R*TwVOd}Ux{egPC=c=k34L_ugH
+zppth?dw^U{1}3mD(0m34W`+M2Ad<m|fs0uTY!XxwOfiB*I41KkHZ%7yFif7n7|I+9
+zq@OTO68rz30cbtY&<F-~21Z65Ae)VWd2$KUM{SV1qZzar;u)D3nHgCaS=o~ki_&s3
+S3s``3F&mI5$}a)2D;NN%(L_%G
+
+delta 291
+zcmdnM-oZXWy?z1%1A|L?PGwqC{6-rF2F52q{-li5#1#E|3|c_;8Xz{y01B`PFzo}f
+zLGmgYxg`}Wnv5(!^$kG2Ku&&gB11mIWFY?vh@YESQNX~<zz^he0Qm}eiMgqsXP0v_
+zFfdgB`DY69i%TL47@`;$GMHU}0xk@UK$3~kBQ(%8HJ;z*D+43*3!n(Yv$wGe;It7?
+z$sVRXKt3k}6G#*Yfclsf{#$@Z1|x<Ppe)EFWWWd(VV}&$*gSbEW60#Uj1wnMV|uU5
+j4pbD)pv@4^$i&FZ$ikkKSd^BNS-=9Mi`jrgQGN*kTH`%k
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index eca3dc34..d4991c4f 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -12,6 +12,8 @@ StaticLegacy.ttf is a static font as an old FontForge build leaves it:
+ * barflip: bar turned 180 degrees (scale -1, -1).
+ * bars: two bars, the composite's own lsb (105) 5 units right of its xMin.
+ * barrot: bar turned 90 degrees (a 2x2 transform with xy = -1, yx = 1).
++* barx: x and bar, bar flagged USE_MY_METRICS: drawn by bar's lsb (10 units
++  right), not by the composite's own (40).
+ """
+ from fontTools.fontBuilder import FontBuilder
+ from fontTools.ttLib.tables.O_S_2f_2 import Panose
+@@ -33,16 +35,18 @@ def composite(*parts):
+     g = Glyph()
+     g.numberOfContours = -1
+     g.components = []
+-    for name, dx, dy, matrix in parts:
++    for name, dx, dy, matrix, *flags in parts:
+         c = GlyphComponent()
+-        c.glyphName, c.x, c.y, c.flags = name, dx, dy, 0x4  # ROUND_XY_TO_GRID
++        c.glyphName, c.x, c.y = name, dx, dy
++        c.flags = 0x4 | (flags[0] if flags else 0)  # ROUND_XY_TO_GRID
+         if matrix is not None:
+             c.transform = matrix
+         g.components.append(c)
+     return g
+ 
+ 
+-order = [".notdef", "x", "H", "bar", "barflip", "bars", "barrot"]
++USE_MY_METRICS = 0x200
++order = [".notdef", "x", "H", "bar", "barflip", "bars", "barrot", "barx"]
+ glyphs = {
+     ".notdef": Glyph(),
+     "x": rect(50, 0, 450, 480),
+@@ -52,12 +56,13 @@ glyphs = {
+     "bars": composite(("bar", 0, 0, None), ("bar", 250, 0, None)),
+     # fontTools' transform is [[xx, yx], [xy, yy]]: x' = xx*x + xy*y, y' = yx*x + yy*y
+     "barrot": composite(("bar", 700, 0, [[0, 1], [-1, 0]])),
++    "barx": composite(("x", 300, 0, None), ("bar", 0, 0, None, USE_MY_METRICS)),
+ }
+ fb = FontBuilder(1000, isTTF=True)
+ fb.setupGlyphOrder(order)
+ fb.setupCharacterMap({ord("x"): "x", ord("H"): "H", ord("|"): "bar"})
+ fb.setupGlyf(glyphs)
+-lsb = {".notdef": 0, "x": 50, "H": 60, "bar": 110, "barflip": 100, "bars": 105, "barrot": 100}
++lsb = {".notdef": 0, "x": 50, "H": 60, "bar": 110, "barflip": 100, "bars": 105, "barrot": 100, "barx": 140}
+ fb.setupHorizontalMetrics({g: (800, lsb[g]) for g in order})
+ fb.setupHorizontalHeader(ascent=800, descent=-200)
+ fb.setupNameTable({
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index b00e8239..62ad2291 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -594,23 +594,57 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+ }
+ 
+ /// How far a TrueType rasterizer moves a glyph's stored outline when it draws
+-/// it: the phantom point puts the outline's xMin at the hmtx left side bearing.
+-/// (At the default location; component deltas are not applied here either.)
++/// it: by minus the x of its first phantom point, which is xMin - lsb (hmtx
++/// left side bearing), except that a composite takes the phantom points of a
++/// component flagged USE_MY_METRICS (the last one, untransformed). An empty
++/// glyph has an xMin of 0. (At the default location; component deltas are not
++/// applied here either.)
+ fn drawn_shift(
+     fontref: &skrifa::FontRef<'_>,
+     glyf: &glyf::Glyf<'_>,
+     gid: skrifa::GlyphId,
++    depth: usize,
+ ) -> Result<f64, BabelfontError> {
+-    let Some(glyph) = fontref.loca(None)?.get_glyf(gid, glyf)? else {
+-        return Ok(0.0);
+-    };
++    if depth > COMPOSITE_RECURSION_LIMIT {
++        return Err(BabelfontError::BinaryFontRead(format!(
++            "Glyph ID {} nests components too deeply",
++            gid.to_u32()
++        )));
++    }
++    let glyph = fontref.loca(None)?.get_glyf(gid, glyf)?;
++    let x_min = glyph.as_ref().map_or(0, |glyph| glyph.x_min()) as f64;
+     let lsb = fontref
+         .hmtx()?
+         .side_bearing(gid)
+-        .unwrap_or_else(|| glyph.x_min());
+-    Ok(lsb as f64 - glyph.x_min() as f64)
++        .map_or(x_min, |lsb| lsb as f64);
++    let mut shift = lsb - x_min;
++    if let Some(glyf::Glyph::Composite(composite)) = glyph {
++        for component in composite.components() {
++            if component
++                .flags
++                .contains(glyf::CompositeGlyphFlags::USE_MY_METRICS)
++            {
++                shift = drawn_shift(fontref, glyf, component.glyph.into(), depth + 1)?;
++            }
++        }
++    }
++    Ok(shift)
++}
++
++/// The shift a component's outline was read with (an empty one has none)
++fn read_shift(
++    fontref: &skrifa::FontRef<'_>,
++    glyf: &glyf::Glyf<'_>,
++    gid: skrifa::GlyphId,
++) -> Result<f64, BabelfontError> {
++    if fontref.loca(None)?.get_glyf(gid, glyf)?.is_none() {
++        return Ok(0.0);
++    }
++    drawn_shift(fontref, glyf, gid, 0)
+ }
+ 
++const COMPOSITE_RECURSION_LIMIT: usize = 32;
++
+ fn load_layer(
+     axes: &[crate::Axis],
+     fontref: &skrifa::FontRef<'_>,
+@@ -647,13 +681,13 @@ fn load_layer(
+         glyf::Glyph::Composite(c) => {
+             // This gets complex. :-/
+             //
+-            // A TrueType rasterizer draws a glyph shifted by lsb - xMin (hmtx
+-            // left side bearing less glyf xMin), and simple glyphs are read
+-            // above as drawn. A composite is drawn from its components'
+-            // outlines as stored, then shifted by its own lsb - xMin; so each
+-            // offset gains the composite's shift and loses the shift its
+-            // component was read with, as the component's transform moves it.
+-            let shift = drawn_shift(fontref, &glyf, gid)?;
++            // A TrueType rasterizer draws a glyph shifted (see drawn_shift),
++            // and simple glyphs are read above as drawn. A composite is drawn
++            // from its components' outlines as stored, then shifted as a
++            // whole; so each offset gains the composite's shift and loses the
++            // shift its component was read with, as the component's transform
++            // moves it.
++            let shift = drawn_shift(fontref, &glyf, gid, 0)?;
+             for component in c.components() {
+                 let gid = component.glyph;
+                 let anchor = match component.anchor {
+@@ -668,7 +702,7 @@ fn load_layer(
+                 let yx = component.transform.yx.to_f32() as f64;
+                 let xy = component.transform.xy.to_f32() as f64;
+                 let yy = component.transform.yy.to_f32() as f64;
+-                let component_shift = drawn_shift(fontref, &glyf, gid.into())?;
++                let component_shift = read_shift(fontref, &glyf, gid.into())?;
+                 // XXX apply deltas
+                 // kurbo::Affine::new expects [xx, yx, xy, yy, dx, dy]
+                 let our_affine = kurbo::Affine::new([

@@ -1,0 +1,158 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 15:54:07 +0100
+Subject: [PATCH 02/16] ttf: read a composite where it is drawn
+
+A TrueType rasterizer draws a glyph shifted by lsb - xMin, its hmtx left side
+bearing less its glyf xMin. Simple glyphs are read as drawn (skrifa applies
+that shift), but a composite's offsets were taken as stored, while the
+rasterizer draws a composite from its components' stored outlines and then
+shifts it by its own lsb - xMin. So wherever a component's or the
+composite's lsb was not its xMin, the composite came out displaced, by twice
+the shift when the component is mirrored (questiondown from question).
+
+Each offset now gains the composite's shift and loses the shift its
+component was read with, as the component's transform moves it.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/convertors/ttf.rs | 96 ++++++++++++++++++++++++++++++---
+ 1 file changed, 89 insertions(+), 7 deletions(-)
+
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index fa1c654b..93e8826d 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -527,6 +527,24 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+     Ok(coords)
+ }
+ 
++/// How far a TrueType rasterizer moves a glyph's stored outline when it draws
++/// it: the phantom point puts the outline's xMin at the hmtx left side bearing.
++/// (At the default location; component deltas are not applied here either.)
++fn drawn_shift(
++    fontref: &skrifa::FontRef<'_>,
++    glyf: &glyf::Glyf<'_>,
++    gid: skrifa::GlyphId,
++) -> Result<f64, BabelfontError> {
++    let Some(glyph) = fontref.loca(None)?.get_glyf(gid, glyf)? else {
++        return Ok(0.0);
++    };
++    let lsb = fontref
++        .hmtx()?
++        .side_bearing(gid)
++        .unwrap_or_else(|| glyph.x_min());
++    Ok(lsb as f64 - glyph.x_min() as f64)
++}
++
+ fn load_layer(
+     axes: &[crate::Axis],
+     fontref: &skrifa::FontRef<'_>,
+@@ -562,6 +580,14 @@ fn load_layer(
+         }
+         glyf::Glyph::Composite(c) => {
+             // This gets complex. :-/
++            //
++            // A TrueType rasterizer draws a glyph shifted by lsb - xMin (hmtx
++            // left side bearing less glyf xMin), and simple glyphs are read
++            // above as drawn. A composite is drawn from its components'
++            // outlines as stored, then shifted by its own lsb - xMin; so each
++            // offset gains the composite's shift and loses the shift its
++            // component was read with, as the component's transform moves it.
++            let shift = drawn_shift(fontref, &glyf, gid)?;
+             for component in c.components() {
+                 let gid = component.glyph;
+                 let anchor = match component.anchor {
+@@ -571,16 +597,21 @@ fn load_layer(
+                         component: _,
+                     } => (0.0, 0.0),
+                 };
++                // x' = xx * x + xy * y, y' = yx * x + yy * y
++                let xx = component.transform.xx.to_f32() as f64;
++                let yx = component.transform.yx.to_f32() as f64;
++                let xy = component.transform.xy.to_f32() as f64;
++                let yy = component.transform.yy.to_f32() as f64;
++                let component_shift = drawn_shift(fontref, &glyf, gid.into())?;
+                 // XXX apply deltas
+-                // x' = xx * x + xy * y, y' = yx * x + yy * y;
+                 // kurbo::Affine::new expects [xx, yx, xy, yy, dx, dy]
+                 let our_affine = kurbo::Affine::new([
+-                    component.transform.xx.to_f32() as f64,
+-                    component.transform.yx.to_f32() as f64,
+-                    component.transform.xy.to_f32() as f64,
+-                    component.transform.yy.to_f32() as f64,
+-                    anchor.0,
+-                    anchor.1,
++                    xx,
++                    yx,
++                    xy,
++                    yy,
++                    anchor.0 + shift - xx * component_shift,
++                    anchor.1 - yx * component_shift,
+                 ]);
+ 
+                 layer.shapes.push(crate::Shape::Component(crate::Component {
+@@ -607,6 +638,7 @@ fn load_layer(
+ #[allow(clippy::unwrap_used, clippy::indexing_slicing)]
+ mod tests {
+     use super::*;
++    use kurbo::Shape as _;
+ 
+     const STATIC_LEGACY: &str = "resources/ttf/StaticLegacy.ttf";
+ 
+@@ -631,4 +663,54 @@ mod tests {
+         let coeffs = component_coeffs(&font, "barrot");
+         assert_close(&coeffs[0][..4], &[0.0, 1.0, -1.0, 0.0]);
+     }
++
++    #[test]
++    fn test_glyphs_read_as_drawn() {
++        // bar's lsb is 10 units right of its xMin, bars' own lsb 5 units:
++        // every glyph, simple or composite, must come out where skrifa draws it
++        let binary = std::fs::read(STATIC_LEGACY).unwrap();
++        let fontref = skrifa::FontRef::new(&binary).unwrap();
++        let font = load(STATIC_LEGACY).unwrap();
++        for (gid, glyph) in font.glyphs.iter().enumerate() {
++            let mut pen = PathBuilder::new();
++            fontref
++                .outline_glyphs()
++                .get(GlyphId::new(gid as u32))
++                .unwrap()
++                .draw(
++                    DrawSettings::unhinted(Size::unscaled(), LocationRef::default()),
++                    &mut pen,
++                )
++                .unwrap();
++            let drawn = pen
++                .build()
++                .iter()
++                .map(|p| p.to_kurbo().unwrap().bounding_box())
++                .reduce(|a, b| a.union(b))
++                .unwrap_or_default();
++            let layer = &glyph.layers[0];
++            let mut paths: Vec<crate::Path> = layer.paths().cloned().collect();
++            for component in layer.components() {
++                paths.extend(component.decompose(None, |name, _| {
++                    let layer = &font.glyphs.get(name)?.layers[0];
++                    Some(crate::shape::ResolvedShapes {
++                        paths: layer.paths().cloned().collect(),
++                        components: layer.components().cloned().collect(),
++                    })
++                }));
++            }
++            let read = paths
++                .iter()
++                .map(|p| p.to_kurbo().unwrap().bounding_box())
++                .reduce(|a, b| a.union(b))
++                .unwrap_or_default();
++            assert_close(
++                &[read.x0, read.y0, read.x1, read.y1],
++                &[drawn.x0, drawn.y0, drawn.x1, drawn.y1],
++            );
++        }
++        assert_close(&component_coeffs(&font, "barflip")[0][4..], &[310.0, 600.0]);
++        let bars = component_coeffs(&font, "bars");
++        assert_close(&[bars[0][4], bars[1][4]], &[-5.0, 245.0]);
++    }
+ }

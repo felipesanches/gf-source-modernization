@@ -1,0 +1,78 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:16:09 +0100
+Subject: [PATCH 08/16] ttf: read hhea's line gap
+
+The reader took hhea's ascender and descender but not its line gap, so a
+font whose hhea.lineGap was 25 compiled to 0, which changes the line spacing
+CoreText and FreeType-based engines use.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/StaticLegacy.ttf | Bin 1052 -> 1052 bytes
+ babelfont/resources/ttf/make_fixtures.py |   5 +++--
+ babelfont/src/convertors/ttf.rs          |  11 +++++++++++
+ 3 files changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+index 5d89fa9d1cdeddb8db3d09927506771f6889220a..7ef6d9968f7352ba54874daeca072fd60f66c594 100644
+GIT binary patch
+delta 63
+zcmbQkF^6M<lK@W|0|UbvAU4a$NKItzoEVfWohYdj&u{aUfsy$IP=evv+Y}`jJ@JAp
+KqvXbSddvVCw-QeP
+
+delta 63
+zcmbQkF^6M<lK}S{1_p*TKx~$gk($U_Ffk}uda{&4JipCX21e!=KnaFtZ<C+G=!q9(
+L85uUd(_;nzO_UT(
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index 8d454b49..551c7d99 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -6,7 +6,8 @@ StaticLegacy.ttf is a static font as an old FontForge build leaves it:
+ 
+ * OS/2 version 1 (no sxHeight / sCapHeight), usWeightClass 500, usWidthClass 6,
+   fsType 0, a PANOSE, fsSelection REGULAR | USE_TYPO_METRICS; head.fontRevision
+-  2.005, lowestRecPPEM 9; style "Medium" (name ID 17; ID 2 is "Regular").
++  2.005, lowestRecPPEM 9; hhea lineGap 25; style "Medium" (name ID 17; ID 2 is
++  "Regular").
+ * bar: a simple glyph whose hmtx lsb (110) is not its glyf xMin (100), so a
+   TrueType rasterizer draws it 10 units right of its stored outline.
+ * barflip: bar turned 180 degrees (scale -1, -1).
+@@ -76,7 +77,7 @@ lsb = {".notdef": 0, "x": 50, "H": 60, "bar": 110, "barflip": 100, "bars": 105,
+        "gravecomb": -200, "commaaccent": 20}
+ advance = {"gravecomb": 0, "commaaccent": 120}
+ fb.setupHorizontalMetrics({g: (advance.get(g, 800), lsb[g]) for g in order})
+-fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupHorizontalHeader(ascent=800, descent=-200, lineGap=25)
+ fb.setupNameTable({
+     "familyName": "Fixture Medium",
+     "styleName": "Regular",
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index 6778f0e1..3fd6487b 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -325,6 +325,10 @@ fn load_metrics(
+         MetricType::HheaDescender,
+         fontref.hhea()?.descender().to_i16() as i32,
+     );
++    metrics.insert(
++        MetricType::HheaLineGap,
++        fontref.hhea()?.line_gap().to_i16() as i32,
++    );
+ 
+     // post stores the angle negative for a right lean; babelfont stores the
+     // Glyphs convention, the opposite sign.
+@@ -933,4 +937,11 @@ mod tests {
+         assert_eq!(metrics.get(&MetricType::XHeight), Some(&480));
+         assert_eq!(metrics.get(&MetricType::CapHeight), Some(&700));
+     }
++
++    #[test]
++    fn test_hhea_line_gap() {
++        let font = load(STATIC_LEGACY).unwrap();
++        let metrics = &font.masters[0].metrics;
++        assert_eq!(metrics.get(&MetricType::HheaLineGap), Some(&25));
++    }
+ }

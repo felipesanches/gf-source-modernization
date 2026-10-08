@@ -1,0 +1,156 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 17:05:22 +0100
+Subject: [PATCH 16/16] ttf: name glyphs uniquely, as the uncompiled features
+ do
+
+A post table may give two glyphs the same name, and a source with a
+duplicate glyph name does not build (fontc: "N jobs stuck pending"). Glyphs
+are now named by sr_aef::unique_glyph_names, which the uncompiled features
+use too, so a component or a rule that points at the second "ffi" points at
+"ffi.1" in both.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/DuplicateNames.ttf | Bin 0 -> 772 bytes
+ babelfont/resources/ttf/make_fixtures.py   |  22 ++++++++++++
+ babelfont/src/convertors/ttf.rs            |  38 ++++++++++++---------
+ 3 files changed, 44 insertions(+), 16 deletions(-)
+ create mode 100644 babelfont/resources/ttf/DuplicateNames.ttf
+
+diff --git a/babelfont/resources/ttf/DuplicateNames.ttf b/babelfont/resources/ttf/DuplicateNames.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..f59b5a154cb1d5802bbbd8b31f7f4f0ca6107c47
+GIT binary patch
+literal 772
+zcmah{F;5gh6#iyr4@3oX2}Ubi0s#_&lD&vZHX(%NDsn0&LI;!G_3n~gZgaProK}{W
+zlol4$#-BhzV`63H51^o+vBQ$A-z<Cau;FdqoA-VD=Dlxb7XrX-e1wAi^34-xbH+OY
+z!~)rUKh}wOjcMY~#BMWs|1Ny=Y?b(w_-!lHfj-#y!u%V3rA4ChL40R^MxSlPY2W&Z
+zKI=abPedJGV;LL7zliU~x}RVScZhEh+Xp%hf4`_M0rENVVbbZPtE~q6%OAupj8^*m
+ztDVl?J@*fkIwy1899GZCW0DH8e8oM=&e>D$!hs{_icZ7(WWiKmaWy{Jc~v9GDCvnq
+zn2MWC4VSFZh}Us)r9s&+rx`Yz$GRxhxv29oW;B>ilZ@u%lbpT4b);0tj(JX8tocdq
+z6;&h(8^=S;V3FM5M%b%Xovu3KLLOgw<|bWM9w9JOYENtT-5?0an(1Hvv30VXGhjyw
+zO=g6Jm2#rM17f4ms2(MvVrz`dV@#E~#00kL?S7hdL)*)esO{@Cv>W{9z3s4>MY_uw
+zZT>AOGISBbhQ};HMAnBUZ@31tm{||oj7?TVWV-)-u|mqVP$8NXQYc|rL6(F?sI2>)
+GIQa`YvS@k$
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index 2bdcca66..c0548bd6 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -29,6 +29,9 @@ GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores.
+ Unnamed.ttf has no glyph names (post format 3): A (U+0041), Aring (U+00C5, a
+ component of A), an unencoded alternate of A reached by salt, and A Aring kerned
+ -50 in a legacy kern table.
++
++DuplicateNames.ttf's post table names glyphs 2 and 3 both "dupe" (a post table
++may); Acomp is a component of glyph 3.
+ """
+ from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
+ from fontTools.fontBuilder import FontBuilder
+@@ -168,3 +171,22 @@ addOpenTypeFeaturesFromString(fb.font, "feature salt { sub A by A.alt; } salt;")
+ legacy_kern(fb.font, {("A", "Aring"): -50})
+ fb.setupPost(keepGlyphNames=False)
+ save(fb, "Unnamed.ttf")
++
++
++order = [".notdef", "A", "dupa", "dupb", "Acomp"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({0x41: "A", 0xC0: "Acomp"})
++fb.setupGlyf({".notdef": Glyph(), "A": rect(50, 0, 550, 700), "dupa": rect(60, 0, 160, 100),
++              "dupb": rect(70, 0, 170, 100), "Acomp": composite(("dupb", 0, 0, None))})
++fb.setupHorizontalMetrics({".notdef": (500, 0), "A": (600, 50), "dupa": (600, 60), "dupb": (600, 70),
++                           "Acomp": (600, 70)})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({"familyName": "Fixture Duplicate Names", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++fb.setupPost()
++save(fb, "DuplicateNames.ttf")
++data = open("DuplicateNames.ttf", "rb").read()
++# both names become "dupe": the same length, so nothing in the post table moves
++assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
++open("DuplicateNames.ttf", "wb").write(data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe"))
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index 86a57613..696205bb 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -382,17 +382,10 @@ fn load_metrics(
+ }
+ 
+ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
+-    let glyph_count = fontref.maxp()?.num_glyphs() as u32;
+-    let names = GlyphNames::new(fontref);
+-    for glyph_id_u32 in 0..glyph_count {
+-        let gid = skrifa::GlyphId::new(glyph_id_u32);
+-        let proposed_name = names
+-            .get(gid)
+-            .ok_or(BabelfontError::BinaryFontRead(format!(
+-                "Glyph ID {} does not have a name in the font's 'post' table",
+-                glyph_id_u32
+-            )))?;
+-        let mut glyph = Glyph::new(proposed_name.as_str());
++    // unique, and the names the uncompiled features use
++    let names = sr_aef::unique_glyph_names(fontref);
++    for name in &names {
++        let mut glyph = Glyph::new(name.as_str());
+         glyph.exported = true;
+         font.glyphs.push(glyph);
+     }
+@@ -837,7 +830,7 @@ fn load_layer(
+     fontref: &skrifa::FontRef<'_>,
+     gid: skrifa::GlyphId,
+     master: &crate::Master,
+-    names: &skrifa::GlyphNames<'_>,
++    names: &[SmolStr],
+ ) -> Result<crate::Layer, BabelfontError> {
+     let loc = fontdrasil_location_to_skrifa_location(master.location.clone(), axes)?;
+     let locationref = LocationRef::new(&loc);
+@@ -912,13 +905,12 @@ fn load_layer(
+ 
+                 layer.shapes.push(crate::Shape::Component(crate::Component {
+                     reference: names
+-                        .get(gid.into())
++                        .get(gid.to_u32() as usize)
+                         .ok_or(BabelfontError::BinaryFontRead(format!(
+-                            "Component glyph ID {} does not have a name in the font's 'post' table",
++                            "Component glyph ID {} is not in the font",
+                             gid.to_u32()
+                         )))?
+-                        .to_string()
+-                        .into(),
++                        .clone(),
+                     transform: our_affine.into(),
+                     location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
+                     format_specific: FormatSpecific::default(),
+@@ -939,6 +931,7 @@ mod tests {
+     const STATIC_LEGACY: &str = "resources/ttf/StaticLegacy.ttf";
+     const GDEF_CLASSES: &str = "resources/ttf/GdefClasses.ttf";
+     const UNNAMED: &str = "resources/ttf/Unnamed.ttf";
++    const DUPLICATE_NAMES: &str = "resources/ttf/DuplicateNames.ttf";
+ 
+     fn category(font: &Font, glyph: &str) -> (GlyphCategory, Option<String>) {
+         let glyph = font.glyphs.get(glyph).unwrap();
+@@ -1148,6 +1141,19 @@ mod tests {
+         assert!(area > 0.0, "{:?}", path.nodes);
+     }
+ 
++    #[test]
++    fn test_duplicate_glyph_names() {
++        // the post table names glyphs 2 and 3 both "dupe"; Acomp uses glyph 3
++        let font = load(DUPLICATE_NAMES).unwrap();
++        let names: Vec<&str> = font.glyphs.iter().map(|g| g.name.as_str()).collect();
++        assert_eq!(names, [".notdef", "A", "dupe", "dupe.1", "Acomp"]);
++        let component = font.glyphs.get("Acomp").unwrap().layers[0]
++            .components()
++            .next()
++            .unwrap();
++        assert_eq!(component.reference, "dupe.1");
++    }
++
+     #[test]
+     fn test_font_revision() {
+         // head.fontRevision 2.005 (0x00020148)

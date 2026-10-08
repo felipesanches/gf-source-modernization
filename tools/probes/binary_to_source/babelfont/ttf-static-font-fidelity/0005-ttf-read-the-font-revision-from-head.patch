@@ -1,0 +1,59 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 15:56:21 +0100
+Subject: [PATCH 05/16] ttf: read the font revision from head
+
+The reader left the version at its default 1.0, so a converted font compiled
+to head.fontRevision 1.0 whatever the binary stated. It is now read from
+head.fontRevision, the minor in thousandths as Glyphs and UFO state it
+(0x00003333, 0.19999, is 0.200 and compiles back to 0x00003333).
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/convertors/ttf.rs | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index f120c881..b00e8239 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -32,6 +32,7 @@ pub fn load<T: AsRef<std::path::Path>>(path: T) -> Result<Font, BabelfontError>
+     let fontref =
+         skrifa::FontRef::new(&binary).map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
+     font.upm = fontref.head()?.units_per_em();
++    font.version = font_version(&fontref)?;
+ 
+     load_axes(&fontref, &mut font)?;
+     load_axis_mappings(&fontref, &mut font)?;
+@@ -44,6 +45,17 @@ pub fn load<T: AsRef<std::path::Path>>(path: T) -> Result<Font, BabelfontError>
+     Ok(font)
+ }
+ 
++/// head.fontRevision as (major, minor), the minor in thousandths as Glyphs
++/// and UFO state it: 0x00003333 (0.19999) is 0.200
++fn font_version(fontref: &skrifa::FontRef) -> Result<(u16, u16), BabelfontError> {
++    let revision = fontref.head()?.font_revision().to_f64();
++    let thousandths = (revision * 1000.0).round();
++    Ok((
++        (thousandths / 1000.0).floor() as u16,
++        (thousandths % 1000.0) as u16,
++    ))
++}
++
+ fn name_id_to_i18n(fontref: &skrifa::FontRef, name_id: StringId) -> crate::I18NDictionary {
+     let names = fontref.localized_strings(name_id);
+     let mut dict = crate::I18NDictionary::new();
+@@ -786,6 +798,12 @@ mod tests {
+         assert_eq!(ot.head_lowest_rec_ppem, Some(9));
+     }
+ 
++    #[test]
++    fn test_font_revision() {
++        // head.fontRevision 2.005 (0x00020148)
++        assert_eq!(load(STATIC_LEGACY).unwrap().version, (2, 5));
++    }
++
+     #[test]
+     fn test_heights_without_os2_v2() {
+         // OS/2 version 1: x-height and cap height are the tops of x and H

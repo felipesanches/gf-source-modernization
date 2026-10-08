@@ -1,0 +1,175 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:25:35 +0100
+Subject: [PATCH 10/16] ttf: state GDEF's glyph classes in the features
+
+A compiler derives GDEF glyph classes from glyph categories and anchors, and
+writes no GDEF at all when no glyph is a mark, a ligature or an anchored base.
+A font whose GDEF calls its combining accents bases (they space, and no
+lookup attaches them) then built with no GDEF, and a shaper took the accents
+for marks again by their codepoints.
+
+The glyph classes are now written as a GlyphClassDef statement, as the
+lookups already are, with glyph names that are feature-file keywords escaped.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/GdefClasses.ttf  | Bin 988 -> 1032 bytes
+ babelfont/resources/ttf/StaticLegacy.ttf | Bin 1052 -> 1052 bytes
+ babelfont/resources/ttf/make_fixtures.py |  13 +++---
+ babelfont/src/convertors/ttf.rs          |  55 +++++++++++++++++++++++
+ 4 files changed, 62 insertions(+), 6 deletions(-)
+
+diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
+index 8a837eed3d65c01b8f006b78e0f8033ea7ad05fb..32db81874fff086d04179597d8bc0a0de3b785da 100644
+GIT binary patch
+delta 390
+zcmXw#JxD@P6vxlGSKqS`OpGw7u#ce{5?;{c5avgL&>%uVP!G#Y-pgmc!J@FXM(YhV
+zv<8kf22mgl4H2|AS4&N{h4okHUe3Me_dn;{!?~~Ov8PH*L|!^1NwdjVJVE`W63Kn2
+zL&<a|dSld=z!%`cVmhqFj}j#!o(HdGP2G}x@)`U9j%^ydx!PznP9%ch^ZbUs9$xS@
+z;6K4;@(|p6!bZLeJeD`@YNh*~A`t2j28?1>rxKmv0S~yx)GHQsk%IU*IJB*s8?~Ry
+z6~wQ=MXOl09}irJ$q;zCGYkg0p9@^C`Xb*X<p*?n`^*LY@81Hdzr-zAk~nEisA{K7
+zb*6ZbUz`-%f}74AXE^2bifWKaL;nUhkx$e9VZX*TZnnIRBTjwzD~hpT$u4%Y;%IVY
+dQYmM5wk%AEGMKmRU@^ARIc2+ZJLXu@_ydn-O@9CY
+
+delta 346
+zcmeC+xWiu0z{tSBz{AkMz|7#_?&9jkAkM(fz`z^=6qRug4t3g@vmye>F97nh{Dbw4
+zTpQi87#J8mfc%8y+{6NAG3IkX{sAE0B|WDy%|yD{j)8$m1jw(;NKH)9_vC#CWS;?I
+zvkagBYZX&5P(2Hfuac2lQeVOGnSl!^umUI`k&~aC$WX}O4Kx6xfG;<(qJV*efek3H
+z0pu&>CFZ71__H(yC_e?r&o9U?E}7i_VJFamAoT%Y&j3C2RBE3{JipCX24?0LKyij=
+zZ&Nj4^nal9ncgw&0rHs{m?r+yWM>0wW1FnUD9d<ivJYd)<Rgs1j0}?{nCd65XPU$d
+ow4T9*k%^I+k%f_UasacE3|IpX$V4Du1VUCY$qX`a@*L(I0H4f6`v3p{
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+index 7ef6d9968f7352ba54874daeca072fd60f66c594..c704991819564ab0f3a9e3b4b949bee756189f7f 100644
+GIT binary patch
+delta 43
+rcmbQkF^6M<6O(|)M3*8d!Hjr*o39Lv%r6*#;Mv<WVHmyff)6tQ6SNIN
+
+delta 43
+rcmbQkF^6M<6BAF`M3*8dNu79po39Lv%r6*#;Mv<0B^bT&f)6tQ5=ad~
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index 88c64317..43243b03 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -20,8 +20,8 @@ StaticLegacy.ttf is a static font as an old FontForge build leaves it:
+ 
+ GdefClasses.ttf carries GDEF glyph classes: gravecomb a base (class 1, advance
+ 190), acutecomb a mark with no advance, tildecomb a mark with one (300), f_f a
+-ligature. Its calt's backtrack covers five glyphs, which reads back as a named
+-glyph class.
++ligature, script a base whose name is a feature-file keyword. Its calt's
++backtrack covers five glyphs, which reads back as a named glyph class.
+ """
+ from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
+ from fontTools.fontBuilder import FontBuilder
+@@ -96,14 +96,15 @@ fb.font["head"].lowestRecPPEM = 9
+ fb.save("StaticLegacy.ttf")
+ 
+ 
+-order = [".notdef", "a", "gravecomb", "acutecomb", "tildecomb", "f_f"]
++order = [".notdef", "a", "gravecomb", "acutecomb", "tildecomb", "f_f", "script"]
+ fb = FontBuilder(1000, isTTF=True)
+ fb.setupGlyphOrder(order)
+ fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb", 0x0301: "acutecomb", 0x0303: "tildecomb"})
+ fb.setupGlyf({".notdef": Glyph(), "a": rect(50, 0, 450, 500), "gravecomb": rect(40, 550, 150, 700),
+               "acutecomb": rect(-150, 550, -40, 700), "tildecomb": rect(20, 550, 280, 650),
+-              "f_f": rect(50, 0, 750, 700)})
+-advance = {".notdef": 500, "a": 500, "gravecomb": 190, "acutecomb": 0, "tildecomb": 300, "f_f": 800}
++              "f_f": rect(50, 0, 750, 700), "script": rect(50, 0, 450, 500)})
++advance = {".notdef": 500, "a": 500, "gravecomb": 190, "acutecomb": 0, "tildecomb": 300, "f_f": 800,
++           "script": 500}
+ fb.setupHorizontalMetrics({g: (advance[g], fb.font["glyf"][g].xMin if g != ".notdef" else 0)
+                            for g in order})
+ fb.setupHorizontalHeader(ascent=800, descent=-200)
+@@ -116,7 +117,7 @@ feature calt {
+     sub [a gravecomb acutecomb tildecomb f_f] gravecomb' lookup up;
+ } calt;
+ table GDEF {
+-    GlyphClassDef [a gravecomb], [f_f], [acutecomb tildecomb], ;
++    GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;
+ } GDEF;
+ """)
+ fb.save("GdefClasses.ttf")
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index 5e4f854d..c324f0ee 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -549,6 +549,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+             PossiblyAutomaticCode::new(language_systems_block),
+         );
+     }
++    if let Some(glyph_classes) = gdef_glyph_classes(fontref, font)? {
++        features
++            .prefixes
++            .insert("GDEF".into(), PossiblyAutomaticCode::new(glyph_classes));
++    }
+     for (lookup_name, statements) in uncompile_context.lookups.iter() {
+         features.prefixes.insert(
+             lookup_name.clone(),
+@@ -565,6 +570,44 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+     Ok(())
+ }
+ 
++/// GDEF's glyph classes as a feature file states them, so that a compiler
++/// keeps them instead of deriving its own (which gives no GDEF at all when no
++/// glyph is a mark, ligature or anchored base)
++fn gdef_glyph_classes(
++    fontref: &skrifa::FontRef,
++    font: &Font,
++) -> Result<Option<String>, BabelfontError> {
++    let Ok(gdef) = fontref.gdef() else {
++        return Ok(None);
++    };
++    let Some(class_def) = gdef.glyph_class_def().transpose()? else {
++        return Ok(None);
++    };
++    let mut classes: [Vec<&str>; 4] = Default::default();
++    for (gid, class) in class_def.iter() {
++        let glyph = font.glyphs.get_by_index(gid.to_u32() as usize);
++        if let (Some(glyph), Some(members)) =
++            (glyph, classes.get_mut((class as usize).wrapping_sub(1)))
++        {
++            members.push(glyph.name.as_str());
++        }
++    }
++    let classes = classes
++        .iter()
++        .map(|members| {
++            if members.is_empty() {
++                String::new()
++            } else {
++                fea_rs_ast::GlyphContainer::new_class(members).as_fea("")
++            }
++        })
++        .join(", ");
++    Ok(Some(format!(
++        "table GDEF {{\n    GlyphClassDef {};\n}} GDEF;",
++        classes
++    )))
++}
++
+ fn get_x_y_location_for_anchor(
+     location: DesignLocation,
+     anchor: &sr_aef::fea_rs_ast::Anchor,
+@@ -924,6 +967,18 @@ mod tests {
+         );
+     }
+ 
++    #[test]
++    fn test_gdef_glyph_classes() {
++        let font = load(GDEF_CLASSES).unwrap();
++        assert_eq!(
++            font.features.prefixes.get("GDEF").unwrap().code,
++            "table GDEF {\n    GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;\n} GDEF;"
++        );
++        // no GDEF, nothing stated
++        let font = load(STATIC_LEGACY).unwrap();
++        assert!(font.features.prefixes.get("GDEF").is_none());
++    }
++
+     #[test]
+     fn test_named_class_members() {
+         // a class's code is its members; the brackets are added on writing

@@ -1,0 +1,311 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:15:30 +0100
+Subject: [PATCH 07/16] ttf: read each glyph's category as a shaper reads its
+ class
+
+The reader left every glyph's category unset, so a compiler guessed one from
+the glyph's name: a gravecomb that the font's GDEF calls a base became a
+zero-width mark, and so did an unencoded commaaccent in a font with no GDEF.
+
+Categories now follow the GDEF glyph classes, or without them what a shaper
+infers (a nonspacing-mark codepoint is a mark, anything else a base). A mark
+is Nonspacing if it has no advance, else Spacing Combining, which keeps the
+advance; a ligature's subcategory is Ligature. icu_properties (the version
+glyphs-reader uses) gives the general category.
+
+GdefClasses.ttf in the fixtures has GDEF classes; StaticLegacy.ttf has none.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ Cargo.lock                               |   1 +
+ babelfont/Cargo.toml                     |   3 +-
+ babelfont/resources/ttf/GdefClasses.ttf  | Bin 0 -> 864 bytes
+ babelfont/resources/ttf/StaticLegacy.ttf | Bin 944 -> 1052 bytes
+ babelfont/resources/ttf/make_fixtures.py |  42 ++++++++++-
+ babelfont/src/convertors/ttf.rs          |  89 ++++++++++++++++++++++-
+ 6 files changed, 129 insertions(+), 6 deletions(-)
+ create mode 100644 babelfont/resources/ttf/GdefClasses.ttf
+
+diff --git a/Cargo.lock b/Cargo.lock
+index 43668dcf..6dc0cb0c 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -147,6 +147,7 @@ dependencies = [
+  "fontdrasil",
+  "fontir",
+  "glyphslib",
++ "icu_properties",
+  "indexmap 2.14.2",
+  "itertools",
+  "kurbo",
+diff --git a/babelfont/Cargo.toml b/babelfont/Cargo.toml
+index 6706803b..fa950b21 100644
+--- a/babelfont/Cargo.toml
++++ b/babelfont/Cargo.toml
+@@ -57,7 +57,7 @@ robocjk = []
+ fontlab = []
+ fontforge = []
+ fontir = ["dep:fontir", "dep:fontc", "dep:fontbe"]
+-ttf = ["dep:skrifa"]
++ttf = ["dep:skrifa", "dep:icu_properties"]
+ linesweeper = ["dep:linesweeper"]
+ cli = [
+     "dep:env_logger",
+@@ -99,6 +99,7 @@ typeshare = { version = "1.0.4", optional = true }
+ num-traits = "0.2.19"
+ vfbreader = { version = "0.1.5", optional = true }
+ skrifa = { workspace = true, optional = true }
++icu_properties = { version = "=2.1", optional = true }
+ sr-aef = { version = "0.1.1", path = "../sr-aef" }
+ itertools = "0.14.0"
+ unicode-normalization = "0.1.25"
+diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..ae51eafd4862f37314ce97fbb1a9ff350513a541
+GIT binary patch
+literal 864
+zcmah{&ubGw6#iyrlP0!SN>h#KAq5Qq3oWS@526TZqIgj1Rj6ZjH$TWWG2KY?Ac~&6
+z7!ZOty?7UILh#^8Jb3mWP`p?K>&>`+v%8@^2);0H-uJyX?^hNAz%(8}VWm=9FXITN
+z097J;{Oa}P;`+mK0}yA4Z&p3sQHRwh;@8BbTI;TR`q-oMfV7D3*BxyyU!Hbpk9gMV
+zBog=JHtk)W6Lrt;r+(r9-#;hLw%S#V+qgn({Ij0!caTDoI7^({(w;N;{ptquKPGN>
+z+S~rKr$62joA_%mz4N@d<h|KEbnX|F`bGv{zgNFZ?x4x&9clVekcOr3jmia_iMol5
+z+zB&9zDOrSCJ8I{OkVEADDhDYkYL3B<>LO33lw6l)T9S|*zc#Ei#Eco6!8uPAZUsu
+zWK@or<M1e+3^ga=ZDECXia+DiN+=Zsp~aO1LGW@c$0DADbSMXL6epR_^dd}N@t*aV
+zcXe)Yt|$g#_s@*+6l5Ml?vI}NGph@QEtww<A%dpN2cIKeksro9x0x4N`6P;8T*wGZ
+z=50H!5&jdC8ge8@<5JX(g|)ap0hWzz$!~GSOlhUbWHBGx60<l}ZuI?L*U43E$K7yh
+zy_W8xj0XDf(L)yw*I0qg+r<WTjcf~=o^VT1-G6I-fhY+nl(0l1UF+&QPPOgbO6zLR
+ak1W5@vO`O`n{L>x>Dq|db0XA=-O9fO1%YS)
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+index 24727060a8c21f08f326aeffe7c70f151da506f3..5d89fa9d1cdeddb8db3d09927506771f6889220a 100644
+GIT binary patch
+delta 564
+zcmX|7J7^S96g~I7&Ft<(k`!asUol{cfM7^8vPD2_+zp5df(RDjWoD8M+1VX7i|m4s
+zbP})|Ock(G3xyP^f`w%Y6%j$O6n}_@6q{0?XV#Dh=iYnH{myLVHw&u}04~;`;orD5
+zF;#hT{URXaRBs2dNt~;H*U6ueUt6qq7rLLnKL*q>@=vwMgcGH~UyPp<mueIS5*0K4
+zLX6eocIRYQzOsLfe7xQaj7*|OPGB@Poz(;*7^YC5;5SSh&AxeB<bogMuao9V`{UX7
+z%Yfb{kNU?dsZOV-{JG(o1BlM*@a=cNCI7uG+p^kIFG-6~naanH)V?hrT33(uCowV7
+zPiMyMOKv(OXB_o`2RiAbl+ua}m988WF}Tc!SEy>FbvaSfKBkBnqCtej(xHC{aAgM`
+zyA+`bk2d?`9&+G0+*)8xp~|}Z8rD)fitUbFw-5dlvX1nfoYn?$`cqz<7h9H|-Bfq7
+znR@!d@!e2*VaPg<8$<gx(@WI7o4Xqu=_9pYaXI)d&S6fJXvxWdIFirLo7O^oDap~V
+eI5e$hJBvHT#g@4j1<iPVkR~=J2%<)tBmMyqjD4#B
+
+delta 457
+zcmYLFze_?<6#mY8FMTSggk(^ILqi~u8AOoK5@;AS1T78n{FR1JAL{S|L7^dpnqE*t
+zdk_*qv_wNgW3AC25EWrgwFR$pUs30Beth3K=ew7Cte(5uAOK!;AS1H6HXTnE(_a8h
+zGP|DBH3R!J#rS~n(q?75*!5i;GVU`zEfutUEU3P5-D96CG2z;h@?1Z$Pn7hgsa%r6
+z^Bu;+m0C{2EiA^50_&RDHsD8q36+URRnrU0_a`1eI%0fh)Edof>0tqog=pG&tVF5V
+z=+0RtkoW}2ugv55JuA{rj`Q|Fx@PEs<j^e73K4r=M8x5hM;s+?27d>{i1-QB^3%9W
+zj?f2O)(nNMB>BUl@n?%{xIqdnt3snIESEqPd6e1roGEds%pT$>Rzpw_<E-)#y%bEe
+zZ2P~muk5b93$pq&X8EL^^&$<T;zKqNMTR7jNueQkR;w2)WkccIaB-;DnxZ!G4N~n{
+A>Hq)$
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index d4991c4f..8d454b49 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -14,7 +14,14 @@ StaticLegacy.ttf is a static font as an old FontForge build leaves it:
+ * barrot: bar turned 90 degrees (a 2x2 transform with xy = -1, yx = 1).
+ * barx: x and bar, bar flagged USE_MY_METRICS: drawn by bar's lsb (10 units
+   right), not by the composite's own (40).
++* gravecomb (U+0300, advance 0) and commaaccent (unencoded, advance 120): with no
++  GDEF, a shaper takes the first for a mark and the second for a base.
++
++GdefClasses.ttf carries GDEF glyph classes: gravecomb a base (class 1, advance
++190), acutecomb a mark with no advance, tildecomb a mark with one (300), f_f a
++ligature.
+ """
++from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
+ from fontTools.fontBuilder import FontBuilder
+ from fontTools.ttLib.tables.O_S_2f_2 import Panose
+ from fontTools.pens.ttGlyphPen import TTGlyphPen
+@@ -46,7 +53,8 @@ def composite(*parts):
+ 
+ 
+ USE_MY_METRICS = 0x200
+-order = [".notdef", "x", "H", "bar", "barflip", "bars", "barrot", "barx"]
++order = [".notdef", "x", "H", "bar", "barflip", "bars", "barrot", "barx", "gravecomb",
++         "commaaccent"]
+ glyphs = {
+     ".notdef": Glyph(),
+     "x": rect(50, 0, 450, 480),
+@@ -57,13 +65,17 @@ glyphs = {
+     # fontTools' transform is [[xx, yx], [xy, yy]]: x' = xx*x + xy*y, y' = yx*x + yy*y
+     "barrot": composite(("bar", 700, 0, [[0, 1], [-1, 0]])),
+     "barx": composite(("x", 300, 0, None), ("bar", 0, 0, None, USE_MY_METRICS)),
++    "gravecomb": rect(-200, 500, -100, 600),
++    "commaaccent": rect(20, -200, 100, -50),
+ }
+ fb = FontBuilder(1000, isTTF=True)
+ fb.setupGlyphOrder(order)
+-fb.setupCharacterMap({ord("x"): "x", ord("H"): "H", ord("|"): "bar"})
++fb.setupCharacterMap({ord("x"): "x", ord("H"): "H", ord("|"): "bar", 0x0300: "gravecomb"})
+ fb.setupGlyf(glyphs)
+-lsb = {".notdef": 0, "x": 50, "H": 60, "bar": 110, "barflip": 100, "bars": 105, "barrot": 100, "barx": 140}
+-fb.setupHorizontalMetrics({g: (800, lsb[g]) for g in order})
++lsb = {".notdef": 0, "x": 50, "H": 60, "bar": 110, "barflip": 100, "bars": 105, "barrot": 100, "barx": 140,
++       "gravecomb": -200, "commaaccent": 20}
++advance = {"gravecomb": 0, "commaaccent": 120}
++fb.setupHorizontalMetrics({g: (advance.get(g, 800), lsb[g]) for g in order})
+ fb.setupHorizontalHeader(ascent=800, descent=-200)
+ fb.setupNameTable({
+     "familyName": "Fixture Medium",
+@@ -80,3 +92,25 @@ fb.setupPost()
+ fb.font["head"].fontRevision = 2.005
+ fb.font["head"].lowestRecPPEM = 9
+ fb.save("StaticLegacy.ttf")
++
++
++order = [".notdef", "a", "gravecomb", "acutecomb", "tildecomb", "f_f"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb", 0x0301: "acutecomb", 0x0303: "tildecomb"})
++fb.setupGlyf({".notdef": Glyph(), "a": rect(50, 0, 450, 500), "gravecomb": rect(40, 550, 150, 700),
++              "acutecomb": rect(-150, 550, -40, 700), "tildecomb": rect(20, 550, 280, 650),
++              "f_f": rect(50, 0, 750, 700)})
++advance = {".notdef": 500, "a": 500, "gravecomb": 190, "acutecomb": 0, "tildecomb": 300, "f_f": 800}
++fb.setupHorizontalMetrics({g: (advance[g], fb.font["glyf"][g].xMin if g != ".notdef" else 0)
++                           for g in order})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({"familyName": "Fixture Gdef", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++fb.setupPost()
++addOpenTypeFeaturesFromString(fb.font, """
++table GDEF {
++    GlyphClassDef [a gravecomb], [f_f], [acutecomb tildecomb], ;
++} GDEF;
++""")
++fb.save("GdefClasses.ttf")
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index 62ad2291..6778f0e1 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -5,6 +5,7 @@ use fontdrasil::{
+     },
+     types::Axes,
+ };
++use icu_properties::{props::GeneralCategory, CodePointMapData};
+ use indexmap::IndexMap;
+ use itertools::Itertools;
+ use ordered_float::OrderedFloat;
+@@ -22,7 +23,7 @@ use write_fonts::types::F2Dot14;
+ 
+ use crate::{
+     features::PossiblyAutomaticCode, Anchor, BabelfontError, Features, Font, FormatSpecific, Glyph,
+-    Instance, Layer, LayerType, MetricType, PathBuilder, Tag,
++    GlyphCategory, Instance, Layer, LayerType, MetricType, PathBuilder, Tag,
+ };
+ 
+ /// Load a TTF font from a file path
+@@ -373,6 +374,50 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
+             )))?;
+         glyph.codepoints.push(unicode);
+     }
++    load_categories(fontref, font)
++}
++
++/// Each glyph's GDEF class as a shaper reads it: from GDEF's glyph classes, or
++/// without them, a mark for a nonspacing-mark codepoint and a base for anything
++/// else. Every glyph is given a category, so that a compiler does not guess one
++/// from its name; a mark is Nonspacing if it has no advance, else Spacing
++/// Combining, which keeps its advance.
++fn load_categories(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
++    let class_def = match fontref.gdef() {
++        Ok(gdef) => gdef.glyph_class_def().transpose()?,
++        Err(_) => None,
++    };
++    let general_category = CodePointMapData::<GeneralCategory>::new();
++    let metrics = fontref.glyph_metrics(Size::unscaled(), LocationRef::default());
++    for (gid, glyph) in font.glyphs.iter_mut().enumerate() {
++        let gid = GlyphId::new(gid as u32);
++        let class = match &class_def {
++            Some(class_def) => class_def.get(gid),
++            None if glyph.codepoints.iter().any(|&cp| {
++                char::from_u32(cp)
++                    .is_some_and(|c| general_category.get(c) == GeneralCategory::NonspacingMark)
++            }) =>
++            {
++                3
++            }
++            None => 1,
++        };
++        let (category, subcategory) = match class {
++            2 => (GlyphCategory::Ligature, Some("Ligature")),
++            3 if metrics.advance_width(gid).unwrap_or_default() == 0.0 => {
++                (GlyphCategory::Mark, Some("Nonspacing"))
++            }
++            3 => (GlyphCategory::Mark, Some("Spacing Combining")),
++            _ => (GlyphCategory::Base, None),
++        };
++        glyph.category = category;
++        if let Some(subcategory) = subcategory {
++            glyph.format_specific.insert(
++                "subcategory".to_string(),
++                serde_json::Value::String(subcategory.to_string()),
++            );
++        }
++    }
+     Ok(())
+ }
+ 
+@@ -741,6 +786,15 @@ mod tests {
+     use kurbo::Shape as _;
+ 
+     const STATIC_LEGACY: &str = "resources/ttf/StaticLegacy.ttf";
++    const GDEF_CLASSES: &str = "resources/ttf/GdefClasses.ttf";
++
++    fn category(font: &Font, glyph: &str) -> (GlyphCategory, Option<String>) {
++        let glyph = font.glyphs.get(glyph).unwrap();
++        (
++            glyph.category.clone(),
++            glyph.format_specific.get_optionstring("subcategory"),
++        )
++    }
+ 
+     fn component_coeffs(font: &Font, glyph: &str) -> Vec<[f64; 6]> {
+         font.glyphs.get(glyph).unwrap().layers[0]
+@@ -832,6 +886,39 @@ mod tests {
+         assert_eq!(ot.head_lowest_rec_ppem, Some(9));
+     }
+ 
++    #[test]
++    fn test_categories_without_gdef() {
++        // as a shaper infers them: U+0300 is a nonspacing mark; an unencoded
++        // glyph is a base, whatever its name suggests
++        let font = load(STATIC_LEGACY).unwrap();
++        assert_eq!(
++            category(&font, "gravecomb"),
++            (GlyphCategory::Mark, Some("Nonspacing".to_string()))
++        );
++        assert_eq!(category(&font, "commaaccent"), (GlyphCategory::Base, None));
++        assert_eq!(category(&font, "x"), (GlyphCategory::Base, None));
++    }
++
++    #[test]
++    fn test_categories_from_gdef() {
++        let font = load(GDEF_CLASSES).unwrap();
++        // a base in GDEF, though U+0300 is a nonspacing mark
++        assert_eq!(category(&font, "gravecomb"), (GlyphCategory::Base, None));
++        assert_eq!(
++            category(&font, "acutecomb"),
++            (GlyphCategory::Mark, Some("Nonspacing".to_string()))
++        );
++        // a mark with an advance keeps it
++        assert_eq!(
++            category(&font, "tildecomb"),
++            (GlyphCategory::Mark, Some("Spacing Combining".to_string()))
++        );
++        assert_eq!(
++            category(&font, "f_f"),
++            (GlyphCategory::Ligature, Some("Ligature".to_string()))
++        );
++    }
++
+     #[test]
+     fn test_font_revision() {
+         // head.fontRevision 2.005 (0x00020148)

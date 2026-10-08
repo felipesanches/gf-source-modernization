@@ -1,0 +1,565 @@
+DellaRespira-Regular             RESIDUAL: 2 blocking row(s), functional FAIL(rendering+names+line_spacing)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0]}
+    functional:   cmap         PASS 293 codepoints, exact
+    functional:   shaping      PASS 685494 runs shaped, 0 differ
+    functional:   rendering    FAIL diffenator3 34 glyph / 10 word diffs (34 / 10 confirmed); 88 of 293 changed outlines draw different ink
+    functional:       - diffenator3: 34 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00EF 90px, U+00BF 88px, U+003E 65px, U+201C 43px, U+2018 22px
+    functional:       - diffenator3: 10 word(s) render differently (>8 px at 16 ppem), confirmed: 'Aláàrìnjó' 20px, 'ÑÒÀÐÀ' 15px, 'ÁŅŅé' 15px, 'ĎURKÁČOVÁ' 13px, 'Ęîěďëĺęń' 11px
+    functional:       - 88 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): questiondown 1698px, quotedblleft 634px, greater 555px, quoteleft 320px, agrave 199px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 953, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1638, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     PASS 294 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 0 it does not
+Oranienbaum-Regular              RESIDUAL: 3 blocking row(s), functional FAIL(names+advances+gdef)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [5, 0], "3": [6, 0], "4": [8, 0], "7": [2, 0], "9": [3, 0]}
+    BLOCKING hmtx.commaaccent {"width": [120, 0]}
+    functional:   cmap         PASS 413 codepoints, exact
+    functional:   shaping      PASS 732187 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 413 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 416 glyph advances compared, 1 differ
+    functional:       - 1 advance width(s) differ (release/build): commaaccent 120/0
+    functional:   gdef         FAIL GDEF absent/present; 1 class difference(s) shaping reads, 415 it does not
+    functional:       - GDEF present in the build
+    functional:       - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent -/3
+AveriaLibre-BoldItalic           RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574065 runs shaped, 515205 differ
+    functional:       - default features, pairs: 15816 of 47524 runs differ
+    functional:       - default features, words: 499389 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 959 word diffs (0 / 959 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 959 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 532px, '1/234,latn,dflt,frac' 370px, '0a,,,ordn' 116px, '0,,,zero' 68px, '0123456789,,,sups' 66px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Bold Italic', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Bold Italic', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: BOLD lost
+    functional:       - head.macStyle bold: release 1, build 0
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 970, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - ... 1 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaLibre-Bold                 RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 570222 runs shaped, 501661 differ
+    functional:       - default features, pairs: 11811 of 43681 runs differ
+    functional:       - default features, words: 489850 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 862 word diffs (0 / 862 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 862 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 520px, '1/234,latn,dflt,frac' 344px, '0123456789,,,pnum' 229px, '0123456789,,,dnom' 222px, '0123456789,,,sups' 216px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Bold', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Bold', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: BOLD lost, REGULAR gained
+    functional:       - head.macStyle bold: release 1, build 0
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 1006, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - ... 1 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaLibre-Italic               RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574502 runs shaped, 515709 differ
+    functional:       - default features, pairs: 14813 of 47961 runs differ
+    functional:       - default features, words: 500896 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 984 word diffs (0 / 984 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 984 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 477px, '1/234,latn,dflt,frac' 319px, '0a,,,ordn' 68px, '0,,,zero' 34px, 'Abhávottaránandapratyayálambaniirvrttih' 1579px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Italic', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Italic', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 950, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1389, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaLibre-LightItalic          RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574502 runs shaped, 518744 differ
+    functional:       - default features, pairs: 15520 of 47961 runs differ
+    functional:       - default features, words: 503224 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 974 word diffs (0 / 974 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 974 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 482px, '1/234,latn,dflt,frac' 326px, '0a,,,ordn' 100px, '0,,,zero' 35px, 'cqqGGaaicqqGGaaicqqGGaaidaWadaqaaiabhIfayjabcYcaSiabhc' 2453px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Averia Libre', build 'Averia Libre Light'
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Light Italic', build 'Default'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Averia Libre', build 'Averia Libre Light'
+    functional:       - ... 1 more
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 943, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1388, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaLibre-Light                RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 568977 runs shaped, 498189 differ
+    functional:       - default features, pairs: 11134 of 42436 runs differ
+    functional:       - default features, words: 487055 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 868 word diffs (0 / 868 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 868 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 477px, '0123456789,,,pnum' 416px, '0123456789,,,dnom' 416px, '0123456789,,,tnum' 402px, '0123456789,,,sinf' 360px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Averia Libre', build 'Averia Libre Light'
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Light', build 'Default'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Averia Libre', build 'Averia Libre Light'
+    functional:       - ... 1 more
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 985, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1389, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaLibre-Regular              RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 568977 runs shaped, 495710 differ
+    functional:       - default features, pairs: 11230 of 42436 runs differ
+    functional:       - default features, words: 484480 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 847 word diffs (0 / 847 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 847 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 511px, '1/234,latn,dflt,frac' 240px, '0123456789,,,pnum' 227px, '0123456789,,,dnom' 220px, '0123456789,,,tnum' 215px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 990, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1395, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSansLibre-BoldItalic       RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574065 runs shaped, 515205 differ
+    functional:       - default features, pairs: 15816 of 47524 runs differ
+    functional:       - default features, words: 499389 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 959 word diffs (0 / 959 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 959 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 546px, '1/234,latn,dflt,frac' 381px, '0a,,,ordn' 116px, '0123456789,,,sups' 75px, '0,,,zero' 75px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Bold Italic', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Bold Italic', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: BOLD lost
+    functional:       - head.macStyle bold: release 1, build 0
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 1003, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - ... 1 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSansLibre-Bold             RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 570222 runs shaped, 501661 differ
+    functional:       - default features, pairs: 11811 of 43681 runs differ
+    functional:       - default features, words: 489850 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 862 word diffs (0 / 862 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 862 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 534px, '1/234,latn,dflt,frac' 352px, '0123456789,,,dnom' 223px, '0123456789,,,pnum' 221px, '0123456789,,,sups' 209px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Bold', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Bold', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: BOLD lost, REGULAR gained
+    functional:       - head.macStyle bold: release 1, build 0
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 1010, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - ... 1 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSansLibre-Italic           RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574502 runs shaped, 515709 differ
+    functional:       - default features, pairs: 14813 of 47961 runs differ
+    functional:       - default features, words: 500896 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 984 word diffs (0 / 984 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 984 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 477px, '1/234,latn,dflt,frac' 305px, '0a,,,ordn' 61px, '0,,,zero' 36px, 'Abhávottaránandapratyayálambaniirvrttih' 1611px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Italic', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Italic', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 987, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1396, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSansLibre-LightItalic      RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574502 runs shaped, 518744 differ
+    functional:       - default features, pairs: 15520 of 47961 runs differ
+    functional:       - default features, words: 503224 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 975 word diffs (0 / 975 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 975 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 465px, '1/234,latn,dflt,frac' 325px, '0a,,,ordn' 100px, '0,,,zero' 33px, 'cqqGGaaicqqGGaaicqqGGaaidaWadaqaaiabhIfayjabcYcaSiabhc' 2419px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Averia Sans Libre', build 'Averia Sans Libre Light'
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Light Italic', build 'Default'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Averia Sans Libre', build 'Averia Sans Libre Light'
+    functional:       - ... 1 more
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 977, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1386, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSansLibre-Light            RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 568977 runs shaped, 498189 differ
+    functional:       - default features, pairs: 11134 of 42436 runs differ
+    functional:       - default features, words: 487055 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 868 word diffs (0 / 868 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 868 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 467px, '0123456789,,,pnum' 396px, '0123456789,,,dnom' 389px, '0123456789,,,tnum' 374px, '0123456789,,,sinf' 349px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Averia Sans Libre', build 'Averia Sans Libre Light'
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Light', build 'Default'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Averia Sans Libre', build 'Averia Sans Libre Light'
+    functional:       - ... 1 more
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 982, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1390, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSansLibre-Regular          RESIDUAL: 3 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 568977 runs shaped, 495710 differ
+    functional:       - default features, pairs: 11230 of 42436 runs differ
+    functional:       - default features, words: 484480 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 847 word diffs (0 / 847 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 847 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 510px, '1/234,latn,dflt,frac' 229px, '0123456789,,,pnum' 222px, '0123456789,,,dnom' 207px, '0123456789,,,tnum' 207px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 988, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1398, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSerifLibre-BoldItalic      RESIDUAL: 4 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hhea.line_gap [184, 0]
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574065 runs shaped, 515205 differ
+    functional:       - default features, pairs: 15816 of 47524 runs differ
+    functional:       - default features, words: 499389 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 959 word diffs (0 / 959 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 959 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 511px, '1/234,latn,dflt,frac' 382px, '0a,,,ordn' 113px, '0123456789,,,sups' 72px, '0,,,zero' 64px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Bold Italic', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Bold Italic', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap DIFFER
+    functional:       - CoreText line spacing (ascender, descender, gap): release hhea (1861, -475, 184), build hhea (1861, -475, 0)
+    functional:       - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1861, -475, 184), build win (1861, -475, 0)
+    functional:       - FreeType engines line spacing (ascender, descender, gap): release hhea (1861, -475, 184), build hhea (1861, -475, 0)
+    functional:       - ... 5 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSerifLibre-Bold            RESIDUAL: 4 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hhea.line_gap [184, 0]
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 570222 runs shaped, 501661 differ
+    functional:       - default features, pairs: 11811 of 43681 runs differ
+    functional:       - default features, words: 489850 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 862 word diffs (0 / 862 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 862 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 547px, '1/234,latn,dflt,frac' 354px, '0123456789,,,sups' 231px, '0123456789,,,pnum' 228px, '0123456789,,,dnom' 221px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Bold', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Bold', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap DIFFER
+    functional:       - CoreText line spacing (ascender, descender, gap): release hhea (1833, -466, 184), build hhea (1833, -466, 0)
+    functional:       - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1833, -466, 184), build win (1833, -466, 0)
+    functional:       - FreeType engines line spacing (ascender, descender, gap): release hhea (1833, -466, 184), build hhea (1833, -466, 0)
+    functional:       - ... 5 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSerifLibre-Italic          RESIDUAL: 4 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hhea.line_gap [184, 0]
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574502 runs shaped, 515709 differ
+    functional:       - default features, pairs: 14813 of 47961 runs differ
+    functional:       - default features, words: 500896 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 984 word diffs (0 / 984 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 984 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 478px, '1/234,latn,dflt,frac' 311px, '0a,,,ordn' 59px, '0,,,zero' 30px, 'Abhávottaránandapratyayálambaniirvrttih' 1552px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Italic', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Italic', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap DIFFER
+    functional:       - CoreText line spacing (ascender, descender, gap): release hhea (1862, -484, 184), build hhea (1862, -484, 0)
+    functional:       - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1862, -484, 184), build win (1862, -484, 0)
+    functional:       - FreeType engines line spacing (ascender, descender, gap): release hhea (1862, -484, 184), build hhea (1862, -484, 0)
+    functional:       - ... 3 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSerifLibre-LightItalic     RESIDUAL: 5 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING cmap U+00C1 ["Aacute", "gid131"]
+    BLOCKING hhea.line_gap [184, 0]
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 574502 runs shaped, 518744 differ
+    functional:       - default features, pairs: 15520 of 47961 runs differ
+    functional:       - default features, words: 503224 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 974 word diffs (0 / 974 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 974 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 483px, '1/234,latn,dflt,frac' 329px, '0a,,,ordn' 103px, '0,,,zero' 29px, 'cqqGGaaicqqGGaaicqqGGaaidaWadaqaaiabhIfayjabcYcaSiabhc' 2411px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Averia Serif Libre', build 'Averia Serif Libre Light'
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Light Italic', build 'Default'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Averia Serif Libre', build 'Averia Serif Libre Light'
+    functional:       - ... 1 more
+    functional:   line_spacing FAIL per-platform ascender/descender/gap DIFFER
+    functional:       - CoreText line spacing (ascender, descender, gap): release hhea (1868, -486, 184), build hhea (1868, -486, 0)
+    functional:       - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1868, -486, 184), build win (1868, -486, 0)
+    functional:       - FreeType engines line spacing (ascender, descender, gap): release hhea (1868, -486, 184), build hhea (1868, -486, 0)
+    functional:       - ... 3 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSerifLibre-Light           RESIDUAL: 4 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hhea.line_gap [184, 0]
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 568977 runs shaped, 498189 differ
+    functional:       - default features, pairs: 11134 of 42436 runs differ
+    functional:       - default features, words: 487055 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 868 word diffs (0 / 868 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 868 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 507px, '0123456789,,,pnum' 422px, '0123456789,,,dnom' 420px, '0123456789,,,tnum' 400px, '0123456789,,,sinf' 370px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Averia Serif Libre', build 'Averia Serif Libre Light'
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Light', build 'Default'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Averia Serif Libre', build 'Averia Serif Libre Light'
+    functional:       - ... 1 more
+    functional:   line_spacing FAIL per-platform ascender/descender/gap DIFFER
+    functional:       - CoreText line spacing (ascender, descender, gap): release hhea (1823, -465, 184), build hhea (1823, -465, 0)
+    functional:       - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1823, -465, 184), build win (1823, -465, 0)
+    functional:       - FreeType engines line spacing (ascender, descender, gap): release hhea (1823, -465, 184), build hhea (1823, -465, 0)
+    functional:       - ... 3 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+AveriaSerifLibre-Regular         RESIDUAL: 4 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances)
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [6, 0], "3": [3, 0], "9": [4, 0]}
+    BLOCKING hhea.line_gap [184, 0]
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 49 unit(s) at .notdef (release 53, ours 102)
+    functional:   cmap         PASS 231 codepoints, exact
+    functional:   shaping      FAIL 568977 runs shaped, 495710 differ
+    functional:       - default features, pairs: 11230 of 42436 runs differ
+    functional:       - default features, words: 484480 of 526310 runs differ
+    functional:   rendering    FAIL diffenator3 0 glyph / 847 word diffs (0 / 847 confirmed); 0 of 229 changed outlines draw different ink
+    functional:       - diffenator3: 847 word(s) render differently (>8 px at 16 ppem), confirmed: '1/4,latn,dflt,frac' 549px, '1/234,latn,dflt,frac' 248px, '0123456789,,,pnum' 235px, '0123456789,,,tnum' 226px, '0123456789,,,dnom' 223px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap DIFFER
+    functional:       - CoreText line spacing (ascender, descender, gap): release hhea (1828, -465, 184), build hhea (1828, -465, 0)
+    functional:       - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1828, -465, 184), build win (1828, -465, 0)
+    functional:       - FreeType engines line spacing (ascender, descender, gap): release hhea (1828, -465, 184), build hhea (1828, -465, 0)
+    functional:       - ... 3 more
+    functional:   advances     FAIL 231 glyph advances compared, 0 differ
+    functional:       - 1 reachable release glyph(s) have no build counterpart: .notdef
+    functional:       - 1 reachable build glyph(s) have no release counterpart: .notdef
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+Sansation-BoldItalic             RESIDUAL: 6 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances+gdef)
+    BLOCKING GPOS.script_list [{"latn/dflt": {"lookups": []}, "latn/zz01": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"0": [1, 0], "1": [0, 1]}}}
+    BLOCKING OS/2.panose_10 {"0": [2, 0]}
+    BLOCKING hmtx.commaccent {"width": [465, 0]}
+    functional:   cmap         PASS 533 codepoints, exact
+    functional:   shaping      FAIL 766957 runs shaped, 56778 differ
+    functional:       - default features, singles: 1 of 533 runs differ
+    functional:       - default features, pairs: 1221 of 106529 runs differ
+    functional:       - default features, base+mark: 403 of 407 runs differ
+    functional:       - ... 8 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 189 word diffs (0 / 189 confirmed); 0 of 522 changed outlines draw different ink
+    functional:       - diffenator3: 189 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 618px, '0123456789,,,sinf' 525px, 'СУАЛЛАХЬХЬУНССА' 1147px, 'ВЕГЕТАЦИОННЫЙ' 848px, 'БАТАЛЬЙОН' 750px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Bold Italic', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Bold Italic', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: ITALIC lost, BOLD lost, REGULAR gained
+    functional:       - head.macStyle bold: release 1, build 0
+    functional:       - head.macStyle italic: release 1, build 0
+    functional:       - ... 2 more
+    functional:   advances     FAIL 524 glyph advances compared, 1 differ
+    functional:       - 1 advance width(s) differ (release/build): commaccent 465/0
+    functional:   gdef         FAIL GDEF present/present; 1 class difference(s) shaping reads, 523 it does not
+    functional:       - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+Sansation-Bold                   RESIDUAL: 6 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances+gdef)
+    BLOCKING GPOS.script_list [{"latn/dflt": {"lookups": []}, "latn/zz01": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"0": [1, 0], "1": [0, 1]}}}
+    BLOCKING OS/2.panose_10 {"0": [2, 0]}
+    BLOCKING hmtx.commaccent {"width": [465, 0]}
+    functional:   cmap         PASS 540 codepoints, exact
+    functional:   shaping      FAIL 779831 runs shaped, 56992 differ
+    functional:       - default features, singles: 1 of 540 runs differ
+    functional:       - default features, pairs: 1221 of 112584 runs differ
+    functional:       - default features, base+mark: 403 of 407 runs differ
+    functional:       - ... 13 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 189 word diffs (0 / 189 confirmed); 0 of 529 changed outlines draw different ink
+    functional:       - diffenator3: 189 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 591px, '0123456789,,,sinf' 490px, 'СУАЛЛАХЬХЬУНССА' 1133px, 'ВЕГЕТАЦИОННЫЙ' 851px, 'БАТАЛЬЙОН' 753px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Bold', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Bold', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: BOLD lost, REGULAR gained
+    functional:       - head.macStyle bold: release 1, build 0
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 1050, build 500 (the release's OS/2 v0 has no sxHeight; engines measure the outline)
+    functional:       - ... 1 more
+    functional:   advances     FAIL 531 glyph advances compared, 1 differ
+    functional:       - 1 advance width(s) differ (release/build): commaccent 465/0
+    functional:   gdef         FAIL GDEF present/present; 1 class difference(s) shaping reads, 530 it does not
+    functional:       - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+Sansation-Italic                 RESIDUAL: 6 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances+gdef)
+    BLOCKING GPOS.script_list [{"latn/dflt": {"lookups": []}, "latn/zz01": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"0": [1, 0], "1": [0, 1]}}}
+    BLOCKING OS/2.panose_10 {"0": [2, 0]}
+    BLOCKING hmtx.commaccent {"width": [385, 0]}
+    functional:   cmap         PASS 533 codepoints, exact
+    functional:   shaping      FAIL 766957 runs shaped, 56778 differ
+    functional:       - default features, singles: 1 of 533 runs differ
+    functional:       - default features, pairs: 1221 of 106529 runs differ
+    functional:       - default features, base+mark: 403 of 407 runs differ
+    functional:       - ... 8 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 189 word diffs (0 / 189 confirmed); 0 of 522 changed outlines draw different ink
+    functional:       - diffenator3: 189 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 559px, '0123456789,,,sinf' 476px, 'СУАЛЛАХЬХЬУНССА' 1043px, 'ВЕГЕТАЦИОННЫЙ' 774px, 'БАТАЛЬЙОН' 699px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Italic', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Italic', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: ITALIC lost, REGULAR gained
+    functional:       - head.macStyle italic: release 1, build 0
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 1050, build 500 (the release's OS/2 v0 has no sxHeight; engines measure the outline)
+    functional:       - ... 1 more
+    functional:   advances     FAIL 524 glyph advances compared, 1 differ
+    functional:       - 1 advance width(s) differ (release/build): commaccent 385/0
+    functional:   gdef         FAIL GDEF present/present; 1 class difference(s) shaping reads, 523 it does not
+    functional:       - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+Sansation-LightItalic            BUILD FAILED (nothing)
+    operation 'Fontc' while building [../fonts//ttf/SansationLight-Regular.ttf, ../fonts//webfonts/SansationLight-Regular.woff2] from [Sansation-LightItalic.glyphs]: Unable to proceed; 410 jobs stuck pending
+Sansation-Light                  RESIDUAL: 6 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances+gdef)
+    BLOCKING GPOS.script_list [{"latn/dflt": {"lookups": []}, "latn/zz01": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"0": [1, 0], "1": [0, 1]}}}
+    BLOCKING OS/2.panose_10 {"0": [2, 0]}
+    BLOCKING hmtx.commaccent {"width": [305, 0]}
+    functional:   cmap         PASS 540 codepoints, exact
+    functional:   shaping      FAIL 779831 runs shaped, 56992 differ
+    functional:       - default features, singles: 1 of 540 runs differ
+    functional:       - default features, pairs: 1221 of 112584 runs differ
+    functional:       - default features, base+mark: 403 of 407 runs differ
+    functional:       - ... 13 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 189 word diffs (0 / 189 confirmed); 0 of 529 changed outlines draw different ink
+    functional:       - diffenator3: 189 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 467px, '0123456789,,,sinf' 386px, 'СУАЛЛАХЬХЬУНССА' 871px, 'ВЕГЕТАЦИОННЫЙ' 642px, 'ФАЪОЛИЯТИ' 561px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Light', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Light', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 1050, build 500 (the release's OS/2 v0 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1430, build 700 (the release's OS/2 v0 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 531 glyph advances compared, 1 differ
+    functional:       - 1 advance width(s) differ (release/build): commaccent 305/0
+    functional:   gdef         FAIL GDEF present/present; 1 class difference(s) shaping reads, 530 it does not
+    functional:       - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+Sansation-Regular                RESIDUAL: 6 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+advances+gdef)
+    BLOCKING GPOS.script_list [{"latn/dflt": {"lookups": []}, "latn/zz01": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"0": [1, 0], "1": [0, 1]}}}
+    BLOCKING OS/2.panose_10 {"0": [2, 0]}
+    BLOCKING hmtx.commaccent {"width": [385, 0]}
+    functional:   cmap         PASS 540 codepoints, exact
+    functional:   shaping      FAIL 779831 runs shaped, 56992 differ
+    functional:       - default features, singles: 1 of 540 runs differ
+    functional:       - default features, pairs: 1221 of 112584 runs differ
+    functional:       - default features, base+mark: 403 of 407 runs differ
+    functional:       - ... 13 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 189 word diffs (0 / 189 confirmed); 0 of 529 changed outlines draw different ink
+    functional:       - diffenator3: 189 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 521px, '0123456789,,,sinf' 430px, 'СУАЛЛАХЬХЬУНССА' 1038px, 'ВЕГЕТАЦИОННЫЙ' 733px, 'БАТАЛЬЙОН' 707px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:       - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release 1050, build 500 (the release's OS/2 v0 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release 1430, build 700 (the release's OS/2 v0 has no sCapHeight; engines measure the outline)
+    functional:   advances     FAIL 531 glyph advances compared, 1 differ
+    functional:       - 1 advance width(s) differ (release/build): commaccent 385/0
+    functional:   gdef         FAIL GDEF present/present; 1 class difference(s) shaping reads, 530 it does not
+    functional:       - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3

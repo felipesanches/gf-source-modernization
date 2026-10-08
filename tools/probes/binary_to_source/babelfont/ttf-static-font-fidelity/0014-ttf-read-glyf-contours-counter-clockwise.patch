@@ -1,0 +1,64 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:42:18 +0100
+Subject: [PATCH 14/16] ttf: read glyf contours counter-clockwise
+
+TrueType contours run clockwise and a source's counter-clockwise; a compiler
+reverses a source's contours on the way out. The reader kept the glyf
+direction, so every converted font compiled with its contours reversed from
+the binary's. They are now reversed on reading, so a compiled font has the
+binary's own directions back, whichever they were.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/convertors/ttf.rs | 29 ++++++++++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index 356bfcc0..e5f117a6 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -858,7 +858,16 @@ fn load_layer(
+                         &mut pen,
+                     )
+                     .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
+-                layer.shapes = pen.build().into_iter().map(crate::Shape::Path).collect();
++                // glyf contours run clockwise and a source's counter-clockwise;
++                // a compiler reverses them back on the way out
++                layer.shapes = pen
++                    .build()
++                    .into_iter()
++                    .map(|mut path| {
++                        path.reverse();
++                        crate::Shape::Path(path)
++                    })
++                    .collect();
+             }
+         }
+         glyf::Glyph::Composite(c) => {
+@@ -1115,6 +1124,24 @@ mod tests {
+         assert!(font.features.to_fea().contains("sub uni0041 by gid3;"));
+     }
+ 
++    #[test]
++    fn test_contours_read_counter_clockwise() {
++        // x is a clockwise (TrueType) rectangle in the binary
++        let font = load(STATIC_LEGACY).unwrap();
++        let path = font.glyphs.get("x").unwrap().layers[0]
++            .paths()
++            .next()
++            .unwrap();
++        let n = path.nodes.len();
++        let area: f64 = (0..n)
++            .map(|i| {
++                let (a, b) = (&path.nodes[i], &path.nodes[(i + 1) % n]);
++                a.x * b.y - b.x * a.y
++            })
++            .sum();
++        assert!(area > 0.0, "{:?}", path.nodes);
++    }
++
+     #[test]
+     fn test_font_revision() {
+         // head.fontRevision 2.005 (0x00020148)

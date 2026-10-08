@@ -1,0 +1,217 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:33:42 +0100
+Subject: [PATCH 12/16] ttf: read a legacy kern table as kerning
+
+A font that kerns with a kern table and no GPOS kern feature lost all its
+kerning. Its horizontal format 0 pairs are now the default master's kerning,
+the pairs of several subtables added up, as a shaper applies them; when GPOS
+has a kern feature the kern table is left alone, as a shaper leaves it.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/GdefClasses.ttf  | Bin 1032 -> 1168 bytes
+ babelfont/resources/ttf/StaticLegacy.ttf | Bin 1052 -> 1124 bytes
+ babelfont/resources/ttf/make_fixtures.py |  20 ++++++-
+ babelfont/src/convertors/ttf.rs          |  67 ++++++++++++++++++++++-
+ 4 files changed, 85 insertions(+), 2 deletions(-)
+
+diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
+index 5b4a87150f82807e0ed4dacab231ce43d9ef40fb..ea63798c3766c0655165bcb8d8692cd1bac2a52b 100644
+GIT binary patch
+delta 376
+zcmeC+n7~=jz{tSBz{k+Qz|4@~?&9jkAj!baz`(o(C@SY3;2*p}d*5Fm{|b;F;2s?6
+zv@>T#1Oo$$3Xq@WAFOZW+UQoqz`&RR<R>KOCKfP@F`onSp8)wT={c2Y6O^4?85o!>
+zfczO5sfj6xdCqfy>^DGcmXVQKpU7IpR07lhGEgNWx1@sWIfD(5e*(yt$xbcGW8nG!
+z9%#S?AYURUKRJ=1kYPHIuL0x><R(@WFmN)k0o8i|`3iZ7xv3NWER6xmzX0;{3-XIg
+zPSmmh)iMJe%@7IpEYQR5=abpu`E9;3Fi*U9l96fi3Px^5QBXjL097!8%mV^O2G;*K
+zCU0Q+=*`C<#=r&S17%&@d_ou`7#P7W6JcNitCIrCLUaJh|Nnt1LArSuSirOpkPU_Z
+KzfGRQoC5&uTuWg9
+
+delta 240
+zcmbQh*}+lIz{tSBz{AkMz|7#_?&9jkAj!baz`$Gs6qR!i4t3g@vmye>p9AD)`3LJ8
+zxi-2LGB7ZD0Qm{YxrqhLV$A1&{3AfVOL|Ua+5}}MR|W<q2_Sz)MrvY8VxBWd?-?LA
+z%K!?nRxy<T)w2NkDjB&YkriCe8Ek+8D}VwrIr+(n422BSfd+5@`2x9#6$K2O3~WGo
+z4Ip13FEKZD!k?uvK=}<oettoIamk5V7N8un0+1gG_6*QNQ9oAyo%rKCBje^1jNFWq
+MUo*X%tjUrN05;V&OaK4?
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+index 1807124adc382aa3cbaee4da59881b44af43805c..7ca950cf6d9b7671af5b689a35c6b009411a7a2e 100644
+GIT binary patch
+delta 269
+zcmbQk@r0wEfsuiMft#U$ftkU;KUm+$eVLyL0|TQ4P&6z#H?e@t?O!L5zXQnkNzbWF
+zt9<l)J_7@j43K{-BQ-H4(Z)py$le3QW*I;M)=s8eAo~jtt7PPsR7h4bJ_YKZ0OV_A
+zrxxWgh%qPw_5T3!EpqacJrfxXL5i7JfC6H<i4_G50u1~>4H7`ULSABSs^{6|oD2-i
+z20;Fqg8br=>&ln1f&4!}ek$1UOpG3>Ek+wQ?l5LDWde#y0Y#Y@c))UuK#~>2|NjW9
+Q3=;$6|2LaoFqtp{0Jrov1ONa4
+
+delta 199
+zcmaFDF^8j`fsuiMfs3Jmftf+UKUm+$eVLyL0|TQ5P&6z#H?e@t?O!L5zXHhjNzbWF
+zt9<l)J_7?250HN=BQ-H4(Z)py$X)})W*I;M)=s8eAo~drt7PPsR7h4bJ_YJ;0P;0*
+z@{<!84H>=w`9RDdmYY~%S->E`zz-DQ017DNCFZ7jo?XrfwBQAhf2JV6xa7L>rECTU
+c<}E;eD%i11j2;)oR&LpN!kB5ZF|#2f07tzr9RL6T
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index 7eca6df9..7fe984d8 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -17,17 +17,21 @@ StaticLegacy.ttf is a static font as an old FontForge build leaves it:
+   right), not by the composite's own (40).
+ * gravecomb (U+0300, advance 0) and commaaccent (unencoded, advance 120): with no
+   GDEF, a shaper takes the first for a mark and the second for a base.
++* a legacy kern table of two subtables: x H -30, H x -20, and x x 5 in both.
+ 
+ GdefClasses.ttf carries GDEF glyph classes: gravecomb a base (class 1, advance
+ 190), acutecomb a mark with no advance, tildecomb a mark with one (300), f_f a
+ ligature, script a base whose name is a feature-file keyword. Its calt's
+-backtrack covers five glyphs, which reads back as a named glyph class.
++backtrack covers five glyphs, which reads back as a named glyph class. It has a
++GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores.
+ """
+ from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
+ from fontTools.fontBuilder import FontBuilder
+ from fontTools.ttLib.tables.O_S_2f_2 import Panose
+ from fontTools.pens.ttGlyphPen import TTGlyphPen
++from fontTools.ttLib import newTable
+ from fontTools.ttLib.tables._g_l_y_f import Glyph, GlyphComponent
++from fontTools.ttLib.tables._k_e_r_n import KernTable_format_0
+ 
+ 
+ def save(fb, path):
+@@ -37,6 +41,15 @@ def save(fb, path):
+     fb.save(path)
+ 
+ 
++def legacy_kern(font, *subtables):
++    font["kern"] = kern = newTable("kern")
++    kern.version, kern.kernTables = 0, []
++    for pairs in subtables:
++        st = KernTable_format_0()
++        st.version, st.coverage, st.kernTable = 0, 1, pairs
++        kern.kernTables.append(st)
++
++
+ def rect(x0, y0, x1, y1):
+     pen = TTGlyphPen(None)
+     pen.moveTo((x0, y0))
+@@ -100,6 +113,7 @@ fb.setupOS2(
+ fb.setupPost()
+ fb.font["head"].fontRevision = 2.005
+ fb.font["head"].lowestRecPPEM = 9
++legacy_kern(fb.font, {("x", "H"): -30, ("x", "x"): 5}, {("H", "x"): -20, ("x", "x"): 5})
+ save(fb, "StaticLegacy.ttf")
+ 
+ 
+@@ -123,8 +137,12 @@ lookup up { sub gravecomb by acutecomb; } up;
+ feature calt {
+     sub [a gravecomb acutecomb tildecomb f_f] gravecomb' lookup up;
+ } calt;
++feature kern {
++    pos a a -10;
++} kern;
+ table GDEF {
+     GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;
+ } GDEF;
+ """)
++legacy_kern(fb.font, {("a", "f_f"): -40})
+ save(fb, "GdefClasses.ttf")
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index c324f0ee..a15021f3 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -12,7 +12,10 @@ use ordered_float::OrderedFloat;
+ use skrifa::{
+     outline::DrawSettings,
+     prelude::{LocationRef, Size},
+-    raw::{tables::glyf, TableProvider},
++    raw::{
++        tables::{glyf, kern},
++        TableProvider,
++    },
+     string::StringId,
+     GlyphId, GlyphNames, MetadataProvider,
+ };
+@@ -43,6 +46,7 @@ pub fn load<T: AsRef<std::path::Path>>(path: T) -> Result<Font, BabelfontError>
+     load_masters(&fontref, &mut font)?;
+     load_glyphs(&fontref, &mut font)?;
+     load_features(&fontref, &mut font)?;
++    load_legacy_kerning(&fontref, &mut font)?;
+     Ok(font)
+ }
+ 
+@@ -570,6 +574,54 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+     Ok(())
+ }
+ 
++/// A legacy kern table's horizontal pairs, as the default master's kerning,
++/// read where a shaper reads them: only when GPOS has no kern feature. The
++/// pairs of several subtables add up.
++fn load_legacy_kerning(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
++    let Ok(kern) = fontref.kern() else {
++        return Ok(());
++    };
++    if let Ok(gpos) = fontref.gpos() {
++        let feature_list = gpos.feature_list()?;
++        if feature_list
++            .feature_records()
++            .iter()
++            .any(|record| record.feature_tag() == Tag::new(b"kern"))
++        {
++            return Ok(());
++        }
++    }
++    let mut pairs: IndexMap<(SmolStr, SmolStr), i32> = IndexMap::new();
++    for subtable in kern.subtables() {
++        let subtable = subtable?;
++        if !subtable.is_horizontal() || subtable.is_cross_stream() || subtable.is_variable() {
++            continue;
++        }
++        let Ok(kern::SubtableKind::Format0(format0)) = subtable.kind() else {
++            log::warn!("Only format 0 kern subtables are read");
++            continue;
++        };
++        for pair in format0.pairs() {
++            let left = font.glyphs.get_by_index(pair.left().to_u32() as usize);
++            let right = font.glyphs.get_by_index(pair.right().to_u32() as usize);
++            if let (Some(left), Some(right)) = (left, right) {
++                *pairs
++                    .entry((left.name.clone(), right.name.clone()))
++                    .or_default() += pair.value() as i32;
++            }
++        }
++    }
++    // The default master is the last one pushed
++    if let Some(master) = font.masters.last_mut() {
++        for (pair, value) in pairs {
++            master
++                .kerning
++                .insert(pair, value.clamp(i16::MIN as i32, i16::MAX as i32) as i16);
++        }
++    }
++    Ok(())
++}
++
+ /// GDEF's glyph classes as a feature file states them, so that a compiler
+ /// keeps them instead of deriving its own (which gives no GDEF at all when no
+ /// glyph is a mark, ligature or anchored base)
+@@ -991,6 +1043,19 @@ mod tests {
+             .contains("= [a gravecomb acutecomb tildecomb f_f];"));
+     }
+ 
++    #[test]
++    fn test_legacy_kerning() {
++        // two subtables: x x is in both, and adds up
++        let font = load(STATIC_LEGACY).unwrap();
++        let kerning = &font.masters[0].kerning;
++        assert_eq!(kerning.get(&("x".into(), "H".into())), Some(&-30));
++        assert_eq!(kerning.get(&("H".into(), "x".into())), Some(&-20));
++        assert_eq!(kerning.get(&("x".into(), "x".into())), Some(&10));
++        // a shaper ignores kern when GPOS has a kern feature, and so does this
++        let font = load(GDEF_CLASSES).unwrap();
++        assert!(font.masters[0].kerning.is_empty());
++    }
++
+     #[test]
+     fn test_font_revision() {
+         // head.fontRevision 2.005 (0x00020148)

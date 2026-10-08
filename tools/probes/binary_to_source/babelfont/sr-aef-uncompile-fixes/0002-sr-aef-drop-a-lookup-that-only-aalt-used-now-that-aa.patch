@@ -1,0 +1,121 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 16:47:18 +0100
+Subject: [PATCH 2/3] sr-aef: drop a lookup that only aalt used, now that aalt
+ has its rules
+
+With its rules written into aalt, a lookup nothing else references was still
+written out on its own, so the compiled font carried it twice (aalt's copy
+and an unused one) and every later lookup moved down the list.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ sr-aef/resources/aalt.fea |   4 ++++
+ sr-aef/resources/aalt.ttf | Bin 540 -> 556 bytes
+ sr-aef/src/lib.rs         |  36 +++++++++++++++++++++++++++++++++++-
+ 3 files changed, 39 insertions(+), 1 deletion(-)
+
+diff --git a/sr-aef/resources/aalt.fea b/sr-aef/resources/aalt.fea
+index 5cd1a10f..381a7ad0 100644
+--- a/sr-aef/resources/aalt.fea
++++ b/sr-aef/resources/aalt.fea
+@@ -12,3 +12,7 @@ feature aalt {
+     lookup single;
+     lookup alternate;
+ } aalt;
++
++feature salt {
++    lookup single;
++} salt;
+diff --git a/sr-aef/resources/aalt.ttf b/sr-aef/resources/aalt.ttf
+index 30ada3dcfdab5b82bab809eb41cba402f676263c..7ae6d8e87ce73a86b0c100becfd9a651113570b0 100644
+GIT binary patch
+delta 135
+zcmbQkvW7*5fsuiMfs>(uftf+TJvh`!=Z>%t0|Vm@plH!VnGT*Qdmg`t=ePOFz|8z&
+z;zp^7r+#}XFlaC^y14m-Fo-cQB_`&SFlZEmNF|^+P%9YA0nG!k)u18_3`}4aBZCA;
+O#sB{x{v;+DAPE5N%oyYV
+
+delta 119
+zcmZ3(GKWQmfsuiMfs>(uftf+TJvh{9XTY*d1_s6*K+%+mG95hCm-l+a^V@u7U}k<X
+zaii44Q@^dH7?c<oUEF*^7z7v?6BBbv7-WDDs0oY}fF^<1azK&^BKrS7RE}>lACn9K
+DOX3#f
+
+diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
+index c0a8f267..bedf12be 100644
+--- a/sr-aef/src/lib.rs
++++ b/sr-aef/src/lib.rs
+@@ -137,6 +137,8 @@ pub struct UncompileContext<'a> {
+     #[cfg_attr(feature = "cli", serde(skip))]
+     axes: Option<fontdrasil::types::Axes>,
+     num_glyphs: u16,
++    /// Lookups whose rules were written into aalt
++    aalt_lookups: IndexSet<SmolStr>,
+ }
+ 
+ impl<'a> UncompileContext<'a> {
+@@ -188,6 +190,7 @@ impl<'a> UncompileContext<'a> {
+                 .unwrap_or_default(),
+             axes: variations::fontdrasil_axes(font)?,
+             num_glyphs: glyph_names.num_glyphs() as u16,
++            aalt_lookups: IndexSet::new(),
+         };
+         slf.gather_language_systems()?;
+         slf.uncompile_gsub_lookups()?;
+@@ -802,6 +805,32 @@ impl<'a> UncompileContext<'a> {
+                 }
+             }
+         }
++        // A lookup written into aalt as rules, and used nowhere else, is not
++        // kept beside them
++        let used = self
++            .features
++            .values()
++            .flatten()
++            .map(|statement| statement.as_fea(""))
++            .chain(
++                self.lookups
++                    .values()
++                    .flat_map(|lookup| lookup.statements.iter().map(|s| s.as_fea(""))),
++            )
++            .collect::<Vec<_>>()
++            .join("\n");
++        let words: Vec<&str> = used
++            .split(|c: char| c.is_whitespace() || c == ';')
++            .filter(|word| !word.is_empty())
++            .collect();
++        for name in std::mem::take(&mut self.aalt_lookups) {
++            if !words
++                .windows(2)
++                .any(|pair| pair[0] == "lookup" && pair[1] == name.as_str())
++            {
++                self.lookups.shift_remove(&name);
++            }
++        }
+     }
+ 
+     /// Build script, language, and lookup statements for feature registrations.
+@@ -964,6 +993,7 @@ impl<'a> UncompileContext<'a> {
+                         .lookups
+                         .get(reference.lookup_name.as_str())
+                         .map(|block| {
++                            self.aalt_lookups.insert(block.name.clone());
+                             block
+                                 .statements
+                                 .iter()
+@@ -1694,10 +1724,14 @@ lookup gpos_pair_1;
+         let fontref = skrifa::FontRef::new(&data).unwrap();
+         let ff = uncompile(&fontref, true).unwrap();
+         let fea = ff.as_fea("");
+-        let aalt = &fea[fea.find("feature aalt").unwrap()..];
++        let aalt = &fea[fea.find("feature aalt").unwrap()..fea.find("} aalt;").unwrap()];
+         assert!(!aalt.contains("lookup "), "{fea}");
+         assert!(aalt.contains("sub a by a.alt1;"), "{fea}");
+         assert!(aalt.contains("sub b from [b.alt1 b.alt2];"), "{fea}");
++        // salt uses the single substitution too, so it stays; the alternate one,
++        // used nowhere else, is not kept beside its rules
++        assert!(fea.contains("lookup gsub_single_1 {"), "{fea}");
++        assert!(!fea.contains("lookup gsub_alternate_1 {"), "{fea}");
+     }
+ 
+     #[test]

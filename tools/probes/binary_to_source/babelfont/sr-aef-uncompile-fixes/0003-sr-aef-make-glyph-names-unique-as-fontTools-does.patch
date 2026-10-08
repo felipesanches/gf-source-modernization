@@ -1,0 +1,152 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Thu, 8 Oct 2026 17:04:12 +0100
+Subject: [PATCH 3/3] sr-aef: make glyph names unique as fontTools does
+
+A post table may give two glyphs the same name (Sansation Light Italic names
+two glyphs ffi). The uncompiled features then named both alike, and a
+compiler could neither tell them apart nor, given a source with the
+duplicate, build at all. unique_glyph_names() gives a name already taken the
+first free suffix of .1, .2, ..., as fontTools does; it is public so that a
+converter names the glyphs as the features do.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ sr-aef/resources/dupnames.ttf     | Bin 0 -> 480 bytes
+ sr-aef/resources/make_dupnames.py |  23 +++++++++++
+ sr-aef/src/lib.rs                 |  62 +++++++++++++++++++++++-------
+ 3 files changed, 72 insertions(+), 13 deletions(-)
+ create mode 100644 sr-aef/resources/dupnames.ttf
+ create mode 100644 sr-aef/resources/make_dupnames.py
+
+diff --git a/sr-aef/resources/dupnames.ttf b/sr-aef/resources/dupnames.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..d8bdaae982ce0bdb8f4ff9e9c132b676d9e98ce1
+GIT binary patch
+literal 480
+zcmZ`!u}T9$5Pg$93lE7wjw5A?^nwOKu#j+QW2b^$SaQ)T?#Mw-h@Br|;YV2LKUj*5
+zjin!;Vt2mTO%5bD$Gm;-&F;(`1i(6OVbD1~Js&>CPXQozbdzymOKjkQx=%g0%5N@t
+zG9*>VCN>?#hwtQie=nl}k#F)BW<M*cxqOmAx`Z&Fj;$){3qn}fd5JZ&$bXo<ayqNt
+zc3z*gHT3|x8*_JixIfxF_<}JXbp8wDI%!qkx$x6T8)sQ?4*zr!y2GDnUV2ySh8YpH
+zSA+mPo&i7Awyr(a_banlV605=c7wW0A}ujNdR<N&xK3@v2+1Nya&&TrE@Wo&N;O{y
+Rw$O1sylU$l?&6g|egQ5tGOPdq
+
+literal 0
+HcmV?d00001
+
+diff --git a/sr-aef/resources/make_dupnames.py b/sr-aef/resources/make_dupnames.py
+new file mode 100644
+index 00000000..f5760a44
+--- /dev/null
++++ b/sr-aef/resources/make_dupnames.py
+@@ -0,0 +1,23 @@
++"""Writes dupnames.ttf, whose post table names glyphs 2 and 3 both "dupe" (a post
++table may; fontTools reads the second as dupe.1): python3 make_dupnames.py"""
++from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
++from fontTools.fontBuilder import FontBuilder
++from fontTools.ttLib.tables._g_l_y_f import Glyph
++
++order = [".notdef", "a", "dupa", "dupb"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("a"): "a"})
++fb.setupGlyf({name: Glyph() for name in order})
++fb.setupHorizontalMetrics({name: (500, 0) for name in order})
++fb.setupHorizontalHeader()
++fb.setupPost()
++addOpenTypeFeaturesFromString(fb.font, "feature salt { sub a by dupb; } salt;")
++fb.font["head"].created = fb.font["head"].modified = 0
++fb.font.recalcTimestamp = False
++fb.save("dupnames.ttf")
++data = open("dupnames.ttf", "rb").read()
++# both names become "dupe": the same length, so nothing in the post table moves
++assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
++data = data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe")
++open("dupnames.ttf", "wb").write(data)
+diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
+index bedf12be..12587613 100644
+--- a/sr-aef/src/lib.rs
++++ b/sr-aef/src/lib.rs
+@@ -146,19 +146,10 @@ impl<'a> UncompileContext<'a> {
+         let glyph_names = GlyphNames::new(font);
+         let default = LocationRef::default();
+         let glyph_metrics = GlyphMetrics::new(font, Size::unscaled(), default);
+-        let glyph_id_to_name: HashMap<GlyphId, SmolStr> = (0..glyph_names.num_glyphs())
+-            .map(GlyphId::new)
+-            .map(|gid| {
+-                (
+-                    gid,
+-                    SmolStr::new(
+-                        glyph_names
+-                            .get(gid)
+-                            .map(|s| s.to_string())
+-                            .unwrap_or_else(|| format!("gid{:04}", gid)),
+-                    ),
+-                )
+-            })
++        let glyph_id_to_name: HashMap<GlyphId, SmolStr> = unique_glyph_names(font)
++            .into_iter()
++            .enumerate()
++            .map(|(gid, name)| (GlyphId::new(gid as u32), name))
+             .collect();
+         let glyph_name_to_id = glyph_id_to_name
+             .iter()
+@@ -1232,6 +1223,38 @@ pub fn uncompile_bytes(
+ /// This partially decompiles the font, giving you the component parts so that you can
+ /// put them where you want them. Useful for font editors and other tools that want the
+ /// data but don't want to go all the way to a fea file.
++/// The glyph names a font states, made unique as fontTools makes them: a post
++/// table may give two glyphs the same name, and a name already taken gets the
++/// first free suffix of .1, .2, ...
++pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
++    let glyph_names = GlyphNames::new(font);
++    let stated: Vec<SmolStr> = (0..glyph_names.num_glyphs())
++        .map(GlyphId::new)
++        .map(|gid| {
++            SmolStr::new(
++                glyph_names
++                    .get(gid)
++                    .map(|s| s.to_string())
++                    .unwrap_or_else(|| format!("gid{:04}", gid)),
++            )
++        })
++        .collect();
++    let all: HashSet<SmolStr> = stated.iter().cloned().collect();
++    let mut taken: HashSet<SmolStr> = HashSet::new();
++    stated
++        .into_iter()
++        .map(|name| {
++            if taken.insert(name.clone()) {
++                return name;
++            }
++            (1..)
++                .map(|n| SmolStr::new(format!("{name}.{n}")))
++                .find(|candidate| !all.contains(candidate) && taken.insert(candidate.clone()))
++                .unwrap_or(name)
++        })
++        .collect()
++}
++
+ pub fn uncompile_context<'a>(font: &'a skrifa::FontRef) -> Result<UncompileContext<'a>, ReadError> {
+     UncompileContext::new(font)
+ }
+@@ -1717,6 +1740,19 @@ lookup gpos_pair_1;
+         );
+     }
+ 
++    #[test]
++    fn test_unique_glyph_names() {
++        // the post table names glyphs 2 and 3 both "dupe"
++        let data = std::fs::read("resources/dupnames.ttf").unwrap();
++        let fontref = skrifa::FontRef::new(&data).unwrap();
++        assert_eq!(
++            unique_glyph_names(&fontref),
++            [".notdef", "a", "dupe", "dupe.1"]
++        );
++        let fea = uncompile(&fontref, true).unwrap().as_fea("");
++        assert!(fea.contains("sub a by dupe.1;"), "{fea}");
++    }
++
+     #[test]
+     fn test_uncompile_aalt_rules() {
+         // aalt may hold only rules and feature references
