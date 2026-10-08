@@ -41,6 +41,16 @@ def weight_class(glyphs_text, sfd_text):
     if stated is None or int(stated) == 400:
         return glyphs_text, None
     wc = int(stated)
+    t = weight_class_fea(glyphs_text, wc)
+    if t == glyphs_text:
+        return glyphs_text, None     # already carried; report only a real change
+    return t, ("usWeightClass %d (TTFWeight) as FEA; fontc 1.0.0 drops a single "
+               "master's instance weightClass" % wc)
+
+
+def weight_class_fea(glyphs_text, wc):
+    """The .glyphs text with `table OS/2 { WeightClass wc; }` in its features, merged
+    into an existing OS/2 block (fea-rs keeps only the last one)."""
     t = glyphs_text
     m = re.search(r'code = "table OS/2 \{\n', t)
     if m:
@@ -61,10 +71,7 @@ def weight_class(glyphs_text, sfd_text):
             anchor = ".formatVersion = 3;\n"
             i = t.index(anchor) + len(anchor)
             t = t[:i] + "featurePrefixes = (\n" + entry + ");\n" + t[i:]
-    if t == glyphs_text:
-        return glyphs_text, None     # already carried; report only a real change
-    return t, ("usWeightClass %d (TTFWeight) as FEA; fontc 1.0.0 drops a single "
-               "master's instance weightClass" % wc)
+    return t
 
 
 def italic_angle(glyphs_text, sfd_text):
