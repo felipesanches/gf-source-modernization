@@ -78,6 +78,7 @@ One family at a time, each probed, then landed with tools/land.py (families-bina
 | PT Serif | 4 | CLEAN once a font without GDEF glyph classes is given none (before: 13995 of 2250538 runs differed, accents that ccmp substitutes keeping their advance); hinting disclosed |
 | PT Sans Narrow | 2 | CLEAN once usWidthClass (3) travels as FEA, as usWeightClass does (fontc 1.0.0 drops a single master's instance widthClass too); hinting disclosed |
 | PT Sans Caption | 2 | CLEAN; hinting disclosed |
+| IM Fell English SC | 1 | not landed: 246 of 932722 runs differ, all with U+0326. The release has a legacy kern table and no GPOS, so HarfBuzz positions the comma below itself (fallback); the build kerns through GPOS, which turns the fallback off (`0` + U+0326: release offset 501,-58, build 1004,0). Plus head.font_direction_hint 0. Felipe's decision |
 
 The converter is now the integration tree of `babelfont/measure-integration.diff` as updated
 (17 patches in `babelfont/ttf-static-font-fidelity/`); the earlier families are re-landed on it.
