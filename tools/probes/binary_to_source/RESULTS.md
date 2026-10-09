@@ -77,6 +77,7 @@ One family at a time, each probed, then landed with tools/land.py (families-bina
 | Reenie Beanie | 1 | CLEAN (hand hinting in VTT replaced by ttfautohint; disclosed) |
 | PT Serif | 4 | CLEAN once a font without GDEF glyph classes is given none (before: 13995 of 2250538 runs differed, accents that ccmp substitutes keeping their advance); hinting disclosed |
 | PT Sans Narrow | 2 | CLEAN once usWidthClass (3) travels as FEA, as usWeightClass does (fontc 1.0.0 drops a single master's instance widthClass too); hinting disclosed |
+| PT Sans Caption | 2 | CLEAN; hinting disclosed |
 
 The converter is now the integration tree of `babelfont/measure-integration.diff` as updated
 (17 patches in `babelfont/ttf-static-font-fidelity/`); the earlier families are re-landed on it.
