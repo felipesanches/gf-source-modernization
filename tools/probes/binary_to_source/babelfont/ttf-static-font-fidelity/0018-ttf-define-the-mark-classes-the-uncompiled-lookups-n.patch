@@ -1,0 +1,119 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Fri, 9 Oct 2026 04:26:28 +0100
+Subject: [PATCH 18/18] ttf: define the mark classes the uncompiled lookups
+ name
+
+The reader turned GPOS mark classes into anchors but left the uncompiled mark lookups
+naming them (`mark @bottomleft`) with no markClass statement, so a font with mark
+attachment converted to features fontc could not compile ("undefined mark class":
+Yinmar, Almarai). The markClass definitions are now written before the lookups too.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/GdefClasses.ttf  | Bin 1168 -> 1232 bytes
+ babelfont/resources/ttf/make_fixtures.py |   7 ++++-
+ babelfont/src/convertors/ttf.rs          |  37 +++++++++++++++++++++++
+ 3 files changed, 43 insertions(+), 1 deletion(-)
+
+diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
+index ea63798c3766c0655165bcb8d8692cd1bac2a52b..1b0fd6d9d27afd01226e2af7e27015b8310bb176 100644
+GIT binary patch
+delta 188
+zcmbQhd4Y3+f`r~0wWSOU%vTr~7$&#}hdS-dSrNg&z>+f2Vh@Ygxyfc5e>`NW7hsTJ
+z;9_86P+-ttV03Zw31JXpV9HJ{%41N<O)Sa=iYfs0GXXIpgBk-1nAQT5KmsVn$iVRb
+zKUAI(s2ZX|1}HAZ03wwbcz`5`#rXdlh-6>}lVF_;JRr$mj9-9~bC@C~tFYt%0OiUb
+ANB{r;
+
+delta 123
+zcmcb>Ie~M6g2V>xeSaAkn6EG}Fa)><hdS-dSrNg&z@jqIVh@Y^`DC_@KOQo9^D&4q
+za4|44h%hj^xcP)INH8#FrxxV_`Ak54j0{phSrA|Z5&!>#X+{Pf1{ScG5Rear|G!O6
+HVaWjiFr^qw
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index c0548bd6..2bc6ff6f 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -24,7 +24,8 @@ GdefClasses.ttf carries GDEF glyph classes: gravecomb a base (class 1, advance
+ 190), acutecomb a mark with no advance, tildecomb a mark with one (300), f_f a
+ ligature, script a base whose name is a feature-file keyword. Its calt's
+ backtrack covers five glyphs, which reads back as a named glyph class. It has a
+-GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores.
++GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores, and a
++mark feature attaching acutecomb to a.
+ 
+ Unnamed.ttf has no glyph names (post format 3): A (U+0041), Aring (U+00C5, a
+ component of A), an unencoded alternate of A reached by salt, and A Aring kerned
+@@ -149,6 +150,10 @@ feature calt {
+ feature kern {
+     pos a a -10;
+ } kern;
++markClass acutecomb <anchor -100 600> @ACUTE;
++feature mark {
++    pos base a <anchor 250 500> mark @ACUTE;
++} mark;
+ table GDEF {
+     GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;
+ } GDEF;
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index 6cc994a0..de0dd571 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -512,6 +512,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+     }
+ 
+     // Do the same but for mark classes.
++    // The lookups name their mark classes, so the classes are defined as well as
++    // made anchors of
++    let mark_class_definitions = uncompile_context
++        .mark_classes
++        .values()
++        .flatten()
++        .map(|definition| definition.as_fea(""))
++        .join("\n");
+     for (anchor_name, classdefs) in uncompile_context.mark_classes {
+         let anchor_name = format!("_{}", anchor_name);
+         for definition in classdefs.iter() {
+@@ -579,6 +587,12 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+             .prefixes
+             .insert("GDEF".into(), PossiblyAutomaticCode::new(glyph_classes));
+     }
++    if !mark_class_definitions.is_empty() {
++        features.prefixes.insert(
++            "MarkClasses".into(),
++            PossiblyAutomaticCode::new(mark_class_definitions),
++        );
++    }
+     for (lookup_name, statements) in uncompile_context.lookups.iter() {
+         features.prefixes.insert(
+             lookup_name.clone(),
+@@ -1078,6 +1092,29 @@ mod tests {
+         assert!(font.features.prefixes.get("GDEF").is_none());
+     }
+ 
++    #[test]
++    fn test_mark_classes_defined() {
++        // every mark class a lookup names is defined in the features
++        let fea = load(GDEF_CLASSES).unwrap().features.to_fea();
++        let used: Vec<&str> = fea
++            .split("mark @")
++            .skip(1)
++            .map(|rest| {
++                rest.split(|c: char| c == ';' || c.is_whitespace())
++                    .next()
++                    .unwrap()
++            })
++            .collect();
++        assert!(!used.is_empty(), "{fea}");
++        for class in used {
++            assert!(
++                fea.contains(&format!("@{class};")),
++                "@{class} undefined: {fea}"
++            );
++            assert!(fea.contains("markClass "), "{fea}");
++        }
++    }
++
+     #[test]
+     fn test_named_class_members() {
+         // a class's code is its members; the brackets are added on writing

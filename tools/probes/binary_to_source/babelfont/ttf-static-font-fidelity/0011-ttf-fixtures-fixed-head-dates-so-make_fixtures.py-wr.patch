@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:27:32 +0100
-Subject: [PATCH 11/17] ttf fixtures: fixed head dates, so make_fixtures.py
+Subject: [PATCH 11/18] ttf fixtures: fixed head dates, so make_fixtures.py
  writes the same bytes
 
 Assisted by an AI agent (Claude Opus 5.5)

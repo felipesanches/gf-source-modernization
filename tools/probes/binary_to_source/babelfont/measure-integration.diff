@@ -52,23 +52,24 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
 new file mode 100644
-index 0000000000000000000000000000000000000000..ea63798c3766c0655165bcb8d8692cd1bac2a52b
+index 0000000000000000000000000000000000000000..1b0fd6d9d27afd01226e2af7e27015b8310bb176
 GIT binary patch
-literal 1168
-zcmah|O=}ZD7=C7ElbTX%YtvFoDXG>_sGy`+JQRvGO*|A@S_K86T{oLA^JTh`C<uD>
-zlvDKJ!HeM0gBPLn;Hf7+z(aq4pa-d!>dCl1v%94g6la;4_j%rrdEa+uAOQ5@0TkBL
-z$%Pb7pbJp1$d09#msVd+ZFPu05-+D$ug<?Ny|@M#6U4=()w79(hp9Rs^2F;_*{rD{
-z^_KV(aWYrBn{Az%UjXC<;wO3A%$Su+Pbq)poXL|2-IEUOb-amu*=crv#w_tR@#rnP
-zUO|uhjsEY6hf7t<#BDq#o+R!oo6Q;`2-E&DajasN?bgrdH>m$YT&-0%obCGtZ54CI
-zb?90-)9<YC+OgU1P)ghVG29}(cjYEY1sSO5qhc;=;95jf?s}09`*nFt7mPr&?|ERO
-z#0Swrh!+1J7Z01vaS)qI?dO2)!+OdwNU_J#_K?69Sg%_YXAo5}Bs`8K(MoYfxw0DW
-z2F`Im!cXf=C6sbqPhwkK*L~KJ9T8MR+8alCJ5KYAIV@6>;E8V-pK+)A$NLkaCH8*x
-z=nhZHINIzXH3R3T2PZ2s-fly<MHzQ@d|r`n2Ru6(7sK+AZ$Ca56^4vwGCC5^@czdB
-z8FEu@c9MbSucvFBu21LAo53Lva(B2JnDKO)VVZ#~dEa|<SBwamVGIPa<g1uU6`D??
-zZpYFYJG)}%8YQ!i6bfj<K?8NzY<(IT?pdsG&5<p^q{i#2KK);VuM9~cg%XAciEt!W
-zH}BY1wR|&TS`EjSoI)w%Nh-UR4R2WWLXD5b&s<lahhL{&6+h`!r904zA#@Y56Uo%#
-z6;>v^_Z0Oq6Bwb^_vgw#uYGi1^!*e#&KZ2}4@!J(jL=Qr5u6Mn_CZ)?$-yW&KPQ1P
-dujhiCpV>iVp07Kr^I&w}-nWrn*8EFk@f*69p-un*
+literal 1232
+zcmah|&r4KM6#nkLPi@3Xa}*Pi(QJ^4ijky+AlWz*AsAX<5a?@ukMpbXO-w;h+g1a?
+z)WSs@p+(C!fwXAlN(x%|2L!bU+gOXpUf;d%i3UaY@$Nm}ch0%@oO92G0B{5kp|BK>
+zPRDQ@ZGd`3b})WzcK+<k@EY+4;zoS_#?<S=iv_?+66a^<&qbym#j1eF5-%l+c1887
+zP2!Kl(M;i9x^ZG^8ju%>pJh{a(k@+IrTm5ec$P%Ved*ACgm@%dbn5M&FhRUQJg}Uq
+zmeApTrT;tPzCt-+;|`t@j}mtl?Ro_Pw9@_xaj0Y$Q;nZ%x2XS2T&|Q?oQ($-Z53n2
+zP3T<tU)_8%zIb%v8<f&^e+)NI?`^qGQbGDE`lyi09609@l-p*fgMMv>X@li!_B{7(
+zlz1;1Xraab$EAZNlN`jhQhPCA<Di~$2vY1YwH-w82F%yZi!%tS5F&<SO0-h^gPfTS
+zR}1I49^$8Uwh~IYu8~+4*L9!o%3a}SL)whP?2eN>V-hpeM0ny`?$3S4x`w(Uq9JyE
+zb?6F@$}pO&AvN6>#(G9eGTdxJxOo|Nw>(~vZ~8nd8Ww%>v1dQj6BL#VC)r}=409WM
+zXUKKAz8m#5e?496bbdN^b_Rz)i@U|u!no0ChGF`$WWRUls#pOsedzXO$yaeYma99p
+zYAO^@rqXk%Os!y75kn4jIH;kD6iXjRl4}}soHJw#u&FUs)u;b!@RcDdq)@^VEuuA$
+zsoHl_iE{CFz)sX0PjYgFq>)s5G2Ob7sOBnsEMDX~13kPv^{n_wla;POCv#~h4zV9Z
+zG&XY`y^!Wb4Hxa|GT9KV^xX@DO;-w>GKiDe73>F3&l~kE2B_(Uo`+dAVI<*xH}<--
+zybnhAgS{c#Rk=WRKc0Sidhv8ZB<zC2J^KA~1qRKX>3#QO(BArHbcWt~%(wS!q{*7M
+HOcuWZrr@Yb
 
 literal 0
 HcmV?d00001
@@ -117,10 +118,10 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
 new file mode 100644
-index 00000000..c0548bd6
+index 00000000..2bc6ff6f
 --- /dev/null
 +++ b/babelfont/resources/ttf/make_fixtures.py
-@@ -0,0 +1,192 @@
+@@ -0,0 +1,197 @@
 +"""Writes the TrueType fixtures the ttf reader tests load (fontTools).
 +
 +Run from this directory: python3 make_fixtures.py
@@ -147,7 +148,8 @@ index 00000000..c0548bd6
 +190), acutecomb a mark with no advance, tildecomb a mark with one (300), f_f a
 +ligature, script a base whose name is a feature-file keyword. Its calt's
 +backtrack covers five glyphs, which reads back as a named glyph class. It has a
-+GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores.
++GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores, and a
++mark feature attaching acutecomb to a.
 +
 +Unnamed.ttf has no glyph names (post format 3): A (U+0041), Aring (U+00C5, a
 +component of A), an unencoded alternate of A reached by salt, and A Aring kerned
@@ -272,6 +274,10 @@ index 00000000..c0548bd6
 +feature kern {
 +    pos a a -10;
 +} kern;
++markClass acutecomb <anchor -100 600> @ACUTE;
++feature mark {
++    pos base a <anchor 250 500> mark @ACUTE;
++} mark;
 +table GDEF {
 +    GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;
 +} GDEF;
@@ -802,7 +808,7 @@ index fa2d59d2..d78de54b 100644
      fn test_no_entries_for_several_styles() {
          let mut font = single_style_font("Lekton", "Regular");
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index bcfc7fe3..6cc994a0 100644
+index bcfc7fe3..de0dd571 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -5,13 +5,17 @@ use fontdrasil::{
@@ -909,12 +915,12 @@ index bcfc7fe3..6cc994a0 100644
      }
 +    Ok(())
 +}
-+
+ 
+-    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
 +/// The fsSelection bits a source states; ITALIC, BOLD and REGULAR are set by
 +/// the compiler from the style.
 +const SOURCE_FS_SELECTION_BITS: u16 = !(1 << 0 | 1 << 5 | 1 << 6);
- 
--    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
++
 +fn load_custom_ot_values(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let os2 = fontref.os2()?;
 +    let ot = &mut font.custom_ot_values;
@@ -1083,7 +1089,22 @@ index bcfc7fe3..6cc994a0 100644
      Ok(())
  }
  
-@@ -413,10 +553,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -372,6 +512,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+     }
+ 
+     // Do the same but for mark classes.
++    // The lookups name their mark classes, so the classes are defined as well as
++    // made anchors of
++    let mark_class_definitions = uncompile_context
++        .mark_classes
++        .values()
++        .flatten()
++        .map(|definition| definition.as_fea(""))
++        .join("\n");
+     for (anchor_name, classdefs) in uncompile_context.mark_classes {
+         let anchor_name = format!("_{}", anchor_name);
+         for definition in classdefs.iter() {
+@@ -413,10 +561,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      for (class_name, glyphs) in uncompile_context.named_classes.iter() {
@@ -1099,7 +1120,7 @@ index bcfc7fe3..6cc994a0 100644
      }
      let mut language_systems = vec![];
      for (script_tag, lang_sys_tags) in &uncompile_context.language_systems {
-@@ -433,6 +574,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -433,6 +582,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
              PossiblyAutomaticCode::new(language_systems_block),
          );
      }
@@ -1108,10 +1129,16 @@ index bcfc7fe3..6cc994a0 100644
 +            .prefixes
 +            .insert("GDEF".into(), PossiblyAutomaticCode::new(glyph_classes));
 +    }
++    if !mark_class_definitions.is_empty() {
++        features.prefixes.insert(
++            "MarkClasses".into(),
++            PossiblyAutomaticCode::new(mark_class_definitions),
++        );
++    }
      for (lookup_name, statements) in uncompile_context.lookups.iter() {
          features.prefixes.insert(
              lookup_name.clone(),
-@@ -449,6 +595,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -449,6 +609,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      Ok(())
  }
  
@@ -1223,7 +1250,7 @@ index bcfc7fe3..6cc994a0 100644
  fn get_x_y_location_for_anchor(
      location: DesignLocation,
      anchor: &sr_aef::fea_rs_ast::Anchor,
-@@ -527,12 +778,64 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+@@ -527,12 +792,64 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
      Ok(coords)
  }
  
@@ -1289,7 +1316,7 @@ index bcfc7fe3..6cc994a0 100644
  ) -> Result<crate::Layer, BabelfontError> {
      let loc = fontdrasil_location_to_skrifa_location(master.location.clone(), axes)?;
      let locationref = LocationRef::new(&loc);
-@@ -557,11 +860,28 @@ fn load_layer(
+@@ -557,11 +874,28 @@ fn load_layer(
                          &mut pen,
                      )
                      .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
@@ -1319,7 +1346,7 @@ index bcfc7fe3..6cc994a0 100644
              for component in c.components() {
                  let gid = component.glyph;
                  let anchor = match component.anchor {
-@@ -571,25 +891,31 @@ fn load_layer(
+@@ -571,25 +905,31 @@ fn load_layer(
                          component: _,
                      } => (0.0, 0.0),
                  };
@@ -1361,7 +1388,7 @@ index bcfc7fe3..6cc994a0 100644
                      transform: our_affine.into(),
                      location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
                      format_specific: FormatSpecific::default(),
-@@ -600,3 +926,255 @@ fn load_layer(
+@@ -600,3 +940,278 @@ fn load_layer(
  
      Ok(layer)
  }
@@ -1515,6 +1542,29 @@ index bcfc7fe3..6cc994a0 100644
 +        // no GDEF, nothing stated
 +        let font = load(STATIC_LEGACY).unwrap();
 +        assert!(font.features.prefixes.get("GDEF").is_none());
++    }
++
++    #[test]
++    fn test_mark_classes_defined() {
++        // every mark class a lookup names is defined in the features
++        let fea = load(GDEF_CLASSES).unwrap().features.to_fea();
++        let used: Vec<&str> = fea
++            .split("mark @")
++            .skip(1)
++            .map(|rest| {
++                rest.split(|c: char| c == ';' || c.is_whitespace())
++                    .next()
++                    .unwrap()
++            })
++            .collect();
++        assert!(!used.is_empty(), "{fea}");
++        for class in used {
++            assert!(
++                fea.contains(&format!("@{class};")),
++                "@{class} undefined: {fea}"
++            );
++            assert!(fea.contains("markClass "), "{fea}");
++        }
 +    }
 +
 +    #[test]
@@ -1725,8 +1775,30 @@ index 00000000..f5760a44
 +assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
 +data = data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe")
 +open("dupnames.ttf", "wb").write(data)
+diff --git a/sr-aef/src/gpos.rs b/sr-aef/src/gpos.rs
+index ebbd1a75..532157cc 100644
+--- a/sr-aef/src/gpos.rs
++++ b/sr-aef/src/gpos.rs
+@@ -496,7 +496,7 @@ impl<'a> UncompileContext<'a> {
+             let anchor_name = guessed_name_by_class
+                 .get(&class_number)
+                 .cloned()
+-                .unwrap_or_else(|| self.gensym(&format!("mark_class_{}", class_number)));
++                .unwrap_or_else(|| self.mark_class_symbol(class_number));
+             self.register_mark_class(mark_class, &anchor_name);
+             class_to_anchor_name.insert(class_number, anchor_name);
+         }
+@@ -736,7 +736,7 @@ impl<'a> UncompileContext<'a> {
+                 continue;
+             }
+             // Create one with a symbol
+-            let name = self.gensym(&format!("mark_class_{}", class_number));
++            let name = self.mark_class_symbol(*class_number);
+             self.anchors
+                 .insert(name.clone(), base_glyphs_anchors.clone());
+             new_names.push(name);
 diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
-index 1b9eb7c6..12587613 100644
+index 1b9eb7c6..91258169 100644
 --- a/sr-aef/src/lib.rs
 +++ b/sr-aef/src/lib.rs
 @@ -137,6 +137,8 @@ pub struct UncompileContext<'a> {
@@ -1770,7 +1842,25 @@ index 1b9eb7c6..12587613 100644
          };
          slf.gather_language_systems()?;
          slf.uncompile_gsub_lookups()?;
-@@ -802,6 +796,32 @@ impl<'a> UncompileContext<'a> {
+@@ -356,6 +350,17 @@ impl<'a> UncompileContext<'a> {
+         name
+     }
+ 
++    /// A made-up name for the anchor of a mark class, `mark_class_<class>x<n>`.
++    /// A font editor reads an anchor name ending in `_<digits>` as one of a
++    /// ligature's components, which a mark anchor cannot be.
++    pub(crate) fn mark_class_symbol(&mut self, class_number: u16) -> SmolStr {
++        let prefix = SmolStr::new(format!("mark_class_{}x", class_number));
++        let symbol_index = self.symbols.entry(prefix.clone()).or_insert(1);
++        let name = SmolStr::new(format!("{}{}", prefix, symbol_index));
++        *symbol_index += 1;
++        name
++    }
++
+     fn assign_lookup_name<T: SubOrPos>(&mut self, prefix: &str, index: u16, phase: T) {
+         let name = self.gensym(prefix);
+         self.lookup_map.insert((phase.to_string(), index), name);
+@@ -802,6 +807,32 @@ impl<'a> UncompileContext<'a> {
                  }
              }
          }
@@ -1803,7 +1893,7 @@ index 1b9eb7c6..12587613 100644
      }
  
      /// Build script, language, and lookup statements for feature registrations.
-@@ -954,6 +974,36 @@ impl<'a> UncompileContext<'a> {
+@@ -954,6 +985,36 @@ impl<'a> UncompileContext<'a> {
      }
  
      fn add_feature_lookups(&mut self, feature_tag: Tag, lookups: Vec<Statement>) {
@@ -1840,7 +1930,7 @@ index 1b9eb7c6..12587613 100644
          let statements = self
              .features
              .entry(feature_tag.to_string().into())
-@@ -1173,6 +1223,38 @@ pub fn uncompile_bytes(
+@@ -1173,6 +1234,38 @@ pub fn uncompile_bytes(
  /// This partially decompiles the font, giving you the component parts so that you can
  /// put them where you want them. Useful for font editors and other tools that want the
  /// data but don't want to go all the way to a fea file.
@@ -1879,7 +1969,25 @@ index 1b9eb7c6..12587613 100644
  pub fn uncompile_context<'a>(font: &'a skrifa::FontRef) -> Result<UncompileContext<'a>, ReadError> {
      UncompileContext::new(font)
  }
-@@ -1658,6 +1740,36 @@ lookup gpos_pair_1;
+@@ -1197,7 +1290,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
+ 
+ markClass grave <anchor 200 150> @bottomleft;
+ markClass acute <anchor 350 0> @bottomleft;
+-markClass dotbelowcomb <anchor 200 -200> @mark_class_1_1;
++markClass dotbelowcomb <anchor 200 -200> @mark_class_1x1;
+ lookup gsub_single_1 {
+     sub a by b;
+ } gsub_single_1;
+@@ -1252,7 +1345,7 @@ lookup gsub_single_6 {
+ lookup gpos_mark_to_base_1 {
+     pos base A
+         <anchor 150 100> mark @bottomleft
+-        <anchor -200 -200> mark @mark_class_1_1;
++        <anchor -200 -200> mark @mark_class_1x1;
+ } gpos_mark_to_base_1;
+ lookup gpos_single_1 {
+     pos A 10;
+@@ -1658,6 +1751,36 @@ lookup gpos_pair_1;
          );
      }
  
@@ -1916,3 +2024,30 @@ index 1b9eb7c6..12587613 100644
      #[test]
      fn test_uncompile_size_feature() {
          let data = std::fs::read("resources/size.ttf").unwrap();
+@@ -1786,8 +1909,8 @@ GlyphClassDef [b], [a], [c d], [];
+ } GDEF;
+ 
+ markClass c <anchor 0 500> @left;
+-markClass c <anchor 0 500> @mark_class_0_1;
+-markClass d <anchor 0 0> @mark_class_1_1;
++markClass c <anchor 0 500> @mark_class_0x1;
++markClass d <anchor 0 0> @mark_class_1x1;
+ markClass c <anchor 0 500> @topleft;
+ lookup gpos_mark_to_base_1 {
+     pos base a
+@@ -1797,11 +1920,11 @@ lookup gpos_mark_to_base_1 {
+ } gpos_mark_to_base_1;
+ lookup gpos_mark_to_ligature_1 {
+     pos ligature a
+-        <anchor 100 500> mark @mark_class_0_1
+-        <anchor NULL> mark @mark_class_1_1
++        <anchor 100 500> mark @mark_class_0x1
++        <anchor NULL> mark @mark_class_1x1
+         ligComponent
+-        <anchor 400 500> mark @mark_class_0_1
+-        <anchor NULL> mark @mark_class_1_1;
++        <anchor 400 500> mark @mark_class_0x1
++        <anchor NULL> mark @mark_class_1x1;
+ } gpos_mark_to_ligature_1;
+ lookup gpos_mark_to_mark_1 {
+     pos mark c

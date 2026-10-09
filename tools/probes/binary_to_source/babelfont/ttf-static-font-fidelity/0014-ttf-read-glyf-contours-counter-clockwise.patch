@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:42:18 +0100
-Subject: [PATCH 14/17] ttf: read glyf contours counter-clockwise
+Subject: [PATCH 14/18] ttf: read glyf contours counter-clockwise
 
 TrueType contours run clockwise and a source's counter-clockwise; a compiler
 reverses a source's contours on the way out. The reader kept the glyf
