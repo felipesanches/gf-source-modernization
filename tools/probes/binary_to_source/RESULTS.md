@@ -70,7 +70,9 @@ and pr-bodies/sr-aef-uncompile-fixes.md.
 
 ## Later families (2026-10-09)
 
-One family at a time, each probed, then landed with tools/land.py (families-binary.tsv):
+One family at a time, each probed, then landed with tools/land.py (families-binary.tsv). The
+converter follows `babelfont/measure-integration.diff` (`babelfont/refresh.sh` regenerates it
+and the patch series after each change); landed families are re-landed on the latest one.
 
 | family | styles | result |
 |---|---|---|
@@ -92,7 +94,4 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 
 | family | styles | result |
 |---|---|---|
-
-The converter is now the integration tree of `babelfont/measure-integration.diff` as updated
-(17 patches in `babelfont/ttf-static-font-fidelity/`); the earlier families are re-landed on it.
 | Jua | 1 | CLEAN; hinting disclosed |
