@@ -95,4 +95,4 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 
 The converter is now the integration tree of `babelfont/measure-integration.diff` as updated
 (17 patches in `babelfont/ttf-static-font-fidelity/`); the earlier families are re-landed on it.
-
+| Jua | 1 | CLEAN; hinting disclosed |
