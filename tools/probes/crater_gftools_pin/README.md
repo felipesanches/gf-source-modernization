@@ -31,3 +31,17 @@ Crater reuses cached results when only Python tools change: every run here clear
 
 Both gftools changes merged upstream 2026-10-07: googlefonts/gftools#1229 (678696c4) and #1230
 (d8a6e227); main at 678696c4 has the same library code as the tree measured here.
+
+## Scripts
+
+| script | question | run |
+|---|---|---|
+| `compare.py` | per target, what changed between two crater result files | `python3 compare.py <before>.json <after>.json` |
+| `run_pair.sh` | what does moving the pin from venv A to venv B change, all else equal | `RUSTUP_TOOLCHAIN=1.97.1 sh run_pair.sh <fontc checkout> <venv A> <venv B> <subset.json> <scratch>` |
+| `classify_failures.py` | why do a run's failing targets fail (counts by error signature) | `python3 classify_failures.py <run>.json ...` |
+
+A harness pitfall found on 2026-10-09: when crater's `--cache` is reached through a symlink,
+ttx_diff (fontc 6bbfa26d) resolves the config path but not the source path, so every
+same-repo gftools-mode target gets a wrong `--experimental-single-source` and gftools rejects
+it ("must match exactly one of ... (matched 0)"). A first 0.10.1 run had 30 such failures on
+both sides (`classify_failures.py`); `run_pair.sh` now resolves the cache directory first.
