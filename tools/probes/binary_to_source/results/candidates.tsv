@@ -1,0 +1,131 @@
+family	lic	styles	hinting	variable	kern	gpos	gdef	glyphs	source_hint
+adobeblank	ofl	1	fpgm	0	0	0	0	2049	.glyphs,.ufo
+akronim	ofl	1	fpgm	0	1	0	0	254	.glyphs,.sfd,.ufo
+alef	ofl	2	fpgm	0	0	1	1	424	.glyphs,.sfd,.ufo,.vfb
+almarai	ofl	4	fpgm	0	0	1	1	579	
+anonymouspro	ofl	4	fpgm	0	0	0	0	624	
+averiagruesalibre	ofl	1	none	0	1	0	0	234	.glyphs,.sfd,.ufo,.vfb
+averialibre	ofl	6	none	0	1	0	0	234	.glyphs,.sfd,.ufo
+averiasanslibre	ofl	6	none	0	1	0	0	234	.glyphs,.sfd,.ufo,.vfb
+averiaseriflibre	ofl	6	none	0	1	0	0	234	.glyphs,.sfd,.ufo
+batang	ofl	1	fpgm	0	0	0	0	22772	.glyphs,.ufo
+batangche	ofl	1	fpgm	0	0	0	0	22772	.glyphs,.ufo
+blackhansans	ofl	1	fpgm	0	0	0	0	2734	.glyphs,.sfd,.ufo
+bpmfhuninn	ofl	1	none	0	0	0	0	21535	
+bpmfiansui	ofl	1	none	0	0	0	0	21830	
+bpmfzihikaistd	ofl	1	none	0	0	0	0	32996	
+calligraffitti	apache	1	fpgm	0	0	0	0	228	.glyphs,.sfd,.ufo,.vfb
+carlito	ofl	4	fpgm	0	0	1	1	2783	.glyphs,.sfd,.ufo
+cherrycreamsoda	apache	1	fpgm	0	1	0	0	228	.glyphs,.sfd,.ufo
+chewy	apache	1	fpgm	0	1	0	0	229	.glyphs,.sfd,.ufo
+comingsoon	apache	1	fpgm	0	1	1	0	230	.glyphs,.sfd,.ufo
+craftygirls	apache	1	fpgm	0	1	0	0	230	.glyphs,.ufo,.vfb
+datatype	ofl	1	none	1	0	0	0	10850	.glyphs,.ufo
+dellarespira	ofl	1	none	0	0	1	1	296	.glyphs,.sfd,.ufo,.vfb,bazaar,bzr,launchpad
+dohyeon	ofl	1	fpgm	0	0	1	0	3094	.glyphs,.sfd,.ufo
+dongle	ofl	3	none	0	0	1	1	12550	
+dotum	ofl	1	fpgm	0	0	0	0	22643	.glyphs,.sfd,.ufo
+dotumche	ofl	1	fpgm	0	0	0	0	22643	.glyphs,.sfd,.ufo
+eastseadokdo	ofl	1	fpgm	0	0	1	0	3099	.glyphs,.sfd,.ufo
+ekmukta	ofl	7	ttfautohint	0	0	1	1	1368	.glyphs,.ufo
+firamono	ofl	3	fpgm	0	0	1	1	1485	.glyphs,.ufo
+firasans	ofl	18	fpgm	0	0	1	1	2708	.glyphs,.ufo
+firasanscondensed	ofl	18	fpgm	0	0	1	1	2708	.glyphs,.ufo
+firasansextracondensed	ofl	18	fpgm	0	0	1	1	2708	.glyphs,.ufo
+fontdinerswanky	apache	1	fpgm	0	1	0	0	231	.glyphs,.sfd,.ufo,.vfb
+gamjaflower	ofl	1	fpgm	0	0	1	0	12021	.glyphs,.sfd,.ufo
+gfsdidot	ofl	1	none	0	0	1	1	1147	.glyphs,.sfd,.ufo
+gfsneohellenic	ofl	4	fpgm	0	0	1	1	1142	.glyphs,.sfd,.ufo
+gothica1	ofl	9	fpgm	0	0	1	1	22711	.glyphs,.sfd,.ufo,.vfb
+gowunbatang	ofl	2	none	0	0	1	1	12550	.glyphs
+gugi	ofl	1	fpgm	0	0	0	0	2495	.glyphs,.sfd,.ufo,.vfb
+gulim	ofl	1	fpgm	0	0	0	0	22522	.glyphs,.ufo
+gulimche	ofl	1	fpgm	0	0	0	0	22522	.glyphs,.ufo
+gungsuh	ofl	1	fpgm	0	0	0	0	21896	.glyphs,.ufo
+gungsuhche	ofl	1	fpgm	0	0	0	0	21896	.glyphs,.ufo
+himelody	ofl	1	fpgm	0	0	1	0	12103	.glyphs,.sfd,.ufo
+homemadeapple	apache	1	fpgm	0	0	0	0	230	.glyphs,.sfd,.ufo,.vfb
+ibmplexsans	ofl	2	fpgm	1	0	1	1	1025	.ufo
+ibmplexsansarabic	ofl	7	fpgm	0	0	1	1	1706	.ufo
+imfelldoublepica	ofl	2	none	0	1	0	0	397	
+imfelldoublepicasc	ofl	1	none	0	1	0	0	359	
+imfelldwpica	ofl	2	none	0	1	0	0	386	.glyphs,.ufo
+imfelldwpicasc	ofl	1	none	0	1	0	0	359	.glyphs,.ufo
+imfellenglish	ofl	2	none	0	1	0	0	379	.glyphs,.ufo
+imfellenglishsc	ofl	1	none	0	1	0	0	359	.glyphs,.ufo
+imfellfrenchcanon	ofl	2	none	0	1	0	0	394	.glyphs,.ufo
+imfellfrenchcanonsc	ofl	1	none	0	1	0	0	357	.glyphs,.ufo
+imfellgreatprimer	ofl	2	none	0	1	0	0	390	.glyphs,.ufo
+imfellgreatprimersc	ofl	1	none	0	1	0	0	359	.glyphs,.ufo
+iosevkacharon	ofl	8	fpgm	0	0	1	1	11315	.glyphs,.ufo
+iosevkacharonmono	ofl	8	fpgm	0	0	1	1	11861	.glyphs,.ufo
+jomolhari	ofl	1	fpgm	0	1	1	1	3333	.glyphs,.sfd,.ufo
+jsmathcmbx10	apache	1	fpgm	0	0	0	0	132	.glyphs,.ufo
+jsmathcmex10	apache	1	fpgm	0	0	0	0	132	
+jsmathcmmi10	apache	1	fpgm	0	0	0	0	132	
+jsmathcmr10	apache	1	fpgm	0	0	0	0	132	
+jsmathcmsy10	apache	1	fpgm	0	0	0	0	132	
+jsmathcmti10	apache	1	fpgm	0	0	0	0	132	
+jua	ofl	1	fpgm	0	0	1	0	2520	
+khmer	ofl	1	fpgm	0	0	1	1	302	
+kiranghaerang	ofl	1	fpgm	0	0	1	0	5638	
+kranky	apache	1	fpgm	0	1	0	0	228	.glyphs,.sfd,.ufo,.vfb
+lato	ofl	18	fpgm	0	0	1	0	3023	
+libertinuskeyboard	ofl	1	fpgm	0	0	0	1	421	.glyphs,.sfd,.ufo
+libertinusmath	ofl	1	fpgm	0	0	1	1	4379	.glyphs,.sfd,.ufo
+libertinusmono	ofl	1	fpgm	0	0	1	1	618	.glyphs,.sfd,.ufo
+libertinussans	ofl	3	fpgm	0	0	1	1	2592	.glyphs,.sfd,.ufo
+libertinusserif	ofl	6	fpgm	0	0	1	1	2731	.glyphs,.sfd,.ufo
+libertinusserifdisplay	ofl	1	fpgm	0	0	1	1	2280	.glyphs,.sfd,.ufo
+librebarcode128	ofl	1	ttfautohint	0	0	0	0	221	.glyphs,.sfd,.ufo
+librebarcode128text	ofl	1	ttfautohint	0	0	0	0	415	.glyphs,.sfd,.ufo
+librebarcode39	ofl	1	ttfautohint	0	0	0	0	121	.glyphs,.ufo
+librebarcode39extended	ofl	1	ttfautohint	0	0	0	0	179	.glyphs,.sfd,.ufo
+librebarcode39extendedtext	ofl	1	ttfautohint	0	0	0	0	272	.glyphs,.sfd,.ufo
+librebarcode39text	ofl	1	ttfautohint	0	0	0	0	163	.glyphs,.ufo
+librebarcodeean13text	ofl	1	ttfautohint	0	0	1	0	155	.glyphs,.sfd,.ufo
+nanumbrushscript	ofl	1	fpgm	0	0	1	0	13799	
+nanumgothic	ofl	3	fpgm	0	0	1	0	13671	
+nanumgothiccoding	ofl	2	fpgm	0	0	0	0	20338	
+nanummyeongjo	ofl	3	fpgm	0	0	1	0	14697	
+nanumpenscript	ofl	1	fpgm	0	0	1	1	13751	
+newscycle	ofl	2	fpgm/none	0	0	1	1	1566	bazaar,bzr,launchpad
+notosansduployan	ofl	2	none	0	0	1	1	10729	.glyphs,.ufo
+notosanshk	ofl	1	none	1	0	1	1	20940	
+notosansjp	ofl	1	none	1	0	1	1	17936	
+notosanskr	ofl	1	none	1	0	1	1	24964	
+notosanssc	ofl	1	none	1	0	1	1	31036	
+notosanstc	ofl	1	none	1	0	1	1	20950	
+notoserifhk	ofl	1	none	1	0	1	1	20933	
+notoserifjp	ofl	1	none	1	0	1	1	17923	
+notoserifkr	ofl	1	none	1	0	1	1	24910	
+notoserifsc	ofl	1	none	1	0	1	1	31058	
+notoseriftc	ofl	1	none	1	0	1	1	20939	
+oranienbaum	ofl	1	ttfautohint	0	1	1	0	419	
+permanentmarker	apache	1	fpgm	0	1	0	0	230	.sfd,.vfb
+phetsarath	ofl	2	none	0	0	1	1	162	.glyphs,.ufo
+portersansblock	ofl	1	fpgm	0	1	1	0	209	.glyphs
+pressstart2p	ofl	1	fpgm	0	0	0	1	658	
+ptsanscaption	ofl	2	fpgm	0	1	1	0	720	
+ptsansnarrow	ofl	2	fpgm	0	1	1	0	720	
+ptserif	ofl	4	fpgm	0	1	1	0	719	
+reeniebeanie	ofl	1	fpgm	0	0	0	0	318	
+rocksalt	apache	1	fpgm	0	1	1	0	228	.sfd,.vfb
+sansation	ofl	6	none	0	1	1	1	533	
+schoolbell	apache	1	fpgm	0	1	0	0	228	.sfd,.vfb
+shipporimincho	ofl	5	ttfautohint	0	0	1	1	16359	
+shipporiminchob1	ofl	5	ttfautohint	0	0	1	1	16359	
+siemreap	ofl	1	none	0	0	1	1	696	
+slackey	apache	1	fpgm	0	1	0	0	229	.sfd,.vfb
+sourcecodepro	ofl	2	none	1	0	1	1	1568	
+sunshiney	apache	1	fpgm	0	1	0	0	229	.sfd,.vfb
+tiny5duo	ofl	2	none	1	0	1	1	1749	
+ubuntucondensed	ufl	1	fpgm	0	1	1	0	1263	.sfd,.vfb
+unkempt	apache	2	fpgm	0	1	0	0	228	.sfd,.vfb
+walterturncoat	apache	1	fpgm	0	1	0	0	228	.sfd,.vfb
+yeonsung	ofl	1	fpgm	0	0	0	0	3120	
+yinmar	ofl	1	none	0	0	1	1	249	
+zenantique	ofl	1	none	0	0	1	1	7867	
+zenantiquesoft	ofl	1	none	0	0	1	1	7867	
+zenmarugothic	ofl	5	none	0	0	1	1	7864	
+zenoldmincho	ofl	5	none	0	0	1	1	7866	
