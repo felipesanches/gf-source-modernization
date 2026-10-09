@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 17:05:22 +0100
-Subject: [PATCH 16/16] ttf: name glyphs uniquely, as the uncompiled features
+Subject: [PATCH 16/17] ttf: name glyphs uniquely, as the uncompiled features
  do
 
 A post table may give two glyphs the same name, and a source with a

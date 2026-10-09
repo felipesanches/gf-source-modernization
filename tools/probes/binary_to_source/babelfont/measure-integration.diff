@@ -802,7 +802,7 @@ index fa2d59d2..d78de54b 100644
      fn test_no_entries_for_several_styles() {
          let mut font = single_style_font("Lekton", "Regular");
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index bcfc7fe3..696205bb 100644
+index bcfc7fe3..6cc994a0 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -5,13 +5,17 @@ use fontdrasil::{
@@ -1042,38 +1042,28 @@ index bcfc7fe3..696205bb 100644
          glyph.exported = true;
          font.glyphs.push(glyph);
      }
-@@ -307,6 +413,50 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
+@@ -307,6 +413,40 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
              )))?;
          glyph.codepoints.push(unicode);
      }
 +    load_categories(fontref, font)
 +}
 +
-+/// Each glyph's GDEF class as a shaper reads it: from GDEF's glyph classes, or
-+/// without them, a mark for a nonspacing-mark codepoint and a base for anything
-+/// else. Every glyph is given a category, so that a compiler does not guess one
-+/// from its name; a mark is Nonspacing if it has no advance, else Spacing
-+/// Combining, which keeps its advance.
++/// Each glyph's category from GDEF's glyph classes; a mark is Nonspacing if it
++/// has no advance, else Spacing Combining, which keeps its advance. A font with no
++/// glyph classes leaves them to the shaper, which guesses each glyph's class as it
++/// is used (from the codepoint, or kept through a substitution), so every glyph is
++/// a base: a compiler then writes no glyph classes either. Every glyph is given a
++/// category, so that a compiler does not guess one from its name.
 +fn load_categories(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let class_def = match fontref.gdef() {
 +        Ok(gdef) => gdef.glyph_class_def().transpose()?,
 +        Err(_) => None,
 +    };
-+    let general_category = CodePointMapData::<GeneralCategory>::new();
 +    let metrics = fontref.glyph_metrics(Size::unscaled(), LocationRef::default());
 +    for (gid, glyph) in font.glyphs.iter_mut().enumerate() {
 +        let gid = GlyphId::new(gid as u32);
-+        let class = match &class_def {
-+            Some(class_def) => class_def.get(gid),
-+            None if glyph.codepoints.iter().any(|&cp| {
-+                char::from_u32(cp)
-+                    .is_some_and(|c| general_category.get(c) == GeneralCategory::NonspacingMark)
-+            }) =>
-+            {
-+                3
-+            }
-+            None => 1,
-+        };
++        let class = class_def.as_ref().map_or(1, |class_def| class_def.get(gid));
 +        let (category, subcategory) = match class {
 +            2 => (GlyphCategory::Ligature, Some("Ligature")),
 +            3 if metrics.advance_width(gid).unwrap_or_default() == 0.0 => {
@@ -1093,7 +1083,7 @@ index bcfc7fe3..696205bb 100644
      Ok(())
  }
  
-@@ -413,10 +563,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -413,10 +553,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      for (class_name, glyphs) in uncompile_context.named_classes.iter() {
@@ -1109,7 +1099,7 @@ index bcfc7fe3..696205bb 100644
      }
      let mut language_systems = vec![];
      for (script_tag, lang_sys_tags) in &uncompile_context.language_systems {
-@@ -433,6 +584,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -433,6 +574,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
              PossiblyAutomaticCode::new(language_systems_block),
          );
      }
@@ -1121,14 +1111,15 @@ index bcfc7fe3..696205bb 100644
      for (lookup_name, statements) in uncompile_context.lookups.iter() {
          features.prefixes.insert(
              lookup_name.clone(),
-@@ -449,6 +605,96 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -449,6 +595,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      Ok(())
  }
  
 +/// A legacy kern table's horizontal pairs, as the default master's kerning,
 +/// read where a shaper reads them: only when GPOS has no kern feature, and
 +/// never across a mark (a shaper applies the table ignoring marks, so a pair
-+/// with a mark in it never applies). The pairs of several subtables add up.
++/// with a mark in it never applies: a GDEF mark, or without glyph classes a
++/// nonspacing-mark codepoint). The pairs of several subtables add up.
 +fn load_legacy_kerning(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let Ok(kern) = fontref.kern() else {
 +        return Ok(());
@@ -1143,6 +1134,20 @@ index bcfc7fe3..696205bb 100644
 +            return Ok(());
 +        }
 +    }
++    let has_classes = fontref
++        .gdef()
++        .is_ok_and(|gdef| gdef.glyph_class_def().is_some());
++    let general_category = CodePointMapData::<GeneralCategory>::new();
++    let shaper_mark = |glyph: &Glyph| {
++        if has_classes {
++            glyph.category == GlyphCategory::Mark
++        } else {
++            glyph.codepoints.iter().any(|&cp| {
++                char::from_u32(cp)
++                    .is_some_and(|c| general_category.get(c) == GeneralCategory::NonspacingMark)
++            })
++        }
++    };
 +    let mut pairs: IndexMap<(SmolStr, SmolStr), i32> = IndexMap::new();
 +    for subtable in kern.subtables() {
 +        let subtable = subtable?;
@@ -1157,7 +1162,7 @@ index bcfc7fe3..696205bb 100644
 +            let left = font.glyphs.get_by_index(pair.left().to_u32() as usize);
 +            let right = font.glyphs.get_by_index(pair.right().to_u32() as usize);
 +            if let (Some(left), Some(right)) = (left, right) {
-+                if left.category == GlyphCategory::Mark || right.category == GlyphCategory::Mark {
++                if shaper_mark(left) || shaper_mark(right) {
 +                    continue;
 +                }
 +                *pairs
@@ -1218,7 +1223,7 @@ index bcfc7fe3..696205bb 100644
  fn get_x_y_location_for_anchor(
      location: DesignLocation,
      anchor: &sr_aef::fea_rs_ast::Anchor,
-@@ -527,12 +773,64 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+@@ -527,12 +778,64 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
      Ok(coords)
  }
  
@@ -1284,7 +1289,7 @@ index bcfc7fe3..696205bb 100644
  ) -> Result<crate::Layer, BabelfontError> {
      let loc = fontdrasil_location_to_skrifa_location(master.location.clone(), axes)?;
      let locationref = LocationRef::new(&loc);
-@@ -557,11 +855,28 @@ fn load_layer(
+@@ -557,11 +860,28 @@ fn load_layer(
                          &mut pen,
                      )
                      .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
@@ -1314,7 +1319,7 @@ index bcfc7fe3..696205bb 100644
              for component in c.components() {
                  let gid = component.glyph;
                  let anchor = match component.anchor {
-@@ -571,25 +886,31 @@ fn load_layer(
+@@ -571,25 +891,31 @@ fn load_layer(
                          component: _,
                      } => (0.0, 0.0),
                  };
@@ -1356,7 +1361,7 @@ index bcfc7fe3..696205bb 100644
                      transform: our_affine.into(),
                      location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
                      format_specific: FormatSpecific::default(),
-@@ -600,3 +921,258 @@ fn load_layer(
+@@ -600,3 +926,255 @@ fn load_layer(
  
      Ok(layer)
  }
@@ -1472,13 +1477,10 @@ index bcfc7fe3..696205bb 100644
 +
 +    #[test]
 +    fn test_categories_without_gdef() {
-+        // as a shaper infers them: U+0300 is a nonspacing mark; an unencoded
-+        // glyph is a base, whatever its name suggests
++        // no glyph classes: every glyph a base, U+0300 too, so that the compiled
++        // font has none either and a shaper guesses them as it does for this one
 +        let font = load(STATIC_LEGACY).unwrap();
-+        assert_eq!(
-+            category(&font, "gravecomb"),
-+            (GlyphCategory::Mark, Some("Nonspacing".to_string()))
-+        );
++        assert_eq!(category(&font, "gravecomb"), (GlyphCategory::Base, None));
 +        assert_eq!(category(&font, "commaaccent"), (GlyphCategory::Base, None));
 +        assert_eq!(category(&font, "x"), (GlyphCategory::Base, None));
 +    }

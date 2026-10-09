@@ -67,3 +67,16 @@ functional gate pairs them by correspondence and finds them equal).
 
 See the commit messages of the two patch series and pr-bodies/babelfont-ttf-static-font-fidelity.md
 and pr-bodies/sr-aef-uncompile-fixes.md.
+
+## Later families (2026-10-09)
+
+One family at a time, each probed, then landed with tools/land.py (families-binary.tsv):
+
+| family | styles | result |
+|---|---|---|
+| Reenie Beanie | 1 | CLEAN (hand hinting in VTT replaced by ttfautohint; disclosed) |
+| PT Serif | 4 | CLEAN once a font without GDEF glyph classes is given none (before: 13995 of 2250538 runs differed, accents that ccmp substitutes keeping their advance); hinting disclosed |
+
+The converter is now the integration tree of `babelfont/measure-integration.diff` as updated
+(17 patches in `babelfont/ttf-static-font-fidelity/`); the earlier families are re-landed on it.
+
