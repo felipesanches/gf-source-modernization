@@ -33,6 +33,9 @@ The scratch dir keeps each font's `.glyphs`, `config.yaml`, build and diffenator
   upstream plus `babelfont/measure-integration.diff`, and checks it is the measured tree. The
   patch series in `babelfont/sr-aef-uncompile-fixes/` and `babelfont/ttf-static-font-fidelity/`
   are the same changes, commit by commit, for review (pr-bodies/ has their PR texts).
+- `babelfont/refresh.sh`: after a converter change, regenerates the patch series, the
+  integration diff and rebuild.sh's checksum from the babelfont branches, and checks that the
+  diff applied to public upstream gives exactly the measured tree.
 
 ## Results
 
