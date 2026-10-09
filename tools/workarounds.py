@@ -14,7 +14,9 @@ of a named, reproduced defect in a tool -- it is not a change to the font:
                  probes/fontc_static_weight_class/). The .sfd states the value as
                  TTFWeight, so it is written into the source's features as
                  `table OS/2 { WeightClass N; }` -- merged into an existing OS/2
-                 block, because fea-rs keeps only the last one.
+                 block, because fea-rs keeps only the last one. A converted binary
+                 (tools/land.py, kind binary) states it in OS/2, and its usWidthClass,
+                 lost the same way, travels as `WidthClass N` (width_class_fea).
   italic-angle   babelfont stores metrics as integers and loses a fractional
                  ItalicAngle (-9.3 becomes 9; ../../sfd-batch6/issues/
                  babelfont-italic-angle-rounded.md). The .sfd's own value is
@@ -51,18 +53,28 @@ def weight_class(glyphs_text, sfd_text):
 def weight_class_fea(glyphs_text, wc):
     """The .glyphs text with `table OS/2 { WeightClass wc; }` in its features, merged
     into an existing OS/2 block (fea-rs keeps only the last one)."""
+    return os2_statement_fea(glyphs_text, "WeightClass", wc)
+
+
+def width_class_fea(glyphs_text, wc):
+    """The same for `WidthClass`: fontc 1.0.0 drops a single master's instance
+    widthClass as it does its weightClass (../issues/fontc-static-weight-class.md)."""
+    return os2_statement_fea(glyphs_text, "WidthClass", wc)
+
+
+def os2_statement_fea(glyphs_text, keyword, value):
     t = glyphs_text
     m = re.search(r'code = "table OS/2 \{\n', t)
     if m:
         end = t.index("} OS/2;", m.end())
-        if re.search(r"^\s*WeightClass\s+\d+;\s*$", t[m.end():end], re.M):
-            t = t[:m.end()] + re.sub(r"(?m)^(\s*)WeightClass\s+\d+;$",
-                                     r"\g<1>WeightClass %d;" % wc, t[m.end():end], count=1) + t[end:]
+        if re.search(r"^\s*%s\s+\d+;\s*$" % keyword, t[m.end():end], re.M):
+            t = t[:m.end()] + re.sub(r"(?m)^(\s*)%s\s+\d+;$" % keyword,
+                                     r"\g<1>%s %d;" % (keyword, value), t[m.end():end], count=1) + t[end:]
         else:
-            t = t[:m.end()] + "    WeightClass %d;\n" % wc + t[m.end():]
+            t = t[:m.end()] + "    %s %d;\n" % (keyword, value) + t[m.end():]
     else:
-        entry = ('{\ncode = "table OS/2 {\n    WeightClass %d;\n} OS/2;";\n'
-                 'name = WeightClassOverride;\n},\n' % wc)
+        entry = ('{\ncode = "table OS/2 {\n    %s %d;\n} OS/2;";\n'
+                 'name = %sOverride;\n},\n' % (keyword, value, keyword))
         key = "featurePrefixes = (\n"
         if key in t:
             i = t.index(key) + len(key)

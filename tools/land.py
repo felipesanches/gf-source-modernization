@@ -498,15 +498,19 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         g = os.path.join(d, "sources", r["style"] + ".glyphs")
         sh(BF, src, g)
         from fontTools.ttLib import TTFont
-        wc = TTFont(src)["OS/2"].usWeightClass
+        os2 = TTFont(src)["OS/2"]
         notes = []
-        if wc != 400:
+        for field, default, fea in (("usWeightClass", 400, workarounds.weight_class_fea),
+                                    ("usWidthClass", 5, workarounds.width_class_fea)):
+            value = getattr(os2, field)
+            if value == default:
+                continue
             text = open(g, encoding="utf-8").read()
-            changed = workarounds.weight_class_fea(text, wc)
+            changed = fea(text, value)
             if changed != text:
                 open(g, "w", encoding="utf-8").write(changed)
-                notes.append("usWeightClass %d (OS/2) as FEA; fontc 1.0.0 drops a single "
-                             "master's instance weightClass" % wc)
+                notes.append("%s %d (OS/2) as FEA; fontc 1.0.0 drops a single master's "
+                             "instance %s" % (field, value, field[2].lower() + field[3:]))
         per_style.append({"row": r, "flags": [], "notes": notes, "glyphs": g})
     for r in [] if glyphs or binary else rows:
         src = os.path.join(d, r["source"])

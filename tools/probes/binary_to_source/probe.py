@@ -3,8 +3,9 @@
 source by converting its own binary with babelfont, and does that source rebuild the binary?
 
 For each shipped .ttf given: babelfont reads it and writes a .glyphs (with the weight-class
-workaround of tools/workarounds.py: fontc 1.0.0 drops a single master's instance weightClass,
-so a usWeightClass other than 400 travels as FEA, read from the binary); gftools-builder builds
+workarounds of tools/workarounds.py: fontc 1.0.0 drops a single master's instance weightClass
+and widthClass, so a usWeightClass other than 400 or usWidthClass other than 5 travels as FEA,
+read from the binary); gftools-builder builds
 that .glyphs (config: static, the source's own glyph names, no autohinting unless the binary
 was ttfautohinted); the build is gated against the shipped binary exactly as tools/land.py
 gates a conversion -- table gate (tools/table_gate.py), the release's exact codepoints,
@@ -42,10 +43,11 @@ def probe(scratch, shipped):
     if conv.returncode or not os.path.exists(glyphs):
         return stem, "CONVERT FAILED", [(conv.stderr or conv.stdout).strip()[-400:]]
     f = TTFont(shipped, lazy=True)
-    wc = f["OS/2"].usWeightClass
-    if wc != 400:
-        text = open(glyphs, encoding="utf-8").read()
-        open(glyphs, "w", encoding="utf-8").write(workarounds.weight_class_fea(text, wc))
+    for value, default, fea in ((f["OS/2"].usWeightClass, 400, workarounds.weight_class_fea),
+                                (f["OS/2"].usWidthClass, 5, workarounds.width_class_fea)):
+        if value != default:
+            text = open(glyphs, encoding="utf-8").read()
+            open(glyphs, "w", encoding="utf-8").write(fea(text, value))
     autohint = "ttfautohint" in (f["name"].getDebugName(5) or "") or "TTFA" in f
     with open(os.path.join(work, "sources", "config.yaml"), "w") as fh:
         fh.write("buildVariable: false\nproductionNames: false\n")
