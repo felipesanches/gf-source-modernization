@@ -80,6 +80,7 @@ One family at a time, each probed, then landed with tools/land.py (families-bina
 | PT Sans Caption | 2 | CLEAN; hinting disclosed |
 | IM Fell English SC | 1 | not landed: 246 of 932722 runs differ, all with U+0326. The release has a legacy kern table and no GPOS, so HarfBuzz positions the comma below itself (fallback); the build kerns through GPOS, which turns the fallback off (`0` + U+0326: release offset 501,-58, build 1004,0). Plus head.font_direction_hint 0. Felipe's decision |
 | Anonymous Pro | 4 | not landed: the release embeds bitmap strikes (EBDT, EBLC, EBSC), which a .glyphs source cannot carry; the reader also loses post.isFixedPitch |
+| Khmer | 1 | not landed: Khmer substitutions differ (6930 of 36123 runs; U+17B6 alone becomes uni1794.a2 in the release and stays uni17B6 in the build); GSUB not investigated yet |
 
 The converter is now the integration tree of `babelfont/measure-integration.diff` as updated
 (17 patches in `babelfont/ttf-static-font-fidelity/`); the earlier families are re-landed on it.
