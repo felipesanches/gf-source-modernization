@@ -81,7 +81,17 @@ One family at a time, each probed, then landed with tools/land.py (families-bina
 | Almarai | 4 | CLEAN once the reader defines the mark classes its uncompiled mark lookups name, and sr-aef stops naming a made-up mark anchor `_mark_class_<c>_<n>` (fontc: "mark anchors cannot be numbered"); hinting disclosed |
 | IM Fell English SC | 1 | not landed: 246 of 932722 runs differ, all with U+0326. The release has a legacy kern table and no GPOS, so HarfBuzz positions the comma below itself (fallback); the build kerns through GPOS, which turns the fallback off (`0` + U+0326: release offset 501,-58, build 1004,0). Plus head.font_direction_hint 0. Felipe's decision |
 | Anonymous Pro | 4 | not landed: the release embeds bitmap strikes (EBDT, EBLC, EBSC), which a .glyphs source cannot carry; the reader also loses post.isFixedPitch |
-| Khmer | 1 | not landed: Khmer substitutions differ (6930 of 36123 runs; U+17B6 alone becomes uni1794.a2 in the release and stays uni17B6 in the build); GSUB not investigated yet |
+| Khmer | 1 | not landed: Khmer substitutions differ (6930 of 36123 runs; U+17B6 alone becomes uni1794.a2 in the release and stays uni17B6 in the build); shaped through AAT, see below |
+| Yinmar | 1 | not landed, for the same reason as Khmer (19621 of 80657 runs differ) |
+
+Khmer, Yinmar, Siemreap and Phetsarath carry an AAT `morx` table beside GSUB, and HarfBuzz
+shapes horizontal text with `morx` when a font has one: removing `morx` from a copy of the
+Yinmar release makes it shape exactly as the build (U+102B gets a dotted circle, U+1026
+decomposes to U+1025 U+102E). fontc writes no AAT tables, so under HarfBuzz these four
+cannot be reproduced; under an engine that reads GSUB they were never shaped by `morx`.
+
+| family | styles | result |
+|---|---|---|
 
 The converter is now the integration tree of `babelfont/measure-integration.diff` as updated
 (17 patches in `babelfont/ttf-static-font-fidelity/`); the earlier families are re-landed on it.
