@@ -1,0 +1,164 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Fri, 9 Oct 2026 04:40:17 +0100
+Subject: [PATCH 19/19] ttf: read vertical metrics
+
+vhea and vmtx were not read, so a font with vertical metrics (most CJK fonts) compiled
+without them. Each glyph's vmtx advance is its Glyphs vertWidth, and its origin (the top
+of its bounding box plus its top side bearing) its vertOrigin, measured down from the
+typographic ascender as Glyphs does; vhea's ascender, descender and line gap are the
+master's vheaVertAscender, vheaVertDescender and vheaVertLineGap.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/GdefClasses.ttf  | Bin 1232 -> 1316 bytes
+ babelfont/resources/ttf/make_fixtures.py |   6 +-
+ babelfont/src/convertors/ttf.rs          |  71 +++++++++++++++++++++++
+ 3 files changed, 76 insertions(+), 1 deletion(-)
+
+diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
+index 1b0fd6d9d27afd01226e2af7e27015b8310bb176..22f1b2144fc58dc99ae8afbe87b8905b2e1f0323 100644
+GIT binary patch
+delta 344
+zcmcb>xrD2pfsuiMK>$dwFfh2gxVkY&GO#l+Fkb<R%DD&l2kWg-TMFcV0rDrf2ZuWC
+z%vliuRNMmOXZZ)~8@V>R6)`X{b^!Sa$+?LI%wo*v7#Ns<rZKpr=TxRmP<C<!@_~97
+zW@Mx$rX=P$&jG6E0rJf<GE(akS*w^zfC4T+0hNs0k_xWp3^qXi3m{)6JGCf}f#?5w
+zpaCC%e2JX=<V1!-hUq}Q2aqq2n^;l6z{$V{RG$IlE952SrcU^?GzREk4j@0jAiuce
+zL@kR3kY54hN0tFyz*@yB3iJTTJe9Issgerj*8e~kvx)!(1i+yI3=HqDi|aT3xWQ}!
+l5@2rm4|Fo~i~n;NCxATyREY!_nO^{TDgWmH;W?nn6aX=_Pj3JK
+
+delta 265
+zcmZ3&b%C><fsuiMfsdhqftew}-Nn_7L6U);fq{7oP*l!6z&}`TjoMNm{|b;l!96(C
+zX=l!g2nGh06d*s#KUm+$wb8AJfq^jt$WKVlO)Ov*V?GDuKLPSx(sL@)CMY|(GB7Y%
+z0QoaAQWH}W^PJ}Z*>8Z@EF&YeK9RMGsRXD&1t_4Bky}#1^_;;5$Ugz(%Veh(<uUO5
+ze-AX^0+26}lb@W(P{=SH$kzb!1#%NB3K%#U*nsLifP96##N5;gf0o7o<zE2#`33pK
+kB`0cGfNGh6j%J7idlu+nuXB^l;`wd9GB9tJW4y!+0Da#(_5c6?
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index 2bc6ff6f..915c8eab 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -25,7 +25,8 @@ GdefClasses.ttf carries GDEF glyph classes: gravecomb a base (class 1, advance
+ ligature, script a base whose name is a feature-file keyword. Its calt's
+ backtrack covers five glyphs, which reads back as a named glyph class. It has a
+ GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores, and a
+-mark feature attaching acutecomb to a.
++mark feature attaching acutecomb to a, and vertical metrics: vhea 900/-100,
++every glyph 1000 high with its origin at y 600.
+ 
+ Unnamed.ttf has no glyph names (post format 3): A (U+0041), Aring (U+00C5, a
+ component of A), an unencoded alternate of A reached by salt, and A Aring kerned
+@@ -139,6 +140,9 @@ advance = {".notdef": 500, "a": 500, "gravecomb": 190, "acutecomb": 0, "tildecom
+ fb.setupHorizontalMetrics({g: (advance[g], fb.font["glyf"][g].xMin if g != ".notdef" else 0)
+                            for g in order})
+ fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupVerticalHeader(ascent=900, descent=-100)
++fb.setupVerticalMetrics({g: (1000, 600 - fb.font["glyf"][g].yMax if g != ".notdef" else 0)
++                         for g in order})
+ fb.setupNameTable({"familyName": "Fixture Gdef", "styleName": "Regular"})
+ fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
+ fb.setupPost()
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index de0dd571..ba058709 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -290,7 +290,22 @@ fn load_masters(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelf
+         );
+     }
+ 
++    let mut format_specific = FormatSpecific::default();
++    if let Ok(vhea) = fontref.vhea() {
++        // Glyphs states vhea in these master custom parameters
++        for (name, value) in [
++            ("vheaVertAscender", vhea.ascender().to_i16()),
++            ("vheaVertDescender", vhea.descender().to_i16()),
++            ("vheaVertLineGap", vhea.line_gap().to_i16()),
++        ] {
++            format_specific.insert(
++                format!("com.schriftgestalt.Glyphs.customParameters.{name}"),
++                serde_json::json!({ "value": value, "disabled": false }),
++            );
++        }
++    }
+     font.masters.push(crate::Master {
++        format_specific,
+         name: if font.axes.is_empty() {
+             style_name(fontref)
+         } else {
+@@ -792,6 +807,37 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+     Ok(coords)
+ }
+ 
++/// A glyph's vmtx advance and origin, as Glyphs states them: vertWidth, and
++/// vertOrigin measured down from the typographic ascender. The origin is the top
++/// of the glyph's bounding box (0 for an empty glyph) plus its top side bearing.
++fn load_vertical_metrics(
++    fontref: &skrifa::FontRef<'_>,
++    gid: skrifa::GlyphId,
++    layer: &mut Layer,
++) -> Result<(), BabelfontError> {
++    let Ok(vmtx) = fontref.vmtx() else {
++        return Ok(());
++    };
++    let (Some(advance), Some(tsb)) = (vmtx.advance(gid), vmtx.side_bearing(gid)) else {
++        return Ok(());
++    };
++    let y_max = fontref
++        .loca(None)?
++        .get_glyf(gid, &fontref.glyf()?)?
++        .map_or(0, |glyph| glyph.y_max()) as f64;
++    let origin = y_max + tsb as f64;
++    let ascender = fontref.os2()?.s_typo_ascender() as f64;
++    layer.format_specific.insert(
++        "com.schriftgestalt.Glyphs.vertWidth".to_string(),
++        serde_json::json!(advance as f64),
++    );
++    layer.format_specific.insert(
++        "com.schriftgestalt.Glyphs.vertOrigin".to_string(),
++        serde_json::json!(ascender - origin),
++    );
++    Ok(())
++}
++
+ /// How far a TrueType rasterizer moves a glyph's stored outline when it draws
+ /// it: by minus the x of its first phantom point, which is xMin - lsb (hmtx
+ /// left side bearing), except that a composite takes the phantom points of a
+@@ -856,6 +902,7 @@ fn load_layer(
+     let width = fontref.glyph_metrics(Size::unscaled(), locationref);
+     let mut layer = Layer::new(width.advance_width(gid).unwrap_or_default());
+     layer.master = crate::LayerType::DefaultForMaster(master.id.clone());
++    load_vertical_metrics(fontref, gid, &mut layer)?;
+ 
+     // Skrifa pens don't support components. Parse component glyphs manually.
+     let glyf = fontref.glyf()?;
+@@ -1115,6 +1162,30 @@ mod tests {
+         }
+     }
+ 
++    #[test]
++    fn test_vertical_metrics() {
++        // vhea 900/-100/0; a: advance height 1000, tsb 100, yMax 500 (origin 600);
++        // the typographic ascender is 800
++        let font = load(GDEF_CLASSES).unwrap();
++        let master = &font.masters[0];
++        let cp = |name: &str| {
++            master
++                .format_specific
++                .get(&format!(
++                    "com.schriftgestalt.Glyphs.customParameters.{name}"
++                ))
++                .and_then(|v| v.get("value"))
++                .and_then(|v| v.as_f64())
++        };
++        assert_eq!(cp("vheaVertAscender"), Some(900.0));
++        assert_eq!(cp("vheaVertDescender"), Some(-100.0));
++        assert_eq!(cp("vheaVertLineGap"), Some(0.0));
++        let layer = &font.glyphs.get("a").unwrap().layers[0];
++        let fs = |key: &str| layer.format_specific.get(key).and_then(|v| v.as_f64());
++        assert_eq!(fs("com.schriftgestalt.Glyphs.vertWidth"), Some(1000.0));
++        assert_eq!(fs("com.schriftgestalt.Glyphs.vertOrigin"), Some(200.0));
++    }
++
+     #[test]
+     fn test_named_class_members() {
+         // a class's code is its members; the brackets are added on writing

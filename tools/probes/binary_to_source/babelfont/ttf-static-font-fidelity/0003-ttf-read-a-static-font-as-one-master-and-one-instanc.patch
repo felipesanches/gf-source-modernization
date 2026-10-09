@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 15:55:11 +0100
-Subject: [PATCH 03/18] ttf: read a static font as one master and one instance,
+Subject: [PATCH 03/19] ttf: read a static font as one master and one instance,
  with its OS/2 values
 
 A static font is one instance of one master. Both are now named after its

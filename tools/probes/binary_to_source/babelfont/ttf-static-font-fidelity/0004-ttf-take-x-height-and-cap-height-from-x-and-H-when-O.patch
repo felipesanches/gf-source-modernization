@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 15:55:57 +0100
-Subject: [PATCH 04/18] ttf: take x-height and cap height from x and H when
+Subject: [PATCH 04/19] ttf: take x-height and cap height from x and H when
  OS/2 has none
 
 OS/2 before version 2 has no sxHeight or sCapHeight; the specification

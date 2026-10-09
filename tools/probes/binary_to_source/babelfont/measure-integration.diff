@@ -52,24 +52,24 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
 new file mode 100644
-index 0000000000000000000000000000000000000000..1b0fd6d9d27afd01226e2af7e27015b8310bb176
+index 0000000000000000000000000000000000000000..22f1b2144fc58dc99ae8afbe87b8905b2e1f0323
 GIT binary patch
-literal 1232
-zcmah|&r4KM6#nkLPi@3Xa}*Pi(QJ^4ijky+AlWz*AsAX<5a?@ukMpbXO-w;h+g1a?
-z)WSs@p+(C!fwXAlN(x%|2L!bU+gOXpUf;d%i3UaY@$Nm}ch0%@oO92G0B{5kp|BK>
-zPRDQ@ZGd`3b})WzcK+<k@EY+4;zoS_#?<S=iv_?+66a^<&qbym#j1eF5-%l+c1887
-zP2!Kl(M;i9x^ZG^8ju%>pJh{a(k@+IrTm5ec$P%Ved*ACgm@%dbn5M&FhRUQJg}Uq
-zmeApTrT;tPzCt-+;|`t@j}mtl?Ro_Pw9@_xaj0Y$Q;nZ%x2XS2T&|Q?oQ($-Z53n2
-zP3T<tU)_8%zIb%v8<f&^e+)NI?`^qGQbGDE`lyi09609@l-p*fgMMv>X@li!_B{7(
-zlz1;1Xraab$EAZNlN`jhQhPCA<Di~$2vY1YwH-w82F%yZi!%tS5F&<SO0-h^gPfTS
-zR}1I49^$8Uwh~IYu8~+4*L9!o%3a}SL)whP?2eN>V-hpeM0ny`?$3S4x`w(Uq9JyE
-zb?6F@$}pO&AvN6>#(G9eGTdxJxOo|Nw>(~vZ~8nd8Ww%>v1dQj6BL#VC)r}=409WM
-zXUKKAz8m#5e?496bbdN^b_Rz)i@U|u!no0ChGF`$WWRUls#pOsedzXO$yaeYma99p
-zYAO^@rqXk%Os!y75kn4jIH;kD6iXjRl4}}soHJw#u&FUs)u;b!@RcDdq)@^VEuuA$
-zsoHl_iE{CFz)sX0PjYgFq>)s5G2Ob7sOBnsEMDX~13kPv^{n_wla;POCv#~h4zV9Z
-zG&XY`y^!Wb4Hxa|GT9KV^xX@DO;-w>GKiDe73>F3&l~kE2B_(Uo`+dAVI<*xH}<--
-zybnhAgS{c#Rk=WRKc0Sidhv8ZB<zC2J^KA~1qRKX>3#QO(BArHbcWt~%(wS!q{*7M
-HOcuWZrr@Yb
+literal 1316
+zcmah}%}Z2K6hHUg8OIT;F-I{G8O;W%s2E9F2$Ic5kYH#*L13?WZ@!$bo^NCdA_9YG
+zHLIz`EP@bP^bZ8mqLnKlXyJd5D{G-GBD?+Web1Vr=sxD$`#a~{^L>XH5rsf}M5%Zp
+zNyjKaBtC#UoVq%<aOQP%4R{y0ky^Mu^QQRf29#HU3v&x+V~Iyen}|IDzMU=^Rnadt
+zi8!oLJX^e%X&j$P0OJll&sm0PlrOcQ-wiyO1H*rxJHT<^v0TZicYUNO;BDZcCCe^T
+zxBP_rpMeL8m9#;3=^5~4;84k^S1Cvx(9Z!!%0|g*d|SJPcsqeB)ylH7@xV6@TnE0n
+zqW$^%5WliFwgP|Ru|&N7FmQ-eE%3Xt_wwQ5k*PfrVjG;_mMp;g4qpdT5cfp5BO>yG
+zrUeS~9c`)oUO;mKsIu|_6YWBM7VJH1kYDxTzw2VV#xxeNA;dupw9zidIYOMFgZRbh
+zEukK=z)n+GL@1_tZae~-VPvHu3?q(n*gNs5SPj91kW!ye7AfV6eZJ4UY{1s*5T@q@
+zd`#0UBr$k=2m7!)(KFH$V-2?Z9gSx+&ZE>s4I$}0KhZZ{=Fw)8m@M$9+;aH>{HDi8
+zMWbwhKXvs-`ohe|qo%1W!H4d~fe*gU*Y`0@|MsqADnAuFCI^d=Uv6Rd(WI6sj+#%U
+zrz#TwLREZ0a0aN?J99crr;_=)Q?so|%Cs``R<>3&Y)Vp|>f}(3Y_d@L6q(pFG!L2u
+zw@3ygf0+R7?kB-3q&VYDFdy@?j$qa{R;+ZTbSG$}YmR$z@<mghL}oG5v7EN^RXip)
+za+QHvZk~z?d|YRxG7BM>F5n2}fyI-v*QlSkesQBE!(IY60xi{hMo~SLj819<qOB6<
+z!Ih(<p2iR){iNt9s>bw*$uC-8O_uwSmVL!+FxkR?Lwh`fxar1&_n0<{4r~m1ei;qx
+yo+-P(Vo<kLXH<sne$>-<b-2zNT?SWiNUX{h=(cRJ2E6~dn11!9Y~kC4ruhS5)x0_Y
 
 literal 0
 HcmV?d00001
@@ -118,10 +118,10 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
 new file mode 100644
-index 00000000..2bc6ff6f
+index 00000000..915c8eab
 --- /dev/null
 +++ b/babelfont/resources/ttf/make_fixtures.py
-@@ -0,0 +1,197 @@
+@@ -0,0 +1,201 @@
 +"""Writes the TrueType fixtures the ttf reader tests load (fontTools).
 +
 +Run from this directory: python3 make_fixtures.py
@@ -149,7 +149,8 @@ index 00000000..2bc6ff6f
 +ligature, script a base whose name is a feature-file keyword. Its calt's
 +backtrack covers five glyphs, which reads back as a named glyph class. It has a
 +GPOS kern feature and a legacy kern table (a f_f -40), which a shaper ignores, and a
-+mark feature attaching acutecomb to a.
++mark feature attaching acutecomb to a, and vertical metrics: vhea 900/-100,
++every glyph 1000 high with its origin at y 600.
 +
 +Unnamed.ttf has no glyph names (post format 3): A (U+0041), Aring (U+00C5, a
 +component of A), an unencoded alternate of A reached by salt, and A Aring kerned
@@ -263,6 +264,9 @@ index 00000000..2bc6ff6f
 +fb.setupHorizontalMetrics({g: (advance[g], fb.font["glyf"][g].xMin if g != ".notdef" else 0)
 +                           for g in order})
 +fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupVerticalHeader(ascent=900, descent=-100)
++fb.setupVerticalMetrics({g: (1000, 600 - fb.font["glyf"][g].yMax if g != ".notdef" else 0)
++                         for g in order})
 +fb.setupNameTable({"familyName": "Fixture Gdef", "styleName": "Regular"})
 +fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
 +fb.setupPost()
@@ -808,7 +812,7 @@ index fa2d59d2..d78de54b 100644
      fn test_no_entries_for_several_styles() {
          let mut font = single_style_font("Lekton", "Regular");
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index bcfc7fe3..de0dd571 100644
+index bcfc7fe3..ba058709 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -5,13 +5,17 @@ use fontdrasil::{
@@ -915,12 +919,12 @@ index bcfc7fe3..de0dd571 100644
      }
 +    Ok(())
 +}
- 
--    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
++
 +/// The fsSelection bits a source states; ITALIC, BOLD and REGULAR are set by
 +/// the compiler from the style.
 +const SOURCE_FS_SELECTION_BITS: u16 = !(1 << 0 | 1 << 5 | 1 << 6);
-+
+ 
+-    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
 +fn load_custom_ot_values(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let os2 = fontref.os2()?;
 +    let ot = &mut font.custom_ot_values;
@@ -966,11 +970,27 @@ index bcfc7fe3..de0dd571 100644
      for (id, instance) in fontref.named_instances().iter().enumerate() {
          let name = name_id_to_i18n(fontref, instance.subfamily_name_id());
          let coordinates = instance.location();
-@@ -192,7 +291,11 @@ fn load_masters(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelf
+@@ -191,8 +290,27 @@ fn load_masters(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelf
+         );
      }
  
++    let mut format_specific = FormatSpecific::default();
++    if let Ok(vhea) = fontref.vhea() {
++        // Glyphs states vhea in these master custom parameters
++        for (name, value) in [
++            ("vheaVertAscender", vhea.ascender().to_i16()),
++            ("vheaVertDescender", vhea.descender().to_i16()),
++            ("vheaVertLineGap", vhea.line_gap().to_i16()),
++        ] {
++            format_specific.insert(
++                format!("com.schriftgestalt.Glyphs.customParameters.{name}"),
++                serde_json::json!({ "value": value, "disabled": false }),
++            );
++        }
++    }
      font.masters.push(crate::Master {
 -        name: "Default".into(),
++        format_specific,
 +        name: if font.axes.is_empty() {
 +            style_name(fontref)
 +        } else {
@@ -979,7 +999,7 @@ index bcfc7fe3..de0dd571 100644
          id: uuid::Uuid::new_v4().to_string(),
          location: default_location,
          metrics,
-@@ -206,20 +309,26 @@ fn load_metrics(
+@@ -206,20 +324,26 @@ fn load_metrics(
      font: &mut Font,
      loc: &fontdrasil::coords::Location<fontdrasil::coords::DesignSpace>,
  ) -> Result<IndexMap<MetricType, i32>, BabelfontError> {
@@ -1015,7 +1035,7 @@ index bcfc7fe3..de0dd571 100644
          metrics.insert(MetricType::CapHeight, cap_height as i32);
      }
      if let Some(strikeout) = skrifa_metrics.strikeout {
-@@ -258,6 +367,10 @@ fn load_metrics(
+@@ -258,6 +382,10 @@ fn load_metrics(
          MetricType::HheaDescender,
          fontref.hhea()?.descender().to_i16() as i32,
      );
@@ -1026,7 +1046,7 @@ index bcfc7fe3..de0dd571 100644
  
      // post stores the angle negative for a right lean; babelfont stores the
      // Glyphs convention, the opposite sign.
-@@ -269,17 +382,10 @@ fn load_metrics(
+@@ -269,17 +397,10 @@ fn load_metrics(
  }
  
  fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
@@ -1048,7 +1068,7 @@ index bcfc7fe3..de0dd571 100644
          glyph.exported = true;
          font.glyphs.push(glyph);
      }
-@@ -307,6 +413,40 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
+@@ -307,6 +428,40 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
              )))?;
          glyph.codepoints.push(unicode);
      }
@@ -1089,7 +1109,7 @@ index bcfc7fe3..de0dd571 100644
      Ok(())
  }
  
-@@ -372,6 +512,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -372,6 +527,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      // Do the same but for mark classes.
@@ -1104,7 +1124,7 @@ index bcfc7fe3..de0dd571 100644
      for (anchor_name, classdefs) in uncompile_context.mark_classes {
          let anchor_name = format!("_{}", anchor_name);
          for definition in classdefs.iter() {
-@@ -413,10 +561,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -413,10 +576,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      for (class_name, glyphs) in uncompile_context.named_classes.iter() {
@@ -1120,7 +1140,7 @@ index bcfc7fe3..de0dd571 100644
      }
      let mut language_systems = vec![];
      for (script_tag, lang_sys_tags) in &uncompile_context.language_systems {
-@@ -433,6 +582,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -433,6 +597,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
              PossiblyAutomaticCode::new(language_systems_block),
          );
      }
@@ -1138,7 +1158,7 @@ index bcfc7fe3..de0dd571 100644
      for (lookup_name, statements) in uncompile_context.lookups.iter() {
          features.prefixes.insert(
              lookup_name.clone(),
-@@ -449,6 +609,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -449,6 +624,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      Ok(())
  }
  
@@ -1250,10 +1270,41 @@ index bcfc7fe3..de0dd571 100644
  fn get_x_y_location_for_anchor(
      location: DesignLocation,
      anchor: &sr_aef::fea_rs_ast::Anchor,
-@@ -527,12 +792,64 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+@@ -527,18 +807,102 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
      Ok(coords)
  }
  
++/// A glyph's vmtx advance and origin, as Glyphs states them: vertWidth, and
++/// vertOrigin measured down from the typographic ascender. The origin is the top
++/// of the glyph's bounding box (0 for an empty glyph) plus its top side bearing.
++fn load_vertical_metrics(
++    fontref: &skrifa::FontRef<'_>,
++    gid: skrifa::GlyphId,
++    layer: &mut Layer,
++) -> Result<(), BabelfontError> {
++    let Ok(vmtx) = fontref.vmtx() else {
++        return Ok(());
++    };
++    let (Some(advance), Some(tsb)) = (vmtx.advance(gid), vmtx.side_bearing(gid)) else {
++        return Ok(());
++    };
++    let y_max = fontref
++        .loca(None)?
++        .get_glyf(gid, &fontref.glyf()?)?
++        .map_or(0, |glyph| glyph.y_max()) as f64;
++    let origin = y_max + tsb as f64;
++    let ascender = fontref.os2()?.s_typo_ascender() as f64;
++    layer.format_specific.insert(
++        "com.schriftgestalt.Glyphs.vertWidth".to_string(),
++        serde_json::json!(advance as f64),
++    );
++    layer.format_specific.insert(
++        "com.schriftgestalt.Glyphs.vertOrigin".to_string(),
++        serde_json::json!(ascender - origin),
++    );
++    Ok(())
++}
++
 +/// How far a TrueType rasterizer moves a glyph's stored outline when it draws
 +/// it: by minus the x of its first phantom point, which is xMin - lsb (hmtx
 +/// left side bearing), except that a composite takes the phantom points of a
@@ -1316,7 +1367,14 @@ index bcfc7fe3..de0dd571 100644
  ) -> Result<crate::Layer, BabelfontError> {
      let loc = fontdrasil_location_to_skrifa_location(master.location.clone(), axes)?;
      let locationref = LocationRef::new(&loc);
-@@ -557,11 +874,28 @@ fn load_layer(
+     let width = fontref.glyph_metrics(Size::unscaled(), locationref);
+     let mut layer = Layer::new(width.advance_width(gid).unwrap_or_default());
+     layer.master = crate::LayerType::DefaultForMaster(master.id.clone());
++    load_vertical_metrics(fontref, gid, &mut layer)?;
+ 
+     // Skrifa pens don't support components. Parse component glyphs manually.
+     let glyf = fontref.glyf()?;
+@@ -557,11 +921,28 @@ fn load_layer(
                          &mut pen,
                      )
                      .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
@@ -1346,7 +1404,7 @@ index bcfc7fe3..de0dd571 100644
              for component in c.components() {
                  let gid = component.glyph;
                  let anchor = match component.anchor {
-@@ -571,25 +905,31 @@ fn load_layer(
+@@ -571,25 +952,31 @@ fn load_layer(
                          component: _,
                      } => (0.0, 0.0),
                  };
@@ -1388,7 +1446,7 @@ index bcfc7fe3..de0dd571 100644
                      transform: our_affine.into(),
                      location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
                      format_specific: FormatSpecific::default(),
-@@ -600,3 +940,278 @@ fn load_layer(
+@@ -600,3 +987,302 @@ fn load_layer(
  
      Ok(layer)
  }
@@ -1565,6 +1623,30 @@ index bcfc7fe3..de0dd571 100644
 +            );
 +            assert!(fea.contains("markClass "), "{fea}");
 +        }
++    }
++
++    #[test]
++    fn test_vertical_metrics() {
++        // vhea 900/-100/0; a: advance height 1000, tsb 100, yMax 500 (origin 600);
++        // the typographic ascender is 800
++        let font = load(GDEF_CLASSES).unwrap();
++        let master = &font.masters[0];
++        let cp = |name: &str| {
++            master
++                .format_specific
++                .get(&format!(
++                    "com.schriftgestalt.Glyphs.customParameters.{name}"
++                ))
++                .and_then(|v| v.get("value"))
++                .and_then(|v| v.as_f64())
++        };
++        assert_eq!(cp("vheaVertAscender"), Some(900.0));
++        assert_eq!(cp("vheaVertDescender"), Some(-100.0));
++        assert_eq!(cp("vheaVertLineGap"), Some(0.0));
++        let layer = &font.glyphs.get("a").unwrap().layers[0];
++        let fs = |key: &str| layer.format_specific.get(key).and_then(|v| v.as_f64());
++        assert_eq!(fs("com.schriftgestalt.Glyphs.vertWidth"), Some(1000.0));
++        assert_eq!(fs("com.schriftgestalt.Glyphs.vertOrigin"), Some(200.0));
 +    }
 +
 +    #[test]

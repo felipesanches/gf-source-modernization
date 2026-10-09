@@ -95,3 +95,4 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | family | styles | result |
 |---|---|---|
 | Jua | 1 | CLEAN; hinting disclosed |
+| Dongle | 3 | CLEAN once the reader reads vertical metrics (vhea, vmtx as Glyphs vertWidth/vertOrigin) |

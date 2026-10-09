@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:25:35 +0100
-Subject: [PATCH 10/18] ttf: state GDEF's glyph classes in the features
+Subject: [PATCH 10/19] ttf: state GDEF's glyph classes in the features
 
 A compiler derives GDEF glyph classes from glyph categories and anchors, and
 writes no GDEF at all when no glyph is a mark, a ligature or an anchored base.
