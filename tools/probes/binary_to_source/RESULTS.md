@@ -96,3 +96,4 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 |---|---|---|
 | Jua | 1 | CLEAN; hinting disclosed |
 | Dongle | 3 | CLEAN once the reader reads vertical metrics (vhea, vmtx as Glyphs vertWidth/vertOrigin) |
+| Shippori Mincho | 5 | not landed: its Japanese name records (IDs 1, 2, 4, 6, 16; Windows 0x411) do not reach the build. The reader read the undecodable MacJapanese record as an empty "ja" name (fixed on the ttf branch); babelfont's Glyphs writer then writes BCP-47 language codes ("ja-JP"), which fontc does not know, and the branch that writes such names as Name Table Entry parameters (glyphs3-localized-name-entries) conflicts with typographic-family-names in export_name_table_entries: the two need reconciling first. Regular otherwise CLEAN (0 table rows) |
