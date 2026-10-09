@@ -17,7 +17,7 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
     env:
-      GFTOOLS_RUST_REV: ade8776
+      GFTOOLS_RUST_REV: 1e638bd
     steps:
       - uses: actions/checkout@v6
       - name: Set up Python 3.11

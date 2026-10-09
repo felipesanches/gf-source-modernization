@@ -71,7 +71,7 @@ BF = os.path.join(BF_TREE, "target-heights/release/babelfont")
 BF_UPSTREAM = "simoncozens/babelfont-rs"
 BF_WHERE = BF_UPSTREAM            # set by check_converter()
 B3_DEFAULT = "/home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder"
-B3_ID, FONTC_ID = "ade8776", "1.0.0"   # simoncozens/gftools-rust main; fontc as it pins it
+B3_ID, FONTC_ID = "1e638bd", "1.0.0"   # simoncozens/gftools-rust main; fontc as it pins it
 # B3=<path> builds with another gftools-builder, for measurement only: the landing is then
 # marked UNPUBLISHED-BUILDER (push.sh pushes only CLEAN) and its commit names the variant
 # from B3_NOTE= instead of claiming gftools-rust B3_ID.
