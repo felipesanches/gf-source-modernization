@@ -17,6 +17,7 @@ that build in both runs, whether ttx_diff's fontc-vs-fontmake scores moved.
 | 0.9.93 -> 0.10.0, sample (108 targets) | 87 unchanged ok (scores identical), 14 unchanged failures; Workbench fixed; **Katibeh regresses** (`KeyError: 'customParameters'`); 5 fail differently |
 | 0.9.93 -> main b42647c3 + both gftools changes, sample | 88 unchanged ok (scores identical), 13 unchanged failures; Workbench fixed; Katibeh ok; 6 fail differently, no target newly failing |
 | 0.9.93 -> main + both changes, our 42 (108 targets) | 54 default unchanged ok; 54 gftools-mode FAIL -> ok |
+| 0.9.93 -> release 0.10.1, sample, on fontc 6bbfa26d (2026-10-09) | 90 unchanged ok (scores identical), 12 unchanged failures; LXGW Marker Gothic and Workbench fixed; 4 fail differently (Balsamiq Sans x2, Sixtyfour x2 lose `--keep-direction`), no target newly failing |
 
 The two gftools changes: accept `noProductionNames` (../gftools_no_production_names), and treat a
 .glyphs file without font-level customParameters as static (the 0.10.0 Katibeh regression).
@@ -31,6 +32,13 @@ Crater reuses cached results when only Python tools change: every run here clear
 
 Both gftools changes merged upstream 2026-10-07: googlefonts/gftools#1229 (678696c4) and #1230
 (d8a6e227); main at 678696c4 has the same library code as the tree measured here.
+
+2026-10-09: gftools 0.10.1 was released with both changes and #1231 (`productionNames`). The
+0.10.1 row was measured with `run_pair.sh` on fontc 6bbfa26d (googlefonts/fontc main), venv A
+= fontc's requirements.txt (gftools 0.9.93), venv B = the same with gftools 0.10.1
+(`compare-sample-0.9.93-vs-0.10.1.txt`). Same versions in both: fontmake 3.12.1, fonttools
+4.66.1, glyphsLib 6.16.0, ufo2ft 3.9.1. The proposed fontc change is that bump, branch
+gftools-0.10.1 (`pr-bodies/fontc-gftools-0.10.1.md`).
 
 ## Scripts
 
