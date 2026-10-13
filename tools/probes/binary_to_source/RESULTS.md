@@ -33,6 +33,11 @@ minus descender, as glyphsLib does). All 12 landed families were re-landed with 
 (`land.py <repo> --rebuild --unpublished-converter`, the measured babelfont): every verdict is
 unchanged -- 8 CLEAN, and Averia x3 and Sansation RESIDUAL as before; Dongle CLEAN 3/3 with 12550
 vertOrigin values and no vertWidth (every advance is the default).
+Later the same day the measured converter also took simoncozens/babelfont-rs#117 (localized
+names no Glyphs property holds, and languages Glyphs has no code for, as Name Table Entry)
+plus a new commit on it (a Macintosh name record gets no Windows entry): the measured babelfont.
+All 22 families landed by then were re-landed with it: every verdict unchanged, 18 CLEAN and
+4 RESIDUAL (Averia x3, Sansation).
 
 ## The sample (results/final-sample.log, results/before-sample.log)
 
