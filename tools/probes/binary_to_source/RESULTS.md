@@ -135,7 +135,7 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Yeon Sung | 1 | CLEAN (2026-10-13); the designers' repository holds the fonts as built |
 | Black Han Sans | 1 | CLEAN (2026-10-13); the designers' repository holds the fonts as built |
 | Do Hyeon | 1 | CLEAN (2026-10-13); the designers' repository holds the fonts as built |
-| Stylish, Sunflower (3), Cute Font, Song Myung | 6 | CLEAN (2026-10-13); no source block; added as built in google/fonts#1459 (2018), no source repository known |
+| Stylish, Sunflower (3), Cute Font, Song Myung, Dokdo | 7 | CLEAN (2026-10-13); no source block; added as built in google/fonts#1459 (2018), no source repository known (Dokdo once glyph 0 pairs with glyph 0 in the functional gate) |
 
 make_plan.py, measuring PT Serif Caption, showed what four plans written by hand had left out:
 PT Serif, PT Sans Narrow and PT Sans Caption keep a legacy kern table beside GPOS kern, which
