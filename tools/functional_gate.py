@@ -195,8 +195,8 @@ class Font:
 
     def outline(self, name):
         """Normalised outline AS DRAWN: composites flattened, a FontForge closing
-        duplicate and implied on-curve points (the exact midpoint of two off-curves)
-        dropped, each contour rotated to a canonical start; as a sorted tuple of
+        duplicate, repeated points, off-curve points on an adjacent on-curve point and
+        implied on-curve points (the exact midpoint of two off-curves) dropped, each contour rotated to a canonical start; as a sorted tuple of
         contours. TrueType rasterizers (FreeType, skrifa, CoreText) place the outline by
         the phantom point pp1 = xMin - lsb, so a release whose hmtx lsb is not its glyf
         xMin draws the outline shifted by lsb - xMin (NixieOne's comma: lsb 75, xMin 71,
@@ -230,6 +230,16 @@ class Font:
 def canonical_contour(pts):
     if len(pts) > 1 and pts[0] == pts[-1]:
         pts = pts[:-1]
+    # points that draw nothing: a point repeating the one before it (a zero-length segment;
+    # Kirang Haerang's U+D683 records one, the build does not), and an off-curve point on top
+    # of an adjacent on-curve point (that quadratic is the straight line between them; as
+    # tools/outline_match.py's drop_degenerate)
+    pts = [p for i, p in enumerate(pts) if i == 0 or p != pts[i - 1]]
+    if len(pts) > 1 and pts[0] == pts[-1]:
+        pts = pts[:-1]
+    n = len(pts)
+    pts = [p for i, p in enumerate(pts)
+           if p[2] or not any(q[2] and q[:2] == p[:2] for q in (pts[i - 1], pts[(i + 1) % n]))]
     n = len(pts)
     keep = []
     for i, p in enumerate(pts):
