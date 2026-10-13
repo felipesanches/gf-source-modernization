@@ -1,0 +1,198 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 2 Oct 2026 14:53:53 +0100
+Subject: [PATCH 4/4] Move the one-width rule back into the OS/2 defaults
+ filter
+
+The generic filters use their own monospace check, so the OS/2 defaults filter is
+again the rule's only user.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/filters/fontforge_one_width.rs  | 70 ------------------
+ babelfont/src/filters/fontforgeos2defaults.rs | 71 ++++++++++++++++++-
+ babelfont/src/filters/mod.rs                  |  1 -
+ 3 files changed, 68 insertions(+), 74 deletions(-)
+ delete mode 100644 babelfont/src/filters/fontforge_one_width.rs
+
+diff --git a/babelfont/src/filters/fontforge_one_width.rs b/babelfont/src/filters/fontforge_one_width.rs
+deleted file mode 100644
+index ac62dcf2..00000000
+--- a/babelfont/src/filters/fontforge_one_width.rs
++++ /dev/null
+@@ -1,70 +0,0 @@
+-//! The advance a FontForge source's glyphs share, which decides whether FontForge
+-//! exports the font as fixed pitch.
+-
+-use crate::{Font, Master, Shape};
+-use std::collections::HashSet;
+-
+-/// `CIDOneWidth` in FontForge's `splinesave.c` up to tag 20230101: the advance shared
+-/// by every glyph FontForge would output, leaving out `.null`, `nonmarkingreturn` and
+-/// a `.notdef` with no contours. `None` when two advances differ or no glyph counts.
+-/// From tag 20251009 on, `SFOneWidth` also leaves out zero-width glyphs.
+-pub(crate) fn one_width(font: &Font, master: &Master) -> Option<i32> {
+-    let referenced: HashSet<&str> = font
+-        .glyphs
+-        .iter()
+-        .flat_map(|glyph| glyph.layers.iter())
+-        .flat_map(|layer| layer.shapes.iter())
+-        .filter_map(|shape| match shape {
+-            Shape::Component(component) => Some(component.reference.as_str()),
+-            Shape::Path(_) => None,
+-        })
+-        .collect();
+-    let mut width = None;
+-    for glyph in font.glyphs.iter() {
+-        let Some(layer) = font.master_layer_for(&glyph.name, master) else {
+-            continue;
+-        };
+-        let has_contours = layer.shapes.iter().any(|s| matches!(s, Shape::Path(_)));
+-        match glyph.name.as_str() {
+-            ".null" | "nonmarkingreturn" => continue,
+-            ".notdef" if !has_contours => continue,
+-            _ => {}
+-        }
+-        // `SCWorthOutputting`: it draws something, its width was set, it carries an
+-        // anchor or another glyph uses it as a component.
+-        let width_set = glyph
+-            .format_specific
+-            .get("sfd.width_set")
+-            .and_then(|v| v.as_bool())
+-            .unwrap_or(false);
+-        let worth_outputting = draws_something(font, master, &glyph.name, 0)
+-            || width_set
+-            || !layer.anchors.is_empty()
+-            || referenced.contains(glyph.name.as_str());
+-        if !worth_outputting {
+-            continue;
+-        }
+-        let advance = layer.width.round() as i32;
+-        match width {
+-            None => width = Some(advance),
+-            Some(w) if w != advance => return None,
+-            Some(_) => {}
+-        }
+-    }
+-    width
+-}
+-
+-/// `SCDrawsSomething`: the glyph has a contour, or a component that brings one.
+-fn draws_something(font: &Font, master: &Master, name: &str, depth: usize) -> bool {
+-    const MAX_REFERENCE_DEPTH: usize = 8;
+-    let Some(layer) = font.master_layer_for(name, master) else {
+-        return false;
+-    };
+-    layer.shapes.iter().any(|shape| match shape {
+-        Shape::Path(_) => true,
+-        Shape::Component(component) => {
+-            depth < MAX_REFERENCE_DEPTH
+-                && draws_something(font, master, &component.reference, depth + 1)
+-        }
+-    })
+-}
+diff --git a/babelfont/src/filters/fontforgeos2defaults.rs b/babelfont/src/filters/fontforgeos2defaults.rs
+index 66f283f3..bf608b6d 100644
+--- a/babelfont/src/filters/fontforgeos2defaults.rs
++++ b/babelfont/src/filters/fontforgeos2defaults.rs
+@@ -1,7 +1,7 @@
+ use crate::filters::fontforge_standard_height::{exported_heights, CurveMean, MeasuredHeights};
+-use crate::filters::fontforge_one_width::one_width;
+ use crate::filters::FontFilter;
+-use crate::{Font, MetricType};
++use crate::{Font, Master, MetricType, Shape};
++use std::collections::HashSet;
+ 
+ /// The eight sub/superscript metrics and two strikeout metrics FontForge computes
+ /// at export, all together, when the source states no `OS2SubXSize`.
+@@ -303,11 +303,76 @@ fn width_check(name: &str) -> Option<u8> {
+     }
+ }
+ 
++/// `CIDOneWidth` in FontForge's `splinesave.c` up to tag 20230101: the advance shared
++/// by every glyph FontForge would output, leaving out `.null`, `nonmarkingreturn` and
++/// a `.notdef` with no contours. `None` when two advances differ or no glyph counts.
++/// From tag 20251009 on, `SFOneWidth` also leaves out zero-width glyphs.
++fn one_width(font: &Font, master: &Master) -> Option<i32> {
++    let referenced: HashSet<&str> = font
++        .glyphs
++        .iter()
++        .flat_map(|glyph| glyph.layers.iter())
++        .flat_map(|layer| layer.shapes.iter())
++        .filter_map(|shape| match shape {
++            Shape::Component(component) => Some(component.reference.as_str()),
++            Shape::Path(_) => None,
++        })
++        .collect();
++    let mut width = None;
++    for glyph in font.glyphs.iter() {
++        let Some(layer) = font.master_layer_for(&glyph.name, master) else {
++            continue;
++        };
++        let has_contours = layer.shapes.iter().any(|s| matches!(s, Shape::Path(_)));
++        match glyph.name.as_str() {
++            ".null" | "nonmarkingreturn" => continue,
++            ".notdef" if !has_contours => continue,
++            _ => {}
++        }
++        // `SCWorthOutputting`: it draws something, its width was set, it carries an
++        // anchor or another glyph uses it as a component.
++        let width_set = glyph
++            .format_specific
++            .get("sfd.width_set")
++            .and_then(|v| v.as_bool())
++            .unwrap_or(false);
++        let worth_outputting = draws_something(font, master, &glyph.name, 0)
++            || width_set
++            || !layer.anchors.is_empty()
++            || referenced.contains(glyph.name.as_str());
++        if !worth_outputting {
++            continue;
++        }
++        let advance = layer.width.round() as i32;
++        match width {
++            None => width = Some(advance),
++            Some(w) if w != advance => return None,
++            Some(_) => {}
++        }
++    }
++    width
++}
++
++/// `SCDrawsSomething`: the glyph has a contour, or a component that brings one.
++fn draws_something(font: &Font, master: &Master, name: &str, depth: usize) -> bool {
++    const MAX_REFERENCE_DEPTH: usize = 8;
++    let Some(layer) = font.master_layer_for(name, master) else {
++        return false;
++    };
++    layer.shapes.iter().any(|shape| match shape {
++        Shape::Path(_) => true,
++        Shape::Component(component) => {
++            depth < MAX_REFERENCE_DEPTH
++                && draws_something(font, master, &component.reference, depth + 1)
++        }
++    })
++}
++
+ #[allow(clippy::unwrap_used, clippy::expect_used)]
+ #[cfg(test)]
+ mod tests {
+     use super::*;
+-    use crate::{Glyph, Layer, LayerType, Master, Node, NodeType, Path, Shape};
++    use crate::{Glyph, Layer, LayerType, Node, NodeType, Path};
+ 
+     fn font_with(ascender: i32, descender: i32, italic: Option<i32>) -> Font {
+         let mut m = Master::default();
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index 5258b9e4..7312456b 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -3,7 +3,6 @@ use fontdrasil::coords::{DesignCoord, DesignLocation};
+ use smol_str::SmolStr;
+ 
+ mod curve_filter_common;
+-mod fontforge_one_width;
+ mod fontforge_standard_height;
+ mod monospace;
+ 

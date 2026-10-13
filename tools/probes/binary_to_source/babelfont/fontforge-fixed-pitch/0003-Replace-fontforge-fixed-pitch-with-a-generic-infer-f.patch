@@ -1,0 +1,454 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 2 Oct 2026 14:55:15 +0100
+Subject: [PATCH 3/4] Replace --fontforge-fixed-pitch with a generic
+ --infer-fixed-pitch
+
+Set post.isFixedPitch when the font states nothing and every glyph shares one
+advance, leaving out zero-width glyphs, .notdef, .null and nonmarkingreturn.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/filters/fontforgefixedpitch.rs | 146 -------------------
+ babelfont/src/filters/inferfixedpitch.rs     | 125 ++++++++++++++++
+ babelfont/src/filters/mod.rs                 |   3 +-
+ babelfont/src/filters/monospace.rs           | 116 +++++++++++++++
+ 4 files changed, 243 insertions(+), 147 deletions(-)
+ delete mode 100644 babelfont/src/filters/fontforgefixedpitch.rs
+ create mode 100644 babelfont/src/filters/inferfixedpitch.rs
+ create mode 100644 babelfont/src/filters/monospace.rs
+
+diff --git a/babelfont/src/filters/fontforgefixedpitch.rs b/babelfont/src/filters/fontforgefixedpitch.rs
+deleted file mode 100644
+index 95c8614d..00000000
+--- a/babelfont/src/filters/fontforgefixedpitch.rs
++++ /dev/null
+@@ -1,146 +0,0 @@
+-use crate::filters::fontforge_one_width::one_width;
+-use crate::filters::FontFilter;
+-
+-#[derive(Default)]
+-/// A filter that marks a font fixed pitch (`post.isFixedPitch`) when FontForge's
+-/// exporter would: when every glyph that counts shares one advance.
+-///
+-/// A FontForge `.sfd` states no pitch. FontForge's exporter derives it from the
+-/// advances, so the exported binary says the font is fixed pitch although nothing in
+-/// the source does, and a compiler that is not told writes 0.
+-///
+-/// The glyphs that count are those the export writes, leaving out `.null`,
+-/// `nonmarkingreturn` and a `.notdef` with no contours; the advances are read from the
+-/// default master. This is the rule of FontForge releases up to tag 20230101; from
+-/// tag 20251009 on, zero-width glyphs are left out too.
+-///
+-/// A font with more than one advance is left as it is: 0 is what every compiler
+-/// writes when nothing is stated.
+-///
+-/// # Opt-in, because it is a statement about who exported the binary
+-///
+-/// Other tools leave `isFixedPitch` to what the source states, so this filter only
+-/// makes sense when reproducing a binary FontForge exported.
+-pub struct FontForgeFixedPitch;
+-
+-impl FontForgeFixedPitch {
+-    /// Create a new FontForgeFixedPitch filter
+-    pub fn new() -> Self {
+-        FontForgeFixedPitch
+-    }
+-}
+-
+-impl FontFilter for FontForgeFixedPitch {
+-    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
+-        let width = font
+-            .default_master()
+-            .or(font.masters.first())
+-            .and_then(|master| one_width(font, master))
+-            .filter(|width| *width > 0);
+-        if let Some(width) = width {
+-            font.custom_ot_values.post_is_fixed_pitch = Some(true);
+-            log::info!(
+-                "Marked the font fixed pitch: every glyph FontForge exports advances {width}"
+-            );
+-        }
+-        Ok(())
+-    }
+-
+-    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
+-    where
+-        Self: Sized,
+-    {
+-        Ok(FontForgeFixedPitch::new())
+-    }
+-
+-    #[cfg(feature = "cli")]
+-    fn arg() -> clap::Arg
+-    where
+-        Self: Sized,
+-    {
+-        clap::Arg::new("fontforgefixedpitch")
+-            .long("fontforge-fixed-pitch")
+-            .help(
+-                "Set post.isFixedPitch when every glyph FontForge's exporter writes shares \
+-                 one advance, as FontForge does. Use only to reproduce a binary FontForge \
+-                 exported",
+-            )
+-            .action(clap::ArgAction::SetTrue)
+-    }
+-}
+-
+-#[allow(clippy::unwrap_used, clippy::expect_used)]
+-#[cfg(test)]
+-mod tests {
+-    use super::*;
+-    use crate::{Font, Glyph, Layer, LayerType, Master, Node, NodeType, Path, Shape};
+-
+-    fn font() -> Font {
+-        let mut f = Font::new();
+-        f.masters.push(Master::default());
+-        f
+-    }
+-
+-    /// A glyph with one triangular contour (or none) and the given advance.
+-    fn add_glyph(f: &mut Font, name: &str, advance: f32, contour: bool) {
+-        let mut layer = Layer::new(advance);
+-        layer.master = LayerType::DefaultForMaster(f.masters[0].id.clone());
+-        if contour {
+-            let node = |x: f64, y: f64| Node {
+-                x,
+-                y,
+-                nodetype: NodeType::Line,
+-                ..Default::default()
+-            };
+-            layer.shapes.push(Shape::Path(Path {
+-                nodes: vec![node(0.0, 0.0), node(100.0, 0.0), node(50.0, 100.0)],
+-                closed: true,
+-                ..Default::default()
+-            }));
+-        }
+-        let mut glyph = Glyph::new(name);
+-        glyph.layers.push(layer);
+-        f.glyphs.push(glyph);
+-    }
+-
+-    #[test]
+-    fn test_one_shared_advance_marks_the_font_fixed_pitch() {
+-        let mut f = font();
+-        add_glyph(&mut f, "a", 1150.0, true);
+-        add_glyph(&mut f, "b", 1150.0, true);
+-        // Left out: an empty .notdef of another advance.
+-        add_glyph(&mut f, ".notdef", 500.0, false);
+-        FontForgeFixedPitch::new().apply(&mut f).unwrap();
+-        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, Some(true));
+-    }
+-
+-    #[test]
+-    fn test_two_advances_leave_the_font_alone() {
+-        let mut f = font();
+-        add_glyph(&mut f, "a", 1150.0, true);
+-        add_glyph(&mut f, "b", 600.0, true);
+-        FontForgeFixedPitch::new().apply(&mut f).unwrap();
+-        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, None);
+-
+-        // A .notdef with contours counts.
+-        let mut f = font();
+-        add_glyph(&mut f, "a", 1150.0, true);
+-        add_glyph(&mut f, ".notdef", 500.0, true);
+-        FontForgeFixedPitch::new().apply(&mut f).unwrap();
+-        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, None);
+-    }
+-
+-    #[test]
+-    fn test_the_glyphs_source_carries_is_fixed_pitch() {
+-        let mut f = font();
+-        add_glyph(&mut f, "a", 1150.0, true);
+-        FontForgeFixedPitch::new().apply(&mut f).unwrap();
+-        let glyphs = crate::convertors::glyphs3::as_glyphs3(&f).unwrap();
+-        let cp = glyphs
+-            .custom_parameters
+-            .iter()
+-            .find(|cp| cp.name == "isFixedPitch")
+-            .expect("an isFixedPitch custom parameter");
+-        assert_eq!(cp.value, glyphslib::Plist::Integer(1));
+-    }
+-}
+diff --git a/babelfont/src/filters/inferfixedpitch.rs b/babelfont/src/filters/inferfixedpitch.rs
+new file mode 100644
+index 00000000..8b5c7e9a
+--- /dev/null
++++ b/babelfont/src/filters/inferfixedpitch.rs
+@@ -0,0 +1,125 @@
++use crate::filters::monospace::monospaced_advance;
++use crate::filters::FontFilter;
++
++#[derive(Default)]
++/// A filter that marks a monospaced font as fixed pitch (`post.isFixedPitch`)
++/// when the font does not say whether it is.
++///
++/// A font is monospaced when all its exported glyphs have one advance in every
++/// master. Glyphs whose advance says nothing about the spacing of text are left
++/// out: glyphs with a zero advance (such as combining marks), `.notdef`, and the
++/// control-character glyphs `.null` and `nonmarkingreturn` (or any glyph mapped
++/// to U+0000 or U+000D).
++///
++/// Many sources do not state the flag, and a compiler that is not told writes 0,
++/// so a monospaced font would be marked proportional. A font with more than one
++/// advance, or one that already states a value, is left as it is.
++pub struct InferFixedPitch;
++
++impl InferFixedPitch {
++    /// Create a new InferFixedPitch filter
++    pub fn new() -> Self {
++        InferFixedPitch
++    }
++}
++
++impl FontFilter for InferFixedPitch {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        if font.custom_ot_values.post_is_fixed_pitch.is_some() {
++            return Ok(());
++        }
++        if let Some(advance) = monospaced_advance(font) {
++            font.custom_ot_values.post_is_fixed_pitch = Some(true);
++            log::info!("Marked the font fixed pitch: every glyph advances {advance}");
++        }
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(InferFixedPitch::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("inferfixedpitch")
++            .long("infer-fixed-pitch")
++            .help(
++                "Set post.isFixedPitch when the font does not state it and all its glyphs \
++                 share one advance (ignoring zero-width glyphs, .notdef, .null and \
++                 nonmarkingreturn)",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
++
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Font, Glyph, Layer, LayerType, Master};
++
++    fn font() -> Font {
++        let mut f = Font::new();
++        f.masters.push(Master::default());
++        f
++    }
++
++    fn add_glyph(f: &mut Font, name: &str, advance: f32) {
++        let mut layer = Layer::new(advance);
++        layer.master = LayerType::DefaultForMaster(f.masters[0].id.clone());
++        let mut glyph = Glyph::new(name);
++        glyph.exported = true;
++        glyph.layers.push(layer);
++        f.glyphs.push(glyph);
++    }
++
++    #[test]
++    fn test_one_shared_advance_marks_the_font_fixed_pitch() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0);
++        add_glyph(&mut f, "b", 1150.0);
++        // Left out: a zero-width mark and a .notdef of another advance.
++        add_glyph(&mut f, "acutecomb", 0.0);
++        add_glyph(&mut f, ".notdef", 500.0);
++        InferFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, Some(true));
++    }
++
++    #[test]
++    fn test_two_advances_leave_the_font_alone() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0);
++        add_glyph(&mut f, "b", 600.0);
++        InferFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, None);
++    }
++
++    #[test]
++    fn test_a_stated_value_is_kept() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0);
++        f.custom_ot_values.post_is_fixed_pitch = Some(false);
++        InferFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, Some(false));
++    }
++
++    #[test]
++    fn test_the_glyphs_source_carries_is_fixed_pitch() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0);
++        InferFixedPitch::new().apply(&mut f).unwrap();
++        let glyphs = crate::convertors::glyphs3::as_glyphs3(&f).unwrap();
++        let cp = glyphs
++            .custom_parameters
++            .iter()
++            .find(|cp| cp.name == "isFixedPitch")
++            .expect("an isFixedPitch custom parameter");
++        assert_eq!(cp.value, glyphslib::Plist::Integer(1));
++    }
++}
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index 39817a39..5258b9e4 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -5,6 +5,7 @@ use smol_str::SmolStr;
+ mod curve_filter_common;
+ mod fontforge_one_width;
+ mod fontforge_standard_height;
++mod monospace;
+ 
+ /// Parse a comma-separated list of glyph names from a string argument.
+ /// Returns an empty `Vec` if the string is empty, indicating that all glyphs
+@@ -118,7 +119,6 @@ declare_filters! {
+         FontForgeUnderlinePosition(fontforgeunderlineposition) => "fontforgeunderlineposition",
+         FontForgeHeightGlyphCountMean(fontforgeheightglyphcountmean) => "fontforgeheightglyphcountmean",
+         FontForgeOs2Defaults(fontforgeos2defaults) => "fontforgeos2defaults",
+-        FontForgeFixedPitch(fontforgefixedpitch) => "fontforgefixedpitch",
+     }
+     group "Filters for manipulating outlines" {
+         DecomposeComponentReferences(decomposecomponentreferences) => "decomposecomponents",
+@@ -160,6 +160,7 @@ declare_filters! {
+         AddMaster(addmaster) => "addmaster",
+         RemoveExtraneousLayers(removeextraneouslayers) => "removeextraneouslayers",
+         AddInstancePerMaster(addinstancepermaster) => "addinstancepermaster",
++        InferFixedPitch(inferfixedpitch) => "inferfixedpitch",
+     }
+ }
+ 
+diff --git a/babelfont/src/filters/monospace.rs b/babelfont/src/filters/monospace.rs
+new file mode 100644
+index 00000000..62f94823
+--- /dev/null
++++ b/babelfont/src/filters/monospace.rs
+@@ -0,0 +1,116 @@
++//! Detecting a monospaced font: one whose glyphs all share a single advance.
++
++use crate::{Font, Glyph, LayerType};
++
++/// Whether a glyph's advance says nothing about the spacing of text, so that it
++/// is left out when deciding whether a font is monospaced: `.notdef`, and the
++/// control-character glyphs `.null` and `nonmarkingreturn` or any glyph mapped
++/// to U+0000 or U+000D.
++fn spacing_irrelevant(glyph: &Glyph) -> bool {
++    matches!(
++        glyph.name.as_str(),
++        ".notdef" | ".null" | "nonmarkingreturn"
++    ) || glyph.codepoints.iter().any(|&c| c == 0x0000 || c == 0x000D)
++}
++
++/// The advance every glyph of the font has in every master, or `None` when two
++/// advances differ or there is no glyph to measure.
++///
++/// Advances are rounded to whole font units. Left out: glyphs with a zero advance
++/// (such as combining marks), glyphs that are not exported, `.notdef`, and the
++/// control-character glyphs `.null` and `nonmarkingreturn` (or any glyph mapped to
++/// U+0000 or U+000D).
++pub(crate) fn monospaced_advance(font: &Font) -> Option<i32> {
++    let mut shared = None;
++    for glyph in font.glyphs.iter() {
++        if !glyph.exported || spacing_irrelevant(glyph) {
++            continue;
++        }
++        for layer in glyph.layers.iter() {
++            if !matches!(layer.master, LayerType::DefaultForMaster(_)) {
++                continue;
++            }
++            let advance = layer.width.round() as i32;
++            if advance == 0 {
++                continue;
++            }
++            match shared {
++                None => shared = Some(advance),
++                Some(previous) if previous != advance => return None,
++                Some(_) => {}
++            }
++        }
++    }
++    shared
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Layer, Master};
++
++    fn font() -> Font {
++        let mut f = Font::new();
++        f.masters.push(Master::default());
++        f
++    }
++
++    fn add_glyph<'a>(f: &'a mut Font, name: &str, advance: f32) -> &'a mut Glyph {
++        let mut layer = Layer::new(advance);
++        layer.master = LayerType::DefaultForMaster(f.masters[0].id.clone());
++        let mut glyph = Glyph::new(name);
++        glyph.exported = true;
++        glyph.layers.push(layer);
++        f.glyphs.push(glyph);
++        let last = f.glyphs.len() - 1;
++        &mut f.glyphs[last]
++    }
++
++    #[test]
++    fn test_one_advance_is_shared() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 600.0);
++        add_glyph(&mut f, "b", 600.4);
++        assert_eq!(monospaced_advance(&f), Some(600));
++        add_glyph(&mut f, "c", 500.0);
++        assert_eq!(monospaced_advance(&f), None);
++    }
++
++    #[test]
++    fn test_glyphs_that_say_nothing_about_spacing_are_left_out() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 600.0);
++        add_glyph(&mut f, "acutecomb", 0.0);
++        add_glyph(&mut f, ".notdef", 500.0);
++        add_glyph(&mut f, ".null", 0.0);
++        add_glyph(&mut f, "nonmarkingreturn", 300.0);
++        add_glyph(&mut f, "CR", 300.0).codepoints.push(0x000D);
++        add_glyph(&mut f, "unused", 300.0).exported = false;
++        assert_eq!(monospaced_advance(&f), Some(600));
++    }
++
++    #[test]
++    fn test_every_master_counts() {
++        let mut f = font();
++        f.masters.push(Master {
++            id: "bold".to_string(),
++            ..Default::default()
++        });
++        add_glyph(&mut f, "a", 600.0);
++        let mut layer = Layer::new(600.0);
++        layer.master = LayerType::DefaultForMaster("bold".to_string());
++        f.glyphs[0].layers.push(layer.clone());
++        assert_eq!(monospaced_advance(&f), Some(600));
++        layer.width = 650.0;
++        f.glyphs[0].layers[1] = layer;
++        assert_eq!(monospaced_advance(&f), None);
++    }
++
++    #[test]
++    fn test_no_glyph_to_measure() {
++        let mut f = font();
++        add_glyph(&mut f, ".notdef", 500.0);
++        add_glyph(&mut f, "space", 0.0);
++        assert_eq!(monospaced_advance(&f), None);
++    }
++}

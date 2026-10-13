@@ -1,0 +1,279 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 2 Oct 2026 02:41:06 +0100
+Subject: [PATCH 2/4] Add post.isFixedPitch and --fontforge-fixed-pitch
+
+Carry post.isFixedPitch through the model (Glyphs isFixedPitch, UFO
+postscriptIsFixedPitch, fontir), and set it as FontForge's exporter does.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont-ts/src/underlying.ts                |   2 +
+ babelfont/src/common/otvalue.rs               |   4 +
+ .../src/convertors/fontir/static_metadata.rs  |   2 +-
+ .../convertors/glyphs3/customparameters.rs    |  15 ++
+ babelfont/src/convertors/ufo.rs               |   2 +
+ babelfont/src/filters/fontforgefixedpitch.rs  | 146 ++++++++++++++++++
+ babelfont/src/filters/mod.rs                  |   1 +
+ 7 files changed, 171 insertions(+), 1 deletion(-)
+ create mode 100644 babelfont/src/filters/fontforgefixedpitch.rs
+
+diff --git a/babelfont-ts/src/underlying.ts b/babelfont-ts/src/underlying.ts
+index ce2c5069..2028fc8c 100644
+--- a/babelfont-ts/src/underlying.ts
++++ b/babelfont-ts/src/underlying.ts
+@@ -192,6 +192,8 @@ export interface CustomOTValues {
+    * A bit field; see OpenType spec for bit meanings
+    */
+   os2_code_page_range2?: number;
++  /** post table isFixedPitch field: whether the font is not proportionally spaced */
++  post_is_fixed_pitch?: boolean;
+   /** CFF table BlueValues field */
+   cff_blue_values?: number[];
+   /** CFF table OtherBlues field */
+diff --git a/babelfont/src/common/otvalue.rs b/babelfont/src/common/otvalue.rs
+index fe0a3ebc..40b7bbba 100644
+--- a/babelfont/src/common/otvalue.rs
++++ b/babelfont/src/common/otvalue.rs
+@@ -103,6 +103,10 @@ pub struct CustomOTValues {
+     /// A bit field; see OpenType spec for bit meanings
+     #[serde(default, skip_serializing_if = "Option::is_none")]
+     pub os2_code_page_range2: Option<u32>,
++    // post table
++    /// post table isFixedPitch field: whether the font is not proportionally spaced
++    #[serde(default, skip_serializing_if = "Option::is_none")]
++    pub post_is_fixed_pitch: Option<bool>,
+     // CFF table
+     /// CFF table BlueValues field
+     #[serde(default, skip_serializing_if = "Option::is_none")]
+diff --git a/babelfont/src/convertors/fontir/static_metadata.rs b/babelfont/src/convertors/fontir/static_metadata.rs
+index 5b557c09..15a01d59 100644
+--- a/babelfont/src/convertors/fontir/static_metadata.rs
++++ b/babelfont/src/convertors/fontir/static_metadata.rs
+@@ -271,7 +271,7 @@ impl Work<Context, WorkId, Error> for StaticMetadataWork {
+         // // Default per <https://github.com/googlefonts/glyphsLib/blob/cb8a4a914b0a33431f0a77f474bf57eec2f19bcc/Lib/glyphsLib/builder/custom_params.py#L1117-L1119>
+         // static_metadata.misc.fs_type = font.custom_parameters.fs_type.or(Some(1 << 3));
+ 
+-        // static_metadata.misc.is_fixed_pitch = font.custom_parameters.is_fixed_pitch;
++        static_metadata.misc.is_fixed_pitch = font.custom_ot_values.post_is_fixed_pitch;
+ 
+         // static_metadata.misc.unicode_range_bits = font
+         //     .custom_parameters
+diff --git a/babelfont/src/convertors/glyphs3/customparameters.rs b/babelfont/src/convertors/glyphs3/customparameters.rs
+index 53b9ca11..e1ba1f31 100644
+--- a/babelfont/src/convertors/glyphs3/customparameters.rs
++++ b/babelfont/src/convertors/glyphs3/customparameters.rs
+@@ -19,6 +19,7 @@ pub(crate) fn export_font_level_cps(
+     export_variable_font_origin(custom_parameters, font)?;
+     export_use_typo_metrics(custom_parameters, font)?;
+     export_os2_values(custom_parameters, font)?;
++    export_post_values(custom_parameters, font);
+     Ok(())
+ }
+ 
+@@ -290,6 +291,20 @@ fn export_os2_values(
+     Ok(())
+ }
+ 
++/// Write the `post` values a source recorded out as custom parameters.
++fn export_post_values(custom_parameters: &mut Vec<CustomParameter>, font: &Font) {
++    if let Some(fixed) = font.custom_ot_values.post_is_fixed_pitch {
++        find_or_insert(
++            custom_parameters,
++            CustomParameter {
++                name: "isFixedPitch".to_string(),
++                value: Plist::Integer(i64::from(fixed)),
++                disabled: false,
++            },
++        );
++    }
++}
++
+ fn export_use_typo_metrics(
+     custom_parameters: &mut Vec<CustomParameter>,
+     font: &Font,
+diff --git a/babelfont/src/convertors/ufo.rs b/babelfont/src/convertors/ufo.rs
+index e028016a..9689ff04 100644
+--- a/babelfont/src/convertors/ufo.rs
++++ b/babelfont/src/convertors/ufo.rs
+@@ -594,6 +594,7 @@ pub(crate) fn save_info(info: &mut norad::FontInfo, font: &Font, master_ix: usiz
+     info.open_type_os2_vendor_id = font.custom_ot_values.os2_vendor_id.map(|x| x.to_string());
+     info.open_type_os2_win_ascent = get_metric(MetricType::WinAscent).map(|x| x as u32);
+     info.open_type_os2_win_descent = get_metric(MetricType::WinDescent).map(|x| x as u32);
++    info.postscript_is_fixed_pitch = font.custom_ot_values.post_is_fixed_pitch;
+     info.postscript_underline_position = get_metric(MetricType::UnderlinePosition);
+     info.postscript_underline_thickness = get_metric(MetricType::UnderlineThickness);
+     info.postscript_other_blues = font.custom_ot_values.cff_other_blues.clone();
+@@ -798,6 +799,7 @@ pub(crate) fn load_font_info(
+         font.custom_ot_values.os2_unicode_range3 = Some(ur3);
+         font.custom_ot_values.os2_unicode_range4 = Some(ur4);
+     }
++    font.custom_ot_values.post_is_fixed_pitch = info.postscript_is_fixed_pitch;
+     font.custom_ot_values.cff_blue_values = info.postscript_blue_values.clone();
+     font.custom_ot_values.cff_other_blues = info.postscript_other_blues.clone();
+     font.custom_ot_values.cff_family_blues = info.postscript_family_blues.clone();
+diff --git a/babelfont/src/filters/fontforgefixedpitch.rs b/babelfont/src/filters/fontforgefixedpitch.rs
+new file mode 100644
+index 00000000..95c8614d
+--- /dev/null
++++ b/babelfont/src/filters/fontforgefixedpitch.rs
+@@ -0,0 +1,146 @@
++use crate::filters::fontforge_one_width::one_width;
++use crate::filters::FontFilter;
++
++#[derive(Default)]
++/// A filter that marks a font fixed pitch (`post.isFixedPitch`) when FontForge's
++/// exporter would: when every glyph that counts shares one advance.
++///
++/// A FontForge `.sfd` states no pitch. FontForge's exporter derives it from the
++/// advances, so the exported binary says the font is fixed pitch although nothing in
++/// the source does, and a compiler that is not told writes 0.
++///
++/// The glyphs that count are those the export writes, leaving out `.null`,
++/// `nonmarkingreturn` and a `.notdef` with no contours; the advances are read from the
++/// default master. This is the rule of FontForge releases up to tag 20230101; from
++/// tag 20251009 on, zero-width glyphs are left out too.
++///
++/// A font with more than one advance is left as it is: 0 is what every compiler
++/// writes when nothing is stated.
++///
++/// # Opt-in, because it is a statement about who exported the binary
++///
++/// Other tools leave `isFixedPitch` to what the source states, so this filter only
++/// makes sense when reproducing a binary FontForge exported.
++pub struct FontForgeFixedPitch;
++
++impl FontForgeFixedPitch {
++    /// Create a new FontForgeFixedPitch filter
++    pub fn new() -> Self {
++        FontForgeFixedPitch
++    }
++}
++
++impl FontFilter for FontForgeFixedPitch {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        let width = font
++            .default_master()
++            .or(font.masters.first())
++            .and_then(|master| one_width(font, master))
++            .filter(|width| *width > 0);
++        if let Some(width) = width {
++            font.custom_ot_values.post_is_fixed_pitch = Some(true);
++            log::info!(
++                "Marked the font fixed pitch: every glyph FontForge exports advances {width}"
++            );
++        }
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(FontForgeFixedPitch::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("fontforgefixedpitch")
++            .long("fontforge-fixed-pitch")
++            .help(
++                "Set post.isFixedPitch when every glyph FontForge's exporter writes shares \
++                 one advance, as FontForge does. Use only to reproduce a binary FontForge \
++                 exported",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
++
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Font, Glyph, Layer, LayerType, Master, Node, NodeType, Path, Shape};
++
++    fn font() -> Font {
++        let mut f = Font::new();
++        f.masters.push(Master::default());
++        f
++    }
++
++    /// A glyph with one triangular contour (or none) and the given advance.
++    fn add_glyph(f: &mut Font, name: &str, advance: f32, contour: bool) {
++        let mut layer = Layer::new(advance);
++        layer.master = LayerType::DefaultForMaster(f.masters[0].id.clone());
++        if contour {
++            let node = |x: f64, y: f64| Node {
++                x,
++                y,
++                nodetype: NodeType::Line,
++                ..Default::default()
++            };
++            layer.shapes.push(Shape::Path(Path {
++                nodes: vec![node(0.0, 0.0), node(100.0, 0.0), node(50.0, 100.0)],
++                closed: true,
++                ..Default::default()
++            }));
++        }
++        let mut glyph = Glyph::new(name);
++        glyph.layers.push(layer);
++        f.glyphs.push(glyph);
++    }
++
++    #[test]
++    fn test_one_shared_advance_marks_the_font_fixed_pitch() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0, true);
++        add_glyph(&mut f, "b", 1150.0, true);
++        // Left out: an empty .notdef of another advance.
++        add_glyph(&mut f, ".notdef", 500.0, false);
++        FontForgeFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, Some(true));
++    }
++
++    #[test]
++    fn test_two_advances_leave_the_font_alone() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0, true);
++        add_glyph(&mut f, "b", 600.0, true);
++        FontForgeFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, None);
++
++        // A .notdef with contours counts.
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0, true);
++        add_glyph(&mut f, ".notdef", 500.0, true);
++        FontForgeFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, None);
++    }
++
++    #[test]
++    fn test_the_glyphs_source_carries_is_fixed_pitch() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0, true);
++        FontForgeFixedPitch::new().apply(&mut f).unwrap();
++        let glyphs = crate::convertors::glyphs3::as_glyphs3(&f).unwrap();
++        let cp = glyphs
++            .custom_parameters
++            .iter()
++            .find(|cp| cp.name == "isFixedPitch")
++            .expect("an isFixedPitch custom parameter");
++        assert_eq!(cp.value, glyphslib::Plist::Integer(1));
++    }
++}
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index e6f9cba4..39817a39 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -118,6 +118,7 @@ declare_filters! {
+         FontForgeUnderlinePosition(fontforgeunderlineposition) => "fontforgeunderlineposition",
+         FontForgeHeightGlyphCountMean(fontforgeheightglyphcountmean) => "fontforgeheightglyphcountmean",
+         FontForgeOs2Defaults(fontforgeos2defaults) => "fontforgeos2defaults",
++        FontForgeFixedPitch(fontforgefixedpitch) => "fontforgefixedpitch",
+     }
+     group "Filters for manipulating outlines" {
+         DecomposeComponentReferences(decomposecomponentreferences) => "decomposecomponents",

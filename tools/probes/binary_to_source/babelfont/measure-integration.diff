@@ -10,6 +10,19 @@ index fa742a6a..0b82a552 100644
   "indexmap 2.14.2",
   "itertools",
   "kurbo",
+diff --git a/babelfont-ts/src/underlying.ts b/babelfont-ts/src/underlying.ts
+index 2fce480b..8ee95096 100644
+--- a/babelfont-ts/src/underlying.ts
++++ b/babelfont-ts/src/underlying.ts
+@@ -202,6 +202,8 @@ export interface CustomOTValues {
+    * A bit field; see OpenType spec for bit meanings
+    */
+   os2_code_page_range2?: number;
++  /** post table isFixedPitch field: whether the font is not proportionally spaced */
++  post_is_fixed_pitch?: boolean;
+   /** CFF table BlueValues field */
+   cff_blue_values?: number[];
+   /** CFF table OtherBlues field */
 diff --git a/babelfont/Cargo.toml b/babelfont/Cargo.toml
 index ec96e148..979a3558 100644
 --- a/babelfont/Cargo.toml
@@ -33,19 +46,19 @@ index ec96e148..979a3558 100644
  unicode-normalization = "0.1.25"
 diff --git a/babelfont/resources/ttf/DuplicateNames.ttf b/babelfont/resources/ttf/DuplicateNames.ttf
 new file mode 100644
-index 0000000000000000000000000000000000000000..f59b5a154cb1d5802bbbd8b31f7f4f0ca6107c47
+index 0000000000000000000000000000000000000000..02ed3eeb1a16ed7b8adcc0c1e2b5aa1aea784075
 GIT binary patch
 literal 772
-zcmah{F;5gh6#iyr4@3oX2}Ubi0s#_&lD&vZHX(%NDsn0&LI;!G_3n~gZgaProK}{W
-zlol4$#-BhzV`63H51^o+vBQ$A-z<Cau;FdqoA-VD=Dlxb7XrX-e1wAi^34-xbH+OY
-z!~)rUKh}wOjcMY~#BMWs|1Ny=Y?b(w_-!lHfj-#y!u%V3rA4ChL40R^MxSlPY2W&Z
-zKI=abPedJGV;LL7zliU~x}RVScZhEh+Xp%hf4`_M0rENVVbbZPtE~q6%OAupj8^*m
-ztDVl?J@*fkIwy1899GZCW0DH8e8oM=&e>D$!hs{_icZ7(WWiKmaWy{Jc~v9GDCvnq
-zn2MWC4VSFZh}Us)r9s&+rx`Yz$GRxhxv29oW;B>ilZ@u%lbpT4b);0tj(JX8tocdq
-z6;&h(8^=S;V3FM5M%b%Xovu3KLLOgw<|bWM9w9JOYENtT-5?0an(1Hvv30VXGhjyw
-zO=g6Jm2#rM17f4ms2(MvVrz`dV@#E~#00kL?S7hdL)*)esO{@Cv>W{9z3s4>MY_uw
-zZT>AOGISBbhQ};HMAnBUZ@31tm{||oj7?TVWV-)-u|mqVP$8NXQYc|rL6(F?sI2>)
-GIQa`YvS@k$
+zcmah{J#W-N5PiGrOUNfWDF`ZXlqiXW0+CMyh%7}>%vI>fhm_F4$~Jc=**WXZmJTXP
+z%9Io!rAGM)DbgTOrQ!!rP|(nYGBR%+pK=ieW6kWm=h>OJYeN7S$9pK)FLoa~&*r=%
+zKrE4c?Z-M1+n6Q(NbEMFw{OCGkJpHQ5bw1@9q5D2Pt1?$t1S|hcj7DapY-`woc66V
+z^jZIbcslC%8Y|c&{!Tm@>wbbUOc387whwe1{(f3r2ILds!=%$o*IJFw#NUWr7_Ich
+zt^N4bP4^F!`bFltIjmlgCnObQ`HFj#owKKW2?vf`C^`-AlLb?O#nt#==Vgr`qogMe
+zVJiM_YPe*bM!bR3OAX3~InA)yJl1)s&PAP%F{8nBnqf32pW*B!t|O&FcFc3)V$Dx;
+zuc#tX*c9$y4)@6oZiKyR)!C{e&gIF4XKvDE<q-lirS_<H%MF5nteO7himj97oB=yh
+zXfh)#td<i6ZW9}gM)fEW6<cFu9^h`7OHAW=z1>f<ZfJX1619DuhIWJBytflJvq*P2
+zqs_l1MTRay*zlMoh{*cT<PFzg7BlN%hq1|uh)nmNFII>d3Kiz_LJB1;E69?t2$c=L
+H6DNNGIHqWN
 
 literal 0
 HcmV?d00001
@@ -140,7 +153,7 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
 new file mode 100644
-index 00000000..262af356
+index 00000000..05312a5d
 --- /dev/null
 +++ b/babelfont/resources/ttf/make_fixtures.py
 @@ -0,0 +1,232 @@
@@ -180,7 +193,7 @@ index 00000000..262af356
 +-50 in a legacy kern table.
 +
 +DuplicateNames.ttf's post table names glyphs 2 and 3 both "dupe" (a post table
-+may); Acomp is a component of glyph 3.
++may); Acomp is a component of glyph 3. Its post table says it is fixed pitch.
 +
 +MarkNoGdef.ttf has no GDEF but a mark feature attaching gravecomb (U+0300,
 +advance 0) to a; commaaccent is unencoded, and uni034F (COMBINING GRAPHEME JOINER) a
@@ -348,7 +361,7 @@ index 00000000..262af356
 +fb.setupHorizontalHeader(ascent=800, descent=-200)
 +fb.setupNameTable({"familyName": "Fixture Duplicate Names", "styleName": "Regular"})
 +fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
-+fb.setupPost()
++fb.setupPost(isFixedPitch=1)
 +save(fb, "DuplicateNames.ttf")
 +data = open("DuplicateNames.ttf", "rb").read()
 +# both names become "dupe": the same length, so nothing in the post table moves
@@ -376,6 +389,21 @@ index 00000000..262af356
 +""")
 +del fb.font["GDEF"]
 +save(fb, "MarkNoGdef.ttf")
+diff --git a/babelfont/src/common/otvalue.rs b/babelfont/src/common/otvalue.rs
+index fe0a3ebc..40b7bbba 100644
+--- a/babelfont/src/common/otvalue.rs
++++ b/babelfont/src/common/otvalue.rs
+@@ -103,6 +103,10 @@ pub struct CustomOTValues {
+     /// A bit field; see OpenType spec for bit meanings
+     #[serde(default, skip_serializing_if = "Option::is_none")]
+     pub os2_code_page_range2: Option<u32>,
++    // post table
++    /// post table isFixedPitch field: whether the font is not proportionally spaced
++    #[serde(default, skip_serializing_if = "Option::is_none")]
++    pub post_is_fixed_pitch: Option<bool>,
+     // CFF table
+     /// CFF table BlueValues field
+     #[serde(default, skip_serializing_if = "Option::is_none")]
 diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
 index ad22aaf1..07f34a6e 100644
 --- a/babelfont/src/convertors/fontforge.rs
@@ -578,6 +606,19 @@ index 088fdfca..5ee87098 100644
 +        "Bold"
 +    );
 +}
+diff --git a/babelfont/src/convertors/fontir/static_metadata.rs b/babelfont/src/convertors/fontir/static_metadata.rs
+index 5b557c09..15a01d59 100644
+--- a/babelfont/src/convertors/fontir/static_metadata.rs
++++ b/babelfont/src/convertors/fontir/static_metadata.rs
+@@ -271,7 +271,7 @@ impl Work<Context, WorkId, Error> for StaticMetadataWork {
+         // // Default per <https://github.com/googlefonts/glyphsLib/blob/cb8a4a914b0a33431f0a77f474bf57eec2f19bcc/Lib/glyphsLib/builder/custom_params.py#L1117-L1119>
+         // static_metadata.misc.fs_type = font.custom_parameters.fs_type.or(Some(1 << 3));
+ 
+-        // static_metadata.misc.is_fixed_pitch = font.custom_parameters.is_fixed_pitch;
++        static_metadata.misc.is_fixed_pitch = font.custom_ot_values.post_is_fixed_pitch;
+ 
+         // static_metadata.misc.unicode_range_bits = font
+         //     .custom_parameters
 diff --git a/babelfont/src/convertors/glyphs3.rs b/babelfont/src/convertors/glyphs3.rs
 index cdd122ed..9481b3c7 100644
 --- a/babelfont/src/convertors/glyphs3.rs
@@ -732,7 +773,7 @@ index cdd122ed..9481b3c7 100644
          props: &[glyphslib::glyphs3::Property],
          wanted: glyphslib::glyphs3::SingularPropertyKey,
 diff --git a/babelfont/src/convertors/glyphs3/customparameters.rs b/babelfont/src/convertors/glyphs3/customparameters.rs
-index 4a7caef3..76b44b3e 100644
+index 4a7caef3..d60ecc65 100644
 --- a/babelfont/src/convertors/glyphs3/customparameters.rs
 +++ b/babelfont/src/convertors/glyphs3/customparameters.rs
 @@ -1,7 +1,11 @@
@@ -748,11 +789,12 @@ index 4a7caef3..76b44b3e 100644
  };
  
  /// A set of paired functions to interpret/export font-level custom parameters
-@@ -20,41 +24,148 @@ pub(crate) fn export_font_level_cps(
+@@ -20,41 +24,149 @@ pub(crate) fn export_font_level_cps(
      export_use_typo_metrics(custom_parameters, font)?;
      export_os2_values(custom_parameters, font)?;
      export_name_table_entries(custom_parameters, font);
 +    export_localized_name_table_entries(custom_parameters, font);
++    export_post_values(custom_parameters, font);
      Ok(())
  }
  
@@ -904,7 +946,28 @@ index 4a7caef3..76b44b3e 100644
              disabled: false,
          });
      }
-@@ -422,6 +533,29 @@ mod name_table_entry_tests {
+@@ -353,6 +465,20 @@ fn export_os2_values(
+     Ok(())
+ }
+ 
++/// Write the `post` values a source recorded out as custom parameters.
++fn export_post_values(custom_parameters: &mut Vec<CustomParameter>, font: &Font) {
++    if let Some(fixed) = font.custom_ot_values.post_is_fixed_pitch {
++        find_or_insert(
++            custom_parameters,
++            CustomParameter {
++                name: "isFixedPitch".to_string(),
++                value: Plist::Integer(i64::from(fixed)),
++                disabled: false,
++            },
++        );
++    }
++}
++
+ fn export_use_typo_metrics(
+     custom_parameters: &mut Vec<CustomParameter>,
+     font: &Font,
+@@ -422,6 +548,29 @@ mod name_table_entry_tests {
          );
      }
  
@@ -934,7 +997,7 @@ index 4a7caef3..76b44b3e 100644
      #[test]
      fn test_no_entries_for_several_styles() {
          let mut font = single_style_font("Lekton", "Regular");
-@@ -847,3 +981,85 @@ mod os2_export_tests {
+@@ -847,3 +996,85 @@ mod os2_export_tests {
          assert!(params(&font).is_empty());
      }
  }
@@ -1021,7 +1084,7 @@ index 4a7caef3..76b44b3e 100644
 +    }
 +}
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index bcfc7fe3..15c9a4d8 100644
+index bcfc7fe3..54fa8f11 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -5,13 +5,20 @@ use fontdrasil::{
@@ -1139,7 +1202,7 @@ index bcfc7fe3..15c9a4d8 100644
          }
      }
      dict
-@@ -114,12 +178,55 @@ fn load_names(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfon
+@@ -114,12 +178,59 @@ fn load_names(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfon
              *record = name_id_to_i18n(fontref, name_id);
          }
      }
@@ -1160,6 +1223,10 @@ index bcfc7fe3..15c9a4d8 100644
 +    ot.os2_panose = os2.panose_10().try_into().ok();
 +    ot.os2_fs_selection = Some(os2.fs_selection().bits() & SOURCE_FS_SELECTION_BITS);
 +    ot.head_lowest_rec_ppem = Some(fontref.head()?.lowest_rec_ppem());
++    // a proportional font's 0 is every compiler's default
++    if fontref.post()?.is_fixed_pitch() != 0 {
++        ot.post_is_fixed_pitch = Some(true);
++    }
 +    // A variable font's classes are those of its default instance only
 +    if font.axes.is_empty() {
 +        ot.os2_us_weight_class = Some(os2.us_weight_class());
@@ -1196,7 +1263,7 @@ index bcfc7fe3..15c9a4d8 100644
      for (id, instance) in fontref.named_instances().iter().enumerate() {
          let name = name_id_to_i18n(fontref, instance.subfamily_name_id());
          let coordinates = instance.location();
-@@ -192,7 +299,11 @@ fn load_masters(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelf
+@@ -192,7 +303,11 @@ fn load_masters(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelf
      }
  
      font.masters.push(crate::Master {
@@ -1209,7 +1276,7 @@ index bcfc7fe3..15c9a4d8 100644
          id: uuid::Uuid::new_v4().to_string(),
          location: default_location,
          metrics,
-@@ -206,20 +317,26 @@ fn load_metrics(
+@@ -206,20 +321,26 @@ fn load_metrics(
      font: &mut Font,
      loc: &fontdrasil::coords::Location<fontdrasil::coords::DesignSpace>,
  ) -> Result<IndexMap<MetricType, i32>, BabelfontError> {
@@ -1245,7 +1312,7 @@ index bcfc7fe3..15c9a4d8 100644
          metrics.insert(MetricType::CapHeight, cap_height as i32);
      }
      if let Some(strikeout) = skrifa_metrics.strikeout {
-@@ -258,6 +375,15 @@ fn load_metrics(
+@@ -258,6 +379,15 @@ fn load_metrics(
          MetricType::HheaDescender,
          fontref.hhea()?.descender().to_i16() as i32,
      );
@@ -1261,7 +1328,7 @@ index bcfc7fe3..15c9a4d8 100644
  
      // post stores the angle negative for a right lean; babelfont stores the
      // Glyphs convention, the opposite sign.
-@@ -269,17 +395,10 @@ fn load_metrics(
+@@ -269,17 +399,10 @@ fn load_metrics(
  }
  
  fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
@@ -1283,7 +1350,7 @@ index bcfc7fe3..15c9a4d8 100644
          glyph.exported = true;
          font.glyphs.push(glyph);
      }
-@@ -307,9 +426,79 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
+@@ -307,9 +430,79 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
              )))?;
          glyph.codepoints.push(unicode);
      }
@@ -1363,7 +1430,7 @@ index bcfc7fe3..15c9a4d8 100644
  // This is only sound for mark class definitions
  fn expand_glyphcontainer(glyphs: &fea_rs_ast::GlyphContainer) -> Vec<SmolStr> {
      let mut r = vec![];
-@@ -372,6 +561,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -372,6 +565,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      // Do the same but for mark classes.
@@ -1378,7 +1445,7 @@ index bcfc7fe3..15c9a4d8 100644
      for (anchor_name, classdefs) in uncompile_context.mark_classes {
          let anchor_name = format!("_{}", anchor_name);
          for definition in classdefs.iter() {
-@@ -413,10 +610,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -413,10 +614,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      for (class_name, glyphs) in uncompile_context.named_classes.iter() {
@@ -1394,7 +1461,7 @@ index bcfc7fe3..15c9a4d8 100644
      }
      let mut language_systems = vec![];
      for (script_tag, lang_sys_tags) in &uncompile_context.language_systems {
-@@ -433,6 +631,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -433,6 +635,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
              PossiblyAutomaticCode::new(language_systems_block),
          );
      }
@@ -1412,7 +1479,7 @@ index bcfc7fe3..15c9a4d8 100644
      for (lookup_name, statements) in uncompile_context.lookups.iter() {
          features.prefixes.insert(
              lookup_name.clone(),
-@@ -449,6 +658,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -449,6 +662,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      Ok(())
  }
  
@@ -1524,7 +1591,7 @@ index bcfc7fe3..15c9a4d8 100644
  fn get_x_y_location_for_anchor(
      location: DesignLocation,
      anchor: &sr_aef::fea_rs_ast::Anchor,
-@@ -527,18 +841,93 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+@@ -527,18 +845,93 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
      Ok(coords)
  }
  
@@ -1619,7 +1686,7 @@ index bcfc7fe3..15c9a4d8 100644
  
      // Skrifa pens don't support components. Parse component glyphs manually.
      let glyf = fontref.glyf()?;
-@@ -557,11 +946,28 @@ fn load_layer(
+@@ -557,11 +950,28 @@ fn load_layer(
                          &mut pen,
                      )
                      .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
@@ -1649,7 +1716,7 @@ index bcfc7fe3..15c9a4d8 100644
              for component in c.components() {
                  let gid = component.glyph;
                  let anchor = match component.anchor {
-@@ -571,25 +977,31 @@ fn load_layer(
+@@ -571,25 +981,31 @@ fn load_layer(
                          component: _,
                      } => (0.0, 0.0),
                  };
@@ -1691,7 +1758,7 @@ index bcfc7fe3..15c9a4d8 100644
                      transform: our_affine.into(),
                      location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
                      format_specific: FormatSpecific::default(),
-@@ -600,3 +1012,326 @@ fn load_layer(
+@@ -600,3 +1016,333 @@ fn load_layer(
  
      Ok(layer)
  }
@@ -1804,6 +1871,13 @@ index bcfc7fe3..15c9a4d8 100644
 +        // REGULAR | USE_TYPO_METRICS: the compiler sets REGULAR from the style
 +        assert_eq!(ot.os2_fs_selection, Some(1 << 7));
 +        assert_eq!(ot.head_lowest_rec_ppem, Some(9));
++        assert_eq!(ot.post_is_fixed_pitch, None);
++    }
++
++    #[test]
++    fn test_fixed_pitch() {
++        let font = load(DUPLICATE_NAMES).unwrap();
++        assert_eq!(font.custom_ot_values.post_is_fixed_pitch, Some(true));
 +    }
 +
 +    #[test]
@@ -2016,6 +2090,299 @@ index bcfc7fe3..15c9a4d8 100644
 +        let font = load(STATIC_LEGACY).unwrap();
 +        let metrics = &font.masters[0].metrics;
 +        assert_eq!(metrics.get(&MetricType::HheaLineGap), Some(&25));
++    }
++}
+diff --git a/babelfont/src/convertors/ufo.rs b/babelfont/src/convertors/ufo.rs
+index 5c23a956..41f19e1c 100644
+--- a/babelfont/src/convertors/ufo.rs
++++ b/babelfont/src/convertors/ufo.rs
+@@ -651,6 +651,7 @@ pub(crate) fn save_info(info: &mut norad::FontInfo, font: &Font, master_ix: usiz
+     info.open_type_os2_vendor_id = font.custom_ot_values.os2_vendor_id.map(|x| x.to_string());
+     info.open_type_os2_win_ascent = get_metric(MetricType::WinAscent).map(|x| x as u32);
+     info.open_type_os2_win_descent = get_metric(MetricType::WinDescent).map(|x| x as u32);
++    info.postscript_is_fixed_pitch = font.custom_ot_values.post_is_fixed_pitch;
+     info.postscript_underline_position = get_metric(MetricType::UnderlinePosition);
+     info.postscript_underline_thickness = get_metric(MetricType::UnderlineThickness);
+     info.postscript_other_blues = font.custom_ot_values.cff_other_blues.clone();
+@@ -891,6 +892,7 @@ pub(crate) fn load_font_info(
+         font.custom_ot_values.os2_unicode_range3 = Some(ur3);
+         font.custom_ot_values.os2_unicode_range4 = Some(ur4);
+     }
++    font.custom_ot_values.post_is_fixed_pitch = info.postscript_is_fixed_pitch;
+     font.custom_ot_values.cff_blue_values = info.postscript_blue_values.clone();
+     font.custom_ot_values.cff_other_blues = info.postscript_other_blues.clone();
+     font.custom_ot_values.cff_family_blues = info.postscript_family_blues.clone();
+diff --git a/babelfont/src/filters/inferfixedpitch.rs b/babelfont/src/filters/inferfixedpitch.rs
+new file mode 100644
+index 00000000..8b5c7e9a
+--- /dev/null
++++ b/babelfont/src/filters/inferfixedpitch.rs
+@@ -0,0 +1,125 @@
++use crate::filters::monospace::monospaced_advance;
++use crate::filters::FontFilter;
++
++#[derive(Default)]
++/// A filter that marks a monospaced font as fixed pitch (`post.isFixedPitch`)
++/// when the font does not say whether it is.
++///
++/// A font is monospaced when all its exported glyphs have one advance in every
++/// master. Glyphs whose advance says nothing about the spacing of text are left
++/// out: glyphs with a zero advance (such as combining marks), `.notdef`, and the
++/// control-character glyphs `.null` and `nonmarkingreturn` (or any glyph mapped
++/// to U+0000 or U+000D).
++///
++/// Many sources do not state the flag, and a compiler that is not told writes 0,
++/// so a monospaced font would be marked proportional. A font with more than one
++/// advance, or one that already states a value, is left as it is.
++pub struct InferFixedPitch;
++
++impl InferFixedPitch {
++    /// Create a new InferFixedPitch filter
++    pub fn new() -> Self {
++        InferFixedPitch
++    }
++}
++
++impl FontFilter for InferFixedPitch {
++    fn apply(&self, font: &mut crate::Font) -> Result<(), crate::BabelfontError> {
++        if font.custom_ot_values.post_is_fixed_pitch.is_some() {
++            return Ok(());
++        }
++        if let Some(advance) = monospaced_advance(font) {
++            font.custom_ot_values.post_is_fixed_pitch = Some(true);
++            log::info!("Marked the font fixed pitch: every glyph advances {advance}");
++        }
++        Ok(())
++    }
++
++    fn from_str(_s: &str) -> Result<Self, crate::BabelfontError>
++    where
++        Self: Sized,
++    {
++        Ok(InferFixedPitch::new())
++    }
++
++    #[cfg(feature = "cli")]
++    fn arg() -> clap::Arg
++    where
++        Self: Sized,
++    {
++        clap::Arg::new("inferfixedpitch")
++            .long("infer-fixed-pitch")
++            .help(
++                "Set post.isFixedPitch when the font does not state it and all its glyphs \
++                 share one advance (ignoring zero-width glyphs, .notdef, .null and \
++                 nonmarkingreturn)",
++            )
++            .action(clap::ArgAction::SetTrue)
++    }
++}
++
++#[allow(clippy::unwrap_used, clippy::expect_used)]
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Font, Glyph, Layer, LayerType, Master};
++
++    fn font() -> Font {
++        let mut f = Font::new();
++        f.masters.push(Master::default());
++        f
++    }
++
++    fn add_glyph(f: &mut Font, name: &str, advance: f32) {
++        let mut layer = Layer::new(advance);
++        layer.master = LayerType::DefaultForMaster(f.masters[0].id.clone());
++        let mut glyph = Glyph::new(name);
++        glyph.exported = true;
++        glyph.layers.push(layer);
++        f.glyphs.push(glyph);
++    }
++
++    #[test]
++    fn test_one_shared_advance_marks_the_font_fixed_pitch() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0);
++        add_glyph(&mut f, "b", 1150.0);
++        // Left out: a zero-width mark and a .notdef of another advance.
++        add_glyph(&mut f, "acutecomb", 0.0);
++        add_glyph(&mut f, ".notdef", 500.0);
++        InferFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, Some(true));
++    }
++
++    #[test]
++    fn test_two_advances_leave_the_font_alone() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0);
++        add_glyph(&mut f, "b", 600.0);
++        InferFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, None);
++    }
++
++    #[test]
++    fn test_a_stated_value_is_kept() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0);
++        f.custom_ot_values.post_is_fixed_pitch = Some(false);
++        InferFixedPitch::new().apply(&mut f).unwrap();
++        assert_eq!(f.custom_ot_values.post_is_fixed_pitch, Some(false));
++    }
++
++    #[test]
++    fn test_the_glyphs_source_carries_is_fixed_pitch() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 1150.0);
++        InferFixedPitch::new().apply(&mut f).unwrap();
++        let glyphs = crate::convertors::glyphs3::as_glyphs3(&f).unwrap();
++        let cp = glyphs
++            .custom_parameters
++            .iter()
++            .find(|cp| cp.name == "isFixedPitch")
++            .expect("an isFixedPitch custom parameter");
++        assert_eq!(cp.value, glyphslib::Plist::Integer(1));
++    }
++}
+diff --git a/babelfont/src/filters/mod.rs b/babelfont/src/filters/mod.rs
+index 3d79c06b..7312456b 100644
+--- a/babelfont/src/filters/mod.rs
++++ b/babelfont/src/filters/mod.rs
+@@ -4,6 +4,7 @@ use smol_str::SmolStr;
+ 
+ mod curve_filter_common;
+ mod fontforge_standard_height;
++mod monospace;
+ 
+ /// Parse a comma-separated list of glyph names from a string argument.
+ /// Returns an empty `Vec` if the string is empty, indicating that all glyphs
+@@ -158,6 +159,7 @@ declare_filters! {
+         AddMaster(addmaster) => "addmaster",
+         RemoveExtraneousLayers(removeextraneouslayers) => "removeextraneouslayers",
+         AddInstancePerMaster(addinstancepermaster) => "addinstancepermaster",
++        InferFixedPitch(inferfixedpitch) => "inferfixedpitch",
+     }
+ }
+ 
+diff --git a/babelfont/src/filters/monospace.rs b/babelfont/src/filters/monospace.rs
+new file mode 100644
+index 00000000..62f94823
+--- /dev/null
++++ b/babelfont/src/filters/monospace.rs
+@@ -0,0 +1,116 @@
++//! Detecting a monospaced font: one whose glyphs all share a single advance.
++
++use crate::{Font, Glyph, LayerType};
++
++/// Whether a glyph's advance says nothing about the spacing of text, so that it
++/// is left out when deciding whether a font is monospaced: `.notdef`, and the
++/// control-character glyphs `.null` and `nonmarkingreturn` or any glyph mapped
++/// to U+0000 or U+000D.
++fn spacing_irrelevant(glyph: &Glyph) -> bool {
++    matches!(
++        glyph.name.as_str(),
++        ".notdef" | ".null" | "nonmarkingreturn"
++    ) || glyph.codepoints.iter().any(|&c| c == 0x0000 || c == 0x000D)
++}
++
++/// The advance every glyph of the font has in every master, or `None` when two
++/// advances differ or there is no glyph to measure.
++///
++/// Advances are rounded to whole font units. Left out: glyphs with a zero advance
++/// (such as combining marks), glyphs that are not exported, `.notdef`, and the
++/// control-character glyphs `.null` and `nonmarkingreturn` (or any glyph mapped to
++/// U+0000 or U+000D).
++pub(crate) fn monospaced_advance(font: &Font) -> Option<i32> {
++    let mut shared = None;
++    for glyph in font.glyphs.iter() {
++        if !glyph.exported || spacing_irrelevant(glyph) {
++            continue;
++        }
++        for layer in glyph.layers.iter() {
++            if !matches!(layer.master, LayerType::DefaultForMaster(_)) {
++                continue;
++            }
++            let advance = layer.width.round() as i32;
++            if advance == 0 {
++                continue;
++            }
++            match shared {
++                None => shared = Some(advance),
++                Some(previous) if previous != advance => return None,
++                Some(_) => {}
++            }
++        }
++    }
++    shared
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use crate::{Layer, Master};
++
++    fn font() -> Font {
++        let mut f = Font::new();
++        f.masters.push(Master::default());
++        f
++    }
++
++    fn add_glyph<'a>(f: &'a mut Font, name: &str, advance: f32) -> &'a mut Glyph {
++        let mut layer = Layer::new(advance);
++        layer.master = LayerType::DefaultForMaster(f.masters[0].id.clone());
++        let mut glyph = Glyph::new(name);
++        glyph.exported = true;
++        glyph.layers.push(layer);
++        f.glyphs.push(glyph);
++        let last = f.glyphs.len() - 1;
++        &mut f.glyphs[last]
++    }
++
++    #[test]
++    fn test_one_advance_is_shared() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 600.0);
++        add_glyph(&mut f, "b", 600.4);
++        assert_eq!(monospaced_advance(&f), Some(600));
++        add_glyph(&mut f, "c", 500.0);
++        assert_eq!(monospaced_advance(&f), None);
++    }
++
++    #[test]
++    fn test_glyphs_that_say_nothing_about_spacing_are_left_out() {
++        let mut f = font();
++        add_glyph(&mut f, "a", 600.0);
++        add_glyph(&mut f, "acutecomb", 0.0);
++        add_glyph(&mut f, ".notdef", 500.0);
++        add_glyph(&mut f, ".null", 0.0);
++        add_glyph(&mut f, "nonmarkingreturn", 300.0);
++        add_glyph(&mut f, "CR", 300.0).codepoints.push(0x000D);
++        add_glyph(&mut f, "unused", 300.0).exported = false;
++        assert_eq!(monospaced_advance(&f), Some(600));
++    }
++
++    #[test]
++    fn test_every_master_counts() {
++        let mut f = font();
++        f.masters.push(Master {
++            id: "bold".to_string(),
++            ..Default::default()
++        });
++        add_glyph(&mut f, "a", 600.0);
++        let mut layer = Layer::new(600.0);
++        layer.master = LayerType::DefaultForMaster("bold".to_string());
++        f.glyphs[0].layers.push(layer.clone());
++        assert_eq!(monospaced_advance(&f), Some(600));
++        layer.width = 650.0;
++        f.glyphs[0].layers[1] = layer;
++        assert_eq!(monospaced_advance(&f), None);
++    }
++
++    #[test]
++    fn test_no_glyph_to_measure() {
++        let mut f = font();
++        add_glyph(&mut f, ".notdef", 500.0);
++        add_glyph(&mut f, "space", 0.0);
++        assert_eq!(monospaced_advance(&f), None);
 +    }
 +}
 diff --git a/babelfont/src/names.rs b/babelfont/src/names.rs
