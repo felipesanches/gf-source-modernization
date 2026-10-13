@@ -23,7 +23,7 @@ done | sort -n > "$S/order.txt"
 while read -r n f d; do
   [ -s "$S/$f.log" ] && grep -q "^done" "$S/$f.log" && continue   # resumable
   mkdir -p "$S/$f"
-  "$PY" "$HERE/probe.py" "$S/$f" "$d"/*.ttf > "$S/$f.log" 2>&1 || true
+  "$PY" "$HERE/probe.py" "$S/$f" "$d"/*.ttf < /dev/null > "$S/$f.log" 2>&1 || true
   echo "done" >> "$S/$f.log"
   styles=$(ls "$d"/*.ttf | wc -l)
   # verdict lines start at column 0 (stem, then CLEAN: / RESIDUAL: / CONVERT FAILED / BUILD FAILED)
