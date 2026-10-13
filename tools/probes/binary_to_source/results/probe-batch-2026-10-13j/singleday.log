@@ -1,0 +1,10 @@
+SingleDay-Regular                RESIDUAL: 0 blocking row(s), functional FAIL(cmap)
+    functional:   cmap         FAIL 11465 codepoints, 1 problem(s)
+    functional:       - 2 codepoint(s) map to a different glyph: U+3157 .notdef.42/_notdef.42; U+FF31 .notdef.2495/_notdef.2495
+    functional:   shaping      PASS 2291255 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 3 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 12127 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+done

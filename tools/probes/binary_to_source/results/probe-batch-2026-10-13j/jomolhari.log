@@ -1,0 +1,5 @@
+Jomolhari-Regular                RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.feature_list {"abvs": {"9": [17, 18]}, "calt": {"0": [18, 20], "1": [19, 22], "2": [20, 24]}}
+    BLOCKING GSUB.lookup_list {"17": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[uni0F
+    BLOCKING PCLT: whole-table difference
+done

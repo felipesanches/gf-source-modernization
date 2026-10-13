@@ -1,0 +1,51 @@
+Phetsarath-Bold                  RESIDUAL: 13 blocking row(s), functional FAIL(shaping+rendering+line_spacing)
+    BLOCKING GPOS.script_list [{"lao /dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    BLOCKING GSUB.script_list {"lao /dflt": {"lookups": {"0": [2, 0], "1": [0, 1]}}, "latn/dflt": {"lookups":
+    BLOCKING GSUB.feature_list {"liga": {"1": [1, 2], "2": [2, 4], "3": [3, 6], "4": [4, 7], "5": [5, 8], "6":
+    BLOCKING GSUB.lookup_list {"1": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[uni0E8
+    BLOCKING TSI0: whole-table difference
+    BLOCKING TSI1: whole-table difference
+    BLOCKING TSI2: whole-table difference
+    BLOCKING TSI3: whole-table difference
+    BLOCKING TSI5: whole-table difference
+    BLOCKING feat: whole-table difference
+    functional:   cmap         PASS 116 codepoints, exact
+    functional:   shaping      FAIL 29347 runs shaped, 2535 differ
+    functional:       - default features, pairs: 3 of 3600 runs differ
+    functional:       - default features, base+mark: 40 of 900 runs differ
+    functional:       - default features, base+mark+mark: 218 of 900 runs differ
+    functional:       - ... 4 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 19 word diffs (0 / 19 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 19 word(s) render differently (>8 px at 16 ppem), confirmed: 'ເຈົ້າຟ້າງຸ່ມ' 544px, 'ຫຼຸດພົ້ນ' 468px, 'ຫຼຸດລົງ' 421px, 'ສະຫຼຸບ' 405px, 'ຫຼູຫຼາ' 336px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release None, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release None, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     PASS 150 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+Phetsarath-Regular               RESIDUAL: 8 blocking row(s), functional FAIL(shaping+rendering+line_spacing)
+    BLOCKING GPOS.script_list [{"lao /dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    BLOCKING GSUB.script_list {"lao /dflt": {"lookups": {"0": [2, 0], "1": [0, 1]}}, "latn/dflt": {"lookups":
+    BLOCKING GSUB.feature_list {"liga": {"1": [1, 2], "2": [2, 4], "3": [3, 6], "4": [4, 7], "5": [5, 8], "6":
+    BLOCKING GSUB.lookup_list {"1": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[uni0E8
+    BLOCKING feat: whole-table difference
+    BLOCKING morx: whole-table difference
+    functional:   cmap         PASS 101 codepoints, exact
+    functional:   shaping      FAIL 29332 runs shaped, 2535 differ
+    functional:       - default features, pairs: 3 of 3600 runs differ
+    functional:       - default features, base+mark: 40 of 900 runs differ
+    functional:       - default features, base+mark+mark: 218 of 900 runs differ
+    functional:       - ... 4 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 19 word diffs (0 / 19 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 19 word(s) render differently (>8 px at 16 ppem), confirmed: 'ເຈົ້າຟ້າງຸ່ມ' 441px, 'ຫຼຸດພົ້ນ' 369px, 'ສະຫຼຸບ' 351px, 'ຫຼຸດລົງ' 350px, 'ຫຼູຫຼາ' 273px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release None, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release None, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     PASS 149 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+done

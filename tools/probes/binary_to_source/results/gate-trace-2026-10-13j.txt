@@ -1,0 +1,359 @@
+== phetsarath Phetsarath-Bold
+   TRACE gsub: shaping differs lang=None word='ຄຳ'
+      release=[('cp:0E84', 1315), ('cp:0ECD', 0), ('cp:0EB2', 1045)]
+      ours   =[('cp:0E84', 1315), ('n:uni0ECD.blw', 0), ('cp:0EB2', 1045)]
+   BLOCKING GPOS.script_list [{"lao /dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+   BLOCKING GPOS.feature_list [{}, null]
+   BLOCKING GPOS.lookup_list [{}, null]
+   BLOCKING GSUB.script_list {"lao /dflt": {"lookups": {"0": [2, 0], "1": [0, 1]}}, "latn/dflt": {"lookups": 
+   BLOCKING GSUB.feature_list {"liga": {"1": [1, 2], "2": [2, 4], "3": [3, 6], "4": [4, 7], "5": [5, 8], "6": 
+   BLOCKING GSUB.lookup_list {"1": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[uni0E8
+   BLOCKING TSI0: whole-table difference
+   BLOCKING TSI1: whole-table difference
+   BLOCKING TSI2: whole-table difference
+   BLOCKING TSI3: whole-table difference
+   BLOCKING TSI5: whole-table difference
+   BLOCKING feat: whole-table difference
+   BLOCKING morx: whole-table difference
+== phetsarath Phetsarath-Regular
+   TRACE gsub: shaping differs lang=None word='ຄຳ'
+      release=[('cp:0E84', 1210), ('cp:0ECD', 0), ('cp:0EB2', 713)]
+      ours   =[('cp:0E84', 1210), ('n:uni0ECD.blw', 0), ('cp:0EB2', 713)]
+   BLOCKING GPOS.script_list [{"lao /dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+   BLOCKING GPOS.feature_list [{}, null]
+   BLOCKING GPOS.lookup_list [{}, null]
+   BLOCKING GSUB.script_list {"lao /dflt": {"lookups": {"0": [2, 0], "1": [0, 1]}}, "latn/dflt": {"lookups": 
+   BLOCKING GSUB.feature_list {"liga": {"1": [1, 2], "2": [2, 4], "3": [3, 6], "4": [4, 7], "5": [5, 8], "6": 
+   BLOCKING GSUB.lookup_list {"1": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[uni0E8
+   BLOCKING feat: whole-table difference
+   BLOCKING morx: whole-table difference
+== averiagruesalibre AveriaGruesaLibre-Regular
+   BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+   BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "uni0020": {"uni0054": {"x": -4}, "uni0056": {"x"
+== yinmar Yinmar-Regular
+   TRACE gsub: shaping differs lang=None word='\xa0ဦ'
+      release=[('cp:0020', 250), ('cp:1026', 680)]
+      ours   =[('cp:0020', 250), ('cp:1025', 680), ('cp:102E', 0)]
+   BLOCKING GSUB.script_list {"mym2/dflt": {"lookups": {"2": [3, 2], "3": [2, 3], "4": [5, 4], "5": [4, 5]}}}
+   BLOCKING GSUB.feature_list {"blwf": {"0": [0, 1], "1": [2, 4], "2": [3, 5], "3": [21, 32], "4": [22, 33], "
+   BLOCKING GSUB.lookup_list {"0": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[u1008 
+   BLOCKING feat: whole-table difference
+   BLOCKING head.font_direction_hint [1, 2]
+   BLOCKING morx: whole-table difference
+== khmer Khmer
+   TRACE gsub: shaping differs lang=None word='!ា'
+      release=[('cp:0021', 551), ('n:uni1794.a2', 775)]
+      ours   =[('cp:0021', 551), ('cp:17B6', 775)]
+   BLOCKING GPOS.script_list [{"khmr/dflt": {"lookups": []}}, null]
+   BLOCKING GPOS.feature_list [{}, null]
+   BLOCKING GPOS.lookup_list [{}, null]
+   BLOCKING GSUB.script_list {"khmr/dflt": {"lookups": {"3": [4, 3], "4": [3, 4]}}}
+   BLOCKING GSUB.feature_list {"abvs": {"0": [9, 14], "1": [16, 28]}, "blwf": {"1": [4, 6], "2": [6, 10], "3":
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["uni1789
+   BLOCKING feat: whole-table difference
+   BLOCKING morx: whole-table difference
+== imfellfrenchcanonsc IMFeFCsc28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 368), ('cp:0041', 1279)]
+      ours   =[('cp:0027', 319), ('cp:0041', 1328)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [5, 1], "2": [14, 5], "3": [19, 6], "4": [24, 7]
+   BLOCKING GSUB.feature_list {"calt": {"0": [4, 6]}, "ss02": {"0": [5, 7]}}
+   BLOCKING GSUB.lookup_list {"4": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["l perio
+   BLOCKING head.font_direction_hint [0, 2]
+== imfelldoublepicasc IMFeDPsc28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 482), ('cp:0041', 1265)]
+      ours   =[('cp:0027', 446), ('cp:0041', 1301)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [5, 1], "2": [14, 5], "3": [19, 6], "4": [24, 7]
+   BLOCKING GSUB.feature_list {"calt": {"0": [4, 6]}, "ss02": {"0": [5, 7]}}
+   BLOCKING GSUB.lookup_list {"4": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["l perio
+   BLOCKING head.font_direction_hint [0, 2]
+== imfelldwpicasc IMFePIsc28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 490), ('cp:0041', 1270)]
+      ours   =[('cp:0027', 456), ('cp:0041', 1304)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [5, 1], "2": [14, 5], "3": [19, 6], "4": [24, 7]
+   BLOCKING GSUB.feature_list {"calt": {"0": [4, 6]}, "ss02": {"0": [5, 7]}}
+   BLOCKING GSUB.lookup_list {"4": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["l perio
+   BLOCKING head.font_direction_hint [0, 2]
+== imfellenglishsc IMFeENsc28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 518), ('cp:0041', 1341)]
+      ours   =[('cp:0027', 479), ('cp:0041', 1380)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [5, 1], "2": [14, 5], "3": [19, 6], "4": [24, 7]
+   BLOCKING GSUB.feature_list {"calt": {"0": [4, 6]}, "ss02": {"0": [5, 7]}}
+   BLOCKING GSUB.lookup_list {"4": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["l perio
+   BLOCKING head.font_direction_hint [0, 2]
+== imfellgreatprimersc IMFeGPsc28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 467), ('cp:0041', 1336)]
+      ours   =[('cp:0027', 424), ('cp:0041', 1379)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [5, 1], "2": [14, 5], "3": [19, 6], "4": [24, 7]
+   BLOCKING GSUB.feature_list {"calt": {"0": [4, 6]}, "ss02": {"0": [5, 7]}}
+   BLOCKING GSUB.lookup_list {"4": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["l perio
+   BLOCKING head.font_direction_hint [0, 2]
+== imfellenglish IMFeENit28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 504), ('cp:0041', 1414)]
+      ours   =[('cp:0027', 454), ('cp:0041', 1464)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "salt": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfellenglish IMFeENrm28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 520), ('cp:0041', 1344)]
+      ours   =[('cp:0027', 480), ('cp:0041', 1384)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "ss01": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfelldwpica IMFePIit28P
+   TRACE gsub: shaping differs lang=None word="'D"
+      release=[('cp:0027', 573), ('cp:0044', 1815)]
+      ours   =[('cp:0027', 587), ('cp:0044', 1801)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "salt": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfelldwpica IMFePIrm28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 490), ('cp:0041', 1270)]
+      ours   =[('cp:0027', 456), ('cp:0041', 1304)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "ss01": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfellgreatprimer IMFeGPit28P
+   TRACE gsub: shaping differs lang=None word="'B"
+      release=[('cp:0027', 459), ('cp:0042', 1370)]
+      ours   =[('cp:0027', 452), ('cp:0042', 1377)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "salt": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfellgreatprimer IMFeGPrm28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 467), ('cp:0041', 1336)]
+      ours   =[('cp:0027', 424), ('cp:0041', 1379)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "ss01": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfellfrenchcanon IMFeFCit28P
+   TRACE gsub: shaping differs lang=None word="'J"
+      release=[('cp:0027', 435), ('cp:004A', 1421)]
+      ours   =[('cp:0027', 453), ('cp:004A', 1403)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "salt": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfellfrenchcanon IMFeFCrm28P
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 393), ('cp:0041', 1283)]
+      ours   =[('cp:0027', 348), ('cp:0041', 1328)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "ss01": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfelldoublepica IMFELLDoublePica-Italic
+   TRACE gsub: shaping differs lang=None word="'J"
+      release=[('cp:0027', 429), ('cp:004A', 1279)]
+      ours   =[('cp:0027', 447), ('cp:004A', 1261)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "salt": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== imfelldoublepica IMFELLDoublePica-Regular
+   TRACE gsub: shaping differs lang=None word="'A"
+      release=[('cp:0027', 482), ('cp:0041', 1265)]
+      ours   =[('cp:0027', 446), ('cp:0041', 1301)]
+   BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+   BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "ss01": {"
+   BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+   BLOCKING head.font_direction_hint [0, 2]
+== alef Alef-Bold
+   BLOCKING head.font_direction_hint [0, 2]
+== alef Alef-Regular
+   BLOCKING head.font_direction_hint [0, 2]
+== anonymouspro AnonymousPro-Bold
+   BLOCKING EBDT: whole-table difference
+   BLOCKING EBLC: whole-table difference
+   BLOCKING EBSC: whole-table difference
+== anonymouspro AnonymousPro-BoldItalic
+   BLOCKING EBDT: whole-table difference
+   BLOCKING EBLC: whole-table difference
+   BLOCKING EBSC: whole-table difference
+== anonymouspro AnonymousPro-Italic
+   BLOCKING EBDT: whole-table difference
+   BLOCKING EBLC: whole-table difference
+   BLOCKING EBSC: whole-table difference
+== anonymouspro AnonymousPro-Regular
+   BLOCKING EBDT: whole-table difference
+   BLOCKING EBLC: whole-table difference
+   BLOCKING EBSC: whole-table difference
+== chenla Chenla
+   TRACE gsub: shaping differs lang=None word='ិិ'
+      release=[('cp:17B7', 0), ('n:glyph172', 0)]
+      ours   =[('cp:17B7', 0), ('cp:17B7', 0)]
+   BLOCKING GPOS.script_list [{"khmr/dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+   BLOCKING GPOS.feature_list [{}, null]
+   BLOCKING GPOS.lookup_list [{}, null]
+   BLOCKING GSUB.script_list {"khmr/dflt": {"lookups": {"4": [5, 4]}}, "latn/dflt": {"lookups": {"0": [4, 5]}
+   BLOCKING GSUB.feature_list {"abvf": {"0": [5, 7], "1": [14, 24]}, "blwf": {"1": [6, 9], "2": [7, 11]}, "blw
+   BLOCKING GSUB.lookup_list {"2": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["uni17D2
+   BLOCKING feat: whole-table difference
+   BLOCKING prop: whole-table difference
+   BLOCKING morx: whole-table difference
+== content Content-Bold
+   TRACE gsub: shaping differs lang=None word='!ា'
+      release=[('cp:0021', 872), ('cp:17B6', 700)]
+      ours   =[('cp:0021', 872), ('cp:25CC', 1300), ('cp:17B6', 700)]
+   BLOCKING GPOS.script_list [{"khmr/dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+   BLOCKING GPOS.feature_list [{}, null]
+   BLOCKING GPOS.lookup_list [{}, null]
+   BLOCKING GSUB.script_list {"khmr/dflt": {"lookups": {"4": [5, 4]}}, "latn/dflt": {"lookups": {"0": [4, 5]}
+   BLOCKING GSUB.feature_list {"abvf": {"0": [5, 7], "1": [14, 24]}, "blwf": {"1": [6, 9], "2": [7, 11]}, "blw
+   BLOCKING GSUB.lookup_list {"2": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["uni17D2
+   BLOCKING feat: whole-table difference
+   BLOCKING prop: whole-table difference
+   BLOCKING morx: whole-table difference
+== content Content-Regular
+   TRACE gsub: shaping differs lang=None word='!ា'
+      release=[('cp:0021', 872), ('cp:17B6', 580)]
+      ours   =[('cp:0021', 872), ('cp:25CC', 1300), ('cp:17B6', 580)]
+   BLOCKING GPOS.script_list [{"khmr/dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+   BLOCKING GPOS.feature_list [{}, null]
+   BLOCKING GPOS.lookup_list [{}, null]
+   BLOCKING GSUB.script_list {"khmr/dflt": {"lookups": {"4": [5, 4]}}, "latn/dflt": {"lookups": {"0": [4, 5]}
+   BLOCKING GSUB.feature_list {"abvf": {"0": [5, 7], "1": [14, 24]}, "blwf": {"1": [6, 9], "2": [7, 11]}, "blw
+   BLOCKING GSUB.lookup_list {"2": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["uni17D2
+   BLOCKING feat: whole-table difference
+   BLOCKING prop: whole-table difference
+   BLOCKING morx: whole-table difference
+== siemreap Siemreap
+   TRACE gsub: shaping differs lang=None word='!ា'
+      release=[('cp:0021', 872), ('cp:17B6', 650)]
+      ours   =[('cp:0021', 872), ('cp:25CC', 1300), ('cp:17B6', 650)]
+   BLOCKING GPOS.script_list [{"khmr/dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+   BLOCKING GPOS.feature_list [{}, null]
+   BLOCKING GPOS.lookup_list [{}, null]
+   BLOCKING GSUB.script_list {"khmr/dflt": {"lookups": {"4": [5, 4]}}, "latn/dflt": {"lookups": {"0": [4, 5]}
+   BLOCKING GSUB.feature_list {"abvf": {"0": [5, 7], "1": [14, 24]}, "blwf": {"1": [6, 9], "2": [7, 11]}, "blw
+   BLOCKING GSUB.lookup_list {"2": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["uni17D2
+   BLOCKING feat: whole-table difference
+   BLOCKING prop: whole-table difference
+   BLOCKING morx: whole-table difference
+== gfsneohellenic GFSNeohellenic
+== gfsneohellenic GFSNeohellenicBold
+   BLOCKING GPOS.script_list [{"grek/dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+   BLOCKING GPOS.feature_list [{}, null]
+   BLOCKING GPOS.lookup_list [{}, null]
+== gfsneohellenic GFSNeohellenicBoldItalic
+== gfsneohellenic GFSNeohellenicItalic
+== gfsdidot GFSDidot-Regular
+== ekmukta EkMukta-Bold
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+   BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37, 
+   BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+== ekmukta EkMukta-ExtraBold
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+   BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37, 
+   BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+== ekmukta EkMukta-ExtraLight
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+   BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37, 
+   BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+== ekmukta EkMukta-Light
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+   BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37, 
+   BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+== ekmukta EkMukta-Medium
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+   BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37, 
+   BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+== ekmukta EkMukta-Regular
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+   BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37, 
+   BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+== ekmukta EkMukta-SemiBold
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+   BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37, 
+   BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+== gaegu Gaegu-Bold
+== gaegu Gaegu-Light
+   BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 1 unit(s) at uniFF15 (release 254, ours 255)
+== gaegu Gaegu-Regular
+== carlito Carlito-Bold
+   BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+== carlito Carlito-BoldItalic
+   BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+== carlito Carlito-Italic
+   BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+== carlito Carlito-Regular
+   BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+== uchen Uchen-Regular
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [4, 3], "2": [6, 4]}}, "tibt/dflt": {"lookups": 
+   BLOCKING GSUB.feature_list {"calt": {"0": [16, 17], "1": [17, 19]}}
+   BLOCKING GSUB.lookup_list {"16": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[uni0F
+== jomolhari Jomolhari-Regular
+   TRACE gsub: refused on TypeError: unhashable type: 'list'
+   BLOCKING GSUB.feature_list {"abvs": {"9": [17, 18]}, "calt": {"0": [18, 20], "1": [19, 22], "2": [20, 24]}}
+   BLOCKING GSUB.lookup_list {"17": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[uni0F
+   BLOCKING PCLT: whole-table difference
+== kiranghaerang KirangHaerang-Regular
+== datatype Datatype[wdth,wght]
+   (no release, build or diffenator3 JSON)
+== singleday SingleDay-Regular
+== nanummyeongjo NanumMyeongjo-Bold
+== nanummyeongjo NanumMyeongjo-ExtraBold
+   BLOCKING head.font_direction_hint [1, 2]
+== nanummyeongjo NanumMyeongjo-Regular
+== nanumgothiccoding NanumGothicCoding-Bold
+   BLOCKING head.font_direction_hint [1, 2]
+== nanumgothiccoding NanumGothicCoding-Regular
+   BLOCKING head.font_direction_hint [1, 2]
+== gulimche GulimChe-Regular
+   TRACE gsub: the corpus never fired the features
+   BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00457": ["glyph.00032", null], "glyph.00458": ["glyph.00033"
+   BLOCKING head.font_direction_hint [1, 2]
+   BLOCKING vhea.version ["1.0", "1.1"]
+   BLOCKING vhea.min_bottom_side_bearing [-9, -8]
+   BLOCKING vhea.y_max_extent [1033, 1032]
+== gulim Gulim-Regular
+   TRACE gsub: the corpus never fired the features
+   BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00547": ["glyph.00004", null], "glyph.00548": ["glyph.00005"
+   BLOCKING head.font_direction_hint [1, 2]
+   BLOCKING vhea.version ["1.0", "1.1"]
+== dotumche DotumChe-Regular
+   TRACE gsub: the corpus never fired the features
+   BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00457": ["glyph.00032", null], "glyph.00458": ["glyph.00033"
+   BLOCKING head.font_direction_hint [1, 2]
+   BLOCKING vhea.version ["1.0", "1.1"]
+   BLOCKING vhea.min_bottom_side_bearing [-9, -7]
+   BLOCKING vhea.y_max_extent [1033, 1031]
+== dotum Dotum-Regular
+   TRACE gsub: the corpus never fired the features
+   BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00547": ["glyph.00004", null], "glyph.00548": ["glyph.00005"
+   BLOCKING head.font_direction_hint [1, 2]
+   BLOCKING vhea.version ["1.0", "1.1"]
+   BLOCKING vhea.min_bottom_side_bearing [-9, -7]
+   BLOCKING vhea.y_max_extent [1033, 1031]
+== gothica1 GothicA1-Black
+== gothica1 GothicA1-Bold
+== gothica1 GothicA1-ExtraBold
+== gothica1 GothicA1-ExtraLight
+== gothica1 GothicA1-Light
+== gothica1 GothicA1-Medium
+== gothica1 GothicA1-Regular
+== gothica1 GothicA1-SemiBold
+== gothica1 GothicA1-Thin

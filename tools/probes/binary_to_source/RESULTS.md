@@ -187,3 +187,65 @@ from 4 differing glyphs to 418, and to 159 when only an off-curve point between 
 on-curve points was dropped (skrifa draws TrueType's implied on-curve points, so the reader
 cannot tell them from stored ones in every case). The reader keeps its points as drawn; the
 step that merges coincident points and keeps the off-curve one is still to be found.
+
+## Re-landed again; the 36 not landed (2026-10-13, night)
+
+The measured converter changed once more (a font with no glyph names gets `.notdef` for glyph
+0, as fontTools names it; `babelfont/` as of this commit), so all 47 were re-landed: 43 CLEAN,
+4 RESIDUAL (Averia x3, Sansation), every verdict as before. Their sources are the generation
+before (land.py keeps it as `<repo>.prev`) except for what babelfont makes up on every run, the
+`.glyphs` date and the master ids: `same_sources.py` reads SAME for all 49 repositories (the 47,
+Almarai and Dongle), and DIFFERENT once one advance width in a copy is changed. Those two values
+make every re-land a new source: the TTF reader gives each master `Uuid::new_v4()`
+(babelfont/src/convertors/ttf.rs:176 and 196 at upstream d44f2bdc) and `Font::new` dates the
+font `chrono::Utc::now()` (babelfont/src/font.rs:136). A reproducible conversion needs both
+derived from the input.
+
+The 36 binary-only families not landed were re-probed on the same converter and gates, one
+at a time (`probe_batch.sh`; logs, summary.tsv and order.txt in
+`results/probe-batch-2026-10-13j/`): 72 styles, 12 CLEAN, 59 RESIDUAL, 1 build failure. Then
+the table gate was re-run on each style with its GSUB arbitration traced (`gate_trace.sh`,
+`results/gate-trace-2026-10-13j.txt`). This table supersedes the not-landed rows above.
+
+| families (styles)                                                                     | what blocks (measured)                                                                                                                                                                                                                                                                                                                             |
+|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Khmer (1), Chenla (1), Content (2), Siemreap (1), Phetsarath (2), Yinmar (1)          | AAT `morx`, which HarfBuzz shapes with and fontc does not write: runs differ in Khmer 6930 of 36123, Chenla 65920 of 164482, Content and Siemreap 80272 of 164513, Phetsarath 2535 of 29332 (Bold 29347), Yinmar 19621 of 80657. Also `feat` (all), `prop` (Chenla, Content, Siemreap), VTT sources TSI0-3 and TSI5 (Phetsarath Bold), D6 (Yinmar) |
+| the 10 IM Fell families (15)                                                          | 246 to 255 runs per style, all with U+0326; head.font_direction_hint 0 (decision D6, open); GSUB rows the gate does not clear (gap B below). Felipe's decision (bottleneck 8)                                                                                                                                                                      |
+| Alef (2), Nanum Gothic Coding (2), Nanum Myeongjo (ExtraBold; Bold and Regular CLEAN) | head.font_direction_hint 0 only (D6)                                                                                                                                                                                                                                                                                                               |
+| Gulim (1), GulimChe (1), Dotum (1), DotumChe (1)                                      | head.font_direction_hint 1 (D6); vhea version 1.0 against 1.1, and (but Gulim) its minBottomSideBearing and yMaxExtent; GSUB `vert` rows the gate does not clear (gap C)                                                                                                                                                                           |
+| Ek Mukta (7)                                                                          | GSUB rows only (gap A); functional gate PASS                                                                                                                                                                                                                                                                                                       |
+| Carlito (4)                                                                           | GDEF.glyph_classes only (gap D); functional gate PASS                                                                                                                                                                                                                                                                                              |
+| Jomolhari (1)                                                                         | GSUB rows (gap A) and `PCLT` (gap E); functional gate PASS                                                                                                                                                                                                                                                                                         |
+| Uchen (1)                                                                             | GSUB rows (gap A); 60 of 5587232 runs differ (28 of 2286 rule runs; 4 words; 28 with `rlig` off), not investigated                                                                                                                                                                                                                                 |
+| Kirang Haerang (1), Single Day (1), Gothic A1 (SemiBold, Thin; the other 7 CLEAN)     | the corner points above: 4, 2 and 1 codepoint(s) map to a glyph drawn differently (by under a unit)                                                                                                                                                                                                                                                |
+| Gaegu (Light; Bold and Regular CLEAN)                                                 | hmtx: uniFF15's outline differs by 1 unit (left bearing 254 against 255)                                                                                                                                                                                                                                                                           |
+| Anonymous Pro (4)                                                                     | bitmap strikes (EBDT, EBLC, EBSC), which a .glyphs source cannot carry (post.isFixedPitch is read now)                                                                                                                                                                                                                                             |
+| Averia Gruesa Libre (1)                                                               | italic angle -1.7 on an upright font: the build names it Italic and sets fsSelection ITALIC; GPOS rows                                                                                                                                                                                                                                             |
+| GFS Didot (1)                                                                         | `grek` registered without features (see above): 20624 of 1848234 runs differ                                                                                                                                                                                                                                                                       |
+| GFS Neohellenic (Regular, Bold, Italic; BoldItalic CLEAN)                             | Regular: only gap F. Bold: gap F, GPOS rows, 8740 of 9191 base+mark runs differ. Italic: 33893 of 996700 runs differ (61 of 315565 pairs). Not investigated                                                                                                                                                                                        |
+| Datatype (1)                                                                          | the one variable font: land.py's config builds statics (`buildVariable: false`), and instantiating SemiBold fails ("No master was present at location ... wght: 600.01")                                                                                                                                                                           |
+
+Gaps in the gates, measured (`gate_trace.sh`, `gsub_lookups.py`, `gdef_classes.py`):
+
+- A. table_gate.py's GSUB lookup-order arbitration refuses every font with a multiple
+  substitution: `profile()` keys each mapping's value as one glyph, a multiple substitution maps
+  to a list, and the TypeError is caught as a refusal (9 styles: Ek Mukta, Jomolhari, Uchen).
+  Jomolhari's release and build have the same 25 lookups; the release lists four nested single
+  substitutions after the four chaining lookups that call them, fontc puts each before its caller.
+- B. The same arbitration compares x advances. HarfBuzz applies a legacy `kern` value split
+  between the two glyphs (half as the second one's offset) and GPOS kerning on the first, so IM
+  Fell English SC's `'A` reads 518 + 1341 against 479 + 1380: the same total, the A drawn at the
+  same place. All 15 IM Fell styles refuse this way.
+- C. A `vert` lookup never fires in its horizontal corpus ("the corpus never fired the
+  features"), although Gulim's release and build carry the same 32 `vert` substitutions keyed by
+  codepoint.
+- D. GDEF glyph classes are compared by name. A release with no glyph names (post format 3) is
+  named by fontTools (AGL names) and the build `uniXXXX`, so Carlito's 479 renamed glyphs read as
+  base in the release and unclassified in ours, while the classes are equal glyph by glyph.
+- E. Jomolhari keeps a `PCLT` table (HP PCL printer metrics), which fontc does not write; the gate
+  has no rule for it (it accepts VDMX, LTSH, hdmx and DSIG).
+- F. The functional gate's cmap check fails a rename the build cannot avoid: GFS Neohellenic names
+  U+2116's glyph `Numero sign`, with a space; the build calls it `Numero_sign` (same outline and
+  advance). A name the release gives several glyphs is noted, not failed, for the same reason.
+
+Ek Mukta's and Carlito's only blocking rows come from gaps A and D.

@@ -1,0 +1,15 @@
+Uchen-Regular                    RESIDUAL: 3 blocking row(s), functional FAIL(shaping)
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [4, 3], "2": [6, 4]}}, "tibt/dflt": {"lookups":
+    BLOCKING GSUB.feature_list {"calt": {"0": [16, 17], "1": [17, 19]}}
+    BLOCKING GSUB.lookup_list {"16": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[uni0F
+    functional:   cmap         PASS 2405 codepoints, exact
+    functional:   shaping      FAIL 5587232 runs shaped, 60 differ
+    functional:       - default features, rules: 28 of 2286 runs differ
+    functional:       - default features, words: 4 of 556303 runs differ
+    functional:       - GSUB rlig off: 28 of 253353 runs differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 3034 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+done

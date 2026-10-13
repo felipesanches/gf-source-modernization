@@ -1,0 +1,17 @@
+AnonymousPro-Bold                RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING EBDT: whole-table difference
+    BLOCKING EBLC: whole-table difference
+    BLOCKING EBSC: whole-table difference
+AnonymousPro-BoldItalic          RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING EBDT: whole-table difference
+    BLOCKING EBLC: whole-table difference
+    BLOCKING EBSC: whole-table difference
+AnonymousPro-Italic              RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING EBDT: whole-table difference
+    BLOCKING EBLC: whole-table difference
+    BLOCKING EBSC: whole-table difference
+AnonymousPro-Regular             RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING EBDT: whole-table difference
+    BLOCKING EBLC: whole-table difference
+    BLOCKING EBSC: whole-table difference
+done

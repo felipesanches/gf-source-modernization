@@ -1,0 +1,5 @@
+NanumGothicCoding-Bold           RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING head.font_direction_hint [1, 2]
+NanumGothicCoding-Regular        RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING head.font_direction_hint [1, 2]
+done

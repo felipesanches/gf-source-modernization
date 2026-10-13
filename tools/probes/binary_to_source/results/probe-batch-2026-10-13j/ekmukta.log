@@ -1,0 +1,29 @@
+EkMukta-Bold                     RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+    BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37,
+    BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+EkMukta-ExtraBold                RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+    BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37,
+    BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+EkMukta-ExtraLight               RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+    BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37,
+    BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+EkMukta-Light                    RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+    BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37,
+    BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+EkMukta-Medium                   RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+    BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37,
+    BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+EkMukta-Regular                  RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+    BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37,
+    BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+EkMukta-SemiBold                 RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [8, 1], "2": [22, 4], "3": [30, 5], "4": [38, 6]
+    BLOCKING GSUB.feature_list {"abvs": {"0": [33, 56], "1": [34, 57], "2": [35, 58], "3": [36, 59], "4": [37,
+    BLOCKING GSUB.lookup_list {"31": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["matraI
+done

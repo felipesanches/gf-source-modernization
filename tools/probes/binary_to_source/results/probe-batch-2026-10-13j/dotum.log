@@ -1,0 +1,7 @@
+Dotum-Regular                    RESIDUAL: 5 blocking row(s), functional PASS
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00547": ["glyph.00004", null], "glyph.00548": ["glyph.00005"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    BLOCKING vhea.min_bottom_side_bearing [-9, -7]
+    BLOCKING vhea.y_max_extent [1033, 1031]
+done

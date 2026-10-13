@@ -1,0 +1,33 @@
+IMFeGPit28P                      RESIDUAL: 4 blocking row(s), functional FAIL(shaping+rendering)
+    BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+    BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "salt": {"
+    BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+    BLOCKING head.font_direction_hint [0, 2]
+    functional:   cmap         PASS 373 codepoints, exact
+    functional:   shaping      FAIL 995467 runs shaped, 254 differ
+    functional:       - default features, singles: 1 of 373 runs differ
+    functional:       - default features, base+mark: 248 of 252 runs differ
+    functional:       - default features, base+mark+mark: 5 of 5 runs differ
+    functional:   rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 1 changed outlines draw different ink
+    functional:       - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 68px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 386 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+IMFeGPrm28P                      RESIDUAL: 4 blocking row(s), functional FAIL(shaping+rendering)
+    BLOCKING GSUB.script_list {"latn/dflt": {"lookups": {"1": [4, 1], "2": [8, 2], "3": [12, 3], "4": [19, 7],
+    BLOCKING GSUB.feature_list {"dlig": {"0": [7, 8]}, "hist": {"0": [3, 4]}, "liga": {"0": [6, 7]}, "ss01": {"
+    BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["s' look
+    BLOCKING head.font_direction_hint [0, 2]
+    functional:   cmap         PASS 354 codepoints, exact
+    functional:   shaping      FAIL 947623 runs shaped, 254 differ
+    functional:       - default features, singles: 1 of 354 runs differ
+    functional:       - default features, base+mark: 248 of 252 runs differ
+    functional:       - default features, base+mark+mark: 5 of 5 runs differ
+    functional:   rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 1 changed outlines draw different ink
+    functional:       - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 52px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 367 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+done

@@ -1,0 +1,5 @@
+Gaegu-Bold                       CLEAN: 0 blocking row(s), functional PASS
+Gaegu-Light                      RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING hmtx.1 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 1 unit(s) at uniFF15 (release 254, ours 255)
+Gaegu-Regular                    CLEAN: 0 blocking row(s), functional PASS
+done

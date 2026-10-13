@@ -38,6 +38,16 @@ The scratch dir keeps each font's `.glyphs`, `config.yaml`, build and diffenator
   differently? (results/legacy-kern-pairs.txt)
 - `check_weight_class_refactor.py <.glyphs>...`: does tools/workarounds.py's weight_class
   behave exactly as before its FEA writer was split out (for the binaries' usWeightClass)?
+- `same_sources.py <repos dir> [repo ...]`: did a re-land give each family the same sources as
+  the generation before (`<repo>.prev`), once the `.glyphs` date and the master UUIDs babelfont
+  makes up on every run are set aside? SAME / DIFFERENT / NO-PREV per repository.
+- `gate_trace.sh <google/fonts> <probe_batch scratch>`: re-runs only the table gate on each
+  style of a probe_batch.sh run with GATE_TRACE=1: why its GSUB lookup-order arbitration
+  refuses, and which rows still block (results/gate-trace-2026-10-13j.txt).
+- `gsub_lookups.py <release.ttf> <build.ttf>`: how the two GSUB lookup lists line up (type,
+  flags, the lookups a chaining rule calls, each feature's lookup indices).
+- `gdef_classes.py <release.ttf> <build.ttf>`: do the fonts' GDEF classes differ glyph by glyph,
+  or only by glyph name (a release with no glyph names)?
 - `babelfont/rebuild.sh <empty dir>`: rebuilds the babelfont the "after" runs used, from public
   upstream plus `babelfont/measure-integration.diff`, and checks it is the measured tree. The
   patch series in `babelfont/sr-aef-uncompile-fixes/` and `babelfont/ttf-static-font-fidelity/`

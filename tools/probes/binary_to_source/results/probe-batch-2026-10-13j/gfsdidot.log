@@ -1,0 +1,14 @@
+GFSDidot-Regular                 RESIDUAL: 0 blocking row(s), functional FAIL(shaping+rendering)
+    functional:   cmap         PASS 1104 codepoints, exact
+    functional:   shaping      FAIL 1848234 runs shaped, 20624 differ
+    functional:       - default features, pairs: 414 of 663404 runs differ
+    functional:       - default features, words: 18790 of 650426 runs differ
+    functional:       - GSUB c2sc on: 150 of 246849 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 15 word diffs (0 / 15 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 15 word(s) render differently (>8 px at 16 ppem), confirmed: 'Άναχαϊμ' 337px, 'Ύπαρχος' 334px, 'Άλμπρεχτσμπεργκερ' 305px, 'Άγχεσμος' 304px, 'Αχαΐας' 297px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1105 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+done

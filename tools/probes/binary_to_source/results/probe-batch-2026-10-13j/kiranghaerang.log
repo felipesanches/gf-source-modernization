@@ -1,0 +1,10 @@
+KirangHaerang-Regular            RESIDUAL: 0 blocking row(s), functional FAIL(cmap)
+    functional:   cmap         FAIL 3158 codepoints, 1 problem(s)
+    functional:       - 4 codepoint(s) map to a different glyph: U+D683 .notdef.2764/_notdef.2764; U+D685 .notdef.2765/_notdef.2765; U+D6FD .notdef.2792/_notdef.2792; U+D700 .notdef.2793/_notdef.2793
+    functional:   shaping      PASS 7608672 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 9 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 5638 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+done

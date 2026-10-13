@@ -1236,7 +1236,10 @@ def arbitrate_gsub_lookup_order(rows, shipped, built):
                 print("TRACE gsub: the corpus never fired the features")
             # The corpus never triggered these features, so it has not tested them.
             return rows, []
-    except Exception:
+    except Exception as exc:
+        # refused, as for any condition not met; say why, or a crash reads as a verdict
+        if os.environ.get("GATE_TRACE"):
+            print("TRACE gsub: refused on %s: %s" % (type(exc).__name__, exc))
         return rows, []
     keep = [r for r in rows if r not in gsub_rows]
     how = ("the same GSUB rules in a different order and differently packed -- the "

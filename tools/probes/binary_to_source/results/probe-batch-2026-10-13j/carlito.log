@@ -1,0 +1,9 @@
+Carlito-Bold                     RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+Carlito-BoldItalic               RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+Carlito-Italic                   RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+Carlito-Regular                  RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+done

@@ -1,0 +1,23 @@
+Yinmar-Regular                   RESIDUAL: 6 blocking row(s), functional FAIL(shaping+rendering+line_spacing)
+    BLOCKING GSUB.script_list {"mym2/dflt": {"lookups": {"2": [3, 2], "3": [2, 3], "4": [5, 4], "5": [4, 5]}}}
+    BLOCKING GSUB.feature_list {"blwf": {"0": [0, 1], "1": [2, 4], "2": [3, 5], "3": [21, 32], "4": [22, 33], "
+    BLOCKING GSUB.lookup_list {"0": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[u1008
+    BLOCKING feat: whole-table difference
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING morx: whole-table difference
+    functional:   cmap         PASS 191 codepoints, exact
+    functional:   shaping      FAIL 80657 runs shaped, 19621 differ
+    functional:       - default features, singles: 60 of 191 runs differ
+    functional:       - default features, pairs: 236 of 13924 runs differ
+    functional:       - default features, base+mark: 373 of 7021 runs differ
+    functional:       - ... 11 more
+    functional:   rendering    FAIL diffenator3 59 glyph / 15 word diffs (59 / 15 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 59 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+103B 687px, U+1063 590px, U+102B 476px, U+1083 449px, U+1068 393px
+    functional:       - diffenator3: 15 word(s) render differently (>8 px at 16 ppem), confirmed: 'ဤေ' 392px, 'လျှို့ဝှက်' 359px, 'ဥ္ေၾ' 236px, 'ဥ္းၿ' 211px, 'ဖိဳးျ' 174px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - x-height as layout engines read it (CSS ex / cap units): release None, build 500 (the release's OS/2 v1 has no sxHeight; engines measure the outline)
+    functional:       - cap height as layout engines read it (CSS ex / cap units): release None, build 700 (the release's OS/2 v1 has no sCapHeight; engines measure the outline)
+    functional:   advances     PASS 247 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+done

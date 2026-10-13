@@ -1,0 +1,5 @@
+NanumMyeongjo-Bold               CLEAN: 0 blocking row(s), functional PASS
+NanumMyeongjo-ExtraBold          RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING head.font_direction_hint [1, 2]
+NanumMyeongjo-Regular            CLEAN: 0 blocking row(s), functional PASS
+done

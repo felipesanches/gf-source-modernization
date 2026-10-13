@@ -1,0 +1,39 @@
+GFSNeohellenic                   RESIDUAL: 0 blocking row(s), functional FAIL(cmap)
+    functional:   cmap         FAIL 1104 codepoints, 1 problem(s)
+    functional:       - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+2116 Numero sign/Numero_sign
+    functional:   shaping      PASS 1672095 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1105 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+GFSNeohellenicBold               RESIDUAL: 3 blocking row(s), functional FAIL(cmap+shaping)
+    BLOCKING GPOS.script_list [{"grek/dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    functional:   cmap         FAIL 876 codepoints, 1 problem(s)
+    functional:       - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+2116 Numero sign/Numero_sign
+    functional:   shaping      FAIL 984768 runs shaped, 10439 differ
+    functional:       - default features, base+mark: 8740 of 9191 runs differ
+    functional:       - default features, base+mark+mark: 1690 of 1690 runs differ
+    functional:       - default features, kern+mark: 9 of 9 runs differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 877 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+GFSNeohellenicBoldItalic         CLEAN: 0 blocking row(s), functional PASS
+GFSNeohellenicItalic             RESIDUAL: 0 blocking row(s), functional FAIL(shaping+rendering)
+    functional:   cmap         PASS 879 codepoints, exact
+    functional:   shaping      FAIL 996700 runs shaped, 33893 differ
+    functional:       - default features, pairs: 61 of 315565 runs differ
+    functional:       - default features, words: 32410 of 650382 runs differ
+    functional:       - GSUB fina off: 1097 of 2718 runs differ
+    functional:       - ... 1 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 27 word diffs (0 / 27 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 27 word(s) render differently (>8 px at 16 ppem), confirmed: 'Αλγοϋποδοχείς' 411px, 'ΕΒΡΑΪΚΩΝ' 323px, 'Άλτσχαουζεν' 248px, 'ΈκτασηΞηράς' 245px, 'ΜΩΡΑΪΤΗΣ' 241px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 880 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+done
