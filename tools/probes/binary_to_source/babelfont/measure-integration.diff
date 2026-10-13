@@ -2533,6 +2533,43 @@ index 00000000..f5760a44
 +assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
 +data = data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe")
 +open("dupnames.ttf", "wb").write(data)
+diff --git a/sr-aef/resources/make_noname.py b/sr-aef/resources/make_noname.py
+new file mode 100644
+index 00000000..5a5fa6f8
+--- /dev/null
++++ b/sr-aef/resources/make_noname.py
+@@ -0,0 +1,18 @@
++"""Writes noname.ttf, whose post table (format 3) names no glyph: glyph 1 is
++encoded (U+0061), glyph 2 is not. fontTools reads them as .notdef, a and
++glyph00002: python3 make_noname.py"""
++from fontTools.fontBuilder import FontBuilder
++from fontTools.ttLib.tables._g_l_y_f import Glyph
++
++order = [".notdef", "a", "extra"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("a"): "a"})
++fb.setupGlyf({name: Glyph() for name in order})
++fb.setupHorizontalMetrics({name: (500, 0) for name in order})
++fb.setupHorizontalHeader()
++fb.setupPost()
++fb.font["post"].formatType = 3.0
++fb.font["head"].created = fb.font["head"].modified = 0
++fb.font.recalcTimestamp = False
++fb.save("noname.ttf")
+diff --git a/sr-aef/resources/noname.ttf b/sr-aef/resources/noname.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..4470a7d67b87b691a4cedd916a99c431a80ca394
+GIT binary patch
+literal 368
+zcmZQzWME+6U}#`qW?)FpO)OyGVc5dJz$gF|HA&B@OaszDz~}=aGEx&$;>8>u0NFi2
+zY?c8OU|?kY24o)rVwH^Ck_yHzKo$cd2aw>%$xluM@qm06Ai<HFSW&>h!oUP%zW`!|
+zg8bqVki9_p01%%6<Q5=aD715TJipCX24-fEI$VGmY!XNoqz?=rwgZ`P5tsy61Z)>r
+w1mp%30N2R?HWj2&1n4%9IU+zeD*$O0AO!If|Nn=O{}*7`!vOIQP#y;W0D!wAumAu6
+
+literal 0
+HcmV?d00001
+
 diff --git a/sr-aef/src/gpos.rs b/sr-aef/src/gpos.rs
 index ebbd1a75..532157cc 100644
 --- a/sr-aef/src/gpos.rs
@@ -2556,7 +2593,7 @@ index ebbd1a75..532157cc 100644
                  .insert(name.clone(), base_glyphs_anchors.clone());
              new_names.push(name);
 diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
-index 1b9eb7c6..cfa143fd 100644
+index 1b9eb7c6..c202fd27 100644
 --- a/sr-aef/src/lib.rs
 +++ b/sr-aef/src/lib.rs
 @@ -137,6 +137,8 @@ pub struct UncompileContext<'a> {
@@ -2688,7 +2725,7 @@ index 1b9eb7c6..cfa143fd 100644
          let statements = self
              .features
              .entry(feature_tag.to_string().into())
-@@ -1173,6 +1234,68 @@ pub fn uncompile_bytes(
+@@ -1173,6 +1234,70 @@ pub fn uncompile_bytes(
  /// This partially decompiles the font, giving you the component parts so that you can
  /// put them where you want them. Useful for font editors and other tools that want the
  /// data but don't want to go all the way to a fea file.
@@ -2702,7 +2739,9 @@ index 1b9eb7c6..cfa143fd 100644
 +        .map(|gid| {
 +            SmolStr::new(match glyph_names.get(gid) {
 +                Some(name) if !name.is_synthesized() => name.to_string(),
-+                // a glyph the font leaves unnamed, named as fontTools names it
++                // a glyph the font leaves unnamed, named as fontTools names one
++                // that no cmap entry names
++                _ if gid.to_u32() == 0 => ".notdef".to_string(),
 +                _ => format!("glyph{:05}", gid.to_u32()),
 +            })
 +        })
@@ -2757,7 +2796,7 @@ index 1b9eb7c6..cfa143fd 100644
  pub fn uncompile_context<'a>(font: &'a skrifa::FontRef) -> Result<UncompileContext<'a>, ReadError> {
      UncompileContext::new(font)
  }
-@@ -1182,6 +1305,30 @@ mod tests {
+@@ -1182,6 +1307,30 @@ mod tests {
      use fea_rs_ast::AsFea;
  
      use super::*;
@@ -2788,7 +2827,7 @@ index 1b9eb7c6..cfa143fd 100644
      #[test]
      fn test_uncompile_static() {
          let data = std::fs::read("resources/test.ttf").unwrap();
-@@ -1197,7 +1344,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
+@@ -1197,7 +1346,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
  
  markClass grave <anchor 200 150> @bottomleft;
  markClass acute <anchor 350 0> @bottomleft;
@@ -2797,7 +2836,7 @@ index 1b9eb7c6..cfa143fd 100644
  lookup gsub_single_1 {
      sub a by b;
  } gsub_single_1;
-@@ -1252,7 +1399,7 @@ lookup gsub_single_6 {
+@@ -1252,7 +1401,7 @@ lookup gsub_single_6 {
  lookup gpos_mark_to_base_1 {
      pos base A
          <anchor 150 100> mark @bottomleft
@@ -2806,10 +2845,22 @@ index 1b9eb7c6..cfa143fd 100644
  } gpos_mark_to_base_1;
  lookup gpos_single_1 {
      pos A 10;
-@@ -1658,6 +1805,36 @@ lookup gpos_pair_1;
+@@ -1658,6 +1807,48 @@ lookup gpos_pair_1;
          );
      }
  
++    #[test]
++    fn test_unnamed_glyph_names() {
++        // a post table of format 3 names no glyph; glyph 1 is encoded, and a
++        // converter names an encoded glyph for its codepoint itself
++        let data = std::fs::read("resources/noname.ttf").unwrap();
++        let fontref = skrifa::FontRef::new(&data).unwrap();
++        assert_eq!(
++            unique_glyph_names(&fontref),
++            [".notdef", "glyph00001", "glyph00002"]
++        );
++    }
++
 +    #[test]
 +    fn test_unique_glyph_names() {
 +        // the post table names glyphs 2 and 3 both "dupe"
@@ -2843,7 +2894,7 @@ index 1b9eb7c6..cfa143fd 100644
      #[test]
      fn test_uncompile_size_feature() {
          let data = std::fs::read("resources/size.ttf").unwrap();
-@@ -1786,8 +1963,8 @@ GlyphClassDef [b], [a], [c d], [];
+@@ -1786,8 +1977,8 @@ GlyphClassDef [b], [a], [c d], [];
  } GDEF;
  
  markClass c <anchor 0 500> @left;
@@ -2854,7 +2905,7 @@ index 1b9eb7c6..cfa143fd 100644
  markClass c <anchor 0 500> @topleft;
  lookup gpos_mark_to_base_1 {
      pos base a
-@@ -1797,11 +1974,11 @@ lookup gpos_mark_to_base_1 {
+@@ -1797,11 +1988,11 @@ lookup gpos_mark_to_base_1 {
  } gpos_mark_to_base_1;
  lookup gpos_mark_to_ligature_1 {
      pos ligature a
