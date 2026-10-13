@@ -6,20 +6,21 @@ Subject: [PATCH 5/5] sr-aef: name glyphs as a feature file can
 
 A post table can name a glyph with characters a feature file cannot hold:
 GFS Neohellenic has "Numero sign", which the uncompiled GDEF class read as two
-glyphs, "Numero" and "sign", and fontc refused the features; Kirang Haerang
-names thousands of glyphs ".notdef", made unique as ".notdef.487" and the
-like, which a feature file refuses too. After the names are made unique, a
-character outside A-Z a-z 0-9 . _ - becomes _, a name starting with a digit
-or a hyphen gets a leading _, one starting with a period other than .notdef
-and .null has it replaced by _, and the names are made unique again.
+glyphs, "Numero" and "sign", and fontc refused the features. A character
+outside A-Z a-z 0-9 . _ - now becomes _, and a name starting with a digit or a
+hyphen gets a leading _. Kirang Haerang names thousands of glyphs ".notdef",
+which were made unique as ".notdef.487" and the like, names a feature file
+refuses (it takes a leading period only in .notdef): a repeated name starting
+with a period now becomes "_notdef.1" and so on. A name the font gives once,
+such as ".ttfautohint", is kept.
 
 Assisted by an AI agent (Claude Opus 5.5)
 ---
- sr-aef/src/lib.rs | 62 ++++++++++++++++++++++++++++++++++++++++++++---
- 1 file changed, 59 insertions(+), 3 deletions(-)
+ sr-aef/src/lib.rs | 63 ++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 59 insertions(+), 4 deletions(-)
 
 diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
-index 91258169..363fc525 100644
+index 91258169..632791be 100644
 --- a/sr-aef/src/lib.rs
 +++ b/sr-aef/src/lib.rs
 @@ -1234,9 +1234,9 @@ pub fn uncompile_bytes(
@@ -35,20 +36,15 @@ index 91258169..363fc525 100644
  pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
      let glyph_names = GlyphNames::new(font);
      let stated: Vec<SmolStr> = (0..glyph_names.num_glyphs())
-@@ -1250,6 +1250,38 @@ pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
+@@ -1250,6 +1250,33 @@ pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
              )
          })
          .collect();
-+    // made unique first, as fontTools does: a repeated ".notdef" becomes ".notdef.1",
-+    // which then needs the same treatment as any other name a feature file refuses
-+    let unique = unique_names(stated);
-+    unique_names(unique.iter().map(|name| fea_glyph_name(name)).collect())
++    unique_names(stated.iter().map(|name| fea_glyph_name(name)).collect())
 +}
 +
 +/// A glyph name a feature file can hold: a character outside `A-Z a-z 0-9 . _ -`
-+/// becomes `_`; a name starting with a digit or a hyphen gets a leading `_`, and
-+/// one starting with a period other than `.notdef` and `.null` has it replaced by
-+/// `_`.
++/// becomes `_`, and a name starting with a digit or a hyphen gets a leading `_`.
 +fn fea_glyph_name(name: &str) -> SmolStr {
 +    let mut out: String = name
 +        .chars()
@@ -62,19 +58,33 @@ index 91258169..363fc525 100644
 +        .collect();
 +    if out.is_empty() || out.starts_with(|c: char| c.is_ascii_digit() || c == '-') {
 +        out.insert(0, '_');
-+    } else if out.starts_with('.') && out != ".notdef" && out != ".null" {
-+        out.replace_range(0..1, "_");
 +    }
 +    SmolStr::new(out)
 +}
 +
 +/// Each name kept, unless an earlier glyph has it: then the first free `.1`, `.2`,
-+/// ... suffix, as fontTools does.
++/// ... suffix, as fontTools does. A feature file takes a name starting with a period
++/// only as `.notdef`, so a repeated `.notdef` (or any name starting with a period)
++/// becomes `_notdef.1` and so on.
 +fn unique_names(stated: Vec<SmolStr>) -> Vec<SmolStr> {
      let all: HashSet<SmolStr> = stated.iter().cloned().collect();
      let mut taken: HashSet<SmolStr> = HashSet::new();
      stated
-@@ -1275,6 +1307,30 @@ mod tests {
+@@ -1258,8 +1285,12 @@ pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
+             if taken.insert(name.clone()) {
+                 return name;
+             }
++            let base = match name.strip_prefix('.') {
++                Some(rest) => format!("_{rest}"),
++                None => name.to_string(),
++            };
+             (1..)
+-                .map(|n| SmolStr::new(format!("{name}.{n}")))
++                .map(|n| SmolStr::new(format!("{base}.{n}")))
+                 .find(|candidate| !all.contains(candidate) && taken.insert(candidate.clone()))
+                 .unwrap_or(name)
+         })
+@@ -1275,6 +1306,30 @@ mod tests {
      use fea_rs_ast::AsFea;
  
      use super::*;
@@ -88,19 +98,19 @@ index 91258169..363fc525 100644
 +        assert_eq!(fea_glyph_name("-x"), "_-x");
 +        assert_eq!(fea_glyph_name(""), "_");
 +        assert_eq!(fea_glyph_name(".null"), ".null");
-+        assert_eq!(fea_glyph_name(".notdef.487"), "_notdef.487");
++        assert_eq!(fea_glyph_name(".ttfautohint"), ".ttfautohint");
 +    }
 +
 +    #[test]
 +    fn test_unique_fea_names() {
-+        // unique, then valid, then unique again, as unique_glyph_names does
-+        let stated: Vec<SmolStr> = [".notdef", ".notdef", "a b", "a_b"]
++        let stated: Vec<SmolStr> = [".notdef", ".notdef", "a b", "a_b", ".notdef"]
 +            .iter()
-+            .map(SmolStr::new)
++            .map(|n| fea_glyph_name(n))
 +            .collect();
-+        let unique = unique_names(stated);
-+        let names = unique_names(unique.iter().map(|n| fea_glyph_name(n)).collect());
-+        assert_eq!(names, vec![".notdef", "_notdef.1", "a_b", "a_b.1"]);
++        assert_eq!(
++            unique_names(stated),
++            vec![".notdef", "_notdef.1", "a_b", "a_b.1", "_notdef.2"]
++        );
 +    }
      #[test]
      fn test_uncompile_static() {

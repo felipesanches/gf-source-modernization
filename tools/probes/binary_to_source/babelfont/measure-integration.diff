@@ -2175,7 +2175,7 @@ index ebbd1a75..532157cc 100644
                  .insert(name.clone(), base_glyphs_anchors.clone());
              new_names.push(name);
 diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
-index 1b9eb7c6..363fc525 100644
+index 1b9eb7c6..632791be 100644
 --- a/sr-aef/src/lib.rs
 +++ b/sr-aef/src/lib.rs
 @@ -137,6 +137,8 @@ pub struct UncompileContext<'a> {
@@ -2307,7 +2307,7 @@ index 1b9eb7c6..363fc525 100644
          let statements = self
              .features
              .entry(feature_tag.to_string().into())
-@@ -1173,6 +1234,70 @@ pub fn uncompile_bytes(
+@@ -1173,6 +1234,69 @@ pub fn uncompile_bytes(
  /// This partially decompiles the font, giving you the component parts so that you can
  /// put them where you want them. Useful for font editors and other tools that want the
  /// data but don't want to go all the way to a fea file.
@@ -2327,16 +2327,11 @@ index 1b9eb7c6..363fc525 100644
 +            )
 +        })
 +        .collect();
-+    // made unique first, as fontTools does: a repeated ".notdef" becomes ".notdef.1",
-+    // which then needs the same treatment as any other name a feature file refuses
-+    let unique = unique_names(stated);
-+    unique_names(unique.iter().map(|name| fea_glyph_name(name)).collect())
++    unique_names(stated.iter().map(|name| fea_glyph_name(name)).collect())
 +}
 +
 +/// A glyph name a feature file can hold: a character outside `A-Z a-z 0-9 . _ -`
-+/// becomes `_`; a name starting with a digit or a hyphen gets a leading `_`, and
-+/// one starting with a period other than `.notdef` and `.null` has it replaced by
-+/// `_`.
++/// becomes `_`, and a name starting with a digit or a hyphen gets a leading `_`.
 +fn fea_glyph_name(name: &str) -> SmolStr {
 +    let mut out: String = name
 +        .chars()
@@ -2350,14 +2345,14 @@ index 1b9eb7c6..363fc525 100644
 +        .collect();
 +    if out.is_empty() || out.starts_with(|c: char| c.is_ascii_digit() || c == '-') {
 +        out.insert(0, '_');
-+    } else if out.starts_with('.') && out != ".notdef" && out != ".null" {
-+        out.replace_range(0..1, "_");
 +    }
 +    SmolStr::new(out)
 +}
 +
 +/// Each name kept, unless an earlier glyph has it: then the first free `.1`, `.2`,
-+/// ... suffix, as fontTools does.
++/// ... suffix, as fontTools does. A feature file takes a name starting with a period
++/// only as `.notdef`, so a repeated `.notdef` (or any name starting with a period)
++/// becomes `_notdef.1` and so on.
 +fn unique_names(stated: Vec<SmolStr>) -> Vec<SmolStr> {
 +    let all: HashSet<SmolStr> = stated.iter().cloned().collect();
 +    let mut taken: HashSet<SmolStr> = HashSet::new();
@@ -2367,8 +2362,12 @@ index 1b9eb7c6..363fc525 100644
 +            if taken.insert(name.clone()) {
 +                return name;
 +            }
++            let base = match name.strip_prefix('.') {
++                Some(rest) => format!("_{rest}"),
++                None => name.to_string(),
++            };
 +            (1..)
-+                .map(|n| SmolStr::new(format!("{name}.{n}")))
++                .map(|n| SmolStr::new(format!("{base}.{n}")))
 +                .find(|candidate| !all.contains(candidate) && taken.insert(candidate.clone()))
 +                .unwrap_or(name)
 +        })
@@ -2378,7 +2377,7 @@ index 1b9eb7c6..363fc525 100644
  pub fn uncompile_context<'a>(font: &'a skrifa::FontRef) -> Result<UncompileContext<'a>, ReadError> {
      UncompileContext::new(font)
  }
-@@ -1182,6 +1307,30 @@ mod tests {
+@@ -1182,6 +1306,30 @@ mod tests {
      use fea_rs_ast::AsFea;
  
      use super::*;
@@ -2392,24 +2391,24 @@ index 1b9eb7c6..363fc525 100644
 +        assert_eq!(fea_glyph_name("-x"), "_-x");
 +        assert_eq!(fea_glyph_name(""), "_");
 +        assert_eq!(fea_glyph_name(".null"), ".null");
-+        assert_eq!(fea_glyph_name(".notdef.487"), "_notdef.487");
++        assert_eq!(fea_glyph_name(".ttfautohint"), ".ttfautohint");
 +    }
 +
 +    #[test]
 +    fn test_unique_fea_names() {
-+        // unique, then valid, then unique again, as unique_glyph_names does
-+        let stated: Vec<SmolStr> = [".notdef", ".notdef", "a b", "a_b"]
++        let stated: Vec<SmolStr> = [".notdef", ".notdef", "a b", "a_b", ".notdef"]
 +            .iter()
-+            .map(SmolStr::new)
++            .map(|n| fea_glyph_name(n))
 +            .collect();
-+        let unique = unique_names(stated);
-+        let names = unique_names(unique.iter().map(|n| fea_glyph_name(n)).collect());
-+        assert_eq!(names, vec![".notdef", "_notdef.1", "a_b", "a_b.1"]);
++        assert_eq!(
++            unique_names(stated),
++            vec![".notdef", "_notdef.1", "a_b", "a_b.1", "_notdef.2"]
++        );
 +    }
      #[test]
      fn test_uncompile_static() {
          let data = std::fs::read("resources/test.ttf").unwrap();
-@@ -1197,7 +1346,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
+@@ -1197,7 +1345,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
  
  markClass grave <anchor 200 150> @bottomleft;
  markClass acute <anchor 350 0> @bottomleft;
@@ -2418,7 +2417,7 @@ index 1b9eb7c6..363fc525 100644
  lookup gsub_single_1 {
      sub a by b;
  } gsub_single_1;
-@@ -1252,7 +1401,7 @@ lookup gsub_single_6 {
+@@ -1252,7 +1400,7 @@ lookup gsub_single_6 {
  lookup gpos_mark_to_base_1 {
      pos base A
          <anchor 150 100> mark @bottomleft
@@ -2427,7 +2426,7 @@ index 1b9eb7c6..363fc525 100644
  } gpos_mark_to_base_1;
  lookup gpos_single_1 {
      pos A 10;
-@@ -1658,6 +1807,36 @@ lookup gpos_pair_1;
+@@ -1658,6 +1806,36 @@ lookup gpos_pair_1;
          );
      }
  
@@ -2464,7 +2463,7 @@ index 1b9eb7c6..363fc525 100644
      #[test]
      fn test_uncompile_size_feature() {
          let data = std::fs::read("resources/size.ttf").unwrap();
-@@ -1786,8 +1965,8 @@ GlyphClassDef [b], [a], [c d], [];
+@@ -1786,8 +1964,8 @@ GlyphClassDef [b], [a], [c d], [];
  } GDEF;
  
  markClass c <anchor 0 500> @left;
@@ -2475,7 +2474,7 @@ index 1b9eb7c6..363fc525 100644
  markClass c <anchor 0 500> @topleft;
  lookup gpos_mark_to_base_1 {
      pos base a
-@@ -1797,11 +1976,11 @@ lookup gpos_mark_to_base_1 {
+@@ -1797,11 +1975,11 @@ lookup gpos_mark_to_base_1 {
  } gpos_mark_to_base_1;
  lookup gpos_mark_to_ligature_1 {
      pos ligature a
