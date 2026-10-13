@@ -129,6 +129,13 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Slackey | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
 | Sunshiney | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
 | Permanent Marker | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
+| PT Serif Caption | 2 | CLEAN (2026-10-13); no source block; googlefontdirectory-hg keeps ParaType's own builds (ofl/ptserif/src/PTZ55F.ttf, PTZ56F.ttf) |
+| PT Sans | 4 | CLEAN (2026-10-13); no source block; no source in googlefontdirectory-hg |
+
+make_plan.py, measuring PT Serif Caption, showed what four plans written by hand had left out:
+PT Serif, PT Sans Narrow and PT Sans Caption keep a legacy kern table beside GPOS kern, which
+the sources do not carry, and Oranienbaum had no plan at all (hinted; the same kern table). All
+four were given the disclosure and re-landed: CLEAN.
 
 Corrected 2026-10-13 (same day): an earlier version of this paragraph excluded Schoolbell,
 Walter Turncoat, Slackey, Sunshiney, Permanent Marker, Rock Salt and Unkempt because their
