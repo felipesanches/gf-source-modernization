@@ -34,7 +34,7 @@ MONOREPO = "googlefonts/googlefontdirectory-hg"
 
 
 def git(repo, *args):
-    r = subprocess.run(["git", "-C", repo, *args], capture_output=True, text=True,
+    r = subprocess.run(["git", "-c", "core.quotePath=off", "-C", repo, *args], capture_output=True, text=True,
                        errors="replace")
     return r.stdout if r.returncode == 0 else None
 

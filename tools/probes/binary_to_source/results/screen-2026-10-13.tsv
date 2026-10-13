@@ -134,8 +134,8 @@ rocksalt	NO-SOURCES	https://github.com/googlefonts/googlefontdirectory-hg	52f780
 ruslandisplay	NO-SOURCE-BLOCK			no	1				NO-REPO
 sansation	NO-SOURCES	https://github.com/googlefonts/googlefontdirectory-hg	52f780bc9d19	yes	6			0	BINARY-ONLY	
 schoolbell	NO-SOURCES	https://github.com/googlefonts/googlefontdirectory-hg	52f780bc9d19	yes	1			0	BINARY-ONLY	
-shipporimincho	NO-SOURCES	https://github.com/fontdasu/ShipporiMincho	63431fee6c2c	yes	5	glyphs:3	glyphs:6	0	HAS-SOURCES	source/ShipporiMincho.zip;source/Step1ShipporiMinLatenOnly.zip;source/Step2ShipporiMinJapaneseOnly.zip
-shipporiminchob1	NO-SOURCES	https://github.com/fontdasu/ShipporiMincho	63431fee6c2c	yes	5	glyphs:3	glyphs:6	0	HAS-SOURCES	source/ShipporiMincho.zip;source/Step1ShipporiMinLatenOnly.zip;source/Step2ShipporiMinJapaneseOnly.zip
+shipporimincho	NO-SOURCES	https://github.com/fontdasu/ShipporiMincho	63431fee6c2c	yes	5	glyphs:3	glyphs:8	0	HAS-SOURCES	source/ShipporiMincho.zip;source/Step1ShipporiMinLatenOnly.zip;source/Step2ShipporiMinJapaneseOnly.zip
+shipporiminchob1	NO-SOURCES	https://github.com/fontdasu/ShipporiMincho	63431fee6c2c	yes	5	glyphs:3	glyphs:8	0	HAS-SOURCES	source/ShipporiMincho.zip;source/Step1ShipporiMinLatenOnly.zip;source/Step2ShipporiMinJapaneseOnly.zip
 siemreap	NO-SOURCES	https://github.com/danhhong/Siemreap	3ce4cbfc6b81	yes	1			0	BINARY-ONLY	
 singleday	NO-SOURCE-BLOCK			no	1				NO-REPO
 sitara	NO-SOURCE-BLOCK			no	4				NO-REPO
