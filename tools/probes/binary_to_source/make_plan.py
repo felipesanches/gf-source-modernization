@@ -108,21 +108,23 @@ def disclosures(per_style):
                 "" if one else " per style")
         out.append("The released font%s %s %s. These sources carry no TrueType instructions, "
                    "so the build is hinted by ttfautohint: the outlines, spacing and layout are "
-                   "the release's, its rendering at small sizes under a TrueType interpreter is "
+                   "the %s, its rendering at small sizes under a TrueType interpreter is "
                    "not. Hinting is not compared by the gates."
-                   % ("" if one else "s", "is" if one else "are", what))
+                   % ("" if one else "s", "is" if one else "are", what,
+                      "release's" if one else "releases'"))
     if fpgm_only and not hinted:
         dropout = all(v["prep"] == "PUSHW 511 SCANCTRL PUSHB 4 SCANTYPE" for v in fpgm_only)
         out.append("The release%s no glyph instructions: %s font program defines functions that "
                    "no glyph calls, and %s control value program %s. These sources carry no "
                    "TrueType instructions, and the build is hinted by ttfautohint, as for every "
                    "release that has a font program: the outlines, spacing and layout are the "
-                   "release's, its rendering at small sizes under a TrueType interpreter is not. "
+                   "%s, its rendering at small sizes under a TrueType interpreter is not. "
                    "Hinting is not compared by the gates."
                    % (" has" if one else "s have", "its" if one else "their",
                       "its" if one else "their",
                       "only turns on dropout control (SCANCTRL 511, SCANTYPE 4)" if dropout
-                      else "sets up the rasterizer without hinting any glyph"))
+                      else "sets up the rasterizer without hinting any glyph",
+                      "release's" if one else "releases'"))
     return out
 
 
