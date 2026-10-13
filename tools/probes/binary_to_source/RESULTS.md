@@ -113,6 +113,7 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Chewy | 1 | CLEAN (2026-10-13); legacy kern (399 pairs) as GPOS and hinting disclosed |
 | Coming Soon | 1 | CLEAN (2026-10-13); its GPOS kern kept and its legacy kern table (861 pairs, read only without GPOS) not carried; unhinted glyphs; disclosed |
 | Crafty Girls | 1 | CLEAN (2026-10-13); legacy kern (375 pairs) as GPOS and hinting disclosed |
+| Fontdiner Swanky | 1 | CLEAN (2026-10-13); legacy kern (3290 pairs) as GPOS and unhinted glyphs disclosed |
 
 Not binary-only after all (2026-10-13): Schoolbell, Walter Turncoat, Slackey, Sunshiney,
 Permanent Marker and Rock Salt are on the NO-SOURCES list, but their upstream_info.md records
