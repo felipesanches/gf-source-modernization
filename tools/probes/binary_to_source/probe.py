@@ -6,8 +6,8 @@ For each shipped .ttf given: babelfont reads it and writes a .glyphs (with the w
 workarounds of tools/workarounds.py: fontc 1.0.0 drops a single master's instance weightClass
 and widthClass, so a usWeightClass other than 400 or usWidthClass other than 5 travels as FEA,
 read from the binary); gftools-builder builds
-that .glyphs (config: static, the source's own glyph names, no autohinting unless the binary
-was ttfautohinted); the build is gated against the shipped binary exactly as tools/land.py
+that .glyphs (config: the one tools/land.py writes, from tools/recipe.py); the build is gated
+against the shipped binary exactly as tools/land.py
 gates a conversion -- table gate (tools/table_gate.py), the release's exact codepoints,
 tools/functional_gate.py (cmap, shaping, rendering, names, line spacing, advances, GDEF).
 
@@ -23,6 +23,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(os.path.dirname(HERE)))   # tools/
 import land  # noqa: E402
+import recipe  # noqa: E402
 import functional_gate  # noqa: E402
 import workarounds  # noqa: E402
 from fontTools.ttLib import TTFont  # noqa: E402
@@ -48,12 +49,12 @@ def probe(scratch, shipped):
         if value != default:
             text = open(glyphs, encoding="utf-8").read()
             open(glyphs, "w", encoding="utf-8").write(fea(text, value))
-    autohint = "ttfautohint" in (f["name"].getDebugName(5) or "") or "TTFA" in f
+    # the config tools/land.py writes for a converted family, so that a probe's verdict is
+    # the landing's: the recipe keeps transformed and nested components, overlaps and the
+    # source's glyph names, and autohints only a release that has a font program
     with open(os.path.join(work, "sources", "config.yaml"), "w") as fh:
-        fh.write("buildVariable: false\nproductionNames: false\n")
-        if not autohint:
-            fh.write("autohintTTF: false\n")
-        fh.write("sources:\n  - %s.glyphs\n" % stem)
+        fh.write("buildVariable: false\nremoveOutlineOverlaps: false\n"
+                 + recipe.builder_keys([shipped], False) + "sources:\n  - %s.glyphs\n" % stem)
     b = subprocess.run([B3, "sources/config.yaml"], cwd=work, capture_output=True, text=True)
     ttf_dir = os.path.join(work, "fonts", "ttf")
     built = sorted(os.listdir(ttf_dir)) if os.path.isdir(ttf_dir) else []
