@@ -123,7 +123,18 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Porter Sans Block | 1 | CLEAN (2026-10-13); its GPOS kern kept and its legacy kern table (2209 pairs) not carried; hinting disclosed |
 | Gugi | 1 | CLEAN (2026-10-13) once its Korean names (Windows 0x0412) reach the build: the Glyphs writer gave them the BCP-47 code "ko-KR", which fontc does not read; #117 writes them as Name Table Entry, and its new commit keeps the Macintosh English records out of those; hinting disclosed |
 
-Not binary-only after all (2026-10-13): Schoolbell, Walter Turncoat, Slackey, Sunshiney,
-Permanent Marker, Rock Salt and Unkempt are on the NO-SOURCES list, but their upstream_info.md records
-.vfb/.sfd sources ("legacy formats only"). They belong to the SFD/VFB tracks, which convert a
-source (after establishing which format the release was mastered from), not to this one.
+Corrected 2026-10-13 (same day): an earlier version of this paragraph excluded Schoolbell,
+Walter Turncoat, Slackey, Sunshiney, Permanent Marker, Rock Salt and Unkempt because their
+upstream_info.md says "legacy formats only (.vfb/.sfd)". That is wrong: no .vfb, .sfd or other
+source file is in their googlefontdirectory-hg directory at the recorded commit or anywhere in
+its history (`screen.py`), nor for Ubuntu Condensed. They are binary-only. The same claim is
+wrong in 16 upstream_info.md files, and 21 state a Source path that is not in the repository
+(`check_info_claims.py`); the corrections go to google/fonts.
+
+Two landed families are not binary-only (`screen.py`, which opens .zip files): Almarai's
+repository (JuergenWillrodt/Almarai 7307ede5d42b) keeps its four UFO sources zipped
+(source/1-drawings/Almarai-*.ufo.zip), and Dongle's (yangheeryu/Dongle f7127c4d2450) keeps
+Dongle.glyphs in sources/Dongle.zip (the three .glyphs were zipped in 2021, "Updating for GF").
+Their landed repositories leave this track: they are to be converted from those sources,
+whichever is closest to the release. Zipped sources also hide Gowun Batang, Shippori Mincho,
+Zen Antique (Soft), Zen Maru Gothic and Zen Old Mincho from a census that lists files.

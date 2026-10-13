@@ -1,0 +1,57 @@
+family_dir	claimed	at_commit	in_history	verdict
+apache/creepstercaps	sfd	glyphs	glyphs,sfd	ONLY-EARLIER (stated source path creepstercaps/src/ is not in the repository)
+apache/irishgrover	vfb	vfb	vfb	OK (stated source path irishgrover/src/ is not in the repository)
+apache/montez	sfd,vfb	vfb	vfb	WRONG
+apache/mountainsofchristmas	sfd,vfb	sfd,vfb	sfd,vfb	OK
+apache/permanentmarker	sfd,vfb			WRONG
+apache/rancho	sfd,vfb	vfb	vfb	WRONG
+apache/redressed	sfd,vfb	vfb	vfb	WRONG
+apache/rochester	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path apache/rochester/src/ is not in the repository)
+apache/rocksalt	sfd,vfb			WRONG
+apache/satisfy	sfd,vfb	vfb	vfb	WRONG
+apache/schoolbell	sfd,vfb			WRONG
+apache/slackey	sfd,vfb			WRONG
+apache/smokum	sfd,vfb	sfd,vfb	sfd,vfb	OK
+apache/specialelite	sfd,vfb	vfb	vfb	WRONG
+apache/sunshiney	sfd,vfb			WRONG
+apache/syncopate	sfd,vfb	vfb	vfb	WRONG
+apache/ultra	sfd,vfb	sfd,vfb	sfd,vfb	OK
+apache/unkempt	sfd,vfb			WRONG
+apache/walterturncoat	sfd,vfb			WRONG
+apache/yellowtail	sfd,vfb	sfd,vfb	sfd,vfb	OK
+ofl/italiana	sfd,vfb	sfd,vfb	sfd,vfb	OK (stated source path italiana/src/ is not in the repository)
+ofl/karlatamilinclined	vfb	vfb	vfb	OK (stated source path karlatamilinclined/src/ is not in the repository)
+ofl/karlatamilupright	vfb	vfb	vfb	OK (stated source path karlatamilupright/src/ is not in the repository)
+ofl/keaniaone	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path keaniaone/src/ is not in the repository)
+ofl/kellyslab	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path kellyslab/src/ is not in the repository)
+ofl/kenia	sfd,vfb	sfd,vfb	sfd,vfb	OK (stated source path kenia/src/ is not in the repository)
+ofl/kottaone	sfd,vfb	sfd,vfb	sfd,vfb	OK (stated source path kottaone/src/ is not in the repository)
+ofl/kristi	sfd	sfd	sfd	OK (stated source path kristi/src/ is not in the repository)
+ofl/kronaone	sfd,vfb	sfd,vfb	sfd,vfb	OK (stated source path kronaone/src/ is not in the repository)
+ofl/mousememoirs	vfb	vfb	vfb	OK
+ofl/mrbedfort	sfd,vfb	sfd,vfb	sfd,vfb	OK
+ofl/mrdafoe	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/mrdafoe/src/ is not in the repository)
+ofl/mrdehaviland	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/mrdehaviland/src/ is not in the repository)
+ofl/mrssaintdelafield	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/mrssaintdelafield/src/ is not in the repository)
+ofl/mrssheppards	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/mrssheppards/src/ is not in the repository)
+ofl/mysteryquest	vfb	vfb	vfb	OK
+ofl/passionone	sfd,vfb	sfd,vfb	sfd,vfb	OK
+ofl/patrickhand	sfd	sfd	sfd	OK
+ofl/patrickhandsc	sfd	sfd	sfd	OK
+ofl/patuaone	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/patuaone/src/ is not in the repository)
+ofl/peralta	vfb	vfb	vfb	OK
+ofl/petitformalscript	vfb	vfb	vfb	OK
+ofl/piedra	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/piedra/src/ is not in the repository)
+ofl/pirataone	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/pirataone/src/ is not in the repository)
+ofl/play	sfd	sfd	sfd	OK
+ofl/poetsenone	vfb	vfb	vfb	OK
+ofl/pollerone	sfd,vfb	sfd,vfb	sfd,vfb	OK
+ofl/poly	sfd,vfb	sfd,vfb	sfd,vfb	OK
+ofl/pompiere	sfd,vfb	sfd,vfb	sfd,vfb	OK
+ofl/portlligatsans	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/portlligatsans/src/ is not in the repository)
+ofl/portlligatslab	sfd,vfb	glyphs	glyphs,sfd,vfb	ONLY-EARLIER (stated source path ofl/portlligatslab/src/ is not in the repository)
+ofl/princesssofia	vfb	vfb	vfb	OK
+ofl/prostoone	vfb	vfb	vfb	OK
+ufl/ubuntu	sfd,vfb	vfb	vfb	WRONG
+ufl/ubuntucondensed	sfd,vfb			WRONG
+ufl/ubuntumono	sfd,vfb	vfb	vfb	WRONG

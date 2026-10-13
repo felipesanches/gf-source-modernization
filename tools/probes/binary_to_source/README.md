@@ -24,6 +24,15 @@ The scratch dir keeps each font's `.glyphs`, `config.yaml`, build and diffenator
 
 ## The other scripts
 
+- `screen.py <census tsv> <google/fonts> <rev> <repo archive>`: for each family the census gave no
+  buildable source (NO-SOURCES, NO-SOURCE-BLOCK, NOT-MIRRORED), does the repository METADATA.pb
+  records hold any source file -- at the recorded commit, inside a .zip there, or anywhere in
+  its history (googlefontdirectory-hg: the family's directory only)? BINARY-ONLY /
+  HAS-SOURCES / NO-REPO (results/screen-2026-10-13.tsv). Sources kept in another repository
+  (Noto CJK: Adobe's Source Han) and generators (Libre Barcode) it cannot see.
+- `check_info_claims.py <google/fonts> <rev> <repo archive>`: which upstream_info.md files claim
+  source formats in their "Buildable" row that the recorded repository never held, or state a
+  "Source path" that is not in it (results/upstream-info-claims-2026-10-13.tsv).
 - `legacy_kern_pairs.py <scratch> <shipped.ttf>...`: when a release kerns with a legacy `kern`
   table and its source through a GPOS kern feature, which kerned pairs does HarfBuzz shape
   differently? (results/legacy-kern-pairs.txt)
