@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:33:42 +0100
-Subject: [PATCH 12/19] ttf: read a legacy kern table as kerning
+Subject: [PATCH 12/20] ttf: read a legacy kern table as kerning
 
 A font that kerns with a kern table and no GPOS kern feature lost all its
 kerning. Its horizontal format 0 pairs are now the default master's kerning,
@@ -117,7 +117,7 @@ index 7eca6df9..7fe984d8 100644
 +legacy_kern(fb.font, {("a", "f_f"): -40})
  save(fb, "GdefClasses.ttf")
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index c324f0ee..a15021f3 100644
+index e95f23ca..200ce9e3 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -12,7 +12,10 @@ use ordered_float::OrderedFloat;
@@ -196,7 +196,7 @@ index c324f0ee..a15021f3 100644
  /// keeps them instead of deriving its own (which gives no GDEF at all when no
  /// glyph is a mark, ligature or anchored base)
 @@ -991,6 +1043,19 @@ mod tests {
-             .contains("= [a gravecomb acutecomb tildecomb f_f];"));
+             .contains("= [a gravecomb acutecomb tildecomb f_f\n];"));
      }
  
 +    #[test]

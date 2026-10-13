@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:25:35 +0100
-Subject: [PATCH 10/19] ttf: state GDEF's glyph classes in the features
+Subject: [PATCH 10/20] ttf: state GDEF's glyph classes in the features
 
 A compiler derives GDEF glyph classes from glyph categories and anchors, and
 writes no GDEF at all when no glyph is a mark, a ligature or an anchored base.
@@ -94,7 +94,7 @@ index 88c64317..43243b03 100644
  """)
  fb.save("GdefClasses.ttf")
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 5e4f854d..c324f0ee 100644
+index a34a3469..e95f23ca 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -549,6 +549,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel

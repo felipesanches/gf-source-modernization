@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 17:05:22 +0100
-Subject: [PATCH 16/19] ttf: name glyphs uniquely, as the uncompiled features
+Subject: [PATCH 16/20] ttf: name glyphs uniquely, as the uncompiled features
  do
 
 A post table may give two glyphs the same name, and a source with a
@@ -75,7 +75,7 @@ index 2bdcca66..c0548bd6 100644
 +assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
 +open("DuplicateNames.ttf", "wb").write(data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe"))
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 86a57613..696205bb 100644
+index dec73bc1..556d00a9 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -382,17 +382,10 @@ fn load_metrics(

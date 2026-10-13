@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:20:48 +0100
-Subject: [PATCH 09/19] ttf: a named class's code is its members, without
+Subject: [PATCH 09/20] ttf: a named class's code is its members, without
  brackets
 
 A feature class's code is its member list; the writers add the brackets
@@ -61,7 +61,7 @@ index 551c7d99..88c64317 100644
      GlyphClassDef [a gravecomb], [f_f], [acutecomb tildecomb], ;
  } GDEF;
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 3fd6487b..5e4f854d 100644
+index 3fd6487b..a34a3469 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -528,10 +528,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
@@ -93,7 +93,7 @@ index 3fd6487b..5e4f854d 100644
 +        assert!(font
 +            .features
 +            .to_fea()
-+            .contains("= [a gravecomb acutecomb tildecomb f_f];"));
++            .contains("= [a gravecomb acutecomb tildecomb f_f\n];"));
 +    }
 +
      #[test]

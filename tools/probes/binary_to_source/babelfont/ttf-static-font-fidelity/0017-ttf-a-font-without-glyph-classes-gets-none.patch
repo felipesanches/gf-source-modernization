@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
 Date: Fri, 9 Oct 2026 03:59:52 +0100
-Subject: [PATCH 17/19] ttf: a font without glyph classes gets none
+Subject: [PATCH 17/20] ttf: a font without glyph classes gets none
 
 Without GDEF glyph classes a shaper guesses each glyph's class as it is used: from
 its codepoint, or kept through a substitution, so the same glyph can be a mark
@@ -18,7 +18,7 @@ Assisted by an AI agent (Claude Opus 5.5)
  1 file changed, 27 insertions(+), 25 deletions(-)
 
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 696205bb..6cc994a0 100644
+index 556d00a9..5dfaa4ca 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -416,31 +416,21 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo

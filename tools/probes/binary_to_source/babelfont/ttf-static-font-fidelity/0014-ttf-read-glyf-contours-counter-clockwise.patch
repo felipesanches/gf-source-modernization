@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:42:18 +0100
-Subject: [PATCH 14/19] ttf: read glyf contours counter-clockwise
+Subject: [PATCH 14/20] ttf: read glyf contours counter-clockwise
 
 TrueType contours run clockwise and a source's counter-clockwise; a compiler
 reverses a source's contours on the way out. The reader kept the glyf
@@ -16,7 +16,7 @@ Assisted by an AI agent (Claude Opus 5.5)
  1 file changed, 28 insertions(+), 1 deletion(-)
 
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 356bfcc0..e5f117a6 100644
+index 016833f0..aa239bc1 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -858,7 +858,16 @@ fn load_layer(

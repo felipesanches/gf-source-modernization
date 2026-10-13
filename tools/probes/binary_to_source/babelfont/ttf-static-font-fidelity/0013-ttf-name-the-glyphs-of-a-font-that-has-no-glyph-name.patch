@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:39:18 +0100
-Subject: [PATCH 13/19] ttf: name the glyphs of a font that has no glyph names
+Subject: [PATCH 13/20] ttf: name the glyphs of a font that has no glyph names
 
 A format 3 post table names no glyph, and the names are synthesized as gidN,
 so glyph 0 came out as gid0 and a compiler added a .notdef of its own in
@@ -73,7 +73,7 @@ index 7fe984d8..d6ca6807 100644
 +fb.setupPost(keepGlyphNames=False)
 +save(fb, "Unnamed.ttf")
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index a15021f3..356bfcc0 100644
+index 200ce9e3..016833f0 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -47,9 +47,47 @@ pub fn load<T: AsRef<std::path::Path>>(path: T) -> Result<Font, BabelfontError>

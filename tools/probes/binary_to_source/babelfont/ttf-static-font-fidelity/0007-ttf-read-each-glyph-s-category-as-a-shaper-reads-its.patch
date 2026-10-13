@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:15:30 +0100
-Subject: [PATCH 07/19] ttf: read each glyph's category as a shaper reads its
+Subject: [PATCH 07/20] ttf: read each glyph's category as a shaper reads its
  class
 
 The reader left every glyph's category unset, so a compiler guessed one from
@@ -29,7 +29,7 @@ Assisted by an AI agent (Claude Opus 5.5)
  create mode 100644 babelfont/resources/ttf/GdefClasses.ttf
 
 diff --git a/Cargo.lock b/Cargo.lock
-index 43668dcf..6dc0cb0c 100644
+index fa742a6a..0b82a552 100644
 --- a/Cargo.lock
 +++ b/Cargo.lock
 @@ -147,6 +147,7 @@ dependencies = [
@@ -41,7 +41,7 @@ index 43668dcf..6dc0cb0c 100644
   "itertools",
   "kurbo",
 diff --git a/babelfont/Cargo.toml b/babelfont/Cargo.toml
-index 6706803b..fa950b21 100644
+index ec96e148..979a3558 100644
 --- a/babelfont/Cargo.toml
 +++ b/babelfont/Cargo.toml
 @@ -57,7 +57,7 @@ robocjk = []

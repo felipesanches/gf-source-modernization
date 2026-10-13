@@ -1,0 +1,93 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
+Date: Fri, 9 Oct 2026 06:06:03 +0100
+Subject: [PATCH 20/20] ttf: leave out a name record that does not decode
+
+skrifa reads a name record in an encoding it does not decode (MacJapanese) as an
+empty string, which the reader kept as that language's name: Shippori Mincho's
+Japanese family name became "" under "ja" (the Windows record, which decodes, is
+"ja-JP"). An empty decoded name is now left out.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/StaticLegacy.ttf | Bin 1132 -> 1172 bytes
+ babelfont/resources/ttf/make_fixtures.py |   4 ++++
+ babelfont/src/convertors/ttf.rs          |  23 ++++++++++++++++++++++-
+ 3 files changed, 26 insertions(+), 1 deletion(-)
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+index a5e7a554d17df0ae784c41e0734b1c6b05b91d67..2518f32f8f97f4642ff8d956023f661ad29f9e44 100644
+GIT binary patch
+delta 171
+zcmaFEF@<x&0*wv-1urr%Fk3J%FnlS<FD|*Rd?}lOfkg+%Pi0^Pl1z*q(?eq_Hl8SE
+zV&-C~n{3By=*|d~;Ra$31|<e&21XW6AX|n(3(96<;A3!uvIT(b5GY%afrlXp%oYUe
+v&6_-rS&5@*YtzA|+f6SfA7FOjG6*+FHmEh|Vqlu=$S6KJfRSUeDvLV+oM0hH
+
+delta 126
+zcmbQj`G#Y{0u9fz%Q+bsm@OC>7|s;r7nfXDzLd?tz`_FLr!p`CNhU^*)E!0<8&4E7
+zF>^4aO}1k;)MsX3WZ?wL$}lJ~K-f$Sd<=F_wg8ar17!;`@GwM8-o~sn`2n*F69dy^
+LLl&9IUMyY!ks%h8
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index 915c8eab..ad2039b1 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -17,6 +17,7 @@ StaticLegacy.ttf is a static font as an old FontForge build leaves it:
+   right), not by the composite's own (40).
+ * gravecomb (U+0300, advance 0) and commaaccent (unencoded, advance 120): with no
+   GDEF, a shaper takes the first for a mark and the second for a base.
++* a Japanese family name in a Windows record and in a MacJapanese one.
+ * a legacy kern table of two subtables: x H -30, H x -20, and x x 5 in both;
+   x gravecomb -15, which a shaper never applies (it skips marks).
+ 
+@@ -123,6 +124,9 @@ fb.setupOS2(
+ fb.setupPost()
+ fb.font["head"].fontRevision = 2.005
+ fb.font["head"].lowestRecPPEM = 9
++# a Japanese family name, in a Windows record and a MacJapanese one
++fb.font["name"].setName("\u3057\u3063\u307d\u308a", 1, 3, 1, 0x411)
++fb.font["name"].setName("\u3057\u3063\u307d\u308a", 1, 1, 1, 11)
+ legacy_kern(fb.font, {("x", "H"): -30, ("x", "x"): 5, ("x", "gravecomb"): -15},
+             {("H", "x"): -20, ("x", "x"): 5})
+ save(fb, "StaticLegacy.ttf")
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index 8cb43574..285ca045 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -109,7 +109,12 @@ fn name_id_to_i18n(fontref: &skrifa::FontRef, name_id: StringId) -> crate::I18ND
+             } else {
+                 lang
+             };
+-            dict.insert(lang.to_string(), name.to_string());
++            // a record skrifa cannot decode (a MacJapanese one, say) reads as
++            // empty, and is left out rather than stated as an empty name
++            let value = name.to_string();
++            if !value.is_empty() {
++                dict.insert(lang.to_string(), value);
++            }
+         }
+     }
+     dict
+@@ -1234,6 +1239,22 @@ mod tests {
+         assert_eq!(component.reference, "dupe.1");
+     }
+ 
++    #[test]
++    fn test_name_read_from_any_record() {
++        // the MacJapanese record cannot be decoded; the Windows one can
++        let font = load(STATIC_LEGACY).unwrap();
++        let ja = font
++            .names
++            .family_name
++            .0
++            .iter()
++            .find(|(lang, _)| lang.starts_with("ja"));
++        assert_eq!(
++            ja.map(|(_, v)| v.as_str()),
++            Some("\u{3057}\u{3063}\u{307d}\u{308a}")
++        );
++    }
++
+     #[test]
+     fn test_font_revision() {
+         // head.fontRevision 2.005 (0x00020148)
