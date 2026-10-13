@@ -169,3 +169,13 @@ Dongle.glyphs in sources/Dongle.zip (the three .glyphs were zipped in 2021, "Upd
 Their landed repositories leave this track: they are to be converted from those sources,
 whichever is closest to the release. Zipped sources also hide Gowun Batang, Shippori Mincho,
 Zen Antique (Soft), Zen Maru Gothic and Zen Old Mincho from a census that lists files.
+
+Tried and reverted (2026-10-13): Kirang Haerang, Single Day and Gothic A1 each have 2 to 4
+glyphs whose release contour has off-, on- and off-curve points at one place (a corner of
+straight lines); the build keeps one off-curve point there and rounds the corner by under a
+unit (the rendering check sees no ink difference). Dropping such off-curve points in the
+reader fixed those glyphs but changed the point structure of others: Kirang Haerang went
+from 4 differing glyphs to 418, and to 159 when only an off-curve point between two real
+on-curve points was dropped (skrifa draws TrueType's implied on-curve points, so the reader
+cannot tell them from stored ones in every case). The reader keeps its points as drawn; the
+step that merges coincident points and keeps the off-curve one is still to be found.

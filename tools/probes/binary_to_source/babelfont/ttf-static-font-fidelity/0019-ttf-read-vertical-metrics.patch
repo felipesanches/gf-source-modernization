@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
 Date: Fri, 9 Oct 2026 04:40:17 +0100
-Subject: [PATCH 19/22] ttf: read vertical metrics
+Subject: [PATCH 19/21] ttf: read vertical metrics
 
 vhea and vmtx were not read, so a font with vertical metrics (most CJK fonts) compiled
 without them. vhea's ascender, descender and line gap become the master's vhea metrics;

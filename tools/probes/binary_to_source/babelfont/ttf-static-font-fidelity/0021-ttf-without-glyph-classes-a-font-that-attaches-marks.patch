@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Tue, 13 Oct 2026 07:28:04 +0100
-Subject: [PATCH 21/22] ttf: without glyph classes, a font that attaches marks
+Subject: [PATCH 21/21] ttf: without glyph classes, a font that attaches marks
  marks its marks
 
 A font without GDEF glyph classes gets every glyph a base, so that the compiled

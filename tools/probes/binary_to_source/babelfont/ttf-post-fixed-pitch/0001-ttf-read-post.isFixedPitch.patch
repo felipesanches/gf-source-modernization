@@ -26,7 +26,7 @@ delta 48
 xcmZo+YhjzPSac2p1Jelx1_m1jMj#2q>H*>T8+XVvP4;7CpB%u*3dS#(WB>+|3mgCd
 
 diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
-index 3f75b7b8..aa9a869f 100644
+index 262af356..05312a5d 100644
 --- a/babelfont/resources/ttf/make_fixtures.py
 +++ b/babelfont/resources/ttf/make_fixtures.py
 @@ -34,7 +34,7 @@ component of A), an unencoded alternate of A reached by salt, and A Aring kerned
@@ -38,7 +38,7 @@ index 3f75b7b8..aa9a869f 100644
  
  MarkNoGdef.ttf has no GDEF but a mark feature attaching gravecomb (U+0300,
  advance 0) to a; commaaccent is unencoded, and uni034F (COMBINING GRAPHEME JOINER) a
-@@ -203,7 +203,7 @@ fb.setupHorizontalMetrics({".notdef": (500, 0), "A": (600, 50), "dupa": (600, 60
+@@ -202,7 +202,7 @@ fb.setupHorizontalMetrics({".notdef": (500, 0), "A": (600, 50), "dupa": (600, 60
  fb.setupHorizontalHeader(ascent=800, descent=-200)
  fb.setupNameTable({"familyName": "Fixture Duplicate Names", "styleName": "Regular"})
  fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
@@ -48,7 +48,7 @@ index 3f75b7b8..aa9a869f 100644
  data = open("DuplicateNames.ttf", "rb").read()
  # both names become "dupe": the same length, so nothing in the post table moves
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index a5550942..3c690cee 100644
+index 15c9a4d8..54fa8f11 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -194,6 +194,10 @@ fn load_custom_ot_values(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(
@@ -62,7 +62,7 @@ index a5550942..3c690cee 100644
      // A variable font's classes are those of its default instance only
      if font.axes.is_empty() {
          ot.os2_us_weight_class = Some(os2.us_weight_class());
-@@ -1166,6 +1170,13 @@ mod tests {
+@@ -1121,6 +1125,13 @@ mod tests {
          // REGULAR | USE_TYPO_METRICS: the compiler sets REGULAR from the style
          assert_eq!(ot.os2_fs_selection, Some(1 << 7));
          assert_eq!(ot.head_lowest_rec_ppem, Some(9));

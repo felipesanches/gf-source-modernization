@@ -230,16 +230,17 @@ class Font:
 def canonical_contour(pts):
     if len(pts) > 1 and pts[0] == pts[-1]:
         pts = pts[:-1]
-    # points that draw nothing: a point repeating the one before it (a zero-length segment;
-    # Kirang Haerang's U+D683 records one, the build does not), and an off-curve point on top
-    # of an adjacent on-curve point (that quadratic is the straight line between them; as
-    # tools/outline_match.py's drop_degenerate)
+    # points that draw nothing: a point repeating the one before it (a zero-length segment),
+    # and an off-curve point between two on-curve points, on top of one of them (that
+    # quadratic is the straight line between them). An off-curve point next to another
+    # off-curve point is kept: the two imply an on-curve point midway.
     pts = [p for i, p in enumerate(pts) if i == 0 or p != pts[i - 1]]
     if len(pts) > 1 and pts[0] == pts[-1]:
         pts = pts[:-1]
     n = len(pts)
     pts = [p for i, p in enumerate(pts)
-           if p[2] or not any(q[2] and q[:2] == p[:2] for q in (pts[i - 1], pts[(i + 1) % n]))]
+           if p[2] or not (pts[i - 1][2] and pts[(i + 1) % n][2]
+                           and p[:2] in (pts[i - 1][:2], pts[(i + 1) % n][:2]))]
     n = len(pts)
     keep = []
     for i, p in enumerate(pts):
