@@ -140,6 +140,14 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Gamja Flower, Hi Melody | 2 | CLEAN (2026-10-13) once glyph 0 pairs with glyph 0 (an empty .notdef in a font with no glyph names); the designers' repositories hold the fonts as built |
 | Poor Story | 1 | CLEAN (2026-10-13), as Gamja Flower; no source block, but yoondesign/Yoonfont-PoorStory holds the fonts as built (its upstream_info.md missed it: corrected) |
 | Nanum Gothic | 3 | CLEAN (2026-10-13) on the converter and gates of that day; googlefontdirectory-hg and naver/nanumfont hold the fonts as built |
+| Nanum Brush Script | 1 | CLEAN (2026-10-13, the final converter of that day) once glyph names suit a feature file |
+| Lato | 18 | CLEAN (2026-10-13) once the reader marks a no-GDEF font's Mn glyphs when it attaches marks (135 marks lost before), the table gate takes HarfBuzz's Mn-only synthesis (U+0488, U+0489, U+20DD are bases), unnamed glyphs are named as fontTools names them (glyph00094) and the functional gate pairs those names in a release with no glyph names; googlefonts/LatoGFVersion holds the fonts as built |
+
+PT Mono is not binary-only: it has no source block, so screen.py did not scan it, but
+googlefontdirectory-hg keeps ofl/ptmono/src/PTM55FT.vfb (its upstream_info.md missed it:
+corrected). It probes CLEAN from its binary once the reader reads post.isFixedPitch, a
+reference for its .vfb conversion. Of the other NO-REPO families only Ruslan Display has a
+source in that mirror (excluded already).
 
 make_plan.py, measuring PT Serif Caption, showed what four plans written by hand had left out:
 PT Serif, PT Sans Narrow and PT Sans Caption keep a legacy kern table beside GPOS kern, which
