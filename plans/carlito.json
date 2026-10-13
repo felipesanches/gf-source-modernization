@@ -1,9 +1,7 @@
 {
   "repo": "carlito",
   "commits": [],
-  "earlier_sources": [
-    "https://github.com/googlefonts/carlito at 3a810cab78ebd6e2e4eed42af9e8453c4f9b850a: the fonts as built (4 font files); no source."
-  ],
+  "earlier_sources": [],
   "disclose": [
     "The released fonts are hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the releases', its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
   ]

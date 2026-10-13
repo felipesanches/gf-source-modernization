@@ -26,7 +26,9 @@ A row of kind `binary` (families-binary.tsv) is a family that exists only as the
 fonts Google Fonts ships: step 1 imports its google/fonts directory at a commit
 of google/fonts, step 4 converts the binaries themselves with babelfont's TTF
 reader (no filters; usWeightClass, read from the binary, travels as FEA as for an
-.sfd) and retires them.
+.sfd) and retires them. When google/fonts takes the fonts from a googlefonts repository
+that already exists (`base` is not google/fonts: carlito), step 1 is that repository's
+history at the recorded commit instead, and the landing is a branch for a pull request.
 
 A row of kind `glyphs` (families.tsv) says the source already IS a .glyphs file,
 <base>@<commit>:<source>: step 1 is that upstream history, step 3 must be empty
@@ -108,6 +110,17 @@ BRANCH = {"hg": "main", "fork": "modernize-sfd-to-glyphs",
           "allerta": "add-allerta-stencil", "upstream": "modernize-sfd-to-glyphs",
           # googlefonts/<repo> created empty, to carry the upstream's history
           "glyphs": "main", "binary": "main"}
+
+
+def on_upstream(rows):
+    """A binary family whose fonts google/fonts takes from a googlefonts repository that
+    already exists (carlito): step 1 is that repository's history, and the landing is a
+    branch for a pull request to it, not a fresh repository."""
+    return rows[0]["kind"] == "binary" and rows[0]["base"] != "google/fonts"
+
+
+def branch_of(rows):
+    return "modernize-binary-to-glyphs" if on_upstream(rows) else BRANCH[rows[0]["kind"]]
 
 
 # Why a per-release flag differs between the styles of one family.
@@ -242,6 +255,10 @@ def start(repo, rows, d):
             subtree out of a repository that serves the whole library is not
             practical. The commit named above is the provenance.""") % (
             fam, commit_id[:12], path, commit_id, base))
+    if kind == "binary" and on_upstream(rows):
+        sh("git", "clone", "-q", mirror, d)
+        git(d, "checkout", "-q", "-b", branch_of(rows), commit_id)
+        return None
     if kind == "binary":
         sh("git", "init", "-q", "-b", "main", d)
         path = "%s/%s" % (lic, fam)
@@ -339,7 +356,12 @@ def template(repo, rows, d, plan=None):
     readme += ("\nHow these sources were checked against the released fonts (the tools, this "
                "family's plan and the logs): %s.\n" % EVIDENCE_URL)
     earlier = (plan or {}).get("earlier_sources", [])
-    if earlier:
+    if earlier and rows[0]["kind"] == "binary":
+        # a binary family's earlier copies are fonts as built, often the very files
+        # Google Fonts ships: what none of them holds is a source
+        readme += ("\n## Earlier sources\n\nWhere this family was published before, kept on "
+                   "record; none of these holds a source of it:\n\n")
+    elif earlier:
         readme += ("\n## Earlier sources\n\nOther sources of this family, kept on record; "
                    "none of them is what Google Fonts ships:\n\n")
         readme += "".join("- %s\n" % t for t in earlier)
@@ -715,7 +737,7 @@ def main():
     made = edits(repo, rows, d, plan)
     head, results, functional = convert(repo, rows, d, plan, bf_rev, len(made))
     kind = rows[0]["kind"]
-    if kind == "upstream":
+    if kind == "upstream" or on_upstream(rows):
         git(d, "remote", "set-url", "origin", "https://github.com/%s.git" % rows[0]["base"])
     else:
         git(d, "remote", "remove", "origin", check=False)
@@ -737,7 +759,7 @@ def main():
     summary = "; ".join("%s=%s functional=%s" % (st, x if x is not None else "BUILD", fverdict(st))
                         for st, x, _ in results)
     with open(LANDED, "a") as fh:
-        fh.write("\t".join([repo, BRANCH[kind], head, str(n), status, summary]) + "\n")
+        fh.write("\t".join([repo, branch_of(rows), head, str(n), status, summary]) + "\n")
     print("%s: %s @ %s, %d commits, %d edit(s): %s" % (repo, status, head, n, len(made), summary))
     for st, x, blocking in results:
         for b in blocking[:6]:
