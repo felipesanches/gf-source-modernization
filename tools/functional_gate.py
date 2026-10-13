@@ -251,9 +251,11 @@ def correspondence(A, B):
     by outline identity (a unique normalised outline + advance). A glyph with no
     counterpart keys as "<release name>" or "+<build name>"."""
     ka, kb = {}, {}
+    # glyph 0 is .notdef in every font, whatever it is called and however it is drawn
+    ka[A.order[0]] = kb[B.order[0]] = A.order[0]
     if A.has_names and B.has_names:
         for n in A.order:
-            if n in B.gid:
+            if n in B.gid and n not in ka and n not in kb:
                 ka[n] = kb[n] = n
     left_a = [n for n in A.order if n not in ka]
     left_b = set(n for n in B.order if n not in kb)
@@ -515,13 +517,23 @@ def check_cmap(A, B, ka, kb):
         fails.append("build loses %d codepoint(s): %s" % (len(lost), " ".join(u(c) for c in lost[:20])))
     if gained:
         fails.append("build gains %d codepoint(s): %s" % (len(gained), " ".join(u(c) for c in gained[:20])))
-    renamed, other = [], []
+    renamed, other, shared = [], [], []
+    # the names the release's post table gives: fontTools makes a repeated name unique
+    # (".notdef.1"), and post.mapping keeps what the table says
+    raw = getattr(A.tt["post"], "mapping", {}) or {}
+    times = {}
+    for n in A.order:
+        times[raw.get(n, n)] = times.get(raw.get(n, n), 0) + 1
     for cp in sorted(set(ua) & set(ub)):
         na, nb = ua[cp], ub[cp]
         if A.has_names and B.has_names:
             if na != nb:
                 same = A.outline(na) == B.outline(nb) and A.tt["hmtx"][na][0] == B.tt["hmtx"][nb][0]
-                (renamed if same else other).append("%s %s/%s" % (u(cp), na, nb))
+                if same and times.get(raw.get(na, na), 1) > 1:
+                    # a name the release gives several glyphs: no build can keep it
+                    shared.append("%s %s/%s" % (u(cp), raw.get(na, na), nb))
+                else:
+                    (renamed if same else other).append("%s %s/%s" % (u(cp), na, nb))
         elif ka[na] != kb[nb]:
             other.append("%s %s/%s" % (u(cp), na, nb))
     if renamed:
@@ -529,6 +541,10 @@ def check_cmap(A, B, ka, kb):
                      % (len(renamed), "; ".join(renamed[:10])))
     if other:
         fails.append("%d codepoint(s) map to a different glyph: %s" % (len(other), "; ".join(other[:10])))
+    if shared:
+        notes.append("%d codepoint(s) map to a glyph whose release name the release gives several "
+                     "glyphs; the build names it uniquely (same outline and advance): %s"
+                     % (len(shared), "; ".join(shared[:5])))
 
     def subtables(F):
         return {(st.platformID, st.platEncID): st for st in F.tt["cmap"].tables}

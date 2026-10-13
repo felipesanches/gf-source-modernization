@@ -1596,7 +1596,9 @@ def _effective_marks(path):
             cat = unicodedata.category(chr(cp))
         except ValueError:
             continue
-        if cat in ('Mn', 'Mc', 'Me') and cp not in _MN_DEFAULT_IGNORABLE:
+        # HarfBuzz synthesises a mark for a nonspacing mark (Mn) only; enclosing (Me) and
+        # spacing (Mc) marks it takes for bases (tools/probes/hb_synthesized_classes/)
+        if cat == 'Mn' and cp not in _MN_DEFAULT_IGNORABLE:
             marks.add(cp)
     return marks
 

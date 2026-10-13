@@ -1,0 +1,6 @@
+Mn U+0301              first a advance 400 -> MARK (kern applied across it)
+Me U+20DD              first a advance 500 -> base
+Me U+0488              first a advance 500 -> base
+Mc U+0903              first a advance 500 -> base
+Mn+ignorable U+034F    first a advance 400 -> MARK (kern applied across it)
+harfbuzz 0.53.3
