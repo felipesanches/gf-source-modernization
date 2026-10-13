@@ -122,6 +122,13 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Akronim | 1 | CLEAN (2026-10-13); legacy kern (1051 pairs) as GPOS and partial hinting disclosed |
 | Porter Sans Block | 1 | CLEAN (2026-10-13); its GPOS kern kept and its legacy kern table (2209 pairs) not carried; hinting disclosed |
 | Gugi | 1 | CLEAN (2026-10-13) once its Korean names (Windows 0x0412) reach the build: the Glyphs writer gave them the BCP-47 code "ko-KR", which fontc does not read; #117 writes them as Name Table Entry, and its new commit keeps the Macintosh English records out of those; hinting disclosed |
+| Rock Salt | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
+| Schoolbell | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
+| Unkempt | 2 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
+| Walter Turncoat | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
+| Slackey | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
+| Sunshiney | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
+| Permanent Marker | 1 | CLEAN (2026-10-13, probe_batch.sh + land_batch.sh; plan from make_plan.py) |
 
 Corrected 2026-10-13 (same day): an earlier version of this paragraph excluded Schoolbell,
 Walter Turncoat, Slackey, Sunshiney, Permanent Marker, Rock Salt and Unkempt because their
