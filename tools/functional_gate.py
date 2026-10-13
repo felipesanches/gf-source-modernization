@@ -96,6 +96,7 @@ import hashlib
 import itertools
 import json
 import math
+import re
 import os
 import shutil
 import subprocess
@@ -246,9 +247,11 @@ def canonical_contour(pts):
 def correspondence(A, B):
     """key_a[gid], key_b[gid]: a common key for glyphs that are the same glyph.
 
-    Glyph names when both fonts carry them (post 1/2): identical names correspond. What
-    is left pairs by codepoint (a glyph both cmaps assign to the same codepoint), then
-    by outline identity (a unique normalised outline + advance). A glyph with no
+    Glyph 0 corresponds to glyph 0. Glyph names when both fonts carry them (post 1/2):
+    identical names correspond. What is left pairs by codepoint (a glyph both cmaps assign
+    to the same codepoint); for a release with no names, by fontTools' name for an unnamed
+    glyph (glyphNNNNN, which the converter writes too); then by outline identity (a unique
+    normalised outline + advance). A glyph with no
     counterpart keys as "<release name>" or "+<build name>"."""
     ka, kb = {}, {}
     # glyph 0 is .notdef in every font, whatever it is called and however it is drawn
@@ -266,6 +269,15 @@ def correspondence(A, B):
         ka[na] = kb[nb] = na
         left_b.discard(nb)
     left_a = [n for n in A.order if n not in ka]
+    # a release with no glyph names: fontTools calls an unencoded glyph "glyph" and its
+    # five-digit glyph id, and the converter names the glyph it makes of it the same, so
+    # that name is the release glyph id it came from
+    if not A.has_names:
+        for n in left_a:
+            if re.fullmatch(r"glyph\d{5}", n) and n in left_b:
+                ka[n] = kb[n] = n
+                left_b.discard(n)
+        left_a = [n for n in A.order if n not in ka]
 
     def sig(F, n):
         return (F.outline(n), F.tt["hmtx"][n][0])
