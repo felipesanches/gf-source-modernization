@@ -56,7 +56,7 @@ index c0548bd6..2bc6ff6f 100644
      GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;
  } GDEF;
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 5dfaa4ca..3f266cc2 100644
+index f50675d1..b5251d35 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -512,6 +512,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel

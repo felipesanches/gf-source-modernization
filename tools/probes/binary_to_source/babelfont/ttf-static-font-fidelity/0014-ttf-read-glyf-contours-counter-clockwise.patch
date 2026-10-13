@@ -16,7 +16,7 @@ Assisted by an AI agent (Claude Opus 5.5)
  1 file changed, 28 insertions(+), 1 deletion(-)
 
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 016833f0..aa239bc1 100644
+index 55f4b7ee..c9010cd9 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -858,7 +858,16 @@ fn load_layer(
@@ -37,8 +37,8 @@ index 016833f0..aa239bc1 100644
              }
          }
          glyf::Glyph::Composite(c) => {
-@@ -1115,6 +1124,24 @@ mod tests {
-         assert!(font.features.to_fea().contains("sub uni0041 by gid3;"));
+@@ -1118,6 +1127,24 @@ mod tests {
+             .contains("sub uni0041 by glyph00003;"));
      }
  
 +    #[test]

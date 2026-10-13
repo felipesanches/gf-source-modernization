@@ -14,8 +14,8 @@ Assisted by an AI agent (Claude Opus 5.5)
 ---
  babelfont/resources/ttf/Unnamed.ttf      | Bin 0 -> 820 bytes
  babelfont/resources/ttf/make_fixtures.py |  20 ++++++++
- babelfont/src/convertors/ttf.rs          |  59 +++++++++++++++++++++++
- 3 files changed, 79 insertions(+)
+ babelfont/src/convertors/ttf.rs          |  62 +++++++++++++++++++++++
+ 3 files changed, 82 insertions(+)
  create mode 100644 babelfont/resources/ttf/Unnamed.ttf
 
 diff --git a/babelfont/resources/ttf/Unnamed.ttf b/babelfont/resources/ttf/Unnamed.ttf
@@ -73,7 +73,7 @@ index 7fe984d8..d6ca6807 100644
 +fb.setupPost(keepGlyphNames=False)
 +save(fb, "Unnamed.ttf")
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 200ce9e3..016833f0 100644
+index 200ce9e3..55f4b7ee 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -47,9 +47,47 @@ pub fn load<T: AsRef<std::path::Path>>(path: T) -> Result<Font, BabelfontError>
@@ -132,7 +132,7 @@ index 200ce9e3..016833f0 100644
  
      fn category(font: &Font, glyph: &str) -> (GlyphCategory, Option<String>) {
          let glyph = font.glyphs.get(glyph).unwrap();
-@@ -1056,6 +1095,26 @@ mod tests {
+@@ -1056,6 +1095,29 @@ mod tests {
          assert!(font.masters[0].kerning.is_empty());
      }
  
@@ -141,7 +141,7 @@ index 200ce9e3..016833f0 100644
 +        // post format 3: names follow the codepoints, everywhere they are used
 +        let font = load(UNNAMED).unwrap();
 +        let names: Vec<&str> = font.glyphs.iter().map(|g| g.name.as_str()).collect();
-+        assert_eq!(names, [".notdef", "uni0041", "uni00C5", "gid3"]);
++        assert_eq!(names, [".notdef", "uni0041", "uni00C5", "glyph00003"]);
 +        let component = font.glyphs.get("uni00C5").unwrap().layers[0]
 +            .components()
 +            .next()
@@ -153,7 +153,10 @@ index 200ce9e3..016833f0 100644
 +                .get(&("uni0041".into(), "uni00C5".into())),
 +            Some(&-50)
 +        );
-+        assert!(font.features.to_fea().contains("sub uni0041 by gid3;"));
++        assert!(font
++            .features
++            .to_fea()
++            .contains("sub uni0041 by glyph00003;"));
 +    }
 +
      #[test]

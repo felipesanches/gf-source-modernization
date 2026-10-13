@@ -18,7 +18,7 @@ Assisted by an AI agent (Claude Opus 5.5)
  1 file changed, 27 insertions(+), 25 deletions(-)
 
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 556d00a9..5dfaa4ca 100644
+index 1fcd5ba7..f50675d1 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -416,31 +416,21 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo

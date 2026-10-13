@@ -53,7 +53,7 @@ index d6ca6807..2bdcca66 100644
  
  
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index aa239bc1..dec73bc1 100644
+index c9010cd9..e86a9fca 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -613,8 +613,9 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel

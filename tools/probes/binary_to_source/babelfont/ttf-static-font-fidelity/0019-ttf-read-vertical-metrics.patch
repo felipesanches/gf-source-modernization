@@ -58,7 +58,7 @@ index 2bc6ff6f..915c8eab 100644
  fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
  fb.setupPost()
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 3f266cc2..8cb43574 100644
+index b5251d35..22c62faa 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -371,6 +371,11 @@ fn load_metrics(

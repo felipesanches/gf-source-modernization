@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:32:08 +0100
-Subject: [PATCH 1/5] sr-aef: write aalt's lookups out as rules
+Subject: [PATCH 1/6] sr-aef: write aalt's lookups out as rules
 
 An aalt block may hold only single and alternate substitution rules and
 feature references; fea-rs rejects a lookup reference there ("aalt can only

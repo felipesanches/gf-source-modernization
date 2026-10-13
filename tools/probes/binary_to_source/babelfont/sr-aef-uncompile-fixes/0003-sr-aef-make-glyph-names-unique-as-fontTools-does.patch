@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 17:04:12 +0100
-Subject: [PATCH 3/5] sr-aef: make glyph names unique as fontTools does
+Subject: [PATCH 3/6] sr-aef: make glyph names unique as fontTools does
 
 A post table may give two glyphs the same name (Sansation Light Italic names
 two glyphs ffi). The uncompiled features then named both alike, and a

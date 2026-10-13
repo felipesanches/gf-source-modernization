@@ -1,0 +1,39 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Tue, 13 Oct 2026 09:58:26 +0100
+Subject: [PATCH 6/6] sr-aef: name an unnamed glyph as fontTools does
+
+A glyph a font leaves unnamed (post format 3, or an empty post name) took
+skrifa's made-up name, "gid94"; fontTools calls it "glyph00094". Tools that
+pair a converted font's glyphs with the binary's by name then miss them: six
+of Lato's unnamed glyphs, same outline and advance, found no counterpart. An
+unnamed glyph is now "glyph" and its five-digit glyph id, as fontTools has it.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ sr-aef/src/lib.rs | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
+index 632791be..cfa143fd 100644
+--- a/sr-aef/src/lib.rs
++++ b/sr-aef/src/lib.rs
+@@ -1242,12 +1242,11 @@ pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
+     let stated: Vec<SmolStr> = (0..glyph_names.num_glyphs())
+         .map(GlyphId::new)
+         .map(|gid| {
+-            SmolStr::new(
+-                glyph_names
+-                    .get(gid)
+-                    .map(|s| s.to_string())
+-                    .unwrap_or_else(|| format!("gid{:04}", gid)),
+-            )
++            SmolStr::new(match glyph_names.get(gid) {
++                Some(name) if !name.is_synthesized() => name.to_string(),
++                // a glyph the font leaves unnamed, named as fontTools names it
++                _ => format!("glyph{:05}", gid.to_u32()),
++            })
+         })
+         .collect();
+     unique_names(stated.iter().map(|name| fea_glyph_name(name)).collect())

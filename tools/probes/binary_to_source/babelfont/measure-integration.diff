@@ -1021,7 +1021,7 @@ index 4a7caef3..76b44b3e 100644
 +    }
 +}
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index bcfc7fe3..75b47885 100644
+index bcfc7fe3..15c9a4d8 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -5,13 +5,20 @@ use fontdrasil::{
@@ -1691,7 +1691,7 @@ index bcfc7fe3..75b47885 100644
                      transform: our_affine.into(),
                      location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
                      format_specific: FormatSpecific::default(),
-@@ -600,3 +1012,323 @@ fn load_layer(
+@@ -600,3 +1012,326 @@ fn load_layer(
  
      Ok(layer)
  }
@@ -1931,7 +1931,7 @@ index bcfc7fe3..75b47885 100644
 +        // post format 3: names follow the codepoints, everywhere they are used
 +        let font = load(UNNAMED).unwrap();
 +        let names: Vec<&str> = font.glyphs.iter().map(|g| g.name.as_str()).collect();
-+        assert_eq!(names, [".notdef", "uni0041", "uni00C5", "gid3"]);
++        assert_eq!(names, [".notdef", "uni0041", "uni00C5", "glyph00003"]);
 +        let component = font.glyphs.get("uni00C5").unwrap().layers[0]
 +            .components()
 +            .next()
@@ -1943,7 +1943,10 @@ index bcfc7fe3..75b47885 100644
 +                .get(&("uni0041".into(), "uni00C5".into())),
 +            Some(&-50)
 +        );
-+        assert!(font.features.to_fea().contains("sub uni0041 by gid3;"));
++        assert!(font
++            .features
++            .to_fea()
++            .contains("sub uni0041 by glyph00003;"));
 +    }
 +
 +    #[test]
@@ -2186,7 +2189,7 @@ index ebbd1a75..532157cc 100644
                  .insert(name.clone(), base_glyphs_anchors.clone());
              new_names.push(name);
 diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
-index 1b9eb7c6..632791be 100644
+index 1b9eb7c6..cfa143fd 100644
 --- a/sr-aef/src/lib.rs
 +++ b/sr-aef/src/lib.rs
 @@ -137,6 +137,8 @@ pub struct UncompileContext<'a> {
@@ -2318,7 +2321,7 @@ index 1b9eb7c6..632791be 100644
          let statements = self
              .features
              .entry(feature_tag.to_string().into())
-@@ -1173,6 +1234,69 @@ pub fn uncompile_bytes(
+@@ -1173,6 +1234,68 @@ pub fn uncompile_bytes(
  /// This partially decompiles the font, giving you the component parts so that you can
  /// put them where you want them. Useful for font editors and other tools that want the
  /// data but don't want to go all the way to a fea file.
@@ -2330,12 +2333,11 @@ index 1b9eb7c6..632791be 100644
 +    let stated: Vec<SmolStr> = (0..glyph_names.num_glyphs())
 +        .map(GlyphId::new)
 +        .map(|gid| {
-+            SmolStr::new(
-+                glyph_names
-+                    .get(gid)
-+                    .map(|s| s.to_string())
-+                    .unwrap_or_else(|| format!("gid{:04}", gid)),
-+            )
++            SmolStr::new(match glyph_names.get(gid) {
++                Some(name) if !name.is_synthesized() => name.to_string(),
++                // a glyph the font leaves unnamed, named as fontTools names it
++                _ => format!("glyph{:05}", gid.to_u32()),
++            })
 +        })
 +        .collect();
 +    unique_names(stated.iter().map(|name| fea_glyph_name(name)).collect())
@@ -2388,7 +2390,7 @@ index 1b9eb7c6..632791be 100644
  pub fn uncompile_context<'a>(font: &'a skrifa::FontRef) -> Result<UncompileContext<'a>, ReadError> {
      UncompileContext::new(font)
  }
-@@ -1182,6 +1306,30 @@ mod tests {
+@@ -1182,6 +1305,30 @@ mod tests {
      use fea_rs_ast::AsFea;
  
      use super::*;
@@ -2419,7 +2421,7 @@ index 1b9eb7c6..632791be 100644
      #[test]
      fn test_uncompile_static() {
          let data = std::fs::read("resources/test.ttf").unwrap();
-@@ -1197,7 +1345,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
+@@ -1197,7 +1344,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
  
  markClass grave <anchor 200 150> @bottomleft;
  markClass acute <anchor 350 0> @bottomleft;
@@ -2428,7 +2430,7 @@ index 1b9eb7c6..632791be 100644
  lookup gsub_single_1 {
      sub a by b;
  } gsub_single_1;
-@@ -1252,7 +1400,7 @@ lookup gsub_single_6 {
+@@ -1252,7 +1399,7 @@ lookup gsub_single_6 {
  lookup gpos_mark_to_base_1 {
      pos base A
          <anchor 150 100> mark @bottomleft
@@ -2437,7 +2439,7 @@ index 1b9eb7c6..632791be 100644
  } gpos_mark_to_base_1;
  lookup gpos_single_1 {
      pos A 10;
-@@ -1658,6 +1806,36 @@ lookup gpos_pair_1;
+@@ -1658,6 +1805,36 @@ lookup gpos_pair_1;
          );
      }
  
@@ -2474,7 +2476,7 @@ index 1b9eb7c6..632791be 100644
      #[test]
      fn test_uncompile_size_feature() {
          let data = std::fs::read("resources/size.ttf").unwrap();
-@@ -1786,8 +1964,8 @@ GlyphClassDef [b], [a], [c d], [];
+@@ -1786,8 +1963,8 @@ GlyphClassDef [b], [a], [c d], [];
  } GDEF;
  
  markClass c <anchor 0 500> @left;
@@ -2485,7 +2487,7 @@ index 1b9eb7c6..632791be 100644
  markClass c <anchor 0 500> @topleft;
  lookup gpos_mark_to_base_1 {
      pos base a
-@@ -1797,11 +1975,11 @@ lookup gpos_mark_to_base_1 {
+@@ -1797,11 +1974,11 @@ lookup gpos_mark_to_base_1 {
  } gpos_mark_to_base_1;
  lookup gpos_mark_to_ligature_1 {
      pos ligature a

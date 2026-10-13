@@ -51,7 +51,7 @@ index 915c8eab..ad2039b1 100644
              {("H", "x"): -20, ("x", "x"): 5})
  save(fb, "StaticLegacy.ttf")
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 8cb43574..285ca045 100644
+index 22c62faa..64a6946e 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -109,7 +109,12 @@ fn name_id_to_i18n(fontref: &skrifa::FontRef, name_id: StringId) -> crate::I18ND
@@ -68,7 +68,7 @@ index 8cb43574..285ca045 100644
          }
      }
      dict
-@@ -1234,6 +1239,22 @@ mod tests {
+@@ -1237,6 +1242,22 @@ mod tests {
          assert_eq!(component.reference, "dupe.1");
      }
  

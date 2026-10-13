@@ -75,7 +75,7 @@ index 2bdcca66..c0548bd6 100644
 +assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
 +open("DuplicateNames.ttf", "wb").write(data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe"))
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index dec73bc1..556d00a9 100644
+index e86a9fca..1fcd5ba7 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -382,17 +382,10 @@ fn load_metrics(
@@ -134,7 +134,7 @@ index dec73bc1..556d00a9 100644
  
      fn category(font: &Font, glyph: &str) -> (GlyphCategory, Option<String>) {
          let glyph = font.glyphs.get(glyph).unwrap();
-@@ -1148,6 +1141,19 @@ mod tests {
+@@ -1151,6 +1144,19 @@ mod tests {
          assert!(area > 0.0, "{:?}", path.nodes);
      }
  

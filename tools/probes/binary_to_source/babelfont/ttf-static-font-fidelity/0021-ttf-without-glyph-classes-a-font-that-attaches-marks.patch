@@ -86,7 +86,7 @@ index ad2039b1..262af356 100644
 +del fb.font["GDEF"]
 +save(fb, "MarkNoGdef.ttf")
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index 285ca045..75b47885 100644
+index 64a6946e..15c9a4d8 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -5,7 +5,10 @@ use fontdrasil::{

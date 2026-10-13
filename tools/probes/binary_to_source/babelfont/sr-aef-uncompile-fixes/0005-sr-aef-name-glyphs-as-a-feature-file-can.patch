@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Tue, 13 Oct 2026 07:18:59 +0100
-Subject: [PATCH 5/5] sr-aef: name glyphs as a feature file can
+Subject: [PATCH 5/6] sr-aef: name glyphs as a feature file can
 
 A post table can name a glyph with characters a feature file cannot hold:
 GFS Neohellenic has "Numero sign", which the uncompiled GDEF class read as two
