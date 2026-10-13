@@ -108,3 +108,9 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Shippori Mincho | 5 | not landed: its Japanese name records (IDs 1, 2, 4, 6, 16; Windows 0x411) do not reach the build. The reader read the undecodable MacJapanese record as an empty "ja" name (fixed on the ttf branch); babelfont's Glyphs writer then writes BCP-47 language codes ("ja-JP"), which fontc does not know, and the branch that writes such names as Name Table Entry parameters (glyphs3-localized-name-entries) conflicts with typographic-family-names in export_name_table_entries: the two need reconciling first. Regular otherwise CLEAN (0 table rows) |
 | Homemade Apple | 1 | CLEAN (2026-10-13). The release has no glyph instructions (its fpgm defines functions no glyph calls; its prep only turns on dropout control); the build is ttfautohinted, as for every release with an fpgm; disclosed |
 | Calligraffitti | 1 | CLEAN (2026-10-13); hinting disclosed |
+| Kranky | 1 | CLEAN (2026-10-13); legacy kern (629 pairs) as GPOS and unhinted glyphs disclosed |
+
+Not binary-only after all (2026-10-13): Schoolbell, Walter Turncoat, Slackey, Sunshiney,
+Permanent Marker and Rock Salt are on the NO-SOURCES list, but their upstream_info.md records
+.vfb/.sfd sources ("legacy formats only"). They belong to the SFD/VFB tracks, which convert a
+source (after establishing which format the release was mastered from), not to this one.
