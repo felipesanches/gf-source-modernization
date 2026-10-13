@@ -93,10 +93,46 @@ def on_published_branch(h):
     return None
 
 
+ANY_URL = re.compile(r"https://(?:www\.)?(github\.com|gitlab\.com|git\.sr\.ht)/([^\s'\"`)<>\]]+)")
+
+
+def line_repos(h, text):
+    """(host, path) of the repository URLs on every line that carries the id: a table row
+    names its repository beside its commit (screen.py's TSV, a "<url> at <commit>" plan)."""
+    found = []
+    for line in text.splitlines():
+        if h not in line:
+            continue
+        for host, path in ANY_URL.findall(line):
+            path = re.sub(r"(\.git)?/*$", "", path.split("/-/")[0])
+            if host != "gitlab.com":
+                path = "/".join(path.split("/")[:2])
+            if (host, path) not in found:
+                found.append((host, path))
+    return found
+
+
+def mirror_of(host, path):
+    """The repo-archive mirror of a repository URL, if any (layouts as in the archive)."""
+    parts = path.split("/")
+    for p in ("%s/%s/%s.git" % (ARC, parts[0], parts[-1]), "%s/%s/%s.git" % (ARC, host, path),
+              "%s/sr.ht-%s/%s.git" % (ARC, parts[0].lstrip("~"), parts[-1])):
+        if os.path.isdir(p):
+            return p
+    return None
+
+
 def in_archive(h, text):
     """On the default branch of the repo-archive mirror of the repository named by the
     nearest github.com URL before the id (a JSON entry: repo_url, then rev), else of any of
     the first 40 repositories the text names."""
+    for host, path in line_repos(h, text):
+        mirror = mirror_of(host, path)
+        if not mirror:
+            continue
+        full = git(mirror, "rev-parse", "--verify", "-q", h + "^{commit}").stdout.strip()
+        if full and git(mirror, "merge-base", "--is-ancestor", full, "HEAD").returncode == 0:
+            return path
     pos = text.find(h)
     near = [m.group(1) for m in re.finditer(r"github\.com/([A-Za-z0-9-]+/[A-Za-z0-9_.-]+?)(?:\.git)?[\"/\s]", text[:pos])][-1:]
     line = text[text.rfind("\n", 0, pos) + 1:pos]          # "owner/repo/..." earlier on the same line
@@ -114,7 +150,16 @@ def in_archive(h, text):
 def served_by_github(h, text):
     """(slug, None) if GitHub serves the commit; (None, reason) otherwise."""
     reason = "not found on GitHub"
-    for u in sorted(set(URL.findall(text)))[:8]:
+    for host, path in line_repos(h, text):
+        if host != "gitlab.com":
+            continue
+        code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-L", "-w", "%{http_code}",
+                               "https://gitlab.com/%s/-/commit/%s" % (path, h)],
+                              capture_output=True, text=True).stdout
+        if code == "200":
+            return path, None
+    same_line = ["https://%s/%s" % hp for hp in line_repos(h, text) if hp[0] == "github.com"]
+    for u in same_line + sorted(set(URL.findall(text)) - set(same_line))[:8]:
         m = re.match(r"https://github\.com/([A-Za-z0-9-]+/[A-Za-z0-9_.-]+?)(?:\.git)?(?:/|$)", u)
         if not m:
             continue
