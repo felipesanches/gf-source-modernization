@@ -1720,6 +1720,14 @@ def _same_glyph(shipped, built, cp):
         contours = outline_match.contours_of(font, name)
         if contours is None:
             return False
+        # as drawn: a TrueType rasterizer places the outline by lsb - xMin, so a release
+        # whose hmtx lsb is not its glyf xMin draws the glyph shifted from what it stores
+        # (Nanum Pen Script: lsb 11, xMin 8), and the converter stores it where it is drawn
+        glyph = font['glyf'][name]
+        if not hasattr(glyph, 'xMin'):
+            glyph.recalcBounds(font['glyf'])
+        dx = metrics[name][1] - getattr(glyph, 'xMin', 0) if contours else 0
+        contours = [tuple((x + dx, y, on) for x, y, on in c) for c in contours]
         shapes.append((metrics[name][0],
                        sorted(outline_match.canonical(outline_match.drop_degenerate(c))
                               for c in contours)))
