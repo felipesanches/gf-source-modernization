@@ -114,8 +114,9 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Coming Soon | 1 | CLEAN (2026-10-13); its GPOS kern kept and its legacy kern table (861 pairs, read only without GPOS) not carried; unhinted glyphs; disclosed |
 | Crafty Girls | 1 | CLEAN (2026-10-13); legacy kern (375 pairs) as GPOS and hinting disclosed |
 | Fontdiner Swanky | 1 | CLEAN (2026-10-13); legacy kern (3290 pairs) as GPOS and unhinted glyphs disclosed |
+| Akronim | 1 | CLEAN (2026-10-13); legacy kern (1051 pairs) as GPOS and partial hinting disclosed |
 
 Not binary-only after all (2026-10-13): Schoolbell, Walter Turncoat, Slackey, Sunshiney,
-Permanent Marker and Rock Salt are on the NO-SOURCES list, but their upstream_info.md records
+Permanent Marker, Rock Salt and Unkempt are on the NO-SOURCES list, but their upstream_info.md records
 .vfb/.sfd sources ("legacy formats only"). They belong to the SFD/VFB tracks, which convert a
 source (after establishing which format the release was mastered from), not to this one.
