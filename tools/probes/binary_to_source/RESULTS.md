@@ -25,6 +25,15 @@ only table difference being a legacy `kern` table that is now a GPOS kern featur
 Rerun: `BF=<babelfont> B3=<gftools-builder> python3 probe.py <scratch> <shipped.ttf>...`
 (README.md); logs in `results/`.
 
+2026-10-13: the babelfont branches were rebased onto upstream d44f2bdc (4 + 20 patches; the
+integration diff and rebuild.sh now apply to d44f2bdc). Upstream had added native vertical
+metrics, so the reader now states vhea as the master's vhea metrics and vmtx as each layer's
+vertical advance and origin (the Glyphs writer drops a vertWidth equal to the typo ascender
+minus descender, as glyphsLib does). All 12 landed families were re-landed with that converter
+(`land.py <repo> --rebuild --unpublished-converter`, the measured babelfont): every verdict is
+unchanged -- 8 CLEAN, and Averia x3 and Sansation RESIDUAL as before; Dongle CLEAN 3/3 with 12550
+vertOrigin values and no vertWidth (every advance is the default).
+
 ## The sample (results/final-sample.log, results/before-sample.log)
 
 | family | styles | before (upstream 3dabb000) | after |
