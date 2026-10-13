@@ -1,0 +1,184 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Tue, 13 Oct 2026 07:28:04 +0100
+Subject: [PATCH 21/21] ttf: without glyph classes, a font that attaches marks
+ marks its marks
+
+A font without GDEF glyph classes gets every glyph a base, so that the compiled
+font has no glyph classes either and a shaper guesses them as it does for the
+binary. But a font with a mark-attachment lookup gets glyph classes from any
+compiler, and there every unmarked glyph is a base: Lato's combining accents
+(no GDEF, a mark feature) stopped being marks, and 135 of them shaped as bases.
+In such a font a glyph whose codepoint is a nonspacing mark is now a mark, as a
+shaper takes it.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/MarkNoGdef.ttf   | Bin 0 -> 876 bytes
+ babelfont/resources/ttf/make_fixtures.py |  26 ++++++++++++
+ babelfont/src/convertors/ttf.rs          |  52 +++++++++++++++++++++--
+ 3 files changed, 75 insertions(+), 3 deletions(-)
+ create mode 100644 babelfont/resources/ttf/MarkNoGdef.ttf
+
+diff --git a/babelfont/resources/ttf/MarkNoGdef.ttf b/babelfont/resources/ttf/MarkNoGdef.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..bfeed59b326d8000eddea5b8e2601f76fcd3c679
+GIT binary patch
+literal 876
+zcmah`J#Q016r8=i1m%MeO9nzf;t&v}K_Ev&DJ=1k#72lXQ9?n7m-G26KHD;9FdbBg
+z&Xq+$fkZ<Ak`aQ60$CKPsF2_XP*75s28k@Q8y8N2*wwy$GjDfq-W&vg2|R?vh4jYy
+z*1Pu~Ujx!5n_u5LpICjAiUDGYIO~V1KGNMiN&J#HS*Se7cb~Ms68|K=UJO(&yL|Nv
+z^AB8$MG|gCtTOL&ohgP<%gyR8&p#!euGD;m1db7ZCms(~tBz4lh#6w9s>0ya8+96R
+zlEjbewY$;VYv&^3PsEpDv~!ha@4vWxDESLg{vfk&=(1iCJ;&&ga0Vsbk)CExqOZ${
+zi=KUH_?~MS7kfKDI9#;36iv~_2v7WfTp2!ciGx_lfd=VeXSmMXGs^5r094pQoUG9x
+zx#EoMfV+!%?xR+vV_wvn*zWrIA7@`z2kG-!Rs|i0=<$8NwGcZMONh4U?@p4`WoJ%*
+zqgSlRiwlQ4RcEf#;f*-G%IVLBKT1Bnu|wJp7mI_h@RWVs&<+mlsdUF!oyT#bn7M-~
+zET>AXsM!d-HPzVmGBq!q3-X&mp;=K4q)=kB5t?WqpbcwK%(j_jP-9FZM?Q~D#sW`O
+zY~4Cz<@_U<f3zYTA;$_0buaL1;hhPFP$}OJs*&wr3P&(*dWBd?-MEPvh>!}c%f_`?
+kR?RTZ8=uWCFwI*6CosuqGC?gSnhDGPrqe<{b8Z2D0ob^MWB>pF
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+index ad2039b1..fb25cc73 100644
+--- a/babelfont/resources/ttf/make_fixtures.py
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -35,6 +35,10 @@ component of A), an unencoded alternate of A reached by salt, and A Aring kerned
+ 
+ DuplicateNames.ttf's post table names glyphs 2 and 3 both "dupe" (a post table
+ may); Acomp is a component of glyph 3.
++
++MarkNoGdef.ttf has no GDEF but a mark feature attaching gravecomb (U+0300,
++advance 0) to a; commaaccent is unencoded. A shaper takes gravecomb for a mark
++from its codepoint, and a and commaaccent for bases.
+ """
+ from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
+ from fontTools.fontBuilder import FontBuilder
+@@ -203,3 +207,25 @@ data = open("DuplicateNames.ttf", "rb").read()
+ # both names become "dupe": the same length, so nothing in the post table moves
+ assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
+ open("DuplicateNames.ttf", "wb").write(data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe"))
++
++
++order = [".notdef", "a", "gravecomb", "commaaccent"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb"})
++fb.setupGlyf({".notdef": Glyph(), "a": rect(50, 0, 450, 500), "gravecomb": rect(-150, 550, -40, 700),
++              "commaaccent": rect(20, -200, 100, -50)})
++fb.setupHorizontalMetrics({".notdef": (500, 0), "a": (500, 50), "gravecomb": (0, -150),
++                           "commaaccent": (120, 20)})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({"familyName": "Fixture Mark No Gdef", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++fb.setupPost()
++addOpenTypeFeaturesFromString(fb.font, """
++markClass gravecomb <anchor -100 600> @TOP;
++feature mark {
++    pos base a <anchor 250 500> mark @TOP;
++} mark;
++""")
++del fb.font["GDEF"]
++save(fb, "MarkNoGdef.ttf")
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index 285ca045..c6ca13f3 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -13,7 +13,7 @@ use skrifa::{
+     outline::DrawSettings,
+     prelude::{LocationRef, Size},
+     raw::{
+-        tables::{glyf, kern},
++        tables::{glyf, gpos::PositionSubtables, kern},
+         TableProvider,
+     },
+     string::StringId,
+@@ -430,17 +430,31 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
+ /// has no advance, else Spacing Combining, which keeps its advance. A font with no
+ /// glyph classes leaves them to the shaper, which guesses each glyph's class as it
+ /// is used (from the codepoint, or kept through a substitution), so every glyph is
+-/// a base: a compiler then writes no glyph classes either. Every glyph is given a
++/// a base: a compiler then writes no glyph classes either. But a font that attaches
++/// marks gets glyph classes from any compiler, so there a glyph whose codepoint is a
++/// nonspacing mark is a mark, as the shaper takes it. Every glyph is given a
+ /// category, so that a compiler does not guess one from its name.
+ fn load_categories(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
+     let class_def = match fontref.gdef() {
+         Ok(gdef) => gdef.glyph_class_def().transpose()?,
+         Err(_) => None,
+     };
++    let marks_by_codepoint = class_def.is_none() && attaches_marks(fontref)?;
++    let general_category = CodePointMapData::<GeneralCategory>::new();
+     let metrics = fontref.glyph_metrics(Size::unscaled(), LocationRef::default());
+     for (gid, glyph) in font.glyphs.iter_mut().enumerate() {
+         let gid = GlyphId::new(gid as u32);
+-        let class = class_def.as_ref().map_or(1, |class_def| class_def.get(gid));
++        let nonspacing_mark = || {
++            glyph.codepoints.iter().any(|&cp| {
++                char::from_u32(cp)
++                    .is_some_and(|c| general_category.get(c) == GeneralCategory::NonspacingMark)
++            })
++        };
++        let class = match &class_def {
++            Some(class_def) => class_def.get(gid),
++            None if marks_by_codepoint && nonspacing_mark() => 3,
++            None => 1,
++        };
+         let (category, subcategory) = match class {
+             2 => (GlyphCategory::Ligature, Some("Ligature")),
+             3 if metrics.advance_width(gid).unwrap_or_default() == 0.0 => {
+@@ -460,6 +474,24 @@ fn load_categories(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Bab
+     Ok(())
+ }
+ 
++/// Whether the font's GPOS attaches marks (to bases, ligatures or marks).
++fn attaches_marks(fontref: &skrifa::FontRef) -> Result<bool, BabelfontError> {
++    let Ok(gpos) = fontref.gpos() else {
++        return Ok(false);
++    };
++    for lookup in gpos.lookup_list()?.lookups().iter() {
++        if matches!(
++            lookup?.subtables()?,
++            PositionSubtables::MarkToBase(_)
++                | PositionSubtables::MarkToLig(_)
++                | PositionSubtables::MarkToMark(_)
++        ) {
++            return Ok(true);
++        }
++    }
++    Ok(false)
++}
++
+ // This is only sound for mark class definitions
+ fn expand_glyphcontainer(glyphs: &fea_rs_ast::GlyphContainer) -> Vec<SmolStr> {
+     let mut r = vec![];
+@@ -984,6 +1016,7 @@ mod tests {
+     const GDEF_CLASSES: &str = "resources/ttf/GdefClasses.ttf";
+     const UNNAMED: &str = "resources/ttf/Unnamed.ttf";
+     const DUPLICATE_NAMES: &str = "resources/ttf/DuplicateNames.ttf";
++    const MARK_NO_GDEF: &str = "resources/ttf/MarkNoGdef.ttf";
+ 
+     fn category(font: &Font, glyph: &str) -> (GlyphCategory, Option<String>) {
+         let glyph = font.glyphs.get(glyph).unwrap();
+@@ -1093,6 +1126,19 @@ mod tests {
+         assert_eq!(category(&font, "x"), (GlyphCategory::Base, None));
+     }
+ 
++    #[test]
++    fn test_categories_without_gdef_attaching_marks() {
++        // no glyph classes, but a mark feature: a compiler writes glyph classes, so
++        // the nonspacing-mark codepoint is a mark there, as a shaper takes it
++        let font = load(MARK_NO_GDEF).unwrap();
++        assert_eq!(
++            category(&font, "gravecomb"),
++            (GlyphCategory::Mark, Some("Nonspacing".to_string()))
++        );
++        assert_eq!(category(&font, "a"), (GlyphCategory::Base, None));
++        assert_eq!(category(&font, "commaaccent"), (GlyphCategory::Base, None));
++    }
++
+     #[test]
+     fn test_categories_from_gdef() {
+         let font = load(GDEF_CLASSES).unwrap();

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
 Date: Fri, 9 Oct 2026 06:06:03 +0100
-Subject: [PATCH 20/20] ttf: leave out a name record that does not decode
+Subject: [PATCH 20/21] ttf: leave out a name record that does not decode
 
 skrifa reads a name record in an encoding it does not decode (MacJapanese) as an
 empty string, which the reader kept as that language's name: Shippori Mincho's

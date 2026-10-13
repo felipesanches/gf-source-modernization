@@ -1,0 +1,107 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Tue, 13 Oct 2026 07:18:59 +0100
+Subject: [PATCH 5/5] sr-aef: name glyphs as a feature file can
+
+A post table can name a glyph with characters a feature file cannot hold:
+GFS Neohellenic has "Numero sign", which the uncompiled GDEF class read as two
+glyphs, "Numero" and "sign", and fontc refused the features; Kirang Haerang
+names thousands of glyphs ".notdef", made unique as ".notdef.487" and the
+like, which a feature file refuses too. After the names are made unique, a
+character outside A-Z a-z 0-9 . _ - becomes _, a name starting with a digit
+or a hyphen gets a leading _, one starting with a period other than .notdef
+and .null has it replaced by _, and the names are made unique again.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ sr-aef/src/lib.rs | 62 ++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 59 insertions(+), 3 deletions(-)
+
+diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
+index 91258169..363fc525 100644
+--- a/sr-aef/src/lib.rs
++++ b/sr-aef/src/lib.rs
+@@ -1234,9 +1234,9 @@ pub fn uncompile_bytes(
+ /// This partially decompiles the font, giving you the component parts so that you can
+ /// put them where you want them. Useful for font editors and other tools that want the
+ /// data but don't want to go all the way to a fea file.
+-/// The glyph names a font states, made unique as fontTools makes them: a post
+-/// table may give two glyphs the same name, and a name already taken gets the
+-/// first free suffix of .1, .2, ...
++/// The glyph names a font states, each made a name a feature file can hold, then
++/// made unique as fontTools makes them: a post table may give two glyphs the same
++/// name, and a name already taken gets the first free suffix of .1, .2, ...
+ pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
+     let glyph_names = GlyphNames::new(font);
+     let stated: Vec<SmolStr> = (0..glyph_names.num_glyphs())
+@@ -1250,6 +1250,38 @@ pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
+             )
+         })
+         .collect();
++    // made unique first, as fontTools does: a repeated ".notdef" becomes ".notdef.1",
++    // which then needs the same treatment as any other name a feature file refuses
++    let unique = unique_names(stated);
++    unique_names(unique.iter().map(|name| fea_glyph_name(name)).collect())
++}
++
++/// A glyph name a feature file can hold: a character outside `A-Z a-z 0-9 . _ -`
++/// becomes `_`; a name starting with a digit or a hyphen gets a leading `_`, and
++/// one starting with a period other than `.notdef` and `.null` has it replaced by
++/// `_`.
++fn fea_glyph_name(name: &str) -> SmolStr {
++    let mut out: String = name
++        .chars()
++        .map(|c| {
++            if c.is_ascii_alphanumeric() || matches!(c, '.' | '_' | '-') {
++                c
++            } else {
++                '_'
++            }
++        })
++        .collect();
++    if out.is_empty() || out.starts_with(|c: char| c.is_ascii_digit() || c == '-') {
++        out.insert(0, '_');
++    } else if out.starts_with('.') && out != ".notdef" && out != ".null" {
++        out.replace_range(0..1, "_");
++    }
++    SmolStr::new(out)
++}
++
++/// Each name kept, unless an earlier glyph has it: then the first free `.1`, `.2`,
++/// ... suffix, as fontTools does.
++fn unique_names(stated: Vec<SmolStr>) -> Vec<SmolStr> {
+     let all: HashSet<SmolStr> = stated.iter().cloned().collect();
+     let mut taken: HashSet<SmolStr> = HashSet::new();
+     stated
+@@ -1275,6 +1307,30 @@ mod tests {
+     use fea_rs_ast::AsFea;
+ 
+     use super::*;
++
++    #[test]
++    fn test_fea_glyph_name() {
++        assert_eq!(fea_glyph_name("Numero sign"), "Numero_sign");
++        assert_eq!(fea_glyph_name(".notdef"), ".notdef");
++        assert_eq!(fea_glyph_name("uni0300"), "uni0300");
++        assert_eq!(fea_glyph_name("1st"), "_1st");
++        assert_eq!(fea_glyph_name("-x"), "_-x");
++        assert_eq!(fea_glyph_name(""), "_");
++        assert_eq!(fea_glyph_name(".null"), ".null");
++        assert_eq!(fea_glyph_name(".notdef.487"), "_notdef.487");
++    }
++
++    #[test]
++    fn test_unique_fea_names() {
++        // unique, then valid, then unique again, as unique_glyph_names does
++        let stated: Vec<SmolStr> = [".notdef", ".notdef", "a b", "a_b"]
++            .iter()
++            .map(SmolStr::new)
++            .collect();
++        let unique = unique_names(stated);
++        let names = unique_names(unique.iter().map(|n| fea_glyph_name(n)).collect());
++        assert_eq!(names, vec![".notdef", "_notdef.1", "a_b", "a_b.1"]);
++    }
+     #[test]
+     fn test_uncompile_static() {
+         let data = std::fs::read("resources/test.ttf").unwrap();

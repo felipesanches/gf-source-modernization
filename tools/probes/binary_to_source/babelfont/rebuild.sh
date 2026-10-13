@@ -19,6 +19,6 @@ cd "$D/babelfont-rs"
 git checkout -q d44f2bdc
 git apply --index --binary "$HERE/measure-integration.diff"
 SUM=$(git ls-files -s | sha256sum | cut -d' ' -f1)
-[ "$SUM" = 5b4ce2ff69907f3467ee7ec0ddf9f94af24c9d8ffcaa35c23f6ca51f3d670738 ] || { echo "the applied tree is not the measured one"; exit 1; }
+[ "$SUM" = b08e99a033bb3cbc58c344aa38490653ffa40ac0f702638e23df2412229cbdac ] || { echo "the applied tree is not the measured one"; exit 1; }
 CARGO_TARGET_DIR="$D/target" cargo build --release -q -p babelfont --features cli
 echo "$D/target/release/babelfont"

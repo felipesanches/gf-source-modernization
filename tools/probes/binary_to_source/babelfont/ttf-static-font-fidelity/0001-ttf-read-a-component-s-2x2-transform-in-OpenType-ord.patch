@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 15:52:17 +0100
-Subject: [PATCH 01/20] ttf: read a component's 2x2 transform in OpenType order
+Subject: [PATCH 01/21] ttf: read a component's 2x2 transform in OpenType order
 
 A glyf component transform maps x' = xx * x + xy * y, y' = yx * x + yy * y;
 kurbo::Affine takes [xx, yx, xy, yy, dx, dy]. The reader passed xy and yx

@@ -74,6 +74,26 @@ yo+-P(Vo<kLXH<sne$>-<b-2zNT?SWiNUX{h=(cRJ2E6~dn11!9Y~kC4ruhS5)x0_Y
 literal 0
 HcmV?d00001
 
+diff --git a/babelfont/resources/ttf/MarkNoGdef.ttf b/babelfont/resources/ttf/MarkNoGdef.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..bfeed59b326d8000eddea5b8e2601f76fcd3c679
+GIT binary patch
+literal 876
+zcmah`J#Q016r8=i1m%MeO9nzf;t&v}K_Ev&DJ=1k#72lXQ9?n7m-G26KHD;9FdbBg
+z&Xq+$fkZ<Ak`aQ60$CKPsF2_XP*75s28k@Q8y8N2*wwy$GjDfq-W&vg2|R?vh4jYy
+z*1Pu~Ujx!5n_u5LpICjAiUDGYIO~V1KGNMiN&J#HS*Se7cb~Ms68|K=UJO(&yL|Nv
+z^AB8$MG|gCtTOL&ohgP<%gyR8&p#!euGD;m1db7ZCms(~tBz4lh#6w9s>0ya8+96R
+zlEjbewY$;VYv&^3PsEpDv~!ha@4vWxDESLg{vfk&=(1iCJ;&&ga0Vsbk)CExqOZ${
+zi=KUH_?~MS7kfKDI9#;36iv~_2v7WfTp2!ciGx_lfd=VeXSmMXGs^5r094pQoUG9x
+zx#EoMfV+!%?xR+vV_wvn*zWrIA7@`z2kG-!Rs|i0=<$8NwGcZMONh4U?@p4`WoJ%*
+zqgSlRiwlQ4RcEf#;f*-G%IVLBKT1Bnu|wJp7mI_h@RWVs&<+mlsdUF!oyT#bn7M-~
+zET>AXsM!d-HPzVmGBq!q3-X&mp;=K4q)=kB5t?WqpbcwK%(j_jP-9FZM?Q~D#sW`O
+zY~4Cz<@_U<f3zYTA;$_0buaL1;hhPFP$}OJs*&wr3P&(*dWBd?-MEPvh>!}c%f_`?
+kR?RTZ8=uWCFwI*6CosuqGC?gSnhDGPrqe<{b8Z2D0ob^MWB>pF
+
+literal 0
+HcmV?d00001
+
 diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
 new file mode 100644
 index 0000000000000000000000000000000000000000..2518f32f8f97f4642ff8d956023f661ad29f9e44
@@ -119,10 +139,10 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
 new file mode 100644
-index 00000000..ad2039b1
+index 00000000..fb25cc73
 --- /dev/null
 +++ b/babelfont/resources/ttf/make_fixtures.py
-@@ -0,0 +1,205 @@
+@@ -0,0 +1,231 @@
 +"""Writes the TrueType fixtures the ttf reader tests load (fontTools).
 +
 +Run from this directory: python3 make_fixtures.py
@@ -160,6 +180,10 @@ index 00000000..ad2039b1
 +
 +DuplicateNames.ttf's post table names glyphs 2 and 3 both "dupe" (a post table
 +may); Acomp is a component of glyph 3.
++
++MarkNoGdef.ttf has no GDEF but a mark feature attaching gravecomb (U+0300,
++advance 0) to a; commaaccent is unencoded. A shaper takes gravecomb for a mark
++from its codepoint, and a and commaaccent for bases.
 +"""
 +from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 +from fontTools.fontBuilder import FontBuilder
@@ -328,6 +352,28 @@ index 00000000..ad2039b1
 +# both names become "dupe": the same length, so nothing in the post table moves
 +assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
 +open("DuplicateNames.ttf", "wb").write(data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe"))
++
++
++order = [".notdef", "a", "gravecomb", "commaaccent"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb"})
++fb.setupGlyf({".notdef": Glyph(), "a": rect(50, 0, 450, 500), "gravecomb": rect(-150, 550, -40, 700),
++              "commaaccent": rect(20, -200, 100, -50)})
++fb.setupHorizontalMetrics({".notdef": (500, 0), "a": (500, 50), "gravecomb": (0, -150),
++                           "commaaccent": (120, 20)})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({"familyName": "Fixture Mark No Gdef", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++fb.setupPost()
++addOpenTypeFeaturesFromString(fb.font, """
++markClass gravecomb <anchor -100 600> @TOP;
++feature mark {
++    pos base a <anchor 250 500> mark @TOP;
++} mark;
++""")
++del fb.font["GDEF"]
++save(fb, "MarkNoGdef.ttf")
 diff --git a/babelfont/src/convertors/fontforge.rs b/babelfont/src/convertors/fontforge.rs
 index ad22aaf1..07f34a6e 100644
 --- a/babelfont/src/convertors/fontforge.rs
@@ -973,7 +1019,7 @@ index 4a7caef3..76b44b3e 100644
 +    }
 +}
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index bcfc7fe3..285ca045 100644
+index bcfc7fe3..c6ca13f3 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -5,13 +5,17 @@ use fontdrasil::{
@@ -989,7 +1035,7 @@ index bcfc7fe3..285ca045 100644
      prelude::{LocationRef, Size},
 -    raw::{tables::glyf, TableProvider},
 +    raw::{
-+        tables::{glyf, kern},
++        tables::{glyf, gpos::PositionSubtables, kern},
 +        TableProvider,
 +    },
      string::StringId,
@@ -1094,12 +1140,12 @@ index bcfc7fe3..285ca045 100644
      }
 +    Ok(())
 +}
-+
+ 
+-    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
 +/// The fsSelection bits a source states; ITALIC, BOLD and REGULAR are set by
 +/// the compiler from the style.
 +const SOURCE_FS_SELECTION_BITS: u16 = !(1 << 0 | 1 << 5 | 1 << 6);
- 
--    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
++
 +fn load_custom_ot_values(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let os2 = fontref.os2()?;
 +    let ot = &mut font.custom_ot_values;
@@ -1232,7 +1278,7 @@ index bcfc7fe3..285ca045 100644
          glyph.exported = true;
          font.glyphs.push(glyph);
      }
-@@ -307,6 +423,40 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
+@@ -307,9 +423,75 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
              )))?;
          glyph.codepoints.push(unicode);
      }
@@ -1243,17 +1289,31 @@ index bcfc7fe3..285ca045 100644
 +/// has no advance, else Spacing Combining, which keeps its advance. A font with no
 +/// glyph classes leaves them to the shaper, which guesses each glyph's class as it
 +/// is used (from the codepoint, or kept through a substitution), so every glyph is
-+/// a base: a compiler then writes no glyph classes either. Every glyph is given a
++/// a base: a compiler then writes no glyph classes either. But a font that attaches
++/// marks gets glyph classes from any compiler, so there a glyph whose codepoint is a
++/// nonspacing mark is a mark, as the shaper takes it. Every glyph is given a
 +/// category, so that a compiler does not guess one from its name.
 +fn load_categories(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let class_def = match fontref.gdef() {
 +        Ok(gdef) => gdef.glyph_class_def().transpose()?,
 +        Err(_) => None,
 +    };
++    let marks_by_codepoint = class_def.is_none() && attaches_marks(fontref)?;
++    let general_category = CodePointMapData::<GeneralCategory>::new();
 +    let metrics = fontref.glyph_metrics(Size::unscaled(), LocationRef::default());
 +    for (gid, glyph) in font.glyphs.iter_mut().enumerate() {
 +        let gid = GlyphId::new(gid as u32);
-+        let class = class_def.as_ref().map_or(1, |class_def| class_def.get(gid));
++        let nonspacing_mark = || {
++            glyph.codepoints.iter().any(|&cp| {
++                char::from_u32(cp)
++                    .is_some_and(|c| general_category.get(c) == GeneralCategory::NonspacingMark)
++            })
++        };
++        let class = match &class_def {
++            Some(class_def) => class_def.get(gid),
++            None if marks_by_codepoint && nonspacing_mark() => 3,
++            None => 1,
++        };
 +        let (category, subcategory) = match class {
 +            2 => (GlyphCategory::Ligature, Some("Ligature")),
 +            3 if metrics.advance_width(gid).unwrap_or_default() == 0.0 => {
@@ -1273,7 +1333,28 @@ index bcfc7fe3..285ca045 100644
      Ok(())
  }
  
-@@ -372,6 +522,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
++/// Whether the font's GPOS attaches marks (to bases, ligatures or marks).
++fn attaches_marks(fontref: &skrifa::FontRef) -> Result<bool, BabelfontError> {
++    let Ok(gpos) = fontref.gpos() else {
++        return Ok(false);
++    };
++    for lookup in gpos.lookup_list()?.lookups().iter() {
++        if matches!(
++            lookup?.subtables()?,
++            PositionSubtables::MarkToBase(_)
++                | PositionSubtables::MarkToLig(_)
++                | PositionSubtables::MarkToMark(_)
++        ) {
++            return Ok(true);
++        }
++    }
++    Ok(false)
++}
++
+ // This is only sound for mark class definitions
+ fn expand_glyphcontainer(glyphs: &fea_rs_ast::GlyphContainer) -> Vec<SmolStr> {
+     let mut r = vec![];
+@@ -372,6 +554,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      // Do the same but for mark classes.
@@ -1288,7 +1369,7 @@ index bcfc7fe3..285ca045 100644
      for (anchor_name, classdefs) in uncompile_context.mark_classes {
          let anchor_name = format!("_{}", anchor_name);
          for definition in classdefs.iter() {
-@@ -413,10 +571,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -413,10 +603,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      for (class_name, glyphs) in uncompile_context.named_classes.iter() {
@@ -1304,7 +1385,7 @@ index bcfc7fe3..285ca045 100644
      }
      let mut language_systems = vec![];
      for (script_tag, lang_sys_tags) in &uncompile_context.language_systems {
-@@ -433,6 +592,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -433,6 +624,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
              PossiblyAutomaticCode::new(language_systems_block),
          );
      }
@@ -1322,7 +1403,7 @@ index bcfc7fe3..285ca045 100644
      for (lookup_name, statements) in uncompile_context.lookups.iter() {
          features.prefixes.insert(
              lookup_name.clone(),
-@@ -449,6 +619,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -449,6 +651,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      Ok(())
  }
  
@@ -1434,7 +1515,7 @@ index bcfc7fe3..285ca045 100644
  fn get_x_y_location_for_anchor(
      location: DesignLocation,
      anchor: &sr_aef::fea_rs_ast::Anchor,
-@@ -527,18 +802,93 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+@@ -527,18 +834,93 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
      Ok(coords)
  }
  
@@ -1529,7 +1610,7 @@ index bcfc7fe3..285ca045 100644
  
      // Skrifa pens don't support components. Parse component glyphs manually.
      let glyf = fontref.glyf()?;
-@@ -557,11 +907,28 @@ fn load_layer(
+@@ -557,11 +939,28 @@ fn load_layer(
                          &mut pen,
                      )
                      .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
@@ -1559,7 +1640,7 @@ index bcfc7fe3..285ca045 100644
              for component in c.components() {
                  let gid = component.glyph;
                  let anchor = match component.anchor {
-@@ -571,25 +938,31 @@ fn load_layer(
+@@ -571,25 +970,31 @@ fn load_layer(
                          component: _,
                      } => (0.0, 0.0),
                  };
@@ -1601,7 +1682,7 @@ index bcfc7fe3..285ca045 100644
                      transform: our_affine.into(),
                      location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
                      format_specific: FormatSpecific::default(),
-@@ -600,3 +973,307 @@ fn load_layer(
+@@ -600,3 +1005,321 @@ fn load_layer(
  
      Ok(layer)
  }
@@ -1616,6 +1697,7 @@ index bcfc7fe3..285ca045 100644
 +    const GDEF_CLASSES: &str = "resources/ttf/GdefClasses.ttf";
 +    const UNNAMED: &str = "resources/ttf/Unnamed.ttf";
 +    const DUPLICATE_NAMES: &str = "resources/ttf/DuplicateNames.ttf";
++    const MARK_NO_GDEF: &str = "resources/ttf/MarkNoGdef.ttf";
 +
 +    fn category(font: &Font, glyph: &str) -> (GlyphCategory, Option<String>) {
 +        let glyph = font.glyphs.get(glyph).unwrap();
@@ -1723,6 +1805,19 @@ index bcfc7fe3..285ca045 100644
 +        assert_eq!(category(&font, "gravecomb"), (GlyphCategory::Base, None));
 +        assert_eq!(category(&font, "commaaccent"), (GlyphCategory::Base, None));
 +        assert_eq!(category(&font, "x"), (GlyphCategory::Base, None));
++    }
++
++    #[test]
++    fn test_categories_without_gdef_attaching_marks() {
++        // no glyph classes, but a mark feature: a compiler writes glyph classes, so
++        // the nonspacing-mark codepoint is a mark there, as a shaper takes it
++        let font = load(MARK_NO_GDEF).unwrap();
++        assert_eq!(
++            category(&font, "gravecomb"),
++            (GlyphCategory::Mark, Some("Nonspacing".to_string()))
++        );
++        assert_eq!(category(&font, "a"), (GlyphCategory::Base, None));
++        assert_eq!(category(&font, "commaaccent"), (GlyphCategory::Base, None));
 +    }
 +
 +    #[test]
@@ -2080,7 +2175,7 @@ index ebbd1a75..532157cc 100644
                  .insert(name.clone(), base_glyphs_anchors.clone());
              new_names.push(name);
 diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
-index 1b9eb7c6..91258169 100644
+index 1b9eb7c6..363fc525 100644
 --- a/sr-aef/src/lib.rs
 +++ b/sr-aef/src/lib.rs
 @@ -137,6 +137,8 @@ pub struct UncompileContext<'a> {
@@ -2212,13 +2307,13 @@ index 1b9eb7c6..91258169 100644
          let statements = self
              .features
              .entry(feature_tag.to_string().into())
-@@ -1173,6 +1234,38 @@ pub fn uncompile_bytes(
+@@ -1173,6 +1234,70 @@ pub fn uncompile_bytes(
  /// This partially decompiles the font, giving you the component parts so that you can
  /// put them where you want them. Useful for font editors and other tools that want the
  /// data but don't want to go all the way to a fea file.
-+/// The glyph names a font states, made unique as fontTools makes them: a post
-+/// table may give two glyphs the same name, and a name already taken gets the
-+/// first free suffix of .1, .2, ...
++/// The glyph names a font states, each made a name a feature file can hold, then
++/// made unique as fontTools makes them: a post table may give two glyphs the same
++/// name, and a name already taken gets the first free suffix of .1, .2, ...
 +pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
 +    let glyph_names = GlyphNames::new(font);
 +    let stated: Vec<SmolStr> = (0..glyph_names.num_glyphs())
@@ -2232,6 +2327,38 @@ index 1b9eb7c6..91258169 100644
 +            )
 +        })
 +        .collect();
++    // made unique first, as fontTools does: a repeated ".notdef" becomes ".notdef.1",
++    // which then needs the same treatment as any other name a feature file refuses
++    let unique = unique_names(stated);
++    unique_names(unique.iter().map(|name| fea_glyph_name(name)).collect())
++}
++
++/// A glyph name a feature file can hold: a character outside `A-Z a-z 0-9 . _ -`
++/// becomes `_`; a name starting with a digit or a hyphen gets a leading `_`, and
++/// one starting with a period other than `.notdef` and `.null` has it replaced by
++/// `_`.
++fn fea_glyph_name(name: &str) -> SmolStr {
++    let mut out: String = name
++        .chars()
++        .map(|c| {
++            if c.is_ascii_alphanumeric() || matches!(c, '.' | '_' | '-') {
++                c
++            } else {
++                '_'
++            }
++        })
++        .collect();
++    if out.is_empty() || out.starts_with(|c: char| c.is_ascii_digit() || c == '-') {
++        out.insert(0, '_');
++    } else if out.starts_with('.') && out != ".notdef" && out != ".null" {
++        out.replace_range(0..1, "_");
++    }
++    SmolStr::new(out)
++}
++
++/// Each name kept, unless an earlier glyph has it: then the first free `.1`, `.2`,
++/// ... suffix, as fontTools does.
++fn unique_names(stated: Vec<SmolStr>) -> Vec<SmolStr> {
 +    let all: HashSet<SmolStr> = stated.iter().cloned().collect();
 +    let mut taken: HashSet<SmolStr> = HashSet::new();
 +    stated
@@ -2251,7 +2378,38 @@ index 1b9eb7c6..91258169 100644
  pub fn uncompile_context<'a>(font: &'a skrifa::FontRef) -> Result<UncompileContext<'a>, ReadError> {
      UncompileContext::new(font)
  }
-@@ -1197,7 +1290,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
+@@ -1182,6 +1307,30 @@ mod tests {
+     use fea_rs_ast::AsFea;
+ 
+     use super::*;
++
++    #[test]
++    fn test_fea_glyph_name() {
++        assert_eq!(fea_glyph_name("Numero sign"), "Numero_sign");
++        assert_eq!(fea_glyph_name(".notdef"), ".notdef");
++        assert_eq!(fea_glyph_name("uni0300"), "uni0300");
++        assert_eq!(fea_glyph_name("1st"), "_1st");
++        assert_eq!(fea_glyph_name("-x"), "_-x");
++        assert_eq!(fea_glyph_name(""), "_");
++        assert_eq!(fea_glyph_name(".null"), ".null");
++        assert_eq!(fea_glyph_name(".notdef.487"), "_notdef.487");
++    }
++
++    #[test]
++    fn test_unique_fea_names() {
++        // unique, then valid, then unique again, as unique_glyph_names does
++        let stated: Vec<SmolStr> = [".notdef", ".notdef", "a b", "a_b"]
++            .iter()
++            .map(SmolStr::new)
++            .collect();
++        let unique = unique_names(stated);
++        let names = unique_names(unique.iter().map(|n| fea_glyph_name(n)).collect());
++        assert_eq!(names, vec![".notdef", "_notdef.1", "a_b", "a_b.1"]);
++    }
+     #[test]
+     fn test_uncompile_static() {
+         let data = std::fs::read("resources/test.ttf").unwrap();
+@@ -1197,7 +1346,7 @@ GlyphClassDef [A], [], [grave acute dotbelowcomb], [];
  
  markClass grave <anchor 200 150> @bottomleft;
  markClass acute <anchor 350 0> @bottomleft;
@@ -2260,7 +2418,7 @@ index 1b9eb7c6..91258169 100644
  lookup gsub_single_1 {
      sub a by b;
  } gsub_single_1;
-@@ -1252,7 +1345,7 @@ lookup gsub_single_6 {
+@@ -1252,7 +1401,7 @@ lookup gsub_single_6 {
  lookup gpos_mark_to_base_1 {
      pos base A
          <anchor 150 100> mark @bottomleft
@@ -2269,7 +2427,7 @@ index 1b9eb7c6..91258169 100644
  } gpos_mark_to_base_1;
  lookup gpos_single_1 {
      pos A 10;
-@@ -1658,6 +1751,36 @@ lookup gpos_pair_1;
+@@ -1658,6 +1807,36 @@ lookup gpos_pair_1;
          );
      }
  
@@ -2306,7 +2464,7 @@ index 1b9eb7c6..91258169 100644
      #[test]
      fn test_uncompile_size_feature() {
          let data = std::fs::read("resources/size.ttf").unwrap();
-@@ -1786,8 +1909,8 @@ GlyphClassDef [b], [a], [c d], [];
+@@ -1786,8 +1965,8 @@ GlyphClassDef [b], [a], [c d], [];
  } GDEF;
  
  markClass c <anchor 0 500> @left;
@@ -2317,7 +2475,7 @@ index 1b9eb7c6..91258169 100644
  markClass c <anchor 0 500> @topleft;
  lookup gpos_mark_to_base_1 {
      pos base a
-@@ -1797,11 +1920,11 @@ lookup gpos_mark_to_base_1 {
+@@ -1797,11 +1976,11 @@ lookup gpos_mark_to_base_1 {
  } gpos_mark_to_base_1;
  lookup gpos_mark_to_ligature_1 {
      pos ligature a

@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 15:54:07 +0100
-Subject: [PATCH 02/20] ttf: read a composite where it is drawn
+Subject: [PATCH 02/21] ttf: read a composite where it is drawn
 
 A TrueType rasterizer draws a glyph shifted by lsb - xMin, its hmtx left side
 bearing less its glyf xMin. Simple glyphs are read as drawn (skrifa applies
