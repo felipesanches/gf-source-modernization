@@ -608,6 +608,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         return textwrap.wrap(text, 72, initial_indent=indent, subsequent_indent=sub,
                              break_on_hyphens=False, break_long_words=False)
 
+    def para(text):         # never split a URL or a hyphenated name across lines
+        return wrap(text, "", "")
+
     # A flag most styles share is stated once; a style that differs says how.
     every = []
     for p in per_style:
@@ -655,16 +658,16 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     gf_ref = sh("git", "-C", GF, "rev-parse", "--short=12", "HEAD").stdout.strip()
     lines.append("")
     if clean:
-        lines += textwrap.wrap("Builds with gftools-builder (%s, fontc %s) and matches the binaries "
-                               "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
-                               "exactly the release's codepoints, and functionally equivalent under "
-                               "tools/functional_gate.py (cmap, shaping, rendering, names, line "
-                               "spacing, advances, GDEF), %d style(s)."
-                               % (B3_WHERE, FONTC_ID, gf_ref, len(results)), 72)
+        lines += para("Builds with gftools-builder (%s, fontc %s) and matches the binaries "
+                      "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
+                      "exactly the release's codepoints, and functionally equivalent under "
+                      "tools/functional_gate.py (cmap, shaping, rendering, names, line "
+                      "spacing, advances, GDEF), %d style(s)."
+                      % (B3_WHERE, FONTC_ID, gf_ref, len(results)))
     else:
-        lines += textwrap.wrap("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "
-                               "under tools/table_gate.py and tools/functional_gate.py:"
-                               % (B3_WHERE, FONTC_ID, gf_ref), 72)
+        lines += para("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "
+                      "under tools/table_gate.py and tools/functional_gate.py:"
+                      % (B3_WHERE, FONTC_ID, gf_ref))
         for st, n, blocking in results:
             if n is None:
                 lines.append("  %s: %s" % (st, blocking[0]))
@@ -680,10 +683,10 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     cited = ("Those tools and this repository's plan (plans/%s.json): %s at %s." % (repo, EVIDENCE_URL, ev_rev)
              if has_plan else "Those tools: %s at %s (no source edits were needed, so this family has "
              "no plan there)." % (EVIDENCE_URL, ev_rev))
-    lines += [""] + textwrap.wrap(cited + " The logs of the run that made this commit are added to "
-                                  "that repository's logs/ after it.", 72)
+    lines += [""] + para(cited + " The logs of the run that made this commit are added to "
+                         "that repository's logs/ after it.")
     if not glyphs:
-        lines += [""] + textwrap.wrap(what, 72)
+        lines += [""] + para(what)
     head = commit(d, "\n".join(lines), "sources")
     shutil.rmtree(scratch, ignore_errors=True)
     return head, results, functional
