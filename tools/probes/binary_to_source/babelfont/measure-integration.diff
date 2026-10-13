@@ -89,21 +89,21 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/MarkNoGdef.ttf b/babelfont/resources/ttf/MarkNoGdef.ttf
 new file mode 100644
-index 0000000000000000000000000000000000000000..927f3bf34b1b5a4a09159139429262eb289ea4af
+index 0000000000000000000000000000000000000000..e9bef8d81eb18d875770def7759a9c8ff815aaa9
 GIT binary patch
-literal 900
-zcmah{J#Q015Pf@lCO}Le(gl)`;t&wgVc8I+Kp=>*QAF%0p`eQw`}`H3Z5bPx4k|?F
-z%A%m4OB19}go*;WN`+D&!B0R!NED_3g)DCmqnH9QtDT+qX7={&>_Gq+#Un^WlFRAU
-z?bmN#0&<3IKD~M|dh>B21BiLzOx9O*Iblx|ZxY7~m52GQr=1VPd&G-HPvtTTH{LUT
-z!#P(ZVW&ibai8;C(QmfxjNW4XGh(Mw%PK^1mG~=h*jMd3MsSFDlGv>(-`jkp&H~mg
-z;wSam{pN1{^9J!Q@gj_N&e;B!?`y}ee1nvq$oyrxtmj3~GI}JeL5h2%t9d8U*JU`O
-z7kp`WUnpQgum_nxI}d84Xo(I?#sBU4aLF|qv6AWE8l;Pz;XGs4C<|s3pu#qsL50yF
-zIURc5f~$=P*TWnprzB)r>w`$Y_-XBJ4{kv^uw$6Qc@DwuL-cqSzZn}pGaeNk(cce~
-z)MaZ{e`Md7k(Xl=-KsU)?Q)01zUA~g!=EDWEbovG%*Nc{99EGr`uJ3Q(Lk+zgv<q;
-zHp&@W7{fxM)NZyKp1Y(P>u##%CUahX#VfQbs(}Pbym%8WG~lr%OHho~8KqF8Pa;P?
-zj}`g?t13Z0=t6MtKU|1>Tv$R<M4_P`c-fkNZ<NkgDx3AH&5>5M6p39jf33N}7*66S
-zBL^a$xP1qc5I)rgoi`QJ%o;PbVCT&$aDux8W)P+~k)ST)&ETI-|ASo@`nh!%_ytA9
-BieLZ$
+literal 940
+zcmah`O-~a+7=C7F0TDz=7D4o|MkU;A7fXmSeo@=RNQ>aX#DfgG+Yj1po7$3k(~BPE
+zBJp6N@vMm+@Z`bt#L1Hfe}YF7%f+bcGg}PRm^hPp=Xu_bc|QgMz!2_1B9>mvE^obk
+z{|b;vYIE7;)6SLqsRSVA$XDDz)#R8tN&cEVnJ?eXt-siL1{fy!YQb0D%KYVz#P4`!
+z3sjgHktXi&oGb*5R^N2USn-5>qFi+qT%0G@_K`rfYS_mOF+pxuRN%jSqfYSs0{O#Q
+z^-klKd-gH;7xL@Swevjs`rzX2gXeZ2<!5UCSm9bYC)$RtN5a@OF-F=UdlH>+4VGv}
+zFZIUtN1A?gZzk+DMp%lgVgr59o&RrL>UFrlMXqGFTZ6Q*-D@YdyA$D59Do(JU_~BX
+zKV6IDu_)OIZxb=zdUD#PBxE)W_fYu!hw**uuO1KJ2u^Xw=_hm^(PlorJ2QHG)Dat^
+z^K+QWaLt$sKXHDv$i&RpX2qD=++>8s`FY_7tske}THL03H-`t0lR-S;#AD-*<9W;h
+zRyn(CXLOWRYYhx^J23}ooyJk!6|sR4%%_U2MzikQ3#wkSGgUk7`MD)O-z=*-QYdmT
+z4Kz`Q&yg)a5tWECs8Xg`gpVASDD(6xNA`dGq^@Fb^%EwAA*3)x-(bG3)_u1ctPW8G
+zO1Z9IX$&+g#n{Z5lvyfPN;*>i!UzsyKamBIOkKNy35bAIN57*zCTacc3;vFd5jeys
+Zfnyk^)JU*CE%ipE{l;Gr;Zx%#@C(h+ja>i$
 
 literal 0
 HcmV?d00001
@@ -153,10 +153,10 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
 new file mode 100644
-index 00000000..05312a5d
+index 00000000..aa9a869f
 --- /dev/null
 +++ b/babelfont/resources/ttf/make_fixtures.py
-@@ -0,0 +1,232 @@
+@@ -0,0 +1,247 @@
 +"""Writes the TrueType fixtures the ttf reader tests load (fontTools).
 +
 +Run from this directory: python3 make_fixtures.py
@@ -198,7 +198,8 @@ index 00000000..05312a5d
 +MarkNoGdef.ttf has no GDEF but a mark feature attaching gravecomb (U+0300,
 +advance 0) to a; commaaccent is unencoded, and uni034F (COMBINING GRAPHEME JOINER) a
 +nonspacing mark that is default-ignorable. A shaper takes gravecomb for a mark from its
-+codepoint, and a, commaaccent and uni034F for bases.
++codepoint, and a, commaaccent and uni034F for bases. kink (unencoded) has an off-curve, an
++on-curve and an off-curve point all at (50, 100): a corner drawn with straight lines.
 +"""
 +from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 +from fontTools.fontBuilder import FontBuilder
@@ -369,14 +370,28 @@ index 00000000..05312a5d
 +open("DuplicateNames.ttf", "wb").write(data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe"))
 +
 +
-+order = [".notdef", "a", "gravecomb", "commaaccent", "uni034F"]
++def kink():
++    from array import array
++    from fontTools.ttLib.tables._g_l_y_f import GlyphCoordinates
++    from fontTools.ttLib.tables.ttProgram import Program
++    g = Glyph()
++    g.numberOfContours = 1
++    g.coordinates = GlyphCoordinates([(0, 0), (0, 100), (50, 100), (50, 100), (50, 100), (100, 0)])
++    g.flags = array("B", [1, 1, 0, 1, 0, 1])
++    g.endPtsOfContours = [5]
++    g.program = Program()
++    g.program.fromBytecode(b"")
++    return g
++
++
++order = [".notdef", "a", "gravecomb", "commaaccent", "uni034F", "kink"]
 +fb = FontBuilder(1000, isTTF=True)
 +fb.setupGlyphOrder(order)
 +fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb", 0x034F: "uni034F"})
 +fb.setupGlyf({".notdef": Glyph(), "a": rect(50, 0, 450, 500), "gravecomb": rect(-150, 550, -40, 700),
-+              "commaaccent": rect(20, -200, 100, -50), "uni034F": Glyph()})
++              "commaaccent": rect(20, -200, 100, -50), "uni034F": Glyph(), "kink": kink()})
 +fb.setupHorizontalMetrics({".notdef": (500, 0), "a": (500, 50), "gravecomb": (0, -150),
-+                           "commaaccent": (120, 20), "uni034F": (0, 0)})
++                           "commaaccent": (120, 20), "uni034F": (0, 0), "kink": (200, 0)})
 +fb.setupHorizontalHeader(ascent=800, descent=-200)
 +fb.setupNameTable({"familyName": "Fixture Mark No Gdef", "styleName": "Regular"})
 +fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
@@ -1084,7 +1099,7 @@ index 4a7caef3..d60ecc65 100644
 +    }
 +}
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index bcfc7fe3..54fa8f11 100644
+index bcfc7fe3..3c690cee 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
 @@ -5,13 +5,20 @@ use fontdrasil::{
@@ -1114,7 +1129,7 @@ index bcfc7fe3..54fa8f11 100644
  use crate::{
      features::PossiblyAutomaticCode, Anchor, BabelfontError, Features, Font, FormatSpecific, Glyph,
 -    Instance, Layer, LayerType, MetricType, PathBuilder, Tag,
-+    GlyphCategory, Instance, Layer, LayerType, MetricType, PathBuilder, Tag,
++    GlyphCategory, Instance, Layer, LayerType, MetricType, Node, NodeType, PathBuilder, Tag,
  };
  
  /// Load a TTF font from a file path
@@ -1208,12 +1223,12 @@ index bcfc7fe3..54fa8f11 100644
      }
 +    Ok(())
 +}
-+
+ 
+-    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
 +/// The fsSelection bits a source states; ITALIC, BOLD and REGULAR are set by
 +/// the compiler from the style.
 +const SOURCE_FS_SELECTION_BITS: u16 = !(1 << 0 | 1 << 5 | 1 << 6);
- 
--    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
++
 +fn load_custom_ot_values(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let os2 = fontref.os2()?;
 +    let ot = &mut font.custom_ot_values;
@@ -1591,7 +1606,7 @@ index bcfc7fe3..54fa8f11 100644
  fn get_x_y_location_for_anchor(
      location: DesignLocation,
      anchor: &sr_aef::fea_rs_ast::Anchor,
-@@ -527,18 +845,93 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+@@ -527,18 +845,137 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
      Ok(coords)
  }
  
@@ -1615,6 +1630,50 @@ index bcfc7fe3..54fa8f11 100644
 +    layer.vertical_advance = Some(advance as f32);
 +    layer.vertical_origin = Some(y_max + tsb as f32);
 +    Ok(())
++}
++
++/// A quadratic whose off-curve point sits on one of its on-curve ends is the straight
++/// line between them: such an off-curve point is dropped, and a quadratic left without
++/// one is a line. A glyf contour may record off, on and off-curve points at one place,
++/// a corner; kept as they are, a later step that merges coincident points can keep an
++/// off-curve one and round the corner.
++fn drop_degenerate_offcurves(path: &mut crate::Path) {
++    let n = path.nodes.len();
++    if !path.closed || n < 3 {
++        return;
++    }
++    let on_curve = |node: &Node| node.nodetype != NodeType::OffCurve;
++    let same_place = |a: &Node, b: &Node| a.x == b.x && a.y == b.y;
++    let keep: Vec<bool> = (0..n)
++        .map(|i| {
++            let node = &path.nodes[i];
++            if on_curve(node) {
++                return true;
++            }
++            let prev = &path.nodes[(i + n - 1) % n];
++            let next = &path.nodes[(i + 1) % n];
++            !(on_curve(prev) && same_place(prev, node) || on_curve(next) && same_place(next, node))
++        })
++        .collect();
++    if keep.iter().all(|&k| k) {
++        return;
++    }
++    let mut nodes: Vec<Node> = path
++        .nodes
++        .iter()
++        .zip(keep)
++        .filter(|(_, k)| *k)
++        .map(|(node, _)| node.clone())
++        .collect();
++    let m = nodes.len();
++    for i in 0..m {
++        if nodes[i].nodetype == NodeType::QCurve
++            && nodes[(i + m - 1) % m].nodetype != NodeType::OffCurve
++        {
++            nodes[i].nodetype = NodeType::Line;
++        }
++    }
++    path.nodes = nodes;
 +}
 +
 +/// How far a TrueType rasterizer moves a glyph's stored outline when it draws
@@ -1686,7 +1745,7 @@ index bcfc7fe3..54fa8f11 100644
  
      // Skrifa pens don't support components. Parse component glyphs manually.
      let glyf = fontref.glyf()?;
-@@ -557,11 +950,28 @@ fn load_layer(
+@@ -557,11 +994,29 @@ fn load_layer(
                          &mut pen,
                      )
                      .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
@@ -1697,6 +1756,7 @@ index bcfc7fe3..54fa8f11 100644
 +                    .build()
 +                    .into_iter()
 +                    .map(|mut path| {
++                        drop_degenerate_offcurves(&mut path);
 +                        path.reverse();
 +                        crate::Shape::Path(path)
 +                    })
@@ -1716,7 +1776,7 @@ index bcfc7fe3..54fa8f11 100644
              for component in c.components() {
                  let gid = component.glyph;
                  let anchor = match component.anchor {
-@@ -571,25 +981,31 @@ fn load_layer(
+@@ -571,25 +1026,31 @@ fn load_layer(
                          component: _,
                      } => (0.0, 0.0),
                  };
@@ -1758,7 +1818,7 @@ index bcfc7fe3..54fa8f11 100644
                      transform: our_affine.into(),
                      location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
                      format_specific: FormatSpecific::default(),
-@@ -600,3 +1016,333 @@ fn load_layer(
+@@ -600,3 +1061,349 @@ fn load_layer(
  
      Ok(layer)
  }
@@ -1903,6 +1963,22 @@ index bcfc7fe3..54fa8f11 100644
 +        assert_eq!(category(&font, "commaaccent"), (GlyphCategory::Base, None));
 +        // a nonspacing mark that is default-ignorable: a shaper takes it for a base
 +        assert_eq!(category(&font, "uni034F"), (GlyphCategory::Base, None));
++    }
++
++    #[test]
++    fn test_degenerate_offcurves() {
++        // off, on and off-curve points at (50, 100): a corner of straight lines
++        let font = load(MARK_NO_GDEF).unwrap();
++        let layer = &font.glyphs.get("kink").unwrap().layers[0];
++        let crate::Shape::Path(path) = &layer.shapes[0] else {
++            panic!("kink is a path")
++        };
++        assert!(path.nodes.iter().all(|n| n.nodetype != NodeType::OffCurve));
++        assert_eq!(path.nodes.len(), 4);
++        assert!(path
++            .nodes
++            .iter()
++            .any(|n| (n.x, n.y) == (50.0, 100.0) && n.nodetype == NodeType::Line));
 +    }
 +
 +    #[test]

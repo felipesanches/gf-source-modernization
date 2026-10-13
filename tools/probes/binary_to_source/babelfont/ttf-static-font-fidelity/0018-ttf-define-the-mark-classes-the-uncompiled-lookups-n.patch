@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felipe Correa da Silva Sanches <juca@members.fsf.org>
 Date: Fri, 9 Oct 2026 04:26:28 +0100
-Subject: [PATCH 18/21] ttf: define the mark classes the uncompiled lookups
+Subject: [PATCH 18/22] ttf: define the mark classes the uncompiled lookups
  name
 
 The reader turned GPOS mark classes into anchors but left the uncompiled mark lookups

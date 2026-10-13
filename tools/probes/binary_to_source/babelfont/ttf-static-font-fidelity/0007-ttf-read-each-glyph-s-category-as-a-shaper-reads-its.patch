@@ -2,7 +2,7 @@ From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
  <juca@members.fsf.org>
 Date: Thu, 8 Oct 2026 16:15:30 +0100
-Subject: [PATCH 07/21] ttf: read each glyph's category as a shaper reads its
+Subject: [PATCH 07/22] ttf: read each glyph's category as a shaper reads its
  class
 
 The reader left every glyph's category unset, so a compiler guessed one from
