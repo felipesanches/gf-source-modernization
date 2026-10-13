@@ -1,0 +1,10 @@
+{
+  "repo": "himelody",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/yoondesign/Yoonfont-HiMelody at 4feb2315457c615527775b455d119e9f3b8c8863: the fonts as built (2 font files); no source."
+  ],
+  "disclose": [
+    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+  ]
+}
