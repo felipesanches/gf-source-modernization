@@ -110,6 +110,7 @@ cannot be reproduced; under an engine that reads GSUB they were never shaped by 
 | Calligraffitti | 1 | CLEAN (2026-10-13); hinting disclosed |
 | Kranky | 1 | CLEAN (2026-10-13); legacy kern (629 pairs) as GPOS and unhinted glyphs disclosed |
 | Cherry Cream Soda | 1 | CLEAN (2026-10-13); legacy kern (1125 pairs) as GPOS and hinting disclosed |
+| Chewy | 1 | CLEAN (2026-10-13); legacy kern (399 pairs) as GPOS and hinting disclosed |
 
 Not binary-only after all (2026-10-13): Schoolbell, Walter Turncoat, Slackey, Sunshiney,
 Permanent Marker and Rock Salt are on the NO-SOURCES list, but their upstream_info.md records
