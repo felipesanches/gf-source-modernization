@@ -1,0 +1,11 @@
+{
+  "repo": "chewy",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/librefonts/chewy at 7fae11600a5c13c94a0780ec22ae5309264c43d0: the font as built, dumped to TTX, and its metadata; no source."
+  ],
+  "disclose": [
+    "The release kerns with a legacy `kern` table (399 pairs) and has no GPOS; these sources kern through a GPOS kern feature, which is how fontc builds kerning. HarfBuzz shapes every kerned pair alike in both (the functional gate). Decided 2026-10-01: releases with an old kern table are accepted and disclosed.",
+    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+  ]
+}
