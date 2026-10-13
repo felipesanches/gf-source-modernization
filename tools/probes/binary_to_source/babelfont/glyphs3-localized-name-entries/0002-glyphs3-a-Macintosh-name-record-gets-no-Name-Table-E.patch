@@ -1,0 +1,96 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Tue, 13 Oct 2026 05:00:37 +0100
+Subject: [PATCH 2/2] glyphs3: a Macintosh name record gets no Name Table Entry
+
+A name read from a Macintosh name record is keyed by the BCP-47 code of its
+Macintosh language ("en" for language 0), and the language lookup also matched
+those codes, so a font with Macintosh records got Windows entries with the
+Macintosh language ID: "1 3 1 0x0000; Gugi". Only Windows language IDs are
+looked up now, and a Macintosh language is skipped without a warning.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ .../convertors/glyphs3/customparameters.rs    | 19 +++++++++++++++++--
+ babelfont/src/names.rs                        | 15 +++++++++++++--
+ 2 files changed, 30 insertions(+), 4 deletions(-)
+
+diff --git a/babelfont/src/convertors/glyphs3/customparameters.rs b/babelfont/src/convertors/glyphs3/customparameters.rs
+index 2a7c914a..8a46293a 100644
+--- a/babelfont/src/convertors/glyphs3/customparameters.rs
++++ b/babelfont/src/convertors/glyphs3/customparameters.rs
+@@ -4,7 +4,7 @@ use crate::{
+     common::FormatSpecific,
+     convertors::glyphs3::get_cp,
+     i18ndictionary::DFLT,
+-    names::{is_layout_language_tag, name_language_to_ot_lang_id},
++    names::{is_layout_language_tag, is_mac_language_code, name_language_to_ot_lang_id},
+     BabelfontError, Font, MetricType, NameId,
+ };
+ 
+@@ -69,7 +69,10 @@ fn export_localized_name_table_entries(custom_parameters: &mut Vec<CustomParamet
+                 continue;
+             }
+             let Some(language_id) = name_language_to_ot_lang_id(language) else {
+-                log::warn!("No Windows language ID for name language {language}; dropped");
++                // A Macintosh name record: these entries are Windows records.
++                if !is_mac_language_code(language) {
++                    log::warn!("No Windows language ID for name language {language}; dropped");
++                }
+                 continue;
+             };
+             if language_id == ENGLISH_US {
+@@ -437,6 +440,18 @@ mod localized_name_table_entry_tests {
+         assert!(entries(&font).is_empty());
+     }
+ 
++    #[test]
++    fn test_a_macintosh_name_gets_no_entry() {
++        let mut font = single_style_font();
++        font.names
++            .family_name
++            .insert("en".to_string(), "Comic Relief".to_string());
++        font.names
++            .family_name
++            .insert("ko".to_string(), "Comic Relief".to_string());
++        assert!(entries(&font).is_empty());
++    }
++
+     #[test]
+     fn test_no_entries_for_several_styles() {
+         let mut font = single_style_font();
+diff --git a/babelfont/src/names.rs b/babelfont/src/names.rs
+index f71cd00e..92c4f5af 100644
+--- a/babelfont/src/names.rs
++++ b/babelfont/src/names.rs
+@@ -692,16 +692,27 @@ const LANGUAGE_ID_TO_LAYOUT_TAG: &[(u16, &str)] = &[
+     (0x0404, "ZHT"),
+ ];
+ 
++/// Language IDs below this are Macintosh language codes, not Windows ones.
++const FIRST_WINDOWS_LANGUAGE_ID: u16 = 0x0400;
++
+ /// The Windows language ID of a name language key: an OpenType Layout language
+-/// tag or a BCP-47 tag.
++/// tag or a BCP-47 tag. A Macintosh language code has none.
+ pub fn name_language_to_ot_lang_id(language: &str) -> Option<u16> {
+     LANGUAGE_ID_TO_LAYOUT_TAG
+         .iter()
+         .chain(LANGUAGE_ID_TO_BCP47.iter())
+-        .find(|&&(_, tag)| tag == language)
++        .find(|&&(id, tag)| tag == language && id >= FIRST_WINDOWS_LANGUAGE_ID)
+         .map(|&(id, _)| id)
+ }
+ 
++/// Whether a name language key is the BCP-47 code of a Macintosh language,
++/// which only a Macintosh name record has.
++pub fn is_mac_language_code(language: &str) -> bool {
++    LANGUAGE_ID_TO_BCP47
++        .iter()
++        .any(|&(id, tag)| tag == language && id < FIRST_WINDOWS_LANGUAGE_ID)
++}
++
+ /// Whether a name language key is an OpenType Layout language tag, the
+ /// language codes Glyphs uses for localized properties.
+ pub fn is_layout_language_tag(language: &str) -> bool {
