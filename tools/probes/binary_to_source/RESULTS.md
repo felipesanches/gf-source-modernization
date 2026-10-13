@@ -249,3 +249,13 @@ Gaps in the gates, measured (`gate_trace.sh`, `gsub_lookups.py`, `gdef_classes.p
   advance). A name the release gives several glyphs is noted, not failed, for the same reason.
 
 Ek Mukta's and Carlito's only blocking rows come from gaps A and D.
+
+Gaps A, B and D are now closed in table_gate.py: a multiple
+substitution is profiled as a glyph-to-sequence rule; the arbitration compares where each glyph
+is drawn and where the run ends; GDEF is compared glyph id by glyph id when both fonts keep
+one glyph order (same glyph count, every shared codepoint on the same id). The table gate
+re-run on the same builds (`results/gate-trace-2026-10-13j-fixed.txt`): Ek Mukta (7) and Carlito
+(4) block on nothing, and the functional gate passes them; IM Fell blocks on
+head.font_direction_hint alone (with U+0326 in the functional gate); Jomolhari on `PCLT`;
+Uchen's GSUB rows clear, its 60 shaped runs remain. C, E and F are open; E (`PCLT`) is
+Felipe's call.

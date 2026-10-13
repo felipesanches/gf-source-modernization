@@ -1089,7 +1089,11 @@ def arbitrate_gsub_lookup_order(rows, shipped, built):
             for lk in g.LookupList.Lookup:
                 for st in lk.SubTable:
                     for k, v in (getattr(st, "mapping", None) or {}).items():
-                        rules.append(("sub", key(k), key(v)))
+                        if isinstance(v, (list, tuple)):
+                            # a multiple substitution maps a glyph to a sequence
+                            rules.append(("mul", key(k), tuple(key(x) for x in v)))
+                        else:
+                            rules.append(("sub", key(k), key(v)))
                     for k, v in (getattr(st, "ligatures", None) or {}).items():
                         rules.append(("lig", key(k), len(v)))
                     for k, v in (getattr(st, "alternates", None) or {}).items():
@@ -1139,8 +1143,19 @@ def arbitrate_gsub_lookup_order(rows, shipped, built):
             # Scedilla -> `uni0218`, which is the same glyph at U+0218; comparing the
             # names made a rename look like a shaping difference and the arbitration
             # refused a font that shapes identically.
-            return [(order(i.codepoint), p.x_advance)
-                    for i, p in zip(buf.glyph_infos, buf.glyph_positions)]
+            #
+            # And compare where each glyph is DRAWN (pen position plus offset), and where
+            # the run ends, not the advances. HarfBuzz applies a legacy `kern` value split
+            # between the pair (half to the first advance, half to the second as advance
+            # and negative offset) where GPOS kerning moves the first advance only: IM Fell
+            # English SC's `'A` reads 518 + 1341 in the release and 479 + 1380 in ours,
+            # with the A drawn at 479 in both (results/gate-trace-2026-10-13j.txt).
+            out, x, y = [], 0, 0
+            for i, p in zip(buf.glyph_infos, buf.glyph_positions):
+                out.append((order(i.codepoint), x + p.x_offset, y + p.y_offset))
+                x += p.x_advance
+                y += p.y_advance
+            return out + [("end", x, y)]
 
         # `locl` only substitutes under the language it is registered for, so a corpus
         # shaped in the default language never fires it and the "features demonstrably
@@ -1227,7 +1242,7 @@ def arbitrate_gsub_lookup_order(rows, shipped, built):
                 naive = [s_key(s_cmap[ord(ch)]) for ch in w if ord(ch) in s_cmap]
                 if len(naive) != len(w):
                     continue
-                shaped = [g for g, _ in run(fs, so, w, on)]
+                shaped = [g for g, _x, _y in run(fs, so, w, on)[:-1]]
                 if shaped != naive:
                     fired = True
                     break
@@ -1636,6 +1651,50 @@ def _all_combining(codepoints):
     return True
 
 
+def _gdef_equal_by_glyph_id(shipped, built):
+    """-> a reason when the two fonts keep one glyph order and GDEF says the same of every
+    glyph id, else None.
+
+    diffenator3 compares glyph classes by glyph NAME. A release with no glyph names (post
+    format 3) is named by fontTools, AGL names for encoded glyphs, while our build names
+    them uniXXXX: Carlito's 479 renamed glyphs read as base in the release and
+    unclassified in ours, with the two fonts' classes equal glyph by glyph
+    (probes/binary_to_source/gdef_classes.py). By glyph id is sound only when the order is
+    the same, so it must be shown, not assumed: the same number of glyphs, and every
+    codepoint both fonts map going to the same glyph id."""
+    from fontTools.ttLib import TTFont
+
+    S, B = TTFont(shipped), TTFont(built)
+    so, bo = S.getGlyphOrder(), B.getGlyphOrder()
+    if len(so) != len(bo) or 'GDEF' not in S or 'GDEF' not in B:
+        return None
+    sid = {n: i for i, n in enumerate(so)}
+    bid = {n: i for i, n in enumerate(bo)}
+    sc, bc = _best_cmap(S), _best_cmap(B)
+    shared = set(sc) & set(bc)
+    if not shared or any(sid[sc[c]] != bid[bc[c]] for c in shared):
+        return None
+
+    def by_gid(font, ids, attr):
+        cd = getattr(font['GDEF'].table, attr, None)
+        classes = cd.classDefs if cd else {}
+        return {ids[n]: v for n, v in classes.items() if v}
+
+    for attr in ('GlyphClassDef', 'MarkAttachClassDef'):
+        if by_gid(S, sid, attr) != by_gid(B, bid, attr):
+            return None
+
+    def mark_sets(font, ids):
+        sets = getattr(font['GDEF'].table, 'MarkGlyphSetsDef', None)
+        return [sorted(ids[n] for n in cov.glyphs) for cov in (sets.Coverage if sets else [])]
+
+    if mark_sets(S, sid) != mark_sets(B, bid):
+        return None
+    return ('the same glyph classes, mark attachment classes and mark sets for every glyph '
+            'id; both fonts keep one glyph order (%d glyphs, %d shared codepoints on the same '
+            'ids) and name the glyphs differently' % (len(so), len(shared)))
+
+
 def arbitrate_gdef_classes(rows, shipped, built):
     """A `GDEF.glyph_classes` row where the two fonts nonetheless agree about which
     glyphs are marks, and nothing in either font can read the rest of the distinction.
@@ -1663,6 +1722,14 @@ def arbitrate_gdef_classes(rows, shipped, built):
                                   or _reads_glyph_class(built))
         except Exception:
             block.append(row)
+            continue
+        if 'by_gid' not in cache:
+            try:
+                cache['by_gid'] = _gdef_equal_by_glyph_id(shipped, built)
+            except Exception:
+                cache['by_gid'] = None
+        if cache['by_gid']:
+            benign.append('GDEF.glyph_classes -- %s' % cache['by_gid'])
             continue
         if cache['reads']:
             block.append('GDEF.glyph_classes -- a lookup filters on glyph class')
