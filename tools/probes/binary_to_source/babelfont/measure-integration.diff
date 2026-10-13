@@ -76,20 +76,21 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/MarkNoGdef.ttf b/babelfont/resources/ttf/MarkNoGdef.ttf
 new file mode 100644
-index 0000000000000000000000000000000000000000..bfeed59b326d8000eddea5b8e2601f76fcd3c679
+index 0000000000000000000000000000000000000000..927f3bf34b1b5a4a09159139429262eb289ea4af
 GIT binary patch
-literal 876
-zcmah`J#Q016r8=i1m%MeO9nzf;t&v}K_Ev&DJ=1k#72lXQ9?n7m-G26KHD;9FdbBg
-z&Xq+$fkZ<Ak`aQ60$CKPsF2_XP*75s28k@Q8y8N2*wwy$GjDfq-W&vg2|R?vh4jYy
-z*1Pu~Ujx!5n_u5LpICjAiUDGYIO~V1KGNMiN&J#HS*Se7cb~Ms68|K=UJO(&yL|Nv
-z^AB8$MG|gCtTOL&ohgP<%gyR8&p#!euGD;m1db7ZCms(~tBz4lh#6w9s>0ya8+96R
-zlEjbewY$;VYv&^3PsEpDv~!ha@4vWxDESLg{vfk&=(1iCJ;&&ga0Vsbk)CExqOZ${
-zi=KUH_?~MS7kfKDI9#;36iv~_2v7WfTp2!ciGx_lfd=VeXSmMXGs^5r094pQoUG9x
-zx#EoMfV+!%?xR+vV_wvn*zWrIA7@`z2kG-!Rs|i0=<$8NwGcZMONh4U?@p4`WoJ%*
-zqgSlRiwlQ4RcEf#;f*-G%IVLBKT1Bnu|wJp7mI_h@RWVs&<+mlsdUF!oyT#bn7M-~
-zET>AXsM!d-HPzVmGBq!q3-X&mp;=K4q)=kB5t?WqpbcwK%(j_jP-9FZM?Q~D#sW`O
-zY~4Cz<@_U<f3zYTA;$_0buaL1;hhPFP$}OJs*&wr3P&(*dWBd?-MEPvh>!}c%f_`?
-kR?RTZ8=uWCFwI*6CosuqGC?gSnhDGPrqe<{b8Z2D0ob^MWB>pF
+literal 900
+zcmah{J#Q015Pf@lCO}Le(gl)`;t&wgVc8I+Kp=>*QAF%0p`eQw`}`H3Z5bPx4k|?F
+z%A%m4OB19}go*;WN`+D&!B0R!NED_3g)DCmqnH9QtDT+qX7={&>_Gq+#Un^WlFRAU
+z?bmN#0&<3IKD~M|dh>B21BiLzOx9O*Iblx|ZxY7~m52GQr=1VPd&G-HPvtTTH{LUT
+z!#P(ZVW&ibai8;C(QmfxjNW4XGh(Mw%PK^1mG~=h*jMd3MsSFDlGv>(-`jkp&H~mg
+z;wSam{pN1{^9J!Q@gj_N&e;B!?`y}ee1nvq$oyrxtmj3~GI}JeL5h2%t9d8U*JU`O
+z7kp`WUnpQgum_nxI}d84Xo(I?#sBU4aLF|qv6AWE8l;Pz;XGs4C<|s3pu#qsL50yF
+zIURc5f~$=P*TWnprzB)r>w`$Y_-XBJ4{kv^uw$6Qc@DwuL-cqSzZn}pGaeNk(cce~
+z)MaZ{e`Md7k(Xl=-KsU)?Q)01zUA~g!=EDWEbovG%*Nc{99EGr`uJ3Q(Lk+zgv<q;
+zHp&@W7{fxM)NZyKp1Y(P>u##%CUahX#VfQbs(}Pbym%8WG~lr%OHho~8KqF8Pa;P?
+zj}`g?t13Z0=t6MtKU|1>Tv$R<M4_P`c-fkNZ<NkgDx3AH&5>5M6p39jf33N}7*66S
+zBL^a$xP1qc5I)rgoi`QJ%o;PbVCT&$aDux8W)P+~k)ST)&ETI-|ASo@`nh!%_ytA9
+BieLZ$
 
 literal 0
 HcmV?d00001
@@ -139,10 +140,10 @@ HcmV?d00001
 
 diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
 new file mode 100644
-index 00000000..fb25cc73
+index 00000000..262af356
 --- /dev/null
 +++ b/babelfont/resources/ttf/make_fixtures.py
-@@ -0,0 +1,231 @@
+@@ -0,0 +1,232 @@
 +"""Writes the TrueType fixtures the ttf reader tests load (fontTools).
 +
 +Run from this directory: python3 make_fixtures.py
@@ -182,8 +183,9 @@ index 00000000..fb25cc73
 +may); Acomp is a component of glyph 3.
 +
 +MarkNoGdef.ttf has no GDEF but a mark feature attaching gravecomb (U+0300,
-+advance 0) to a; commaaccent is unencoded. A shaper takes gravecomb for a mark
-+from its codepoint, and a and commaaccent for bases.
++advance 0) to a; commaaccent is unencoded, and uni034F (COMBINING GRAPHEME JOINER) a
++nonspacing mark that is default-ignorable. A shaper takes gravecomb for a mark from its
++codepoint, and a, commaaccent and uni034F for bases.
 +"""
 +from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 +from fontTools.fontBuilder import FontBuilder
@@ -354,14 +356,14 @@ index 00000000..fb25cc73
 +open("DuplicateNames.ttf", "wb").write(data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe"))
 +
 +
-+order = [".notdef", "a", "gravecomb", "commaaccent"]
++order = [".notdef", "a", "gravecomb", "commaaccent", "uni034F"]
 +fb = FontBuilder(1000, isTTF=True)
 +fb.setupGlyphOrder(order)
-+fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb"})
++fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb", 0x034F: "uni034F"})
 +fb.setupGlyf({".notdef": Glyph(), "a": rect(50, 0, 450, 500), "gravecomb": rect(-150, 550, -40, 700),
-+              "commaaccent": rect(20, -200, 100, -50)})
++              "commaaccent": rect(20, -200, 100, -50), "uni034F": Glyph()})
 +fb.setupHorizontalMetrics({".notdef": (500, 0), "a": (500, 50), "gravecomb": (0, -150),
-+                           "commaaccent": (120, 20)})
++                           "commaaccent": (120, 20), "uni034F": (0, 0)})
 +fb.setupHorizontalHeader(ascent=800, descent=-200)
 +fb.setupNameTable({"familyName": "Fixture Mark No Gdef", "styleName": "Regular"})
 +fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
@@ -1019,14 +1021,17 @@ index 4a7caef3..76b44b3e 100644
 +    }
 +}
 diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
-index bcfc7fe3..c6ca13f3 100644
+index bcfc7fe3..75b47885 100644
 --- a/babelfont/src/convertors/ttf.rs
 +++ b/babelfont/src/convertors/ttf.rs
-@@ -5,13 +5,17 @@ use fontdrasil::{
+@@ -5,13 +5,20 @@ use fontdrasil::{
      },
      types::Axes,
  };
-+use icu_properties::{props::GeneralCategory, CodePointMapData};
++use icu_properties::{
++    props::{DefaultIgnorableCodePoint, GeneralCategory},
++    CodePointMapData, CodePointSetData,
++};
  use indexmap::IndexMap;
  use itertools::Itertools;
  use ordered_float::OrderedFloat;
@@ -1041,7 +1046,7 @@ index bcfc7fe3..c6ca13f3 100644
      string::StringId,
      GlyphId, GlyphNames, MetadataProvider,
  };
-@@ -22,7 +26,7 @@ use write_fonts::types::F2Dot14;
+@@ -22,7 +29,7 @@ use write_fonts::types::F2Dot14;
  
  use crate::{
      features::PossiblyAutomaticCode, Anchor, BabelfontError, Features, Font, FormatSpecific, Glyph,
@@ -1050,7 +1055,7 @@ index bcfc7fe3..c6ca13f3 100644
  };
  
  /// Load a TTF font from a file path
-@@ -32,17 +36,69 @@ pub fn load<T: AsRef<std::path::Path>>(path: T) -> Result<Font, BabelfontError>
+@@ -32,17 +39,69 @@ pub fn load<T: AsRef<std::path::Path>>(path: T) -> Result<Font, BabelfontError>
      let fontref =
          skrifa::FontRef::new(&binary).map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
      font.upm = fontref.head()?.units_per_em();
@@ -1120,7 +1125,7 @@ index bcfc7fe3..c6ca13f3 100644
  fn name_id_to_i18n(fontref: &skrifa::FontRef, name_id: StringId) -> crate::I18NDictionary {
      let names = fontref.localized_strings(name_id);
      let mut dict = crate::I18NDictionary::new();
-@@ -53,7 +109,12 @@ fn name_id_to_i18n(fontref: &skrifa::FontRef, name_id: StringId) -> crate::I18ND
+@@ -53,7 +112,12 @@ fn name_id_to_i18n(fontref: &skrifa::FontRef, name_id: StringId) -> crate::I18ND
              } else {
                  lang
              };
@@ -1134,18 +1139,18 @@ index bcfc7fe3..c6ca13f3 100644
          }
      }
      dict
-@@ -114,12 +175,55 @@ fn load_names(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfon
+@@ -114,12 +178,55 @@ fn load_names(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfon
              *record = name_id_to_i18n(fontref, name_id);
          }
      }
 +    Ok(())
 +}
- 
--    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
++
 +/// The fsSelection bits a source states; ITALIC, BOLD and REGULAR are set by
 +/// the compiler from the style.
 +const SOURCE_FS_SELECTION_BITS: u16 = !(1 << 0 | 1 << 5 | 1 << 6);
-+
+ 
+-    font.custom_ot_values.os2_vendor_id = Some(fontref.os2()?.ach_vend_id());
 +fn load_custom_ot_values(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let os2 = fontref.os2()?;
 +    let ot = &mut font.custom_ot_values;
@@ -1191,7 +1196,7 @@ index bcfc7fe3..c6ca13f3 100644
      for (id, instance) in fontref.named_instances().iter().enumerate() {
          let name = name_id_to_i18n(fontref, instance.subfamily_name_id());
          let coordinates = instance.location();
-@@ -192,7 +296,11 @@ fn load_masters(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelf
+@@ -192,7 +299,11 @@ fn load_masters(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelf
      }
  
      font.masters.push(crate::Master {
@@ -1204,7 +1209,7 @@ index bcfc7fe3..c6ca13f3 100644
          id: uuid::Uuid::new_v4().to_string(),
          location: default_location,
          metrics,
-@@ -206,20 +314,26 @@ fn load_metrics(
+@@ -206,20 +317,26 @@ fn load_metrics(
      font: &mut Font,
      loc: &fontdrasil::coords::Location<fontdrasil::coords::DesignSpace>,
  ) -> Result<IndexMap<MetricType, i32>, BabelfontError> {
@@ -1240,7 +1245,7 @@ index bcfc7fe3..c6ca13f3 100644
          metrics.insert(MetricType::CapHeight, cap_height as i32);
      }
      if let Some(strikeout) = skrifa_metrics.strikeout {
-@@ -258,6 +372,15 @@ fn load_metrics(
+@@ -258,6 +375,15 @@ fn load_metrics(
          MetricType::HheaDescender,
          fontref.hhea()?.descender().to_i16() as i32,
      );
@@ -1256,7 +1261,7 @@ index bcfc7fe3..c6ca13f3 100644
  
      // post stores the angle negative for a right lean; babelfont stores the
      // Glyphs convention, the opposite sign.
-@@ -269,17 +392,10 @@ fn load_metrics(
+@@ -269,17 +395,10 @@ fn load_metrics(
  }
  
  fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
@@ -1278,7 +1283,7 @@ index bcfc7fe3..c6ca13f3 100644
          glyph.exported = true;
          font.glyphs.push(glyph);
      }
-@@ -307,9 +423,75 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
+@@ -307,9 +426,79 @@ fn load_glyphs(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babelfo
              )))?;
          glyph.codepoints.push(unicode);
      }
@@ -1291,8 +1296,9 @@ index bcfc7fe3..c6ca13f3 100644
 +/// is used (from the codepoint, or kept through a substitution), so every glyph is
 +/// a base: a compiler then writes no glyph classes either. But a font that attaches
 +/// marks gets glyph classes from any compiler, so there a glyph whose codepoint is a
-+/// nonspacing mark is a mark, as the shaper takes it. Every glyph is given a
-+/// category, so that a compiler does not guess one from its name.
++/// nonspacing mark, and not default-ignorable, is a mark, as the shaper takes it.
++/// Every glyph is given a category, so that a compiler does not guess one from its
++/// name.
 +fn load_categories(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), BabelfontError> {
 +    let class_def = match fontref.gdef() {
 +        Ok(gdef) => gdef.glyph_class_def().transpose()?,
@@ -1300,13 +1306,16 @@ index bcfc7fe3..c6ca13f3 100644
 +    };
 +    let marks_by_codepoint = class_def.is_none() && attaches_marks(fontref)?;
 +    let general_category = CodePointMapData::<GeneralCategory>::new();
++    let default_ignorable = CodePointSetData::new::<DefaultIgnorableCodePoint>();
 +    let metrics = fontref.glyph_metrics(Size::unscaled(), LocationRef::default());
 +    for (gid, glyph) in font.glyphs.iter_mut().enumerate() {
 +        let gid = GlyphId::new(gid as u32);
 +        let nonspacing_mark = || {
 +            glyph.codepoints.iter().any(|&cp| {
-+                char::from_u32(cp)
-+                    .is_some_and(|c| general_category.get(c) == GeneralCategory::NonspacingMark)
++                char::from_u32(cp).is_some_and(|c| {
++                    general_category.get(c) == GeneralCategory::NonspacingMark
++                        && !default_ignorable.contains(c)
++                })
 +            })
 +        };
 +        let class = match &class_def {
@@ -1354,7 +1363,7 @@ index bcfc7fe3..c6ca13f3 100644
  // This is only sound for mark class definitions
  fn expand_glyphcontainer(glyphs: &fea_rs_ast::GlyphContainer) -> Vec<SmolStr> {
      let mut r = vec![];
-@@ -372,6 +554,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -372,6 +561,14 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      // Do the same but for mark classes.
@@ -1369,7 +1378,7 @@ index bcfc7fe3..c6ca13f3 100644
      for (anchor_name, classdefs) in uncompile_context.mark_classes {
          let anchor_name = format!("_{}", anchor_name);
          for definition in classdefs.iter() {
-@@ -413,10 +603,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -413,10 +610,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      }
  
      for (class_name, glyphs) in uncompile_context.named_classes.iter() {
@@ -1385,7 +1394,7 @@ index bcfc7fe3..c6ca13f3 100644
      }
      let mut language_systems = vec![];
      for (script_tag, lang_sys_tags) in &uncompile_context.language_systems {
-@@ -433,6 +624,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -433,6 +631,17 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
              PossiblyAutomaticCode::new(language_systems_block),
          );
      }
@@ -1403,7 +1412,7 @@ index bcfc7fe3..c6ca13f3 100644
      for (lookup_name, statements) in uncompile_context.lookups.iter() {
          features.prefixes.insert(
              lookup_name.clone(),
-@@ -449,6 +651,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+@@ -449,6 +658,111 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
      Ok(())
  }
  
@@ -1515,7 +1524,7 @@ index bcfc7fe3..c6ca13f3 100644
  fn get_x_y_location_for_anchor(
      location: DesignLocation,
      anchor: &sr_aef::fea_rs_ast::Anchor,
-@@ -527,18 +834,93 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
+@@ -527,18 +841,93 @@ fn fontdrasil_location_to_skrifa_location<Space: ConvertSpace<NormalizedSpace>>(
      Ok(coords)
  }
  
@@ -1610,7 +1619,7 @@ index bcfc7fe3..c6ca13f3 100644
  
      // Skrifa pens don't support components. Parse component glyphs manually.
      let glyf = fontref.glyf()?;
-@@ -557,11 +939,28 @@ fn load_layer(
+@@ -557,11 +946,28 @@ fn load_layer(
                          &mut pen,
                      )
                      .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
@@ -1640,7 +1649,7 @@ index bcfc7fe3..c6ca13f3 100644
              for component in c.components() {
                  let gid = component.glyph;
                  let anchor = match component.anchor {
-@@ -571,25 +970,31 @@ fn load_layer(
+@@ -571,25 +977,31 @@ fn load_layer(
                          component: _,
                      } => (0.0, 0.0),
                  };
@@ -1682,7 +1691,7 @@ index bcfc7fe3..c6ca13f3 100644
                      transform: our_affine.into(),
                      location: IndexMap::new(), // We don't have per-component locations in TTF, so leave this empty
                      format_specific: FormatSpecific::default(),
-@@ -600,3 +1005,321 @@ fn load_layer(
+@@ -600,3 +1012,323 @@ fn load_layer(
  
      Ok(layer)
  }
@@ -1818,6 +1827,8 @@ index bcfc7fe3..c6ca13f3 100644
 +        );
 +        assert_eq!(category(&font, "a"), (GlyphCategory::Base, None));
 +        assert_eq!(category(&font, "commaaccent"), (GlyphCategory::Base, None));
++        // a nonspacing mark that is default-ignorable: a shaper takes it for a base
++        assert_eq!(category(&font, "uni034F"), (GlyphCategory::Base, None));
 +    }
 +
 +    #[test]
