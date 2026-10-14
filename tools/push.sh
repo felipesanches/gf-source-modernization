@@ -67,6 +67,7 @@ for repo in $repos; do
   fi
   fam="$W/families.tsv"
   grep -q "^$repo	" "$fam" || fam="$W/families-next.tsv"   # the table that pairs this repo
+  grep -q "^$repo	" "$fam" || fam="$W/families-binary.tsv"
   if ! FAMILIES="$fam" "$PY" "$W/tools/verify_landed.py" "$repo" >/dev/null 2>&1; then
     echo "$repo: REFUSED -- verify_landed.py fails; run it to see why"; continue
   fi
@@ -82,7 +83,12 @@ for repo in $repos; do
     printf '%s\t%s\t%s\t%s\n' "$repo" "$branch" "$head" "$url" >> "$W/push_log.tsv"
     if [ "$branch" != main ]; then
       echo "$repo: pushed $branch -- open the pull request:"
-      echo "    ${url%.git}/compare/master...$branch?expand=1"
+      # the pull request goes to the repository's default branch (carlito's is main)
+      default=$(GIT_TERMINAL_PROMPT=0 git ls-remote --symref "$url" HEAD 2>/dev/null \
+        | sed -n 's#^ref: refs/heads/\([^[:space:]]*\)[[:space:]]*HEAD$#\1#p')
+      echo "    ${url%.git}/compare/${default:-master}...$branch?expand=1"
+      # written from the branch just pushed, so it names the commits the PR shows
+      FAMILIES="$fam" "$PY" "$W/tools/pr_body.py" "$repo" >/dev/null
       echo "    body: $W/pr-bodies/$repo.md"
     else
       echo "$repo: pushed main"

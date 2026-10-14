@@ -6,7 +6,8 @@ from the branch itself -- its commits and its convert commit's measured claim --
 so the body cannot describe a different history from the one pushed.
 
 Fresh repositories get no pull request (their first push creates `main`), so this
-is for the forks and for a family added to an existing repository.
+is for the forks, for a family added to an existing repository, and for a binary-only
+family kept in a googlefonts repository (carlito).
 
 Output is ASCII: a proposed title, then the body, which begins with the AI
 disclaimer and is deliberately short, one paragraph or bullet per line.
@@ -48,6 +49,12 @@ def main():
         intro = ("Restores Allerta Stencil's `.sfd`, which 2efd249 deleted unconverted, "
                  "byte-identical to the revision google/fonts records, then converts it to "
                  "`.glyphs`. One commit per step:")
+    elif kind == "binary":
+        title = "Add .glyphs sources converted from %s's fonts" % names
+        intro = ("No source of %s was ever published. This converts the fonts this repository "
+                 "holds, the ones Google Fonts ships, to `.glyphs` with babelfont's TTF reader, so "
+                 "%s builds with gftools-builder and fontc. One commit per step, the conversion "
+                 "last:" % (names, names))
     else:
         title = "Convert %s from .sfd to .glyphs" % names
         intro = ("Converts %s's FontForge sources to `.glyphs`, so they build with "
@@ -55,6 +62,9 @@ def main():
     lines = ["Title: " + title, "", "Body:", "", DISCLAIMER, "", intro, ""]
     lines += ["- `%s`" % c for c in commits]
     lines += ["", claim]
+    if kind == "binary":
+        lines += ["", "What differs from the released fonts, reviewed and left as it is, is listed "
+                      "in the README."]
     body = "\n".join(lines) + "\n"
     if any(ord(ch) > 127 for ch in body):
         sys.exit("FATAL: non-ASCII in the body")

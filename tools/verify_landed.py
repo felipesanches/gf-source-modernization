@@ -6,7 +6,9 @@ a fresh clone -- and checks, for every repository given:
 
   1. ORIGINAL: the first commit holds the family's files byte-for-byte as the
      archive does at the revision METADATA.pb records (fresh repositories); a fork
-     branches from exactly that revision; a restored file is byte-identical.
+     branches from exactly that revision; a restored file is byte-identical; a
+     `binary` row's first commit is google/fonts' directory of the family at the
+     recorded commit (or, kept in a googlefonts repository, that history).
   2. LICENCE: OFL.txt at HEAD is the family's own, unchanged, and never the
      template's (which is Bentham's).
   3. SHAPE: every commit between the template and the conversion changes only .sfd
@@ -106,6 +108,14 @@ def verify(repo):
             diff = sorted(set(ours.items()) ^ set(theirs.items()))[:5]
             problems.append("ORIGINAL: first commit differs from %s/%s@%s: %s" % (lic, fam, commit[:12], diff))
         start = 1
+    elif kind == "binary" and not land.on_upstream(rows):
+        ours = blobs(d, first)
+        theirs = blobs(land.GF, commit, "%s/%s/" % (lic, fam))
+        if ours != theirs:
+            diff = sorted(set(ours.items()) ^ set(theirs.items()))[:5]
+            problems.append("ORIGINAL: first commit differs from google/fonts %s/%s@%s: %s"
+                            % (lic, fam, commit[:12], diff))
+        start = 1
     elif kind == "allerta":
         master = run("git", "-C", d, "rev-parse", "master").stdout.strip()
         if run("git", "-C", d, "merge-base", "--is-ancestor", master, "HEAD").returncode:
@@ -123,6 +133,10 @@ def verify(repo):
             problems.append("ORIGINAL: %s is not an ancestor of HEAD" % commit[:12])
         log = [commit] + run("git", "-C", d, "rev-list", "--reverse", "%s..HEAD" % commit).stdout.split()
         start = 1
+    if land.on_upstream(rows):
+        branch = run("git", "-C", d, "symbolic-ref", "--short", "HEAD").stdout.strip()
+        if branch != land.branch_of(rows):
+            problems.append("SHAPE: on branch %r, want %r" % (branch, land.branch_of(rows)))
     if kind == "glyphs":
         for src in sorted({r["source"] for r in rows}):
             want = run("git", "-C", mirror, "rev-parse", "%s:%s" % (commit, src)).stdout.strip()
@@ -174,7 +188,8 @@ def verify(repo):
             problems.append("SHAPE: the conversion does not add sources/%s.glyphs" % r["style"])
 
     # 5. messages
-    for c in all_log[start - 1 if kind == "hg" else start:]:
+    ours_from = start - 1 if kind == "hg" or (kind == "binary" and not land.on_upstream(rows)) else start
+    for c in all_log[ours_from:]:
         msg = run("git", "-C", d, "log", "-1", "--format=%B", c).stdout
         if any(ord(ch) > 127 for ch in msg):
             problems.append("MESSAGE: %s is not ASCII" % c[:7])
@@ -185,7 +200,7 @@ def verify(repo):
 
     # 6. remote
     origin = run("git", "-C", d, "remote", "get-url", "origin").stdout.strip()
-    want = ("https://github.com/%s.git" % base if kind == "upstream"
+    want = ("https://github.com/%s.git" % base if kind == "upstream" or land.on_upstream(rows)
             else "https://github.com/googlefonts/%s.git" % repo)
     if origin != want:
         problems.append("REMOTE: origin is %r, want %r" % (origin, want))
