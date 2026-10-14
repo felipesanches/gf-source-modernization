@@ -213,8 +213,8 @@ the table gate was re-run on each style with its GSUB arbitration traced (`gate_
 | the 10 IM Fell families (15)                                                          | 246 to 255 runs per style, all with U+0326; head.font_direction_hint 0 (decision D6, open); GSUB rows the gate does not clear (gap B below). Felipe's decision (bottleneck 8)                                                                                                                                                                      |
 | Alef (2), Nanum Gothic Coding (2), Nanum Myeongjo (ExtraBold; Bold and Regular CLEAN) | head.font_direction_hint 0 only (D6)                                                                                                                                                                                                                                                                                                               |
 | Gulim (1), GulimChe (1), Dotum (1), DotumChe (1)                                      | head.font_direction_hint 1 (D6); vhea version 1.0 against 1.1, and (but Gulim) its minBottomSideBearing and yMaxExtent; GSUB `vert` rows the gate does not clear (gap C)                                                                                                                                                                           |
-| Ek Mukta (7)                                                                          | GSUB rows only (gap A); functional gate PASS                                                                                                                                                                                                                                                                                                       |
-| Carlito (4)                                                                           | GDEF.glyph_classes only (gap D); functional gate PASS                                                                                                                                                                                                                                                                                              |
+| Ek Mukta (7)                                                                          | GSUB rows only (gap A); functional gate PASS. Not binary-only after all: its upstream, EkType/Mukta, keeps a .vfb per weight and AFDKO feature files (the recorded googlefonts/MuktaGFVersion is a build repository), so it leaves this track                                                                                                      |
+| Carlito (4)                                                                           | GDEF.glyph_classes only (gap D); functional gate PASS. Landed CLEAN 2026-10-14, below                                                                                                                                                                                                                                                              |
 | Jomolhari (1)                                                                         | GSUB rows (gap A) and `PCLT` (gap E); functional gate PASS                                                                                                                                                                                                                                                                                         |
 | Uchen (1)                                                                             | GSUB rows (gap A); 60 of 5587232 runs differ (28 of 2286 rule runs; 4 words; 28 with `rlig` off), not investigated                                                                                                                                                                                                                                 |
 | Kirang Haerang (1), Single Day (1), Gothic A1 (SemiBold, Thin; the other 7 CLEAN)     | the corner points above: 4, 2 and 1 codepoint(s) map to a glyph drawn differently (by under a unit)                                                                                                                                                                                                                                                |
@@ -259,3 +259,25 @@ re-run on the same builds (`results/gate-trace-2026-10-13j-fixed.txt`): Ek Mukta
 head.font_direction_hint alone (with U+0326 in the functional gate); Jomolhari on `PCLT`;
 Uchen's GSUB rows clear, its 60 shaped runs remain. C, E and F are open; E (`PCLT`) is
 Felipe's call.
+
+Carlito landed CLEAN in 4 of 4 styles (2026-10-14). googlefonts/carlito already exists: it
+holds the four fonts google/fonts ships, byte-identical at 3a810cab78eb (the commit METADATA.pb
+records), and ten commits, so a fresh history could never be pushed there. land.py now lands a
+binary family whose base is a googlefonts repository on that repository's history, on a branch
+(modernize-binary-to-glyphs) for a pull request; families-binary.tsv says so for Carlito. Ek
+Mukta does not land (table above). The README of a binary family called its earlier copies
+"other sources ... none of them is what Google Fonts ships", though most are fonts as built and
+some are the very files Google Fonts ships; it now says that none of them holds a source.
+
+All 48 were then re-landed on that land.py: 44 CLEAN, 4 RESIDUAL (Averia x3, Sansation), every
+earlier verdict unchanged, so the gate changes moved no landed family. `same_sources.py`: SAME
+for all 50 repositories (the 48, Almarai and Dongle).
+
+push.sh could not have pushed any of them: verify_landed.py, which it runs, had no case for a
+binary row (it looked for the google/fonts commit in the repository's history), and push.sh
+looked the repository up in families.tsv and families-next.tsv only. verify_landed.py now
+checks a fresh binary repository's first commit against google/fonts' directory of the family
+byte for byte (and Carlito's branch and remote), push.sh reads families-binary.tsv, prints the
+pull request against the repository's default branch, and writes the body (tools/pr_body.py,
+which now has a binary case) from the branch it has just pushed. Oranienbaum and Carlito:
+VERIFIED.
