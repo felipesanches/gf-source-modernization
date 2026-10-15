@@ -1,4 +1,4 @@
-Title: Record the builder-config commits of the 42 families of #11077 (productionNames)
+Title: Record the builder-config commits of the 42 families of #11077 (productionNames); correct 31 upstream_info.md reports
 
 Body:
 
@@ -9,3 +9,11 @@ The builder key that keeps the source's glyph names was renamed from `noProducti
 - One commit per family: the METADATA.pb `commit` and upstream_info.md.
 - Each new commit changes only `sources/config.yaml` and the CI workflow. Its build was gated again against the shipped binaries: 0 blocking rows, exactly the release's codepoints, functionally equivalent, 54 styles.
 - No font binaries change.
+
+This PR also corrects 31 upstream_info.md reports whose claims did not match the repositories, one commit per family, each checked against the repository at its recorded commit:
+
+- 9 said the source is a .sfd; it is a .vfb, and there is no .sfd (Montez, Rancho, Redressed, Satisfy, Special Elite, Syncopate, Ubuntu, Ubuntu Mono; Ubuntu Condensed, whose .vfb is in ufl/ubuntu/src).
+- 7 named .vfb or .sfd sources; no source file exists (Permanent Marker, Rock Salt, Schoolbell, Slackey, Sunshiney, Unkempt, Walter Turncoat).
+- 11 gave a source path without its license directory (`keaniaone/src/` for `ofl/keaniaone/src/`).
+- Ruslan Display, Poor Story, PT Mono: a source or repository the report missed.
+- TikTok Sans: METADATA.pb `commit` moves from baa2f38 to 1cfe2b7 (https://github.com/TikTok/TikTokSans). baa2f38 post-dates the google/fonts push; the shipped font's head.modified falls between 1cfe2b7 and its CI deploy to gh-pages. `sources/` is identical in both.
