@@ -192,13 +192,13 @@ def texts(unit):
                 if l.startswith("+++ "):
                     cur = l[6:] if l.startswith("+++ b/") else l[4:]
                     blob = git(d, "show", "%s:%s" % (sha, cur)).stdout if cur != "/dev/null" else ""
-                    if not cur.startswith("tools/") and "\0" not in blob:
-                        named.update(u.rstrip(".,;:`") for u in URL.findall(blob))
                     if cur.endswith(".json") and '"fonts_repo_sha"' in blob and '"sources"' in blob:
                         frs = re.search(r'"fonts_repo_sha": "([0-9a-f]+)"', blob).group(1)
                         yield "%s %s %s (gfs output)" % (os.path.basename(d), sha[:9], cur), \
                             "fonts_repo_sha %s of https://github.com/google/fonts" % frs, ""
                         cur = "\0skip"
+                    elif not cur.startswith("tools/") and "\0" not in blob:
+                        named.update(u.rstrip(".,;:`") for u in URL.findall(blob))
                 elif l.startswith("+") and cur != "\0skip":
                     if cur.endswith((".patch", ".diff")) and PATCH_INDEX.match(l[1:]):
                         continue
@@ -228,11 +228,13 @@ def main():
             for h in sorted(set(HEX.findall(text))):
                 if not (re.search("[a-f]", h) and re.search("[0-9]", h)):
                     continue
-                # the repositories the rest of its file names follow the text: never "nearest"
-                where_h = text + ("\n" + named if named else "")
-                if on_published_branch(h) or in_archive(h, where_h):
+                # the text's own repositories first; the rest of its files only as a fallback,
+                # so a long file (a targets list) never crowds them out
+                if on_published_branch(h) or in_archive(h, text) or (named and in_archive(h, named)):
                     continue
-                slug, reason = served_by_github(h, where_h)
+                slug, reason = served_by_github(h, text)
+                if not slug and named:
+                    slug, reason = served_by_github(h, named)
                 if slug:
                     notes.append("%s: off-branch, but GitHub serves it in %s" % (h, slug))
                 else:
