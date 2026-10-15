@@ -1,0 +1,112 @@
+117 targets (default 59, gftools 58): unchanged ok 61, unchanged failure 1, changed 55
+fails differently  TikTok/TikTokSans/sources/config.yaml TikTokSans.designspace?1cfe2b707a (gftools)
+      before <time> ThreadId fontc ERROR] Reading source failed for 'build/TikTokSans-TextBlack.ufo': 'cannot access UFO pa / fontmake.errors.FontmakeError: In 'build/TikTokSans-Light.ufo': Reading UFO source failed: No such file or dir
+      after  <time> ThreadId fontc ERROR] Reading source failed for 'build/TikTokSans-LightExt.ufo': 'cannot access UFO pac / fontmake.errors.FontmakeError: In 'build/TikTokSans-Light.ufo': Reading UFO source failed: No such file or dir
+FAIL -> ok          googlefonts/creepstercaps/sources/config.yaml CreepsterCaps-Regular.glyphs?8cd28318d3 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/herrvonmuellerhoff/sources/config.yaml HerrVonMuellerhoff-Regular.glyphs?174d55adb6 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/keaniaone/sources/config.yaml KeaniaOne-Regular.glyphs?a07dc92b02 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/kellyslab/sources/config.yaml KellySlab-Regular.glyphs?c51204fc61 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/lovedbytheking/sources/config.yaml LovedbytheKing.glyphs?0ccebbea77 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/loveyalikeasister/sources/config.yaml LoveYaLikeASister.glyphs?ac127baf86 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/marvel/sources/config.yaml Marvel-Bold.glyphs?f290b8dc76 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/marvel/sources/config.yaml Marvel-BoldItalic.glyphs?f290b8dc76 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/marvel/sources/config.yaml Marvel-Italic.glyphs?f290b8dc76 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/marvel/sources/config.yaml Marvel-Regular.glyphs?f290b8dc76 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/medulaone/sources/config.yaml MedulaOne-Regular.glyphs?4a34502cf7 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/meiescript/sources/config.yaml MeieScript-Regular.glyphs?fece0d7d05 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/missfajardose/sources/config.yaml MissFajardose-Regular.glyphs?b8ef73ad16 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/monsieurladoulaise/sources/config.yaml MonsieurLaDoulaise-Regular.glyphs?66fdca6107 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/mrdafoe/sources/config.yaml MrDafoe-Regular.glyphs?eb7a5c3671 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/mrdehaviland/sources/config.yaml MrDeHaviland-Regular.glyphs?f92c920102 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/mrssaintdelafield/sources/config.yaml MrsSaintDelafield-Regular.glyphs?c0873de00c (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/mrssheppards/sources/config.yaml MrsSheppards-Regular.glyphs?23a001ba79 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/novacut/sources/config.yaml NovaCut.glyphs?90cd83c4dd (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/novaflat/sources/config.yaml NovaFlat.glyphs?8304f556ab (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/novaoval/sources/config.yaml NovaOval.glyphs?18f803cf68 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/novaround/sources/config.yaml NovaRound.glyphs?8f84b5459d (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/novaslim/sources/config.yaml NovaSlim.glyphs?e7bcda8f60 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/novasquare/sources/config.yaml NovaSquare.glyphs?1c1b71e3b6 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/numans/sources/config.yaml Numans-Regular.glyphs?8ce300194e (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/overlocksc/sources/config.yaml OverlockSC-Regular.glyphs?4aeced9bec (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/overtherainbow/sources/config.yaml OvertheRainbow.glyphs?38ae8bf620 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/patuaone/sources/config.yaml PatuaOne-Regular.glyphs?0073acdf38 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/piedra/sources/config.yaml Piedra-Regular.glyphs?3de595b680 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/pirataone/sources/config.yaml PirataOne-Regular.glyphs?1b0f68b6b2 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/portlligatsans/sources/config.yaml PortLligatSans-Regular.glyphs?0f84e3c240 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/portlligatslab/sources/config.yaml PortLligatSlab-Regular.glyphs?c8a1033909 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/puritan/sources/config.yaml Puritan-Bold.glyphs?c5d7ace521 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/puritan/sources/config.yaml Puritan-BoldItalic.glyphs?c5d7ace521 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/puritan/sources/config.yaml Puritan-Italic.glyphs?c5d7ace521 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/puritan/sources/config.yaml Puritan-Regular.glyphs?c5d7ace521 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/quantico/sources/config.yaml Quantico-Bold.glyphs?1a0cb10889 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/quantico/sources/config.yaml Quantico-BoldItalic.glyphs?1a0cb10889 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/quantico/sources/config.yaml Quantico-Italic.glyphs?1a0cb10889 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/quantico/sources/config.yaml Quantico-Regular.glyphs?1a0cb10889 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/rochester/sources/config.yaml Rochester-Regular.glyphs?dc1cfd08f2 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/rufina/sources/config.yaml Rufina-Bold.glyphs?256f968dc4 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/rufina/sources/config.yaml Rufina-Regular.glyphs?256f968dc4 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/russoone/sources/config.yaml RussoOne-Regular.glyphs?c3624ce1f3 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/sixcaps/sources/config.yaml SixCaps.glyphs?de9fac499d (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/spirax/sources/config.yaml Spirax-Regular.glyphs?32281bec8b (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/squadaone/sources/config.yaml SquadaOne-Regular.glyphs?53fb1e38c5 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/swankyandmoomoo/sources/config.yaml SwankyandMooMoo.glyphs?2a7b182ac1 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/thegirlnextdoor/sources/config.yaml TheGirlNextDoor.glyphs?e591dbc5cd (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/trochut/sources/config.yaml Trochut-Bold.glyphs?3a72aad610 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/trochut/sources/config.yaml Trochut-Italic.glyphs?3a72aad610 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/trochut/sources/config.yaml Trochut-Regular.glyphs?3a72aad610 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/tulpenone/sources/config.yaml TulpenOne-Regular.glyphs?991f5684e0 (gftools)
+      ValueError: Invalid configuration file
+FAIL -> ok          googlefonts/wendyone/sources/config.yaml WendyOne-Regular.glyphs?2a55e184f1 (gftools)
+      ValueError: Invalid configuration file
