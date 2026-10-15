@@ -1,0 +1,3 @@
+old 1440 entries, generated 1439, kept by hand 1 (googlesans-flex), result 1440
+added 0, removed 0, rev changed 1
+  ~ https://github.com/googlefonts/googlesans  sources/config.yaml
