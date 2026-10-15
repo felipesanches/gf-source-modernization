@@ -20,6 +20,9 @@ For each text:
   4. no "PLACEHOLDER" is left (a draft whose links or revisions are not known yet).
 A hex id that is only the unit's own unpublished commit fails too: a push does not make a
 text's reference to a not-yet-pushed commit public in time for everyone reading it.
+A commit's added lines are read where they land: the repositories the rest of the same file
+names (a METADATA.pb's repository_url, beside the `commit` the commit changes) count as named
+by the text, so an id there resolves against them. Only the added lines are checked.
 Tool output under logs/ is checked like everything else: a log can carry local hashes too.
 One exception: a google-fonts-sources output (JSON with "fonts_repo_sha" and "sources"),
 whose revs are google/fonts' own METADATA.pb records; only its fonts_repo_sha is checked
@@ -182,28 +185,30 @@ def texts(unit):
     if ":" in unit and os.path.isdir(unit.split(":", 1)[0]):
         d, rng = unit.split(":", 1)
         for sha in git(d, "rev-list", "--reverse", rng).stdout.split():
-            yield "%s %s message" % (os.path.basename(d), sha[:9]), git(d, "log", "-1", "--format=%B", sha).stdout
+            yield "%s %s message" % (os.path.basename(d), sha[:9]), git(d, "log", "-1", "--format=%B", sha).stdout, ""
             diff = git(d, "show", "--format=", "--unified=0", sha).stdout
-            prose, code, cur = [], [], ""
+            prose, code, cur, named = [], [], "", set()
             for l in diff.splitlines():
                 if l.startswith("+++ "):
                     cur = l[6:] if l.startswith("+++ b/") else l[4:]
-                    blob = git(d, "show", "%s:%s" % (sha, cur)).stdout if cur.endswith(".json") else ""
-                    if '"fonts_repo_sha"' in blob and '"sources"' in blob:
+                    blob = git(d, "show", "%s:%s" % (sha, cur)).stdout if cur != "/dev/null" else ""
+                    if not cur.startswith("tools/") and "\0" not in blob:
+                        named.update(u.rstrip(".,;:`") for u in URL.findall(blob))
+                    if cur.endswith(".json") and '"fonts_repo_sha"' in blob and '"sources"' in blob:
                         frs = re.search(r'"fonts_repo_sha": "([0-9a-f]+)"', blob).group(1)
                         yield "%s %s %s (gfs output)" % (os.path.basename(d), sha[:9], cur), \
-                            "fonts_repo_sha %s of https://github.com/google/fonts" % frs
+                            "fonts_repo_sha %s of https://github.com/google/fonts" % frs, ""
                         cur = "\0skip"
                 elif l.startswith("+") and cur != "\0skip":
                     if cur.endswith((".patch", ".diff")) and PATCH_INDEX.match(l[1:]):
                         continue
                     (code if cur.startswith("tools/") and cur.endswith((".py", ".sh")) else prose).append(l[1:])
-            yield "%s %s added lines" % (os.path.basename(d), sha[:9]), "\n".join(prose)
+            yield "%s %s added lines" % (os.path.basename(d), sha[:9]), "\n".join(prose), " ".join(sorted(named))
             if code:
-                yield "%s %s added code" % (os.path.basename(d), sha[:9]), "\n".join(code)
+                yield "%s %s added code" % (os.path.basename(d), sha[:9]), "\n".join(code), ""
     else:
         text = open(unit, encoding="utf-8").read()
-        yield unit, PATCH_INDEX.sub("", text) if unit.endswith((".patch", ".diff")) else text
+        yield unit, PATCH_INDEX.sub("", text) if unit.endswith((".patch", ".diff")) else text, ""
 
 
 def main():
@@ -213,7 +218,7 @@ def main():
         fetch()
     bad = 0
     for unit in args:
-        for where, text in texts(unit):
+        for where, text, named in texts(unit):
             problems, notes = [], []
             if "PLACEHOLDER" in text and not where.endswith("added code"):
                 problems.append("unfinished: %d PLACEHOLDER(s)" % text.count("PLACEHOLDER"))
@@ -223,9 +228,11 @@ def main():
             for h in sorted(set(HEX.findall(text))):
                 if not (re.search("[a-f]", h) and re.search("[0-9]", h)):
                     continue
-                if on_published_branch(h) or in_archive(h, text):
+                # the repositories the rest of its file names follow the text: never "nearest"
+                where_h = text + ("\n" + named if named else "")
+                if on_published_branch(h) or in_archive(h, where_h):
                     continue
-                slug, reason = served_by_github(h, text)
+                slug, reason = served_by_github(h, where_h)
                 if slug:
                     notes.append("%s: off-branch, but GitHub serves it in %s" % (h, slug))
                 else:
