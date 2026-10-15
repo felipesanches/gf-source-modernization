@@ -1,0 +1,9 @@
+crater (fontc_crater ci) on subset-intel-one-mono.json, googlefonts/fontc da343d39 with its requirements.txt (gftools 0.10.3)
+stats: {"total_targets": 4, "identical": 2, "produced_diff": 0, "fontc_failed": 2, "fontmake_failed": 0, "both_failed": 0, "other_failure": 0, "diff_perc_including_failures": 50.0, "diff_perc_excluding_failures": 100.0}
+
+ok    googlefonts/intel-one-mono/sources/config.yaml masters/IntelOneMono-Italic.designspace?06572f3e0b (default)  "identical"  (https://github.com/googlefonts/intel-one-mono)
+ok    googlefonts/intel-one-mono/sources/config.yaml masters/IntelOneMono.designspace?06572f3e0b (default)  "identical"  (https://github.com/googlefonts/intel-one-mono)
+FAIL  googlefonts/intel-one-mono/sources/config.yaml masters/IntelOneMono-Italic.designspace?06572f3e0b (gftools)  (https://github.com/googlefonts/intel-one-mono)
+      error: unexpected argument '--fea-include-dir' found\n\n  tip: to pass '--fea-include-dir'
+FAIL  googlefonts/intel-one-mono/sources/config.yaml masters/IntelOneMono.designspace?06572f3e0b (gftools)  (https://github.com/googlefonts/intel-one-mono)
+      error: unexpected argument '--fea-include-dir' found\n\n  tip: to pass '--fea-include-dir'
