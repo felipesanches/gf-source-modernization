@@ -4,16 +4,15 @@ Body:
 
 > so apparently all of these newly added targets fail in gftools mode, because they have all set a config option, `noProductionNames: true`, that gftools doesn't seem to know about?
 
-Yes. Following the naming discussion on googlefonts/gftools#1229, the key became `productionNames` (default true) in both builders (googlefonts/gftools#1231, simoncozens/gftools-rust#1), released in gftools 0.10.1. Each of the 42 repositories gained a commit with `productionNames: false`, and google/fonts#11121 records those commits. A new commit here points the 42 targets at them; regenerating against google/fonts main also moves six entries google/fonts changed meanwhile and adds Pushster.
+Fixed on both sides. Following the naming discussion on googlefonts/gftools#1229, the key became `productionNames` (default true) in both builders (googlefonts/gftools#1231, simoncozens/gftools-rust#1); each of the 42 repositories gained a commit with `productionNames: false`, and google/fonts#11121 records those commits. crater's gftools pin is 0.10.3 on fontc main, which knows the key. Two new commits here:
+
+- the 42 targets at their new commits (regenerating against google/fonts main also moves six entries google/fonts changed meanwhile, and adds Pushster);
+- googlesans generated from its new google/fonts source block (google/fonts#11122), at v14.000, a commit on its public main, so it no longer needs listing by hand. googlesans-flex still does.
 
 > maybe we could teach your agents to actually run crater locally on the newly added targets as part of preparing these PRs?
 
-Done: crater itself, both modes, on only the entries this PR adds or changes (50 entries, 117 targets), on fontc main 6bbfa26d:
+Done: crater itself, on fontc main da343d39 with its requirements.txt, on only the entries this PR adds or changes (51 entries, 119 targets). 116 build, including all 108 targets of the 42 families, in both modes. The rest:
 
-- with gftools 0.10.1, 115 of 117 build;
-- with the current pin, 0.9.93, the 54 gftools-mode targets of the 42 fail ("Invalid configuration file": 0.9.93 does not know the key);
-- TikTok Sans fails in both modes, as it already does in crater at its previous rev: its designspace names UFOs that its Makefile generates.
-
-So these gftools-mode targets need crater's gftools pin moved to 0.10.1. On a sample of 44 existing entries, that bump makes no target newly fail, and the ones that build keep identical ttx_diff scores (0.10.0 would have broken Katibeh; googlefonts/gftools#1230, in 0.10.1, fixes it). The pin bump goes to googlefonts/fontc as a separate PR.
-
-Another commit removes the auth flag from googlesans and googlesans-flex. The googlesans rev in targets.json is not on any public branch (it predates the repository's published history), so a fresh crater cache may not reach it; the google/fonts PR adding a source block for Google Sans records its public v14.000 commit instead.
+- GoogleSans-Italic.designspace (default) fails in fontc only, and is new: at v14.000, GoogleSansItalic-opsz18-wght380-GRAD0.ufo/fontinfo.plist has `<integer>1509       </integer>` (trailing spaces), which fontc rejects (InvalidIntegerString) and fontmake accepts. The roman builds.
+- TikTok Sans fails in both modes, as it already does at its previous rev: its designspace names UFOs that its Makefile generates.
+- font_tiny5, font-namdhinggo and pushster are reported as missing a source. The first two did before this PR too. Pushster's METADATA.pb copies its upstream `sources/config.yaml` into google/fonts, which google-fonts-sources then reads as an override, so `Lobster.glyphs` is looked for at the repository root.
