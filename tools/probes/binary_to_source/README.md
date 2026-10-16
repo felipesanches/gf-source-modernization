@@ -51,10 +51,22 @@ The scratch dir keeps each font's `.glyphs`, `config.yaml`, build and diffenator
 - `babelfont/rebuild.sh <empty dir>`: rebuilds the babelfont the "after" runs used, from public
   upstream plus `babelfont/measure-integration.diff`, and checks it is the measured tree. The
   patch series in `babelfont/sr-aef-uncompile-fixes/` and `babelfont/ttf-static-font-fidelity/`
-  are the same changes, commit by commit, for review (pr-bodies/ has their PR texts).
+  are the same changes, commit by commit, as measured. The PR branches were reorganized on
+  2026-10-16 into `babelfont/pr-2026-10-16/` (on upstream 3e3b6dcf; pr-bodies/ has their PR
+  texts); they convert every binary family the same (results/converter-ab-2026-10-16/).
 - `babelfont/refresh.sh`: after a converter change, regenerates the patch series, the
   integration diff and rebuild.sh's checksum from the babelfont branches, and checks that the
   diff applied to public upstream gives exactly the measured tree.
+- `converter_ab.py <babelfont A> <babelfont B> <scratch> [repo ...]`: which families of
+  families-binary.tsv get a different `.glyphs` from converter B than from converter A (the
+  shipped TTF converted as land.py converts it, compared as same_sources.py compares)?
+  SAME / DIFFERENT per repository; each differing style's diff is left in the scratch dir.
+- `ab_causes.sh <converter_ab output> <scratch>`: of the DIFFERENT families, which differ by
+  localized name records (#117) and which by anything else (typographic-family-names)?
+- `fixed_pitch.py`: does any shipped binary-family font declare itself fixed pitch? (None does,
+  so the isFixedPitch branches change no binary family.)
+- `babelfont/fixtures/make_*.py`: write the sr-aef test fonts of the sr-aef PR
+  (resources/aalt.ttf from aalt.fea, dupnames.ttf, noname.ttf). sr-aef keeps only the fonts.
 
 ## Results
 

@@ -1,0 +1,51 @@
+oranienbaum            SAME 1 styles
+averialibre            DIFFERENT 2/6 styles; first: +name = "Name Table Entry";
+averiasanslibre        DIFFERENT 2/6 styles; first: +name = "Name Table Entry";
+averiaseriflibre       DIFFERENT 2/6 styles; first: +name = "Name Table Entry";
+sansation              SAME 6 styles
+reeniebeanie           SAME 1 styles
+ptserif                SAME 4 styles
+ptsansnarrow           SAME 2 styles
+ptsanscaption          SAME 2 styles
+almarai                DIFFERENT 3/4 styles; first: -value = "16; Almarai";
+jua                    SAME 1 styles
+dongle                 DIFFERENT 1/3 styles; first: +name = "Name Table Entry";
+homemadeapple          SAME 1 styles
+calligraffitti         SAME 1 styles
+kranky                 SAME 1 styles
+cherrycreamsoda        SAME 1 styles
+chewy                  SAME 1 styles
+comingsoon             SAME 1 styles
+craftygirls            SAME 1 styles
+fontdinerswanky        SAME 1 styles
+akronim                SAME 1 styles
+portersansblock        SAME 1 styles
+gugi                   DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+rocksalt               SAME 1 styles
+schoolbell             SAME 1 styles
+unkempt                SAME 2 styles
+walterturncoat         SAME 1 styles
+slackey                SAME 1 styles
+sunshiney              SAME 1 styles
+permanentmarker        SAME 1 styles
+ptserifcaption         SAME 2 styles
+ptsans                 SAME 4 styles
+eastseadokdo           DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+yeonsung               SAME 1 styles
+stylish                DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+blackhansans           DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+dohyeon                SAME 1 styles
+sunflower              DIFFERENT 2/3 styles; first: +name = "Name Table Entry";
+cutefont               DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+songmyung              DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+dokdo                  DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+blackandwhitepicture   DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+gamjaflower            DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+himelody               DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+poorstory              DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+nanumgothic            DIFFERENT 3/3 styles; first: -name = "Name Table Entry";
+nanumbrushscript       DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+lato                   DIFFERENT 14/18 styles; first: +name = "Name Table Entry";
+nanumpenscript         DIFFERENT 1/1 styles; first: -name = "Name Table Entry";
+carlito                SAME 4 styles
+total: 50 repos; SAME 29, DIFFERENT 21, ERROR 0

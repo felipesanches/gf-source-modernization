@@ -1,0 +1,58 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 16 Oct 2026 08:23:05 +0100
+Subject: [PATCH 04/18] ttf: read glyf contours counter-clockwise
+
+glyf contours run clockwise and a source's counter-clockwise, and a compiler
+reverses a source's, so every converted font compiled with its contours
+reversed. Now they are reversed on reading.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/convertors/ttf.rs | 27 ++++++++++++++++++++++++++-
+ 1 file changed, 26 insertions(+), 1 deletion(-)
+
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index ea39a0c6..1513ef93 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -600,7 +600,15 @@ fn load_layer(
+                         &mut pen,
+                     )
+                     .map_err(|e| BabelfontError::BinaryFontRead(e.to_string()))?;
+-                layer.shapes = pen.build().into_iter().map(crate::Shape::Path).collect();
++                // glyf contours run clockwise, a source's counter-clockwise
++                layer.shapes = pen
++                    .build()
++                    .into_iter()
++                    .map(|mut path| {
++                        path.reverse();
++                        crate::Shape::Path(path)
++                    })
++                    .collect();
+             }
+         }
+         glyf::Glyph::Composite(c) => {
+@@ -733,4 +741,21 @@ mod tests {
+         let bars = component_coeffs(&font, "bars");
+         assert_close(&[bars[0][4], bars[1][4]], &[-5.0, 245.0]);
+     }
++    #[test]
++    fn test_contours_read_counter_clockwise() {
++        // x is a clockwise rectangle in the binary
++        let font = load(STATIC_LEGACY).unwrap();
++        let path = font.glyphs.get("x").unwrap().layers[0]
++            .paths()
++            .next()
++            .unwrap();
++        let n = path.nodes.len();
++        let area: f64 = (0..n)
++            .map(|i| {
++                let (a, b) = (&path.nodes[i], &path.nodes[(i + 1) % n]);
++                a.x * b.y - b.x * a.y
++            })
++            .sum();
++        assert!(area > 0.0, "{:?}", path.nodes);
++    }
+ }

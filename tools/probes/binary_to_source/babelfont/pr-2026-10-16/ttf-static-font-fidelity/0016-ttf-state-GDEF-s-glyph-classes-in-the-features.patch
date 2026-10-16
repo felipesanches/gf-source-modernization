@@ -1,0 +1,92 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 16 Oct 2026 08:37:17 +0100
+Subject: [PATCH 16/18] ttf: state GDEF's glyph classes in the features
+
+A compiler derives glyph classes from categories and anchors, and writes no
+GDEF when no glyph is a mark, ligature or anchored base, so a font whose GDEF
+called its accents bases lost its GDEF. Now the classes are written as a
+GlyphClassDef statement.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/convertors/ttf.rs | 53 +++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index c6de4c32..a68f410b 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -594,6 +594,11 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+             PossiblyAutomaticCode::new(language_systems_block),
+         );
+     }
++    if let Some(glyph_classes) = gdef_glyph_classes(fontref, font)? {
++        features
++            .prefixes
++            .insert("GDEF".into(), PossiblyAutomaticCode::new(glyph_classes));
++    }
+     if !mark_class_definitions.is_empty() {
+         features.prefixes.insert(
+             "MarkClasses".into(),
+@@ -616,6 +621,44 @@ fn load_features(fontref: &skrifa::FontRef, font: &mut Font) -> Result<(), Babel
+     Ok(())
+ }
+ 
++/// GDEF's glyph classes as a GlyphClassDef statement, so that a compiler keeps
++/// them rather than deriving its own
++fn gdef_glyph_classes(
++    fontref: &skrifa::FontRef,
++    font: &Font,
++) -> Result<Option<String>, BabelfontError> {
++    let Ok(gdef) = fontref.gdef() else {
++        return Ok(None);
++    };
++    let Some(class_def) = gdef.glyph_class_def().transpose()? else {
++        return Ok(None);
++    };
++    let mut classes: [Vec<&str>; 4] = Default::default();
++    for (gid, class) in class_def.iter() {
++        let glyph = font.glyphs.get_by_index(gid.to_u32() as usize);
++        let members = (class as usize)
++            .checked_sub(1)
++            .and_then(|index| classes.get_mut(index));
++        if let (Some(glyph), Some(members)) = (glyph, members) {
++            members.push(glyph.name.as_str());
++        }
++    }
++    let classes = classes
++        .iter()
++        .map(|members| {
++            if members.is_empty() {
++                String::new()
++            } else {
++                fea_rs_ast::GlyphContainer::new_class(members).as_fea("")
++            }
++        })
++        .join(", ");
++    Ok(Some(format!(
++        "table GDEF {{\n    GlyphClassDef {};\n}} GDEF;",
++        classes
++    )))
++}
++
+ fn get_x_y_location_for_anchor(
+     location: DesignLocation,
+     anchor: &sr_aef::fea_rs_ast::Anchor,
+@@ -1113,4 +1156,14 @@ mod tests {
+             assert_category(&font, glyph, GlyphCategory::Base, None);
+         }
+     }
++    #[test]
++    fn test_gdef_glyph_classes() {
++        let font = load(GDEF_CLASSES).unwrap();
++        assert_eq!(
++            font.features.prefixes.get("GDEF").unwrap().code,
++            "table GDEF {\n    GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;\n} GDEF;"
++        );
++        let font = load(STATIC_LEGACY).unwrap();
++        assert!(font.features.prefixes.get("GDEF").is_none());
++    }
+ }

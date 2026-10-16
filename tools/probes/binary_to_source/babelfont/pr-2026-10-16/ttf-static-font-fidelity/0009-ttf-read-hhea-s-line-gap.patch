@@ -1,0 +1,40 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 16 Oct 2026 08:27:26 +0100
+Subject: [PATCH 09/18] ttf: read hhea's line gap
+
+hhea's ascender and descender were read but not its line gap, which compiled
+to 0.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/convertors/ttf.rs | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index e1abd5c6..98f996bd 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -324,6 +324,10 @@ fn load_metrics(
+         MetricType::HheaDescender,
+         fontref.hhea()?.descender().to_i16() as i32,
+     );
++    metrics.insert(
++        MetricType::HheaLineGap,
++        fontref.hhea()?.line_gap().to_i16() as i32,
++    );
+ 
+     // post stores the angle negative for a right lean; babelfont stores the
+     // Glyphs convention, the opposite sign.
+@@ -856,4 +860,10 @@ mod tests {
+         assert_eq!(metrics.get(&MetricType::XHeight), Some(&480));
+         assert_eq!(metrics.get(&MetricType::CapHeight), Some(&700));
+     }
++    #[test]
++    fn test_hhea_line_gap() {
++        let font = load(STATIC_LEGACY).unwrap();
++        let metrics = &font.masters[0].metrics;
++        assert_eq!(metrics.get(&MetricType::HheaLineGap), Some(&25));
++    }
+ }

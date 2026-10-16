@@ -281,3 +281,21 @@ byte for byte (and Carlito's branch and remote), push.sh reads families-binary.t
 pull request against the repository's default branch, and writes the body (tools/pr_body.py,
 which now has a binary case) from the branch it has just pushed. Oranienbaum and Carlito:
 VERIFIED.
+
+## Which babelfont PRs each family needs; the reader PRs reorganized (2026-10-16)
+
+`converter_ab.py` converted all 109 shipped fonts with the measured babelfont and with
+upstream plus the two reader PRs alone (sr-aef-uncompile-fixes, ttf-static-font-fidelity):
+29 of the 48 landed families get the same sources, so they need nothing else. The other 19
+differ only in name records: 13 Korean families need simoncozens/babelfont-rs#117 (their
+Korean names), Lato, Sunflower and the three Averias need typographic-family-names (name IDs
+16/17), Nanum Gothic both. The fixed-pitch branches change no landed family: none of the
+109 fonts sets post.isFixedPitch or a monospaced PANOSE.
+
+The two reader PR branches were then reorganized for review on upstream 3e3b6dcf: follow-up
+fixes folded into the commits they complete, one commit per fix, short comments and
+messages (`babelfont/pr-2026-10-16/`). The TTF reader now adopts sr-aef's unique glyph names in
+the sr-aef PR itself, so glyphs and features agree at every commit. Converted with the
+reorganized branches, all 109 fonts give the same sources as before. The measured converter
+(`babelfont/rebuild.sh`) and the landed repositories are unchanged.
+(results/converter-ab-2026-10-16/)
