@@ -9,7 +9,7 @@ on every tracked text file:
   1. no workstation path (/home/..., /tmp/..., ~/compartilhado);
   2. every hexadecimal commit id (7-40 digits, not one of the repository's own commits)
      is a commit on the published branch of a public repository: babelfont-rs main,
-     gftools-rust main, google/fonts main, googlefontdirectory-hg master, this evidence
+     gftools-rust main, gftools-builder3 main, fontc main, google/fonts main, googlefontdirectory-hg master, this evidence
      repository's published main, or the family's own upstream (its repo-archive mirror);
   3. every file this evidence repository is cited for (plans/<x>.json, tools/<x>, logs/<x>,
      investigations/<x>, templates/<x>) exists at the cited revision;
@@ -34,6 +34,8 @@ EVIDENCE_REMOTE = os.environ.get("EVIDENCE_REMOTE", EVIDENCE_URL)   # a local pa
 MIRRORS = [
     (C + "/babelfont-rs-worktrees/upstream-main", "upstream", "main"),
     (C + "/gftools-rust", "origin", "main"),
+    (C + "/gftools-builder3", "upstream", "main"),   # simoncozens/gftools-builder3
+    (C + "/fontc", "origin", "main"),                # googlefonts/fontc
     (C + "/google/fonts", "upstream", "main"),
     (C + "/upstream_repos/repo_archive/googlefonts/googlefontdirectory-hg.git", "origin", "master"),
 ]
