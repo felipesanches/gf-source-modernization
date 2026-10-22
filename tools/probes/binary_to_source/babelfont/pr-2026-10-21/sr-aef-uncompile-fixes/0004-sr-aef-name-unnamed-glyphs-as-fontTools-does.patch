@@ -1,0 +1,73 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 16 Oct 2026 08:18:15 +0100
+Subject: [PATCH 4/5] sr-aef: name unnamed glyphs as fontTools does
+
+A glyph the post table leaves unnamed was called gidNNNN. Now it is .notdef if
+it is glyph 0, and glyphNNNNN otherwise.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ sr-aef/resources/noname.ttf | Bin 0 -> 368 bytes
+ sr-aef/src/lib.rs           |  22 +++++++++++++++++-----
+ 2 files changed, 17 insertions(+), 5 deletions(-)
+ create mode 100644 sr-aef/resources/noname.ttf
+
+diff --git a/sr-aef/resources/noname.ttf b/sr-aef/resources/noname.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..4470a7d67b87b691a4cedd916a99c431a80ca394
+GIT binary patch
+literal 368
+zcmZQzWME+6U}#`qW?)FpO)OyGVc5dJz$gF|HA&B@OaszDz~}=aGEx&$;>8>u0NFi2
+zY?c8OU|?kY24o)rVwH^Ck_yHzKo$cd2aw>%$xluM@qm06Ai<HFSW&>h!oUP%zW`!|
+zg8bqVki9_p01%%6<Q5=aD715TJipCX24-fEI$VGmY!XNoqz?=rwgZ`P5tsy61Z)>r
+w1mp%30N2R?HWj2&1n4%9IU+zeD*$O0AO!If|Nn=O{}*7`!vOIQP#y;W0D!wAumAu6
+
+literal 0
+HcmV?d00001
+
+diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
+index 2da411b6..867e0eb6 100644
+--- a/sr-aef/src/lib.rs
++++ b/sr-aef/src/lib.rs
+@@ -1229,12 +1229,13 @@ pub fn unique_glyph_names(font: &skrifa::FontRef) -> Vec<SmolStr> {
+     )
+ }
+ 
+-/// A glyph's post table name.
++/// A glyph's post table name; an unnamed glyph is named as fontTools names it.
+ fn glyph_name(glyph_names: &GlyphNames, gid: GlyphId) -> String {
+-    glyph_names
+-        .get(gid)
+-        .map(|s| s.to_string())
+-        .unwrap_or_else(|| format!("gid{:04}", gid))
++    match glyph_names.get(gid) {
++        Some(name) if !name.is_synthesized() => name.to_string(),
++        _ if gid.to_u32() == 0 => ".notdef".to_string(),
++        _ => format!("glyph{:05}", gid.to_u32()),
++    }
+ }
+ 
+ /// A glyph name with each character a feature file does not allow replaced by
+@@ -1793,6 +1794,17 @@ lookup gpos_pair_1;
+         assert!(fea.contains("sub a by dupe.1;"), "{fea}");
+     }
+ 
++    #[test]
++    fn test_unnamed_glyph_names() {
++        // post format 3 names no glyph
++        let data = std::fs::read("resources/noname.ttf").unwrap();
++        let fontref = skrifa::FontRef::new(&data).unwrap();
++        assert_eq!(
++            unique_glyph_names(&fontref),
++            [".notdef", "glyph00001", "glyph00002"]
++        );
++    }
++
+     #[test]
+     fn test_uncompile_aalt_rules() {
+         let data = std::fs::read("resources/aalt.ttf").unwrap();
+-- 
+2.47.3
+

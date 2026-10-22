@@ -53,7 +53,8 @@ The scratch dir keeps each font's `.glyphs`, `config.yaml`, build and diffenator
   patch series in `babelfont/sr-aef-uncompile-fixes/` and `babelfont/ttf-static-font-fidelity/`
   are the same changes, commit by commit, as measured. The PR branches were reorganized on
   2026-10-16 into `babelfont/pr-2026-10-16/` (on upstream 3e3b6dcf; pr-bodies/ has their PR
-  texts); they convert every binary family the same (results/converter-ab-2026-10-16/).
+  texts), and rebased on 2026-10-21 onto upstream 5ff5bf04 (`babelfont/pr-2026-10-21/`); they
+  convert every binary family the same (results/converter-ab-2026-10-16/).
 - `babelfont/refresh.sh`: after a converter change, regenerates the patch series, the
   integration diff and rebuild.sh's checksum from the babelfont branches, and checks that the
   diff applied to public upstream gives exactly the measured tree.

@@ -25,4 +25,4 @@ Reading a static .ttf with the TTF reader, writing .glyphs and compiling that sh
 
 Validation: 48 static families that Google Fonts ships only as binaries, converted, rebuilt with fontc and compared with the shipped fonts (tables, shaping, rendering). With this PR, #117 and the name ID 16/17 change (a separate PR), 44 come back identical; 4 differ only in a legacy kern table becoming a GPOS kern feature, and in one italic flag fontc drops.
 
-cargo fmt and clippy clean; `cargo test -p babelfont --features ttf --lib`: 288 passed (the 11 robocjk and decompose tests need external noto-cjk-varco data).
+cargo fmt and clippy clean; `cargo test -p babelfont --features ttf --lib`: 298 passed (the 11 robocjk and decompose tests need external noto-cjk-varco data).

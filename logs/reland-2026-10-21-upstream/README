@@ -1,0 +1,16 @@
+reland-2026-10-21-upstream: which of the 101 repositories land CLEAN with only published tools?
+
+Converter: babelfont upstream main 5ff5bf04 (simoncozens/babelfont-rs, published). Builder:
+land.py's default (gftools-rust 1e638bd). Landed into scratch (OUT, LANDED, SCRATCH set), so
+sfd-reland-repos/ and landed.tsv were untouched.
+
+  BF_TREE=<5ff5bf04 worktree> sh tools/build_babelfont.sh
+  BF_TREE=<5ff5bf04 worktree> OUT=<scratch>/repos LANDED=<scratch>/landed.tsv \
+    SCRATCH=<scratch>/land sh tools/reland_all.sh 2026-10-21-upstream
+
+Result (verdicts.tsv): 52 CLEAN, 49 RESIDUAL. The 42 pushed on 2026-10-05 are still CLEAN.
+Of the other 59, ten are CLEAN, as on 2026-10-03 (reland-2026-10-03-upstream): abrilfatface,
+allerta, ledger, magra, mergeone, rambla, rosarivo, sail, textmeone, wallpoet. They need no
+unmerged babelfont PR; they were not pushed because eight have no googlefonts repository
+yet and two (abrilfatface, allerta) go to existing ones as a branch and PR.
+The per-repository logs stay out of this repository until those repositories are pushed.

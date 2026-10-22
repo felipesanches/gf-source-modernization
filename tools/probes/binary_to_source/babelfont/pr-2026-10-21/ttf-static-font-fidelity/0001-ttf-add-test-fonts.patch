@@ -1,0 +1,362 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 16 Oct 2026 08:18:51 +0100
+Subject: [PATCH 01/18] ttf: add test fonts
+
+Small TrueType fonts for the reader tests that follow, written by
+make_fixtures.py.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/resources/ttf/DuplicateNames.ttf | Bin 0 -> 772 bytes
+ babelfont/resources/ttf/GdefClasses.ttf    | Bin 0 -> 1316 bytes
+ babelfont/resources/ttf/MarkNoGdef.ttf     | Bin 0 -> 900 bytes
+ babelfont/resources/ttf/StaticLegacy.ttf   | Bin 0 -> 1172 bytes
+ babelfont/resources/ttf/Unnamed.ttf        | Bin 0 -> 820 bytes
+ babelfont/resources/ttf/make_fixtures.py   | 221 +++++++++++++++++++++
+ 6 files changed, 221 insertions(+)
+ create mode 100644 babelfont/resources/ttf/DuplicateNames.ttf
+ create mode 100644 babelfont/resources/ttf/GdefClasses.ttf
+ create mode 100644 babelfont/resources/ttf/MarkNoGdef.ttf
+ create mode 100644 babelfont/resources/ttf/StaticLegacy.ttf
+ create mode 100644 babelfont/resources/ttf/Unnamed.ttf
+ create mode 100644 babelfont/resources/ttf/make_fixtures.py
+
+diff --git a/babelfont/resources/ttf/DuplicateNames.ttf b/babelfont/resources/ttf/DuplicateNames.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..f59b5a154cb1d5802bbbd8b31f7f4f0ca6107c47
+GIT binary patch
+literal 772
+zcmah{F;5gh6#iyr4@3oX2}Ubi0s#_&lD&vZHX(%NDsn0&LI;!G_3n~gZgaProK}{W
+zlol4$#-BhzV`63H51^o+vBQ$A-z<Cau;FdqoA-VD=Dlxb7XrX-e1wAi^34-xbH+OY
+z!~)rUKh}wOjcMY~#BMWs|1Ny=Y?b(w_-!lHfj-#y!u%V3rA4ChL40R^MxSlPY2W&Z
+zKI=abPedJGV;LL7zliU~x}RVScZhEh+Xp%hf4`_M0rENVVbbZPtE~q6%OAupj8^*m
+ztDVl?J@*fkIwy1899GZCW0DH8e8oM=&e>D$!hs{_icZ7(WWiKmaWy{Jc~v9GDCvnq
+zn2MWC4VSFZh}Us)r9s&+rx`Yz$GRxhxv29oW;B>ilZ@u%lbpT4b);0tj(JX8tocdq
+z6;&h(8^=S;V3FM5M%b%Xovu3KLLOgw<|bWM9w9JOYENtT-5?0an(1Hvv30VXGhjyw
+zO=g6Jm2#rM17f4ms2(MvVrz`dV@#E~#00kL?S7hdL)*)esO{@Cv>W{9z3s4>MY_uw
+zZT>AOGISBbhQ};HMAnBUZ@31tm{||oj7?TVWV-)-u|mqVP$8NXQYc|rL6(F?sI2>)
+GIQa`YvS@k$
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/GdefClasses.ttf b/babelfont/resources/ttf/GdefClasses.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..eea457d3bd5258c59f8f6de119904ab0d8dc0c63
+GIT binary patch
+literal 1316
+zcmah}&uddb5T4ylnx?e1wW&lXCB+(o7L*i=NTFEM#6zLdT2K(`GcP}zU%tMCsCW=6
+zh<L~;ddR_x;J+Xg51x7|2p;+$*i-dTJ&1MvW|K-3#a-UM{buIPd^5BAND$Ew77tM(
+zwh*V2<RelaARSL!TUv<(rk(*G05=jVtMjkxZ+c+737lVAITu}c6nBWk6X4s)qE%5R
+z)DDq^H;QEn_tK41^9#T?fL~-&mTi@;v|!&4Jd=gMdtbW1G2qE;(XID=q*>rS;IZ|T
+zQ=)$T3EzJP4i?Hui|*2M;H$txMXO#RKY@?P0*6XgG1d6~>K6F+0+%c04R`yYCjwjt
+zzF9NzyrbaH{w8aPrygtY^#*{4h--o8!9Z<w?bz%WQfd#9--ga3`o7$PP?7AY@Qn)T
+zi)PJJK<*n)-QW3)#D^+#47li4n!OV5MT5NDhyRYt-4=5gz?M=+9B8{+k9~-wKnL+e
+z=`EoiIxnUuph6TivNj(D%K)-sh5_(6k9RL7bG4LEN^7%2S+v$K59OigWCO7o12{dW
+z5o3-Pp@|~mJNSp+>EVgtsA!0TA85RwhzwH`HH2p5!t`jQB*V=n37wZ=z1x;6$eSHG
+zDjF6+`Lu06F&Ypa8MbZqgczn9M=|7<+&aWz`ge5JaemAlCkI22SMTEOp&6rN37=24
+z<I4DeP!*3Kk|2$A_L2taY&=(Yt4=DEuv6*fRHj<69Ewwp>f}<D97>_|39|7{(=yf!
+zqy@5|`O66~;eIW+g%lG~DB%%a(c{lJRxOn*7w`D3WYul&++4vnJC$Bb_iQAcTm_e@
+z&73pf(aw`sg(*!|oLL{JUBbnSFJ4EF&8b6wxz~cExp{*{%UMUIjw-=EBx)AwSoH!=
+znJ>9s(CV)p#F~COjx|V=tl^q<Cc%TyE&LG#tOb3;32E~ghqpiZutp@Uf(wrAT$llO
+xj}gZ?gNOUbh@)`SF@v#~e9>QnnLXQ)+SDzqd%7hW;PK}W=GNP~g}DPu`zJEtxjX;>
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/MarkNoGdef.ttf b/babelfont/resources/ttf/MarkNoGdef.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..ee12b3ac7e9783ca09dc050a27df0a10aa140369
+GIT binary patch
+literal 900
+zcmah{J#Q015Pf@lCO`}*=pw?0&>=!ZfrMp4NP$2QW21=JQIdiN;l)0G#b;Z_Mn*JH
+zAv#wU1qB^ViXcRn%2g_q0ttQsf(9YepuqC>Vic!9+11R=doz3cc6K2EjN&OIBFTmH
+z(!2HE6F{CKn@=xYjNW>d$N*x7IFt2NU5?u)h*yc@h05dn+KbL7;w|F2qNj41*_$63
+zuhXWBB<z$(Fz(YPi+;0hXY?BDUlKc&T2>*7YsBA)!@g?QF@k->6U1&+`QGYVbr!I0
+z6F;xl9yT}Y-`)^!63@YCr(OB+_1^s>SARmvFJyKNUDh+AXBj;b)*!_-($zeZ=<6~Z
+z(F^`Gye<?lA=rb=zm+>RQnW+|reg1LW4Pox2eFdrZ4J`J#&DjoYm@~R1*otMXHa2u
+zNSZ^>Q}Ame!tZ`glT#8ht@Tc%U;nnY-VaVeIv9s=9OpO%yARRhUi@cl?95nHbVUD8
+zn4~USQ~ERe#*Dli8}C-Fscx4m9QG}zKN$WPd1qmRbTDj85B6ad8KaL^#TyOO+6Ty-
+z$4R4{v4z8!O_bWrR>O1WRb$0X)!byx%P)F`Rz)?CK#2!$qJ;)LwqzcP(F&s!YV=9u
+z$mg+0Utm=w$Ol~rHvW$bk&g>YNQx*l)FUrj^B;`T`ATK8UbQ*Ws+J<LOXk&@6CA{8
+zT!4rt?kuy%!ELj@CL?^RCbwNDm@`>HMj(u%^b?q*7u00Dnc(Xd`jvH;v3Xm+%su}F
+D4#A0I
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/StaticLegacy.ttf b/babelfont/resources/ttf/StaticLegacy.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..2518f32f8f97f4642ff8d956023f661ad29f9e44
+GIT binary patch
+literal 1172
+zcmZ`&O=uHQ5T1FPZrfDb2GVLv4zWrVEf`ak9D+YkY6YuOtp*gzHoHwjvq{({l7fol
+zQYs#Lsu#hVc=RHO^iX@sNl*kqFQFjzAc7D<#P<2U%{E5C2Q&N4H#6_en|Vu2L>+XG
+zG>Tlhax{AG$;IPD90PkTX&ZTcbbAT*3)mM@nT45!jn9vXL<shWS<5hu_{ae8D&*uW
+zh?XT`1J@u2X6-_$Z-GA{e;M|nIm^k)Uo?XJAFxkla!G@asaWBI-D?}AJatnS;`hQ1
+zXARqWCIfGXG*wS6pPMhd-~V=w$TtMrB2~NKv4@j4OH*C(@5I_Bn7@{c$(Z;mRDJCv
+zJQwn`u#8cktNmK9yHj(X-(~#d!?z82JDK$u0hYx(u94oH)Qkn`TEjluKmez)XpP3S
+zdJWK2`QwMBm?$I;$wEv>+WS5rLfs__B11sb89`{(i6E*~ee!!1k0I{1MpA-nVEIxm
+z$;GWUHv^8w+D-j5ND+$Dd731H)D)SbQ0rV(=L`q-1){vn)$OqI#8E&9ef2zXu8P$y
+zjF!nnW<@0Gp5cILip17aRI$T%k;X$Jv8E~m$Lok4RMFH5{S!A-yotRlv`CseJ351w
+zc^<+%6LgT6@d||QX0nWNO+Kohs+}0_shC_dO;i&^zfAdBMeP9}yj)pX!A@AJe_=#u
+zv<q5?FttF0+<<PA-{9|8w(D0nQ+~`|eo^V@^Ib4%F?G6HVS!t8dVDu<kB0*|Aq33$
+z+tiyHz`5*e2M*C;4+~_Ddbk_-s)qxpVA{n2H#a+)E)|N76&|<DbkUx$QpJqncx0U`
+zKQF&3e=Kiezck)Kfr{kdj|tN_v<a?=2~Pm0fHIi3^G{?`T;zHr8Mza=?{-Yx@qfz?
+z#|=6{Q!H3xAGfg1t*z6BGm}Z@efZAnP)@F(aH&1z7`Los&YtdovJE4dw6X<k@f!kb
+B!z=&*
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/Unnamed.ttf b/babelfont/resources/ttf/Unnamed.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..c19316b0760b56b2620da7c61f1402096a44cee8
+GIT binary patch
+literal 820
+zcmah{J!=$E6g}_FWb>&Zkce2wL`8xG5+)&}SV`1%wGf1j3xb6{vg2-WX0l9XVbX|%
+zlqu3{lP+C~2qLDi5iCUV2P_3ki^NJ9&wZH%ZITOj-aY4jzWW9Wzz|-+!Q#E8`t5he
+z@5$(&WGfGsru@5CD?5O?PyB2-GHvw)mx$jImz&}G^R2y&U&Oy9z7?2;$?m+N{e?Q$
+zBGI#{KG5$HUu#8a=DtKsyh}XvB1mHN=ik|Hk@#Y`x@<6oG5V$dKxDEu`Y=d5LF~mQ
+z3U2Jz#u@*ZIBT!2rJS3h55*5oF1ok>`rFgt@-ZCehj{-JpV8C$fSdzec$njO`Mj;`
+zV?s~cO8=&5%eZiPigq(kViXxiFQ{$w(0jJnnY&>N6xz4&>0}1S!{@HAIC(R5R7~fi
+zOji0!l~I1>)}!nzJ1P~^v09!J+cW=|-?ULAteoSHuh3GEZCvLzSZiive8g8r`ruCm
+z%<XzgHd9GgySE~;TtwO`(qDE^vemhr{3|UNb2eA{3>R@Sc`p&CcKgX+#)ZPxIFH%t
+zN|tt#z^ljd){R=w?1Uyk6)VV)qJsnhJk<FQ#W0A78mRHxq%S0s$W2Za+13F2PC`|x
+g4<7OVvM<IPi$|@QFeN85i^^Ne*+(sLcDbec3lW)XaR2}S
+
+literal 0
+HcmV?d00001
+
+diff --git a/babelfont/resources/ttf/make_fixtures.py b/babelfont/resources/ttf/make_fixtures.py
+new file mode 100644
+index 00000000..0bdf791f
+--- /dev/null
++++ b/babelfont/resources/ttf/make_fixtures.py
+@@ -0,0 +1,221 @@
++"""Writes the fonts the ttf reader tests load: python3 make_fixtures.py
++
++StaticLegacy.ttf: OS/2 version 1 (no sxHeight or sCapHeight), usWeightClass 500,
++usWidthClass 6, fsType 0, a PANOSE, fsSelection REGULAR | USE_TYPO_METRICS;
++head.fontRevision 2.005, lowestRecPPEM 9; hhea lineGap 25; style "Medium" (name
++ID 17; ID 2 is "Regular"); a Japanese family name in a Windows and a MacJapanese
++record; a kern table of two subtables (x H -30, H x -20, x x 5 in both,
++x gravecomb -15). Glyphs:
++
++* bar: hmtx lsb 110, glyf xMin 100.
++* barflip: bar turned 180 degrees.
++* bars: two bars; its own lsb is 5 units right of its xMin.
++* barrot: bar turned 90 degrees (xy = -1, yx = 1).
++* barx: x and bar, bar flagged USE_MY_METRICS; its own lsb is 40 units right of
++  its xMin.
++* gravecomb (U+0300, advance 0) and commaaccent (unencoded, advance 120).
++
++GdefClasses.ttf: GDEF glyph classes (gravecomb a base with an advance, acutecomb a
++mark without one, tildecomb a mark with one, f_f a ligature, script a base named
++like a keyword); a calt rule whose five-glyph backtrack reads back as a named
++class; a GPOS kern feature beside a kern table (a f_f -40); a mark feature; vhea
++900/-100, every glyph 1000 high with its vertical origin at 600.
++
++Unnamed.ttf: post format 3; A (U+0041), Aring (U+00C5, a component of A), an
++unencoded alternate of A reached by salt, and A Aring kerned -50 in a kern table.
++
++DuplicateNames.ttf: the post table names glyphs 2 and 3 both "dupe"; Acomp is a
++component of glyph 3.
++
++MarkNoGdef.ttf: no GDEF; a mark feature attaching gravecomb (U+0300) to a;
++commaaccent unencoded; uni034F (U+034F) a default-ignorable nonspacing mark.
++"""
++from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
++from fontTools.fontBuilder import FontBuilder
++from fontTools.ttLib.tables.O_S_2f_2 import Panose
++from fontTools.pens.ttGlyphPen import TTGlyphPen
++from fontTools.ttLib import newTable
++from fontTools.ttLib.tables._g_l_y_f import Glyph, GlyphComponent
++from fontTools.ttLib.tables._k_e_r_n import KernTable_format_0
++
++
++def save(fb, path):
++    # fixed dates, so that the same script writes the same bytes
++    fb.font["head"].created = fb.font["head"].modified = 0
++    fb.font.recalcTimestamp = False
++    fb.save(path)
++
++
++def legacy_kern(font, *subtables):
++    font["kern"] = kern = newTable("kern")
++    kern.version, kern.kernTables = 0, []
++    for pairs in subtables:
++        st = KernTable_format_0()
++        st.version, st.coverage, st.kernTable = 0, 1, pairs
++        kern.kernTables.append(st)
++
++
++def rect(x0, y0, x1, y1):
++    pen = TTGlyphPen(None)
++    pen.moveTo((x0, y0))
++    pen.lineTo((x0, y1))
++    pen.lineTo((x1, y1))
++    pen.lineTo((x1, y0))
++    pen.closePath()
++    return pen.glyph()
++
++
++def composite(*parts):
++    g = Glyph()
++    g.numberOfContours = -1
++    g.components = []
++    for name, dx, dy, matrix, *flags in parts:
++        c = GlyphComponent()
++        c.glyphName, c.x, c.y = name, dx, dy
++        c.flags = 0x4 | (flags[0] if flags else 0)  # ROUND_XY_TO_GRID
++        if matrix is not None:
++            c.transform = matrix
++        g.components.append(c)
++    return g
++
++
++USE_MY_METRICS = 0x200
++order = [".notdef", "x", "H", "bar", "barflip", "bars", "barrot", "barx", "gravecomb",
++         "commaaccent"]
++glyphs = {
++    ".notdef": Glyph(),
++    "x": rect(50, 0, 450, 480),
++    "H": rect(60, 0, 540, 700),
++    "bar": rect(100, 0, 200, 600),
++    "barflip": composite(("bar", 300, 600, [[-1, 0], [0, -1]])),
++    "bars": composite(("bar", 0, 0, None), ("bar", 250, 0, None)),
++    # fontTools' transform is [[xx, yx], [xy, yy]]: x' = xx*x + xy*y, y' = yx*x + yy*y
++    "barrot": composite(("bar", 700, 0, [[0, 1], [-1, 0]])),
++    "barx": composite(("x", 300, 0, None), ("bar", 0, 0, None, USE_MY_METRICS)),
++    "gravecomb": rect(-200, 500, -100, 600),
++    "commaaccent": rect(20, -200, 100, -50),
++}
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("x"): "x", ord("H"): "H", ord("|"): "bar", 0x0300: "gravecomb"})
++fb.setupGlyf(glyphs)
++lsb = {".notdef": 0, "x": 50, "H": 60, "bar": 110, "barflip": 100, "bars": 105, "barrot": 100, "barx": 140,
++       "gravecomb": -200, "commaaccent": 20}
++advance = {"gravecomb": 0, "commaaccent": 120}
++fb.setupHorizontalMetrics({g: (advance.get(g, 800), lsb[g]) for g in order})
++fb.setupHorizontalHeader(ascent=800, descent=-200, lineGap=25)
++fb.setupNameTable({
++    "familyName": "Fixture Medium",
++    "styleName": "Regular",
++    "typographicFamily": "Fixture",
++    "typographicSubfamily": "Medium",
++})
++fb.setupOS2(
++    version=1, usWeightClass=500, usWidthClass=6, fsType=0, fsSelection=0x40 | 0x80,
++    sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200,
++    panose=Panose(bFamilyType=2, bSerifStyle=0, bWeight=6, bProportion=3),
++)
++fb.setupPost()
++fb.font["head"].fontRevision = 2.005
++fb.font["head"].lowestRecPPEM = 9
++# a Japanese family name, in a Windows record and a MacJapanese one
++fb.font["name"].setName("\u3057\u3063\u307d\u308a", 1, 3, 1, 0x411)
++fb.font["name"].setName("\u3057\u3063\u307d\u308a", 1, 1, 1, 11)
++legacy_kern(fb.font, {("x", "H"): -30, ("x", "x"): 5, ("x", "gravecomb"): -15},
++            {("H", "x"): -20, ("x", "x"): 5})
++save(fb, "StaticLegacy.ttf")
++
++
++order = [".notdef", "a", "gravecomb", "acutecomb", "tildecomb", "f_f", "script"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb", 0x0301: "acutecomb", 0x0303: "tildecomb"})
++fb.setupGlyf({".notdef": Glyph(), "a": rect(50, 0, 450, 500), "gravecomb": rect(40, 550, 150, 700),
++              "acutecomb": rect(-150, 550, -40, 700), "tildecomb": rect(20, 550, 280, 650),
++              "f_f": rect(50, 0, 750, 700), "script": rect(50, 0, 450, 500)})
++advance = {".notdef": 500, "a": 500, "gravecomb": 190, "acutecomb": 0, "tildecomb": 300, "f_f": 800,
++           "script": 500}
++fb.setupHorizontalMetrics({g: (advance[g], fb.font["glyf"][g].xMin if g != ".notdef" else 0)
++                           for g in order})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupVerticalHeader(ascent=900, descent=-100)
++fb.setupVerticalMetrics({g: (1000, 600 - fb.font["glyf"][g].yMax if g != ".notdef" else 0)
++                         for g in order})
++fb.setupNameTable({"familyName": "Fixture Gdef", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++fb.setupPost()
++addOpenTypeFeaturesFromString(fb.font, """
++lookup up { sub gravecomb by acutecomb; } up;
++feature calt {
++    sub [a gravecomb acutecomb tildecomb f_f] gravecomb' lookup up;
++} calt;
++feature kern {
++    pos a a -10;
++} kern;
++markClass acutecomb <anchor -100 600> @ACUTE;
++feature mark {
++    pos base a <anchor 250 500> mark @ACUTE;
++} mark;
++table GDEF {
++    GlyphClassDef [a gravecomb \\script], [f_f], [acutecomb tildecomb], ;
++} GDEF;
++""")
++legacy_kern(fb.font, {("a", "f_f"): -40})
++save(fb, "GdefClasses.ttf")
++
++
++order = [".notdef", "A", "Aring", "A.alt"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({0x41: "A", 0xC5: "Aring"})
++fb.setupGlyf({".notdef": Glyph(), "A": rect(50, 0, 550, 700), "Aring": composite(("A", 0, 0, None)),
++              "A.alt": rect(60, 0, 560, 700)})
++fb.setupHorizontalMetrics({".notdef": (500, 0), "A": (600, 50), "Aring": (600, 50), "A.alt": (600, 60)})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({"familyName": "Fixture Unnamed", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++addOpenTypeFeaturesFromString(fb.font, "feature salt { sub A by A.alt; } salt;")
++legacy_kern(fb.font, {("A", "Aring"): -50})
++fb.setupPost(keepGlyphNames=False)
++save(fb, "Unnamed.ttf")
++
++
++order = [".notdef", "A", "dupa", "dupb", "Acomp"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({0x41: "A", 0xC0: "Acomp"})
++fb.setupGlyf({".notdef": Glyph(), "A": rect(50, 0, 550, 700), "dupa": rect(60, 0, 160, 100),
++              "dupb": rect(70, 0, 170, 100), "Acomp": composite(("dupb", 0, 0, None))})
++fb.setupHorizontalMetrics({".notdef": (500, 0), "A": (600, 50), "dupa": (600, 60), "dupb": (600, 70),
++                           "Acomp": (600, 70)})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({"familyName": "Fixture Duplicate Names", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++fb.setupPost()
++save(fb, "DuplicateNames.ttf")
++data = open("DuplicateNames.ttf", "rb").read()
++# both names become "dupe": the same length, so nothing in the post table moves
++assert data.count(b"\x04dupa") == 1 and data.count(b"\x04dupb") == 1
++open("DuplicateNames.ttf", "wb").write(data.replace(b"\x04dupa", b"\x04dupe").replace(b"\x04dupb", b"\x04dupe"))
++
++
++order = [".notdef", "a", "gravecomb", "commaaccent", "uni034F"]
++fb = FontBuilder(1000, isTTF=True)
++fb.setupGlyphOrder(order)
++fb.setupCharacterMap({ord("a"): "a", 0x0300: "gravecomb", 0x034F: "uni034F"})
++fb.setupGlyf({".notdef": Glyph(), "a": rect(50, 0, 450, 500), "gravecomb": rect(-150, 550, -40, 700),
++              "commaaccent": rect(20, -200, 100, -50), "uni034F": Glyph()})
++fb.setupHorizontalMetrics({".notdef": (500, 0), "a": (500, 50), "gravecomb": (0, -150),
++                           "commaaccent": (120, 20), "uni034F": (0, 0)})
++fb.setupHorizontalHeader(ascent=800, descent=-200)
++fb.setupNameTable({"familyName": "Fixture Mark No Gdef", "styleName": "Regular"})
++fb.setupOS2(sTypoAscender=800, sTypoDescender=-200, usWinAscent=800, usWinDescent=200)
++fb.setupPost()
++addOpenTypeFeaturesFromString(fb.font, """
++markClass gravecomb <anchor -100 600> @TOP;
++feature mark {
++    pos base a <anchor 250 500> mark @TOP;
++} mark;
++""")
++del fb.font["GDEF"]
++save(fb, "MarkNoGdef.ttf")
+-- 
+2.47.3
+

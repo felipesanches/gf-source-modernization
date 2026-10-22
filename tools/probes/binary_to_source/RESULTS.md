@@ -299,3 +299,6 @@ the sr-aef PR itself, so glyphs and features agree at every commit. Converted wi
 reorganized branches, all 109 fonts give the same sources as before. The measured converter
 (`babelfont/rebuild.sh`) and the landed repositories are unchanged.
 (results/converter-ab-2026-10-16/)
+On 2026-10-21 both branches were rebased, without conflicts, onto upstream 5ff5bf04, which
+changed how the TTF reader expands mark class glyphs (`babelfont/pr-2026-10-21/`): all 109
+fonts again give the same sources (results/converter-ab-2026-10-16/rebase.txt).

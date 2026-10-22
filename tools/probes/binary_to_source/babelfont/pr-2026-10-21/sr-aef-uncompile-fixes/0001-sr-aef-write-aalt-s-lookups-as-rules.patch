@@ -1,0 +1,164 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 16 Oct 2026 08:04:34 +0100
+Subject: [PATCH 1/5] sr-aef: write aalt's lookups as rules
+
+aalt may contain only single and alternate substitutions, so a font whose aalt
+referenced lookups uncompiled to features that did not compile. Now aalt holds
+the lookups' rules, and a lookup nothing else uses is dropped.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ sr-aef/resources/aalt.fea |  18 +++++++++++
+ sr-aef/resources/aalt.ttf | Bin 0 -> 556 bytes
+ sr-aef/src/lib.rs         |  63 ++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 81 insertions(+)
+ create mode 100644 sr-aef/resources/aalt.fea
+ create mode 100644 sr-aef/resources/aalt.ttf
+
+diff --git a/sr-aef/resources/aalt.fea b/sr-aef/resources/aalt.fea
+new file mode 100644
+index 00000000..381a7ad0
+--- /dev/null
++++ b/sr-aef/resources/aalt.fea
+@@ -0,0 +1,18 @@
++languagesystem DFLT dflt;
++
++lookup single {
++    sub a by a.alt1;
++} single;
++
++lookup alternate {
++    sub b from [b.alt1 b.alt2];
++} alternate;
++
++feature aalt {
++    lookup single;
++    lookup alternate;
++} aalt;
++
++feature salt {
++    lookup single;
++} salt;
+diff --git a/sr-aef/resources/aalt.ttf b/sr-aef/resources/aalt.ttf
+new file mode 100644
+index 0000000000000000000000000000000000000000..7ae6d8e87ce73a86b0c100becfd9a651113570b0
+GIT binary patch
+literal 556
+zcmaJ-yGjF55IwWIMzmOiE+Lf!39^L<3W|lGXw=3|t>aC6Y_UsLvqjSR5mw?K_yZRC
+z3`+~aCLf?;7th>{iy%77%$;*)=H4?40WgIdxF{bSo$M?<&&>kzNcOs&m=sqS5QoGY
+zmvR4sCrwff(YZNmR<>W5-_zG45)k=d{zR`wN!F7$W{@g_A9vbD5%DR5pO{{XNjS_u
+z>9w@e&DORa?pV)=ccI$ow}aPVb7u1$t~(_2m$~*Pt?Hb${B@=U^Ifn^X^c=z7DO>w
+zFt*1f4EV3~z5pKTJUxDjTcZ)9u~EqBtJ?qDbmRX_bv4Anp19(b%(98Il~U`+v6^pG
+zMitZ4RYM4A>>nPZ0>`i$VOQe<`MgswZ?y;($4tJnP-9iqQ?;s6?9&6ADbgJrZZiRV
+E0sMnFo&W#<
+
+literal 0
+HcmV?d00001
+
+diff --git a/sr-aef/src/lib.rs b/sr-aef/src/lib.rs
+index 1b9eb7c6..70c19776 100644
+--- a/sr-aef/src/lib.rs
++++ b/sr-aef/src/lib.rs
+@@ -137,6 +137,8 @@ pub struct UncompileContext<'a> {
+     #[cfg_attr(feature = "cli", serde(skip))]
+     axes: Option<fontdrasil::types::Axes>,
+     num_glyphs: u16,
++    /// Lookups whose rules were written into aalt
++    aalt_lookups: IndexSet<SmolStr>,
+ }
+ 
+ impl<'a> UncompileContext<'a> {
+@@ -188,6 +190,7 @@ impl<'a> UncompileContext<'a> {
+                 .unwrap_or_default(),
+             axes: variations::fontdrasil_axes(font)?,
+             num_glyphs: glyph_names.num_glyphs() as u16,
++            aalt_lookups: IndexSet::new(),
+         };
+         slf.gather_language_systems()?;
+         slf.uncompile_gsub_lookups()?;
+@@ -802,6 +805,22 @@ impl<'a> UncompileContext<'a> {
+                 }
+             }
+         }
++        // A lookup written into aalt is dropped unless something else uses it
++        let used: HashSet<SmolStr> = self
++            .features
++            .values()
++            .flatten()
++            .filter_map(|statement| match statement {
++                Statement::LookupReference(reference) => Some(SmolStr::new(&reference.lookup_name)),
++                _ => None,
++            })
++            .chain(self.lookups.values().flat_map(called_lookups))
++            .collect();
++        for name in std::mem::take(&mut self.aalt_lookups) {
++            if !used.contains(&name) {
++                self.lookups.shift_remove(&name);
++            }
++        }
+     }
+ 
+     /// Build script, language, and lookup statements for feature registrations.
+@@ -954,6 +973,36 @@ impl<'a> UncompileContext<'a> {
+     }
+ 
+     fn add_feature_lookups(&mut self, feature_tag: Tag, lookups: Vec<Statement>) {
++        // aalt may contain only single and alternate substitutions, so its
++        // lookups are written out as their rules
++        let lookups = if feature_tag == Tag::new(b"aalt") {
++            lookups
++                .into_iter()
++                .flat_map(|statement| match &statement {
++                    Statement::LookupReference(reference) => self
++                        .lookups
++                        .get(reference.lookup_name.as_str())
++                        .map(|block| {
++                            self.aalt_lookups.insert(block.name.clone());
++                            block
++                                .statements
++                                .iter()
++                                .filter(|s| {
++                                    matches!(
++                                        s,
++                                        Statement::SingleSubst(_) | Statement::AlternateSubst(_)
++                                    )
++                                })
++                                .cloned()
++                                .collect()
++                        })
++                        .unwrap_or_else(|| vec![statement]),
++                    _ => vec![statement],
++                })
++                .collect()
++        } else {
++            lookups
++        };
+         let statements = self
+             .features
+             .entry(feature_tag.to_string().into())
+@@ -1658,6 +1707,20 @@ lookup gpos_pair_1;
+         );
+     }
+ 
++    #[test]
++    fn test_uncompile_aalt_rules() {
++        let data = std::fs::read("resources/aalt.ttf").unwrap();
++        let fontref = skrifa::FontRef::new(&data).unwrap();
++        let fea = uncompile(&fontref, true).unwrap().as_fea("");
++        let aalt = &fea[fea.find("feature aalt").unwrap()..fea.find("} aalt;").unwrap()];
++        assert!(!aalt.contains("lookup "), "{fea}");
++        assert!(aalt.contains("sub a by a.alt1;"), "{fea}");
++        assert!(aalt.contains("sub b from [b.alt1 b.alt2];"), "{fea}");
++        // salt also uses the single substitution; nothing else uses the alternate one
++        assert!(fea.contains("lookup gsub_single_1 {"), "{fea}");
++        assert!(!fea.contains("lookup gsub_alternate_1 {"), "{fea}");
++    }
++
+     #[test]
+     fn test_uncompile_size_feature() {
+         let data = std::fs::read("resources/size.ttf").unwrap();
+-- 
+2.47.3
+

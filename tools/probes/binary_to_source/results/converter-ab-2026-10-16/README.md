@@ -9,6 +9,7 @@ converted by both babelfonts as land.py converts it; the `.glyphs` files are com
 |-------------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------|-----------------------|
 | `reader-only.txt` | the measured babelfont (`babelfont/rebuild.sh`) | upstream d44f2bdc + `babelfont/sr-aef-uncompile-fixes/` + `babelfont/ttf-static-font-fidelity/`         | 29 SAME, 21 DIFFERENT |
 | `refactor.txt`    | B of `reader-only.txt`                          | upstream 3e3b6dcf + `babelfont/pr-2026-10-16/sr-aef-uncompile-fixes/` + `.../ttf-static-font-fidelity/` | 50 SAME               |
+| `rebase.txt`      | B of `refactor.txt`                             | upstream 5ff5bf04 + `babelfont/pr-2026-10-21/sr-aef-uncompile-fixes/` + `.../ttf-static-font-fidelity/` | 50 SAME               |
 
 `reader-only.txt` answers which babelfont PRs each family needs. `causes.txt` (`sh
 ab_causes.sh reader-only.txt <scratch>`) counts each DIFFERENT family's changed lines with a
@@ -26,7 +27,9 @@ and the others (name IDs 16/17 and the typographic familyName of typographic-fam
 upstream 3e3b6dcf, follow-up fixes folded into the commits they complete, comments and
 messages shortened, one mark rule shared by categories and kerning) changed any conversion:
 none did. `babelfont/pr-2026-10-16/` applied to upstream 3e3b6dcf gives the branches' tree
-exactly.
+exactly. `rebase.txt` answers whether rebasing them onto upstream 5ff5bf04 (2026-10-21; it
+changed how the TTF reader expands mark class glyphs) changed any conversion: none did.
+`babelfont/pr-2026-10-21/` applied to upstream 5ff5bf04 gives the rebased branches' tree.
 
 Rerun: build each babelfont with `cargo build --release -p babelfont --features cli`, then
 `GF=<google/fonts clone> ARCHIVE=<repo archive> python3 converter_ab.py <A> <B> <scratch>`;

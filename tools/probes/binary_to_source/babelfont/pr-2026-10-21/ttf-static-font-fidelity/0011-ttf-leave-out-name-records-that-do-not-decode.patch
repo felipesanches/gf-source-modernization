@@ -1,0 +1,54 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 16 Oct 2026 08:30:33 +0100
+Subject: [PATCH 11/18] ttf: leave out name records that do not decode
+
+skrifa reads a record in an encoding it does not decode, such as MacJapanese,
+as an empty string, which was kept as that language's name. Now an empty name
+is left out.
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/convertors/ttf.rs | 20 +++++++++++++++++++-
+ 1 file changed, 19 insertions(+), 1 deletion(-)
+
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index f0ead413..f771ed36 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -68,7 +68,11 @@ fn name_id_to_i18n(fontref: &skrifa::FontRef, name_id: StringId) -> crate::I18ND
+             } else {
+                 lang
+             };
+-            dict.insert(lang.to_string(), name.to_string());
++            // skrifa reads a record it cannot decode as empty
++            let value = name.to_string();
++            if !value.is_empty() {
++                dict.insert(lang.to_string(), value);
++            }
+         }
+     }
+     dict
+@@ -893,4 +897,18 @@ mod tests {
+         assert_eq!(layer.vertical_advance, Some(1000.0));
+         assert_eq!(layer.vertical_origin, Some(600.0));
+     }
++    #[test]
++    fn test_undecodable_name_left_out() {
++        // the MacJapanese record does not decode; the Windows one does
++        let font = load(STATIC_LEGACY).unwrap();
++        let ja: Vec<&String> = font
++            .names
++            .family_name
++            .0
++            .iter()
++            .filter(|(lang, _)| lang.starts_with("ja"))
++            .map(|(_, name)| name)
++            .collect();
++        assert_eq!(ja, ["\u{3057}\u{3063}\u{307d}\u{308a}"]);
++    }
+ }
+-- 
+2.47.3
+

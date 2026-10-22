@@ -1,0 +1,43 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Felipe=20Corr=C3=AAa=20da=20Silva=20Sanches?=
+ <juca@members.fsf.org>
+Date: Fri, 16 Oct 2026 08:31:27 +0100
+Subject: [PATCH 12/18] ttf: test that components follow unique glyph names
+
+Assisted by an AI agent (Claude Opus 5.5)
+---
+ babelfont/src/convertors/ttf.rs | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/babelfont/src/convertors/ttf.rs b/babelfont/src/convertors/ttf.rs
+index f771ed36..5d3a8acf 100644
+--- a/babelfont/src/convertors/ttf.rs
++++ b/babelfont/src/convertors/ttf.rs
+@@ -760,6 +760,7 @@ mod tests {
+ 
+     const STATIC_LEGACY: &str = "resources/ttf/StaticLegacy.ttf";
+     const GDEF_CLASSES: &str = "resources/ttf/GdefClasses.ttf";
++    const DUPLICATE_NAMES: &str = "resources/ttf/DuplicateNames.ttf";
+ 
+     fn component_coeffs(font: &Font, glyph: &str) -> Vec<[f64; 6]> {
+         font.glyphs.get(glyph).unwrap().layers[0]
+@@ -911,4 +912,16 @@ mod tests {
+             .collect();
+         assert_eq!(ja, ["\u{3057}\u{3063}\u{307d}\u{308a}"]);
+     }
++    #[test]
++    fn test_duplicate_glyph_names() {
++        // the post table names glyphs 2 and 3 both "dupe"; Acomp uses glyph 3
++        let font = load(DUPLICATE_NAMES).unwrap();
++        let names: Vec<&str> = font.glyphs.iter().map(|g| g.name.as_str()).collect();
++        assert_eq!(names, [".notdef", "A", "dupe", "dupe.1", "Acomp"]);
++        let component = font.glyphs.get("Acomp").unwrap().layers[0]
++            .components()
++            .next()
++            .unwrap();
++        assert_eq!(component.reference, "dupe.1");
++    }
+ }
+-- 
+2.47.3
+
