@@ -1,0 +1,66 @@
+default mode, fontmake: 4 of 41 sources build
+1 ./akronim/sources/Akronim-Regular.glyphs
+1 ./calligraffitti/sources/Calligraffitti-Regular.glyphs
+1 ./cherrycreamsoda/sources/CherryCreamSoda-Regular.glyphs
+1 ./chewy/sources/Chewy-Regular.glyphs
+1 ./comingsoon/sources/ComingSoon-Regular.glyphs
+1 ./craftygirls/sources/CraftyGirls-Regular.glyphs
+1 ./dohyeon/sources/DoHyeon-Regular.glyphs
+1 ./fontdinerswanky/sources/FontdinerSwanky-Regular.glyphs
+1 ./homemadeapple/sources/HomemadeApple-Regular.glyphs
+1 ./jua/sources/Jua-Regular.glyphs
+1 ./kranky/sources/Kranky-Regular.glyphs
+1 ./oranienbaum/sources/Oranienbaum-Regular.glyphs
+1 ./permanentmarker/sources/PermanentMarker-Regular.glyphs
+1 ./portersansblock/sources/PorterSansBlock-Regular.glyphs
+1 ./ptsanscaption/sources/PT_Sans-Caption-Web-Bold.glyphs
+1 ./ptsanscaption/sources/PT_Sans-Caption-Web-Regular.glyphs
+1 ./ptsansnarrow/sources/PT_Sans-Narrow-Web-Bold.glyphs
+1 ./ptsansnarrow/sources/PT_Sans-Narrow-Web-Regular.glyphs
+1 ./ptsans/sources/PT_Sans-Web-Bold.glyphs
+1 ./ptsans/sources/PT_Sans-Web-BoldItalic.glyphs
+1 ./ptsans/sources/PT_Sans-Web-Italic.glyphs
+1 ./ptsans/sources/PT_Sans-Web-Regular.glyphs
+1 ./ptserifcaption/sources/PT_Serif-Caption-Web-Italic.glyphs
+1 ./ptserifcaption/sources/PT_Serif-Caption-Web-Regular.glyphs
+1 ./ptserif/sources/PT_Serif-Web-Bold.glyphs
+1 ./ptserif/sources/PT_Serif-Web-BoldItalic.glyphs
+1 ./ptserif/sources/PT_Serif-Web-Italic.glyphs
+1 ./ptserif/sources/PT_Serif-Web-Regular.glyphs
+1 ./reeniebeanie/sources/ReenieBeanie.glyphs
+1 ./rocksalt/sources/RockSalt-Regular.glyphs
+1 ./schoolbell/sources/Schoolbell-Regular.glyphs
+1 ./slackey/sources/Slackey-Regular.glyphs
+1 ./sunshiney/sources/Sunshiney-Regular.glyphs
+1 ./unkempt/sources/Unkempt-Bold.glyphs
+1 ./unkempt/sources/Unkempt-Regular.glyphs
+1 ./walterturncoat/sources/WalterTurncoat-Regular.glyphs
+1 ./yeonsung/sources/YeonSung-Regular.glyphs
+gftools mode (akronim): FAILS -- ValueError: Unknown name language: en 
+gftools mode (calligraffitti): FAILS -- ValueError: Unknown name language: en 
+gftools mode (cherrycreamsoda): FAILS -- ValueError: Unknown name language: en 
+gftools mode (chewy): FAILS -- ValueError: Unknown name language: en 
+gftools mode (comingsoon): FAILS -- ValueError: Unknown name language: en 
+gftools mode (craftygirls): FAILS -- ValueError: Unknown name language: en 
+gftools mode (dohyeon): FAILS -- ValueError: Unknown name language: en 
+gftools mode (fontdinerswanky): FAILS -- ValueError: Unknown name language: en 
+gftools mode (homemadeapple): FAILS -- ValueError: Unknown name language: en 
+gftools mode (jua): FAILS -- ValueError: Unknown name language: en 
+gftools mode (kranky): FAILS -- ValueError: Unknown name language: en 
+gftools mode (oranienbaum): FAILS -- ValueError: Unknown name language: en 
+gftools mode (permanentmarker): FAILS -- ValueError: Unknown name language: en 
+gftools mode (portersansblock): FAILS -- ValueError: Unknown name language: en 
+gftools mode (ptsans): FAILS -- ValueError: Unknown name language: en 
+gftools mode (ptsanscaption): FAILS -- ValueError: Unknown name language: en 
+gftools mode (ptsansnarrow): FAILS -- ValueError: Unknown name language: en 
+gftools mode (ptserif): FAILS -- ValueError: Unknown name language: en 
+gftools mode (ptserifcaption): FAILS -- ValueError: Unknown name language: en 
+gftools mode (reeniebeanie): FAILS -- ValueError: Unknown name language: en 
+gftools mode (rocksalt): FAILS -- ValueError: Unknown name language: en 
+gftools mode (schoolbell): FAILS -- ValueError: Unknown name language: en 
+gftools mode (slackey): FAILS -- ValueError: Unknown name language: en 
+gftools mode (sunshiney): FAILS -- ValueError: Unknown name language: en 
+gftools mode (unkempt): FAILS -- ValueError: Unknown name language: en 
+gftools mode (walterturncoat): FAILS -- ValueError: Unknown name language: en 
+gftools mode (yeonsung): FAILS -- ValueError: Unknown name language: en 
+gftools mode (carlito): FAILS -- 

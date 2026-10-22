@@ -10,7 +10,7 @@
 # Signal: fontmake exit status per source ("0 <path>" = built); the builder's last error.
 #   sh crater_builds.sh <scratch dir> <repo>...
 set -eu
-PYBIN=/home/fsanches/compartilhado/gftools/venv/bin
+PYBIN=${PYBIN:-/home/fsanches/compartilhado/gftools/venv/bin}   # crater's pins: a venv from fontc's resources/scripts/requirements.txt
 REPOS=/home/fsanches/compartilhado/sfd-reland-repos
 S=${1:?scratch dir}; shift
 mkdir -p "$S"; cd "$S"
@@ -23,9 +23,13 @@ ls ./*/sources/*.glyphs | xargs -P 4 -I{} sh -c 'd=$(dirname {}); n=$(basename {
   | sort -k2 > fontmake.txt
 echo "default mode, fontmake: $(grep -c '^0 ' fontmake.txt) of $(wc -l < fontmake.txt) sources build"
 grep -v '^0 ' fontmake.txt || true
-r=$1; g=$(ls "$r"/sources/*.glyphs | head -1)
-( cd "$r/sources" && timeout 300 "$PYBIN"/gftools builder config.yaml \
-    --experimental-simple-output "$S/gftools-out" \
-    --experimental-single-source "$(basename "$g")" > "$S/gftools.log" 2>&1 ) && \
-  echo "gftools mode ($r): builds" || \
-  echo "gftools mode ($r): FAILS -- $(grep -o "unexpected key not in schema '[A-Za-z]*'\|ValueError: .*" "$S/gftools.log" | head -2 | tr '\n' ' ')"
+# gftools mode: the first repo, or every repo with GFTOOLS_ALL=1 (configs differ in their keys)
+[ -n "${GFTOOLS_ALL:-}" ] || set -- "$1"
+for r in "$@"; do
+  g=$(ls "$r"/sources/*.glyphs | head -1)
+  ( cd "$r/sources" && timeout 300 "$PYBIN"/gftools builder config.yaml \
+      --experimental-simple-output "$S/gftools-out-$r" \
+      --experimental-single-source "$(basename "$g")" > "$S/gftools-$r.log" 2>&1 ) && \
+    echo "gftools mode ($r): builds" || \
+    echo "gftools mode ($r): FAILS -- $(grep -o "unexpected key not in schema '[A-Za-z]*'\|ValueError: .*" "$S/gftools-$r.log" | head -2 | tr '\n' ' ')"
+done
