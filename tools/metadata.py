@@ -398,8 +398,8 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     out += wrap("- The Unified Font Repository template was adopted in its own commit; the "
                 "README records the provenance and the known differences below.", 88,
                 subsequent_indent="  ")
-    out += wrap("- The fonts were converted to `.glyphs` with babelfont-rs's TTF reader, no "
-                "filters, as the last change. " + conv, 88, subsequent_indent="  ")
+    out += wrap("- The conversion to `.glyphs` is the last change. " + conv, 88,
+                subsequent_indent="  ")
     out += ["", "## Final state", ""]
     out += wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
                 % (repo, head_full[:12], claim), 88)
