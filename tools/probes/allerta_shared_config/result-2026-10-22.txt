@@ -1,0 +1,3 @@
+tables that differ between the builds: ['glyf', 'hmtx', 'post']
+bdd9557: glyph names as shipped False; outlines differ 140 of 215 (bounds 2); advances differ 0; composites 58; post underline (-100, 50) (shipped (-76, 51))
+new: glyph names as shipped True; outlines differ 142 of 217 (bounds 3); advances differ 0; composites 60; post underline (-100, 50) (shipped (-76, 51))
