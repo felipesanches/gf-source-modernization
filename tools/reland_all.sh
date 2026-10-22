@@ -21,7 +21,7 @@ run() {  # $1 = pairing table, $2 = repo
   echo "   rc=$? $(tail -n 1 "${LANDED:-$W/landed.tsv}" | cut -f1,5)" >> "$LOG/progress.txt"
   df -h /home/fsanches/compartilhado | tail -1 >> "$LOG/progress.txt"
 }
-for t in families.tsv families-next.tsv; do
+for t in ${TABLES:-families.tsv families-next.tsv}; do   # TABLES=families-binary.tsv: the binary-only families
   for r in $(repos_of "$W/$t"); do
     if [ $# -gt 0 ]; then case " $* " in *" $r "*) ;; *) continue ;; esac; fi
     run "$W/$t" "$r"

@@ -71,7 +71,12 @@ BF = os.path.join(BF_TREE, "target-heights/release/babelfont")
 # never a personal fork (Felipe, 2026-09-23). --unpublished-converter lands anyway, for
 # measurement only; push.sh refuses such a landing.
 BF_UPSTREAM = "simoncozens/babelfont-rs"
+# The one exception (Felipe, 2026-10-22, deadline): branch 2026-10-22 of his fork = upstream main
+# plus the two TTF reader PR branches, submitted to Simon later. push.sh pushes a repository
+# citing it only once that branch is public and holds the cited revision.
+BF_FORK, BF_FORK_BRANCH = "felipesanches/babelfont-rs", "2026-10-22"
 BF_WHERE = BF_UPSTREAM            # set by check_converter()
+BF_URL = "https://github.com/%s" % BF_UPSTREAM
 B3_DEFAULT = "/home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder"
 B3_ID, FONTC_ID = "1e638bd", "1.0.0"   # simoncozens/gftools-rust main; fontc as it pins it
 # B3=<path> builds with another gftools-builder, for measurement only: the landing is then
@@ -216,13 +221,22 @@ def check_converter():
     git(BF_TREE, "fetch", "-q", "upstream", "main")
     upstream = git(BF_TREE, "merge-base", "--is-ancestor", head, "upstream/main",
                    check=False).returncode == 0
-    if not upstream and "--unpublished-converter" not in sys.argv:
-        raise LandError("babelfont %s is not on %s main; a font repository may cite only an "
-                        "upstream revision (--unpublished-converter lands for measurement only)"
-                        % (head[:7], BF_UPSTREAM))
-    global BF_WHERE
-    BF_WHERE = BF_UPSTREAM if upstream else "UNPUBLISHED, not on %s main" % BF_UPSTREAM
-    return head[:7], upstream
+    fork = not upstream and git(BF_TREE, "merge-base", "--is-ancestor", head,
+                                "refs/heads/" + BF_FORK_BRANCH, check=False).returncode == 0
+    if not upstream and not fork and "--unpublished-converter" not in sys.argv:
+        raise LandError("babelfont %s is not on %s main nor on %s %s; a font repository may cite "
+                        "only those (--unpublished-converter lands for measurement only)"
+                        % (head[:7], BF_UPSTREAM, BF_FORK, BF_FORK_BRANCH))
+    global BF_WHERE, BF_URL
+    if upstream:
+        BF_WHERE = BF_UPSTREAM
+    elif fork:
+        BF_WHERE = "%s branch %s: %s main plus the TTF reader changes proposed to it" % (
+            BF_FORK, BF_FORK_BRANCH, BF_UPSTREAM)
+        BF_URL = "https://github.com/%s/tree/%s" % (BF_FORK, BF_FORK_BRANCH)
+    else:
+        BF_WHERE = "UNPUBLISHED, not on %s main" % BF_UPSTREAM
+    return head[:7], upstream or fork
 
 
 # --- step 1: the unmodified original ------------------------------------------
@@ -325,12 +339,12 @@ def template(repo, rows, d, plan=None):
 
             No source of this family was ever published: the fonts Google Fonts ships
             were its only form. The sources in `sources/` were converted from those
-            fonts with [babelfont-rs](https://github.com/simoncozens/babelfont-rs), and
+            fonts with [babelfont-rs](%s), and
             build with [gftools-builder](https://github.com/simoncozens/gftools-rust)
             and fontc.
 
             The fonts they were converted from remain in the git history.
-            """) % disp
+            """) % (disp, BF_URL)
     elif rows[0]["kind"] == "glyphs":
         readme = textwrap.dedent("""\
             # %s

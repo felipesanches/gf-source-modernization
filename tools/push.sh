@@ -8,7 +8,9 @@
 #
 # Reads landed.tsv (the last row per repository wins) and, for each repository:
 #   - refuses unless the babelfont revision its convert commit cites is on
-#     simoncozens/babelfont-rs main (a font repo must never depend on a fork)
+#     simoncozens/babelfont-rs main (a font repo must never depend on a fork), or on
+#     branch 2026-10-22 of felipesanches/babelfont-rs as GitHub serves it (the one
+#     exception, Felipe 2026-10-22; tools/land.py BF_FORK)
 #   - refuses unless everything it refers to is public: tools/public_refs.py (commits
 #     on published branches, cited evidence files at the cited revision, live URLs, no
 #     workstation paths)
@@ -25,6 +27,9 @@ R=/home/fsanches/compartilhado/sfd-reland-repos
 PY=/home/fsanches/compartilhado/gftools/venv/bin/python3
 BF_TREE=${BF_TREE:-/home/fsanches/compartilhado/babelfont-rs-worktrees/gf-sfd-conversion}   # any worktree of babelfont-rs
 git -C "$BF_TREE" fetch -q upstream main || { echo "cannot fetch babelfont upstream"; exit 1; }
+BF_FORK_REF=refs/published/babelfont-fork-2026-10-22
+git -C "$BF_TREE" fetch -q https://github.com/felipesanches/babelfont-rs.git "+2026-10-22:$BF_FORK_REF" 2>/dev/null ||
+  git -C "$BF_TREE" update-ref -d "$BF_FORK_REF" 2>/dev/null   # not pushed yet: nothing cites it publicly
 # the evidence the font repositories cite (tools, plans, logs) must be published first
 EVIDENCE_REMOTE=${EVIDENCE_REMOTE:-https://github.com/felipesanches/gf-source-modernization}
 git -C "$W" fetch -q "$EVIDENCE_REMOTE" main 2>/dev/null && EVIDENCE_HEAD=$(git -C "$W" rev-parse FETCH_HEAD) || EVIDENCE_HEAD=
@@ -53,8 +58,9 @@ for repo in $repos; do
   fi
   # the converter the convert commit cites must be merged upstream, never only in a fork
   rev=$(git -C "$d" log --format=%s | sed -n 's/^Convert to \.glyphs with babelfont \([0-9a-f]*\)$/\1/p' | head -1)
-  if [ -z "$rev" ] || ! git -C "$BF_TREE" merge-base --is-ancestor "$rev" upstream/main 2>/dev/null; then
-    echo "$repo: BLOCKED -- cites babelfont ${rev:-?}, not on simoncozens/babelfont-rs main; re-land after it merges"
+  if [ -z "$rev" ] || { ! git -C "$BF_TREE" merge-base --is-ancestor "$rev" upstream/main 2>/dev/null &&
+       ! git -C "$BF_TREE" merge-base --is-ancestor "$rev" "$BF_FORK_REF" 2>/dev/null; }; then
+    echo "$repo: BLOCKED -- cites babelfont ${rev:-?}, neither on simoncozens/babelfont-rs main nor on felipesanches/babelfont-rs 2026-10-22 as published"
     continue
   fi
   ev=$(git -C "$d" log -1 --format=%B | tr '\n' ' ' | sed -n 's#.*gf-source-modernization at \([0-9a-f]\{7,\}\)[^0-9a-f].*#\1#p')

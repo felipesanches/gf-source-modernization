@@ -8,7 +8,8 @@ Checks, on the commits this programme wrote (messages ending "Assisted by an AI 
 on every tracked text file:
   1. no workstation path (/home/..., /tmp/..., ~/compartilhado);
   2. every hexadecimal commit id (7-40 digits, not one of the repository's own commits)
-     is a commit on the published branch of a public repository: babelfont-rs main,
+     is a commit on the published branch of a public repository: babelfont-rs main (and
+     felipesanches/babelfont-rs 2026-10-22, Felipe's 2026-10-22 exception),
      gftools-rust main, gftools-builder3 main, fontc main, google/fonts main, googlefontdirectory-hg master, this evidence
      repository's published main, or the family's own upstream (its repo-archive mirror);
   3. every file this evidence repository is cited for (plans/<x>.json, tools/<x>, logs/<x>,
@@ -33,6 +34,7 @@ EVIDENCE_REMOTE = os.environ.get("EVIDENCE_REMOTE", EVIDENCE_URL)   # a local pa
 # (local repository, remote, published branch)
 MIRRORS = [
     (C + "/babelfont-rs-worktrees/upstream-main", "upstream", "main"),
+    (C + "/babelfont-rs", "origin", "2026-10-22"),   # felipesanches/babelfont-rs (land.py BF_FORK)
     (C + "/gftools-rust", "origin", "main"),
     (C + "/gftools-builder3", "upstream", "main"),   # simoncozens/gftools-builder3
     (C + "/fontc", "origin", "main"),                # googlefonts/fontc
