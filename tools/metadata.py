@@ -155,6 +155,8 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
     kind, base, commit = rows[0]["kind"], rows[0]["base"], rows[0]["commit"]
     if kind == "glyphs":
         return glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, future)
+    if kind == "binary":
+        return binary_upstream_info(repo, rows, old_block, head_full, display, previous, future)
     d = os.path.join(land.OUT, repo)
     convert = git(d, "log", "-1", "--format=%B", head_full)
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
@@ -370,6 +372,79 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     return "\n".join(out) + "\n"
 
 
+def binary_upstream_info(repo, rows, old_block, head_full, display, previous, future):
+    """upstream_info.md for a repository converted from the binaries Google Fonts ships,
+    the family's only form: no source of it was ever published."""
+    d = os.path.join(land.OUT, repo)
+    convert = git(d, "log", "-1", "--format=%B", conversion_commit(d))
+    claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
+    claim = plural(" ".join(claim.group(1).split())) + " " + tools_cited(convert) if claim else ""
+    conv = re.search(r"^Converted from .*?(?:\n\n|\Z)", convert, re.S | re.M)
+    conv = " ".join(conv.group(0).split()) if conv else ""
+    plan = land.load_plan(repo)
+    out, _ = header(display, d, head_full)
+    date = git(d, "log", "-1", "--format=%cs", conversion_commit(d)).strip()
+    out += wrap("Sources created %s: no source of this family was ever published, so the "
+                "fonts Google Fonts ships were converted to Glyphs (`.glyphs`) sources, which "
+                "build with gftools-builder and fontc. The repository, commit and config are "
+                "in the `source { }` block of METADATA.pb." % date[:7], 88)
+    out += ["", "## Initial state", ""]
+    out += wrap("Google Fonts shipped %s as binaries only (google/fonts at commit `%s`). No "
+                "source of the family was ever published, so it could not be built with "
+                "fontc." % (display, rows[0]["commit"][:12]), 88)
+    out += ["", "## Actions taken", ""]
+    out += wrap("- The fonts Google Fonts ships were imported unmodified as the first commit "
+                "of https://github.com/googlefonts/%s." % repo, 88, subsequent_indent="  ")
+    out += wrap("- The Unified Font Repository template was adopted in its own commit; the "
+                "README records the provenance and the known differences below.", 88,
+                subsequent_indent="  ")
+    out += wrap("- The fonts were converted to `.glyphs` with babelfont-rs's TTF reader, no "
+                "filters, as the last change. " + conv, 88, subsequent_indent="  ")
+    out += ["", "## Final state", ""]
+    out += wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
+                % (repo, head_full[:12], claim), 88)
+    out += [""]
+    out += wrap("`%s` is the equivalence commit: its build is functionally equivalent to "
+                "the binaries Google Fonts ships. Source modernization adds no features. Any "
+                "improvement is a later commit that needs its own QA, and is left as future "
+                "work for an onboarder to review in a font-update PR." % head_full[:12], 88)
+    disclose = plan.get("disclose", [])
+    if disclose:
+        out += ["", "## Known differences from the released fonts", ""]
+        out += wrap("Reviewed and deliberately left as they are; the repository's README "
+                    "lists them too:", 88)
+        out += [""]
+        for t in disclose:
+            out += wrap("- " + t, 88, subsequent_indent="  ")
+    earlier = plan.get("earlier_sources", [])
+    if earlier:
+        out += ["", "## Earlier sources", ""]
+        out += wrap("Other copies of this family, kept on record; none of them is a source:", 88)
+        out += [""]
+        for t in earlier:
+            out += wrap("- " + t, 88, subsequent_indent="  ")
+    later = later_subjects(d, head_full)
+    if later or future:
+        out += ["", "## Future work", ""]
+        out += wrap("Not part of what Google Fonts ships; for review in a font-update "
+                    "PR:", 88)
+        for l in later:
+            out += wrap("- commit `%s` (after the equivalence commit): %s"
+                        % (l.split(" ", 1)[0], l.split(" ", 1)[1]), 88,
+                        subsequent_indent="  ")
+        for f in future:
+            out += wrap("- " + f, 88, subsequent_indent="  ")
+    if old_block:
+        out += ["", "## Original repository (dormant)", ""]
+        out += wrap("The source block this replaces, preserved for provenance:", 88)
+        out += [""] + ["    " + l for l in old_block.rstrip("\n").splitlines()]
+    if previous.strip():
+        out += ["", "## Previous investigation", ""]
+        for l in previous.rstrip("\n").splitlines():
+            out.append("#" + l if l.startswith("#") else l)
+    return "\n".join(out) + "\n"
+
+
 CONFIG_PREFIX = "Builder config: "
 
 
@@ -441,7 +516,10 @@ def main():
         # `master` for a fork or an extended repository, AFTER its pull request is
         # MERGED -- a squash merge would give the commit a new hash and orphan this one
         # (a `glyphs` repository is created empty on GitHub and pushed to `main`)
-        rbranch = "main" if rows[0]["kind"] in ("hg", "glyphs") else "master"
+        rbranch = "main" if rows[0]["kind"] in ("hg", "glyphs", "binary") else "master"
+        if land.on_upstream(rows):
+            raise SystemExit("FATAL: %s lands on an existing repository's history; record it "
+                             "after its pull request is merged" % repo)
         fam, lic = rows[0]["family"], rows[0]["lic"]
         mp = os.path.join(wt, lic, fam, "METADATA.pb")
         text = open(mp, encoding="utf-8").read()
@@ -491,6 +569,18 @@ def main():
                    "Confidence: high -- 0 blocking rows against the shipped binaries\n\n"
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
                    % (display, repo, repo, head_full[:12], superseded[:12]))
+            git(wt, "commit", "-q", "-F", "-", input=msg)
+            print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
+            continue
+        if rows[0]["kind"] == "binary":
+            msg = ("%s: reference the googlefonts/%s .glyphs source\n\n"
+                   "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
+                   "Status: converted from the shipped binaries (no source was ever published) "
+                   "with babelfont-rs's TTF reader; builds with gftools-builder and fontc\n"
+                   "Confidence: high -- 0 blocking rows against the shipped binaries, "
+                   "functionally equivalent\n\n"
+                   "Assisted by an AI agent (Claude Opus 5.5)\n"
+                   % (display, repo, repo, head_full[:12]))
             git(wt, "commit", "-q", "-F", "-", input=msg)
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
             continue

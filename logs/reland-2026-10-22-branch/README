@@ -1,0 +1,14 @@
+reland-2026-10-22-branch: the binary-only families that need only the two TTF reader PR branches,
+converted with branch 2026-10-22 of felipesanches/babelfont-rs (Felipe's 2026-10-22 decision:
+upstream main 5ff5bf04 + sr-aef-uncompile-fixes + ttf-static-font-fidelity, head 943b9aa).
+
+  BF_TREE=<worktree of branch 2026-10-22> sh tools/build_babelfont.sh
+  BF_TREE=<same> TABLES=families-binary.tsv sh tools/reland_all.sh 2026-10-22-branch <the 29 below>
+  FAMILIES=families-binary.tsv python3 tools/verify_landed.py <repo>     (each CLEAN repo)
+
+Result (verdicts.tsv): 28 CLEAN, all 28 pass verify_landed.py; sansation RESIDUAL by the
+residuals plans/sansation.json discloses (legacy kern rows, Light Italic's italic flag;
+bottleneck 7), as on 2026-10-14. Which 29: those tools/probes/binary_to_source/converter_ab.py
+found needing no other babelfont change (PR-QUEUE section 4, the unmarked names); the other
+19 also need #117 and/or typographic-family-names.
+The per-repository logs stay out of this repository until those repositories are pushed.
