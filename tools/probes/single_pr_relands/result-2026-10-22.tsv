@@ -1,0 +1,30 @@
+pr	repo	verdict	styles
+#106	lekton	CLEAN	Lekton-Bold=0 functional=PASS; Lekton-Italic=0 functional=PASS; Lekton-Regular=0 functional=PASS
+#106	lilitaone	CLEAN	LilitaOne-Regular=0 functional=PASS
+#106	limelight	RESIDUAL	Limelight-Regular=0 functional=FAIL(rendering)
+#106	lohitbengali	RESIDUAL	Lohit-Bengali=0 functional=FAIL(shaping+rendering)
+#106	lohittamil	RESIDUAL	Lohit-Tamil=2 functional=FAIL(shaping+rendering+advances)
+#106	lustria	RESIDUAL	Lustria-Regular=0 functional=FAIL(shaping+gdef)
+#106	megrim	CLEAN	Megrim=0 functional=PASS
+#106	mountainsofchristmas	CLEAN	MountainsofChristmas-Bold=0 functional=PASS; MountainsofChristmas-Regular=0 functional=PASS
+#106	nothingyoucoulddo	CLEAN	NothingYouCouldDo=0 functional=PASS
+#106	patrickhand	RESIDUAL	PatrickHand-Regular=0 functional=FAIL(gdef)
+#106	revalia	CLEAN	Revalia-Regular=0 functional=PASS
+#104	comicrelief	RESIDUAL	ComicRelief-Regular=0 functional=FAIL(names); ComicRelief-Bold=0 functional=FAIL(names)
+#104	kottaone	CLEAN	KottaOne-Regular=0 functional=PASS
+#104	lustria	RESIDUAL	Lustria-Regular=0 functional=FAIL(line_spacing)
+#104	macondo	CLEAN	Macondo-Regular=0 functional=PASS
+#104	monoton	CLEAN	Monoton-Regular=0 functional=PASS
+#104	oleoscript	CLEAN	OleoScript-Bold=0 functional=PASS; OleoScript-Regular=0 functional=PASS
+#104	oleoscriptswashcaps	CLEAN	OleoScriptSwashCaps-Bold=0 functional=PASS; OleoScriptSwashCaps-Regular=0 functional=PASS
+#104	passionone	RESIDUAL	PassionOne-Black=0 functional=FAIL(names); PassionOne-Bold=0 functional=PASS; PassionOne-Regular=0 functional=PASS
+#104	patrickhand	RESIDUAL	PatrickHand-Regular=0 functional=FAIL(line_spacing)
+#104	poly	CLEAN	Poly-Italic=0 functional=PASS; Poly-Regular=0 functional=PASS
+#104	ruluko	CLEAN	Ruluko-Regular=0 functional=PASS
+#104	salsa	CLEAN	Salsa-Regular=0 functional=PASS
+#104	smythe	CLEAN	Smythe-Regular=0 functional=PASS
+#104	titanone	CLEAN	TitanOne-Regular=0 functional=PASS
+#104	tuffy	RESIDUAL	Tuffy-Bold=0 functional=PASS; Tuffy-BoldItalic=0 functional=PASS; Tuffy-Italic=0 functional=FAIL(rendering+names+advances); Tuffy-Regular=0 functional=FAIL(rendering+names+advances)
+#104	unifrakturcook	CLEAN	UnifrakturCook-Bold=0 functional=PASS
+#105	italiana	CLEAN	Italiana-Regular=0 functional=PASS
+#105	sanchez	CLEAN	Sanchez-Italic=0 functional=PASS; Sanchez-Regular=0 functional=PASS
