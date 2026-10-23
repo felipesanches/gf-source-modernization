@@ -170,10 +170,17 @@ def served_by_github(h, text):
                                "https://api.github.com/repos/%s/commits/%s" % (m.group(1), h)],
                               capture_output=True, text=True).stdout
         if code in ("403", "429"):
-            # the API is rate-limited; the public commit page answers the same question
-            code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-L", "-w", "%{http_code}", "-I",
+            # the API is rate-limited; the public commit page answers the same question,
+            # but only by its title ("... owner/repo@<short id> · GitHub"): an empty
+            # repository answers 200 with its own page for any commit URL
+            page = subprocess.run(["curl", "-s", "-L", "-w", "\n%{http_code}",
                                    "https://github.com/%s/commit/%s" % (m.group(1), h)],
                                   capture_output=True, text=True).stdout
+            body, _, code = page.rpartition("\n")
+            title = re.search(r"<title>([^<]*)", body)
+            if code == "200" and not (title and "%s@%s" % (m.group(1).lower(), h[:7])
+                                      in title.group(1).lower()):
+                code = "404"
             if code not in ("200", "404"):
                 reason = "UNVERIFIED: GitHub refused (%s)" % code
         if code == "200":
