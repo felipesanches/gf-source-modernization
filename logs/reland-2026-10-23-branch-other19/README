@@ -1,0 +1,12 @@
+reland-2026-10-23-branch-other19: do the other 19 binary-only families (those that also need
+#117 and/or typographic-family-names) land on babelfont branch 2026-10-22 (58eedc8) alone?
+Measurement only: landed into scratch (OUT, LANDED, SCRATCH), sfd-reland-repos untouched.
+
+  BF_TREE=<worktree of branch 2026-10-22> TABLES=families-binary.tsv OUT=<s>/repos \
+    LANDED=<s>/landed.tsv SCRATCH=<s>/scratch sh tools/reland_all.sh 2026-10-23-branch-other19 <the 19>
+
+Result (verdicts.tsv): 19 RESIDUAL, every one failing the functional gate on names only (the
+Averias' 3 table rows are their disclosed legacy kern). As converter_ab.py found on 2026-10-16:
+they need the name PRs too, so they are not in the 2026-10-22 batch. (One landing was marked
+UNCOMMITTED-EVIDENCE: an unrelated tools/check_publishable.py edit was uncommitted meanwhile.)
+The per-repository logs stay out of this repository until those repositories are pushed.

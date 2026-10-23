@@ -1,0 +1,20 @@
+repo	verdict	styles
+averialibre	RESIDUAL	AveriaLibre-Bold=3 functional=PASS; AveriaLibre-BoldItalic=3 functional=PASS; AveriaLibre-Italic=3 functional=PASS; AveriaLibre-Light=3 functional=FAIL(names); AveriaLibre-LightItalic=3 functional=FAIL(names); AveriaLibre-Regular=3 functional=PASS
+averiasanslibre	RESIDUAL	AveriaSansLibre-Bold=3 functional=PASS; AveriaSansLibre-BoldItalic=3 functional=PASS; AveriaSansLibre-Italic=3 functional=PASS; AveriaSansLibre-Light=3 functional=FAIL(names); AveriaSansLibre-LightItalic=3 functional=FAIL(names); AveriaSansLibre-Regular=3 functional=PASS
+averiaseriflibre	RESIDUAL	AveriaSerifLibre-Bold=3 functional=PASS; AveriaSerifLibre-BoldItalic=3 functional=PASS; AveriaSerifLibre-Italic=3 functional=PASS; AveriaSerifLibre-Light=3 functional=FAIL(names); AveriaSerifLibre-LightItalic=3 functional=FAIL(names); AveriaSerifLibre-Regular=3 functional=PASS
+blackandwhitepicture	RESIDUAL	BlackAndWhitePicture-Regular=0 functional=FAIL(names)
+blackhansans	RESIDUAL	BlackHanSans-Regular=0 functional=FAIL(names)
+cutefont	RESIDUAL	CuteFont-Regular=0 functional=FAIL(names)
+dokdo	RESIDUAL	Dokdo-Regular=0 functional=FAIL(names)
+eastseadokdo	RESIDUAL	EastSeaDokdo-Regular=0 functional=FAIL(names)
+gamjaflower	RESIDUAL	GamjaFlower-Regular=0 functional=FAIL(names)
+gugi	RESIDUAL	Gugi-Regular=0 functional=FAIL(names)
+himelody	RESIDUAL	HiMelody-Regular=0 functional=FAIL(names)
+lato	RESIDUAL	Lato-Black=0 functional=FAIL(names); Lato-BlackItalic=0 functional=FAIL(names); Lato-Bold=0 functional=PASS; Lato-BoldItalic=0 functional=PASS; Lato-ExtraBold=0 functional=FAIL(names); Lato-ExtraBoldItalic=0 functional=FAIL(names); Lato-ExtraLight=0 functional=FAIL(names); Lato-ExtraLightItalic=0 functional=FAIL(names); Lato-Italic=0 functional=PASS; Lato-Light=0 functional=FAIL(names); Lato-LightItalic=0 functional=FAIL(names); Lato-Medium=0 functional=FAIL(names); Lato-MediumItalic=0 functional=FAIL(names); Lato-Regular=0 functional=PASS; Lato-SemiBold=0 functional=FAIL(names); Lato-SemiBoldItalic=0 functional=FAIL(names); Lato-Thin=0 functional=FAIL(names); Lato-ThinItalic=0 functional=FAIL(names)
+nanumbrushscript	RESIDUAL	NanumBrushScript-Regular=0 functional=FAIL(names)
+nanumgothic	RESIDUAL	NanumGothic-Bold=0 functional=FAIL(names); NanumGothic-ExtraBold=0 functional=FAIL(names); NanumGothic-Regular=0 functional=FAIL(names)
+nanumpenscript	RESIDUAL	NanumPenScript-Regular=0 functional=FAIL(names)
+poorstory	RESIDUAL	PoorStory-Regular=0 functional=FAIL(names)
+songmyung	RESIDUAL	SongMyung-Regular=0 functional=FAIL(names)
+stylish	RESIDUAL	Stylish-Regular=0 functional=FAIL(names)
+sunflower	RESIDUAL	Sunflower-Bold=0 functional=PASS; Sunflower-Light=0 functional=FAIL(names); Sunflower-Medium=0 functional=FAIL(names)
