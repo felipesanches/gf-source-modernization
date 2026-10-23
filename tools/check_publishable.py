@@ -49,6 +49,8 @@ KNOWN = [
     (C + "/gftools", "origin", "main"),
     (C + "/gftools-rust", "origin", "main"),
     (C + "/babelfont-rs-worktrees/upstream-main", "upstream", "main"),
+    # Felipe's 2026-10-22 exception (tools/land.py BF_FORK), as GitHub serves it
+    (C + "/babelfont-rs", "https://github.com/felipesanches/babelfont-rs.git", "2026-10-22"),
     (C + "/gfonts", "origin", "main"),
     (C + "/tmp_fontc_crater_investigate", "origin", "main"),
     (C + "/fontc", "origin", "main"),
