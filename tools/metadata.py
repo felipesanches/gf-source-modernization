@@ -136,7 +136,7 @@ def plural(text):
 def tools_cited(message):
     """Where the convert commit says its gate tools live: the evidence repository at the
     landing's revision, and the family's plan there if it has one."""
-    m = re.search(r"^Those tools(?: and this repository's plan \((plans/[\w.-]+)\))?:\s+"
+    m = re.search(r"^Those tools(?:\s+and\s+this\s+repository's\s+plan\s+\((plans/[\w.-]+)\))?:\s+"
                   r"(https://\S+)\s+at\s+([0-9a-f]{7,40})", message, re.M)
     if not m:
         raise SystemExit("FATAL: the convert commit does not say where its tools live")
@@ -379,7 +379,7 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     convert = git(d, "log", "-1", "--format=%B", conversion_commit(d))
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
     claim = plural(" ".join(claim.group(1).split())) + " " + tools_cited(convert) if claim else ""
-    conv = re.search(r"^Converted from .*?(?:\n\n|\Z)", convert, re.S | re.M)
+    conv = re.search(r"^Converted from\s.*?(?:\n\n|\Z)", convert, re.S | re.M)
     conv = " ".join(conv.group(0).split()) if conv else ""
     plan = land.load_plan(repo)
     out, _ = header(display, d, head_full)
