@@ -1,0 +1,141 @@
+{
+  "version": "1.1",
+  "fonts_repo_sha": "b7c8331cf620346575487ef8db0e2c729f014675",
+  "sources": [
+    {
+      "repo_url": "https://github.com/googlefonts/akronim",
+      "rev": "8ad7073228a094d5f4d4e9436719adab4992915d",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/calligraffitti",
+      "rev": "02b6fe053efa4da3c7f497cb6d95001483e5fc53",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/cherrycreamsoda",
+      "rev": "607ffcb94357db224d89e019a077da33ebcfff98",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/chewy",
+      "rev": "5e436e35405525b4f3b5d808dc6f809ed1edb093",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/comingsoon",
+      "rev": "f371c8c2992f239ccb7c4bacc4a07476ab8f7936",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/craftygirls",
+      "rev": "79274ee13dfb33f4b28f322f12925b659a17c4fd",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/dohyeon",
+      "rev": "8607d13340cc290d880417b2392fe01cd8260664",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/fontdinerswanky",
+      "rev": "bcf47dbb493c827810c220bd70603c34843b083d",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/homemadeapple",
+      "rev": "551167a70e49a1e787aaba2a6b2828ec3a463cf1",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/jua",
+      "rev": "9dce1f17069004ee8d777d4d6ee407793037d7f0",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/kranky",
+      "rev": "8e4e8020d3f692ab66f12bd857fa9036e512645b",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/oranienbaum",
+      "rev": "8e89dc77fa0da083395eeda5562f3c96f5ef3d0f",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/permanentmarker",
+      "rev": "b0786e381d1475883fef04d2f3c7541fe51efe93",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/portersansblock",
+      "rev": "2605fcd37888100996b52afb0bad0b0be333f6a0",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/ptsans",
+      "rev": "bcb93f7b9b2c39cf3c75d87be570444f91d0f0b6",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/ptsanscaption",
+      "rev": "6c1efcf8b0d2f413ad47ff12512ee7e0b9e54b75",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/ptsansnarrow",
+      "rev": "ff02de9bb277e04d35751bac43e7df176f1382c8",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/ptserif",
+      "rev": "54cfef3107a5fd42ecbb6d7ce9d2e5f7978458f3",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/ptserifcaption",
+      "rev": "95cb161f0ed9d42004b5a88144d434319eb53a75",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/reeniebeanie",
+      "rev": "ffb157a38ce647753f039a23756598ac6ab6c5ed",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/rocksalt",
+      "rev": "549a707ac164f35706d9580c300c916db01c006a",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/schoolbell",
+      "rev": "d809c212f0683fddc81a5606f74ed8ad0ee0f0ce",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/slackey",
+      "rev": "d0e05e1eb8a9c64f2c0ebd9e95385d8919c12a5d",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/sunshiney",
+      "rev": "8962405986e46057b07fc9231ab4b04773aae649",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/unkempt",
+      "rev": "ef6ca68e4a2a244ac75907c9a6b8e9d0ca7070cb",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/walterturncoat",
+      "rev": "62e29daafc554f85629ffccf45fe986053909262",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/yeonsung",
+      "rev": "8979fd9bff991f4cc9eb2141534b376a296a3bb6",
+      "config": "sources/config.yaml"
+    }
+  ]
+}

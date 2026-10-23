@@ -1,0 +1,13 @@
+crater-local-2026-10-23: do the 27 binary-only families of google/fonts#11162 build in fontc_crater,
+in both modes, before their targets PR? (tools/crater_local.sh; cmyr asked for this on #100.)
+
+Targets: fontc_crater main's targets.json (fonts_repo_sha b7c8331cf) plus one entry per new
+repository, https://github.com/googlefonts/<repo> at its pushed main, config sources/config.yaml
+(subset.json = the 27 new entries). fontc: googlefonts/fontc main 0f0f5ea3 (needs rustc 1.96+,
+so RUSTUP_TOOLCHAIN=1.97.1); venv from its resources/scripts/requirements.txt (gftools 0.10.4,
+fontmake 3.12.2, glyphsLib 6.16.2) plus its ttx_diff package; <scratch>/cache/google/fonts a
+google/fonts worktree at b7c8331cf.
+
+  RUSTUP_TOOLCHAIN=1.97.1 sh tools/crater_local.sh <targets-main.json> <targets-provisional.json> <scratch>
+
+Result (summary.txt): 74 succeeded, 0 failed -- 37 sources x (default, gftools).
