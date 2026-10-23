@@ -9,9 +9,9 @@ Metadata only, no font binaries change. One commit per family: the METADATA.pb `
 No source of these families was ever published: the fonts Google Fonts ships were their only form. Each now points at a new repository, https://github.com/googlefonts/<family>, whose history is the shipped fonts imported unmodified, the Unified Font Repository template, and the conversion to `.glyphs` last. METADATA.pb records that conversion commit.
 
 - 27 families, 37 styles: Akronim, Calligraffitti, Cherry Cream Soda, Chewy, Coming Soon, Crafty Girls, Do Hyeon, Fontdiner Swanky, Homemade Apple, Jua, Kranky, Oranienbaum, Permanent Marker, Porter Sans Block, PT Sans, PT Sans Caption, PT Sans Narrow, PT Serif, PT Serif Caption, Reenie Beanie, Rock Salt, Schoolbell, Slackey, Sunshiney, Unkempt, Walter Turncoat, Yeon Sung.
-- Converted with babelfont-rs's TTF reader, no filters: babelfont 943b9aa, branch 2026-10-22 of https://github.com/felipesanches/babelfont-rs, which is simoncozens/babelfont-rs main 5ff5bf0 plus the TTF reader changes proposed to it. Built with gftools-builder (gftools-rust 1e638bd, fontc 1.0.0).
+- Converted with babelfont-rs's TTF reader, no filters: babelfont 58eedc8, branch 2026-10-22 of https://github.com/felipesanches/babelfont-rs, which is simoncozens/babelfont-rs main 5ff5bf0 plus the TTF reader changes proposed to it. Built with gftools-builder (gftools-rust 1e638bd, fontc 1.0.0).
 - Every build matches the binaries google/fonts ships: 0 blocking rows under the table gate, exactly the shipped codepoints, and functionally equivalent (cmap, shaping, rendering, names, line spacing, advances, GDEF).
 - Known differences, reviewed and kept, are listed in each upstream_info.md and repository README: only two kinds: a legacy `kern` table in the release, alone or beside GPOS (the sources kern through GPOS only, and HarfBuzz shapes every kerned pair alike), and hinting (the builds are hinted by ttfautohint, not by the release's instructions).
 - The previous source blocks (mostly librefonts TTX dumps, not sources) and the earlier investigations are kept in each upstream_info.md.
 
-Tools, plans and logs: https://github.com/felipesanches/gf-source-modernization at f5c5721.
+Tools, plans and logs: https://github.com/felipesanches/gf-source-modernization at e6f2b15.

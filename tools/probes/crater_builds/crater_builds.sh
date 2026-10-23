@@ -11,6 +11,7 @@
 #   sh crater_builds.sh <scratch dir> <repo>...
 set -eu
 PYBIN=${PYBIN:-/home/fsanches/compartilhado/gftools/venv/bin}   # crater's pins: a venv from fontc's resources/scripts/requirements.txt
+export PATH="$PYBIN:$PATH"   # gftools builder runs fontmake from PATH
 REPOS=/home/fsanches/compartilhado/sfd-reland-repos
 S=${1:?scratch dir}; shift
 mkdir -p "$S"; cd "$S"

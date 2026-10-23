@@ -35,3 +35,8 @@ then names as a language; glyphsLib knows only Glyphs' tags (dflt, ENG, ...). fo
 them (the landing gate), so only crater's fontmake side would fail. Fixed in
 ttf-static-font-fidelity by a reader commit keying name records as the SFD reader does;
 after it, fontmake builds Akronim, PT Sans and Do Hyeon (each language = dflt only).
+
+After the fix (landings logs/reland-2026-10-22-branch2, babelfont branch 2026-10-22 at 58eedc8;
+results-2026-10-22-babelfont-58eedc8.txt): default mode 41 of 41 sources build; gftools mode
+builds for all 28 (crater_builds.sh now puts PYBIN on PATH: gftools builder runs fontmake
+from PATH, and without it every repository failed with "No such file or directory: 'fontmake'").

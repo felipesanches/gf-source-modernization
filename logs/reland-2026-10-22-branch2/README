@@ -1,0 +1,13 @@
+reland-2026-10-22-branch2: the same 29 binary-only families as reland-2026-10-22-branch, re-landed
+after one more commit on ttf-static-font-fidelity (and so on branch 2026-10-22 of
+felipesanches/babelfont-rs, head 58eedc8): name records keyed by language as the SFD reader keys
+them. The first run's sources named Macintosh English records as language `en`, which glyphsLib
+refuses, so crater's fontmake side could not build them (tools/probes/crater_builds).
+
+  BF_TREE=<worktree of branch 2026-10-22> sh tools/build_babelfont.sh
+  BF_TREE=<same> TABLES=families-binary.tsv sh tools/reland_all.sh 2026-10-22-branch2 <the 29>
+  FAMILIES=families-binary.tsv python3 tools/verify_landed.py <repo>     (each CLEAN repo)
+
+Result (verdicts.tsv): 28 CLEAN, all 28 pass verify_landed.py; sansation RESIDUAL as before
+(bottleneck 7). These landings supersede reland-2026-10-22-branch.
+The per-repository logs stay out of this repository until those repositories are pushed.

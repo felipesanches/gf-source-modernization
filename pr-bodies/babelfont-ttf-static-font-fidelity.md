@@ -16,6 +16,7 @@ Reading a static .ttf with the TTF reader, writing .glyphs and compiling that sh
 - hhea's line gap is read.
 - vhea and vmtx are read.
 - Name records that do not decode (MacJapanese) are left out instead of being read as empty.
+- Name records are keyed by language as the SFD reader keys LangName (the default, else the layout tag); a Macintosh record is read only where no Windows record states that name. A Macintosh English record was stored as `en`, a language Glyphs and glyphsLib do not know, so fontmake refused the .glyphs.
 - A named class is stored without brackets (it was written as `@c = [[...]];`).
 - The mark classes the lookups name get markClass statements.
 - Glyph categories follow GDEF. A font without GDEF gets none, unless it attaches marks: then the glyphs a shaper takes for marks are marks.
@@ -25,4 +26,4 @@ Reading a static .ttf with the TTF reader, writing .glyphs and compiling that sh
 
 Validation: 48 static families that Google Fonts ships only as binaries, converted, rebuilt with fontc and compared with the shipped fonts (tables, shaping, rendering). With this PR, #117 and the name ID 16/17 change (a separate PR), 44 come back identical; 4 differ only in a legacy kern table becoming a GPOS kern feature, and in one italic flag fontc drops.
 
-cargo fmt and clippy clean; `cargo test -p babelfont --features ttf --lib`: 298 passed (the 11 robocjk and decompose tests need external noto-cjk-varco data).
+cargo fmt and clippy clean; `cargo test -p babelfont --features ttf --lib`: 300 passed (the 11 robocjk and decompose tests need external noto-cjk-varco data).
