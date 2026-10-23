@@ -71,10 +71,11 @@ BF = os.path.join(BF_TREE, "target-heights/release/babelfont")
 # never a personal fork (Felipe, 2026-09-23). --unpublished-converter lands anyway, for
 # measurement only; push.sh refuses such a landing.
 BF_UPSTREAM = "simoncozens/babelfont-rs"
-# The one exception (Felipe, 2026-10-22, deadline): branch 2026-10-22 of his fork = upstream main
-# plus the two TTF reader PR branches, submitted to Simon later. push.sh pushes a repository
-# citing it only once that branch is public and holds the cited revision.
-BF_FORK, BF_FORK_BRANCH = "felipesanches/babelfont-rs", "2026-10-22"
+# The exceptions (Felipe, 2026-10-22 and 2026-10-23, deadline): branches of his fork submitted to
+# Simon later -- 2026-10-22 = upstream main plus the two TTF reader PR branches (#131), 2026-10-23 =
+# that plus #117 and typographic-family-names. push.sh pushes a repository citing one only once
+# that branch is public and holds the cited revision.
+BF_FORK, BF_FORK_BRANCHES = "felipesanches/babelfont-rs", ("2026-10-22", "2026-10-23")
 BF_WHERE = BF_UPSTREAM            # set by check_converter()
 BF_URL = "https://github.com/%s" % BF_UPSTREAM
 B3_DEFAULT = "/home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder"
@@ -221,19 +222,22 @@ def check_converter():
     git(BF_TREE, "fetch", "-q", "upstream", "main")
     upstream = git(BF_TREE, "merge-base", "--is-ancestor", head, "upstream/main",
                    check=False).returncode == 0
-    fork = not upstream and git(BF_TREE, "merge-base", "--is-ancestor", head,
-                                "refs/heads/" + BF_FORK_BRANCH, check=False).returncode == 0
+    # the earliest sanctioned branch holding the revision
+    fork = None if upstream else next(
+        (b for b in BF_FORK_BRANCHES if git(BF_TREE, "merge-base", "--is-ancestor", head,
+                                            "refs/heads/" + b, check=False).returncode == 0), None)
     if not upstream and not fork and "--unpublished-converter" not in sys.argv:
         raise LandError("babelfont %s is not on %s main nor on %s %s; a font repository may cite "
                         "only those (--unpublished-converter lands for measurement only)"
-                        % (head[:7], BF_UPSTREAM, BF_FORK, BF_FORK_BRANCH))
+                        % (head[:7], BF_UPSTREAM, BF_FORK, " or ".join(BF_FORK_BRANCHES)))
     global BF_WHERE, BF_URL
     if upstream:
         BF_WHERE = BF_UPSTREAM
     elif fork:
-        BF_WHERE = "%s branch %s: %s main plus the TTF reader changes proposed to it" % (
-            BF_FORK, BF_FORK_BRANCH, BF_UPSTREAM)
-        BF_URL = "https://github.com/%s/tree/%s" % (BF_FORK, BF_FORK_BRANCH)
+        what = {"2026-10-22": "the TTF reader changes proposed to it",
+                "2026-10-23": "the TTF reader and name changes proposed to it"}[fork]
+        BF_WHERE = "%s branch %s: %s main plus %s" % (BF_FORK, fork, BF_UPSTREAM, what)
+        BF_URL = "https://github.com/%s/tree/%s" % (BF_FORK, fork)
     else:
         BF_WHERE = "UNPUBLISHED, not on %s main" % BF_UPSTREAM
     return head[:7], upstream or fork
