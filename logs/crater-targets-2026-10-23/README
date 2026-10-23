@@ -1,0 +1,12 @@
+# crater-targets-2026-10-23
+
+Inputs and summary of the fontc_crater targets update for google/fonts#11162 (the 27
+binary-only families), branch crater-targets-2026-10-23 of felipesanches/fontc_crater.
+
+- `generated.json`: google-fonts-sources d7db2d8 run against google/fonts e7db6ca60
+  (`google-fonts-sources <dir> -o generated.json`, with `<dir>/google/fonts` a checkout
+  of google/fonts main whose `origin/HEAD` points at `origin/main`).
+- `merge.txt`: what `tools/crater_targets.py <fontc_crater b7e6603 targets.json>
+  generated.json` reported: 1440 -> 1467 entries, 27 added, none removed, one rev change
+  (notofonts/mongolian, changed in google/fonts since b7c8331cf), googlesans-flex kept by hand.
+- Crater on the 27 added entries before the PR: logs/crater-local-2026-10-23 (74 of 74).
