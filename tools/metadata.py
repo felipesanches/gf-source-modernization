@@ -502,9 +502,9 @@ def confidence(status, repo):
     """The commit message's Confidence line: CLEAN landings have no difference at all;
     CLEAN-DISCLOSED ones only the differences the plan accepts and upstream_info.md lists."""
     if status.startswith("CLEAN-DISCLOSED"):
-        n = len(land.load_plan(repo).get("accepted", []))
-        return ("Confidence: high -- functionally equivalent to the shipped binaries except %d "
-                "documented difference(s), listed in upstream_info.md" % n)
+        n = len(land.load_plan(repo).get("disclose", []))
+        return plural("Confidence: high -- functionally equivalent to the shipped binaries except %d "
+                      "documented difference(s), listed in upstream_info.md" % n)
     return "Confidence: high -- 0 blocking rows against the shipped binaries"
 
 
