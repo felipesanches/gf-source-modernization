@@ -40,3 +40,7 @@ After the fix (landings logs/reland-2026-10-22-branch2, babelfont branch 2026-10
 results-2026-10-22-babelfont-58eedc8.txt): default mode 41 of 41 sources build; gftools mode
 builds for all 28 (crater_builds.sh now puts PYBIN on PATH: gftools builder runs fontmake
 from PATH, and without it every repository failed with "No such file or directory: 'fontmake'").
+
+2026-10-24, the 16 on babelfont branch 2026-10-23 (7e58ba5): fontmake 37/37 sources, gftools 16/16
+(results-2026-10-24-babelfont-7e58ba5.txt). On 8165904 the 14 Korean families had failed both modes with
+"Unknown name language: ko-KR" (KOR missing from the layout tag table).

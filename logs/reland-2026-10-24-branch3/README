@@ -1,0 +1,18 @@
+reland-2026-10-24-branch3: the 19 binary-only families that also need #117 and
+typographic-family-names, landed with babelfont branch 2026-10-23 of felipesanches/babelfont-rs
+(head 7e58ba5: branch 2026-10-22 + typographic-family-names + glyphs3-localized-name-entries,
+whose "names: KOR and MOL are Glyphs language codes too" lets glyphsLib read Korean names, + one
+commit making IDs 1 and 16 entries when familyNames holds the typographic family).
+Earlier runs on this branch (2026-10-23-branch, -branch2, 2026-10-24-branch, -branch2) found the
+two bugs those commits fix: fontmake refused `ko-KR` (14 Korean families), then Nanum Gothic
+ExtraBold lost its Korean name IDs 1 and 16.
+
+  BF_TREE=<worktree of branch 2026-10-23> sh tools/build_babelfont.sh
+  BF_TREE=<same> TABLES=families-binary.tsv sh tools/reland_all.sh 2026-10-24-branch3 <the 19>
+  FAMILIES=families-binary.tsv python3 tools/verify_landed.py <repo>     (each CLEAN repo)
+  PYBIN=<crater venv>/bin GFTOOLS_ALL=1 sh tools/probes/crater_builds/crater_builds.sh <s> <the 16>
+
+Result (verdicts.tsv): 16 CLEAN, all pass verify_landed.py; the 3 Averias RESIDUAL by their
+disclosed legacy kern (bottleneck 7). crater_builds with crater's pins: fontmake 37/37 sources,
+gftools 16/16 (tools/probes/crater_builds/results-2026-10-24-babelfont-7e58ba5.txt).
+The per-repository logs stay out of this repository until those repositories are pushed.
