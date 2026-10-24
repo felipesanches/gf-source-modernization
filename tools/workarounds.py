@@ -22,6 +22,12 @@ of a named, reproduced defect in a tool -- it is not a change to the font:
                  babelfont-italic-angle-rounded.md). The .sfd's own value is
                  written back into the master's italic angle metric.
 
+  fixed-pitch    babelfont's TTF reader (as published on 2026-10-24) does not read
+                 post.isFixedPitch, so a monospaced binary's build loses the flag
+                 (Nanum Gothic Coding). The value is written as the font-level
+                 `isFixedPitch` custom parameter, which fontc reads (glyphs-reader
+                 font.rs: "postscriptIsFixedPitch" | "isFixedPitch"); the reader change
+                 waits for babelfont #119 (fixed_pitch_custom_parameter).
 When the defect is fixed upstream the workaround becomes a no-op and should be
 removed; tools/land.py records in the convert commit which ones fired and why.
 
@@ -127,6 +133,21 @@ def italic_angle(glyphs_text, sfd_text):
 
 
 ALL = (weight_class, italic_angle)
+
+
+def fixed_pitch_custom_parameter(glyphs_text):
+    """The .glyphs text with the font-level custom parameter `isFixedPitch = 1`, added to
+    the font's customParameters list or as that list before the `date` key."""
+    t = glyphs_text
+    if re.search(r"^name = isFixedPitch;$", t, re.M):
+        return t
+    entry = "{\nname = isFixedPitch;\nvalue = 1;\n},\n"
+    m = re.search(r"^customParameters = \(\n", t, re.M)
+    if m and m.start() < t.index("\nfontMaster = (") if "\nfontMaster = (" in t else bool(m):
+        return t[:m.end()] + entry + t[m.end():]
+    key = re.search(r"^date = ", t, re.M)
+    block = "customParameters = (\n" + entry.rstrip(",\n") + "\n);\n"
+    return t[:key.start()] + block + t[key.start():]
 
 
 def apply_all(glyphs_path, sfd_path):

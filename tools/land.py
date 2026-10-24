@@ -538,8 +538,16 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         g = os.path.join(d, "sources", r["style"] + ".glyphs")
         sh(BF, src, g)
         from fontTools.ttLib import TTFont
-        os2 = TTFont(src)["OS/2"]
+        tt = TTFont(src)
+        os2 = tt["OS/2"]
         notes = []
+        if tt["post"].isFixedPitch:
+            text = open(g, encoding="utf-8").read()
+            changed = workarounds.fixed_pitch_custom_parameter(text)
+            if changed != text:
+                open(g, "w", encoding="utf-8").write(changed)
+                notes.append("post.isFixedPitch 1 as the isFixedPitch custom parameter; this "
+                             "babelfont's TTF reader does not read post.isFixedPitch")
         for field, default, fea in (("usWeightClass", 400, workarounds.weight_class_fea),
                                     ("usWidthClass", 5, workarounds.width_class_fea)):
             value = getattr(os2, field)
