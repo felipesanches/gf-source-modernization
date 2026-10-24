@@ -4,6 +4,8 @@
 #
 #   sh tools/push.sh --check        report, change nothing (run this first)
 #   sh tools/push.sh                push every repository that --check calls READY
+#   ALLOW_DISCLOSED=1 sh tools/push.sh ...   also those landed CLEAN-DISCLOSED (every remaining
+#                                   difference is in the plan's accepted list; bottleneck 7)
 #   sh tools/push.sh lekton kristi  just these
 #
 # Reads landed.tsv (the last row per repository wins) and, for each repository:
@@ -49,7 +51,10 @@ for repo in $repos; do
   d="$R/$repo"
   head=$(git -C "$d" rev-parse --short HEAD 2>/dev/null)
   url=$(git -C "$d" remote get-url origin 2>/dev/null)
-  if [ "$status" != CLEAN ]; then
+  if [ "$status" = CLEAN-DISCLOSED ] && [ -z "${ALLOW_DISCLOSED:-}" ]; then
+    echo "$repo: HOLD -- landed CLEAN-DISCLOSED (only disclosed differences remain); ALLOW_DISCLOSED=1 pushes it (bottleneck 7)"; continue
+  fi
+  if [ "$status" != CLEAN ] && [ "$status" != CLEAN-DISCLOSED ]; then
     echo "$repo: NOT READY -- landed $status ($(echo "$row" | cut -f6))"; continue
   fi
   remote=$(GIT_TERMINAL_PROMPT=0 git ls-remote "$url" "refs/heads/$branch" 2>/dev/null | cut -c1-40)

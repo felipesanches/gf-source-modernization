@@ -766,8 +766,34 @@ def main():
             return "-"
         bad = functional_gate.failed_checks(functional[st])
         return "PASS" if not bad else "FAIL(%s)" % "+".join(bad)
-    # CLEAN = 0 table-gate rows, the release's exact codepoints, AND functional PASS
-    status = "CLEAN" if all(x == 0 and fverdict(st) == "PASS" for st, x, _ in results) else "RESIDUAL"
+    # CLEAN = 0 table-gate rows, the release's exact codepoints, AND functional PASS.
+    # CLEAN-DISCLOSED = every remaining difference is one the plan's "accepted" list states
+    # word for word (style, check and the gate's summary line, or a blocking table row), so
+    # a decided, disclosed difference passes and any change in it does not. push.sh takes it
+    # only with ALLOW_DISCLOSED=1 (bottleneck item 7). --write-accepted records the current
+    # differences into the plan for review; it never lands.
+    accepted = plan.get("accepted", [])
+    remaining = []
+    for st, x, blocking in results:
+        for b in blocking:
+            remaining.append({"style": st, "check": "table", "row": b})
+        if st in functional:
+            for name, c in functional[st]["checks"].items():
+                if c["status"] != "PASS":
+                    remaining.append({"style": st, "check": name, "summary": c["summary"]})
+    if "--write-accepted" in sys.argv:
+        plan["accepted"] = remaining
+        pp = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "plans", repo + ".json")
+        json.dump(plan, open(pp, "w"), indent=2, ensure_ascii=False)
+        open(pp, "a").write("\n")
+        print("%s: %d remaining difference(s) written to plans/%s.json as accepted; review, commit, re-land"
+              % (repo, len(remaining), repo))
+    if not remaining:
+        status = "CLEAN"
+    elif all(r in accepted for r in remaining):
+        status = "CLEAN-DISCLOSED"
+    else:
+        status = "RESIDUAL"
     if not bf_upstream:
         status += "-UNPUBLISHED-CONVERTER"      # push.sh pushes only CLEAN
     if not B3_PUBLISHED:

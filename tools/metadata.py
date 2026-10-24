@@ -210,6 +210,14 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
                          "conversion, never silently corrected. Any improvement is a later "
                          "commit that needs its own QA, and is left as future work for an "
                          "onboarder to review in a font-update PR." % head_full[:12], 88)
+    disclose = land.load_plan(repo).get("disclose", [])
+    if disclose:
+        out += ["", "## Known differences from the released fonts", ""]
+        out += wrap("Reviewed and deliberately left as they are; the repository's README "
+                    "lists them too:", 88)
+        out += [""]
+        for t in disclose:
+            out += wrap("- " + t, 88, subsequent_indent="  ")
     later = later_subjects(d, head_full)
     if later or future:
         out += ["", "## Future work", ""]
@@ -498,6 +506,8 @@ def main():
     if provisional != branch.endswith("-provisional"):
         raise SystemExit("FATAL: --provisional and a branch name ending in -provisional go together")
     accepted = ("CLEAN", "CLEAN-UNPUBLISHED-BUILDER") if provisional else ("CLEAN",)
+    if os.environ.get("ALLOW_DISCLOSED"):
+        accepted += ("CLEAN-DISCLOSED",)     # every remaining difference is disclosed (bottleneck 7)
     wt = worktree(branch)
     landed = {}
     for line in open(land.LANDED):
