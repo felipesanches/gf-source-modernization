@@ -12,7 +12,7 @@ fixed revision. What it cites is here:
 |---|---|
 | `tools/land.py` | builds a font repository's layered history: the original sources, the Unified Font Repository template, one commit per documented source edit, the conversion last |
 | `tools/table_gate.py`, `tools/functional_gate.py` | the two gates every rebuild must pass against the released binaries (tables; then cmap, shaping, rendering, names, line spacing, advances, GDEF) |
-| `tools/verify_landed.py`, `tools/push.sh` | re-check a landed repository; push only what is CLEAN, built with published tools, and cites a published revision of this repository |
+| `tools/verify_landed.py`, `tools/push.sh` | re-check a landed repository; push only what is CLEAN (or CLEAN-DISCLOSED with `ALLOW_DISCLOSED=1`: every remaining gate difference is in the plan's `accepted` list, word for word), built with published tools, and cites a published revision of this repository |
 | `tools/recipe.py`, `tools/sfd_edit.py` | the converter options per style; the source-edit operations the plans use |
 | `families.tsv`, `families-next.tsv` | which source revision each released style is paired with |
 | `plans/<family>.json` | the documented source edits of a family (one commit each) and its disclosed known differences |
