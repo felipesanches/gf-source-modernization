@@ -1,5 +1,5 @@
-2026-10-22 (58eedc82, BUILT_FROM 58eedc82): before 2fdec452212566e4 after 2fdec452212566e4 IDENTICAL
-2026-10-23 (7e58ba51, BUILT_FROM 7e58ba51): before 75fc32cd4a0b6c76 after 75fc32cd4a0b6c76 IDENTICAL
+2026-10-22 (58eedc82, BUILT_FROM 58eedc82): before 2FDEC452212566E4 after 2FDEC452212566E4 IDENTICAL
+2026-10-23 (7e58ba51, BUILT_FROM 7e58ba51): before 75FC32CD4A0B6C76 after 75FC32CD4A0B6C76 IDENTICAL
 == behaviour check on one font with the saved binaries (if hashes differ):
 2026-10-22: Gugi .glyphs before/after differ in 0 lines (ids and dates ignored)
 2026-10-23: Gugi .glyphs before/after differ in 0 lines (ids and dates ignored)

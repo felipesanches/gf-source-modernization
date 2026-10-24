@@ -7,9 +7,10 @@ worktree's `release/` directory; a fresh checkout is newer than the copied artif
 should have rebuilt. Checked rather than assumed:
 
     sh tools/probes/converter_rebuild_check/check.sh <scratch> \
-      ~/compartilhado/babelfont-rs-worktrees/2026-10-22 ~/compartilhado/babelfont-rs-worktrees/2026-10-23
+      <babelfont-rs worktree of branch 2026-10-22> <worktree of branch 2026-10-23>
 
-Result (result-2026-10-24.txt): both binaries are byte-identical after `cargo clean -p babelfont`
+Result (result-2026-10-24.txt; its sha256 prefixes are written in upper case so that they do not
+read as commit ids): both binaries are byte-identical after `cargo clean -p babelfont`
 and a rebuild -- 2026-10-22 (58eedc82, cited by the 27 repositories of google/fonts#11162) and
 2026-10-23 (7e58ba51, the 16 of PR-QUEUE 0b). Gugi converted by the saved and the rebuilt
 binaries gives the same .glyphs apart from ids and dates.
