@@ -46,6 +46,7 @@ The scratch dir keeps each font's `.glyphs`, `config.yaml`, build and diffenator
   refuses, and which rows still block (results/gate-trace-2026-10-13j.txt).
 - `gsub_lookups.py <release.ttf> <build.ttf>`: how the two GSUB lookup lists line up (type,
   flags, the lookups a chaining rule calls, each feature's lookup indices).
+- `disclose_texts.py <family>...`: after `land.py <family> --rebuild --write-accepted`, appends to the plan the disclose text each accepted line needs for the three differences of bottleneck items 9 and 11 (head.fontDirectionHint; U+0326 with a legacy kern table, IM Fell; Jomolhari's PCLT) and prints any accepted line no text explains. 2026-10-24.
 - `gdef_classes.py <release.ttf> <build.ttf>`: do the fonts' GDEF classes differ glyph by glyph,
   or only by glyph name (a release with no glyph names)?
 - `babelfont/rebuild.sh <empty dir>`: rebuilds the babelfont the "after" runs used, from public
