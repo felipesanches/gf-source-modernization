@@ -1,0 +1,27 @@
+reland-2026-10-24-integration: which of the 49 repositories RESIDUAL on babelfont upstream main
+5ff5bf04 (reland-2026-10-21-upstream) land CLEAN once every open babelfont PR is merged?
+
+Converter: a local, unpublished integration branch = upstream main 5ff5bf04 + the 13 open PR
+branches (#104 #105 #106 #108 #109 #110 #111 #112 #117 #119 #120 #121 and typographic-family-names),
+each first given a merge of that main (the heads are in GoogleFonts/PR-QUEUE.md section 2), merged
+together with the overlaps resolved at item granularity (both sides' tests, calls and functions;
+#108 keeps GENERATED_FEATURES with main's "# Automatic Code" marker). Built with
+tools/build_babelfont.sh in that worktree's own target dir; landed into scratch (OUT, LANDED,
+SCRATCH set), sfd-reland-repos untouched.
+
+  BF_TREE=<integration worktree> OUT=<s>/repos LANDED=<s>/landed.tsv SCRATCH=<s>/scratch \
+    LAND_ARGS=--unpublished-converter sh tools/reland_all.sh 2026-10-24-integration <the 49>
+  python3 tools/compare_runs.py 2026-10-21-upstream 2026-10-24-integration
+
+Result (verdicts.tsv, compare-2026-10-21-upstream.tsv): 27 CLEAN, 22 RESIDUAL; functional PASS
+11 -> 57 of 82 styles; 0 regressions beyond the known disclosed ones (Miama and Ultra gain the
+disclosed gdef row; Overlock-BlackItalic its fontc line-spacing problem). The 27 are the same 27
+that reland-2026-10-03-final found with the pre-rework branches: comicrelief italiana kottaone
+lekton lilitaone lohitbengali lohittamil lustria macondo megrim monoton mountainsofchristmas
+nothingyoucoulddo oleoscript oleoscriptswashcaps passionone patrickhand poly revalia ruluko salsa
+sanchez smythe titanone titilliumweb tuffy unifrakturcook. Per PR: tools/probes/single_pr_relands
+(#106 6, #104 11, #105 2, #104+#106 2); the other 6 need the name PRs too (Comic Relief, Tuffy:
+#117; Passion One, Titillium Web: typographic-family-names) or #111/#121 (Lohit Bengali, Lohit
+Tamil, not measured singly). The 22 RESIDUAL are the decided-disclose and fontc-problem families
+(investigations/reland-2026-10-02/RESIDUALS.md) plus Play (its own .glyphs source, night F).
+The per-repository logs stay out of this repository until those repositories are pushed.
