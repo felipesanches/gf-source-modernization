@@ -498,6 +498,16 @@ def edits_in(d, rows):
     return len(edit_subjects(d, rows))
 
 
+def confidence(status, repo):
+    """The commit message's Confidence line: CLEAN landings have no difference at all;
+    CLEAN-DISCLOSED ones only the differences the plan accepts and upstream_info.md lists."""
+    if status.startswith("CLEAN-DISCLOSED"):
+        n = len(land.load_plan(repo).get("accepted", []))
+        return ("Confidence: high -- functionally equivalent to the shipped binaries except %d "
+                "documented difference(s), listed in upstream_info.md" % n)
+    return "Confidence: high -- 0 blocking rows against the shipped binaries"
+
+
 def main():
     args = sys.argv[1:]
     provisional = "--provisional" in args
@@ -564,9 +574,10 @@ def main():
                    "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
                    "Status: the designer's %s built as is, no conversion; builds with "
                    "gftools-builder and fontc\n"
-                   "Confidence: high -- 0 blocking rows against the shipped binaries%s\n\n"
+                   "%s%s\n\n"
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
                    % (display, repo, repo, head_full[:12], rows[0]["source"],
+                      confidence(landed[repo][4], repo),
                       "; %d known difference(s) disclosed" % n_disc if n_disc else ""))
             git(wt, "commit", "-q", "-F", "-", input=msg)
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
@@ -587,21 +598,21 @@ def main():
                    "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
                    "Status: converted from the shipped binaries (no source was ever published) "
                    "with babelfont-rs's TTF reader; builds with gftools-builder and fontc\n"
-                   "Confidence: high -- 0 blocking rows against the shipped binaries, "
-                   "functionally equivalent\n\n"
+                   "%s\n\n"
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
-                   % (display, repo, repo, head_full[:12]))
+                   % (display, repo, repo, head_full[:12], confidence(landed[repo][4], repo)))
             git(wt, "commit", "-q", "-F", "-", input=msg)
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
             continue
         msg = ("%s: reference the googlefonts/%s .glyphs source\n\n"
                "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
                "Status: %s; builds with gftools-builder and fontc\n"
-               "Confidence: high -- 0 blocking rows against the shipped binaries\n\n"
+               "%s\n\n"
                "Assisted by an AI agent (Claude Opus 5.5)\n"
                % (display, repo, repo, head_full[:12],
                   "converted from the unmodified .sfd" if not edits_in(d, rows) else
-                  plural("converted from the .sfd after %d documented edit(s)" % edits_in(d, rows))))
+                  plural("converted from the .sfd after %d documented edit(s)" % edits_in(d, rows)),
+                  confidence(landed[repo][4], repo)))
         git(wt, "commit", "-q", "-F", "-", input=msg)
         print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
 
