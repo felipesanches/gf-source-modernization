@@ -1,0 +1,10 @@
+{
+  "repo": "imfelldoublepicasc",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/googlefonts/googlefontdirectory-hg at 52f780bc9d197280a9f430574e179a5f233c56b6, ofl/imfelldoublepicasc/: the font as built and its metadata; src/ holds METADATA_comments.txt, no source."
+  ],
+  "disclose": [
+    "The release kerns with a legacy `kern` table (4371 pairs) and has no GPOS; these sources kern through a GPOS kern feature, which is how fontc builds kerning. HarfBuzz shapes every kerned pair alike in both (the functional gate). Decided 2026-10-01: releases with an old kern table are accepted and disclosed."
+  ]
+}

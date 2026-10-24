@@ -1,0 +1,10 @@
+{
+  "repo": "imfellgreatprimer",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/librefonts/imfellgreatprimer at caed052ae660283eebd0c5a497e5582d130825f5: TTX dumps of a build (30 files); no source."
+  ],
+  "disclose": [
+    "The releases kern with a legacy `kern` table (3952 to 4349 pairs per style) and have no GPOS; these sources kern through a GPOS kern feature, which is how fontc builds kerning. HarfBuzz shapes every kerned pair alike in both (the functional gate). Decided 2026-10-01: releases with an old kern table are accepted and disclosed."
+  ]
+}
