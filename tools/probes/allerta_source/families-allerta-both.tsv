@@ -1,0 +1,3 @@
+repo	family	lic	kind	base	commit	style	source	shipped
+allerta-both	allerta	ofl	fork	librefonts/allerta	88a8c57b949cb8224f24815d5d3aa05d4950de69	Allerta-Regular	src/Allerta-Regular-TTF.sfd	/home/fsanches/compartilhado/google/fonts/ofl/allerta/Allerta-Regular.ttf
+allerta-both	allerta	ofl	fork	librefonts/allerta	88a8c57b949cb8224f24815d5d3aa05d4950de69	AllertaStencil-Regular	src/AllertaStencil-Regular-TTF.sfd	/home/fsanches/compartilhado/google/fonts/ofl/allertastencil/AllertaStencil-Regular.ttf

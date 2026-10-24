@@ -19,3 +19,9 @@ rows (OS/2 sub/superscript sizes 717/666 against 700/650, ...) and fail cmap, sh
 names, line spacing and advances: the `-TTF.sfd` is the master of the shipped fonts, as the
 Stencil row of families.tsv already assumed. The underline values the earlier probe missed in the
 pinned repository (tools/probes/allerta_shared_config) are right in today's pipeline.
+
+A fifth landing, `families-allerta-both.tsv`: one repository on librefonts/allerta 88a8c57b with
+both styles from their `-TTF.sfd` and one shared config (productionNames, reverseOutlineDirection
+and decomposeTransformedComponents false): **CLEAN** for both, 0 edits -- the shape option (a)
+of bottleneck item 4 would push, as branch modernize-sfd-to-glyphs of googlefonts/allerta,
+replacing the 2026 conversion that google/fonts pins at bdd9557, with both families re-pinned.

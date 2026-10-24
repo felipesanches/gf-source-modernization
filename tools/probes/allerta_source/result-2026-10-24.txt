@@ -32,3 +32,14 @@ allertastencil-plain: RESIDUAL 13 commits, 0 edit(s): AllertaStencil-Regular=23 
      line_spacing FAIL per-platform ascender/descender/gap DIFFER
      advances     FAIL 186 glyph advances compared, 186 differ
      gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+== allerta-both (one repository, both styles, one config)
+allerta-both: CLEAN 13 commits, 0 edit(s): Allerta-Regular=0 functional=PASS; AllertaStencil-Regular=0 functional=PASS
+sources/config.yaml:
+    buildVariable: false
+    removeOutlineOverlaps: false
+    productionNames: false
+    reverseOutlineDirection: false
+    decomposeTransformedComponents: false
+    sources:
+      - Allerta-Regular.glyphs
+      - AllertaStencil-Regular.glyphs
