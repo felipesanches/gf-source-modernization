@@ -5,6 +5,26 @@
     "https://github.com/librefonts/imfelldwpicasc at 7504ed1a04211a3a32b920be754c7076ffcb5230: TTX dumps of a build (15 files); no source."
   ],
   "disclose": [
-    "The release kerns with a legacy `kern` table (3783 pairs) and has no GPOS; these sources kern through a GPOS kern feature, which is how fontc builds kerning. HarfBuzz shapes every kerned pair alike in both (the functional gate). Decided 2026-10-01: releases with an old kern table are accepted and disclosed."
+    "The release kerns with a legacy `kern` table (3783 pairs) and has no GPOS; these sources kern through a GPOS kern feature, which is how fontc builds kerning. HarfBuzz shapes every kerned pair alike in both (the functional gate). Decided 2026-10-01: releases with an old kern table are accepted and disclosed.",
+    "The release's `head` table states fontDirectionHint 0; the build states 2, the only value the OpenType specification allows new fonts (the field is deprecated and no renderer reads it). A `.glyphs` source cannot state the field, so the difference is kept and disclosed.",
+    "The release kerns with a legacy `kern` table and has no GPOS, so HarfBuzz kerns every pair and positions combining marks itself. These sources kern through a GPOS kern feature, which is how fontc builds kerning, and fontc's kerning lookup skips marks; so a run that contains the combining comma below (U+0326) next to a kerned pair places it differently (some of the gate's shaped runs per style, every one with U+0326), and U+0326 rendered on its own sits at a different position with the same ink; every other run shapes alike. Kept and disclosed."
+  ],
+  "flags": {},
+  "accepted": [
+    {
+      "style": "IMFePIsc28P",
+      "check": "table",
+      "row": "BLOCKING head.font_direction_hint [0, 2]"
+    },
+    {
+      "style": "IMFePIsc28P",
+      "check": "shaping",
+      "summary": "935078 runs shaped, 246 differ"
+    },
+    {
+      "style": "IMFePIsc28P",
+      "check": "rendering",
+      "summary": "diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 1 changed outlines draw different ink"
+    }
   ]
 }

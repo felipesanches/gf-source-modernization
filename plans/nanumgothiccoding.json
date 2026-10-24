@@ -6,5 +6,28 @@
   ],
   "disclose": [
     "The released fonts are partly hinted (TrueType instructions in 2758 of 20024 to 20338 glyphs per style). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the releases', its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+  ],
+  "flags": {},
+  "accepted": [
+    {
+      "style": "NanumGothicCoding-Bold",
+      "check": "table",
+      "row": "BLOCKING head.font_direction_hint [1, 2]"
+    },
+    {
+      "style": "NanumGothicCoding-Bold",
+      "check": "advances",
+      "summary": "14149 glyph advances compared, 0 differ"
+    },
+    {
+      "style": "NanumGothicCoding-Regular",
+      "check": "table",
+      "row": "BLOCKING head.font_direction_hint [1, 2]"
+    },
+    {
+      "style": "NanumGothicCoding-Regular",
+      "check": "advances",
+      "summary": "13910 glyph advances compared, 0 differ"
+    }
   ]
 }

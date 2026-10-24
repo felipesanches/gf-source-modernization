@@ -6,6 +6,15 @@
   ],
   "disclose": [
     "The release kerns through a GPOS kern feature and also carries a legacy `kern` table (292 pairs). Shapers read the GPOS feature, which these sources keep; the legacy table, read only by software without GPOS support, is not carried.",
-    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates.",
+    "The release carries a `PCLT` table (HP PCL 5 printer metrics; the OpenType specification says its use is strongly discouraged). fontc writes none, and no renderer reads it, so the build has no `PCLT`. Kept and disclosed."
+  ],
+  "flags": {},
+  "accepted": [
+    {
+      "style": "Jomolhari-Regular",
+      "check": "table",
+      "row": "BLOCKING PCLT: whole-table difference"
+    }
   ]
 }
