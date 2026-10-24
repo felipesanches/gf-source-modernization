@@ -1,0 +1,12 @@
+GlyphClassDef: release {1: 2394, 2: 112, 3: 142}, build {3: 142}
+  by name, release -> build class: {(1, 0): 2394, (2, 0): 112}
+  by glyph id: 2506 differ
+MarkAttachClassDef: release {}, build {}
+  by name, release -> build class: {}
+  by glyph id: equal
+google/fonts/ofl/carlito/Carlito-Regular.ttf: post format 3.0
+  GSUB lookup flags: {'0x0': 36, '0x100': 4}
+  GPOS lookup flags: {'0x0': 2}
+<scratch>/carlito-build/fonts/ttf/Carlito-Regular.ttf: post format 2.0
+  GSUB lookup flags: {'0x0': 36, '0x100': 4}
+  GPOS lookup flags: {'0x0': 2}
