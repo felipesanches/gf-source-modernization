@@ -36,7 +36,7 @@ for family in sys.argv[1:]:
         added.append("fontDirectionHint %s" % m.group(1))
     runs = sorted({a["summary"] for a in accepted if a["check"] == "shaping"})
     if runs and not any("U+0326" in t for t in disclose):
-        counts = sorted({int(x) for s in runs for x in re.findall(r"(\d+) of \d+ runs differ", s)})
+        counts = sorted({int(x) for s in runs for x in re.findall(r"(\d+) differ", s)})
         text = "%d to %d" % (counts[0], counts[-1]) if len(counts) > 1 else str(counts[0]) if counts else "some"
         disclose.append(U0326.format(runs=text))
         added.append("U+0326 (%s runs)" % text)

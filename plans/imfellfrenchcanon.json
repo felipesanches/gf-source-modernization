@@ -7,7 +7,7 @@
   "disclose": [
     "The releases kern with a legacy `kern` table (4132 to 4469 pairs per style) and have no GPOS; these sources kern through a GPOS kern feature, which is how fontc builds kerning. HarfBuzz shapes every kerned pair alike in both (the functional gate). Decided 2026-10-01: releases with an old kern table are accepted and disclosed.",
     "The release's `head` table states fontDirectionHint 0; the build states 2, the only value the OpenType specification allows new fonts (the field is deprecated and no renderer reads it). A `.glyphs` source cannot state the field, so the difference is kept and disclosed.",
-    "The release kerns with a legacy `kern` table and has no GPOS, so HarfBuzz kerns every pair and positions combining marks itself. These sources kern through a GPOS kern feature, which is how fontc builds kerning, and fontc's kerning lookup skips marks; so a run that contains the combining comma below (U+0326) next to a kerned pair places it differently (some of the gate's shaped runs per style, every one with U+0326), and U+0326 rendered on its own sits at a different position with the same ink; every other run shapes alike. Kept and disclosed."
+    "The release kerns with a legacy `kern` table and has no GPOS, so HarfBuzz kerns every pair and positions combining marks itself. These sources kern through a GPOS kern feature, which is how fontc builds kerning, and fontc's kerning lookup skips marks; so a run that contains the combining comma below (U+0326) next to a kerned pair places it differently (254 of the gate's shaped runs per style, every one with U+0326), and U+0326 rendered on its own sits at a different position with the same ink; every other run shapes alike. Kept and disclosed."
   ],
   "flags": {},
   "accepted": [
