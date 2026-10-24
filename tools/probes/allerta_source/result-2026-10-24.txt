@@ -1,0 +1,34 @@
+== allerta-regular-ttf
+allerta-regular-ttf: CLEAN 13 commits, 0 edit(s): Allerta-Regular=0 functional=PASS
+== allerta-regular-plain
+allerta-regular-plain: RESIDUAL 13 commits, 0 edit(s): Allerta-Regular=23 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   Allerta-Regular BLOCKING OS/2.y_subscript_x_size [717, 700]
+   Allerta-Regular BLOCKING OS/2.y_subscript_y_size [666, 650]
+   Allerta-Regular BLOCKING OS/2.y_subscript_y_offset [143, 140]
+   Allerta-Regular BLOCKING OS/2.y_superscript_x_size [717, 700]
+   Allerta-Regular BLOCKING OS/2.y_superscript_y_size [666, 650]
+   Allerta-Regular BLOCKING OS/2.y_superscript_y_offset [488, 477]
+     cmap         FAIL 186 codepoints, 1 problem(s)
+     shaping      FAIL 538091 runs shaped, 538091 differ
+     rendering    FAIL diffenator3 34 glyph / 83 word diffs (34 / 83 confirmed); 0 of 184 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+     advances     FAIL 186 glyph advances compared, 186 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+== allertastencil-ttf
+allertastencil-ttf: CLEAN 13 commits, 0 edit(s): AllertaStencil-Regular=0 functional=PASS
+== allertastencil-plain
+allertastencil-plain: RESIDUAL 13 commits, 0 edit(s): AllertaStencil-Regular=23 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   AllertaStencil-Regular BLOCKING OS/2.y_subscript_x_size [717, 700]
+   AllertaStencil-Regular BLOCKING OS/2.y_subscript_y_size [666, 650]
+   AllertaStencil-Regular BLOCKING OS/2.y_subscript_y_offset [143, 140]
+   AllertaStencil-Regular BLOCKING OS/2.y_superscript_x_size [717, 700]
+   AllertaStencil-Regular BLOCKING OS/2.y_superscript_y_size [666, 650]
+   AllertaStencil-Regular BLOCKING OS/2.y_superscript_y_offset [488, 477]
+     cmap         FAIL 186 codepoints, 1 problem(s)
+     shaping      FAIL 538091 runs shaped, 538091 differ
+     rendering    FAIL diffenator3 15 glyph / 83 word diffs (15 / 83 confirmed); 0 of 184 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+     advances     FAIL 186 glyph advances compared, 186 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
