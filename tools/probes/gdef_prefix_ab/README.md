@@ -41,8 +41,9 @@ Pen Script and Dongle; the last three pass the gates without the prefix (Carlito
 in google/fonts, the script skips it). So the decision is the gate's, recorded per family:
 `gdef_classes_fea` in plans/carlito.json and plans/sansation.json makes tools/land.py state the
 release's classes as a `table GDEF { GlyphClassDef ... }` feature prefix in the source
-(tools/workarounds.py gdef_classes_fea), noted in the convert commit. `gdef_fea_check.py`
-(research-scratch, session 2026-10-28_f55394dc) showed it writes, for both, the same statement
-the reverted reader wrote.
+(tools/workarounds.py gdef_classes_fea), noted in the convert commit. `gdef_fea_check.py` showed it
+writes, for both, the same statement the reverted reader wrote (the repositories' .prev
+generation still holds it):
 
+    /home/fsanches/compartilhado/gftools/venv/bin/python3 -I tools/probes/gdef_prefix_ab/gdef_fea_check.py <dir with Carlito-Regular.ttf and Sansation-Regular.ttf>
     /home/fsanches/compartilhado/gftools/venv/bin/python3 -I tools/probes/gdef_prefix_ab/gdef_needs_prefix.py
