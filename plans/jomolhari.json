@@ -16,5 +16,6 @@
       "check": "table",
       "row": "BLOCKING PCLT: whole-table difference"
     }
-  ]
+  ],
+  "gdef_classes_fea": "the release's GDEF classes all 3333 glyphs base, 88 combining marks (U+0301 and on) included, and none mark; without it the build has no GDEF, HarfBuzz classes those marks itself, and 21955 shaped runs differ"
 }

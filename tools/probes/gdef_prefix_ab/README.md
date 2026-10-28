@@ -29,17 +29,18 @@ explicit `table GDEF { GlyphClassDef ... }` prefix, which all three honour, can.
 
 Felipe agreed with Simon: 47f99442 is reverted on both fork branches (2026-10-22 ed59a63a,
 2026-10-23 50ea5d2d), and the 35 unpushed repositories that cited the old heads were re-landed
-(logs/reland-2026-10-28-gdef-revert). Two fail without the prefix: Carlito (as above) and
-Sansation (its GDEF classes every glyph base, commaccent U+0326 included, and no glyph mark; the
-build has no GDEF, HarfBuzz classes commaccent a mark, and the kerning skips it: 1 class
-difference shaping reads).
+(logs/reland-2026-10-28-gdef-revert). Three fail without the prefix: Carlito (as above), Sansation
+(its GDEF classes every glyph base, commaccent U+0326 included, and no glyph mark; the build has
+no GDEF, HarfBuzz classes commaccent a mark, and the kerning skips it: 1 class difference shaping
+reads) and Jomolhari (the same shape: all 3333 glyphs base, 88 combining marks among them; 21955
+shaped runs differ without the table).
 
 `gdef_needs_prefix.py` asks whether a cheap rule on the release alone (the classes a compiler
 derives from categories and anchors differ, and a lookup filters on class or the GDEF has no
 marks) predicts that: no. needs-2026-10-28.txt flags Sansation, Black And White Picture, Nanum
 Pen Script and Dongle; the last three pass the gates without the prefix (Carlito's release is not
 in google/fonts, the script skips it). So the decision is the gate's, recorded per family:
-`gdef_classes_fea` in plans/carlito.json and plans/sansation.json makes tools/land.py state the
+`gdef_classes_fea` in plans/carlito.json, plans/sansation.json and plans/jomolhari.json makes tools/land.py state the
 release's classes as a `table GDEF { GlyphClassDef ... }` feature prefix in the source
 (tools/workarounds.py gdef_classes_fea), noted in the convert commit. `gdef_fea_check.py` showed it
 writes, for both, the same statement the reverted reader wrote (the repositories' .prev
