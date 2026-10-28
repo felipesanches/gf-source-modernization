@@ -1,0 +1,5 @@
+carlito: RESIDUAL @ 3f9df2f, 12 commits, 0 edit(s): Carlito-Bold=1 functional=PASS; Carlito-BoldItalic=1 functional=PASS; Carlito-Italic=1 functional=PASS; Carlito-Regular=1 functional=PASS
+   Carlito-Bold BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   Carlito-BoldItalic BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   Carlito-Italic BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   Carlito-Regular BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class

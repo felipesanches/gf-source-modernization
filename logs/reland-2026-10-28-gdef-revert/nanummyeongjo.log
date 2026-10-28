@@ -1,0 +1,2 @@
+nanummyeongjo: CLEAN-DISCLOSED @ e929e47, 3 commits, 0 edit(s): NanumMyeongjo-Bold=0 functional=PASS; NanumMyeongjo-ExtraBold=1 functional=PASS; NanumMyeongjo-Regular=0 functional=PASS
+   NanumMyeongjo-ExtraBold BLOCKING head.font_direction_hint [1, 2]

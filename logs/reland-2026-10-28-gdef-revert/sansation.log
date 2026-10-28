@@ -1,0 +1,94 @@
+sansation: RESIDUAL @ 3a927d2, 3 commits, 0 edit(s): Sansation-Bold=3 functional=FAIL(shaping+gdef); Sansation-BoldItalic=3 functional=FAIL(shaping+gdef); Sansation-Italic=3 functional=FAIL(shaping+gdef); Sansation-Light=3 functional=FAIL(shaping+gdef); Sansation-LightItalic=4 functional=FAIL(shaping+line_spacing+gdef); Sansation-Regular=3 functional=FAIL(shaping+gdef)
+   Sansation-Bold BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-Bold BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-Bold BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+     cmap         PASS 540 codepoints, exact
+     shaping      FAIL 849298 runs shaped, 416 differ
+         - default features, singles: 1 of 540 runs differ
+         - default features, base+mark: 403 of 407 runs differ
+         - default features, base+mark+mark: 12 of 12 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 531 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+   Sansation-BoldItalic BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-BoldItalic BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-BoldItalic BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+     cmap         PASS 533 codepoints, exact
+     shaping      FAIL 834747 runs shaped, 416 differ
+         - default features, singles: 1 of 533 runs differ
+         - default features, base+mark: 403 of 407 runs differ
+         - default features, base+mark+mark: 12 of 12 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 524 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+   Sansation-Italic BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-Italic BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-Italic BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+     cmap         PASS 533 codepoints, exact
+     shaping      FAIL 834747 runs shaped, 416 differ
+         - default features, singles: 1 of 533 runs differ
+         - default features, base+mark: 403 of 407 runs differ
+         - default features, base+mark+mark: 12 of 12 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 524 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+   Sansation-Light BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-Light BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-Light BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+     cmap         PASS 540 codepoints, exact
+     shaping      FAIL 849298 runs shaped, 416 differ
+         - default features, singles: 1 of 540 runs differ
+         - default features, base+mark: 403 of 407 runs differ
+         - default features, base+mark+mark: 12 of 12 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 531 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+   Sansation-LightItalic BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-LightItalic BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-LightItalic BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+   Sansation-LightItalic BLOCKING hmtx.ffi {"width": [1618, 1628]}
+     cmap         PASS 533 codepoints, exact
+     shaping      FAIL 834747 runs shaped, 416 differ
+         - default features, singles: 1 of 533 runs differ
+         - default features, base+mark: 403 of 407 runs differ
+         - default features, base+mark+mark: 12 of 12 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC lost, REGULAR gained
+         - head.macStyle italic: release 1, build 0
+     advances     PASS 524 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
+   Sansation-Regular BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-Regular BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-Regular BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+     cmap         PASS 540 codepoints, exact
+     shaping      FAIL 849298 runs shaped, 416 differ
+         - default features, singles: 1 of 540 runs differ
+         - default features, base+mark: 403 of 407 runs differ
+         - default features, base+mark+mark: 12 of 12 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 531 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 1 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaccent 1/3
