@@ -1,0 +1,29 @@
+sansation: CLEAN-DISCLOSED @ e9d018f, 3 commits, 0 edit(s): Sansation-Bold=3 functional=PASS; Sansation-BoldItalic=3 functional=PASS; Sansation-Italic=3 functional=PASS; Sansation-Light=3 functional=PASS; Sansation-LightItalic=4 functional=FAIL(line_spacing); Sansation-Regular=3 functional=PASS
+   Sansation-Bold BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-Bold BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-Bold BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+   Sansation-BoldItalic BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-BoldItalic BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-BoldItalic BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+   Sansation-Italic BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-Italic BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-Italic BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+   Sansation-Light BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-Light BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-Light BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+   Sansation-LightItalic BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-LightItalic BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-LightItalic BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004
+   Sansation-LightItalic BLOCKING hmtx.ffi {"width": [1618, 1628]}
+     cmap         PASS 533 codepoints, exact
+     shaping      PASS 834747 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - fsSelection: ITALIC lost, REGULAR gained
+         - head.macStyle italic: release 1, build 0
+     advances     PASS 524 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+   Sansation-Regular BLOCKING GPOS.script_list {"latn/dflt": {"lookups": {"0": [null, 2]}}, "latn/zz01": {"lookups": {"0": [nul
+   Sansation-Regular BLOCKING GPOS.feature_list {"kern": [null, [1, 2]]}
+   Sansation-Regular BLOCKING GPOS.lookup_list {"0": [null, [{"type": "pair", "afii10017": {"afii10036": {"x": -150}, "afii1004

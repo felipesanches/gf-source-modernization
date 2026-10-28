@@ -1,0 +1,3 @@
+alef: CLEAN-DISCLOSED @ d8c1ce9, 3 commits, 0 edit(s): Alef-Bold=1 functional=PASS; Alef-Regular=1 functional=PASS
+   Alef-Bold BLOCKING head.font_direction_hint [0, 2]
+   Alef-Regular BLOCKING head.font_direction_hint [0, 2]
