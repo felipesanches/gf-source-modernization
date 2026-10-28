@@ -44,3 +44,8 @@ from PATH, and without it every repository failed with "No such file or director
 2026-10-24, the 16 on babelfont branch 2026-10-23 (7e58ba5): fontmake 37/37 sources, gftools 16/16
 (results-2026-10-24-babelfont-7e58ba5.txt). On 8165904 the 14 Korean families had failed both modes with
 "Unknown name language: ko-KR" (KOR missing from the layout tag table).
+
+2026-10-28, after the GDEF prefix revert (babelfont 2026-10-22 at ed59a63a, 2026-10-23 at 50ea5d2d;
+logs/reland-2026-10-28-gdef-fea): the 16 of 0b plus Carlito, Sansation and Jomolhari (the three whose
+sources now state the release's GDEF classes as a feature prefix): fontmake 48/48 sources, gftools
+19/19 repositories (results-2026-10-28-babelfont-50ea5d2.txt). Same command as 2026-10-22, crater's venv.
