@@ -97,7 +97,7 @@ EVIDENCE_PATHS = ["tools", "plans", "templates", "families.tsv", "families-next.
 GF = "/home/fsanches/compartilhado/google/fonts"
 IDENT = ["-c", "user.name=Felipe Correa da Silva Sanches",
          "-c", "user.email=juca@members.fsf.org", "-c", "commit.gpgsign=false"]
-TRAILER = "\n\nAssisted by an AI agent (Claude Opus 5.5)\n"
+TRAILER = "\n\nAssisted by an AI agent (Claude Fable 5.1)\n"
 # where a landing builds before it commits (SCRATCH=<dir> to put it elsewhere); never /tmp,
 # a small tmpfs wiped on reboot
 SCRATCH = os.environ.get("SCRATCH", "/home/fsanches/compartilhado/tmp/sfd-reland-land")
