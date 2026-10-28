@@ -1,0 +1,105 @@
+oranienbaum            Oranienbaum-Regular          no-GlyphClassDef
+averialibre            AveriaLibre-Bold             no-GlyphClassDef
+averialibre            AveriaLibre-BoldItalic       no-GlyphClassDef
+averialibre            AveriaLibre-Italic           no-GlyphClassDef
+averialibre            AveriaLibre-Light            no-GlyphClassDef
+averialibre            AveriaLibre-LightItalic      no-GlyphClassDef
+averialibre            AveriaLibre-Regular          no-GlyphClassDef
+averiasanslibre        AveriaSansLibre-Bold         no-GlyphClassDef
+averiasanslibre        AveriaSansLibre-BoldItalic   no-GlyphClassDef
+averiasanslibre        AveriaSansLibre-Italic       no-GlyphClassDef
+averiasanslibre        AveriaSansLibre-Light        no-GlyphClassDef
+averiasanslibre        AveriaSansLibre-LightItalic  no-GlyphClassDef
+averiasanslibre        AveriaSansLibre-Regular      no-GlyphClassDef
+averiaseriflibre       AveriaSerifLibre-Bold        no-GlyphClassDef
+averiaseriflibre       AveriaSerifLibre-BoldItalic  no-GlyphClassDef
+averiaseriflibre       AveriaSerifLibre-Italic      no-GlyphClassDef
+averiaseriflibre       AveriaSerifLibre-Light       no-GlyphClassDef
+averiaseriflibre       AveriaSerifLibre-LightItalic no-GlyphClassDef
+averiaseriflibre       AveriaSerifLibre-Regular     no-GlyphClassDef
+sansation              Sansation-Bold               classes=533/0/0/0          diff=533   reads=False marks=False NEED
+sansation              Sansation-BoldItalic         classes=526/0/0/0          diff=526   reads=False marks=False NEED
+sansation              Sansation-Italic             classes=526/0/0/0          diff=526   reads=False marks=False NEED
+sansation              Sansation-Light              classes=533/0/0/0          diff=533   reads=False marks=False NEED
+sansation              Sansation-LightItalic        classes=526/0/0/0          diff=526   reads=False marks=False NEED
+sansation              Sansation-Regular            classes=533/0/0/0          diff=533   reads=False marks=False NEED
+reeniebeanie           ReenieBeanie                 no-GlyphClassDef
+ptserif                PT_Serif-Web-Bold            no-GlyphClassDef
+ptserif                PT_Serif-Web-BoldItalic      no-GlyphClassDef
+ptserif                PT_Serif-Web-Italic          no-GlyphClassDef
+ptserif                PT_Serif-Web-Regular         no-GlyphClassDef
+ptsansnarrow           PT_Sans-Narrow-Web-Bold      no-GlyphClassDef
+ptsansnarrow           PT_Sans-Narrow-Web-Regular   no-GlyphClassDef
+ptsanscaption          PT_Sans-Caption-Web-Bold     no-GlyphClassDef
+ptsanscaption          PT_Sans-Caption-Web-Regular  no-GlyphClassDef
+almarai                Almarai-Bold                 classes=196/42/32/18       diff=36    reads=False marks=True  -
+almarai                Almarai-ExtraBold            classes=196/42/32/18       diff=36    reads=False marks=True  -
+almarai                Almarai-Light                classes=196/42/32/18       diff=36    reads=False marks=True  -
+almarai                Almarai-Regular              classes=196/42/32/18       diff=36    reads=False marks=True  -
+jua                    Jua-Regular                  no-GlyphClassDef
+dongle                 Dongle-Bold                  classes=538/43/40/0        diff=27    reads=True  marks=True  NEED
+dongle                 Dongle-Light                 classes=548/44/40/0        diff=26    reads=True  marks=True  NEED
+dongle                 Dongle-Regular               classes=539/43/39/0        diff=26    reads=True  marks=True  NEED
+homemadeapple          HomemadeApple-Regular        no-GlyphClassDef
+calligraffitti         Calligraffitti-Regular       no-GlyphClassDef
+kranky                 Kranky-Regular               no-GlyphClassDef
+cherrycreamsoda        CherryCreamSoda-Regular      no-GlyphClassDef
+chewy                  Chewy-Regular                no-GlyphClassDef
+comingsoon             ComingSoon-Regular           no-GlyphClassDef
+craftygirls            CraftyGirls-Regular          no-GlyphClassDef
+fontdinerswanky        FontdinerSwanky-Regular      no-GlyphClassDef
+akronim                Akronim-Regular              no-GlyphClassDef
+portersansblock        PorterSansBlock-Regular      no-GlyphClassDef
+gugi                   Gugi-Regular                 no-GlyphClassDef
+rocksalt               RockSalt-Regular             no-GlyphClassDef
+schoolbell             Schoolbell-Regular           no-GlyphClassDef
+unkempt                Unkempt-Bold                 no-GlyphClassDef
+unkempt                Unkempt-Regular              no-GlyphClassDef
+walterturncoat         WalterTurncoat-Regular       no-GlyphClassDef
+slackey                Slackey-Regular              no-GlyphClassDef
+sunshiney              Sunshiney-Regular            no-GlyphClassDef
+permanentmarker        PermanentMarker-Regular      no-GlyphClassDef
+ptserifcaption         PT_Serif-Caption-Web-Italic  no-GlyphClassDef
+ptserifcaption         PT_Serif-Caption-Web-Regular no-GlyphClassDef
+ptsans                 PT_Sans-Web-Bold             no-GlyphClassDef
+ptsans                 PT_Sans-Web-BoldItalic       no-GlyphClassDef
+ptsans                 PT_Sans-Web-Italic           no-GlyphClassDef
+ptsans                 PT_Sans-Web-Regular          no-GlyphClassDef
+eastseadokdo           EastSeaDokdo-Regular         no-GlyphClassDef
+yeonsung               YeonSung-Regular             no-GlyphClassDef
+stylish                Stylish-Regular              no-GlyphClassDef
+blackhansans           BlackHanSans-Regular         no-GlyphClassDef
+dohyeon                DoHyeon-Regular              no-GlyphClassDef
+sunflower              Sunflower-Bold               no-GlyphClassDef
+sunflower              Sunflower-Light              no-GlyphClassDef
+sunflower              Sunflower-Medium             no-GlyphClassDef
+cutefont               CuteFont-Regular             no-GlyphClassDef
+songmyung              SongMyung-Regular            no-GlyphClassDef
+dokdo                  Dokdo-Regular                no-GlyphClassDef
+blackandwhitepicture   BlackAndWhitePicture-Regular classes=11265/0/0/0        diff=11265 reads=False marks=False NEED
+gamjaflower            GamjaFlower-Regular          no-GlyphClassDef
+himelody               HiMelody-Regular             no-GlyphClassDef
+poorstory              PoorStory-Regular            no-GlyphClassDef
+nanumgothic            NanumGothic-Bold             no-GlyphClassDef
+nanumgothic            NanumGothic-ExtraBold        no-GlyphClassDef
+nanumgothic            NanumGothic-Regular          no-GlyphClassDef
+nanumbrushscript       NanumBrushScript-Regular     no-GlyphClassDef
+lato                   Lato-Black                   no-GlyphClassDef
+lato                   Lato-BlackItalic             no-GlyphClassDef
+lato                   Lato-Bold                    no-GlyphClassDef
+lato                   Lato-BoldItalic              no-GlyphClassDef
+lato                   Lato-ExtraBold               no-GlyphClassDef
+lato                   Lato-ExtraBoldItalic         no-GlyphClassDef
+lato                   Lato-ExtraLight              no-GlyphClassDef
+lato                   Lato-ExtraLightItalic        no-GlyphClassDef
+lato                   Lato-Italic                  no-GlyphClassDef
+lato                   Lato-Light                   no-GlyphClassDef
+lato                   Lato-LightItalic             no-GlyphClassDef
+lato                   Lato-Medium                  no-GlyphClassDef
+lato                   Lato-MediumItalic            no-GlyphClassDef
+lato                   Lato-Regular                 no-GlyphClassDef
+lato                   Lato-SemiBold                no-GlyphClassDef
+lato                   Lato-SemiBoldItalic          no-GlyphClassDef
+lato                   Lato-Thin                    no-GlyphClassDef
+lato                   Lato-ThinItalic              no-GlyphClassDef
+nanumpenscript         NanumPenScript-Regular       classes=11654/83/0/0       diff=11737 reads=False marks=False NEED

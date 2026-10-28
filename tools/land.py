@@ -548,6 +548,13 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                 open(g, "w", encoding="utf-8").write(changed)
                 notes.append("post.isFixedPitch 1 as the isFixedPitch custom parameter; this "
                              "babelfont's TTF reader does not read post.isFixedPitch")
+        why = plan.get("gdef_classes_fea")
+        if why:
+            text = open(g, encoding="utf-8").read()
+            changed = workarounds.gdef_classes_fea(text, tt)
+            if changed != text:
+                open(g, "w", encoding="utf-8").write(changed)
+                notes.append("GDEF's glyph classes as FEA; %s" % why)
         for field, default, fea in (("usWeightClass", 400, workarounds.weight_class_fea),
                                     ("usWidthClass", 5, workarounds.width_class_fea)):
             value = getattr(os2, field)

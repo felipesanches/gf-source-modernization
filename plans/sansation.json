@@ -108,5 +108,6 @@
       "check": "table",
       "row": "BLOCKING GPOS.lookup_list {\"0\": [null, [{\"type\": \"pair\", \"afii10017\": {\"afii10036\": {\"x\": -150}, \"afii1004"
     }
-  ]
+  ],
+  "gdef_classes_fea": "the release's GDEF classes every glyph base, commaccent (U+0326) included, and no glyph mark; without it the build has no GDEF and HarfBuzz classes commaccent a mark itself, which the kerning then skips"
 }

@@ -79,17 +79,60 @@ def os2_statement_fea(glyphs_text, keyword, value):
         else:
             t = t[:m.end()] + "    %s %d;\n" % (keyword, value) + t[m.end():]
     else:
-        entry = ('{\ncode = "table OS/2 {\n    %s %d;\n} OS/2;";\n'
-                 'name = %sOverride;\n},\n' % (keyword, value, keyword))
-        key = "featurePrefixes = (\n"
-        if key in t:
-            i = t.index(key) + len(key)
-            t = t[:i] + entry + t[i:]
-        else:
-            anchor = ".formatVersion = 3;\n"
-            i = t.index(anchor) + len(anchor)
-            t = t[:i] + "featurePrefixes = (\n" + entry + ");\n" + t[i:]
+        t = add_feature_prefix(t, "%sOverride" % keyword,
+                               "table OS/2 {\n    %s %d;\n} OS/2;" % (keyword, value))
     return t
+
+
+def add_feature_prefix(glyphs_text, name, code):
+    """The .glyphs text with a feature prefix `name` holding `code`, first in its
+    featurePrefixes list (created before the format version's next key when absent)."""
+    t = glyphs_text
+    entry = '{\ncode = "%s";\nname = %s;\n},\n' % (code.replace("\\", "\\\\").replace('"', '\\"'), name)
+    key = "featurePrefixes = (\n"
+    if key in t:
+        i = t.index(key) + len(key)
+        return t[:i] + entry + t[i:]
+    anchor = ".formatVersion = 3;\n"
+    i = t.index(anchor) + len(anchor)
+    return t[:i] + "featurePrefixes = (\n" + entry + ");\n" + t[i:]
+
+
+# fea-rs-ast's FEA_KEYWORDS: a glyph so named is written with a backslash
+FEA_KEYWORDS = {
+    "anchor", "anchordef", "anon", "anonymous", "by", "contour", "cursive", "device", "enum",
+    "enumerate", "excludedflt", "exclude_dflt", "feature", "from", "ignore", "ignorebaseglyphs",
+    "ignoreligatures", "ignoremarks", "include", "includedflt", "include_dflt", "language",
+    "languagesystem", "lookup", "lookupflag", "mark", "markattachmenttype", "markclass", "nameid",
+    "null", "parameters", "pos", "position", "required", "righttoleft", "reversesub", "rsub",
+    "script", "sub", "substitute", "subtable", "table", "usemarkfilteringset", "useextension",
+    "valuerecorddef", "base", "gdef", "head", "hhea", "name", "vhea", "vmtx",
+}
+
+
+def gdef_classes_fea(glyphs_text, ttfont):
+    """The .glyphs text with the release's GDEF glyph classes stated as
+    `table GDEF { GlyphClassDef ...; } GDEF;` in a feature prefix, glyph by glyph id, so
+    the compiler keeps them. A compiler classes a glyph base or ligature only for an
+    attaching anchor and mark only by category, so a release whose GDEF classes glyphs
+    otherwise cannot keep its classes through the source's categories; a plan asks for
+    this (`gdef_classes_fea`) when the gate shows the lost classes matter."""
+    gdef = ttfont["GDEF"].table if "GDEF" in ttfont else None
+    if gdef is None or gdef.GlyphClassDef is None:
+        return glyphs_text
+    names = re.findall(r'^glyphname = "?([^";]+)"?;$', glyphs_text, re.M)
+    order = ttfont.getGlyphOrder()
+    if len(names) != len(order):
+        raise ValueError("%d glyphs in the source, %d in the release" % (len(names), len(order)))
+    classes = [[] for _ in range(4)]
+    for gid, glyph in enumerate(order):
+        c = gdef.GlyphClassDef.classDefs.get(glyph, 0)
+        if 1 <= c <= 4:
+            n = names[gid]
+            classes[c - 1].append("\\" + n if n in FEA_KEYWORDS else n)
+    statement = ", ".join("[%s]" % " ".join(m) if m else "" for m in classes)
+    return add_feature_prefix(glyphs_text, "GDEF",
+                              "table GDEF {\n    GlyphClassDef %s;\n} GDEF;" % statement)
 
 
 def italic_angle(glyphs_text, sfd_text):
