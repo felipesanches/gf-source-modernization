@@ -166,14 +166,18 @@ def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
 
 
 # A FontLab Studio 5 source (.vfb, families-vfb.tsv): only the filters that any static
-# conversion to .glyphs needs -- an instance per master (a static build needs one), glyph
-# categories for GDEF, the source's own advances, integer coordinates -- and the direction
-# correction when the release has uniform directions (FontLab, like FontForge, reverses
-# the PostScript-direction cubic contours when it generates TrueType). None of the
-# FontForge filters: nothing in a .vfb is FontForge's. Fidelity first: what the gate then
-# finds missing is a reader defect or a documented edit, never a flag added blind.
-VFB_BASE = ["--add-instance-per-master", "--infer-mark-category", "--set-subcategory",
-            "--keep-source-advances", "--round-coordinates"]
+# conversion to .glyphs needs -- an instance per master (a static build needs one), the
+# source's own advances, integer coordinates -- and the direction correction when the
+# release has uniform directions (FontLab, like FontForge, reverses the PostScript-direction
+# cubic contours when it generates TrueType). No glyph categories from anchors: FontLab's
+# export classes GDEF by Unicode alone (an encoded combining mark is a mark, nothing else
+# is; tools/probes/vfb_rules), and the compiler's own glyph data does the same, while
+# --infer-mark-category on the anchors FontLab gives spacing accents made marks of them
+# (Atomic Age: 20 blocking rows with it, 9 without; logs/reland-vfb-nomark-2026-10-29).
+# None of the FontForge filters: nothing in a .vfb is FontForge's. Fidelity first: what
+# the gate then finds missing is a reader defect or a documented edit, never a flag added
+# blind.
+VFB_BASE = ["--add-instance-per-master", "--keep-source-advances", "--round-coordinates"]
 
 
 def flags_for_vfb(shipped, add=(), drop=(), keep_direction=False, source=None, repo_dir=None):
