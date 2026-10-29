@@ -93,7 +93,8 @@ TG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "table_gate.py")
 # Where this workspace is published: font repositories cite it, at the revision the
 # landing ran from, for the gates, plans and logs behind their claims.
 EVIDENCE_URL = "https://github.com/felipesanches/gf-source-modernization"
-EVIDENCE_PATHS = ["tools", "plans", "templates", "families.tsv", "families-next.tsv", "families-binary.tsv"]
+EVIDENCE_PATHS = ["tools", "plans", "templates", "families.tsv", "families-next.tsv", "families-binary.tsv",
+                  "families-vfb.tsv"]
 GF = "/home/fsanches/compartilhado/google/fonts"
 IDENT = ["-c", "user.name=Felipe Correa da Silva Sanches",
          "-c", "user.email=juca@members.fsf.org", "-c", "commit.gpgsign=false"]

@@ -9,10 +9,14 @@ later finding can be traced to its pair (tools/pair_next.py does the same for .s
 Rule, per shipped font:
   1. candidates: .vfb files (in the family's directory, for the googlefontdirectory-hg
      monorepo) whose PostScript font name (VFB entry 1026, `font_name`) equals the
-     shipped font's PostScript name (name ID 6) and which hold glyphs;
+     shipped font's PostScript name (name ID 6) and which hold glyphs. A `-Regular`
+     suffix is ignored on both sides: FontLab names the regular style's font `Family`
+     and the release `Family-Regular` (Aldrich, Combo, Happy Monkey, ... measured in
+     logs/pair_vfb.log);
   2. the `-TTF` variant when there is one (FontLab's TrueType-flavoured copy, the
-     quadratic outlines the release was generated from), else the only candidate;
-     more than one left -> AMBIGUOUS, not paired;
+     quadratic outlines the release was generated from); else, when the candidates are
+     one `-OTF` variant and one plain file, the plain one (the release is TrueType);
+     else the only candidate; more than one left -> AMBIGUOUS, not paired;
   3. no name match, but the family ships ONE font and has ONE .vfb that holds glyphs:
      that pair, logged with both names (a name edited after export, or a typo).
 No candidate -> UNPAIRED. Both are reported, never guessed. A .vfb vfbLib cannot
@@ -76,6 +80,11 @@ def vfb_facts(mirror, commit, path, tmpdir):
     return name, glyphs, err
 
 
+def regular(name):
+    """A PostScript name without its -Regular suffix."""
+    return re.sub(r"-Regular$", "", name)
+
+
 def batch(argv):
     rows = list(csv.DictReader(open(os.path.join(W, "scope", "census.tsv")), delimiter="\t"))
     if argv:
@@ -115,9 +124,11 @@ def main():
         for f in fonts:
             shipped = os.path.join(GF, lic, fam, f)
             ps = str(TTFont(shipped, lazy=True)["name"].getDebugName(6))
-            cands = [p for p, (name, n) in facts.items() if name == ps and n > 0]
+            cands = [p for p, (name, n) in facts.items()
+                     if name is not None and regular(name) == regular(ps) and n > 0]
             ttf = [p for p in cands if re.search(r"-TTF\.vfb$", p, re.I)]
-            pick = ttf if ttf else cands
+            plain = [p for p in cands if not re.search(r"-OTF\.vfb$", p, re.I)]
+            pick = ttf if ttf else plain if len(plain) == 1 and len(cands) == 2 else cands
             sole = [p for p, (name, n) in facts.items() if n > 0]
             if not cands and len(sole) == 1 and len(fonts) == 1:
                 pick = sole
@@ -126,7 +137,11 @@ def main():
             if len(pick) == 1:
                 rule = ("sole .vfb and sole font, font_name %s differs" % facts[pick[0]][0]
                         if ttf is None else
-                        "font_name match, -TTF variant" if ttf else "font_name match, only candidate")
+                        "font_name match, -TTF variant" if ttf else
+                        "font_name match, the plain file over the -OTF variant" if len(cands) == 2
+                        else "font_name match, only candidate")
+                if facts[pick[0]][0] != ps and ttf is not None:
+                    rule += ", -Regular ignored"
                 print("%s/%s: %s <- %s (%s; %d candidate(s))" % (fam, style, pick[0], ps, rule,
                                                                   len(cands)), file=sys.stderr)
                 out.writerow([fam, fam, lic, kind, r["repo"], commit, style,
