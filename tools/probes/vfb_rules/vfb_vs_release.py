@@ -115,7 +115,8 @@ def main():
             "tt_weight_class", "rel_fsType", "tt_fs_type", "rel_fsSelection", "tt_fs_selection", "rel_os2_version",
             "rel_underline", "vfb_underline", "rel_sxHeight", "rel_sCapHeight", "ps_x_height", "ps_cap_height",
             "rel_panose", "vfb_panose", "tt_panose", "rel_typo", "tt_typo", "rel_win", "tt_win", "rel_hhea",
-            "vfb_hhea_line_gap", "rel_fontRevision", "vfb_version", "rel_upm", "tt_upm"]
+            "vfb_hhea_line_gap", "rel_fontRevision", "vfb_version", "rel_upm", "tt_upm", "vfb_tt_version",
+            "vfb_hhea_entries", "rel_usWidthClass", "tt_width_class", "vfb_width"]
     out.writerow(cols)
     tally = collections.Counter()
     counter = collections.defaultdict(list)
@@ -199,6 +200,17 @@ def main():
         if "version_major" in v and "version_minor" in v:
             rule("revision: version_major.version_minor",
                  rel["fontRevision"] == round(v["version_major"] + v["version_minor"] / 1000.0, 3), label)
+        m = re.search(r"(\d+\.\d+)", str(v.get("tt_version", "")))
+        if m:
+            rule("revision: the number in tt_version", rel["fontRevision"] == round(float(m.group(1)), 3), label)
+        hh = (v.get("hhea_ascender"), v.get("hhea_descender"), v.get("hhea_line_gap"))
+        if None not in hh:
+            rule("hhea: the hhea_ascender/descender/line_gap entries", rel["hhea"] == hh, label)
+            rule("hhea: the hhea entries, descender negated", rel["hhea"] == (hh[0], -hh[1], hh[2]), label)
+        if "os2_us_width_class" in tt:
+            rule("width: TrueType block", rel["usWidthClass"] == tt["os2_us_width_class"], label)
+        if "width" in v:
+            rule("width: width entry", str(rel["usWidthClass"]) == str(v["width"]), label)
         tally["os2 version %d" % rel["os2_version"]] += 1
         out.writerow([r["repo"], r["style"], r["source"], rel["name1"], rel["name2"], rel["name4"], rel["name6"],
                       rel["name16"], rel["name17"], fam, sty, v.get("full_name"), v.get("font_name"),
@@ -212,7 +224,9 @@ def main():
                       "/".join(map(str, typo)), "/".join(map(str, rel["win"])), "/".join(map(str, win)),
                       "/".join(map(str, rel["hhea"])), v.get("hhea_line_gap"), rel["fontRevision"],
                       "%s.%s" % (v.get("version_major"), v.get("version_minor")), rel["upm"],
-                      tt.get("head_units_per_em")])
+                      tt.get("head_units_per_em"), v.get("tt_version"),
+                      "/".join(str(v.get(k)) for k in ("hhea_ascender", "hhea_descender", "hhea_line_gap")),
+                      rel["usWidthClass"], tt.get("os2_us_width_class"), v.get("width")])
         sys.stdout.flush()
     print("%d styles read" % n, file=sys.stderr)
     print("\nrule: styles it reproduces / styles it was tested on; then the counter-examples", file=sys.stderr)
