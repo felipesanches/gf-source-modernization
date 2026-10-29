@@ -1,0 +1,31 @@
+== abrilfatface (families.tsv) 2026-10-22T09:01:05+01:00
+   rc=0 abrilfatface	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== allerta (families.tsv) 2026-10-22T09:01:36+01:00
+   rc=0 allerta	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== ledger (families-next.tsv) 2026-10-22T09:01:52+01:00
+   rc=0 ledger	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== magra (families-next.tsv) 2026-10-22T09:02:11+01:00
+   rc=0 magra	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== mergeone (families-next.tsv) 2026-10-22T09:02:56+01:00
+   rc=0 mergeone	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== rambla (families-next.tsv) 2026-10-22T09:03:12+01:00
+   rc=0 rambla	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== rosarivo (families-next.tsv) 2026-10-22T09:04:10+01:00
+   rc=0 rosarivo	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== sail (families-next.tsv) 2026-10-22T09:04:44+01:00
+   rc=0 sail	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== textmeone (families-next.tsv) 2026-10-22T09:05:08+01:00
+   rc=0 textmeone	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+== wallpoet (families-next.tsv) 2026-10-22T09:05:25+01:00
+   rc=0 wallpoet	CLEAN
+shared_from_host  1.8T  1.6T   50G  98% /home/fsanches/compartilhado
+done 2026-10-22T09:05:43+01:00

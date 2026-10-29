@@ -1,0 +1,88 @@
+== akronim (families-binary.tsv) 2026-10-23T00:09:53+01:00
+   rc=0 akronim	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== calligraffitti (families-binary.tsv) 2026-10-23T00:10:56+01:00
+   rc=0 calligraffitti	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== carlito (families-binary.tsv) 2026-10-23T00:11:26+01:00
+   rc=0 carlito	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== cherrycreamsoda (families-binary.tsv) 2026-10-23T00:18:05+01:00
+   rc=0 cherrycreamsoda	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== chewy (families-binary.tsv) 2026-10-23T00:18:27+01:00
+   rc=0 chewy	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== comingsoon (families-binary.tsv) 2026-10-23T00:18:47+01:00
+   rc=0 comingsoon	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== craftygirls (families-binary.tsv) 2026-10-23T00:19:08+01:00
+   rc=0 craftygirls	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== dohyeon (families-binary.tsv) 2026-10-23T00:19:35+01:00
+   rc=0 dohyeon	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== fontdinerswanky (families-binary.tsv) 2026-10-23T00:19:57+01:00
+   rc=0 fontdinerswanky	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== homemadeapple (families-binary.tsv) 2026-10-23T00:20:18+01:00
+   rc=0 homemadeapple	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== jua (families-binary.tsv) 2026-10-23T00:21:26+01:00
+   rc=0 jua	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== kranky (families-binary.tsv) 2026-10-23T00:21:54+01:00
+   rc=0 kranky	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== oranienbaum (families-binary.tsv) 2026-10-23T00:23:13+01:00
+   rc=0 oranienbaum	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== permanentmarker (families-binary.tsv) 2026-10-23T00:23:34+01:00
+   rc=0 permanentmarker	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== portersansblock (families-binary.tsv) 2026-10-23T00:24:05+01:00
+   rc=0 portersansblock	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== ptsans (families-binary.tsv) 2026-10-23T00:24:37+01:00
+   rc=0 ptsans	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== ptsanscaption (families-binary.tsv) 2026-10-23T00:26:42+01:00
+   rc=0 ptsanscaption	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== ptsansnarrow (families-binary.tsv) 2026-10-23T00:27:34+01:00
+   rc=0 ptsansnarrow	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== ptserif (families-binary.tsv) 2026-10-23T00:28:22+01:00
+   rc=0 ptserif	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== ptserifcaption (families-binary.tsv) 2026-10-23T00:31:04+01:00
+   rc=0 ptserifcaption	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== reeniebeanie (families-binary.tsv) 2026-10-23T00:32:12+01:00
+   rc=0 reeniebeanie	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== rocksalt (families-binary.tsv) 2026-10-23T00:32:36+01:00
+   rc=0 rocksalt	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== sansation (families-binary.tsv) 2026-10-23T00:33:40+01:00
+   rc=1 sansation	RESIDUAL
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== schoolbell (families-binary.tsv) 2026-10-23T00:36:07+01:00
+   rc=0 schoolbell	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== slackey (families-binary.tsv) 2026-10-23T00:36:38+01:00
+   rc=0 slackey	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== sunshiney (families-binary.tsv) 2026-10-23T00:37:07+01:00
+   rc=0 sunshiney	CLEAN
+shared_from_host  1.8T  1.7T   41G  98% /home/fsanches/compartilhado
+== unkempt (families-binary.tsv) 2026-10-23T00:38:37+01:00
+   rc=0 unkempt	CLEAN
+shared_from_host  1.8T  1.7T   40G  98% /home/fsanches/compartilhado
+== walterturncoat (families-binary.tsv) 2026-10-23T00:41:41+01:00
+   rc=0 walterturncoat	CLEAN
+shared_from_host  1.8T  1.7T   40G  98% /home/fsanches/compartilhado
+== yeonsung (families-binary.tsv) 2026-10-23T00:42:57+01:00
+   rc=0 yeonsung	CLEAN
+shared_from_host  1.8T  1.7T   40G  98% /home/fsanches/compartilhado
+done 2026-10-23T00:43:48+01:00

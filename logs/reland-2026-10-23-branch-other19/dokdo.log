@@ -1,0 +1,12 @@
+dokdo: RESIDUAL @ 27c5fea, 3 commits, 0 edit(s): Dokdo-Regular=0 functional=FAIL(names)
+     cmap         PASS 2599 codepoints, exact
+     shaping      PASS 875591 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x412): release '독도', build None
+         - name ID 2 (3,1,0x412): release 'Regular', build None
+         - name ID 4 (3,1,0x412): release '독도 Regular', build None
+         - ... 5 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2600 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

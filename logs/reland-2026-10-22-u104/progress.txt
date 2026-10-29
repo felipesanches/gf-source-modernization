@@ -1,0 +1,49 @@
+== comicrelief (families.tsv) 2026-10-22T20:54:05+01:00
+   rc=1 comicrelief	RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== monoton (families.tsv) 2026-10-22T20:54:47+01:00
+   rc=1 monoton	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== patrickhand (families.tsv) 2026-10-22T20:55:09+01:00
+   rc=1 patrickhand	RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== smythe (families.tsv) 2026-10-22T20:55:31+01:00
+   rc=1 smythe	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== tuffy (families.tsv) 2026-10-22T20:55:51+01:00
+   rc=1 tuffy	RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== unifrakturcook (families.tsv) 2026-10-22T20:57:24+01:00
+   rc=1 unifrakturcook	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== kottaone (families-next.tsv) 2026-10-22T20:57:41+01:00
+   rc=1 kottaone	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== lustria (families-next.tsv) 2026-10-22T20:57:54+01:00
+   rc=1 lustria	RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== macondo (families-next.tsv) 2026-10-22T20:58:09+01:00
+   rc=1 macondo	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== oleoscript (families-next.tsv) 2026-10-22T20:58:23+01:00
+   rc=1 oleoscript	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== oleoscriptswashcaps (families-next.tsv) 2026-10-22T20:58:48+01:00
+   rc=1 oleoscriptswashcaps	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== passionone (families-next.tsv) 2026-10-22T20:59:14+01:00
+   rc=1 passionone	RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== poly (families-next.tsv) 2026-10-22T20:59:48+01:00
+   rc=1 poly	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== ruluko (families-next.tsv) 2026-10-22T21:00:20+01:00
+   rc=1 ruluko	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== salsa (families-next.tsv) 2026-10-22T21:00:35+01:00
+   rc=1 salsa	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== titanone (families-next.tsv) 2026-10-22T21:00:56+01:00
+   rc=1 titanone	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+done 2026-10-22T21:01:18+01:00

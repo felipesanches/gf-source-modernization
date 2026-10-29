@@ -1,0 +1,58 @@
+== averialibre (families-binary.tsv) 2026-10-23T03:56:02+01:00
+   rc=1 averialibre	RESIDUAL
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== averiasanslibre (families-binary.tsv) 2026-10-23T03:58:21+01:00
+   rc=1 averiasanslibre	RESIDUAL
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== averiaseriflibre (families-binary.tsv) 2026-10-23T04:00:25+01:00
+   rc=1 averiaseriflibre	RESIDUAL
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== blackandwhitepicture (families-binary.tsv) 2026-10-23T04:02:27+01:00
+   rc=0 blackandwhitepicture	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== blackhansans (families-binary.tsv) 2026-10-23T04:09:10+01:00
+   rc=0 blackhansans	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== cutefont (families-binary.tsv) 2026-10-23T04:09:30+01:00
+   rc=0 cutefont	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== dokdo (families-binary.tsv) 2026-10-23T04:09:53+01:00
+   rc=0 dokdo	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== eastseadokdo (families-binary.tsv) 2026-10-23T04:10:32+01:00
+   rc=0 eastseadokdo	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== gamjaflower (families-binary.tsv) 2026-10-23T04:11:54+01:00
+   rc=0 gamjaflower	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== gugi (families-binary.tsv) 2026-10-23T04:16:04+01:00
+   rc=0 gugi	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== himelody (families-binary.tsv) 2026-10-23T04:16:31+01:00
+   rc=0 himelody	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== lato (families-binary.tsv) 2026-10-23T04:21:23+01:00
+   rc=0 lato	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== nanumbrushscript (families-binary.tsv) 2026-10-23T04:44:56+01:00
+   rc=0 nanumbrushscript	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== nanumgothic (families-binary.tsv) 2026-10-23T04:49:11+01:00
+   rc=0 nanumgothic	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== nanumpenscript (families-binary.tsv) 2026-10-23T05:01:16+01:00
+   rc=0 nanumpenscript	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== poorstory (families-binary.tsv) 2026-10-23T05:06:38+01:00
+   rc=0 poorstory	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== songmyung (families-binary.tsv) 2026-10-23T05:10:15+01:00
+   rc=0 songmyung	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== stylish (families-binary.tsv) 2026-10-23T05:10:47+01:00
+   rc=0 stylish	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+== sunflower (families-binary.tsv) 2026-10-23T05:15:50+01:00
+   rc=0 sunflower	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+done 2026-10-23T05:17:03+01:00

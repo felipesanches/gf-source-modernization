@@ -1,0 +1,12 @@
+eastseadokdo: RESIDUAL @ 749dad8, 3 commits, 0 edit(s): EastSeaDokdo-Regular=0 functional=FAIL(names)
+     cmap         PASS 3098 codepoints, exact
+     shaping      PASS 988510 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 14 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x412): release '대한민국독도', build None
+         - name ID 2 (3,1,0x412): release 'Regular', build None
+         - name ID 4 (3,1,0x412): release 'Daehan Minguk Dokdo Regular', build None
+         - ... 5 more
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 3099 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

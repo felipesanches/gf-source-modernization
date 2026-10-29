@@ -1,0 +1,10 @@
+nanumgothic: RESIDUAL @ f58e626, 3 commits, 0 edit(s): NanumGothic-Bold=0 functional=PASS; NanumGothic-ExtraBold=0 functional=FAIL(names); NanumGothic-Regular=0 functional=PASS
+     cmap         PASS 11826 codepoints, exact
+     shaping      PASS 2597451 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x412) as read: release '나눔고딕', build '나눔고딕 ExtraBold'
+         - name ID 21 (3,1,0x412) as read: release '나눔고딕', build '나눔고딕 ExtraBold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 13670 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

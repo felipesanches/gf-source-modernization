@@ -1,0 +1,19 @@
+averiasanslibre: RESIDUAL @ 617ea99, 3 commits, 0 edit(s): AveriaSansLibre-Bold=3 functional=PASS; AveriaSansLibre-BoldItalic=3 functional=PASS; AveriaSansLibre-Italic=3 functional=PASS; AveriaSansLibre-Light=3 functional=PASS; AveriaSansLibre-LightItalic=3 functional=PASS; AveriaSansLibre-Regular=3 functional=PASS
+   AveriaSansLibre-Bold BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   AveriaSansLibre-Bold BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+   AveriaSansLibre-Bold BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "uni0020": {"uni0041": {"x": -4}, "uni0054": {"x"
+   AveriaSansLibre-BoldItalic BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   AveriaSansLibre-BoldItalic BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+   AveriaSansLibre-BoldItalic BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "uni0020": {"uni0041": {"x": -4}, "uni0056": {"x"
+   AveriaSansLibre-Italic BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   AveriaSansLibre-Italic BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+   AveriaSansLibre-Italic BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "uni0020": {"uni0056": {"x": -4}}, "uni0021": {"u
+   AveriaSansLibre-Light BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   AveriaSansLibre-Light BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+   AveriaSansLibre-Light BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "uni0020": {"uni0054": {"x": -4}, "uni0056": {"x"
+   AveriaSansLibre-LightItalic BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   AveriaSansLibre-LightItalic BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+   AveriaSansLibre-LightItalic BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "uni0021": {"uni0043": {"x": 4}, "uni0047": {"x":
+   AveriaSansLibre-Regular BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   AveriaSansLibre-Regular BLOCKING GPOS.feature_list [null, {"kern": [0, 1]}]
+   AveriaSansLibre-Regular BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "uni0020": {"uni0054": {"x": -4}, "uni0056": {"x"

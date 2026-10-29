@@ -1,0 +1,127 @@
+lato: RESIDUAL @ 8e0d468, 3 commits, 0 edit(s): Lato-Black=0 functional=FAIL(names); Lato-BlackItalic=0 functional=FAIL(names); Lato-Bold=0 functional=PASS; Lato-BoldItalic=0 functional=PASS; Lato-ExtraBold=0 functional=FAIL(names); Lato-ExtraBoldItalic=0 functional=FAIL(names); Lato-ExtraLight=0 functional=FAIL(names); Lato-ExtraLightItalic=0 functional=FAIL(names); Lato-Italic=0 functional=PASS; Lato-Light=0 functional=FAIL(names); Lato-LightItalic=0 functional=FAIL(names); Lato-Medium=0 functional=FAIL(names); Lato-MediumItalic=0 functional=FAIL(names); Lato-Regular=0 functional=PASS; Lato-SemiBold=0 functional=FAIL(names); Lato-SemiBoldItalic=0 functional=FAIL(names); Lato-Thin=0 functional=FAIL(names); Lato-ThinItalic=0 functional=FAIL(names)
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5062576 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato Black'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato Black'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2569 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 752 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5100228 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato Black'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato Black'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2564 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 747 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 4966773 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato ExtraBold'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato ExtraBold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2570 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 753 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5013496 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato ExtraBold'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato ExtraBold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2557 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 740 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5060242 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato ExtraLight'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato ExtraLight'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2564 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 747 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5079082 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato ExtraLight'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato ExtraLight'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2557 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 740 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5063287 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato Light'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato Light'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2559 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 742 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5091906 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato Light'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato Light'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2560 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 743 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5063302 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato Medium'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato Medium'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2569 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 752 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5089365 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato Medium'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato Medium'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2565 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 748 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5063293 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato SemiBold'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato SemiBold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2559 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 742 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5101782 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato SemiBold'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato SemiBold'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2556 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 739 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5000258 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato Thin'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato Thin'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2564 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 747 it does not
+     cmap         PASS 2164 codepoints, exact
+     shaping      PASS 5009062 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 16 (3,1,0x409) as read: release 'Lato', build 'Lato Thin'
+         - name ID 21 (3,1,0x409) as read: release 'Lato', build 'Lato Thin'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 2555 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 738 it does not

@@ -1,0 +1,5 @@
+'kern' subtable longer than defined: 161408 bytes instead of 30336 bytes
+'kern' subtable longer than defined: 144314 bytes instead of 13242 bytes
+'kern' subtable longer than defined: 146228 bytes instead of 15156 bytes
+'kern' subtable longer than defined: 144194 bytes instead of 13122 bytes
+ptsans: CLEAN-UNPUBLISHED-CONVERTER @ ddc57c4, 3 commits, 0 edit(s): PT_Sans-Web-Bold=0 functional=PASS; PT_Sans-Web-BoldItalic=0 functional=PASS; PT_Sans-Web-Italic=0 functional=PASS; PT_Sans-Web-Regular=0 functional=PASS

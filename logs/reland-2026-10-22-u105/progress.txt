@@ -1,0 +1,7 @@
+== italiana (families-next.tsv) 2026-10-22T21:01:18+01:00
+   rc=1 italiana	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+== sanchez (families-next.tsv) 2026-10-22T21:01:39+01:00
+   rc=1 sanchez	CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.6T   49G  98% /home/fsanches/compartilhado
+done 2026-10-22T21:02:28+01:00

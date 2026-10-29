@@ -1,0 +1,4 @@
+== nanumgothic (families-binary.tsv) 2026-10-24T05:44:48+01:00
+   rc=0 nanumgothic	CLEAN
+shared_from_host  1.8T  1.7T   29G  99% /home/fsanches/compartilhado
+done 2026-10-24T05:52:25+01:00
