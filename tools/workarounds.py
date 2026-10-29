@@ -68,6 +68,27 @@ def width_class_fea(glyphs_text, wc):
     return os2_statement_fea(glyphs_text, "WidthClass", wc)
 
 
+def instance_classes_fea(glyphs_path):
+    """The weight and width classes the converted .glyphs states on its (single)
+    instance, restated as FEA for fontc 1.0.0 (../issues/fontc-static-weight-class.md).
+    Edits the file in place; -> the notes for the commit message."""
+    text = open(glyphs_path, encoding="utf-8").read()
+    notes = []
+    for key, default, fea, field in (("weightClass", 400, weight_class_fea, "usWeightClass"),
+                                     ("widthClass", 5, width_class_fea, "usWidthClass")):
+        values = sorted({int(v) for v in re.findall(r"(?m)^%s = (\d+);$" % key, text)})
+        if len(values) != 1 or values[0] == default:
+            continue
+        changed = fea(text, values[0])
+        if changed != text:
+            text = changed
+            notes.append("%s %d (the instance's %s) as FEA; fontc 1.0.0 drops a single "
+                         "master's instance %s" % (field, values[0], key, key))
+    if notes:
+        open(glyphs_path, "w", encoding="utf-8").write(text)
+    return notes
+
+
 def os2_statement_fea(glyphs_text, keyword, value):
     t = glyphs_text
     m = re.search(r'code = "table OS/2 \{\n', t)

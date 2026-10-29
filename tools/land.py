@@ -592,7 +592,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         flags = [x for x in flags if x not in recipe.NOT_YET_UPSTREAM or converter_knows(x)]
         g = os.path.join(d, "sources", r["style"] + ".glyphs")
         sh(BF, src, g, *flags)
-        per_style.append({"row": r, "flags": flags, "notes": [], "glyphs": g})
+        # the weight and width classes the .vfb states travel as FEA, as a binary's do
+        notes = workarounds.instance_classes_fea(g)
+        per_style.append({"row": r, "flags": flags, "notes": notes, "glyphs": g})
     for r in [] if glyphs or binary or vfb else rows:
         src = os.path.join(d, r["source"])
         text = open(src, encoding="utf-8", errors="replace").read()
