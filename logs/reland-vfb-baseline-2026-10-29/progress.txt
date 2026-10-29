@@ -1,0 +1,406 @@
+== aclonica (families-vfb.tsv) 2026-10-29T01:35:40+00:00
+   rc=1 aclonica	RESIDUAL
+shared_from_host  1.8T  1.7T   22G  99% /home/fsanches/compartilhado
+== actor (families-vfb.tsv) 2026-10-29T01:36:05+00:00
+   rc=1 actor	RESIDUAL
+shared_from_host  1.8T  1.7T   22G  99% /home/fsanches/compartilhado
+== aldrich (families-vfb.tsv) 2026-10-29T01:36:22+00:00
+   rc=1 aldrich	RESIDUAL
+shared_from_host  1.8T  1.7T   22G  99% /home/fsanches/compartilhado
+== alfaslabone (families-vfb.tsv) 2026-10-29T01:36:40+00:00
+   rc=1 alfaslabone	RESIDUAL
+shared_from_host  1.8T  1.7T   23G  99% /home/fsanches/compartilhado
+== annieuseyourtelescope (families-vfb.tsv) 2026-10-29T01:37:01+00:00
+   rc=1 annieuseyourtelescope	RESIDUAL
+shared_from_host  1.8T  1.7T   23G  99% /home/fsanches/compartilhado
+== atomicage (families-vfb.tsv) 2026-10-29T01:37:25+00:00
+   rc=1 atomicage	RESIDUAL
+shared_from_host  1.8T  1.7T   23G  99% /home/fsanches/compartilhado
+== audiowide (families-vfb.tsv) 2026-10-29T01:38:07+00:00
+   rc=1 audiowide	RESIDUAL
+shared_from_host  1.8T  1.7T   23G  99% /home/fsanches/compartilhado
+== baumans (families-vfb.tsv) 2026-10-29T01:38:44+00:00
+   rc=1 baumans	RESIDUAL
+shared_from_host  1.8T  1.7T   22G  99% /home/fsanches/compartilhado
+== berkshireswash (families-vfb.tsv) 2026-10-29T01:39:09+00:00
+   rc=1 berkshireswash	RESIDUAL
+shared_from_host  1.8T  1.7T   22G  99% /home/fsanches/compartilhado
+== bigelowrules (families-vfb.tsv) 2026-10-29T01:39:51+00:00
+   rc=1 bigelowrules	RESIDUAL
+shared_from_host  1.8T  1.7T   21G  99% /home/fsanches/compartilhado
+== butterflykids (families-vfb.tsv) 2026-10-29T01:40:25+00:00
+   rc=1 butterflykids	RESIDUAL
+shared_from_host  1.8T  1.7T   21G  99% /home/fsanches/compartilhado
+== caesardressing (families-vfb.tsv) 2026-10-29T01:42:23+00:00
+   rc=1 caesardressing	RESIDUAL
+shared_from_host  1.8T  1.7T   19G  99% /home/fsanches/compartilhado
+== cantoraone (families-vfb.tsv) 2026-10-29T01:43:33+00:00
+   rc=1 cantoraone	RESIDUAL
+shared_from_host  1.8T  1.7T   19G  99% /home/fsanches/compartilhado
+== carroisgothic (families-vfb.tsv) 2026-10-29T01:44:02+00:00
+   rc=1 carroisgothic	RESIDUAL
+shared_from_host  1.8T  1.7T   19G  99% /home/fsanches/compartilhado
+== carroisgothicsc (families-vfb.tsv) 2026-10-29T01:44:33+00:00
+   rc=1 carroisgothicsc	RESIDUAL
+shared_from_host  1.8T  1.7T   19G  99% /home/fsanches/compartilhado
+== cedarvillecursive (families-vfb.tsv) 2026-10-29T01:44:58+00:00
+   rc=1 cedarvillecursive	RESIDUAL
+shared_from_host  1.8T  1.7T   21G  99% /home/fsanches/compartilhado
+== chelseamarket (families-vfb.tsv) 2026-10-29T01:45:47+00:00
+   rc=1 chelseamarket	RESIDUAL
+shared_from_host  1.8T  1.7T   21G  99% /home/fsanches/compartilhado
+== clickerscript (families-vfb.tsv) 2026-10-29T01:48:06+00:00
+   rc=1 clickerscript	RESIDUAL
+shared_from_host  1.8T  1.7T   20G  99% /home/fsanches/compartilhado
+== combo (families-vfb.tsv) 2026-10-29T01:49:01+00:00
+   rc=1 combo	RESIDUAL
+shared_from_host  1.8T  1.7T   20G  99% /home/fsanches/compartilhado
+== crushed (families-vfb.tsv) 2026-10-29T01:49:47+00:00
+   rc=1 crushed	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== dynalight (families-vfb.tsv) 2026-10-29T01:50:33+00:00
+   rc=1 dynalight	RESIDUAL
+shared_from_host  1.8T  1.7T   20G  99% /home/fsanches/compartilhado
+== eaglelake (families-vfb.tsv) 2026-10-29T01:51:36+00:00
+   rc=1 eaglelake	RESIDUAL-UNCOMMITTED-EVIDENCE
+shared_from_host  1.8T  1.7T   20G  99% /home/fsanches/compartilhado
+== electrolize (families-vfb.tsv) 2026-10-29T01:52:41+00:00
+   rc=1 electrolize	RESIDUAL
+shared_from_host  1.8T  1.7T   20G  99% /home/fsanches/compartilhado
+== emilyscandy (families-vfb.tsv) 2026-10-29T01:53:17+00:00
+   rc=1 emilyscandy	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== engagement (families-vfb.tsv) 2026-10-29T01:56:24+00:00
+   rc=1 engagement	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== fascinate (families-vfb.tsv) 2026-10-29T01:57:30+00:00
+   rc=1 fascinate	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== fascinateinline (families-vfb.tsv) 2026-10-29T01:58:13+00:00
+   rc=1 fascinateinline	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== fingerpaint (families-vfb.tsv) 2026-10-29T01:59:07+00:00
+   rc=1 fingerpaint	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== flavors (families-vfb.tsv) 2026-10-29T02:00:50+00:00
+   rc=1 flavors	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== fondamento (families-vfb.tsv) 2026-10-29T02:03:40+00:00
+   rc=1 fondamento	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== forum (families-vfb.tsv) 2026-10-29T02:05:18+00:00
+   rc=1 forum	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== freckleface (families-vfb.tsv) 2026-10-29T02:05:58+00:00
+   rc=1 freckleface	RESIDUAL
+shared_from_host  1.8T  1.7T   19G  99% /home/fsanches/compartilhado
+== frederickathegreat (families-vfb.tsv) 2026-10-29T02:07:25+00:00
+   rc=1 frederickathegreat	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== frijole (families-vfb.tsv) 2026-10-29T02:10:53+00:00
+   rc=1 frijole	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== galindo (families-vfb.tsv) 2026-10-29T02:12:49+00:00
+   rc=1 galindo	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== gloriahallelujah (families-vfb.tsv) 2026-10-29T02:13:16+00:00
+   rc=1 gloriahallelujah	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== gorditas (families-vfb.tsv) 2026-10-29T02:13:35+00:00
+   rc=1 gorditas	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== gotu (families-vfb.tsv) 2026-10-29T02:14:16+00:00
+   rc=1 gotu	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== grandhotel (families-vfb.tsv) 2026-10-29T02:14:20+00:00
+   rc=1 grandhotel	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== griffy (families-vfb.tsv) 2026-10-29T02:14:54+00:00
+   rc=1 griffy	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== hanalei (families-vfb.tsv) 2026-10-29T02:17:15+00:00
+   rc=1 hanalei	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== hanaleifill (families-vfb.tsv) 2026-10-29T02:18:58+00:00
+   rc=1 hanaleifill	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== happymonkey (families-vfb.tsv) 2026-10-29T02:19:50+00:00
+   rc=1 happymonkey	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== hennypenny (families-vfb.tsv) 2026-10-29T02:20:07+00:00
+   rc=1 hennypenny	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== hermeneusone (families-vfb.tsv) 2026-10-29T02:20:45+00:00
+   rc=1 hermeneusone	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== irishgrover (families-vfb.tsv) 2026-10-29T02:21:05+00:00
+   rc=1 irishgrover	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== jimnightshade (families-vfb.tsv) 2026-10-29T02:21:29+00:00
+   rc=1 jimnightshade	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== jollylodger (families-vfb.tsv) 2026-10-29T02:22:45+00:00
+   rc=1 jollylodger	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== junge (families-vfb.tsv) 2026-10-29T02:23:08+00:00
+   rc=1 junge	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== justanotherhand (families-vfb.tsv) 2026-10-29T02:23:24+00:00
+   rc=1 justanotherhand	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== kaushanscript (families-vfb.tsv) 2026-10-29T02:23:57+00:00
+   rc=1 kaushanscript	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== kenia (families-vfb.tsv) 2026-10-29T02:24:25+00:00
+   rc=1 kenia	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== labelleaurore (families-vfb.tsv) 2026-10-29T02:24:45+00:00
+   rc=1 labelleaurore	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== librecaslondisplay (families-vfb.tsv) 2026-10-29T02:25:06+00:00
+   rc=1 librecaslondisplay	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== lobstertwo (families-vfb.tsv) 2026-10-29T02:25:27+00:00
+   rc=1 lobstertwo	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== luckiestguy (families-vfb.tsv) 2026-10-29T02:27:09+00:00
+   rc=1 luckiestguy	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== maidenorange (families-vfb.tsv) 2026-10-29T02:27:32+00:00
+   rc=1 maidenorange	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== marcellus (families-vfb.tsv) 2026-10-29T02:28:02+00:00
+   rc=1 marcellus	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== marcellussc (families-vfb.tsv) 2026-10-29T02:28:30+00:00
+   rc=1 marcellussc	RESIDUAL
+shared_from_host  1.8T  1.7T   17G  99% /home/fsanches/compartilhado
+== margarine (families-vfb.tsv) 2026-10-29T02:28:51+00:00
+   rc=1 margarine	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== mclaren (families-vfb.tsv) 2026-10-29T02:30:08+00:00
+   rc=1 mclaren	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== mervalescript (families-vfb.tsv) 2026-10-29T02:30:30+00:00
+   rc=1 mervalescript	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== metalmania (families-vfb.tsv) 2026-10-29T02:31:03+00:00
+   rc=1 metalmania	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== milonga (families-vfb.tsv) 2026-10-29T02:32:31+00:00
+   rc=1 milonga	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== miltonian (families-vfb.tsv) 2026-10-29T02:33:02+00:00
+   rc=1 miltonian	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== miltoniantattoo (families-vfb.tsv) 2026-10-29T02:33:46+00:00
+   rc=1 miltoniantattoo	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== miniver (families-vfb.tsv) 2026-10-29T02:34:11+00:00
+   rc=1 miniver	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== modak (families-vfb.tsv) 2026-10-29T02:34:41+00:00
+   rc=1 miniver	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== montez (families-vfb.tsv) 2026-10-29T02:34:42+00:00
+   rc=1 montez	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== mousememoirs (families-vfb.tsv) 2026-10-29T02:35:07+00:00
+   rc=1 mousememoirs	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== mukta (families-vfb.tsv) 2026-10-29T02:35:28+00:00
+   rc=1 mukta	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== muktamahee (families-vfb.tsv) 2026-10-29T02:40:00+00:00
+   rc=1 muktamahee	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== muktamalar (families-vfb.tsv) 2026-10-29T02:43:21+00:00
+   rc=1 muktamalar	RESIDUAL
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+== muktavaani (families-vfb.tsv) 2026-10-29T02:47:09+00:00
+   rc=1 muktavaani	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== mysteryquest (families-vfb.tsv) 2026-10-29T02:51:12+00:00
+   rc=1 mysteryquest	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== neucha (families-vfb.tsv) 2026-10-29T02:51:38+00:00
+   rc=1 neucha	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== newrocker (families-vfb.tsv) 2026-10-29T02:51:56+00:00
+   rc=1 newrocker	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== oregano (families-vfb.tsv) 2026-10-29T02:52:23+00:00
+   rc=1 oregano	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== originalsurfer (families-vfb.tsv) 2026-10-29T02:53:32+00:00
+   rc=1 originalsurfer	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== parisienne (families-vfb.tsv) 2026-10-29T02:53:59+00:00
+   rc=1 parisienne	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== peralta (families-vfb.tsv) 2026-10-29T02:54:58+00:00
+   rc=1 peralta	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== petitformalscript (families-vfb.tsv) 2026-10-29T02:55:36+00:00
+   rc=1 petitformalscript	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== poetsenone (families-vfb.tsv) 2026-10-29T02:56:10+00:00
+   rc=1 poetsenone	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== princesssofia (families-vfb.tsv) 2026-10-29T02:56:37+00:00
+   rc=1 princesssofia	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== prostoone (families-vfb.tsv) 2026-10-29T02:58:14+00:00
+   rc=1 prostoone	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== prozalibre (families-vfb.tsv) 2026-10-29T02:58:55+00:00
+   rc=1 prozalibre	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== purplepurse (families-vfb.tsv) 2026-10-29T02:59:02+00:00
+   rc=1 purplepurse	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== quattrocento (families-vfb.tsv) 2026-10-29T02:59:36+00:00
+   rc=1 quattrocento	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== quattrocentosans (families-vfb.tsv) 2026-10-29T03:00:38+00:00
+   rc=1 quattrocentosans	RESIDUAL
+shared_from_host  1.8T  1.7T   16G 100% /home/fsanches/compartilhado
+== quintessential (families-vfb.tsv) 2026-10-29T03:01:45+00:00
+   rc=1 quintessential	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== racingsansone (families-vfb.tsv) 2026-10-29T03:02:25+00:00
+   rc=1 racingsansone	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== ralewaydots (families-vfb.tsv) 2026-10-29T03:02:46+00:00
+   rc=1 ralewaydots	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== ranchers (families-vfb.tsv) 2026-10-29T03:04:22+00:00
+   rc=1 ranchers	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== rancho (families-vfb.tsv) 2026-10-29T03:04:42+00:00
+   rc=1 rancho	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== redressed (families-vfb.tsv) 2026-10-29T03:05:04+00:00
+   rc=1 redressed	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== ribeye (families-vfb.tsv) 2026-10-29T03:05:31+00:00
+   rc=1 ribeye	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== righteous (families-vfb.tsv) 2026-10-29T03:06:03+00:00
+   rc=1 righteous	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== risque (families-vfb.tsv) 2026-10-29T03:06:21+00:00
+   rc=1 risque	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== romanesco (families-vfb.tsv) 2026-10-29T03:06:42+00:00
+   rc=1 romanesco	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== rumraisin (families-vfb.tsv) 2026-10-29T03:07:09+00:00
+   rc=1 rumraisin	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== sansitaone (families-vfb.tsv) 2026-10-29T03:07:33+00:00
+   rc=1 sansitaone	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== satisfy (families-vfb.tsv) 2026-10-29T03:07:52+00:00
+   rc=1 satisfy	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== seaweedscript (families-vfb.tsv) 2026-10-29T03:08:19+00:00
+   rc=1 seaweedscript	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== sevillana (families-vfb.tsv) 2026-10-29T03:09:20+00:00
+   rc=1 sevillana	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== shadowsintolight (families-vfb.tsv) 2026-10-29T03:09:47+00:00
+   rc=1 shadowsintolight	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== shadowsintolighttwo (families-vfb.tsv) 2026-10-29T03:10:08+00:00
+   rc=1 shadowsintolighttwo	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== share (families-vfb.tsv) 2026-10-29T03:10:30+00:00
+   rc=1 share	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== sharetechmono (families-vfb.tsv) 2026-10-29T03:11:57+00:00
+   rc=1 sharetechmono	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== shojumaru (families-vfb.tsv) 2026-10-29T03:12:15+00:00
+   rc=1 shojumaru	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== simonetta (families-vfb.tsv) 2026-10-29T03:12:45+00:00
+   rc=1 simonetta	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== skranji (families-vfb.tsv) 2026-10-29T03:14:00+00:00
+   rc=1 skranji	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== sofadione (families-vfb.tsv) 2026-10-29T03:16:41+00:00
+   rc=1 sofadione	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== sofia (families-vfb.tsv) 2026-10-29T03:17:01+00:00
+   rc=1 sofia	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== specialelite (families-vfb.tsv) 2026-10-29T03:17:18+00:00
+   rc=1 specialelite	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== spicyrice (families-vfb.tsv) 2026-10-29T03:18:26+00:00
+   rc=1 spicyrice	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== stalemate (families-vfb.tsv) 2026-10-29T03:18:50+00:00
+   rc=1 stalemate	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== stalinistone (families-vfb.tsv) 2026-10-29T03:19:18+00:00
+   rc=1 stalinistone	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== stardosstencil (families-vfb.tsv) 2026-10-29T03:19:35+00:00
+   rc=1 stalinistone	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== stintultracondensed (families-vfb.tsv) 2026-10-29T03:19:37+00:00
+   rc=1 stintultracondensed	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== stintultraexpanded (families-vfb.tsv) 2026-10-29T03:19:59+00:00
+   rc=1 stintultraexpanded	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== strong (families-vfb.tsv) 2026-10-29T03:20:20+00:00
+   rc=1 strong	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== sueellenfrancisco (families-vfb.tsv) 2026-10-29T03:20:37+00:00
+   rc=1 sueellenfrancisco	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== syncopate (families-vfb.tsv) 2026-10-29T03:20:52+00:00
+   rc=1 syncopate	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== taiheritagepro (families-vfb.tsv) 2026-10-29T03:21:28+00:00
+   rc=1 taiheritagepro	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== telex (families-vfb.tsv) 2026-10-29T03:22:12+00:00
+   rc=1 telex	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== tenorsans (families-vfb.tsv) 2026-10-29T03:22:26+00:00
+   rc=1 tenorsans	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== tradewinds (families-vfb.tsv) 2026-10-29T03:22:46+00:00
+   rc=1 tradewinds	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== ubuntu (families-vfb.tsv) 2026-10-29T03:23:25+00:00
+   rc=1 tradewinds	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== uncialantiqua (families-vfb.tsv) 2026-10-29T03:23:29+00:00
+   rc=1 uncialantiqua	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== underdog (families-vfb.tsv) 2026-10-29T03:23:51+00:00
+   rc=1 underdog	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== vibur (families-vfb.tsv) 2026-10-29T03:24:11+00:00
+   rc=1 vibur	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== volkhov (families-vfb.tsv) 2026-10-29T03:24:31+00:00
+   rc=1 volkhov	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== waitingforthesunrise (families-vfb.tsv) 2026-10-29T03:25:33+00:00
+   rc=1 waitingforthesunrise	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== yesteryear (families-vfb.tsv) 2026-10-29T03:25:53+00:00
+   rc=1 yesteryear	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== zeyada (families-vfb.tsv) 2026-10-29T03:26:22+00:00
+   rc=1 zeyada	RESIDUAL
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+done 2026-10-29T03:26:50+00:00

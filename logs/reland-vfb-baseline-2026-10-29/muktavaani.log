@@ -1,0 +1,204 @@
+muktavaani: RESIDUAL @ e52ddc6, 92 commits, 0 edit(s): MuktaVaani-Bold=92 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaVaani-ExtraBold=92 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaVaani-ExtraLight=88 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaVaani-Light=92 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaVaani-Medium=92 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaVaani-Regular=89 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaVaani-SemiBold=92 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef)
+   MuktaVaani-Bold BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   MuktaVaani-Bold BLOCKING GDEF.mark_attach_classes [{"Bindu.gj": 1, "MatraI.gj": 1, "Reph.gj": 1, "RephBindu.gj": 1, "MatraI1.gj":
+   MuktaVaani-Bold BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 6, 12, 18]}, "gjr2/dflt": {"lookups": [1, 7, 13,
+   MuktaVaani-Bold BLOCKING GPOS.feature_list [{"abvm": [3, 4, 5, 6], "blwm": [7, 8, 9, 10, 11], "dist": [2], "kern": [0, 1]},
+   MuktaVaani-Bold BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "percent": {"zero": {"x
+   MuktaVaani-Bold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [10, 16, 22, 30, 36, 42, 55, 61, 67, 73, 79, 85]}, "g
+     cmap         FAIL 570 codepoints, 1 problem(s)
+         - build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+     shaping      FAIL 1440423 runs shaped, 637404 differ
+         - default features, pairs: 18077 of 164539 runs differ
+         - default features, base+mark: 404 of 2040 runs differ
+         - default features, base+mark+mark: 172 of 1600 runs differ
+         - ... 31 more
+     rendering    FAIL diffenator3 51 glyph / 2056 word diffs (0 / 2025 confirmed); 0 of 1122 changed outlines draw different ink
+         - diffenator3: 2025 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 656px, '0123456789,,,sinf' 573px, '1/234,latn,dflt,frac' 554px, '0,,,zero' 117px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમર્શઃ' 1783px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta Vaani', build 'MuktaVaani-Bold'
+         - name ID 2 (3,1,0x409): release 'Bold', build ''
+         - name ID 6 (3,1,0x409): release 'MuktaVaani-Bold', build 'MuktaVaani-Bold-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 285, build 300
+         - post.underlinePosition: release -123, build -100
+         - fsSelection: BOLD lost, REGULAR gained
+         - ... 3 more
+     advances     PASS 1299 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 1030 class difference(s) shaping reads, 152 it does not
+         - 1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abreve 1/0, Acircumflex 1/0, Adieresis 1/0, Agrave 1/0, Amacron 1/0, Aogonek 1/0, Aring 1/0, Asmall 1/0, Atilde 1/0, Avagraha.gj 1/0
+         - mark attachment classes differ
+   MuktaVaani-ExtraBold BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   MuktaVaani-ExtraBold BLOCKING GDEF.mark_attach_classes [{"Bindu.gj": 1, "MatraI.gj": 1, "Reph.gj": 1, "RephBindu.gj": 1, "MatraI1.gj":
+   MuktaVaani-ExtraBold BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 6, 12, 18]}, "gjr2/dflt": {"lookups": [1, 7, 13,
+   MuktaVaani-ExtraBold BLOCKING GPOS.feature_list [{"abvm": [3, 4, 5, 6], "blwm": [7, 8, 9, 10, 11], "dist": [2], "kern": [0, 1]},
+   MuktaVaani-ExtraBold BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "numbersign": {"five":
+   MuktaVaani-ExtraBold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [10, 16, 22, 30, 36, 42, 55, 61, 67, 73, 79, 85]}, "g
+     cmap         FAIL 570 codepoints, 1 problem(s)
+         - build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+     shaping      FAIL 1442639 runs shaped, 633179 differ
+         - default features, pairs: 17698 of 164539 runs differ
+         - default features, base+mark: 348 of 2040 runs differ
+         - default features, base+mark+mark: 172 of 1600 runs differ
+         - ... 31 more
+     rendering    FAIL diffenator3 41 glyph / 1826 word diffs (0 / 1792 confirmed); 0 of 1143 changed outlines draw different ink
+         - diffenator3: 1792 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 600px, '1/234,latn,dflt,frac' 547px, '0123456789,,,sinf' 539px, '0,,,zero' 113px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમર્શઃ' 1852px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta Vaani ExtraBold', build 'MuktaVaani-ExtraBold'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'MuktaVaani-ExtraBold', build 'MuktaVaani-ExtraBold-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 288, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 480, build 500
+         - ... 1 more
+     advances     PASS 1299 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 1030 class difference(s) shaping reads, 152 it does not
+         - 1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abreve 1/0, Acircumflex 1/0, Adieresis 1/0, Agrave 1/0, Amacron 1/0, Aogonek 1/0, Aring 1/0, Asmall 1/0, Atilde 1/0, Avagraha.gj 1/0
+         - mark attachment classes differ
+   MuktaVaani-ExtraLight BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   MuktaVaani-ExtraLight BLOCKING GDEF.mark_attach_classes [{"Bindu.gj": 1, "MatraI.gj": 1, "Reph.gj": 1, "RephBindu.gj": 1, "MatraI1.gj":
+   MuktaVaani-ExtraLight BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 6, 12, 18]}, "gjr2/dflt": {"lookups": [1, 7, 13,
+   MuktaVaani-ExtraLight BLOCKING GPOS.feature_list [{"abvm": [3, 4, 5, 6], "blwm": [7, 8, 9, 10, 11], "dist": [2], "kern": [0, 1]},
+   MuktaVaani-ExtraLight BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -27}}, "numbersign": {"six": {
+   MuktaVaani-ExtraLight BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [10, 16, 22, 30, 36, 42, 55, 61, 67, 73, 79, 85]}, "g
+     cmap         FAIL 570 codepoints, 1 problem(s)
+         - build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+     shaping      FAIL 1468285 runs shaped, 619653 differ
+         - default features, pairs: 19033 of 169987 runs differ
+         - default features, base+mark: 345 of 2040 runs differ
+         - default features, base+mark+mark: 172 of 1600 runs differ
+         - ... 31 more
+     rendering    FAIL diffenator3 65 glyph / 1701 word diffs (0 / 1655 confirmed); 0 of 1117 changed outlines draw different ink
+         - diffenator3: 1655 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 539px, '0123456789,,,sinf' 459px, '1/234,latn,dflt,frac' 345px, '0,,,zero' 106px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમર્શઃ' 1211px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta Vaani ExtraLight', build 'MuktaVaani-ExtraLight'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'MuktaVaani-ExtraLight', build 'MuktaVaani-ExtraLight-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 280, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 468, build 500
+         - ... 1 more
+     advances     PASS 1299 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 1030 class difference(s) shaping reads, 152 it does not
+         - 1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abreve 1/0, Acircumflex 1/0, Adieresis 1/0, Agrave 1/0, Amacron 1/0, Aogonek 1/0, Aring 1/0, Asmall 1/0, Atilde 1/0, Avagraha.gj 1/0
+         - mark attachment classes differ
+   MuktaVaani-Light BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   MuktaVaani-Light BLOCKING GDEF.mark_attach_classes [{"Bindu.gj": 1, "MatraI.gj": 1, "Reph.gj": 1, "RephBindu.gj": 1, "MatraI1.gj":
+   MuktaVaani-Light BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 6, 12, 18]}, "gjr2/dflt": {"lookups": [1, 7, 13,
+   MuktaVaani-Light BLOCKING GPOS.feature_list [{"abvm": [3, 4, 5, 6], "blwm": [7, 8, 9, 10, 11], "dist": [2], "kern": [0, 1]},
+   MuktaVaani-Light BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "numbersign": {"six": {
+   MuktaVaani-Light BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [10, 16, 22, 30, 36, 42, 55, 61, 67, 73, 79, 85]}, "g
+     cmap         FAIL 570 codepoints, 1 problem(s)
+         - build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+     shaping      FAIL 1456927 runs shaped, 625026 differ
+         - default features, pairs: 19887 of 166347 runs differ
+         - default features, base+mark: 358 of 2040 runs differ
+         - default features, base+mark+mark: 172 of 1600 runs differ
+         - ... 31 more
+     rendering    FAIL diffenator3 64 glyph / 1914 word diffs (0 / 1873 confirmed); 0 of 1133 changed outlines draw different ink
+         - diffenator3: 1873 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 577px, '0123456789,,,sinf' 512px, '1/234,latn,dflt,frac' 409px, '0,,,zero' 119px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમર્શઃ' 1363px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta Vaani Light', build 'MuktaVaani-Light'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'MuktaVaani-Light', build 'MuktaVaani-Light-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 280, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 467, build 500
+         - ... 1 more
+     advances     PASS 1299 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 1030 class difference(s) shaping reads, 152 it does not
+         - 1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abreve 1/0, Acircumflex 1/0, Adieresis 1/0, Agrave 1/0, Amacron 1/0, Aogonek 1/0, Aring 1/0, Asmall 1/0, Atilde 1/0, Avagraha.gj 1/0
+         - mark attachment classes differ
+   MuktaVaani-Medium BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   MuktaVaani-Medium BLOCKING GDEF.mark_attach_classes [{"Bindu.gj": 1, "MatraI.gj": 1, "Reph.gj": 1, "RephBindu.gj": 1, "MatraI1.gj":
+   MuktaVaani-Medium BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 6, 12, 18]}, "gjr2/dflt": {"lookups": [1, 7, 13,
+   MuktaVaani-Medium BLOCKING GPOS.feature_list [{"abvm": [3, 4, 5, 6], "blwm": [7, 8, 9, 10, 11], "dist": [2], "kern": [0, 1]},
+   MuktaVaani-Medium BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "numbersign": {"one": {
+   MuktaVaani-Medium BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [10, 16, 22, 30, 36, 42, 55, 61, 67, 73, 79, 85]}, "g
+     cmap         FAIL 570 codepoints, 1 problem(s)
+         - build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+     shaping      FAIL 1440556 runs shaped, 636408 differ
+         - default features, pairs: 18064 of 164539 runs differ
+         - default features, base+mark: 360 of 2040 runs differ
+         - default features, base+mark+mark: 172 of 1600 runs differ
+         - ... 31 more
+     rendering    FAIL diffenator3 65 glyph / 2048 word diffs (0 / 2017 confirmed); 0 of 1135 changed outlines draw different ink
+         - diffenator3: 2017 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 614px, '0123456789,,,sinf' 557px, '1/234,latn,dflt,frac' 525px, '0,,,zero' 123px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમર્શઃ' 1621px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta Vaani Medium', build 'MuktaVaani-Medium'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'MuktaVaani-Medium', build 'MuktaVaani-Medium-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 282, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 470, build 500
+         - ... 1 more
+     advances     PASS 1299 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 1030 class difference(s) shaping reads, 152 it does not
+         - 1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abreve 1/0, Acircumflex 1/0, Adieresis 1/0, Agrave 1/0, Amacron 1/0, Aogonek 1/0, Aring 1/0, Asmall 1/0, Atilde 1/0, Avagraha.gj 1/0
+         - mark attachment classes differ
+   MuktaVaani-Regular BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   MuktaVaani-Regular BLOCKING GDEF.mark_attach_classes [{"Bindu.gj": 1, "MatraI.gj": 1, "Reph.gj": 1, "RephBindu.gj": 1, "MatraI1.gj":
+   MuktaVaani-Regular BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 6, 12, 18]}, "gjr2/dflt": {"lookups": [1, 7, 13,
+   MuktaVaani-Regular BLOCKING GPOS.feature_list [{"abvm": [3, 4, 5, 6], "blwm": [7, 8, 9, 10, 11], "dist": [2], "kern": [0, 1]},
+   MuktaVaani-Regular BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "quotedbl": {"Q": {"x":
+   MuktaVaani-Regular BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [10, 16, 22, 30, 36, 42, 55, 61, 67, 73, 79, 85]}, "g
+     cmap         FAIL 570 codepoints, 1 problem(s)
+         - build loses 37 codepoint(s): U+0ABF U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769
+     shaping      FAIL 1430951 runs shaped, 618268 differ
+         - default features, pairs: 21006 of 166347 runs differ
+         - default features, base+mark: 304 of 1938 runs differ
+         - default features, base+mark+mark: 160 of 1444 runs differ
+         - ... 31 more
+     rendering    FAIL diffenator3 56 glyph / 1550 word diffs (0 / 1513 confirmed); 0 of 1103 changed outlines draw different ink
+         - diffenator3: 1513 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 623px, '1/234,latn,dflt,frac' 541px, '0123456789,,,sinf' 530px, '0,,,zero' 112px, 'ક્ષદસ્જ્દૈસ્ફ્ક્દસ્ફ્હ' 1186px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Mukta Vaani', build 'MuktaVaani-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'MuktaVaani-Regular', build 'MuktaVaani-Regular-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 280, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 468, build 500
+         - ... 1 more
+     advances     PASS 1299 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 1030 class difference(s) shaping reads, 152 it does not
+         - 1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abreve 1/0, Acircumflex 1/0, Adieresis 1/0, Agrave 1/0, Amacron 1/0, Aogonek 1/0, Aring 1/0, Asmall 1/0, Atilde 1/0, Avagraha.gj 1/0
+         - mark attachment classes differ
+   MuktaVaani-SemiBold BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   MuktaVaani-SemiBold BLOCKING GDEF.mark_attach_classes [{"Bindu.gj": 1, "MatraI.gj": 1, "Reph.gj": 1, "RephBindu.gj": 1, "MatraI1.gj":
+   MuktaVaani-SemiBold BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 6, 12, 18]}, "gjr2/dflt": {"lookups": [1, 7, 13,
+   MuktaVaani-SemiBold BLOCKING GPOS.feature_list [{"abvm": [3, 4, 5, 6], "blwm": [7, 8, 9, 10, 11], "dist": [2], "kern": [0, 1]},
+   MuktaVaani-SemiBold BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "numbersign": {"five":
+   MuktaVaani-SemiBold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [10, 16, 22, 30, 36, 42, 55, 61, 67, 73, 79, 85]}, "g
+     cmap         FAIL 570 codepoints, 1 problem(s)
+         - build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+     shaping      FAIL 1440423 runs shaped, 636741 differ
+         - default features, pairs: 18053 of 164539 runs differ
+         - default features, base+mark: 350 of 2040 runs differ
+         - default features, base+mark+mark: 172 of 1600 runs differ
+         - ... 31 more
+     rendering    FAIL diffenator3 50 glyph / 1947 word diffs (0 / 1919 confirmed); 0 of 1128 changed outlines draw different ink
+         - diffenator3: 1919 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 632px, '1/234,latn,dflt,frac' 627px, '0123456789,,,sinf' 532px, '0,,,zero' 117px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમર્શઃ' 1699px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta Vaani SemiBold', build 'MuktaVaani-SemiBold'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'MuktaVaani-SemiBold', build 'MuktaVaani-SemiBold-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 284, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 474, build 500
+         - ... 1 more
+     advances     PASS 1299 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 1030 class difference(s) shaping reads, 152 it does not
+         - 1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abreve 1/0, Acircumflex 1/0, Adieresis 1/0, Agrave 1/0, Amacron 1/0, Aogonek 1/0, Aring 1/0, Asmall 1/0, Atilde 1/0, Avagraha.gj 1/0
+         - mark attachment classes differ

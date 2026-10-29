@@ -1,0 +1,26 @@
+aclonica: RESIDUAL @ 15399dd, 15 commits, 0 edit(s): Aclonica-Regular=20 functional=FAIL(cmap+rendering+names+line_spacing)
+   Aclonica-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   Aclonica-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   Aclonica-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   Aclonica-Regular BLOCKING OS/2.fs_type [0, 8]
+   Aclonica-Regular BLOCKING OS/2.y_subscript_x_size [700, 1331]
+   Aclonica-Regular BLOCKING OS/2.y_subscript_y_size [650, 1229]
+     cmap         FAIL 368 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 776769 runs shaped, 0 differ
+     rendering    FAIL diffenator3 148 glyph / 139 word diffs (67 / 117 confirmed); 86 of 267 changed outlines draw different ink
+         - diffenator3: 67 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00D5 61px, U+0153 58px, U+2030 54px, U+014E 53px, U+00D3 52px
+         - diffenator3: 117 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 113px, '0123456789,,,sinf' 100px, '1/234,latn,dflt,frac' 78px, '0,,,zero' 67px, 'ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋ' 694px
+         - 86 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): two 18px, perthousand 14px, percent 14px, oe 11px, eight 11px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Aclonica', build 'Aclonica-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Aclonica'
+         - name ID 4 (3,1,0x409): release 'Aclonica Regular', build 'Aclonica'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (1687, -533, 101), build hhea (1687, -533, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1687, -533, 101), build win (1925, -533, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (1687, -533, 101), build hhea (1687, -533, 0)
+         - ... 8 more
+     advances     PASS 369 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

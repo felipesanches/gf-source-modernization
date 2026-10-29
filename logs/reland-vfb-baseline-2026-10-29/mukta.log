@@ -1,0 +1,204 @@
+mukta: RESIDUAL @ be97f45, 93 commits, 0 edit(s): Mukta-Bold=83 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); Mukta-ExtraBold=83 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); Mukta-ExtraLight=83 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); Mukta-Light=83 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); Mukta-Medium=83 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); Mukta-Regular=82 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); Mukta-SemiBold=83 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef)
+   Mukta-Bold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 8, 22, 30, 38, 46, 54, 68, 76, 88, 96, 104, 112,
+   Mukta-Bold BLOCKING GSUB.feature_list [{"abvs": [33, 34, 35, 36, 37, 38], "akhn": [15], "blwf": [19], "blws": [39, 40,
+   Mukta-Bold BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+   Mukta-Bold BLOCKING OS/2.us_weight_class [700, 400]
+   Mukta-Bold BLOCKING OS/2.fs_type [0, 8]
+   Mukta-Bold BLOCKING OS/2.y_strikeout_position [285, 300]
+     cmap         FAIL 652 codepoints, 1 problem(s)
+         - build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+     shaping      FAIL 1993137 runs shaped, 166587 differ
+         - default features, singles: 10 of 616 runs differ
+         - default features, pairs: 5928 of 185475 runs differ
+         - default features, base+mark: 762 of 17490 runs differ
+         - ... 37 more
+     rendering    FAIL diffenator3 70 glyph / 1393 word diffs (10 / 1245 confirmed); 0 of 1184 changed outlines draw different ink
+         - diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095B 620px, U+0959 446px, U+0958 441px, U+095E 427px, U+095F 326px
+         - diffenator3: 1245 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 268px, 'श्रीमच्छंकराचार्यविरचितं' 1773px, 'ग्लोमेरुलोस्केलेरोसिस' 1651px, 'कम्प्य्लोबक्तेरिओसिस' 1638px, 'चतुर्थेनात्मचतुस्त्रिंशोनेन' 1398px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta', build 'Mukta-Bold'
+         - name ID 2 (3,1,0x409): release 'Bold', build ''
+         - name ID 6 (3,1,0x409): release 'Mukta-Bold', build 'Mukta-Bold-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 285, build 300
+         - post.underlinePosition: release -123, build -100
+         - fsSelection: BOLD lost, REGULAR gained
+         - ... 3 more
+     advances     PASS 1356 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 59 class difference(s) shaping reads, 1241 it does not
+         - 59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3/0, NuktaVattumatraUu.dv 3/0, Reph.dv 3/0, RephBindu.dv 3/0, RephChandrabindu.dv 3/0, Vattu.dv 3/0, VattumatraRu.dv 3/0, VattumatraRusmall.dv 3/0, VattumatraU.dv 3/0, VattumatraUsmall.dv 3/0, VattumatraUu.dv 3/0, VattumatraUusmall.dv 3/0, matraAiBindu.dv 3/0
+   Mukta-ExtraBold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 8, 22, 30, 38, 46, 54, 68, 76, 88, 96, 104, 112,
+   Mukta-ExtraBold BLOCKING GSUB.feature_list [{"abvs": [33, 34, 35, 36, 37, 38], "akhn": [15], "blwf": [19], "blws": [39, 40,
+   Mukta-ExtraBold BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+   Mukta-ExtraBold BLOCKING OS/2.us_weight_class [800, 400]
+   Mukta-ExtraBold BLOCKING OS/2.fs_type [0, 8]
+   Mukta-ExtraBold BLOCKING OS/2.y_strikeout_position [288, 300]
+     cmap         FAIL 652 codepoints, 1 problem(s)
+         - build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+     shaping      FAIL 1986048 runs shaped, 166380 differ
+         - default features, singles: 10 of 616 runs differ
+         - default features, pairs: 5928 of 185475 runs differ
+         - default features, base+mark: 762 of 17490 runs differ
+         - ... 37 more
+     rendering    FAIL diffenator3 57 glyph / 1383 word diffs (10 / 1229 confirmed); 0 of 1206 changed outlines draw different ink
+         - diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095E 449px, U+0959 442px, U+0958 435px, U+095F 337px, U+095C 332px
+         - diffenator3: 1229 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 303px, 'श्रीमच्छंकराचार्यविरचितं' 1943px, 'कम्प्य्लोबक्तेरिओसिस' 1751px, 'चतुर्थेनात्मचतुस्त्रिंशोनेन' 1420px, 'एचोकर्दिओग्रफिक' 1406px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta ExtraBold', build 'Mukta-ExtraBold'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'Mukta-ExtraBold', build 'Mukta-ExtraBold-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 288, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 480, build 500
+         - ... 1 more
+     advances     PASS 1356 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 59 class difference(s) shaping reads, 1241 it does not
+         - 59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3/0, NuktaVattumatraUu.dv 3/0, Reph.dv 3/0, RephBindu.dv 3/0, RephChandrabindu.dv 3/0, Vattu.dv 3/0, VattumatraRu.dv 3/0, VattumatraRusmall.dv 3/0, VattumatraU.dv 3/0, VattumatraUsmall.dv 3/0, VattumatraUu.dv 3/0, VattumatraUusmall.dv 3/0, matraAiBindu.dv 3/0
+   Mukta-ExtraLight BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 8, 22, 30, 38, 46, 54, 68, 76, 88, 96, 104, 112,
+   Mukta-ExtraLight BLOCKING GSUB.feature_list [{"abvs": [33, 34, 35, 36, 37, 38], "akhn": [15], "blwf": [19], "blws": [39, 40,
+   Mukta-ExtraLight BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+   Mukta-ExtraLight BLOCKING OS/2.us_weight_class [275, 400]
+   Mukta-ExtraLight BLOCKING OS/2.fs_type [0, 8]
+   Mukta-ExtraLight BLOCKING OS/2.y_strikeout_position [280, 300]
+     cmap         FAIL 652 codepoints, 1 problem(s)
+         - build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+     shaping      FAIL 2069990 runs shaped, 168585 differ
+         - default features, singles: 10 of 616 runs differ
+         - default features, pairs: 6008 of 189419 runs differ
+         - default features, base+mark: 762 of 17490 runs differ
+         - ... 37 more
+     rendering    FAIL diffenator3 74 glyph / 1340 word diffs (10 / 1175 confirmed); 0 of 1184 changed outlines draw different ink
+         - diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0959 375px, U+0958 316px, U+095E 312px, U+0934 266px, U+095F 230px
+         - diffenator3: 1175 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 134px, 'श्रीमच्छंकराचार्यविरचितं' 1320px, 'कम्प्य्लोबक्तेरिओसिस' 1227px, 'ग्लोमेरुलोस्केलेरोसिस' 1189px, 'एकैन्थोप्टरिजियाए' 993px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta ExtraLight', build 'Mukta-ExtraLight'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'Mukta-ExtraLight', build 'Mukta-ExtraLight-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 280, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 468, build 500
+         - ... 1 more
+     advances     PASS 1356 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 59 class difference(s) shaping reads, 1241 it does not
+         - 59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3/0, NuktaVattumatraUu.dv 3/0, Reph.dv 3/0, RephBindu.dv 3/0, RephChandrabindu.dv 3/0, Vattu.dv 3/0, VattumatraRu.dv 3/0, VattumatraRusmall.dv 3/0, VattumatraU.dv 3/0, VattumatraUsmall.dv 3/0, VattumatraUu.dv 3/0, VattumatraUusmall.dv 3/0, matraAiBindu.dv 3/0
+   Mukta-Light BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 8, 22, 30, 38, 46, 54, 68, 76, 88, 96, 104, 112,
+   Mukta-Light BLOCKING GSUB.feature_list [{"abvs": [33, 34, 35, 36, 37, 38], "akhn": [15], "blwf": [19], "blws": [39, 40,
+   Mukta-Light BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+   Mukta-Light BLOCKING OS/2.us_weight_class [300, 400]
+   Mukta-Light BLOCKING OS/2.fs_type [0, 8]
+   Mukta-Light BLOCKING OS/2.y_strikeout_position [280, 300]
+     cmap         FAIL 652 codepoints, 1 problem(s)
+         - build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+     shaping      FAIL 2080524 runs shaped, 168544 differ
+         - default features, singles: 10 of 616 runs differ
+         - default features, pairs: 6048 of 191403 runs differ
+         - default features, base+mark: 762 of 17490 runs differ
+         - ... 37 more
+     rendering    FAIL diffenator3 75 glyph / 1395 word diffs (10 / 1246 confirmed); 0 of 1194 changed outlines draw different ink
+         - diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0959 416px, U+0958 384px, U+095E 346px, U+0934 280px, U+095B 272px
+         - diffenator3: 1246 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 198px, 'श्रीमच्छंकराचार्यविरचितं' 1437px, 'कम्प्य्लोबक्तेरिओसिस' 1330px, 'चतुर्थेनात्मचतुस्त्रिंशोनेन' 1115px, 'कार्डियोरैसपाइरेटरी' 1084px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta Light', build 'Mukta-Light'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'Mukta-Light', build 'Mukta-Light-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 280, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 467, build 500
+         - ... 1 more
+     advances     PASS 1356 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 59 class difference(s) shaping reads, 1241 it does not
+         - 59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3/0, NuktaVattumatraUu.dv 3/0, Reph.dv 3/0, RephBindu.dv 3/0, RephChandrabindu.dv 3/0, Vattu.dv 3/0, VattumatraRu.dv 3/0, VattumatraRusmall.dv 3/0, VattumatraU.dv 3/0, VattumatraUsmall.dv 3/0, VattumatraUu.dv 3/0, VattumatraUusmall.dv 3/0, matraAiBindu.dv 3/0
+   Mukta-Medium BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 8, 22, 30, 38, 46, 54, 68, 76, 88, 96, 104, 112,
+   Mukta-Medium BLOCKING GSUB.feature_list [{"abvs": [33, 34, 35, 36, 37, 38], "akhn": [15], "blwf": [19], "blws": [39, 40,
+   Mukta-Medium BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+   Mukta-Medium BLOCKING OS/2.us_weight_class [500, 400]
+   Mukta-Medium BLOCKING OS/2.fs_type [0, 8]
+   Mukta-Medium BLOCKING OS/2.y_strikeout_position [282, 300]
+     cmap         FAIL 652 codepoints, 1 problem(s)
+         - build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+     shaping      FAIL 1990600 runs shaped, 166483 differ
+         - default features, singles: 10 of 616 runs differ
+         - default features, pairs: 5928 of 185475 runs differ
+         - default features, base+mark: 762 of 17490 runs differ
+         - ... 37 more
+     rendering    FAIL diffenator3 70 glyph / 1395 word diffs (10 / 1247 confirmed); 0 of 1197 changed outlines draw different ink
+         - diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095B 592px, U+0959 466px, U+0958 433px, U+095E 410px, U+0934 384px
+         - diffenator3: 1247 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 262px, 'ग्लोमेरुलोस्केलेरोसिस' 1555px, 'कम्प्य्लोबक्तेरिओसिस' 1533px, 'एचोकर्दिओग्रफिक' 1258px, 'चतुर्थेनात्मचतुस्त्रिंशोनेन' 1257px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta Medium', build 'Mukta-Medium'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'Mukta-Medium', build 'Mukta-Medium-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 282, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 470, build 500
+         - ... 1 more
+     advances     PASS 1356 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 59 class difference(s) shaping reads, 1241 it does not
+         - 59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3/0, NuktaVattumatraUu.dv 3/0, Reph.dv 3/0, RephBindu.dv 3/0, RephChandrabindu.dv 3/0, Vattu.dv 3/0, VattumatraRu.dv 3/0, VattumatraRusmall.dv 3/0, VattumatraU.dv 3/0, VattumatraUsmall.dv 3/0, VattumatraUu.dv 3/0, VattumatraUusmall.dv 3/0, matraAiBindu.dv 3/0
+   Mukta-Regular BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 8, 22, 30, 38, 46, 54, 68, 76, 88, 96, 104, 112,
+   Mukta-Regular BLOCKING GSUB.feature_list [{"abvs": [33, 34, 35, 36, 37, 38], "akhn": [15], "blwf": [19], "blws": [39, 40,
+   Mukta-Regular BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+   Mukta-Regular BLOCKING OS/2.fs_type [0, 8]
+   Mukta-Regular BLOCKING OS/2.y_strikeout_position [280, 300]
+   Mukta-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [11, 0]}
+     cmap         FAIL 652 codepoints, 1 problem(s)
+         - build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+     shaping      FAIL 2057696 runs shaped, 168120 differ
+         - default features, singles: 10 of 616 runs differ
+         - default features, pairs: 5968 of 187443 runs differ
+         - default features, base+mark: 762 of 17490 runs differ
+         - ... 37 more
+     rendering    FAIL diffenator3 71 glyph / 1323 word diffs (10 / 1190 confirmed); 0 of 1343 changed outlines draw different ink
+         - diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095B 514px, U+0959 447px, U+0958 413px, U+095E 376px, U+0934 359px
+         - diffenator3: 1190 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 240px, 'कम्प्य्लोबक्तेरिओसिस' 1436px, 'चतुर्थेनात्मचतुस्त्रिंशोनेन' 1193px, 'कार्डियोरैसपाइरेटरी' 1158px, 'स्वायत्त्योपनिवेशों' 1120px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Mukta', build 'Mukta-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'Mukta-Regular', build 'Mukta-Regular-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 280, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 468, build 500
+         - ... 1 more
+     advances     PASS 1356 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 59 class difference(s) shaping reads, 1241 it does not
+         - 59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3/0, NuktaVattumatraUu.dv 3/0, Reph.dv 3/0, RephBindu.dv 3/0, RephChandrabindu.dv 3/0, Vattu.dv 3/0, VattumatraRu.dv 3/0, VattumatraRusmall.dv 3/0, VattumatraU.dv 3/0, VattumatraUsmall.dv 3/0, VattumatraUu.dv 3/0, VattumatraUusmall.dv 3/0, matraAiBindu.dv 3/0
+   Mukta-SemiBold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 8, 22, 30, 38, 46, 54, 68, 76, 88, 96, 104, 112,
+   Mukta-SemiBold BLOCKING GSUB.feature_list [{"abvs": [33, 34, 35, 36, 37, 38], "akhn": [15], "blwf": [19], "blws": [39, 40,
+   Mukta-SemiBold BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+   Mukta-SemiBold BLOCKING OS/2.us_weight_class [600, 400]
+   Mukta-SemiBold BLOCKING OS/2.fs_type [0, 8]
+   Mukta-SemiBold BLOCKING OS/2.y_strikeout_position [284, 300]
+     cmap         FAIL 652 codepoints, 1 problem(s)
+         - build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+     shaping      FAIL 1985067 runs shaped, 166337 differ
+         - default features, singles: 10 of 616 runs differ
+         - default features, pairs: 5908 of 184494 runs differ
+         - default features, base+mark: 762 of 17490 runs differ
+         - ... 37 more
+     rendering    FAIL diffenator3 62 glyph / 1326 word diffs (10 / 1186 confirmed); 0 of 1191 changed outlines draw different ink
+         - diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095B 589px, U+0959 444px, U+0958 421px, U+095E 421px, U+095F 320px
+         - diffenator3: 1186 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 267px, 'श्रीमच्छंकराचार्यविरचितं' 1700px, 'कम्प्य्लोबक्तेरिओसिस' 1613px, 'ग्लोमेरुलोस्केलेरोसिस' 1600px, 'चतुर्थेनात्मचतुस्त्रिंशोनेन' 1331px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Mukta SemiBold', build 'Mukta-SemiBold'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'Mukta-SemiBold', build 'Mukta-SemiBold-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 284, build 300
+         - post.underlinePosition: release -123, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 474, build 500
+         - ... 1 more
+     advances     PASS 1356 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 59 class difference(s) shaping reads, 1241 it does not
+         - 59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3/0, NuktaVattumatraUu.dv 3/0, Reph.dv 3/0, RephBindu.dv 3/0, RephChandrabindu.dv 3/0, Vattu.dv 3/0, VattumatraRu.dv 3/0, VattumatraRusmall.dv 3/0, VattumatraU.dv 3/0, VattumatraUsmall.dv 3/0, VattumatraUu.dv 3/0, VattumatraUusmall.dv 3/0, matraAiBindu.dv 3/0

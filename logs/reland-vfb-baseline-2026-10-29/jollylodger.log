@@ -1,0 +1,22 @@
+jollylodger: RESIDUAL @ 49c4f9b, 13 commits, 0 edit(s): JollyLodger-Regular=14 functional=FAIL(names+line_spacing)
+   JollyLodger-Regular BLOCKING OS/2.fs_type [0, 8]
+   JollyLodger-Regular BLOCKING OS/2.y_subscript_x_size [717, 666]
+   JollyLodger-Regular BLOCKING OS/2.y_subscript_y_size [666, 614]
+   JollyLodger-Regular BLOCKING OS/2.y_subscript_y_offset [143, 77]
+   JollyLodger-Regular BLOCKING OS/2.y_superscript_x_size [717, 666]
+   JollyLodger-Regular BLOCKING OS/2.y_superscript_y_size [666, 614]
+     cmap         PASS 231 codepoints, exact
+     shaping      PASS 547393 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 34 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Jolly Lodger', build 'JollyLodger'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Jolly Lodger'
+         - name ID 6 (3,1,0x409): release 'JollyLodger', build 'JollyLodger-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (988, -263, 0), build win (988, -257, 0)
+         - OS/2.usWinDescent: release 263, build 257
+         - OS/2.yStrikeoutPosition: release 256, build 300
+         - ... 3 more
+     advances     PASS 232 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

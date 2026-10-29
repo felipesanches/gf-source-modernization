@@ -1,0 +1,86 @@
+volkhov: RESIDUAL @ 46e8daf, 3 commits, 0 edit(s): Volkhov-Bold=11 functional=FAIL(cmap+names+line_spacing); Volkhov-BoldItalic=12 functional=FAIL(cmap+names+line_spacing); Volkhov-Italic=13 functional=FAIL(cmap+names+line_spacing); Volkhov-Regular=10 functional=FAIL(cmap+names+line_spacing)
+   Volkhov-Bold BLOCKING OS/2.us_weight_class [700, 400]
+   Volkhov-Bold BLOCKING OS/2.fs_type [0, 8]
+   Volkhov-Bold BLOCKING OS/2.y_subscript_x_size [700, 650]
+   Volkhov-Bold BLOCKING OS/2.y_subscript_y_size [650, 600]
+   Volkhov-Bold BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   Volkhov-Bold BLOCKING OS/2.y_superscript_x_size [700, 650]
+     cmap         FAIL 214 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 581205 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 6 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Volkhov', build 'Volkhov-Bold'
+         - name ID 2 (3,1,0x409): release 'Bold', build 'Volkhov'
+         - name ID 6 (3,1,0x409): release 'Volkhov-Bold', build 'Volkhov-Bold-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 250, build 300
+         - post.underlinePosition: release -75, build -100
+         - fsSelection: BOLD lost, REGULAR gained
+         - ... 1 more
+     advances     PASS 219 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+   Volkhov-BoldItalic BLOCKING OS/2.us_weight_class [700, 400]
+   Volkhov-BoldItalic BLOCKING OS/2.fs_type [0, 8]
+   Volkhov-BoldItalic BLOCKING OS/2.y_subscript_x_size [700, 650]
+   Volkhov-BoldItalic BLOCKING OS/2.y_subscript_y_size [650, 600]
+   Volkhov-BoldItalic BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   Volkhov-BoldItalic BLOCKING OS/2.y_superscript_x_size [700, 650]
+     cmap         FAIL 214 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 580494 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 7 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Volkhov', build 'Volkhov-BoldItalic'
+         - name ID 2 (3,1,0x409): release 'Bold Italic', build 'Volkhov'
+         - name ID 6 (3,1,0x409): release 'Volkhov-BoldItalic', build 'Volkhov-BoldItalic-DefaultMaster'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 250, build 300
+         - post.underlinePosition: release -75, build -100
+         - fsSelection: ITALIC lost, BOLD lost, REGULAR gained
+         - ... 3 more
+     advances     PASS 219 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+   Volkhov-Italic BLOCKING OS/2.fs_type [0, 8]
+   Volkhov-Italic BLOCKING OS/2.y_subscript_x_size [700, 650]
+   Volkhov-Italic BLOCKING OS/2.y_subscript_y_size [650, 600]
+   Volkhov-Italic BLOCKING OS/2.y_subscript_x_offset [0, 16]
+   Volkhov-Italic BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   Volkhov-Italic BLOCKING OS/2.y_superscript_x_size [700, 650]
+     cmap         FAIL 214 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 580494 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 11 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Volkhov', build 'Volkhov-Italic'
+         - name ID 2 (3,1,0x409): release 'Italic', build 'Volkhov'
+         - name ID 6 (3,1,0x409): release 'Volkhov-Italic', build 'Volkhov-Italic-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 250, build 300
+         - post.underlinePosition: release -75, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 507, build 500
+     advances     PASS 219 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+   Volkhov-Regular BLOCKING OS/2.fs_type [0, 8]
+   Volkhov-Regular BLOCKING OS/2.y_subscript_x_size [700, 650]
+   Volkhov-Regular BLOCKING OS/2.y_subscript_y_size [650, 600]
+   Volkhov-Regular BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   Volkhov-Regular BLOCKING OS/2.y_superscript_x_size [700, 650]
+   Volkhov-Regular BLOCKING OS/2.y_superscript_y_size [650, 600]
+     cmap         FAIL 214 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 579787 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 10 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Volkhov', build 'Volkhov-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Volkhov'
+         - name ID 6 (3,1,0x409): release 'Volkhov-Regular', build 'Volkhov-Regular-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 250, build 300
+         - post.underlinePosition: release -75, build -100
+     advances     PASS 219 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

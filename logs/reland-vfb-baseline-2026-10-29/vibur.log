@@ -1,0 +1,33 @@
+Glyph 'rs' has a huge advance width (64001); is it intentional or an (invalid) negative value?
+Glyph 'rs' has a huge advance width (64001); is it intentional or an (invalid) negative value?
+vibur: RESIDUAL @ 480a627, 3 commits, 0 edit(s): Vibur-Regular=30 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   Vibur-Regular BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}, null]
+   Vibur-Regular BLOCKING GPOS.feature_list [{"kern": [0]}, null]
+   Vibur-Regular BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "quotedbl": {"comma": {"x": -202}, "slash": {"x": -27},
+   Vibur-Regular BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [null, 1]}}, "latn/dflt": [{"lookups": [1]}, nul
+   Vibur-Regular BLOCKING GSUB.feature_list {"calt": [null, [1]]}
+   Vibur-Regular BLOCKING GSUB.lookup_list {"1": {"0": {"type": ["ligature", "chained_sequence_context"], "a s": ["as", nul
+     cmap         FAIL 228 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a different glyph: U+00B7 middot/periodcentered
+     shaping      FAIL 595763 runs shaped, 519454 differ
+         - default features, singles: 129 of 228 runs differ
+         - default features, pairs: 30857 of 37148 runs differ
+         - default features, rules: 23 of 58 runs differ
+         - ... 4 more
+     rendering    FAIL diffenator3 179 glyph / 120 word diffs (173 / 120 confirmed); 225 of 259 changed outlines draw different ink
+         - diffenator3: 173 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 690px, U+0057 563px, U+00C3 546px, U+00C2 543px, U+00C5 541px
+         - diffenator3: 120 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,sinf' 1120px, '0123456789,,,pnum' 1118px, '1/234,latn,dflt,frac' 1107px, '0123456789,,,numr' 1089px, '0123456789,,,sups' 1080px
+         - 225 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): W 24641px, at 23665px, Otilde 17943px, Ocircumflex 17825px, Odieresis 17541px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Vibur', build ''
+         - name ID 2 (3,1,0x409): release 'Medium', build ''
+         - name ID 4 (3,1,0x409): release 'Vibur', build ''
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (1960, -792, 184), build hhea (1536, -348, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1960, -792, 184), build win (2110, -348, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (1960, -792, 184), build hhea (1536, -348, 0)
+         - ... 14 more
+     advances     FAIL 264 glyph advances compared, 130 differ
+         - 130 advance width(s) differ (release/build): A 1138/1409, AE 1903/2456, Aacute 1136/1409, Acircumflex 1136/1409, Adieresis 1136/1409, Agrave 1136/1409, Aring 1136/1409, Atilde 1136/1409, B 1152/1275, E 1104/998, Eacute 1104/998, Ecircumflex 1104/998, Edieresis 1104/998, Egrave 1104/998, Eth 1173/1416
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 37 it does not

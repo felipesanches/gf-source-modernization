@@ -1,0 +1,28 @@
+kenia: RESIDUAL @ 0678893, 3 commits, 0 edit(s): Kenia-Regular=18 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   Kenia-Regular BLOCKING OS/2.fs_type [0, 8]
+   Kenia-Regular BLOCKING OS/2.y_subscript_x_size [700, 650]
+   Kenia-Regular BLOCKING OS/2.y_subscript_y_size [650, 600]
+   Kenia-Regular BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   Kenia-Regular BLOCKING OS/2.y_superscript_x_size [700, 650]
+   Kenia-Regular BLOCKING OS/2.y_superscript_y_size [650, 600]
+     cmap         FAIL 199 codepoints, 1 problem(s)
+         - build loses 1 codepoint(s): U+00A0
+     shaping      FAIL 540346 runs shaped, 24628 differ
+         - default features, pairs: 94 of 19922 runs differ
+         - default features, words: 24534 of 513504 runs differ
+     rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 2 of 41 changed outlines draw different ink
+         - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'Abcdefghijklmnopqrstuvwxyz' 786px
+         - 2 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2106px, logicalnot 5px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Kenia', build 'Kenia-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Kenia'
+         - name ID 6 (3,1,0x409): release 'Kenia-Regular', build 'Kenia-Regular-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (958, -330, 0), build win (950, -250, 0)
+         - OS/2.sTypoLineGap: release 0, build 200
+         - OS/2.usWinAscent: release 958, build 950
+         - ... 5 more
+     advances     FAIL 198 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 194/500
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

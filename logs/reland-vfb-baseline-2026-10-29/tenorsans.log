@@ -1,0 +1,28 @@
+tenorsans: RESIDUAL @ 614f2cc, 3 commits, 0 edit(s): TenorSans-Regular=20 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   TenorSans-Regular BLOCKING GPOS.script_list [{"latn/dflt": {"lookups": [0]}}, null]
+   TenorSans-Regular BLOCKING GPOS.feature_list [{"kern": [0]}, null]
+   TenorSans-Regular BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "F": {"J": {"x": -120}}, "D": {"T": {"x": -70}}, "L": {
+   TenorSans-Regular BLOCKING OS/2.fs_type [0, 8]
+   TenorSans-Regular BLOCKING OS/2.y_subscript_x_size [700, 650]
+   TenorSans-Regular BLOCKING OS/2.y_subscript_y_size [650, 600]
+     cmap         FAIL 475 codepoints, 2 problem(s)
+         - build loses 1 codepoint(s): U+00A0
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      FAIL 678774 runs shaped, 35864 differ
+         - default features, pairs: 74 of 90594 runs differ
+         - default features, words: 35790 of 582085 runs differ
+     rendering    FAIL diffenator3 91 glyph / 205 word diffs (0 / 9 confirmed); 0 of 293 changed outlines draw different ink
+         - diffenator3: 9 word(s) render differently (>8 px at 16 ppem), confirmed: 'ГАЛОЎПРАФАДУКАЦЫІ' 1551px, 'Бйоргулфссон' 380px, 'Ґудзя' 164px, 'Јанкулев' 162px, 'Ёкуле' 102px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Tenor Sans', build 'TenorSans'
+         - name ID 2 (3,1,0x409): release 'Regular', build ''
+         - name ID 6 (3,1,0x409): release 'TenorSans', build 'TenorSans-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (920, -250, 0), build win (950, -250, 0)
+         - OS/2.sTypoLineGap: release 0, build 30
+         - OS/2.usWinAscent: release 920, build 950
+         - ... 2 more
+     advances     FAIL 476 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

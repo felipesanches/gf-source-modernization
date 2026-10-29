@@ -1,0 +1,25 @@
+irishgrover: RESIDUAL @ b96f3ab, 3 commits, 0 edit(s): IrishGrover-Regular=18 functional=FAIL(shaping+rendering+names+line_spacing)
+   IrishGrover-Regular BLOCKING OS/2.fs_type [0, 8]
+   IrishGrover-Regular BLOCKING OS/2.y_subscript_x_size [700, 666]
+   IrishGrover-Regular BLOCKING OS/2.y_subscript_y_size [650, 614]
+   IrishGrover-Regular BLOCKING OS/2.y_subscript_y_offset [140, 77]
+   IrishGrover-Regular BLOCKING OS/2.y_superscript_x_size [700, 666]
+   IrishGrover-Regular BLOCKING OS/2.y_superscript_y_size [650, 614]
+     cmap         PASS 227 codepoints, exact
+     shaping      FAIL 548581 runs shaped, 246788 differ
+         - default features, pairs: 1076 of 22801 runs differ
+         - default features, words: 245712 of 525553 runs differ
+     rendering    FAIL diffenator3 0 glyph / 303 word diffs (0 / 303 confirmed); 0 of 51 changed outlines draw different ink
+         - diffenator3: 303 word(s) render differently (>8 px at 16 ppem), confirmed: 'AgnethaFältskogsbästaAgnetha' 1553px, 'ACEILNORSUYZaceilnorsuyz' 978px, 'ARQUEOLÓGICOS' 963px, 'FUTBALLFEJLESZTÉS' 956px, 'EUROPÄISCHES' 952px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Irish Grover', build 'IrishGrover'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Irish Grover'
+         - name ID 4 (3,1,0x409): release 'Irish Grover Regular', build 'Irish Grover'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (965, -246, 27), build hhea (965, -246, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (965, -246, 27), build win (983, -246, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (965, -246, 27), build hhea (965, -246, 0)
+         - ... 9 more
+     advances     PASS 228 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

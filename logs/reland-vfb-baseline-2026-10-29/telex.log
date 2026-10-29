@@ -1,0 +1,34 @@
+telex: RESIDUAL @ a80727d, 3 commits, 0 edit(s): Telex-Regular=20 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   Telex-Regular BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 3, 6, 10, 13]}, "latn/dflt": {"lookups": [1, 4, 7
+   Telex-Regular BLOCKING GSUB.feature_list [{"aalt": [0], "frac": [3], "liga": [5], "locl": [1], "ordn": [4], "sups": [2]},
+   Telex-Regular BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "A": "ordfeminine", "O": "ordmasculine", "a": "ordfem
+   Telex-Regular BLOCKING OS/2.fs_type [0, 8]
+   Telex-Regular BLOCKING OS/2.y_strikeout_position [308, 300]
+   Telex-Regular BLOCKING OS/2.panose_10 {"2": [5, 0]}
+     cmap         FAIL 266 codepoints, 3 problem(s)
+         - build loses 2 codepoint(s): U+0000 U+000D
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 uni00A0/nbspace; U+00B9 uni00B9/onesuperior
+         - 8 codepoint(s) map to a different glyph: U+00B2 uni00B2/twosuperior; U+00B3 uni00B3/threesuperior; U+0307 uni0307/dotaccentcmb; U+0326 uni0326/commaaccent; U+0394 uni0394/Delta; U+03A9 uni03A9/Omega; U+03BC uni03BC/mu; U+F8FF uniF8FF/apple
+     shaping      FAIL 635218 runs shaped, 8346 differ
+         - default features, pairs: 2 of 34176 runs differ
+         - default features, base+mark: 248 of 336 runs differ
+         - default features, base+mark+mark: 12 of 32 runs differ
+         - ... 10 more
+     rendering    FAIL diffenator3 15 glyph / 98 word diffs (3 / 87 confirmed); 18 of 174 changed outlines draw different ink
+         - diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 36px, U+0067 20px, U+0035 17px
+         - diffenator3: 87 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 201px, '0123456789,,,pnum' 74px, '0123456789,,,sinf' 69px, 'Abfangjagdflugzeug' 289px, 'Afijio' 127px
+         - 18 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): uni0326 521px, uni0307 262px, M 15px, uni03BC 13px, g 10px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Telex', build 'Telex-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Telex'
+         - name ID 4 (3,1,0x409): release 'Telex Regular', build 'Telex'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 308, build 300
+         - post.underlinePosition: release -75, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 514, build 500
+         - ... 1 more
+     advances     FAIL 265 glyph advances compared, 2 differ
+         - 2 reachable release glyph(s) have no build counterpart: NULL nonmarkingreturn
+         - 2 advance width(s) differ (release/build): uni0307 0/132, uni0326 0/271
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 73 it does not

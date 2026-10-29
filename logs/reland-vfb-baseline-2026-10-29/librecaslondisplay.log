@@ -1,0 +1,34 @@
+librecaslondisplay: RESIDUAL @ a0356de, 8 commits, 0 edit(s): LibreCaslonDisplay-Regular=19 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef)
+   LibreCaslonDisplay-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 1 mark(s): only the release marks U+F6C3; only ours marks none
+   LibreCaslonDisplay-Regular BLOCKING GSUB.feature_list {"dlig": {"0": [2, 3]}, "dnom": {"0": [9, 11]}, "frac": {"0": [5, 6]}, "numr": {
+   LibreCaslonDisplay-Regular BLOCKING GSUB.lookup_list {"1": {"0": {"rules": {"0": ["L' lookup lookup_11 [A A.ss01]", "L' lookup lookup
+   LibreCaslonDisplay-Regular BLOCKING OS/2.fs_type [0, 8]
+   LibreCaslonDisplay-Regular BLOCKING OS/2.y_strikeout_size [50, 0]
+   LibreCaslonDisplay-Regular BLOCKING OS/2.y_strikeout_position [254, 300]
+     cmap         FAIL 501 codepoints, 2 problem(s)
+         - 6 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+2002 uni2002/enspace; U+2003 uni2003/emspace; U+2074 uni2074/foursuperior; U+2084 uni2084/fourinferior; U+2206 uni2206/Delta
+         - 82 codepoint(s) map to a different glyph: U+00B2 uni00B2/twosuperior; U+00B3 uni00B3/threesuperior; U+00B5 uni00B5/mu; U+00B9 uni00B9/onesuperior; U+018F uni018F/Schwa; U+01EA uni01EA/Oogonek; U+01EB uni01EB/oogonek; U+01F4 uni01F4/Gacute; U+01F5 uni01F5/gacute; U+0200 uni0200/Adblgrave
+     shaping      FAIL 1014876 runs shaped, 2059 differ
+         - default features, singles: 1 of 501 runs differ
+         - default features, pairs: 898 of 191994 runs differ
+         - default features, base+mark: 560 of 774 runs differ
+         - ... 2 more
+     rendering    FAIL diffenator3 54 glyph / 141 word diffs (7 / 6 confirmed); 11 of 524 changed outlines draw different ink
+         - diffenator3: 7 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0118 136px, U+015E 42px, U+030F 38px, U+F6C3 33px, U+00C7 31px
+         - diffenator3: 6 word(s) render differently (>8 px at 16 ppem), confirmed: 'ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋ' 236px, 'ÇĢĶĻŅŖŞŢçģķļņŗşţ' 56px, 'ƒREAKÇONTRØL' 46px, 'ANYKŠČIŲ' 22px, 'Abbasuşağı' 17px
+         - 11 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 3436px, uni030F 444px, uni0311 276px, uniF6C3 231px, Eogonek 211px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Libre Caslon Display', build 'LibreCaslonDisplay-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Libre Caslon Display'
+         - name ID 4 (3,1,0x409): release 'Libre Caslon Display Regular', build 'Libre Caslon Display'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.usWinAscent: release 963, build 970
+         - OS/2.usWinDescent: release 254, build 266
+         - OS/2.yStrikeoutSize: release 50, build 0
+         - ... 5 more
+     advances     FAIL 551 glyph advances compared, 4 differ
+         - 4 advance width(s) differ (release/build): .notdef 160/717, uni030F 0/299, uni0311 0/306, uniF6C3 0/164
+     gdef         FAIL GDEF present/absent; 1 class difference(s) shaping reads, 257 it does not
+         - GDEF absent in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uniF6C3 3/1

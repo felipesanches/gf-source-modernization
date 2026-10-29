@@ -1,0 +1,3 @@
+gotu: RESIDUAL @ ae28c73, 14 commits, 0 edit(s): Gotu-Regular=BUILD functional=-
+   Gotu-Regular BUILD: Gotu-DefaultMaster.ttf not produced (nothing)
+   Gotu-Regular builder: operation 'Fontc' while building [../fonts//ttf/Gotu-DefaultMaster.ttf, ../fonts//webfonts/Gotu-DefaultMaster.woff2] from [Gotu-Regular.glyphs]: FEA validation failed with 6380 errors

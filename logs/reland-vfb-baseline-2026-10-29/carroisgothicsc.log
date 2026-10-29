@@ -1,0 +1,30 @@
+carroisgothicsc: RESIDUAL @ c6bb17d, 13 commits, 0 edit(s): CarroisGothicSC-Regular=14 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   CarroisGothicSC-Regular BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [1]}}, null]
+   CarroisGothicSC-Regular BLOCKING GPOS.feature_list [{"kern": [0]}, null]
+   CarroisGothicSC-Regular BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "plus": {"A": {"x": -15}, "J": {"x": -20}, "T": {"x": -
+   CarroisGothicSC-Regular BLOCKING OS/2.fs_type [0, 8]
+   CarroisGothicSC-Regular BLOCKING OS/2.y_strikeout_position [290, 300]
+   CarroisGothicSC-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [11, 0], "2": [5, 0], "3": [6, 0], "4": [4, 0], "7": [2, 0],
+     cmap         FAIL 252 codepoints, 2 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 575265 runs shaped, 373006 differ
+         - default features, singles: 1 of 252 runs differ
+         - default features, pairs: 3418 of 33489 runs differ
+         - default features, base+mark: 159 of 159 runs differ
+         - ... 2 more
+     rendering    FAIL diffenator3 0 glyph / 71 word diffs (0 / 71 confirmed); 0 of 11 changed outlines draw different ink
+         - diffenator3: 71 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 535px, '0,,,zero' 44px, 'ACEGHIJOSUWYaceghijosuwy' 1358px, 'ALKUjiggerypokeryMIX' 808px, 'Abcdefghijklmnopqrstuvwxyz' 729px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Carrois Gothic SC', build 'CarroisGothicSC-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Carrois Gothic SC'
+         - name ID 4 (3,1,0x409): release 'Carrois Gothic SC Regular', build 'Carrois Gothic SC'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release typo (922, -270, 0), build win (930, -270, 0)
+         - USE_TYPO_METRICS cleared by the build: it changes the line spacing on DirectWrite/GDI
+         - OS/2.sTypoLineGap: release 0, build 8
+         - ... 5 more
+     advances     FAIL 261 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

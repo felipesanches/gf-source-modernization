@@ -1,0 +1,22 @@
+mysteryquest: RESIDUAL @ 3c8b6fb, 3 commits, 0 edit(s): MysteryQuest-Regular=14 functional=FAIL(names+line_spacing)
+   MysteryQuest-Regular BLOCKING OS/2.fs_type [0, 8]
+   MysteryQuest-Regular BLOCKING OS/2.y_subscript_x_size [717, 666]
+   MysteryQuest-Regular BLOCKING OS/2.y_subscript_y_size [666, 614]
+   MysteryQuest-Regular BLOCKING OS/2.y_subscript_y_offset [143, 77]
+   MysteryQuest-Regular BLOCKING OS/2.y_superscript_x_size [717, 666]
+   MysteryQuest-Regular BLOCKING OS/2.y_superscript_y_size [666, 614]
+     cmap         PASS 228 codepoints, exact
+     shaping      PASS 547390 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 61 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Mystery Quest', build 'MysteryQuest'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Mystery Quest'
+         - name ID 6 (3,1,0x409): release 'MysteryQuest', build 'MysteryQuest-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (989, -419, 0), build win (989, -409, 0)
+         - OS/2.usWinDescent: release 419, build 409
+         - OS/2.yStrikeoutPosition: release 256, build 300
+         - ... 3 more
+     advances     PASS 229 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

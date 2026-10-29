@@ -1,0 +1,25 @@
+happymonkey: RESIDUAL @ 8a09811, 14 commits, 0 edit(s): HappyMonkey-Regular=12 functional=FAIL(cmap+shaping+rendering+names+line_spacing)
+   HappyMonkey-Regular BLOCKING OS/2.fs_type [0, 8]
+   HappyMonkey-Regular BLOCKING OS/2.y_subscript_x_size [700, 650]
+   HappyMonkey-Regular BLOCKING OS/2.y_subscript_y_size [650, 600]
+   HappyMonkey-Regular BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   HappyMonkey-Regular BLOCKING OS/2.y_superscript_x_size [700, 650]
+   HappyMonkey-Regular BLOCKING OS/2.y_superscript_y_size [650, 600]
+     cmap         FAIL 219 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+00B7 periodcentered/middot
+     shaping      FAIL 588763 runs shaped, 1835 differ
+         - default features, pairs: 294 of 34969 runs differ
+         - default features, words: 1541 of 520601 runs differ
+     rendering    FAIL diffenator3 0 glyph / 3 word diffs (0 / 3 confirmed); 0 of 0 changed outlines draw different ink
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'Abaújalpár' 397px, 'APGujarat' 327px, 'Abaújkér' 285px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Happy Monkey', build 'HappyMonkey'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Happy Monkey'
+         - name ID 6 (3,1,0x409): release 'HappyMonkey-Regular', build 'HappyMonkey-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 250, build 300
+         - post.underlinePosition: release -75, build -100
+         - cap height as layout engines read it (CSS ex / cap units): release 699, build 700
+     advances     PASS 220 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

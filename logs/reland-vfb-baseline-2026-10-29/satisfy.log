@@ -1,0 +1,25 @@
+satisfy: RESIDUAL @ 8b962c2, 3 commits, 0 edit(s): Satisfy-Regular=17 functional=FAIL(shaping+rendering+names+line_spacing)
+   Satisfy-Regular BLOCKING OS/2.fs_type [0, 8]
+   Satisfy-Regular BLOCKING OS/2.y_subscript_x_size [717, 666]
+   Satisfy-Regular BLOCKING OS/2.y_subscript_y_size [666, 614]
+   Satisfy-Regular BLOCKING OS/2.y_subscript_y_offset [143, 77]
+   Satisfy-Regular BLOCKING OS/2.y_superscript_x_size [717, 666]
+   Satisfy-Regular BLOCKING OS/2.y_superscript_y_size [666, 614]
+     cmap         PASS 226 codepoints, exact
+     shaping      FAIL 548883 runs shaped, 79153 differ
+         - default features, pairs: 369 of 23104 runs differ
+         - default features, words: 78784 of 525553 runs differ
+     rendering    FAIL diffenator3 0 glyph / 120 word diffs (0 / 120 confirmed); 0 of 32 changed outlines draw different ink
+         - diffenator3: 120 word(s) render differently (>8 px at 16 ppem), confirmed: 'ALKUjiggerypokeryMIX' 1261px, 'ACEGHIJOSUWYaceghijosuwy' 1199px, 'ACEILNORSUYZaceilnorsuyz' 1043px, 'ENCYCLOPÆDIA' 855px, 'LËTZEBUERGER' 827px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (5)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Satisfy'
+         - name ID 4 (3,1,0x409): release 'Satisfy Regular', build 'Satisfy'
+         - name ID 6 (3,1,0x409): release 'Satisfy-Regular', build 'Satisfy-DefaultMaster'
+         - ... 2 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (957, -501, 17), build hhea (957, -501, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (957, -501, 17), build win (957, -501, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (957, -501, 17), build hhea (957, -501, 0)
+         - ... 8 more
+     advances     PASS 227 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

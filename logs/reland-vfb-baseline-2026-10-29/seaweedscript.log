@@ -1,0 +1,22 @@
+seaweedscript: RESIDUAL @ 717474e, 3 commits, 0 edit(s): SeaweedScript-Regular=14 functional=FAIL(names+line_spacing)
+   SeaweedScript-Regular BLOCKING OS/2.fs_type [0, 8]
+   SeaweedScript-Regular BLOCKING OS/2.y_subscript_x_size [717, 666]
+   SeaweedScript-Regular BLOCKING OS/2.y_subscript_y_size [666, 614]
+   SeaweedScript-Regular BLOCKING OS/2.y_subscript_y_offset [143, 77]
+   SeaweedScript-Regular BLOCKING OS/2.y_superscript_x_size [717, 666]
+   SeaweedScript-Regular BLOCKING OS/2.y_superscript_y_size [666, 614]
+     cmap         PASS 227 codepoints, exact
+     shaping      PASS 547389 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 42 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Seaweed Script', build 'SeaweedScript'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Seaweed Script'
+         - name ID 6 (3,1,0x409): release 'SeaweedScript-Regular', build 'SeaweedScript-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (969, -431, 0), build win (969, -421, 0)
+         - OS/2.usWinDescent: release 431, build 421
+         - OS/2.yStrikeoutPosition: release 256, build 300
+         - ... 3 more
+     advances     PASS 228 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

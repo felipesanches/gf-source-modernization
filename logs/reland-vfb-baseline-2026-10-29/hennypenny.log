@@ -1,0 +1,23 @@
+hennypenny: RESIDUAL @ 048f4a3, 14 commits, 0 edit(s): HennyPenny-Regular=6 functional=FAIL(cmap+names+line_spacing)
+   HennyPenny-Regular BLOCKING OS/2.fs_type [0, 8]
+   HennyPenny-Regular BLOCKING OS/2.y_strikeout_position [512, 300]
+   HennyPenny-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [5, 0], "3": [5, 0], "7": [2, 0], "9": [4, 0]}
+   HennyPenny-Regular BLOCKING OS/2.sx_height [1264, 500]
+   HennyPenny-Regular BLOCKING OS/2.s_cap_height [1794, 700]
+   HennyPenny-Regular BLOCKING post.underline_position [-154, -100]
+     cmap         FAIL 215 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 567800 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 28 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Henny Penny', build 'HennyPenny-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Henny Penny'
+         - name ID 6 (3,1,0x409): release 'HennyPenny-Regular', build 'HennyPenny-Regular-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 512, build 300
+         - post.underlinePosition: release -154, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 1264, build 500
+         - ... 1 more
+     advances     PASS 230 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

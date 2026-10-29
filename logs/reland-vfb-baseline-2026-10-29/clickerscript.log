@@ -1,0 +1,23 @@
+clickerscript: RESIDUAL @ 21646b9, 13 commits, 0 edit(s): ClickerScript-Regular=24 functional=FAIL(cmap+names+line_spacing)
+   ClickerScript-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   ClickerScript-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   ClickerScript-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   ClickerScript-Regular BLOCKING OS/2.fs_type [0, 8]
+   ClickerScript-Regular BLOCKING OS/2.y_subscript_x_size [1434, 1331]
+   ClickerScript-Regular BLOCKING OS/2.y_subscript_y_size [1331, 1229]
+     cmap         FAIL 368 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 744493 runs shaped, 0 differ
+     rendering    PASS diffenator3 1 glyph / 0 word diffs (0 / 0 confirmed); 0 of 53 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Clicker Script', build 'ClickerScript-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Clicker Script'
+         - name ID 6 (3,1,0x409): release 'ClickerScript-Regular', build 'ClickerScript-Regular-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (1898, -807, 0), build hhea (927, -394, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1898, -807, 0), build win (2064, -394, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (1898, -807, 0), build hhea (927, -394, 0)
+         - ... 12 more
+     advances     PASS 372 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

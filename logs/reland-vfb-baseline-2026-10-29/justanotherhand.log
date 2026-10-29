@@ -1,0 +1,26 @@
+justanotherhand: RESIDUAL @ 5ab3e0d, 14 commits, 0 edit(s): JustAnotherHand-Regular=25 functional=FAIL(cmap+names+line_spacing+advances)
+   JustAnotherHand-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   JustAnotherHand-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   JustAnotherHand-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   JustAnotherHand-Regular BLOCKING OS/2.fs_type [0, 8]
+   JustAnotherHand-Regular BLOCKING OS/2.y_subscript_x_size [1400, 1331]
+   JustAnotherHand-Regular BLOCKING OS/2.y_subscript_y_size [1300, 1229]
+     cmap         FAIL 368 codepoints, 3 problem(s)
+         - build loses 2 codepoint(s): U+008E U+009E
+         - build gains 1 codepoint(s): U+000D
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 777178 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 83 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+         - name ID 1 (3,1,0x409): release 'Just Another Hand', build 'JustAnotherHand-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Just Another Hand'
+         - name ID 4 (3,1,0x409): release 'Just Another Hand Regular', build 'Just Another Hand'
+         - ... 5 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1842, -755, 0), build win (1850, -608, 0)
+         - OS/2.sTypoLineGap: release 0, build 410
+         - OS/2.usWinAscent: release 1842, build 1850
+         - ... 6 more
+     advances     FAIL 367 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

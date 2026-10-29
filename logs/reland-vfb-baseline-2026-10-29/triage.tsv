@@ -1,0 +1,742 @@
+repo	style	check	cause	detail
+aclonica	Aclonica-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+aclonica	Aclonica-Regular	rendering	rendering: outlines differ	diffenator3: 67 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00D5 61px, U+0153 58px, U+2030 54px, U+014E 53px, U+00D3 52px
+aclonica	Aclonica-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Aclonica', build 'Aclonica-Regular'
+aclonica	Aclonica-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1687, -533, 101), build hhea (1687, -533, 0)
+actor	Actor-Regular	cmap	cmap: differs	build loses 1 codepoint(s): U+00A0
+actor	Actor-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Actor', build 'Actor-Regular'
+actor	Actor-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+aldrich	Aldrich-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+aldrich	Aldrich-Regular	shaping	shaping: pairs	default features, pairs: 345 of 28900 runs differ
+aldrich	Aldrich-Regular	rendering	rendering: outlines differ	diffenator3: 132 word(s) render differently (>8 px at 16 ppem), confirmed: 'AWorthyOpponent' 884px, 'ATAKTrucking' 811px, 'NYJetsAFLlogo' 731px, 'Wschodnioazjatycka' 709px, 'Tähdenlentoja' 689px
+aldrich	Aldrich-Regular	names	names: ID 2+4+6	name ID 2 (3,1,0x409): release 'Regular', build 'Aldrich'
+aldrich	Aldrich-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1475, -430, 98), build hhea (1872, -573, 0)
+aldrich	Aldrich-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+alfaslabone	AlfaSlabOne-Regular	cmap	cmap: differs	build loses 437 codepoint(s): U+0100 U+0101 U+0102 U+0103 U+0104 U+0105 U+0106 U+0107 U+0108 U+0109 U+010A U+010B U+010C U+010D U+010E U+010F U+0110 U+0111 U+0112 U+0113
+alfaslabone	AlfaSlabOne-Regular	shaping	shaping: singles	default features, singles: 155 of 234 runs differ
+alfaslabone	AlfaSlabOne-Regular	rendering	rendering: .notdef	diffenator3: 174 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 896px, U+0134 384px, U+0132 334px, U+00FF 315px, U+00FD 315px
+alfaslabone	AlfaSlabOne-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Alfa Slab One', build 'AlfaSlabOne-Regular'
+alfaslabone	AlfaSlabOne-Regular	line_spacing	line_spacing: metrics differ	OS/2.usWinAscent: release 1238, build 1036
+alfaslabone	AlfaSlabOne-Regular	advances	advances: differ	496 reachable release glyph(s) have no build counterpart: AEacute Abreve Amacron Aogonek Aringacute Cacute Ccaron Ccircumflex Cdotaccent Dcaron Dcroat Ebreve Ecaron Edotaccent Emacron
+alfaslabone	AlfaSlabOne-Regular	gdef	gdef: classes differ	mark attachment classes differ
+annieuseyourtelescope	AnnieUseYourTelescope-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+annieuseyourtelescope	AnnieUseYourTelescope-Regular	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00BC 162px, U+00BD 127px, U+00B2 80px, U+00B3 71px, U+00BA 66px
+annieuseyourtelescope	AnnieUseYourTelescope-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Annie Use Your Telescope', build 'AnnieUseYourTelescope'
+annieuseyourtelescope	AnnieUseYourTelescope-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+atomicage	AtomicAge-Regular	cmap	cmap: differs	2 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+00A0 nonbreakingspace/nbspace
+atomicage	AtomicAge-Regular	shaping	shaping: pairs	default features, pairs: 1 of 145386 runs differ
+atomicage	AtomicAge-Regular	rendering	rendering: outlines differ	diffenator3: 91 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,sinf' 56px, 'ÇĢĶĻŅŖŞŢçģķļņŗşţ' 133px, 'ĂČĎĚĞĽŇŘŠŤŬŽăčďěğľňřšťŭž' 118px, 'Aṣṭāṅgahṛdayasaṃhitā' 115px, 'ÁĆÉÍĹŃÓŔŚ
+atomicage	AtomicAge-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Atomic Age', build 'AtomicAge-Regular'
+atomicage	AtomicAge-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (2091, -656, 0), build hhea (2014, -560, 0)
+atomicage	AtomicAge-Regular	gdef	gdef: classes differ	GDEF present in the build
+audiowide	Audiowide-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+audiowide	Audiowide-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10554px
+audiowide	Audiowide-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Audiowide', build 'Audiowide-Regular'
+audiowide	Audiowide-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+audiowide	Audiowide-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 666/1024
+baumans	Baumans-Regular	cmap	cmap: differs	2 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace; U+2074 uni2074/foursuperior
+baumans	Baumans-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Baumans', build 'Baumans-Regular'
+baumans	Baumans-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (942, -240, 0), build win (960, -240, 0)
+berkshireswash	BerkshireSwash-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+berkshireswash	BerkshireSwash-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Berkshire Swash', build 'BerkshireSwash-Regular'
+berkshireswash	BerkshireSwash-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+bigelowrules	BigelowRules-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+bigelowrules	BigelowRules-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 9698px
+bigelowrules	BigelowRules-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Bigelow Rules', build 'BigelowRules-Regular'
+bigelowrules	BigelowRules-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1857, -516, 0), build win (1942, -516, 0)
+bigelowrules	BigelowRules-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 410/1024
+butterflykids	ButterflyKids-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Butterfly Kids', build 'ButterflyKids'
+butterflykids	ButterflyKids-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (917, -304, 0), build win (925, -304, 0)
+caesardressing	CaesarDressing-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Caesar Dressing', build 'CaesarDressing'
+caesardressing	CaesarDressing-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1017, -231, 0), build win (1017, -226, 0)
+cantoraone	CantoraOne-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+cantoraone	CantoraOne-Regular	shaping	shaping: rules	default features, rules: 2 of 65 runs differ
+cantoraone	CantoraOne-Regular	rendering	rendering: outlines differ	diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'Geoffhodgson' 444px
+cantoraone	CantoraOne-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Cantora One', build 'CantoraOne-Regular'
+cantoraone	CantoraOne-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+cantoraone	CantoraOne-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+carroisgothic	CarroisGothic-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+carroisgothic	CarroisGothic-Regular	shaping	shaping: singles	default features, singles: 1 of 252 runs differ
+carroisgothic	CarroisGothic-Regular	rendering	rendering: outlines differ	diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 277px, '0,,,zero' 40px, 'ACEGHIJOSUWYaceghijosuwy' 1394px, 'ASSOCIAÇÃO' 504px, 'ATKVeertjie' 499px
+carroisgothic	CarroisGothic-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Carrois Gothic', build 'CarroisGothic-Regular'
+carroisgothic	CarroisGothic-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release typo (922, -270, 0), build win (930, -270, 0)
+carroisgothic	CarroisGothic-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+carroisgothicsc	CarroisGothicSC-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+carroisgothicsc	CarroisGothicSC-Regular	shaping	shaping: singles	default features, singles: 1 of 252 runs differ
+carroisgothicsc	CarroisGothicSC-Regular	rendering	rendering: outlines differ	diffenator3: 71 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 535px, '0,,,zero' 44px, 'ACEGHIJOSUWYaceghijosuwy' 1358px, 'ALKUjiggerypokeryMIX' 808px, 'Abcdefghijklm
+carroisgothicsc	CarroisGothicSC-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Carrois Gothic SC', build 'CarroisGothicSC-Regular'
+carroisgothicsc	CarroisGothicSC-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release typo (922, -270, 0), build win (930, -270, 0)
+carroisgothicsc	CarroisGothicSC-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+cedarvillecursive	Cedarville-Cursive	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+cedarvillecursive	Cedarville-Cursive	rendering	rendering: outlines differ	diffenator3: 11 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00BD 239px, U+00BF 220px, U+00BC 220px, U+00BE 218px, U+00B3 111px
+cedarvillecursive	Cedarville-Cursive	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Cedarville Cursive', build 'Cedarville-Cursive'
+cedarvillecursive	Cedarville-Cursive	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+chelseamarket	ChelseaMarket-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Chelsea Market', build 'ChelseaMarket-Regular'
+chelseamarket	ChelseaMarket-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 51, build 52
+clickerscript	ClickerScript-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+clickerscript	ClickerScript-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Clicker Script', build 'ClickerScript-Regular'
+clickerscript	ClickerScript-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1898, -807, 0), build hhea (927, -394, 0)
+combo	Combo-Regular	cmap	cmap: differs	build loses 3 codepoint(s): U+0000 U+000D U+00A0
+combo	Combo-Regular	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build 'Combo'
+combo	Combo-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (907, -269, 0), build win (931, -269, 0)
+combo	Combo-Regular	advances	advances: differ	3 reachable release glyph(s) have no build counterpart: .ttfautohint nonmarkingreturn uni00A0
+crushed	Crushed-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+crushed	Crushed-Regular	shaping	shaping: pairs	default features, pairs: 4723 of 86509 runs differ
+crushed	Crushed-Regular	rendering	rendering: outlines differ	diffenator3: 65 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 405px, '0123456789,,,pnum' 148px, '0123456789,,,sinf' 148px, '0,,,zero' 146px, 'ÂĈÊĜĤÎĴÔŜÛŴŶâĉêĝĥîĵôŝûŵ
+crushed	Crushed-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Crushed', build 'Crushed-Regular'
+crushed	Crushed-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1820, -483, 51), build hhea (1820, -483, 0)
+dynalight	Dynalight-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+dynalight	Dynalight-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10062px
+dynalight	Dynalight-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Dynalight', build 'Dynalight-Regular'
+dynalight	Dynalight-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+dynalight	Dynalight-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 490/1024
+eaglelake	EagleLake-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+eaglelake	EagleLake-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 12870px
+eaglelake	EagleLake-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Eagle Lake', build 'EagleLake-Regular'
+eaglelake	EagleLake-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+eaglelake	EagleLake-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 610/1024
+electrolize	Electrolize-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+electrolize	Electrolize-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Electrolize', build 'Electrolize-Regular'
+electrolize	Electrolize-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (911, -275, 0), build win (925, -275, 0)
+emilyscandy	EmilysCandy-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Emilys Candy', build 'EmilysCandy'
+emilyscandy	EmilysCandy-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (996, -293, 0), build win (996, -286, 0)
+engagement	Engagement-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+engagement	Engagement-Regular	rendering	rendering: outlines differ	diffenator3: 89 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0192 425px, U+00A9 48px, U+0179 47px, U+017D 46px, U+014E 45px
+engagement	Engagement-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Engagement', build 'Engagement-Regular'
+engagement	Engagement-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+fascinate	Fascinate-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+fascinate	Fascinate-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Fascinate', build 'Fascinate-Regular'
+fascinate	Fascinate-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+fascinateinline	FascinateInline-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+fascinateinline	FascinateInline-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Fascinate Inline', build 'FascinateInline-Regular'
+fascinateinline	FascinateInline-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+fingerpaint	FingerPaint-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+fingerpaint	FingerPaint-Regular	shaping	shaping: singles	default features, singles: 1 of 252 runs differ
+fingerpaint	FingerPaint-Regular	rendering	rendering: outlines differ	diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0307 21px
+fingerpaint	FingerPaint-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Finger Paint', build 'FingerPaint-Regular'
+fingerpaint	FingerPaint-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 290, build 300
+fingerpaint	FingerPaint-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+flavors	Flavors-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Flavors', build 'Flavors-Regular'
+flavors	Flavors-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1015, -300, 0), build win (1015, -293, 0)
+fondamento	Fondamento-Italic	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+fondamento	Fondamento-Italic	shaping	shaping: singles	default features, singles: 3 of 369 runs differ
+fondamento	Fondamento-Italic	rendering	rendering: outlines differ	diffenator3: 134 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+FB02 1019px, U+0134 1011px, U+004A 803px, U+0123 738px, U+011D 716px
+fondamento	Fondamento-Italic	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Fondamento', build 'Fondamento-Italic'
+fondamento	Fondamento-Italic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 20
+fondamento	Fondamento-Italic	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+fondamento	Fondamento-Italic	gdef	gdef: classes differ	GDEF absent in the build
+fondamento	Fondamento-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+fondamento	Fondamento-Regular	shaping	shaping: singles	default features, singles: 3 of 369 runs differ
+fondamento	Fondamento-Regular	rendering	rendering: outlines differ	diffenator3: 128 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0134 738px, U+00C5 714px, U+004A 588px, U+00F0 168px, U+1E80 133px
+fondamento	Fondamento-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Fondamento', build 'Fondamento-Regular'
+fondamento	Fondamento-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 20
+fondamento	Fondamento-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+fondamento	Fondamento-Regular	gdef	gdef: classes differ	GDEF absent in the build
+forum	Forum-Regular	cmap	cmap: differs	build loses 1 codepoint(s): U+00A0
+forum	Forum-Regular	shaping	shaping: singles	default features, singles: 10 of 577 runs differ
+forum	Forum-Regular	rendering	rendering: outlines differ	diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+030B 41px, U+030A 27px, U+0303 24px, U+030C 23px, U+0306 20px
+forum	Forum-Regular	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build 'Forum'
+forum	Forum-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (856, -248, 0), build win (952, -248, 0)
+forum	Forum-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+freckleface	FreckleFace-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+freckleface	FreckleFace-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Freckle Face', build 'FreckleFace-Regular'
+freckleface	FreckleFace-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1946, -571, 0), build hhea (950, -279, 0)
+frederickathegreat	FrederickatheGreat-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Fredericka the Great', build 'FrederickatheGreat-Regular'
+frederickathegreat	FrederickatheGreat-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+frijole	Frijole-Regular	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build 'Frijole'
+frijole	Frijole-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1075, -337, 0), build hhea (1050, -329, 0)
+galindo	Galindo-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+galindo	Galindo-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 6578px
+galindo	Galindo-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Galindo', build 'Galindo-Regular'
+galindo	Galindo-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (2014, -883, 0), build hhea (983, -431, 0)
+galindo	Galindo-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 614/1024
+gloriahallelujah	GloriaHallelujah	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+gloriahallelujah	GloriaHallelujah	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Gloria Hallelujah', build 'GloriaHallelujah'
+gloriahallelujah	GloriaHallelujah	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+gorditas	Gorditas-Bold	cmap	cmap: differs	2 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+00B7 periodcentered/middot
+gorditas	Gorditas-Bold	shaping	shaping: pairs	default features, pairs: 1220 of 34596 runs differ
+gorditas	Gorditas-Bold	rendering	rendering: outlines differ	diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'BlagoÏevitch' 262px, 'AraÚjo' 123px, 'AntropologÌa' 65px
+gorditas	Gorditas-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Gorditas', build 'Gorditas-Bold'
+gorditas	Gorditas-Bold	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (954, -259, 0), build hhea (950, -259, 0)
+gorditas	Gorditas-Regular	cmap	cmap: differs	3 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+00AF macron/overscore; U+00B7 periodcentered/middot
+gorditas	Gorditas-Regular	shaping	shaping: pairs	default features, pairs: 1031 of 34596 runs differ
+gorditas	Gorditas-Regular	rendering	rendering: outlines differ	diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'BlagoÏevitch' 255px, 'AraÚjo' 157px, 'AntropologÌa' 74px
+gorditas	Gorditas-Regular	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build 'Gorditas'
+gorditas	Gorditas-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (954, -259, 0), build hhea (950, -259, 0)
+gotu	Gotu-Regular	BUILD	not built	BUILD
+grandhotel	GrandHotel-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+grandhotel	GrandHotel-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Grand Hotel', build 'GrandHotel-Regular'
+grandhotel	GrandHotel-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1938, -844, 0), build hhea (946, -412, 0)
+griffy	Griffy-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Griffy', build 'Griffy-Regular'
+griffy	Griffy-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+hanalei	Hanalei-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+hanalei	Hanalei-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Hanalei', build 'Hanalei-Regular'
+hanalei	Hanalei-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (2124, -541, 0), build hhea (1037, -264, 0)
+hanaleifill	HanaleiFill-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+hanaleifill	HanaleiFill-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Hanalei Fill', build 'HanaleiFill-Regular'
+hanaleifill	HanaleiFill-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (2124, -541, 0), build hhea (1037, -264, 0)
+happymonkey	HappyMonkey-Regular	cmap	cmap: differs	2 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+00B7 periodcentered/middot
+happymonkey	HappyMonkey-Regular	shaping	shaping: pairs	default features, pairs: 294 of 34969 runs differ
+happymonkey	HappyMonkey-Regular	rendering	rendering: outlines differ	diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'Abaújalpár' 397px, 'APGujarat' 327px, 'Abaújkér' 285px
+happymonkey	HappyMonkey-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Happy Monkey', build 'HappyMonkey'
+happymonkey	HappyMonkey-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+hennypenny	HennyPenny-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+hennypenny	HennyPenny-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Henny Penny', build 'HennyPenny-Regular'
+hennypenny	HennyPenny-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+hermeneusone	HermeneusOne-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+hermeneusone	HermeneusOne-Regular	shaping	shaping: singles	default features, singles: 1 of 444 runs differ
+hermeneusone	HermeneusOne-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Hermeneus One', build 'HermeneusOne-Regular'
+hermeneusone	HermeneusOne-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+hermeneusone	HermeneusOne-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+irishgrover	IrishGrover-Regular	shaping	shaping: pairs	default features, pairs: 1076 of 22801 runs differ
+irishgrover	IrishGrover-Regular	rendering	rendering: outlines differ	diffenator3: 303 word(s) render differently (>8 px at 16 ppem), confirmed: 'AgnethaFältskogsbästaAgnetha' 1553px, 'ACEILNORSUYZaceilnorsuyz' 978px, 'ARQUEOLÓGICOS' 963px, 'FUTBALLFEJLESZTÉS' 956px, 'E
+irishgrover	IrishGrover-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Irish Grover', build 'IrishGrover'
+irishgrover	IrishGrover-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (965, -246, 27), build hhea (965, -246, 0)
+jimnightshade	JimNightshade-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+jimnightshade	JimNightshade-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11414px
+jimnightshade	JimNightshade-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Jim Nightshade', build 'JimNightshade-Regular'
+jimnightshade	JimNightshade-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 20
+jimnightshade	JimNightshade-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 400/1024
+jollylodger	JollyLodger-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Jolly Lodger', build 'JollyLodger'
+jollylodger	JollyLodger-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (988, -263, 0), build win (988, -257, 0)
+junge	Junge-Regular	cmap	cmap: differs	2 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace; U+2074 uni2074/foursuperior
+junge	Junge-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Junge', build 'Junge-Regular'
+junge	Junge-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+justanotherhand	JustAnotherHand-Regular	cmap	cmap: differs	build loses 2 codepoint(s): U+008E U+009E
+justanotherhand	JustAnotherHand-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Just Another Hand', build 'JustAnotherHand-Regular'
+justanotherhand	JustAnotherHand-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1842, -755, 0), build win (1850, -608, 0)
+justanotherhand	JustAnotherHand-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+kaushanscript	KaushanScript-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+kaushanscript	KaushanScript-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Kaushan Script', build 'KaushanScript-Regular'
+kaushanscript	KaushanScript-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 50, build 47
+kenia	Kenia-Regular	cmap	cmap: differs	build loses 1 codepoint(s): U+00A0
+kenia	Kenia-Regular	shaping	shaping: pairs	default features, pairs: 94 of 19922 runs differ
+kenia	Kenia-Regular	rendering	rendering: .notdef	diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'Abcdefghijklmnopqrstuvwxyz' 786px
+kenia	Kenia-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Kenia', build 'Kenia-Regular'
+kenia	Kenia-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (958, -330, 0), build win (950, -250, 0)
+kenia	Kenia-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 194/500
+labelleaurore	LaBelleAurore	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00BE 246px, U+00BC 169px, U+00BD 138px, U+00B3 88px, U+00B2 81px
+labelleaurore	LaBelleAurore	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'La Belle Aurore', build 'LaBelleAurore'
+labelleaurore	LaBelleAurore	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1103, -794, 0), build hhea (1103, -796, 0)
+librecaslondisplay	LibreCaslonDisplay-Regular	cmap	cmap: differs	6 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+2002 uni2002/enspace; U+2003 uni2003/emspace; U+2074 uni2074/foursuperior; U+2084 uni2084/fourin
+librecaslondisplay	LibreCaslonDisplay-Regular	shaping	shaping: singles	default features, singles: 1 of 501 runs differ
+librecaslondisplay	LibreCaslonDisplay-Regular	rendering	rendering: .notdef	diffenator3: 7 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0118 136px, U+015E 42px, U+030F 38px, U+F6C3 33px, U+00C7 31px
+librecaslondisplay	LibreCaslonDisplay-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Libre Caslon Display', build 'LibreCaslonDisplay-Regular'
+librecaslondisplay	LibreCaslonDisplay-Regular	line_spacing	line_spacing: metrics differ	OS/2.usWinAscent: release 963, build 970
+librecaslondisplay	LibreCaslonDisplay-Regular	advances	advances: differ	4 advance width(s) differ (release/build): .notdef 160/717, uni030F 0/299, uni0311 0/306, uniF6C3 0/164
+librecaslondisplay	LibreCaslonDisplay-Regular	gdef	gdef: classes differ	GDEF absent in the build
+lobstertwo	LobsterTwo-Bold	shaping	shaping: pairs	default features, pairs: 19 of 50625 runs differ
+lobstertwo	LobsterTwo-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Lobster Two', build 'LobsterTwo-Bold'
+lobstertwo	LobsterTwo-Bold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+lobstertwo	LobsterTwo-BoldItalic	shaping	shaping: pairs	default features, pairs: 19 of 51076 runs differ
+lobstertwo	LobsterTwo-BoldItalic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Lobster Two', build 'LobsterTwo-BoldItalic'
+lobstertwo	LobsterTwo-BoldItalic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+lobstertwo	LobsterTwo-Italic	shaping	shaping: pairs	default features, pairs: 19 of 51076 runs differ
+lobstertwo	LobsterTwo-Italic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Lobster Two', build 'LobsterTwo-Italic'
+lobstertwo	LobsterTwo-Italic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+lobstertwo	LobsterTwo-Regular	shaping	shaping: pairs	default features, pairs: 19 of 50176 runs differ
+lobstertwo	LobsterTwo-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Lobster Two', build 'LobsterTwo'
+lobstertwo	LobsterTwo-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+luckiestguy	LuckiestGuy-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+luckiestguy	LuckiestGuy-Regular	rendering	rendering: outlines differ	diffenator3: 25 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+2030 45px, U+016E 36px, U+0025 33px, U+0026 32px, U+00F5 28px
+luckiestguy	LuckiestGuy-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Luckiest Guy', build 'LuckiestGuy-ExtraBold'
+luckiestguy	LuckiestGuy-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1440, -608, 0), build hhea (720, -304, 0)
+maidenorange	MaidenOrange-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+maidenorange	MaidenOrange-Regular	rendering	rendering: outlines differ	diffenator3: 48 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+2030 56px, U+00A9 49px, U+00AE 44px, U+00D6 41px, U+014E 38px
+maidenorange	MaidenOrange-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Maiden Orange', build 'MaidenOrange-Regular'
+maidenorange	MaidenOrange-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1832, -506, 0), build win (1850, -608, 0)
+marcellus	Marcellus-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+marcellus	Marcellus-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Marcellus', build 'Marcellus-Regular'
+marcellus	Marcellus-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+marcellussc	MarcellusSC-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+marcellussc	MarcellusSC-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Marcellus SC', build 'MarcellusSC-Regular'
+marcellussc	MarcellusSC-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+margarine	Margarine-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+margarine	Margarine-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Margarine', build 'Margarine-Regular'
+margarine	Margarine-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (2075, -678, 0), build hhea (1013, -331, 0)
+mclaren	McLaren-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+mclaren	McLaren-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11544px
+mclaren	McLaren-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'McLaren', build 'McLaren-Regular'
+mclaren	McLaren-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (2216, -722, 0), build hhea (2216, -729, 0)
+mclaren	McLaren-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 537/1024
+mervalescript	MervaleScript-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+mervalescript	MervaleScript-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mervale Script', build 'MervaleScript-Regular'
+mervalescript	MervaleScript-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (2020, -692, 0), build hhea (986, -338, 0)
+metalmania	MetalMania-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+metalmania	MetalMania-Regular	shaping	shaping: singles	default features, singles: 1 of 259 runs differ
+metalmania	MetalMania-Regular	rendering	rendering: outlines differ	diffenator3: 29 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 399px, '0123456789,,,pnum' 54px, 'DANAŠNjIH' 539px, 'najorĸutagssiaĸ' 513px, 'ATKVeertjie' 442px
+metalmania	MetalMania-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Metal Mania', build 'MetalMania-Regular'
+metalmania	MetalMania-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+milonga	Milonga-Regular	cmap	cmap: differs	build gains 1 codepoint(s): U+000D
+milonga	Milonga-Regular	shaping	shaping: singles	default features, singles: 1 of 428 runs differ
+milonga	Milonga-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Milonga', build 'Milonga-Regular'
+milonga	Milonga-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+milonga	Milonga-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+miltonian	Miltonian-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00B7 periodcentered/middot
+miltonian	Miltonian-Regular	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build 'Miltonian'
+miltonian	Miltonian-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (918, -274, 0), build win (926, -274, 0)
+miltoniantattoo	MiltonianTattoo-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00B7 periodcentered/middot
+miltoniantattoo	MiltonianTattoo-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Miltonian Tattoo', build 'MiltonianTattoo'
+miltoniantattoo	MiltonianTattoo-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (918, -274, 0), build win (926, -274, 0)
+miniver	Miniver-Regular	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build 'Miniver'
+miniver	Miniver-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+modak	-	LANDING	landing failed	UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+montez	Montez-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+montez	Montez-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Montez', build 'Montez-Regular'
+montez	Montez-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+mousememoirs	MouseMemoirs-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+mousememoirs	MouseMemoirs-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mouse Memoirs', build 'MouseMemoirs-Regular'
+mousememoirs	MouseMemoirs-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1917, -428, 0), build hhea (936, -209, 0)
+mukta	Mukta-Bold	cmap	cmap: differs	build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+mukta	Mukta-Bold	shaping	shaping: singles	default features, singles: 10 of 616 runs differ
+mukta	Mukta-Bold	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095B 620px, U+0959 446px, U+0958 441px, U+095E 427px, U+095F 326px
+mukta	Mukta-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta', build 'Mukta-Bold'
+mukta	Mukta-Bold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 285, build 300
+mukta	Mukta-Bold	gdef	gdef: classes differ	59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3
+mukta	Mukta-ExtraBold	cmap	cmap: differs	build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+mukta	Mukta-ExtraBold	shaping	shaping: singles	default features, singles: 10 of 616 runs differ
+mukta	Mukta-ExtraBold	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095E 449px, U+0959 442px, U+0958 435px, U+095F 337px, U+095C 332px
+mukta	Mukta-ExtraBold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta ExtraBold', build 'Mukta-ExtraBold'
+mukta	Mukta-ExtraBold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 288, build 300
+mukta	Mukta-ExtraBold	gdef	gdef: classes differ	59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3
+mukta	Mukta-ExtraLight	cmap	cmap: differs	build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+mukta	Mukta-ExtraLight	shaping	shaping: singles	default features, singles: 10 of 616 runs differ
+mukta	Mukta-ExtraLight	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0959 375px, U+0958 316px, U+095E 312px, U+0934 266px, U+095F 230px
+mukta	Mukta-ExtraLight	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta ExtraLight', build 'Mukta-ExtraLight'
+mukta	Mukta-ExtraLight	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+mukta	Mukta-ExtraLight	gdef	gdef: classes differ	59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3
+mukta	Mukta-Light	cmap	cmap: differs	build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+mukta	Mukta-Light	shaping	shaping: singles	default features, singles: 10 of 616 runs differ
+mukta	Mukta-Light	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0959 416px, U+0958 384px, U+095E 346px, U+0934 280px, U+095B 272px
+mukta	Mukta-Light	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Light', build 'Mukta-Light'
+mukta	Mukta-Light	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+mukta	Mukta-Light	gdef	gdef: classes differ	59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3
+mukta	Mukta-Medium	cmap	cmap: differs	build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+mukta	Mukta-Medium	shaping	shaping: singles	default features, singles: 10 of 616 runs differ
+mukta	Mukta-Medium	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095B 592px, U+0959 466px, U+0958 433px, U+095E 410px, U+0934 384px
+mukta	Mukta-Medium	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Medium', build 'Mukta-Medium'
+mukta	Mukta-Medium	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 282, build 300
+mukta	Mukta-Medium	gdef	gdef: classes differ	59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3
+mukta	Mukta-Regular	cmap	cmap: differs	build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+mukta	Mukta-Regular	shaping	shaping: singles	default features, singles: 10 of 616 runs differ
+mukta	Mukta-Regular	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095B 514px, U+0959 447px, U+0958 413px, U+095E 376px, U+0934 359px
+mukta	Mukta-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta', build 'Mukta-Regular'
+mukta	Mukta-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+mukta	Mukta-Regular	gdef	gdef: classes differ	59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3
+mukta	Mukta-SemiBold	cmap	cmap: differs	build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+mukta	Mukta-SemiBold	shaping	shaping: singles	default features, singles: 10 of 616 runs differ
+mukta	Mukta-SemiBold	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+095B 589px, U+0959 444px, U+0958 421px, U+095E 421px, U+095F 320px
+mukta	Mukta-SemiBold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta SemiBold', build 'Mukta-SemiBold'
+mukta	Mukta-SemiBold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 284, build 300
+mukta	Mukta-SemiBold	gdef	gdef: classes differ	59 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Chandrabinduone.dv 3/0, NuktaVattumatraRu.dv 3/0, NuktaVattumatraU.dv 3
+muktamahee	MuktaMahee-Bold	cmap	cmap: differs	build loses 2 codepoint(s): U+0964 U+0965
+muktamahee	MuktaMahee-Bold	shaping	shaping: singles	default features, singles: 6 of 562 runs differ
+muktamahee	MuktaMahee-Bold	rendering	rendering: outlines differ	diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A5E 432px, U+0A5B 247px, U+0A36 227px, U+0A5A 210px, U+0A33 203px
+muktamahee	MuktaMahee-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Mahee', build 'MuktaMahee-Bold'
+muktamahee	MuktaMahee-Bold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 285, build 300
+muktamahee	MuktaMahee-Bold	gdef	gdef: classes differ	85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.a
+muktamahee	MuktaMahee-ExtraBold	cmap	cmap: differs	build loses 2 codepoint(s): U+0964 U+0965
+muktamahee	MuktaMahee-ExtraBold	shaping	shaping: singles	default features, singles: 6 of 562 runs differ
+muktamahee	MuktaMahee-ExtraBold	rendering	rendering: outlines differ	diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A5E 448px, U+0A5A 297px, U+0A5B 290px, U+0A36 261px, U+0A33 215px
+muktamahee	MuktaMahee-ExtraBold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Mahee ExtraBold', build 'MuktaMahee-ExtraBold'
+muktamahee	MuktaMahee-ExtraBold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 288, build 300
+muktamahee	MuktaMahee-ExtraBold	gdef	gdef: classes differ	85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.a
+muktamahee	MuktaMahee-ExtraLight	cmap	cmap: differs	build loses 2 codepoint(s): U+0964 U+0965
+muktamahee	MuktaMahee-ExtraLight	shaping	shaping: singles	default features, singles: 6 of 562 runs differ
+muktamahee	MuktaMahee-ExtraLight	rendering	rendering: outlines differ	diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A5A 499px, U+0A33 475px, U+0A36 196px, U+0A59 136px, U+0A5B 124px
+muktamahee	MuktaMahee-ExtraLight	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Mahee ExtraLight', build 'MuktaMahee-ExtraLight'
+muktamahee	MuktaMahee-ExtraLight	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktamahee	MuktaMahee-ExtraLight	gdef	gdef: classes differ	85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.a
+muktamahee	MuktaMahee-Light	cmap	cmap: differs	build loses 2 codepoint(s): U+0964 U+0965
+muktamahee	MuktaMahee-Light	shaping	shaping: singles	default features, singles: 6 of 562 runs differ
+muktamahee	MuktaMahee-Light	rendering	rendering: outlines differ	diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A36 230px, U+0A33 196px, U+0A5A 172px, U+0A59 163px, U+0A5B 153px
+muktamahee	MuktaMahee-Light	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Mahee Light', build 'MuktaMahee-Light'
+muktamahee	MuktaMahee-Light	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktamahee	MuktaMahee-Light	gdef	gdef: classes differ	85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.a
+muktamahee	MuktaMahee-Medium	cmap	cmap: differs	build loses 5 codepoint(s): U+0964 U+0965 U+200C U+200D U+25CC
+muktamahee	MuktaMahee-Medium	shaping	shaping: singles	default features, singles: 24 of 559 runs differ
+muktamahee	MuktaMahee-Medium	rendering	rendering: outlines differ	diffenator3: 24 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A40 347px, U+0A5B 244px, U+0A36 225px, U+0A5A 216px, U+0A59 212px
+muktamahee	MuktaMahee-Medium	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Mahee Medium', build 'MuktaMahee-Medium'
+muktamahee	MuktaMahee-Medium	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 282, build 300
+muktamahee	MuktaMahee-Medium	gdef	gdef: classes differ	85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.a
+muktamahee	MuktaMahee-Regular	cmap	cmap: differs	build loses 2 codepoint(s): U+0964 U+0965
+muktamahee	MuktaMahee-Regular	shaping	shaping: singles	default features, singles: 6 of 562 runs differ
+muktamahee	MuktaMahee-Regular	rendering	rendering: outlines differ	diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A33 460px, U+0A5A 214px, U+0A59 168px, U+0A36 163px, U+0A5B 161px
+muktamahee	MuktaMahee-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Mahee', build 'MuktaMahee-Regular'
+muktamahee	MuktaMahee-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktamahee	MuktaMahee-Regular	gdef	gdef: classes differ	85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.a
+muktamahee	MuktaMahee-SemiBold	cmap	cmap: differs	build loses 2 codepoint(s): U+0964 U+0965
+muktamahee	MuktaMahee-SemiBold	shaping	shaping: singles	default features, singles: 6 of 562 runs differ
+muktamahee	MuktaMahee-SemiBold	rendering	rendering: outlines differ	diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A33 522px, U+0A5E 430px, U+0A5B 256px, U+0A36 237px, U+0A5A 214px
+muktamahee	MuktaMahee-SemiBold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Mahee SemiBold', build 'MuktaMahee-SemiBold'
+muktamahee	MuktaMahee-SemiBold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 284, build 300
+muktamahee	MuktaMahee-SemiBold	gdef	gdef: classes differ	85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.a
+muktamalar	MuktaMalar-Bold	cmap	cmap: differs	build gains 22 codepoint(s): U+2070 U+2074 U+2075 U+2076 U+2077 U+2078 U+2079 U+207D U+207E U+2080 U+2081 U+2082 U+2083 U+2084 U+2085 U+2086 U+2087 U+2088 U+2089 U+208D
+muktamalar	MuktaMalar-Bold	shaping	shaping: pairs	default features, pairs: 16579 of 170617 runs differ
+muktamalar	MuktaMalar-Bold	rendering	rendering: outlines differ	diffenator3: 266 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 511px, '0123456789,,,pnum' 455px, '0123456789,,,sinf' 416px, '0,,,zero' 197px, 'ÂĈÊĜĤÎĴÔŜÛŴŶâĉêĝĥîĵôŝû
+muktamalar	MuktaMalar-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Malar', build 'MuktaMalar-Bold'
+muktamalar	MuktaMalar-Bold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 285, build 300
+muktamalar	MuktaMalar-Bold	gdef	gdef: classes differ	2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): MatraIiDflt.tm 1/3, PulliDflt.tm 1/3
+muktamalar	MuktaMalar-ExtraBold	cmap	cmap: differs	build gains 22 codepoint(s): U+2070 U+2074 U+2075 U+2076 U+2077 U+2078 U+2079 U+207D U+207E U+2080 U+2081 U+2082 U+2083 U+2084 U+2085 U+2086 U+2087 U+2088 U+2089 U+208D
+muktamalar	MuktaMalar-ExtraBold	shaping	shaping: pairs	default features, pairs: 16543 of 170617 runs differ
+muktamalar	MuktaMalar-ExtraBold	rendering	rendering: outlines differ	diffenator3: 266 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 554px, '0123456789,,,pnum' 471px, '0123456789,,,sinf' 420px, '0,,,zero' 201px, 'ÂĈÊĜĤÎĴÔŜÛŴŶâĉêĝĥîĵôŝû
+muktamalar	MuktaMalar-ExtraBold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Malar ExtraBold', build 'MuktaMalar-ExtraBold'
+muktamalar	MuktaMalar-ExtraBold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 288, build 300
+muktamalar	MuktaMalar-ExtraBold	gdef	gdef: classes differ	1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): MatraIiDflt.tm 1/3
+muktamalar	MuktaMalar-ExtraLight	cmap	cmap: differs	build gains 22 codepoint(s): U+2070 U+2074 U+2075 U+2076 U+2077 U+2078 U+2079 U+207D U+207E U+2080 U+2081 U+2082 U+2083 U+2084 U+2085 U+2086 U+2087 U+2088 U+2089 U+208D
+muktamalar	MuktaMalar-ExtraLight	shaping	shaping: pairs	default features, pairs: 16620 of 177865 runs differ
+muktamalar	MuktaMalar-ExtraLight	rendering	rendering: outlines differ	diffenator3: 252 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 399px, '0123456789,,,sinf' 344px, '1/234,latn,dflt,frac' 270px, '0,,,zero' 126px, 'ƒREAKÇONTRØL' 1624px
+muktamalar	MuktaMalar-ExtraLight	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Malar ExtraLight', build 'MuktaMalar-ExtraLight'
+muktamalar	MuktaMalar-ExtraLight	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktamalar	MuktaMalar-ExtraLight	gdef	gdef: classes differ	2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): MatraIiDflt.tm 1/3, PulliDflt.tm 1/3
+muktamalar	MuktaMalar-Light	cmap	cmap: differs	build gains 22 codepoint(s): U+2070 U+2074 U+2075 U+2076 U+2077 U+2078 U+2079 U+207D U+207E U+2080 U+2081 U+2082 U+2083 U+2084 U+2085 U+2086 U+2087 U+2088 U+2089 U+208D
+muktamalar	MuktaMalar-Light	shaping	shaping: pairs	default features, pairs: 16682 of 177865 runs differ
+muktamalar	MuktaMalar-Light	rendering	rendering: outlines differ	diffenator3: 252 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 428px, '1/234,latn,dflt,frac' 367px, '0123456789,,,sinf' 361px, '0,,,zero' 103px, 'ƒREAKÇONTRØL' 1678px
+muktamalar	MuktaMalar-Light	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Malar Light', build 'MuktaMalar-Light'
+muktamalar	MuktaMalar-Light	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktamalar	MuktaMalar-Light	gdef	gdef: classes differ	2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): MatraIiDflt.tm 1/3, PulliDflt.tm 1/3
+muktamalar	MuktaMalar-Medium	cmap	cmap: differs	build gains 22 codepoint(s): U+2070 U+2074 U+2075 U+2076 U+2077 U+2078 U+2079 U+207D U+207E U+2080 U+2081 U+2082 U+2083 U+2084 U+2085 U+2086 U+2087 U+2088 U+2089 U+208D
+muktamalar	MuktaMalar-Medium	shaping	shaping: pairs	default features, pairs: 16312 of 170617 runs differ
+muktamalar	MuktaMalar-Medium	rendering	rendering: outlines differ	diffenator3: 266 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 490px, '0123456789,,,pnum' 468px, '0123456789,,,sinf' 422px, '0,,,zero' 179px, 'ÂĈÊĜĤÎĴÔŜÛŴŶâĉêĝĥîĵôŝû
+muktamalar	MuktaMalar-Medium	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Malar Medium', build 'MuktaMalar-Medium'
+muktamalar	MuktaMalar-Medium	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 282, build 300
+muktamalar	MuktaMalar-Medium	gdef	gdef: classes differ	2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): MatraIiDflt.tm 1/3, PulliDflt.tm 1/3
+muktamalar	MuktaMalar-Regular	cmap	cmap: differs	build gains 22 codepoint(s): U+2070 U+2074 U+2075 U+2076 U+2077 U+2078 U+2079 U+207D U+207E U+2080 U+2081 U+2082 U+2083 U+2084 U+2085 U+2086 U+2087 U+2088 U+2089 U+208D
+muktamalar	MuktaMalar-Regular	shaping	shaping: pairs	default features, pairs: 18466 of 173320 runs differ
+muktamalar	MuktaMalar-Regular	rendering	rendering: outlines differ	diffenator3: 261 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 448px, '1/234,latn,dflt,frac' 433px, '0123456789,,,sinf' 357px, '0,,,zero' 163px, 'ƒREAKÇONTRØL' 1705px
+muktamalar	MuktaMalar-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Malar', build 'MuktaMalar-Regular'
+muktamalar	MuktaMalar-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktamalar	MuktaMalar-Regular	gdef	gdef: classes differ	2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): MatraIiDflt.tm 1/3, PulliDflt.tm 1/3
+muktamalar	MuktaMalar-SemiBold	cmap	cmap: differs	build gains 22 codepoint(s): U+2070 U+2074 U+2075 U+2076 U+2077 U+2078 U+2079 U+207D U+207E U+2080 U+2081 U+2082 U+2083 U+2084 U+2085 U+2086 U+2087 U+2088 U+2089 U+208D
+muktamalar	MuktaMalar-SemiBold	shaping	shaping: pairs	default features, pairs: 16505 of 170617 runs differ
+muktamalar	MuktaMalar-SemiBold	rendering	rendering: outlines differ	diffenator3: 266 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 535px, '0123456789,,,pnum' 408px, '0123456789,,,sinf' 340px, '0,,,zero' 195px, 'ÂĈÊĜĤÎĴÔŜÛŴŶâĉêĝĥîĵôŝû
+muktamalar	MuktaMalar-SemiBold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Malar SemiBold', build 'MuktaMalar-SemiBold'
+muktamalar	MuktaMalar-SemiBold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 284, build 300
+muktamalar	MuktaMalar-SemiBold	gdef	gdef: classes differ	1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): MatraIiDflt.tm 1/3
+muktavaani	MuktaVaani-Bold	cmap	cmap: differs	build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+muktavaani	MuktaVaani-Bold	shaping	shaping: pairs	default features, pairs: 18077 of 164539 runs differ
+muktavaani	MuktaVaani-Bold	rendering	rendering: outlines differ	diffenator3: 2025 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 656px, '0123456789,,,sinf' 573px, '1/234,latn,dflt,frac' 554px, '0,,,zero' 117px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમ
+muktavaani	MuktaVaani-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Vaani', build 'MuktaVaani-Bold'
+muktavaani	MuktaVaani-Bold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 285, build 300
+muktavaani	MuktaVaani-Bold	gdef	gdef: classes differ	1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abre
+muktavaani	MuktaVaani-ExtraBold	cmap	cmap: differs	build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+muktavaani	MuktaVaani-ExtraBold	shaping	shaping: pairs	default features, pairs: 17698 of 164539 runs differ
+muktavaani	MuktaVaani-ExtraBold	rendering	rendering: outlines differ	diffenator3: 1792 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 600px, '1/234,latn,dflt,frac' 547px, '0123456789,,,sinf' 539px, '0,,,zero' 113px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમ
+muktavaani	MuktaVaani-ExtraBold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Vaani ExtraBold', build 'MuktaVaani-ExtraBold'
+muktavaani	MuktaVaani-ExtraBold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 288, build 300
+muktavaani	MuktaVaani-ExtraBold	gdef	gdef: classes differ	1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abre
+muktavaani	MuktaVaani-ExtraLight	cmap	cmap: differs	build loses 36 codepoint(s): U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769 U+F76A
+muktavaani	MuktaVaani-ExtraLight	shaping	shaping: pairs	default features, pairs: 19033 of 169987 runs differ
+muktavaani	MuktaVaani-ExtraLight	rendering	rendering: outlines differ	diffenator3: 1655 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 539px, '0123456789,,,sinf' 459px, '1/234,latn,dflt,frac' 345px, '0,,,zero' 106px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમ
+muktavaani	MuktaVaani-ExtraLight	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Vaani ExtraLight', build 'MuktaVaani-ExtraLight'
+muktavaani	MuktaVaani-ExtraLight	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktavaani	MuktaVaani-ExtraLight	gdef	gdef: classes differ	1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abre
+muktavaani	MuktaVaani-Light	cmap	cmap: differs	build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+muktavaani	MuktaVaani-Light	shaping	shaping: pairs	default features, pairs: 19887 of 166347 runs differ
+muktavaani	MuktaVaani-Light	rendering	rendering: outlines differ	diffenator3: 1873 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 577px, '0123456789,,,sinf' 512px, '1/234,latn,dflt,frac' 409px, '0,,,zero' 119px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમ
+muktavaani	MuktaVaani-Light	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Vaani Light', build 'MuktaVaani-Light'
+muktavaani	MuktaVaani-Light	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktavaani	MuktaVaani-Light	gdef	gdef: classes differ	1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abre
+muktavaani	MuktaVaani-Medium	cmap	cmap: differs	build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+muktavaani	MuktaVaani-Medium	shaping	shaping: pairs	default features, pairs: 18064 of 164539 runs differ
+muktavaani	MuktaVaani-Medium	rendering	rendering: outlines differ	diffenator3: 2017 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 614px, '0123456789,,,sinf' 557px, '1/234,latn,dflt,frac' 525px, '0,,,zero' 123px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમ
+muktavaani	MuktaVaani-Medium	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Vaani Medium', build 'MuktaVaani-Medium'
+muktavaani	MuktaVaani-Medium	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 282, build 300
+muktavaani	MuktaVaani-Medium	gdef	gdef: classes differ	1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abre
+muktavaani	MuktaVaani-Regular	cmap	cmap: differs	build loses 37 codepoint(s): U+0ABF U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768 U+F769
+muktavaani	MuktaVaani-Regular	shaping	shaping: pairs	default features, pairs: 21006 of 166347 runs differ
+muktavaani	MuktaVaani-Regular	rendering	rendering: outlines differ	diffenator3: 1513 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 623px, '1/234,latn,dflt,frac' 541px, '0123456789,,,sinf' 530px, '0,,,zero' 112px, 'ક્ષદસ્જ્દૈસ્ફ્ક્દસ્ફ્
+muktavaani	MuktaVaani-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Vaani', build 'MuktaVaani-Regular'
+muktavaani	MuktaVaani-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 280, build 300
+muktavaani	MuktaVaani-Regular	gdef	gdef: classes differ	1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abre
+muktavaani	MuktaVaani-SemiBold	cmap	cmap: differs	build loses 38 codepoint(s): U+0964 U+0965 U+F730 U+F731 U+F732 U+F733 U+F734 U+F735 U+F736 U+F737 U+F738 U+F739 U+F761 U+F762 U+F763 U+F764 U+F765 U+F766 U+F767 U+F768
+muktavaani	MuktaVaani-SemiBold	shaping	shaping: pairs	default features, pairs: 18053 of 164539 runs differ
+muktavaani	MuktaVaani-SemiBold	rendering	rendering: outlines differ	diffenator3: 1919 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 632px, '1/234,latn,dflt,frac' 627px, '0123456789,,,sinf' 532px, '0,,,zero' 117px, 'શ્રીરાસપઞ્ચાધ્યાયીવિમ
+muktavaani	MuktaVaani-SemiBold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mukta Vaani SemiBold', build 'MuktaVaani-SemiBold'
+muktavaani	MuktaVaani-SemiBold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 284, build 300
+muktavaani	MuktaVaani-SemiBold	gdef	gdef: classes differ	1030 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): A 1/0, AE 1/0, AEacute 1/0, Aacute 1/0, AbbreviationSign.gj 1/0, Abre
+mysteryquest	MysteryQuest-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Mystery Quest', build 'MysteryQuest'
+mysteryquest	MysteryQuest-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (989, -419, 0), build win (989, -409, 0)
+neucha	Neucha	cmap	cmap: differs	2 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace; U+00B7 periodcentered/middot
+neucha	Neucha	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build ''
+neucha	Neucha	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (787, -292, 49), build hhea (787, -292, 0)
+newrocker	NewRocker-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+newrocker	NewRocker-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'New Rocker', build 'NewRocker-Regular'
+newrocker	NewRocker-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+newrocker	NewRocker-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+oregano	Oregano-Italic	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+oregano	Oregano-Italic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Oregano', build 'Oregano-Italic'
+oregano	Oregano-Italic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+oregano	Oregano-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+oregano	Oregano-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Oregano', build 'Oregano-Regular'
+oregano	Oregano-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+originalsurfer	OriginalSurfer-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+originalsurfer	OriginalSurfer-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Original Surfer', build 'OriginalSurfer-Regular'
+originalsurfer	OriginalSurfer-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+parisienne	Parisienne-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+parisienne	Parisienne-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11228px
+parisienne	Parisienne-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Parisienne', build 'Parisienne-Regular'
+parisienne	Parisienne-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 20
+parisienne	Parisienne-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 600/1024
+peralta	Peralta-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+peralta	Peralta-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10608px
+peralta	Peralta-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Peralta', build 'Peralta-Regular'
+peralta	Peralta-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+peralta	Peralta-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 614/1024
+petitformalscript	PetitFormalScript-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+petitformalscript	PetitFormalScript-Regular	shaping	shaping: pairs	default features, pairs: 884 of 119102 runs differ
+petitformalscript	PetitFormalScript-Regular	rendering	rendering: outlines differ	diffenator3: 32 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 742px, '0123456789,,,pnum' 681px, '0123456789,,,dnom' 663px, '0123456789,,,sinf' 597px, 'ACEGHIJOSUWYac
+petitformalscript	PetitFormalScript-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Petit Formal Script', build 'PetitFormalScript-Regular'
+petitformalscript	PetitFormalScript-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 94
+petitformalscript	PetitFormalScript-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+poetsenone	PoetsenOne-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+poetsenone	PoetsenOne-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'PoetsenOne', build 'PoetsenOne-Regular'
+poetsenone	PoetsenOne-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+poetsenone	PoetsenOne-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+princesssofia	PrincessSofia-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Princess Sofia', build 'PrincessSofia'
+princesssofia	PrincessSofia-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1010, -588, 0), build win (1010, -574, 0)
+prostoone	ProstoOne-Regular	cmap	cmap: differs	build loses 1 codepoint(s): U+00A0
+prostoone	ProstoOne-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Prosto One', build 'ProstoOne'
+prostoone	ProstoOne-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+prozalibre	ProzaLibre-Bold	BUILD	not built	BUILD
+prozalibre	ProzaLibre-ExtraBoldItalic	BUILD	not built	BUILD
+prozalibre	ProzaLibre-Medium	BUILD	not built	BUILD
+prozalibre	ProzaLibre-MediumItalic	BUILD	not built	BUILD
+prozalibre	ProzaLibre-SemiBold	BUILD	not built	BUILD
+prozalibre	ProzaLibre-SemiBoldItalic	BUILD	not built	BUILD
+purplepurse	PurplePurse-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+purplepurse	PurplePurse-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Purple Purse', build 'PurplePurse-Regular'
+purplepurse	PurplePurse-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1870, -690, 0), build hhea (913, -337, 0)
+purplepurse	PurplePurse-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+quattrocento	Quattrocento-Bold	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+quattrocento	Quattrocento-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Quattrocento', build 'Quattrocento-Bold'
+quattrocento	Quattrocento-Bold	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (848, -260, 0), build win (940, -260, 0)
+quattrocento	Quattrocento-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+quattrocento	Quattrocento-Regular	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build 'Quattrocento'
+quattrocento	Quattrocento-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (848, -260, 0), build win (940, -260, 0)
+quattrocentosans	QuattrocentoSans-Bold	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+quattrocentosans	QuattrocentoSans-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Quattrocento Sans', build 'QuattrocentoSans-Bold'
+quattrocentosans	QuattrocentoSans-Bold	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (848, -260, 0), build win (940, -260, 0)
+quattrocentosans	QuattrocentoSans-BoldItalic	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+quattrocentosans	QuattrocentoSans-BoldItalic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Quattrocento Sans', build 'QuattrocentoSans-BoldItalic'
+quattrocentosans	QuattrocentoSans-BoldItalic	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (848, -260, 0), build win (940, -260, 0)
+quattrocentosans	QuattrocentoSans-Italic	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+quattrocentosans	QuattrocentoSans-Italic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Quattrocento Sans', build 'QuattrocentoSans-Italic'
+quattrocentosans	QuattrocentoSans-Italic	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (848, -260, 0), build win (940, -260, 0)
+quattrocentosans	QuattrocentoSans-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+quattrocentosans	QuattrocentoSans-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Quattrocento Sans', build 'QuattrocentoSans'
+quattrocentosans	QuattrocentoSans-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (848, -260, 0), build win (940, -260, 0)
+quintessential	Quintessential-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+quintessential	Quintessential-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 12194px
+quintessential	Quintessential-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Quintessential', build 'Quintessential-Regular'
+quintessential	Quintessential-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+quintessential	Quintessential-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 512/1024
+racingsansone	RacingSansOne-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+racingsansone	RacingSansOne-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Racing Sans One', build 'RacingSansOne-Regular'
+racingsansone	RacingSansOne-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 50, build 52
+racingsansone	RacingSansOne-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+ralewaydots	RalewayDots-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+ralewaydots	RalewayDots-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Raleway Dots', build 'RalewayDots-Regular'
+ralewaydots	RalewayDots-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (918, -213, 0), build win (987, -213, 0)
+ralewaydots	RalewayDots-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+ranchers	Ranchers-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+ranchers	Ranchers-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Ranchers', build 'Ranchers-Regular'
+ranchers	Ranchers-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 50, build 57
+ranchers	Ranchers-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+rancho	Rancho-Regular	shaping	shaping: pairs	default features, pairs: 577 of 22500 runs differ
+rancho	Rancho-Regular	rendering	rendering: outlines differ	diffenator3: 148 word(s) render differently (>8 px at 16 ppem), confirmed: 'ACEGHIJOSUWYaceghijosuwy' 633px, 'Abfangjagdflugzeug' 508px, 'Aaronwesleymanagement' 494px, 'AUSOlympicTeam' 486px, 'DANAŠNj
+rancho	Rancho-Regular	names	names: ID 2+4+6	name ID 2 (3,1,0x409): release 'Regular', build 'Rancho'
+rancho	Rancho-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (919, -329, 24), build hhea (919, -329, 0)
+redressed	Redressed-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+redressed	Redressed-Regular	rendering	rendering: outlines differ	diffenator3: 27 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00CB 48px, U+0116 40px, U+0042 40px, U+0114 34px, U+00BF 34px
+redressed	Redressed-Regular	names	names: ID 2+4+6	name ID 2 (3,1,0x409): release 'Regular', build 'Redressed'
+redressed	Redressed-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1907, -494, 0), build win (1964, -494, 0)
+ribeye	Ribeye-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+ribeye	Ribeye-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Ribeye', build 'Ribeye-Regular'
+ribeye	Ribeye-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+righteous	Righteous-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+righteous	Righteous-Regular	shaping	shaping: singles	default features, singles: 3 of 369 runs differ
+righteous	Righteous-Regular	rendering	rendering: outlines differ	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 29px, U+0312 29px, U+0315 21px
+righteous	Righteous-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Righteous', build 'Righteous-Regular'
+righteous	Righteous-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+risque	Risque-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+risque	Risque-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Risque', build 'Risque-Regular'
+risque	Risque-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1853, -514, 0), build hhea (905, -251, 0)
+romanesco	Romanesco-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+romanesco	Romanesco-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Romanesco', build 'Romanesco-Regular'
+romanesco	Romanesco-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1866, -483, 0), build win (1975, -483, 0)
+rumraisin	RumRaisin-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+rumraisin	RumRaisin-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Rum Raisin', build 'RumRaisin-Regular'
+rumraisin	RumRaisin-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+sansitaone	SansitaOne-Regular	cmap	cmap: differs	build gains 45 codepoint(s): U+010C U+010D U+0118 U+0119 U+0141 U+0142 U+0160 U+0161 U+0178 U+017B U+017C U+017D U+017E U+0192 U+02C7 U+02D8 U+02D9 U+02DB U+02DD U+03A9
+sansitaone	SansitaOne-Regular	shaping	shaping: pairs	default features, pairs: 44 of 32761 runs differ
+sansitaone	SansitaOne-Regular	rendering	rendering: outlines differ	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00B2 141px, U+00B3 124px, U+00B9 106px
+sansitaone	SansitaOne-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Sansita One', build 'SansitaOne'
+sansitaone	SansitaOne-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (907, -258, 0), build win (942, -258, 0)
+sansitaone	SansitaOne-Regular	advances	advances: differ	44 reachable build glyph(s) have no release counterpart: Ccaron Eogonek Lslash Omega Scaron Ydieresis Zcaron Zdotaccent approxequal breve caron ccaron dagger daggerdbl dotaccent
+satisfy	Satisfy-Regular	shaping	shaping: pairs	default features, pairs: 369 of 23104 runs differ
+satisfy	Satisfy-Regular	rendering	rendering: outlines differ	diffenator3: 120 word(s) render differently (>8 px at 16 ppem), confirmed: 'ALKUjiggerypokeryMIX' 1261px, 'ACEGHIJOSUWYaceghijosuwy' 1199px, 'ACEILNORSUYZaceilnorsuyz' 1043px, 'ENCYCLOPÆDIA' 855px, 'L
+satisfy	Satisfy-Regular	names	names: ID 2+4+6	name ID 2 (3,1,0x409): release 'Regular', build 'Satisfy'
+satisfy	Satisfy-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (957, -501, 17), build hhea (957, -501, 0)
+seaweedscript	SeaweedScript-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Seaweed Script', build 'SeaweedScript'
+seaweedscript	SeaweedScript-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (969, -431, 0), build win (969, -421, 0)
+sevillana	Sevillana-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+sevillana	Sevillana-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Sevillana', build 'Sevillana-Regular'
+sevillana	Sevillana-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+shadowsintolight	ShadowsIntoLight	cmap	cmap: differs	2 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace; U+00AD uni00AD/_173
+shadowsintolight	ShadowsIntoLight	rendering	rendering: outlines differ	diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00BE 250px, U+00BF 139px, U+00BD 132px, U+00BC 117px, U+00B3 85px
+shadowsintolight	ShadowsIntoLight	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Shadows Into Light', build 'ShadowsIntoLight'
+shadowsintolight	ShadowsIntoLight	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1203, -442, 0), build hhea (1203, -443, 0)
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular	cmap	cmap: differs	build loses 1 codepoint(s): U+00A0
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular	shaping	shaping: pairs	default features, pairs: 357 of 74570 runs differ
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular	rendering	rendering: outlines differ	diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+010B 23px
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Shadows Into Light Two', build 'ShadowsIntoLightTwo-Regular'
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 51, build 0
+share	Share-Bold	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+share	Share-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Share', build 'Share-Bold'
+share	Share-Bold	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (885, -242, 0), build win (958, -242, 0)
+share	Share-Bold	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+share	Share-BoldItalic	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+share	Share-BoldItalic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Share', build 'Share-BoldItalic'
+share	Share-BoldItalic	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (885, -242, 0), build win (958, -242, 0)
+share	Share-BoldItalic	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+share	Share-Italic	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+share	Share-Italic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Share', build 'Share-Italic'
+share	Share-Italic	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (885, -242, 0), build win (958, -242, 0)
+share	Share-Italic	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+share	Share-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+share	Share-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Share', build 'Share-Regular'
+share	Share-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (885, -242, 0), build win (958, -242, 0)
+share	Share-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+sharetechmono	ShareTechMono-Regular	cmap	cmap: differs	build loses 12 codepoint(s): U+2620 U+263A U+263B U+263C U+2640 U+2642 U+2660 U+2663 U+2665 U+2666 U+266A U+266B
+sharetechmono	ShareTechMono-Regular	shaping	shaping: singles	default features, singles: 2 of 255 runs differ
+sharetechmono	ShareTechMono-Regular	rendering	rendering: outlines differ	diffenator3: 2 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+FB01 259px, U+FB02 253px
+sharetechmono	ShareTechMono-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Share Tech Mono', build 'ShareTechMono-Regular'
+sharetechmono	ShareTechMono-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (885, -242, 0), build win (958, -242, 0)
+sharetechmono	ShareTechMono-Regular	advances	advances: differ	12 reachable release glyph(s) have no build counterpart: club diamond female heart invsmileface male musicalnote musicalnotedbl smileface spade sun uni2620
+shojumaru	Shojumaru-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+shojumaru	Shojumaru-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10816px
+shojumaru	Shojumaru-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Shojumaru', build 'Shojumaru-Regular'
+shojumaru	Shojumaru-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+shojumaru	Shojumaru-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 819/1024
+simonetta	Simonetta-Black	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+simonetta	Simonetta-Black	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Simonetta Black', build 'Simonetta-Black'
+simonetta	Simonetta-Black	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+simonetta	Simonetta-BlackItalic	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+simonetta	Simonetta-BlackItalic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Simonetta Black', build 'Simonetta-BlackItalic'
+simonetta	Simonetta-BlackItalic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+simonetta	Simonetta-Italic	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+simonetta	Simonetta-Italic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Simonetta', build 'Simonetta-Italic'
+simonetta	Simonetta-Italic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+simonetta	Simonetta-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+simonetta	Simonetta-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Simonetta', build 'Simonetta-Regular'
+simonetta	Simonetta-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 512, build 300
+skranji	Skranji-Bold	shaping	shaping: singles	default features, singles: 252 of 257 runs differ
+skranji	Skranji-Bold	rendering	rendering: outlines differ	diffenator3: 254 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00C6 812px, U+00C1 793px, U+00C0 792px, U+00C2 765px, U+00C5 764px
+skranji	Skranji-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Skranji', build 'Skranji-Bold'
+skranji	Skranji-Bold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+skranji	Skranji-Bold	advances	advances: differ	253 advance width(s) differ (release/build): A 790/698, AE 1099/974, Aacute 790/698, Acircumflex 790/698, Adieresis 790/698, Agrave 790/698, Aring 790/698, Atilde 790/698, B 716/641, C 598/595, Ccedil
+skranji	Skranji-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Skranji', build 'Skranji-Regular'
+skranji	Skranji-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+sofadione	SofadiOne-Regular	cmap	cmap: differs	build gains 2 codepoint(s): U+0000 U+000D
+sofadione	SofadiOne-Regular	shaping	shaping: singles	default features, singles: 1 of 252 runs differ
+sofadione	SofadiOne-Regular	rendering	rendering: outlines differ	diffenator3: 47 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 429px, '0,,,zero' 39px, 'Abcdefghijklmnopqrstuvwxyz' 1398px, 'ACEGHIJOSUWYaceghijosuwy' 1340px, 'Afryka
+sofadione	SofadiOne-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Sofadi One', build 'SofadiOne-Regular'
+sofadione	SofadiOne-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release typo (856, -310, 0), build win (890, -310, 0)
+sofadione	SofadiOne-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+sofia	Sofia-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Sofia', build 'Sofia-Regular'
+sofia	Sofia-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+specialelite	SpecialElite-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+specialelite	SpecialElite-Regular	rendering	rendering: outlines differ	diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋ' 16px, 'ÁĆÉÍĹŃÓŔŚÚÝŹáćéíĺńóŕśúýź' 15px, 'Ǽnd' 10p
+specialelite	SpecialElite-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Special Elite', build 'SpecialElite-Regular'
+specialelite	SpecialElite-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1440, -608, 0), build win (1850, -608, 0)
+spicyrice	SpicyRice-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+spicyrice	SpicyRice-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Spicy Rice', build 'SpicyRice-Regular'
+spicyrice	SpicyRice-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+stalemate	Stalemate-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+stalemate	Stalemate-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Stalemate', build 'Stalemate-Regular'
+stalemate	Stalemate-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1837, -1165, 0), build hhea (897, -569, 0)
+stalinistone	StalinistOne-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00B7 periodcentered/middot
+stalinistone	StalinistOne-Regular	shaping	shaping: singles	default features, singles: 2 of 333 runs differ
+stalinistone	StalinistOne-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Stalinist One', build 'StalinistOne-Regular'
+stalinistone	StalinistOne-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+stalinistone	StalinistOne-Regular	advances	advances: differ	2 advance width(s) differ (release/build): space 400/500, uni00A0 400/0
+stardosstencil	-	LANDING	landing failed	
+stintultracondensed	StintUltraCondensed-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+stintultracondensed	StintUltraCondensed-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Stint Ultra Condensed', build 'StintUltraCondensed-Regular'
+stintultracondensed	StintUltraCondensed-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1829, -483, 0), build win (1975, -483, 0)
+stintultraexpanded	StintUltraExpanded-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+stintultraexpanded	StintUltraExpanded-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Stint Ultra Expanded', build 'StintUltraExpanded-Regular'
+stintultraexpanded	StintUltraExpanded-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (1853, -483, 0), build win (1975, -483, 0)
+strong	Strong-Regular	cmap	cmap: differs	3 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace; U+2074 uni2074/foursuperior; U+F6D4 uniF6D4/cyrbreve
+strong	Strong-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 3731px
+strong	Strong-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Strong', build 'Strong-Regular'
+strong	Strong-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (944, -250, 0), build win (950, -250, 0)
+strong	Strong-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 0/1210
+sueellenfrancisco	SueEllenFrancisco-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+sueellenfrancisco	SueEllenFrancisco-Regular	names	names: ID 2+17+22	name ID 2 (3,1,0x403): release 'Normal', build None
+sueellenfrancisco	SueEllenFrancisco-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 51, build 75
+syncopate	Syncopate-Bold	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+syncopate	Syncopate-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Syncopate', build 'Syncopate-Bold'
+syncopate	Syncopate-Bold	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1556, -426, 150), build hhea (1556, -426, 0)
+syncopate	Syncopate-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+syncopate	Syncopate-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Syncopate', build 'Syncopate-Regular'
+syncopate	Syncopate-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1556, -426, 150), build hhea (0, 0, 0)
+taiheritagepro	TaiHeritagePro-Bold	shaping	shaping: singles	default features, singles: 1 of 502 runs differ
+taiheritagepro	TaiHeritagePro-Bold	rendering	rendering: outlines differ	diffenator3: 90 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0040 90px, U+AAAF 66px, U+AADE 65px, U+2030 61px, U+1ECC 58px
+taiheritagepro	TaiHeritagePro-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Tai Heritage Pro', build 'TaiHeritagePro-Bold'
+taiheritagepro	TaiHeritagePro-Bold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+taiheritagepro	TaiHeritagePro-Bold	gdef	gdef: classes differ	17 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni031B 3/0, uniFE00 0/3, uniFE01 0/3, uniFE02 0/3, uniFE03 0/3, uniFE0
+taiheritagepro	TaiHeritagePro-Regular	shaping	shaping: singles	default features, singles: 1 of 502 runs differ
+taiheritagepro	TaiHeritagePro-Regular	rendering	rendering: outlines differ	diffenator3: 64 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0040 76px, U+AADE 59px, U+AA85 49px, U+AA93 44px, U+AA96 44px
+taiheritagepro	TaiHeritagePro-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Tai Heritage Pro', build 'TaiHeritagePro'
+taiheritagepro	TaiHeritagePro-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+taiheritagepro	TaiHeritagePro-Regular	gdef	gdef: classes differ	17 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni031B 3/0, uniFE00 0/3, uniFE01 0/3, uniFE02 0/3, uniFE03 0/3, uniFE0
+telex	Telex-Regular	cmap	cmap: differs	build loses 2 codepoint(s): U+0000 U+000D
+telex	Telex-Regular	shaping	shaping: pairs	default features, pairs: 2 of 34176 runs differ
+telex	Telex-Regular	rendering	rendering: outlines differ	diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 36px, U+0067 20px, U+0035 17px
+telex	Telex-Regular	names	names: ID 1+2+4	name ID 1 (3,1,0x409): release 'Telex', build 'Telex-Regular'
+telex	Telex-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 308, build 300
+telex	Telex-Regular	advances	advances: differ	2 reachable release glyph(s) have no build counterpart: NULL nonmarkingreturn
+tenorsans	TenorSans-Regular	cmap	cmap: differs	build loses 1 codepoint(s): U+00A0
+tenorsans	TenorSans-Regular	shaping	shaping: pairs	default features, pairs: 74 of 90594 runs differ
+tenorsans	TenorSans-Regular	rendering	rendering: outlines differ	diffenator3: 9 word(s) render differently (>8 px at 16 ppem), confirmed: 'ГАЛОЎПРАФАДУКАЦЫІ' 1551px, 'Бйоргулфссон' 380px, 'Ґудзя' 164px, 'Јанкулев' 162px, 'Ёкуле' 102px
+tenorsans	TenorSans-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Tenor Sans', build 'TenorSans'
+tenorsans	TenorSans-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (920, -250, 0), build win (950, -250, 0)
+tenorsans	TenorSans-Regular	advances	advances: differ	1 reachable build glyph(s) have no release counterpart: CR
+tradewinds	TradeWinds-Regular	rendering	rendering: outlines differ	diffenator3: 2 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00B3 254px, U+00BE 246px
+tradewinds	TradeWinds-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Trade Winds', build 'TradeWinds'
+tradewinds	TradeWinds-Regular	line_spacing	line_spacing: metrics differ	CoreText line spacing (ascender, descender, gap): release hhea (1019, -469, 0), build hhea (995, -458, 0)
+ubuntu	-	LANDING	landing failed	FileNotFoundError: [Errno 2] No such file or directory: '/home/fsanches/compartilhado/google/fonts/apache/ubuntu/METADATA.pb'
+uncialantiqua	UncialAntiqua-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+uncialantiqua	UncialAntiqua-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Uncial Antiqua', build 'UncialAntiqua-Regular'
+uncialantiqua	UncialAntiqua-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+underdog	Underdog-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+underdog	Underdog-Regular	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build 'Underdog'
+underdog	Underdog-Regular	line_spacing	line_spacing: metrics differ	DirectWrite/GDI line spacing (ascender, descender, gap): release win (909, -247, 0), build win (953, -247, 0)
+underdog	Underdog-Regular	advances	advances: differ	1 reachable release glyph(s) have no build counterpart: .ttfautohint
+vibur	-	LANDING	landing failed	     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 37 it does not
+volkhov	Volkhov-Bold	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+volkhov	Volkhov-Bold	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Volkhov', build 'Volkhov-Bold'
+volkhov	Volkhov-Bold	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+volkhov	Volkhov-BoldItalic	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+volkhov	Volkhov-BoldItalic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Volkhov', build 'Volkhov-BoldItalic'
+volkhov	Volkhov-BoldItalic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+volkhov	Volkhov-Italic	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+volkhov	Volkhov-Italic	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Volkhov', build 'Volkhov-Italic'
+volkhov	Volkhov-Italic	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+volkhov	Volkhov-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+volkhov	Volkhov-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Volkhov', build 'Volkhov-Regular'
+volkhov	Volkhov-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 250, build 300
+waitingforthesunrise	WaitingfortheSunrise	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+waitingforthesunrise	WaitingfortheSunrise	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Waiting for the Sunrise', build 'WaitingfortheSunrise'
+waitingforthesunrise	WaitingfortheSunrise	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300
+yesteryear	Yesteryear-Regular	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+yesteryear	Yesteryear-Regular	rendering	rendering: .notdef	1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11752px
+yesteryear	Yesteryear-Regular	names	names: ID 1+2+6	name ID 1 (3,1,0x409): release 'Yesteryear', build 'Yesteryear-Regular'
+yesteryear	Yesteryear-Regular	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutSize: release 102, build 41
+yesteryear	Yesteryear-Regular	advances	advances: differ	1 advance width(s) differ (release/build): .notdef 461/1024
+zeyada	Zeyada	cmap	cmap: differs	1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+zeyada	Zeyada	rendering	rendering: outlines differ	diffenator3: 11 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00BE 209px, U+00BC 115px, U+00BD 80px, U+00AA 65px, U+00B3 62px
+zeyada	Zeyada	names	names: ID 2+6+17	name ID 2 (3,1,0x409): release 'Regular', build ''
+zeyada	Zeyada	line_spacing	line_spacing: metrics differ	OS/2.yStrikeoutPosition: release 256, build 300

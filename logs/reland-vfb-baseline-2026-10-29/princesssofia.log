@@ -1,0 +1,22 @@
+princesssofia: RESIDUAL @ 2ded951, 3 commits, 0 edit(s): PrincessSofia-Regular=14 functional=FAIL(names+line_spacing)
+   PrincessSofia-Regular BLOCKING OS/2.fs_type [0, 8]
+   PrincessSofia-Regular BLOCKING OS/2.y_subscript_x_size [717, 666]
+   PrincessSofia-Regular BLOCKING OS/2.y_subscript_y_size [666, 614]
+   PrincessSofia-Regular BLOCKING OS/2.y_subscript_y_offset [143, 77]
+   PrincessSofia-Regular BLOCKING OS/2.y_superscript_x_size [717, 666]
+   PrincessSofia-Regular BLOCKING OS/2.y_superscript_y_size [666, 614]
+     cmap         PASS 229 codepoints, exact
+     shaping      PASS 547391 runs shaped, 0 differ
+     rendering    PASS diffenator3 1 glyph / 0 word diffs (0 / 0 confirmed); 0 of 34 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Princess Sofia', build 'PrincessSofia'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Princess Sofia'
+         - name ID 6 (3,1,0x409): release 'PrincessSofia', build 'PrincessSofia-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1010, -588, 0), build win (1010, -574, 0)
+         - OS/2.usWinDescent: release 588, build 574
+         - OS/2.yStrikeoutPosition: release 256, build 300
+         - ... 3 more
+     advances     PASS 230 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

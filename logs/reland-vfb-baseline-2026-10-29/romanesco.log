@@ -1,0 +1,23 @@
+romanesco: RESIDUAL @ da36f14, 3 commits, 0 edit(s): Romanesco-Regular=18 functional=FAIL(cmap+names+line_spacing)
+   Romanesco-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   Romanesco-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   Romanesco-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   Romanesco-Regular BLOCKING OS/2.fs_type [0, 8]
+   Romanesco-Regular BLOCKING OS/2.y_subscript_x_size [1434, 1331]
+   Romanesco-Regular BLOCKING OS/2.y_subscript_y_size [1331, 1229]
+     cmap         FAIL 368 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 731142 runs shaped, 0 differ
+     rendering    PASS diffenator3 1 glyph / 0 word diffs (0 / 0 confirmed); 0 of 125 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Romanesco', build 'Romanesco-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Romanesco'
+         - name ID 6 (3,1,0x409): release 'Romanesco-Regular', build 'Romanesco-Regular-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1866, -483, 0), build win (1975, -483, 0)
+         - OS/2.sTypoLineGap: release 0, build 109
+         - OS/2.usWinAscent: release 1866, build 1975
+         - ... 4 more
+     advances     PASS 370 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,24 @@
+underdog: RESIDUAL @ 6d9c51c, 3 commits, 0 edit(s): Underdog-Regular=15 functional=FAIL(cmap+names+line_spacing+advances)
+   Underdog-Regular BLOCKING OS/2.fs_type [0, 8]
+   Underdog-Regular BLOCKING OS/2.y_subscript_x_size [700, 650]
+   Underdog-Regular BLOCKING OS/2.y_subscript_y_size [650, 600]
+   Underdog-Regular BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   Underdog-Regular BLOCKING OS/2.y_superscript_x_size [700, 650]
+   Underdog-Regular BLOCKING OS/2.y_superscript_y_size [650, 600]
+     cmap         FAIL 407 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 735137 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 141 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Underdog'
+         - name ID 6 (3,1,0x409): release 'Underdog-Regular', build 'Underdog-DefaultMaster'
+         - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Default Master'
+         - ... 1 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (909, -247, 0), build win (953, -247, 0)
+         - OS/2.sTypoLineGap: release 0, build 44
+         - OS/2.usWinAscent: release 909, build 953
+         - ... 4 more
+     advances     FAIL 409 glyph advances compared, 0 differ
+         - 1 reachable release glyph(s) have no build counterpart: .ttfautohint
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,24 @@
+ranchers: RESIDUAL @ 5d46957, 3 commits, 0 edit(s): Ranchers-Regular=16 functional=FAIL(cmap+names+line_spacing+advances)
+   Ranchers-Regular BLOCKING OS/2.fs_type [0, 8]
+   Ranchers-Regular BLOCKING OS/2.y_subscript_x_size [700, 650]
+   Ranchers-Regular BLOCKING OS/2.y_subscript_y_size [650, 600]
+   Ranchers-Regular BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   Ranchers-Regular BLOCKING OS/2.y_superscript_x_size [700, 650]
+   Ranchers-Regular BLOCKING OS/2.y_superscript_y_size [650, 600]
+     cmap         FAIL 430 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      PASS 873448 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Ranchers', build 'Ranchers-Regular'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Ranchers'
+         - name ID 6 (3,1,0x409): release 'Ranchers-Regular', build 'Ranchers-Regular-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 50, build 57
+         - OS/2.yStrikeoutPosition: release 250, build 300
+         - post.underlinePosition: release -86, build -100
+         - ... 2 more
+     advances     FAIL 442 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,23 @@
+miltoniantattoo: RESIDUAL @ 3b7b615, 5 commits, 0 edit(s): MiltonianTattoo-Regular=16 functional=FAIL(cmap+names+line_spacing)
+   MiltonianTattoo-Regular BLOCKING OS/2.fs_type [0, 8]
+   MiltonianTattoo-Regular BLOCKING OS/2.y_subscript_x_size [700, 650]
+   MiltonianTattoo-Regular BLOCKING OS/2.y_subscript_y_size [650, 600]
+   MiltonianTattoo-Regular BLOCKING OS/2.y_subscript_y_offset [140, 75]
+   MiltonianTattoo-Regular BLOCKING OS/2.y_superscript_x_size [700, 650]
+   MiltonianTattoo-Regular BLOCKING OS/2.y_superscript_y_size [650, 600]
+     cmap         FAIL 255 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00B7 periodcentered/middot
+     shaping      PASS 590094 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (7)
+         - name ID 1 (3,1,0x409): release 'Miltonian Tattoo', build 'MiltonianTattoo'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Miltonian Tattoo'
+         - name ID 6 (3,1,0x409): release 'MiltonianTattoo-Regular', build 'MiltonianTattoo-DefaultMaster'
+         - ... 4 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (918, -274, 0), build win (926, -274, 0)
+         - OS/2.sTypoLineGap: release 0, build 8
+         - OS/2.usWinAscent: release 918, build 926
+         - ... 5 more
+     advances     PASS 256 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

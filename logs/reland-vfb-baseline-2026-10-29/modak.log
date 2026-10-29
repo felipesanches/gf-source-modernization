@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/fsanches/compartilhado/gf-source-modernization/tools/land.py", line 857, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/fsanches/compartilhado/gf-source-modernization/tools/land.py", line 792, in main
+    template(repo, rows, d, plan)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fsanches/compartilhado/gf-source-modernization/tools/land.py", line 343, in template
+    old_readme = open(os.path.join(d, "README.md")).read() if "README.md" in tracked else ""
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "<frozen codecs>", line 325, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte

@@ -1,0 +1,13 @@
+prozalibre: RESIDUAL @ f5608b3, 86 commits, 0 edit(s): ProzaLibre-Bold=BUILD functional=-; ProzaLibre-ExtraBoldItalic=BUILD functional=-; ProzaLibre-Medium=BUILD functional=-; ProzaLibre-MediumItalic=BUILD functional=-; ProzaLibre-SemiBold=BUILD functional=-; ProzaLibre-SemiBoldItalic=BUILD functional=-
+   ProzaLibre-Bold BUILD: ProzaLibre-Bold-DefaultMaster.ttf not produced (nothing)
+   ProzaLibre-Bold builder: operation 'Fontc' while building [../fonts//ttf/ProzaLibre-ExtraBoldItalic-DefaultMaster.ttf, ../fonts//webfonts/ProzaLibre-ExtraBoldItalic-DefaultMaster.woff2] from [ProzaLibre-ExtraBoldItalic.glyphs]: FEA validation failed with 1480 errors
+   ProzaLibre-ExtraBoldItalic BUILD: ProzaLibre-ExtraBoldItalic-DefaultMaster.ttf not produced (nothing)
+   ProzaLibre-ExtraBoldItalic builder: operation 'Fontc' while building [../fonts//ttf/ProzaLibre-ExtraBoldItalic-DefaultMaster.ttf, ../fonts//webfonts/ProzaLibre-ExtraBoldItalic-DefaultMaster.woff2] from [ProzaLibre-ExtraBoldItalic.glyphs]: FEA validation failed with 1480 errors
+   ProzaLibre-Medium BUILD: ProzaLibre-Medium-DefaultMaster.ttf not produced (nothing)
+   ProzaLibre-Medium builder: operation 'Fontc' while building [../fonts//ttf/ProzaLibre-ExtraBoldItalic-DefaultMaster.ttf, ../fonts//webfonts/ProzaLibre-ExtraBoldItalic-DefaultMaster.woff2] from [ProzaLibre-ExtraBoldItalic.glyphs]: FEA validation failed with 1480 errors
+   ProzaLibre-MediumItalic BUILD: ProzaLibre-MediumItalic-DefaultMaster.ttf not produced (nothing)
+   ProzaLibre-MediumItalic builder: operation 'Fontc' while building [../fonts//ttf/ProzaLibre-ExtraBoldItalic-DefaultMaster.ttf, ../fonts//webfonts/ProzaLibre-ExtraBoldItalic-DefaultMaster.woff2] from [ProzaLibre-ExtraBoldItalic.glyphs]: FEA validation failed with 1480 errors
+   ProzaLibre-SemiBold BUILD: ProzaLibre-SemiBold-DefaultMaster.ttf not produced (nothing)
+   ProzaLibre-SemiBold builder: operation 'Fontc' while building [../fonts//ttf/ProzaLibre-ExtraBoldItalic-DefaultMaster.ttf, ../fonts//webfonts/ProzaLibre-ExtraBoldItalic-DefaultMaster.woff2] from [ProzaLibre-ExtraBoldItalic.glyphs]: FEA validation failed with 1480 errors
+   ProzaLibre-SemiBoldItalic BUILD: ProzaLibre-SemiBoldItalic-DefaultMaster.ttf not produced (nothing)
+   ProzaLibre-SemiBoldItalic builder: operation 'Fontc' while building [../fonts//ttf/ProzaLibre-ExtraBoldItalic-DefaultMaster.ttf, ../fonts//webfonts/ProzaLibre-ExtraBoldItalic-DefaultMaster.woff2] from [ProzaLibre-ExtraBoldItalic.glyphs]: FEA validation failed with 1480 errors
