@@ -197,3 +197,29 @@ own defect class; `calibrate_geometry.py` -> `CALIBRATION.txt`: the rendering th
   `investigations/workflow-journal-wf_67b21e98-632.jsonl`
 - `issues/` -- upstream issue drafts (fontc weight class, fontc duplicate glyph name)
 - the repositories themselves: `../sfd-reland-repos/<repo>` (not in this repo)
+
+## The VFB batch (2026-10-29)
+
+The families whose source of record is a FontLab Studio 5 `.vfb`: `scope/census.tsv`'s
+class `vfb` (130) plus the `sfd+vfb` families whose releases carry no FFTM table (13; not
+exported by FontForge, so the `.vfb` is the likelier master), static only, none handled
+by an earlier list. 143 families; 135 pair (194 styles), 16 styles do not: the
+multiple-master sources of Arvo, Karla Tamil Inclined/Upright, Proza Libre and Ubuntu
+Mono (the VFB plan's decision D3). The reader is upstream babelfont's (vfbreader 0.1.5);
+what it does not read yet -- the TrueType/OS/2 block, family and style names, native
+kerning and kerning classes, anchors -- is the 2026-07 fix series, re-ported onto
+upstream main `b24ffd03` as branches `vfb-names`, `vfb-truetype-info-2026-10-29`,
+`vfb-kerning-2026-10-29`, `vfb-filters-2026-10-29` (integration branch
+`vfb-integration-2026-10-29`).
+
+| what                                                        | where / command                                                                                                                                       |
+|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| pairing (rules in the docstring; the log says which fired)  | `/home/fsanches/compartilhado/vfblib-py-venv/bin/python3 tools/pair_vfb.py > families-vfb.tsv 2> logs/pair_vfb.log`                                 |
+| the flags a `.vfb` style gets                               | `tools/recipe.py` `flags_for_vfb`: `VFB_BASE` plus `--correct-path-direction` unless the release mixes directions; no FontForge filter                |
+| fidelity-only baseline on upstream babelfont (`b24ffd03`)   | `TABLES=families-vfb.tsv OUT=../vfb-reland-repos LANDED=landed-vfb.tsv BF_TREE=../babelfont-rs-worktrees/vfb-baseline sh tools/reland_all.sh <tag>` |
+| the same with the ported fixes (measurement only)           | `BF_TREE=../babelfont-rs-worktrees/vfb-integration LAND_ARGS=--unpublished-converter ...` with its own `OUT=` and `LANDED=`                            |
+| verdicts                                                    | `landed-vfb.tsv` (last row per repository wins), logs under `logs/reland-<tag>/`                                                                      |
+
+A landing on a librefonts mirror (kind `fork`) is branch `modernize-vfb-to-glyphs` on
+the googlefonts fork that does not exist yet; a monorepo family (kind `hg`) is a fresh
+repository; an upstream repository (kind `upstream`) a branch for a pull request.
