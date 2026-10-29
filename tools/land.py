@@ -200,9 +200,18 @@ def family_rows(repo):
 
 
 def display_name(family):
-    text = open(os.path.join(GF, "ofl" if os.path.isdir(os.path.join(GF, "ofl", family)) else "apache",
-                             family, "METADATA.pb"), encoding="utf-8").read()
+    lic = next(l for l in ("ofl", "apache", "ufl") if os.path.isdir(os.path.join(GF, l, family)))
+    text = open(os.path.join(GF, lic, family, "METADATA.pb"), encoding="utf-8").read()
     return re.search(r'^name: "(.*)"', text, re.M).group(1)
+
+
+def read_text(path):
+    """A repository text file as str: UTF-8, or UTF-16 when it starts with that BOM
+    (librefonts/modak's README.md), else UTF-8 with the undecodable bytes replaced."""
+    raw = open(path, "rb").read()
+    if raw[:2] in (b"\xff\xfe", b"\xfe\xff"):
+        return raw.decode("utf-16")
+    return raw.decode("utf-8", errors="replace")
 
 
 def load_plan(repo):
@@ -340,7 +349,7 @@ def template(repo, rows, d, plan=None):
         os.makedirs(os.path.dirname(os.path.join(d, f)) or d, exist_ok=True)
         shutil.copyfile(os.path.join(TEMPLATE, f), os.path.join(d, f))
     tracked = git(d, "ls-files").stdout.splitlines()
-    old_readme = open(os.path.join(d, "README.md")).read() if "README.md" in tracked else ""
+    old_readme = read_text(os.path.join(d, "README.md")) if "README.md" in tracked else ""
     disp = display_name(rows[0]["family"])
     if rows[0]["kind"] == "binary":
         readme = textwrap.dedent("""\
