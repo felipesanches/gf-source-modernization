@@ -1,0 +1,33 @@
+== fontforge-fixed-pitch 386a5938 2026-10-29T13:23:07Z
+     Removed 1087 files, 1.9GiB total
+fmt: ok
+clippy: ok
+test convertors::robocjk::tests::test_deserialize_designspace ... FAILED
+test convertors::robocjk::tests::test_load_robocjk ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_codepoints ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_deep_components ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_glyphs ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_masters ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif ... FAILED
+test convertors::robocjk::tests::test_load_robocjk_variation_layer_classification ... FAILED
+test filters::decomposecomponentreferences::tests::test_decompose ... FAILED
+test filters::decomposecomponentreferences::tests::test_pass_on_external_axes ... FAILED
+test filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole ... FAILED
+thread 'convertors::robocjk::tests::test_deserialize_designspace' (936422) panicked at babelfont/src/convertors/robocjk.rs:404:91:
+thread 'convertors::robocjk::tests::test_load_robocjk' (936423) panicked at babelfont/src/convertors/robocjk.rs:439:69:
+thread 'convertors::robocjk::tests::test_load_robocjk_codepoints' (936424) panicked at babelfont/src/convertors/robocjk.rs:547:69:
+thread 'convertors::robocjk::tests::test_load_robocjk_deep_components' (936425) panicked at babelfont/src/convertors/robocjk.rs:597:69:
+thread 'convertors::robocjk::tests::test_load_robocjk_glyphs' (936426) panicked at babelfont/src/convertors/robocjk.rs:524:69:
+thread 'convertors::robocjk::tests::test_load_robocjk_masters' (936427) panicked at babelfont/src/convertors/robocjk.rs:461:69:
+thread 'convertors::robocjk::tests::test_load_robocjk_variation_inlined_in_base_glif' (936428) panicked at babelfont/src/convertors/robocjk.rs:639:69:
+thread 'convertors::robocjk::tests::test_load_robocjk_variation_layer_classification' (936429) panicked at babelfont/src/convertors/robocjk.rs:567:69:
+thread 'filters::decomposecomponentreferences::tests::test_decompose' (936458) panicked at babelfont/src/filters/decomposecomponentreferences.rs:559:73:
+thread 'filters::decomposecomponentreferences::tests::test_pass_on_external_axes' (936460) panicked at babelfont/src/filters/decomposecomponentreferences.rs:710:73:
+thread 'filters::decomposecomponentreferences::tests::test_subset_is_same_as_whole' (936461) panicked at babelfont/src/filters/decomposecomponentreferences.rs:582:73:
+test result: FAILED. 318 passed; 11 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.32s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.69s
+test result: ok. 19 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 11.75s
+test result: ok. 30 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+test result: ok. 4 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 3.05s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s

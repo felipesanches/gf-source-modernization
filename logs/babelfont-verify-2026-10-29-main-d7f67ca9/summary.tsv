@@ -1,0 +1,14 @@
+worktree	head	fmt	clippy	tests
+fontforge-gdef-classes	206c0907	ok	ok	374 passed; 11 failed
+fontforge-shadowed-kern-pairs	bb7c0bc3	ok	ok	375 passed; 11 failed
+fontforge-legacy-os2-version	1007f899	ok	ok	372 passed; 11 failed
+fontforge-lookup-precedence	efa7eeca	ok	ok	372 passed; 11 failed
+fontforge-ligature-carets	2221f1b6	ok	ok	372 passed; 11 failed
+fontforge-spacing-marks	82483bb7	ok	ok	373 passed; 11 failed
+fontforge-no-anchor-propagation	43936421	ok	ok	372 passed; 11 failed
+fontforge-ligature-anchors	1f143c33	ok	ok	372 passed; 11 failed
+glyphs3-localized-name-entries	dda287da	ok	ok	377 passed; 11 failed
+fontforge-fixed-pitch	386a5938	ok	ok	379 passed; 11 failed
+fontforge-notdef	883927c8	ok	ok	383 passed; 11 failed
+fontforge-explicit-mark-lookups	130ebf74	ok	ok	376 passed; 11 failed
+typographic-family-names	a2af02ac	ok	ok	377 passed; 11 failed
