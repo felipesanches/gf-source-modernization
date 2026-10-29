@@ -1,0 +1,21 @@
+maidenorange: RESIDUAL-UNPUBLISHED-CONVERTER @ 11b78f9, 3 commits, 0 edit(s): MaidenOrange-Regular=5 functional=FAIL(cmap+rendering+names+line_spacing)
+   MaidenOrange-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   MaidenOrange-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   MaidenOrange-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   MaidenOrange-Regular BLOCKING OS/2.us_win_ascent [1832, 1440]
+   MaidenOrange-Regular BLOCKING OS/2.us_win_descent [506, 1216]
+     cmap         FAIL 366 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 768844 runs shaped, 0 differ
+     rendering    FAIL diffenator3 65 glyph / 124 word diffs (48 / 99 confirmed); 81 of 262 changed outlines draw different ink
+         - diffenator3: 48 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+2030 56px, U+00A9 49px, U+00AE 44px, U+00D6 41px, U+014E 38px
+         - diffenator3: 99 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,sinf' 71px, '0123456789,,,pnum' 69px, '0,,,zero' 16px, 'ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋ' 154px, 'ĂČĎĚĞĽŇŘŠŤŬŽăčďěğľňřšťŭž' 77px
+         - 81 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): registered 30px, copyright 30px, otilde 23px, obreve 22px, perthousand 19px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Maiden Orange Regular', build 'Maiden Orange'
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1832, -506, 0), build win (1440, -1216, 0)
+         - OS/2.usWinAscent: release 1832, build 1440
+         - OS/2.usWinDescent: release 506, build 1216
+     advances     PASS 367 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

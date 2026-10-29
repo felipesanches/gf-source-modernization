@@ -1,0 +1,12 @@
+marcellussc: RESIDUAL-UNPUBLISHED-CONVERTER @ 8bc5d63, 3 commits, 0 edit(s): MarcellusSC-Regular=3 functional=FAIL(cmap)
+   MarcellusSC-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   MarcellusSC-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   MarcellusSC-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+     cmap         FAIL 368 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 733308 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 67 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 370 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 265 it does not

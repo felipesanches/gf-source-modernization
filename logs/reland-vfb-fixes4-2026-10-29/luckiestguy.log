@@ -1,0 +1,25 @@
+luckiestguy: RESIDUAL-UNPUBLISHED-CONVERTER @ 1e84d19, 3 commits, 0 edit(s): LuckiestGuy-Regular=7 functional=FAIL(cmap+rendering+names+line_spacing)
+   LuckiestGuy-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   LuckiestGuy-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   LuckiestGuy-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   LuckiestGuy-Regular BLOCKING OS/2.us_weight_class [400, 800]
+   LuckiestGuy-Regular BLOCKING OS/2.panose_10 {"1": [0, 11], "2": [5, 9]}
+   LuckiestGuy-Regular BLOCKING OS/2.us_win_ascent [2006, 1440]
+     cmap         FAIL 367 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 781055 runs shaped, 0 differ
+     rendering    FAIL diffenator3 87 glyph / 132 word diffs (25 / 91 confirmed); 53 of 300 changed outlines draw different ink
+         - diffenator3: 25 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+2030 45px, U+016E 36px, U+0025 33px, U+0026 32px, U+014E 28px
+         - diffenator3: 91 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 130px, '0123456789,,,sinf' 112px, '1/234,latn,dflt,frac' 48px, 'ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋ' 348px, 'ÅĊĖĠİĿŮŻåċėġıŀůż' 142px
+         - 53 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): backslash 26px, partialdiff 17px, perthousand 15px, dcaron 14px, d 14px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (6)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'ExtraBold'
+         - name ID 4 (3,1,0x409): release 'Luckiest Guy Regular', build 'Luckiest Guy ExtraBold'
+         - name ID 6 (3,1,0x409): release 'LuckiestGuy-Regular', build 'LuckiestGuy-ExtraBold'
+         - ... 3 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (2006, -504, 0), build win (1440, -608, 0)
+         - OS/2.usWinAscent: release 2006, build 1440
+         - OS/2.usWinDescent: release 504, build 608
+     advances     PASS 367 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,13 @@
+prostoone: RESIDUAL-UNPUBLISHED-CONVERTER @ a95dc17, 3 commits, 0 edit(s): ProstoOne-Regular=3 functional=FAIL(cmap+names)
+   ProstoOne-Regular BLOCKING OS/2.fs_type [0, 4]
+   ProstoOne-Regular BLOCKING cmap U+00A0 LOST ["space", null]
+   ProstoOne-Regular CMAP gained [] lost ['U+00A0']
+     cmap         FAIL 402 codepoints, 1 problem(s)
+         - build loses 1 codepoint(s): U+00A0
+     shaping      PASS 699137 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 14 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 6 (3,1,0x409): release 'ProstoOne-Regular', build 'ProstoOne'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 402 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

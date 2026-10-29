@@ -1,0 +1,21 @@
+berkshireswash: RESIDUAL-UNPUBLISHED-CONVERTER @ e46e28f, 12 commits, 0 edit(s): BerkshireSwash-Regular=5 functional=FAIL(cmap+shaping+names+gdef)
+   BerkshireSwash-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   BerkshireSwash-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   BerkshireSwash-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   BerkshireSwash-Regular BLOCKING OS/2.us_weight_class [400, 700]
+   BerkshireSwash-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 3 mark(s): only the release marks U+0312,U+0315,U+0326; only ours marks none
+     cmap         FAIL 371 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 746192 runs shaped, 885 differ
+         - default features, singles: 3 of 371 runs differ
+         - default features, base+mark: 837 of 837 runs differ
+         - default features, base+mark+mark: 45 of 45 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 23 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 4 (3,1,0x409): release 'Berkshire Swash Regular', build 'Berkshire Swash'
+         - OS/2.usWeightClass: release 400, build 700
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 372 glyph advances compared, 0 differ
+     gdef         FAIL GDEF absent/present; 3 class difference(s) shaping reads, 183 it does not
+         - GDEF present in the build
+         - 3 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/0, uni0312 3/0, uni0315 3/0

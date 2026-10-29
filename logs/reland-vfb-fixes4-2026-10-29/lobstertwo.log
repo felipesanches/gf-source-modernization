@@ -1,0 +1,49 @@
+lobstertwo: RESIDUAL-UNPUBLISHED-CONVERTER @ 561a855, 3 commits, 0 edit(s): LobsterTwo-Bold=3 functional=FAIL(shaping); LobsterTwo-BoldItalic=3 functional=FAIL(shaping); LobsterTwo-Italic=3 functional=FAIL(shaping); LobsterTwo-Regular=3 functional=FAIL(shaping)
+   LobsterTwo-Bold BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2]}, null], "DFLT/dflt": [null, {"lookups": [0
+   LobsterTwo-Bold BLOCKING GSUB.feature_list {"aalt": {"1": [1, null]}, "liga": {"0": [2, 1], "1": [3, 2]}, "salt": {"0": [6,
+   LobsterTwo-Bold BLOCKING GSUB.lookup_list {"0": {"0": {"a": ["a.end", null], "a_x": ["a_x.end", null], "aacute": ["aacute.
+     cmap         PASS 257 codepoints, exact
+     shaping      FAIL 654762 runs shaped, 2189 differ
+         - default features, pairs: 19 of 50625 runs differ
+         - GSUB aalt on: 2170 of 2803 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 354 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 348 it does not
+   LobsterTwo-BoldItalic BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2]}, null], "DFLT/dflt": [null, {"lookups": [0
+   LobsterTwo-BoldItalic BLOCKING GSUB.feature_list {"aalt": {"1": [1, null]}, "liga": {"0": [2, 1], "1": [3, 2]}, "salt": {"0": [6,
+   LobsterTwo-BoldItalic BLOCKING GSUB.lookup_list {"0": {"0": {"a": ["a.end", null], "a_x": ["a_x.end", null], "aacute": ["aacute.
+     cmap         PASS 257 codepoints, exact
+     shaping      FAIL 655530 runs shaped, 2189 differ
+         - default features, pairs: 19 of 51076 runs differ
+         - GSUB aalt on: 2170 of 2803 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 354 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 348 it does not
+   LobsterTwo-Italic BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2]}, null], "DFLT/dflt": [null, {"lookups": [0
+   LobsterTwo-Italic BLOCKING GSUB.feature_list {"aalt": {"1": [1, null]}, "liga": {"0": [2, 1], "1": [3, 2]}, "salt": {"0": [6,
+   LobsterTwo-Italic BLOCKING GSUB.lookup_list {"0": {"0": {"a": ["a.end", null], "a_x": ["a_x.end", null], "aacute": ["aacute.
+     cmap         PASS 257 codepoints, exact
+     shaping      FAIL 655530 runs shaped, 2189 differ
+         - default features, pairs: 19 of 51076 runs differ
+         - GSUB aalt on: 2170 of 2803 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 354 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 348 it does not
+   LobsterTwo-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2]}, null], "DFLT/dflt": [null, {"lookups": [0
+   LobsterTwo-Regular BLOCKING GSUB.feature_list {"aalt": {"1": [1, null]}, "liga": {"0": [2, 1], "1": [3, 2]}, "salt": {"0": [6,
+   LobsterTwo-Regular BLOCKING GSUB.lookup_list {"0": {"0": {"a": ["a.end", null], "a_x": ["a_x.end", null], "aacute": ["aacute.
+     cmap         PASS 257 codepoints, exact
+     shaping      FAIL 653885 runs shaped, 2189 differ
+         - default features, pairs: 19 of 50176 runs differ
+         - GSUB aalt on: 2170 of 2803 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 354 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 348 it does not

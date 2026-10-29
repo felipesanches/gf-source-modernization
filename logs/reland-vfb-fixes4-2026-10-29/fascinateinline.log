@@ -1,0 +1,18 @@
+fascinateinline: RESIDUAL-UNPUBLISHED-CONVERTER @ de6d988, 12 commits, 0 edit(s): FascinateInline-Regular=4 functional=FAIL(cmap+shaping+gdef)
+   FascinateInline-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4, 5]}, null], "DFLT/dflt": [null, {"loo
+   FascinateInline-Regular BLOCKING GSUB.feature_list {"frac": {"0": [5, 6]}}
+   FascinateInline-Regular BLOCKING GSUB.lookup_list {"4": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   FascinateInline-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 3 mark(s): only the release marks U+0312,U+0315,U+0326; only ours marks none
+     cmap         FAIL 374 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 731145 runs shaped, 894 differ
+         - default features, singles: 3 of 374 runs differ
+         - default features, base+mark: 846 of 846 runs differ
+         - default features, base+mark+mark: 45 of 45 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 3 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 377 glyph advances compared, 0 differ
+     gdef         FAIL GDEF absent/present; 3 class difference(s) shaping reads, 177 it does not
+         - GDEF present in the build
+         - 3 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/0, uni0312 3/0, uni0315 3/0

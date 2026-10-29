@@ -1,0 +1,22 @@
+sansitaone: RESIDUAL-UNPUBLISHED-CONVERTER @ 368fc75, 3 commits, 0 edit(s): SansitaOne-Regular=47 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances)
+   SansitaOne-Regular BLOCKING OS/2.sx_height [106, 530]
+   SansitaOne-Regular BLOCKING OS/2.s_cap_height [660, 677]
+   SansitaOne-Regular CMAP gained ['U+010C', 'U+010D', 'U+0118', 'U+0119', 'U+0141', 'U+0142', 'U+0160', 'U+0161', 'U+0178', 'U+017B', 'U+017C', 'U+017D', 'U+017E', 'U+0192', 'U+02C7', 'U+02D8', 'U+02D9', 'U+02DB', 'U+02DD', 'U+03A9', 'U+03BC', 'U+03C0', 'U+2020', 'U+2021', 'U+2030', 'U+2122', 'U+2153', 'U+2154', 'U+215B', 'U+2202', 'U+2206', 'U+220F', 'U+2211', 'U+221A', 'U+221E', 'U+222B', 'U+2248', 'U+2260', 'U+2264', 'U+2265', 'U+25CA', 'U+E000', 'U+FB00', 'U+FB01', 'U+FB02'] lost []
+     cmap         FAIL 211 codepoints, 2 problem(s)
+         - build gains 45 codepoint(s): U+010C U+010D U+0118 U+0119 U+0141 U+0142 U+0160 U+0161 U+0178 U+017B U+017C U+017D U+017E U+0192 U+02C7 U+02D8 U+02D9 U+02DB U+02DD U+03A9
+         - 2 codepoint(s) map to a different glyph: U+00AF macron/overscore; U+00B7 periodcentered/middot
+     shaping      FAIL 580001 runs shaped, 554 differ
+         - default features, pairs: 44 of 32761 runs differ
+         - default features, words: 510 of 516117 runs differ
+     rendering    FAIL diffenator3 12 glyph / 65 word diffs (3 / 0 confirmed); 3 of 190 changed outlines draw different ink
+         - diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00B2 141px, U+00B3 124px, U+00B9 106px
+         - 3 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): uni00B2 1598px, uni00B3 1248px, uni00B9 1058px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 4 (3,1,0x409): release 'Sansita One Regular', build 'Sansita One'
+         - name ID 6 (3,1,0x409): release 'SansitaOne-Regular', build 'SansitaOne'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 106, build 530
+         - cap height as layout engines read it (CSS ex / cap units): release 660, build 677
+     advances     FAIL 212 glyph advances compared, 0 differ
+         - 44 reachable build glyph(s) have no release counterpart: Ccaron Eogonek Lslash Omega Scaron Ydieresis Zcaron Zdotaccent approxequal breve caron ccaron dagger daggerdbl dotaccent
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

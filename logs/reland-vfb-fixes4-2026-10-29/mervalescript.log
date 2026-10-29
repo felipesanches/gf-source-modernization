@@ -1,0 +1,19 @@
+mervalescript: RESIDUAL-UNPUBLISHED-CONVERTER @ c65e9f7, 3 commits, 0 edit(s): MervaleScript-Regular=8 functional=FAIL(cmap+line_spacing)
+   MervaleScript-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   MervaleScript-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   MervaleScript-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   MervaleScript-Regular BLOCKING OS/2.s_typo_ascender [2020, 2019]
+   MervaleScript-Regular BLOCKING OS/2.us_win_ascent [2020, 2019]
+   MervaleScript-Regular BLOCKING OS/2.sx_height [0, 500]
+     cmap         FAIL 367 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 753695 runs shaped, 0 differ
+     rendering    PASS diffenator3 4 glyph / 0 word diffs (0 / 0 confirmed); 0 of 63 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (2020, -692, 0), build hhea (2019, -692, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (2020, -692, 0), build win (2019, -692, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (2020, -692, 0), build hhea (2019, -692, 0)
+         - ... 5 more
+     advances     PASS 369 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 176 it does not

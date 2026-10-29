@@ -1,0 +1,14 @@
+ralewaydots: RESIDUAL-UNPUBLISHED-CONVERTER @ d74a15b, 13 commits, 0 edit(s): RalewayDots-Regular=2 functional=FAIL(cmap+names+advances)
+   RalewayDots-Regular CMAP gained ['U+0000', 'U+000D'] lost []
+     cmap         FAIL 407 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      PASS 764039 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 19 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Raleway Dots', build 'Raleway Dots '
+         - name ID 16 (3,1,0x409) as read: release 'Raleway Dots', build 'Raleway Dots '
+         - name ID 21 (3,1,0x409) as read: release 'Raleway Dots', build 'Raleway Dots '
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 458 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 218 it does not

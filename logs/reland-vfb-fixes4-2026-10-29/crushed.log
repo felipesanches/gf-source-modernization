@@ -1,0 +1,19 @@
+crushed: RESIDUAL-UNPUBLISHED-CONVERTER @ 05bd8b4, 14 commits, 0 edit(s): Crushed-Regular=4 functional=FAIL(cmap+names+line_spacing)
+   Crushed-Regular BLOCKING OS/2.us_width_class [3, 5]
+   Crushed-Regular BLOCKING hhea.ascender [1820, 1374]
+   Crushed-Regular BLOCKING hhea.descender [-483, -115]
+   Crushed-Regular BLOCKING hhea.line_gap [51, 100]
+     cmap         FAIL 367 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 718875 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 44 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 4 (3,1,0x409): release 'Crushed Regular', build 'Crushed'
+         - OS/2.usWidthClass: release 3, build 5
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (1820, -483, 51), build hhea (1374, -115, 100)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1820, -483, 51), build win (1820, -483, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (1820, -483, 51), build hhea (1374, -115, 100)
+         - ... 3 more
+     advances     PASS 369 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 160 it does not

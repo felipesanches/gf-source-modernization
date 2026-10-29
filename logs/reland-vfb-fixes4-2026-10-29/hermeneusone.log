@@ -1,0 +1,14 @@
+hermeneusone: RESIDUAL-UNPUBLISHED-CONVERTER @ b3e836a, 3 commits, 0 edit(s): HermeneusOne-Regular=3 functional=FAIL(cmap+shaping+advances)
+   HermeneusOne-Regular BLOCKING hmtx.uni00A0 {"width": [198, 199]}
+   HermeneusOne-Regular CMAP gained ['U+0000', 'U+000D'] lost []
+     cmap         FAIL 444 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      FAIL 874980 runs shaped, 1 differ
+         - default features, singles: 1 of 444 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 446 glyph advances compared, 1 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+         - 1 advance width(s) differ (release/build): uni00A0 198/199
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 400 it does not

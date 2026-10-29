@@ -1,0 +1,9 @@
+kaushanscript: RESIDUAL-UNPUBLISHED-CONVERTER @ ddf65b7, 14 commits, 0 edit(s): KaushanScript-Regular=0 functional=FAIL(cmap)
+     cmap         FAIL 397 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+     shaping      PASS 824457 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 402 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 353 it does not

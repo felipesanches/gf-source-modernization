@@ -1,0 +1,3 @@
+gotu: RESIDUAL-UNPUBLISHED-CONVERTER @ 2be768c, 14 commits, 0 edit(s): Gotu-Regular=BUILD functional=-
+   Gotu-Regular BUILD: Gotu-Regular.ttf not produced (nothing)
+   Gotu-Regular builder: operation 'Fontc' while building [../fonts//ttf/Gotu-Regular.ttf, ../fonts//webfonts/Gotu-Regular.woff2] from [Gotu-Regular.glyphs]: FEA validation failed with 6380 errors

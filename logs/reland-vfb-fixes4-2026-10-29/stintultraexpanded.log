@@ -1,0 +1,20 @@
+stintultraexpanded: RESIDUAL-UNPUBLISHED-CONVERTER @ 3f3f7c5, 3 commits, 0 edit(s): StintUltraExpanded-Regular=5 functional=FAIL(cmap+shaping+names+gdef)
+   StintUltraExpanded-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   StintUltraExpanded-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   StintUltraExpanded-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   StintUltraExpanded-Regular BLOCKING OS/2.us_width_class [7, 5]
+   StintUltraExpanded-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 2 mark(s): only the release marks U+0315,U+0326; only ours marks none
+     cmap         FAIL 370 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 728906 runs shaped, 580 differ
+         - default features, singles: 2 of 370 runs differ
+         - default features, base+mark: 558 of 558 runs differ
+         - default features, base+mark+mark: 20 of 20 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 28 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - OS/2.usWidthClass: release 7, build 5
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 371 glyph advances compared, 0 differ
+     gdef         FAIL GDEF absent/present; 2 class difference(s) shaping reads, 167 it does not
+         - GDEF present in the build
+         - 2 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/0, uni0315 3/0

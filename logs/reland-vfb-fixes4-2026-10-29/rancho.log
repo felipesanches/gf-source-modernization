@@ -1,0 +1,17 @@
+rancho: RESIDUAL-UNPUBLISHED-CONVERTER @ 6b2135d, 3 commits, 0 edit(s): Rancho-Regular=3 functional=FAIL(names+line_spacing)
+   Rancho-Regular BLOCKING hhea.ascender [919, 681]
+   Rancho-Regular BLOCKING hhea.descender [-329, -259]
+   Rancho-Regular BLOCKING hhea.line_gap [24, 48]
+     cmap         PASS 226 codepoints, exact
+     shaping      PASS 559327 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 45 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 4 (3,1,0x409): release 'Rancho Regular', build 'Rancho'
+         - name ID 6 (3,1,0x409): release 'Rancho-Regular', build 'Rancho'
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (919, -329, 24), build hhea (681, -259, 48)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (919, -329, 24), build win (919, -329, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (919, -329, 24), build hhea (681, -259, 48)
+         - ... 3 more
+     advances     PASS 227 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

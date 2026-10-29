@@ -1,0 +1,47 @@
+taiheritagepro: RESIDUAL-UNPUBLISHED-CONVERTER @ 2801e51, 30 commits, 0 edit(s): TaiHeritagePro-Bold=11 functional=FAIL(shaping+rendering+gdef); TaiHeritagePro-Regular=11 functional=FAIL(shaping+rendering+gdef)
+   TaiHeritagePro-Bold BLOCKING Feat: whole-table difference
+   TaiHeritagePro-Bold BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   TaiHeritagePro-Bold BLOCKING GDEF.mark_attach_classes [{"uni031B": 1}, null]
+   TaiHeritagePro-Bold BLOCKING GDEF.mark_glyph_sets [null, {"0": ["gravecomb", "acutecomb", "uni0302", "uni0306", "hookabovecomb", "
+   TaiHeritagePro-Bold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [1]}, "latn/dflt": {"lookups": [0, 1]}, "tavt/dflt":
+   TaiHeritagePro-Bold BLOCKING GSUB.feature_list [{"ccmp": [7, 8, 10], "rclt": [12, 14, 16, 18, 12, 14, 16, 18]}, null]
+     cmap         PASS 502 codepoints, exact
+     shaping      FAIL 758025 runs shaped, 38048 differ
+         - default features, singles: 1 of 502 runs differ
+         - default features, pairs: 89 of 77757 runs differ
+         - default features, base+mark: 309 of 10286 runs differ
+         - ... 9 more
+     rendering    FAIL diffenator3 144 glyph / 188 word diffs (90 / 175 confirmed); 132 of 416 changed outlines draw different ink
+         - diffenator3: 90 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0040 90px, U+AAAF 66px, U+AADE 65px, U+2030 61px, U+1ED8 58px
+         - diffenator3: 175 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,sinf' 99px, '0123456789,,,pnum' 98px, '1/234,latn,dflt,frac' 58px, '0,,,zero' 29px, 'ƒREAKÇONTRØL' 2218px
+         - 132 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): approxequal 36px, uniAAAF 28px, uniAA96 25px, uniAA90 25px, Q 23px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 506 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 17 class difference(s) shaping reads, 0 it does not
+         - 17 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni031B 3/0, uniFE00 0/3, uniFE01 0/3, uniFE02 0/3, uniFE03 0/3, uniFE04 0/3, uniFE05 0/3, uniFE06 0/3, uniFE07 0/3, uniFE08 0/3, uniFE09 0/3, uniFE0A 0/3, uniFE0B 0/3, uniFE0C 0/3, uniFE0D 0/3
+         - mark attachment classes differ
+         - mark glyph sets differ
+   TaiHeritagePro-Regular BLOCKING Feat: whole-table difference
+   TaiHeritagePro-Regular BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+   TaiHeritagePro-Regular BLOCKING GDEF.mark_attach_classes [{"uni031B": 1}, null]
+   TaiHeritagePro-Regular BLOCKING GDEF.mark_glyph_sets [null, {"0": ["gravecomb", "acutecomb", "uni0302", "uni0306", "hookabovecomb", "
+   TaiHeritagePro-Regular BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [1]}, "latn/dflt": {"lookups": [0, 1]}, "tavt/dflt":
+   TaiHeritagePro-Regular BLOCKING GSUB.feature_list [{"ccmp": [7, 8, 10], "rclt": [12, 14, 16, 18, 12, 14, 16, 18]}, null]
+     cmap         PASS 502 codepoints, exact
+     shaping      FAIL 753659 runs shaped, 29728 differ
+         - default features, singles: 1 of 502 runs differ
+         - default features, pairs: 155 of 77757 runs differ
+         - default features, base+mark: 286 of 10286 runs differ
+         - ... 8 more
+     rendering    FAIL diffenator3 162 glyph / 183 word diffs (64 / 103 confirmed); 80 of 414 changed outlines draw different ink
+         - diffenator3: 64 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0040 76px, U+AADE 59px, U+AA85 49px, U+AA96 44px, U+AA93 44px
+         - diffenator3: 103 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 59px, '0123456789,,,sinf' 52px, '1/234,latn,dflt,frac' 40px, '0,,,zero' 34px, 'ƒREAKÇONTRØL' 1870px
+         - 80 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): uniAAB6.dwarf 43px, uniAAB6 41px, uniAA8B 19px, uniAAAA 18px, uniAA82 17px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 506 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 17 class difference(s) shaping reads, 0 it does not
+         - 17 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni031B 3/0, uniFE00 0/3, uniFE01 0/3, uniFE02 0/3, uniFE03 0/3, uniFE04 0/3, uniFE05 0/3, uniFE06 0/3, uniFE07 0/3, uniFE08 0/3, uniFE09 0/3, uniFE0A 0/3, uniFE0B 0/3, uniFE0C 0/3, uniFE0D 0/3
+         - mark attachment classes differ
+         - mark glyph sets differ

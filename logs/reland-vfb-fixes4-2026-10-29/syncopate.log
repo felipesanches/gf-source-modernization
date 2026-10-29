@@ -1,0 +1,40 @@
+syncopate: RESIDUAL-UNPUBLISHED-CONVERTER @ df75d97, 3 commits, 0 edit(s): Syncopate-Bold=1 functional=FAIL(cmap+shaping+gdef); Syncopate-Regular=6 functional=FAIL(cmap+shaping+names+line_spacing+gdef)
+   Syncopate-Bold BLOCKING GDEF.glyph_classes -- the two fonts disagree about 1 mark(s): only the release marks U+0326; only ours marks none
+     cmap         FAIL 369 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 703576 runs shaped, 285 differ
+         - default features, singles: 1 of 369 runs differ
+         - default features, base+mark: 279 of 279 runs differ
+         - default features, base+mark+mark: 5 of 5 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 69 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 370 glyph advances compared, 0 differ
+     gdef         FAIL GDEF absent/present; 1 class difference(s) shaping reads, 157 it does not
+         - GDEF present in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/0
+   Syncopate-Regular BLOCKING OS/2.us_weight_class [400, 300]
+   Syncopate-Regular BLOCKING OS/2.us_width_class [7, 5]
+   Syncopate-Regular BLOCKING OS/2.fs_type [0, 4]
+   Syncopate-Regular BLOCKING OS/2.us_win_ascent [1853, 0]
+   Syncopate-Regular BLOCKING OS/2.us_win_descent [483, 0]
+   Syncopate-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 1 mark(s): only the release marks U+0326; only ours marks none
+     cmap         FAIL 369 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 694186 runs shaped, 285 differ
+         - default features, singles: 1 of 369 runs differ
+         - default features, base+mark: 279 of 279 runs differ
+         - default features, base+mark+mark: 5 of 5 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 65 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 4 (3,1,0x409): release 'Syncopate Regular', build 'Syncopate'
+         - OS/2.usWeightClass: release 400, build 300
+         - OS/2.usWidthClass: release 7, build 5
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1853, -483, 0), build win (0, 0, 2132)
+         - OS/2.usWinAscent: release 1853, build 0
+         - OS/2.usWinDescent: release 483, build 0
+     advances     PASS 370 glyph advances compared, 0 differ
+     gdef         FAIL GDEF absent/present; 1 class difference(s) shaping reads, 163 it does not
+         - GDEF present in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/0

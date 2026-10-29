@@ -1,0 +1,11 @@
+poetsenone: RESIDUAL-UNPUBLISHED-CONVERTER @ e4efb57, 3 commits, 0 edit(s): PoetsenOne-Regular=2 functional=FAIL(cmap+advances)
+   PoetsenOne-Regular CMAP gained ['U+0000', 'U+000D'] lost []
+     cmap         FAIL 441 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      PASS 882667 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 445 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 405 it does not

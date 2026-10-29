@@ -1,0 +1,192 @@
+muktamahee: RESIDUAL-UNPUBLISHED-CONVERTER @ d3b070b, 92 commits, 0 edit(s): MuktaMahee-Bold=16 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaMahee-ExtraBold=17 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaMahee-ExtraLight=17 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaMahee-Light=17 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaMahee-Medium=16 functional=FAIL(shaping+rendering+names+line_spacing+gdef); MuktaMahee-Regular=16 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef); MuktaMahee-SemiBold=16 functional=FAIL(cmap+shaping+rendering+names+line_spacing+gdef)
+   MuktaMahee-Bold BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 4, 8, 12]}, "gur2/dflt": {"lookups": [1, 5, 9, 13
+   MuktaMahee-Bold BLOCKING GPOS.feature_list [{"abvm": [7, 8, 9, 10, 11, 12], "blwm": [5, 6], "dist": [3, 4], "kern": [0, 1,
+   MuktaMahee-Bold BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "asterisk": {"four.lat"
+   MuktaMahee-Bold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [8, 12, 16, 22, 28, 32, 38, 42, 46, 52, 56, 60, 64]},
+   MuktaMahee-Bold BLOCKING GSUB.feature_list [{"abvs": [19, 20, 21, 22], "akhn": [13], "blwf": [16], "blws": [23, 24], "dlig"
+   MuktaMahee-Bold BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+     cmap         FAIL 564 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+     shaping      FAIL 1124638 runs shaped, 610981 differ
+         - default features, singles: 6 of 564 runs differ
+         - default features, pairs: 22635 of 204398 runs differ
+         - default features, base+mark: 474 of 1800 runs differ
+         - ... 27 more
+     rendering    FAIL diffenator3 54 glyph / 1578 word diffs (6 / 1547 confirmed); 0 of 583 changed outlines draw different ink
+         - diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A5E 432px, U+0A5B 247px, U+0A36 227px, U+0A5A 210px, U+0A33 203px
+         - diffenator3: 1547 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 546px, '0123456789,,,pnum' 503px, '0123456789,,,sinf' 461px, '0,,,zero' 119px, 'ਅਭਿਧਾਵ੍ਰਿਤੀਮਾਤ੍ਰਿਕਾ' 1196px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Mukta Mahee', build 'Mukta Mahee Bold'
+         - name ID 16 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee Bold'
+         - name ID 21 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee Bold'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 20, build 50
+         - OS/2.yStrikeoutPosition: release 285, build 250
+         - x-height as layout engines read it (CSS ex / cap units): release 476, build 480
+     advances     PASS 775 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 85 class difference(s) shaping reads, 571 it does not
+         - 85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.alt 3/0, MatraAiAddak.gm 3/0, MatraAiAddak.gm.alt 3/0, MatraAiAddakBindi.gm 3/0, MatraAiAddakBindi.gm.alt 3/0, MatraAiBindi.gm 3/0, MatraAiBindi.gm.alt 3/0, MatraAu.gm.alt 3/0, MatraAuAddak.gm 3/0, MatraAuAddak.gm.alt 3/0, MatraAuAddakBindi.gm 3/0, MatraAuAddakBindi.gm.alt 3/0
+   MuktaMahee-ExtraBold BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 4, 8, 12]}, "gur2/dflt": {"lookups": [1, 5, 9, 13
+   MuktaMahee-ExtraBold BLOCKING GPOS.feature_list [{"abvm": [6, 7, 8, 9, 10, 11], "blwm": [4, 5], "dist": [3], "kern": [0, 1, 2]},
+   MuktaMahee-ExtraBold BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "asterisk": {"four.lat"
+   MuktaMahee-ExtraBold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [8, 12, 16, 22, 28, 32, 38, 42, 46, 52, 56, 60, 64]},
+   MuktaMahee-ExtraBold BLOCKING GSUB.feature_list [{"abvs": [19, 20, 21, 22], "akhn": [13], "blwf": [16], "blws": [23, 24], "dlig"
+   MuktaMahee-ExtraBold BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+     cmap         FAIL 564 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+     shaping      FAIL 1120405 runs shaped, 607494 differ
+         - default features, singles: 6 of 564 runs differ
+         - default features, pairs: 22332 of 204398 runs differ
+         - default features, base+mark: 482 of 1800 runs differ
+         - ... 27 more
+     rendering    FAIL diffenator3 44 glyph / 1425 word diffs (6 / 1392 confirmed); 0 of 606 changed outlines draw different ink
+         - diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A5E 448px, U+0A5A 297px, U+0A5B 290px, U+0A36 261px, U+0A33 215px
+         - diffenator3: 1392 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 548px, '1/234,latn,dflt,frac' 531px, '0123456789,,,sinf' 500px, '0,,,zero' 114px, 'ਕ੍ਰਿਤਿਮਵਨ੍ਤਿਸੁਨ੍ਦਰੀ' 1253px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'ExtraBold'
+         - name ID 16 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee ExtraBold'
+         - name ID 21 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee ExtraBold'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 20, build 50
+         - OS/2.yStrikeoutPosition: release 288, build 250
+         - x-height as layout engines read it (CSS ex / cap units): release 480, build 482
+         - ... 1 more
+     advances     PASS 775 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 85 class difference(s) shaping reads, 571 it does not
+         - 85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.alt 3/0, MatraAiAddak.gm 3/0, MatraAiAddak.gm.alt 3/0, MatraAiAddakBindi.gm 3/0, MatraAiAddakBindi.gm.alt 3/0, MatraAiBindi.gm 3/0, MatraAiBindi.gm.alt 3/0, MatraAu.gm.alt 3/0, MatraAuAddak.gm 3/0, MatraAuAddak.gm.alt 3/0, MatraAuAddakBindi.gm 3/0, MatraAuAddakBindi.gm.alt 3/0
+   MuktaMahee-ExtraLight BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 4, 8, 12]}, "gur2/dflt": {"lookups": [1, 5, 9, 13
+   MuktaMahee-ExtraLight BLOCKING GPOS.feature_list [{"abvm": [7, 8, 9, 10, 11, 12], "blwm": [5, 6], "dist": [3, 4], "kern": [0, 1,
+   MuktaMahee-ExtraLight BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -27}}, "asterisk": {"V": {"x":
+   MuktaMahee-ExtraLight BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [8, 12, 16, 22, 28, 32, 38, 42, 46, 52, 56, 60, 64]},
+   MuktaMahee-ExtraLight BLOCKING GSUB.feature_list [{"abvs": [19, 20, 21, 22], "akhn": [13], "blwf": [16], "blws": [23, 24], "dlig"
+   MuktaMahee-ExtraLight BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+     cmap         FAIL 564 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+     shaping      FAIL 1137006 runs shaped, 592038 differ
+         - default features, singles: 6 of 564 runs differ
+         - default features, pairs: 23301 of 209343 runs differ
+         - default features, base+mark: 480 of 1800 runs differ
+         - ... 27 more
+     rendering    FAIL diffenator3 67 glyph / 1386 word diffs (5 / 1340 confirmed); 0 of 579 changed outlines draw different ink
+         - diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A5A 499px, U+0A33 475px, U+0A36 196px, U+0A59 136px, U+0A5B 124px
+         - diffenator3: 1340 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 422px, '0123456789,,,sinf' 374px, '1/234,latn,dflt,frac' 362px, '0,,,zero' 116px, 'ਸ਼੍ਰਦ੍ਧਾਭਕ੍ਤਿਸਮਨ੍ਬਿਤਾਹ' 1084px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'ExtraLight'
+         - name ID 16 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee ExtraLight'
+         - name ID 21 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee ExtraLight'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 20, build 50
+         - OS/2.yStrikeoutPosition: release 280, build 250
+         - x-height as layout engines read it (CSS ex / cap units): release 468, build 470
+         - ... 1 more
+     advances     PASS 775 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 85 class difference(s) shaping reads, 571 it does not
+         - 85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.alt 3/0, MatraAiAddak.gm 3/0, MatraAiAddak.gm.alt 3/0, MatraAiAddakBindi.gm 3/0, MatraAiAddakBindi.gm.alt 3/0, MatraAiBindi.gm 3/0, MatraAiBindi.gm.alt 3/0, MatraAu.gm.alt 3/0, MatraAuAddak.gm 3/0, MatraAuAddak.gm.alt 3/0, MatraAuAddakBindi.gm 3/0, MatraAuAddakBindi.gm.alt 3/0
+   MuktaMahee-Light BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 4, 8, 12]}, "gur2/dflt": {"lookups": [1, 5, 9, 13
+   MuktaMahee-Light BLOCKING GPOS.feature_list [{"abvm": [7, 8, 9, 10, 11, 12], "blwm": [5, 6], "dist": [3, 4], "kern": [0, 1,
+   MuktaMahee-Light BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "asterisk": {"one.lat":
+   MuktaMahee-Light BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [8, 12, 16, 22, 28, 32, 38, 42, 46, 52, 56, 60, 64]},
+   MuktaMahee-Light BLOCKING GSUB.feature_list [{"abvs": [19, 20, 21, 22], "akhn": [13], "blwf": [16], "blws": [23, 24], "dlig"
+   MuktaMahee-Light BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+     cmap         FAIL 564 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+     shaping      FAIL 1133364 runs shaped, 595155 differ
+         - default features, singles: 6 of 564 runs differ
+         - default features, pairs: 23312 of 207359 runs differ
+         - default features, base+mark: 485 of 1800 runs differ
+         - ... 27 more
+     rendering    FAIL diffenator3 65 glyph / 1555 word diffs (5 / 1512 confirmed); 0 of 594 changed outlines draw different ink
+         - diffenator3: 5 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A36 230px, U+0A33 196px, U+0A5A 172px, U+0A59 163px, U+0A5B 153px
+         - diffenator3: 1512 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 482px, '1/234,latn,dflt,frac' 463px, '0123456789,,,sinf' 430px, '0,,,zero' 126px, 'ਡੀਹਾਈਡ੍ਰੋਏਸਟੋਸਟੀਰੋਨ' 1087px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Light'
+         - name ID 16 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee Light'
+         - name ID 21 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee Light'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 20, build 50
+         - OS/2.yStrikeoutPosition: release 280, build 250
+         - x-height as layout engines read it (CSS ex / cap units): release 467, build 470
+         - ... 1 more
+     advances     PASS 775 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 85 class difference(s) shaping reads, 571 it does not
+         - 85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.alt 3/0, MatraAiAddak.gm 3/0, MatraAiAddak.gm.alt 3/0, MatraAiAddakBindi.gm 3/0, MatraAiAddakBindi.gm.alt 3/0, MatraAiBindi.gm 3/0, MatraAiBindi.gm.alt 3/0, MatraAu.gm.alt 3/0, MatraAuAddak.gm 3/0, MatraAuAddak.gm.alt 3/0, MatraAuAddakBindi.gm 3/0, MatraAuAddakBindi.gm.alt 3/0
+   MuktaMahee-Medium BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 4, 8, 12]}, "gur2/dflt": {"lookups": [1, 5, 9, 13
+   MuktaMahee-Medium BLOCKING GPOS.feature_list [{"abvm": [7, 8, 9, 10, 11, 12], "blwm": [5, 6], "dist": [3, 4], "kern": [0, 1,
+   MuktaMahee-Medium BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "asterisk": {"one.lat":
+   MuktaMahee-Medium BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [8, 12, 16, 22, 28, 32, 38, 42, 46, 52, 56, 60, 64]},
+   MuktaMahee-Medium BLOCKING GSUB.feature_list [{"abvs": [19, 20, 21, 22], "akhn": [13], "blwf": [16], "blws": [23, 24], "dlig"
+   MuktaMahee-Medium BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+     cmap         PASS 564 codepoints, exact
+     shaping      FAIL 1124638 runs shaped, 611071 differ
+         - default features, singles: 6 of 564 runs differ
+         - default features, pairs: 22646 of 204398 runs differ
+         - default features, base+mark: 488 of 1800 runs differ
+         - ... 27 more
+     rendering    FAIL diffenator3 59 glyph / 1537 word diffs (6 / 1506 confirmed); 0 of 599 changed outlines draw different ink
+         - diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A5B 244px, U+0A36 225px, U+0A5A 216px, U+0A59 212px, U+0A33 209px
+         - diffenator3: 1506 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 526px, '1/234,latn,dflt,frac' 497px, '0123456789,,,sinf' 448px, '0,,,zero' 129px, 'ਸ਼੍ਰਦ੍ਧਾਭਕ੍ਤਿਸਮਨ੍ਬਿਤਾਹ' 1310px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Medium'
+         - name ID 16 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee Medium'
+         - name ID 21 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee Medium'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 20, build 50
+         - OS/2.yStrikeoutPosition: release 282, build 250
+         - x-height as layout engines read it (CSS ex / cap units): release 470, build 486
+     advances     PASS 775 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 85 class difference(s) shaping reads, 571 it does not
+         - 85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.alt 3/0, MatraAiAddak.gm 3/0, MatraAiAddak.gm.alt 3/0, MatraAiAddakBindi.gm 3/0, MatraAiAddakBindi.gm.alt 3/0, MatraAiBindi.gm 3/0, MatraAiBindi.gm.alt 3/0, MatraAu.gm.alt 3/0, MatraAuAddak.gm 3/0, MatraAuAddak.gm.alt 3/0, MatraAuAddakBindi.gm 3/0, MatraAuAddakBindi.gm.alt 3/0
+   MuktaMahee-Regular BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 4, 8, 12]}, "gur2/dflt": {"lookups": [1, 5, 9, 13
+   MuktaMahee-Regular BLOCKING GPOS.feature_list [{"abvm": [7, 8, 9, 10, 11, 12], "blwm": [5, 6], "dist": [3, 4], "kern": [0, 1,
+   MuktaMahee-Regular BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "quotedbl": {"Q": {"x":
+   MuktaMahee-Regular BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [8, 12, 16, 22, 28, 32, 38, 42, 46, 52, 56, 60, 64]},
+   MuktaMahee-Regular BLOCKING GSUB.feature_list [{"abvs": [19, 20, 21, 22], "akhn": [13], "blwf": [16], "blws": [23, 24], "dlig"
+   MuktaMahee-Regular BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+     cmap         FAIL 564 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+     shaping      FAIL 1129272 runs shaped, 611438 differ
+         - default features, singles: 6 of 564 runs differ
+         - default features, pairs: 25598 of 205383 runs differ
+         - default features, base+mark: 485 of 1800 runs differ
+         - ... 27 more
+     rendering    FAIL diffenator3 56 glyph / 1386 word diffs (6 / 1349 confirmed); 0 of 571 changed outlines draw different ink
+         - diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A33 460px, U+0A5A 214px, U+0A59 168px, U+0A36 163px, U+0A5B 161px
+         - diffenator3: 1349 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 527px, '1/234,latn,dflt,frac' 489px, '0123456789,,,sinf' 476px, '0,,,zero' 124px, 'ਡੀਹਾਈਡ੍ਰੋਏਸਟੋਸਟੀਰੋਨ' 1144px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Mukta Mahee', build 'Mukta Mahee Regular'
+         - name ID 16 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee Regular'
+         - name ID 21 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee Regular'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 20, build 50
+         - OS/2.yStrikeoutPosition: release 280, build 250
+         - x-height as layout engines read it (CSS ex / cap units): release 468, build 470
+     advances     PASS 775 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 85 class difference(s) shaping reads, 571 it does not
+         - 85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.alt 3/0, MatraAiAddak.gm 3/0, MatraAiAddak.gm.alt 3/0, MatraAiAddakBindi.gm 3/0, MatraAiAddakBindi.gm.alt 3/0, MatraAiBindi.gm 3/0, MatraAiBindi.gm.alt 3/0, MatraAu.gm.alt 3/0, MatraAuAddak.gm 3/0, MatraAuAddak.gm.alt 3/0, MatraAuAddakBindi.gm 3/0, MatraAuAddakBindi.gm.alt 3/0
+   MuktaMahee-SemiBold BLOCKING GPOS.script_list [{"DFLT/dflt": {"lookups": [0, 4, 8, 12]}, "gur2/dflt": {"lookups": [1, 5, 9, 13
+   MuktaMahee-SemiBold BLOCKING GPOS.feature_list [{"abvm": [7, 8, 9, 10, 11, 12], "blwm": [5, 6], "dist": [3, 4], "kern": [0, 1,
+   MuktaMahee-SemiBold BLOCKING GPOS.lookup_list [{"0": [{"type": "pair", "space": {"space": {"x": -32}}, "asterisk": {"one.lat":
+   MuktaMahee-SemiBold BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [8, 12, 16, 22, 28, 32, 38, 42, 46, 52, 56, 60, 64]},
+   MuktaMahee-SemiBold BLOCKING GSUB.feature_list [{"abvs": [19, 20, 21, 22], "akhn": [13], "blwf": [16], "blws": [23, 24], "dlig"
+   MuktaMahee-SemiBold BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "percent": "percentoldstyle", "zero": "oneoldstyle",
+     cmap         FAIL 564 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+     shaping      FAIL 1124638 runs shaped, 609729 differ
+         - default features, singles: 6 of 564 runs differ
+         - default features, pairs: 22545 of 204398 runs differ
+         - default features, base+mark: 484 of 1800 runs differ
+         - ... 27 more
+     rendering    FAIL diffenator3 48 glyph / 1515 word diffs (6 / 1487 confirmed); 0 of 588 changed outlines draw different ink
+         - diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0A33 522px, U+0A5E 430px, U+0A5B 256px, U+0A36 237px, U+0A5A 214px
+         - diffenator3: 1487 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 528px, '1/234,latn,dflt,frac' 516px, '0123456789,,,sinf' 498px, '0,,,zero' 118px, 'ਸ਼੍ਰਦ੍ਧਾਭਕ੍ਤਿਸਮਨ੍ਬਿਤਾਹ' 1347px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 2 (3,1,0x409): release 'Regular', build 'SemiBold'
+         - name ID 16 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee SemiBold'
+         - name ID 21 (3,1,0x409) as read: release 'Mukta Mahee', build 'Mukta Mahee SemiBold'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutSize: release 20, build 50
+         - OS/2.yStrikeoutPosition: release 284, build 250
+         - x-height as layout engines read it (CSS ex / cap units): release 474, build 480
+     advances     PASS 775 glyph advances compared, 0 differ
+     gdef         FAIL GDEF present/present; 85 class difference(s) shaping reads, 571 it does not
+         - 85 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): Addak.gm.alt 3/0, AddakBindi.gm.alt 3/0, Bindi.gm.alt 3/0, MatraAi.gm.alt 3/0, MatraAiAddak.gm 3/0, MatraAiAddak.gm.alt 3/0, MatraAiAddakBindi.gm 3/0, MatraAiAddakBindi.gm.alt 3/0, MatraAiBindi.gm 3/0, MatraAiBindi.gm.alt 3/0, MatraAu.gm.alt 3/0, MatraAuAddak.gm 3/0, MatraAuAddak.gm.alt 3/0, MatraAuAddakBindi.gm 3/0, MatraAuAddakBindi.gm.alt 3/0

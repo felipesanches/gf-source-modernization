@@ -1,0 +1,14 @@
+parisienne: RESIDUAL-UNPUBLISHED-CONVERTER @ 8ea1fd8, 3 commits, 0 edit(s): Parisienne-Regular=3 functional=FAIL(cmap+rendering+advances)
+   Parisienne-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   Parisienne-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   Parisienne-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+     cmap         FAIL 368 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 746442 runs shaped, 0 differ
+     rendering    FAIL diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 1 of 60 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11228px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 370 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 600/1024
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 173 it does not

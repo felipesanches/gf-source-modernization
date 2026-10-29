@@ -1,0 +1,20 @@
+yesteryear: RESIDUAL-UNPUBLISHED-CONVERTER @ 5aa27dd, 3 commits, 0 edit(s): Yesteryear-Regular=4 functional=FAIL(cmap+shaping+rendering+advances+gdef)
+   Yesteryear-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   Yesteryear-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   Yesteryear-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   Yesteryear-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 1 mark(s): only the release marks U+0326; only ours marks none
+     cmap         FAIL 369 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 748953 runs shaped, 285 differ
+         - default features, singles: 1 of 369 runs differ
+         - default features, base+mark: 279 of 279 runs differ
+         - default features, base+mark+mark: 5 of 5 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (0 / 0 confirmed); 1 of 68 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11752px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 370 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 461/1024
+     gdef         FAIL GDEF absent/present; 1 class difference(s) shaping reads, 169 it does not
+         - GDEF present in the build
+         - 1 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): commaaccent 3/0

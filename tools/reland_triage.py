@@ -42,7 +42,11 @@ def cause(check, details):
     if check == "advances":
         return "advances: differ"
     if check == "cmap":
-        return "cmap: differs"
+        # the release maps a codepoint to a glyph FontLab's export renamed (nbspace ->
+        # nonbreakingspace, CR -> nonmarkingreturn...): same outline, same advance
+        if details and all(d.startswith("map to") or " map to a glyph of another name" in d for d in details):
+            return "cmap: renamed glyphs only"
+        return "cmap: codepoints gained or lost"
     return check
 
 
