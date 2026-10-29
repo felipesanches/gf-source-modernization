@@ -1,0 +1,15 @@
+combo: RESIDUAL-UNPUBLISHED-CONVERTER @ dbc3883, 14 commits, 0 edit(s): Combo-Regular=6 functional=FAIL(cmap+names+advances)
+   Combo-Regular BLOCKING cmap U+0000 LOST ["NULL", null]
+   Combo-Regular BLOCKING cmap U+000D LOST ["nonmarkingreturn", null]
+   Combo-Regular BLOCKING cmap U+00A0 LOST ["uni00A0", null]
+   Combo-Regular CMAP gained [] lost ['U+0000', 'U+000D', 'U+00A0']
+     cmap         FAIL 389 codepoints, 1 problem(s)
+         - build loses 3 codepoint(s): U+0000 U+000D U+00A0
+     shaping      PASS 717939 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 390 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 6 (3,1,0x409): release 'Combo-Regular', build 'Combo'
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     FAIL 401 glyph advances compared, 0 differ
+         - 3 reachable release glyph(s) have no build counterpart: .ttfautohint nonmarkingreturn uni00A0
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 15 it does not

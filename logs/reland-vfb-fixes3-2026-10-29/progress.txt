@@ -1,0 +1,25 @@
+== aclonica (families-vfb.tsv) 2026-10-29T05:37:25+00:00
+   rc=1 aclonica	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== actor (families-vfb.tsv) 2026-10-29T05:37:51+00:00
+   rc=1 actor	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== aldrich (families-vfb.tsv) 2026-10-29T05:38:13+00:00
+   rc=1 aldrich	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== annieuseyourtelescope (families-vfb.tsv) 2026-10-29T05:38:32+00:00
+   rc=1 annieuseyourtelescope	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== atomicage (families-vfb.tsv) 2026-10-29T05:38:53+00:00
+   rc=1 atomicage	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== audiowide (families-vfb.tsv) 2026-10-29T05:39:20+00:00
+   rc=1 audiowide	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== combo (families-vfb.tsv) 2026-10-29T05:39:42+00:00
+   rc=1 combo	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+== gorditas (families-vfb.tsv) 2026-10-29T05:40:04+00:00
+   rc=1 gorditas	RESIDUAL-UNPUBLISHED-CONVERTER
+shared_from_host  1.8T  1.7T   18G  99% /home/fsanches/compartilhado
+done 2026-10-29T05:40:44+00:00
