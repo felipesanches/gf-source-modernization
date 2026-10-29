@@ -133,6 +133,7 @@ def fontforge_build(shipped):
 NOT_YET_UPSTREAM = {
     "--add-notdef": "simoncozens/babelfont-rs#120",
     "--infer-fixed-pitch": "simoncozens/babelfont-rs#119",
+    "--glyph-order-and-alias-db": "babelfont-rs branch vfb-filters-2026-10-29 (unpublished)",
 }
 
 
@@ -175,13 +176,31 @@ VFB_BASE = ["--add-instance-per-master", "--infer-mark-category", "--set-subcate
             "--keep-source-advances", "--round-coordinates"]
 
 
-def flags_for_vfb(shipped, add=(), drop=(), keep_direction=False):
-    """The babelfont arguments for one style converted from a .vfb, in order."""
+def flags_for_vfb(shipped, add=(), drop=(), keep_direction=False, source=None, repo_dir=None):
+    """The babelfont arguments for one style converted from a .vfb, in order. `source` is
+    the .vfb's path; with `repo_dir`, the path the GOADB flag states is relative to it (the
+    flags are quoted in the commit message, and the converter runs there)."""
     flags = list(VFB_BASE)
     if not keep_direction:
         flags.append("--correct-path-direction")
+    if source and goadb_near(source):
+        # makeotf-era sources (Mukta) encode glyphs through the table, not the .vfb
+        stated = os.path.relpath(source, repo_dir) if repo_dir else source
+        flags.append("--glyph-order-and-alias-db=" + stated)
     flags += [f for f in add if f not in flags]
     return [f for f in flags if f not in set(drop)]
+
+
+def goadb_near(source, levels=4):
+    """The nearest GlyphOrderAndAliasDB in the source's directory or an ancestor
+    (up to `levels` up), or None."""
+    d = os.path.dirname(os.path.abspath(source))
+    for _ in range(levels):
+        p = os.path.join(d, "GlyphOrderAndAliasDB")
+        if os.path.isfile(p):
+            return p
+        d = os.path.dirname(d)
+    return None
 
 
 def keep_direction(shipped_fonts):
