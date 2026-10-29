@@ -1,0 +1,20 @@
+quintessential: RESIDUAL-UNPUBLISHED-CONVERTER @ 9af004f, 12 commits, 0 edit(s): Quintessential-Regular=7 functional=FAIL(cmap+rendering+line_spacing+advances)
+   Quintessential-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   Quintessential-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   Quintessential-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   Quintessential-Regular BLOCKING OS/2.panose_10 {"0": [3, 0], "1": [2, 0], "2": [5, 0], "7": [2, 0]}
+   Quintessential-Regular BLOCKING OS/2.sx_height [1057, 500]
+   Quintessential-Regular BLOCKING OS/2.s_cap_height [1489, 700]
+     cmap         FAIL 368 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 778466 runs shaped, 0 differ
+     rendering    FAIL diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 1 of 72 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 12194px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -252, build -272
+         - x-height as layout engines read it (CSS ex / cap units): release 1057, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1489, build 700
+     advances     FAIL 369 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 512/1024
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

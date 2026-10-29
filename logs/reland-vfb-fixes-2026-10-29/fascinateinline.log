@@ -1,0 +1,26 @@
+fascinateinline: RESIDUAL-UNPUBLISHED-CONVERTER @ 5f0bfc3, 12 commits, 0 edit(s): FascinateInline-Regular=21 functional=FAIL(cmap+shaping+names+line_spacing+advances+gdef)
+   FascinateInline-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4, 5]}, null], "DFLT/dflt": [null, {"loo
+   FascinateInline-Regular BLOCKING GSUB.feature_list {"frac": {"0": [5, 6]}}
+   FascinateInline-Regular BLOCKING GSUB.lookup_list {"4": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   FascinateInline-Regular BLOCKING OS/2.us_weight_class [900, 400]
+   FascinateInline-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [15, 0], "2": [11, 0], "3": [6, 0], "4": [8, 0], "5": [8, 0],
+   FascinateInline-Regular BLOCKING OS/2.sx_height [1024, 500]
+     cmap         FAIL 374 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 782709 runs shaped, 12050 differ
+         - default features, singles: 13 of 374 runs differ
+         - default features, pairs: 6743 of 96820 runs differ
+         - default features, base+mark: 763 of 846 runs differ
+         - ... 2 more
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 3 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - OS/2.usWeightClass: release 900, build 400
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -154, build -205
+         - x-height as layout engines read it (CSS ex / cap units): release 1024, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1436, build 700
+     advances     FAIL 377 glyph advances compared, 12 differ
+         - 12 advance width(s) differ (release/build): acute 820/0, breve 820/0, caron 820/0, circumflex 820/0, dieresis 820/0, dotaccent 820/0, grave 820/0, hungarumlaut 820/0, macron 820/0, ring 820/0, tilde 820/0, uni0312 820/0
+     gdef         FAIL GDEF absent/present; 13 class difference(s) shaping reads, 166 it does not
+         - GDEF present in the build
+         - 13 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 1/3, breve 1/3, caron 1/3, circumflex 1/3, commaaccent 3/0, dieresis 1/3, dotaccent 1/3, grave 1/3, hungarumlaut 1/3, macron 1/3, ring 1/3, tilde 1/3, uni0315 3/0

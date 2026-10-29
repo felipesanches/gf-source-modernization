@@ -1,0 +1,25 @@
+petitformalscript: RESIDUAL-UNPUBLISHED-CONVERTER @ cd657ad, 3 commits, 0 edit(s): PetitFormalScript-Regular=23 functional=FAIL(cmap+shaping+line_spacing+advances+gdef)
+   PetitFormalScript-Regular BLOCKING OS/2.panose_10 {"0": [3, 0], "1": [2, 0], "2": [6, 0], "3": [2, 0], "4": [4, 0], "5": [8, 0], "
+   PetitFormalScript-Regular BLOCKING OS/2.sx_height [1185, 500]
+   PetitFormalScript-Regular BLOCKING OS/2.s_cap_height [1609, 700]
+   PetitFormalScript-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 15 mark(s): only the release marks none; only ours marks U+0060,U+00A8,U+00AF,U+00B4,U+00B8,U+02BC,U+02C6,U+02C7,U+02D8,U+02D9,U+02DA,U+02DB,U+02DC,U+02DD,U+F6C3
+   PetitFormalScript-Regular BLOCKING hmtx.dotaccent {"width": [740, 0]}
+   PetitFormalScript-Regular BLOCKING hmtx.dieresis {"width": [740, 0]}
+     cmap         FAIL 427 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      FAIL 725326 runs shaped, 12030 differ
+         - default features, singles: 15 of 427 runs differ
+         - default features, pairs: 10515 of 127550 runs differ
+         - GPOS mark off: 1500 of 4417 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -143, build -190
+         - x-height as layout engines read it (CSS ex / cap units): release 1185, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1609, build 700
+     advances     FAIL 430 glyph advances compared, 15 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+         - 15 advance width(s) differ (release/build): acute 378/0, apostrophe 274/0, breve 477/0, caron 653/0, cedilla 488/0, circumflex 653/0, commaaccent 339/0, dieresis 740/0, dotaccent 740/0, grave 378/0, hungarumlaut 658/0, macron 805/0, ogonek 479/0, ring 384/0, tilde 968/0
+     gdef         FAIL GDEF absent/present; 15 class difference(s) shaping reads, 372 it does not
+         - GDEF present in the build
+         - 15 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 1/3, apostrophe 1/3, breve 1/3, caron 1/3, cedilla 1/3, circumflex 1/3, commaaccent 1/3, dieresis 1/3, dotaccent 1/3, grave 1/3, hungarumlaut 1/3, macron 1/3, ogonek 1/3, ring 1/3, tilde 1/3

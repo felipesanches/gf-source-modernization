@@ -1,0 +1,16 @@
+tenorsans: RESIDUAL-UNPUBLISHED-CONVERTER @ a5db56a, 3 commits, 0 edit(s): TenorSans-Regular=6 functional=FAIL(cmap+line_spacing+advances)
+   TenorSans-Regular BLOCKING OS/2.panose_10 {"0": [2, 0]}
+   TenorSans-Regular BLOCKING cmap U+00A0 LOST ["space", null]
+   TenorSans-Regular BLOCKING post.underline_position [-75, -100]
+   TenorSans-Regular CMAP gained ['U+0000', 'U+000D'] lost ['U+00A0']
+     cmap         FAIL 475 codepoints, 2 problem(s)
+         - build loses 1 codepoint(s): U+00A0
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      PASS 678774 runs shaped, 0 differ
+     rendering    PASS diffenator3 91 glyph / 203 word diffs (0 / 0 confirmed); 0 of 293 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -75, build -100
+     advances     FAIL 476 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

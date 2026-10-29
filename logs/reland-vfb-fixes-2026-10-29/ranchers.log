@@ -1,0 +1,26 @@
+ranchers: RESIDUAL-UNPUBLISHED-CONVERTER @ 39624c8, 3 commits, 0 edit(s): Ranchers-Regular=24 functional=FAIL(cmap+shaping+line_spacing+advances+gdef)
+   Ranchers-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [11, 0], "2": [9, 0], "3": [3, 0], "4": [3, 0], "5": [2, 0],
+   Ranchers-Regular BLOCKING OS/2.sx_height [598, 500]
+   Ranchers-Regular BLOCKING OS/2.s_cap_height [818, 700]
+   Ranchers-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 15 mark(s): only the release marks none; only ours marks U+0060,U+00A8,U+00AF,U+00B4,U+00B8,U+02BC,U+02C6,U+02C7,U+02D8,U+02D9,U+02DA,U+02DB,U+02DC,U+02DD,U+F6C3
+   Ranchers-Regular BLOCKING hmtx.acute {"width": [267, 0]}
+   Ranchers-Regular BLOCKING hmtx.circumflex {"width": [382, 0]}
+     cmap         FAIL 430 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      FAIL 887177 runs shaped, 14044 differ
+         - default features, singles: 15 of 430 runs differ
+         - default features, pairs: 11835 of 160984 runs differ
+         - GPOS kern off: 724 of 133669 runs differ
+         - ... 1 more
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -86, build -114
+         - x-height as layout engines read it (CSS ex / cap units): release 598, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 818, build 700
+     advances     FAIL 442 glyph advances compared, 15 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+         - 15 advance width(s) differ (release/build): acute 267/0, apostrophe 288/0, breve 332/0, caron 382/0, cedilla 256/0, circumflex 382/0, commaaccent 256/0, dieresis 372/0, dotaccent 212/0, grave 267/0, hungarumlaut 389/0, macron 370/0, ogonek 292/0, ring 240/0, tilde 419/0
+     gdef         FAIL GDEF absent/present; 15 class difference(s) shaping reads, 385 it does not
+         - GDEF present in the build
+         - 15 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 1/3, apostrophe 1/3, breve 1/3, caron 1/3, cedilla 1/3, circumflex 1/3, commaaccent 1/3, dieresis 1/3, dotaccent 1/3, grave 1/3, hungarumlaut 1/3, macron 1/3, ogonek 1/3, ring 1/3, tilde 1/3

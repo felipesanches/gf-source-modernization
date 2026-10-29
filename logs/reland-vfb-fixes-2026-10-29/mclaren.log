@@ -1,0 +1,21 @@
+mclaren: RESIDUAL-UNPUBLISHED-CONVERTER @ f2dc6b7, 3 commits, 0 edit(s): McLaren-Regular=10 functional=FAIL(cmap+rendering+line_spacing+advances)
+   McLaren-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   McLaren-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   McLaren-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   McLaren-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [5, 0], "3": [3, 0], "7": [2, 0], "9": [4, 0]}
+   McLaren-Regular BLOCKING OS/2.s_typo_descender [-722, -729]
+   McLaren-Regular BLOCKING OS/2.us_win_descent [722, 729]
+     cmap         FAIL 372 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 784223 runs shaped, 0 differ
+     rendering    FAIL diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 1 of 61 changed outlines draw different ink
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 11544px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (2216, -722, 0), build hhea (2216, -729, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (2216, -722, 0), build win (2216, -729, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (2216, -722, 0), build hhea (2216, -729, 0)
+         - ... 6 more
+     advances     FAIL 373 glyph advances compared, 1 differ
+         - 1 advance width(s) differ (release/build): .notdef 537/1024
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

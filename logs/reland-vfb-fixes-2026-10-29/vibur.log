@@ -1,0 +1,3 @@
+Glyph 'rs' has a huge advance width (64001); is it intentional or an (invalid) negative value?
+vibur: RESIDUAL-UNPUBLISHED-CONVERTER @ 6bb623f, 3 commits, 0 edit(s): Vibur-Regular=BUILD functional=-
+   Vibur-Regular BUILD: test_neue_3-.ttf not produced (test_neue_3-Regular.ttf)

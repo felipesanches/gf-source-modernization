@@ -1,0 +1,16 @@
+hennypenny: RESIDUAL-UNPUBLISHED-CONVERTER @ a7fb012, 14 commits, 0 edit(s): HennyPenny-Regular=4 functional=FAIL(cmap+line_spacing)
+   HennyPenny-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [5, 0], "3": [5, 0], "7": [2, 0], "9": [4, 0]}
+   HennyPenny-Regular BLOCKING OS/2.sx_height [1264, 500]
+   HennyPenny-Regular BLOCKING OS/2.s_cap_height [1794, 700]
+   HennyPenny-Regular BLOCKING post.underline_position [-154, -205]
+     cmap         FAIL 215 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 567800 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 28 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -154, build -205
+         - x-height as layout engines read it (CSS ex / cap units): release 1264, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1794, build 700
+     advances     PASS 230 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

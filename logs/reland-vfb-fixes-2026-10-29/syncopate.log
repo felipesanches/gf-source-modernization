@@ -1,0 +1,53 @@
+syncopate: RESIDUAL-UNPUBLISHED-CONVERTER @ 6df57d3, 3 commits, 0 edit(s): Syncopate-Bold=17 functional=FAIL(cmap+shaping+names+line_spacing+advances+gdef); Syncopate-Regular=23 functional=FAIL(cmap+shaping+names+line_spacing+advances+gdef)
+   Syncopate-Bold BLOCKING OS/2.us_weight_class [700, 400]
+   Syncopate-Bold BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [6, 0], "2": [5, 0], "3": [7, 0], "7": [2, 0], "9": [3, 0]}
+   Syncopate-Bold BLOCKING OS/2.sx_height [958, 500]
+   Syncopate-Bold BLOCKING OS/2.s_cap_height [1374, 700]
+   Syncopate-Bold BLOCKING hmtx.grave {"width": [1081, 0]}
+   Syncopate-Bold BLOCKING hmtx.acute {"width": [1081, 0]}
+     cmap         FAIL 369 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 761898 runs shaped, 11615 differ
+         - default features, singles: 12 of 369 runs differ
+         - default features, pairs: 6479 of 89482 runs differ
+         - default features, base+mark: 279 of 279 runs differ
+         - ... 2 more
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 69 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - OS/2.usWeightClass: release 700, build 400
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -154, build -205
+         - x-height as layout engines read it (CSS ex / cap units): release 958, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1374, build 700
+     advances     FAIL 370 glyph advances compared, 11 differ
+         - 11 advance width(s) differ (release/build): acute 1081/0, breve 1081/0, caron 1081/0, circumflex 1081/0, dieresis 1081/0, dotaccent 1081/0, grave 1081/0, hungarumlaut 1081/0, macron 1081/0, ring 1081/0, tilde 1081/0
+     gdef         FAIL GDEF absent/present; 12 class difference(s) shaping reads, 146 it does not
+         - GDEF present in the build
+         - 12 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 1/3, breve 1/3, caron 1/3, circumflex 1/3, commaaccent 3/0, dieresis 1/3, dotaccent 1/3, grave 1/3, hungarumlaut 1/3, macron 1/3, ring 1/3, tilde 1/3
+   Syncopate-Regular BLOCKING OS/2.us_width_class [7, 5]
+   Syncopate-Regular BLOCKING OS/2.fs_type [0, 4]
+   Syncopate-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [5, 0], "3": [5, 0], "7": [2, 0], "9": [3, 0]}
+   Syncopate-Regular BLOCKING OS/2.us_win_ascent [1853, 0]
+   Syncopate-Regular BLOCKING OS/2.us_win_descent [483, 0]
+   Syncopate-Regular BLOCKING OS/2.sx_height [958, 500]
+     cmap         FAIL 369 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 749670 runs shaped, 11351 differ
+         - default features, singles: 12 of 369 runs differ
+         - default features, pairs: 6347 of 85918 runs differ
+         - default features, base+mark: 279 of 279 runs differ
+         - ... 2 more
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 65 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 4 (3,1,0x409): release 'Syncopate Regular', build 'Syncopate'
+         - OS/2.usWidthClass: release 7, build 5
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (1556, -426, 150), build hhea (0, 0, 18)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1853, -483, 0), build win (0, 0, 18)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (1556, -426, 150), build hhea (0, 0, 18)
+         - ... 8 more
+     advances     FAIL 370 glyph advances compared, 11 differ
+         - 11 advance width(s) differ (release/build): acute 1081/0, breve 1081/0, caron 1081/0, circumflex 1081/0, dieresis 1081/0, dotaccent 1081/0, grave 1081/0, hungarumlaut 1081/0, macron 1081/0, ring 1081/0, tilde 1081/0
+     gdef         FAIL GDEF absent/present; 12 class difference(s) shaping reads, 152 it does not
+         - GDEF present in the build
+         - 12 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 1/3, breve 1/3, caron 1/3, circumflex 1/3, commaaccent 3/0, dieresis 1/3, dotaccent 1/3, grave 1/3, hungarumlaut 1/3, macron 1/3, ring 1/3, tilde 1/3

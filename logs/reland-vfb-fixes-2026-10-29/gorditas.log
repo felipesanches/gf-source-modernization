@@ -1,0 +1,44 @@
+gorditas: RESIDUAL-UNPUBLISHED-CONVERTER @ a2ccfba, 14 commits, 0 edit(s): Gorditas-Bold=5 functional=FAIL(cmap+shaping+rendering+names+line_spacing); Gorditas-Regular=6 functional=FAIL(cmap+shaping+rendering+names+line_spacing)
+   Gorditas-Bold BLOCKING OS/2.us_weight_class [700, 400]
+   Gorditas-Bold BLOCKING OS/2.s_typo_ascender [954, 950]
+   Gorditas-Bold BLOCKING OS/2.us_win_ascent [954, 950]
+   Gorditas-Bold BLOCKING hhea.ascender [954, 950]
+   Gorditas-Bold BLOCKING post.underline_position [-75, -100]
+     cmap         FAIL 219 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+00B7 periodcentered/middot
+     shaping      FAIL 588127 runs shaped, 1755 differ
+         - default features, pairs: 1220 of 34596 runs differ
+         - default features, words: 535 of 520601 runs differ
+     rendering    FAIL diffenator3 0 glyph / 3 word diffs (0 / 3 confirmed); 0 of 2 changed outlines draw different ink
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'BlagoÏevitch' 262px, 'AraÚjo' 123px, 'AntropologÌa' 65px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - OS/2.usWeightClass: release 700, build 400
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (954, -259, 0), build hhea (950, -259, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (954, -259, 0), build win (950, -259, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (954, -259, 0), build hhea (950, -259, 0)
+         - ... 4 more
+     advances     PASS 220 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+   Gorditas-Regular BLOCKING OS/2.s_typo_ascender [954, 950]
+   Gorditas-Regular BLOCKING OS/2.us_win_ascent [954, 950]
+   Gorditas-Regular BLOCKING OS/2.sx_height [274, 500]
+   Gorditas-Regular BLOCKING OS/2.s_cap_height [380, 700]
+   Gorditas-Regular BLOCKING hhea.ascender [954, 950]
+   Gorditas-Regular BLOCKING post.underline_position [-75, -100]
+     cmap         FAIL 220 codepoints, 1 problem(s)
+         - 3 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+00AF macron/overscore; U+00B7 periodcentered/middot
+     shaping      FAIL 588128 runs shaped, 1250 differ
+         - default features, pairs: 1031 of 34596 runs differ
+         - default features, words: 219 of 520601 runs differ
+     rendering    FAIL diffenator3 0 glyph / 3 word diffs (0 / 3 confirmed); 0 of 2 changed outlines draw different ink
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'BlagoÏevitch' 255px, 'AraÚjo' 157px, 'AntropologÌa' 74px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 6 (3,1,0x409): release 'Gorditas-Regular', build 'Gorditas'
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (954, -259, 0), build hhea (950, -259, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (954, -259, 0), build win (950, -259, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (954, -259, 0), build hhea (950, -259, 0)
+         - ... 6 more
+     advances     PASS 221 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

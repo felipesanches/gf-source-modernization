@@ -1,0 +1,17 @@
+rancho: RESIDUAL-UNPUBLISHED-CONVERTER @ b961b2a, 3 commits, 0 edit(s): Rancho-Regular=4 functional=FAIL(names+line_spacing)
+   Rancho-Regular BLOCKING OS/2.panose_10 {"0": [2, 0]}
+   Rancho-Regular BLOCKING OS/2.sx_height [407, 500]
+   Rancho-Regular BLOCKING OS/2.s_cap_height [705, 700]
+   Rancho-Regular BLOCKING post.underline_position [-77, -102]
+     cmap         PASS 226 codepoints, exact
+     shaping      PASS 559327 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 45 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 4 (3,1,0x409): release 'Rancho Regular', build 'Rancho'
+         - name ID 6 (3,1,0x409): release 'Rancho-Regular', build 'Rancho'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -77, build -102
+         - x-height as layout engines read it (CSS ex / cap units): release 407, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 705, build 700
+     advances     PASS 227 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

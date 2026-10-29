@@ -1,0 +1,21 @@
+labelleaurore: RESIDUAL-UNPUBLISHED-CONVERTER @ f93bf27, 3 commits, 0 edit(s): LaBelleAurore=7 functional=FAIL(rendering+line_spacing)
+   LaBelleAurore BLOCKING OS/2.fs_type [0, 4]
+   LaBelleAurore BLOCKING OS/2.panose_10 {"0": [2, 0]}
+   LaBelleAurore BLOCKING OS/2.us_win_descent [794, 796]
+   LaBelleAurore BLOCKING OS/2.sx_height [377, 500]
+   LaBelleAurore BLOCKING OS/2.s_cap_height [688, 700]
+   LaBelleAurore BLOCKING hhea.descender [-794, -796]
+     cmap         PASS 352 codepoints, exact
+     shaping      PASS 647395 runs shaped, 0 differ
+     rendering    FAIL diffenator3 12 glyph / 3 word diffs (10 / 3 confirmed); 11 of 85 changed outlines draw different ink
+         - diffenator3: 10 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00BE 246px, U+00BC 169px, U+00BD 138px, U+00B3 88px, U+00B2 81px
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: 'FÃƒÂªTe' 28px, 'RepÃƒÂºBlica' 21px, 'Mīrāŉbāī' 15px
+         - 11 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): threequarters 2464px, onequarter 1700px, onehalf 1259px, questiondown 989px, ordmasculine 788px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (1103, -794, 0), build hhea (1103, -796, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1103, -794, 0), build win (1103, -796, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (1103, -794, 0), build hhea (1103, -796, 0)
+         - ... 5 more
+     advances     PASS 352 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

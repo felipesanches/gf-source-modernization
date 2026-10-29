@@ -1,0 +1,19 @@
+shadowsintolighttwo: RESIDUAL-UNPUBLISHED-CONVERTER @ 274aaf5, 3 commits, 0 edit(s): ShadowsIntoLightTwo-Regular=5 functional=FAIL(cmap+rendering+line_spacing)
+   ShadowsIntoLightTwo-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [5, 0], "3": [6, 0], "7": [2, 0], "9": [4, 0]}
+   ShadowsIntoLightTwo-Regular BLOCKING OS/2.sx_height [610, 500]
+   ShadowsIntoLightTwo-Regular BLOCKING OS/2.s_cap_height [848, 700]
+   ShadowsIntoLightTwo-Regular BLOCKING cmap U+00A0 LOST ["space", null]
+   ShadowsIntoLightTwo-Regular CMAP gained [] lost ['U+00A0']
+     cmap         FAIL 362 codepoints, 1 problem(s)
+         - build loses 1 codepoint(s): U+00A0
+     shaping      PASS 657006 runs shaped, 0 differ
+     rendering    FAIL diffenator3 52 glyph / 93 word diffs (1 / 1 confirmed); 1 of 351 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+010B 23px
+         - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'ÅĊĖĠİĿŮŻåċėġıŀůż' 28px
+         - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): cdotaccent 5px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - x-height as layout engines read it (CSS ex / cap units): release 610, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 848, build 700
+     advances     PASS 353 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

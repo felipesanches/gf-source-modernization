@@ -1,0 +1,22 @@
+aclonica: RESIDUAL-UNPUBLISHED-CONVERTER @ 915e115, 15 commits, 0 edit(s): Aclonica-Regular=7 functional=FAIL(cmap+rendering+names+line_spacing)
+   Aclonica-Regular BLOCKING GSUB.script_list {"latn/dflt": [{"lookups": [0, 1, 2, 3, 4]}, null], "DFLT/dflt": [null, {"lookup
+   Aclonica-Regular BLOCKING GSUB.feature_list {"frac": {"0": [4, 5]}}
+   Aclonica-Regular BLOCKING GSUB.lookup_list {"3": {"0": {"rules": {"0": ["[zero one two three four five six seven eight nine
+   Aclonica-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [6, 0], "2": [5, 0], "3": [3, 0], "7": [2, 0], "9": [4, 0]}
+   Aclonica-Regular BLOCKING OS/2.sx_height [1155, 500]
+   Aclonica-Regular BLOCKING OS/2.s_cap_height [1440, 700]
+     cmap         FAIL 368 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 776769 runs shaped, 0 differ
+     rendering    FAIL diffenator3 148 glyph / 139 word diffs (67 / 117 confirmed); 86 of 267 changed outlines draw different ink
+         - diffenator3: 67 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00D5 61px, U+0153 58px, U+2030 54px, U+014E 53px, U+00D6 52px
+         - diffenator3: 117 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 113px, '0123456789,,,sinf' 100px, '1/234,latn,dflt,frac' 78px, '0,,,zero' 67px, 'ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋ' 694px
+         - 86 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): two 18px, perthousand 14px, percent 14px, oe 11px, eight 11px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Aclonica Regular', build 'Aclonica'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -123, build -133
+         - x-height as layout engines read it (CSS ex / cap units): release 1155, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1440, build 700
+     advances     PASS 369 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

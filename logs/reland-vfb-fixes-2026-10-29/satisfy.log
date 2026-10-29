@@ -1,0 +1,17 @@
+satisfy: RESIDUAL-UNPUBLISHED-CONVERTER @ 5747ec7, 3 commits, 0 edit(s): Satisfy-Regular=4 functional=FAIL(names+line_spacing)
+   Satisfy-Regular BLOCKING OS/2.panose_10 {"0": [2, 0]}
+   Satisfy-Regular BLOCKING OS/2.sx_height [417, 500]
+   Satisfy-Regular BLOCKING OS/2.s_cap_height [767, 700]
+   Satisfy-Regular BLOCKING post.underline_position [-77, -102]
+     cmap         PASS 226 codepoints, exact
+     shaping      PASS 554596 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 32 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+         - name ID 4 (3,1,0x409): release 'Satisfy Regular', build 'Satisfy'
+         - name ID 6 (3,1,0x409): release 'Satisfy-Regular', build 'Satisfy'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -77, build -102
+         - x-height as layout engines read it (CSS ex / cap units): release 417, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 767, build 700
+     advances     PASS 227 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

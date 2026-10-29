@@ -1,0 +1,71 @@
+share: RESIDUAL-UNPUBLISHED-CONVERTER @ 50c7c2f, 3 commits, 0 edit(s): Share-Bold=5 functional=FAIL(cmap+names+line_spacing+advances); Share-BoldItalic=9 functional=FAIL(cmap+names+line_spacing+advances); Share-Italic=4 functional=FAIL(cmap+line_spacing+advances); Share-Regular=8 functional=FAIL(cmap+names+line_spacing+advances)
+   Share-Bold BLOCKING OS/2.us_weight_class [700, 400]
+   Share-Bold BLOCKING OS/2.s_cap_height [709, 700]
+   Share-Bold BLOCKING post.underline_position [-98, -135]
+   Share-Bold CMAP gained ['U+0000', 'U+000D'] lost []
+     cmap         FAIL 253 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      PASS 589539 runs shaped, 0 differ
+     rendering    PASS diffenator3 10 glyph / 45 word diffs (0 / 0 confirmed); 0 of 130 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - OS/2.usWeightClass: release 700, build 400
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -98, build -135
+         - cap height as layout engines read it (CSS ex / cap units): release 709, build 700
+     advances     FAIL 255 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 0 it does not
+   Share-BoldItalic BLOCKING OS/2.us_weight_class [700, 400]
+   Share-BoldItalic BLOCKING OS/2.s_typo_ascender [885, 808]
+   Share-BoldItalic BLOCKING OS/2.s_typo_descender [-242, -192]
+   Share-BoldItalic BLOCKING OS/2.s_typo_line_gap [0, 200]
+   Share-BoldItalic BLOCKING OS/2.s_cap_height [709, 700]
+   Share-BoldItalic BLOCKING hhea.line_gap [0, 73]
+     cmap         FAIL 253 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      PASS 589539 runs shaped, 0 differ
+     rendering    PASS diffenator3 5 glyph / 28 word diffs (0 / 0 confirmed); 0 of 132 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - OS/2.usWeightClass: release 700, build 400
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (885, -242, 0), build hhea (885, -242, 73)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (885, -242, 0), build win (885, -242, 73)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (885, -242, 0), build hhea (885, -242, 73)
+         - ... 6 more
+     advances     FAIL 255 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 0 it does not
+   Share-Italic BLOCKING OS/2.s_cap_height [707, 700]
+   Share-Italic BLOCKING post.underline_position [-98, -135]
+   Share-Italic CMAP gained ['U+0000', 'U+000D'] lost []
+     cmap         FAIL 253 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      PASS 589539 runs shaped, 0 differ
+     rendering    PASS diffenator3 5 glyph / 37 word diffs (0 / 0 confirmed); 0 of 131 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -98, build -135
+         - cap height as layout engines read it (CSS ex / cap units): release 707, build 700
+     advances     FAIL 255 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 0 it does not
+   Share-Regular BLOCKING OS/2.s_typo_ascender [885, 808]
+   Share-Regular BLOCKING OS/2.s_typo_descender [-242, -192]
+   Share-Regular BLOCKING OS/2.s_typo_line_gap [0, 200]
+   Share-Regular BLOCKING OS/2.s_cap_height [707, 700]
+   Share-Regular BLOCKING hhea.line_gap [0, 73]
+   Share-Regular BLOCKING post.underline_position [-98, -135]
+     cmap         FAIL 253 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      PASS 589539 runs shaped, 0 differ
+     rendering    PASS diffenator3 12 glyph / 41 word diffs (0 / 0 confirmed); 0 of 131 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Share Regular', build 'Share'
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (885, -242, 0), build hhea (885, -242, 73)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (885, -242, 0), build win (885, -242, 73)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (885, -242, 0), build hhea (885, -242, 73)
+         - ... 6 more
+     advances     FAIL 255 glyph advances compared, 0 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 0 it does not

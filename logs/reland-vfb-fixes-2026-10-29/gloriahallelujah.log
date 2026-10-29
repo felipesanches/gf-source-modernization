@@ -1,0 +1,16 @@
+gloriahallelujah: RESIDUAL-UNPUBLISHED-CONVERTER @ 4c8c366, 13 commits, 0 edit(s): GloriaHallelujah=4 functional=FAIL(cmap+line_spacing)
+   GloriaHallelujah BLOCKING OS/2.fs_type [0, 4]
+   GloriaHallelujah BLOCKING OS/2.sx_height [580, 500]
+   GloriaHallelujah BLOCKING OS/2.s_cap_height [904, 700]
+   GloriaHallelujah BLOCKING post.underline_position [-77, -102]
+     cmap         FAIL 358 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 653359 runs shaped, 0 differ
+     rendering    PASS diffenator3 2 glyph / 0 word diffs (0 / 0 confirmed); 0 of 39 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -77, build -102
+         - x-height as layout engines read it (CSS ex / cap units): release 580, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 904, build 700
+     advances     PASS 359 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

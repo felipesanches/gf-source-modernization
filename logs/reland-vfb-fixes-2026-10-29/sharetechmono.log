@@ -1,0 +1,29 @@
+sharetechmono: RESIDUAL-UNPUBLISHED-CONVERTER @ 03c9de8, 3 commits, 0 edit(s): ShareTechMono-Regular=38 functional=FAIL(cmap+shaping+rendering+line_spacing+advances)
+   ShareTechMono-Regular BLOCKING GSUB.script_list {"DFLT/dflt": [{"lookups": [0, 3, 6, 9, 12, 15]}, null], "grek/dflt": [{"lookups
+   ShareTechMono-Regular BLOCKING GSUB.feature_list {"dlig": [[4], null], "frac": {"0": [2, 1]}, "liga": {"0": [5, 3]}, "ordn": {"0"
+   ShareTechMono-Regular BLOCKING GSUB.lookup_list {"0": {"0": {"slash": [null, "fraction"]}}, "1": {"0": {"type": ["single", "liga
+   ShareTechMono-Regular BLOCKING OS/2.y_subscript_x_size [650, 700]
+   ShareTechMono-Regular BLOCKING OS/2.y_subscript_y_size [600, 650]
+   ShareTechMono-Regular BLOCKING OS/2.y_subscript_y_offset [75, 140]
+     cmap         FAIL 267 codepoints, 2 problem(s)
+         - build loses 12 codepoint(s): U+2620 U+263A U+263B U+263C U+2640 U+2642 U+2660 U+2663 U+2665 U+2666 U+266A U+266B
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+     shaping      FAIL 562061 runs shaped, 8744 differ
+         - default features, singles: 2 of 255 runs differ
+         - default features, pairs: 614 of 23875 runs differ
+         - default features, rules: 7 of 62 runs differ
+         - ... 9 more
+     rendering    FAIL diffenator3 2 glyph / 6 word diffs (2 / 3 confirmed); 2 of 131 changed outlines draw different ink
+         - diffenator3: 2 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+FB01 259px, U+FB02 253px
+         - diffenator3: 3 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 326px, 'Abfangjagdflugzeug' 406px, 'Afijio' 253px
+         - 2 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): fl 3065px, fi 2937px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 300, build 250
+         - post.underlinePosition: release -110, build -135
+         - post.underlineThickness: release 50, build 75
+     advances     FAIL 256 glyph advances compared, 2 differ
+         - 12 reachable release glyph(s) have no build counterpart: club diamond female heart invsmileface male musicalnote musicalnotedbl smileface spade sun uni2620
+         - 2 advance width(s) differ (release/build): fi 1080/540, fl 1080/540
+         - post.isFixedPitch: release 1, build 0
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

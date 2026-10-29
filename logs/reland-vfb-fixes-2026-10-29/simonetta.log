@@ -1,0 +1,76 @@
+simonetta: RESIDUAL-UNPUBLISHED-CONVERTER @ bf815a5, 3 commits, 0 edit(s): Simonetta-Black=6 functional=FAIL(cmap+names+line_spacing); Simonetta-BlackItalic=6 functional=FAIL(cmap+names+line_spacing); Simonetta-Italic=6 functional=FAIL(cmap+line_spacing); Simonetta-Regular=6 functional=FAIL(cmap+names+line_spacing)
+   Simonetta-Black BLOCKING OS/2.us_weight_class [900, 400]
+   Simonetta-Black BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [10, 0], "3": [4, 0], "4": [7, 0], "7": [2, 0], "9": [3, 0]}
+   Simonetta-Black BLOCKING OS/2.sx_height [926, 500]
+   Simonetta-Black BLOCKING OS/2.s_cap_height [1397, 700]
+   Simonetta-Black BLOCKING hmtx.nonmarkingreturn {"width": [457, 477]}
+   Simonetta-Black BLOCKING post.underline_position [-154, -205]
+     cmap         FAIL 224 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 603371 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 8 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Simonetta Black', build 'Simonetta'
+         - name ID 2 (3,1,0x409): release 'Regular', build 'Black'
+         - OS/2.usWeightClass: release 900, build 400
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -154, build -205
+         - x-height as layout engines read it (CSS ex / cap units): release 926, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1397, build 700
+     advances     PASS 235 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+   Simonetta-BlackItalic BLOCKING OS/2.us_weight_class [900, 400]
+   Simonetta-BlackItalic BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [10, 0], "3": [4, 0], "4": [7, 0], "7": [9, 0], "9": [3, 0]}
+   Simonetta-BlackItalic BLOCKING OS/2.sx_height [926, 500]
+   Simonetta-BlackItalic BLOCKING OS/2.s_cap_height [1397, 700]
+   Simonetta-BlackItalic BLOCKING hmtx.nonmarkingreturn {"width": [446, 477]}
+   Simonetta-BlackItalic BLOCKING post.underline_position [-154, -205]
+     cmap         FAIL 224 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 602365 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 12 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (3)
+         - name ID 1 (3,1,0x409): release 'Simonetta Black', build 'Simonetta'
+         - name ID 2 (3,1,0x409): release 'Italic', build 'Black Italic'
+         - OS/2.usWeightClass: release 900, build 400
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -154, build -205
+         - x-height as layout engines read it (CSS ex / cap units): release 926, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1397, build 700
+     advances     PASS 235 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+   Simonetta-Italic BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [5, 0], "3": [4, 0], "4": [7, 0], "7": [9, 0], "9": [3, 0]}
+   Simonetta-Italic BLOCKING OS/2.sx_height [897, 500]
+   Simonetta-Italic BLOCKING OS/2.s_cap_height [1391, 700]
+   Simonetta-Italic BLOCKING hmtx.nonmarkingreturn {"width": [477, 447]}
+   Simonetta-Italic BLOCKING post.underline_position [-154, -205]
+   Simonetta-Italic BLOCKING post.num_glyphs -- we add f_b (2 contour(s), unmapped, referenced by a lookup); f_h (1 contour(s), unmapped, referenced by a lookup); f_j (1 contour(s), unmapped, referenced by a lookup); f_k (1 contour(s), unmapped, referenced by a lookup)
+     cmap         FAIL 220 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 560952 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 33 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -154, build -205
+         - x-height as layout engines read it (CSS ex / cap units): release 897, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1391, build 700
+     advances     PASS 226 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+   Simonetta-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "2": [5, 0], "3": [4, 0], "4": [7, 0], "7": [2, 0], "9": [3, 0]}
+   Simonetta-Regular BLOCKING OS/2.sx_height [897, 500]
+   Simonetta-Regular BLOCKING OS/2.s_cap_height [1391, 700]
+   Simonetta-Regular BLOCKING hmtx.nonmarkingreturn {"width": [477, 444]}
+   Simonetta-Regular BLOCKING post.underline_position [-154, -205]
+   Simonetta-Regular BLOCKING post.num_glyphs -- we add f_b (2 contour(s), unmapped, referenced by a lookup); f_h (1 contour(s), unmapped, referenced by a lookup); f_j (1 contour(s), unmapped, referenced by a lookup); f_k (2 contour(s), unmapped, referenced by a lookup)
+     cmap         FAIL 220 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/nbspace
+     shaping      PASS 560686 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 42 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Simonetta Regular', build 'Simonetta'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -154, build -205
+         - x-height as layout engines read it (CSS ex / cap units): release 897, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 1391, build 700
+     advances     PASS 226 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,28 @@
+atomicage: RESIDUAL-UNPUBLISHED-CONVERTER @ 98d3b2b, 16 commits, 0 edit(s): AtomicAge-Regular=39 functional=FAIL(cmap+shaping+rendering+line_spacing+advances+gdef)
+   AtomicAge-Regular BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [5, 3]}}, "latn/dflt": {"lookups": {"0": [1, 0],
+   AtomicAge-Regular BLOCKING GSUB.feature_list {"liga": {"0": [6, 8], "1": [7, null], "2": [8, null]}, "locl": {"0": [4, 6]}}
+   AtomicAge-Regular BLOCKING GSUB.lookup_list {"1": {"0": {"periodcentered": {"0": ["Ldot", "ldot"], "1": ["ldot", "Ldot"]}}},
+   AtomicAge-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [1, 0], "2": [6, 0], "3": [4, 0], "4": [1, 0], "5": [2, 0], "
+   AtomicAge-Regular BLOCKING OS/2.s_typo_ascender [2091, 2014]
+   AtomicAge-Regular BLOCKING OS/2.s_typo_descender [-656, -560]
+     cmap         FAIL 525 codepoints, 1 problem(s)
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+00A0 nonbreakingspace/nbspace
+     shaping      FAIL 1322804 runs shaped, 77352 differ
+         - default features, singles: 14 of 525 runs differ
+         - default features, pairs: 10976 of 155591 runs differ
+         - default features, base+mark: 5771 of 8085 runs differ
+         - ... 7 more
+     rendering    FAIL diffenator3 4 glyph / 250 word diffs (0 / 91 confirmed); 18 of 503 changed outlines draw different ink
+         - diffenator3: 91 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,sinf' 56px, 'ÇĢĶĻŅŖŞŢçģķļņŗşţ' 133px, 'ĂČĎĚĞĽŇŘŠŤŬŽăčďěğľňřšťŭž' 118px, 'Aṣṭāṅgahṛdayasaṃhitā' 115px, 'ÁĆÉÍĹŃÓŔŚÚÝŹáćéíĺńóŕśúýź' 100px
+         - 18 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): uni0219 15px, uni1E63 13px, uni1E61 13px, uni015F 13px, scircumflex 13px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (2091, -656, 0), build hhea (2014, -560, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (2091, -656, 0), build win (2014, -560, 0)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (2091, -656, 0), build hhea (2014, -560, 0)
+         - ... 9 more
+     advances     FAIL 544 glyph advances compared, 15 differ
+         - 15 advance width(s) differ (release/build): acute 909/0, breve 1109/0, caron 1142/0, cedilla 949/0, circumflex 1142/0, commaaccent 638/0, dieresis 1167/0, dotaccent 633/0, grave 909/0, hungarumlaut 1213/0, macron 1202/0, macron.cap 1202/0, ogonek 863/0, ring 877/0, tilde 1185/0
+     gdef         FAIL GDEF absent/present; 27 class difference(s) shaping reads, 165 it does not
+         - GDEF present in the build
+         - 27 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 1/3, breve 1/3, caron 1/3, cedilla 1/3, circumflex 1/3, commaaccent 1/3, dieresis 1/3, dotaccent 1/3, grave 1/3, hungarumlaut 1/3, macron 1/3, macron.cap -/3, ogonek 1/3, ring 1/3, tilde 1/3

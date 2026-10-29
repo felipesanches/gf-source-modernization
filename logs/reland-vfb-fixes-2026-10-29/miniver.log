@@ -1,0 +1,20 @@
+miniver: RESIDUAL-UNPUBLISHED-CONVERTER @ 9866deb, 3 commits, 0 edit(s): Miniver-Regular=7 functional=FAIL(shaping+rendering+line_spacing)
+   Miniver-Regular BLOCKING OS/2.panose_10 {"0": [2, 0]}
+   Miniver-Regular BLOCKING OS/2.sx_height [501, 500]
+   Miniver-Regular BLOCKING OS/2.s_cap_height [782, 700]
+   Miniver-Regular BLOCKING GPOS.script_list [null, {"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}]
+   Miniver-Regular BLOCKING GPOS.feature_list [null, {"kern": [0]}]
+   Miniver-Regular BLOCKING GPOS.lookup_list [null, {"0": [{"type": "pair", "hyphen": {"z": {"x": -41}}, "A": {"hyphen": {"x"
+     cmap         PASS 228 codepoints, exact
+     shaping      FAIL 554264 runs shaped, 162517 differ
+         - default features, pairs: 98 of 23104 runs differ
+         - default features, words: 162419 of 525580 runs differ
+     rendering    FAIL diffenator3 0 glyph / 37 word diffs (0 / 37 confirmed); 0 of 38 changed outlines draw different ink
+         - diffenator3: 37 word(s) render differently (>8 px at 16 ppem), confirmed: '0,,,zero' 81px, 'Abschlußzeugnis' 831px, 'Alþjóðasambands' 760px, 'Abhjängigkeit' 659px, 'ALKUjiggerypokeryMIX' 622px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -77, build -102
+         - x-height as layout engines read it (CSS ex / cap units): release 501, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 782, build 700
+     advances     PASS 229 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

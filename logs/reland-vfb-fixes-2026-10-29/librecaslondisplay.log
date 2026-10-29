@@ -1,0 +1,30 @@
+librecaslondisplay: RESIDUAL-UNPUBLISHED-CONVERTER @ 13ecd33, 8 commits, 0 edit(s): LibreCaslonDisplay-Regular=23 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef)
+   LibreCaslonDisplay-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 15 mark(s): only the release marks none; only ours marks U+0060,U+00A8,U+00AF,U+00B4,U+00B8,U+02BC,U+02C6,U+02C7,U+02C9,U+02D8,U+02D9,U+02DA,U+02DB,U+02DC,U+02DD
+   LibreCaslonDisplay-Regular BLOCKING GSUB.feature_list {"dlig": {"0": [2, 3]}, "dnom": {"0": [9, 11]}, "frac": {"0": [5, 6]}, "numr": {
+   LibreCaslonDisplay-Regular BLOCKING GSUB.lookup_list {"1": {"0": {"rules": {"0": ["L' lookup lookup_11 [A A.ss01]", "L' lookup lookup
+   LibreCaslonDisplay-Regular BLOCKING OS/2.y_subscript_x_size [650, 700]
+   LibreCaslonDisplay-Regular BLOCKING OS/2.y_subscript_y_size [600, 650]
+   LibreCaslonDisplay-Regular BLOCKING OS/2.y_subscript_y_offset [75, 140]
+     cmap         FAIL 501 codepoints, 2 problem(s)
+         - 6 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR; U+2002 uni2002/enspace; U+2003 uni2003/emspace; U+2074 uni2074/foursuperior; U+2084 uni2084/fourinferior; U+2206 uni2206/Delta
+         - 82 codepoint(s) map to a different glyph: U+00B2 uni00B2/twosuperior; U+00B3 uni00B3/threesuperior; U+00B5 uni00B5/mu; U+00B9 uni00B9/onesuperior; U+018F uni018F/Schwa; U+01EA uni01EA/Oogonek; U+01EB uni01EB/oogonek; U+01F4 uni01F4/Gacute; U+01F5 uni01F5/gacute; U+0200 uni0200/Adblgrave
+     shaping      FAIL 1033781 runs shaped, 23325 differ
+         - default features, singles: 15 of 501 runs differ
+         - default features, pairs: 13670 of 201839 runs differ
+         - default features, base+mark: 568 of 774 runs differ
+         - ... 2 more
+     rendering    FAIL diffenator3 54 glyph / 141 word diffs (7 / 6 confirmed); 11 of 524 changed outlines draw different ink
+         - diffenator3: 7 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0118 136px, U+015E 42px, U+030F 38px, U+F6C3 33px, U+00C7 31px
+         - diffenator3: 6 word(s) render differently (>8 px at 16 ppem), confirmed: 'ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋ' 236px, 'ÇĢĶĻŅŖŞŢçģķļņŗşţ' 56px, 'ƒREAKÇONTRØL' 46px, 'ANYKŠČIŲ' 22px, 'Abbasuşağı' 17px
+         - 11 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 3436px, uni030F 444px, uni0311 276px, uniF6C3 231px, Eogonek 211px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Libre Caslon Display Regular', build 'Libre Caslon Display'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.usWinAscent: release 963, build 970
+         - OS/2.usWinDescent: release 254, build 266
+         - OS/2.yStrikeoutPosition: release 254, build 250
+         - ... 4 more
+     advances     FAIL 551 glyph advances compared, 18 differ
+         - 18 advance width(s) differ (release/build): .notdef 160/717, acute 194/0, apostrophe 144/0, breve 306/0, caron 282/0, caron.alt 164/0, cedilla 271/0, circumflex 282/0, dieresis 343/0, dotaccent 186/0, dotbelow 186/0, grave 194/0, hungarumlaut 299/0, macron 290/0, ogonek 278/0
+     gdef         FAIL GDEF present/present; 17 class difference(s) shaping reads, 27 it does not
+         - 17 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 0/3, apostrophe 0/3, breve 0/3, caron 0/3, caron.alt 0/3, cedilla 0/3, circumflex 0/3, dieresis 0/3, dotaccent 0/3, dotbelow 0/3, grave 0/3, hungarumlaut 0/3, macron 0/3, ogonek 0/3, ring 0/3

@@ -1,0 +1,12 @@
+sofia: RESIDUAL-UNPUBLISHED-CONVERTER @ 66f0eb5, 3 commits, 0 edit(s): Sofia-Regular=2 functional=FAIL(line_spacing)
+   Sofia-Regular BLOCKING OS/2.sx_height [441, 500]
+   Sofia-Regular BLOCKING post.underline_position [-75, -100]
+     cmap         PASS 229 codepoints, exact
+     shaping      PASS 545190 runs shaped, 0 differ
+     rendering    PASS diffenator3 86 glyph / 93 word diffs (0 / 0 confirmed); 0 of 227 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -75, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 441, build 500
+     advances     PASS 229 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not

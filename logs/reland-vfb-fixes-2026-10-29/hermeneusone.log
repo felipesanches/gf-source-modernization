@@ -1,0 +1,24 @@
+hermeneusone: RESIDUAL-UNPUBLISHED-CONVERTER @ 00fa62d, 3 commits, 0 edit(s): HermeneusOne-Regular=34 functional=FAIL(cmap+shaping+line_spacing+advances+gdef)
+   HermeneusOne-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [6, 0], "2": [7, 0], "3": [6, 0], "4": [3, 0], "5": [2, 0], "
+   HermeneusOne-Regular BLOCKING OS/2.s_cap_height [720, 700]
+   HermeneusOne-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 14 mark(s): only the release marks none; only ours marks U+0060,U+00A8,U+00AF,U+00B4,U+00B8,U+02C6,U+02C7,U+02D8,U+02D9,U+02DA,U+02DB,U+02DC,U+02DD,U+F6C3
+   HermeneusOne-Regular BLOCKING hmtx.dotaccent {"width": [263, 0]}
+   HermeneusOne-Regular BLOCKING hmtx.dieresis {"width": [463, 0]}
+   HermeneusOne-Regular BLOCKING hmtx.uni00A0 {"width": [198, 199]}
+     cmap         FAIL 444 codepoints, 1 problem(s)
+         - build gains 2 codepoint(s): U+0000 U+000D
+     shaping      FAIL 889287 runs shaped, 12825 differ
+         - default features, singles: 15 of 444 runs differ
+         - default features, pairs: 11340 of 169124 runs differ
+         - GPOS mark off: 1470 of 4563 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -75, build -100
+         - cap height as layout engines read it (CSS ex / cap units): release 720, build 700
+     advances     FAIL 446 glyph advances compared, 15 differ
+         - 1 reachable build glyph(s) have no release counterpart: CR
+         - 15 advance width(s) differ (release/build): acute 198/0, breve 396/0, caron 384/0, cedilla 259/0, circumflex 384/0, commaaccent 159/0, dieresis 463/0, dotaccent 263/0, grave 198/0, hungarumlaut 361/0, macron 384/0, ogonek 224/0, ring 228/0, tilde 432/0, uni00A0 198/199
+     gdef         FAIL GDEF absent/present; 14 class difference(s) shaping reads, 386 it does not
+         - GDEF present in the build
+         - 14 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 1/3, breve 1/3, caron 1/3, cedilla 1/3, circumflex 1/3, commaaccent 1/3, dieresis 1/3, dotaccent 1/3, grave 1/3, hungarumlaut 1/3, macron 1/3, ogonek 1/3, ring 1/3, tilde 1/3

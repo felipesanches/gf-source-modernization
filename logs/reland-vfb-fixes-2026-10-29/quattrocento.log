@@ -1,0 +1,33 @@
+quattrocento: RESIDUAL-UNPUBLISHED-CONVERTER @ 583b52c, 11 commits, 0 edit(s): Quattrocento-Bold=5 functional=FAIL(cmap+names+line_spacing); Quattrocento-Regular=4 functional=FAIL(cmap+line_spacing)
+   Quattrocento-Bold BLOCKING OS/2.us_weight_class [700, 400]
+   Quattrocento-Bold BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [2, 0], "2": [8, 0], "3": [2, 0], "4": [3, 0], "8": [4, 0], "
+   Quattrocento-Bold BLOCKING OS/2.sx_height [459, 500]
+   Quattrocento-Bold BLOCKING OS/2.s_cap_height [660, 700]
+   Quattrocento-Bold BLOCKING post.underline_position [-71, -95]
+     cmap         FAIL 245 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+     shaping      PASS 616339 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - OS/2.usWeightClass: release 700, build 400
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -71, build -95
+         - x-height as layout engines read it (CSS ex / cap units): release 459, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 660, build 700
+     advances     PASS 249 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+   Quattrocento-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [2, 0], "2": [5, 0], "3": [2, 0], "4": [3, 0], "8": [4, 0], "
+   Quattrocento-Regular BLOCKING OS/2.sx_height [459, 500]
+   Quattrocento-Regular BLOCKING OS/2.s_cap_height [660, 700]
+   Quattrocento-Regular BLOCKING post.underline_position [-71, -95]
+     cmap         FAIL 245 codepoints, 1 problem(s)
+         - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+000D nonmarkingreturn/CR
+     shaping      PASS 614355 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - post.underlinePosition: release -71, build -95
+         - x-height as layout engines read it (CSS ex / cap units): release 459, build 500
+         - cap height as layout engines read it (CSS ex / cap units): release 660, build 700
+     advances     PASS 249 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not

@@ -1,0 +1,32 @@
+telex: RESIDUAL-UNPUBLISHED-CONVERTER @ 0693d6d, 3 commits, 0 edit(s): Telex-Regular=39 functional=FAIL(cmap+shaping+rendering+names+line_spacing+advances+gdef)
+   Telex-Regular BLOCKING GDEF.glyph_classes -- the two fonts disagree about 13 mark(s): only the release marks none; only ours marks U+0060,U+00A8,U+00AF,U+00B4,U+00B8,U+02C6,U+02C7,U+02D8,U+02D9,U+02DA,U+02DB,U+02DC,U+02DD
+   Telex-Regular BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0, 3, 6, 10, 13]}, "latn/dflt": {"lookups": [1, 4, 7
+   Telex-Regular BLOCKING GSUB.feature_list [{"aalt": [0], "frac": [3], "liga": [5], "locl": [1], "ordn": [4], "sups": [2]},
+   Telex-Regular BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "A": "ordfeminine", "O": "ordmasculine", "a": "ordfem
+   Telex-Regular BLOCKING OS/2.y_subscript_x_size [650, 700]
+   Telex-Regular BLOCKING OS/2.y_subscript_y_size [600, 650]
+     cmap         FAIL 266 codepoints, 3 problem(s)
+         - build loses 2 codepoint(s): U+0000 U+000D
+         - 2 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 uni00A0/nbspace; U+00B9 uni00B9/onesuperior
+         - 8 codepoint(s) map to a different glyph: U+00B2 uni00B2/twosuperior; U+00B3 uni00B3/threesuperior; U+0307 uni0307/dotaccentcmb; U+0326 uni0326/commaaccent; U+0394 uni0394/Delta; U+03A9 uni03A9/Omega; U+03BC uni03BC/mu; U+F8FF uniF8FF/apple
+     shaping      FAIL 643636 runs shaped, 16913 differ
+         - default features, singles: 13 of 264 runs differ
+         - default features, pairs: 5007 of 38433 runs differ
+         - default features, base+mark: 257 of 336 runs differ
+         - ... 11 more
+     rendering    FAIL diffenator3 15 glyph / 98 word diffs (3 / 87 confirmed); 18 of 174 changed outlines draw different ink
+         - diffenator3: 3 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 36px, U+0067 20px, U+0035 17px
+         - diffenator3: 87 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 201px, '0123456789,,,pnum' 74px, '0123456789,,,sinf' 69px, 'Abfangjagdflugzeug' 289px, 'Afijio' 127px
+         - 18 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): uni0326 521px, uni0307 262px, M 15px, uni03BC 13px, g 10px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+         - name ID 4 (3,1,0x409): release 'Telex Regular', build 'Telex'
+     line_spacing FAIL per-platform ascender/descender/gap equal
+         - OS/2.yStrikeoutPosition: release 308, build 250
+         - post.underlinePosition: release -75, build -100
+         - x-height as layout engines read it (CSS ex / cap units): release 514, build 500
+         - ... 1 more
+     advances     FAIL 265 glyph advances compared, 13 differ
+         - 2 reachable release glyph(s) have no build counterpart: NULL nonmarkingreturn
+         - 13 advance width(s) differ (release/build): acute 233/0, breve 327/0, caron 368/0, cedilla 232/0, circumflex 368/0, dieresis 314/0, dotaccent 132/0, grave 233/0, hungarumlaut 404/0, macron 344/0, ogonek 184/0, ring 238/0, tilde 522/0
+     gdef         FAIL GDEF present/present; 13 class difference(s) shaping reads, 64 it does not
+         - 13 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acute 0/3, breve 0/3, caron 0/3, cedilla 0/3, circumflex 0/3, dieresis 0/3, dotaccent 0/3, grave 0/3, hungarumlaut 0/3, macron 0/3, ogonek 0/3, ring 0/3, tilde 0/3
