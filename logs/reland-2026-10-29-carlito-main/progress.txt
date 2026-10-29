@@ -1,0 +1,4 @@
+== carlito (families-binary.tsv) 2026-10-29T13:35:11+00:00
+   rc=0 carlito	CLEAN
+shared_from_host  1.8T  1.7T   17G 100% /home/fsanches/compartilhado
+done 2026-10-29T13:38:42+00:00
