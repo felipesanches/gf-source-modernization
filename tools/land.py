@@ -126,7 +126,11 @@ def on_upstream(rows):
 
 
 def branch_of(rows):
-    return "modernize-binary-to-glyphs" if on_upstream(rows) else BRANCH[rows[0]["kind"]]
+    if on_upstream(rows):
+        return "modernize-binary-to-glyphs"
+    if rows[0]["kind"] in ("fork", "upstream") and rows[0]["source"].lower().endswith(".vfb"):
+        return "modernize-vfb-to-glyphs"
+    return BRANCH[rows[0]["kind"]]
 
 
 # Why a per-release flag differs between the styles of one family.
@@ -318,7 +322,7 @@ def start(repo, rows, d):
             Allerta was converted, but the commit retiring the legacy sources
             (2efd249) removed Allerta Stencil's too, leaving a family Google Fonts
             ships with no source here at all.""") % (src, commit_id[:12], commit_id), src)
-    git(d, "checkout", "-q", "-b", BRANCH[kind], commit_id)
+    git(d, "checkout", "-q", "-b", branch_of(rows), commit_id)
     return None
 
 
@@ -526,6 +530,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     keep = recipe.keep_direction([r["shipped"] for r in rows])
     glyphs = rows[0]["kind"] == "glyphs"
     binary = rows[0]["kind"] == "binary"
+    # a FontLab Studio 5 source (families-vfb.tsv): babelfont's VFB reader, no FontForge
+    # filters and no .sfd workarounds; the outlines are cubic, so the compiler converts them
+    vfb = all(r["source"].lower().endswith(".vfb") for r in rows)
     if binary:
         keep = False     # the TTF reader reverses glyf contours and the compiler restores them
     for r in rows if glyphs else []:
@@ -567,7 +574,16 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                 notes.append("%s %d (OS/2) as FEA; fontc 1.0.0 drops a single master's "
                              "instance %s" % (field, value, field[2].lower() + field[3:]))
         per_style.append({"row": r, "flags": [], "notes": notes, "glyphs": g})
-    for r in [] if glyphs or binary else rows:
+    for r in rows if vfb else []:
+        src = os.path.join(d, r["source"])
+        f = plan["flags"].get(r["style"], {})
+        flags = recipe.flags_for_vfb(r["shipped"], f.get("add", []), f.get("drop", []),
+                                     keep_direction=keep) + [x for x in BF_EXTRA_FLAGS]
+        flags = [x for x in flags if x not in recipe.NOT_YET_UPSTREAM or converter_knows(x)]
+        g = os.path.join(d, "sources", r["style"] + ".glyphs")
+        sh(BF, src, g, *flags)
+        per_style.append({"row": r, "flags": flags, "notes": [], "glyphs": g})
+    for r in [] if glyphs or binary or vfb else rows:
         src = os.path.join(d, r["source"])
         text = open(src, encoding="utf-8", errors="replace").read()
         f = plan["flags"].get(r["style"], {})
@@ -650,7 +666,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     else:
         retired = [p["row"]["source"] for p in per_style]
         git(d, "rm", "-q", "--", *retired)
-        what = "The converted .sfd is retired; it remains in the git history."
+        what = "The converted %s is retired; it remains in the git history." % (".vfb" if vfb else ".sfd")
 
     def equivalent(st):
         return st in functional and functional[st]["verdict"] == "PASS"
@@ -679,6 +695,12 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         lines += wrap("Converted from %s, the %s Google Fonts ships, with babelfont %s "
                       "(%s): its TTF reader, no filters." % (
                           srcs, "fonts" if len(per_style) > 1 else "font", bf_rev, BF_WHERE), "", "")
+    elif vfb:
+        lines = ["Convert to .glyphs with babelfont %s" % bf_rev, ""]
+        lines += wrap("Converted from %s%s with babelfont %s (%s): its FontLab Studio 5 "
+                      "(.vfb) reader%s" % (srcs, corrected, bf_rev, BF_WHERE,
+                                          ", with:" if common else ", no filters."), "", "")
+        lines += wrap(" ".join(common), "  ", "  ")
     else:
         lines = ["Convert to .glyphs with babelfont %s" % bf_rev, ""]
         lines += wrap("Converted from %s%s with babelfont %s (%s), FontForge-fidelity filters "
@@ -707,7 +729,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     notes = [(p["row"]["style"], n) for p in per_style for n in p["notes"]]
     if notes:
         lines += ["", "Values from the %s that the toolchain loses, carried across:"
-                  % ("binary" if binary else ".sfd")]
+                  % ("binary" if binary else ".vfb" if vfb else ".sfd")]
         for st, n in notes:
             lines += wrap("%s: %s" % (st, n))
     gf_ref = sh("git", "-C", GF, "rev-parse", "--short=12", "HEAD").stdout.strip()

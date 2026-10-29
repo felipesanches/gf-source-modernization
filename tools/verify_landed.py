@@ -145,8 +145,8 @@ def verify(repo):
                 problems.append("ORIGINAL: %s at HEAD is not byte-identical to %s@%s (%s vs %s)"
                                 % (src, base, commit[:12], got, want))
         branch = run("git", "-C", d, "symbolic-ref", "--short", "HEAD").stdout.strip()
-        if branch != land.BRANCH[kind]:
-            problems.append("SHAPE: on branch %r, want %r" % (branch, land.BRANCH[kind]))
+        if branch != land.branch_of(rows):
+            problems.append("SHAPE: on branch %r, want %r" % (branch, land.branch_of(rows)))
 
     # 2. the licence
     ofl_head = run("git", "-C", d, "show", "HEAD:OFL.txt").stdout
@@ -178,8 +178,8 @@ def verify(repo):
         if s == "Adopt the Unified Font Repository template":
             continue
         changed = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-only", "-r", c).stdout.split()
-        if not changed or any(not p.lower().endswith(".sfd") for p in changed):
-            problems.append("SHAPE: %s %r touches non-.sfd files: %s" % (c[:7], s, changed))
+        if not changed or any(not p.lower().endswith((".sfd", ".vfb")) for p in changed):
+            problems.append("SHAPE: %s %r touches non-source files: %s" % (c[:7], s, changed))
     retired = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-status", "-r", log[-1]).stdout
     for r in rows if kind != "glyphs" else []:
         if not re.search(r"^D\t%s$" % re.escape(r["source"]), retired, re.M):

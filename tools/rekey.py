@@ -165,7 +165,7 @@ def rekey(repo, redo):
                         for st, n, _ in results)
     n_commits = int(git(d, "rev-list", "--count", "HEAD").strip())
     with open(land.LANDED, "a") as fh:
-        fh.write("\t".join([repo, land.BRANCH[rows[0]["kind"]], head, str(n_commits), status, summary]) + "\n")
+        fh.write("\t".join([repo, land.branch_of(rows), head, str(n_commits), status, summary]) + "\n")
     print("%s: %s @ %s: %s" % (repo, status, head, summary))
     return status.startswith("CLEAN")
 

@@ -164,6 +164,26 @@ def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
     return [f for f in flags if f not in set(drop)]
 
 
+# A FontLab Studio 5 source (.vfb, families-vfb.tsv): only the filters that any static
+# conversion to .glyphs needs -- an instance per master (a static build needs one), glyph
+# categories for GDEF, the source's own advances, integer coordinates -- and the direction
+# correction when the release has uniform directions (FontLab, like FontForge, reverses
+# the PostScript-direction cubic contours when it generates TrueType). None of the
+# FontForge filters: nothing in a .vfb is FontForge's. Fidelity first: what the gate then
+# finds missing is a reader defect or a documented edit, never a flag added blind.
+VFB_BASE = ["--add-instance-per-master", "--infer-mark-category", "--set-subcategory",
+            "--keep-source-advances", "--round-coordinates"]
+
+
+def flags_for_vfb(shipped, add=(), drop=(), keep_direction=False):
+    """The babelfont arguments for one style converted from a .vfb, in order."""
+    flags = list(VFB_BASE)
+    if not keep_direction:
+        flags.append("--correct-path-direction")
+    flags += [f for f in add if f not in flags]
+    return [f for f in flags if f not in set(drop)]
+
+
 def keep_direction(shipped_fonts):
     """Whether a repository's builds must keep source contour directions: any release
     of it mixes the two senses (fontc --keep-direction, config reverseOutlineDirection)."""
