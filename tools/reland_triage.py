@@ -131,6 +131,14 @@ def main():
     for r in all_rows:
         fails[(r["repo"], r["style"])].add(r["cause"])
     only = collections.Counter(next(iter(c)) for c in fails.values() if len(c) == 1)
+    # families whose every style fails on nothing but FontLab's export renames: the
+    # candidates for an early submission once the gate accepts the renames (bottleneck 13 f)
+    by_repo = collections.defaultdict(set)
+    for r in all_rows:
+        by_repo[r["repo"]].add(r["cause"])
+    ready = sorted(k for k, v in by_repo.items() if v == {"cmap: renamed glyphs only"})
+    print("\nfamilies failing only on 'cmap: renamed glyphs only': %d" % len(ready))
+    print("   " + " ".join(ready))
     print("\nstyles failing on exactly one cause (fixing it alone makes them pass):")
     for k, n in only.most_common():
         print("  %4d  %s" % (n, k))
