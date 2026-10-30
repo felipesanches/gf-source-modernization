@@ -9,12 +9,16 @@ are ready to push today and which empty repositories are waiting for a better co
 
 Reads the pairing tables (families*.tsv), the landing ledgers (landed.tsv; landed-vfb*.tsv
 are measurement only, their converter is not public) and asks GitHub once per repository
-(`git ls-remote`). Writes repos-status.tsv and prints the groups the queue lists.
+(`git ls-remote`). Writes repos-status.tsv, repos-to-create.txt (every googlefonts/<slug> that does not
+exist yet, one per line, for the colleagues who create them) and prints the groups the
+queue lists. The census's legacy families not yet in a pairing table are included so the
+list covers the whole goal (classes in CENSUS_CLASSES; "modern" families keep theirs).
 
 Usage: python3 -I tools/repo_status.py [--no-fetch]    (~1 min; --no-fetch reuses the tsv)
 """
 import collections
 import concurrent.futures
+import csv
 import os
 import subprocess
 import sys
@@ -23,6 +27,9 @@ W = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TABLES = ("families.tsv", "families-next.tsv", "families-binary.tsv", "families-vfb.tsv")
 LEDGERS = (("landed.tsv", "public"), ("landed-vfb-fixes.tsv", "unpublished converter"),
            ("landed-vfb.tsv", "upstream vfb reader"))
+# census classes whose families will get a modernized source repository of their own
+# (families of class "modern" keep their upstream repository)
+CENSUS_CLASSES = ("sfd", "vfb", "sfd+vfb", "binary-only", "no-repo", "empty")
 CLONES = ("/home/fsanches/compartilhado/sfd-reland-repos",
           "/home/fsanches/compartilhado/vfb-reland-repos-fixes",
           "/home/fsanches/compartilhado/vfb-reland-repos")
@@ -67,6 +74,13 @@ def main():
                     here[f[0]] = {"branch": f[1], "head": f[2], "verdict": f[4], "ledger": name}
         for repo, row in here.items():
             landed.setdefault(repo, row)
+    # the census: every legacy-source family not yet in a pairing table (slug = its
+    # google/fonts directory), so the list of repositories to create covers the whole goal
+    with open(os.path.join(W, "scope", "census.tsv"), encoding="utf-8") as fh:
+        for r in csv.DictReader(fh, delimiter="\t"):
+            slug = r["gf_path"].rstrip("/").rsplit("/", 1)[-1]
+            if slug not in repos and r["class"] in CENSUS_CLASSES:
+                repos[slug] = {"table": "census", "kind": r["class"], "base": r["repo"]}
     for repo, info in repos.items():
         info["dest"] = "https://github.com/googlefonts/%s.git" % repo
         for c in CLONES:
@@ -84,7 +98,8 @@ def main():
             repos[repo]["remote"] = prev.get(repo, "?")
     else:
         with concurrent.futures.ThreadPoolExecutor(8) as ex:
-            states = dict(zip(repos, ex.map(lambda r: remote_state(repos[r]["dest"]), repos)))
+            states = dict(zip(repos, ex.map(
+                lambda r: remote_state("https://github.com/googlefonts/%s.git" % r), repos)))
         for repo in repos:
             repos[repo]["remote"] = states[repo]
     with open(out, "w", encoding="utf-8") as fh:
@@ -92,13 +107,22 @@ def main():
         for repo, i in repos.items():
             fh.write("\t".join([repo, i["table"], i["kind"], i["base"], i["dest"], i["remote"],
                                 i["branch"], i["head"], i["verdict"], i["ledger"]]) + "\n")
+    # the repositories Felipe's colleagues must create: one name per line
+    with open(os.path.join(W, "repos-to-create.txt"), "w", encoding="utf-8") as fh:
+        for repo, i in repos.items():
+            if i["remote"] == "MISSING":
+                fh.write(repo + "\n")
     groups = collections.defaultdict(list)
     for repo, i in repos.items():
+        if i["table"] == "census":
+            groups["census only (not paired yet): googlefonts/<slug> " + ("MISSING" if i["remote"] == "MISSING" else "exists")].append(
+                "%s (%s)" % (repo, i["kind"]))
+            continue
         gf = "/googlefonts/" in i["dest"]
         public = i["ledger"] == "landed.tsv"
         clean = i["verdict"] in ("CLEAN", "CLEAN-DISCLOSED") and public
         if not gf:
-            g = "destination not a googlefonts repository (decision)"
+            g = "landed clone's origin is not a googlefonts repository (decision); googlefonts/<repo> " + i["remote"].split(":")[0]
         elif i["remote"] == "EMPTY":
             g = "EMPTY, landed CLEAN: ready to push (push.sh --check first)" if clean else "EMPTY, waiting for a better conversion"
         elif i["remote"] == "MISSING":
