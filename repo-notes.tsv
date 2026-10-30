@@ -1,0 +1,62 @@
+repo	note
+blackandwhitepicture	push babelfont branch 2026-10-23 (section 0b)
+blackhansans	push babelfont branch 2026-10-23 (section 0b)
+cutefont	push babelfont branch 2026-10-23 (section 0b)
+dokdo	push babelfont branch 2026-10-23 (section 0b)
+eastseadokdo	push babelfont branch 2026-10-23 (section 0b)
+gamjaflower	push babelfont branch 2026-10-23 (section 0b)
+gugi	push babelfont branch 2026-10-23 (section 0b)
+himelody	push babelfont branch 2026-10-23 (section 0b)
+lato	push babelfont branch 2026-10-23 (section 0b)
+nanumbrushscript	push babelfont branch 2026-10-23 (section 0b)
+nanumgothic	push babelfont branch 2026-10-23 (section 0b)
+nanumpenscript	push babelfont branch 2026-10-23 (section 0b)
+poorstory	push babelfont branch 2026-10-23 (section 0b)
+songmyung	push babelfont branch 2026-10-23 (section 0b)
+stylish	push babelfont branch 2026-10-23 (section 0b)
+sunflower	push babelfont branch 2026-10-23 (section 0b)
+averialibre	bottleneck 7: CLEAN-DISCLOSED, your yes then ALLOW_DISCLOSED=1
+averiasanslibre	bottleneck 7: CLEAN-DISCLOSED, your yes then ALLOW_DISCLOSED=1
+averiaseriflibre	bottleneck 7: CLEAN-DISCLOSED, your yes then ALLOW_DISCLOSED=1
+sansation	bottleneck 7: CLEAN-DISCLOSED, your yes then ALLOW_DISCLOSED=1
+mrbedfort	bottleneck 7: CLEAN-DISCLOSED, your yes then ALLOW_DISCLOSED=1 (section 0c)
+nixieone	bottleneck 7: CLEAN-DISCLOSED, your yes then ALLOW_DISCLOSED=1 (section 0c)
+novascript	bottleneck 7: CLEAN-DISCLOSED, your yes then ALLOW_DISCLOSED=1 (section 0c)
+rougescript	bottleneck 7: CLEAN-DISCLOSED, your yes then ALLOW_DISCLOSED=1 (section 0c)
+monoton	CLEAN on the integration branch; waits for Simon to merge #104 (night C)
+ruluko	CLEAN on the integration branch; waits for Simon to merge #104 (night C)
+salsa	CLEAN on the integration branch; waits for Simon to merge #104 (night C)
+smythe	CLEAN on the integration branch; waits for Simon to merge #104 (night C)
+titanone	CLEAN on the integration branch; waits for Simon to merge #104 (night C)
+unifrakturcook	CLEAN on the integration branch; waits for Simon to merge #104 (night C)
+italiana	CLEAN on the integration branch; waits for Simon to merge #105 (night C)
+sanchez	CLEAN on the integration branch; waits for Simon to merge #105 (night C)
+lekton	CLEAN on the integration branch; waits for Simon to merge #106 (night C)
+revalia	CLEAN on the integration branch; waits for Simon to merge #106 (night C)
+patrickhand	CLEAN on the integration branch; waits for Simon to merge #104 and #106 (night C)
+passionone	CLEAN on the integration branch; waits for night B (#117 + typographic-family-names)
+tuffy	CLEAN on the integration branch; waits for night B (#117 + typographic-family-names)
+nosifercaps	residual you decided to disclose (2026-10-01): accepted list to write, then CLEAN-DISCLOSED
+novamono	residual you decided to disclose (2026-10-01): accepted list to write, then CLEAN-DISCLOSED
+viga	residual you decided to disclose (2026-10-01): accepted list to write, then CLEAN-DISCLOSED
+play	waits for night F (glyphslib-rs + gftools-rust PRs)
+kristi	conversion work: names + line spacing
+miama	conversion work: shaping, rendering, names, GDEF
+nosifer	conversion work: shaping, rendering
+niconne	conversion work: rendering
+overlock	conversion work: names + line spacing on the italics
+unifraktur	conversion work: shaping
+ledger	section 3: push today, once the repository exists
+magra	section 3: push today, once the repository exists
+mergeone	section 3: push today, once the repository exists
+rambla	section 3: push today, once the repository exists
+rosarivo	section 3: push today, once the repository exists
+sail	section 3: push today, once the repository exists
+textmeone	section 3: push today, once the repository exists
+wallpoet	section 3: push today, once the repository exists
+abrilfatface	section 3: branch + PR, ready
+carlito	section 0: branch + PR after the evidence push
+allerta	bottleneck 4
+corben	RESIDUAL
+cardo	RESIDUAL
+almarai	WITHDRAWN (bottleneck 10)
