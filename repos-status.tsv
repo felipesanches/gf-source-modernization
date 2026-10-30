@@ -1,0 +1,301 @@
+repo	table	kind	base	destination	remote	landed_branch	landed_head	verdict	ledger
+creepstercaps	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/creepstercaps.git	branches: main=8cd2831	main	8cd2831	CLEAN	landed.tsv
+herrvonmuellerhoff	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/herrvonmuellerhoff.git	branches: main=174d55a	main	174d55a	CLEAN	landed.tsv
+kristi	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/kristi.git	EMPTY	main	3f440b5	RESIDUAL	landed.tsv
+lekton	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/lekton.git	EMPTY	main	28d9d2f	RESIDUAL	landed.tsv
+miama	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/miama.git	EMPTY	main	79e0e79	RESIDUAL	landed.tsv
+monoton	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/monoton.git	EMPTY	main	e29adf4	RESIDUAL	landed.tsv
+nixieone	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/nixieone.git	EMPTY	main	1ff0cdf	CLEAN-DISCLOSED	landed.tsv
+nosifer	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/nosifer.git	EMPTY	main	7e39074	RESIDUAL	landed.tsv
+nosifercaps	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/nosifercaps.git	EMPTY	main	3fd1539	RESIDUAL	landed.tsv
+novacut	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/novacut.git	branches: main=90cd83c	main	90cd83c	CLEAN	landed.tsv
+novaflat	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/novaflat.git	branches: main=8304f55	main	8304f55	CLEAN	landed.tsv
+novamono	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/novamono.git	EMPTY	main	9a8456f	RESIDUAL	landed.tsv
+novaoval	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/novaoval.git	branches: main=18f803c	main	18f803c	CLEAN	landed.tsv
+novaround	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/novaround.git	branches: main=8f84b54	main	8f84b54	CLEAN	landed.tsv
+novascript	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/novascript.git	EMPTY	main	cbf6f2f	CLEAN-DISCLOSED	landed.tsv
+novaslim	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/novaslim.git	branches: main=e7bcda8	main	e7bcda8	CLEAN	landed.tsv
+novasquare	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/novasquare.git	branches: main=1c1b71e	main	1c1b71e	CLEAN	landed.tsv
+patrickhand	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/patrickhand.git	EMPTY	main	3d9a5f3	RESIDUAL	landed.tsv
+play	families.tsv	glyphs	alexeiva/play	https://github.com/googlefonts/play.git	EMPTY	main	cf2760a	RESIDUAL	landed.tsv
+puritan	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/puritan.git	branches: main=c5d7ace	main	c5d7ace	CLEAN	landed.tsv
+russoone	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/russoone.git	branches: main=c3624ce	main	c3624ce	CLEAN	landed.tsv
+sixcaps	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sixcaps.git	branches: main=de9fac4	main	de9fac4	CLEAN	landed.tsv
+smythe	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/smythe.git	EMPTY	main	5f5775d	RESIDUAL	landed.tsv
+tuffy	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/tuffy.git	EMPTY	main	88710ac	RESIDUAL	landed.tsv
+tulpenone	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/tulpenone.git	branches: main=991f568	main	991f568	CLEAN	landed.tsv
+unifrakturcook	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/unifrakturcook.git	EMPTY	main	89c1a4d	RESIDUAL	landed.tsv
+unifraktur	families.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/unifraktur.git	EMPTY	main	339b767	RESIDUAL	landed.tsv
+abrilfatface	families.tsv	fork	librefonts/abrilfatface	https://github.com/googlefonts/abrilfatface.git	branches: gh-pages=2e940ea master=5e899bf	modernize-sfd-to-glyphs	eabee93	CLEAN	landed.tsv
+corben	families.tsv	fork	librefonts/corben	https://github.com/googlefonts/corben.git	branches: gh-pages=7d1026a master=94d5b00	modernize-sfd-to-glyphs	57d7d62	RESIDUAL	landed.tsv
+allerta	families.tsv	allerta	librefonts/allerta	https://github.com/googlefonts/allerta.git	branches: gh-pages=ce69e8a master=bdd9557 modernize-sfd-to-glyphs=689411f rebuild-from-sfd=59b4200	add-allerta-stencil	4ff010f	CLEAN	landed.tsv
+comicrelief	families.tsv	upstream	loudifier/Comic-Relief	https://github.com/loudifier/Comic-Relief.git	branches: ci_update=089e409 gh-pages=959dbfa hinting=020cbd1 main=52b4ad3	modernize-sfd-to-glyphs	252b082	RESIDUAL	landed.tsv
+mountainsofchristmas	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mountainsofchristmas.git	MISSING	main	6c279ea	RESIDUAL	landed.tsv
+rochester	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/rochester.git	branches: main=dc1cfd0	main	dc1cfd0	CLEAN	landed.tsv
+smokum	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/smokum.git	MISSING	main	329e829	CLEAN-DISCLOSED	landed.tsv
+ultra	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/ultra.git	MISSING	main	58a4341	RESIDUAL	landed.tsv
+cardo	families-next.tsv	upstream	googlefonts/CardoFont	https://github.com/googlefonts/CardoFont.git	branches: main=fc675d7	modernize-sfd-to-glyphs	3d22ef6	RESIDUAL	landed.tsv
+italiana	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/italiana.git	EMPTY	main	1d2d190	RESIDUAL	landed.tsv
+keaniaone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/keaniaone.git	branches: main=a07dc92	main	a07dc92	CLEAN	landed.tsv
+kellyslab	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/kellyslab.git	branches: main=c51204f	main	c51204f	CLEAN	landed.tsv
+kottaone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/kottaone.git	MISSING	main	2ea5c3b	RESIDUAL	landed.tsv
+ledger	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/ledger.git	MISSING	main	35047d5	CLEAN	landed.tsv
+lilitaone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/lilitaone.git	MISSING	main	465c39b	RESIDUAL	landed.tsv
+limelight	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/limelight.git	MISSING	main	bf3122c	RESIDUAL	landed.tsv
+lohitbengali	families-next.tsv	upstream	pravins/lohit	https://github.com/pravins/lohit.git	branches: master=7a8b554	modernize-sfd-to-glyphs	a90d0a5	RESIDUAL	landed.tsv
+lohittamil	families-next.tsv	upstream	pravins/lohit	https://github.com/pravins/lohit.git	branches: master=7a8b554	modernize-sfd-to-glyphs	ac115ba	RESIDUAL	landed.tsv
+lovedbytheking	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/lovedbytheking.git	branches: main=0ccebbe	main	0ccebbe	CLEAN	landed.tsv
+loveyalikeasister	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/loveyalikeasister.git	branches: main=ac127ba	main	ac127ba	CLEAN	landed.tsv
+lustria	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/lustria.git	MISSING	main	c1eabdf	RESIDUAL	landed.tsv
+macondo	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/macondo.git	MISSING	main	eaf4f1b	RESIDUAL	landed.tsv
+magra	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/magra.git	MISSING	main	f884305	CLEAN	landed.tsv
+marvel	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/marvel.git	branches: main=f290b8d	main	f290b8d	CLEAN	landed.tsv
+medulaone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/medulaone.git	branches: main=4a34502	main	4a34502	CLEAN	landed.tsv
+megrim	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/megrim.git	MISSING	main	614cb2e	RESIDUAL	landed.tsv
+meiescript	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/meiescript.git	branches: main=fece0d7	main	fece0d7	CLEAN	landed.tsv
+mergeone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mergeone.git	MISSING	main	a244e59	CLEAN	landed.tsv
+missfajardose	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/missfajardose.git	branches: main=b8ef73a	main	b8ef73a	CLEAN	landed.tsv
+monsieurladoulaise	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/monsieurladoulaise.git	branches: main=66fdca6	main	66fdca6	CLEAN	landed.tsv
+mrbedfort	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mrbedfort.git	EMPTY	main	492c87e	CLEAN-DISCLOSED	landed.tsv
+mrdafoe	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mrdafoe.git	branches: main=eb7a5c3	main	eb7a5c3	CLEAN	landed.tsv
+mrdehaviland	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mrdehaviland.git	branches: main=f92c920	main	f92c920	CLEAN	landed.tsv
+mrssaintdelafield	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mrssaintdelafield.git	branches: main=c0873de	main	c0873de	CLEAN	landed.tsv
+mrssheppards	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mrssheppards.git	branches: main=23a001b	main	23a001b	CLEAN	landed.tsv
+niconne	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/niconne.git	EMPTY	main	c5d1b33	RESIDUAL	landed.tsv
+nothingyoucoulddo	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/nothingyoucoulddo.git	MISSING	main	a48d1b0	RESIDUAL	landed.tsv
+numans	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/numans.git	branches: main=8ce3001	main	8ce3001	CLEAN	landed.tsv
+oleoscript	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/oleoscript.git	MISSING	main	cb8d8d8	RESIDUAL	landed.tsv
+oleoscriptswashcaps	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/oleoscriptswashcaps.git	MISSING	main	75d842b	RESIDUAL	landed.tsv
+overlock	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/overlock.git	EMPTY	main	d71146e	RESIDUAL	landed.tsv
+overlocksc	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/overlocksc.git	branches: main=4aeced9	main	4aeced9	CLEAN	landed.tsv
+overtherainbow	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/overtherainbow.git	branches: main=38ae8bf	main	38ae8bf	CLEAN	landed.tsv
+passionone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/passionone.git	EMPTY	main	5b7be6f	RESIDUAL	landed.tsv
+patuaone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/patuaone.git	branches: main=0073acd	main	0073acd	CLEAN	landed.tsv
+piedra	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/piedra.git	branches: main=3de595b	main	3de595b	CLEAN	landed.tsv
+pirataone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/pirataone.git	branches: main=1b0f68b	main	1b0f68b	CLEAN	landed.tsv
+poly	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/poly.git	MISSING	main	2e36b05	RESIDUAL	landed.tsv
+portlligatsans	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/portlligatsans.git	branches: main=0f84e3c	main	0f84e3c	CLEAN	landed.tsv
+portlligatslab	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/portlligatslab.git	branches: main=c8a1033	main	c8a1033	CLEAN	landed.tsv
+quantico	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/quantico.git	branches: main=1a0cb10	main	1a0cb10	CLEAN	landed.tsv
+rambla	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/rambla.git	MISSING	main	30f4859	CLEAN	landed.tsv
+revalia	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/revalia.git	EMPTY	main	5b6d2b8	RESIDUAL	landed.tsv
+ribeyemarrow	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/ribeyemarrow.git	MISSING	main	d5d20a1	RESIDUAL	landed.tsv
+rosarivo	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/rosarivo.git	MISSING	main	b4bd172	CLEAN	landed.tsv
+rougescript	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/rougescript.git	EMPTY	main	8dbeac3	CLEAN-DISCLOSED	landed.tsv
+rufina	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/rufina.git	branches: main=256f968	main	256f968	CLEAN	landed.tsv
+ruluko	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/ruluko.git	EMPTY	main	1e97785	RESIDUAL	landed.tsv
+sail	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sail.git	MISSING	main	d09f97b	CLEAN	landed.tsv
+salsa	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/salsa.git	EMPTY	main	c61874f	RESIDUAL	landed.tsv
+sanchez	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sanchez.git	EMPTY	main	f91accd	RESIDUAL	landed.tsv
+spirax	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/spirax.git	branches: main=32281be	main	32281be	CLEAN	landed.tsv
+squadaone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/squadaone.git	branches: main=53fb1e3	main	53fb1e3	CLEAN	landed.tsv
+swankyandmoomoo	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/swankyandmoomoo.git	branches: main=2a7b182	main	2a7b182	CLEAN	landed.tsv
+textmeone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/textmeone.git	MISSING	main	558c788	CLEAN	landed.tsv
+thabit	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/thabit.git	MISSING	main	e59b237	RESIDUAL	landed.tsv
+thegirlnextdoor	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/thegirlnextdoor.git	branches: main=e591dbc	main	e591dbc	CLEAN	landed.tsv
+titanone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/titanone.git	EMPTY	main	9ff910c	RESIDUAL	landed.tsv
+titilliumweb	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/titilliumweb.git	MISSING	main	d4d58e9	RESIDUAL	landed.tsv
+trochut	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/trochut.git	branches: main=3a72aad	main	3a72aad	CLEAN	landed.tsv
+varela	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/varela.git	MISSING	main	eccd19a	RESIDUAL	landed.tsv
+viga	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/viga.git	EMPTY	main	3a9b91c	RESIDUAL	landed.tsv
+wallpoet	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/wallpoet.git	MISSING	main	4d4a51f	CLEAN	landed.tsv
+wendyone	families-next.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/wendyone.git	branches: main=2a55e18	main	2a55e18	CLEAN	landed.tsv
+oranienbaum	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/oranienbaum.git	branches: main=8e89dc7	main	8e89dc7	CLEAN	landed.tsv
+averialibre	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/averialibre.git	EMPTY	main	7bcf2b6	CLEAN-DISCLOSED	landed.tsv
+averiasanslibre	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/averiasanslibre.git	EMPTY	main	28ca287	CLEAN-DISCLOSED	landed.tsv
+averiaseriflibre	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/averiaseriflibre.git	EMPTY	main	eb23c9e	CLEAN-DISCLOSED	landed.tsv
+sansation	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/sansation.git	EMPTY	main	e9d018f	CLEAN-DISCLOSED	landed.tsv
+reeniebeanie	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/reeniebeanie.git	branches: main=ffb157a	main	ffb157a	CLEAN	landed.tsv
+ptserif	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/ptserif.git	branches: main=54cfef3	main	54cfef3	CLEAN	landed.tsv
+ptsansnarrow	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/ptsansnarrow.git	branches: main=ff02de9	main	ff02de9	CLEAN	landed.tsv
+ptsanscaption	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/ptsanscaption.git	branches: main=6c1efcf	main	6c1efcf	CLEAN	landed.tsv
+almarai	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/almarai.git	branches: master=7307ede	main	5523554	WITHDRAWN	landed.tsv
+jua	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/jua.git	branches: main=9dce1f1	main	9dce1f1	CLEAN	landed.tsv
+dongle	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/dongle.git	MISSING	main	31d974e	WITHDRAWN	landed.tsv
+homemadeapple	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/homemadeapple.git	branches: main=551167a	main	551167a	CLEAN	landed.tsv
+calligraffitti	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/calligraffitti.git	branches: main=02b6fe0	main	02b6fe0	CLEAN	landed.tsv
+kranky	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/kranky.git	branches: main=8e4e802	main	8e4e802	CLEAN	landed.tsv
+cherrycreamsoda	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/cherrycreamsoda.git	branches: main=607ffcb	main	607ffcb	CLEAN	landed.tsv
+chewy	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/chewy.git	branches: main=5e436e3	main	5e436e3	CLEAN	landed.tsv
+comingsoon	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/comingsoon.git	branches: main=f371c8c	main	f371c8c	CLEAN	landed.tsv
+craftygirls	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/craftygirls.git	branches: main=79274ee	main	79274ee	CLEAN	landed.tsv
+fontdinerswanky	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/fontdinerswanky.git	branches: main=bcf47db	main	bcf47db	CLEAN	landed.tsv
+akronim	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/akronim.git	branches: main=8ad7073	main	8ad7073	CLEAN	landed.tsv
+portersansblock	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/portersansblock.git	branches: main=2605fcd	main	2605fcd	CLEAN	landed.tsv
+gugi	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/gugi.git	EMPTY	main	afaca20	CLEAN	landed.tsv
+rocksalt	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/rocksalt.git	branches: main=549a707	main	549a707	CLEAN	landed.tsv
+schoolbell	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/schoolbell.git	branches: main=d809c21	main	d809c21	CLEAN	landed.tsv
+unkempt	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/unkempt.git	branches: main=ef6ca68	main	ef6ca68	CLEAN	landed.tsv
+walterturncoat	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/walterturncoat.git	branches: main=62e29da	main	62e29da	CLEAN	landed.tsv
+slackey	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/slackey.git	branches: main=d0e05e1	main	d0e05e1	CLEAN	landed.tsv
+sunshiney	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/sunshiney.git	branches: main=8962405	main	8962405	CLEAN	landed.tsv
+permanentmarker	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/permanentmarker.git	branches: main=b0786e3	main	b0786e3	CLEAN	landed.tsv
+ptserifcaption	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/ptserifcaption.git	branches: main=95cb161	main	95cb161	CLEAN	landed.tsv
+ptsans	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/ptsans.git	branches: main=bcb93f7	main	bcb93f7	CLEAN	landed.tsv
+eastseadokdo	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/eastseadokdo.git	EMPTY	main	68da298	CLEAN	landed.tsv
+yeonsung	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/yeonsung.git	branches: main=8979fd9	main	8979fd9	CLEAN	landed.tsv
+stylish	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/stylish.git	EMPTY	main	47be9bc	CLEAN	landed.tsv
+blackhansans	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/blackhansans.git	EMPTY	main	2a089fb	CLEAN	landed.tsv
+dohyeon	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/dohyeon.git	branches: main=8607d13	main	8607d13	CLEAN	landed.tsv
+sunflower	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/sunflower.git	EMPTY	main	445ae18	CLEAN	landed.tsv
+cutefont	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/cutefont.git	EMPTY	main	6196bae	CLEAN	landed.tsv
+songmyung	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/songmyung.git	EMPTY	main	1c73bfb	CLEAN	landed.tsv
+dokdo	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/dokdo.git	EMPTY	main	3ac3e7b	CLEAN	landed.tsv
+blackandwhitepicture	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/blackandwhitepicture.git	EMPTY	main	d80b942	CLEAN	landed.tsv
+gamjaflower	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/gamjaflower.git	EMPTY	main	f706640	CLEAN	landed.tsv
+himelody	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/himelody.git	EMPTY	main	a1e8388	CLEAN	landed.tsv
+poorstory	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/poorstory.git	EMPTY	main	4ded0c2	CLEAN	landed.tsv
+nanumgothic	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/nanumgothic.git	EMPTY	main	3f3ed7d	CLEAN	landed.tsv
+nanumbrushscript	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/nanumbrushscript.git	EMPTY	main	0528631	CLEAN	landed.tsv
+lato	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/lato.git	EMPTY	main	ce5afb1	CLEAN	landed.tsv
+nanumpenscript	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/nanumpenscript.git	EMPTY	main	f3ec012	CLEAN	landed.tsv
+carlito	families-binary.tsv	binary	googlefonts/carlito	https://github.com/googlefonts/carlito.git	branches: main=3a810ca	modernize-binary-to-glyphs	7d1f14f	CLEAN	landed.tsv
+alef	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/alef.git	MISSING	main	d8c1ce9	CLEAN-DISCLOSED	landed.tsv
+imfelldoublepica	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfelldoublepica.git	MISSING	main	6a0450c	CLEAN-DISCLOSED	landed.tsv
+imfelldoublepicasc	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfelldoublepicasc.git	MISSING	main	2ae34d2	CLEAN-DISCLOSED	landed.tsv
+imfelldwpica	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfelldwpica.git	MISSING	main	b8f0047	CLEAN-DISCLOSED	landed.tsv
+imfelldwpicasc	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfelldwpicasc.git	MISSING	main	10500d2	CLEAN-DISCLOSED	landed.tsv
+imfellenglish	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfellenglish.git	MISSING	main	99355ec	CLEAN-DISCLOSED	landed.tsv
+imfellenglishsc	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfellenglishsc.git	MISSING	main	1bfd09c	CLEAN-DISCLOSED	landed.tsv
+imfellfrenchcanon	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfellfrenchcanon.git	MISSING	main	f9961c2	CLEAN-DISCLOSED	landed.tsv
+imfellfrenchcanonsc	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfellfrenchcanonsc.git	MISSING	main	a065519	CLEAN-DISCLOSED	landed.tsv
+imfellgreatprimer	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfellgreatprimer.git	MISSING	main	3b93dd8	CLEAN-DISCLOSED	landed.tsv
+imfellgreatprimersc	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/imfellgreatprimersc.git	MISSING	main	698d401	CLEAN-DISCLOSED	landed.tsv
+jomolhari	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/jomolhari.git	MISSING	main	8c02bfc	CLEAN-DISCLOSED	landed.tsv
+nanumgothiccoding	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/nanumgothiccoding.git	MISSING	main	a8883ab	CLEAN-DISCLOSED	landed.tsv
+nanummyeongjo	families-binary.tsv	binary	google/fonts	https://github.com/googlefonts/nanummyeongjo.git	MISSING	main	adbd147	CLEAN-DISCLOSED	landed.tsv
+aclonica	families-vfb.tsv	fork	librefonts/aclonica	https://github.com/googlefonts/aclonica.git	MISSING	modernize-vfb-to-glyphs	6139ac5	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+crushed	families-vfb.tsv	fork	librefonts/crushed	https://github.com/googlefonts/crushed.git	MISSING	modernize-vfb-to-glyphs	05bd8b4	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+irishgrover	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/irishgrover.git	MISSING	main	3949ff3	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+justanotherhand	families-vfb.tsv	fork	librefonts/justanotherhand	https://github.com/googlefonts/justanotherhand.git	MISSING	modernize-vfb-to-glyphs	8f6d176	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+luckiestguy	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/luckiestguy.git	MISSING	main	1e84d19	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+maidenorange	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/maidenorange.git	MISSING	main	11b78f9	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+montez	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/montez.git	MISSING	main	fe1a4b1	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+rancho	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/rancho.git	MISSING	main	6b2135d	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+redressed	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/redressed.git	MISSING	main	680c145	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+satisfy	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/satisfy.git	MISSING	main	4e50eb2	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+specialelite	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/specialelite.git	MISSING	main	57d0d40	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+syncopate	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/syncopate.git	MISSING	main	df75d97	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+actor	families-vfb.tsv	fork	librefonts/actor	https://github.com/googlefonts/actor.git	MISSING	modernize-vfb-to-glyphs	595541d	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+aldrich	families-vfb.tsv	fork	librefonts/aldrich	https://github.com/googlefonts/aldrich.git	MISSING	modernize-vfb-to-glyphs	824a792	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+alfaslabone	families-vfb.tsv	fork	librefonts/alfaslabone	https://github.com/googlefonts/alfaslabone.git	MISSING	modernize-vfb-to-glyphs	882ab70	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+annieuseyourtelescope	families-vfb.tsv	fork	librefonts/annieuseyourtelescope	https://github.com/googlefonts/annieuseyourtelescope.git	MISSING	modernize-vfb-to-glyphs	aa31a8e	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+atomicage	families-vfb.tsv	upstream	EbenSorkin/Atomic-Age	https://github.com/EbenSorkin/Atomic-Age.git	branches: master=bb96b17	modernize-vfb-to-glyphs	6185b53	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+audiowide	families-vfb.tsv	fork	librefonts/audiowide	https://github.com/googlefonts/audiowide.git	MISSING	modernize-vfb-to-glyphs	027b6c9	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+baumans	families-vfb.tsv	fork	librefonts/baumans	https://github.com/googlefonts/baumans.git	MISSING	modernize-vfb-to-glyphs	655f375	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+berkshireswash	families-vfb.tsv	fork	librefonts/berkshireswash	https://github.com/googlefonts/berkshireswash.git	MISSING	modernize-vfb-to-glyphs	e46e28f	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+bigelowrules	families-vfb.tsv	fork	librefonts/bigelowrules	https://github.com/googlefonts/bigelowrules.git	MISSING	modernize-vfb-to-glyphs	915be6b	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+butterflykids	families-vfb.tsv	fork	librefonts/butterflykids	https://github.com/googlefonts/butterflykids.git	MISSING	modernize-vfb-to-glyphs	48b8c2f	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+caesardressing	families-vfb.tsv	fork	librefonts/caesardressing	https://github.com/googlefonts/caesardressing.git	MISSING	modernize-vfb-to-glyphs	a9a2bd8	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+cantoraone	families-vfb.tsv	fork	librefonts/cantoraone	https://github.com/googlefonts/cantoraone.git	MISSING	modernize-vfb-to-glyphs	4d54006	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+carroisgothic	families-vfb.tsv	fork	librefonts/carroisgothic	https://github.com/googlefonts/carroisgothic.git	MISSING	modernize-vfb-to-glyphs	ee50480	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+carroisgothicsc	families-vfb.tsv	fork	librefonts/carroisgothicsc	https://github.com/googlefonts/carroisgothicsc.git	MISSING	modernize-vfb-to-glyphs	08c8247	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+cedarvillecursive	families-vfb.tsv	fork	librefonts/cedarvillecursive	https://github.com/googlefonts/cedarvillecursive.git	MISSING	modernize-vfb-to-glyphs	a607d31	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+chelseamarket	families-vfb.tsv	fork	librefonts/chelseamarket	https://github.com/googlefonts/chelseamarket.git	MISSING	modernize-vfb-to-glyphs	0930ca5	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+clickerscript	families-vfb.tsv	fork	librefonts/clickerscript	https://github.com/googlefonts/clickerscript.git	MISSING	modernize-vfb-to-glyphs	fc65a63	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+combo	families-vfb.tsv	fork	librefonts/combo	https://github.com/googlefonts/combo.git	MISSING	modernize-vfb-to-glyphs	da42345	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+dynalight	families-vfb.tsv	fork	librefonts/dynalight	https://github.com/googlefonts/dynalight.git	MISSING	modernize-vfb-to-glyphs	1b78530	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+eaglelake	families-vfb.tsv	fork	librefonts/eaglelake	https://github.com/googlefonts/eaglelake.git	MISSING	modernize-vfb-to-glyphs	5bc7fbc	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+electrolize	families-vfb.tsv	fork	librefonts/electrolize	https://github.com/googlefonts/electrolize.git	MISSING	modernize-vfb-to-glyphs	8ac7954	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+emilyscandy	families-vfb.tsv	fork	librefonts/emilyscandy	https://github.com/googlefonts/emilyscandy.git	MISSING	modernize-vfb-to-glyphs	d445b27	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+engagement	families-vfb.tsv	fork	librefonts/engagement	https://github.com/googlefonts/engagement.git	MISSING	modernize-vfb-to-glyphs	904c392	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+fascinate	families-vfb.tsv	fork	librefonts/fascinate	https://github.com/googlefonts/fascinate.git	MISSING	modernize-vfb-to-glyphs	5d8ffd6	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+fascinateinline	families-vfb.tsv	fork	librefonts/fascinateinline	https://github.com/googlefonts/fascinateinline.git	MISSING	modernize-vfb-to-glyphs	de6d988	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+fingerpaint	families-vfb.tsv	fork	librefonts/fingerpaint	https://github.com/googlefonts/fingerpaint.git	MISSING	modernize-vfb-to-glyphs	58ac901	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+flavors	families-vfb.tsv	fork	librefonts/flavors	https://github.com/googlefonts/flavors.git	MISSING	modernize-vfb-to-glyphs	d5fc2f5	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+fondamento	families-vfb.tsv	fork	librefonts/fondamento	https://github.com/googlefonts/fondamento.git	MISSING	modernize-vfb-to-glyphs	aaf3955	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+forum	families-vfb.tsv	fork	librefonts/forum	https://github.com/googlefonts/forum.git	MISSING	modernize-vfb-to-glyphs	8d449fa	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+freckleface	families-vfb.tsv	fork	librefonts/freckleface	https://github.com/googlefonts/freckleface.git	MISSING	modernize-vfb-to-glyphs	f41fc0c	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+frederickathegreat	families-vfb.tsv	fork	librefonts/frederickathegreat	https://github.com/googlefonts/frederickathegreat.git	MISSING	modernize-vfb-to-glyphs	b9cbada	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+frijole	families-vfb.tsv	fork	librefonts/frijole	https://github.com/googlefonts/frijole.git	MISSING	modernize-vfb-to-glyphs	db9bf74	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+galindo	families-vfb.tsv	fork	librefonts/galindo	https://github.com/googlefonts/galindo.git	MISSING	modernize-vfb-to-glyphs	13f1e9d	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+gloriahallelujah	families-vfb.tsv	fork	librefonts/gloriahallelujah	https://github.com/googlefonts/gloriahallelujah.git	MISSING	modernize-vfb-to-glyphs	6ba9e0a	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+gorditas	families-vfb.tsv	fork	librefonts/gorditas	https://github.com/googlefonts/gorditas.git	MISSING	modernize-vfb-to-glyphs	915ffb2	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+gotu	families-vfb.tsv	upstream	EkType/Gotu	https://github.com/EkType/Gotu.git	branches: master=c02f2e5	modernize-vfb-to-glyphs	2be768c	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+grandhotel	families-vfb.tsv	fork	librefonts/grandhotel	https://github.com/googlefonts/grandhotel.git	MISSING	modernize-vfb-to-glyphs	3d065b7	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+griffy	families-vfb.tsv	fork	librefonts/griffy	https://github.com/googlefonts/griffy.git	MISSING	modernize-vfb-to-glyphs	dc5ddac	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+hanalei	families-vfb.tsv	fork	librefonts/hanalei	https://github.com/googlefonts/hanalei.git	MISSING	modernize-vfb-to-glyphs	f3e2c4a	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+hanaleifill	families-vfb.tsv	fork	librefonts/hanaleifill	https://github.com/googlefonts/hanaleifill.git	MISSING	modernize-vfb-to-glyphs	d10dcda	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+happymonkey	families-vfb.tsv	fork	librefonts/happymonkey	https://github.com/googlefonts/happymonkey.git	MISSING	modernize-vfb-to-glyphs	79982a7	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+hennypenny	families-vfb.tsv	fork	librefonts/hennypenny	https://github.com/googlefonts/hennypenny.git	MISSING	modernize-vfb-to-glyphs	4fbc361	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+hermeneusone	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/hermeneusone.git	MISSING	main	b3e836a	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+jimnightshade	families-vfb.tsv	fork	librefonts/jimnightshade	https://github.com/googlefonts/jimnightshade.git	MISSING	modernize-vfb-to-glyphs	2197c08	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+jollylodger	families-vfb.tsv	fork	librefonts/jollylodger	https://github.com/googlefonts/jollylodger.git	MISSING	modernize-vfb-to-glyphs	1974d50	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+junge	families-vfb.tsv	fork	librefonts/junge	https://github.com/googlefonts/junge.git	MISSING	modernize-vfb-to-glyphs	ed7e0b0	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+kaushanscript	families-vfb.tsv	fork	librefonts/kaushanscript	https://github.com/googlefonts/kaushanscript.git	MISSING	modernize-vfb-to-glyphs	ddf65b7	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+kenia	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/kenia.git	MISSING	main	6589ec2	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+labelleaurore	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/labelleaurore.git	MISSING	main	5c224e6	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+librecaslondisplay	families-vfb.tsv	upstream	impallari/Libre-Caslon-Display	https://github.com/impallari/Libre-Caslon-Display.git	branches: master=3491f6a	modernize-vfb-to-glyphs	a825d38	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+lobstertwo	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/lobstertwo.git	MISSING	main	561a855	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+marcellus	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/marcellus.git	MISSING	main	f61eaf4	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+marcellussc	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/marcellussc.git	MISSING	main	8bc5d63	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+margarine	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/margarine.git	MISSING	main	27c0567	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+mclaren	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mclaren.git	MISSING	main	904e7dc	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+mervalescript	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mervalescript.git	MISSING	main	c65e9f7	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+metalmania	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/metalmania.git	MISSING	main	1182109	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+milonga	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/milonga.git	MISSING	main	952db02	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+miltonian	families-vfb.tsv	upstream	impallari/Miltonian	https://github.com/impallari/Miltonian.git	branches: master=95d180e	modernize-vfb-to-glyphs	7477b26	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+miltoniantattoo	families-vfb.tsv	upstream	impallari/Miltonian	https://github.com/impallari/Miltonian.git	branches: master=95d180e	modernize-vfb-to-glyphs	e181563	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+miniver	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/miniver.git	MISSING	main	d3e315c	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+modak	families-vfb.tsv	upstream	EkType/Modak	https://github.com/EkType/Modak.git	branches: master=a07ed62	modernize-vfb-to-glyphs	da9958b	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+mousememoirs	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mousememoirs.git	MISSING	main	6899e7a	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+mukta	families-vfb.tsv	upstream	EkType/Mukta	https://github.com/EkType/Mukta.git	branches: master=65fdb20	modernize-vfb-to-glyphs	3b6b0f0	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+muktamahee	families-vfb.tsv	upstream	EkType/Mukta	https://github.com/EkType/Mukta.git	branches: master=65fdb20	modernize-vfb-to-glyphs	d3b070b	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+muktamalar	families-vfb.tsv	upstream	EkType/Mukta	https://github.com/EkType/Mukta.git	branches: master=65fdb20	modernize-vfb-to-glyphs	3e19195	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+muktavaani	families-vfb.tsv	upstream	EkType/Mukta	https://github.com/EkType/Mukta.git	branches: master=65fdb20	modernize-vfb-to-glyphs	d0b4a5f	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+mysteryquest	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/mysteryquest.git	MISSING	main	5d18a9c	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+neucha	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/neucha.git	MISSING	main	6fa13b6	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+newrocker	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/newrocker.git	MISSING	main	8496acd	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+oregano	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/oregano.git	MISSING	main	1914b63	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+originalsurfer	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/originalsurfer.git	MISSING	main	4a0a6fb	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+parisienne	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/parisienne.git	MISSING	main	8ea1fd8	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+peralta	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/peralta.git	MISSING	main	3b1d538	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+petitformalscript	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/petitformalscript.git	MISSING	main	70139d1	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+poetsenone	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/poetsenone.git	MISSING	main	e4efb57	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+princesssofia	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/princesssofia.git	MISSING	main	a4d007b	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+prostoone	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/prostoone.git	MISSING	main	a95dc17	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+prozalibre	families-vfb.tsv	upstream	jasperdewaard/Proza-Libre	https://github.com/jasperdewaard/Proza-Libre.git	branches: master=45ea7bb personal-branch=e4853ec	modernize-vfb-to-glyphs	91dc030	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+purplepurse	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/purplepurse.git	MISSING	main	4c47379	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+quattrocento	families-vfb.tsv	fork	librefonts/quattrocento	https://github.com/googlefonts/quattrocento.git	MISSING	modernize-vfb-to-glyphs	24737e7	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+quattrocentosans	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/quattrocentosans.git	MISSING	main	8da7794	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+quintessential	families-vfb.tsv	fork	librefonts/quintessential	https://github.com/googlefonts/quintessential.git	MISSING	modernize-vfb-to-glyphs	30653ad	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+racingsansone	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/racingsansone.git	MISSING	main	ca5235e	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+ralewaydots	families-vfb.tsv	fork	librefonts/ralewaydots	https://github.com/googlefonts/ralewaydots.git	MISSING	modernize-vfb-to-glyphs	d74a15b	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+ranchers	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/ranchers.git	MISSING	main	571226c	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+ribeye	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/ribeye.git	MISSING	main	721404a	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+righteous	families-vfb.tsv	fork	librefonts/righteous	https://github.com/googlefonts/righteous.git	MISSING	modernize-vfb-to-glyphs	33ccbc3	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+risque	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/risque.git	MISSING	main	f06eba8	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+romanesco	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/romanesco.git	MISSING	main	fbe2df1	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+rumraisin	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/rumraisin.git	MISSING	main	21d9833	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+sansitaone	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sansitaone.git	MISSING	main	368fc75	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+seaweedscript	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/seaweedscript.git	MISSING	main	add85f2	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+sevillana	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sevillana.git	MISSING	main	d70e6e0	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+shadowsintolight	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/shadowsintolight.git	MISSING	main	4405453	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+shadowsintolighttwo	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/shadowsintolighttwo.git	MISSING	main	76beac5	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+share	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/share.git	MISSING	main	7931390	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+sharetechmono	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sharetechmono.git	MISSING	main	a271cfc	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+shojumaru	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/shojumaru.git	MISSING	main	dd118cf	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+simonetta	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/simonetta.git	MISSING	main	c9c02d2	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+skranji	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/skranji.git	MISSING	main	d9e34b6	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+sofadione	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sofadione.git	MISSING	main	56c7782	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+sofia	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sofia.git	MISSING	main	0133f03	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+spicyrice	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/spicyrice.git	MISSING	main	dd3d6b3	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+stalemate	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/stalemate.git	MISSING	main	d9487e7	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+stalinistone	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/stalinistone.git	MISSING	main	09886e1	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+stardosstencil	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/stardosstencil.git	MISSING			not landed	
+stintultracondensed	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/stintultracondensed.git	MISSING	main	4c0622d	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+stintultraexpanded	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/stintultraexpanded.git	MISSING	main	3f3f7c5	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+strong	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/strong.git	MISSING	main	577431e	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+sueellenfrancisco	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/sueellenfrancisco.git	MISSING	main	4380a4d	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+taiheritagepro	families-vfb.tsv	upstream	silnrsi/font-taiheritagepro	https://github.com/silnrsi/font-taiheritagepro.git	branches: master=8237215	modernize-vfb-to-glyphs	2801e51	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+telex	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/telex.git	MISSING	main	2e27380	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+tenorsans	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/tenorsans.git	MISSING	main	09ecdd1	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+tradewinds	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/tradewinds.git	MISSING	main	d1fabbc	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+uncialantiqua	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/uncialantiqua.git	MISSING	main	8492de1	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+underdog	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/underdog.git	MISSING	main	8ef1f75	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+vibur	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/vibur.git	MISSING	main	2354f49	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+volkhov	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/volkhov.git	MISSING	main	f798512	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+waitingforthesunrise	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/waitingforthesunrise.git	MISSING	main	07cea61	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+yesteryear	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/yesteryear.git	MISSING	main	5aa27dd	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+zeyada	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/zeyada.git	MISSING	main	e33e3e1	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
+ubuntu	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	https://github.com/googlefonts/ubuntu.git	MISSING	main	f4b7cf6	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
