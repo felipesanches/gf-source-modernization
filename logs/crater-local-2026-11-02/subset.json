@@ -1,0 +1,46 @@
+{
+  "version": "1.1",
+  "fonts_repo_sha": "2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc",
+  "sources": [
+    {
+      "repo_url": "https://github.com/googlefonts/ledger",
+      "rev": "35047d53a9fc5fb41e185e1f4c4a9532eca001b1",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/magra",
+      "rev": "f884305229b5887dc113d4432be51aa0176df026",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/mergeone",
+      "rev": "a244e59ac470dc37d946da2a95156791aed68d35",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/rambla",
+      "rev": "30f485909fc73f5f5212f0f3ff13264062ef0ce8",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/rosarivo",
+      "rev": "b4bd172df4a6da833f62fb55e8682a433ed1b53b",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/sail",
+      "rev": "d09f97b7114d58e0bf8cfaf1ba5aaf04dbe762cc",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/textmeone",
+      "rev": "558c7889e4ad002ebc612ea7a3e8cac1703986f9",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/wallpoet",
+      "rev": "4d4a51f7dfc130ff487abc51e88a6844622c743c",
+      "config": "sources/config.yaml"
+    }
+  ]
+}

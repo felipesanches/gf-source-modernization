@@ -1,0 +1,13 @@
+crater-local-2026-11-02: do the eight SFD families of google/fonts#11218 build in fontc_crater,
+in both modes, before their targets PR? (tools/crater_local.sh; cmyr asked for this on #100.)
+
+Targets: fontc_crater main 682c470's targets.json plus one entry per new repository,
+https://github.com/googlefonts/<repo> at its pushed main, config sources/config.yaml
+(subset.json = the 8 new entries, from logs/crater-targets-2026-11-02). fontc: googlefonts/fontc
+main 691e72e41 (RUSTUP_TOOLCHAIN=1.97.1), fontc_crater built from it; venv from its
+resources/scripts/requirements.txt (gftools 0.10.6, fontmake 3.12.2, glyphsLib 6.17.0) plus
+its ttx_diff package. Scratch: ~/compartilhado/tmp/crater-local-2026-11-02 (regenerable).
+
+  RUSTUP_TOOLCHAIN=1.97.1 sh tools/crater_local.sh <targets-main.json> <new.json> <scratch>
+
+Result (summary.txt): 26 succeeded, 0 failed -- 13 sources x (default, gftools).

@@ -1,0 +1,10 @@
+old 1467 entries, generated 1474, kept by hand 1 (googlesans-flex), result 1475
+added 8, removed 0, rev changed 0
+  + https://github.com/googlefonts/ledger  sources/config.yaml
+  + https://github.com/googlefonts/magra  sources/config.yaml
+  + https://github.com/googlefonts/mergeone  sources/config.yaml
+  + https://github.com/googlefonts/rambla  sources/config.yaml
+  + https://github.com/googlefonts/rosarivo  sources/config.yaml
+  + https://github.com/googlefonts/sail  sources/config.yaml
+  + https://github.com/googlefonts/textmeone  sources/config.yaml
+  + https://github.com/googlefonts/wallpoet  sources/config.yaml

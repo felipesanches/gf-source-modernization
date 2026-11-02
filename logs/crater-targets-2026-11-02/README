@@ -1,0 +1,15 @@
+# crater-targets-2026-11-02
+
+Inputs and summary of the fontc_crater targets update for google/fonts#11218 (the eight
+SFD families Ledger, Magra, Merge One, Rambla, Rosarivo, Sail, Text Me One, Wallpoet),
+branch crater-targets-2026-11-02 of felipesanches/fontc_crater (commit 7f7e697 on
+googlefonts/fontc_crater main 682c470).
+
+- `generated.json`: google-fonts-sources d7db2d8 run against google/fonts 2fe1e8c6b (the
+  merge of #11218): `google-fonts-sources <dir> -o generated.json`, with `<dir>/google/fonts`
+  a detached worktree of the google/fonts clone at that commit (its `origin/HEAD` points at
+  `origin/main`). `generate.log` is the tool's output.
+- `merge.txt`: what `tools/crater_targets.py <fontc_crater 682c470 targets.json>
+  generated.json` reported: 1467 -> 1475 entries, 8 added, none removed, no rev change,
+  googlesans-flex kept by hand. The result is the branch's targets.json.
+- Crater on the 8 added entries before the PR: logs/crater-local-2026-11-02 (26 of 26).
