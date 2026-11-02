@@ -1,0 +1,3 @@
+nanumgothiccoding: CLEAN-DISCLOSED @ 7afc9a7, 3 commits, 0 edit(s): NanumGothicCoding-Bold=1 functional=PASS; NanumGothicCoding-Regular=1 functional=PASS
+   NanumGothicCoding-Bold BLOCKING head.font_direction_hint [1, 2]
+   NanumGothicCoding-Regular BLOCKING head.font_direction_hint [1, 2]

@@ -1,0 +1,25 @@
+imfellenglish: CLEAN-DISCLOSED @ 452cabb, 3 commits, 0 edit(s): IMFeENit28P=1 functional=FAIL(shaping+rendering); IMFeENrm28P=1 functional=FAIL(shaping+rendering)
+   IMFeENit28P BLOCKING head.font_direction_hint [0, 2]
+     cmap         PASS 362 codepoints, exact
+     shaping      FAIL 971967 runs shaped, 255 differ
+         - default features, singles: 1 of 362 runs differ
+         - default features, base+mark: 249 of 253 runs differ
+         - default features, base+mark+mark: 5 of 5 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 1 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 128px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 375 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+   IMFeENrm28P BLOCKING head.font_direction_hint [0, 2]
+     cmap         PASS 352 codepoints, exact
+     shaping      FAIL 945377 runs shaped, 254 differ
+         - default features, singles: 1 of 352 runs differ
+         - default features, base+mark: 248 of 252 runs differ
+         - default features, base+mark+mark: 5 of 5 runs differ
+     rendering    FAIL diffenator3 1 glyph / 0 word diffs (1 / 0 confirmed); 0 of 1 changed outlines draw different ink
+         - diffenator3: 1 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0326 49px
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 365 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
