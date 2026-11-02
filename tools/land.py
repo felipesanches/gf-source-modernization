@@ -72,10 +72,12 @@ BF = os.path.join(BF_TREE, "target-heights/release/babelfont")
 # measurement only; push.sh refuses such a landing.
 BF_UPSTREAM = "simoncozens/babelfont-rs"
 # The exceptions (Felipe, 2026-10-22 and 2026-10-23, deadline): branches of his fork submitted to
-# Simon later -- 2026-10-22 = upstream main plus the two TTF reader PR branches (#131), 2026-10-23 =
-# that plus #117 and typographic-family-names. push.sh pushes a repository citing one only once
-# that branch is public and holds the cited revision.
-BF_FORK, BF_FORK_BRANCHES = "felipesanches/babelfont-rs", ("2026-10-22", "2026-10-23")
+# Simon later -- 2026-10-22 = upstream main plus the two TTF reader PR branches (#131, merged
+# 2026-10-29); 2026-11-02 = upstream main after #131 plus, linear, the commits of #117,
+# typographic-family-names and the IDs 1/16 commit (it replaces 2026-10-23, never pushed, whose
+# history held merges). push.sh pushes a repository citing one only once that branch is public and
+# holds the cited revision.
+BF_FORK, BF_FORK_BRANCHES = "felipesanches/babelfont-rs", ("2026-10-22", "2026-11-02")
 BF_WHERE = BF_UPSTREAM            # set by check_converter()
 BF_URL = "https://github.com/%s" % BF_UPSTREAM
 B3_DEFAULT = "/home/fsanches/compartilhado/tmp/gftools-rust-target/release/gftools-builder"
@@ -249,7 +251,7 @@ def check_converter():
         BF_WHERE = BF_UPSTREAM
     elif fork:
         what = {"2026-10-22": "the TTF reader changes proposed to it",
-                "2026-10-23": "the TTF reader and name changes proposed to it"}[fork]
+                "2026-11-02": "the name changes proposed to it (#117, typographic-family-names)"}[fork]
         BF_WHERE = "%s branch %s: %s main plus %s" % (BF_FORK, fork, BF_UPSTREAM, what)
         BF_URL = "https://github.com/%s/tree/%s" % (BF_FORK, fork)
     else:

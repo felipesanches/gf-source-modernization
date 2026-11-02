@@ -35,7 +35,7 @@ EVIDENCE_REMOTE = os.environ.get("EVIDENCE_REMOTE", EVIDENCE_URL)   # a local pa
 MIRRORS = [
     (C + "/babelfont-rs-worktrees/upstream-main", "upstream", "main"),
     (C + "/babelfont-rs", "origin", "2026-10-22"),   # felipesanches/babelfont-rs (land.py BF_FORK)
-    (C + "/babelfont-rs", "origin", "2026-10-23"),
+    (C + "/babelfont-rs", "origin", "2026-11-02"),
     (C + "/gftools-rust", "origin", "main"),
     (C + "/gftools-builder3", "upstream", "main"),   # simoncozens/gftools-builder3
     (C + "/fontc", "origin", "main"),                # googlefonts/fontc
