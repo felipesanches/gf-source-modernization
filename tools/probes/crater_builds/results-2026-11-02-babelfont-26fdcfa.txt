@@ -1,0 +1,40 @@
+default mode, fontmake: 78 of 78 sources build
+gftools mode (alef): builds
+gftools mode (averialibre): builds
+gftools mode (averiasanslibre): builds
+gftools mode (averiaseriflibre): builds
+gftools mode (blackandwhitepicture): builds
+gftools mode (blackhansans): builds
+gftools mode (cutefont): builds
+gftools mode (dokdo): builds
+gftools mode (eastseadokdo): builds
+gftools mode (gamjaflower): builds
+gftools mode (gugi): builds
+gftools mode (himelody): builds
+gftools mode (imfelldoublepica): builds
+gftools mode (imfelldoublepicasc): builds
+gftools mode (imfelldwpica): builds
+gftools mode (imfelldwpicasc): builds
+gftools mode (imfellenglish): builds
+gftools mode (imfellenglishsc): builds
+gftools mode (imfellfrenchcanon): builds
+gftools mode (imfellfrenchcanonsc): builds
+gftools mode (imfellgreatprimer): builds
+gftools mode (imfellgreatprimersc): builds
+gftools mode (jomolhari): builds
+gftools mode (lato): builds
+gftools mode (nanumbrushscript): builds
+gftools mode (nanumgothic): builds
+gftools mode (nanumgothiccoding): builds
+gftools mode (nanummyeongjo): builds
+gftools mode (nanumpenscript): builds
+gftools mode (poorstory): builds
+gftools mode (songmyung): builds
+gftools mode (stylish): FAILS -- 
+gftools mode (sunflower): builds
+
+stylish rerun without the probe's 300 s timeout (same command, same venv): builds, rc=0, 861 s
+(gftools-stylish-notimeout-2026-11-02.log beside this file). The first run was killed by the timeout
+during its first step (fontmake .glyphs -> UFO, 46 MB source, 11370 glyphs) at load average ~26-30 on
+8 cores (other sessions' jobs). fontc_crater sets no time limit on the build (fontc 691e72e41: only
+ttx_diff's ten-minute OTL normalizer limit). So gftools mode builds 33/33.

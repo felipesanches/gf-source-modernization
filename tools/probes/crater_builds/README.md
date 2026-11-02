@@ -49,3 +49,12 @@ from PATH, and without it every repository failed with "No such file or director
 logs/reland-2026-10-28-gdef-fea): the 16 of 0b plus Carlito, Sansation and Jomolhari (the three whose
 sources now state the release's GDEF classes as a feature prefix): fontmake 48/48 sources, gftools
 19/19 repositories (results-2026-10-28-babelfont-50ea5d2.txt). Same command as 2026-10-22, crater's venv.
+
+2026-11-02, the 33 binary-family repositories re-landed on babelfont branch 2026-11-02 (26fdcfa9;
+logs/reland-2026-11-02-branch), with crater's current pins (a venv from googlefonts/fontc 691e72e41's
+resources/scripts/requirements.txt: gftools 0.10.6, fontmake 3.12.2, glyphsLib 6.17.0): fontmake 78/78
+sources, gftools 33/33 repositories (results-2026-11-02-babelfont-26fdcfa.txt). Stylish first hit the
+probe's 300 s timeout under a load of ~28 on 8 cores; rerun without it, it builds in 861 s (the log is
+beside the results). Command:
+
+    PYBIN=<venv>/bin GFTOOLS_ALL=1 sh crater_builds.sh <scratch> <repos>

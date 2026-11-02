@@ -1,0 +1,10 @@
+INFO:glyphsLib.parser:Parsing .glyphs file
+[1/3] instantiateUfo
+fontmake -i Stylish Regular -o ufo -g Stylish-Regular.glyphs --ufo-structure=json --instance-dir instance_ufos
+[2/3] buildTTF
+fontmake --output-path /home/fsanches/compartilhado/tmp/tmplpl_a278 -o ttf -u instance_ufos/Stylish-Regular.ufo.json --filter ... --filter FlattenComponentsFilter --filter DecomposeTransformedComponentsFilter --keep-overlaps --no-production-names --drop-implied-oncurves
+[3/3] fix
+gftools-fix-font -o /home/fsanches/compartilhado/tmp/crater-builds-2026-11-02/gftools-out-stylish/Stylish-Regular.ttf /home/fsanches/compartilhado/tmp/tmplpl_a278
+Cleaning up temporary files...
+another .ninja file exists, leaving instance_ufos in place
+Done cleaning up temporary files
