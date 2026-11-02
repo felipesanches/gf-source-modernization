@@ -33,6 +33,8 @@ a fresh clone -- and checks, for every repository given:
      change behaviour).
 
 Usage: verify_landed.py <repo> [<repo> ...]     exit 1 if anything fails
+       (ALLOW_DISCLOSED=1: a GATE or FUNCTIONAL difference that the plan's "accepted"
+       list states word for word passes, reported as DISCLOSED; bottleneck item 7)
        (FAMILIES=families-next.tsv for the next batch; SCRATCH=<dir> for the
        fresh clones, default the session scratchpad)
 """
@@ -97,6 +99,7 @@ def verify(repo):
     d = os.path.join(land.OUT, repo)
     mirror = os.path.join(land.ARC, base + ".git")
     problems = []
+    notes = []            # accepted, disclosed differences (ALLOW_DISCLOSED=1)
     log = run("git", "-C", d, "log", "--reverse", "--format=%H", "HEAD").stdout.split()
     first = log[0]
 
@@ -205,6 +208,16 @@ def verify(repo):
     if origin != want:
         problems.append("REMOTE: origin is %r, want %r" % (origin, want))
 
+    # A difference the plan's "accepted" list states word for word (as land.py's
+    # CLEAN-DISCLOSED) passes only with ALLOW_DISCLOSED=1 (bottleneck item 7); any
+    # change in it, or any other difference, still fails.
+    accepted = land.load_plan(repo).get("accepted", []) if os.environ.get("ALLOW_DISCLOSED") else []
+    def disclosed(diff):
+        if diff in accepted:
+            notes.append("DISCLOSED: %s %s (accepted in plans/%s.json)" % (diff["style"], diff["check"], repo))
+            return True
+        return False
+
     # 4. correspondence, from a fresh clone
     os.makedirs(land.SCRATCH, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="verify-%s-" % repo, dir=land.SCRATCH) as tmp:
@@ -229,8 +242,10 @@ def verify(repo):
             except land.LandError as e:
                 problems.append("GATE: %s" % e)
                 continue
-            if n:
-                problems.append("GATE: %s %d blocking row(s): %s" % (r["style"], n, blocking[:3]))
+            blocking = [b for b in blocking
+                        if not disclosed({"style": r["style"], "check": "table", "row": b})]
+            if blocking:
+                problems.append("GATE: %s %d blocking row(s): %s" % (r["style"], len(blocking), blocking[:3]))
             gained, lost = land.cmap_difference(r["shipped"], os.path.join(ttf, name))
             if gained or lost:
                 problems.append("CMAP: %s gains %s, loses %s" % (
@@ -245,22 +260,24 @@ def verify(repo):
                 continue
             for check in functional_gate.failed_checks(fg):
                 c = fg["checks"][check]
+                if disclosed({"style": r["style"], "check": check, "summary": c["summary"]}):
+                    continue
                 problems.append("FUNCTIONAL: %s %s: %s%s" % (
                     r["style"], check, c["summary"],
                     "" if not c["failures"] else " -- " + c["failures"][0][:200]))
-    return problems
+    return problems, notes
 
 
 def main():
     bad = 0
     for repo in sys.argv[1:]:
         try:
-            problems = verify(repo)
+            problems, notes = verify(repo)
         except Exception as e:           # a verifier that crashes has not verified
-            problems = ["VERIFIER CRASHED: %r" % e]
+            problems, notes = ["VERIFIER CRASHED: %r" % e], []
         bad += bool(problems)
-        print("%-20s %s" % (repo, "VERIFIED" if not problems else "FAILED"))
-        for p in problems:
+        print("%-20s %s" % (repo, "FAILED" if problems else "VERIFIED, DISCLOSED" if notes else "VERIFIED"))
+        for p in problems + notes:
             print("    " + p)
     return 1 if bad else 0
 
