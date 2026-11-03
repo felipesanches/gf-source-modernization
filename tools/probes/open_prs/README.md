@@ -1,9 +1,9 @@
 # Open PRs: conflicts and reviewers' comments
 
-| script         | question it answers                                                                              | command                                                                                   |
-|----------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| script         | question it answers                                                                              | command                                                                                                                |
+|----------------|--------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | `conflicts.sh` | which open PR heads, and which local branches, merge with the repository's main without conflict | `sh tools/probes/open_prs/conflicts.sh <babelfont-rs clone> simoncozens/babelfont-rs <branch>...` |
-| `comments.sh`  | what others have said on felipesanches's open PRs since a date                                   | `sh tools/probes/open_prs/comments.sh simoncozens/babelfont-rs 2026-09-01 <scratch dir>`  |
+| `comments.sh`  | what others have said on felipesanches's open PRs since a date                                   | `sh tools/probes/open_prs/comments.sh simoncozens/babelfont-rs 2026-09-01 <scratch dir>`                               |
 
 Signal: `git merge-tree --write-tree` exits 0 for a clean merge and 1 for a conflict (git 2.47 has no
 `--quiet`; behind `2>/dev/null` its usage error, exit 129, reads like a conflict). A squash-merged PR

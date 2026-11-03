@@ -9,21 +9,21 @@ convert commit.
 
 ## Q1. Filters the recipe passes
 
-| flag                                  | upstream          | FF/FL-specific         | families                       | sev |
-|---------------------------------------|-------------------|------------------------|--------------------------------|-----|
-| --fontforge-os2-defaults              | yes (#91)         | yes, exporter defaults | all 101 SFD repos              | NIT |
-| --fontforge-underline-position        | yes (#91)         | yes, exporter offset   | 101 SFD                        | NIT |
-| --fontforge-height-glyph-count-mean   | yes (#91)         | yes, pre-2012 build    | 85 SFD                         | NIT |
-| --add-instance-per-master             | yes               | no                     | all SFD + VFB                  | OK  |
-| --infer-mark-category                 | yes               | no                     | 101 SFD                        | OK  |
-| --set-subcategory                     | yes               | no                     | 101 SFD                        | OK  |
-| --keep-source-advances                | yes (#97)         | no                     | 101 SFD + all VFB              | OK  |
-| --round-coordinates                   | yes (#100)        | no                     | 57 SFD + VFB                   | OK  |
-| --correct-path-direction              | yes               | no                     | 65 SFD, 229 VFB styles         | OK  |
-| --correct-conjunct-category           | yes               | no                     | lohitbengali, lohittamil       | OK  |
-| --add-notdef                          | no (#120)         | no (reworked)          | 0 landed; tuffy R/I + ~7 wait  | FIX |
-| --infer-fixed-pitch                   | no (#119)         | no (reworked)          | NovaMono                       | NIT |
-| --glyph-order-and-alias-db            | no ("Add a filter for the GlyphOrderAndAliasDB Unicode column")     | no (AFDKO GOADB)       | 30 VFB styles (Mukta etc.)     | FIX |
+| flag                                | upstream      | FF/FL-specific         | families                      | sev |
+|-------------------------------------|---------------|------------------------|-------------------------------|-----|
+| --fontforge-os2-defaults            | yes (#91)     | yes, exporter defaults | all 101 SFD repos             | NIT |
+| --fontforge-underline-position      | yes (#91)     | yes, exporter offset   | 101 SFD                       | NIT |
+| --fontforge-height-glyph-count-mean | yes (#91)     | yes, pre-2012 build    | 85 SFD                        | NIT |
+| --add-instance-per-master           | yes           | no                     | all SFD + VFB                 | OK  |
+| --infer-mark-category               | yes           | no                     | 101 SFD                       | OK  |
+| --set-subcategory                   | yes           | no                     | 101 SFD                       | OK  |
+| --keep-source-advances              | yes (#97)     | no                     | 101 SFD + all VFB             | OK  |
+| --round-coordinates                 | yes (#100)    | no                     | 57 SFD + VFB                  | OK  |
+| --correct-path-direction            | yes           | no                     | 65 SFD, 229 VFB styles        | OK  |
+| --correct-conjunct-category         | yes           | no                     | lohitbengali, lohittamil      | OK  |
+| --add-notdef                        | no (#120)     | no (reworked)          | 0 landed; tuffy R/I + ~7 wait | FIX |
+| --infer-fixed-pitch                 | no (#119)     | no (reworked)          | NovaMono                      | NIT |
+| --glyph-order-and-alias-db          | no ("Add a filter for the GlyphOrderAndAliasDB Unicode column") | no (AFDKO GOADB)       | 30 VFB styles (Mukta etc.)    | FIX |
 
 The three upstream --fontforge-* filters predate the 2026-10-02 rule (merged in #91): add no more of the
 kind; Tuffy states the same OS/2 values as setfield source edits, so one quirk is handled two ways.
@@ -31,12 +31,12 @@ land.py:599,611 silently drops a flag the converter does not know (FIX: fail ins
 
 Post-conversion edits written by land.py/workarounds.py:
 
-| edit                                        | repos                          | principle        | sev | shape                                                     |
-|---------------------------------------------|--------------------------------|------------------|-----|-----------------------------------------------------------|
-| table OS/2 { WeightClass/WidthClass } FEA   | 44 SFD/binary + 23 VFB         | P12, P5          | FIX | drop once gftools-rust pins a fontc with 22388c88          |
-| gdef_classes_fea (GlyphClassDef prefix)     | carlito, sansation, jomolhari  | P12, layering    | FIX | its own documented source-edit commit after the conversion |
-| isFixedPitch custom parameter               | nanumgothiccoding              | P3               | NIT | TTF reader reads post.isFixedPitch (#119's model field)    |
-| italic-angle metric rewrite                 | SFDs with fractional angle     | P3               | NIT | model keeps the real angle                                 |
+| edit                                      | repos                         | principle     | sev | shape                                                      |
+|-------------------------------------------|-------------------------------|---------------|-----|------------------------------------------------------------|
+| table OS/2 { WeightClass/WidthClass } FEA | 44 SFD/binary + 23 VFB        | P12, P5       | FIX | drop once gftools-rust pins a fontc with 22388c88          |
+| gdef_classes_fea (GlyphClassDef prefix)   | carlito, sansation, jomolhari | P12, layering | FIX | its own documented source-edit commit after the conversion |
+| isFixedPitch custom parameter             | nanumgothiccoding             | P3            | NIT | TTF reader reads post.isFixedPitch (#119's model field)    |
+| italic-angle metric rewrite               | SFDs with fractional angle    | P3            | NIT | model keeps the real angle                                 |
 
 ## Q2. Dependencies on rejected or under-review behaviour
 
