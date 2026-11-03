@@ -58,3 +58,12 @@ repositories convert a "-TTF.vfb" and 5 styles in 2 a "-OTF.vfb" (P13's batch co
 35 repositories convert other .vfb files (originals such as annieuseyourtelescope, which Simon called
 fine). The five "export rules" of vfb-export-rules (audit B) exist to reproduce what FontLab's exporter
 did from those archival files.
+
+## P15 measured
+
+Added code-comment lines that justify a change by a compiler (fontc, fontmake, glyphsLib, ufo2ft, "the
+compiler") in each branch's net merge with a93e1325: #121 8, #108 3, #110 3, #105 1, #112 1, #117 1,
+#119 1, #106/#109/#111/#120/typographic-family-names 0. Mentions in the texts we drafted for babelfont:
+post-2026-11-03/121.md 4, 117.md 3, 104.md/111.md/119.md/glyphs3-family-ids-entries.md 1 each;
+babelfont-ttf-static-font-fidelity.md 5, babelfont-vfb-export-rules.md 2. (grep -i
+"fontc|fontmake|glyphsLib|ufo2ft|compiler" over the texts and the '+//' lines of the diffs.)
