@@ -217,7 +217,8 @@ def read_text(path):
 
 
 def load_plan(repo):
-    p = os.path.join(W, "plans", repo + ".json")
+    # PLANS=<dir> reads plans elsewhere (a probe trying a plan without committing it)
+    p = os.path.join(os.environ.get("PLANS", os.path.join(W, "plans")), repo + ".json")
     if not os.path.exists(p):
         return {"repo": repo, "commits": [], "flags": {}}
     plan = json.load(open(p))

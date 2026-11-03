@@ -1,0 +1,273 @@
+== 2024-10-29 googlefonts/googlesans-flex https://github.com/googlefonts/googlesans-flex/issues/945#issuecomment-2444282668
+I doubt that we have enough source checks to make it worthwhile.
+
+== 2026-02-18 googlefonts/gftools https://github.com/googlefonts/gftools/issues/1170#issuecomment-3919105495
+The point of gftools-builder is to have a standardised or near-standardised build script, made up of well-known components. I agree that allowing arbitrary shell commands to run beforehand may be useful in terms of just getting things building, but it's a step in the wrong direction.
+
+In my mind, having a pre-compile sequence which runs `python3 scripts/fix_sources.py` within gftools-builder does not actually buy you anything over running `python3 scripts/fix_sources.py; gftools-builder`. It certainly won't be allowed as we move to Rust.
+
+== 2026-02-18 googlefonts/gftools https://github.com/googlefonts/gftools/issues/1170#issuecomment-3919386595
+I understand, but Rod is very unhappy with arbitrary code execution except for pathological cases (Playwrite etc.). It's something we need to move away from, not grandfather in.
+
+== 2026-03-09 fonttools/fontspector https://github.com/fonttools/fontspector/pull/667#issuecomment-4024544699
+Please add a hotfix function which turns off this bit.
+
+== 2026-03-09 fonttools/fontspector https://github.com/fonttools/fontspector/pull/670#issuecomment-4024533370
+Please add a hotfix function which unsets these bits for OS/2 versions < 4.
+
+== 2026-05-01 google/fonts https://github.com/google/fonts/pull/10490#issuecomment-4358374226
+Thank you! This will be extremely useful in proving babelfont-rs's SFD compilation capabilities.
+
+== 2026-05-01 google/fonts https://github.com/google/fonts/pull/10490#issuecomment-4358409771
+Actually, looking into these more, this needs careful separation.
+
+For some fonts like Aladin, I'm unconvinced that they are the font "sources" in any meaningful sense. ISTR @davelab6 had all the binary fonts converted to SFD/VFB for archival purposes. This explains why there's SFD *and* VFB sources for the fonts, and why the source filenames contain "-Regular-TTF" and "-OTF" - they're batch-converted from the binary files. So my advice would be to generate fresh sources using babelfont from the existing Google Fonts binaries. It certainly doesn't make sense to list both the VFB and SFD sources for the *same file*.
+
+However, for other fonts (e.g. annieuseyourtelescope), we have the original VFB file. These are fine. This will help me test VFB support. :-)
+
+== 2026-05-01 google/fonts https://github.com/google/fonts/pull/10490#issuecomment-4360268262
+VFB probably not, it's the old pre-variable FontLab format. SFD definitely is something we're still seeing submissions in and it's a bit of a headache when we're trying to interact with designers working in SFD. I would say that building from SFD is actually necessary; that's why I think babelfont is the sweet spot here - it ingests formats that fontc doesn't want to concern itself with, but then passes IR to fontc to get the font built.
+
+== 2026-06-22 simoncozens/gftools-builder3 https://github.com/simoncozens/gftools-builder3/pull/1#issuecomment-4771327967
+I'm not sure this is the right approach. If the user tells us not to build a variable, don't build a variable. We should make sure we are able to perform source instantiation instead.
+
+== 2026-06-29 fonttools/fontspector https://github.com/fonttools/fontspector/pull/669#issuecomment-4834006535
+I agree we should not make weird fonts, and it would be strange for fontspector - a font QA tool - to bend over backwards to allow the weirdness. The better answer is probably a check that an fvar table is not empty!
+
+== 2026-06-29 fonttools/fontspector https://github.com/fonttools/fontspector/pull/684#issuecomment-4832358176
+> @simoncozens Is there a reason why this has not been merged, yet?
+
+> submitted without human review. @felipesanches himself would still need to participate in the PR thread if he wants to contribute to the review.
+
+That's the reason. If you're happy with this and it replaces your stale one, I'll merge it.
+
+
+
+== 2026-07-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/20#issuecomment-4863446415
+Code to add a new interpolated master is not a bad idea, but SetDefaultLocation is the wrong place for it. The issue is that gftools-builder3 expects to be able to find a master for any interpolated instance, to work around the fact that fontc doesn't generate instances.
+
+Where sources don't interpolate and buildVariable is false, we can guarantee that there is a master available at the instance location, so SetDefault is the right approach. In the cases of Arya etc, given that the sources are interpolatable already (or else we wouldn't be able to generate interpolated instances), the fix might actually be to upgrade the families to VFs!
+
+== 2026-07-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/22#issuecomment-4863972896
+Some of this is bad, some of it is good. I'll split into separate PRs.
+
+== 2026-07-03 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/25#issuecomment-4875846727
+Thanks - I've merged this fix.
+
+== 2026-07-03 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/26#issuecomment-4875690586
+> Anchors keep their FontForge class names ("Above", "arriba-1", ...); fontc needs top/bottom on bases and _top/_bottom on marks.
+
+Partially true! It doesn't need to be exactly "top" and "bottom" but the names do need to match up, with mark anchors starting with an underscore. I think this convention is worth enforcing at source format level. But the names themselves should be maintained, and we don't need to do stupid heuristics on working out what is abvm and what is blwm - fontc will do that anyway.
+
+> Marks lack subCategory = Nonspacing, which fontc requires for GDEF mark classification.
+
+Just because fontc is brain-dead (because it is copying Glyphs which is brain-dead) does not mean that the *source representation* needs to be brain-dead.  Thinking more broadly, this isn't fontforge-specific; any font we export to Glyphs needs to set subcategory=Nonspacing for mark-attaching glyphs, so we should do this as part of the Glyphs export.
+
+> FontForge's anchor-based lookups (mark2base etc.) have no FEA rules
+
+...in simple cases. But they certainly do have rules in more complex (contextual) cases. So we should only skip them if they're empty.
+
+== 2026-07-03 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/26#issuecomment-4876853297
+Another reason why we're losing mark positioning is that we're not emitting `languagesystem` definitions.
+
+== 2026-07-03 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/27#issuecomment-4875869309
+>  So space, digits, punctuation -- and combining marks that the SFD (incorrectly but commonly) marks as GlyphClass 2 -- are all forced to Letter.
+
+At the binary font level, "Letter" isn't a thing. The choices in GDEF are base, ligature, or mark (and component but nobody uses that). So forcing space/digital/punctuation to "Letter" isn't a problem since these are all emitted as GDEF base.
+
+The *actual* problem is:
+
+> combining marks that the SFD (incorrectly but commonly) marks as GlyphClass 2
+
+This is what needs fixing.
+
+== 2026-07-03 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/24#issuecomment-4873704023
+This isn't quite right; it doesn't distinguish between master-level and font-level vertical metrics.
+
+== 2026-07-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/26#issuecomment-4901043311
+I've fixed the `languagesystem` issue and added two more filters (`--set-subcategory --correct-conjunct-category`) to help with Glyphs export. The only remaining issue now is:
+
+> FontForge's anchor-based lookups (mark2base etc.) have no FEA rules, so
+> they export as empty feature blocks -- and fontc skips generating any
+> feature already declared in the FEA.
+
+
+== 2026-07-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/26#issuecomment-4901429886
+This is now done, modulo https://github.com/googlefonts/fontc/issues/2055
+
+== 2026-07-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/28#issuecomment-4901695941
+Thank you, I've merged your commit!
+
+== 2026-07-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/29#issuecomment-4902727502
+This is a good idea but will fail for glyphs which support mark-to-mark attachment; these glyphs will have both a mark anchor (starts with underscore) and base anchor (no underscore). Let's use a simpler test which just checks for mark anchors (starts with underscore). This will also allow us to rename the test function to something a little less confusing. :-)
+
+== 2026-07-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/29#issuecomment-4903362629
+I have merged and adjusted this!
+
+== 2026-07-08 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/30#issuecomment-4913197577
+I've fixed this with a combination of your patch and my fixups...
+
+== 2026-07-08 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/31#issuecomment-4915536288
+Thank you, merged!
+
+== 2026-07-13 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/33#issuecomment-4957385373
+This sounds good, but let's think what we mean by partial parsing; for designspace files, a partial parse might mean just the axes/masters/instances without the sources at all. So I think we want some finer grained options. Let's go with load_with_options, but we can have a bunch of bools, all of which default to true: `load_axes`, `load_masters`, `load_glyphs`, `load_layers`... This would then allow us to skip the relevant ingestion code for all of the formats, not just UFO/DS.
+
+== 2026-08-05 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/5#issuecomment-5189478937
+All of these should now be supported. There are some issues which Felipe will be reporting, but fundamentally things work.
+
+== 2026-08-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/45#issuecomment-5202880479
+I don't like this approach. If we want to put arbitrary binary fields into the source, the way to do it is `master.custom_ot_values.os2_us_weight_class = Some(700)` or `font.custom_ot_values`.
+
+== 2026-08-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/47#issuecomment-5202927267
+This is mixing QA on the font binary with source representation. babelfont-rs is a source representation library. It is deliberately neutral in that it doesn't care about QA *at all*. If the user wants to put `"Complete Nonsense"` into name ID 5, they should be able to.
+
+The more important question is "how does FontForge interpret its `Version:` field?" If it carries an implicit "Version " which is added when the font is exported, then we should also interpret its field as "Version "+contents. If not, we should leave it alone and fix QA problems later.
+
+== 2026-08-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/57#issuecomment-5203674465
+I think this change is good but the rationale is wrong. 
+
+> fontc maps only the localized keys. 
+
+So what? We're not fontc. babelfont-rs really doesn't care what fontc does. We're trying to be compatible with Glyphs font import and export, so we should change the writer to emit localised properties if that's what *Glyphs' writer would do*, but not because of what a compiler does or doesn't do with the information.
+
+It seems like Glyphs' writer does export localised properties for these fields, so this is fine; all that needs to change is the comments.
+
+== 2026-08-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/59#issuecomment-5203743546
+I don't like the idea of doing QA fixups *while importing a file*; we're supposed to be as neutral as possible. If the user wants to put a copyright notice into the description, let them. Probably best implemented as a fontspector source fix.
+
+== 2026-08-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/69#issuecomment-5208343494
+This doesn't make sense. Glyphs files can also have carriage returns in their name entries. If a Glyphs file with a carriage return gets converted to Fontforge and then back to Glyphs, it wouldn't round-trip. Again this is enforcing QA while parsing a format, which I don't think is a good idea.
+
+== 2026-08-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/38#issuecomment-5202382448
+I like this a lot. I would like it even more if reverse_path was a public method .reverse on Path objects.
+
+== 2026-08-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/40#issuecomment-5202654190
+This is overcomplicated. Nothing says the master ID needs to be a UUID. If you want a deterministic string, just use "babelfont/sfd/master/Regular" directly as the master/layer ID.
+
+== 2026-08-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/47#issuecomment-5216567606
+Perfect, thanks!
+
+== 2026-08-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/65#issuecomment-5216697262
+I'm unconvinced by part 1 here. Again, we're just storing font-related data; we don't care what compilers do or don't do. fontc should be able to handle Indic marks that have arbitrary anchor names. It doesn't, and that might be a bug. But fontmake does absolutely fine with those fonts. (See for example Noto Sans Modi, which has anchors named `Anchor1`, `Anchor2`, etc. and fontmake creates `abvm` and `blwm` features.)
+
+Source loading should not involve itself with working around bugs in a completely separate project.
+
+Parts 2 and 3 are fine.
+
+== 2026-08-25 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/79#issuecomment-5409360849
+The second commit *removes* the test for the first commit's behaviour, and the rationale is wooly. I'd prefer to keep the test and fix any problems.
+
+== 2026-08-25 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/80#issuecomment-5409699351
+I don't think this is the right fix. Babelfont stores the italic angle in "Glyphs convention" (counterclockwise is positive). So an italic angle of "-12" in Fontforge sources (`post` convention, counterclockwise is negative) should be stored as +12, which the current code does. If there's another "flip" somewhere, that's the bug, not the fontforge reader.
+
+== 2026-08-25 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/81#issuecomment-5409714850
+I don't get it. `skip_metrics` is literally "just put some dummy metrics in there". If you care about what the metrics values are, why are you using `skip_metrics`?
+
+== 2026-09-11 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/88#issuecomment-5636839184
+Thanks; I did this myself while working on something else, so this is unnecessary now!
+
+== 2026-09-23 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/90#issuecomment-5799293390
+This seems fine but as usual the comments are full of implementation details about SFD and fontc and other irrelevancies. Also I'd like to check that if we're emitting MetricType::UnderlinePosition -> custom parameter, we also read in custom parameter -> MetricType::UnderlinePosition. The ingress part doesn't seem to be in this PR.
+
+== 2026-09-25 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/95#issuecomment-5832590477
+Why not store it in `font.version`? Seems the obvious place.
+
+== 2026-09-28 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/92#issuecomment-5872017774
+Ack, sorry, can you rebase?
+
+== 2026-10-01 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/93#issuecomment-5927115388
+The problem is more that I don't understand what you're doing or how you want to use these.
+
+> --reverse-path-direction: reverse every closed contour, for a font whose mixed directions must be kept.
+
+I don't understand the point of this. What are you trying to achieve? fontc has a `--keep-direction` flag.
+
+> --keep-source-glyph-names: set "Don't use Production Names".
+
+This one also doesn't make a lot of sense. It adds a Glyphs-specific custom parameter to the font, but claims to be a generic way of setting a *compiler* option? `fontc` has a --no-production-names flag, so if that's what you want, why not use that?
+
+> --keep-source-advances: mark an uncategorised glyph with an advance as a base, so it is not zeroed as a mark by its name.
+
+This one is fine.
+
+> --snap-component-transforms: in glyphs FontForge exports as composites, snap near-integer scales and round offsets with rint, as dumpcomposite() does.
+
+I don't understand this either. Is it FontForge specific? What are we trying to do and why?
+
+== 2026-10-01 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/99#issuecomment-5930243413
+This turns out to be a builder3 issue, not a babelfont one.
+
+== 2026-10-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/105#issuecomment-5948295377
+> The reader passed both on (one to the kerning model, one to an FEA lookup), so the compiled font kerned the pair twice.
+
+But this PR doesn't look in the kerning model, so I don't see how it fixes that. Also, it would be better if we put kerning into the master kerning, not into FEA anyway.
+
+== 2026-10-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/107#issuecomment-5948259866
+I don't care sufficiently about a one-unit diff in non-integer anchors(!) to add a new filter to babelfont for this. 
+
+== 2026-10-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/115#issuecomment-5948480692
+This feels wrong. Flag 0x80 means "point was interpolated between two control points (when read from a ttf file)". That's just a normal on-curve. Why do you want to turn it into an off-curve?
+
+== 2026-10-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/118#issuecomment-5948614113
+This seems OK but conflicts with #102.
+
+== 2026-10-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/120#issuecomment-5948569087
+Please read this description of a filter:
+
+```
+//! The advance a FontForge source's glyphs share, which decides whether FontForge
+//! exports the font as fixed pitch.
+```
+
+Does this tell you what the filter does? Does it do "Fontforge notdef"? What even is "Fontforge notdef"?
+
+== 2026-10-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/120#issuecomment-5948650691
+A filter for creating an outline rectangle glyph for empty `.notdef`s is a good idea, but it's in no way Fontforge specific.
+
+== 2026-10-02 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/121#issuecomment-5948522825
+"Writes a FontForge source's anchor lookups as feature code with FontForge's coverage, flags and registrations, and turns off the mark and curs writers."
+
+Why is this something we want to do? Please explain the problem you're trying to solve. Then think about whether or not it's an import problem. These weirdly specific FontForge filters are, in general, a bad idea.
+
+== 2026-10-05 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/124#issuecomment-5998096009
+Very nice, thank you!
+
+== 2026-10-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/128#issuecomment-6024861052
+Try a --force?
+
+== 2026-10-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/128#issuecomment-6025243686
+Looks like my release script didn't publish. Will fix it tomorrow.
+
+== 2026-10-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/126#issuecomment-6019959984
+I just merged it by hand. :-)
+
+== 2026-10-06 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/127#issuecomment-6020338262
+Thank you so much for all the fixes!
+
+== 2026-10-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/129#issuecomment-6042187718
+Thank you. Most of this looks good, but the part which passes UFO-specific information into Glyphs-specific information doesn't sit right with the idea of babelfont being a neutral broker. Data should always go anything -> babelfont -> anything, and if it can't, then we need to change babelfont.
+
+== 2026-10-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/129#issuecomment-6042485729
+Yep. I can fix it up.
+
+== 2026-10-08 googlefonts/fontc_crater https://github.com/googlefonts/fontc_crater/pull/100#issuecomment-6055375813
+> @simoncozens, now that https://github.com/googlefonts/gftools/pull/1229 and https://github.com/googlefonts/gftools/pull/1230 are merged, we'll need a new release of gftools (v0.10.1 perhaps?)
+
+Did you mean to address that to @m4rc1e ? :-)
+
+== 2026-10-09 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/130#issuecomment-6078019110
+Can we also do the same for the babelfont and fontmerge binaries?
+
+== 2026-10-12 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/130#issuecomment-6124875720
+I've done the sr-aef upload and also cut a new babelfont release which has uploaded that. I'll leave fontmerge until the next release; I suspect I'll find some bugs soon enough.
+
+== 2026-10-23 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/131#issuecomment-6361608095
+[47f9944](https://github.com/simoncozens/babelfont-rs/pull/131/commits/47f99442d3b59406f5e8e1208476fe97319ed8d0) doesn't feel right; setting the glyph categories should be enough for the compiler to write a GDEF table. It feels particularly pointless after [3640e9a](https://github.com/simoncozens/babelfont-rs/pull/131/commits/3640e9aa0e871fcac6a08ad17c31824da7ee2bd7).
+
+== 2026-10-30 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/134#issuecomment-6520816346
+This was recently fixed in #131. I need to make another release.
+
+== 2026-10-30 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/issues/134#issuecomment-6523385307
+New version 0.1.2 out on crates.io
+
