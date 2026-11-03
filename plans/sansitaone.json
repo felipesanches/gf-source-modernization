@@ -1,0 +1,7 @@
+{
+  "repo": "sansitaone",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/googlefonts/googlefontdirectory-hg at 52f780bc9d197280a9f430574e179a5f233c56b6: src/SansitaOne-TTF.vfb, a FontLab import of the shipped font, not a source: Simon on google/fonts#10490 (\"batch-converted from the binary files\")."
+  ]
+}
