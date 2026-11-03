@@ -20,6 +20,7 @@ import collections
 import concurrent.futures
 import csv
 import os
+import re
 import subprocess
 import sys
 
@@ -105,8 +106,13 @@ def main():
     with open(out, "w", encoding="utf-8") as fh:
         fh.write("repo\ttable\tkind\tbase\tdestination\tremote\tlanded_branch\tlanded_head\tverdict\tledger\n")
         for repo, i in repos.items():
-            fh.write("\t".join([repo, i["table"], i["kind"], i["base"], i["dest"], i["remote"],
-                                i["branch"], i["head"], i["verdict"], i["ledger"]]) + "\n")
+            # only what is public: whether the landed head is on the remote (not its id), a destination as
+            # owner/repo (a repository still to create has no URL that answers)
+            head = "on-remote" if i["head"] and i["head"][:7] in i["remote"] else "-"
+            dest = re.sub(r"^https?://github\.com/", "", i["dest"])
+            remote = re.sub(r"=[0-9a-f]{7,40}", "", i["remote"])     # the branches, not their ids
+            fh.write("\t".join([repo, i["table"], i["kind"], i["base"], dest, remote,
+                                i["branch"], head, i["verdict"], i["ledger"]]) + "\n")
     # the repositories Felipe's colleagues must create: one name per line
     with open(os.path.join(W, "repos-to-create.txt"), "w", encoding="utf-8") as fh:
         for repo, i in repos.items():
