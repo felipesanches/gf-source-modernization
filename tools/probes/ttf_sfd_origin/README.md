@@ -36,3 +36,17 @@ ribeyemarrow, sanchez, smokum, tuffy, nosifercaps, overlock); cardo, miama, nosi
 shaping. The GDEF statement is the font's own source stating classes no category expresses -- what Simon
 called "a matter for its source" (babelfont#131) -- and needs land.py to allow a documented source-edit
 commit after a binary's conversion (today it sits inside the convert commit, as in carlito).
+
+## The VFB imports, 2026-11-03
+
+families-vfb-from-binary.tsv: the 100 repositories (120 styles) of families-vfb.tsv whose .vfb is a "-TTF"/"-OTF"
+FontLab import; reland_vfb_from_binary.sh lands them from their binaries (summary-vfb-from-binary-2026-11-03.txt).
+
+| route                                                       | CLEAN |
+|-------------------------------------------------------------|-------|
+| .vfb, every local VFB branch (reland-vfb-fixes4-2026-10-29) | 0     |
+| the binary, published converter                             | 55    |
+
+Of the 45 RESIDUAL from the binary, 39 differ only in table-gate rows (functional PASS on every style); 6
+fail a functional check or do not build. The GDEF-statement pass (reland_from_binary_gdef.sh) has not been
+run on them yet.

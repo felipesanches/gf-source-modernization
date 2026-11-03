@@ -1,0 +1,100 @@
+actor-bin: CLEAN, 3 commits, 0 edit(s): Actor-Regular=0 functional=PASS
+aldrich-bin: RESIDUAL, 3 commits, 0 edit(s): Aldrich-Regular=0 functional=FAIL(shaping+rendering)
+alfaslabone-bin: RESIDUAL, 3 commits, 0 edit(s): AlfaSlabOne-Regular=1 functional=PASS
+audiowide-bin: RESIDUAL, 3 commits, 0 edit(s): Audiowide-Regular=2 functional=PASS
+baumans-bin: CLEAN, 3 commits, 0 edit(s): Baumans-Regular=0 functional=PASS
+berkshireswash-bin: RESIDUAL, 3 commits, 0 edit(s): BerkshireSwash-Regular=2 functional=PASS
+bigelowrules-bin: RESIDUAL, 3 commits, 0 edit(s): BigelowRules-Regular=2 functional=PASS
+butterflykids-bin: CLEAN, 3 commits, 0 edit(s): ButterflyKids-Regular=0 functional=PASS
+caesardressing-bin: CLEAN, 3 commits, 0 edit(s): CaesarDressing-Regular=0 functional=PASS
+cantoraone-bin: CLEAN, 3 commits, 0 edit(s): CantoraOne-Regular=0 functional=PASS
+carroisgothic-bin: CLEAN, 3 commits, 0 edit(s): CarroisGothic-Regular=0 functional=PASS
+carroisgothicsc-bin: CLEAN, 3 commits, 0 edit(s): CarroisGothicSC-Regular=0 functional=PASS
+chelseamarket-bin: CLEAN, 3 commits, 0 edit(s): ChelseaMarket-Regular=0 functional=PASS
+clickerscript-bin: RESIDUAL, 3 commits, 0 edit(s): ClickerScript-Regular=2 functional=PASS
+combo-bin: CLEAN, 3 commits, 0 edit(s): Combo-Regular=0 functional=PASS
+dynalight-bin: RESIDUAL, 3 commits, 0 edit(s): Dynalight-Regular=2 functional=PASS
+eaglelake-bin: RESIDUAL, 3 commits, 0 edit(s): EagleLake-Regular=2 functional=PASS
+electrolize-bin: CLEAN, 3 commits, 0 edit(s): Electrolize-Regular=0 functional=PASS
+emilyscandy-bin: CLEAN, 3 commits, 0 edit(s): EmilysCandy-Regular=0 functional=PASS
+engagement-bin: RESIDUAL, 3 commits, 0 edit(s): Engagement-Regular=2 functional=PASS
+fascinate-bin: RESIDUAL, 3 commits, 0 edit(s): Fascinate-Regular=2 functional=PASS
+fascinateinline-bin: RESIDUAL, 3 commits, 0 edit(s): FascinateInline-Regular=2 functional=PASS
+fingerpaint-bin: CLEAN, 3 commits, 0 edit(s): FingerPaint-Regular=0 functional=PASS
+flavors-bin: CLEAN, 3 commits, 0 edit(s): Flavors-Regular=0 functional=PASS
+fondamento-bin: RESIDUAL, 3 commits, 0 edit(s): Fondamento-Italic=2 functional=FAIL(shaping+gdef); Fondamento-Regular=2 functional=FAIL(shaping+gdef)
+forum-bin: CLEAN, 3 commits, 0 edit(s): Forum-Regular=0 functional=PASS
+freckleface-bin: RESIDUAL, 3 commits, 0 edit(s): FreckleFace-Regular=2 functional=PASS
+frederickathegreat-bin: CLEAN, 3 commits, 0 edit(s): FrederickatheGreat-Regular=0 functional=PASS
+frijole-bin: CLEAN, 3 commits, 0 edit(s): Frijole-Regular=0 functional=PASS
+galindo-bin: RESIDUAL, 3 commits, 0 edit(s): Galindo-Regular=2 functional=PASS
+gorditas-bin: CLEAN, 3 commits, 0 edit(s): Gorditas-Bold=0 functional=PASS; Gorditas-Regular=0 functional=PASS
+grandhotel-bin: RESIDUAL, 3 commits, 0 edit(s): GrandHotel-Regular=2 functional=PASS
+griffy-bin: CLEAN, 3 commits, 0 edit(s): Griffy-Regular=0 functional=PASS
+hanalei-bin: RESIDUAL, 3 commits, 0 edit(s): Hanalei-Regular=2 functional=PASS
+hanaleifill-bin: RESIDUAL, 3 commits, 0 edit(s): HanaleiFill-Regular=2 functional=PASS
+happymonkey-bin: CLEAN, 3 commits, 0 edit(s): HappyMonkey-Regular=0 functional=PASS
+hennypenny-bin: RESIDUAL, 3 commits, 0 edit(s): HennyPenny-Regular=BUILD functional=-
+hermeneusone-bin: CLEAN, 3 commits, 0 edit(s): HermeneusOne-Regular=0 functional=PASS
+jimnightshade-bin: RESIDUAL, 3 commits, 0 edit(s): JimNightshade-Regular=2 functional=PASS
+jollylodger-bin: CLEAN, 3 commits, 0 edit(s): JollyLodger-Regular=0 functional=PASS
+junge-bin: CLEAN, 3 commits, 0 edit(s): Junge-Regular=0 functional=PASS
+kaushanscript-bin: CLEAN, 3 commits, 0 edit(s): KaushanScript-Regular=0 functional=PASS
+librecaslondisplay-bin: CLEAN, 3 commits, 0 edit(s): LibreCaslonDisplay-Regular=0 functional=PASS
+lobstertwo-bin: CLEAN, 3 commits, 0 edit(s): LobsterTwo-Bold=0 functional=PASS; LobsterTwo-BoldItalic=0 functional=PASS; LobsterTwo-Italic=0 functional=PASS; LobsterTwo-Regular=0 functional=PASS
+marcellus-bin: RESIDUAL, 3 commits, 0 edit(s): Marcellus-Regular=2 functional=PASS
+marcellussc-bin: RESIDUAL, 3 commits, 0 edit(s): MarcellusSC-Regular=2 functional=PASS
+margarine-bin: RESIDUAL, 3 commits, 0 edit(s): Margarine-Regular=2 functional=PASS
+mclaren-bin: RESIDUAL, 3 commits, 0 edit(s): McLaren-Regular=2 functional=PASS
+mervalescript-bin: RESIDUAL, 3 commits, 0 edit(s): MervaleScript-Regular=2 functional=PASS
+metalmania-bin: CLEAN, 3 commits, 0 edit(s): MetalMania-Regular=0 functional=PASS
+milonga-bin: CLEAN, 3 commits, 0 edit(s): Milonga-Regular=0 functional=PASS
+miltonian-bin: CLEAN, 3 commits, 0 edit(s): Miltonian-Regular=0 functional=PASS
+miltoniantattoo-bin: CLEAN, 3 commits, 0 edit(s): MiltonianTattoo-Regular=0 functional=PASS
+miniver-bin: CLEAN, 3 commits, 0 edit(s): Miniver-Regular=0 functional=PASS
+mousememoirs-bin: RESIDUAL, 3 commits, 0 edit(s): MouseMemoirs-Regular=2 functional=PASS
+mysteryquest-bin: CLEAN, 3 commits, 0 edit(s): MysteryQuest-Regular=0 functional=PASS
+newrocker-bin: CLEAN, 3 commits, 0 edit(s): NewRocker-Regular=0 functional=PASS
+oregano-bin: RESIDUAL, 3 commits, 0 edit(s): Oregano-Italic=2 functional=PASS; Oregano-Regular=2 functional=PASS
+originalsurfer-bin: RESIDUAL, 3 commits, 0 edit(s): OriginalSurfer-Regular=2 functional=PASS
+parisienne-bin: RESIDUAL, 3 commits, 0 edit(s): Parisienne-Regular=2 functional=PASS
+peralta-bin: RESIDUAL, 3 commits, 0 edit(s): Peralta-Regular=2 functional=PASS
+petitformalscript-bin: CLEAN, 3 commits, 0 edit(s): PetitFormalScript-Regular=0 functional=PASS
+poetsenone-bin: CLEAN, 3 commits, 0 edit(s): PoetsenOne-Regular=0 functional=PASS
+princesssofia-bin: CLEAN, 3 commits, 0 edit(s): PrincessSofia-Regular=0 functional=PASS
+prostoone-bin: CLEAN, 3 commits, 0 edit(s): ProstoOne-Regular=0 functional=PASS
+purplepurse-bin: RESIDUAL, 3 commits, 0 edit(s): PurplePurse-Regular=2 functional=PASS
+quattrocento-bin: CLEAN, 3 commits, 0 edit(s): Quattrocento-Bold=0 functional=PASS; Quattrocento-Regular=0 functional=PASS
+quattrocentosans-bin: CLEAN, 3 commits, 0 edit(s): QuattrocentoSans-Bold=0 functional=PASS; QuattrocentoSans-BoldItalic=0 functional=PASS; QuattrocentoSans-Italic=0 functional=PASS; QuattrocentoSans-Regular=0 functional=PASS
+quintessential-bin: RESIDUAL, 3 commits, 0 edit(s): Quintessential-Regular=2 functional=PASS
+racingsansone-bin: CLEAN, 3 commits, 0 edit(s): RacingSansOne-Regular=0 functional=PASS
+ralewaydots-bin: CLEAN, 3 commits, 0 edit(s): RalewayDots-Regular=0 functional=PASS
+ranchers-bin: CLEAN, 3 commits, 0 edit(s): Ranchers-Regular=0 functional=PASS
+rancho-bin: CLEAN, 3 commits, 0 edit(s): Rancho-Regular=0 functional=PASS
+ribeye-bin: RESIDUAL, 3 commits, 0 edit(s): Ribeye-Regular=2 functional=PASS
+righteous-bin: RESIDUAL, 3 commits, 0 edit(s): Righteous-Regular=0 functional=FAIL(shaping+rendering)
+risque-bin: RESIDUAL, 3 commits, 0 edit(s): Risque-Regular=2 functional=PASS
+romanesco-bin: RESIDUAL, 3 commits, 0 edit(s): Romanesco-Regular=2 functional=PASS
+rumraisin-bin: RESIDUAL, 3 commits, 0 edit(s): RumRaisin-Regular=2 functional=PASS
+sansitaone-bin: CLEAN, 3 commits, 0 edit(s): SansitaOne-Regular=0 functional=PASS
+satisfy-bin: CLEAN, 3 commits, 0 edit(s): Satisfy-Regular=0 functional=PASS
+seaweedscript-bin: CLEAN, 3 commits, 0 edit(s): SeaweedScript-Regular=0 functional=PASS
+sevillana-bin: RESIDUAL, 3 commits, 0 edit(s): Sevillana-Regular=BUILD functional=-
+shadowsintolighttwo-bin: CLEAN, 3 commits, 0 edit(s): ShadowsIntoLightTwo-Regular=0 functional=PASS
+share-bin: CLEAN, 3 commits, 0 edit(s): Share-Bold=0 functional=PASS; Share-BoldItalic=0 functional=PASS; Share-Italic=0 functional=PASS; Share-Regular=0 functional=PASS
+shojumaru-bin: RESIDUAL, 3 commits, 0 edit(s): Shojumaru-Regular=2 functional=PASS
+simonetta-bin: RESIDUAL, 3 commits, 0 edit(s): Simonetta-Black=BUILD functional=-; Simonetta-BlackItalic=BUILD functional=-; Simonetta-Italic=BUILD functional=-; Simonetta-Regular=BUILD functional=-
+skranji-bin: CLEAN, 3 commits, 0 edit(s): Skranji-Bold=0 functional=PASS; Skranji-Regular=0 functional=PASS
+sofadione-bin: CLEAN, 3 commits, 0 edit(s): SofadiOne-Regular=0 functional=PASS
+sofia-bin: CLEAN, 3 commits, 0 edit(s): Sofia-Regular=0 functional=PASS
+spicyrice-bin: RESIDUAL, 3 commits, 0 edit(s): SpicyRice-Regular=2 functional=PASS
+stalemate-bin: RESIDUAL, 3 commits, 0 edit(s): Stalemate-Regular=2 functional=PASS
+stalinistone-bin: CLEAN, 3 commits, 0 edit(s): StalinistOne-Regular=0 functional=PASS
+stintultracondensed-bin: RESIDUAL, 3 commits, 0 edit(s): StintUltraCondensed-Regular=2 functional=PASS
+stintultraexpanded-bin: RESIDUAL, 3 commits, 0 edit(s): StintUltraExpanded-Regular=2 functional=PASS
+strong-bin: CLEAN, 3 commits, 0 edit(s): Strong-Regular=0 functional=PASS
+tradewinds-bin: CLEAN, 3 commits, 0 edit(s): TradeWinds-Regular=0 functional=PASS
+uncialantiqua-bin: RESIDUAL, 3 commits, 0 edit(s): UncialAntiqua-Regular=2 functional=PASS
+underdog-bin: CLEAN, 3 commits, 0 edit(s): Underdog-Regular=0 functional=PASS
+volkhov-bin: CLEAN, 3 commits, 0 edit(s): Volkhov-Bold=0 functional=PASS; Volkhov-BoldItalic=0 functional=PASS; Volkhov-Italic=0 functional=PASS; Volkhov-Regular=0 functional=PASS
+yesteryear-bin: RESIDUAL, 3 commits, 0 edit(s): Yesteryear-Regular=2 functional=PASS
