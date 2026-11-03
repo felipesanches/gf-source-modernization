@@ -48,5 +48,8 @@ FontLab import; reland_vfb_from_binary.sh lands them from their binaries (summar
 | the binary, published converter                             | 55    |
 
 Of the 45 RESIDUAL from the binary, 39 differ only in table-gate rows (functional PASS on every style); 6
-fail a functional check or do not build. The GDEF-statement pass (reland_from_binary_gdef.sh) has not been
-run on them yet.
+fail a functional check or do not build. The GDEF-statement pass (reland_vfb_from_binary_gdef.sh,
+summary-vfb-from-binary-gdef-2026-11-03.txt) makes one more CLEAN: unlike the SFD imports, the VFB residuals are
+not class problems. 41 of the 44 left block only on GSUB.feature_list / GSUB.lookup_list -- lookups renumbered
+or repacked (e.g. Audiowide's frac and ordn), shaping identical: fontc problems 12 and 13
+(gfonts-ai-usage-report 22-fontc-problems), which the 2026-10-02 decision discloses rather than works around.

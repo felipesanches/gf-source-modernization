@@ -1,0 +1,45 @@
+aldrich-bin: RESIDUAL, 3 commits, 0 edit(s): Aldrich-Regular=0 functional=FAIL(shaping+rendering)
+alfaslabone-bin: CLEAN, 4 commits, 0 edit(s): AlfaSlabOne-Regular=0 functional=PASS
+audiowide-bin: RESIDUAL, 3 commits, 0 edit(s): Audiowide-Regular=2 functional=PASS
+berkshireswash-bin: RESIDUAL, 3 commits, 0 edit(s): BerkshireSwash-Regular=2 functional=PASS
+bigelowrules-bin: RESIDUAL, 3 commits, 0 edit(s): BigelowRules-Regular=2 functional=PASS
+clickerscript-bin: RESIDUAL, 3 commits, 0 edit(s): ClickerScript-Regular=2 functional=PASS
+dynalight-bin: RESIDUAL, 3 commits, 0 edit(s): Dynalight-Regular=2 functional=PASS
+eaglelake-bin: RESIDUAL, 3 commits, 0 edit(s): EagleLake-Regular=2 functional=PASS
+engagement-bin: RESIDUAL, 3 commits, 0 edit(s): Engagement-Regular=2 functional=PASS
+fascinate-bin: RESIDUAL, 3 commits, 0 edit(s): Fascinate-Regular=2 functional=PASS
+fascinateinline-bin: RESIDUAL, 3 commits, 0 edit(s): FascinateInline-Regular=2 functional=PASS
+fondamento-bin: RESIDUAL, 4 commits, 0 edit(s): Fondamento-Italic=2 functional=PASS; Fondamento-Regular=2 functional=PASS
+freckleface-bin: RESIDUAL, 3 commits, 0 edit(s): FreckleFace-Regular=2 functional=PASS
+galindo-bin: RESIDUAL, 3 commits, 0 edit(s): Galindo-Regular=2 functional=PASS
+grandhotel-bin: RESIDUAL, 3 commits, 0 edit(s): GrandHotel-Regular=2 functional=PASS
+hanalei-bin: RESIDUAL, 3 commits, 0 edit(s): Hanalei-Regular=2 functional=PASS
+hanaleifill-bin: RESIDUAL, 3 commits, 0 edit(s): HanaleiFill-Regular=2 functional=PASS
+hennypenny-bin: RESIDUAL, 3 commits, 0 edit(s): HennyPenny-Regular=BUILD functional=-
+jimnightshade-bin: RESIDUAL, 3 commits, 0 edit(s): JimNightshade-Regular=2 functional=PASS
+marcellus-bin: RESIDUAL, 3 commits, 0 edit(s): Marcellus-Regular=2 functional=PASS
+marcellussc-bin: RESIDUAL, 3 commits, 0 edit(s): MarcellusSC-Regular=2 functional=PASS
+margarine-bin: RESIDUAL, 3 commits, 0 edit(s): Margarine-Regular=2 functional=PASS
+mclaren-bin: RESIDUAL, 3 commits, 0 edit(s): McLaren-Regular=2 functional=PASS
+mervalescript-bin: RESIDUAL, 3 commits, 0 edit(s): MervaleScript-Regular=2 functional=PASS
+mousememoirs-bin: RESIDUAL, 3 commits, 0 edit(s): MouseMemoirs-Regular=2 functional=PASS
+oregano-bin: RESIDUAL, 3 commits, 0 edit(s): Oregano-Italic=2 functional=PASS; Oregano-Regular=2 functional=PASS
+originalsurfer-bin: RESIDUAL, 3 commits, 0 edit(s): OriginalSurfer-Regular=2 functional=PASS
+parisienne-bin: RESIDUAL, 3 commits, 0 edit(s): Parisienne-Regular=2 functional=PASS
+peralta-bin: RESIDUAL, 3 commits, 0 edit(s): Peralta-Regular=2 functional=PASS
+purplepurse-bin: RESIDUAL, 3 commits, 0 edit(s): PurplePurse-Regular=2 functional=PASS
+quintessential-bin: RESIDUAL, 3 commits, 0 edit(s): Quintessential-Regular=2 functional=PASS
+ribeye-bin: RESIDUAL, 3 commits, 0 edit(s): Ribeye-Regular=2 functional=PASS
+righteous-bin: RESIDUAL, 3 commits, 0 edit(s): Righteous-Regular=0 functional=FAIL(shaping+rendering)
+risque-bin: RESIDUAL, 3 commits, 0 edit(s): Risque-Regular=2 functional=PASS
+romanesco-bin: RESIDUAL, 3 commits, 0 edit(s): Romanesco-Regular=2 functional=PASS
+rumraisin-bin: RESIDUAL, 3 commits, 0 edit(s): RumRaisin-Regular=2 functional=PASS
+sevillana-bin: RESIDUAL, 3 commits, 0 edit(s): Sevillana-Regular=BUILD functional=-
+shojumaru-bin: RESIDUAL, 3 commits, 0 edit(s): Shojumaru-Regular=2 functional=PASS
+simonetta-bin: RESIDUAL, 3 commits, 0 edit(s): Simonetta-Black=BUILD functional=-; Simonetta-BlackItalic=BUILD functional=-; Simonetta-Italic=BUILD functional=-; Simonetta-Regular=BUILD functional=-
+spicyrice-bin: RESIDUAL, 3 commits, 0 edit(s): SpicyRice-Regular=2 functional=PASS
+stalemate-bin: RESIDUAL, 3 commits, 0 edit(s): Stalemate-Regular=2 functional=PASS
+stintultracondensed-bin: RESIDUAL, 3 commits, 0 edit(s): StintUltraCondensed-Regular=2 functional=PASS
+stintultraexpanded-bin: RESIDUAL, 3 commits, 0 edit(s): StintUltraExpanded-Regular=2 functional=PASS
+uncialantiqua-bin: RESIDUAL, 3 commits, 0 edit(s): UncialAntiqua-Regular=2 functional=PASS
+yesteryear-bin: RESIDUAL, 3 commits, 0 edit(s): Yesteryear-Regular=2 functional=PASS
