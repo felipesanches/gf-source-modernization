@@ -1,0 +1,34 @@
+6f7bba433  ofl/blackandwhitepicture     OK
+2883258a5  ofl/blackhansans             FAIL
+    upstream_info.md: 8809d5944fbf6aa2cd99158cb7ab55629058348a is not a commit on any published branch we know
+2d9f853f2  ofl/cutefont                 OK
+46f66bc6d  ofl/dokdo                    OK
+fdcd0ae25  ofl/eastseadokdo             FAIL
+    upstream_info.md: 1bc4d9ec41e5159a839e58a349fa2e88799e93bc is not a commit on any published branch we know
+b907176d7  ofl/gamjaflower              FAIL
+    upstream_info.md: c31c8953af3fc0dca946e82e5196c9dacfe7a3b3 is not a commit on any published branch we know
+18c043f32  ofl/gugi                     FAIL
+    upstream_info.md: 7aa7f4c408a5b63e6f58a22c90eed13993f1cdae is not a commit on any published branch we know
+4cebef73b  ofl/himelody                 FAIL
+    upstream_info.md: 4feb2315457c615527775b455d119e9f3b8c8863 is not a commit on any published branch we know
+cd0cff734  ofl/lato                     FAIL
+    upstream_info.md: 080cb69711ca050d91e9c866e58df7a73095c69a is not a commit on any published branch we know
+64c07d360  ofl/nanumbrushscript         OK
+d7817560c  ofl/nanumgothic              OK
+a5b18fdd8  ofl/nanumpenscript           OK
+f59707fb3  ofl/poorstory                FAIL
+    upstream_info.md: ba19825551ed130aa7c3f035992eac63dacc477e is not a commit on any published branch we know
+7a8132dd0  ofl/songmyung                OK
+400dec15d  ofl/stylish                  OK
+463c1cf29  ofl/sunflower                OK
+16 commits, 7 failing
+rc=1
+
+Where each id is (the repository its upstream_info.md names beside it):
+  https://github.com/zesstype/Black-Han-Sans/commit/8809d5944fbf6aa2cd99158cb7ab55629058348a
+  https://github.com/yoondesign/Yoonfont-KoreaDokdo/commit/1bc4d9ec41e5159a839e58a349fa2e88799e93bc
+  https://github.com/yoondesign/yoonfont-Gamjaflower/commit/c31c8953af3fc0dca946e82e5196c9dacfe7a3b3
+  https://github.com/1020tj/Gugi/commit/7aa7f4c408a5b63e6f58a22c90eed13993f1cdae
+  https://github.com/yoondesign/Yoonfont-HiMelody/commit/4feb2315457c615527775b455d119e9f3b8c8863
+  https://github.com/googlefonts/LatoGFVersion/commit/080cb69711ca050d91e9c866e58df7a73095c69a
+  https://github.com/yoondesign/Yoonfont-PoorStory/commit/ba19825551ed130aa7c3f035992eac63dacc477e

@@ -28,6 +28,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import land  # noqa: E402
 import public_refs  # noqa: E402
+import check_publishable  # noqa: E402
 from google.protobuf import text_format  # noqa: E402
 from gftools import fonts_public_pb2  # noqa: E402
 
@@ -111,8 +112,14 @@ def check_commit(wt, sha, build):
             continue
         if is_ancestor(public_refs.W, h, "refs/published/main"):
             continue
-        if not any(public_refs.published(r, rem, b, h) for r, rem, b in public_refs.MIRRORS):
-            problems.append("upstream_info.md: %s is not a commit on any published branch we know" % h)
+        if any(public_refs.published(r, rem, b, h) for r, rem, b in public_refs.MIRRORS):
+            continue
+        # a repository the text names beside the id (an earlier copy, the replaced source
+        # block): its repo-archive mirror's default branch, else GitHub serving the commit,
+        # as check_publishable.py resolves it
+        if check_publishable.in_archive(h, text) or check_publishable.served_by_github(h, text)[0]:
+            continue
+        problems.append("upstream_info.md: %s is not a commit on any published branch we know" % h)
     for u in set(public_refs.URL.findall(text)):
         u = u.rstrip(".,;:`")
         code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-L", "-w", "%{http_code}", "-I", u],
