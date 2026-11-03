@@ -1,0 +1,24 @@
+{
+  "repo": "freckleface",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/librefonts/freckleface at 158b54fbb54daa103228a08cb0ea7d03c832461b: src/FreckleFace-Regular-TTF.vfb, a FontLab import of the shipped font, not a source: Simon on google/fonts#10490 (\"batch-converted from the binary files\")."
+  ],
+  "disclose": [
+    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates.",
+    "The build's GSUB numbers or packs some lookups differently from the release's (fontc places a lookup that only a contextual lookup calls, and packs chained contextual rules, its own way: gfonts-ai-usage-report 22-fontc-problems, problems 12 and 13); every rule is the same and the text shapes identically (tools/functional_gate.py). Decided 2026-10-02: problems that need fontc are disclosed and fixed in fontc later."
+  ],
+  "flags": {},
+  "accepted": [
+    {
+      "style": "FreckleFace-Regular",
+      "check": "table",
+      "row": "BLOCKING GSUB.feature_list {\"frac\": {\"0\": [4, 7]}, \"ordn\": {\"0\": [3, 4]}}"
+    },
+    {
+      "style": "FreckleFace-Regular",
+      "check": "table",
+      "row": "BLOCKING GSUB.lookup_list {\"3\": {\"0\": {\"type\": [\"chained_sequence_context\", \"single\"], \"rules\": [[\"[zero o"
+    }
+  ]
+}
