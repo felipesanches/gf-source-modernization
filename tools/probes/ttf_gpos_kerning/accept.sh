@@ -7,11 +7,12 @@
 set -u
 W=/home/fsanches/compartilhado/gf-source-modernization
 S=${1:?scratch dir}
-export FAMILIES=$W/families-binary.tsv OUT=$S/repos SCRATCH=$S/scratch TMPDIR=/home/fsanches/compartilhado/tmp
+# LANDED= keeps these measurement rows out of landed.tsv, which push.sh reads
+export FAMILIES=$W/families-binary.tsv OUT=$S/repos SCRATCH=$S/scratch LANDED=$S/landed.tsv TMPDIR=/home/fsanches/compartilhado/tmp
 : "${BF_TREE:?BF_TREE}"
 mkdir -p "$OUT" "$S/logs"
 for repo in $(tail -n +2 "$FAMILIES" | cut -f1 | sort -u); do
-    /home/fsanches/compartilhado/gftools/venv/bin/python3 -I "$W/tools/land.py" "$repo" --rebuild > "$S/logs/$repo.log" 2>&1
+    /home/fsanches/compartilhado/gftools/venv/bin/python3 -I "$W/tools/land.py" "$repo" --rebuild --unpublished-converter > "$S/logs/$repo.log" 2>&1
     grep -E "^$repo: " "$S/logs/$repo.log" | tail -1
 done > "$S/logs/summary.txt"
 echo done
