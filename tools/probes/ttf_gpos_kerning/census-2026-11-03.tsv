@@ -1,0 +1,282 @@
+repo	style	kern_lookups	types	pair_formats	beyond_xadvance	flags	called_by_contextual	scripts	verdict
+oranienbaum	Oranienbaum-Regular	1	2	1	no	0	no	latn	SIMPLE
+averialibre	AveriaLibre-Bold	0							NO-GPOS-KERN
+averialibre	AveriaLibre-BoldItalic	0							NO-GPOS-KERN
+averialibre	AveriaLibre-Italic	0							NO-GPOS-KERN
+averialibre	AveriaLibre-Light	0							NO-GPOS-KERN
+averialibre	AveriaLibre-LightItalic	0							NO-GPOS-KERN
+averialibre	AveriaLibre-Regular	0							NO-GPOS-KERN
+averiasanslibre	AveriaSansLibre-Bold	0							NO-GPOS-KERN
+averiasanslibre	AveriaSansLibre-BoldItalic	0							NO-GPOS-KERN
+averiasanslibre	AveriaSansLibre-Italic	0							NO-GPOS-KERN
+averiasanslibre	AveriaSansLibre-Light	0							NO-GPOS-KERN
+averiasanslibre	AveriaSansLibre-LightItalic	0							NO-GPOS-KERN
+averiasanslibre	AveriaSansLibre-Regular	0							NO-GPOS-KERN
+averiaseriflibre	AveriaSerifLibre-Bold	0							NO-GPOS-KERN
+averiaseriflibre	AveriaSerifLibre-BoldItalic	0							NO-GPOS-KERN
+averiaseriflibre	AveriaSerifLibre-Italic	0							NO-GPOS-KERN
+averiaseriflibre	AveriaSerifLibre-Light	0							NO-GPOS-KERN
+averiaseriflibre	AveriaSerifLibre-LightItalic	0							NO-GPOS-KERN
+averiaseriflibre	AveriaSerifLibre-Regular	0							NO-GPOS-KERN
+sansation	Sansation-Bold	0							NO-GPOS-KERN
+sansation	Sansation-BoldItalic	0							NO-GPOS-KERN
+sansation	Sansation-Italic	0							NO-GPOS-KERN
+sansation	Sansation-Light	0							NO-GPOS-KERN
+sansation	Sansation-LightItalic	0							NO-GPOS-KERN
+sansation	Sansation-Regular	0							NO-GPOS-KERN
+reeniebeanie	ReenieBeanie	0							NO-GPOS-KERN
+ptserif	PT_Serif-Web-Bold	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptserif	PT_Serif-Web-BoldItalic	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptserif	PT_Serif-Web-Italic	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptserif	PT_Serif-Web-Regular	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptsansnarrow	PT_Sans-Narrow-Web-Bold	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptsansnarrow	PT_Sans-Narrow-Web-Regular	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptsanscaption	PT_Sans-Caption-Web-Bold	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptsanscaption	PT_Sans-Caption-Web-Regular	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+almarai	Almarai-Bold	2	2	1,2	yes	0,9	no	DFLT,arab,latn	COMPLEX
+almarai	Almarai-ExtraBold	2	2	1,2	yes	0,9	no	DFLT,arab,latn	COMPLEX
+almarai	Almarai-Light	2	2	1,2	yes	0,9	no	DFLT,arab,latn	COMPLEX
+almarai	Almarai-Regular	2	2	1,2	yes	0,1	no	DFLT,arab,latn	COMPLEX
+jua	Jua-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+dongle	Dongle-Bold	1	2	1,2	no	8	no	DFLT,latn	SIMPLE
+dongle	Dongle-Light	1	2	1,2	no	8	no	DFLT,latn	SIMPLE
+dongle	Dongle-Regular	1	2	1,2	no	8	no	DFLT,latn	SIMPLE
+homemadeapple	HomemadeApple-Regular	0							NO-GPOS-KERN
+calligraffitti	Calligraffitti-Regular	0							NO-GPOS-KERN
+kranky	Kranky-Regular	0							NO-GPOS-KERN
+cherrycreamsoda	CherryCreamSoda-Regular	0							NO-GPOS-KERN
+chewy	Chewy-Regular	0							NO-GPOS-KERN
+comingsoon	ComingSoon-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+craftygirls	CraftyGirls-Regular	0							NO-GPOS-KERN
+fontdinerswanky	FontdinerSwanky-Regular	0							NO-GPOS-KERN
+akronim	Akronim-Regular	0							NO-GPOS-KERN
+portersansblock	PorterSansBlock-Regular	1	2	1,2	no	0	no	DFLT	SIMPLE
+gugi	Gugi-Regular	0							NO-GPOS-KERN
+rocksalt	RockSalt-Regular	1	2	1	no	0	no	latn	SIMPLE
+schoolbell	Schoolbell-Regular	0							NO-GPOS-KERN
+unkempt	Unkempt-Bold	0							NO-GPOS-KERN
+unkempt	Unkempt-Regular	0							NO-GPOS-KERN
+walterturncoat	WalterTurncoat-Regular	0							NO-GPOS-KERN
+slackey	Slackey-Regular	0							NO-GPOS-KERN
+sunshiney	Sunshiney-Regular	0							NO-GPOS-KERN
+permanentmarker	PermanentMarker-Regular	0							NO-GPOS-KERN
+ptserifcaption	PT_Serif-Caption-Web-Italic	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptserifcaption	PT_Serif-Caption-Web-Regular	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptsans	PT_Sans-Web-Bold	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptsans	PT_Sans-Web-BoldItalic	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptsans	PT_Sans-Web-Italic	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+ptsans	PT_Sans-Web-Regular	1	2	1,2	no	0	no	cyrl,latn	SIMPLE
+eastseadokdo	EastSeaDokdo-Regular	0							NO-GPOS-KERN
+yeonsung	YeonSung-Regular	0							NO-GPOS-KERN
+stylish	Stylish-Regular	0							NO-GPOS-KERN
+blackhansans	BlackHanSans-Regular	0							NO-GPOS-KERN
+dohyeon	DoHyeon-Regular	0							NO-GPOS-KERN
+sunflower	Sunflower-Bold	0							NO-GPOS-KERN
+sunflower	Sunflower-Light	0							NO-GPOS-KERN
+sunflower	Sunflower-Medium	0							NO-GPOS-KERN
+cutefont	CuteFont-Regular	0							NO-GPOS-KERN
+songmyung	SongMyung-Regular	0							NO-GPOS-KERN
+dokdo	Dokdo-Regular	0							NO-GPOS-KERN
+blackandwhitepicture	BlackAndWhitePicture-Regular	0							NO-GPOS-KERN
+gamjaflower	GamjaFlower-Regular	0							NO-GPOS-KERN
+himelody	HiMelody-Regular	0							NO-GPOS-KERN
+poorstory	PoorStory-Regular	0							NO-GPOS-KERN
+nanumgothic	NanumGothic-Bold	0							NO-GPOS-KERN
+nanumgothic	NanumGothic-ExtraBold	0							NO-GPOS-KERN
+nanumgothic	NanumGothic-Regular	0							NO-GPOS-KERN
+nanumbrushscript	NanumBrushScript-Regular	0							NO-GPOS-KERN
+lato	Lato-Black	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-BlackItalic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-Bold	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-BoldItalic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-ExtraBold	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-ExtraBoldItalic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-ExtraLight	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-ExtraLightItalic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-Italic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-Light	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-LightItalic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-Medium	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-MediumItalic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-Regular	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-SemiBold	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-SemiBoldItalic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-Thin	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+lato	Lato-ThinItalic	1	2	1,2	no	0	no	DFLT,cyrl,grek,latn	SIMPLE
+nanumpenscript	NanumPenScript-Regular	0							NO-GPOS-KERN
+carlito	Carlito-Bold	1	2	2	no	0	no	cyrl,grek,latn	SIMPLE
+carlito	Carlito-BoldItalic	1	2	2	no	0	no	cyrl,grek,latn	SIMPLE
+carlito	Carlito-Italic	1	2	2	no	0	no	cyrl,grek,latn	SIMPLE
+carlito	Carlito-Regular	1	2	2	no	0	no	cyrl,grek,latn	SIMPLE
+alef	Alef-Bold	0							NO-GPOS-KERN
+alef	Alef-Regular	0							NO-GPOS-KERN
+imfelldoublepica	IMFELLDoublePica-Italic	0							NO-GPOS-KERN
+imfelldoublepica	IMFELLDoublePica-Regular	0							NO-GPOS-KERN
+imfelldoublepicasc	IMFeDPsc28P	0							NO-GPOS-KERN
+imfelldwpica	IMFePIit28P	0							NO-GPOS-KERN
+imfelldwpica	IMFePIrm28P	0							NO-GPOS-KERN
+imfelldwpicasc	IMFePIsc28P	0							NO-GPOS-KERN
+imfellenglish	IMFeENit28P	0							NO-GPOS-KERN
+imfellenglish	IMFeENrm28P	0							NO-GPOS-KERN
+imfellenglishsc	IMFeENsc28P	0							NO-GPOS-KERN
+imfellfrenchcanon	IMFeFCit28P	0							NO-GPOS-KERN
+imfellfrenchcanon	IMFeFCrm28P	0							NO-GPOS-KERN
+imfellfrenchcanonsc	IMFeFCsc28P	0							NO-GPOS-KERN
+imfellgreatprimer	IMFeGPit28P	0							NO-GPOS-KERN
+imfellgreatprimer	IMFeGPrm28P	0							NO-GPOS-KERN
+imfellgreatprimersc	IMFeGPsc28P	0							NO-GPOS-KERN
+jomolhari	Jomolhari-Regular	2	2	1	yes	0	no	tibt	COMPLEX
+nanumgothiccoding	NanumGothicCoding-Bold	0							NO-GPOS-KERN
+nanumgothiccoding	NanumGothicCoding-Regular	0							NO-GPOS-KERN
+nanummyeongjo	NanumMyeongjo-Bold	1	2	1	no	0	no	DFLT,latn	SIMPLE
+nanummyeongjo	NanumMyeongjo-ExtraBold	1	2	1	no	0	no	DFLT,latn	SIMPLE
+nanummyeongjo	NanumMyeongjo-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+lekton	Lekton-Bold	0							NO-GPOS-KERN
+lekton	Lekton-Italic	1	2	1	no	0	no	latn	SIMPLE
+lekton	Lekton-Regular	0							NO-GPOS-KERN
+monoton	Monoton-Regular	1	2	1	no	0	no	latn	SIMPLE
+nixieone	NixieOne-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+patrickhand	PatrickHand-Regular	0							NO-GPOS-KERN
+unifrakturcook	UnifrakturCook-Bold	1	2	1	no	0	no	latn	SIMPLE
+mountainsofchristmas	MountainsofChristmas-Bold	1	2	1	no	0	no	DFLT,latn	SIMPLE
+mountainsofchristmas	MountainsofChristmas-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+italiana	Italiana-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+kottaone	KottaOne-Regular	1	2	1	no	0	no	DFLT	SIMPLE
+lilitaone	LilitaOne-Regular	1	2	1	no	0	no	latn	SIMPLE
+limelight	Limelight-Regular	0							NO-GPOS-KERN
+lustria	Lustria-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+macondo	Macondo-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+megrim	Megrim	0							NO-GPOS-KERN
+mrbedfort	MrBedfort-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+niconne	Niconne-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+nothingyoucoulddo	NothingYouCouldDo	0							NO-GPOS-KERN
+oleoscript	OleoScript-Bold	1	2	1	no	0	no	latn	SIMPLE
+oleoscript	OleoScript-Regular	1	2	1	no	0	no	latn	SIMPLE
+oleoscriptswashcaps	OleoScriptSwashCaps-Bold	1	2	1	no	0	no	latn	SIMPLE
+oleoscriptswashcaps	OleoScriptSwashCaps-Regular	1	2	1	no	0	no	latn	SIMPLE
+revalia	Revalia-Regular	0							NO-GPOS-KERN
+rougescript	RougeScript-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+ruluko	Ruluko-Regular	1	2	1	no	0	no	DFLT	SIMPLE
+salsa	Salsa-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+titanone	TitanOne-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-Black	1	2	1	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-Bold	1	2	1,2	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-BoldItalic	1	2	1,2	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-Italic	1	2	1,2	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-Light	1	2	1,2	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-LightItalic	1	2	1,2	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-Regular	1	2	1,2	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-SemiBold	1	2	1,2	no	0	no	DFLT,latn	SIMPLE
+titilliumweb	TitilliumWeb-SemiBoldItalic	1	2	1,2	no	0	no	DFLT,latn	SIMPLE
+rancho	Rancho-Regular	0							NO-GPOS-KERN
+satisfy	Satisfy-Regular	0							NO-GPOS-KERN
+actor	Actor-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+alfaslabone	AlfaSlabOne-Regular	1	2	1,2	no	8	no	DFLT,latn	SIMPLE
+baumans	Baumans-Regular	0							NO-GPOS-KERN
+butterflykids	ButterflyKids-Regular	0							NO-GPOS-KERN
+caesardressing	CaesarDressing-Regular	0							NO-GPOS-KERN
+cantoraone	CantoraOne-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+carroisgothic	CarroisGothic-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+carroisgothicsc	CarroisGothicSC-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+chelseamarket	ChelseaMarket-Regular	0							NO-GPOS-KERN
+combo	Combo-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+electrolize	Electrolize-Regular	0							NO-GPOS-KERN
+emilyscandy	EmilysCandy-Regular	0							NO-GPOS-KERN
+fingerpaint	FingerPaint-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+flavors	Flavors-Regular	0							NO-GPOS-KERN
+forum	Forum-Regular	1	2	1	no	0	no	latn	SIMPLE
+frederickathegreat	FrederickatheGreat-Regular	0							NO-GPOS-KERN
+frijole	Frijole-Regular	0							NO-GPOS-KERN
+gorditas	Gorditas-Bold	1	2	1,2	no	0	no	latn	SIMPLE
+gorditas	Gorditas-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+griffy	Griffy-Regular	0							NO-GPOS-KERN
+happymonkey	HappyMonkey-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+hermeneusone	HermeneusOne-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+jollylodger	JollyLodger-Regular	0							NO-GPOS-KERN
+junge	Junge-Regular	0							NO-GPOS-KERN
+kaushanscript	KaushanScript-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+librecaslondisplay	LibreCaslonDisplay-Regular	2	2	1,2	no	8	no	DFLT	SIMPLE
+lobstertwo	LobsterTwo-Bold	1	2	1,2	no	0	no	latn	SIMPLE
+lobstertwo	LobsterTwo-BoldItalic	1	2	1,2	no	0	no	latn	SIMPLE
+lobstertwo	LobsterTwo-Italic	1	2	1,2	no	0	no	latn	SIMPLE
+lobstertwo	LobsterTwo-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+metalmania	MetalMania-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+milonga	Milonga-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+miltonian	Miltonian-Regular	1	2	1,2	no	0	no	DFLT	SIMPLE
+miltoniantattoo	MiltonianTattoo-Regular	1	2	1,2	no	0	no	DFLT	SIMPLE
+miniver	Miniver-Regular	0							NO-GPOS-KERN
+mysteryquest	MysteryQuest-Regular	0							NO-GPOS-KERN
+newrocker	NewRocker-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+petitformalscript	PetitFormalScript-Regular	1	2	1	no	0	no	latn	SIMPLE
+poetsenone	PoetsenOne-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+princesssofia	PrincessSofia-Regular	0							NO-GPOS-KERN
+prostoone	ProstoOne-Regular	1	2	1	no	0	no	latn	SIMPLE
+quattrocento	Quattrocento-Bold	1	2	1,2	no	0	no	latn	SIMPLE
+quattrocento	Quattrocento-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+quattrocentosans	QuattrocentoSans-Bold	1	2	1,2	no	0	no	latn	SIMPLE
+quattrocentosans	QuattrocentoSans-BoldItalic	1	2	1,2	no	0	no	latn	SIMPLE
+quattrocentosans	QuattrocentoSans-Italic	1	2	1,2	no	0	no	latn	SIMPLE
+quattrocentosans	QuattrocentoSans-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+racingsansone	RacingSansOne-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+ralewaydots	RalewayDots-Regular	1	2	1	no	0	no	latn	SIMPLE
+ranchers	Ranchers-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+sansitaone	SansitaOne-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+seaweedscript	SeaweedScript-Regular	0							NO-GPOS-KERN
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular	1	2	1	no	0	no	latn	SIMPLE
+share	Share-Bold	1	2	1	no	0	no	latn	SIMPLE
+share	Share-BoldItalic	1	2	1	no	0	no	latn	SIMPLE
+share	Share-Italic	1	2	1	no	0	no	latn	SIMPLE
+share	Share-Regular	1	2	1	no	0	no	latn	SIMPLE
+skranji	Skranji-Bold	0							NO-GPOS-KERN
+skranji	Skranji-Regular	0							NO-GPOS-KERN
+sofadione	SofadiOne-Regular	1	2	1	no	0	no	DFLT,latn	SIMPLE
+sofia	Sofia-Regular	0							NO-GPOS-KERN
+stalinistone	StalinistOne-Regular	1	2	1	no	0	no	latn	SIMPLE
+strong	Strong-Regular	0							NO-GPOS-KERN
+tradewinds	TradeWinds-Regular	0							NO-GPOS-KERN
+underdog	Underdog-Regular	1	2	1	no	0	no	latn	SIMPLE
+volkhov	Volkhov-Bold	1	2	1,2	no	0	no	latn	SIMPLE
+volkhov	Volkhov-BoldItalic	1	2	1,2	no	0	no	latn	SIMPLE
+volkhov	Volkhov-Italic	1	2	1,2	no	0	no	latn	SIMPLE
+volkhov	Volkhov-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+audiowide	Audiowide-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+berkshireswash	BerkshireSwash-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+bigelowrules	BigelowRules-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+clickerscript	ClickerScript-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+dynalight	Dynalight-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+eaglelake	EagleLake-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+engagement	Engagement-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+fascinate	Fascinate-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+fascinateinline	FascinateInline-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+fondamento	Fondamento-Italic	1	2	1,2	no	0	no	latn	SIMPLE
+fondamento	Fondamento-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+freckleface	FreckleFace-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+galindo	Galindo-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+grandhotel	GrandHotel-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+hanalei	Hanalei-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+hanaleifill	HanaleiFill-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+jimnightshade	JimNightshade-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+marcellus	Marcellus-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+marcellussc	MarcellusSC-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+margarine	Margarine-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+mclaren	McLaren-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+mervalescript	MervaleScript-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+mousememoirs	MouseMemoirs-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+oregano	Oregano-Italic	1	2	1,2	no	0	no	latn	SIMPLE
+oregano	Oregano-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+originalsurfer	OriginalSurfer-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+parisienne	Parisienne-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+peralta	Peralta-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+purplepurse	PurplePurse-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+quintessential	Quintessential-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+ribeye	Ribeye-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+risque	Risque-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+romanesco	Romanesco-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+rumraisin	RumRaisin-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+shojumaru	Shojumaru-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+spicyrice	SpicyRice-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+stalemate	Stalemate-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+stintultracondensed	StintUltraCondensed-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+stintultraexpanded	StintUltraExpanded-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+uncialantiqua	UncialAntiqua-Regular	1	2	1,2	no	0	no	latn	SIMPLE
+yesteryear	Yesteryear-Regular	1	2	1,2	no	0	no	latn	SIMPLE
