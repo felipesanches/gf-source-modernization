@@ -1,0 +1,114 @@
+main a93e1325
+fatal: refusing to merge unrelated histories
+#1 ERROR(128)
+fatal: refusing to merge unrelated histories
+#2 ERROR(128)
+fatal: refusing to merge unrelated histories
+#3 ERROR(128)
+#7 CONFLICT(babelfont/src/convertors/glyphs3.rs babelfont/src/font.rs Cargo.lock)
+#9 CONFLICT(babelfont/Cargo.toml Cargo.lock)
+#11 CONFLICT(babelfont/src/convertors/designspace.rs babelfont/src/convertors/ufo.rs babelfont/src/font.rs Cargo.lock)
+#12 CONFLICT(babelfont/src/filters/glyphsbracketlayers.rs fontmerge/src/merge.rs)
+#13 clean
+#14 CONFLICT(babelfont/src/filters/glyphsbracketlayers.rs)
+#15 clean
+#16 CONFLICT(babelfont/src/convertors/fontir/kerning.rs babelfont/tests/integration.rs)
+#17 CONFLICT(sr-aef/src/variations.rs)
+#18 clean
+#19 clean
+#20 clean
+#21 clean
+#22 CONFLICT(babelfont/src/convertors/fontforge.rs babelfont/src/glyph.rs)
+#23 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#24 CONFLICT(babelfont/src/convertors/glyphs3/customparameters.rs babelfont/src/convertors/glyphs3.rs)
+#32 CONFLICT(babelfont/src/convertors/glyphs3.rs)
+#34 CONFLICT(babelfont/src/convertors/glyphs3/customparameters.rs babelfont/src/convertors/glyphs3.rs)
+#35 clean
+#38 CONFLICT(babelfont/src/filters/mod.rs babelfont/src/shape.rs)
+#40 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#42 clean
+#44 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#46 CONFLICT(babelfont/src/convertors/glyphs3.rs)
+#48 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#50 CONFLICT(babelfont/src/convertors/glyphs3/customparameters.rs)
+#52 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#54 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#56 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#58 clean
+#60 clean
+#62 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#64 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#66 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#68 CONFLICT(babelfont/src/convertors/fontforge/utf7.rs)
+#70 CONFLICT(babelfont/src/filters/mod.rs)
+#72 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#74 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#75 CONFLICT(babelfont/src/filters/subsetlayout.rs)
+#76 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#77 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#78 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#79 clean
+#80 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#81 clean
+#82 clean
+#83 clean
+#84 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#85 CONFLICT(babelfont/src/convertors/fontforge.rs)
+#86 CONFLICT(babelfont/src/convertors/glyphs3.rs)
+#87 CONFLICT(babelfont/Cargo.toml babelfont/src/filters/removeoverlaps.rs Cargo.lock)
+#88 clean
+#90 CONFLICT(babelfont/src/convertors/glyphs3/customparameters.rs)
+#91 CONFLICT(babelfont/src/filters/fontforgeos2defaults.rs)
+#92 clean
+#93 CONFLICT(babelfont/src/filters/mod.rs)
+#94 clean
+#95 CONFLICT(babelfont/src/convertors/fontforge/tests.rs)
+#96 CONFLICT(babelfont/src/convertors/fontforge/tests.rs)
+#97 clean
+#98 CONFLICT(babelfont/src/convertors/fontforge.rs babelfont/src/convertors/fontforge/tests.rs)
+#99 CONFLICT(babelfont/src/filters/mod.rs)
+#100 CONFLICT(babelfont/src/filters/roundcoordinates.rs)
+#101 clean
+#102 CONFLICT(babelfont/src/convertors/fontforge.rs babelfont/src/convertors/fontforge/tests.rs)
+#103 clean
+#104 clean
+#105 CONFLICT(babelfont/src/convertors/fontforge/tests.rs)
+#106 clean
+#107 clean
+#108 CONFLICT(babelfont/src/convertors/fontforge.rs babelfont/src/convertors/fontforge/tests.rs)
+#109 CONFLICT(babelfont/src/convertors/fontforge/tests.rs)
+#110 CONFLICT(babelfont/src/convertors/fontforge/tests.rs)
+#111 clean
+#112 clean
+#113 clean
+#114 clean
+#115 clean
+#116 clean
+#117 CONFLICT(babelfont/src/convertors/glyphs3/customparameters.rs)
+#118 clean
+#119 CONFLICT(babelfont/src/convertors/glyphs3/customparameters.rs babelfont/src/filters/fontforgeos2defaults.rs)
+#120 CONFLICT(babelfont/src/filters/fontforgeos2defaults.rs)
+#121 clean
+#122 clean
+#124 CONFLICT(sr-aef/resources/test.fea sr-aef/resources/test.ttf sr-aef/src/gpos.rs sr-aef/src/lib.rs)
+#125 CONFLICT(sr-aef/src/gpos.rs sr-aef/src/gsub.rs sr-aef/src/lib.rs)
+#126 CONFLICT(babelfont/src/filters/subsetlayout.rs babelfont/src/layout/closure.rs babelfont/src/layout/renamer.rs Cargo.lock Cargo.toml sr-aef/src/lib.rs)
+#127 CONFLICT(sr-aef/src/lib.rs)
+#130 clean
+#131 CONFLICT(babelfont/Cargo.toml)
+#132 clean
+#133 clean
+fontforge-gdef-classes clean
+fontforge-shadowed-kern-pairs clean
+fontforge-legacy-os2-version clean
+fontforge-lookup-precedence clean
+fontforge-ligature-carets clean
+fontforge-spacing-marks clean
+fontforge-no-anchor-propagation clean
+fontforge-ligature-anchors clean
+glyphs3-localized-name-entries clean
+fontforge-fixed-pitch clean
+fontforge-notdef clean
+fontforge-explicit-mark-lookups clean
+typographic-family-names clean
+glyphs3-family-ids-entries clean

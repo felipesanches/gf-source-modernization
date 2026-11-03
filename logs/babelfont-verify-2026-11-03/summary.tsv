@@ -1,0 +1,3 @@
+worktree	head	fmt	clippy	tests
+glyphs3-localized-name-entries	local-head+a93e1325	ok	ok	377 passed; 11 failed
+typographic-family-names	3c532e9e	ok	ok	377 passed; 11 failed

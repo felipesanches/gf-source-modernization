@@ -1,0 +1,19 @@
+#104: 0 comment(s) by others
+#105: 1 comment(s) by others
+  2026-10-02 simoncozens comment: > The reader passed both on (one to the kerning model, one to an FEA lookup), so the compiled font kerned the pair twice.  But this PR doesn't look in the kerning model, so I don't see how it fixes that. Also, it would be better if we put kerning into the master kerning, not into FEA anyway.
+#106: 0 comment(s) by others
+#108: 0 comment(s) by others
+#109: 0 comment(s) by others
+#110: 0 comment(s) by others
+#111: 0 comment(s) by others
+#112: 0 comment(s) by others
+#114: 0 comment(s) by others
+#116: 0 comment(s) by others
+#117: 0 comment(s) by others
+#119: 0 comment(s) by others
+#120: 2 comment(s) by others
+  2026-10-02 simoncozens comment: Please read this description of a filter:  ``` //! The advance a FontForge source's glyphs share, which decides whether FontForge //! exports the font as fixed pitch. ```  Does this tell you what the filter does? Does it do "Fontforge notdef"? What even is "Fontforge notdef"?
+  2026-10-02 simoncozens comment: A filter for creating an outline rectangle glyph for empty `.notdef`s is a good idea, but it's in no way Fontforge specific.
+#121: 2 comment(s) by others
+  2026-10-02 simoncozens comment: "Writes a FontForge source's anchor lookups as feature code with FontForge's coverage, flags and registrations, and turns off the mark and curs writers."  Why is this something we want to do? Please explain the problem you're trying to solve. Then think about whether or not it's an import problem.
+  2026-10-04 khaledhosny comment: It boils down to whether you are converting the fonts to be edited in a another font editor if you are trying to build them. In the first case you want “native” editor anchors, groups, kerning, etc even if means loss of precision. In the second case you want to reproduce FontForge code as faithfully
