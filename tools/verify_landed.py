@@ -15,8 +15,10 @@ a fresh clone -- and checks, for every repository given:
      files (criterion B: each edit to the font is its own commit); the convert
      commit is last and retires the converted sources -- except that it may be
      followed by "Builder config: ..." commits that change only sources/config.yaml
-     and the CI workflow (a builder key renamed, the builder pin moved); step 4
-     rebuilds HEAD, so they are gated like the conversion.
+     and the CI workflow (a builder key renamed, the builder pin moved) and, for a
+     `binary` row, "Source edit: ..." commits that change only sources/*.glyphs (a
+     documented statement the binary's conversion cannot carry, e.g. its GDEF classes);
+     step 4 rebuilds HEAD, so they are gated like the conversion.
      A `glyphs` row (the source already is .glyphs): the upstream history at its
      commit, the template, then "Add a gftools-builder config for <source>" last,
      adding only sources/config.yaml; no edit commits (land.py refuses them), so
@@ -164,11 +166,16 @@ def verify(repo):
     subjects = [run("git", "-C", d, "log", "-1", "--format=%s", c).stdout.strip() for c in log]
     all_log = log
     tail = 0
-    while tail < len(subjects) - 1 and subjects[-1 - tail].startswith(CONFIG_PREFIX):
+    while tail < len(subjects) - 1 and subjects[-1 - tail].startswith((CONFIG_PREFIX, land.SOURCE_EDIT_PREFIX)):
         tail += 1
     for c, s in zip(log[len(log) - tail:], subjects[len(log) - tail:]):
         changed = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-only", "-r", c).stdout.split()
-        if not changed or any(p not in CONFIG_FILES for p in changed):
+        if s.startswith(land.SOURCE_EDIT_PREFIX):
+            # a documented edit of the converted source after a binary's conversion (a binary
+            # has no earlier source to edit): it changes only sources/*.glyphs
+            if kind != "binary" or not changed or any(not re.fullmatch(r"sources/[^/]+\.glyphs", p) for p in changed):
+                problems.append("SHAPE: %s %r is not a binary's .glyphs-only source edit: %s" % (c[:7], s, changed))
+        elif not changed or any(p not in CONFIG_FILES for p in changed):
             problems.append("SHAPE: %s %r touches more than the builder config: %s" % (c[:7], s, changed))
     if tail:
         log, subjects = log[:-tail], subjects[:-tail]

@@ -43,7 +43,7 @@ GF = land.GF
 # never break a file or flag name at its hyphen
 wrap = functools.partial(textwrap.wrap, break_on_hyphens=False, break_long_words=False)
 WT_ROOT = "/home/fsanches/compartilhado/google/fonts-worktrees"
-MODEL = "Claude Fable 5.1"
+MODEL = "Claude Opus 5.5"
 # the license file google/fonts ships beside each family, by license directory
 LICENSE_FILE = {"ofl": "OFL.txt", "apache": "LICENSE.txt", "ufl": "UFL.txt"}
 LEGACY = {".vfb": "FontLab `.vfb`", ".vfc": "FontLab `.vfc`", ".vfj": "FontLab `.vfj`",
@@ -257,11 +257,12 @@ def equivalence_commit(d, rows=None):
         h, subject = line.split(" ", 1)
         if subject.startswith("Convert to .glyphs with babelfont "):
             # "Builder config:" commits right after it change only the build config (a
-            # builder key renamed, the builder pin moved) and are gated like it; the last
-            # of them is what a current builder builds as the conversion did
+            # builder key renamed, the builder pin moved) and are gated like it; a binary's
+            # "Source edit:" commits state what its conversion cannot carry; the last of
+            # them is the commit that is equivalent
             for after in git(d, "log", "--reverse", "--format=%H %s", "%s..HEAD" % h).splitlines():
                 ah, asubject = after.split(" ", 1)
-                if not asubject.startswith(CONFIG_PREFIX):
+                if not asubject.startswith((CONFIG_PREFIX, land.SOURCE_EDIT_PREFIX)):
                     break
                 h = ah
             return h
@@ -385,8 +386,10 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     the family's only form: no source of it was ever published."""
     d = os.path.join(land.OUT, repo)
     convert = git(d, "log", "-1", "--format=%B", conversion_commit(d))
-    claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
-    claim = plural(" ".join(claim.group(1).split())) + " " + tools_cited(convert) if claim else ""
+    # the equivalence claim is the last gated commit's: the conversion's, or a source edit's after it
+    equiv = git(d, "log", "-1", "--format=%B", head_full)
+    claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", equiv, re.S | re.M)
+    claim = plural(" ".join(claim.group(1).split())) + " " + tools_cited(equiv) if claim else ""
     conv = re.search(r"^Converted from\s.*?(?:\n\n|\Z)", convert, re.S | re.M)
     conv = " ".join(conv.group(0).split()) if conv else ""
     plan = land.load_plan(repo)
@@ -575,7 +578,7 @@ def main():
                    "Status: the designer's %s built as is, no conversion; builds with "
                    "gftools-builder and fontc\n"
                    "%s%s\n\n"
-                   "Assisted by an AI agent (Claude Fable 5.1)\n"
+                   "Assisted by an AI agent (Claude Opus 5.5)\n"
                    % (display, repo, repo, head_full[:12], rows[0]["source"],
                       confidence(landed[repo][4], repo),
                       "; %d known difference(s) disclosed" % n_disc if n_disc else ""))
@@ -588,7 +591,7 @@ def main():
                    "Status: %s plus a commit that only updates the build config "
                    "(productionNames); builds with gftools-builder and fontc\n"
                    "Confidence: high -- 0 blocking rows against the shipped binaries\n\n"
-                   "Assisted by an AI agent (Claude Fable 5.1)\n"
+                   "Assisted by an AI agent (Claude Opus 5.5)\n"
                    % (display, repo, repo, head_full[:12], superseded[:12]))
             git(wt, "commit", "-q", "-F", "-", input=msg)
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
@@ -599,7 +602,7 @@ def main():
                    "Status: converted from the shipped binaries (no source was ever published) "
                    "with babelfont-rs's TTF reader; builds with gftools-builder and fontc\n"
                    "%s\n\n"
-                   "Assisted by an AI agent (Claude Fable 5.1)\n"
+                   "Assisted by an AI agent (Claude Opus 5.5)\n"
                    % (display, repo, repo, head_full[:12], confidence(landed[repo][4], repo)))
             git(wt, "commit", "-q", "-F", "-", input=msg)
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
@@ -608,7 +611,7 @@ def main():
                "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
                "Status: %s; builds with gftools-builder and fontc\n"
                "%s\n\n"
-               "Assisted by an AI agent (Claude Fable 5.1)\n"
+               "Assisted by an AI agent (Claude Opus 5.5)\n"
                % (display, repo, repo, head_full[:12],
                   "converted from the unmodified .sfd" if not edits_in(d, rows) else
                   plural("converted from the .sfd after %d documented edit(s)" % edits_in(d, rows)),

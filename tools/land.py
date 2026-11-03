@@ -21,6 +21,11 @@ sfd-batch5/tools/drift/build_series.py builds it):
      the table gate (tools/table_gate.py), the exact codepoint set,
      and tools/functional_gate.py (shaping, rendering, names, line spacing,
      advances, GDEF). A landing is CLEAN only if all three pass.
+  5. "Source edit: <what>" -- only after a binary's conversion (a binary has no
+     earlier source to edit): a documented statement the conversion cannot carry,
+     today the release's GDEF glyph classes (plan key gdef_classes_fea), changing
+     only sources/*.glyphs. Built and gated again; the conversion's message says it
+     is not equivalent on its own, this one states the gate. metadata.py records it.
 
 A row of kind `binary` (families-binary.tsv) is a family that exists only as the
 fonts Google Fonts ships: step 1 imports its google/fonts directory at a commit
@@ -100,7 +105,7 @@ EVIDENCE_PATHS = ["tools", "plans", "templates", "families.tsv", "families-next.
 GF = "/home/fsanches/compartilhado/google/fonts"
 IDENT = ["-c", "user.name=Felipe Correa da Silva Sanches",
          "-c", "user.email=juca@members.fsf.org", "-c", "commit.gpgsign=false"]
-TRAILER = "\n\nAssisted by an AI agent (Claude Fable 5.1)\n"
+TRAILER = "\n\nAssisted by an AI agent (Claude Opus 5.5)\n"
 # where a landing builds before it commits (SCRATCH=<dir> to put it elsewhere); never /tmp,
 # a small tmpfs wiped on reboot
 SCRATCH = os.environ.get("SCRATCH", "/home/fsanches/compartilhado/tmp/sfd-reland-land")
@@ -553,6 +558,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     vfb = all(r["source"].lower().endswith(".vfb") for r in rows)
     if binary:
         keep = False     # the TTF reader reverses glyf contours and the compiler restores them
+    deferred_gdef = []   # (style, .glyphs path, TTFont): the GDEF statement's own commit
     for r in rows if glyphs else []:
         # the source is already .glyphs: no converter, no flags, no workarounds
         per_style.append({"row": r, "flags": [], "notes": [], "glyphs": os.path.join(d, r["source"])})
@@ -573,13 +579,12 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                 open(g, "w", encoding="utf-8").write(changed)
                 notes.append("post.isFixedPitch 1 as the isFixedPitch custom parameter; this "
                              "babelfont's TTF reader does not read post.isFixedPitch")
-        why = plan.get("gdef_classes_fea")
-        if why:
-            text = open(g, encoding="utf-8").read()
-            changed = workarounds.gdef_classes_fea(text, tt)
-            if changed != text:
-                open(g, "w", encoding="utf-8").write(changed)
-                notes.append("GDEF's glyph classes as FEA; %s" % why)
+        if plan.get("gdef_classes_fea") and "GDEF" in tt and tt["GDEF"].table.GlyphClassDef:
+            # stated by the font's own source in a commit of its own after the conversion
+            # (SOURCE_EDIT_PREFIX): read now, the binary is retired by the conversion
+            tt["GDEF"].table.GlyphClassDef.classDefs
+            tt.getGlyphOrder()
+            deferred_gdef.append((r["style"], g, tt))
         for field, default, fea in (("usWeightClass", 400, workarounds.weight_class_fea),
                                     ("usWidthClass", 5, workarounds.width_class_fea)):
             value = getattr(os2, field)
@@ -636,35 +641,39 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                 fh.write("  - %s.glyphs\n" % p["row"]["style"])
 
     # build exactly what will be committed, from its own config, in a scratch copy
-    os.makedirs(SCRATCH, exist_ok=True)
-    scratch = tempfile.mkdtemp(prefix="land-%s-" % repo, dir=SCRATCH)
-    shutil.copytree(os.path.join(d, "sources"), os.path.join(scratch, "sources"))
-    r = subprocess.run([B3, "sources/config.yaml"], cwd=scratch, capture_output=True, text=True)
-    ttf_dir = os.path.join(scratch, "fonts", "ttf")
-    built = sorted(os.listdir(ttf_dir)) if os.path.isdir(ttf_dir) else []
-    results = []
-    functional = {}            # style -> tools/functional_gate.py verdict
-    for p in per_style:
-        # one .glyphs file with several instances: each style is its own instance
-        name = p["row"]["style"] + ".ttf" if glyphs else built_name(p["glyphs"])
-        if name not in built:
-            tail = [l.strip() for l in (r.stderr + r.stdout).splitlines() if l.strip()][-3:]
-            results.append((p["row"]["style"], None, ["BUILD: %s not produced (%s)" % (name, ", ".join(built) or "nothing")]
-                            + ["builder: " + l[:300] for l in tail]))
-            continue
-        font = os.path.join(ttf_dir, name)
-        n, blocking = gate(p["row"]["shipped"], font, scratch)
-        gained, lost = cmap_difference(p["row"]["shipped"], font)
-        if gained or lost:
-            n += len(gained) + len(lost)
-            blocking = blocking + ["CMAP gained %s lost %s" % (["U+%04X" % c for c in gained],
-                                                               ["U+%04X" % c for c in lost])]
-        # after the table gate: does the build BEHAVE like the release?
-        fg = functional_gate.run(p["row"]["shipped"], font, p["row"]["style"],
-                                 d3_json=d3_json_path(font, scratch), workdir=scratch)
-        functional[p["row"]["style"]] = fg
-        results.append((p["row"]["style"], n, blocking))
-        p["built"] = name
+    def build_and_gate():
+        os.makedirs(SCRATCH, exist_ok=True)
+        scratch = tempfile.mkdtemp(prefix="land-%s-" % repo, dir=SCRATCH)
+        shutil.copytree(os.path.join(d, "sources"), os.path.join(scratch, "sources"))
+        r = subprocess.run([B3, "sources/config.yaml"], cwd=scratch, capture_output=True, text=True)
+        ttf_dir = os.path.join(scratch, "fonts", "ttf")
+        built = sorted(os.listdir(ttf_dir)) if os.path.isdir(ttf_dir) else []
+        results = []
+        functional = {}            # style -> tools/functional_gate.py verdict
+        for p in per_style:
+            # one .glyphs file with several instances: each style is its own instance
+            name = p["row"]["style"] + ".ttf" if glyphs else built_name(p["glyphs"])
+            if name not in built:
+                tail = [l.strip() for l in (r.stderr + r.stdout).splitlines() if l.strip()][-3:]
+                results.append((p["row"]["style"], None, ["BUILD: %s not produced (%s)" % (name, ", ".join(built) or "nothing")]
+                                + ["builder: " + l[:300] for l in tail]))
+                continue
+            font = os.path.join(ttf_dir, name)
+            n, blocking = gate(p["row"]["shipped"], font, scratch)
+            gained, lost = cmap_difference(p["row"]["shipped"], font)
+            if gained or lost:
+                n += len(gained) + len(lost)
+                blocking = blocking + ["CMAP gained %s lost %s" % (["U+%04X" % c for c in gained],
+                                                                   ["U+%04X" % c for c in lost])]
+            # after the table gate: does the build BEHAVE like the release?
+            fg = functional_gate.run(p["row"]["shipped"], font, p["row"]["style"],
+                                     d3_json=d3_json_path(font, scratch), workdir=scratch)
+            functional[p["row"]["style"]] = fg
+            results.append((p["row"]["style"], n, blocking))
+            p["built"] = name
+        return scratch, results, functional
+
+    scratch, results, functional = build_and_gate()
 
     # retire the converted source(s)
     kind = rows[0]["kind"]
@@ -754,7 +763,12 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
             lines += wrap("%s: %s" % (st, n))
     gf_ref = sh("git", "-C", GF, "rev-parse", "--short=12", "HEAD").stdout.strip()
     lines.append("")
-    if clean:
+    if deferred_gdef:
+        lines += para("Not yet equivalent on its own: the commit that follows states the release's "
+                      "GDEF glyph classes in the source. Against google/fonts %s, under "
+                      "tools/table_gate.py and tools/functional_gate.py:" % gf_ref)
+        lines += gate_lines(results, functional, wrap)
+    elif clean:
         lines += para("Builds with gftools-builder (%s, fontc %s) and matches the binaries "
                       "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
                       "exactly the release's codepoints, and functionally equivalent under "
@@ -765,14 +779,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         lines += para("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "
                       "under tools/table_gate.py and tools/functional_gate.py:"
                       % (B3_WHERE, FONTC_ID, gf_ref))
-        for st, n, blocking in results:
-            if n is None:
-                lines.append("  %s: %s" % (st, blocking[0]))
-                continue
-            table = "0 blocking rows" if n == 0 else "%s blocking row(s)" % n
-            bad = functional_gate.failed_checks(functional[st])
-            lines += wrap("%s: %s; %s" % (st, table, "functionally equivalent" if not bad else
-                                          "functionally different in " + ", ".join(bad)))
+        lines += gate_lines(results, functional, wrap)
     ev_rev, _ = evidence()
     w = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     has_plan = sh("git", "-C", w, "cat-file", "-e", "%s:plans/%s.json" % (ev_rev, repo),
@@ -784,6 +791,63 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                          "that repository's logs/ after it.")
     if not glyphs:
         lines += [""] + para(what)
+    head = commit(d, "\n".join(lines), "sources")
+    shutil.rmtree(scratch, ignore_errors=True)
+    if deferred_gdef:
+        head, results, functional = state_gdef_classes(
+            d, plan, deferred_gdef, build_and_gate, para, wrap, gf_ref, cited)
+    return head, results, functional
+
+
+SOURCE_EDIT_PREFIX = "Source edit: "
+
+
+def gate_lines(results, functional, wrap):
+    """One wrapped line per style: its table-gate rows and functional verdict."""
+    lines = []
+    for st, n, blocking in results:
+        if n is None:
+            lines.append("  %s: %s" % (st, blocking[0]))
+            continue
+        table = "0 blocking rows" if n == 0 else "%s blocking row(s)" % n
+        bad = functional_gate.failed_checks(functional[st])
+        lines += wrap("%s: %s; %s" % (st, table, "functionally equivalent" if not bad else
+                                      "functionally different in " + ", ".join(bad)))
+    return lines
+
+
+def state_gdef_classes(d, plan, deferred, build_and_gate, para, wrap, gf_ref, cited):
+    """After a binary's conversion: the source states the release's GDEF glyph classes, the
+    ones no glyph category expresses, in a commit of its own (a documented source edit,
+    not a converter change: Simon on babelfont#131, "a matter for its source")."""
+    styles = []
+    for style, g, tt in deferred:
+        text = open(g, encoding="utf-8").read()
+        changed = workarounds.gdef_classes_fea(text, tt)
+        if changed != text:
+            open(g, "w", encoding="utf-8").write(changed)
+            styles.append(style)
+    scratch, results, functional = build_and_gate()
+    clean = all(n == 0 and st in functional and functional[st]["verdict"] == "PASS"
+                for st, n, _ in results)
+    lines = [SOURCE_EDIT_PREFIX + "state the release's GDEF glyph classes", ""]
+    lines += para("%s: the GDEF glyph classes of the binary, stated as a GlyphClassDef in the "
+                  "source's feature prefix, glyph by glyph. Why: %s." % (", ".join(styles),
+                  plan["gdef_classes_fea"].rstrip(".")))
+    lines.append("")
+    if clean:
+        lines += para("Builds with gftools-builder (%s, fontc %s) and matches the binaries "
+                      "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
+                      "exactly the release's codepoints, and functionally equivalent under "
+                      "tools/functional_gate.py (cmap, shaping, rendering, names, line "
+                      "spacing, advances, GDEF), %d style(s)."
+                      % (B3_WHERE, FONTC_ID, gf_ref, len(results)))
+    else:
+        lines += para("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "
+                      "under tools/table_gate.py and tools/functional_gate.py:"
+                      % (B3_WHERE, FONTC_ID, gf_ref))
+        lines += gate_lines(results, functional, wrap)
+    lines += [""] + para(cited)
     head = commit(d, "\n".join(lines), "sources")
     shutil.rmtree(scratch, ignore_errors=True)
     return head, results, functional

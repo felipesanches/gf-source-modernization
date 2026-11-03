@@ -78,7 +78,7 @@ def rekey(repo, redo):
     if redo:
         drop_provisional(d)
     last = git(d, "log", "-1", "--format=%s").strip()
-    if not (last.startswith("Convert to .glyphs with babelfont ") or last.startswith("Builder config: ")):
+    if not last.startswith(("Convert to .glyphs with babelfont ", "Builder config: ", land.SOURCE_EDIT_PREFIX)):
         raise land.LandError("%s: the last commit is %r, not the conversion" % (repo, last))
     cfg = os.path.join(d, "sources", "config.yaml")
     text = open(cfg).read()
