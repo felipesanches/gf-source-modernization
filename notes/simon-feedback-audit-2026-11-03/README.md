@@ -42,3 +42,9 @@ repository: 81 IMPORT on every style (43 published, 38 not), 2 likely (Titillium
 unknown. The unpublished 40 include most of the families the FontForge-specific PRs (#104-#121) were
 written for; reland_from_binary.sh lands them from the shipped binaries with the published converter
 instead (results in that directory).
+
+The VFB batch shows the same pattern by file name (families-vfb.tsv, 194 styles): 115 styles in 98
+repositories convert a "-TTF.vfb" and 5 styles in 2 a "-OTF.vfb" (P13's batch conversions); 74 styles in
+35 repositories convert other .vfb files (originals such as annieuseyourtelescope, which Simon called
+fine). The five "export rules" of vfb-export-rules (audit B) exist to reproduce what FontLab's exporter
+did from those archival files.
