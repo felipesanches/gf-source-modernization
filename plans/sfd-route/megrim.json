@@ -1,0 +1,32 @@
+{
+ "repo": "megrim",
+ "commits": [
+  {
+   "styles": [
+    "Megrim"
+   ],
+   "op": "droplookup",
+   "args": "'aalt' Access All Alternates in Latin lookup 0",
+   "subject": "Drop the aalt lookup the release does not carry",
+   "body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; the glyphs stay."
+  },
+  {
+   "styles": [
+    "Megrim"
+   ],
+   "op": "droplookup",
+   "args": "'ss01' Style Set 1 lookup 1",
+   "subject": "Drop the ss01 lookup the release does not carry",
+   "body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; the .ss01 glyphs stay."
+  },
+  {
+   "styles": [
+    "Megrim"
+   ],
+   "op": "droplookup",
+   "args": "'locl' Localized Forms in Latin lookup 2",
+   "subject": "Drop the Turkish locl lookup the release does not carry",
+   "body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; i.TRK stays."
+  }
+ ]
+}

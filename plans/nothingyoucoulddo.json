@@ -1,46 +1,10 @@
 {
- "repo": "nothingyoucoulddo",
- "commits": [
-  {
-   "styles": [
-    "NothingYouCouldDo"
-   ],
-   "ops": [
-    [
-     "setfield",
-     "OS2WinAscent 959"
-    ],
-    [
-     "setfield",
-     "OS2WinAOffset 0"
-    ],
-    [
-     "setfield",
-     "OS2WinDescent 407"
-    ],
-    [
-     "setfield",
-     "OS2WinDOffset 0"
-    ],
-    [
-     "setfield",
-     "HheadAscent 959"
-    ],
-    [
-     "setfield",
-     "HheadAOffset 0"
-    ],
-    [
-     "setfield",
-     "HheadDescent -407"
-    ],
-    [
-     "setfield",
-     "HheadDOffset 0"
-    ]
-   ],
-   "subject": "State the win and hhea metrics the release has, as absolute values",
-   "body": "The release (google/fonts 90abd17b4 ofl/nothingyoucoulddo/NothingYouCouldDo.ttf) has usWinAscent 959, usWinDescent 407, hhea ascender 959 and descender -407. This file states them as offsets (OS2WinAscent 0, OS2WinDescent 0, HheadAscent 0, HheadDescent 0, all with offset flag 1), which FontForge resolves at export against the font's bounding box. The FontForge 20110222 (FFTM 2011-02-22) that exported the release, like every build before ee15007274e9 (2014-09-16), measured that box over ON-CURVE points only for the win metrics, and took the true curve extremes truncated toward zero, widened to that box, for hhea (splineutil.c SplineSetQuickBounds, tottf.c WinBB and sethhead). Applied to this source, the highest on-curve point, Ecircumflex's, ceils to 959 and the lowest, y's, is -407; the true curve extremes are 959.439 (Ecircumflex) and -407.0 (y), truncated 959 and -407. So win ascent 959 + 0 = 959, win descent 407, hhea ascender max(959, 959) = 959 and hhea descender -407: the release's values. A converter that measures the true curves resolves the same offsets to 960, 407, 960 and -407.\n\nStated here as absolute values with the offset flags 0, so no bounding-box rule is needed; the typo metrics stay as offsets from Ascent/Descent. Evidence: gf-source-modernization investigations/next-vmetrics (FontForge's code at the release's build, and a sweep of every offset-mode style)."
-  }
- ]
+  "repo": "nothingyoucoulddo",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/googlefonts/googlefontdirectory-hg at 52f780bc9d197280a9f430574e179a5f233c56b6: ofl/nothingyoucoulddo/src/NothingYouCouldDo-TTF.sfd, a FontForge import of the shipped font (quadratic outlines, its TrueType instructions; tools/probes/ttf_sfd_origin), not a source: Simon on google/fonts#10490 (\"batch-converted from the binary files\")."
+  ],
+  "disclose": [
+    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+  ]
 }

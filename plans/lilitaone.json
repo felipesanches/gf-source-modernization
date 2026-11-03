@@ -1,14 +1,10 @@
 {
- "repo": "lilitaone",
- "commits": [
-  {
-   "styles": [
-    "LilitaOne-Regular"
-   ],
-   "op": "addprivate",
-   "args": "BlueValues [-10 0 506 510 704 709]",
-   "subject": "Restore the BlueValues the release was exported with",
-   "body": "FontForge exported the release from src/LilitaOne-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues."
-  }
- ]
+  "repo": "lilitaone",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/googlefonts/googlefontdirectory-hg at 52f780bc9d197280a9f430574e179a5f233c56b6: ofl/lilitaone/src/LilitaOne-Regular-TTF.sfd, a FontForge import of the shipped font (quadratic outlines, its TrueType instructions; tools/probes/ttf_sfd_origin), not a source: Simon on google/fonts#10490 (\"batch-converted from the binary files\")."
+  ],
+  "disclose": [
+    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+  ]
 }

@@ -1,0 +1,14 @@
+{
+ "repo": "lustria",
+ "commits": [
+  {
+   "styles": [
+    "Lustria-Regular"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [-11 0 504 511 704 711]",
+   "subject": "Restore the BlueValues the release was exported with",
+   "body": "FontForge exported the release from src/Lustria-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues."
+  }
+ ]
+}

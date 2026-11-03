@@ -1,23 +1,11 @@
 {
- "repo": "oleoscript",
- "commits": [
-  {
-   "styles": [
-    "OleoScript-Bold"
-   ],
-   "op": "addprivate",
-   "args": "BlueValues [-12 0 443 443 710 710]",
-   "subject": "Restore the BlueValues the release was exported with",
-   "body": "FontForge exported the release from src/OleoScript-Bold.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues."
-  },
-  {
-   "styles": [
-    "OleoScript-Regular"
-   ],
-   "op": "addprivate",
-   "args": "BlueValues [-12 0 443 450 710 710]",
-   "subject": "Restore the BlueValues the release was exported with",
-   "body": "FontForge exported the release from src/OleoScript-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues."
-  }
- ]
+  "repo": "oleoscript",
+  "commits": [],
+  "gdef_classes_fea": "the release's GDEF classes glyphs no glyph category expresses (bases and ligatures without an attaching anchor), so the build without them shapes differently (tools/probes/ttf_sfd_origin)",
+  "earlier_sources": [
+    "https://github.com/googlefonts/googlefontdirectory-hg at 52f780bc9d197280a9f430574e179a5f233c56b6: ofl/oleoscript/src/OleoScript-Bold-TTF.sfd, src/OleoScript-Regular-TTF.sfd, a FontForge import of the shipped fonts (quadratic outlines, its TrueType instructions; tools/probes/ttf_sfd_origin), not a source: Simon on google/fonts#10490 (\"batch-converted from the binary files\")."
+  ],
+  "disclose": [
+    "The released fonts are hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+  ]
 }

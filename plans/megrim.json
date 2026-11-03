@@ -1,32 +1,10 @@
 {
- "repo": "megrim",
- "commits": [
-  {
-   "styles": [
-    "Megrim"
-   ],
-   "op": "droplookup",
-   "args": "'aalt' Access All Alternates in Latin lookup 0",
-   "subject": "Drop the aalt lookup the release does not carry",
-   "body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; the glyphs stay."
-  },
-  {
-   "styles": [
-    "Megrim"
-   ],
-   "op": "droplookup",
-   "args": "'ss01' Style Set 1 lookup 1",
-   "subject": "Drop the ss01 lookup the release does not carry",
-   "body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; the .ss01 glyphs stay."
-  },
-  {
-   "styles": [
-    "Megrim"
-   ],
-   "op": "droplookup",
-   "args": "'locl' Localized Forms in Latin lookup 2",
-   "subject": "Drop the Turkish locl lookup the release does not carry",
-   "body": "Megrim.ttf was exported by FontForge 20110222 with OpenType output off\n(no GSUB, GPOS or GDEF; usMaxContext 1), so this lookup never shipped.\nThe absence exists only in the release; i.TRK stays."
-  }
- ]
+  "repo": "megrim",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/googlefonts/googlefontdirectory-hg at 52f780bc9d197280a9f430574e179a5f233c56b6: ofl/megrim/src/Megrim-TTF.sfd, a FontForge import of the shipped font (quadratic outlines, its TrueType instructions; tools/probes/ttf_sfd_origin), not a source: Simon on google/fonts#10490 (\"batch-converted from the binary files\")."
+  ],
+  "disclose": [
+    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+  ]
 }

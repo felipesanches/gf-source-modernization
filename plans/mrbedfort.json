@@ -1,15 +1,10 @@
 {
   "repo": "mrbedfort",
   "commits": [],
-  "disclose": [
-    "In the released font some glyphs are drawn shifted horizontally from their outlines: FontForge's export wrote a left side bearing that does not match the glyph's bounding box (a FontForge bug), and rasterizers place the outline by the side bearing. These sources keep the outlines as designed, so the following glyphs are drawn that many font units to the left of where the release draws them: backslash, 4 units; bracketleft, 3. Decided 2026-10-01: leave as designed and disclose."
+  "earlier_sources": [
+    "https://github.com/googlefonts/googlefontdirectory-hg at 52f780bc9d197280a9f430574e179a5f233c56b6: ofl/mrbedfort/src/MrBedfort-Regular-TTF.sfd, a FontForge import of the shipped font (quadratic outlines, its TrueType instructions; tools/probes/ttf_sfd_origin), not a source: Simon on google/fonts#10490 (\"batch-converted from the binary files\")."
   ],
-  "flags": {},
-  "accepted": [
-    {
-      "style": "MrBedfort-Regular",
-      "check": "rendering",
-      "summary": "diffenator3 2 glyph / 0 word diffs (2 / 0 confirmed); 2 of 44 changed outlines draw different ink"
-    }
+  "disclose": [
+    "The released font is hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the release's, its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
   ]
 }

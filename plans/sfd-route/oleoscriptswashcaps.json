@@ -1,0 +1,23 @@
+{
+ "repo": "oleoscriptswashcaps",
+ "commits": [
+  {
+   "styles": [
+    "OleoScriptSwashCaps-Bold"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [-13 0 443 443 747 747]",
+   "subject": "Restore the BlueValues the release was exported with",
+   "body": "FontForge exported the release from src/OleoScriptSwashCaps-Bold.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues."
+  },
+  {
+   "styles": [
+    "OleoScriptSwashCaps-Regular"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [-12 0 443 450 747 747]",
+   "subject": "Restore the BlueValues the release was exported with",
+   "body": "FontForge exported the release from\nsrc/OleoScriptSwashCaps-Regular.otf (tools/generate/HOWTOGEN.txt) and\nsnapped its OS/2 x-height to these zones. This .sfd re-imports that TTF\n(ttf2sfd.py), which cannot carry a private dictionary. Value: the .otf's\nCFF Private BlueValues."
+  }
+ ]
+}

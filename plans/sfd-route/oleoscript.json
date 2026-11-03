@@ -1,0 +1,23 @@
+{
+ "repo": "oleoscript",
+ "commits": [
+  {
+   "styles": [
+    "OleoScript-Bold"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [-12 0 443 443 710 710]",
+   "subject": "Restore the BlueValues the release was exported with",
+   "body": "FontForge exported the release from src/OleoScript-Bold.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues."
+  },
+  {
+   "styles": [
+    "OleoScript-Regular"
+   ],
+   "op": "addprivate",
+   "args": "BlueValues [-12 0 443 450 710 710]",
+   "subject": "Restore the BlueValues the release was exported with",
+   "body": "FontForge exported the release from src/OleoScript-Regular.otf\n(tools/generate/HOWTOGEN.txt) and snapped its OS/2 x-height and cap\nheight to these zones. This .sfd re-imports that TTF (ttf2sfd.py),\nwhich cannot carry a private dictionary. Value: the .otf's CFF Private\nBlueValues."
+  }
+ ]
+}
