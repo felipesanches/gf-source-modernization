@@ -1,5 +1,11 @@
 # Follow-up plan after the re-land on upstream tools (2026-10-01)
 
+> **Superseded.** Its FontForge-specific filters (--fontforge-gdef-classes, --fontforge-notdef,
+> --fontforge-no-anchor-propagation, --fontforge-mark-lookups) and the KernFeatureWriter option written by
+> babelfont are shapes Simon rejected (2026-10-02 decision; notes/simon-feedback-audit-2026-11-03, P9 P11
+> P12 P15). Current plan: GoogleFonts/PR-QUEUE.md section 2 and bottleneck P13. Kept as the record of what
+> was measured on 2026-10-01/02.
+
 **Latest (2026-10-02): 108/149 functional PASS, 105 CLEAN** with fixes 1-3, 5, 6 and the
 section-2 edits (babelfont #101-#106). What still fails, grouped by fix:
 investigations/reland-2026-10-02/RESIDUALS.md.

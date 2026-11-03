@@ -144,10 +144,12 @@ def flags_for(sfd_text, shipped, add=(), drop=(), keep_direction=False):
     built = fontforge_build(shipped)
     if built is not None and built < FONTFORGE_HEIGHT_MEAN_FIXED:
         flags.insert(0, "--fontforge-height-glyph-count-mean")
-    # The SFD reader itself states what the source says about OS/2 version bits, glyph
-    # classes (GDEF), anchor lookups and anchor inheritance (babelfont #104 #106 #111
-    # #121). What an exporter did that the source does not state is a documented edit
-    # in plans/<repo>.json, never a flag here.
+    # The SFD reader itself states what the source says (OS/2 version bits, #106; glyph
+    # categories, #104 reworked to categories only). What an exporter did that the source
+    # does not state, and GDEF classes no category expresses, are documented edits in
+    # plans/<repo>.json, never a flag here (Simon, babelfont #121 #131; notes/
+    # simon-feedback-audit-2026-11-03). --add-notdef and --infer-fixed-pitch are #120 and
+    # #119, not merged yet: a converter without them drops the flags (land.py).
     # A source with no .notdef gets a rectangle, as the releases have (an empty one is
     # kept); post.isFixedPitch is set when every glyph shares one advance. Before
     # direction correction, so the added contour is normalised too.
