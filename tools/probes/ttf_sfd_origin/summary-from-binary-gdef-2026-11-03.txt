@@ -1,0 +1,27 @@
+abrilfatface-bin: RESIDUAL, 3 commits, 0 edit(s): AbrilFatface-Regular=BUILD functional=-
+cardo-bin: RESIDUAL, 3 commits, 0 edit(s): Cardo-Bold=2 functional=FAIL(shaping); Cardo-Italic=2 functional=FAIL(cmap+shaping); Cardo-Regular=2 functional=FAIL(cmap)
+corben-bin: CLEAN, 3 commits, 0 edit(s): Corben-Regular=0 functional=PASS; Corben-Bold=0 functional=PASS
+kottaone-bin: CLEAN, 3 commits, 0 edit(s): KottaOne-Regular=0 functional=PASS
+lustria-bin: CLEAN, 3 commits, 0 edit(s): Lustria-Regular=0 functional=PASS
+macondo-bin: CLEAN, 3 commits, 0 edit(s): Macondo-Regular=0 functional=PASS
+miama-bin: RESIDUAL, 3 commits, 0 edit(s): Miama-Regular=0 functional=FAIL(shaping+rendering+names)
+monoton-bin: CLEAN, 3 commits, 0 edit(s): Monoton-Regular=0 functional=PASS
+niconne-bin: CLEAN, 3 commits, 0 edit(s): Niconne-Regular=0 functional=PASS
+nosifer-bin: RESIDUAL, 3 commits, 0 edit(s): Nosifer-Regular=0 functional=FAIL(shaping+rendering)
+nosifercaps-bin: RESIDUAL, 3 commits, 0 edit(s): NosiferCaps-Regular=0 functional=FAIL(line_spacing)
+oleoscript-bin: CLEAN, 3 commits, 0 edit(s): OleoScript-Bold=0 functional=PASS; OleoScript-Regular=0 functional=PASS
+oleoscriptswashcaps-bin: CLEAN, 3 commits, 0 edit(s): OleoScriptSwashCaps-Bold=0 functional=PASS; OleoScriptSwashCaps-Regular=0 functional=PASS
+overlock-bin: RESIDUAL, 3 commits, 0 edit(s): Overlock-Black=0 functional=PASS; Overlock-BlackItalic=0 functional=FAIL(names+line_spacing); Overlock-Bold=0 functional=PASS; Overlock-BoldItalic=0 functional=PASS; Overlock-Italic=0 functional=PASS; Overlock-Regular=0 functional=PASS
+passionone-bin: CLEAN, 3 commits, 0 edit(s): PassionOne-Black=0 functional=PASS; PassionOne-Bold=0 functional=PASS; PassionOne-Regular=0 functional=PASS
+patrickhand-bin: CLEAN, 3 commits, 0 edit(s): PatrickHand-Regular=0 functional=PASS
+poly-bin: RESIDUAL, 3 commits, 0 edit(s): Poly-Italic=3 functional=PASS; Poly-Regular=0 functional=PASS
+ribeyemarrow-bin: RESIDUAL, 3 commits, 0 edit(s): RibeyeMarrow-Regular=2 functional=PASS
+ruluko-bin: CLEAN, 3 commits, 0 edit(s): Ruluko-Regular=0 functional=PASS
+salsa-bin: CLEAN, 3 commits, 0 edit(s): Salsa-Regular=0 functional=PASS
+sanchez-bin: RESIDUAL, 3 commits, 0 edit(s): Sanchez-Italic=1 functional=PASS; Sanchez-Regular=0 functional=PASS
+smokum-bin: RESIDUAL, 3 commits, 0 edit(s): Smokum-Regular=3 functional=PASS
+titanone-bin: CLEAN, 3 commits, 0 edit(s): TitanOne-Regular=0 functional=PASS
+tuffy-bin: RESIDUAL, 3 commits, 0 edit(s): Tuffy-Bold=0 functional=PASS; Tuffy-BoldItalic=0 functional=FAIL(line_spacing); Tuffy-Italic=0 functional=PASS; Tuffy-Regular=0 functional=PASS
+unifrakturcook-bin: CLEAN, 3 commits, 0 edit(s): UnifrakturCook-Bold=0 functional=PASS
+varela-bin: RESIDUAL, 3 commits, 0 edit(s): Varela-Regular=6 functional=FAIL(shaping)
+viga-bin: RESIDUAL, 3 commits, 0 edit(s): Viga-Regular=0 functional=FAIL(shaping)
