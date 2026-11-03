@@ -9,4 +9,5 @@ curl -s -o rev-bf-131.json "https://api.github.com/repos/simoncozens/babelfont-r
 curl -s -o rc-bf-131.json "https://api.github.com/repos/simoncozens/babelfont-rs/pulls/131/comments"
 for p in 1 2; do curl -s -o gfrust-$p.json "https://api.github.com/repos/simoncozens/gftools-rust/issues/comments?since=2026-05-01T00:00:00Z&per_page=100&page=$p"; done
 curl -s -o glyphslib-rs.json "https://api.github.com/repos/simoncozens/glyphslib-rs/issues/comments?since=2026-05-01T00:00:00Z&per_page=100"
+for p in 1 2; do curl -s -o "gfonts-10490-$p.json" "https://api.github.com/repos/google/fonts/issues/10490/comments?per_page=100&page=$p"; done
 echo done

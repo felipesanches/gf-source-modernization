@@ -1,18 +1,18 @@
-== 2024-10-29 googlefonts/googlesans-flex https://github.com/googlefonts/googlesans-flex/issues/945#issuecomment-2444282668
+== 2024-10-29 googlefonts_googlesans-flex-945 https://github.com/googlefonts/googlesans-flex/issues/945#issuecomment-2444282668
 I doubt that we have enough source checks to make it worthwhile.
 
-== 2026-02-18 googlefonts/gftools https://github.com/googlefonts/gftools/issues/1170#issuecomment-3919105495
+== 2026-02-18 googlefonts_gftools-1170 https://github.com/googlefonts/gftools/issues/1170#issuecomment-3919105495
 The point of gftools-builder is to have a standardised or near-standardised build script, made up of well-known components. I agree that allowing arbitrary shell commands to run beforehand may be useful in terms of just getting things building, but it's a step in the wrong direction.
 
 In my mind, having a pre-compile sequence which runs `python3 scripts/fix_sources.py` within gftools-builder does not actually buy you anything over running `python3 scripts/fix_sources.py; gftools-builder`. It certainly won't be allowed as we move to Rust.
 
-== 2026-02-18 googlefonts/gftools https://github.com/googlefonts/gftools/issues/1170#issuecomment-3919386595
+== 2026-02-18 googlefonts_gftools-1170 https://github.com/googlefonts/gftools/issues/1170#issuecomment-3919386595
 I understand, but Rod is very unhappy with arbitrary code execution except for pathological cases (Playwrite etc.). It's something we need to move away from, not grandfather in.
 
-== 2026-03-09 fonttools/fontspector https://github.com/fonttools/fontspector/pull/667#issuecomment-4024544699
+== 2026-03-09 fonttools_fontspector-667 https://github.com/fonttools/fontspector/pull/667#issuecomment-4024544699
 Please add a hotfix function which turns off this bit.
 
-== 2026-03-09 fonttools/fontspector https://github.com/fonttools/fontspector/pull/670#issuecomment-4024533370
+== 2026-03-09 fonttools_fontspector-670 https://github.com/fonttools/fontspector/pull/670#issuecomment-4024533370
 Please add a hotfix function which unsets these bits for OS/2 versions < 4.
 
 == 2026-05-01 google/fonts https://github.com/google/fonts/pull/10490#issuecomment-4358374226
@@ -28,13 +28,13 @@ However, for other fonts (e.g. annieuseyourtelescope), we have the original VFB 
 == 2026-05-01 google/fonts https://github.com/google/fonts/pull/10490#issuecomment-4360268262
 VFB probably not, it's the old pre-variable FontLab format. SFD definitely is something we're still seeing submissions in and it's a bit of a headache when we're trying to interact with designers working in SFD. I would say that building from SFD is actually necessary; that's why I think babelfont is the sweet spot here - it ingests formats that fontc doesn't want to concern itself with, but then passes IR to fontc to get the font built.
 
-== 2026-06-22 simoncozens/gftools-builder3 https://github.com/simoncozens/gftools-builder3/pull/1#issuecomment-4771327967
+== 2026-06-22 simoncozens_gftools-builder3-1 https://github.com/simoncozens/gftools-builder3/pull/1#issuecomment-4771327967
 I'm not sure this is the right approach. If the user tells us not to build a variable, don't build a variable. We should make sure we are able to perform source instantiation instead.
 
-== 2026-06-29 fonttools/fontspector https://github.com/fonttools/fontspector/pull/669#issuecomment-4834006535
+== 2026-06-29 fonttools_fontspector-669 https://github.com/fonttools/fontspector/pull/669#issuecomment-4834006535
 I agree we should not make weird fonts, and it would be strange for fontspector - a font QA tool - to bend over backwards to allow the weirdness. The better answer is probably a check that an fvar table is not empty!
 
-== 2026-06-29 fonttools/fontspector https://github.com/fonttools/fontspector/pull/684#issuecomment-4832358176
+== 2026-06-29 fonttools_fontspector-684 https://github.com/fonttools/fontspector/pull/684#issuecomment-4832358176
 > @simoncozens Is there a reason why this has not been merged, yet?
 
 > submitted without human review. @felipesanches himself would still need to participate in the PR thread if he wants to contribute to the review.
@@ -251,7 +251,7 @@ Thank you. Most of this looks good, but the part which passes UFO-specific infor
 == 2026-10-07 simoncozens/babelfont-rs https://github.com/simoncozens/babelfont-rs/pull/129#issuecomment-6042485729
 Yep. I can fix it up.
 
-== 2026-10-08 googlefonts/fontc_crater https://github.com/googlefonts/fontc_crater/pull/100#issuecomment-6055375813
+== 2026-10-08 googlefonts_fontc_crater-100 https://github.com/googlefonts/fontc_crater/pull/100#issuecomment-6055375813
 > @simoncozens, now that https://github.com/googlefonts/gftools/pull/1229 and https://github.com/googlefonts/gftools/pull/1230 are merged, we'll need a new release of gftools (v0.10.1 perhaps?)
 
 Did you mean to address that to @m4rc1e ? :-)

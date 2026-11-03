@@ -21,5 +21,7 @@ for f in sorted(glob.glob("c-*.json")):
 for f in sorted(glob.glob("gfrust-*.json")):
     add(f, "simoncozens/gftools-rust")
 add("glyphslib-rs.json", "simoncozens/glyphslib-rs")
+for f in sorted(glob.glob("gfonts-10490-*.json")):
+    add(f, "google/fonts")
 for d, u, r, b in sorted(out):
     print("== %s %s %s\n%s\n" % (d, r, u, b))
