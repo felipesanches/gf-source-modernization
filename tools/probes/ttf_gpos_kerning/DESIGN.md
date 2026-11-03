@@ -35,8 +35,19 @@ cannot change what the kerning model means:
    their first glyph; class 0 of the second class definition is "every glyph not in a class" and is
    expanded only where the pair has a value.
 
+Measured further (groups.py, groups-2026-11-03.tsv, and the lookup/subtable order of the 166): the
+model keeps a glyph in at most one first-side and one second-side group (the Glyphs rule), and a glyph
+pair overrides its group's value. 162 of the 166 styles' class definitions fit one group per side (42 have
+no class pairs at all); the 4 that do not are Carlito's. 161 of the 162 have a single `kern` lookup whose
+glyph-pair subtables all come before its class subtables -- exactly the model's "a glyph pair overrides
+its group". So the conditions, all required, become:
+
+6. One `kern` lookup, its format 1 subtables before its format 2 ones (161 styles meet 1-6).
+7. Each glyph in one class per side across its format 2 subtables (the class becomes `@<first glyph>`
+   in first_kern_groups / second_kern_groups); otherwise keep the feature code.
+
 Everything else stays exactly as today (feature code), so the change can only move kerning that the
-model expresses.
+model expresses: 161 of the 281 styles move, 120 keep what they have (110 have no GPOS kerning).
 
 ## Acceptance
 
