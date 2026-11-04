@@ -128,3 +128,7 @@ in IM Fell English Roman. Their accepted list needs that line when they are re-l
 
 So the change passes the design's bar: no style loses CLEAN through the reader, and no shaping run
 differs because of it.
+
+Moved: 79 of the 166 SIMPLE styles (61 families) carry master kerning after runs 1 and 2 (the .glyphs
+of run 2 for its 72 repositories, of run 1 for the rest); the other 87 keep the feature code (69
+flag-0 styles with marks, the other-GPOS-feature families, and the census exclusions of rules 6-7).
