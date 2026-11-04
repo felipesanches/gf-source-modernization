@@ -107,3 +107,11 @@ old rule 2): 176 kept their verdict, 7 lost CLEAN (Forum and the five PT familie
 The run's verdicts carry -UNCOMMITTED-EVIDENCE from nanumbrushscript on, because these probes were
 being written in the evidence tree meanwhile; the results are not affected. Run 2 re-lands with the
 corrected rules 2 and 8.
+
+## Acceptance run 2 (run2-repos.txt)
+
+The 72 binary-route repositories that rules 2 and 8 or gate gap G can change: a shipped style encodes
+a mark (Mn, Mc, Me, not default-ignorable), or GPOS has a feature besides `kern`. The rest of the 183
+read the same under the corrected rules and are not re-landed.
+
+    BF_TREE=<branch 2026-11-02 + the kerning commit> REPOS=tools/probes/ttf_gpos_kerning/run2-repos.txt sh tools/probes/ttf_gpos_kerning/accept.sh <scratch dir>
