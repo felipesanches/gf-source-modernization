@@ -427,9 +427,23 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     return "\n".join(out) + "\n"
 
 
+IMPORT = re.compile(r", an? (FontForge|FontLab) import of the shipped font")
+
+
+def imported_by(plan):
+    """"FontForge" or "FontLab" when the family's only published source is an import of the
+    shipped fonts (an archival "-TTF" .sfd or .vfb, Simon on google/fonts#10490), as its
+    plan's earlier_sources says; None when no source was ever published."""
+    tools = {m.group(1) for t in plan.get("earlier_sources", []) for m in [IMPORT.search(t)] if m}
+    if len(tools) > 1:
+        raise SystemExit("FATAL: earlier_sources name imports by both FontForge and FontLab")
+    return tools.pop() if tools else None
+
+
 def binary_upstream_info(repo, rows, old_block, head_full, display, previous, future):
-    """upstream_info.md for a repository converted from the binaries Google Fonts ships,
-    the family's only form: no source of it was ever published."""
+    """upstream_info.md for a repository converted from the binaries Google Fonts ships:
+    no source of the family was ever published, or the only one is an import of those
+    binaries (P13), which is listed under "Earlier sources"."""
     d = os.path.join(land.OUT, repo)
     convert = git(d, "log", "-1", "--format=%B", conversion_commit(d))
     # the equivalence claim is the last gated commit's: the conversion's, or a source edit's after it
@@ -441,14 +455,29 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     plan = land.load_plan(repo)
     out, _ = header(display, d, head_full)
     date = git(d, "log", "-1", "--format=%cs", conversion_commit(d)).strip()
-    out += wrap("Sources created %s: no source of this family was ever published, so the "
-                "fonts Google Fonts ships were converted to Glyphs (`.glyphs`) sources, which "
-                "build with gftools-builder and fontc. The repository, commit and config are "
-                "in the `source { }` block of METADATA.pb." % date[:7], 88)
-    out += ["", "## Initial state", ""]
-    out += wrap("Google Fonts shipped %s as binaries only (google/fonts at commit `%s`). No "
-                "source of the family was ever published, so it could not be built with "
-                "fontc." % (display, rows[0]["commit"][:12]), 88)
+    tool = imported_by(plan)
+    if tool:
+        ext = ".sfd" if tool == "FontForge" else ".vfb"
+        out += wrap("Sources modernized %s: the only published source of this family, a %s "
+                    "`%s`, is an import of the fonts Google Fonts ships, so those fonts were "
+                    "converted to Glyphs (`.glyphs`) sources, which build with gftools-builder "
+                    "and fontc. The repository, commit and config are in the `source { }` block "
+                    "of METADATA.pb." % (date[:7], tool, ext), 88)
+        out += ["", "## Initial state", ""]
+        out += wrap("Google Fonts shipped %s (google/fonts at commit `%s`). Its only published "
+                    "source is a %s import of the shipped fonts, not a design source (listed "
+                    "under \"Earlier sources\"; Simon on google/fonts#10490: \"batch-converted "
+                    "from the binary files\"), and it could not be built with fontc."
+                    % (display, rows[0]["commit"][:12], tool), 88)
+    else:
+        out += wrap("Sources created %s: no source of this family was ever published, so the "
+                    "fonts Google Fonts ships were converted to Glyphs (`.glyphs`) sources, which "
+                    "build with gftools-builder and fontc. The repository, commit and config are "
+                    "in the `source { }` block of METADATA.pb." % date[:7], 88)
+        out += ["", "## Initial state", ""]
+        out += wrap("Google Fonts shipped %s as binaries only (google/fonts at commit `%s`). No "
+                    "source of the family was ever published, so it could not be built with "
+                    "fontc." % (display, rows[0]["commit"][:12]), 88)
     out += ["", "## Actions taken", ""]
     out += wrap("- The fonts Google Fonts ships were imported unmodified as the first commit "
                 "of https://github.com/googlefonts/%s." % repo, 88, subsequent_indent="  ")
@@ -476,7 +505,8 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     earlier = plan.get("earlier_sources", [])
     if earlier:
         out += ["", "## Earlier sources", ""]
-        out += wrap("Other copies of this family, kept on record; none of them is a source:", 88)
+        out += wrap("Other copies of this family, kept on record; none of them is a design "
+                    "source:", 88)
         out += [""]
         for t in earlier:
             out += wrap("- " + t, 88, subsequent_indent="  ")
@@ -657,11 +687,16 @@ def main():
         if rows[0]["kind"] == "binary":
             msg = ("%s: reference the googlefonts/%s .glyphs source\n\n"
                    "Repo: https://github.com/googlefonts/%s\nCommit: %s\nConfig: sources/config.yaml\n"
-                   "Status: converted from the shipped binaries (no source was ever published) "
+                   "Status: converted from the shipped binaries (%s) "
                    "with babelfont-rs's TTF reader; builds with gftools-builder and fontc\n"
                    "%s\n\n"
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
-                   % (display, repo, repo, head_full[:12], confidence(landed[repo][4], repo)))
+                   % (display, repo, repo, head_full[:12],
+                      "its only published source, a %s %s, is an import of them" % (
+                          imported_by(land.load_plan(repo)),
+                          ".sfd" if imported_by(land.load_plan(repo)) == "FontForge" else ".vfb")
+                      if imported_by(land.load_plan(repo)) else "no source was ever published",
+                      confidence(landed[repo][4], repo)))
             git(wt, "commit", "-q", "-F", "-", input=msg)
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
             continue
