@@ -146,6 +146,7 @@ FEATURE_WORDS = 3000        # words per script per toggled feature / language sy
 RULE_EXPANSION_CAP = 400    # sequences per contextual/ligature rule
 MARK_PAIR_BASES = 4         # representative bases for base+mark+mark, per script
 MARKS_FOR_STACKS = 60       # marks per script used in base+mark+mark
+KERN_MARKS = 8              # marks put between a kerned pair in kern+mark
 
 
 # ---------------------------------------------------------------------------------
@@ -764,8 +765,10 @@ def check_shaping(A, B, key_a, key_b, examples, wordlists_dir, extra_words=()):
         counts[name] = [len(texts), d]
         if d:
             diffs[name] = ex
-    # kern + mark: a kerned pair with a combining mark between (lookup mark flags)
+    # kern + mark: a kerned pair with a combining mark between (lookup mark flags): three common
+    # marks, then the fonts' own (gate gap G: a font encoding only U+0312 U+0315 U+0326 was never tried)
     between = [m for m in (0x0301, 0x0308, 0x0323) if m in shared]
+    between += [m for m in marks if m not in between][:KERN_MARKS - len(between)]
     kmt = [t[0] + chr(m) + t[1] for t in kerned for m in between]
     d, ex = 0, []
     for t in kmt:
