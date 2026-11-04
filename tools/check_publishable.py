@@ -14,7 +14,8 @@ For each text:
   2. every hexadecimal id (7-40 digits, with a letter and a digit) is public: a commit on
      the published branch of a public repository mirrored here (KNOWN, or the repo-archive
      mirror of a repository the same text names), else a commit GitHub serves for a
-     repository named in a github.com URL of the same text (reported "off-branch"). An
+     repository named in a github.com URL of the same text, or by the `owner/repo@<id>` of
+     a workflow's `uses:` (reported "off-branch"). An
      answer GitHub refuses (rate limit) counts as NOT public, never as public;
   3. every github.com URL answers HTTP 200;
   4. no "PLACEHOLDER" is left (a draft whose links or revisions are not known yet).
@@ -100,6 +101,8 @@ def on_published_branch(h):
 
 
 ANY_URL = re.compile(r"https://(?:www\.)?(github\.com|gitlab\.com|git\.sr\.ht)/([^\s'\"`)<>\]]+)")
+# a GitHub Actions reference names its repository beside its commit: `uses: owner/repo[/path]@<id>`
+USES = re.compile(r"\b([A-Za-z0-9-]+/[A-Za-z0-9_.-]+?)(?:/[^\s@]*)?@([0-9a-f]{7,40})\b")
 
 
 def line_repos(h, text):
@@ -115,6 +118,9 @@ def line_repos(h, text):
                 path = "/".join(path.split("/")[:2])
             if (host, path) not in found:
                 found.append((host, path))
+        for slug, rev in USES.findall(line):
+            if rev == h and ("github.com", slug) not in found:
+                found.append(("github.com", slug))
     return found
 
 
@@ -153,6 +159,9 @@ def in_archive(h, text):
     return None
 
 
+SERVED = set()   # (slug, id) GitHub served earlier in this run: only positive answers are kept
+
+
 def served_by_github(h, text):
     """(slug, None) if GitHub serves the commit; (None, reason) otherwise."""
     reason = "not found on GitHub"
@@ -169,6 +178,8 @@ def served_by_github(h, text):
         m = re.match(r"https://github\.com/([A-Za-z0-9-]+/[A-Za-z0-9_.-]+?)(?:\.git)?(?:/|$)", u)
         if not m:
             continue
+        if (m.group(1), h) in SERVED:
+            return m.group(1), None
         code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
                                "https://api.github.com/repos/%s/commits/%s" % (m.group(1), h)],
                               capture_output=True, text=True).stdout
@@ -187,6 +198,7 @@ def served_by_github(h, text):
             if code not in ("200", "404"):
                 reason = "UNVERIFIED: GitHub refused (%s)" % code
         if code == "200":
+            SERVED.add((m.group(1), h))
             return m.group(1), None
     return None, reason
 
