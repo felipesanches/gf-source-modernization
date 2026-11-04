@@ -1,0 +1,4 @@
+verify_metadata.py --build over https://github.com/felipesanches/fonts/tree/source-metadata-abrilfatface-2026-11-04 (merged as https://github.com/google/fonts/pull/11234); the ids below are that branch's commits on https://github.com/felipesanches/fonts
+
+add3aaf18  ofl/abrilfatface             OK
+1 commits, 0 failing

@@ -56,8 +56,13 @@ DEFAULT = {}
 def verdict(repo, commit, branch):
     url = "https://github.com/googlefonts/%s.git" % repo
     if repo not in DEFAULT:
-        head = subprocess.run(["git", "ls-remote", "--symref", url, "HEAD"], capture_output=True, text=True).stdout
-        m = re.search(r"^ref: refs/heads/(\S+)\tHEAD$", head, re.M)
+        for _ in range(3):        # a network failure is retried, never read as "not pushed"
+            r = subprocess.run(["git", "ls-remote", "--symref", url, "HEAD"], capture_output=True, text=True)
+            if r.returncode == 0:
+                break
+        if r.returncode:
+            return "UNVERIFIED (ls-remote failed 3 times)", None
+        m = re.search(r"^ref: refs/heads/(\S+)\tHEAD$", r.stdout, re.M)
         DEFAULT[repo] = m.group(1) if m else None
         if m:
             bare = os.path.join(CACHE, repo + ".git")
@@ -93,6 +98,9 @@ def main():
             if repo in mine:
                 rows.append((b, fam, repo, commit[:12], branch) + verdict(repo, commit, branch))
     head = ("where", "family", "repo", "commit", "branch", "verdict", "default")
+    # each commit as a link to its repository, so the table can be published as is
+    rows = [r[:3] + ("[%s](https://github.com/googlefonts/%s/commit/%s)" % (r[3], r[2], r[3]) if r[3] else "",)
+            + r[4:] for r in rows]
     table = [head] + [tuple(str(c or "-") for c in r) for r in rows]
     w = [max(len(r[i]) for r in table) for i in range(len(head))]
     fmt = lambda r: "| " + " | ".join(c.ljust(w[i]) for i, c in enumerate(r)) + " |"

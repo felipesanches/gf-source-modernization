@@ -1,0 +1,4 @@
+verify_metadata.py --build over https://github.com/felipesanches/fonts/tree/source-metadata-carlito-2026-11-04 (merged as https://github.com/google/fonts/pull/11235); the ids below are that branch's commits on https://github.com/felipesanches/fonts
+
+1aaf4b764  ofl/carlito                  OK
+1 commits, 0 failing

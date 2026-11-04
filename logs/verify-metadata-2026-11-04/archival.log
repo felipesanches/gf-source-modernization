@@ -1,0 +1,27 @@
+verify_metadata.py --build over https://github.com/felipesanches/fonts/tree/source-metadata-archival-2026-11-04 (merged as https://github.com/google/fonts/pull/11236); the ids below are that branch's commits on https://github.com/felipesanches/fonts
+
+6035f3c66  ofl/italiana                 OK
+8d718a35d  ofl/lekton                   OK
+eb97b160d  ofl/monoton                  OK
+deb4283a0  ofl/mrbedfort                OK
+5087f8056  ofl/niconne                  OK
+6c1eddc2a  ofl/nixieone                 OK
+d7cc81693  ofl/patrickhand              OK
+1087b9524  ofl/revalia                  OK
+283e5fe4a  ofl/rougescript              OK
+fa54db0ba  ofl/ruluko                   OK
+7e7dc0bd6  ofl/salsa                    OK
+99623e6be  ofl/titanone                 OK
+368935f3d  ofl/unifrakturcook           OK
+08c28eeab  ofl/kottaone                 OK
+23fdb1a5c  ofl/lilitaone                OK
+c183cfae0  ofl/limelight                OK
+fc0a12729  ofl/lustria                  OK
+963e092f8  ofl/macondo                  OK
+c0d159e97  ofl/megrim                   OK
+f8c5f93a5  apache/mountainsofchristmas  OK
+8c9741922  ofl/nothingyoucoulddo        OK
+d274b97d2  ofl/oleoscript               OK
+1ff22c631  ofl/oleoscriptswashcaps      OK
+6dd599356  ofl/titilliumweb             OK
+24 commits, 0 failing
