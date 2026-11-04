@@ -57,6 +57,41 @@ def git(d, *a, check=True, input=None):
     return r.stdout
 
 
+PUBLISHED_ROOT = os.path.join(os.environ.get("TMPDIR", "/home/fsanches/compartilhado/tmp"),
+                              "metadata-published")
+
+
+def published_equivalent(d, repo, branch, landed_commit):
+    """The commit on googlefonts/<repo>'s published `branch` that is the landed equivalence
+    commit: the commit itself (fast-forward or merge commit), else the one with its tree
+    and subject (a rebase merge). None found: the pull request is not merged, or was
+    squashed (a squash records one commit with another subject), and the metadata would
+    cite a commit outside the published history."""
+    ref = "refs/published/" + branch
+    git(d, "fetch", "-q", "https://github.com/googlefonts/%s.git" % repo, "+refs/heads/%s:%s" % (branch, ref))
+    if subprocess.run(["git", "-C", d, "merge-base", "--is-ancestor", landed_commit, ref]).returncode == 0:
+        return landed_commit
+    want = (git(d, "rev-parse", landed_commit + "^{tree}").strip(),
+            git(d, "log", "-1", "--format=%s", landed_commit).strip())
+    for line in git(d, "log", "--first-parent", "--format=%H %T %s", ref).splitlines():
+        h, tree, subject = line.split(" ", 2)
+        if (tree, subject) == want:
+            return h
+    raise SystemExit("FATAL: googlefonts/%s %s has no commit equal to the landed %s (tree and "
+                     "subject); is its pull request merged, and not squashed?"
+                     % (repo, branch, landed_commit[:12]))
+
+
+def published_view(d, repo, commit):
+    """A detached worktree of the landed repository at the published equivalence commit,
+    under PUBLISHED_ROOT/<repo>; returns PUBLISHED_ROOT, to stand in for land.OUT."""
+    wt = os.path.join(PUBLISHED_ROOT, repo)
+    if os.path.isdir(wt):
+        git(d, "worktree", "remove", "--force", wt)
+    git(d, "worktree", "add", "-q", "--detach", wt, commit)
+    return PUBLISHED_ROOT
+
+
 def worktree(branch):
     wt = os.path.join(WT_ROOT, branch)
     if not os.path.isdir(wt):
@@ -526,7 +561,9 @@ def main():
     for line in open(land.LANDED):
         cols = line.rstrip("\n").split("\t")
         landed[cols[0]] = cols
+    out_root = land.OUT
     for repo in repos:
+        land.OUT = out_root
         if landed.get(repo, [None] * 5)[4] not in accepted:
             raise SystemExit("FATAL: %s is not landed CLEAN; its metadata would overclaim" % repo)
         rows = land.family_rows(repo)
@@ -537,12 +574,19 @@ def main():
         future = land.load_plan(repo).get("future_work", [])
         # the branch the commit lives on once published: `main` for a fresh repository;
         # `master` for a fork or an extended repository, AFTER its pull request is
-        # MERGED -- a squash merge would give the commit a new hash and orphan this one
-        # (a `glyphs` repository is created empty on GitHub and pushed to `main`)
+        # MERGED (a `glyphs` repository is created empty on GitHub and pushed to `main`)
         rbranch = "main" if rows[0]["kind"] in ("hg", "glyphs", "binary") else "master"
         if land.on_upstream(rows):
             raise SystemExit("FATAL: %s lands on an existing repository's history; record it "
                              "after its pull request is merged" % repo)
+        if rbranch == "master":
+            # a rebase merge gives every commit of the pull request a new hash: record the
+            # commit on the published master whose tree and subject are the landed one's,
+            # and read everything else (edits, dates, later commits) from that history
+            published = published_equivalent(d, repo, rbranch, head_full)
+            if published != head_full:
+                land.OUT = published_view(d, repo, published)
+                d, head_full = os.path.join(land.OUT, repo), published
         fam, lic = rows[0]["family"], rows[0]["lic"]
         mp = os.path.join(wt, lic, fam, "METADATA.pb")
         text = open(mp, encoding="utf-8").read()
