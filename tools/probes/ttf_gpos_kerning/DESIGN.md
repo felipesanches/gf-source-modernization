@@ -115,3 +115,16 @@ a mark (Mn, Mc, Me, not default-ignorable), or GPOS has a feature besides `kern`
 read the same under the corrected rules and are not re-landed.
 
     BF_TREE=<branch 2026-11-02 + the kerning commit> REPOS=tools/probes/ttf_gpos_kerning/run2-repos.txt sh tools/probes/ttf_gpos_kerning/accept.sh <scratch dir>
+
+Result (accept-2026-11-04-run2.txt; converter babelfont branch 2026-11-02 + the corrected kerning
+commit): 62 of the 72 keep their verdict, among them the 7 run 1 lost (Forum, the five PT families and
+Share are CLEAN again, their kerning feature code kept). The other 10 are the IM Fell families,
+CLEAN-DISCLOSED -> RESIDUAL, and the kerning change is not why: they have no GPOS kerning, and their
+converted sources equal their current landings except for random master ids. Gate gap G now puts
+U+0326 between kerned pairs, and IM Fell's disclosed U+0326 defect (bottleneck 9: commaaccent at x=279
+in the release, 480 in the build; base+mark already 249 of 253) shows there too: kern+mark 3778 of 3916
+in IM Fell English Roman. Their accepted list needs that line when they are re-landed (land.py
+--write-accepted), once Felipe decides bottleneck 9.
+
+So the change passes the design's bar: no style loses CLEAN through the reader, and no shaping run
+differs because of it.
