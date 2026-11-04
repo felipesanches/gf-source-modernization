@@ -1,0 +1,18 @@
+old 1475 entries, generated 1490, kept by hand 1 (googlesans-flex), result 1491
+added 16, removed 0, rev changed 0
+  + https://github.com/googlefonts/blackandwhitepicture  sources/config.yaml
+  + https://github.com/googlefonts/blackhansans  sources/config.yaml
+  + https://github.com/googlefonts/cutefont  sources/config.yaml
+  + https://github.com/googlefonts/dokdo  sources/config.yaml
+  + https://github.com/googlefonts/eastseadokdo  sources/config.yaml
+  + https://github.com/googlefonts/gamjaflower  sources/config.yaml
+  + https://github.com/googlefonts/gugi  sources/config.yaml
+  + https://github.com/googlefonts/himelody  sources/config.yaml
+  + https://github.com/googlefonts/lato  sources/config.yaml
+  + https://github.com/googlefonts/nanumbrushscript  sources/config.yaml
+  + https://github.com/googlefonts/nanumgothic  sources/config.yaml
+  + https://github.com/googlefonts/nanumpenscript  sources/config.yaml
+  + https://github.com/googlefonts/poorstory  sources/config.yaml
+  + https://github.com/googlefonts/songmyung  sources/config.yaml
+  + https://github.com/googlefonts/stylish  sources/config.yaml
+  + https://github.com/googlefonts/sunflower  sources/config.yaml

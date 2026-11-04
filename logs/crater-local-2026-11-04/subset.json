@@ -1,0 +1,86 @@
+{
+  "version": "1.1",
+  "fonts_repo_sha": "e4a37edc30c612724d1ab506484445e9c5806391",
+  "sources": [
+    {
+      "repo_url": "https://github.com/googlefonts/blackandwhitepicture",
+      "rev": "75469c6eb209e3b87717e10f604a15fc501b46e2",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/blackhansans",
+      "rev": "41b7d933d1c5d9c570f9f2a71affc5c2f8142818",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/cutefont",
+      "rev": "759c5c5d251f5f9f70d0f3e509057cd8d03f7630",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/dokdo",
+      "rev": "47a91e8d460eb2891c66c1af36bc675f23855087",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/eastseadokdo",
+      "rev": "7826832c41f58f84cc819f5c4353ad989db69b49",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/gamjaflower",
+      "rev": "c98981a4f463a583f619d53b419678c6bc1fb7d9",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/gugi",
+      "rev": "cb3b662a31375df2083eb5522e4123194e8ebe1b",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/himelody",
+      "rev": "a322a95b160571d7bb5a8efc3b64a5f847c80fce",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/lato",
+      "rev": "3a099680152e3455ef6bc3eb4118ec5ef60e7e54",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/nanumbrushscript",
+      "rev": "5b703ee26d2c686003d96d63189461e08402c1f0",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/nanumgothic",
+      "rev": "1893597aed63d9fecf2e84a70804f60ae490162d",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/nanumpenscript",
+      "rev": "404860478f027e805535e22988a7823fc43d1848",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/poorstory",
+      "rev": "b2d4c0cc67e5a36633e2f55784612e04e721d3e8",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/songmyung",
+      "rev": "34d21808ddde0fc48444269a2541e57c6746ae09",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/stylish",
+      "rev": "e0b178c4cb090a6805ab41f8d4c3a7d8d3176633",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/sunflower",
+      "rev": "ee6d06ce4876d1493f59c9db050c550d21cfd645",
+      "config": "sources/config.yaml"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# crater-targets-2026-11-04
+
+Inputs and summary of the fontc_crater targets update for google/fonts#11225 (the 16
+binary-only families Black And White Picture, Black Han Sans, Cute Font, Dokdo, East Sea
+Dokdo, Gamja Flower, Gugi, Hi Melody, Lato, Nanum Brush Script, Nanum Gothic, Nanum Pen
+Script, Poor Story, Song Myung, Stylish, Sunflower), on googlefonts/fontc_crater main 2c7b075.
+
+- `generated.json`: google-fonts-sources d7db2d8 run against google/fonts e4a37edc3 (the
+  merge of #11225): `google-fonts-sources <dir> -o generated.json`, with `<dir>/google/fonts`
+  a detached worktree of the google/fonts clone at that commit (its `origin/HEAD` points at
+  `origin/main`). `generate.log` is the tool's output (empty).
+- `merge.txt`: what `tools/crater_targets.py <fontc_crater 2c7b075 targets.json>
+  generated.json` reported: 1475 -> 1491 entries, 16 added, none removed, no rev change,
+  googlesans-flex kept by hand. The result is the branch's targets.json.
+- Crater on the 16 added entries before the PR: logs/crater-local-2026-11-04 (74 of 74).
