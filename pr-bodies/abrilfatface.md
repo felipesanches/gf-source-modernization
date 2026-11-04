@@ -6,7 +6,8 @@ Body:
 
 Converts Abril Fatface's FontForge sources to `.glyphs`, so they build with gftools-builder and fontc. One commit per step, the conversion last:
 
-- `9b8db6f Adopt the Unified Font Repository template`
-- `f431a0a Convert to .glyphs with babelfont 8b59bc3`
+- [`8e2fea7`](https://github.com/googlefonts/abrilfatface/commit/8e2fea7) Adopt the Unified Font Repository template
+- [`c6a7405`](https://github.com/googlefonts/abrilfatface/commit/c6a7405) Name AbrilFatface-Regular as the release does
+- [`eabee93`](https://github.com/googlefonts/abrilfatface/commit/eabee93) Convert to .glyphs with babelfont 5ff5bf0
 
-Builds with gftools-builder3 e851b8b (fontc 1.0.0) and matches the binaries google/fonts b5efa9c32e8f ships: 0 blocking rows under the table gate and exactly the release's codepoints, 1 style(s).
+Builds with gftools-builder (gftools-rust 1e638bd, fontc 1.0.0) and matches the binaries google/fonts 2eb0b48d5f76 ships: 0 blocking rows under [tools/table_gate.py](https://github.com/felipesanches/gf-source-modernization/blob/488fa72/tools/table_gate.py), exactly the release's codepoints, and functionally equivalent under [tools/functional_gate.py](https://github.com/felipesanches/gf-source-modernization/blob/488fa72/tools/functional_gate.py) (cmap, shaping, rendering, names, line spacing, advances, GDEF), 1 style(s).

@@ -42,6 +42,14 @@ def main():
     convert = git(d, "log", "-1", "--format=%B", "HEAD")
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
     claim = " ".join(claim.group(1).split()) if claim else "(no build claim found)"
+    # The tools the claim names live in the evidence repository, at the revision the convert
+    # commit cites; a reader of this repository's PR must be able to open them.
+    cited = re.search(r"^Those tools[^:]*:\s+(https://github\.com/\S+)\s+at\s+([0-9a-f]{7,40})\b", convert, re.M)
+    if not cited:
+        sys.exit("FATAL: the convert commit cites no evidence revision")
+    url, rev = cited.groups()
+    claim = re.sub(r"\btools/([a-z_]+\.py)\b",
+                   lambda m: "[tools/%s](%s/blob/%s/tools/%s)" % (m.group(1), url, rev, m.group(1)), claim)
     names = " and ".join(sorted({land.display_name(r["family"]) for r in rows}))
     # One paragraph or bullet per line: GitHub wraps them. Title first, then the body.
     if kind == "allerta":
@@ -60,7 +68,11 @@ def main():
         intro = ("Converts %s's FontForge sources to `.glyphs`, so they build with "
                  "gftools-builder and fontc. One commit per step, the conversion last:" % names)
     lines = ["Title: " + title, "", "Body:", "", DISCLAIMER, "", intro, ""]
-    lines += ["- `%s`" % c for c in commits]
+    # each commit links to the repository the PR is opened in, where the push put it
+    repo_url = re.sub(r"\.git$", "", git(d, "remote", "get-url", "origin").strip())
+    for c in commits:
+        h, subject = c.split(" ", 1)
+        lines.append("- [`%s`](%s/commit/%s) %s" % (h, repo_url, h, subject))
     lines += ["", claim]
     if kind == "binary":
         lines += ["", "What differs from the released fonts, reviewed and left as it is, is listed "
