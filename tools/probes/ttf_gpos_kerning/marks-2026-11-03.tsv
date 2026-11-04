@@ -1,0 +1,163 @@
+repo	style	gdef_classes	marks	examples	verdict
+oranienbaum	Oranienbaum-Regular	no	0		SAFE
+ptserif	PT_Serif-Web-Bold	no	1	acutecomb	MARKS
+ptserif	PT_Serif-Web-BoldItalic	no	1	acutecomb	MARKS
+ptserif	PT_Serif-Web-Italic	no	1	acutecomb	MARKS
+ptserif	PT_Serif-Web-Regular	no	1	acutecomb	MARKS
+ptsansnarrow	PT_Sans-Narrow-Web-Bold	no	1	acutecomb	MARKS
+ptsansnarrow	PT_Sans-Narrow-Web-Regular	no	1	acutecomb	MARKS
+ptsanscaption	PT_Sans-Caption-Web-Bold	no	1	acutecomb	MARKS
+ptsanscaption	PT_Sans-Caption-Web-Regular	no	1	acutecomb	MARKS
+jua	Jua-Regular	no	0		SAFE
+comingsoon	ComingSoon-Regular	no	0		SAFE
+portersansblock	PorterSansBlock-Regular	no	0		SAFE
+rocksalt	RockSalt-Regular	no	0		SAFE
+ptserifcaption	PT_Serif-Caption-Web-Italic	no	1	acutecomb	MARKS
+ptserifcaption	PT_Serif-Caption-Web-Regular	no	1	acutecomb	MARKS
+ptsans	PT_Sans-Web-Bold	no	1	acutecomb	MARKS
+ptsans	PT_Sans-Web-BoldItalic	no	1	acutecomb	MARKS
+ptsans	PT_Sans-Web-Italic	no	1	acutecomb	MARKS
+ptsans	PT_Sans-Web-Regular	no	1	acutecomb	MARKS
+lato	Lato-Black	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-BlackItalic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-Bold	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-BoldItalic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-ExtraBold	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-ExtraBoldItalic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-ExtraLight	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-ExtraLightItalic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-Italic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-Light	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-LightItalic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-Medium	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-MediumItalic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-Regular	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-SemiBold	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-SemiBoldItalic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-Thin	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+lato	Lato-ThinItalic	no	135	acutecomb,dotbelowcomb,gravecomb,hookabovecomb	MARKS
+carlito	Carlito-Bold	yes	142	glyph01312,glyph01560,glyph01580,glyph02558	MARKS
+carlito	Carlito-BoldItalic	yes	142	glyph01311,glyph01559,glyph01579,glyph02557	MARKS
+carlito	Carlito-Italic	yes	142	glyph01311,glyph01559,glyph01579,glyph02557	MARKS
+carlito	Carlito-Regular	yes	142	glyph01312,glyph01560,glyph01580,glyph02558	MARKS
+jomolhari	Jomolhari-Regular	yes	0		SAFE
+nanummyeongjo	NanumMyeongjo-Bold	no	0		SAFE
+nanummyeongjo	NanumMyeongjo-ExtraBold	no	0		SAFE
+nanummyeongjo	NanumMyeongjo-Regular	no	0		SAFE
+lekton	Lekton-Italic	yes	0		SAFE
+monoton	Monoton-Regular	yes	0		SAFE
+nixieone	NixieOne-Regular	yes	0		SAFE
+unifrakturcook	UnifrakturCook-Bold	yes	0		SAFE
+mountainsofchristmas	MountainsofChristmas-Bold	yes	0		SAFE
+mountainsofchristmas	MountainsofChristmas-Regular	yes	0		SAFE
+italiana	Italiana-Regular	yes	0		SAFE
+kottaone	KottaOne-Regular	yes	0		SAFE
+lilitaone	LilitaOne-Regular	yes	0		SAFE
+lustria	Lustria-Regular	yes	0		SAFE
+macondo	Macondo-Regular	yes	0		SAFE
+mrbedfort	MrBedfort-Regular	yes	0		SAFE
+niconne	Niconne-Regular	yes	0		SAFE
+oleoscript	OleoScript-Bold	yes	0		SAFE
+oleoscript	OleoScript-Regular	yes	0		SAFE
+oleoscriptswashcaps	OleoScriptSwashCaps-Bold	yes	0		SAFE
+oleoscriptswashcaps	OleoScriptSwashCaps-Regular	yes	0		SAFE
+rougescript	RougeScript-Regular	yes	0		SAFE
+ruluko	Ruluko-Regular	yes	0		SAFE
+salsa	Salsa-Regular	yes	0		SAFE
+titanone	TitanOne-Regular	yes	0		SAFE
+titilliumweb	TitilliumWeb-Black	yes	0		SAFE
+titilliumweb	TitilliumWeb-Bold	yes	0		SAFE
+titilliumweb	TitilliumWeb-BoldItalic	yes	0		SAFE
+titilliumweb	TitilliumWeb-Italic	yes	0		SAFE
+titilliumweb	TitilliumWeb-Light	yes	0		SAFE
+titilliumweb	TitilliumWeb-LightItalic	yes	0		SAFE
+titilliumweb	TitilliumWeb-Regular	yes	0		SAFE
+titilliumweb	TitilliumWeb-SemiBold	yes	0		SAFE
+titilliumweb	TitilliumWeb-SemiBoldItalic	yes	0		SAFE
+actor	Actor-Regular	no	0		SAFE
+cantoraone	CantoraOne-Regular	no	0		SAFE
+carroisgothic	CarroisGothic-Regular	no	1	dotaccentcmb	MARKS
+carroisgothicsc	CarroisGothicSC-Regular	no	1	dotaccentcmb	MARKS
+combo	Combo-Regular	yes	0		SAFE
+fingerpaint	FingerPaint-Regular	no	1	dotaccentcmb	MARKS
+forum	Forum-Regular	no	10	acutecomb,gravecomb,tildecomb,uni0302	MARKS
+gorditas	Gorditas-Bold	yes	0		SAFE
+gorditas	Gorditas-Regular	yes	0		SAFE
+happymonkey	HappyMonkey-Regular	yes	0		SAFE
+hermeneusone	HermeneusOne-Regular	no	0		SAFE
+kaushanscript	KaushanScript-Regular	no	0		SAFE
+lobstertwo	LobsterTwo-Bold	yes	0		SAFE
+lobstertwo	LobsterTwo-BoldItalic	yes	0		SAFE
+lobstertwo	LobsterTwo-Italic	yes	0		SAFE
+lobstertwo	LobsterTwo-Regular	yes	0		SAFE
+metalmania	MetalMania-Regular	no	1	dotaccentcmb	MARKS
+milonga	Milonga-Regular	no	0		SAFE
+miltonian	Miltonian-Regular	yes	0		SAFE
+miltoniantattoo	MiltonianTattoo-Regular	yes	0		SAFE
+newrocker	NewRocker-Regular	no	0		SAFE
+petitformalscript	PetitFormalScript-Regular	no	0		SAFE
+poetsenone	PoetsenOne-Regular	no	0		SAFE
+prostoone	ProstoOne-Regular	no	0		SAFE
+quattrocento	Quattrocento-Bold	no	0		SAFE
+quattrocento	Quattrocento-Regular	no	0		SAFE
+quattrocentosans	QuattrocentoSans-Bold	no	0		SAFE
+quattrocentosans	QuattrocentoSans-BoldItalic	no	0		SAFE
+quattrocentosans	QuattrocentoSans-Italic	no	0		SAFE
+quattrocentosans	QuattrocentoSans-Regular	no	0		SAFE
+racingsansone	RacingSansOne-Regular	no	0		SAFE
+ralewaydots	RalewayDots-Regular	no	0		SAFE
+ranchers	Ranchers-Regular	no	0		SAFE
+sansitaone	SansitaOne-Regular	yes	0		SAFE
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular	no	0		SAFE
+share	Share-Bold	no	0		SAFE
+share	Share-BoldItalic	no	0		SAFE
+share	Share-Italic	no	0		SAFE
+share	Share-Regular	no	0		SAFE
+sofadione	SofadiOne-Regular	no	1	dotaccentcmb	MARKS
+stalinistone	StalinistOne-Regular	yes	0		SAFE
+underdog	Underdog-Regular	no	0		SAFE
+volkhov	Volkhov-Bold	no	0		SAFE
+volkhov	Volkhov-BoldItalic	no	0		SAFE
+volkhov	Volkhov-Italic	no	0		SAFE
+volkhov	Volkhov-Regular	no	0		SAFE
+audiowide	Audiowide-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+berkshireswash	BerkshireSwash-Regular	no	3	commaaccent,uni0312,uni0315	MARKS
+bigelowrules	BigelowRules-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+clickerscript	ClickerScript-Regular	no	0		SAFE
+dynalight	Dynalight-Regular	no	0		SAFE
+eaglelake	EagleLake-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+engagement	Engagement-Regular	no	0		SAFE
+fascinate	Fascinate-Regular	no	3	commaaccent,uni0312,uni0315	MARKS
+fascinateinline	FascinateInline-Regular	no	3	commaaccent,uni0312,uni0315	MARKS
+fondamento	Fondamento-Italic	yes	0		SAFE
+fondamento	Fondamento-Regular	yes	0		SAFE
+freckleface	FreckleFace-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+galindo	Galindo-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+grandhotel	GrandHotel-Regular	no	0		SAFE
+hanalei	Hanalei-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+hanaleifill	HanaleiFill-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+jimnightshade	JimNightshade-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+marcellus	Marcellus-Regular	no	0		SAFE
+marcellussc	MarcellusSC-Regular	no	0		SAFE
+margarine	Margarine-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+mclaren	McLaren-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+mervalescript	MervaleScript-Regular	no	0		SAFE
+mousememoirs	MouseMemoirs-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+oregano	Oregano-Italic	no	0		SAFE
+oregano	Oregano-Regular	no	0		SAFE
+originalsurfer	OriginalSurfer-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+parisienne	Parisienne-Regular	no	0		SAFE
+peralta	Peralta-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+purplepurse	PurplePurse-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+quintessential	Quintessential-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+ribeye	Ribeye-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+risque	Risque-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+romanesco	Romanesco-Regular	no	0		SAFE
+rumraisin	RumRaisin-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+shojumaru	Shojumaru-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+spicyrice	SpicyRice-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+stalemate	Stalemate-Regular	no	0		SAFE
+stintultracondensed	StintUltraCondensed-Regular	no	2	commaaccent,uni0315	MARKS
+stintultraexpanded	StintUltraExpanded-Regular	no	2	commaaccent,uni0315	MARKS
+uncialantiqua	UncialAntiqua-Regular	no	3	uni0312,uni0315,uni0326	MARKS
+yesteryear	Yesteryear-Regular	no	1	commaaccent	MARKS

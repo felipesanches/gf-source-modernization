@@ -1,0 +1,183 @@
+actor: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Actor-Regular=0 functional=PASS
+akronim: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Akronim-Regular=0 functional=PASS
+alef: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Alef-Bold=1 functional=PASS; Alef-Regular=1 functional=PASS
+alfaslabone: CLEAN-UNPUBLISHED-CONVERTER, 4 commits, 0 edit(s): AlfaSlabOne-Regular=0 functional=PASS
+almarai: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Almarai-Bold=0 functional=PASS; Almarai-ExtraBold=0 functional=PASS; Almarai-Light=0 functional=PASS; Almarai-Regular=0 functional=PASS
+audiowide: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Audiowide-Regular=2 functional=PASS
+averialibre: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): AveriaLibre-Bold=3 functional=PASS; AveriaLibre-BoldItalic=3 functional=PASS; AveriaLibre-Italic=3 functional=PASS; AveriaLibre-Light=3 functional=PASS; AveriaLibre-LightItalic=3 functional=PASS; AveriaLibre-Regular=3 functional=PASS
+averiasanslibre: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): AveriaSansLibre-Bold=3 functional=PASS; AveriaSansLibre-BoldItalic=3 functional=PASS; AveriaSansLibre-Italic=3 functional=PASS; AveriaSansLibre-Light=3 functional=PASS; AveriaSansLibre-LightItalic=3 functional=PASS; AveriaSansLibre-Regular=3 functional=PASS
+averiaseriflibre: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): AveriaSerifLibre-Bold=3 functional=PASS; AveriaSerifLibre-BoldItalic=3 functional=PASS; AveriaSerifLibre-Italic=3 functional=PASS; AveriaSerifLibre-Light=3 functional=PASS; AveriaSerifLibre-LightItalic=3 functional=PASS; AveriaSerifLibre-Regular=3 functional=PASS
+baumans: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Baumans-Regular=0 functional=PASS
+berkshireswash: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): BerkshireSwash-Regular=2 functional=PASS
+bigelowrules: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): BigelowRules-Regular=2 functional=PASS
+blackandwhitepicture: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): BlackAndWhitePicture-Regular=0 functional=PASS
+blackhansans: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): BlackHanSans-Regular=0 functional=PASS
+butterflykids: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): ButterflyKids-Regular=0 functional=PASS
+caesardressing: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): CaesarDressing-Regular=0 functional=PASS
+calligraffitti: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Calligraffitti-Regular=0 functional=PASS
+cantoraone: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): CantoraOne-Regular=0 functional=PASS
+carlito: CLEAN-UNPUBLISHED-CONVERTER, 13 commits, 0 edit(s): Carlito-Bold=0 functional=PASS; Carlito-BoldItalic=0 functional=PASS; Carlito-Italic=0 functional=PASS; Carlito-Regular=0 functional=PASS
+carroisgothic: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): CarroisGothic-Regular=0 functional=PASS
+carroisgothicsc: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): CarroisGothicSC-Regular=0 functional=PASS
+chelseamarket: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): ChelseaMarket-Regular=0 functional=PASS
+cherrycreamsoda: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): CherryCreamSoda-Regular=0 functional=PASS
+chewy: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Chewy-Regular=0 functional=PASS
+clickerscript: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): ClickerScript-Regular=2 functional=PASS
+combo: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Combo-Regular=0 functional=PASS
+comingsoon: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): ComingSoon-Regular=0 functional=PASS
+craftygirls: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): CraftyGirls-Regular=0 functional=PASS
+cutefont: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): CuteFont-Regular=0 functional=PASS
+dohyeon: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): DoHyeon-Regular=0 functional=PASS
+dokdo: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Dokdo-Regular=0 functional=PASS
+dongle: RESIDUAL-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Dongle-Bold=2 functional=FAIL(shaping+rendering+gdef); Dongle-Light=2 functional=FAIL(shaping+rendering+gdef); Dongle-Regular=2 functional=FAIL(shaping+rendering+gdef)
+dynalight: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Dynalight-Regular=2 functional=PASS
+eaglelake: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): EagleLake-Regular=2 functional=PASS
+eastseadokdo: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): EastSeaDokdo-Regular=0 functional=PASS
+electrolize: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Electrolize-Regular=0 functional=PASS
+emilyscandy: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): EmilysCandy-Regular=0 functional=PASS
+engagement: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Engagement-Regular=2 functional=PASS
+fascinate: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Fascinate-Regular=2 functional=PASS
+fascinateinline: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): FascinateInline-Regular=2 functional=PASS
+fingerpaint: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): FingerPaint-Regular=0 functional=PASS
+flavors: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Flavors-Regular=0 functional=PASS
+fondamento: RESIDUAL-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Fondamento-Italic=2 functional=FAIL(shaping+gdef); Fondamento-Regular=2 functional=FAIL(shaping+gdef)
+fontdinerswanky: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): FontdinerSwanky-Regular=0 functional=PASS
+forum: RESIDUAL-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Forum-Regular=0 functional=FAIL(shaping)
+freckleface: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): FreckleFace-Regular=2 functional=PASS
+frederickathegreat: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): FrederickatheGreat-Regular=0 functional=PASS
+frijole: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Frijole-Regular=0 functional=PASS
+galindo: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Galindo-Regular=2 functional=PASS
+gamjaflower: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): GamjaFlower-Regular=0 functional=PASS
+gorditas: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Gorditas-Bold=0 functional=PASS; Gorditas-Regular=0 functional=PASS
+grandhotel: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): GrandHotel-Regular=2 functional=PASS
+griffy: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Griffy-Regular=0 functional=PASS
+gugi: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Gugi-Regular=0 functional=PASS
+hanalei: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Hanalei-Regular=2 functional=PASS
+hanaleifill: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): HanaleiFill-Regular=2 functional=PASS
+happymonkey: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): HappyMonkey-Regular=0 functional=PASS
+hermeneusone: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): HermeneusOne-Regular=0 functional=PASS
+himelody: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): HiMelody-Regular=0 functional=PASS
+homemadeapple: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): HomemadeApple-Regular=0 functional=PASS
+imfelldoublepica: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFELLDoublePica-Italic=1 functional=FAIL(shaping+rendering); IMFELLDoublePica-Regular=1 functional=FAIL(shaping+rendering)
+imfelldoublepicasc: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFeDPsc28P=1 functional=FAIL(shaping+rendering)
+imfelldwpica: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFePIit28P=1 functional=FAIL(shaping+rendering); IMFePIrm28P=1 functional=FAIL(shaping+rendering)
+imfelldwpicasc: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFePIsc28P=1 functional=FAIL(shaping+rendering)
+imfellenglish: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFeENit28P=1 functional=FAIL(shaping+rendering); IMFeENrm28P=1 functional=FAIL(shaping+rendering)
+imfellenglishsc: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFeENsc28P=1 functional=FAIL(shaping+rendering)
+imfellfrenchcanon: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFeFCit28P=1 functional=FAIL(shaping+rendering); IMFeFCrm28P=1 functional=FAIL(shaping+rendering)
+imfellfrenchcanonsc: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFeFCsc28P=1 functional=FAIL(shaping+rendering)
+imfellgreatprimer: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFeGPit28P=1 functional=FAIL(shaping+rendering); IMFeGPrm28P=1 functional=FAIL(shaping+rendering)
+imfellgreatprimersc: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): IMFeGPsc28P=1 functional=FAIL(shaping+rendering)
+italiana: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Italiana-Regular=0 functional=PASS
+jimnightshade: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): JimNightshade-Regular=2 functional=PASS
+jollylodger: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): JollyLodger-Regular=0 functional=PASS
+jomolhari: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 4 commits, 0 edit(s): Jomolhari-Regular=1 functional=PASS
+jua: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Jua-Regular=0 functional=PASS
+junge: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Junge-Regular=0 functional=PASS
+kaushanscript: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): KaushanScript-Regular=0 functional=PASS
+kottaone: CLEAN-UNPUBLISHED-CONVERTER, 4 commits, 0 edit(s): KottaOne-Regular=0 functional=PASS
+kranky: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Kranky-Regular=0 functional=PASS
+lato: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Lato-Black=0 functional=PASS; Lato-BlackItalic=0 functional=PASS; Lato-Bold=0 functional=PASS; Lato-BoldItalic=0 functional=PASS; Lato-ExtraBold=0 functional=PASS; Lato-ExtraBoldItalic=0 functional=PASS; Lato-ExtraLight=0 functional=PASS; Lato-ExtraLightItalic=0 functional=PASS; Lato-Italic=0 functional=PASS; Lato-Light=0 functional=PASS; Lato-LightItalic=0 functional=PASS; Lato-Medium=0 functional=PASS; Lato-MediumItalic=0 functional=PASS; Lato-Regular=0 functional=PASS; Lato-SemiBold=0 functional=PASS; Lato-SemiBoldItalic=0 functional=PASS; Lato-Thin=0 functional=PASS; Lato-ThinItalic=0 functional=PASS
+lekton: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Lekton-Bold=0 functional=PASS; Lekton-Italic=0 functional=PASS; Lekton-Regular=0 functional=PASS
+librecaslondisplay: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): LibreCaslonDisplay-Regular=0 functional=PASS
+lilitaone: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): LilitaOne-Regular=0 functional=PASS
+limelight: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Limelight-Regular=0 functional=PASS
+lobstertwo: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): LobsterTwo-Bold=0 functional=PASS; LobsterTwo-BoldItalic=0 functional=PASS; LobsterTwo-Italic=0 functional=PASS; LobsterTwo-Regular=0 functional=PASS
+lustria: CLEAN-UNPUBLISHED-CONVERTER, 4 commits, 0 edit(s): Lustria-Regular=0 functional=PASS
+macondo: CLEAN-UNPUBLISHED-CONVERTER, 4 commits, 0 edit(s): Macondo-Regular=0 functional=PASS
+marcellus: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Marcellus-Regular=2 functional=PASS
+marcellussc: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): MarcellusSC-Regular=2 functional=PASS
+margarine: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Margarine-Regular=2 functional=PASS
+mclaren: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): McLaren-Regular=2 functional=PASS
+megrim: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Megrim=0 functional=PASS
+mervalescript: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): MervaleScript-Regular=2 functional=PASS
+metalmania: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): MetalMania-Regular=0 functional=PASS
+milonga: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Milonga-Regular=0 functional=PASS
+miltonian: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Miltonian-Regular=0 functional=PASS
+miltoniantattoo: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): MiltonianTattoo-Regular=0 functional=PASS
+miniver: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): Miniver-Regular=0 functional=PASS
+monoton: CLEAN-UNPUBLISHED-CONVERTER, 4 commits, 0 edit(s): Monoton-Regular=0 functional=PASS
+mountainsofchristmas: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): MountainsofChristmas-Bold=0 functional=PASS; MountainsofChristmas-Regular=0 functional=PASS
+mousememoirs: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): MouseMemoirs-Regular=2 functional=PASS
+mrbedfort: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): MrBedfort-Regular=0 functional=PASS
+mysteryquest: CLEAN-UNPUBLISHED-CONVERTER, 3 commits, 0 edit(s): MysteryQuest-Regular=0 functional=PASS
+nanumbrushscript: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): NanumBrushScript-Regular=0 functional=PASS
+nanumgothic: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): NanumGothic-Bold=0 functional=PASS; NanumGothic-ExtraBold=0 functional=PASS; NanumGothic-Regular=0 functional=PASS
+nanumgothiccoding: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): NanumGothicCoding-Bold=1 functional=PASS; NanumGothicCoding-Regular=1 functional=PASS
+nanummyeongjo: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): NanumMyeongjo-Bold=0 functional=PASS; NanumMyeongjo-ExtraBold=1 functional=PASS; NanumMyeongjo-Regular=0 functional=PASS
+nanumpenscript: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): NanumPenScript-Regular=0 functional=PASS
+newrocker: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): NewRocker-Regular=0 functional=PASS
+niconne: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): Niconne-Regular=0 functional=PASS
+nixieone: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): NixieOne-Regular=0 functional=PASS
+nothingyoucoulddo: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): NothingYouCouldDo=0 functional=PASS
+oleoscript: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): OleoScript-Bold=0 functional=PASS; OleoScript-Regular=0 functional=PASS
+oleoscriptswashcaps: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): OleoScriptSwashCaps-Bold=0 functional=PASS; OleoScriptSwashCaps-Regular=0 functional=PASS
+oranienbaum: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Oranienbaum-Regular=0 functional=PASS
+oregano: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Oregano-Italic=2 functional=PASS; Oregano-Regular=2 functional=PASS
+originalsurfer: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): OriginalSurfer-Regular=2 functional=PASS
+parisienne: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Parisienne-Regular=2 functional=PASS
+patrickhand: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): PatrickHand-Regular=0 functional=PASS
+peralta: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Peralta-Regular=2 functional=PASS
+permanentmarker: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PermanentMarker-Regular=0 functional=PASS
+petitformalscript: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PetitFormalScript-Regular=0 functional=PASS
+poetsenone: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PoetsenOne-Regular=0 functional=PASS
+poorstory: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PoorStory-Regular=0 functional=PASS
+portersansblock: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PorterSansBlock-Regular=0 functional=PASS
+princesssofia: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PrincessSofia-Regular=0 functional=PASS
+prostoone: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): ProstoOne-Regular=0 functional=PASS
+ptsans: RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PT_Sans-Web-Bold=0 functional=FAIL(shaping); PT_Sans-Web-BoldItalic=0 functional=FAIL(shaping); PT_Sans-Web-Italic=0 functional=FAIL(shaping); PT_Sans-Web-Regular=0 functional=FAIL(shaping)
+ptsanscaption: RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PT_Sans-Caption-Web-Bold=0 functional=FAIL(shaping); PT_Sans-Caption-Web-Regular=0 functional=FAIL(shaping)
+ptsansnarrow: RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PT_Sans-Narrow-Web-Bold=0 functional=FAIL(shaping); PT_Sans-Narrow-Web-Regular=0 functional=FAIL(shaping)
+ptserif: RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PT_Serif-Web-Bold=0 functional=FAIL(shaping); PT_Serif-Web-BoldItalic=0 functional=FAIL(shaping); PT_Serif-Web-Italic=0 functional=FAIL(shaping); PT_Serif-Web-Regular=0 functional=FAIL(shaping)
+ptserifcaption: RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PT_Serif-Caption-Web-Italic=0 functional=FAIL(shaping); PT_Serif-Caption-Web-Regular=0 functional=FAIL(shaping)
+purplepurse: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): PurplePurse-Regular=2 functional=PASS
+quattrocento: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Quattrocento-Bold=0 functional=PASS; Quattrocento-Regular=0 functional=PASS
+quattrocentosans: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): QuattrocentoSans-Bold=0 functional=PASS; QuattrocentoSans-BoldItalic=0 functional=PASS; QuattrocentoSans-Italic=0 functional=PASS; QuattrocentoSans-Regular=0 functional=PASS
+quintessential: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Quintessential-Regular=2 functional=PASS
+racingsansone: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): RacingSansOne-Regular=0 functional=PASS
+ralewaydots: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): RalewayDots-Regular=0 functional=PASS
+ranchers: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Ranchers-Regular=0 functional=PASS
+rancho: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Rancho-Regular=0 functional=PASS
+reeniebeanie: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): ReenieBeanie=0 functional=PASS
+revalia: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Revalia-Regular=0 functional=PASS
+ribeye: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Ribeye-Regular=2 functional=PASS
+risque: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Risque-Regular=2 functional=PASS
+rocksalt: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): RockSalt-Regular=0 functional=PASS
+romanesco: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Romanesco-Regular=2 functional=PASS
+rougescript: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): RougeScript-Regular=0 functional=PASS
+ruluko: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): Ruluko-Regular=0 functional=PASS
+rumraisin: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): RumRaisin-Regular=2 functional=PASS
+salsa: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): Salsa-Regular=0 functional=PASS
+sansation: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): Sansation-Bold=3 functional=PASS; Sansation-BoldItalic=3 functional=PASS; Sansation-Italic=3 functional=PASS; Sansation-Light=3 functional=PASS; Sansation-LightItalic=4 functional=FAIL(line_spacing); Sansation-Regular=3 functional=PASS
+sansitaone: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): SansitaOne-Regular=0 functional=PASS
+satisfy: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Satisfy-Regular=0 functional=PASS
+schoolbell: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Schoolbell-Regular=0 functional=PASS
+seaweedscript: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): SeaweedScript-Regular=0 functional=PASS
+shadowsintolighttwo: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): ShadowsIntoLightTwo-Regular=0 functional=PASS
+share: RESIDUAL-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Share-Bold=0 functional=FAIL(shaping); Share-BoldItalic=0 functional=FAIL(shaping); Share-Italic=0 functional=FAIL(shaping); Share-Regular=0 functional=FAIL(shaping)
+shojumaru: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Shojumaru-Regular=2 functional=PASS
+skranji: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Skranji-Bold=0 functional=PASS; Skranji-Regular=0 functional=PASS
+slackey: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Slackey-Regular=0 functional=PASS
+sofadione: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): SofadiOne-Regular=0 functional=PASS
+sofia: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Sofia-Regular=0 functional=PASS
+songmyung: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): SongMyung-Regular=0 functional=PASS
+spicyrice: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): SpicyRice-Regular=2 functional=PASS
+stalemate: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Stalemate-Regular=2 functional=PASS
+stalinistone: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): StalinistOne-Regular=0 functional=PASS
+stintultracondensed: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): StintUltraCondensed-Regular=2 functional=PASS
+stintultraexpanded: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): StintUltraExpanded-Regular=2 functional=PASS
+strong: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Strong-Regular=0 functional=PASS
+stylish: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Stylish-Regular=0 functional=PASS
+sunflower: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Sunflower-Bold=0 functional=PASS; Sunflower-Light=0 functional=PASS; Sunflower-Medium=0 functional=PASS
+sunshiney: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Sunshiney-Regular=0 functional=PASS
+titanone: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): TitanOne-Regular=0 functional=PASS
+titilliumweb: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): TitilliumWeb-Black=0 functional=PASS; TitilliumWeb-Bold=0 functional=PASS; TitilliumWeb-BoldItalic=0 functional=PASS; TitilliumWeb-Italic=0 functional=PASS; TitilliumWeb-Light=0 functional=PASS; TitilliumWeb-LightItalic=0 functional=PASS; TitilliumWeb-Regular=0 functional=PASS; TitilliumWeb-SemiBold=0 functional=PASS; TitilliumWeb-SemiBoldItalic=0 functional=PASS
+tradewinds: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): TradeWinds-Regular=0 functional=PASS
+uncialantiqua: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): UncialAntiqua-Regular=2 functional=PASS
+underdog: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Underdog-Regular=0 functional=PASS
+unifrakturcook: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 4 commits, 0 edit(s): UnifrakturCook-Bold=0 functional=PASS
+unkempt: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Unkempt-Bold=0 functional=PASS; Unkempt-Regular=0 functional=PASS
+volkhov: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Volkhov-Bold=0 functional=PASS; Volkhov-BoldItalic=0 functional=PASS; Volkhov-Italic=0 functional=PASS; Volkhov-Regular=0 functional=PASS
+walterturncoat: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): WalterTurncoat-Regular=0 functional=PASS
+yeonsung: CLEAN-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): YeonSung-Regular=0 functional=PASS
+yesteryear: CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNCOMMITTED-EVIDENCE, 3 commits, 0 edit(s): Yesteryear-Regular=2 functional=PASS

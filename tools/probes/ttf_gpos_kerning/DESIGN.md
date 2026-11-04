@@ -25,8 +25,12 @@ cannot change what the kerning model means:
 
 1. Every `kern` lookup is type 2 (or an extension of type 2), ValueFormat1 is XAdvance alone and
    ValueFormat2 is 0, and no contextual lookup calls it.
-2. Its flag is IgnoreMarks, or 0 in a font whose GDEF classes no glyph as a mark (then the two read
-   the same). Otherwise the font keeps its kerning as feature code.
+2. Its flag is IgnoreMarks, or 0 in a font where no glyph is a mark (then the two read the same):
+   with GDEF glyph classes, none in class 3; without them, no glyph whose codepoint a shaper takes
+   for a mark (general category Mn, Mc or Me, not default-ignorable). Otherwise the font keeps its
+   kerning as feature code. (Corrected 2026-11-03: the first version looked only at the categories
+   the reader assigns, which are all bases in a font without GDEF that attaches no marks; Forum
+   failed shaping in the acceptance run, see marks.py below.)
 3. No `kern` lookup is registered for a right-to-left script (none is today; a later change can add
    it).
 4. Precedence as a shaper applies it: within one lookup, the first subtable holding a pair wins
@@ -61,3 +65,45 @@ model expresses: 161 of the 281 styles move, 120 keep what they have (110 have n
 - Then: the PR to simoncozens/babelfont-rs (problem first, P1/P15 comments), and for the 10 published
   repositories a new commit each (no force push) once it is merged and released in the pinned
   converter.
+
+## Marks in flag-0 fonts without GDEF (marks.py, marks-2026-11-03.tsv)
+
+The acceptance run's first regression was Forum: no GDEF, a flag-0 `kern` lookup, U+0300..U+030C
+encoded; 7195 of 8300 kern+mark runs differed, because master kerning compiles to a lookup that ignores
+marks and a shaper without glyph classes takes U+0301 for one. marks.py lists every flag-0 style:
+48 with no GDEF and no marks and 45 with GDEF classes and no marks are SAFE; 65 without GDEF and 4 with
+GDEF (Carlito) have marks and keep their feature code under the corrected rule 2.
+
+The functional gate missed most of the 65: its kern+mark corpus put only U+0301, U+0308 and U+0323
+between a kerned pair, and most of these fonts encode other marks (U+0312, U+0315, U+0326,
+dotaccentcmb). In the acceptance run 32 repositories with marks moved their kerning and passed (exactly
+the RISK rows of kern_marks_risk.py), and the 6 encoding U+0301 failed (Forum, PT Sans, PT Sans
+Caption, PT Sans Narrow, PT Serif, PT Serif Caption). Gate gap G, fixed in functional_gate.py: the
+corpus also puts up to KERN_MARKS (8) of the marks the two fonts share between a kerned pair.
+
+kern_marks_risk.py asks the same of every landed CLEAN repository on every route: the only release
+kern lookups without IgnoreMarks whose marks the old corpus never tried are those 32, and all of their
+current landings keep the kerning as feature code (flag 0 kept). No published landing is affected.
+
+    python3 -I tools/probes/ttf_gpos_kerning/kern_marks_risk.py > tools/probes/ttf_gpos_kerning/kern-marks-risk-2026-11-03.tsv
+
+## Other positioning features (Share)
+
+The run's other regression was Share: GPOS registers cpsp and kern for latn alone, and a shaper falls
+back to latn for a run of another script. Master kerning has no script; the compiled font registers
+kern for DFLT and grek too, where cpsp is then missing: 67 of 6120 cpsp runs differed (U+2126,
+U+2206 and other non-Latin codepoints lose cpsp). So a further condition, all required:
+
+8. GPOS has no feature besides `kern`, and every language system registers it. Of the 66 repositories
+   that moved kerning, 5 had other GPOS features (Alfa Slab One, Dongle, Libre Caslon Display, Share,
+   Titillium Web); they keep the feature code. No language system without `kern` exists today.
+
+    python3 -I tools/probes/ttf_gpos_kerning/marks.py tools/probes/ttf_gpos_kerning/census-2026-11-03.tsv > tools/probes/ttf_gpos_kerning/marks-2026-11-03.tsv
+
+## Acceptance run 1 (accept-2026-11-03-run1.txt)
+
+accept.sh over the 183 repositories with the first version of the reader change (rules 1-7 with the
+old rule 2): 176 kept their verdict, 7 lost CLEAN (Forum and the five PT families: marks; Share: cpsp).
+The run's verdicts carry -UNCOMMITTED-EVIDENCE from nanumbrushscript on, because these probes were
+being written in the evidence tree meanwhile; the results are not affected. Run 2 re-lands with the
+corrected rules 2 and 8.
