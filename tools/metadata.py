@@ -276,8 +276,10 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
         for f in future:
             out += wrap("- " + f, 88, subsequent_indent="  ")
     if old_block:
-        out += ["", "## Original repository (dormant)", ""]
-        out += wrap("The source block this replaces, preserved for provenance:", 88)
+        same = "googlefonts/%s\"" % repo in old_block
+        out += ["", "## Previous source block" if same else "## Original repository (dormant)", ""]
+        out += wrap("The source block this replaces%s, preserved for provenance:"
+                    % (" (the same repository, before this work)" if same else ""), 88)
         out += [""] + ["    " + l for l in old_block.rstrip("\n").splitlines()]
     if previous.strip():
         # never discard an earlier investigation: carried forward, one heading level down
@@ -417,8 +419,10 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
         for f in future:
             out += wrap("- " + f, 88, subsequent_indent="  ")
     if old_block:
-        out += ["", "## Original repository (dormant)", ""]
-        out += wrap("The source block this replaces, preserved for provenance:", 88)
+        same = "googlefonts/%s\"" % repo in old_block
+        out += ["", "## Previous source block" if same else "## Original repository (dormant)", ""]
+        out += wrap("The source block this replaces%s, preserved for provenance:"
+                    % (" (the same repository, before this work)" if same else ""), 88)
         out += [""] + ["    " + l for l in old_block.rstrip("\n").splitlines()]
     if previous.strip():
         out += ["", "## Previous investigation", ""]
@@ -475,17 +479,36 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
                     "build with gftools-builder and fontc. The repository, commit and config are "
                     "in the `source { }` block of METADATA.pb." % date[:7], 88)
         out += ["", "## Initial state", ""]
-        out += wrap("Google Fonts shipped %s as binaries only (google/fonts at commit `%s`). No "
-                    "source of the family was ever published, so it could not be built with "
-                    "fontc." % (display, rows[0]["commit"][:12]), 88)
+        if land.on_upstream(rows):
+            out += wrap("Google Fonts shipped %s from https://github.com/%s at commit `%s`, which "
+                        "holds the fonts as built and no source, so it could not be built with "
+                        "fontc." % (display, rows[0]["base"], rows[0]["commit"][:12]), 88)
+        else:
+            out += wrap("Google Fonts shipped %s as binaries only (google/fonts at commit `%s`). No "
+                        "source of the family was ever published, so it could not be built with "
+                        "fontc." % (display, rows[0]["commit"][:12]), 88)
     out += ["", "## Actions taken", ""]
-    out += wrap("- The fonts Google Fonts ships were imported unmodified as the first commit "
-                "of https://github.com/googlefonts/%s." % repo, 88, subsequent_indent="  ")
+    if land.on_upstream(rows):
+        out += wrap("- The work was done on top of that repository's history, in a pull request "
+                    "merged into its default branch, so its fonts are the ones converted." , 88,
+                    subsequent_indent="  ")
+    else:
+        out += wrap("- The fonts Google Fonts ships were imported unmodified as the first commit "
+                    "of https://github.com/googlefonts/%s." % repo, 88, subsequent_indent="  ")
     out += wrap("- The Unified Font Repository template was adopted in its own commit; the "
                 "README records the provenance and the known differences below.", 88,
                 subsequent_indent="  ")
-    out += wrap("- The conversion to `.glyphs` is the last change. " + conv, 88,
-                subsequent_indent="  ")
+    edits = [l.split(" ", 1)[1][len(land.SOURCE_EDIT_PREFIX):].strip() for l in git(
+        d, "log", "--reverse", "--format=%h %s", "%s..%s" % (conversion_commit(d), head_full)).splitlines()
+        if l.split(" ", 1)[1].startswith(land.SOURCE_EDIT_PREFIX)]
+    if edits:
+        out += wrap("- The conversion to `.glyphs`. " + conv, 88, subsequent_indent="  ")
+        out += wrap("- Then what the conversion cannot carry, stated in the source, each in a "
+                    "documented commit of its own (\"Source edit:\"): " + "; ".join(edits) + ". "
+                    "The last of them is the equivalence commit.", 88, subsequent_indent="  ")
+    else:
+        out += wrap("- The conversion to `.glyphs` is the last change. " + conv, 88,
+                    subsequent_indent="  ")
     out += ["", "## Final state", ""]
     out += wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
                 % (repo, head_full[:12], claim), 88)
@@ -522,8 +545,10 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
         for f in future:
             out += wrap("- " + f, 88, subsequent_indent="  ")
     if old_block:
-        out += ["", "## Original repository (dormant)", ""]
-        out += wrap("The source block this replaces, preserved for provenance:", 88)
+        same = "googlefonts/%s\"" % repo in old_block
+        out += ["", "## Previous source block" if same else "## Original repository (dormant)", ""]
+        out += wrap("The source block this replaces%s, preserved for provenance:"
+                    % (" (the same repository, before this work)" if same else ""), 88)
         out += [""] + ["    " + l for l in old_block.rstrip("\n").splitlines()]
     if previous.strip():
         out += ["", "## Previous investigation", ""]
@@ -617,7 +642,7 @@ def main():
         # `master` for a fork or an extended repository, AFTER its pull request is
         # MERGED (a `glyphs` repository is created empty on GitHub and pushed to `main`)
         rbranch = "main" if rows[0]["kind"] in ("hg", "glyphs", "binary") else "master"
-        if land.on_upstream(rows):
+        if land.on_upstream(rows) and provisional:
             raise SystemExit("FATAL: %s lands on an existing repository's history; record it "
                              "after its pull request is merged" % repo)
         if not provisional:
