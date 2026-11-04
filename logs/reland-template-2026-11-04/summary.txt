@@ -1,0 +1,81 @@
+italiana: CLEAN, 3 commits, 0 edit(s): Italiana-Regular=0 functional=PASS
+carlito: CLEAN, 13 commits, 0 edit(s): Carlito-Bold=0 functional=PASS; Carlito-BoldItalic=0 functional=PASS; Carlito-Italic=0 functional=PASS; Carlito-Regular=0 functional=PASS
+lekton: CLEAN, 3 commits, 0 edit(s): Lekton-Bold=0 functional=PASS; Lekton-Italic=0 functional=PASS; Lekton-Regular=0 functional=PASS
+monoton: CLEAN, 4 commits, 0 edit(s): Monoton-Regular=0 functional=PASS
+mrbedfort: CLEAN, 3 commits, 0 edit(s): MrBedfort-Regular=0 functional=PASS
+niconne: CLEAN, 4 commits, 0 edit(s): Niconne-Regular=0 functional=PASS
+nixieone: CLEAN, 3 commits, 0 edit(s): NixieOne-Regular=0 functional=PASS
+patrickhand: CLEAN, 4 commits, 0 edit(s): PatrickHand-Regular=0 functional=PASS
+revalia: CLEAN, 3 commits, 0 edit(s): Revalia-Regular=0 functional=PASS
+rougescript: CLEAN, 3 commits, 0 edit(s): RougeScript-Regular=0 functional=PASS
+ruluko: CLEAN, 4 commits, 0 edit(s): Ruluko-Regular=0 functional=PASS
+salsa: CLEAN, 4 commits, 0 edit(s): Salsa-Regular=0 functional=PASS
+titanone: CLEAN, 4 commits, 0 edit(s): TitanOne-Regular=0 functional=PASS
+unifrakturcook: CLEAN, 4 commits, 0 edit(s): UnifrakturCook-Bold=0 functional=PASS
+kottaone: CLEAN, 4 commits, 0 edit(s): KottaOne-Regular=0 functional=PASS
+lilitaone: CLEAN, 3 commits, 0 edit(s): LilitaOne-Regular=0 functional=PASS
+limelight: CLEAN, 3 commits, 0 edit(s): Limelight-Regular=0 functional=PASS
+lustria: CLEAN, 4 commits, 0 edit(s): Lustria-Regular=0 functional=PASS
+macondo: CLEAN, 4 commits, 0 edit(s): Macondo-Regular=0 functional=PASS
+megrim: CLEAN, 3 commits, 0 edit(s): Megrim=0 functional=PASS
+mountainsofchristmas: CLEAN, 3 commits, 0 edit(s): MountainsofChristmas-Bold=0 functional=PASS; MountainsofChristmas-Regular=0 functional=PASS
+nothingyoucoulddo: CLEAN, 3 commits, 0 edit(s): NothingYouCouldDo=0 functional=PASS
+oleoscript: CLEAN, 4 commits, 0 edit(s): OleoScript-Bold=0 functional=PASS; OleoScript-Regular=0 functional=PASS
+oleoscriptswashcaps: CLEAN, 4 commits, 0 edit(s): OleoScriptSwashCaps-Bold=0 functional=PASS; OleoScriptSwashCaps-Regular=0 functional=PASS
+titilliumweb: CLEAN, 3 commits, 0 edit(s): TitilliumWeb-Black=0 functional=PASS; TitilliumWeb-Bold=0 functional=PASS; TitilliumWeb-BoldItalic=0 functional=PASS; TitilliumWeb-Italic=0 functional=PASS; TitilliumWeb-Light=0 functional=PASS; TitilliumWeb-LightItalic=0 functional=PASS; TitilliumWeb-Regular=0 functional=PASS; TitilliumWeb-SemiBold=0 functional=PASS; TitilliumWeb-SemiBoldItalic=0 functional=PASS
+actor: CLEAN, 3 commits, 0 edit(s): Actor-Regular=0 functional=PASS
+alfaslabone: CLEAN, 4 commits, 0 edit(s): AlfaSlabOne-Regular=0 functional=PASS
+baumans: CLEAN, 3 commits, 0 edit(s): Baumans-Regular=0 functional=PASS
+butterflykids: CLEAN, 3 commits, 0 edit(s): ButterflyKids-Regular=0 functional=PASS
+caesardressing: CLEAN, 3 commits, 0 edit(s): CaesarDressing-Regular=0 functional=PASS
+cantoraone: CLEAN, 3 commits, 0 edit(s): CantoraOne-Regular=0 functional=PASS
+carroisgothic: CLEAN, 3 commits, 0 edit(s): CarroisGothic-Regular=0 functional=PASS
+carroisgothicsc: CLEAN, 3 commits, 0 edit(s): CarroisGothicSC-Regular=0 functional=PASS
+chelseamarket: CLEAN, 3 commits, 0 edit(s): ChelseaMarket-Regular=0 functional=PASS
+combo: CLEAN, 3 commits, 0 edit(s): Combo-Regular=0 functional=PASS
+electrolize: CLEAN, 3 commits, 0 edit(s): Electrolize-Regular=0 functional=PASS
+emilyscandy: CLEAN, 3 commits, 0 edit(s): EmilysCandy-Regular=0 functional=PASS
+fingerpaint: CLEAN, 3 commits, 0 edit(s): FingerPaint-Regular=0 functional=PASS
+flavors: CLEAN, 3 commits, 0 edit(s): Flavors-Regular=0 functional=PASS
+forum: CLEAN, 3 commits, 0 edit(s): Forum-Regular=0 functional=PASS
+frederickathegreat: CLEAN, 3 commits, 0 edit(s): FrederickatheGreat-Regular=0 functional=PASS
+frijole: CLEAN, 3 commits, 0 edit(s): Frijole-Regular=0 functional=PASS
+gorditas: CLEAN, 3 commits, 0 edit(s): Gorditas-Bold=0 functional=PASS; Gorditas-Regular=0 functional=PASS
+griffy: CLEAN, 3 commits, 0 edit(s): Griffy-Regular=0 functional=PASS
+happymonkey: CLEAN, 3 commits, 0 edit(s): HappyMonkey-Regular=0 functional=PASS
+hermeneusone: CLEAN, 3 commits, 0 edit(s): HermeneusOne-Regular=0 functional=PASS
+jollylodger: CLEAN, 3 commits, 0 edit(s): JollyLodger-Regular=0 functional=PASS
+junge: CLEAN, 3 commits, 0 edit(s): Junge-Regular=0 functional=PASS
+kaushanscript: CLEAN, 3 commits, 0 edit(s): KaushanScript-Regular=0 functional=PASS
+librecaslondisplay: CLEAN, 3 commits, 0 edit(s): LibreCaslonDisplay-Regular=0 functional=PASS
+lobstertwo: CLEAN, 3 commits, 0 edit(s): LobsterTwo-Bold=0 functional=PASS; LobsterTwo-BoldItalic=0 functional=PASS; LobsterTwo-Italic=0 functional=PASS; LobsterTwo-Regular=0 functional=PASS
+metalmania: CLEAN, 3 commits, 0 edit(s): MetalMania-Regular=0 functional=PASS
+milonga: CLEAN, 3 commits, 0 edit(s): Milonga-Regular=0 functional=PASS
+miltonian: CLEAN, 3 commits, 0 edit(s): Miltonian-Regular=0 functional=PASS
+miltoniantattoo: CLEAN, 3 commits, 0 edit(s): MiltonianTattoo-Regular=0 functional=PASS
+miniver: CLEAN, 3 commits, 0 edit(s): Miniver-Regular=0 functional=PASS
+mysteryquest: CLEAN, 3 commits, 0 edit(s): MysteryQuest-Regular=0 functional=PASS
+newrocker: CLEAN, 3 commits, 0 edit(s): NewRocker-Regular=0 functional=PASS
+petitformalscript: CLEAN, 3 commits, 0 edit(s): PetitFormalScript-Regular=0 functional=PASS
+poetsenone: CLEAN, 3 commits, 0 edit(s): PoetsenOne-Regular=0 functional=PASS
+princesssofia: CLEAN, 3 commits, 0 edit(s): PrincessSofia-Regular=0 functional=PASS
+prostoone: CLEAN, 3 commits, 0 edit(s): ProstoOne-Regular=0 functional=PASS
+quattrocento: CLEAN, 3 commits, 0 edit(s): Quattrocento-Bold=0 functional=PASS; Quattrocento-Regular=0 functional=PASS
+quattrocentosans: CLEAN, 3 commits, 0 edit(s): QuattrocentoSans-Bold=0 functional=PASS; QuattrocentoSans-BoldItalic=0 functional=PASS; QuattrocentoSans-Italic=0 functional=PASS; QuattrocentoSans-Regular=0 functional=PASS
+racingsansone: CLEAN, 3 commits, 0 edit(s): RacingSansOne-Regular=0 functional=PASS
+ralewaydots: CLEAN, 3 commits, 0 edit(s): RalewayDots-Regular=0 functional=PASS
+ranchers: CLEAN, 3 commits, 0 edit(s): Ranchers-Regular=0 functional=PASS
+rancho: CLEAN, 3 commits, 0 edit(s): Rancho-Regular=0 functional=PASS
+sansitaone: CLEAN, 3 commits, 0 edit(s): SansitaOne-Regular=0 functional=PASS
+satisfy: CLEAN, 3 commits, 0 edit(s): Satisfy-Regular=0 functional=PASS
+seaweedscript: CLEAN, 3 commits, 0 edit(s): SeaweedScript-Regular=0 functional=PASS
+shadowsintolighttwo: CLEAN, 3 commits, 0 edit(s): ShadowsIntoLightTwo-Regular=0 functional=PASS
+share: CLEAN, 3 commits, 0 edit(s): Share-Bold=0 functional=PASS; Share-BoldItalic=0 functional=PASS; Share-Italic=0 functional=PASS; Share-Regular=0 functional=PASS
+skranji: CLEAN, 3 commits, 0 edit(s): Skranji-Bold=0 functional=PASS; Skranji-Regular=0 functional=PASS
+sofadione: CLEAN, 3 commits, 0 edit(s): SofadiOne-Regular=0 functional=PASS
+sofia: CLEAN, 3 commits, 0 edit(s): Sofia-Regular=0 functional=PASS
+stalinistone: CLEAN, 3 commits, 0 edit(s): StalinistOne-Regular=0 functional=PASS
+strong: CLEAN, 3 commits, 0 edit(s): Strong-Regular=0 functional=PASS
+tradewinds: CLEAN, 3 commits, 0 edit(s): TradeWinds-Regular=0 functional=PASS
+underdog: CLEAN, 3 commits, 0 edit(s): Underdog-Regular=0 functional=PASS
+volkhov: CLEAN, 3 commits, 0 edit(s): Volkhov-Bold=0 functional=PASS; Volkhov-BoldItalic=0 functional=PASS; Volkhov-Italic=0 functional=PASS; Volkhov-Regular=0 functional=PASS
