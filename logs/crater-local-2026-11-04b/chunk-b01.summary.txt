@@ -1,0 +1,10 @@
+subset: 4 of 1495 entries are new
+ok    googlefonts/fingerpaint/sources/config.yaml FingerPaint-Regular.glyphs?39a0edc95f (default)
+ok    googlefonts/fingerpaint/sources/config.yaml FingerPaint-Regular.glyphs?39a0edc95f (gftools)
+ok    googlefonts/flavors/sources/config.yaml Flavors-Regular.glyphs?4131dec31a (default)
+ok    googlefonts/flavors/sources/config.yaml Flavors-Regular.glyphs?4131dec31a (gftools)
+ok    googlefonts/forum/sources/config.yaml Forum-Regular.glyphs?af5cedec1c (default)
+ok    googlefonts/forum/sources/config.yaml Forum-Regular.glyphs?af5cedec1c (gftools)
+ok    googlefonts/frederickathegreat/sources/config.yaml FrederickatheGreat-Regular.glyphs?ece6c2d0b4 (default)
+ok    googlefonts/frederickathegreat/sources/config.yaml FrederickatheGreat-Regular.glyphs?ece6c2d0b4 (gftools)
+8 succeeded, 0 failed (2026-11-04-195039.json)

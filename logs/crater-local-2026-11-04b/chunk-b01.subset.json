@@ -1,0 +1,26 @@
+{
+  "version": "1.1",
+  "fonts_repo_sha": "e4a37edc30c612724d1ab506484445e9c5806391",
+  "sources": [
+    {
+      "repo_url": "https://github.com/googlefonts/fingerpaint",
+      "rev": "39a0edc95f87784da492a393c802a143974c8fa1",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/flavors",
+      "rev": "4131dec31a739fc04f6a51109251778cb1000511",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/forum",
+      "rev": "af5cedec1cf3ce693dee62dba7e0e13e89d9c7f2",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/frederickathegreat",
+      "rev": "ece6c2d0b4863f4df46bf100022c7bd2b008828f",
+      "config": "sources/config.yaml"
+    }
+  ]
+}

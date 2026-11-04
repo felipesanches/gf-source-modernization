@@ -1,0 +1,10 @@
+subset: 4 of 1495 entries are new
+ok    googlefonts/chelseamarket/sources/config.yaml ChelseaMarket-Regular.glyphs?620f5bb572 (default)
+ok    googlefonts/chelseamarket/sources/config.yaml ChelseaMarket-Regular.glyphs?620f5bb572 (gftools)
+ok    googlefonts/combo/sources/config.yaml Combo-Regular.glyphs?8921bc4f76 (default)
+ok    googlefonts/combo/sources/config.yaml Combo-Regular.glyphs?8921bc4f76 (gftools)
+ok    googlefonts/electrolize/sources/config.yaml Electrolize-Regular.glyphs?e647a28236 (default)
+ok    googlefonts/electrolize/sources/config.yaml Electrolize-Regular.glyphs?e647a28236 (gftools)
+ok    googlefonts/emilyscandy/sources/config.yaml EmilysCandy-Regular.glyphs?8707cfc195 (default)
+ok    googlefonts/emilyscandy/sources/config.yaml EmilysCandy-Regular.glyphs?8707cfc195 (gftools)
+8 succeeded, 0 failed (2026-11-04-193952.json)

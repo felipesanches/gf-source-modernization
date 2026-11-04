@@ -1,0 +1,26 @@
+{
+  "version": "1.1",
+  "fonts_repo_sha": "e4a37edc30c612724d1ab506484445e9c5806391",
+  "sources": [
+    {
+      "repo_url": "https://github.com/googlefonts/chelseamarket",
+      "rev": "620f5bb572e9ba831e37cf2491699826de0139bc",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/combo",
+      "rev": "8921bc4f7647f45413b745a1890fdc2413f31d90",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/electrolize",
+      "rev": "e647a282361e11972839dbec0ac337204372abc0",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/emilyscandy",
+      "rev": "8707cfc1953c8f9804beb360bace88492e45d34d",
+      "config": "sources/config.yaml"
+    }
+  ]
+}

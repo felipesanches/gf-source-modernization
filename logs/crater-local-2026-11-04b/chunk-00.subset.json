@@ -1,0 +1,56 @@
+{
+  "version": "1.1",
+  "fonts_repo_sha": "e4a37edc30c612724d1ab506484445e9c5806391",
+  "sources": [
+    {
+      "repo_url": "https://github.com/googlefonts/abrilfatface",
+      "rev": "9d1486e10152a225e46f9d1f787410d7d269015e",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/actor",
+      "rev": "ddd45a44c902817866bb116bbe405bd532e8765d",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/alfaslabone",
+      "rev": "b49726a15e80546c1faa6a616c1070c6de8b86be",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/baumans",
+      "rev": "0940714afd9d51d979f524ab44c920179d172d57",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/butterflykids",
+      "rev": "ba6a0c6241f01ff45a9c822440b6420e6b41b033",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/caesardressing",
+      "rev": "ead46ca1c29dd9656cfc7ea6a780afd7a762b55f",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/cantoraone",
+      "rev": "60930f3a78733ed049440ec31207db10dc27513c",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/carlito",
+      "rev": "a8d610ee6e4ae5079a09f46c43da006abb23f5bd",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/carroisgothic",
+      "rev": "20bfc4fda8862da27558dd1dc5e96256d71b255e",
+      "config": "sources/config.yaml"
+    },
+    {
+      "repo_url": "https://github.com/googlefonts/carroisgothicsc",
+      "rev": "ff248c4f388d98b685a0e5f866c2fb3db3cbc392",
+      "config": "sources/config.yaml"
+    }
+  ]
+}
