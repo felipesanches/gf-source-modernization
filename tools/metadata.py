@@ -18,9 +18,11 @@ conversion; each style is an instance of that one file, built as <style>.ttf. It
 upstream_info.md says no conversion ran, names the builder from that commit's message,
 and lists the known differences plans/<repo>.json `disclose` puts in the README.
 
-Writes into a google/fonts worktree on its own branch; never pushes. The commits
-are only meaningful once the repositories are pushed: every hash they cite must
-exist on GitHub first.
+Writes into a google/fonts worktree on its own branch; never pushes. Standing rule
+(Felipe, 2026-11-04): the recorded commit is on the repository's default branch as
+GitHub publishes it, never on an open pull request's branch; after a rebase merge it is
+the published commit with the landed one's tree and subject. A repository not pushed,
+or a pull request not merged (or squashed), stops it.
 
 Usage: metadata.py [--provisional] <branch> <repo>...
 --provisional accepts repositories landed CLEAN with an unpublished builder
@@ -59,6 +61,15 @@ def git(d, *a, check=True, input=None):
 
 PUBLISHED_ROOT = os.path.join(os.environ.get("TMPDIR", "/home/fsanches/compartilhado/tmp"),
                               "metadata-published")
+
+
+def default_branch(repo):
+    head = subprocess.run(["git", "ls-remote", "--symref", "https://github.com/googlefonts/%s.git" % repo,
+                           "HEAD"], capture_output=True, text=True).stdout
+    m = re.search(r"^ref: refs/heads/(\S+)\tHEAD$", head, re.M)
+    if not m:
+        raise SystemExit("FATAL: cannot read the default branch of googlefonts/%s (is it pushed?)" % repo)
+    return m.group(1)
 
 
 def published_equivalent(d, repo, branch, landed_commit):
@@ -579,10 +590,13 @@ def main():
         if land.on_upstream(rows):
             raise SystemExit("FATAL: %s lands on an existing repository's history; record it "
                              "after its pull request is merged" % repo)
-        if rbranch == "master":
-            # a rebase merge gives every commit of the pull request a new hash: record the
-            # commit on the published master whose tree and subject are the landed one's,
-            # and read everything else (edits, dates, later commits) from that history
+        if not provisional:
+            # standing rule (Felipe, 2026-11-04): record a commit on the repository's default
+            # branch as GitHub publishes it, never one of an open pull request. A rebase merge
+            # gives the pull request's commits new hashes: record the commit on that branch
+            # whose tree and subject are the landed one's, and read everything else (edits,
+            # dates, later commits) from that history
+            rbranch = default_branch(repo)
             published = published_equivalent(d, repo, rbranch, head_full)
             if published != head_full:
                 land.OUT = published_view(d, repo, published)

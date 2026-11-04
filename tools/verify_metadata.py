@@ -4,8 +4,8 @@
 Checks every commit between the base (upstream/main by default) and the branch HEAD:
   1. it touches exactly <lic>/<family>/METADATA.pb and upstream_info.md, one family;
   2. METADATA.pb parses (gftools' fonts_public_pb2) and its source block names
-     https://github.com/googlefonts/<repo>, a branch, and a commit that is on that
-     branch on GitHub (git ls-remote, then ancestry in the landed clone);
+     https://github.com/googlefonts/<repo>, its DEFAULT branch on GitHub, and a commit on
+     that branch as GitHub publishes it (fetched; never a pull request's branch);
   3. every files {} dest_file is a file google/fonts ships in that family's directory,
      and the license source_file is in the repository at that commit;
   4. with --build: the repository at that commit, built by the same gftools-builder as
@@ -60,14 +60,23 @@ def check_commit(wt, sha, build):
         return fam_dir, ["repository_url %r is not a googlefonts repository" % src.repository_url]
     repo = m.group(1)
     local = os.path.join(land.OUT, repo)
-    remote = subprocess.run(["git", "ls-remote", src.repository_url, "refs/heads/" + src.branch],
-                            capture_output=True, text=True).stdout.split()
-    if not remote:
+    # standing rule (Felipe, 2026-11-04): the commit is on the repository's DEFAULT branch
+    # as GitHub publishes it, never on a pull request's branch
+    head = subprocess.run(["git", "ls-remote", "--symref", src.repository_url, "HEAD"],
+                          capture_output=True, text=True).stdout
+    default = re.search(r"^ref: refs/heads/(\S+)\tHEAD$", head, re.M)
+    if not default:
+        problems.append("cannot read the default branch of %s" % src.repository_url)
+    elif src.branch != default.group(1):
+        problems.append("branch %r is not %s's default branch %r" % (src.branch, repo, default.group(1)))
+    ref = "refs/published/" + src.branch
+    fetched = subprocess.run(["git", "-C", local, "fetch", "-q", src.repository_url + ".git",
+                              "+refs/heads/%s:%s" % (src.branch, ref)], capture_output=True, text=True)
+    if fetched.returncode:
         problems.append("branch %r is not on %s" % (src.branch, src.repository_url))
-    elif subprocess.run(["git", "-C", local, "merge-base", "--is-ancestor", src.commit,
-                         remote[0]]).returncode:
+    elif subprocess.run(["git", "-C", local, "merge-base", "--is-ancestor", src.commit, ref]).returncode:
         problems.append("commit %s is not on %s %s (%s)" % (src.commit[:12], repo, src.branch,
-                                                            remote[0][:12]))
+                                                            git(local, "rev-parse", "--short", ref).strip()))
     shipped = set(git(wt, "ls-tree", "--name-only", sha, fam_dir + "/").split())
     mapped = []
     for f in src.files:
@@ -108,7 +117,7 @@ def check_commit(wt, sha, build):
             continue
         # the family's own repository on GitHub, the evidence repository as published,
         # then the tool and google/fonts mirrors public_refs.py knows
-        if remote and is_ancestor(local, h, remote[0]):
+        if not fetched.returncode and is_ancestor(local, h, ref):
             continue
         if is_ancestor(public_refs.W, h, "refs/published/main"):
             continue
