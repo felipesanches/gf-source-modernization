@@ -28,7 +28,11 @@ fontc, and babelfont adds points the release did not have: 2490 of 5318 instruct
    (per glyph); gasp as the "gasp Table" custom parameter. No new format, no new file.
 2. **babelfont-rs (TTF reader, an import fix):** keep the release's point structure (omit
    implied on-curves, keep explicit ones, keep the start point) and read fpgm, prep, cvt, maxp
-   limits and glyph programs into (1). A reader change, no filter.
+   limits and glyph programs into (1). A reader change, no filter. Where the points are
+   lost (simoncozens/babelfont-rs 622ed1fd, babelfont/src/convertors/ttf.rs): a simple glyph is drawn
+   through skrifa's outline pen into PathBuilder, and the pen reports every implied on-curve
+   as a `quad_to` end point, so it becomes a node. Reading the glyf points, flags and
+   contour ends directly (as the composite branch already parses components) keeps them.
 3. **Python check first:** build a converted hinted release with fontmake (gftools builder,
    `autohintTTF: false`) and run the gate. This proves (1) and (2) before any fontc work.
 4. **fontc:** keep source on-curve points (carry "explicit" through the IR so only the
