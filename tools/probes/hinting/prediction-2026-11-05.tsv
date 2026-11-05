@@ -1,0 +1,478 @@
+repo	font	prediction	reasons	published
+creepstercaps	CreepsterCaps-Regular.ttf	PASS		yes
+herrvonmuellerhoff	HerrVonMuellerhoff-Regular.ttf	PASS		yes
+kristi	Kristi-Regular.ttf	FAIL	release instructed (124 glyph programs, other); prep 380 bytes; gasp -	no
+miama	Miama-Regular.ttf	PASS		no
+nosifer	Nosifer-Regular.ttf	PASS		no
+nosifercaps	NosiferCaps-Regular.ttf	PASS		no
+novacut	NovaCut.ttf	FAIL	release instructed (416 glyph programs, other); prep 46 bytes	yes
+novaflat	NovaFlat.ttf	FAIL	release instructed (417 glyph programs, other); prep 46 bytes	yes
+novamono	NovaMono.ttf	FAIL	release instructed (1305 glyph programs, other); prep 46 bytes; gasp 8:2,17:1,65535:3	no
+novaoval	NovaOval.ttf	FAIL	release instructed (417 glyph programs, other); prep 46 bytes	yes
+novaround	NovaRound.ttf	FAIL	release instructed (417 glyph programs, other); prep 46 bytes	yes
+novascript	NovaScript-Regular.ttf	FAIL	release instructed (417 glyph programs, other); prep 46 bytes	no
+novaslim	NovaSlim.ttf	FAIL	release instructed (417 glyph programs, other); prep 46 bytes	yes
+novasquare	NovaSquare.ttf	FAIL	release instructed (417 glyph programs, other); prep 46 bytes	yes
+play	Play-Bold.ttf	FAIL	release instructed (955 glyph programs, ttfautohint); prep 224 bytes	no
+play	Play-Regular.ttf	FAIL	release instructed (955 glyph programs, ttfautohint); prep 224 bytes	no
+puritan	Puritan-Bold.ttf	FAIL	release instructed (216 glyph programs, other); prep 46 bytes; gasp -	yes
+puritan	Puritan-BoldItalic.ttf	FAIL	release instructed (217 glyph programs, other); prep 46 bytes; gasp -	yes
+puritan	Puritan-Italic.ttf	FAIL	release instructed (226 glyph programs, other); prep 46 bytes; gasp -	yes
+puritan	Puritan-Regular.ttf	FAIL	release instructed (226 glyph programs, other); prep 46 bytes; gasp -	yes
+russoone	RussoOne-Regular.ttf	PASS		yes
+sixcaps	SixCaps.ttf	FAIL	release instructed (174 glyph programs, other); prep 121 bytes	yes
+smythe	Smythe-Regular.ttf	FAIL	release instructed (167 glyph programs, other); prep 246 bytes	no
+tuffy	Tuffy-Bold.ttf	FAIL	prep none	no
+tuffy	Tuffy-BoldItalic.ttf	PASS		no
+tuffy	Tuffy-Italic.ttf	FAIL	release instructed (1494 glyph programs, ttfautohint); prep 199 bytes	no
+tuffy	Tuffy-Regular.ttf	FAIL	release instructed (1285 glyph programs, ttfautohint); prep 199 bytes	no
+tulpenone	TulpenOne-Regular.ttf	PASS		yes
+unifraktur	UnifrakturMaguntia-Book.ttf	FAIL	release instructed (163 glyph programs, other); prep 150 bytes; gasp 8:2,16:1,65535:3	no
+abrilfatface	AbrilFatface-Regular.ttf	PASS		yes
+corben	Corben-Regular.ttf	PASS		no
+corben	Corben-Bold.ttf	FAIL	release instructed (482 glyph programs, ttfautohint); prep 163 bytes	no
+allerta	AllertaStencil-Regular.ttf	FAIL	prep 46 bytes; gasp 8:2,16:1,65535:3	yes
+comicrelief	ComicRelief-Regular.ttf	FAIL	release instructed (517 glyph programs, ttfautohint); prep 203 bytes	no
+comicrelief	ComicRelief-Bold.ttf	FAIL	release instructed (521 glyph programs, ttfautohint); prep 203 bytes	no
+rochester	Rochester-Regular.ttf	PASS		yes
+smokum	Smokum-Regular.ttf	PASS		no
+ultra	Ultra-Regular.ttf	PASS		no
+cardo	Cardo-Bold.ttf	FAIL	prep none; gasp 65535:3	no
+cardo	Cardo-Italic.ttf	FAIL	gasp 65535:3	no
+cardo	Cardo-Regular.ttf	FAIL	gasp 65535:3	no
+keaniaone	KeaniaOne-Regular.ttf	PASS		yes
+kellyslab	KellySlab-Regular.ttf	PASS		yes
+ledger	Ledger-Regular.ttf	PASS		yes
+lohitbengali	Lohit-Bengali.ttf	FAIL	release instructed (461 glyph programs, other); prep 11 bytes; gasp -	no
+lohittamil	Lohit-Tamil.ttf	FAIL	release instructed (233 glyph programs, other); prep 11 bytes; gasp -	no
+lovedbytheking	LovedbytheKing.ttf	PASS		yes
+loveyalikeasister	LoveYaLikeASister.ttf	PASS		yes
+magra	Magra-Bold.ttf	PASS		yes
+magra	Magra-Regular.ttf	PASS		yes
+marvel	Marvel-Bold.ttf	PASS		yes
+marvel	Marvel-BoldItalic.ttf	PASS		yes
+marvel	Marvel-Italic.ttf	PASS		yes
+marvel	Marvel-Regular.ttf	PASS		yes
+medulaone	MedulaOne-Regular.ttf	PASS		yes
+meiescript	MeieScript-Regular.ttf	FAIL	release instructed (214 glyph programs, other); prep 46 bytes	yes
+mergeone	MergeOne-Regular.ttf	PASS		yes
+missfajardose	MissFajardose-Regular.ttf	PASS		yes
+monsieurladoulaise	MonsieurLaDoulaise-Regular.ttf	PASS		yes
+mrdafoe	MrDafoe-Regular.ttf	PASS		yes
+mrdehaviland	MrDeHaviland-Regular.ttf	PASS		yes
+mrssaintdelafield	MrsSaintDelafield-Regular.ttf	PASS		yes
+mrssheppards	MrsSheppards-Regular.ttf	PASS		yes
+numans	Numans-Regular.ttf	PASS		yes
+overlock	Overlock-Black.ttf	PASS		no
+overlock	Overlock-BlackItalic.ttf	PASS		no
+overlock	Overlock-Bold.ttf	PASS		no
+overlock	Overlock-BoldItalic.ttf	PASS		no
+overlock	Overlock-Italic.ttf	PASS		no
+overlock	Overlock-Regular.ttf	PASS		no
+overlocksc	OverlockSC-Regular.ttf	PASS		yes
+overtherainbow	OvertheRainbow.ttf	FAIL	release instructed (67 glyph programs, other); gasp 65535:3	yes
+passionone	PassionOne-Black.ttf	PASS		no
+passionone	PassionOne-Bold.ttf	PASS		no
+passionone	PassionOne-Regular.ttf	PASS		no
+patuaone	PatuaOne-Regular.ttf	PASS		yes
+piedra	Piedra-Regular.ttf	PASS		yes
+pirataone	PirataOne-Regular.ttf	PASS		yes
+poly	Poly-Italic.ttf	PASS		no
+poly	Poly-Regular.ttf	FAIL	prep none	no
+portlligatsans	PortLligatSans-Regular.ttf	PASS		yes
+portlligatslab	PortLligatSlab-Regular.ttf	PASS		yes
+quantico	Quantico-Bold.ttf	FAIL	prep none; gasp 65535:2	yes
+quantico	Quantico-BoldItalic.ttf	FAIL	prep none; gasp 65535:2	yes
+quantico	Quantico-Italic.ttf	FAIL	prep none; gasp 65535:2	yes
+quantico	Quantico-Regular.ttf	PASS		yes
+rambla	Rambla-Bold.ttf	PASS		yes
+rambla	Rambla-BoldItalic.ttf	PASS		yes
+rambla	Rambla-Italic.ttf	PASS		yes
+rambla	Rambla-Regular.ttf	PASS		yes
+ribeyemarrow	RibeyeMarrow-Regular.ttf	PASS		no
+rosarivo	Rosarivo-Italic.ttf	PASS		yes
+rosarivo	Rosarivo-Regular.ttf	PASS		yes
+rufina	Rufina-Bold.ttf	PASS		yes
+rufina	Rufina-Regular.ttf	PASS		yes
+sail	Sail-Regular.ttf	PASS		yes
+sanchez	Sanchez-Italic.ttf	PASS		no
+sanchez	Sanchez-Regular.ttf	PASS		no
+spirax	Spirax-Regular.ttf	PASS		yes
+squadaone	SquadaOne-Regular.ttf	PASS		yes
+swankyandmoomoo	SwankyandMooMoo.ttf	FAIL	gasp 65535:3	yes
+textmeone	TextMeOne-Regular.ttf	PASS		yes
+thabit	Thabit-Bold.ttf	FAIL	release instructed (98 glyph programs, other); prep 1411 bytes; gasp -	no
+thabit	Thabit.ttf	FAIL	release instructed (1 glyph programs, other); prep 1411 bytes; gasp 65535:2	no
+thabit	Thabit-Oblique.ttf	FAIL	release instructed (1 glyph programs, other); prep 1411 bytes; gasp 65535:2	no
+thabit	Thabit-BoldOblique.ttf	FAIL	release instructed (98 glyph programs, other); prep 1411 bytes; gasp -	no
+thegirlnextdoor	TheGirlNextDoor.ttf	FAIL	release instructed (87 glyph programs, other)	yes
+trochut	Trochut-Bold.ttf	PASS		yes
+trochut	Trochut-Italic.ttf	PASS		yes
+trochut	Trochut-Regular.ttf	PASS		yes
+varela	Varela-Regular.ttf	FAIL	release instructed (834 glyph programs, other); prep 46 bytes; gasp -	no
+viga	Viga-Regular.ttf	PASS		no
+wallpoet	Wallpoet-Regular.ttf	FAIL	release instructed (178 glyph programs, other)	yes
+wendyone	WendyOne-Regular.ttf	PASS		yes
+oranienbaum	Oranienbaum-Regular.ttf	FAIL	release instructed (416 glyph programs, ttfautohint); prep 133 bytes	yes
+averialibre	AveriaLibre-Bold.ttf	FAIL	prep none; gasp 65535:2	no
+averialibre	AveriaLibre-BoldItalic.ttf	FAIL	prep none; gasp 65535:2	no
+averialibre	AveriaLibre-Italic.ttf	FAIL	prep none; gasp 65535:2	no
+averialibre	AveriaLibre-Light.ttf	FAIL	prep none; gasp 65535:2	no
+averialibre	AveriaLibre-LightItalic.ttf	FAIL	prep none; gasp 65535:2	no
+averialibre	AveriaLibre-Regular.ttf	FAIL	prep none; gasp 65535:2	no
+averiasanslibre	AveriaSansLibre-Bold.ttf	FAIL	prep none; gasp 65535:2	no
+averiasanslibre	AveriaSansLibre-BoldItalic.ttf	FAIL	prep none; gasp 65535:2	no
+averiasanslibre	AveriaSansLibre-Italic.ttf	FAIL	prep none; gasp 65535:2	no
+averiasanslibre	AveriaSansLibre-Light.ttf	FAIL	prep none; gasp 65535:2	no
+averiasanslibre	AveriaSansLibre-LightItalic.ttf	FAIL	prep none; gasp 65535:2	no
+averiasanslibre	AveriaSansLibre-Regular.ttf	FAIL	prep none; gasp 65535:2	no
+averiaseriflibre	AveriaSerifLibre-Bold.ttf	FAIL	prep none; gasp 65535:2	no
+averiaseriflibre	AveriaSerifLibre-BoldItalic.ttf	FAIL	prep none; gasp 65535:2	no
+averiaseriflibre	AveriaSerifLibre-Italic.ttf	FAIL	prep none; gasp 65535:2	no
+averiaseriflibre	AveriaSerifLibre-Light.ttf	FAIL	prep none; gasp 65535:2	no
+averiaseriflibre	AveriaSerifLibre-LightItalic.ttf	FAIL	prep none; gasp 65535:2	no
+averiaseriflibre	AveriaSerifLibre-Regular.ttf	FAIL	prep none; gasp 65535:2	no
+sansation	Sansation-Bold.ttf	FAIL	prep none; gasp 65535:2	no
+sansation	Sansation-BoldItalic.ttf	FAIL	prep none; gasp 65535:2	no
+sansation	Sansation-Italic.ttf	FAIL	prep none; gasp 65535:2	no
+sansation	Sansation-Light.ttf	FAIL	prep none; gasp 65535:2	no
+sansation	Sansation-LightItalic.ttf	FAIL	prep none; gasp 65535:2	no
+sansation	Sansation-Regular.ttf	FAIL	prep none; gasp 65535:2	no
+reeniebeanie	ReenieBeanie.ttf	FAIL	release instructed (315 glyph programs, other); prep 132 bytes; gasp 8:2,16:1,65535:3	yes
+ptserif	PT_Serif-Web-Bold.ttf	FAIL	release instructed (417 glyph programs, other); prep 378 bytes; gasp 8:2,65535:3	yes
+ptserif	PT_Serif-Web-BoldItalic.ttf	FAIL	release instructed (391 glyph programs, other); prep 496 bytes; gasp 8:2,65535:3	yes
+ptserif	PT_Serif-Web-Italic.ttf	FAIL	release instructed (579 glyph programs, other); prep 566 bytes; gasp 8:2,16:1,65535:3	yes
+ptserif	PT_Serif-Web-Regular.ttf	FAIL	release instructed (611 glyph programs, other); prep 458 bytes; gasp 8:2,16:1,65535:3	yes
+ptsansnarrow	PT_Sans-Narrow-Web-Bold.ttf	FAIL	release instructed (631 glyph programs, other); prep 376 bytes; gasp 8:2,11:1,65535:3	yes
+ptsansnarrow	PT_Sans-Narrow-Web-Regular.ttf	FAIL	release instructed (615 glyph programs, other); prep 348 bytes; gasp 8:2,19:1,65535:3	yes
+ptsanscaption	PT_Sans-Caption-Web-Bold.ttf	FAIL	release instructed (611 glyph programs, other); prep 334 bytes; gasp 6:2,7:1,65535:3	yes
+ptsanscaption	PT_Sans-Caption-Web-Regular.ttf	FAIL	release instructed (629 glyph programs, other); prep 362 bytes; gasp 6:2,16:1,65535:3	yes
+almarai	Almarai-Bold.ttf	FAIL	release instructed (527 glyph programs, other); prep 163 bytes	no
+almarai	Almarai-ExtraBold.ttf	FAIL	release instructed (527 glyph programs, other); prep 163 bytes	no
+almarai	Almarai-Light.ttf	FAIL	release instructed (527 glyph programs, other); prep 163 bytes	no
+almarai	Almarai-Regular.ttf	FAIL	release instructed (527 glyph programs, other); prep 163 bytes	no
+jua	Jua-Regular.ttf	FAIL	release instructed (2506 glyph programs, other)	yes
+dongle	Dongle-Bold.ttf	FAIL	prep none; gasp 65535:10	no
+dongle	Dongle-Light.ttf	FAIL	prep none; gasp 65535:10	no
+dongle	Dongle-Regular.ttf	FAIL	prep none; gasp 65535:10	no
+homemadeapple	HomemadeApple-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	yes
+calligraffitti	Calligraffitti-Regular.ttf	FAIL	release instructed (168 glyph programs, other); gasp 8:2,16:1,65535:3	yes
+kranky	Kranky-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	yes
+cherrycreamsoda	CherryCreamSoda-Regular.ttf	FAIL	release instructed (168 glyph programs, other); gasp 8:2,16:1,65535:3	yes
+chewy	Chewy-Regular.ttf	FAIL	release instructed (172 glyph programs, other); gasp 8:2,16:1,65535:3	yes
+comingsoon	ComingSoon-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	yes
+craftygirls	CraftyGirls-Regular.ttf	FAIL	release instructed (172 glyph programs, other); gasp 8:2,16:1,65535:3	yes
+fontdinerswanky	FontdinerSwanky-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	yes
+akronim	Akronim-Regular.ttf	FAIL	release instructed (16 glyph programs, other); prep 3 bytes; gasp -	yes
+portersansblock	PorterSansBlock-Regular.ttf	FAIL	release instructed (205 glyph programs, other); prep 101 bytes; gasp -	yes
+gugi	Gugi-Regular.ttf	FAIL	release instructed (2493 glyph programs, other); prep 366 bytes	yes
+rocksalt	RockSalt-Regular.ttf	FAIL	release instructed (153 glyph programs, other); prep 32 bytes; gasp 8:2,16:1,65535:3	yes
+schoolbell	Schoolbell-Regular.ttf	FAIL	gasp -	yes
+unkempt	Unkempt-Bold.ttf	PASS		yes
+unkempt	Unkempt-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	yes
+walterturncoat	WalterTurncoat-Regular.ttf	FAIL	gasp -	yes
+slackey	Slackey-Regular.ttf	FAIL	gasp -	yes
+sunshiney	Sunshiney-Regular.ttf	FAIL	gasp -	yes
+permanentmarker	PermanentMarker-Regular.ttf	FAIL	gasp -	yes
+ptserifcaption	PT_Serif-Caption-Web-Italic.ttf	FAIL	release instructed (601 glyph programs, other); prep 634 bytes; gasp 6:2,14:1,65535:3	yes
+ptserifcaption	PT_Serif-Caption-Web-Regular.ttf	FAIL	release instructed (607 glyph programs, other); prep 558 bytes; gasp 6:2,14:1,65535:3	yes
+ptsans	PT_Sans-Web-Bold.ttf	FAIL	release instructed (635 glyph programs, other); prep 400 bytes; gasp 8:2,10:1,65535:3	yes
+ptsans	PT_Sans-Web-BoldItalic.ttf	FAIL	release instructed (602 glyph programs, other); prep 478 bytes; gasp 8:2,10:1,65535:3	yes
+ptsans	PT_Sans-Web-Italic.ttf	FAIL	release instructed (603 glyph programs, other); prep 462 bytes; gasp 8:2,18:1,65535:3	yes
+ptsans	PT_Sans-Web-Regular.ttf	FAIL	release instructed (635 glyph programs, other); prep 426 bytes; gasp 8:2,18:1,65535:3	yes
+eastseadokdo	EastSeaDokdo-Regular.ttf	FAIL	prep 44 bytes	yes
+yeonsung	YeonSung-Regular.ttf	FAIL	release instructed (3101 glyph programs, other)	yes
+stylish	Stylish-Regular.ttf	FAIL	release instructed (11366 glyph programs, other); prep 432 bytes	yes
+blackhansans	BlackHanSans-Regular.ttf	FAIL	release instructed (2731 glyph programs, other); prep 510 bytes	yes
+dohyeon	DoHyeon-Regular.ttf	FAIL	release instructed (3090 glyph programs, other)	yes
+sunflower	Sunflower-Bold.ttf	FAIL	release instructed (2501 glyph programs, other); prep 357 bytes	yes
+sunflower	Sunflower-Light.ttf	FAIL	release instructed (2501 glyph programs, other); prep 357 bytes	yes
+sunflower	Sunflower-Medium.ttf	FAIL	release instructed (2501 glyph programs, other); prep 501 bytes	yes
+cutefont	CuteFont-Regular.ttf	FAIL	release instructed (2523 glyph programs, other); prep 183 bytes	yes
+songmyung	SongMyung-Regular.ttf	FAIL	release instructed (2613 glyph programs, other); prep 414 bytes	yes
+dokdo	Dokdo-Regular.ttf	FAIL	release instructed (2598 glyph programs, other); prep 486 bytes	yes
+blackandwhitepicture	BlackAndWhitePicture-Regular.ttf	FAIL	prep 66 bytes	yes
+gamjaflower	GamjaFlower-Regular.ttf	FAIL	release instructed (12019 glyph programs, other); prep 147 bytes	yes
+himelody	HiMelody-Regular.ttf	FAIL	release instructed (12101 glyph programs, other); prep 183 bytes	yes
+poorstory	PoorStory-Regular.ttf	FAIL	release instructed (11721 glyph programs, other); prep 219 bytes	yes
+nanumgothic	NanumGothic-Bold.ttf	FAIL	release instructed (4701 glyph programs, other); prep 372 bytes	yes
+nanumgothic	NanumGothic-ExtraBold.ttf	FAIL	release instructed (4839 glyph programs, other); prep 372 bytes	yes
+nanumgothic	NanumGothic-Regular.ttf	FAIL	release instructed (4462 glyph programs, other); prep 408 bytes	yes
+nanumbrushscript	NanumBrushScript-Regular.ttf	FAIL	release instructed (5093 glyph programs, other); prep 331 bytes	yes
+lato	Lato-Black.ttf	FAIL	release instructed (2109 glyph programs, other); prep 185 bytes	yes
+lato	Lato-BlackItalic.ttf	FAIL	release instructed (2189 glyph programs, other); prep 185 bytes	yes
+lato	Lato-Bold.ttf	FAIL	release instructed (2105 glyph programs, other); prep 185 bytes	yes
+lato	Lato-BoldItalic.ttf	FAIL	release instructed (2209 glyph programs, other); prep 185 bytes	yes
+lato	Lato-ExtraBold.ttf	FAIL	release instructed (2105 glyph programs, other); prep 185 bytes	yes
+lato	Lato-ExtraBoldItalic.ttf	FAIL	release instructed (2258 glyph programs, other); prep 185 bytes	yes
+lato	Lato-ExtraLight.ttf	FAIL	release instructed (2184 glyph programs, other); prep 185 bytes	yes
+lato	Lato-ExtraLightItalic.ttf	FAIL	release instructed (2249 glyph programs, other); prep 185 bytes	yes
+lato	Lato-Italic.ttf	FAIL	release instructed (2308 glyph programs, other); prep 185 bytes	yes
+lato	Lato-Light.ttf	FAIL	release instructed (2237 glyph programs, other); prep 185 bytes	yes
+lato	Lato-LightItalic.ttf	FAIL	release instructed (2264 glyph programs, other); prep 185 bytes	yes
+lato	Lato-Medium.ttf	FAIL	release instructed (2122 glyph programs, other); prep 185 bytes	yes
+lato	Lato-MediumItalic.ttf	FAIL	release instructed (2239 glyph programs, other); prep 185 bytes	yes
+lato	Lato-Regular.ttf	FAIL	release instructed (2169 glyph programs, other); prep 185 bytes	yes
+lato	Lato-SemiBold.ttf	FAIL	release instructed (2201 glyph programs, other); prep 185 bytes	yes
+lato	Lato-SemiBoldItalic.ttf	FAIL	release instructed (2267 glyph programs, other); prep 185 bytes	yes
+lato	Lato-Thin.ttf	FAIL	release instructed (2179 glyph programs, other); prep 185 bytes	yes
+lato	Lato-ThinItalic.ttf	FAIL	release instructed (2280 glyph programs, other); prep 185 bytes	yes
+nanumpenscript	NanumPenScript-Regular.ttf	FAIL	release instructed (4924 glyph programs, other); prep 241 bytes	yes
+carlito	Carlito-Bold.ttf	FAIL	release instructed (2755 glyph programs, other); prep 129 bytes	yes
+carlito	Carlito-BoldItalic.ttf	FAIL	release instructed (2754 glyph programs, other); prep 129 bytes	yes
+carlito	Carlito-Italic.ttf	FAIL	release instructed (2755 glyph programs, other); prep 129 bytes	yes
+carlito	Carlito-Regular.ttf	FAIL	release instructed (2755 glyph programs, other); prep 129 bytes	yes
+alef	Alef-Bold.ttf	FAIL	release instructed (394 glyph programs, other); prep 915 bytes	no
+alef	Alef-Regular.ttf	FAIL	release instructed (397 glyph programs, other); prep 888 bytes	no
+imfelldoublepica	IMFELLDoublePica-Italic.ttf	FAIL	prep none; gasp 65535:2	no
+imfelldoublepica	IMFELLDoublePica-Regular.ttf	FAIL	prep none; gasp 65535:2	no
+imfelldoublepicasc	IMFeDPsc28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfelldwpica	IMFePIit28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfelldwpica	IMFePIrm28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfelldwpicasc	IMFePIsc28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellenglish	IMFeENit28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellenglish	IMFeENrm28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellenglishsc	IMFeENsc28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellfrenchcanon	IMFeFCit28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellfrenchcanon	IMFeFCrm28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellfrenchcanonsc	IMFeFCsc28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellgreatprimer	IMFeGPit28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellgreatprimer	IMFeGPrm28P.ttf	FAIL	prep none; gasp 65535:2	no
+imfellgreatprimersc	IMFeGPsc28P.ttf	FAIL	prep none; gasp 65535:2	no
+jomolhari	Jomolhari-Regular.ttf	FAIL	release instructed (2028 glyph programs, other)	no
+nanumgothiccoding	NanumGothicCoding-Bold.ttf	FAIL	release instructed (2758 glyph programs, other); prep 234 bytes; gasp 65535:3	no
+nanumgothiccoding	NanumGothicCoding-Regular.ttf	FAIL	release instructed (2758 glyph programs, other); prep 234 bytes; gasp 65535:3	no
+nanummyeongjo	NanumMyeongjo-Bold.ttf	FAIL	release instructed (5852 glyph programs, other); prep 202 bytes	no
+nanummyeongjo	NanumMyeongjo-ExtraBold.ttf	FAIL	release instructed (5856 glyph programs, other); prep 165 bytes	no
+nanummyeongjo	NanumMyeongjo-Regular.ttf	FAIL	release instructed (5853 glyph programs, other); prep 220 bytes	no
+lekton	Lekton-Bold.ttf	FAIL	gasp 65535:2	yes
+lekton	Lekton-Italic.ttf	FAIL	gasp 65535:2	yes
+lekton	Lekton-Regular.ttf	FAIL	gasp 65535:2	yes
+monoton	Monoton-Regular.ttf	FAIL	gasp 65535:3	yes
+nixieone	NixieOne-Regular.ttf	PASS		yes
+patrickhand	PatrickHand-Regular.ttf	FAIL	release instructed (722 glyph programs, ttfautohint); prep 144 bytes	yes
+unifrakturcook	UnifrakturCook-Bold.ttf	PASS		yes
+mountainsofchristmas	MountainsofChristmas-Bold.ttf	PASS		yes
+mountainsofchristmas	MountainsofChristmas-Regular.ttf	PASS		yes
+italiana	Italiana-Regular.ttf	PASS		yes
+kottaone	KottaOne-Regular.ttf	PASS		yes
+lilitaone	LilitaOne-Regular.ttf	PASS		yes
+limelight	Limelight-Regular.ttf	FAIL	release instructed (402 glyph programs, other); prep 96 bytes	yes
+lustria	Lustria-Regular.ttf	PASS		yes
+macondo	Macondo-Regular.ttf	PASS		yes
+megrim	Megrim.ttf	FAIL	release instructed (346 glyph programs, other)	yes
+mrbedfort	MrBedfort-Regular.ttf	PASS		yes
+niconne	Niconne-Regular.ttf	PASS		yes
+nothingyoucoulddo	NothingYouCouldDo.ttf	PASS		yes
+oleoscript	OleoScript-Bold.ttf	PASS		yes
+oleoscript	OleoScript-Regular.ttf	PASS		yes
+oleoscriptswashcaps	OleoScriptSwashCaps-Bold.ttf	PASS		yes
+oleoscriptswashcaps	OleoScriptSwashCaps-Regular.ttf	PASS		yes
+revalia	Revalia-Regular.ttf	FAIL	release instructed (217 glyph programs, other); prep 46 bytes	yes
+rougescript	RougeScript-Regular.ttf	PASS		yes
+ruluko	Ruluko-Regular.ttf	PASS		yes
+salsa	Salsa-Regular.ttf	PASS		yes
+titanone	TitanOne-Regular.ttf	PASS		yes
+titilliumweb	TitilliumWeb-Black.ttf	PASS		yes
+titilliumweb	TitilliumWeb-Bold.ttf	PASS		yes
+titilliumweb	TitilliumWeb-BoldItalic.ttf	PASS		yes
+titilliumweb	TitilliumWeb-Italic.ttf	PASS		yes
+titilliumweb	TitilliumWeb-Light.ttf	PASS		yes
+titilliumweb	TitilliumWeb-LightItalic.ttf	PASS		yes
+titilliumweb	TitilliumWeb-Regular.ttf	PASS		yes
+titilliumweb	TitilliumWeb-SemiBold.ttf	PASS		yes
+titilliumweb	TitilliumWeb-SemiBoldItalic.ttf	PASS		yes
+rancho	Rancho-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	yes
+satisfy	Satisfy-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	yes
+actor	Actor-Regular.ttf	FAIL	release instructed (169 glyph programs, other); prep 150 bytes; gasp 8:2,16:1,65535:3	yes
+alfaslabone	AlfaSlabOne-Regular.ttf	FAIL	release instructed (408 glyph programs, other); prep 163 bytes	yes
+baumans	Baumans-Regular.ttf	FAIL	release instructed (187 glyph programs, other); prep 306 bytes; gasp 8:2,65535:3	yes
+butterflykids	ButterflyKids-Regular.ttf	PASS		yes
+caesardressing	CaesarDressing-Regular.ttf	PASS		yes
+cantoraone	CantoraOne-Regular.ttf	FAIL	release instructed (466 glyph programs, ttfautohint); prep 97 bytes	yes
+carroisgothic	CarroisGothic-Regular.ttf	FAIL	release instructed (175 glyph programs, other); prep 58 bytes; gasp 8:10,20:11,96:15,65535:10	yes
+carroisgothicsc	CarroisGothicSC-Regular.ttf	FAIL	release instructed (173 glyph programs, other); prep 48 bytes; gasp 8:10,20:11,96:15,65535:10	yes
+chelseamarket	ChelseaMarket-Regular.ttf	PASS		yes
+combo	Combo-Regular.ttf	FAIL	release instructed (400 glyph programs, other); prep 86 bytes	yes
+electrolize	Electrolize-Regular.ttf	FAIL	release instructed (165 glyph programs, other); prep 194 bytes; gasp 65535:3	yes
+emilyscandy	EmilysCandy-Regular.ttf	PASS		yes
+fingerpaint	FingerPaint-Regular.ttf	FAIL	release instructed (1 glyph programs, other); prep 17 bytes; gasp 8:10,20:11,96:15,65535:10	yes
+flavors	Flavors-Regular.ttf	PASS		yes
+forum	Forum-Regular.ttf	FAIL	release instructed (577 glyph programs, other); prep 240 bytes; gasp 8:2,16:1,65535:3	yes
+frederickathegreat	FrederickatheGreat-Regular.ttf	PASS		yes
+frijole	Frijole-Regular.ttf	PASS		yes
+gorditas	Gorditas-Bold.ttf	FAIL	release instructed (216 glyph programs, other); prep 348 bytes; gasp 4:2,65535:3	yes
+gorditas	Gorditas-Regular.ttf	FAIL	release instructed (216 glyph programs, other); prep 307 bytes; gasp 4:2,65535:3	yes
+griffy	Griffy-Regular.ttf	PASS		yes
+happymonkey	HappyMonkey-Regular.ttf	FAIL	release instructed (216 glyph programs, other); prep 293 bytes; gasp 4:2,65535:3	yes
+hermeneusone	HermeneusOne-Regular.ttf	FAIL	release instructed (455 glyph programs, ttfautohint); prep 147 bytes	yes
+jollylodger	JollyLodger-Regular.ttf	PASS		yes
+junge	Junge-Regular.ttf	FAIL	release instructed (214 glyph programs, other); prep 650 bytes; gasp 11:2,65535:3	yes
+kaushanscript	KaushanScript-Regular.ttf	FAIL	release instructed (410 glyph programs, other); prep 75 bytes	yes
+librecaslondisplay	LibreCaslonDisplay-Regular.ttf	FAIL	release instructed (391 glyph programs, ttfautohint); prep 177 bytes	yes
+lobstertwo	LobsterTwo-Bold.ttf	FAIL	release instructed (355 glyph programs, other); prep 168 bytes; gasp -	yes
+lobstertwo	LobsterTwo-BoldItalic.ttf	FAIL	release instructed (355 glyph programs, other); prep 150 bytes; gasp -	yes
+lobstertwo	LobsterTwo-Italic.ttf	FAIL	release instructed (355 glyph programs, other); prep 132 bytes; gasp -	yes
+lobstertwo	LobsterTwo-Regular.ttf	FAIL	release instructed (355 glyph programs, other); prep 186 bytes; gasp -	yes
+metalmania	MetalMania-Regular.ttf	FAIL	release instructed (172 glyph programs, other); prep 150 bytes; gasp 8:2,16:1,65535:3	yes
+milonga	Milonga-Regular.ttf	FAIL	release instructed (442 glyph programs, ttfautohint); prep 147 bytes	yes
+miltonian	Miltonian-Regular.ttf	FAIL	release instructed (182 glyph programs, other); prep 94 bytes; gasp -	yes
+miltoniantattoo	MiltonianTattoo-Regular.ttf	FAIL	release instructed (182 glyph programs, other); prep 366 bytes; gasp 4:2,65535:3	yes
+miniver	Miniver-Regular.ttf	PASS		yes
+mysteryquest	MysteryQuest-Regular.ttf	PASS		yes
+newrocker	NewRocker-Regular.ttf	FAIL	release instructed (438 glyph programs, ttfautohint); prep 147 bytes	yes
+petitformalscript	PetitFormalScript-Regular.ttf	FAIL	release instructed (428 glyph programs, ttfautohint); prep 97 bytes	yes
+poetsenone	PoetsenOne-Regular.ttf	FAIL	release instructed (455 glyph programs, ttfautohint); prep 97 bytes	yes
+princesssofia	PrincessSofia-Regular.ttf	PASS		yes
+prostoone	ProstoOne-Regular.ttf	FAIL	release instructed (275 glyph programs, other); prep 171 bytes; gasp 8:2,16:1,65535:3	yes
+quattrocento	Quattrocento-Bold.ttf	FAIL	release instructed (245 glyph programs, other); prep 86 bytes	yes
+quattrocento	Quattrocento-Regular.ttf	FAIL	release instructed (245 glyph programs, other); prep 86 bytes	yes
+quattrocentosans	QuattrocentoSans-Bold.ttf	FAIL	release instructed (238 glyph programs, other); prep 86 bytes	yes
+quattrocentosans	QuattrocentoSans-BoldItalic.ttf	FAIL	release instructed (238 glyph programs, other); prep 86 bytes	yes
+quattrocentosans	QuattrocentoSans-Italic.ttf	FAIL	release instructed (239 glyph programs, other); prep 86 bytes	yes
+quattrocentosans	QuattrocentoSans-Regular.ttf	FAIL	release instructed (239 glyph programs, other); prep 86 bytes	yes
+racingsansone	RacingSansOne-Regular.ttf	FAIL	release instructed (469 glyph programs, ttfautohint); prep 97 bytes	yes
+ralewaydots	RalewayDots-Regular.ttf	FAIL	release instructed (265 glyph programs, other); prep 22 bytes; gasp -	yes
+ranchers	Ranchers-Regular.ttf	FAIL	release instructed (442 glyph programs, ttfautohint); prep 97 bytes	yes
+sansitaone	SansitaOne-Regular.ttf	FAIL	prep none	yes
+seaweedscript	SeaweedScript-Regular.ttf	PASS		yes
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular.ttf	PASS		yes
+share	Share-Bold.ttf	FAIL	release instructed (252 glyph programs, other); prep 17 bytes; gasp -	yes
+share	Share-BoldItalic.ttf	FAIL	release instructed (252 glyph programs, other); prep 17 bytes; gasp -	yes
+share	Share-Italic.ttf	FAIL	release instructed (252 glyph programs, other); prep 17 bytes; gasp -	yes
+share	Share-Regular.ttf	FAIL	release instructed (252 glyph programs, other); prep 17 bytes; gasp -	yes
+skranji	Skranji-Bold.ttf	PASS		yes
+skranji	Skranji-Regular.ttf	PASS		yes
+sofadione	SofadiOne-Regular.ttf	FAIL	release instructed (158 glyph programs, other); prep 58 bytes; gasp 8:10,20:11,96:15,65535:10	yes
+sofia	Sofia-Regular.ttf	PASS		yes
+stalinistone	StalinistOne-Regular.ttf	FAIL	release instructed (330 glyph programs, other); prep 133 bytes	yes
+strong	Strong-Regular.ttf	FAIL	release instructed (286 glyph programs, other); prep 180 bytes; gasp 8:2,65535:3	yes
+tradewinds	TradeWinds-Regular.ttf	PASS		yes
+underdog	Underdog-Regular.ttf	FAIL	release instructed (407 glyph programs, ttfautohint); prep 110 bytes	yes
+volkhov	Volkhov-Bold.ttf	FAIL	release instructed (217 glyph programs, other); prep 290 bytes; gasp 8:2,65535:3	yes
+volkhov	Volkhov-BoldItalic.ttf	FAIL	release instructed (213 glyph programs, other); prep 251 bytes; gasp 8:2,65535:3	yes
+volkhov	Volkhov-Italic.ttf	FAIL	release instructed (213 glyph programs, other); prep 227 bytes; gasp 8:2,65535:3	yes
+volkhov	Volkhov-Regular.ttf	FAIL	release instructed (215 glyph programs, other); prep 290 bytes; gasp 8:2,65535:3	yes
+audiowide	Audiowide-Regular.ttf	FAIL	prep 4 bytes; gasp 8:2,16:1,65535:3	no
+berkshireswash	BerkshireSwash-Regular.ttf	PASS		no
+bigelowrules	BigelowRules-Regular.ttf	PASS		no
+clickerscript	ClickerScript-Regular.ttf	PASS		no
+dynalight	Dynalight-Regular.ttf	PASS		no
+eaglelake	EagleLake-Regular.ttf	PASS		no
+engagement	Engagement-Regular.ttf	PASS		no
+fascinate	Fascinate-Regular.ttf	PASS		no
+fascinateinline	FascinateInline-Regular.ttf	PASS		no
+fondamento	Fondamento-Italic.ttf	PASS		no
+fondamento	Fondamento-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+freckleface	FreckleFace-Regular.ttf	FAIL	prep 3 bytes; gasp 8:2,16:1,65535:3	no
+galindo	Galindo-Regular.ttf	PASS		no
+grandhotel	GrandHotel-Regular.ttf	PASS		no
+hanalei	Hanalei-Regular.ttf	PASS		no
+hanaleifill	HanaleiFill-Regular.ttf	PASS		no
+jimnightshade	JimNightshade-Regular.ttf	PASS		no
+marcellus	Marcellus-Regular.ttf	PASS		no
+marcellussc	MarcellusSC-Regular.ttf	PASS		no
+margarine	Margarine-Regular.ttf	PASS		no
+mclaren	McLaren-Regular.ttf	PASS		no
+mervalescript	MervaleScript-Regular.ttf	PASS		no
+mousememoirs	MouseMemoirs-Regular.ttf	PASS		no
+oregano	Oregano-Italic.ttf	PASS		no
+oregano	Oregano-Regular.ttf	PASS		no
+originalsurfer	OriginalSurfer-Regular.ttf	PASS		no
+parisienne	Parisienne-Regular.ttf	PASS		no
+peralta	Peralta-Regular.ttf	PASS		no
+purplepurse	PurplePurse-Regular.ttf	PASS		no
+quintessential	Quintessential-Regular.ttf	PASS		no
+ribeye	Ribeye-Regular.ttf	PASS		no
+risque	Risque-Regular.ttf	PASS		no
+romanesco	Romanesco-Regular.ttf	PASS		no
+rumraisin	RumRaisin-Regular.ttf	PASS		no
+shojumaru	Shojumaru-Regular.ttf	PASS		no
+spicyrice	SpicyRice-Regular.ttf	PASS		no
+stalemate	Stalemate-Regular.ttf	PASS		no
+stintultracondensed	StintUltraCondensed-Regular.ttf	PASS		no
+stintultraexpanded	StintUltraExpanded-Regular.ttf	PASS		no
+uncialantiqua	UncialAntiqua-Regular.ttf	PASS		no
+yesteryear	Yesteryear-Regular.ttf	PASS		no
+aclonica	Aclonica-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+crushed	Crushed-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+irishgrover	IrishGrover-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+justanotherhand	JustAnotherHand-Regular.ttf	FAIL	release instructed (337 glyph programs, other); prep 136 bytes; gasp 8:2,16:3,65535:3	no
+luckiestguy	LuckiestGuy-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+maidenorange	MaidenOrange-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+montez	Montez-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+redressed	Redressed-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+specialelite	SpecialElite-Regular.ttf	FAIL	gasp 8:2,16:1,65535:3	no
+syncopate	Syncopate-Bold.ttf	FAIL	release instructed (189 glyph programs, other); prep 114 bytes; gasp 8:2,16:1,65535:3	no
+syncopate	Syncopate-Regular.ttf	FAIL	release instructed (336 glyph programs, other); prep 194 bytes; gasp 8:2,25:3,65535:3	no
+aldrich	Aldrich-Regular.ttf	FAIL	release instructed (254 glyph programs, other); prep 4 bytes; gasp -	no
+annieuseyourtelescope	AnnieUseYourTelescope-Regular.ttf	PASS		no
+atomicage	AtomicAge-Regular.ttf	FAIL	release instructed (391 glyph programs, ttfautohint); prep 135 bytes	no
+cedarvillecursive	Cedarville-Cursive.ttf	PASS		no
+gloriahallelujah	GloriaHallelujah.ttf	FAIL	release instructed (35 glyph programs, other); prep 22 bytes; gasp 65535:3	no
+gotu	Gotu-Regular.ttf	FAIL	release instructed (1630 glyph programs, ttfautohint); prep 225 bytes	no
+hennypenny	HennyPenny-Regular.ttf	FAIL	release instructed (204 glyph programs, other); prep 19 bytes; gasp 11:2,65535:3	no
+kenia	Kenia-Regular.ttf	FAIL	release instructed (196 glyph programs, other); prep 141 bytes; gasp 8:2,16:1,65535:3	no
+labelleaurore	LaBelleAurore.ttf	PASS		no
+modak	Modak-Regular.ttf	FAIL	release instructed (1220 glyph programs, ttfautohint); prep 149 bytes	no
+mukta	Mukta-Bold.ttf	FAIL	release instructed (1355 glyph programs, ttfautohint); prep 188 bytes	no
+mukta	Mukta-ExtraBold.ttf	FAIL	release instructed (1355 glyph programs, ttfautohint); prep 188 bytes	no
+mukta	Mukta-ExtraLight.ttf	FAIL	release instructed (1355 glyph programs, ttfautohint); prep 188 bytes	no
+mukta	Mukta-Light.ttf	FAIL	release instructed (1355 glyph programs, ttfautohint); prep 188 bytes	no
+mukta	Mukta-Medium.ttf	FAIL	release instructed (1355 glyph programs, ttfautohint); prep 188 bytes	no
+mukta	Mukta-Regular.ttf	FAIL	release instructed (1355 glyph programs, ttfautohint); prep 188 bytes	no
+mukta	Mukta-SemiBold.ttf	FAIL	release instructed (1355 glyph programs, ttfautohint); prep 188 bytes	no
+muktamahee	MuktaMahee-Bold.ttf	FAIL	release instructed (786 glyph programs, ttfautohint); prep 188 bytes	no
+muktamahee	MuktaMahee-ExtraBold.ttf	FAIL	release instructed (786 glyph programs, ttfautohint); prep 188 bytes	no
+muktamahee	MuktaMahee-ExtraLight.ttf	FAIL	release instructed (786 glyph programs, ttfautohint); prep 188 bytes	no
+muktamahee	MuktaMahee-Light.ttf	FAIL	release instructed (786 glyph programs, ttfautohint); prep 188 bytes	no
+muktamahee	MuktaMahee-Medium.ttf	FAIL	release instructed (786 glyph programs, ttfautohint); prep 188 bytes	no
+muktamahee	MuktaMahee-Regular.ttf	FAIL	release instructed (786 glyph programs, ttfautohint); prep 188 bytes	no
+muktamahee	MuktaMahee-SemiBold.ttf	FAIL	release instructed (786 glyph programs, ttfautohint); prep 188 bytes	no
+muktamalar	MuktaMalar-Bold.ttf	FAIL	release instructed (796 glyph programs, ttfautohint); prep 163 bytes	no
+muktamalar	MuktaMalar-ExtraBold.ttf	FAIL	release instructed (796 glyph programs, ttfautohint); prep 163 bytes	no
+muktamalar	MuktaMalar-ExtraLight.ttf	FAIL	release instructed (796 glyph programs, ttfautohint); prep 163 bytes	no
+muktamalar	MuktaMalar-Light.ttf	FAIL	release instructed (796 glyph programs, ttfautohint); prep 163 bytes	no
+muktamalar	MuktaMalar-Medium.ttf	FAIL	release instructed (796 glyph programs, ttfautohint); prep 163 bytes	no
+muktamalar	MuktaMalar-Regular.ttf	FAIL	release instructed (796 glyph programs, ttfautohint); prep 163 bytes	no
+muktamalar	MuktaMalar-SemiBold.ttf	FAIL	release instructed (796 glyph programs, ttfautohint); prep 163 bytes	no
+muktavaani	MuktaVaani-Bold.ttf	FAIL	release instructed (1297 glyph programs, ttfautohint); prep 188 bytes	no
+muktavaani	MuktaVaani-ExtraBold.ttf	FAIL	release instructed (1297 glyph programs, ttfautohint); prep 188 bytes	no
+muktavaani	MuktaVaani-ExtraLight.ttf	FAIL	release instructed (1297 glyph programs, ttfautohint); prep 188 bytes	no
+muktavaani	MuktaVaani-Light.ttf	FAIL	release instructed (1298 glyph programs, ttfautohint); prep 188 bytes	no
+muktavaani	MuktaVaani-Medium.ttf	FAIL	release instructed (1298 glyph programs, ttfautohint); prep 188 bytes	no
+muktavaani	MuktaVaani-Regular.ttf	FAIL	release instructed (1297 glyph programs, ttfautohint); prep 188 bytes	no
+muktavaani	MuktaVaani-SemiBold.ttf	FAIL	release instructed (1297 glyph programs, ttfautohint); prep 188 bytes	no
+neucha	Neucha.ttf	FAIL	release instructed (251 glyph programs, other); prep 258 bytes; gasp 65535:2	no
+prozalibre	ProzaLibre-Bold.ttf	FAIL	release instructed (226 glyph programs, ttfautohint); prep 155 bytes	no
+prozalibre	ProzaLibre-ExtraBoldItalic.ttf	FAIL	release instructed (224 glyph programs, ttfautohint); prep 155 bytes	no
+prozalibre	ProzaLibre-Medium.ttf	FAIL	release instructed (226 glyph programs, ttfautohint); prep 155 bytes	no
+prozalibre	ProzaLibre-MediumItalic.ttf	FAIL	release instructed (226 glyph programs, ttfautohint); prep 155 bytes	no
+prozalibre	ProzaLibre-SemiBold.ttf	FAIL	release instructed (226 glyph programs, ttfautohint); prep 155 bytes	no
+prozalibre	ProzaLibre-SemiBoldItalic.ttf	FAIL	release instructed (226 glyph programs, ttfautohint); prep 155 bytes	no
+righteous	Righteous-Regular.ttf	FAIL	prep none; gasp 8:2,16:1,65535:3	no
+sevillana	Sevillana-Regular.ttf	FAIL	release instructed (210 glyph programs, other); prep 590 bytes; gasp 11:2,23:1,65535:3	no
+shadowsintolight	ShadowsIntoLight.ttf	PASS		no
+sharetechmono	ShareTechMono-Regular.ttf	FAIL	release instructed (262 glyph programs, other); prep 139 bytes	no
+simonetta	Simonetta-Black.ttf	FAIL	release instructed (226 glyph programs, other); prep 468 bytes; gasp 8:2,65535:3	no
+simonetta	Simonetta-BlackItalic.ttf	FAIL	release instructed (225 glyph programs, other); prep 524 bytes; gasp 12:2,65535:3	no
+simonetta	Simonetta-Italic.ttf	FAIL	release instructed (223 glyph programs, other); prep 624 bytes; gasp 12:2,19:1,65535:3	no
+simonetta	Simonetta-Regular.ttf	FAIL	release instructed (220 glyph programs, other); prep 602 bytes; gasp 12:2,19:1,65535:3	no
+stardosstencil	StardosStencil-Bold.ttf	PASS		no
+stardosstencil	StardosStencil-Regular.ttf	FAIL	release instructed (0 glyph programs, ttfautohint); prep none	no
+sueellenfrancisco	SueEllenFrancisco-Regular.ttf	FAIL	release instructed (216 glyph programs, other); prep 22 bytes; gasp 65535:3	no
+taiheritagepro	TaiHeritagePro-Bold.ttf	FAIL	prep none; gasp 8:2,16:1,65535:3	no
+taiheritagepro	TaiHeritagePro-Regular.ttf	FAIL	prep none; gasp 8:2,16:1,65535:3	no
+telex	Telex-Regular.ttf	FAIL	release instructed (223 glyph programs, other); prep 152 bytes	no
+tenorsans	TenorSans-Regular.ttf	FAIL	release instructed (473 glyph programs, other); prep 258 bytes; gasp -	no
+vibur	Vibur-Regular.ttf	FAIL	release instructed (220 glyph programs, other); prep 243 bytes; gasp -	no
+waitingforthesunrise	WaitingfortheSunrise.ttf	FAIL	release instructed (71 glyph programs, other); prep 22 bytes; gasp 65535:3	no
+zeyada	Zeyada.ttf	PASS		no
+ubuntu	Ubuntu-Bold.ttf	FAIL	release instructed (941 glyph programs, other); prep 383 bytes; gasp 8:2,11:1,65535:3	no
+ubuntu	Ubuntu-BoldItalic.ttf	FAIL	release instructed (930 glyph programs, other); prep 533 bytes; gasp 8:2,11:1,65535:3	no
+ubuntu	Ubuntu-Italic.ttf	FAIL	release instructed (944 glyph programs, other); prep 791 bytes; gasp 8:2,18:1,65535:3	no
+ubuntu	Ubuntu-Light.ttf	FAIL	release instructed (1089 glyph programs, other); prep 511 bytes; gasp 8:2,26:1,65535:3	no
+ubuntu	Ubuntu-LightItalic.ttf	FAIL	release instructed (958 glyph programs, other); prep 486 bytes; gasp 8:2,26:1,100:3,65535:2	no
+ubuntu	Ubuntu-Medium.ttf	FAIL	release instructed (942 glyph programs, other); prep 441 bytes; gasp 8:2,12:1,65535:3	no
+ubuntu	Ubuntu-MediumItalic.ttf	FAIL	release instructed (947 glyph programs, other); prep 441 bytes; gasp 8:2,12:1,65535:3	no
+ubuntu	Ubuntu-Regular.ttf	FAIL	release instructed (933 glyph programs, other); prep 753 bytes; gasp 8:2,18:1,65535:3	no

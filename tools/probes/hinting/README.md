@@ -7,6 +7,8 @@ Question (google/fonts#11237, comment 6650283300): can the modernized repositori
 | `census.py`     | Which kind of hinting does each shipped font carry?                                  | `$PY -I tools/probes/hinting/census.py families.tsv families-next.tsv families-binary.tsv families-vfb.tsv` |
 | `points.py`     | Would the release's glyph programs address the same points in our build?             | `$PY -I tools/probes/hinting/points.py <shipped.ttf> <built.ttf>`                                         |
 | `run_points.sh` | `points.py` over freshly built landed repositories (published gftools-rust 1e638bd) | `tools/probes/hinting/run_points.sh <scratch> <repo>... > points.txt`                                     |
+| `predict.py`    | What will functional_gate's hinting check say about each repository, unbuilt?       | `$PY -I tools/probes/hinting/predict.py census.tsv published.txt > prediction.tsv`                        |
+| `check_built.py`| Does the hinting check agree with `predict.py` on fonts actually built?             | `$PY -I tools/probes/hinting/check_built.py prediction.tsv <shipped> <built>...`                           |
 
 `$PY` is a Python with fontTools (the `PY` of the repository README). Shipped fonts were read from a google/fonts clone at 2eb0b48d5; the METADATA PRs since then change no font binary.
 
@@ -28,3 +30,16 @@ The no-glyph-code class is the setup of fontspector's `smart_dropout` check (fon
 Our builds carry no hinting at all: gftools-rust 1e638bd's single-master static recipe is `fontc` then `fix`, with no autohint step (`build_a_static` in `gftools-builder/src/recipe_providers/googlefonts.rs`; only `instantiate_a_static` autohints). Checked on the Actor and Stalinist One builds: no fpgm, no glyph instructions, name ID 5 `Version ...;fontc 1.0.0`. The upstream_info.md text "the build is hinted by ttfautohint" holds for Python gftools-builder, not for the builder those texts name.
 
 `points-2026-11-05.txt`: 8 repositories, 18 fonts. 2981 of 5478 glyphs are point-identical; 2496 differ, 2490 of them instructed in the release (of 5318 instructed glyphs). Where the points are lost, on Actor `O` (release: 20 + 16 points, on-curves at (51,341), (380,691), (709,340) among them): the .glyphs source written by babelfont 26fdcfa stores every implied on-curve point as an explicit `q` node (32 + 24 nodes, fractional midpoints such as (81.5,173)), so it no longer records which on-curves the release had; it lists the contour from (51,438,o), and Glyphs takes the last node as the start; fontc 1.0.0 then drops every on-curve at the exact midpoint of two off-curves, the release's own (380,691) included, and outputs 18 + 16 points. Cantora One `B` keeps its point count and is rotated by two. Stalinist One is the exception: 336 of 337 identical. A glyph program addresses points by index, so copying the release's instructions onto these builds would hint wrong points in about half of the instructed glyphs.
+
+## The gate (2026-11-05)
+
+Hinting is now the eighth check of `tools/functional_gate.py` (its docstring states the rules), so land.py, verify_landed.py (and through it push.sh) and verify_metadata.py `--build` all refuse a conversion whose hinting differs from the release's, unless the plan's `accepted` list states the difference (ALLOW_DISCLOSED=1). `tools/probes/functional_gate/MUTATIONS.txt`: 15 of 15 mutations fail exactly their expected checks, 6 of them hinting cases.
+
+`prediction-2026-11-05.tsv` (published = the 176 repositories of `logs/metadata-audit-2026-11-04/main-after-11237.md`): our builds all carry the smart_dropout prep, gasp 65535:15, no fpgm and no glyph programs, so a font passes only if its release has exactly that.
+
+| repositories | pass | fail | fail: release instructed | fail: gasp only | fail: prep (and gasp) |
+|--------------|------|------|--------------------------|-----------------|-----------------------|
+| published    | 72   | 104  | 84                       | 15              | 5                     |
+| not yet      | 51   | 73   | 43                       | 9               | 21                    |
+
+`check-built-2026-11-05.txt`: on the 24 fonts built for this probe, the gate agrees with the prediction 24 of 24 times. verify_metadata.py `--build` passes Abril Fatface (its commit in google/fonts#11234) and fails Actor (its commit in google/fonts#11237) on hinting.

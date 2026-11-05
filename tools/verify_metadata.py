@@ -9,7 +9,10 @@ Checks every commit between the base (upstream/main by default) and the branch H
   3. every files {} dest_file is a file google/fonts ships in that family's directory,
      and the license source_file is in the repository at that commit;
   4. with --build: the repository at that commit, built by the same gftools-builder as
-     tools/land.py, produces exactly the fonts/ttf/ files the source block maps;
+     tools/land.py, produces exactly the fonts/ttf/ files the source block maps, and each
+     passes tools/functional_gate.py (all eight checks, hinting included) against the font
+     this google/fonts commit ships as its dest_file (ALLOW_DISCLOSED=1: a difference the
+     plan's "accepted" list states word for word is reported, not failed);
   5. the upstream_info.md text this branch adds (everything above "## Previous
      investigation") is ASCII, names no workstation path, and every commit id and
      github.com URL in it is public (tools/public_refs.py's mirrors; run --fetch once).
@@ -28,6 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import land  # noqa: E402
 import public_refs  # noqa: E402
+import functional_gate  # noqa: E402
 import check_publishable  # noqa: E402
 from google.protobuf import text_format  # noqa: E402
 from gftools import fonts_public_pb2  # noqa: E402
@@ -100,6 +104,23 @@ def check_commit(wt, sha, build):
             built = sorted(os.listdir(ttf)) if os.path.isdir(ttf) else []
             if sorted(mapped) != built:
                 problems.append("build produces %s, the source block maps %s" % (built, sorted(mapped)))
+            accepted = land.load_plan(repo).get("accepted", []) if os.environ.get("ALLOW_DISCLOSED") else []
+            for f in src.files:
+                name = os.path.basename(f.source_file)
+                if not f.source_file.startswith("fonts/ttf/") or name not in built:
+                    continue
+                shipped_font = os.path.join(scratch, "shipped-" + f.dest_file)
+                with open(shipped_font, "wb") as fh:
+                    fh.write(subprocess.run(["git", "-C", wt, "show", "%s:%s/%s" % (sha, fam_dir, f.dest_file)],
+                                            capture_output=True, check=True).stdout)
+                style = os.path.splitext(f.dest_file)[0]
+                res = functional_gate.run(shipped_font, os.path.join(ttf, name), style, workdir=scratch)
+                for check in functional_gate.failed_checks(res):
+                    c = res["checks"][check]
+                    if {"style": style, "check": check, "summary": c["summary"]} in accepted:
+                        continue
+                    problems.append("%s: functional_gate %s FAIL: %s" % (
+                        f.dest_file, check, (c["failures"] or [c["summary"]])[0][:200]))
         finally:
             if os.path.dirname(scratch) == land.SCRATCH and os.path.basename(scratch).startswith("verify-metadata-"):
                 shutil.rmtree(scratch)

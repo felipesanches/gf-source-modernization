@@ -8,7 +8,7 @@ step 4 does), run diffenator3 with land.gate()'s flags, then the functional gate
 are not landed repositories (Lohit-Bengali's provenance-repaired build) come from EXTRA.tsv
 (label, shipped, built, d3 json; `$S` stands for the scratch root).
 
-Writes one TSV row per style to stdout: repo, style, verdict, the seven check statuses, and
+Writes one TSV row per style to stdout: repo, style, verdict, the eight check statuses, and
 the first failure of each failing check. Per-style verdict JSON: $S/runs/<style>.json.
 
 Usage:
@@ -33,7 +33,7 @@ import land             # noqa: E402
 
 S = functional_gate.SCRATCH
 R = land.OUT
-CHECKS = ["cmap", "shaping", "rendering", "names", "line_spacing", "advances", "gdef"]
+CHECKS = ["cmap", "shaping", "rendering", "names", "line_spacing", "advances", "gdef", "hinting"]
 
 
 def landed_rows():
