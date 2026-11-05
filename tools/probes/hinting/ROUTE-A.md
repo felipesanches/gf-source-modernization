@@ -73,6 +73,31 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## Status, 2026-11-05 evening: end to end on 20 releases (`e2e.py`, `e2e-2026-11-05.txt`)
+
+babelfont-rs branch `ttf-stored-points` (one commit on Simon's main 622ed1fd; not yet
+public) reads a static font's simple glyphs from the glyf points, starting each contour where
+the rasterizer starts it, and lists that point first so the reversal to counter-clockwise
+leaves it last, where a closed path starts. Then:
+
+| build of the converted .glyphs                                  | gate `hinting` after the hinting file |
+|-----------------------------------------------------------------|---------------------------------------|
+| fontmake (`--keep-overlaps`; it keeps every on-curve point)     | 19 of 20 pass                         |
+| fontc through gftools-rust 1e638bd                              | 1 of 20 pass (Stalinist One)          |
+
+The hinting file now also carries what a .glyphs source cannot state: the first point of a
+contour that starts off-curve (Tuffy: 299 glyphs), and component transforms whose F2Dot14
+values 4 decimals lose (the plist writer's precision; Volkhov's flipped components,
+-16383/16384). The one fontmake failure is Tuffy Regular's `multiply`: a rotated, slightly
+skewed component whose matrix comes back about 29 F2Dot14 units off after babelfont's
+angle/scale/slant decomposition (not rounding; `apply` refuses it). Every fontc failure is the
+explicit midpoint drop (Actor: 209 of 237 point-identical, the 28 others are exactly those
+glyphs). Drafts: `pr-bodies/fontc-issue-keep-source-oncurves.md`,
+`pr-bodies/glyphslib-rs-issue-float-precision.md`.
+
+The gate also accepts head flag 3 set where the release has an fpgm and lacks it (fontspector
+integer_ppem_if_hinted; gftools fix_hinted_font sets it): 10 of 314 releases with an fpgm.
+
 ## First plan (2026-11-05 morning, superseded above)
 
 

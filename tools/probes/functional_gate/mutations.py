@@ -101,6 +101,11 @@ def gasp_fontspector(tt):
     tt["gasp"].gaspRange = {0xFFFF: 0x0F}
 
 
+def head_flag3_cleared(tt):
+    # the release (Actor) sets it; a build may add it, never drop it
+    tt["head"].flags &= ~8
+
+
 def prep_smart_dropout_appended(tt):
     # the smart_dropout setup is accepted only in place of no prep, never added to one
     from fontTools.ttLib.tables import ttProgram
@@ -165,7 +170,8 @@ HINTED_MUTATIONS = [("hinted identity", lambda tt: None, set()),
                     ("cvt[0] +20", cvt_changed, {"hinting"}),
                     ("contour start rotated", points_rotated, {"hinting"}),
                     ("gasp -> fontspector's 65535:15", gasp_fontspector, set()),
-                    ("smart_dropout appended to prep", prep_smart_dropout_appended, {"hinting"})]
+                    ("smart_dropout appended to prep", prep_smart_dropout_appended, {"hinting"}),
+                    ("head flag 3 cleared", head_flag3_cleared, {"hinting"})]
 
 
 def main():

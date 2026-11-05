@@ -82,11 +82,12 @@ Checks (each PASS or FAIL; the verdict is PASS only if all eight pass):
   hinting       the release's prep program and gasp ranges, always (an unhinted
                 release's prep is typically the smart_dropout setup, B8 01 FF 85 B0 04
                 8D, with gasp 65535:15), except what fontspector asks for: gasp 65535:15
-                in place of any other gasp, and the smart_dropout prep where the release
-                has no prep (googlefonts/gasp and its hotfix; reported as notes).
-                When the release is instructed (glyph programs,
+                in place of any other gasp, the smart_dropout prep where the release
+                has no prep (googlefonts/gasp and its hotfix), and head flag 3 set
+                where the release has an fpgm (integer_ppem_if_hinted); reported as
+                notes. When the release is instructed (glyph programs,
                 or a prep that CALLs the font program): fpgm, cvt, the maxp TrueType
-                limits and head flag 3 equal; every glyph's program equal and on the same
+                limits and head flag 3 equal (but for that exception); every glyph's program equal and on the same
                 points (contour ends, coordinates, on-curve flags; a composite's
                 components); and every reachable glyph's hinted raster identical under
                 FreeType's TrueType interpreter (v35 bi-level, v35 and v40 grayscale) at
@@ -1175,8 +1176,14 @@ def check_hinting(A, B, ka_map, kb_map, examples):
         if diff:
             fails.append("maxp TrueType limits (release/build): " + ", ".join(diff))
         if (ta["head"].flags ^ tb["head"].flags) & 0x0008:
-            fails.append("head flag 3 (integer ppem): release %d, build %d" % (
-                bool(ta["head"].flags & 8), bool(tb["head"].flags & 8)))
+            # fontspector integer_ppem_if_hinted fails a font with an fpgm and without
+            # flag 3; gftools fix_hinted_font sets it: accepted in that direction only
+            if fa is not None and tb["head"].flags & 8:
+                notes.append("head flag 3 (integer ppem): release 0, build 1, as fontspector "
+                             "integer_ppem_if_hinted asks (accepted)")
+            else:
+                fails.append("head flag 3 (integer ppem): release %d, build %d" % (
+                    bool(ta["head"].flags & 8), bool(tb["head"].flags & 8)))
     else:
         if fa is not None:
             notes.append("the release's fpgm (%d bytes) is never called: no glyph program, and prep "

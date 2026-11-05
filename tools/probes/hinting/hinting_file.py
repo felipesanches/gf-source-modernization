@@ -20,8 +20,15 @@ File (formatVersion "1"; programs in fontTools/ufo2ft assembly, glyph ids as ufo
   components         {"<composite glyph>": [flags of each component, masked to COMPONENT_FLAGS]}
                      (ROUND_XY_TO_GRID, USE_MY_METRICS, OVERLAP_COMPOUND, SCALED/UNSCALED_COMPONENT_OFFSET:
                      they change the hinted result, and a compiler sets its own)
-apply refuses a glyph whose points do not hash to its id (the program would address other
-points) and exits 1, naming them; it never applies a program to other points.
+  offcurve_starts    {"<glyph>": {"<contour>": [x, y]}}: the first point of each contour that
+                     starts on an off-curve point, which a .glyphs or UFO closed path cannot
+                     start on
+  transforms         {"<glyph>": [[xx, xy, yx, yy], ...]}: the component transforms of a
+                     composite whose F2Dot14 values a source does not keep at 4 decimals
+apply first restores those two (rotating a contour only to a point it already has, setting
+a transform only within one F2Dot14 unit of the compiled one), then refuses a glyph whose
+points do not hash to its id (the program would address other points) and exits 1, naming
+them; it never applies a program to other points.
 """
 import array
 import json
@@ -82,6 +89,21 @@ def extract(path):
         if hasattr(g, "program") and g.program.getBytecode():
             glyphs[name] = {"assembly": asm(g.program), "id": glyph_id(tt, name)}
     d["glyphs"] = glyphs
+    starts, transforms = {}, {}
+    for name in tt.getGlyphOrder():
+        g = tt["glyf"][name]
+        if g.isComposite():
+            ts = [list(c.transform[0]) + list(c.transform[1]) if hasattr(c, "transform") else [1, 0, 0, 1]
+                  for c in g.components]
+            if any(round(round(v, 4) * 16384) != round(v * 16384) for t in ts for v in t):
+                transforms[name] = ts
+        elif g.numberOfContours > 0:
+            first = 0
+            for i, end in enumerate(g.endPtsOfContours):
+                if not g.flags[first] & 1:
+                    starts.setdefault(name, {})[str(i)] = list(g.coordinates[first])
+                first = end + 1
+    d["offcurve_starts"], d["transforms"] = starts, transforms
     d["components"] = {name: [c.flags & COMPONENT_FLAGS for c in tt["glyf"][name].components]
                        for name in tt.getGlyphOrder() if tt["glyf"][name].isComposite()}
     json.dump(d, sys.stdout, indent=1, sort_keys=True)
@@ -109,6 +131,41 @@ def apply(hpath, inp, out):
         tt["gasp"].gaspRange = {int(k): v for k, v in d["gasp"].items()}
     bad = []
     glyf = tt["glyf"]
+    for name, contours in d.get("offcurve_starts", {}).items():
+        g = glyf[name] if name in glyf else None
+        if g is None or g.isComposite():
+            bad.append(name)
+            continue
+        coords, flags, ends = list(g.coordinates), list(g.flags), list(g.endPtsOfContours)
+        first = 0
+        for i, end in enumerate(ends):
+            want = contours.get(str(i))
+            idx = list(range(first, end + 1))
+            if want is not None:
+                at = [k for k, j in enumerate(idx) if list(coords[j]) == want and not flags[j] & 1]
+                if len(at) != 1:
+                    bad.append(name)
+                    break
+                rot = idx[at[0]:] + idx[:at[0]]
+                coords[first:end + 1] = [coords[j] for j in rot]
+                flags[first:end + 1] = [flags[j] for j in rot]
+            first = end + 1
+        g.coordinates = type(g.coordinates)(coords)
+        g.flags = array.array("B", flags)
+    for name, ts in d.get("transforms", {}).items():
+        g = glyf[name] if name in glyf else None
+        if g is None or not g.isComposite() or len(g.components) != len(ts):
+            bad.append(name)
+            continue
+        for c, t in zip(g.components, ts):
+            have = list(c.transform[0]) + list(c.transform[1]) if hasattr(c, "transform") else [1, 0, 0, 1]
+            if any(abs(a - b) > 1.5 / 16384 for a, b in zip(have, t)):
+                bad.append(name)
+                break
+            if t != [1, 0, 0, 1]:
+                c.transform = [[t[0], t[1]], [t[2], t[3]]]
+                c.flags &= ~(0x0008 | 0x0040 | 0x0080)
+                c.flags |= 0x0080 if t[1] or t[2] else (0x0040 if t[0] != t[3] else 0x0008)
     for name in tt.getGlyphOrder():
         g = glyf[name]
         if name in d["glyphs"]:

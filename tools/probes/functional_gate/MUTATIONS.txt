@@ -16,3 +16,4 @@ OK    cvt[0] +20                             expected fail hinting              
 OK    contour start rotated                  expected fail hinting                                  got hinting (B)
 OK    gasp -> fontspector's 65535:15         expected fail -                                        got -
 OK    smart_dropout appended to prep         expected fail hinting                                  got hinting
+OK    head flag 3 cleared                    expected fail hinting                                  got hinting
