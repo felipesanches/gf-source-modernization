@@ -81,7 +81,10 @@ Checks (each PASS or FAIL; the verdict is PASS only if all eight pass):
                 mark glyph sets fail only when a lookup uses them.
   hinting       the release's prep program and gasp ranges, always (an unhinted
                 release's prep is typically the smart_dropout setup, B8 01 FF 85 B0 04
-                8D, with gasp 65535:15). When the release is instructed (glyph programs,
+                8D, with gasp 65535:15), except what fontspector asks for: gasp 65535:15
+                in place of any other gasp, and the smart_dropout prep where the release
+                has no prep (googlefonts/gasp and its hotfix; reported as notes).
+                When the release is instructed (glyph programs,
                 or a prep that CALLs the font program): fpgm, cvt, the maxp TrueType
                 limits and head flag 3 equal; every glyph's program equal and on the same
                 points (contour ends, coordinates, on-curve flags; a composite's
@@ -1105,6 +1108,7 @@ def describe_program(b):
 
 
 SMART_DROPOUT = bytes([0xB8, 0x01, 0xFF, 0x85, 0xB0, 0x04, 0x8D])
+FONTSPECTOR_GASP = {0xFFFF: 0x0F}
 
 
 def set_interpreter(version):
@@ -1123,7 +1127,8 @@ def hinted_bitmap(face, gid, target):
 
 
 def check_hinting(A, B, ka_map, kb_map, examples):
-    """Does the build hint like the release? The release's prep and gasp always; when the
+    """Does the build hint like the release? The release's prep and gasp always (except
+    fontspector's gasp 65535:15 and smart_dropout prep, see FONTSPECTOR_GASP); when the
     release carries instructions (glyph programs, or a prep that calls the font program),
     its fpgm, cvt, maxp limits, head flag 3, every glyph's program on the same points,
     and the hinted rasters (HINT_MODES at HINT_PPEMS, exact)."""
@@ -1137,10 +1142,22 @@ def check_hinting(A, B, ka_map, kb_map, examples):
     instructed = ha["glyph_programs"] > 0 or prep_calls
     data = {"release": ha, "build": hb_, "release_instructed": instructed}
 
+    # What fontspector asks for is accepted (Felipe, 2026-11-05): googlefonts/gasp fails a
+    # missing gasp and warns on any other gasp than 65535:15, and its hotfix (gftools
+    # fix_unhinted_font) writes that gasp with the smart_dropout prep. So the build may add
+    # that prep to a release with none, and state that gasp; nothing else.
     if pa != pb:
-        fails.append("prep: release %s, build %s" % (describe_program(pa), describe_program(pb)))
+        if pa is None and pb == SMART_DROPOUT:
+            notes.append("prep: the release has none, the build has the smart_dropout setup "
+                         "(fontspector googlefonts/gasp hotfix; accepted)")
+        else:
+            fails.append("prep: release %s, build %s" % (describe_program(pa), describe_program(pb)))
     if ha["gasp"] != hb_["gasp"]:
-        fails.append("gasp: release %s, build %s" % (ha["gasp"], hb_["gasp"]))
+        if hb_["gasp"] == FONTSPECTOR_GASP:
+            notes.append("gasp: release %s, build %s as fontspector googlefonts/gasp asks (accepted)"
+                         % (ha["gasp"], hb_["gasp"]))
+        else:
+            fails.append("gasp: release %s, build %s" % (ha["gasp"], hb_["gasp"]))
 
     fa, fb = program_bytes(ta, "fpgm"), program_bytes(tb, "fpgm")
     if instructed:

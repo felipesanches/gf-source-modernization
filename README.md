@@ -74,9 +74,10 @@ check 7. The table gate itself is unchanged.
 
 Evidence (`tools/probes/functional_gate/`, see its README):
 
-- **Each check catches its own defect.** 15 of 15 fontTools mutations fail exactly the
-  expected checks: 11 of Salsa-Regular (gasp and prep among them) and 4 of the instructed
-  Actor-Regular (a glyph program removed, a cvt value, a contour start rotated); both
+- **Each check catches its own defect.** 17 of 17 fontTools mutations fail exactly the
+  expected checks: 11 of Salsa-Regular (gasp and prep among them) and 6 of the instructed
+  Actor-Regular (a glyph program removed, a cvt value, a contour start rotated, the
+  smart_dropout setup appended to its prep; fontspector's gasp in place of its own passes); both
   unmutated copies pass all eight (`MUTATIONS.txt`, 2026-11-05).
 - **Rendering thresholds.** 4145 glyphs in 95 pairs (92 landed styles, two Lohit-Bengali
   builds, one mutation) store their outline differently. Every one the conversion rewrites

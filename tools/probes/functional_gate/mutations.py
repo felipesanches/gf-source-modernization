@@ -96,6 +96,19 @@ def prep_removed(tt):
     del tt["prep"]
 
 
+def gasp_fontspector(tt):
+    # Actor's release gasp is 8:2,16:1,65535:3; fontspector's is accepted in its place
+    tt["gasp"].gaspRange = {0xFFFF: 0x0F}
+
+
+def prep_smart_dropout_appended(tt):
+    # the smart_dropout setup is accepted only in place of no prep, never added to one
+    from fontTools.ttLib.tables import ttProgram
+    p = ttProgram.Program()
+    p.fromBytecode(tt["prep"].program.getBytecode() + bytes([0xB8, 0x01, 0xFF, 0x85, 0xB0, 0x04, 0x8D]))
+    tt["prep"].program = p
+
+
 MUTATIONS = [("identity", lambda tt: None, set()),
              ("kerning value halved", kern_value, {"shaping"}),
              ("advance of 'a' +12", advance, {"shaping", "advances", "rendering"}),
@@ -150,7 +163,9 @@ def points_rotated(tt):
 HINTED_MUTATIONS = [("hinted identity", lambda tt: None, set()),
                     ("glyph program removed", program_removed, {"hinting"}),
                     ("cvt[0] +20", cvt_changed, {"hinting"}),
-                    ("contour start rotated", points_rotated, {"hinting"})]
+                    ("contour start rotated", points_rotated, {"hinting"}),
+                    ("gasp -> fontspector's 65535:15", gasp_fontspector, set()),
+                    ("smart_dropout appended to prep", prep_smart_dropout_appended, {"hinting"})]
 
 
 def main():

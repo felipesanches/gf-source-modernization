@@ -14,3 +14,5 @@ OK    hinted identity                        expected fail -                    
 OK    glyph program removed                  expected fail hinting                                  got hinting (B)
 OK    cvt[0] +20                             expected fail hinting                                  got hinting (cvt[0] 40)
 OK    contour start rotated                  expected fail hinting                                  got hinting (B)
+OK    gasp -> fontspector's 65535:15         expected fail -                                        got -
+OK    smart_dropout appended to prep         expected fail hinting                                  got hinting

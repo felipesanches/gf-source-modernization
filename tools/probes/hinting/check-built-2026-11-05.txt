@@ -1,24 +1,24 @@
-Actor-Regular.ttf                    predicted FAIL gate FAIL MATCH  prep: release 150 bytes, build the smart_dropout setup (7 bytes) | gasp: release {8: 2, 16: 1, 65535: 3}, build {65535: 15} | fpgm: release 371 bytes, build none
+Actor-Regular.ttf                    predicted FAIL gate FAIL MATCH  prep: release 150 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 15 values, build none
 CantoraOne-Regular.ttf               predicted FAIL gate FAIL MATCH  prep: release 97 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 1865 bytes, build none | cvt: release 24 values, build none
-Forum-Regular.ttf                    predicted FAIL gate FAIL MATCH  prep: release 240 bytes, build the smart_dropout setup (7 bytes) | gasp: release {8: 2, 16: 1, 65535: 3}, build {65535: 15} | fpgm: release 371 bytes, build none
+Forum-Regular.ttf                    predicted FAIL gate FAIL MATCH  prep: release 240 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 20 values, build none
 HerrVonMuellerhoff-Regular.ttf       predicted PASS gate PASS MATCH  
-HomemadeApple-Regular.ttf            predicted FAIL gate FAIL MATCH  gasp: release {8: 2, 16: 1, 65535: 3}, build {65535: 15}
-LobsterTwo-BoldItalic.ttf            predicted FAIL gate FAIL MATCH  prep: release 150 bytes, build the smart_dropout setup (7 bytes) | gasp: release None, build {65535: 15} | fpgm: release 371 bytes, build none
-LobsterTwo-Bold.ttf                  predicted FAIL gate FAIL MATCH  prep: release 168 bytes, build the smart_dropout setup (7 bytes) | gasp: release None, build {65535: 15} | fpgm: release 371 bytes, build none
-LobsterTwo-Italic.ttf                predicted FAIL gate FAIL MATCH  prep: release 132 bytes, build the smart_dropout setup (7 bytes) | gasp: release None, build {65535: 15} | fpgm: release 371 bytes, build none
-LobsterTwo-Regular.ttf               predicted FAIL gate FAIL MATCH  prep: release 186 bytes, build the smart_dropout setup (7 bytes) | gasp: release None, build {65535: 15} | fpgm: release 371 bytes, build none
+HomemadeApple-Regular.ttf            predicted PASS gate PASS MATCH  gasp: release {8: 2, 16: 1, 65535: 3}, build {65535: 15} as fontspector googlefonts/gasp a | the release's fpgm (353 bytes) is never called: no glyph program, and prep makes no CALL; 
+LobsterTwo-BoldItalic.ttf            predicted FAIL gate FAIL MATCH  prep: release 150 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 15 values, build none
+LobsterTwo-Bold.ttf                  predicted FAIL gate FAIL MATCH  prep: release 168 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 16 values, build none
+LobsterTwo-Italic.ttf                predicted FAIL gate FAIL MATCH  prep: release 132 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 14 values, build none
+LobsterTwo-Regular.ttf               predicted FAIL gate FAIL MATCH  prep: release 186 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 17 values, build none
 Quattrocento-Bold.ttf                predicted FAIL gate FAIL MATCH  prep: release 86 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 1865 bytes, build none | cvt: release 24 values, build none
 Quattrocento-Regular.ttf             predicted FAIL gate FAIL MATCH  prep: release 86 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 1865 bytes, build none | cvt: release 24 values, build none
-Share-BoldItalic.ttf                 predicted FAIL gate FAIL MATCH  prep: release 17 bytes, build the smart_dropout setup (7 bytes) | gasp: release None, build {65535: 15} | fpgm: release 337 bytes, build none
-Share-Bold.ttf                       predicted FAIL gate FAIL MATCH  prep: release 17 bytes, build the smart_dropout setup (7 bytes) | gasp: release None, build {65535: 15} | fpgm: release 337 bytes, build none
-Share-Italic.ttf                     predicted FAIL gate FAIL MATCH  prep: release 17 bytes, build the smart_dropout setup (7 bytes) | gasp: release None, build {65535: 15} | fpgm: release 337 bytes, build none
-Share-Regular.ttf                    predicted FAIL gate FAIL MATCH  prep: release 17 bytes, build the smart_dropout setup (7 bytes) | gasp: release None, build {65535: 15} | fpgm: release 337 bytes, build none
+Share-BoldItalic.ttf                 predicted FAIL gate FAIL MATCH  prep: release 17 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 337 bytes, build none | cvt: release 9 values, build none
+Share-Bold.ttf                       predicted FAIL gate FAIL MATCH  prep: release 17 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 337 bytes, build none | cvt: release 9 values, build none
+Share-Italic.ttf                     predicted FAIL gate FAIL MATCH  prep: release 17 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 337 bytes, build none | cvt: release 9 values, build none
+Share-Regular.ttf                    predicted FAIL gate FAIL MATCH  prep: release 17 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 337 bytes, build none | cvt: release 9 values, build none
 StalinistOne-Regular.ttf             predicted FAIL gate FAIL MATCH  prep: release 133 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 2411 bytes, build none | cvt: release 23 values, build none
 Tuffy-BoldItalic.ttf                 predicted PASS gate PASS MATCH  
-Tuffy-Bold.ttf                       predicted FAIL gate FAIL MATCH  prep: release none, build the smart_dropout setup (7 bytes)
+Tuffy-Bold.ttf                       predicted PASS gate PASS MATCH  prep: the release has none, the build has the smart_dropout setup (fontspector googlefonts
 Tuffy-Italic.ttf                     predicted FAIL gate FAIL MATCH  prep: release 199 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 3437 bytes, build none | cvt: release 107 values, build none
 Tuffy-Regular.ttf                    predicted FAIL gate FAIL MATCH  prep: release 199 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 3437 bytes, build none | cvt: release 107 values, build none
-Volkhov-BoldItalic.ttf               predicted FAIL gate FAIL MATCH  prep: release 251 bytes, build the smart_dropout setup (7 bytes) | gasp: release {8: 2, 65535: 3}, build {65535: 15} | fpgm: release 371 bytes, build none
-Volkhov-Bold.ttf                     predicted FAIL gate FAIL MATCH  prep: release 290 bytes, build the smart_dropout setup (7 bytes) | gasp: release {8: 2, 65535: 3}, build {65535: 15} | fpgm: release 371 bytes, build none
-Volkhov-Italic.ttf                   predicted FAIL gate FAIL MATCH  prep: release 227 bytes, build the smart_dropout setup (7 bytes) | gasp: release {8: 2, 65535: 3}, build {65535: 15} | fpgm: release 371 bytes, build none
-Volkhov-Regular.ttf                  predicted FAIL gate FAIL MATCH  prep: release 290 bytes, build the smart_dropout setup (7 bytes) | gasp: release {8: 2, 65535: 3}, build {65535: 15} | fpgm: release 371 bytes, build none
+Volkhov-BoldItalic.ttf               predicted FAIL gate FAIL MATCH  prep: release 251 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 16 values, build none
+Volkhov-Bold.ttf                     predicted FAIL gate FAIL MATCH  prep: release 290 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 15 values, build none
+Volkhov-Italic.ttf                   predicted FAIL gate FAIL MATCH  prep: release 227 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 16 values, build none
+Volkhov-Regular.ttf                  predicted FAIL gate FAIL MATCH  prep: release 290 bytes, build the smart_dropout setup (7 bytes) | fpgm: release 371 bytes, build none | cvt: release 15 values, build none

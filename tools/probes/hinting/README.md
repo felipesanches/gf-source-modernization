@@ -33,13 +33,15 @@ Our builds carry no hinting at all: gftools-rust 1e638bd's single-master static 
 
 ## The gate (2026-11-05)
 
-Hinting is now the eighth check of `tools/functional_gate.py` (its docstring states the rules), so land.py, verify_landed.py (and through it push.sh) and verify_metadata.py `--build` all refuse a conversion whose hinting differs from the release's, unless the plan's `accepted` list states the difference (ALLOW_DISCLOSED=1). `tools/probes/functional_gate/MUTATIONS.txt`: 15 of 15 mutations fail exactly their expected checks, 6 of them hinting cases.
+Hinting is now the eighth check of `tools/functional_gate.py` (its docstring states the rules), so land.py, verify_landed.py (and through it push.sh) and verify_metadata.py `--build` all refuse a conversion whose hinting differs from the release's, unless the plan's `accepted` list states the difference (ALLOW_DISCLOSED=1). `tools/probes/functional_gate/MUTATIONS.txt`: 17 of 17 mutations fail exactly their expected checks, 8 of them hinting cases.
 
-`prediction-2026-11-05.tsv` (published = the 176 repositories of `logs/metadata-audit-2026-11-04/main-after-11237.md`): our builds all carry the smart_dropout prep, gasp 65535:15, no fpgm and no glyph programs, so a font passes only if its release has exactly that.
+`prediction-2026-11-05.tsv` (published = the 176 repositories of `logs/metadata-audit-2026-11-04/main-after-11237.md`): our builds all carry the smart_dropout prep, gasp 65535:15, no fpgm and no glyph programs. The gate accepts what fontspector asks for (Felipe, 2026-11-05): googlefonts/gasp fails a missing gasp and warns on any gasp other than 65535:15, and its hotfix (gftools fix_unhinted_font) writes that gasp with the smart_dropout prep. So a build may state gasp 65535:15 in place of any other, and the smart_dropout prep where the release has none; nothing else (smart_dropout itself skips a font without prep). A font therefore passes unless its release is instructed. The census does not disassemble: 5 releases without glyph programs have a prep other than the smart_dropout setup (Allerta Stencil, East Sea Dokdo, Black And White Picture, Audiowide, Freckle Face), and each of those CALLs its font program, so they count as instructed.
 
-| repositories | pass | fail | fail: release instructed | fail: gasp only | fail: prep (and gasp) |
-|--------------|------|------|--------------------------|-----------------|-----------------------|
-| published    | 72   | 104  | 84                       | 15              | 5                     |
-| not yet      | 51   | 73   | 43                       | 9               | 21                    |
+| repositories | pass | fail: release instructed |
+|--------------|------|--------------------------|
+| published    | 89   | 87                       |
+| not yet      | 79   | 45                       |
 
-`check-built-2026-11-05.txt`: on the 24 fonts built for this probe, the gate agrees with the prediction 24 of 24 times. verify_metadata.py `--build` passes Abril Fatface (its commit in google/fonts#11234) and fails Actor (its commit in google/fonts#11237) on hinting.
+Before the fontspector rule the same census failed 104 published repositories (84 instructed, 15 on gasp alone, 5 on a missing prep).
+
+`check-built-2026-11-05.txt`: on the 24 fonts built for this probe, the gate agrees with the prediction 24 of 24 times (Homemade Apple passes on fontspector's gasp, Tuffy Bold on the smart_dropout prep its release lacks). verify_metadata.py `--build` passes Abril Fatface (its commit in google/fonts#11234) and fails Actor (its commit in google/fonts#11237) on hinting.
