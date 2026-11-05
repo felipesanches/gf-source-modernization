@@ -22,7 +22,7 @@ Question (google/fonts#11237, comment 6650283300): can the modernized repositori
 | class         | meaning                                                               | fonts | repos |
 |---------------|-----------------------------------------------------------------------|-------|-------|
 | other         | glyph programs from another hinter (FontLab, VTT, FontForge, by hand) | 173   | 102   |
-| ttfautohint   | name ID 5 records ttfautohint and its options (v0.8 to v1.6)           | 57    | 25    |
+| ttfautohint   | name ID 5 records ttfautohint and its options (v0.8 to v1.6)          | 57    | 25    |
 | no-glyph-code | a prep (sometimes an fpgm no glyph calls), no glyph instructions      | 195   | 158   |
 | none          | no fpgm, prep or glyph programs                                       | 52    | 22    |
 
