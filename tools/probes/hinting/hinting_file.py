@@ -25,7 +25,10 @@ File (formatVersion "1"; programs in fontTools/ufo2ft assembly, glyph ids as ufo
                      start on
   transforms         {"<glyph>": [[xx, xy, yx, yy], ...]}: the component transforms of a
                      composite whose F2Dot14 values a source does not keep at 4 decimals
-apply first restores those two (rotating a contour only to a point it already has, setting
+  midpoints          {"<glyph>": {"points": [index, ...], "ends": [contour end, ...]}}: explicit
+                     on-curve points exactly halfway between two off-curves, which a compiler
+                     may drop as implied (fontc does), and the glyph's contour ends
+apply first restores those three (rotating a contour only to a point it already has, setting
 a transform only within one F2Dot14 unit of the compiled one), then refuses a glyph whose
 points do not hash to its id (the program would address other points) and exits 1, naming
 them; it never applies a program to other points.
@@ -61,6 +64,46 @@ def glyph_id(tt, name):
     tt["glyf"][name].drawPoints(RoundingPointPen(pen, transformRoundFunc=partial(floatToFixedToFloat, precisionBits=14)),
                                 tt["glyf"])
     return pen.hash
+
+
+def restore_midpoints(g, points, release_ends):
+    """Make each release index in `points` an on-curve point halfway between its two off-curve
+    neighbours, inserting it where a compiler dropped it (fontc drops them as implied). False
+    if that cannot be done exactly."""
+    coords, flags, ends = list(g.coordinates), list(g.flags), list(g.endPtsOfContours)
+
+    def contour_of(i):
+        return next((k for k, e in enumerate(release_ends) if i <= e), None)
+
+    if len(ends) != len(release_ends):
+        return False
+
+    for i in sorted(points):
+        c = contour_of(i)
+        if c is None:
+            return False
+        start, end = (ends[c - 1] + 1 if c else 0), ends[c]
+        n = end - start + 1
+        if i <= end and flags[i] & 1:
+            p, q = start + (i - start - 1) % n, start + (i - start + 1) % n
+            if (not flags[p] & 1 and not flags[q] & 1
+                    and coords[p][0] + coords[q][0] == 2 * coords[i][0]
+                    and coords[p][1] + coords[q][1] == 2 * coords[i][1]):
+                continue  # still there
+        prev = start + (i - start - 1) % n
+        nxt = i if i <= end else start
+        if flags[prev] & 1 or flags[nxt] & 1:
+            return False
+        sx, sy = coords[prev][0] + coords[nxt][0], coords[prev][1] + coords[nxt][1]
+        if sx % 2 or sy % 2:
+            return False
+        coords.insert(i, (sx // 2, sy // 2))
+        flags.insert(i, 1)
+        ends = ends[:c] + [e + 1 for e in ends[c:]]
+    g.coordinates = type(g.coordinates)(coords)
+    g.flags = array.array("B", flags)
+    g.endPtsOfContours = ends
+    return True
 
 
 def extract(path):
@@ -104,6 +147,24 @@ def extract(path):
                     starts.setdefault(name, {})[str(i)] = list(g.coordinates[first])
                 first = end + 1
     d["offcurve_starts"], d["transforms"] = starts, transforms
+    mids = {}
+    for name in tt.getGlyphOrder():
+        g = tt["glyf"][name]
+        if g.isComposite() or g.numberOfContours <= 0:
+            continue
+        coords, flags, first, found = list(g.coordinates), list(g.flags), 0, []
+        for end in g.endPtsOfContours:
+            idx = list(range(first, end + 1))
+            for k, i in enumerate(idx):
+                p, q = idx[k - 1], idx[(k + 1) % len(idx)]
+                if (flags[i] & 1 and not flags[p] & 1 and not flags[q] & 1
+                        and coords[p][0] + coords[q][0] == 2 * coords[i][0]
+                        and coords[p][1] + coords[q][1] == 2 * coords[i][1]):
+                    found.append(i)
+            first = end + 1
+        if found:
+            mids[name] = {"points": found, "ends": list(g.endPtsOfContours)}
+    d["midpoints"] = mids
     d["components"] = {name: [c.flags & COMPONENT_FLAGS for c in tt["glyf"][name].components]
                        for name in tt.getGlyphOrder() if tt["glyf"][name].isComposite()}
     json.dump(d, sys.stdout, indent=1, sort_keys=True)
@@ -152,6 +213,10 @@ def apply(hpath, inp, out):
             first = end + 1
         g.coordinates = type(g.coordinates)(coords)
         g.flags = array.array("B", flags)
+    for name, m in d.get("midpoints", {}).items():
+        g = glyf[name] if name in glyf else None
+        if g is None or g.isComposite() or not restore_midpoints(g, m["points"], m["ends"]):
+            bad.append(name)
     for name, ts in d.get("transforms", {}).items():
         g = glyf[name] if name in glyf else None
         if g is None or not g.isComposite() or len(g.components) != len(ts):

@@ -73,6 +73,29 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## Status, 2026-11-05 night: fontc too, 20 of 20
+
+The hinting file now also records each glyph's explicit on-curve points that lie exactly
+halfway between two off-curves (`midpoints`, with the contour ends), and applying puts back
+any a compiler dropped, at their index, only where the midpoint is exact; the point digest is
+checked afterwards as before. So fontc's drop (write-fonts `is_implicit_on_curve`) no longer
+needs a fontc change; the #478 toggle is optional (the draft issue says so).
+
+With the builds keeping their components (`flattenComponents` and
+`decomposeTransformedComponents` false, keys gftools-rust and Python gftools both read) and
+glyph names (`productionNames` false), overlaps (`removeOutlineOverlaps` false):
+
+| build of the converted .glyphs     | gate `hinting` after the hinting file (`e2e-2026-11-05.txt`) |
+|------------------------------------|--------------------------------------------------------------|
+| fontmake                           | 19 of 20 (Tuffy Regular's `multiply`, as before)             |
+| fontc through gftools-rust 1e638bd | 20 of 20                                                     |
+
+`e2e-gftools-2026-11-05.txt`: the same run with the gftools branch's own
+`gftools-extract-hinting` / `gftools-apply-hinting` in place of `hinting_file.py`: 19 and 20 of
+20. That branch identifies each glyph's points by a SHA-256 of a canonical point text (advance,
+integer points with on-curve flags, components with their own text, F2Dot14 matrix and offset)
+instead of fontTools' HashPointPen, so that the Rust builder can compute the same digest.
+
 ## Status, 2026-11-05 evening: end to end on 20 releases (`e2e.py`, `e2e-2026-11-05.txt`)
 
 babelfont-rs branch `ttf-stored-points` (one commit on Simon's main 622ed1fd; not yet

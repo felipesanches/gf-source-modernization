@@ -1,40 +1,40 @@
 Actor-Regular              fontmake 237 of 237 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-Actor-Regular              fontc    209 of 237 point-identical, 28 differ (28 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 28 glyph()
+Actor-Regular              fontc    209 of 237 point-identical, 28 differ (28 of them instructed), 0 missing by name; glyph order same | gate PASS
 CantoraOne-Regular         fontmake 470 of 470 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-CantoraOne-Regular         fontc    238 of 470 point-identical, 232 differ (232 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 232 glyph)
+CantoraOne-Regular         fontc    238 of 470 point-identical, 232 differ (232 of them instructed), 0 missing by name; glyph order same | gate PASS
 Forum-Regular              fontmake 584 of 584 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-Forum-Regular              fontc    420 of 584 point-identical, 164 differ (164 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 164 glyph)
+Forum-Regular              fontc    420 of 584 point-identical, 164 differ (164 of them instructed), 0 missing by name; glyph order same | gate PASS
 LobsterTwo-Regular         fontmake 357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-LobsterTwo-Regular         fontc    297 of 357 point-identical, 60 differ (60 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 60 glyph()
+LobsterTwo-Regular         fontc    297 of 357 point-identical, 60 differ (60 of them instructed), 0 missing by name; glyph order same | gate PASS
 LobsterTwo-Bold            fontmake 357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-LobsterTwo-Bold            fontc    263 of 357 point-identical, 94 differ (94 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 94 glyph()
+LobsterTwo-Bold            fontc    263 of 357 point-identical, 94 differ (94 of them instructed), 0 missing by name; glyph order same | gate PASS
 LobsterTwo-Italic          fontmake 357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-LobsterTwo-Italic          fontc    278 of 357 point-identical, 79 differ (79 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 79 glyph()
+LobsterTwo-Italic          fontc    278 of 357 point-identical, 79 differ (79 of them instructed), 0 missing by name; glyph order same | gate PASS
 LobsterTwo-BoldItalic      fontmake 357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-LobsterTwo-BoldItalic      fontc    280 of 357 point-identical, 77 differ (77 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 77 glyph()
+LobsterTwo-BoldItalic      fontc    280 of 357 point-identical, 77 differ (77 of them instructed), 0 missing by name; glyph order same | gate PASS
 Quattrocento-Regular       fontmake 249 of 249 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-Quattrocento-Regular       fontc    159 of 249 point-identical, 90 differ (90 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 90 glyph()
+Quattrocento-Regular       fontc    159 of 249 point-identical, 90 differ (90 of them instructed), 0 missing by name; glyph order same | gate PASS
 Quattrocento-Bold          fontmake 249 of 249 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-Quattrocento-Bold          fontc    202 of 249 point-identical, 47 differ (47 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 47 glyph()
+Quattrocento-Bold          fontc    202 of 249 point-identical, 47 differ (47 of them instructed), 0 missing by name; glyph order same | gate PASS
 Share-Regular              fontmake 256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-Share-Regular              fontc    210 of 256 point-identical, 46 differ (46 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 46 glyph()
+Share-Regular              fontc    210 of 256 point-identical, 46 differ (46 of them instructed), 0 missing by name; glyph order same | gate PASS
 Share-Bold                 fontmake 256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-Share-Bold                 fontc    209 of 256 point-identical, 47 differ (47 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 47 glyph()
+Share-Bold                 fontc    209 of 256 point-identical, 47 differ (47 of them instructed), 0 missing by name; glyph order same | gate PASS
 Share-Italic               fontmake 256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-Share-Italic               fontc    243 of 256 point-identical, 13 differ (13 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 13 glyph()
+Share-Italic               fontc    243 of 256 point-identical, 13 differ (13 of them instructed), 0 missing by name; glyph order same | gate PASS
 Share-BoldItalic           fontmake 256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
-Share-BoldItalic           fontc    246 of 256 point-identical, 10 differ (10 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 10 glyph()
+Share-BoldItalic           fontc    246 of 256 point-identical, 10 differ (10 of them instructed), 0 missing by name; glyph order same | gate PASS
 StalinistOne-Regular       fontmake 336 of 337 point-identical, 0 differ (0 of them instructed), 1 missing by name; glyph order differs | gate PASS
 StalinistOne-Regular       fontc    336 of 337 point-identical, 0 differ (0 of them instructed), 1 missing by name; glyph order differs | gate PASS
 Tuffy-Regular              fontmake 667 of 1502 point-identical, 835 differ (626 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 2 glyph(s)
-Tuffy-Regular              fontc    594 of 1502 point-identical, 908 differ (699 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 369 glyph)
+Tuffy-Regular              fontc    597 of 1502 point-identical, 905 differ (696 of them instructed), 0 missing by name; glyph order same | gate PASS
 Tuffy-Italic               fontmake 885 of 1502 point-identical, 617 differ (617 of them instructed), 0 missing by name; glyph order same | gate PASS
-Tuffy-Italic               fontc    816 of 1502 point-identical, 686 differ (686 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 230 glyph)
+Tuffy-Italic               fontc    816 of 1502 point-identical, 686 differ (686 of them instructed), 0 missing by name; glyph order same | gate PASS
 Volkhov-Regular            fontmake 219 of 225 point-identical, 6 differ (6 of them instructed), 0 missing by name; glyph order same | gate PASS
-Volkhov-Regular            fontc    190 of 225 point-identical, 35 differ (34 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 61 glyph()
+Volkhov-Regular            fontc    190 of 225 point-identical, 35 differ (34 of them instructed), 0 missing by name; glyph order same | gate PASS
 Volkhov-Bold               fontmake 221 of 225 point-identical, 4 differ (4 of them instructed), 0 missing by name; glyph order same | gate PASS
-Volkhov-Bold               fontc    197 of 225 point-identical, 28 differ (28 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 47 glyph()
+Volkhov-Bold               fontc    197 of 225 point-identical, 28 differ (28 of them instructed), 0 missing by name; glyph order same | gate PASS
 Volkhov-Italic             fontmake 223 of 225 point-identical, 2 differ (2 of them instructed), 0 missing by name; glyph order same | gate PASS
-Volkhov-Italic             fontc    209 of 225 point-identical, 16 differ (15 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 31 glyph()
+Volkhov-Italic             fontc    209 of 225 point-identical, 16 differ (15 of them instructed), 0 missing by name; glyph order same | gate PASS
 Volkhov-BoldItalic         fontmake 223 of 225 point-identical, 2 differ (2 of them instructed), 0 missing by name; glyph order same | gate PASS
-Volkhov-BoldItalic         fontc    215 of 225 point-identical, 10 differ (10 of them instructed), 0 missing by name; glyph order same | gate APPLY-REFUSED (points or components differ from the hinting file, nothing applied to: 15 glyph()
+Volkhov-BoldItalic         fontc    215 of 225 point-identical, 10 differ (10 of them instructed), 0 missing by name; glyph order same | gate PASS

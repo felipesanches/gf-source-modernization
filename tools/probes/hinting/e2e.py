@@ -8,12 +8,15 @@ Per release font:
   fontmake  fontmake -g ... -o ttf --no-production-names --keep-overlaps (fontmake keeps
             on-curve points; overlap removal would rewrite them), then
             hinting_file.py extract <release> / apply, then the gate's hinting check
-  fontc     gftools-builder (gftools-rust, <B3>) with buildVariable false,
-            removeOutlineOverlaps false, productionNames false: points only (fontc drops
-            explicit midpoint on-curves, ROUTE-A.md), then the same apply and check
+  fontc     gftools-builder (gftools-rust, <B3>) with buildVariable, removeOutlineOverlaps,
+            productionNames, flattenComponents and decomposeTransformedComponents false
+            (each would change the glyphs' names or points), then the same apply and check
+            (the hinting file restores the explicit midpoint on-curves fontc drops)
 Prints per font: points.py's summary for each build and the gate's status.
 
 Usage: e2e.py <BF> <B3> <scratch> <release.ttf>...
+With EXTRACT=<gftools-extract-hinting> and APPLY=<gftools-apply-hinting> in the environment the
+gftools builder step's own commands replace hinting_file.py.
 """
 import os
 import subprocess
@@ -25,7 +28,8 @@ import functional_gate as fg  # noqa: E402
 
 PY = sys.executable
 FONTMAKE = os.path.join(os.path.dirname(PY), "fontmake")
-CONFIG = "buildVariable: false\nremoveOutlineOverlaps: false\nproductionNames: false\nsources:\n  - %s.glyphs\n"
+CONFIG = ("buildVariable: false\nremoveOutlineOverlaps: false\nproductionNames: false\n"
+          "flattenComponents: false\ndecomposeTransformedComponents: false\nsources:\n  - %s.glyphs\n")
 
 
 def run(args, **kw):
@@ -38,9 +42,14 @@ def points(release, built):
 
 
 def gate(release, hfile, built, out):
-    r = run([PY, os.path.join(HERE, "hinting_file.py"), "apply", hfile, built, out])
+    if os.environ.get("APPLY"):
+        r = run([os.environ["APPLY"], "-o", out, built, hfile])
+    else:
+        r = run([PY, os.path.join(HERE, "hinting_file.py"), "apply", hfile, built, out])
     if r.returncode:
-        return "APPLY-REFUSED (%s)" % r.stderr.strip().splitlines()[-1][:80]
+        # name the hinting file, not where the scratch directory is
+        msg = r.stderr.strip().splitlines()[-1].replace(os.path.dirname(hfile) + os.sep, "")
+        return "APPLY-REFUSED (%s)" % msg[:120]
     A, B = fg.Font(release), fg.Font(out)
     _, _, ka, kb = fg.correspondence(A, B)
     c = fg.check_hinting(A, B, ka, kb, 3)
@@ -59,8 +68,11 @@ def main():
             print("%-26s convert FAILED %s" % (stem, r.stderr.strip()[-120:]), flush=True)
             continue
         hfile = os.path.join(d, stem + ".hinting.json")
-        with open(hfile, "w") as fh:
-            subprocess.run([PY, os.path.join(HERE, "hinting_file.py"), "extract", release], stdout=fh, check=True)
+        if os.environ.get("EXTRACT"):
+            subprocess.run([os.environ["EXTRACT"], "-o", hfile, release], check=True)
+        else:
+            with open(hfile, "w") as fh:
+                subprocess.run([PY, os.path.join(HERE, "hinting_file.py"), "extract", release], stdout=fh, check=True)
         fm = os.path.join(d, stem + ".fontmake.ttf")
         r = run([FONTMAKE, "-g", glyphs, "-o", "ttf", "--output-path", fm, "--no-production-names", "--keep-overlaps"], cwd=d)
         fm_res = ("%s | gate %s" % (points(release, fm), gate(release, hfile, fm, fm[:-4] + ".hinted.ttf"))
