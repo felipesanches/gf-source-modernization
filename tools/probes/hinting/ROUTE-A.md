@@ -85,18 +85,22 @@ hmtx for those glyphs. Patrick Hand's `hmtx` rows were these glyphs.
 Hand and Alef on babelfont branch 2026-11-02 plus the stored-points commit, the branch their
 published landings used, the rest on Simon's main plus that commit):
 
-| family                                                                                | status          | hinting           |
-|---------------------------------------------------------------------------------------|-----------------|-------------------|
-| Actor, Volkhov, Lobster Two, Share, Revalia, Patrick Hand                             | CLEAN           | kept              |
-| Alef, Audiowide, Freckle Face, Jomolhari, Nanum Gothic Coding, Nanum Myeongjo         | CLEAN-DISCLOSED | kept              |
-| Nova Script (.sfd), with a temporary plan edit importing 17 outlines from the release | CLEAN-DISCLOSED | kept              |
-| Smythe (.sfd), without (first row) and with (second) an import of 44 outlines         | RESIDUAL        | 16 glyphs refused |
+| family                                                                                | status          | hinting         |
+|---------------------------------------------------------------------------------------|-----------------|-----------------|
+| Actor, Volkhov, Lobster Two, Share, Revalia, Patrick Hand                             | CLEAN           | kept            |
+| Alef, Audiowide, Freckle Face, Jomolhari, Nanum Gothic Coding, Nanum Myeongjo         | CLEAN-DISCLOSED | kept            |
+| Nova Script (.sfd), with a temporary plan edit importing 17 outlines from the release | CLEAN-DISCLOSED | kept            |
+| Smythe (.sfd), with an import of 45 outlines (`@E.alt` by name)                       | RESIDUAL        | 1 glyph refused |
 
-So bottleneck 0h2 option (a) works for Nova Script. Smythe keeps 16 glyphs refused even with
-the release's outlines imported into its .sfd: the .sfd to .glyphs conversion drops points of
-them (`bullet`: 20 points in the release, 18 built, its first on-curve and the off-curve after
-it), and `E.alt` has no codepoint for `importoutlines`; for Smythe that leaves (b), converting
-from the binary, or a converter fix.
+So bottleneck 0h2 option (a) works for Nova Script, and for Smythe but one glyph. Two last
+fixes got Smythe from 16 to 1: when a contour's release start is an explicit midpoint the
+compiler dropped and the converter also rotated the contour, the step now starts the contour
+after the two off-curves that point lay between (both builders); and `importoutlines` takes
+`@name` for an unencoded glyph (`tools/sfd_edit.py`). The one left, Smythe's `E.alt`, still
+differs after the import (release 427,1243 off and 464,1233 on; built 425,1243 and 465,1233,
+with one more on-curve): the .sfd writes the release's implied on-curves as explicit
+half-unit points and the conversion rounds them. That glyph needs a .sfd reader fix, or
+Smythe converts from its binary.
 
 `e2e-final-2026-11-05.txt`, rerun with all of it: 20 of 20 through fontmake +
 gftools-apply-hinting and through fontc + gftools-rust's step.

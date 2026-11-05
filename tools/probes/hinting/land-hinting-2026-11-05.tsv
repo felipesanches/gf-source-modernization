@@ -8,8 +8,7 @@ freckleface	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Fre
 jomolhari	main	4	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Jomolhari-Regular=1 functional=PASS
 nanumgothiccoding	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NanumGothicCoding-Bold=1 functional=PASS; NanumGothicCoding-Regular=1 functional=PASS
 nanummyeongjo	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NanumMyeongjo-Bold=0 functional=PASS; NanumMyeongjo-ExtraBold=1 functional=PASS; NanumMyeongjo-Regular=0 functional=PASS
-novascript	main	5	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	NovaScript-Regular=0 functional=FAIL(names+line_spacing)
-smythe	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Smythe-Regular=BUILD functional=-
 patrickhand	main	4	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	PatrickHand-Regular=0 functional=PASS
 alef	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Alef-Bold=1 functional=PASS; Alef-Regular=1 functional=PASS
 smythe	main	4	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Smythe-Regular=BUILD functional=-
+novascript	main	5	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	NovaScript-Regular=0 functional=FAIL(names+line_spacing)
