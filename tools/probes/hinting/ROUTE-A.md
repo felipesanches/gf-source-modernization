@@ -21,7 +21,60 @@ So the release's own exact-midpoint on-curves (which its programs address) are l
 fontc, and babelfont adds points the release did not have: 2490 of 5318 instructed glyphs in
 18 sampled fonts differ (points-2026-11-05.txt).
 
-## Work, in order
+## Measured 2026-11-05: the hinting goes in its own file, applied after compiling
+
+`roundtrip.py` (output `roundtrip-2026-11-05.txt`) writes each of 20 instructed release fonts
+(Actor, Cantora One, Forum, Lobster Two x4, Quattrocento x2, Share x4, Stalinist One, Tuffy x2,
+Volkhov x4) to a UFO that keeps the release's own points, then builds it two ways:
+
+| route                                                                    | gate `hinting` |
+|--------------------------------------------------------------------------|----------------|
+| ufo2ft compiles `public.truetype.instructions` from the UFO libs         | 0 of 20 pass   |
+| ufo2ft compiles the outlines; `hinting_file.py apply` adds the hinting   | 20 of 20 pass  |
+
+Why the lib route fails, and cannot be fixed in the source alone:
+- ufo2ft recalculates `maxp.maxSizeOfInstructions` from glyph programs; releases state larger
+  values (Stalinist One 2411, its fpgm size; ufo2ft 138): 16 of 20.
+- the device-metric tables `hdmx`, `LTSH`, `VDMX` have no source form; FreeType's v35
+  interpreter takes advances from `hdmx` (Actor: Ntilde 6 px at 9 ppem in the release's
+  `hdmx`, 7 px without it; the bitmaps are identical). Of the 233 instructed release fonts, 64
+  have `hdmx`, 61 `LTSH`, 49 `VDMX`.
+- ufo2ft sets ROUND_XY_TO_GRID on every component; some releases do not (Tuffy Regular, 534
+  composites), which moves hinted composites.
+- and a .glyphs source cannot carry the libs at all: glyphsLib drops every `public.*` userData
+  key, and fontmake runs it in minimal mode, which skips layer userData.
+
+So the source repository carries one text file per font, `hinting_file.py`'s format: fpgm,
+prep (assembly), cvt, gasp, the maxp limits, head flag 3, hdmx, LTSH, VDMX, each glyph's program
+(assembly) with ufo2ft's point hash `id`, and the hinting-relevant component flags. A builder
+operation applies it to the compiled font and refuses any glyph whose points do not hash to
+its `id`.
+
+The points still have to be the release's. `midpoints.py` (`midpoints-2026-11-05.txt`): in
+212 of the 233 instructed release fonts, 87,730 of 246,455 instructed simple glyphs have at
+least one explicit on-curve point at the exact midpoint of its off-curve neighbours (253,217
+points). fontc drops every such point (write-fonts `is_implicit_on_curve`); fontmake keeps them
+(ufo2ft `dropImpliedOnCurves=False`; fontc_crater runs fontmake with `--drop-implied-oncurves`
+to match fontc, googlefonts/fontc#336). The toggle was asked for upstream on
+googlefonts/fontc#478 (dropping such points "could be undesirable ... because that would mess
+with hinting"; "Maybe this behaviour should have an on/off toggle").
+
+## Work, in order (revised 2026-11-05)
+
+1. **Hinting file and builder operation.** `hinting_file.py` is the prototype (extract,
+   apply). As gftools-builder operations, in Python gftools and in gftools-rust, with the same
+   config key; when a font has a hinting file, no autohinting and no `fix` hinting changes.
+2. **babelfont-rs TTF reader (an import fix):** keep the release's point structure (omit
+   implied on-curves, keep explicit ones, keep contour starts). The extraction of the hinting
+   file belongs to the conversion (land.py), from the release binary.
+3. **fontc:** the #478 toggle, keeping the source's explicit on-curve points (the IR has to
+   know which on-curves the source had; today path_builder makes every implied one explicit).
+4. **Python check end to end** on a converted repository (fontmake keeps the points), then the
+   same with fontc once (3) exists.
+5. **Re-land** the repositories that fail `hinting`; the gate decides each.
+
+## First plan (2026-11-05 morning, superseded above)
+
 
 1. **Representation.** Store the hinting in the .glyphs source in the format both pipelines
    can read: `public.truetype.instructions` in master userData (font level) and layer userData

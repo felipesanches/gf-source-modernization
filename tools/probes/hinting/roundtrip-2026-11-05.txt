@@ -1,0 +1,40 @@
+Actor-Regular                ufo   FAIL  hinted rendering, FreeType v35 mono, 8-24 ppem: 97 of 3995 glyph sizes differ: Ntilde@9, Oacute@9, O | hinted rendering, FreeType v35 gray, 8-24 ppem: 97 of 3995 glyph sizes differ: Ntilde@9, Oacute@9, O
+Actor-Regular                file  PASS  
+CantoraOne-Regular           ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 1865/581
+CantoraOne-Regular           file  PASS  
+Forum-Regular                ufo   FAIL  hinted rendering, FreeType v35 mono, 8-24 ppem: 2 of 9826 glyph sizes differ: uni04B8@17, uni04F4@17 | hinted rendering, FreeType v35 gray, 8-24 ppem: 2 of 9826 glyph sizes differ: uni04B8@17, uni04F4@17
+Forum-Regular                file  PASS  
+LobsterTwo-Regular           ufo   FAIL  hinted rendering, FreeType v35 mono, 8-24 ppem: 1 of 6018 glyph sizes differ: ff@16 | hinted rendering, FreeType v35 gray, 8-24 ppem: 1 of 6018 glyph sizes differ: ff@16
+LobsterTwo-Regular           file  PASS  
+LobsterTwo-Bold              ufo   FAIL  hinted rendering, FreeType v35 mono, 8-24 ppem: 8 of 6018 glyph sizes differ: Gbreve@15, udieresis@1 | hinted rendering, FreeType v35 gray, 8-24 ppem: 8 of 6018 glyph sizes differ: Gbreve@15, udieresis@1
+LobsterTwo-Bold              file  PASS  
+LobsterTwo-Italic            ufo   FAIL  hinted rendering, FreeType v35 mono, 8-24 ppem: 9 of 6018 glyph sizes differ: ring@9, o_ae@10, ordma | hinted rendering, FreeType v35 gray, 8-24 ppem: 9 of 6018 glyph sizes differ: ring@9, o_ae@10, ordma
+LobsterTwo-Italic            file  PASS  
+LobsterTwo-BoldItalic        ufo   FAIL  hinted rendering, FreeType v35 mono, 8-24 ppem: 10 of 6018 glyph sizes differ: ae@9, o_ae@9, oacute_ | hinted rendering, FreeType v35 gray, 8-24 ppem: 10 of 6018 glyph sizes differ: ae@9, o_ae@9, oacute_
+LobsterTwo-BoldItalic        file  PASS  
+Quattrocento-Regular         ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 1865/1291
+Quattrocento-Regular         file  PASS  
+Quattrocento-Bold            ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 1865/1704
+Quattrocento-Bold            file  PASS  
+Share-Regular                ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 800/468 | hinted rendering, FreeType v35 mono, 8-24 ppem: 1 of 4318 glyph sizes differ: Udieresis@12
+Share-Regular                file  PASS  
+Share-Bold                   ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 805/471 | hinted rendering, FreeType v35 mono, 8-24 ppem: 1 of 4318 glyph sizes differ: ampersand@17
+Share-Bold                   file  PASS  
+Share-Italic                 ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 386/245
+Share-Italic                 file  PASS  
+Share-BoldItalic             ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 354/214
+Share-BoldItalic             file  PASS  
+StalinistOne-Regular         ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 2411/138
+StalinistOne-Regular         file  PASS  
+Tuffy-Regular                ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 3437/900 | 325 of 1285 instructed glyph(s) do not carry the release's program on the release's points (0 progra
+Tuffy-Regular                file  PASS  
+Tuffy-Italic                 ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 3437/900
+Tuffy-Italic                 file  PASS  
+Volkhov-Regular              ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 481/439
+Volkhov-Regular              file  PASS  
+Volkhov-Bold                 ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 489/404
+Volkhov-Bold                 file  PASS  
+Volkhov-Italic               ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 371/291
+Volkhov-Italic               file  PASS  
+Volkhov-BoldItalic           ufo   FAIL  maxp TrueType limits (release/build): maxSizeOfInstructions 383/260
+Volkhov-BoldItalic           file  PASS  

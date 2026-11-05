@@ -2,13 +2,16 @@
 
 Question (google/fonts#11237, comment 6650283300): can the modernized repositories keep the TrueType hinting that google/fonts ships, instead of losing it?
 
-| script          | question it answers                                                                 | command                                                                                                   |
-|-----------------|-------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| `census.py`     | Which kind of hinting does each shipped font carry?                                  | `$PY -I tools/probes/hinting/census.py families.tsv families-next.tsv families-binary.tsv families-vfb.tsv` |
-| `points.py`     | Would the release's glyph programs address the same points in our build?             | `$PY -I tools/probes/hinting/points.py <shipped.ttf> <built.ttf>`                                         |
-| `run_points.sh` | `points.py` over freshly built landed repositories (published gftools-rust 1e638bd) | `tools/probes/hinting/run_points.sh <scratch> <repo>... > points.txt`                                     |
-| `predict.py`    | What will functional_gate's hinting check say about each repository, unbuilt?       | `$PY -I tools/probes/hinting/predict.py census.tsv published.txt > prediction.tsv`                        |
-| `check_built.py`| Does the hinting check agree with `predict.py` on fonts actually built?             | `$PY -I tools/probes/hinting/check_built.py prediction.tsv <shipped> <built>...`                           |
+| script            | question it answers                                                                                                         | command                                                                                                                     |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `census.py`       | Which kind of hinting does each shipped font carry?                                                                         | `$PY -I tools/probes/hinting/census.py families.tsv families-next.tsv families-binary.tsv families-vfb.tsv`                 |
+| `points.py`       | Would the release's glyph programs address the same points in our build?                                                    | `$PY -I tools/probes/hinting/points.py <shipped.ttf> <built.ttf>`                                                           |
+| `run_points.sh`   | `points.py` over freshly built landed repositories (published gftools-rust 1e638bd)                                         | `tools/probes/hinting/run_points.sh <scratch> <repo>... > points.txt`                                                       |
+| `roundtrip.py`    | Does a release's hinting come back exactly through ufo2ft libs, or through a separate hinting file applied after compiling? | `$PY -I tools/probes/hinting/roundtrip.py <scratch> <release.ttf>... > roundtrip.txt`                                       |
+| `hinting_file.py` | Prototype of the route (a) builder operation: extract a release's hinting to text; apply it to a compiled font              | `$PY -I tools/probes/hinting/hinting_file.py extract <release.ttf> > X.hinting.json`; `... apply X.hinting.json <in> <out>` |
+| `midpoints.py`    | How many instructed glyphs have explicit on-curve points fontc would drop?                                                  | `$PY -I tools/probes/hinting/midpoints.py census.tsv <google/fonts> > midpoints.txt`                                        |
+| `predict.py`      | What will functional_gate's hinting check say about each repository, unbuilt?                                               | `$PY -I tools/probes/hinting/predict.py census.tsv published.txt > prediction.tsv`                                          |
+| `check_built.py`  | Does the hinting check agree with `predict.py` on fonts actually built?                                                     | `$PY -I tools/probes/hinting/check_built.py prediction.tsv <shipped> <built>...`                                            |
 
 `$PY` is a Python with fontTools (the `PY` of the repository README). Shipped fonts were read from a google/fonts clone at 2eb0b48d5; the METADATA PRs since then change no font binary.
 
