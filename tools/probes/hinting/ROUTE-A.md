@@ -98,9 +98,11 @@ compiler dropped and the converter also rotated the contour, the step now starts
 after the two off-curves that point lay between (both builders); and `importoutlines` takes
 `@name` for an unencoded glyph (`tools/sfd_edit.py`). The one left, Smythe's `E.alt`, still
 differs after the import (release 427,1243 off and 464,1233 on; built 425,1243 and 465,1233,
-with one more on-curve): the .sfd writes the release's implied on-curves as explicit
-half-unit points and the conversion rounds them. That glyph needs a .sfd reader fix, or
-Smythe converts from its binary.
+with one more on-curve). Not rounding (dropping `--round-coordinates` changes nothing): the
+release has a degenerate loop there, (468,1232) (474,1231) (464,1233) and (468,1232) again,
+which the imported .sfd keeps, duplicate point included, but the .sfd to .glyphs conversion
+and the compile do not: the curve after it is refitted. That glyph needs the converter to
+keep duplicate points, or Smythe converts from its binary.
 
 `e2e-final-2026-11-05.txt`, rerun with all of it: 20 of 20 through fontmake +
 gftools-apply-hinting and through fontc + gftools-rust's step.
