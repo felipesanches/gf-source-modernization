@@ -15,6 +15,7 @@ Per release font:
 Prints per font: points.py's summary for each build and the gate's status.
 
 Usage: e2e.py <BF> <B3> <scratch> <release.ttf>...
+FONTMAKE=<fontmake> picks another fontmake than the one beside this Python.
 With EXTRACT=<gftools-extract-hinting> and APPLY=<gftools-apply-hinting> in the environment the
 gftools builder step's own commands replace hinting_file.py. With HINTING_STEP=1 the hinting file
 goes into sources/ and config.yaml names it under `hintingFiles`, so that <B3> applies it while
@@ -30,7 +31,7 @@ sys.path.insert(0, os.path.join(HERE, "..", ".."))
 import functional_gate as fg  # noqa: E402
 
 PY = sys.executable
-FONTMAKE = os.path.join(os.path.dirname(PY), "fontmake")
+FONTMAKE = os.environ.get("FONTMAKE") or os.path.join(os.path.dirname(PY), "fontmake")
 CONFIG = ("buildVariable: false\nremoveOutlineOverlaps: false\nproductionNames: false\n"
           "flattenComponents: false\ndecomposeTransformedComponents: false\nsources:\n  - %s.glyphs\n")
 

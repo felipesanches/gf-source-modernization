@@ -779,6 +779,16 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     if asks:
         lines += wrap("sources/config.yaml: %s%s" % (", ".join(asks),
                       " (a release mixes contour directions)" if "reverseOutlineDirection" in cfg_text else ""))
+    if "hintingFiles:" in cfg_text:
+        hinted = re.findall(r"^  \S+: (hinting/\S+)$", cfg_text, re.M)
+        lines += [""] + wrap("The release's own TrueType hinting is kept in %s: its font program, "
+                             "control values and glyph programs, gasp, maxp limits and device "
+                             "metrics, which a .glyphs source cannot carry. sources/config.yaml "
+                             "names %s under hintingFiles; the builder applies %s after "
+                             "compiling, in place of autohinting, and refuses any glyph whose "
+                             "points differ from the release's."
+                             % (", ".join(hinted), "it" if len(hinted) == 1 else "them",
+                                "it" if len(hinted) == 1 else "each"), "", "")
     notes = [(p["row"]["style"], n) for p in per_style for n in p["notes"]]
     if notes:
         lines += ["", "Values from the %s that the toolchain loses, carried across:"
@@ -815,7 +825,18 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                          "that repository's logs/ after it.")
     if not glyphs:
         lines += [""] + para(what)
-    head = commit(d, "\n".join(lines), "sources")
+    paths = ["sources"]
+    if "hintingFiles:" in cfg_text:
+        with open(os.path.join(d, "README.md"), "a") as fh:
+            fh.write("\n## TrueType hinting\n\nThe released fonts are hinted, and that hinting "
+                     "is kept: `sources/hinting/` holds it for each style (font program, control "
+                     "values, glyph programs, gasp, maxp limits and device metrics), as text. "
+                     "`sources/config.yaml` names each file under `hintingFiles`, and "
+                     "gftools-builder applies it after compiling, in place of autohinting. It "
+                     "refuses a glyph whose points differ from the ones its program was written "
+                     "for, so an outline edit needs its hinting redone.\n")
+        paths.append("README.md")
+    head = commit(d, "\n".join(lines), *paths)
     shutil.rmtree(scratch, ignore_errors=True)
     if deferred_gdef:
         head, results, functional = state_gdef_classes(
