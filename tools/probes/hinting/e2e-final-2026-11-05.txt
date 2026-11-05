@@ -1,0 +1,40 @@
+Actor-Regular              fontmake 237 of 237 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+Actor-Regular              fontc    237 of 237 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+CantoraOne-Regular         fontmake 470 of 470 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+CantoraOne-Regular         fontc    470 of 470 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Forum-Regular              fontmake 584 of 584 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+Forum-Regular              fontc    584 of 584 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+LobsterTwo-Regular         fontmake 357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+LobsterTwo-Regular         fontc    357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+LobsterTwo-Bold            fontmake 357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+LobsterTwo-Bold            fontc    357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+LobsterTwo-Italic          fontmake 357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+LobsterTwo-Italic          fontc    357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+LobsterTwo-BoldItalic      fontmake 357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+LobsterTwo-BoldItalic      fontc    357 of 357 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Quattrocento-Regular       fontmake 249 of 249 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+Quattrocento-Regular       fontc    249 of 249 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Quattrocento-Bold          fontmake 249 of 249 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+Quattrocento-Bold          fontc    249 of 249 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Share-Regular              fontmake 256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+Share-Regular              fontc    256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Share-Bold                 fontmake 256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+Share-Bold                 fontc    256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Share-Italic               fontmake 256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+Share-Italic               fontc    256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Share-BoldItalic           fontmake 256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS
+Share-BoldItalic           fontc    256 of 256 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+StalinistOne-Regular       fontmake 336 of 337 point-identical, 0 differ (0 of them instructed), 1 missing by name; glyph order differs | gate PASS
+StalinistOne-Regular       fontc    336 of 337 point-identical, 0 differ (0 of them instructed), 1 missing by name; glyph order differs | gate PASS (hinted by the builder)
+Tuffy-Regular              fontmake 669 of 1502 point-identical, 833 differ (624 of them instructed), 0 missing by name; glyph order same | gate PASS
+Tuffy-Regular              fontc    1502 of 1502 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Tuffy-Italic               fontmake 885 of 1502 point-identical, 617 differ (617 of them instructed), 0 missing by name; glyph order same | gate PASS
+Tuffy-Italic               fontc    1502 of 1502 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Volkhov-Regular            fontmake 219 of 225 point-identical, 6 differ (6 of them instructed), 0 missing by name; glyph order same | gate PASS
+Volkhov-Regular            fontc    225 of 225 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Volkhov-Bold               fontmake 221 of 225 point-identical, 4 differ (4 of them instructed), 0 missing by name; glyph order same | gate PASS
+Volkhov-Bold               fontc    225 of 225 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Volkhov-Italic             fontmake 223 of 225 point-identical, 2 differ (2 of them instructed), 0 missing by name; glyph order same | gate PASS
+Volkhov-Italic             fontc    225 of 225 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)
+Volkhov-BoldItalic         fontmake 223 of 225 point-identical, 2 differ (2 of them instructed), 0 missing by name; glyph order same | gate PASS
+Volkhov-BoldItalic         fontc    225 of 225 point-identical, 0 differ (0 of them instructed), 0 missing by name; glyph order same | gate PASS (hinted by the builder)

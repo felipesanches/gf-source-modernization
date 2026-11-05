@@ -780,7 +780,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         lines += wrap("sources/config.yaml: %s%s" % (", ".join(asks),
                       " (a release mixes contour directions)" if "reverseOutlineDirection" in cfg_text else ""))
     if "hintingFiles:" in cfg_text:
-        hinted = re.findall(r"^  \S+: (hinting/\S+)$", cfg_text, re.M)
+        hinted = ["sources/" + h for h in re.findall(r"^  \S+: (hinting/\S+)$", cfg_text, re.M)]
         lines += [""] + wrap("The release's own TrueType hinting is kept in %s: its font program, "
                              "control values and glyph programs, gasp, maxp limits and device "
                              "metrics, which a .glyphs source cannot carry. sources/config.yaml "

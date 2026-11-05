@@ -73,6 +73,25 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## Status, 2026-11-05 last: 20 of 20 through both builders; texts corrected
+
+`e2e-final-2026-11-05.txt` (e2e.py with FONTMAKE = fontmake 3.12.2 / glyphsLib 6.17.2,
+HINTING_STEP=1, the gftools branch's commands): fontmake + gftools-apply-hinting 20 of 20,
+fontc + gftools-rust's applyHinting step 20 of 20. The one earlier fontmake failure (Tuffy
+Regular's `multiply`) was the old glyphsLib 6.12.7 of the gftools venv: its
+GSComponent.updateAffineTransform ignores a Glyphs 3 component's `slant`; glyphsLib fixed it
+in googlefonts/glyphsLib#1160 (2026-08-01). fontc's reader applies the slant and rebuilds the
+release's matrix exactly.
+
+A landing with hinting says so: land.py adds a paragraph to the conversion commit and a
+"TrueType hinting" section to the README (checked on a measurement re-landing of Actor).
+The 167 plans' disclosure "These sources carry no TrueType instructions, so the build is
+hinted by ttfautohint ... Hinting is not compared by the gates" is removed: it was never true
+(the builds were unhinted) and the gate now compares hinting. Two of those disclosures held
+provenance kept here: googlefontdirectory-hg kept ParaType's own TTFs of PT Serif
+(ofl/ptserif/src/PTF55F.ttf and siblings, at 52f780bc9d19), and Reenie Beanie's VTT project
+(ofl/reeniebeanie/src/ReenieBeanie-VTT.ttf, same revision), a possible VTT hinting source.
+
 ## Status, 2026-11-05 late night: both builders, and real landings
 
 The builder step exists in both builders, on local branches (not yet public): Python gftools
