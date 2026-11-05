@@ -98,6 +98,16 @@ glyphs). Drafts: `pr-bodies/fontc-issue-keep-source-oncurves.md`,
 The gate also accepts head flag 3 set where the release has an fpgm and lacks it (fontspector
 integer_ppem_if_hinted; gftools fix_hinted_font sets it): 10 of 314 releases with an fpgm.
 
+**The builder step in Python gftools** (local branch `apply-hinting` on googlefonts/gftools
+main 97b6c268, not yet public): config key `hintingFiles` (output TTF name -> hinting file,
+like `vttSources`), operation `applyHinting` (`gftools-apply-hinting`, the module
+`gftools.builder.apply_hinting`, from `hinting_file.py`) in place of autohinting, and
+`gftools-extract-hinting`. Actor Regular, converted with the stored-points reader and built
+by `gftools builder` with `hintingFiles`, `productionNames`, `flattenComponents`,
+`decomposeTransformedComponents` and `removeOutlineOverlaps` all false: the gate's
+`hinting` check passes; of the other seven checks only shaping fails (5 of 40,145 pairs:
+fontmake's kerning, asterisk before Y or Z, 8 units; the fontc build passes it).
+
 ## First plan (2026-11-05 morning, superseded above)
 
 
