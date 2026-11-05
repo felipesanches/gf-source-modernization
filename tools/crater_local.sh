@@ -28,18 +28,6 @@ mkdir -p "$S/cache" "$S/out"
 ( cd "$S/fontc" && PATH="$S/venv/bin:$PATH" CARGO_TARGET_DIR="$S/target" \
     "$S/target/release/fontc_crater" ci "$S/subset.json" --cache "$S/cache" --out "$S/out" ) \
   > "$S/crater.log" 2>&1 || echo "fontc_crater exited non-zero; see $S/crater.log"
-python3 - "$S/out" <<'PY'
-import glob, json, os, sys
-runs = sorted(f for f in glob.glob(os.path.join(sys.argv[1], "*.json"))
-              if os.path.basename(f)[:2] == "20")
-if not runs:
-    sys.exit("no results file in %s" % sys.argv[1])
-d = json.load(open(runs[-1]))
-ok, bad = d.get("success", {}), d.get("failure", {})
-for t in sorted(ok):
-    print("ok    %s" % t)
-for t, why in sorted(bad.items()):
-    print("FAIL  %s\n      %s" % (t, json.dumps(why)[:300]))
-print("%d succeeded, %d failed (%s)" % (len(ok), len(bad), os.path.basename(runs[-1])))
-sys.exit(1 if bad else 0)
-PY
+latest=$(ls "$S/out"/20*.json 2>/dev/null | sort | tail -n 1)
+[ -n "$latest" ] || { echo "no results file in $S/out"; exit 1; }
+python3 "$(dirname "$0")/crater_summary.py" "$latest"

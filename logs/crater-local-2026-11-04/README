@@ -11,4 +11,6 @@ its ttx_diff package. Scratch: a local directory, regenerable.
 
   RUSTUP_TOOLCHAIN=1.97.1 sh tools/crater_local.sh <targets-main.json> <new.json> <scratch>
 
-Result (summary.txt): 74 succeeded, 0 failed -- 37 sources x (default, gftools).
+Result (summary.txt): 74 built, 0 failed -- 37 sources x (default, gftools); 72 same, 2 differ: NanumGothic-Bold in both modes, `name` (score 0.985). summary.txt was first written listing only built or failed; it was regenerated from the same results file with tools/crater_summary.py.
+
+After googlefonts/fontc_crater#117 merged, its CI run (https://github.com/googlefonts/fontc_crater/commit/cee512c, results/2026-11-05-163454.json, fontc https://github.com/googlefonts/fontc/commit/5de9aeff) added the same 74 targets with the same result: 72 identical, 2 differ (NanumGothic-Bold, `name`), 0 failed; no existing target changed category.
