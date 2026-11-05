@@ -1,0 +1,20 @@
+Actor-Regular              PASS all eight
+CantoraOne-Regular         PASS all eight
+Forum-Regular              PASS all eight
+LobsterTwo-Regular         PASS all eight
+LobsterTwo-Bold            FAIL names  names: OS/2.usWeightClass: release 700, build 400
+LobsterTwo-Italic          PASS all eight
+LobsterTwo-BoldItalic      FAIL names  names: OS/2.usWeightClass: release 700, build 400
+Quattrocento-Regular       PASS all eight
+Quattrocento-Bold          FAIL names  names: OS/2.usWeightClass: release 700, build 400
+Share-Regular              PASS all eight
+Share-Bold                 FAIL names  names: OS/2.usWeightClass: release 700, build 400
+Share-Italic               PASS all eight
+Share-BoldItalic           FAIL names  names: OS/2.usWeightClass: release 700, build 400
+StalinistOne-Regular       PASS all eight
+Tuffy-Regular              FAIL names  names: name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+Tuffy-Italic               FAIL names  names: name ID 17 (3,1,0x407) as read: release 'StandardKursiv', build None
+Volkhov-Regular            PASS all eight
+Volkhov-Bold               FAIL names  names: OS/2.usWeightClass: release 700, build 400
+Volkhov-Italic             PASS all eight
+Volkhov-BoldItalic         FAIL names  names: OS/2.usWeightClass: release 700, build 400

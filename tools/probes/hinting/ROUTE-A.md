@@ -73,6 +73,33 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## Status, 2026-11-05 late night: both builders, and real landings
+
+The builder step exists in both builders, on local branches (not yet public): Python gftools
+`apply-hinting` (module `gftools.builder.apply_hinting`, operation `applyHinting`, commands
+`gftools-apply-hinting` / `gftools-extract-hinting`) and gftools-rust `apply-hinting`
+(`gftools-lib/src/hinting.rs`: assembler for fontTools assembly, point digest, restorations,
+hdmx/LTSH/VDMX writers; operation `applyHinting`; recipe key `hintingFiles`, which in the
+static recipes replaces overlap removal and autohinting).
+
+| run                                                                                                | result                                                                                    |
+|----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| `e2e.py`, HINTING_STEP=1: fontc + gftools-rust applying the file (`e2e-rust-2026-11-05.txt`)       | `hinting` 20 of 20                                                                        |
+| `full_gate.py` on those 20 builds (`full-gate-rust-2026-11-05.txt`)                                | `hinting` 20 of 20; other failures all `names`, from e2e.py's bare config (no plan edits) |
+| `land.py` measurement landings (`land-hinting-2026-11-05.tsv`): Actor, Volkhov, Lobster Two, Share | CLEAN, 13 of 13 styles functional PASS, all eight checks                                  |
+
+The landings, into scratch (OUT, LANDED), with the stored-points converter and the
+gftools-rust branch's builder:
+
+    OUT=<scratch>/out LANDED=<scratch>/landed.tsv FAMILIES=families-binary.tsv \
+      BF_TREE=<babelfont-rs worktree of branch ttf-stored-points> B3=<gftools-rust apply-hinting>/target/release/gftools-builder \
+      HINTING_EXTRACT=<venv with gftools apply-hinting>/bin/gftools-extract-hinting \
+      python3 tools/land.py <repo> --unpublished-converter
+
+Each landed repo carries `sources/hinting/<style>.json` and names it in `sources/config.yaml`
+under `hintingFiles`. Still to write for a real landing: the commit message and README
+lines about the hinting file.
+
 ## Status, 2026-11-05 night: fontc too, 20 of 20
 
 The hinting file now also records each glyph's explicit on-curve points that lie exactly
