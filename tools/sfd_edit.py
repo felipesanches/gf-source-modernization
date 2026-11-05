@@ -86,7 +86,8 @@ Edits whose values are copied from a released binary. <release> names it exactly
 google/fonts@<commit>:<path>, read from the google/fonts clone (GF=, default
 /home/fsanches/compartilhado/google/fonts); a plan using one says so in its body:
 
-  importoutlines <release> U+XXXX...  replace these glyphs' Fore-layer outlines and advances
+  importoutlines <release> U+XXXX|@name...  replace these glyphs' Fore-layer outlines and advances
+                                      (@name: an unencoded glyph of that name in both)
                                   with the release's exact quadratic points (contours and
                                   point flags from sfd-batch5/tools/drift/import_outlines.py;
                                   written into the Fore layer, which that tool does not do
@@ -688,8 +689,8 @@ def _fore_replace(body, spline, width):
 
 def op_importoutlines(text, args, base):
     spec, *cps = args.split()
-    if not cps or not all(re.match(r"U\+[0-9A-F]{4,6}$", c) for c in cps):
-        raise EditError("importoutlines takes U+XXXX codepoints")
+    if not cps or not all(re.match(r"U\+[0-9A-F]{4,6}$|@\S+$", c) for c in cps):
+        raise EditError("importoutlines takes U+XXXX codepoints or @glyphname")
     from fontTools.ttLib import TTFont
     sys.path.insert(0, os.path.dirname(IMPORT_OUTLINES))
     import import_outlines as io_
@@ -702,14 +703,23 @@ def op_importoutlines(text, args, base):
             raise EditError("the Fore layer is not quadratic")
         done, seen = [], set()
         for c in cps:
-            u = int(c[2:], 16)
-            g = cmap.get(u)
-            if g is None:
-                raise EditError("%s is not in the release" % c)
+            if c.startswith("@"):
+                # an unencoded glyph: the same name in the release and in the source
+                g = c[1:]
+                if g not in f["glyf"]:
+                    raise EditError("%s is not in the release" % c)
+            else:
+                u = int(c[2:], 16)
+                g = cmap.get(u)
+                if g is None:
+                    raise EditError("%s is not in the release" % c)
             if f["glyf"][g].isComposite():
                 raise EditError("%s is a composite in the release; not modelled" % c)
-            m = [b for b in _blocks(text)
-                 if re.search(r"^Encoding: -?\d+ %d " % u, b.group(0), re.M)]
+            if c.startswith("@"):
+                m = [b for b in _blocks(text) if b.group(1) == g]
+            else:
+                m = [b for b in _blocks(text)
+                     if re.search(r"^Encoding: -?\d+ %d " % u, b.group(0), re.M)]
             if len(m) != 1:
                 raise EditError("%d source glyphs encoded %s" % (len(m), c))
             m = m[0]
