@@ -73,6 +73,26 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## Status, 2026-11-05 last: all 14 measured families keep their hinting
+
+Smythe's last glyph (`E.alt`, a tiny loop through (468,1232) twice) was fontc erasing an
+"open corner": for a .glyphs source whose master lists no ufo2ft filters, fontc (like
+glyphsLib) applies Glyphs' default eraseOpenCorners (glyphs2fontir `compilation_flags`).
+A converted source carries the release's own points, so land.py now has a hinted
+conversion's master state an empty `com.github.googlei18n.ufo2ft.filters` list, which both
+fontc and glyphsLib honour; with it, all of Smythe's glyphs keep their programs (gate
+`hinting` PASS). The fontc issue draft about the loop is withdrawn; this is the documented
+behaviour.
+
+`land-hinting-2026-11-05.tsv`, re-landed with that rule (Nanum rows from the run before):
+
+| family                                                                         | status          | what remains (not hinting)                     |
+|--------------------------------------------------------------------------------|-----------------|------------------------------------------------|
+| Actor, Volkhov, Lobster Two, Share, Revalia, Patrick Hand                      | CLEAN           | -                                              |
+| Alef, Audiowide, Freckle Face, Jomolhari, Nanum Gothic Coding, Nanum Myeongjo  | CLEAN-DISCLOSED | differences their plans already disclose       |
+| Nova Script (.sfd, 17 outlines imported from the release)                      | CLEAN-DISCLOSED | differences its plan already discloses         |
+| Smythe (.sfd, 45 outlines imported from the release)                           | RESIDUAL        | shaping and GDEF: babelfont-rs #104, unmerged  |
+
 ## Status, 2026-11-05 final: 14 families measured, 12 from binaries all landable
 
 Two more restorations (both builders): a glyph whose recorded box (glyf header) is stale,
