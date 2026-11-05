@@ -11,7 +11,7 @@ GDEF, names are not gated), so it passed fonts that behave differently: Italiana
 pairs twice, Salsa without its GDEF, Lohit-Bengali with 284 Bengali words drawn
 differently, wrong name ID 6, USE_TYPO_METRICS gained. This gate measures behaviour.
 
-Checks (each PASS or FAIL; the verdict is PASS only if all seven pass):
+Checks (each PASS or FAIL; the verdict is PASS only if all eight pass):
 
   cmap          every Unicode cmap subtable (and (3,0) symbol, format 14 variation
                 sequences): each codepoint maps in both fonts, to the same glyph NAME
@@ -52,10 +52,7 @@ Checks (each PASS or FAIL; the verdict is PASS only if all seven pass):
                 start point) scores 0 px; one point moved 60 units scores 40 px, where
                 diffenator3's glyph test gives 7 of the 16 it needs. It covers unencoded
                 glyphs (alternates, ligatures, small caps), which diffenator3 never draws.
-                Hinting is reported apart (release vs build fpgm/prep/cvt, glyph programs,
-                gasp) and does not enter the verdict: rendering is compared unhinted, so
-                hinting-only effects (small sizes under a TrueType interpreter) are not
-                measured.
+                This check renders unhinted; the hinting check measures hinting.
   names         Windows name records 1, 2, 4, 6 equal, and the typographic names 16, 17,
                 21, 22 as an application reads them (16 falls back to 1, 17 to 2, 21 to
                 16, 22 to 17), for every language the release carries; usWeightClass and
@@ -82,6 +79,16 @@ Checks (each PASS or FAIL; the verdict is PASS only if all seven pass):
                 attachment) or when some lookup's flags filter the other class (1 under
                 IgnoreBaseGlyphs, 2 under IgnoreLigatures). Mark attachment classes and
                 mark glyph sets fail only when a lookup uses them.
+  hinting       the release's prep program and gasp ranges, always (an unhinted
+                release's prep is typically the smart_dropout setup, B8 01 FF 85 B0 04
+                8D, with gasp 65535:15). When the release is instructed (glyph programs,
+                or a prep that CALLs the font program): fpgm, cvt, the maxp TrueType
+                limits and head flag 3 equal; every glyph's program equal and on the same
+                points (contour ends, coordinates, on-curve flags; a composite's
+                components); and every reachable glyph's hinted raster identical under
+                FreeType's TrueType interpreter (v35 bi-level, v35 and v40 grayscale) at
+                8-24 ppem. An fpgm nothing can call is reported, not compared. A build
+                instructed where the release is not fails.
 
 Run (Python: /home/fsanches/compartilhado/gftools/venv/bin/python3):
     functional_gate.py <shipped.ttf> <built.ttf> [--style NAME] [--d3-json FILE]
@@ -1041,19 +1048,171 @@ def check_rendering(A, B, ka_map, kb_map, key_a, key_b, d3_json, examples):
     if changed and not geo_bad:
         notes.append("%d glyph(s) store their outline differently (point structure, 1-unit rounding) "
                      "and draw the same ink" % changed)
-    ha, hb_ = hinting_state(A), hinting_state(B)
-    data["hinting"] = {"release": ha, "build": hb_}
-
-    def hinted(h):
-        return h["fpgm"] or h["glyph_programs"] > 0
-    if (hinted(ha), ha["gasp"]) != (hinted(hb_), hb_["gasp"]):
-        notes.append("HINTING (reported, not gated; rendering above is unhinted): release %s, build %s" % (
-            "hinted (fpgm %s, %d glyph programs)" % (ha["fpgm"], ha["glyph_programs"]) if hinted(ha)
-            else "unhinted (prep %s)" % ha["prep"],
-            "hinted (fpgm %s, %d glyph programs)" % (hb_["fpgm"], hb_["glyph_programs"]) if hinted(hb_)
-            else "unhinted (prep %s)" % hb_["prep"]) + "; gasp %s / %s" % (ha["gasp"], hb_["gasp"]))
     summary = "diffenator3 %d glyph / %d word diffs (%d / %d confirmed); %d of %d changed outlines draw different ink" % (
         len(glyphs), len(words), len(conf_g), len(conf_w), len(geo_bad), changed)
+    return result("FAIL" if fails else "PASS", summary, fails, notes, **data)
+
+
+# 3b ----------------------------------------------------------------- hinting
+# Hinted rendering is compared with FreeType's TrueType interpreter in the modes where
+# instructions act: v35 bi-level (GDI's black-and-white rendering, where hinting matters
+# most), v35 grayscale, and v40 grayscale (FreeType's default, which ignores most
+# x-direction instructions). gasp is a client's choice FreeType does not apply, so it is
+# compared as a table.
+HINT_PPEMS = tuple(range(8, 25))
+HINT_MODES = (("v35 mono", 35, freetype.FT_LOAD_TARGET_MONO),
+              ("v35 gray", 35, freetype.FT_LOAD_TARGET_NORMAL),
+              ("v40 gray", 40, freetype.FT_LOAD_TARGET_NORMAL))
+# opcodes after which the font program or the control values can be reached from prep
+FPGM_CALLS = ("CALL[", "LOOPCALL[")
+MAXP_TT = ("maxZones", "maxTwilightPoints", "maxStorage", "maxFunctionDefs",
+           "maxInstructionDefs", "maxStackElements", "maxSizeOfInstructions")
+
+
+def program_bytes(tt, tag):
+    """The bytecode of fpgm or prep, None when the table is absent."""
+    if tag not in tt:
+        return None
+    prog = getattr(tt[tag], "program", None)
+    return bytes(prog.getBytecode()) if prog is not None else b""
+
+
+def glyph_program(tt, name):
+    g = tt["glyf"][name]
+    prog = getattr(g, "program", None)
+    return bytes(prog.getBytecode()) if prog is not None else b""
+
+
+def point_structure(tt, name):
+    """What a glyph program addresses: contour ends, coordinates and on-curve flags, or a
+    composite's components with the flags and anchors instructions see."""
+    g = tt["glyf"][name]
+    if g.isComposite():
+        return ("composite", tuple((c.glyphName, getattr(c, "x", None), getattr(c, "y", None),
+                                    c.flags & 0x0E06, getattr(c, "firstPt", None),
+                                    getattr(c, "secondPt", None)) for c in g.components))
+    if not g.numberOfContours:
+        return ("empty",)
+    return ("simple", tuple(g.endPtsOfContours), tuple(g.coordinates), tuple(f & 1 for f in g.flags))
+
+
+def describe_program(b):
+    if b is None:
+        return "none"
+    if b == SMART_DROPOUT:
+        return "the smart_dropout setup (%d bytes)" % len(b)
+    return "%d bytes" % len(b)
+
+
+SMART_DROPOUT = bytes([0xB8, 0x01, 0xFF, 0x85, 0xB0, 0x04, 0x8D])
+
+
+def set_interpreter(version):
+    v = freetype.ctypes.c_uint(version)
+    freetype.raw.FT_Property_Set(freetype.get_handle(), b"truetype", b"interpreter-version",
+                                 freetype.ctypes.byref(v))
+
+
+def hinted_bitmap(face, gid, target):
+    face.load_glyph(gid, freetype.FT_LOAD_NO_AUTOHINT | freetype.FT_LOAD_RENDER | target)
+    s = face.glyph
+    bm = s.bitmap
+    buf = bytes(bm.buffer)
+    return (s.bitmap_left, s.bitmap_top, bm.width, bm.rows, s.advance.x,
+            tuple(buf[r * bm.pitch:(r + 1) * bm.pitch] for r in range(bm.rows)))
+
+
+def check_hinting(A, B, ka_map, kb_map, examples):
+    """Does the build hint like the release? The release's prep and gasp always; when the
+    release carries instructions (glyph programs, or a prep that calls the font program),
+    its fpgm, cvt, maxp limits, head flag 3, every glyph's program on the same points,
+    and the hinted rasters (HINT_MODES at HINT_PPEMS, exact)."""
+    fails, notes = [], []
+    ta, tb = A.tt, B.tt
+    ha, hb_ = hinting_state(A), hinting_state(B)
+    pa, pb = program_bytes(ta, "prep"), program_bytes(tb, "prep")
+    prep_calls = pa is not None and any(op in ta["prep"].program.getAssembly()[i]
+                                        for i in range(len(ta["prep"].program.getAssembly()))
+                                        for op in FPGM_CALLS)
+    instructed = ha["glyph_programs"] > 0 or prep_calls
+    data = {"release": ha, "build": hb_, "release_instructed": instructed}
+
+    if pa != pb:
+        fails.append("prep: release %s, build %s" % (describe_program(pa), describe_program(pb)))
+    if ha["gasp"] != hb_["gasp"]:
+        fails.append("gasp: release %s, build %s" % (ha["gasp"], hb_["gasp"]))
+
+    fa, fb = program_bytes(ta, "fpgm"), program_bytes(tb, "fpgm")
+    if instructed:
+        if fa != fb:
+            fails.append("fpgm: release %s, build %s" % (describe_program(fa), describe_program(fb)))
+        ca = list(ta["cvt "].values) if "cvt " in ta else None
+        cb = list(tb["cvt "].values) if "cvt " in tb else None
+        if ca != cb:
+            fails.append("cvt: release %s, build %s" % (
+                "none" if ca is None else "%d values" % len(ca),
+                "none" if cb is None else ("%d values" % len(cb) + (", different" if ca and len(ca) == len(cb) else ""))))
+        ma = {k: getattr(ta["maxp"], k, None) for k in MAXP_TT}
+        mb = {k: getattr(tb["maxp"], k, None) for k in MAXP_TT}
+        diff = ["%s %s/%s" % (k, ma[k], mb[k]) for k in MAXP_TT if ma[k] != mb[k]]
+        if diff:
+            fails.append("maxp TrueType limits (release/build): " + ", ".join(diff))
+        if (ta["head"].flags ^ tb["head"].flags) & 0x0008:
+            fails.append("head flag 3 (integer ppem): release %d, build %d" % (
+                bool(ta["head"].flags & 8), bool(tb["head"].flags & 8)))
+    else:
+        if fa is not None:
+            notes.append("the release's fpgm (%d bytes) is never called: no glyph program, and prep "
+                         "makes no CALL; not compared" % len(fa))
+        if hb_["glyph_programs"] or (fb is not None and fb):
+            fails.append("the build is instructed (%d glyph programs, fpgm %s), the release is not"
+                         % (hb_["glyph_programs"], describe_program(fb)))
+
+    inv_b = {k: n for n, k in kb_map.items()}
+    pairs = [(n, inv_b[ka_map[n]]) for n in A.order if ka_map.get(n) in inv_b]
+    if instructed or hb_["glyph_programs"]:
+        prog_diff, moved, lost = [], 0, 0
+        for n, nb in pairs:
+            ga, gb = glyph_program(ta, n), glyph_program(tb, nb)
+            if ga == gb and (not ga or point_structure(ta, n) == point_structure(tb, nb)):
+                continue
+            if ga and not gb:
+                lost += 1
+            elif ga == gb:
+                moved += 1
+            prog_diff.append(n)
+        data.update(glyph_programs_differ=len(prog_diff), programs_lost=lost, programs_on_other_points=moved)
+        if prog_diff:
+            fails.append("%d of %d instructed glyph(s) do not carry the release's program on the release's "
+                         "points (%d programs missing, %d on other points): %s" % (
+                             len(prog_diff), ha["glyph_programs"], lost, moved, ", ".join(prog_diff[:examples])))
+
+        reach = [(n, nb) for n, nb in pairs if n in A.reachable()]
+        raster = {}
+        for label, version, target in HINT_MODES:
+            set_interpreter(version)
+            fa_, fb_ = freetype.Face(A.path), freetype.Face(B.path)
+            bad = []
+            for ppem in HINT_PPEMS:
+                fa_.set_pixel_sizes(0, ppem)
+                fb_.set_pixel_sizes(0, ppem)
+                for n, nb in reach:
+                    if hinted_bitmap(fa_, A.gid[n], target) != hinted_bitmap(fb_, B.gid[nb], target):
+                        bad.append("%s@%d" % (n, ppem))
+            raster[label] = len(bad)
+            if bad:
+                fails.append("hinted rendering, FreeType %s, %d-%d ppem: %d of %d glyph sizes differ: %s" % (
+                    label, HINT_PPEMS[0], HINT_PPEMS[-1], len(bad), len(reach) * len(HINT_PPEMS),
+                    ", ".join(bad[:examples])))
+        set_interpreter(40)
+        data["hinted_raster_diffs"] = raster
+
+    def kind(h, t):
+        if h["glyph_programs"]:
+            return "%d glyph programs" % h["glyph_programs"]
+        p = program_bytes(t, "prep")
+        return "no glyph programs, prep %s" % describe_program(p)
+    summary = "release %s; build %s; gasp %s / %s" % (kind(ha, ta), kind(hb_, tb), ha["gasp"], hb_["gasp"])
     return result("FAIL" if fails else "PASS", summary, fails, notes, **data)
 
 
@@ -1403,6 +1562,7 @@ def run(shipped, built, style=None, d3_json=None, workdir=None, examples=5, word
     checks["line_spacing"] = check_line_spacing(A, B)
     checks["advances"] = check_advances(A, B, ka_map, kb_map, examples)
     checks["gdef"] = check_gdef(A, B, ka_map, kb_map, examples)
+    checks["hinting"] = check_hinting(A, B, ka_map, kb_map, examples)
     if own_tmp and not workdir:
         shutil.rmtree(own_tmp, ignore_errors=True)
     env = {"harfbuzz": hb.version_string(), "uharfbuzz": getattr(hb, "__version__", "?"),

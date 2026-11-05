@@ -11,7 +11,7 @@ fixed revision. What it cites is here:
 | path                                              | what it holds                                                                                                                                                                                                                                                       |
 |---------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `tools/land.py`                                   | builds a font repository's layered history: the original sources, the Unified Font Repository template, one commit per documented source edit, the conversion last                                                                                                  |
-| `tools/table_gate.py`, `tools/functional_gate.py` | the two gates every rebuild must pass against the released binaries (tables; then cmap, shaping, rendering, names, line spacing, advances, GDEF)                                                                                                                    |
+| `tools/table_gate.py`, `tools/functional_gate.py` | the two gates every rebuild must pass against the released binaries (tables; then cmap, shaping, rendering, names, line spacing, advances, GDEF, hinting)                                                                                                                    |
 | `tools/verify_landed.py`, `tools/push.sh`         | re-check a landed repository; push only what is CLEAN (or CLEAN-DISCLOSED with `ALLOW_DISCLOSED=1`: every remaining gate difference is in the plan's `accepted` list, word for word), built with published tools, and cites a published revision of this repository |
 | `tools/recipe.py`, `tools/sfd_edit.py`            | the converter options per style; the source-edit operations the plans use                                                                                                                                                                                           |
 | `families.tsv`, `families-next.tsv`               | which source revision each released style is paired with                                                                                                                                                                                                            |
@@ -74,8 +74,10 @@ check 7. The table gate itself is unchanged.
 
 Evidence (`tools/probes/functional_gate/`, see its README):
 
-- **Each check catches its own defect.** 9 of 9 fontTools mutations of Salsa-Regular fail
-  exactly the expected checks; the unmutated copy passes all seven (`MUTATIONS.txt`).
+- **Each check catches its own defect.** 15 of 15 fontTools mutations fail exactly the
+  expected checks: 11 of Salsa-Regular (gasp and prep among them) and 4 of the instructed
+  Actor-Regular (a glyph program removed, a cvt value, a contour start rotated); both
+  unmutated copies pass all eight (`MUTATIONS.txt`, 2026-11-05).
 - **Rendering thresholds.** 4145 glyphs in 95 pairs (92 landed styles, two Lohit-Bengali
   builds, one mutation) store their outline differently. Every one the conversion rewrites
   (point structure, 1-unit rounding, start point, 1-unit stale lsb) scores 0 px on the

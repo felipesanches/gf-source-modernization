@@ -20,7 +20,7 @@ sfd-batch5/tools/drift/build_series.py builds it):
      gated BEFORE it is committed, so its message states what was measured:
      the table gate (tools/table_gate.py), the exact codepoint set,
      and tools/functional_gate.py (shaping, rendering, names, line spacing,
-     advances, GDEF). A landing is CLEAN only if all three pass.
+     advances, GDEF, hinting). A landing is CLEAN only if all three pass.
   5. "Source edit: <what>" -- only after a binary's conversion (a binary has no
      earlier source to edit): a documented statement the conversion cannot carry,
      today the release's GDEF glyph classes (plan key gdef_classes_fea), changing
@@ -773,7 +773,7 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                       "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
                       "exactly the release's codepoints, and functionally equivalent under "
                       "tools/functional_gate.py (cmap, shaping, rendering, names, line "
-                      "spacing, advances, GDEF), %d style(s)."
+                      "spacing, advances, GDEF, hinting), %d style(s)."
                       % (B3_WHERE, FONTC_ID, gf_ref, len(results)))
     else:
         lines += para("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "
@@ -840,7 +840,7 @@ def state_gdef_classes(d, plan, deferred, build_and_gate, para, wrap, gf_ref, ci
                       "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
                       "exactly the release's codepoints, and functionally equivalent under "
                       "tools/functional_gate.py (cmap, shaping, rendering, names, line "
-                      "spacing, advances, GDEF), %d style(s)."
+                      "spacing, advances, GDEF, hinting), %d style(s)."
                       % (B3_WHERE, FONTC_ID, gf_ref, len(results)))
     else:
         lines += para("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "

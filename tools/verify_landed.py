@@ -31,7 +31,7 @@ a fresh clone -- and checks, for every repository given:
   6. REMOTE: origin points at the repository it will be pushed to.
   7. FUNCTIONAL: every style built in step 4 behaves like its release under
      tools/functional_gate.py -- cmap, HarfBuzz shaping, rendering, names, line
-     spacing, advances, GDEF (the table gate is structural and accepts rows that
+     spacing, advances, GDEF, hinting (the table gate is structural and accepts rows that
      change behaviour).
 
 Usage: verify_landed.py <repo> [<repo> ...]     exit 1 if anything fails

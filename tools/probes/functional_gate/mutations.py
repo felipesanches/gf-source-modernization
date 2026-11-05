@@ -4,11 +4,14 @@ there to catch, and only that check?
 
 Takes one release (default Salsa-Regular, which has GDEF, GPOS kerning, marks classed as
 bases and unencoded glyphs), writes one mutated copy per defect class with fontTools, and
-gates release vs copy. Expected: the unmutated copy passes all seven checks; each mutation
+gates release vs copy. Expected: the unmutated copy passes all eight checks; each mutation
 fails the check(s) listed in EXPECT (a mutation that changes behaviour in several ways fails
 several checks, e.g. an advance change also moves shaped glyphs).
 
-Usage: $PY tools/probes/functional_gate/mutations.py [release.ttf] > tools/probes/functional_gate/MUTATIONS.txt
+The hinting check's instructed-release rules need an instructed release: the HINTED
+mutations run on Actor-Regular (169 glyph programs, its own fpgm, prep, cvt and gasp).
+
+Usage: $PY tools/probes/functional_gate/mutations.py [release.ttf [hinted-release.ttf]] > tools/probes/functional_gate/MUTATIONS.txt
 Scratch: $FG_SCRATCH/mutations/ (regenerable).
 """
 import os
@@ -20,6 +23,7 @@ import functional_gate  # noqa: E402
 from fontTools.ttLib import TTFont  # noqa: E402
 
 REL = sys.argv[1] if len(sys.argv) > 1 else "/home/fsanches/compartilhado/google/fonts/ofl/salsa/Salsa-Regular.ttf"
+HINTED_REL = sys.argv[2] if len(sys.argv) > 2 else "/home/fsanches/compartilhado/google/fonts/ofl/actor/Actor-Regular.ttf"
 OUT = os.path.join(functional_gate.SCRATCH, "mutations")
 
 
@@ -84,6 +88,14 @@ def weight(tt):
     tt["OS/2"].usWeightClass += 100
 
 
+def gasp_changed(tt):
+    tt["gasp"].gaspRange = {0xFFFF: 10}
+
+
+def prep_removed(tt):
+    del tt["prep"]
+
+
 MUTATIONS = [("identity", lambda tt: None, set()),
              ("kerning value halved", kern_value, {"shaping"}),
              ("advance of 'a' +12", advance, {"shaping", "advances", "rendering"}),
@@ -92,18 +104,65 @@ MUTATIONS = [("identity", lambda tt: None, set()),
              ("GDEF removed", no_gdef, {"gdef", "shaping"}),
              ("unencoded glyph outline moved", unencoded_outline, {"rendering"}),
              ("U+0041 mapped to B's glyph", remap, {"cmap", "shaping", "rendering"}),
-             ("usWeightClass +100", weight, {"names"})]
+             ("usWeightClass +100", weight, {"names"}),
+             ("gasp 65535:15 -> 65535:10", gasp_changed, {"hinting"}),
+             ("prep removed", prep_removed, {"hinting"})]
+
+
+def first_program(tt):
+    """The first glyph, in glyph order, that carries a program."""
+    for n in tt.getGlyphOrder():
+        g = tt["glyf"][n]
+        if getattr(g, "program", None) is not None and len(g.program.getBytecode()):
+            return n
+
+
+def program_removed(tt):
+    from fontTools.ttLib.tables import ttProgram
+    n = first_program(tt)
+    prog = ttProgram.Program()
+    prog.fromBytecode(b"")
+    tt["glyf"][n].program = prog
+    return n
+
+
+def cvt_changed(tt):
+    tt["cvt "].values[0] += 20
+    return "cvt[0] %d" % tt["cvt "].values[0]
+
+
+def points_rotated(tt):
+    """The first instructed simple glyph's first contour, started one point later: the same
+    outline, so only a program addressing points by index can tell."""
+    import array
+    for n in tt.getGlyphOrder():
+        g = tt["glyf"][n]
+        if (not g.isComposite() and g.numberOfContours and getattr(g, "program", None) is not None
+                and len(g.program.getBytecode())):
+            end = g.endPtsOfContours[0]
+            pts = list(g.coordinates[:end + 1])
+            flags = list(g.flags[:end + 1])
+            g.coordinates[:end + 1] = pts[1:] + pts[:1]
+            g.flags = array.array("B", flags[1:] + flags[:1] + list(g.flags[end + 1:]))
+            return n
+
+
+HINTED_MUTATIONS = [("hinted identity", lambda tt: None, set()),
+                    ("glyph program removed", program_removed, {"hinting"}),
+                    ("cvt[0] +20", cvt_changed, {"hinting"}),
+                    ("contour start rotated", points_rotated, {"hinting"})]
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
     bad = 0
-    for label, fn, expect in MUTATIONS:
-        tt = TTFont(REL)
+    runs = [(REL, m) for m in MUTATIONS] + [(HINTED_REL, m) for m in HINTED_MUTATIONS]
+    for i, (rel, (label, fn, expect)) in enumerate(runs):
+        tt = TTFont(rel)
         what = fn(tt)
-        path = os.path.join(OUT, label.split()[0].replace("'", "") + ".ttf")
+        path = os.path.join(OUT, "%02d-%s.ttf" % (i, label.split()[0].replace("'", "")))
         tt.save(path)
-        res = functional_gate.run(REL, path, label)
+        res = functional_gate.run(rel, path, label)
         failed = set(functional_gate.failed_checks(res))
         ok = failed == expect
         bad += not ok

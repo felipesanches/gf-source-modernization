@@ -140,7 +140,7 @@ def rekey(repo, redo):
                                "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
                                "exactly the release's codepoints, and functionally equivalent under "
                                "tools/functional_gate.py (cmap, shaping, rendering, names, line "
-                               "spacing, advances, GDEF), %d style(s)."
+                               "spacing, advances, GDEF, hinting), %d style(s)."
                                % (land.B3_WHERE, land.FONTC_ID, gf_ref, len(results)), 72)
     else:
         lines += textwrap.wrap("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s:"

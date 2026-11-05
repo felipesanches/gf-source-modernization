@@ -8,4 +8,9 @@ OK    GDEF removed                           expected fail gdef,shaping         
 OK    unencoded glyph outline moved          expected fail rendering                                got rendering (S.swash)
 OK    U+0041 mapped to B's glyph             expected fail cmap,rendering,shaping                   got cmap,rendering,shaping
 OK    usWeightClass +100                     expected fail names                                    got names
-exit 0
+OK    gasp 65535:15 -> 65535:10              expected fail hinting                                  got hinting
+OK    prep removed                           expected fail hinting                                  got hinting
+OK    hinted identity                        expected fail -                                        got -
+OK    glyph program removed                  expected fail hinting                                  got hinting (B)
+OK    cvt[0] +20                             expected fail hinting                                  got hinting (cvt[0] 40)
+OK    contour start rotated                  expected fail hinting                                  got hinting (B)
