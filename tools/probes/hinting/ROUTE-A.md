@@ -73,6 +73,17 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## 0h2 decided (b), 2026-11-05: hinted .sfd families convert from their binaries
+
+Felipe chose (b). Measured (`land-0h2b-2026-11-05.tsv`; a scratch family table with binary
+rows for Nova Script and Smythe, Nova Script's .sfd plan set aside): both convert from their
+shipped binaries with all their hinting applied (0 table rows, `hinting` PASS). What remains
+is ordinary binary-route work, not hinting: Nova Script fails names and line_spacing, the
+two its .sfd plan already discloses (fsSelection italic from the italic angle), so its plan
+needs those disclosures for the binary route; Smythe's release has a GDEF table the build
+lacks (22,374 shaping runs differ, also on branch 2026-11-02), which binary-route plans
+state as a GDEF-classes source edit (`gdef_classes_fea`).
+
 ## Status, 2026-11-05 last: all 14 measured families keep their hinting
 
 Smythe's last glyph (`E.alt`, a tiny loop through (468,1232) twice) was fontc erasing an
