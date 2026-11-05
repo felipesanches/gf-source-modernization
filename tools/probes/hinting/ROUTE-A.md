@@ -84,7 +84,7 @@ fontc and glyphsLib honour; with it, all of Smythe's glyphs keep their programs 
 `hinting` PASS). The fontc issue draft about the loop is withdrawn; this is the documented
 behaviour.
 
-`land-hinting-2026-11-05.tsv`, re-landed with that rule (Nanum rows from the run before):
+`land-hinting-2026-11-05.tsv`, all 14 re-landed with that rule:
 
 | family                                                                         | status          | what remains (not hinting)                     |
 |--------------------------------------------------------------------------------|-----------------|------------------------------------------------|
