@@ -655,6 +655,13 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                     and t["glyf"][n].program.getBytecode() for n in t.getGlyphOrder())):
                 continue
             rel = "hinting/%s.json" % p["row"]["style"]
+            # the hinting addresses the release's own points, so no Glyphs-default ufo2ft
+            # filter may change them (fontc and glyphsLib erase open corners otherwise)
+            g = open(p["glyphs"], encoding="utf-8").read()
+            if "com.github.googlei18n.ufo2ft.filters" not in g and "fontMaster = (\n{\n" in g:
+                at = g.index("fontMaster = (\n{\n") + len("fontMaster = (\n{\n")
+                g = g[:at] + 'userData = {\n"com.github.googlei18n.ufo2ft.filters" = (\n);\n};\n' + g[at:]
+                open(p["glyphs"], "w", encoding="utf-8").write(g)
             os.makedirs(os.path.join(d, "sources", "hinting"), exist_ok=True)
             sh(HINTING_EXTRACT, "-o", os.path.join(d, "sources", rel), shipped)
             hinted.append((built_name(p["glyphs"]), rel))
@@ -786,7 +793,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                              "metrics, which a .glyphs source cannot carry. sources/config.yaml "
                              "names %s under hintingFiles; the builder applies %s after "
                              "compiling, in place of autohinting, and refuses any glyph whose "
-                             "points differ from the release's."
+                             "points differ from the release's; the source's master lists no "
+                             "ufo2ft filters, so that no default filter (open-corner erasure) "
+                             "changes those points."
                              % (", ".join(hinted), "it" if len(hinted) == 1 else "them",
                                 "it" if len(hinted) == 1 else "each"), "", "")
     notes = [(p["row"]["style"], n) for p in per_style for n in p["notes"]]
