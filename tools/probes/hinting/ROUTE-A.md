@@ -73,6 +73,39 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## Status, 2026-11-05 final: 14 families measured, 12 from binaries all landable
+
+Two more restorations (both builders): a glyph whose recorded box (glyf header) is stale,
+xMin unlike its points, keeps that box and its side bearing (`lsb_shifts` now holds the
+release's leftmost point, box and lsb; the points are moved by whatever the build differs,
+0 on the .sfd route, the converter's shift on the binary route); and the Rust step rewrites
+hmtx for those glyphs. Patrick Hand's `hmtx` rows were these glyphs.
+
+`land-hinting-2026-11-05.tsv` (rows in landing order; the two Nanum families and Patrick
+Hand and Alef on babelfont branch 2026-11-02 plus the stored-points commit, the branch their
+published landings used, the rest on Simon's main plus that commit):
+
+| family                                                                                | status          | hinting           |
+|---------------------------------------------------------------------------------------|-----------------|-------------------|
+| Actor, Volkhov, Lobster Two, Share, Revalia, Patrick Hand                             | CLEAN           | kept              |
+| Alef, Audiowide, Freckle Face, Jomolhari, Nanum Gothic Coding, Nanum Myeongjo         | CLEAN-DISCLOSED | kept              |
+| Nova Script (.sfd), with a temporary plan edit importing 17 outlines from the release | CLEAN-DISCLOSED | kept              |
+| Smythe (.sfd), without (first row) and with (second) an import of 44 outlines         | RESIDUAL        | 16 glyphs refused |
+
+So bottleneck 0h2 option (a) works for Nova Script. Smythe keeps 16 glyphs refused even with
+the release's outlines imported into its .sfd: the .sfd to .glyphs conversion drops points of
+them (`bullet`: 20 points in the release, 18 built, its first on-curve and the off-curve after
+it), and `E.alt` has no codepoint for `importoutlines`; for Smythe that leaves (b), converting
+from the binary, or a converter fix.
+
+`e2e-final-2026-11-05.txt`, rerun with all of it: 20 of 20 through fontmake +
+gftools-apply-hinting and through fontc + gftools-rust's step.
+
+The measurement landings ran one at a time: `land.py <repo> --rebuild
+--unpublished-converter` with OUT, LANDED, FAMILIES, BF_TREE, B3 and HINTING_EXTRACT set as
+above; a temporary `importoutlines` commit was appended to the plan for Nova Script and
+Smythe and removed after (the plans are unchanged).
+
 ## Status, 2026-11-05 close: 12 families land with their hinting
 
 Three more things a source or compiler loses, now in the hinting file (both builders):

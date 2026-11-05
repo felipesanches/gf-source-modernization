@@ -3,10 +3,13 @@ volkhov	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Volkhov-Bold=0 fu
 lobstertwo	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	LobsterTwo-Bold=0 functional=PASS; LobsterTwo-BoldItalic=0 functional=PASS; LobsterTwo-Italic=0 functional=PASS; LobsterTwo-Regular=0 functional=PASS
 share	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Share-Bold=0 functional=PASS; Share-BoldItalic=0 functional=PASS; Share-Italic=0 functional=PASS; Share-Regular=0 functional=PASS
 revalia	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Revalia-Regular=0 functional=PASS
-alef	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Alef-Bold=1 functional=PASS; Alef-Regular=1 functional=PASS
-patrickhand	main	4	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	PatrickHand-Regular=6 functional=PASS
 audiowide	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Audiowide-Regular=2 functional=PASS
 freckleface	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	FreckleFace-Regular=2 functional=PASS
 jomolhari	main	4	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Jomolhari-Regular=1 functional=PASS
-nanumgothiccoding	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NanumGothicCoding-Bold=1 functional=FAIL(names); NanumGothicCoding-Regular=1 functional=FAIL(names)
-nanummyeongjo	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NanumMyeongjo-Bold=0 functional=FAIL(names); NanumMyeongjo-ExtraBold=1 functional=FAIL(names); NanumMyeongjo-Regular=0 functional=FAIL(names)
+nanumgothiccoding	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NanumGothicCoding-Bold=1 functional=PASS; NanumGothicCoding-Regular=1 functional=PASS
+nanummyeongjo	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NanumMyeongjo-Bold=0 functional=PASS; NanumMyeongjo-ExtraBold=1 functional=PASS; NanumMyeongjo-Regular=0 functional=PASS
+novascript	main	5	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	NovaScript-Regular=0 functional=FAIL(names+line_spacing)
+smythe	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Smythe-Regular=BUILD functional=-
+patrickhand	main	4	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	PatrickHand-Regular=0 functional=PASS
+alef	main	3	CLEAN-DISCLOSED-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Alef-Bold=1 functional=PASS; Alef-Regular=1 functional=PASS
+smythe	main	4	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Smythe-Regular=BUILD functional=-
