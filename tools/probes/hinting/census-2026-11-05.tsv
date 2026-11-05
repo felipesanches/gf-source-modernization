@@ -1,0 +1,478 @@
+repo	font	class	glyphs_with_instructions	glyphs	smart_dropout	prep	fpgm	gasp	name5
+creepstercaps	CreepsterCaps-Regular.ttf	no-glyph-code	0	230	exact	7	353	65535:15	Version 1.000
+herrvonmuellerhoff	HerrVonMuellerhoff-Regular.ttf	no-glyph-code	0	233	exact	7	-	65535:15	Version 1.000
+kristi	Kristi-Regular.ttf	other	124	212	no	380	613	-	Version 1.004 
+miama	Miama-Regular.ttf	no-glyph-code	0	1113	exact	7	-	65535:15	0.32
+nosifer	Nosifer-Regular.ttf	no-glyph-code	0	337	exact	7	-	65535:15	Version 001.002 
+nosifercaps	NosiferCaps-Regular.ttf	no-glyph-code	0	337	exact	7	-	65535:15	Version 001.002 
+novacut	NovaCut.ttf	other	416	421	no	46	613	65535:15	Version 2.000
+novaflat	NovaFlat.ttf	other	417	421	no	46	613	65535:15	Version 2.000
+novamono	NovaMono.ttf	other	1305	1331	no	46	613	8:2,17:1,65535:3	Version 1.2
+novaoval	NovaOval.ttf	other	417	421	no	46	613	65535:15	Version 2.000
+novaround	NovaRound.ttf	other	417	421	no	46	613	65535:15	Version 2.000
+novascript	NovaScript-Regular.ttf	other	417	421	no	46	613	65535:15	Version 2.001
+novaslim	NovaSlim.ttf	other	417	421	no	46	613	65535:15	Version 2.000
+novasquare	NovaSquare.ttf	other	417	421	no	46	613	65535:15	Version 2.000
+play	Play-Bold.ttf	ttfautohint	955	1150	yes	224	3437	65535:15	Version 2.101; ttfautohint (v1.6)
+play	Play-Regular.ttf	ttfautohint	955	1150	yes	224	3437	65535:15	Version 2.101; ttfautohint (v1.6)
+puritan	Puritan-Bold.ttf	other	216	237	no	46	613	-	2.1
+puritan	Puritan-BoldItalic.ttf	other	217	237	no	46	613	-	2.1
+puritan	Puritan-Italic.ttf	other	226	237	no	46	613	-	2.0a
+puritan	Puritan-Regular.ttf	other	226	237	no	46	613	-	2.0a
+russoone	RussoOne-Regular.ttf	no-glyph-code	0	413	exact	7	-	65535:15	Version 1.001
+sixcaps	SixCaps.ttf	other	174	438	no	121	613	65535:15	Version 001.000
+smythe	Smythe-Regular.ttf	other	167	274	no	246	613	65535:15	Version 1.000
+tuffy	Tuffy-Bold.ttf	none	0	890	-	-	-	65535:15	Version 001.271 
+tuffy	Tuffy-BoldItalic.ttf	no-glyph-code	0	890	exact	7	-	65535:15	Version 001.271 
+tuffy	Tuffy-Italic.ttf	ttfautohint	1494	1502	yes	199	3437	65535:15	Version 1.272; ttfautohint (v1.6)
+tuffy	Tuffy-Regular.ttf	ttfautohint	1285	1502	yes	199	3437	65535:15	Version 1.272; ttfautohint (v1.6)
+tulpenone	TulpenOne-Regular.ttf	no-glyph-code	0	233	exact	7	-	65535:15	Version 1.002
+unifraktur	UnifrakturMaguntia-Book.ttf	other	163	270	no	150	371	8:2,16:1,65535:3	Version 2010-11-24 
+abrilfatface	AbrilFatface-Regular.ttf	no-glyph-code	0	425	exact	7	-	65535:15	Version 1.001
+corben	Corben-Regular.ttf	no-glyph-code	0	356	exact	7	-	65535:15	Version 1.101
+corben	Corben-Bold.ttf	ttfautohint	482	552	yes	163	3437	65535:15	Version 1.101; ttfautohint (v1.6)
+allerta	AllertaStencil-Regular.ttf	no-glyph-code	0	217	no	46	613	8:2,16:1,65535:3	Version 1.02 
+comicrelief	ComicRelief-Regular.ttf	ttfautohint	517	607	yes	203	3596	65535:15	Version 1.200; ttfautohint (v1.8.4.7-5d5b)
+comicrelief	ComicRelief-Bold.ttf	ttfautohint	521	607	yes	203	3596	65535:15	Version 1.200; ttfautohint (v1.8.4.7-5d5b)
+rochester	Rochester-Regular.ttf	no-glyph-code	0	230	exact	7	-	65535:15	Version 1.006
+smokum	Smokum-Regular.ttf	no-glyph-code	0	372	exact	7	-	65535:15	Version 1.001
+ultra	Ultra-Regular.ttf	no-glyph-code	0	374	exact	7	371	65535:15	Version 1.001
+cardo	Cardo-Bold.ttf	none	0	2993	-	-	-	65535:3	Version 1.0011
+cardo	Cardo-Italic.ttf	no-glyph-code	0	2387	exact	7	-	65535:3	Version 0.991
+cardo	Cardo-Regular.ttf	no-glyph-code	0	3845	exact	7	-	65535:3	Version 1.0451
+keaniaone	KeaniaOne-Regular.ttf	no-glyph-code	0	272	exact	7	-	65535:15	Version 1.003
+kellyslab	KellySlab-Regular.ttf	no-glyph-code	0	453	exact	7	-	65535:15	Version 1.001
+ledger	Ledger-Regular.ttf	no-glyph-code	0	452	exact	7	-	65535:15	1.003
+lohitbengali	Lohit-Bengali.ttf	other	461	487	no	11	100	-	Version 2.5.1
+lohittamil	Lohit-Tamil.ttf	other	233	247	no	11	100	-	Version 2.5.0
+lovedbytheking	LovedbytheKing.ttf	no-glyph-code	0	355	exact	7	742	65535:15	Version 1.002 2006
+loveyalikeasister	LoveYaLikeASister.ttf	no-glyph-code	0	355	exact	7	-	65535:15	Version 1.002 2007
+magra	Magra-Bold.ttf	no-glyph-code	0	428	exact	7	-	65535:15	Version 1.001
+magra	Magra-Regular.ttf	no-glyph-code	0	428	exact	7	-	65535:15	Version 1.001
+marvel	Marvel-Bold.ttf	no-glyph-code	0	195	exact	7	-	65535:15	Version 1.001
+marvel	Marvel-BoldItalic.ttf	no-glyph-code	0	195	exact	7	-	65535:15	Version 1.001
+marvel	Marvel-Italic.ttf	no-glyph-code	0	195	exact	7	-	65535:15	Version 1.001
+marvel	Marvel-Regular.ttf	no-glyph-code	0	195	exact	7	-	65535:15	Version 1.001
+medulaone	MedulaOne-Regular.ttf	no-glyph-code	0	230	exact	7	-	65535:15	Version 1.002
+meiescript	MeieScript-Regular.ttf	other	214	222	no	46	613	65535:15	Version 1.001
+mergeone	MergeOne-Regular.ttf	no-glyph-code	0	343	exact	7	-	65535:15	Version 1.001
+missfajardose	MissFajardose-Regular.ttf	no-glyph-code	0	236	exact	7	-	65535:15	Version 1.000
+monsieurladoulaise	MonsieurLaDoulaise-Regular.ttf	no-glyph-code	0	234	exact	7	-	65535:15	Version 1.000
+mrdafoe	MrDafoe-Regular.ttf	no-glyph-code	0	235	exact	7	-	65535:15	Version 1.000
+mrdehaviland	MrDeHaviland-Regular.ttf	no-glyph-code	0	235	exact	7	-	65535:15	Version 1.000
+mrssaintdelafield	MrsSaintDelafield-Regular.ttf	no-glyph-code	0	238	exact	7	-	65535:15	Version 1.001
+mrssheppards	MrsSheppards-Regular.ttf	no-glyph-code	0	235	exact	7	-	65535:15	Version 1.000
+numans	Numans-Regular.ttf	no-glyph-code	0	247	exact	7	-	65535:15	Version 001.001
+overlock	Overlock-Black.ttf	no-glyph-code	0	281	exact	7	-	65535:15	Version 1.002
+overlock	Overlock-BlackItalic.ttf	no-glyph-code	0	283	exact	7	-	65535:15	Version 1.002
+overlock	Overlock-Bold.ttf	no-glyph-code	0	280	exact	7	-	65535:15	Version 1.002
+overlock	Overlock-BoldItalic.ttf	no-glyph-code	0	284	exact	7	-	65535:15	Version 1.002
+overlock	Overlock-Italic.ttf	no-glyph-code	0	283	exact	7	-	65535:15	Version 1.002
+overlock	Overlock-Regular.ttf	no-glyph-code	0	349	exact	7	-	65535:15	Version 1.002
+overlocksc	OverlockSC-Regular.ttf	no-glyph-code	0	247	exact	7	-	65535:15	Version 1.001
+overtherainbow	OvertheRainbow.ttf	other	67	356	exact	7	371	65535:3	Version 1.002 2010
+passionone	PassionOne-Black.ttf	no-glyph-code	0	273	exact	7	-	65535:15	Version 1.002
+passionone	PassionOne-Bold.ttf	no-glyph-code	0	273	exact	7	-	65535:15	Version 1.002
+passionone	PassionOne-Regular.ttf	no-glyph-code	0	273	exact	7	-	65535:15	Version 1.002
+patuaone	PatuaOne-Regular.ttf	no-glyph-code	0	236	exact	7	-	65535:15	Version 1.002
+piedra	Piedra-Regular.ttf	no-glyph-code	0	237	exact	7	-	65535:15	Version 1.000
+pirataone	PirataOne-Regular.ttf	no-glyph-code	0	386	exact	7	-	65535:15	Version 1.001
+poly	Poly-Italic.ttf	no-glyph-code	0	512	exact	7	-	65535:15	Version 1.003
+poly	Poly-Regular.ttf	none	0	585	-	-	-	65535:15	Version 1.001
+portlligatsans	PortLligatSans-Regular.ttf	no-glyph-code	0	266	exact	7	-	65535:15	Version 1.002
+portlligatslab	PortLligatSlab-Regular.ttf	no-glyph-code	0	262	exact	7	-	65535:15	Version 1.002
+quantico	Quantico-Bold.ttf	none	0	268	-	-	-	65535:2	Version 2.002
+quantico	Quantico-BoldItalic.ttf	none	0	268	-	-	-	65535:2	Version 2.002
+quantico	Quantico-Italic.ttf	none	0	268	-	-	-	65535:2	Version 2.002
+quantico	Quantico-Regular.ttf	no-glyph-code	0	268	exact	7	-	65535:15	Version 2.002
+rambla	Rambla-Bold.ttf	no-glyph-code	0	249	exact	7	-	65535:15	Version 1.001
+rambla	Rambla-BoldItalic.ttf	no-glyph-code	0	249	exact	7	-	65535:15	Version 1.001
+rambla	Rambla-Italic.ttf	no-glyph-code	0	248	exact	7	-	65535:15	Version 1.001
+rambla	Rambla-Regular.ttf	no-glyph-code	0	248	exact	7	-	65535:15	Version 1.001
+ribeyemarrow	RibeyeMarrow-Regular.ttf	no-glyph-code	0	372	exact	7	-	65535:15	Version 1.000
+rosarivo	Rosarivo-Italic.ttf	no-glyph-code	0	240	exact	7	-	65535:15	Version 1.003
+rosarivo	Rosarivo-Regular.ttf	no-glyph-code	0	232	exact	7	-	65535:15	Version 1.003
+rufina	Rufina-Bold.ttf	no-glyph-code	0	235	exact	7	-	65535:15	Version 1.001
+rufina	Rufina-Regular.ttf	no-glyph-code	0	235	exact	7	-	65535:15	Version 1.001
+sail	Sail-Regular.ttf	no-glyph-code	0	224	exact	7	-	65535:15	Version 1.002
+sanchez	Sanchez-Italic.ttf	no-glyph-code	0	369	exact	7	-	65535:15	Version 1.001
+sanchez	Sanchez-Regular.ttf	no-glyph-code	0	369	exact	7	-	65535:15	Version 1.001
+spirax	Spirax-Regular.ttf	no-glyph-code	0	222	exact	7	-	65535:15	Version 1.002
+squadaone	SquadaOne-Regular.ttf	no-glyph-code	0	192	exact	7	-	65535:15	Version 1.001
+swankyandmoomoo	SwankyandMooMoo.ttf	no-glyph-code	0	344	exact	7	-	65535:3	Version 1.002 2001
+textmeone	TextMeOne-Regular.ttf	no-glyph-code	0	250	exact	7	-	65535:15	Version 1.003
+thabit	Thabit-Bold.ttf	other	98	789	no	1411	493	-	0.01
+thabit	Thabit.ttf	other	1	788	no	1411	493	65535:2	0.01
+thabit	Thabit-Oblique.ttf	other	1	788	no	1411	493	65535:2	0.01
+thabit	Thabit-BoldOblique.ttf	other	98	789	no	1411	493	-	0.01
+thegirlnextdoor	TheGirlNextDoor.ttf	other	87	346	exact	7	-	65535:15	Version 1.002 2010
+trochut	Trochut-Bold.ttf	no-glyph-code	0	222	exact	7	-	65535:15	Version 1.001
+trochut	Trochut-Italic.ttf	no-glyph-code	0	222	exact	7	-	65535:15	Version 1.001
+trochut	Trochut-Regular.ttf	no-glyph-code	0	224	exact	7	-	65535:15	Version 1.001
+varela	Varela-Regular.ttf	other	834	850	no	46	613	-	Version 1.000
+viga	Viga-Regular.ttf	no-glyph-code	0	282	exact	7	-	65535:15	Version 1.001
+wallpoet	Wallpoet-Regular.ttf	other	178	244	exact	7	371	65535:15	Version 1.000
+wendyone	WendyOne-Regular.ttf	no-glyph-code	0	230	exact	7	-	65535:15	1.001
+oranienbaum	Oranienbaum-Regular.ttf	ttfautohint	416	419	yes	133	2411	65535:15	Version 1.001; ttfautohint (v0.91) -l 8 -r 50 -G 200 -x 0 -w "gGD"
+averialibre	AveriaLibre-Bold.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averialibre	AveriaLibre-BoldItalic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averialibre	AveriaLibre-Italic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averialibre	AveriaLibre-Light.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averialibre	AveriaLibre-LightItalic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averialibre	AveriaLibre-Regular.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiasanslibre	AveriaSansLibre-Bold.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiasanslibre	AveriaSansLibre-BoldItalic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiasanslibre	AveriaSansLibre-Italic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiasanslibre	AveriaSansLibre-Light.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiasanslibre	AveriaSansLibre-LightItalic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiasanslibre	AveriaSansLibre-Regular.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiaseriflibre	AveriaSerifLibre-Bold.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiaseriflibre	AveriaSerifLibre-BoldItalic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiaseriflibre	AveriaSerifLibre-Italic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiaseriflibre	AveriaSerifLibre-Light.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiaseriflibre	AveriaSerifLibre-LightItalic.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+averiaseriflibre	AveriaSerifLibre-Regular.ttf	none	0	234	-	-	-	65535:2	Version 1.002
+sansation	Sansation-Bold.ttf	none	0	533	-	-	-	65535:2	Version 1.301
+sansation	Sansation-BoldItalic.ttf	none	0	526	-	-	-	65535:2	Version 1.301
+sansation	Sansation-Italic.ttf	none	0	526	-	-	-	65535:2	Version 1.301
+sansation	Sansation-Light.ttf	none	0	533	-	-	-	65535:2	Version 1.301
+sansation	Sansation-LightItalic.ttf	none	0	526	-	-	-	65535:2	Version 1.301
+sansation	Sansation-Regular.ttf	none	0	533	-	-	-	65535:2	Version 1.301
+reeniebeanie	ReenieBeanie.ttf	other	315	318	no	132	371	8:2,16:1,65535:3	Version 1.000
+ptserif	PT_Serif-Web-Bold.ttf	other	417	719	no	378	403	8:2,65535:3	Version 1.000W OFL
+ptserif	PT_Serif-Web-BoldItalic.ttf	other	391	719	no	496	403	8:2,65535:3	Version 1.000W OFL
+ptserif	PT_Serif-Web-Italic.ttf	other	579	719	no	566	403	8:2,16:1,65535:3	Version 1.000W OFL
+ptserif	PT_Serif-Web-Regular.ttf	other	611	719	no	458	403	8:2,16:1,65535:3	Version 1.000W OFL
+ptsansnarrow	PT_Sans-Narrow-Web-Bold.ttf	other	631	720	no	376	403	8:2,11:1,65535:3	Version 2.003W OFL
+ptsansnarrow	PT_Sans-Narrow-Web-Regular.ttf	other	615	720	no	348	403	8:2,19:1,65535:3	Version 2.003W OFL
+ptsanscaption	PT_Sans-Caption-Web-Bold.ttf	other	611	720	no	334	403	6:2,7:1,65535:3	Version 2.003W OFL
+ptsanscaption	PT_Sans-Caption-Web-Regular.ttf	other	629	720	no	362	403	6:2,16:1,65535:3	Version 2.004W OFL
+almarai	Almarai-Bold.ttf	other	527	579	yes	163	3335	65535:15	Version 1.10
+almarai	Almarai-ExtraBold.ttf	other	527	579	yes	163	3335	65535:15	Version 1.10
+almarai	Almarai-Light.ttf	other	527	579	yes	163	3335	65535:15	Version 1.10
+almarai	Almarai-Regular.ttf	other	527	579	yes	163	3335	65535:15	Version 1.10
+jua	Jua-Regular.ttf	other	2506	2520	exact	7	371	65535:15	Version 1.001
+dongle	Dongle-Bold.ttf	none	0	12550	-	-	-	65535:10	Version 2.000
+dongle	Dongle-Light.ttf	none	0	12550	-	-	-	65535:10	Version 2.000
+dongle	Dongle-Regular.ttf	none	0	12550	-	-	-	65535:10	Version 2.000
+homemadeapple	HomemadeApple-Regular.ttf	no-glyph-code	0	230	exact	7	353	8:2,16:1,65535:3	Version 1.001
+calligraffitti	Calligraffitti-Regular.ttf	other	168	228	exact	7	353	8:2,16:1,65535:3	Version 1.002
+kranky	Kranky-Regular.ttf	no-glyph-code	0	228	exact	7	353	8:2,16:1,65535:3	Version 1.001
+cherrycreamsoda	CherryCreamSoda-Regular.ttf	other	168	228	exact	7	353	8:2,16:1,65535:3	Version 1.001
+chewy	Chewy-Regular.ttf	other	172	229	exact	7	353	8:2,16:1,65535:3	Version 1.001
+comingsoon	ComingSoon-Regular.ttf	no-glyph-code	0	230	exact	7	353	8:2,16:1,65535:3	Version 1.002
+craftygirls	CraftyGirls-Regular.ttf	other	172	230	exact	7	353	8:2,16:1,65535:3	Version 1.001
+fontdinerswanky	FontdinerSwanky-Regular.ttf	no-glyph-code	0	231	exact	7	353	8:2,16:1,65535:3	Version 1.001
+akronim	Akronim-Regular.ttf	other	16	254	no	3	337	-	Version 1.002
+portersansblock	PorterSansBlock-Regular.ttf	other	205	209	no	101	353	-	Version 1.000
+gugi	Gugi-Regular.ttf	other	2493	2495	no	366	1096	65535:15	Version 3.00
+rocksalt	RockSalt-Regular.ttf	other	153	228	no	32	371	8:2,16:1,65535:3	Version 1.001
+schoolbell	Schoolbell-Regular.ttf	no-glyph-code	0	228	exact	7	353	-	Version 1.001
+unkempt	Unkempt-Bold.ttf	no-glyph-code	0	228	exact	7	353	65535:15	Version 1.002
+unkempt	Unkempt-Regular.ttf	no-glyph-code	0	228	exact	7	353	8:2,16:1,65535:3	Version 1.001
+walterturncoat	WalterTurncoat-Regular.ttf	no-glyph-code	0	228	exact	7	353	-	Version 1.001
+slackey	Slackey-Regular.ttf	no-glyph-code	0	229	exact	7	353	-	Version 1.001
+sunshiney	Sunshiney-Regular.ttf	no-glyph-code	0	229	exact	7	353	-	Version 1.001
+permanentmarker	PermanentMarker-Regular.ttf	no-glyph-code	0	230	exact	7	353	-	Version 1.001
+ptserifcaption	PT_Serif-Caption-Web-Italic.ttf	other	601	720	no	634	403	6:2,14:1,65535:3	Version 1.000W OFL
+ptserifcaption	PT_Serif-Caption-Web-Regular.ttf	other	607	719	no	558	403	6:2,14:1,65535:3	Version 1.000W OFL
+ptsans	PT_Sans-Web-Bold.ttf	other	635	720	no	400	403	8:2,10:1,65535:3	Version 2.003W OFL
+ptsans	PT_Sans-Web-BoldItalic.ttf	other	602	721	no	478	403	8:2,10:1,65535:3	Version 2.003W OFL
+ptsans	PT_Sans-Web-Italic.ttf	other	603	721	no	462	403	8:2,18:1,65535:3	Version 2.003W OFL
+ptsans	PT_Sans-Web-Regular.ttf	other	635	720	no	426	403	8:2,18:1,65535:3	Version 2.003W OFL
+eastseadokdo	EastSeaDokdo-Regular.ttf	no-glyph-code	0	3099	no	44	742	65535:15	Version 1.00
+yeonsung	YeonSung-Regular.ttf	other	3101	3120	exact	7	371	65535:15	Version 1.001
+stylish	Stylish-Regular.ttf	other	11366	11370	no	432	1113	65535:15	Version 1.64
+blackhansans	BlackHanSans-Regular.ttf	other	2731	2734	yes	510	4463	65535:15	Version 1.001
+dohyeon	DoHyeon-Regular.ttf	other	3090	3094	exact	7	724	65535:15	Version 1.001
+sunflower	Sunflower-Bold.ttf	other	2501	2505	no	357	1484	65535:15	Version 1.00
+sunflower	Sunflower-Light.ttf	other	2501	2505	no	357	1484	65535:15	Version 1.00
+sunflower	Sunflower-Medium.ttf	other	2501	2505	no	501	1484	65535:15	Version 1.00
+cutefont	CuteFont-Regular.ttf	other	2523	2524	no	183	742	65535:15	Version 1.00
+songmyung	SongMyung-Regular.ttf	other	2613	2617	no	414	1113	65535:15	Version 1.00
+dokdo	Dokdo-Regular.ttf	other	2598	2600	no	486	1113	65535:15	Version 2.00
+blackandwhitepicture	BlackAndWhitePicture-Regular.ttf	no-glyph-code	0	11368	no	66	1113	65535:15	Version 1.64
+gamjaflower	GamjaFlower-Regular.ttf	other	12019	12021	no	147	742	65535:15	Version 3.00;build 20171102
+himelody	HiMelody-Regular.ttf	other	12101	12103	no	183	742	65535:15	Version 3.00
+poorstory	PoorStory-Regular.ttf	other	11721	11724	no	219	742	65535:15	Version 3.00
+nanumgothic	NanumGothic-Bold.ttf	other	4701	13534	no	372	2313	65535:15	Version 3.020;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895
+nanumgothic	NanumGothic-ExtraBold.ttf	other	4839	13671	no	372	2313	65535:15	Version 3.020;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895
+nanumgothic	NanumGothic-Regular.ttf	other	4462	13297	no	408	2313	65535:15	Version 3.020;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895
+nanumbrushscript	NanumBrushScript-Regular.ttf	other	5093	13799	no	331	1096	65535:15	Version 1.100;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895
+lato	Lato-Black.ttf	other	2109	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-BlackItalic.ttf	other	2189	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-Bold.ttf	other	2105	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-BoldItalic.ttf	other	2209	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-ExtraBold.ttf	other	2105	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-ExtraBoldItalic.ttf	other	2258	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-ExtraLight.ttf	other	2184	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-ExtraLightItalic.ttf	other	2249	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-Italic.ttf	other	2308	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-Light.ttf	other	2237	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-LightItalic.ttf	other	2264	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-Medium.ttf	other	2122	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-MediumItalic.ttf	other	2239	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-Regular.ttf	other	2169	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-SemiBold.ttf	other	2201	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-SemiBoldItalic.ttf	other	2267	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-Thin.ttf	other	2179	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+lato	Lato-ThinItalic.ttf	other	2280	3023	yes	185	2967	65535:15	Version 2.015; 2015-08-06; http://www.latofonts.com/
+nanumpenscript	NanumPenScript-Regular.ttf	other	4924	13751	no	241	1096	65535:15	Version 1.10
+carlito	Carlito-Bold.ttf	other	2755	2783	yes	129	2677	65535:15	Version 1.104
+carlito	Carlito-BoldItalic.ttf	other	2754	2782	yes	129	2677	65535:15	Version 1.104
+carlito	Carlito-Italic.ttf	other	2755	2783	yes	129	2677	65535:15	Version 1.104
+carlito	Carlito-Regular.ttf	other	2755	2783	yes	129	2677	65535:15	Version 1.104
+alef	Alef-Bold.ttf	other	394	424	no	915	1571	65535:15	Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325
+alef	Alef-Regular.ttf	other	397	424	no	888	1571	65535:15	Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325
+imfelldoublepica	IMFELLDoublePica-Italic.ttf	none	0	397	-	-	-	65535:2	3.00
+imfelldoublepica	IMFELLDoublePica-Regular.ttf	none	0	371	-	-	-	65535:2	3.00
+imfelldoublepicasc	IMFeDPsc28P.ttf	none	0	359	-	-	-	65535:2	3.00
+imfelldwpica	IMFePIit28P.ttf	none	0	386	-	-	-	65535:2	3.00
+imfelldwpica	IMFePIrm28P.ttf	none	0	371	-	-	-	65535:2	3.00
+imfelldwpicasc	IMFePIsc28P.ttf	none	0	359	-	-	-	65535:2	3.00
+imfellenglish	IMFeENit28P.ttf	none	0	379	-	-	-	65535:2	3.00
+imfellenglish	IMFeENrm28P.ttf	none	0	372	-	-	-	65535:2	3.00
+imfellenglishsc	IMFeENsc28P.ttf	none	0	359	-	-	-	65535:2	3.00
+imfellfrenchcanon	IMFeFCit28P.ttf	none	0	394	-	-	-	65535:2	3.00
+imfellfrenchcanon	IMFeFCrm28P.ttf	none	0	368	-	-	-	65535:2	3.00
+imfellfrenchcanonsc	IMFeFCsc28P.ttf	none	0	357	-	-	-	65535:2	3.00
+imfellgreatprimer	IMFeGPit28P.ttf	none	0	390	-	-	-	65535:2	3.00
+imfellgreatprimer	IMFeGPrm28P.ttf	none	0	371	-	-	-	65535:2	3.00
+imfellgreatprimersc	IMFeGPsc28P.ttf	none	0	359	-	-	-	65535:2	3.00
+jomolhari	Jomolhari-Regular.ttf	other	2028	3333	exact	7	742	65535:15	Version 1.000
+nanumgothiccoding	NanumGothicCoding-Bold.ttf	other	2758	20338	no	234	1571	65535:3	Version 2.000;PS 1;hotconv 1.0.49;makeotf.lib2.0.14853
+nanumgothiccoding	NanumGothicCoding-Regular.ttf	other	2758	20024	no	234	1571	65535:3	Version 2.000;PS 1;hotconv 1.0.49;makeotf.lib2.0.14853
+nanummyeongjo	NanumMyeongjo-Bold.ttf	other	5852	14695	no	202	1341	65535:15	Version 2.032;PS 1;hotconv 1.0.56;makeotf.lib2.0.21325
+nanummyeongjo	NanumMyeongjo-ExtraBold.ttf	other	5856	14697	no	165	742	65535:15	Version 2.032;PS 1;hotconv 1.0.56;makeotf.lib2.0.21325
+nanummyeongjo	NanumMyeongjo-Regular.ttf	other	5853	14695	no	220	1341	65535:15	Version 2.032;PS 1;hotconv 1.0.56;makeotf.lib2.0.21325
+lekton	Lekton-Bold.ttf	no-glyph-code	0	950	exact	7	-	65535:2	Version 34.000
+lekton	Lekton-Italic.ttf	no-glyph-code	0	205	exact	7	-	65535:2	Version 3.000
+lekton	Lekton-Regular.ttf	no-glyph-code	0	950	exact	7	-	65535:2	Version 34.000
+monoton	Monoton-Regular.ttf	no-glyph-code	0	373	exact	7	-	65535:3	Version 1.000
+nixieone	NixieOne-Regular.ttf	no-glyph-code	0	221	exact	7	-	65535:15	Version 1.004
+patrickhand	PatrickHand-Regular.ttf	ttfautohint	722	728	yes	144	2449	65535:15	Version 1.003;PS 001.003;hotconv 1.0.70;makeotf.lib2.5.58329; ttfautohint (v0.94.20-1c74) -l 8 -r 50 -G 200 -x 14 -w "gGD" -c -f
+unifrakturcook	UnifrakturCook-Bold.ttf	no-glyph-code	0	271	exact	7	742	65535:15	Version 2011-09-01 
+mountainsofchristmas	MountainsofChristmas-Bold.ttf	no-glyph-code	0	233	exact	7	-	65535:15	Version 1.003
+mountainsofchristmas	MountainsofChristmas-Regular.ttf	no-glyph-code	0	231	exact	7	-	65535:15	Version 1.003
+italiana	Italiana-Regular.ttf	no-glyph-code	0	217	exact	7	-	65535:15	Version 001.001 
+kottaone	KottaOne-Regular.ttf	no-glyph-code	0	260	exact	7	-	65535:15	Version 1.001
+lilitaone	LilitaOne-Regular.ttf	no-glyph-code	0	229	exact	7	-	65535:15	Version 1.002
+limelight	Limelight-Regular.ttf	other	402	427	yes	96	1865	65535:15	Version 1.002
+lustria	Lustria-Regular.ttf	no-glyph-code	0	264	exact	7	-	65535:15	Version 001.001
+macondo	Macondo-Regular.ttf	no-glyph-code	0	311	exact	7	-	65535:15	Version 2.001
+megrim	Megrim.ttf	other	346	352	exact	7	613	65535:15	Version 20110427 
+mrbedfort	MrBedfort-Regular.ttf	no-glyph-code	0	234	exact	7	-	65535:15	Version 1.000
+niconne	Niconne-Regular.ttf	no-glyph-code	0	293	exact	7	-	65535:15	Version 1.002
+nothingyoucoulddo	NothingYouCouldDo.ttf	no-glyph-code	0	312	exact	7	-	65535:15	Version 1.005
+oleoscript	OleoScript-Bold.ttf	no-glyph-code	0	246	exact	7	-	65535:15	Version 1.002
+oleoscript	OleoScript-Regular.ttf	no-glyph-code	0	245	exact	7	-	65535:15	Version 1.002
+oleoscriptswashcaps	OleoScriptSwashCaps-Bold.ttf	no-glyph-code	0	246	exact	7	-	65535:15	Version 1.002
+oleoscriptswashcaps	OleoScriptSwashCaps-Regular.ttf	no-glyph-code	0	245	exact	7	-	65535:15	Version 1.002
+revalia	Revalia-Regular.ttf	other	217	221	no	46	613	65535:15	Version 1.001
+rougescript	RougeScript-Regular.ttf	no-glyph-code	0	222	exact	7	-	65535:15	Version 1.003
+ruluko	Ruluko-Regular.ttf	no-glyph-code	0	256	exact	7	-	65535:15	Version 1.001
+salsa	Salsa-Regular.ttf	no-glyph-code	0	362	exact	7	-	65535:15	Version 1.002
+titanone	TitanOne-Regular.ttf	no-glyph-code	0	422	exact	7	-	65535:15	Version 1.001
+titilliumweb	TitilliumWeb-Black.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311
+titilliumweb	TitilliumWeb-Bold.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311
+titilliumweb	TitilliumWeb-BoldItalic.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311
+titilliumweb	TitilliumWeb-Italic.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311
+titilliumweb	TitilliumWeb-Light.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311
+titilliumweb	TitilliumWeb-LightItalic.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311
+titilliumweb	TitilliumWeb-Regular.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311
+titilliumweb	TitilliumWeb-SemiBold.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311
+titilliumweb	TitilliumWeb-SemiBoldItalic.ttf	no-glyph-code	0	456	exact	7	-	65535:15	Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311
+rancho	Rancho-Regular.ttf	no-glyph-code	0	227	exact	7	353	8:2,16:1,65535:3	Version 1.001
+satisfy	Satisfy-Regular.ttf	no-glyph-code	0	227	exact	7	353	8:2,16:1,65535:3	Version 1.001
+actor	Actor-Regular.ttf	other	169	237	no	150	371	8:2,16:1,65535:3	Version 1.001
+alfaslabone	AlfaSlabOne-Regular.ttf	other	408	734	yes	163	3350	65535:15	Version 2.000
+baumans	Baumans-Regular.ttf	other	187	220	no	306	371	8:2,65535:3	Version 001.002
+butterflykids	ButterflyKids-Regular.ttf	no-glyph-code	0	232	exact	7	353	65535:15	Version 1.001
+caesardressing	CaesarDressing-Regular.ttf	no-glyph-code	0	229	exact	7	353	65535:15	Version 1.000
+cantoraone	CantoraOne-Regular.ttf	ttfautohint	466	470	yes	97	1865	65535:15	Version 1.002; ttfautohint (v0.8) -G 200 -r 50
+carroisgothic	CarroisGothic-Regular.ttf	other	175	264	no	58	353	8:10,20:11,96:15,65535:10	Version 1.002
+carroisgothicsc	CarroisGothicSC-Regular.ttf	other	173	264	no	48	353	8:10,20:11,96:15,65535:10	Version 1.002
+chelseamarket	ChelseaMarket-Regular.ttf	no-glyph-code	0	228	exact	7	353	65535:15	Version 1.001
+combo	Combo-Regular.ttf	other	400	406	yes	86	1865	65535:15	Version 1.001
+electrolize	Electrolize-Regular.ttf	other	165	224	no	194	3012	65535:3	Version 1.002
+emilyscandy	EmilysCandy-Regular.ttf	no-glyph-code	0	231	exact	7	353	65535:15	Version 1.000
+fingerpaint	FingerPaint-Regular.ttf	other	1	264	no	17	353	8:10,20:11,96:15,65535:10	Version 1.002
+flavors	Flavors-Regular.ttf	no-glyph-code	0	227	exact	7	353	65535:15	Version 1.001
+forum	Forum-Regular.ttf	other	577	584	no	240	371	8:2,16:1,65535:3	Version 1.000
+frederickathegreat	FrederickatheGreat-Regular.ttf	no-glyph-code	0	229	exact	7	-	65535:15	Version 1.001
+frijole	Frijole-Regular.ttf	no-glyph-code	0	227	exact	7	353	65535:15	Version 1.000
+gorditas	Gorditas-Bold.ttf	other	216	220	no	348	966	4:2,65535:3	Version 001.001
+gorditas	Gorditas-Regular.ttf	other	216	222	no	307	966	4:2,65535:3	Version 1.001
+griffy	Griffy-Regular.ttf	no-glyph-code	0	258	exact	7	353	65535:15	Version 1.000
+happymonkey	HappyMonkey-Regular.ttf	other	216	220	no	293	966	4:2,65535:3	Version 1.001
+hermeneusone	HermeneusOne-Regular.ttf	ttfautohint	455	460	yes	147	2402	65535:15	Version 1.002; ttfautohint (v0.93) -l 8 -r 50 -G 200 -x 14 -w "G"
+jollylodger	JollyLodger-Regular.ttf	no-glyph-code	0	232	exact	7	353	65535:15	Version 1.000
+junge	Junge-Regular.ttf	other	214	222	no	650	371	11:2,65535:3	Version 1.002
+kaushanscript	KaushanScript-Regular.ttf	other	410	414	no	75	1765	65535:15	Version 1.002
+librecaslondisplay	LibreCaslonDisplay-Regular.ttf	ttfautohint	391	551	yes	177	3437	65535:15	Version 1.100; ttfautohint (v1.6) -l 8 -r 50 -G 200 -x 14 -D latn -f none -w G -X ""
+lobstertwo	LobsterTwo-Bold.ttf	other	355	357	no	168	371	-	Version 1.006
+lobstertwo	LobsterTwo-BoldItalic.ttf	other	355	357	no	150	371	-	Version 1.006
+lobstertwo	LobsterTwo-Italic.ttf	other	355	357	no	132	371	-	Version 1.006
+lobstertwo	LobsterTwo-Regular.ttf	other	355	357	no	186	371	-	Version 1.006
+metalmania	MetalMania-Regular.ttf	other	172	268	no	150	371	8:2,16:1,65535:3	Version 1.002
+milonga	Milonga-Regular.ttf	ttfautohint	442	447	yes	147	2402	65535:15	Version 1.000; ttfautohint (v0.93) -l 8 -r 50 -G 200 -x 14 -w "G"
+miltonian	Miltonian-Regular.ttf	other	182	258	no	94	706	-	Version 1.008
+miltoniantattoo	MiltonianTattoo-Regular.ttf	other	182	259	no	366	966	4:2,65535:3	Version 1.008
+miniver	Miniver-Regular.ttf	no-glyph-code	0	229	exact	7	353	65535:15	Version 1.000
+mysteryquest	MysteryQuest-Regular.ttf	no-glyph-code	0	229	exact	7	353	65535:15	Version 1.000
+newrocker	NewRocker-Regular.ttf	ttfautohint	438	442	yes	147	2402	65535:15	Version 1.000; ttfautohint (v0.93) -l 8 -r 50 -G 200 -x 14 -w "G"
+petitformalscript	PetitFormalScript-Regular.ttf	ttfautohint	428	432	yes	97	1865	65535:15	Version 1.001; ttfautohint (v0.8) -G 200 -r 50
+poetsenone	PoetsenOne-Regular.ttf	ttfautohint	455	459	yes	97	1865	65535:15	Version 1.000; ttfautohint (v0.8) -G 200 -r 50
+princesssofia	PrincessSofia-Regular.ttf	no-glyph-code	0	230	exact	7	353	65535:15	Version 1.000
+prostoone	ProstoOne-Regular.ttf	other	275	405	no	171	353	8:2,16:1,65535:3	Version 1.001
+quattrocento	Quattrocento-Bold.ttf	other	245	249	yes	86	1865	65535:15	Version 2.000
+quattrocento	Quattrocento-Regular.ttf	other	245	249	yes	86	1865	65535:15	Version 2.000
+quattrocentosans	QuattrocentoSans-Bold.ttf	other	238	243	yes	86	1865	65535:15	Version 2.000
+quattrocentosans	QuattrocentoSans-BoldItalic.ttf	other	238	244	yes	86	1865	65535:15	Version 2.000
+quattrocentosans	QuattrocentoSans-Italic.ttf	other	239	245	yes	86	1865	65535:15	Version 2.000
+quattrocentosans	QuattrocentoSans-Regular.ttf	other	239	243	yes	86	1865	65535:15	Version 2.000
+racingsansone	RacingSansOne-Regular.ttf	ttfautohint	469	474	yes	97	1865	65535:15	Version 1.001; ttfautohint (v0.8) -G 200 -r 50
+ralewaydots	RalewayDots-Regular.ttf	other	265	460	no	22	371	-	Version 1.000
+ranchers	Ranchers-Regular.ttf	ttfautohint	442	446	yes	97	1865	65535:15	Version 1.000; ttfautohint (v0.8) -G 200 -r 50
+sansitaone	SansitaOne-Regular.ttf	none	0	214	-	-	-	65535:15	Version 1.002
+seaweedscript	SeaweedScript-Regular.ttf	no-glyph-code	0	228	exact	7	353	65535:15	Version 1.000
+shadowsintolighttwo	ShadowsIntoLightTwo-Regular.ttf	no-glyph-code	0	356	exact	7	-	65535:15	Version 1.003 2012
+share	Share-Bold.ttf	other	252	256	no	17	337	-	Version 1.002
+share	Share-BoldItalic.ttf	other	252	256	no	17	337	-	Version 1.002
+share	Share-Italic.ttf	other	252	256	no	17	337	-	Version 1.002
+share	Share-Regular.ttf	other	252	256	no	17	337	-	Version 1.002
+skranji	Skranji-Bold.ttf	no-glyph-code	0	258	exact	7	353	65535:15	Version 1.001
+skranji	Skranji-Regular.ttf	no-glyph-code	0	258	exact	7	353	65535:15	Version 1.001
+sofadione	SofadiOne-Regular.ttf	other	158	264	no	58	353	8:10,20:11,96:15,65535:10	Version 1.002
+sofia	Sofia-Regular.ttf	no-glyph-code	0	232	exact	7	-	65535:15	Version 1.001
+stalinistone	StalinistOne-Regular.ttf	other	330	337	yes	133	2411	65535:15	Version 3.004
+strong	Strong-Regular.ttf	other	286	320	no	180	3012	8:2,65535:3	Version 1.001
+tradewinds	TradeWinds-Regular.ttf	no-glyph-code	0	227	exact	7	353	65535:15	Version 1.001
+underdog	Underdog-Regular.ttf	ttfautohint	407	412	yes	110	2301	65535:15	Version 1.001; ttfautohint (v0.9)
+volkhov	Volkhov-Bold.ttf	other	217	225	no	290	371	8:2,65535:3	Version 1.010
+volkhov	Volkhov-BoldItalic.ttf	other	213	225	no	251	371	8:2,65535:3	Version 1.001
+volkhov	Volkhov-Italic.ttf	other	213	225	no	227	371	8:2,65535:3	Version 1.010
+volkhov	Volkhov-Regular.ttf	other	215	225	no	290	371	8:2,65535:3	Version 1.010
+audiowide	Audiowide-Regular.ttf	no-glyph-code	0	369	no	4	371	8:2,16:1,65535:3	Version 1.003
+berkshireswash	BerkshireSwash-Regular.ttf	no-glyph-code	0	379	exact	7	353	65535:15	Version 1.001
+bigelowrules	BigelowRules-Regular.ttf	no-glyph-code	0	371	exact	7	353	65535:15	Version 1.001
+clickerscript	ClickerScript-Regular.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+dynalight	Dynalight-Regular.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+eaglelake	EagleLake-Regular.ttf	no-glyph-code	0	370	exact	7	353	65535:15	Version 1.000
+engagement	Engagement-Regular.ttf	no-glyph-code	0	374	exact	7	353	65535:15	Version 1.000
+fascinate	Fascinate-Regular.ttf	no-glyph-code	0	377	exact	7	353	65535:15	Version 1.000
+fascinateinline	FascinateInline-Regular.ttf	no-glyph-code	0	377	exact	7	353	65535:15	Version 1.000
+fondamento	Fondamento-Italic.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+fondamento	Fondamento-Regular.ttf	no-glyph-code	0	372	exact	7	353	8:2,16:1,65535:3	Version 1.000
+freckleface	FreckleFace-Regular.ttf	no-glyph-code	0	368	no	3	353	8:2,16:1,65535:3	Version 1.000
+galindo	Galindo-Regular.ttf	no-glyph-code	0	370	exact	7	353	65535:15	Version 1.000
+grandhotel	GrandHotel-Regular.ttf	no-glyph-code	0	369	exact	7	353	65535:15	Version 001.000
+hanalei	Hanalei-Regular.ttf	no-glyph-code	0	366	exact	7	353	65535:15	Version 1.000
+hanaleifill	HanaleiFill-Regular.ttf	no-glyph-code	0	366	exact	7	353	65535:15	Version 1.000
+jimnightshade	JimNightshade-Regular.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+marcellus	Marcellus-Regular.ttf	no-glyph-code	0	370	exact	7	353	65535:15	Version 1.000
+marcellussc	MarcellusSC-Regular.ttf	no-glyph-code	0	370	exact	7	353	65535:15	Version 1.001
+margarine	Margarine-Regular.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+mclaren	McLaren-Regular.ttf	no-glyph-code	0	375	exact	7	353	65535:15	Version 1.000
+mervalescript	MervaleScript-Regular.ttf	no-glyph-code	0	371	exact	7	353	65535:15	Version 1.000
+mousememoirs	MouseMemoirs-Regular.ttf	no-glyph-code	0	377	exact	7	353	65535:15	Version 1.000
+oregano	Oregano-Italic.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+oregano	Oregano-Regular.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+originalsurfer	OriginalSurfer-Regular.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.001
+parisienne	Parisienne-Regular.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+peralta	Peralta-Regular.ttf	no-glyph-code	0	373	exact	7	353	65535:15	Version 1.000
+purplepurse	PurplePurse-Regular.ttf	no-glyph-code	0	368	exact	7	353	65535:15	Version 1.000
+quintessential	Quintessential-Regular.ttf	no-glyph-code	0	371	exact	7	353	65535:15	Version 1.000
+ribeye	Ribeye-Regular.ttf	no-glyph-code	0	372	exact	7	353	65535:15	Version 1.000
+risque	Risque-Regular.ttf	no-glyph-code	0	375	exact	7	353	65535:15	Version 1.000
+romanesco	Romanesco-Regular.ttf	no-glyph-code	0	370	exact	7	353	65535:15	Version 1.000
+rumraisin	RumRaisin-Regular.ttf	no-glyph-code	0	377	exact	7	353	65535:15	Version 1.000
+shojumaru	Shojumaru-Regular.ttf	no-glyph-code	0	373	exact	7	353	65535:15	Version 1.001
+spicyrice	SpicyRice-Regular.ttf	no-glyph-code	0	373	exact	7	353	65535:15	Version 1.000
+stalemate	Stalemate-Regular.ttf	no-glyph-code	0	378	exact	7	353	65535:15	Version 001.000
+stintultracondensed	StintUltraCondensed-Regular.ttf	no-glyph-code	0	371	exact	7	353	65535:15	Version 1.000
+stintultraexpanded	StintUltraExpanded-Regular.ttf	no-glyph-code	0	371	exact	7	353	65535:15	Version 1.000
+uncialantiqua	UncialAntiqua-Regular.ttf	no-glyph-code	0	371	exact	7	353	65535:15	Version 1.000
+yesteryear	Yesteryear-Regular.ttf	no-glyph-code	0	370	exact	7	353	65535:15	Version 1.000
+aclonica	Aclonica-Regular.ttf	no-glyph-code	0	371	exact	7	353	8:2,16:1,65535:3	Version 1.001
+crushed	Crushed-Regular.ttf	no-glyph-code	0	370	exact	7	353	8:2,16:1,65535:3	Version 001.001
+irishgrover	IrishGrover-Regular.ttf	no-glyph-code	0	228	exact	7	353	8:2,16:1,65535:3	Version 1.001
+justanotherhand	JustAnotherHand-Regular.ttf	other	337	369	no	136	371	8:2,16:3,65535:3	Version 1.001
+luckiestguy	LuckiestGuy-Regular.ttf	no-glyph-code	0	369	exact	7	353	8:2,16:1,65535:3	Version 1.001
+maidenorange	MaidenOrange-Regular.ttf	no-glyph-code	0	369	exact	7	353	8:2,16:1,65535:3	Version 1.001
+montez	Montez-Regular.ttf	no-glyph-code	0	372	exact	7	353	8:2,16:1,65535:3	Version 1.001
+redressed	Redressed-Regular.ttf	no-glyph-code	0	376	exact	7	353	8:2,16:1,65535:3	Version 1.001
+specialelite	SpecialElite-Regular.ttf	no-glyph-code	0	370	exact	7	353	8:2,16:1,65535:3	Version 1.001
+syncopate	Syncopate-Bold.ttf	other	189	370	no	114	371	8:2,16:1,65535:3	Version 1.001 2011
+syncopate	Syncopate-Regular.ttf	other	336	370	no	194	371	8:2,25:3,65535:3	Version 001.001
+aldrich	Aldrich-Regular.ttf	other	254	259	no	4	354	-	Version 1.002 2011
+annieuseyourtelescope	AnnieUseYourTelescope-Regular.ttf	no-glyph-code	0	355	exact	7	371	65535:15	Version 1.003 2001
+atomicage	AtomicAge-Regular.ttf	ttfautohint	391	559	yes	135	3027	65535:15	Version 1.008; ttfautohint (v1.4.1) -l 6 -r 46 -G 0 -x 0 -H 200 -D latn -f none -m "" -w g -X ""
+cedarvillecursive	Cedarville-Cursive.ttf	no-glyph-code	0	355	exact	7	371	65535:15	Version 1.001 2010
+gloriahallelujah	GloriaHallelujah.ttf	other	35	361	no	22	371	65535:3	Version 1.004 2010
+gotu	Gotu-Regular.ttf	ttfautohint	1630	1643	yes	225	3605	65535:15	Version 2.320;hotconv 1.0.109;makeotfexe 2.5.65596; ttfautohint (v1.8.1)
+hennypenny	HennyPenny-Regular.ttf	other	204	232	no	19	371	11:2,65535:3	Version 1.001
+kenia	Kenia-Regular.ttf	other	196	200	no	141	353	8:2,16:1,65535:3	Version 1.001
+labelleaurore	LaBelleAurore.ttf	no-glyph-code	0	354	exact	7	371	65535:15	Version 1.001 2001
+modak	Modak-Regular.ttf	ttfautohint	1220	1228	yes	149	2967	65535:15	Version 1.036;PS Version 1.000;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.2.42-39fb)
+mukta	Mukta-Bold.ttf	ttfautohint	1355	1368	yes	188	3437	65535:15	Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+mukta	Mukta-ExtraBold.ttf	ttfautohint	1355	1368	yes	188	3437	65535:15	Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+mukta	Mukta-ExtraLight.ttf	ttfautohint	1355	1368	yes	188	3437	65535:15	Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+mukta	Mukta-Light.ttf	ttfautohint	1355	1368	yes	188	3437	65535:15	Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+mukta	Mukta-Medium.ttf	ttfautohint	1355	1368	yes	188	3437	65535:15	Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+mukta	Mukta-Regular.ttf	ttfautohint	1355	1368	yes	188	3437	65535:15	Version 2.538;PS 1.001;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+mukta	Mukta-SemiBold.ttf	ttfautohint	1355	1368	yes	188	3437	65535:15	Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamahee	MuktaMahee-Bold.ttf	ttfautohint	786	794	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamahee	MuktaMahee-ExtraBold.ttf	ttfautohint	786	794	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamahee	MuktaMahee-ExtraLight.ttf	ttfautohint	786	794	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamahee	MuktaMahee-Light.ttf	ttfautohint	786	794	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamahee	MuktaMahee-Medium.ttf	ttfautohint	786	794	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamahee	MuktaMahee-Regular.ttf	ttfautohint	786	794	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamahee	MuktaMahee-SemiBold.ttf	ttfautohint	786	794	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamalar	MuktaMalar-Bold.ttf	ttfautohint	796	805	yes	163	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamalar	MuktaMalar-ExtraBold.ttf	ttfautohint	796	805	yes	163	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamalar	MuktaMalar-ExtraLight.ttf	ttfautohint	796	805	yes	163	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamalar	MuktaMalar-Light.ttf	ttfautohint	796	805	yes	163	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamalar	MuktaMalar-Medium.ttf	ttfautohint	796	805	yes	163	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamalar	MuktaMalar-Regular.ttf	ttfautohint	796	805	yes	163	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktamalar	MuktaMalar-SemiBold.ttf	ttfautohint	796	805	yes	163	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktavaani	MuktaVaani-Bold.ttf	ttfautohint	1297	1306	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktavaani	MuktaVaani-ExtraBold.ttf	ttfautohint	1297	1306	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktavaani	MuktaVaani-ExtraLight.ttf	ttfautohint	1297	1306	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktavaani	MuktaVaani-Light.ttf	ttfautohint	1298	1306	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktavaani	MuktaVaani-Medium.ttf	ttfautohint	1298	1306	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktavaani	MuktaVaani-Regular.ttf	ttfautohint	1297	1306	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+muktavaani	MuktaVaani-SemiBold.ttf	ttfautohint	1297	1306	yes	188	3437	65535:15	Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)
+neucha	Neucha.ttf	other	251	286	no	258	371	65535:2	Version 001.001
+prozalibre	ProzaLibre-Bold.ttf	ttfautohint	226	348	yes	155	3052	65535:15	Version 1.001; ttfautohint (v1.4.1.8-43bc)
+prozalibre	ProzaLibre-ExtraBoldItalic.ttf	ttfautohint	224	348	yes	155	3052	65535:15	Version 1.001; ttfautohint (v1.4.1.8-43bc)
+prozalibre	ProzaLibre-Medium.ttf	ttfautohint	226	348	yes	155	3052	65535:15	Version 1.001; ttfautohint (v1.4.1.8-43bc)
+prozalibre	ProzaLibre-MediumItalic.ttf	ttfautohint	226	348	yes	155	3052	65535:15	Version 1.001; ttfautohint (v1.4.1.8-43bc)
+prozalibre	ProzaLibre-SemiBold.ttf	ttfautohint	226	348	yes	155	3052	65535:15	Version 1.001; ttfautohint (v1.4.1.8-43bc) -l 8 -r 50 -G 200 -x 14 -D latn -f none -m "ohint (v1.4.1.8-43bc) -l 8 -r 50 -G 200 -x 14" -w G -t -X ""
+prozalibre	ProzaLibre-SemiBoldItalic.ttf	ttfautohint	226	348	yes	155	3052	65535:15	Version 1.001; ttfautohint (v1.4.1.8-43bc)
+righteous	Righteous-Regular.ttf	none	0	372	-	-	-	8:2,16:1,65535:3	Version 1.000
+sevillana	Sevillana-Regular.ttf	other	210	228	no	590	371	11:2,23:1,65535:3	Version 1.001
+shadowsintolight	ShadowsIntoLight.ttf	no-glyph-code	0	352	exact	7	371	65535:15	Version 001.000
+sharetechmono	ShareTechMono-Regular.ttf	other	262	268	yes	139	2927	65535:15	Version 1.003
+simonetta	Simonetta-Black.ttf	other	226	237	no	468	371	8:2,65535:3	Version 1.004
+simonetta	Simonetta-BlackItalic.ttf	other	225	237	no	524	371	12:2,65535:3	Version 1.004
+simonetta	Simonetta-Italic.ttf	other	223	228	no	624	371	12:2,19:1,65535:3	Version 1.004
+simonetta	Simonetta-Regular.ttf	other	220	228	no	602	371	12:2,19:1,65535:3	Version 1.004
+stardosstencil	StardosStencil-Bold.ttf	no-glyph-code	0	306	exact	7	-	65535:15	Version 1.001
+stardosstencil	StardosStencil-Regular.ttf	ttfautohint	0	305	-	-	-	65535:15	Version 1.001; ttfautohint (v1.8.2)
+sueellenfrancisco	SueEllenFrancisco-Regular.ttf	other	216	290	no	22	371	65535:3	Version 1.002 2007
+taiheritagepro	TaiHeritagePro-Bold.ttf	none	0	542	-	-	-	8:2,16:1,65535:3	Version 2.600
+taiheritagepro	TaiHeritagePro-Regular.ttf	none	0	542	-	-	-	8:2,16:1,65535:3	Version 2.600
+telex	Telex-Regular.ttf	other	223	269	yes	152	3350	65535:15	Version 1.100
+tenorsans	TenorSans-Regular.ttf	other	473	477	no	258	371	-	Version 1.1
+vibur	Vibur-Regular.ttf	other	220	279	no	243	199	-	Version 1.004 
+waitingforthesunrise	WaitingfortheSunrise.ttf	other	71	343	no	22	371	65535:3	Version 1.001 2001
+zeyada	Zeyada.ttf	no-glyph-code	0	346	exact	7	-	65535:15	Version 1.002 2010
+ubuntu	Ubuntu-Bold.ttf	other	941	1264	no	383	1571	8:2,11:1,65535:3	0.83
+ubuntu	Ubuntu-BoldItalic.ttf	other	930	1269	no	533	1571	8:2,11:1,65535:3	0.83
+ubuntu	Ubuntu-Italic.ttf	other	944	1269	no	791	1571	8:2,18:1,65535:3	0.83
+ubuntu	Ubuntu-Light.ttf	other	1089	1264	no	511	1571	8:2,26:1,65535:3	0.83
+ubuntu	Ubuntu-LightItalic.ttf	other	958	1269	no	486	1571	8:2,26:1,100:3,65535:2	0.83
+ubuntu	Ubuntu-Medium.ttf	other	942	1264	no	441	1571	8:2,12:1,65535:3	0.83
+ubuntu	Ubuntu-MediumItalic.ttf	other	947	1269	no	441	1571	8:2,12:1,65535:3	0.83
+ubuntu	Ubuntu-Regular.ttf	other	933	1264	no	753	1571	8:2,18:1,65535:3	0.83
