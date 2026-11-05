@@ -16,9 +16,12 @@ Prints per font: points.py's summary for each build and the gate's status.
 
 Usage: e2e.py <BF> <B3> <scratch> <release.ttf>...
 With EXTRACT=<gftools-extract-hinting> and APPLY=<gftools-apply-hinting> in the environment the
-gftools builder step's own commands replace hinting_file.py.
+gftools builder step's own commands replace hinting_file.py. With HINTING_STEP=1 the hinting file
+goes into sources/ and config.yaml names it under `hintingFiles`, so that <B3> applies it while
+building (a gftools-builder with that step); the gate then checks the built font as it is.
 """
 import os
+import shutil
 import subprocess
 import sys
 
@@ -39,6 +42,13 @@ def run(args, **kw):
 def points(release, built):
     out = run([PY, os.path.join(HERE, "points.py"), release, built]).stdout
     return next((l for l in out.splitlines() if "point-identical" in l), out.strip()[-120:])
+
+
+def check(release, built):
+    A, B = fg.Font(release), fg.Font(built)
+    _, _, ka, kb = fg.correspondence(A, B)
+    c = fg.check_hinting(A, B, ka, kb, 3)
+    return c["status"] + ("" if c["status"] == "PASS" else " (%s)" % "; ".join(f[:80] for f in c["failures"][:2]))
 
 
 def gate(release, hfile, built, out):
@@ -78,12 +88,20 @@ def main():
         fm_res = ("%s | gate %s" % (points(release, fm), gate(release, hfile, fm, fm[:-4] + ".hinted.ttf"))
                   if os.path.exists(fm) else "fontmake FAILED " + r.stderr.strip()[-100:])
         print("%-26s fontmake %s" % (stem, fm_res), flush=True)
+        step = os.environ.get("HINTING_STEP") == "1"
         with open(os.path.join(d, "sources", "config.yaml"), "w") as fh:
             fh.write(CONFIG % stem)
+            if step:
+                shutil.copy(hfile, os.path.join(d, "sources", stem + ".hinting.json"))
+                fh.write("hintingFiles:\n  %s.ttf: %s.hinting.json\n" % (stem, stem))
         r = run([b3, "sources/config.yaml"], cwd=d)
         fc = os.path.join(d, "fonts", "ttf", stem + ".ttf")
-        fc_res = ("%s | gate %s" % (points(release, fc), gate(release, hfile, fc, fc[:-4] + ".hinted.ttf"))
-                  if os.path.exists(fc) else "gftools-builder FAILED " + r.stderr.strip()[-100:])
+        if not os.path.exists(fc):
+            fc_res = "gftools-builder FAILED " + (r.stderr.strip() or r.stdout.strip())[-160:].replace(d + os.sep, "")
+        elif step:
+            fc_res = "%s | gate %s (hinted by the builder)" % (points(release, fc), check(release, fc))
+        else:
+            fc_res = "%s | gate %s" % (points(release, fc), gate(release, hfile, fc, fc[:-4] + ".hinted.ttf"))
         print("%-26s fontc    %s" % (stem, fc_res), flush=True)
 
 

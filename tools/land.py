@@ -91,6 +91,10 @@ B3_ID, FONTC_ID = "1e638bd", "1.0.0"   # simoncozens/gftools-rust main; fontc as
 # marked UNPUBLISHED-BUILDER (push.sh pushes only CLEAN) and its commit names the variant
 # from B3_NOTE= instead of claiming gftools-rust B3_ID.
 B3 = os.environ.get("B3") or B3_DEFAULT
+# Route (a), opt-in until the builder step is upstream: gftools-extract-hinting (gftools branch
+# apply-hinting). Each instructed release's hinting goes to sources/hinting/<style>.json and
+# config.yaml names it under hintingFiles (tools/probes/hinting/ROUTE-A.md).
+HINTING_EXTRACT = os.environ.get("HINTING_EXTRACT")
 B3_PUBLISHED = os.path.realpath(B3) == os.path.realpath(B3_DEFAULT)
 B3_WHERE = ("gftools-rust %s" % B3_ID if B3_PUBLISHED else "UNPUBLISHED variant: %s"
             % os.environ.get("B3_NOTE", B3))
@@ -639,6 +643,26 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
             fh.write("buildVariable: false\nremoveOutlineOverlaps: false\n" + builder_keys + "sources:\n")
             for p in per_style:
                 fh.write("  - %s.glyphs\n" % p["row"]["style"])
+
+    if HINTING_EXTRACT and not glyphs and rows[0]["kind"] != "allerta":
+        from fontTools.ttLib import TTFont
+        hinted = []
+        for p in per_style:
+            shipped = p["row"]["shipped"]
+            t = TTFont(shipped)
+            if "glyf" not in t or not ("fpgm" in t or any(
+                    getattr(t["glyf"][n], "program", None) is not None
+                    and t["glyf"][n].program.getBytecode() for n in t.getGlyphOrder())):
+                continue
+            rel = "hinting/%s.json" % p["row"]["style"]
+            os.makedirs(os.path.join(d, "sources", "hinting"), exist_ok=True)
+            sh(HINTING_EXTRACT, "-o", os.path.join(d, "sources", rel), shipped)
+            hinted.append((built_name(p["glyphs"]), rel))
+        if hinted:
+            with open(cfg, "a") as fh:
+                fh.write("hintingFiles:\n")
+                for name, rel in hinted:
+                    fh.write("  %s: %s\n" % (name, rel))
 
     # build exactly what will be committed, from its own config, in a scratch copy
     def build_and_gate():
