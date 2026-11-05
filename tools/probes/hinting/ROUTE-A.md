@@ -73,6 +73,33 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## Status, 2026-11-05 close: 12 families land with their hinting
+
+Three more things a source or compiler loses, now in the hinting file (both builders):
+`glyph_order` (a release whose glyphs have duplicate names, such as Nanum Myeongjo's
+`.notdef` x11000, or none, post format 3, is matched by index), `lsb_shifts` and `offsets`
+(a glyph whose left side bearing differs from its xMin is drawn shifted by the converter;
+its points are shifted back, and the offsets of composites placing it restored: Alef 6
+glyphs, Patrick Hand 8), and `contour_starts` (every contour's first point, replacing
+`offcurve_starts`). `e2e-final-2026-11-05.txt`, rerun with that format: 20 of 20 through
+fontmake + gftools-apply-hinting and through fontc + gftools-rust.
+
+`land-hinting-2026-11-05.tsv` (measurement landings, as above): every one of these 12 passes
+the gate's `hinting` check.
+
+| repo                                       | status          | what remains (not hinting)                                                                     |
+|--------------------------------------------|-----------------|------------------------------------------------------------------------------------------------|
+| actor, volkhov, lobstertwo, share, revalia | CLEAN           | -                                                                                              |
+| alef, audiowide, freckleface, jomolhari    | CLEAN-DISCLOSED | the differences their plans already disclose (bottleneck 7, 9, 11)                             |
+| patrickhand                                | RESIDUAL        | hmtx side bearings: babelfont-rs #104/#106, unmerged                                           |
+| nanumgothiccoding, nanummyeongjo           | RESIDUAL        | Korean name records: babelfont-rs #117, unmerged (the stored-points branch is on Simon's main) |
+
+From .sfd sources (families.tsv) the source's own points can differ from the release's:
+Nova Script, 417 glyphs refused before `contour_starts`, 19 after (17 glyphs with other
+points, e.g. `three` 39 vs 40, and composites of them); Smythe, 167 then 30 (the source has 1
+to 6 points fewer per glyph). 26 of the 132 instructed repos convert from .sfd; the other
+106 from their binaries (including the 25 .vfb imports, P13).
+
 ## Status, 2026-11-05 last: 20 of 20 through both builders; texts corrected
 
 `e2e-final-2026-11-05.txt` (e2e.py with FONTMAKE = fontmake 3.12.2 / glyphsLib 6.17.2,
