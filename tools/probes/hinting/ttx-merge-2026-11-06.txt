@@ -1,0 +1,3 @@
+release: Actor-Regular.ttf
+1. merge fpgm,prep,cvt,gasp: exit 0, tables identical: True
+2. merge glyf holding only '.notdef' of 233 glyphs: exit 1: KeyError: 'nonmarkingreturn'

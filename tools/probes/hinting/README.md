@@ -14,6 +14,7 @@ Question (google/fonts#11237, comment 6650283300): can the modernized repositori
 | `full_gate.py`    | Does a hinted build pass the whole functional gate, not only `hinting`?                                                                | `$PY -I tools/probes/hinting/full_gate.py <release.ttf> <built.ttf>... > full-gate.txt`                                     |
 | `predict.py`      | What will functional_gate's hinting check say about each repository, unbuilt?                                                          | `$PY -I tools/probes/hinting/predict.py census.tsv published.txt > prediction.tsv`                                          |
 | `check_built.py`  | Does the hinting check agree with `predict.py` on fonts actually built?                                                                | `$PY -I tools/probes/hinting/check_built.py prediction.tsv <shipped> <built>...`                                            |
+| `ttx_merge.py`    | Can `ttx -m` carry a release's glyph programs into a built font, or only whole tables? (gftools#1248 review)                           | `$PY -I tools/probes/hinting/ttx_merge.py <scratch> <release.ttf> > ttx-merge.txt`                                          |
 
 `$PY` is a Python with fontTools (the `PY` of the repository README). Shipped fonts were read from a google/fonts clone at 2eb0b48d5; the METADATA PRs since then change no font binary.
 
