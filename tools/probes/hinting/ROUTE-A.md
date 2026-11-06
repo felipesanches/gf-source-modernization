@@ -73,6 +73,30 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## 0h2 (b) on all 23 other instructed .sfd families, 2026-11-06
+
+`land-sfd-binary-2026-11-06.tsv`: the 23 other instructed families whose source is .sfd,
+landed from their binaries (a scratch binary family table; each family's .sfd plan set aside
+during its landing and restored, so differences those plans accept show as failures). Play
+is held out: its upstream source is a Glyphs file, not an import.
+
+All 23 now keep their hinting. Four needed three more restorations, found in Kristi, Over
+the Rainbow, Puritan and Thabit (composites rendering differently at a few sizes): a glyph
+whose recorded box differs from its points (a stale box, lsb equal to the recorded xMin)
+is now recorded too; a composite whose recorded box differs from its components' is
+recorded (`boxes`), every other box is recomputed from the points as fontTools does (the
+Rust step kept the compiler's composite boxes after moving component points, and fontTools'
+composite recalculation recalculated its components); and head flags bits 2 and 4. Follow-up commits on the open PRs, googlefonts/gftools#1248
+and simoncozens/gftools-rust#2.
+
+| result                                                                                                  | families |
+|---------------------------------------------------------------------------------------------------------|----------|
+| CLEAN, hinting kept                                                                                     | 12       |
+| hinting kept; only ordinary binary-route plan work left (GDEF classes, names, line spacing disclosures) | 11       |
+
+`e2e-final-2026-11-05.txt` rerun with these fixes: 20 of 20 through both builders; Actor,
+Volkhov, Alef and Patrick Hand re-landed unchanged.
+
 ## 0h2 decided (b), 2026-11-05: hinted .sfd families convert from their binaries
 
 Felipe chose (b). Measured (`land-0h2b-2026-11-05.tsv`; a scratch family table with binary

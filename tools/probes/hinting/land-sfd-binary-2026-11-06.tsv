@@ -1,0 +1,23 @@
+allerta	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	AllertaStencil-Regular=0 functional=PASS
+comicrelief	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	ComicRelief-Regular=0 functional=FAIL(gdef); ComicRelief-Bold=0 functional=FAIL(gdef)
+corben	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Corben-Regular=0 functional=FAIL(shaping+gdef); Corben-Bold=0 functional=PASS
+lohitbengali	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Lohit-Bengali=0 functional=FAIL(shaping+line_spacing)
+lohittamil	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Lohit-Tamil=0 functional=FAIL(line_spacing)
+meiescript	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	MeieScript-Regular=0 functional=PASS
+novacut	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NovaCut=0 functional=PASS
+novaflat	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NovaFlat=0 functional=PASS
+novamono	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	NovaMono=0 functional=FAIL(shaping+rendering+gdef)
+novaoval	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NovaOval=0 functional=PASS
+novaround	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NovaRound=0 functional=PASS
+novaslim	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NovaSlim=0 functional=PASS
+novasquare	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	NovaSquare=0 functional=PASS
+sixcaps	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	SixCaps=0 functional=PASS
+thegirlnextdoor	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	TheGirlNextDoor=0 functional=PASS
+tuffy	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Tuffy-Bold=0 functional=FAIL(shaping+gdef); Tuffy-BoldItalic=0 functional=FAIL(shaping+line_spacing+gdef); Tuffy-Italic=0 functional=PASS; Tuffy-Regular=0 functional=PASS
+unifraktur	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	UnifrakturMaguntia-Book=3 functional=FAIL(shaping+gdef)
+varela	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Varela-Regular=6 functional=FAIL(shaping+gdef)
+wallpoet	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Wallpoet-Regular=0 functional=PASS
+kristi	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Kristi-Regular=0 functional=FAIL(names+line_spacing)
+overtherainbow	main	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	OvertheRainbow=0 functional=PASS
+puritan	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Puritan-Bold=0 functional=PASS; Puritan-BoldItalic=0 functional=FAIL(line_spacing); Puritan-Italic=0 functional=PASS; Puritan-Regular=0 functional=PASS
+thabit	main	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER-UNCOMMITTED-EVIDENCE	Thabit-Bold=2 functional=PASS; Thabit=2 functional=PASS; Thabit-Oblique=2 functional=FAIL(line_spacing); Thabit-BoldOblique=2 functional=FAIL(line_spacing)
