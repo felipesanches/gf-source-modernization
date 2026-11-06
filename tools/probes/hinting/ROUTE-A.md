@@ -83,6 +83,13 @@ point-identical to Play-Regular, and the hinting file refuses 1,802 and 1,789 gl
 (Regular, Bold). So Play's hinting is kept only by converting from the binaries, or not at
 all (disclosed).
 
+Felipe chose the binaries (2026-11-06). Play moves to families-binary.tsv; its plan keeps
+the Glyphs source and the older ones as earlier sources, drops the disclosures written for
+building the Glyphs source, and states `gdef_classes_fea`. Landed
+(`land-play-binary-2026-11-06.tsv`): both styles pass all eight functional checks, hinting
+included; what remains is fontc's GSUB lookup numbering (3 rows per style), the class the
+38 VFB imports of PR-QUEUE 0c2 disclose (bottleneck 7).
+
 ## 0h2 (b) on all 23 other instructed .sfd families, 2026-11-06
 
 `land-sfd-binary-2026-11-06.tsv`: the 23 other instructed families whose source is .sfd,
