@@ -73,6 +73,16 @@ with hinting"; "Maybe this behaviour should have an on/off toggle").
    same with fontc once (3) exists.
 5. **Re-land** the repositories that fail `hinting`; the gate decides each.
 
+## Play, 2026-11-06: its Glyphs source cannot carry the release's hinting
+
+Felipe asked to measure keeping Play's Glyphs source (alexeiva/play d84ad58f3a3b,
+sources/Play.glyphs) with a hinting file. That file is cubic (11,510 CURVE nodes, no
+QCURVE): the release's quadratic points came from Glyphs.app's own curve conversion, which
+no rebuild reproduces. Built from the landed repo's sources, 17 of 1,150 glyphs are
+point-identical to Play-Regular, and the hinting file refuses 1,802 and 1,789 glyphs
+(Regular, Bold). So Play's hinting is kept only by converting from the binaries, or not at
+all (disclosed).
+
 ## 0h2 (b) on all 23 other instructed .sfd families, 2026-11-06
 
 `land-sfd-binary-2026-11-06.tsv`: the 23 other instructed families whose source is .sfd,
