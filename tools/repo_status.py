@@ -135,7 +135,12 @@ def main():
             g = "MISSING, landed CLEAN: create it, then push" if clean else "MISSING, conversion not ready yet"
         elif i["remote"].startswith("branches"):
             ours = "%s=%s" % (i["branch"], i["head"][:7]) in i["remote"] if i["head"] else False
-            g = "PUBLISHED: the landed head is on it" if ours else "has content: a branch and a pull request"
+            # a main landing whose main has moved on since (e.g. the 2026-11-04 template commits): ls-remote
+            # shows only the tip, so this is not an ancestry check
+            names = [x.split("=")[0] for x in i["remote"].split(": ", 1)[-1].split()]
+            later = i["branch"] == "main" and "main" in names and public
+            g = ("PUBLISHED: the landed head is on it" if ours else
+                 "PUBLISHED, main has later commits" if later else "has content: a branch and a pull request")
         else:
             g = i["remote"]
         groups[g].append("%s (%s%s)" % (repo, i["verdict"], "" if public or not i["ledger"] else ", " + dict(LEDGERS)[i["ledger"]]))
@@ -202,9 +207,10 @@ def markdown(repos, groups):
     census_exists = g("census only (not paired yet): googlefonts/<slug> exists")
     content = g("has content")
     published = g("PUBLISHED")
+    published_later = g("PUBLISHED, main has later")
     to_create = len(create_clean) + len(create_wait) + len(create_origin) + len(create_census)
     out = ["**Repositories under github.com/googlefonts, %s** (`python3 -I tools/repo_status.py --queue "
-           "/home/fsanches/compartilhado/GoogleFonts/PR-QUEUE.md` refreshes this block; the lists are repos-status.tsv and repos-to-create.txt):" % today, ""]
+           "/home/fsanches/compartilhado/GoogleFonts/REPO-STATUS.md` refreshes this block; the lists are repos-status.tsv and repos-to-create.txt):" % today, ""]
     out.append(table([["group", "count"],
                       ["to create, landing CLEAN now", len(create_clean)],
                       ["to create, paired but the conversion is not CLEAN yet", len(create_wait)],
@@ -213,7 +219,8 @@ def markdown(repos, groups):
                       ["already created empty, landing CLEAN, blocked only by a push or a yes", len(empty_clean)],
                       ["already created empty, waiting for a better conversion", len(empty_wait)],
                       ["existing with content: a branch and a pull request each", len(content)],
-                      ["published: the landed head is on GitHub", len(published)]]))
+                      ["published: the landed head is main on GitHub", len(published) - len(published_later)],
+                      ["published, main has later commits (e.g. the 2026-11-04 template)", len(published_later)]]))
     out += ["", "**For your colleagues: create these %d repositories, empty (no README, no license file):**" % to_create,
             "", "    /home/fsanches/compartilhado/gf-source-modernization/repos-to-create.txt", ""]
     out.append("Of them, CLEAN now: " + " ".join(sorted(create_clean)) + ". Not under googlefonts at all yet, by census class: "
