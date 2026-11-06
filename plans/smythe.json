@@ -1,0 +1,8 @@
+{
+  "repo": "smythe",
+  "commits": [],
+  "gdef_classes_fea": "the release's GDEF classes, which no glyph category of the converted source expresses, so the build without them shapes differently",
+  "earlier_sources": [
+    "https://github.com/googlefonts/googlefontdirectory-hg at 52f780bc9d197280a9f430574e179a5f233c56b6: src/Smythe-Regular.sfd, a FontForge source whose points differ from the release's in 45 glyphs, so the release's TrueType hinting could not apply to a build from it; converted from the shipped font instead (Felipe, 2026-11-06, bottleneck 0h2 b; tools/probes/hinting/ROUTE-A.md)."
+  ]
+}

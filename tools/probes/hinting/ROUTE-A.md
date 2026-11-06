@@ -84,6 +84,13 @@ needs those disclosures for the binary route; Smythe's release has a GDEF table 
 lacks (22,374 shaping runs differ, also on branch 2026-11-02), which binary-route plans
 state as a GDEF-classes source edit (`gdef_classes_fea`).
 
+Done 2026-11-06: Nova Script and Smythe moved from families.tsv to families-binary.tsv; Nova
+Script's plan keeps its disclosures and accepted differences and drops its .sfd naming edits
+(the binary carries the release's names); Smythe's new plan states `gdef_classes_fea`; both
+record the .sfd as an earlier source. Landed (`land-0h2b-2026-11-05.tsv`, on babelfont
+2026-11-02 plus the stored-points commit, gftools-rust apply-hinting): Nova Script
+CLEAN-DISCLOSED, Smythe CLEAN, both with all their hinting.
+
 ## Status, 2026-11-05 last: all 14 measured families keep their hinting
 
 Smythe's last glyph (`E.alt`, a tiny loop through (468,1232) twice) was fontc erasing an
