@@ -17,3 +17,7 @@ Run in four parts because of disk space (each crater run clones google/fonts, ab
 "same": fontc's and fontmake's fonts are identical; "differ": both built and ttx_diff found differences. The 12 are 6 sources in both modes, all in `sizeof(GPOS)` (the size of the two GPOS tables differs): Niconne, Salsa and the four Share styles. The summaries were first written with a crater_local.sh that printed only built or failed; they were regenerated from the same results files with tools/crater_summary.py.
 
 226 targets = 113 sources x (default, gftools).
+
+After googlefonts/fontc_crater#118 merged, its CI run (https://github.com/googlefonts/fontc_crater/commit/8ccbcff, results/2026-11-06-154211.json, fontc d73bdfae) built the same 226 targets with the same result per target: 214 identical, 12 differ, 0 failed; none of the 4,163 existing targets changed category from the previous run (results/2026-11-05-163454.json). Checked with
+
+  python3 tools/crater_ci_compare.py <8ccbcff:results/2026-11-06-154211.json> <8ccbcff^:results/2026-11-05-163454.json> logs/crater-local-2026-11-04b/chunk-*.summary.txt
