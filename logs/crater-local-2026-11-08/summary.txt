@@ -1,0 +1,8 @@
+subset: 1 of 1573 entries are new
+same  googlefonts/intel-one-mono/sources/config.yaml masters/IntelOneMono-Italic.designspace?06572f3e0b (default)
+same  googlefonts/intel-one-mono/sources/config.yaml masters/IntelOneMono.designspace?06572f3e0b (default)
+FAIL  googlefonts/intel-one-mono/sources/config.yaml masters/IntelOneMono-Italic.designspace?06572f3e0b (gftools)
+      {"compile_failed": {"fontc": {"command": "gftools builder <scratch>/cache/googlefonts/intel-one-mono_06572f3e0b/sources/config_1lxa7qfd.yaml --experimental-simple-output <tmp>/.tmpk7ngLN/gftools/gftools_temp_dir --experimental
+FAIL  googlefonts/intel-one-mono/sources/config.yaml masters/IntelOneMono.designspace?06572f3e0b (gftools)
+      {"compile_failed": {"fontc": {"command": "gftools builder <scratch>/cache/googlefonts/intel-one-mono_06572f3e0b/sources/config_5gb4gn2a.yaml --experimental-simple-output <tmp>/.tmpRm4oBp/gftools/gftools_temp_dir --experimental
+4 targets: 2 built (2 same, 0 differ), 2 failed (2026-11-08-131956.json)

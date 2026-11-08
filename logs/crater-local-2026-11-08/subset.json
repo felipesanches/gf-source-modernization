@@ -1,0 +1,11 @@
+{
+  "version": "1.1",
+  "fonts_repo_sha": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+  "sources": [
+    {
+      "repo_url": "https://github.com/googlefonts/intel-one-mono",
+      "rev": "06572f3e0bbd90622b7f9e8b53e5994a1fd9f593",
+      "config": "sources/config.yaml"
+    }
+  ]
+}
