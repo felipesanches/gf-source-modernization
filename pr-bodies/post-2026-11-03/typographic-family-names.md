@@ -12,4 +12,4 @@ Now:
 - The Glyphs writer uses ID 16 as the Glyphs family, so Glyphs derives IDs 1, 2, 4, 16 and 17 itself.
 - For the four style-linked styles, where Glyphs writes no IDs 16/17, a stated ID 16 or 17 that reads differently from IDs 1/2 is written as a Name Table Entry.
 
-Builds on #117, which reads Name Table Entry parameters back, so these names survive a Glyphs round trip (the follow-up PR adds the test).
+Builds on #117, which reads Name Table Entry parameters back, so these names survive a Glyphs round trip (`test_a_typographic_family_entry_survives_a_glyphs_round_trip`).
