@@ -1,0 +1,4 @@
+old 1573 entries, generated 1572, kept by hand 1 (googlesans-flex), result 1573
+added 1, removed 1, rev changed 0
+  + https://github.com/googlefonts/intel-one-mono  sources/config.yaml
+  - https://github.com/intel/intel-one-mono  google/fonts/ofl/intelonemono/config.yaml
