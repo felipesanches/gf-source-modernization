@@ -1,0 +1,203 @@
+== fontforge-fixed-pitch
+  novamono NovaMono advances:
+    u0:  FAIL 1329 glyph advances compared, 0 differ | - post.isFixedPitch: release 1, build 0
+    fontforge-fixed-pitch: PASS 1329 glyph advances compared, 0 differ
+== fontforge-gdef-classes
+  comicrelief ComicRelief-Bold gdef:
+    u0:  FAIL GDEF present/present; 15 class difference(s) shaping reads, 586 it does not | - 15 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, gravecomb 1/3, tildecomb 1/3, uni0302 1/3, uni0304 1/3, uni0305 1/3, uni0306 1/3, uni0307 1/3, uni0308 1/3, uni030A 1/3, uni030B 1/3, uni030C 1/3, uni0326 1/3, uni0327 1/3, uni0328 1/3
+    fontforge-gdef-classes: FAIL GDEF present/absent; 15 class difference(s) shaping reads, 7 it does not | - GDEF absent in the build | - 15 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, gravecomb 1/3, tildecomb 1/3, uni0302 1/3, uni0304 1/3, uni0305 1/3, uni0306 1/3, uni0307 1/3, uni0308 1/3, uni030A 1/3, uni030B 1/3, uni030C 1/3, uni0326 1/3, uni0327 1/3, uni0328 1/3
+  comicrelief ComicRelief-Regular gdef:
+    u0:  FAIL GDEF present/present; 15 class difference(s) shaping reads, 586 it does not | - 15 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, gravecomb 1/3, tildecomb 1/3, uni0302 1/3, uni0304 1/3, uni0305 1/3, uni0306 1/3, uni0307 1/3, uni0308 1/3, uni030A 1/3, uni030B 1/3, uni030C 1/3, uni0326 1/3, uni0327 1/3, uni0328 1/3
+    fontforge-gdef-classes: FAIL GDEF present/absent; 15 class difference(s) shaping reads, 7 it does not | - GDEF absent in the build | - 15 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 1/3, gravecomb 1/3, tildecomb 1/3, uni0302 1/3, uni0304 1/3, uni0305 1/3, uni0306 1/3, uni0307 1/3, uni0308 1/3, uni030A 1/3, uni030B 1/3, uni030C 1/3, uni0326 1/3, uni0327 1/3, uni0328 1/3
+== fontforge-legacy-os2-version
+  thabit Thabit line_spacing:
+    u0:  FAIL per-platform ascender/descender/gap DIFFER | - DirectWrite/GDI line spacing (ascender, descender, gap): release win (983, -528, 0), build typo (819, 0, 900) | - FreeType engines line spacing (ascender, descender, gap): release hhea (983, -244, 100), build typo (819, 0, 900) | - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+    fontforge-legacy-os2-version: PASS per-platform ascender/descender/gap equal
+  thabit Thabit-Oblique line_spacing:
+    u0:  FAIL per-platform ascender/descender/gap DIFFER | - DirectWrite/GDI line spacing (ascender, descender, gap): release win (983, -528, 0), build typo (819, 0, 900) | - FreeType engines line spacing (ascender, descender, gap): release hhea (983, -244, 100), build typo (819, 0, 900) | - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines | - ... 2 more
+    fontforge-legacy-os2-version: FAIL per-platform ascender/descender/gap equal | - fsSelection: ITALIC lost, REGULAR gained | - head.macStyle italic: release 1, build 0
+  lohitbengali Lohit-Bengali line_spacing:
+    u0:  FAIL per-platform ascender/descender/gap DIFFER | - DirectWrite/GDI line spacing (ascender, descender, gap): release win (760, -325, 200), build typo (750, -274, 0) | - FreeType engines line spacing (ascender, descender, gap): release hhea (760, -325, 200), build typo (750, -274, 0) | - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+    fontforge-legacy-os2-version: PASS per-platform ascender/descender/gap equal
+  lohittamil Lohit-Tamil line_spacing:
+    u0:  FAIL per-platform ascender/descender/gap DIFFER | - DirectWrite/GDI line spacing (ascender, descender, gap): release win (866, -363, 17), build typo (1400, -648, 20) | - FreeType engines line spacing (ascender, descender, gap): release hhea (866, -380, 0), build typo (1400, -648, 20) | - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines
+    fontforge-legacy-os2-version: PASS per-platform ascender/descender/gap equal
+  kristi Kristi-Regular line_spacing:
+    u0:  FAIL per-platform ascender/descender/gap DIFFER | - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1836, -724, 0), build typo (1272, -776, 512) | - FreeType engines line spacing (ascender, descender, gap): release hhea (1836, -724, 0), build typo (1272, -776, 512) | - USE_TYPO_METRICS set by the build: it changes the line spacing on DirectWrite/GDI, FreeType engines | - ... 4 more
+    fontforge-legacy-os2-version: FAIL per-platform ascender/descender/gap equal | - fsSelection: ITALIC gained, REGULAR lost | - head.macStyle italic: release 0, build 1 | - x-height as layout engines read it (CSS ex / cap units): release 784, build 742 (the release's OS/2 v1 has no sxHeight; engines measure the outline) | - ... 1 more
+== fontforge-ligature-anchors
+  thabit Thabit rendering:
+    u0:  FAIL diffenator3 95 glyph / 192 word diffs (0 / 44 confirmed); 1 of 447 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 269px, 'الاٍمام' 216px, 'أَهلاً' 158px, 'كلاًّ' 123px, 'كلًّا' 57px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-ligature-anchors: FAIL diffenator3 95 glyph / 148 word diffs (0 / 0 confirmed); 1 of 447 changed outlines draw different ink | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit shaping:
+    u0:  FAIL 860492 runs shaped, 625 differ | - default features, base+mark: 112 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+    fontforge-ligature-anchors: FAIL 860492 runs shaped, 48 differ | - default features, base+mark: 48 of 4248 runs differ
+  thabit Thabit-Bold rendering:
+    u0:  FAIL diffenator3 69 glyph / 194 word diffs (0 / 45 confirmed); 1 of 317 changed outlines draw different ink | - diffenator3: 45 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 317px, 'الاٍمام' 248px, 'أَهلاً' 179px, 'كلاًّ' 144px, 'كلًّا' 56px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-ligature-anchors: FAIL diffenator3 69 glyph / 150 word diffs (0 / 1 confirmed); 1 of 317 changed outlines draw different ink | - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'أَیُّهَا' 52px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit-Bold shaping:
+    u0:  FAIL 847324 runs shaped, 865 differ | - default features, base+mark: 344 of 4248 runs differ | - default features, words: 300 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 4 more
+    fontforge-ligature-anchors: FAIL 847324 runs shaped, 288 differ | - default features, base+mark: 280 of 4248 runs differ | - default features, words: 3 of 622112 runs differ | - GSUB fina off: 1 of 11870 runs differ | - ... 3 more
+  thabit Thabit-BoldOblique rendering:
+    u0:  FAIL diffenator3 98 glyph / 179 word diffs (0 / 44 confirmed); 1 of 535 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 342px, 'الإسلَامِيُّ' 329px, 'بالإِصْدارِ' 310px, 'أجيالًا' 281px, 'الإِدارِيِّ' 280px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-ligature-anchors: FAIL diffenator3 98 glyph / 136 word diffs (0 / 0 confirmed); 1 of 535 changed outlines draw different ink | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit-BoldOblique shaping:
+    u0:  FAIL 834284 runs shaped, 577 differ | - default features, base+mark: 64 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+    fontforge-ligature-anchors: PASS 834284 runs shaped, 0 differ
+  thabit Thabit-Oblique rendering:
+    u0:  FAIL diffenator3 91 glyph / 186 word diffs (0 / 44 confirmed); 1 of 529 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 319px, 'بالإِصْدارِ' 277px, 'أجيالًا' 249px, 'الاٍمام' 226px, 'لِإدراج' 218px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-ligature-anchors: FAIL diffenator3 91 glyph / 142 word diffs (0 / 0 confirmed); 1 of 529 changed outlines draw different ink | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit-Oblique shaping:
+    u0:  FAIL 857750 runs shaped, 577 differ | - default features, base+mark: 64 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+    fontforge-ligature-anchors: PASS 857750 runs shaped, 0 differ
+== fontforge-ligature-anchors+fontforge-no-anchor-propagation
+  thabit Thabit gdef:
+    u0:  PASS GDEF present/present; 0 class difference(s) shaping reads, 574 it does not
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: PASS GDEF present/present; 0 class difference(s) shaping reads, 572 it does not
+  thabit Thabit rendering:
+    u0:  FAIL diffenator3 95 glyph / 192 word diffs (0 / 44 confirmed); 1 of 447 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 269px, 'الاٍمام' 216px, 'أَهلاً' 158px, 'كلاًّ' 123px, 'كلًّا' 57px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: FAIL diffenator3 95 glyph / 148 word diffs (0 / 0 confirmed); 1 of 447 changed outlines draw different ink | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit shaping:
+    u0:  FAIL 860492 runs shaped, 625 differ | - default features, base+mark: 112 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: PASS 857750 runs shaped, 0 differ
+  thabit Thabit-Bold gdef:
+    u0:  PASS GDEF present/present; 0 class difference(s) shaping reads, 543 it does not
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: PASS GDEF present/present; 0 class difference(s) shaping reads, 491 it does not
+  thabit Thabit-Bold rendering:
+    u0:  FAIL diffenator3 69 glyph / 194 word diffs (0 / 45 confirmed); 1 of 317 changed outlines draw different ink | - diffenator3: 45 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 317px, 'الاٍمام' 248px, 'أَهلاً' 179px, 'كلاًّ' 144px, 'كلًّا' 56px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: FAIL diffenator3 69 glyph / 149 word diffs (0 / 0 confirmed); 1 of 317 changed outlines draw different ink | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit-Bold shaping:
+    u0:  FAIL 847324 runs shaped, 865 differ | - default features, base+mark: 344 of 4248 runs differ | - default features, words: 300 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 4 more
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: PASS 834284 runs shaped, 0 differ
+  thabit Thabit-BoldOblique rendering:
+    u0:  FAIL diffenator3 98 glyph / 179 word diffs (0 / 44 confirmed); 1 of 535 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 342px, 'الإسلَامِيُّ' 329px, 'بالإِصْدارِ' 310px, 'أجيالًا' 281px, 'الإِدارِيِّ' 280px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: FAIL diffenator3 98 glyph / 136 word diffs (0 / 0 confirmed); 1 of 535 changed outlines draw different ink | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit-BoldOblique shaping:
+    u0:  FAIL 834284 runs shaped, 577 differ | - default features, base+mark: 64 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: PASS 834284 runs shaped, 0 differ
+  thabit Thabit-Oblique rendering:
+    u0:  FAIL diffenator3 91 glyph / 186 word diffs (0 / 44 confirmed); 1 of 529 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 319px, 'بالإِصْدارِ' 277px, 'أجيالًا' 249px, 'الاٍمام' 226px, 'لِإدراج' 218px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: FAIL diffenator3 91 glyph / 142 word diffs (0 / 0 confirmed); 1 of 529 changed outlines draw different ink | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit-Oblique shaping:
+    u0:  FAIL 857750 runs shaped, 577 differ | - default features, base+mark: 64 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+    fontforge-ligature-anchors+fontforge-no-anchor-propagation: PASS 857750 runs shaped, 0 differ
+== fontforge-ligature-carets
+  no difference from u0 on any of the six originals
+== fontforge-no-anchor-propagation
+  thabit Thabit gdef:
+    u0:  PASS GDEF present/present; 0 class difference(s) shaping reads, 574 it does not
+    fontforge-no-anchor-propagation: PASS GDEF present/present; 0 class difference(s) shaping reads, 572 it does not
+  thabit Thabit rendering:
+    u0:  FAIL diffenator3 95 glyph / 192 word diffs (0 / 44 confirmed); 1 of 447 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 269px, 'الاٍمام' 216px, 'أَهلاً' 158px, 'كلاًّ' 123px, 'كلًّا' 57px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-no-anchor-propagation: FAIL diffenator3 95 glyph / 192 word diffs (0 / 44 confirmed); 1 of 447 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 315px, 'بالإِصْدارِ' 266px, 'الاٍمام' 216px, 'لِإدراج' 212px, 'أَهلاً' 158px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit shaping:
+    u0:  FAIL 860492 runs shaped, 625 differ | - default features, base+mark: 112 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+    fontforge-no-anchor-propagation: FAIL 857750 runs shaped, 577 differ | - default features, base+mark: 64 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+  thabit Thabit-Bold gdef:
+    u0:  PASS GDEF present/present; 0 class difference(s) shaping reads, 543 it does not
+    fontforge-no-anchor-propagation: PASS GDEF present/present; 0 class difference(s) shaping reads, 491 it does not
+  thabit Thabit-Bold rendering:
+    u0:  FAIL diffenator3 69 glyph / 194 word diffs (0 / 45 confirmed); 1 of 317 changed outlines draw different ink | - diffenator3: 45 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 317px, 'الاٍمام' 248px, 'أَهلاً' 179px, 'كلاًّ' 144px, 'كلًّا' 56px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-no-anchor-propagation: FAIL diffenator3 69 glyph / 193 word diffs (0 / 44 confirmed); 1 of 317 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 332px, 'بالإِصْدارِ' 294px, 'الإِدارِيِّ' 261px, 'لِإدراج' 252px, 'الاٍمام' 248px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+  thabit Thabit-Bold shaping:
+    u0:  FAIL 847324 runs shaped, 865 differ | - default features, base+mark: 344 of 4248 runs differ | - default features, words: 300 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 4 more
+    fontforge-no-anchor-propagation: FAIL 834284 runs shaped, 577 differ | - default features, base+mark: 64 of 4248 runs differ | - default features, words: 297 of 622112 runs differ | - default features, kern+mark: 96 of 136 runs differ | - ... 3 more
+== fontforge-notdef
+  thabit Thabit BLOCKING 3 -> 2
+  thabit Thabit-Bold BLOCKING 3 -> 2
+  thabit Thabit-BoldOblique BLOCKING 3 -> 2
+  thabit Thabit-Oblique BLOCKING 3 -> 2
+  thabit Thabit advances:
+    u0:  FAIL 761 glyph advances compared, 1 differ | - 1 advance width(s) differ (release/build): .notdef 374/512
+    fontforge-notdef: PASS 761 glyph advances compared, 0 differ
+  thabit Thabit rendering:
+    u0:  FAIL diffenator3 95 glyph / 192 word diffs (0 / 44 confirmed); 1 of 447 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 269px, 'الاٍمام' 216px, 'أَهلاً' 158px, 'كلاًّ' 123px, 'كلًّا' 57px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-notdef: FAIL diffenator3 95 glyph / 192 word diffs (0 / 44 confirmed); 0 of 446 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 269px, 'الاٍمام' 216px, 'أَهلاً' 158px, 'كلاًّ' 123px, 'كلًّا' 57px
+  thabit Thabit-Bold advances:
+    u0:  FAIL 762 glyph advances compared, 1 differ | - 1 advance width(s) differ (release/build): .notdef 374/512
+    fontforge-notdef: PASS 762 glyph advances compared, 0 differ
+  thabit Thabit-Bold rendering:
+    u0:  FAIL diffenator3 69 glyph / 194 word diffs (0 / 45 confirmed); 1 of 317 changed outlines draw different ink | - diffenator3: 45 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 317px, 'الاٍمام' 248px, 'أَهلاً' 179px, 'كلاًّ' 144px, 'كلًّا' 56px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-notdef: FAIL diffenator3 69 glyph / 194 word diffs (0 / 45 confirmed); 0 of 316 changed outlines draw different ink | - diffenator3: 45 word(s) render differently (>8 px at 16 ppem), confirmed: 'الإٍسلام،' 317px, 'الاٍمام' 248px, 'أَهلاً' 179px, 'كلاًّ' 144px, 'كلًّا' 56px
+  thabit Thabit-BoldOblique advances:
+    u0:  FAIL 762 glyph advances compared, 1 differ | - 1 advance width(s) differ (release/build): .notdef 374/512
+    fontforge-notdef: PASS 762 glyph advances compared, 0 differ
+  thabit Thabit-BoldOblique rendering:
+    u0:  FAIL diffenator3 98 glyph / 179 word diffs (0 / 44 confirmed); 1 of 535 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 342px, 'الإسلَامِيُّ' 329px, 'بالإِصْدارِ' 310px, 'أجيالًا' 281px, 'الإِدارِيِّ' 280px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-notdef: FAIL diffenator3 98 glyph / 179 word diffs (0 / 44 confirmed); 0 of 534 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 342px, 'الإسلَامِيُّ' 329px, 'بالإِصْدارِ' 310px, 'أجيالًا' 281px, 'الإِدارِيِّ' 280px
+  thabit Thabit-Oblique advances:
+    u0:  FAIL 761 glyph advances compared, 1 differ | - 1 advance width(s) differ (release/build): .notdef 374/512
+    fontforge-notdef: PASS 761 glyph advances compared, 0 differ
+  thabit Thabit-Oblique rendering:
+    u0:  FAIL diffenator3 91 glyph / 186 word diffs (0 / 44 confirmed); 1 of 529 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 319px, 'بالإِصْدارِ' 277px, 'أجيالًا' 249px, 'الاٍمام' 226px, 'لِإدراج' 218px | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 128 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 2889px
+    fontforge-notdef: FAIL diffenator3 91 glyph / 186 word diffs (0 / 44 confirmed); 0 of 528 changed outlines draw different ink | - diffenator3: 44 word(s) render differently (>8 px at 16 ppem), confirmed: 'الْإِنْجِيلِ' 319px, 'بالإِصْدارِ' 277px, 'أجيالًا' 249px, 'الاٍمام' 226px, 'لِإدراج' 218px
+  kristi Kristi-Regular advances:
+    u0:  FAIL 207 glyph advances compared, 1 differ | - 1 advance width(s) differ (release/build): .notdef 748/1024
+    fontforge-notdef: PASS 207 glyph advances compared, 0 differ
+  kristi Kristi-Regular rendering:
+    u0:  FAIL diffenator3 7 glyph / 0 word diffs (0 / 0 confirmed); 1 of 28 changed outlines draw different ink | - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): .notdef 10972px
+    fontforge-notdef: PASS diffenator3 7 glyph / 0 word diffs (0 / 0 confirmed); 0 of 27 changed outlines draw different ink
+== fontforge-shadowed-kern-pairs
+  no difference from u0 on any of the six originals
+== fontforge-spacing-marks
+  lohittamil Lohit-Tamil BLOCKING 2 -> 0
+  lohittamil Lohit-Tamil advances:
+    u0:  FAIL 245 glyph advances compared, 2 differ | - 2 advance width(s) differ (release/build): u0BC1 532/0, u0BC2 776/0
+    fontforge-spacing-marks: PASS 245 glyph advances compared, 0 differ
+  lohittamil Lohit-Tamil rendering:
+    u0:  FAIL diffenator3 0 glyph / 2 word diffs (0 / 2 confirmed); 0 of 239 changed outlines draw different ink | - diffenator3: 2 word(s) render differently (>8 px at 16 ppem), confirmed: 'ஃபோர்க்ஸ்ஸூக்குத்' 394px, 'ஃஇன்ஹுவாய்' 251px
+    fontforge-spacing-marks: PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 239 changed outlines draw different ink
+  lohittamil Lohit-Tamil shaping:
+    u0:  FAIL 145355 runs shaped, 3104 differ | - default features, singles: 2 of 134 runs differ | - default features, base+mark: 86 of 854 runs differ | - default features, base+mark+mark: 208 of 784 runs differ | - ... 7 more
+    fontforge-spacing-marks: PASS 145355 runs shaped, 0 differ
+== glyphs3-localized-name-entries
+  comicrelief ComicRelief-Bold names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (72) | - name ID 2 (3,1,0x403): release 'Negreta', build None | - name ID 17 (3,1,0x403) as read: release 'Negreta', build None | - name ID 22 (3,1,0x403) as read: release 'Negreta', build None | - ... 69 more
+    glyphs3-localized-name-entries: PASS IDs 1 2 4 6 16 17 21 22 equal
+  comicrelief ComicRelief-Regular names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (72) | - name ID 2 (3,1,0x403): release 'Normal', build None | - name ID 17 (3,1,0x403) as read: release 'Normal', build None | - name ID 22 (3,1,0x403) as read: release 'Normal', build None | - ... 69 more
+    glyphs3-localized-name-entries: PASS IDs 1 2 4 6 16 17 21 22 equal
+  thabit Thabit names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Medium' | - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Medium' | - name ID 2 (3,1,0xC01): release 'عادي', build None | - ... 3 more
+    glyphs3-localized-name-entries: FAIL IDs 1 2 4 6 16 17 21 22 differ (2) | - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Medium' | - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Medium'
+  thabit Thabit-Bold names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold' | - name ID 2 (3,1,0xC01): release 'عريض', build None | - ... 3 more
+    glyphs3-localized-name-entries: FAIL IDs 1 2 4 6 16 17 21 22 differ (2) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold'
+  thabit Thabit-BoldOblique names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique' | - name ID 2 (3,1,0xC01): release 'عريض مائل', build None | - ... 3 more
+    glyphs3-localized-name-entries: FAIL IDs 1 2 4 6 16 17 21 22 differ (2) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique'
+  thabit Thabit-Oblique names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique' | - name ID 2 (3,1,0xC01): release 'مائل', build None | - ... 3 more
+    glyphs3-localized-name-entries: FAIL IDs 1 2 4 6 16 17 21 22 differ (2) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique'
+== glyphs3-localized-name-entries+typographic-family-names
+  comicrelief ComicRelief-Bold names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (72) | - name ID 2 (3,1,0x403): release 'Negreta', build None | - name ID 17 (3,1,0x403) as read: release 'Negreta', build None | - name ID 22 (3,1,0x403) as read: release 'Negreta', build None | - ... 69 more
+    glyphs3-localized-name-entries+typographic-family-names: PASS IDs 1 2 4 6 16 17 21 22 equal
+  comicrelief ComicRelief-Regular names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (72) | - name ID 2 (3,1,0x403): release 'Normal', build None | - name ID 17 (3,1,0x403) as read: release 'Normal', build None | - name ID 22 (3,1,0x403) as read: release 'Normal', build None | - ... 69 more
+    glyphs3-localized-name-entries+typographic-family-names: PASS IDs 1 2 4 6 16 17 21 22 equal
+  thabit Thabit names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Medium' | - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Medium' | - name ID 2 (3,1,0xC01): release 'عادي', build None | - ... 3 more
+    glyphs3-localized-name-entries+typographic-family-names: PASS IDs 1 2 4 6 16 17 21 22 equal
+  thabit Thabit-Bold names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold' | - name ID 2 (3,1,0xC01): release 'عريض', build None | - ... 3 more
+    glyphs3-localized-name-entries+typographic-family-names: FAIL IDs 1 2 4 6 16 17 21 22 differ (3) | - name ID 1 (3,1,0xC01): release 'ثابت', build None | - name ID 16 (3,1,0xC01) as read: release 'ثابت', build None | - name ID 21 (3,1,0xC01) as read: release 'ثابت', build None
+  thabit Thabit-BoldOblique names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique' | - name ID 2 (3,1,0xC01): release 'عريض مائل', build None | - ... 3 more
+    glyphs3-localized-name-entries+typographic-family-names: FAIL IDs 1 2 4 6 16 17 21 22 differ (3) | - name ID 1 (3,1,0xC01): release 'ثابت', build None | - name ID 16 (3,1,0xC01) as read: release 'ثابت', build None | - name ID 21 (3,1,0xC01) as read: release 'ثابت', build None
+  thabit Thabit-Oblique names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique' | - name ID 2 (3,1,0xC01): release 'مائل', build None | - ... 3 more
+    glyphs3-localized-name-entries+typographic-family-names: FAIL IDs 1 2 4 6 16 17 21 22 differ (3) | - name ID 1 (3,1,0xC01): release 'ثابت', build None | - name ID 16 (3,1,0xC01) as read: release 'ثابت', build None | - name ID 21 (3,1,0xC01) as read: release 'ثابت', build None
+== typographic-family-names
+  thabit Thabit names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Medium' | - name ID 22 (3,1,0x409) as read: release 'Regular', build 'Medium' | - name ID 2 (3,1,0xC01): release 'عادي', build None | - ... 3 more
+    typographic-family-names: FAIL IDs 1 2 4 6 16 17 21 22 differ (4) | - name ID 2 (3,1,0xC01): release 'عادي', build None | - name ID 4 (3,1,0xC01): release 'ثابت', build None | - name ID 17 (3,1,0xC01) as read: release 'عادي', build None | - ... 1 more
+  thabit Thabit-Bold names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold' | - name ID 2 (3,1,0xC01): release 'عريض', build None | - ... 3 more
+    typographic-family-names: FAIL IDs 1 2 4 6 16 17 21 22 differ (7) | - name ID 1 (3,1,0xC01): release 'ثابت', build None | - name ID 2 (3,1,0xC01): release 'عريض', build None | - name ID 4 (3,1,0xC01): release 'ثابت', build None | - ... 4 more
+  thabit Thabit-BoldOblique names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Bold-Oblique' | - name ID 2 (3,1,0xC01): release 'عريض مائل', build None | - ... 3 more
+    typographic-family-names: FAIL IDs 1 2 4 6 16 17 21 22 differ (7) | - name ID 1 (3,1,0xC01): release 'ثابت', build None | - name ID 2 (3,1,0xC01): release 'عريض مائل', build None | - name ID 4 (3,1,0xC01): release 'ثابت', build None | - ... 4 more
+  thabit Thabit-Oblique names:
+    u0:  FAIL IDs 1 2 4 6 16 17 21 22 differ (6) | - name ID 16 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique' | - name ID 21 (3,1,0x409) as read: release 'Thabit', build 'Thabit-Oblique' | - name ID 2 (3,1,0xC01): release 'مائل', build None | - ... 3 more
+    typographic-family-names: FAIL IDs 1 2 4 6 16 17 21 22 differ (7) | - name ID 1 (3,1,0xC01): release 'ثابت', build None | - name ID 2 (3,1,0xC01): release 'مائل', build None | - name ID 4 (3,1,0xC01): release 'ثابت', build None | - ... 4 more
