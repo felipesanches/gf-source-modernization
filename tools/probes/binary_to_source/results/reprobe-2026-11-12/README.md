@@ -24,18 +24,21 @@ Rerun (smallest fonts first; `summary.tsv`, `order.txt`, one log per family):
 
 Result (`summary.tsv`; the `'space'=1` of jsMath is a fontTools warning line counted as a verdict):
 
-| what blocks                                         | families                                                                    |
-|-----------------------------------------------------|-----------------------------------------------------------------------------|
-| CLEAN                                               | Della Respira (has a FontForge source on Launchpad: hub bottleneck 8)       |
-| hinting only                                        | Ubuntu Condensed, Kirang Haerang, Ek Mukta (6 of 7 styles)                  |
-| hinting + 3 table rows (GSUB order, head, vhea)     | Gulim, Gulim Che, Dotum, Dotum Che                                          |
-| hinting + post.isFixedPitch + EBDT/EBLC/EBSC        | Anonymous Pro x4                                                             |
-| hinting + localized names (IDs 1-22 in 0x412)       | Gothic A1 x9                                                                |
-| names, format 14 cmap, GSUB, BASE                   | BPMF Huninn, BPMF Iansui                                                    |
-| italic misread (ID 2, fsSelection, macStyle)        | Averia Gruesa Libre                                                         |
-| space advance 65534 (release) vs 0, hinting         | jsMath x6                                                                    |
-| AAT tables (morx/feat/prop), GSUB, Indic shaping    | Phetsarath x2, Yinmar, Siemreap                                             |
-| build fails (variable: no master at the default)    | Datatype                                                                    |
-| killed (out of memory)                              | Adobe Blank, BPMF Zihi Kai Std                                              |
+| what blocks (functional checks failed; blocking table rows) | families                                                                 |
+|-------------------------------------------------------------|--------------------------------------------------------------------------|
+| CLEAN                                                       | Della Respira (has a FontForge source on Launchpad: hub bottleneck 8)    |
+| hinting only                                                | Ubuntu Condensed, Kirang Haerang, Ek Mukta Regular and Bold              |
+| hinting + names                                             | Ek Mukta ExtraLight, Light, Medium, SemiBold, ExtraBold; Gothic A1 Black |
+| hinting + names + shaping, rendering, GDEF (+ cmap in 2)    | Gothic A1: the other 8 styles                                            |
+| hinting; 3 rows (GSUB, head, vhea version)                  | Gulim                                                                    |
+| hinting; 5 rows (+ vhea extents)                            | Dotum                                                                    |
+| hinting + advances; 5 rows                                  | Gulim Che, Dotum Che                                                     |
+| hinting + post.isFixedPitch; EBDT/EBLC/EBSC                 | Anonymous Pro x4                                                         |
+| cmap (format 14, 8 glyph names) + names; GSUB, BASE, post   | BPMF Huninn, BPMF Iansui                                                 |
+| names + line_spacing (italic misread); GPOS kern            | Averia Gruesa Libre                                                      |
+| shaping + advances + hinting; space advance 65534 vs 0      | jsMath x6 (cmbx10 also line_spacing)                                     |
+| shaping, rendering, hinting...; AAT morx/feat/prop, GSUB    | Phetsarath x2, Yinmar, Siemreap                                          |
+| build fails (variable: no master at the default location)   | Datatype                                                                 |
+| killed (signal 9; cause not recorded)                       | Adobe Blank, BPMF Zihi Kai Std                                           |
 
 Against 2026-10-13: Gothic A1 (8 of 9 did not build) and Kirang Haerang (did not build) now build.
