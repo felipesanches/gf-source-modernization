@@ -22,3 +22,12 @@ Why the upstream Glyphs sources do not reproduce the shipped fonts (repo archive
 - itfoundry/Poppins 738d9d6: Latin and Devanagari in two files that hindkit merged; gftools builds them as two families with numeric style names.
 
 Decision (Felipe, 2026-11-12): Kumar One: measure the Glyphs-source route too before choosing; Hind Colombo and Poppins: recorded, no conversion now.
+
+## Kumar One: both routes measured (2026-11-12)
+
+Glyphs-source route: not possible from what is published. itfoundry/kumar 3192a79 (its only branch head) has 847 glyphs and its own products/KumarOne-Regular.ttf has 847. The shipped font is google/fonts 06463af09 ("hotfix-kumarone: v1.001 added", #973, 2017): 868 glyphs. 22 of them are not in the Glyphs file (gjCH, gjD, gjDD, gjTT, gjTTH, gjJH and ligatures of them), it maps U+0AF9, which the file does not, and the file maps 11 combining marks (U+0302 ... U+0328) that the shipped font does not. The features are in separate .fea files and the file has no instances (probe: research-scratch sessions/2026-11-12_static-overrides-source-work/split_masters.py; a split single-master file gives gftools "No final targets").
+
+Binary route, measurement landings (`landing/`: families.tsv, plans, logs; land.py with BF_TREE = babelfont f1458803 + typographic-family-names, B3 = gftools-rust#2 head, HINTING_EXTRACT = gftools#1248 head; scratch only): both families RESIDUAL, 3 GSUB table rows, functional FAIL(gdef+hinting); cmap, shaping (756602 and 759446 runs, 0 differ), rendering, names, line spacing and advances pass. The two failures:
+
+- gdef: the release has a GDEF table in which 18 marks are unclassified; the build has no GDEF, so shaping reads them as marks. The plan's `gdef_classes_fea` did not produce a table.
+- hinting: prep (127 bytes), fpgm and gasp are now equal to the release's; the gate still reports "the build is instructed (0 glyph programs, fpgm 265 bytes), the release is not".
