@@ -1,0 +1,173 @@
+KumarOne-Regular                 RESIDUAL: 3 blocking row(s), functional FAIL(gdef+hinting)
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [3, 1], "2": [6, 2], "3": [9, 4], "4": [12, 5],
+    BLOCKING GSUB.feature_list {"abvs": {"0": [16, 17]}, "blws": {"0": [17, 18]}, "psts": {"0": [18, 19]}}
+    BLOCKING GSUB.lookup_list {"14": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["gjRA'
+    functional:   cmap         PASS 408 codepoints, exact
+    functional:   shaping      PASS 756602 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 795 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 18 class difference(s) shaping reads, 777 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 18 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 0/3, dotbelowcomb 0/3, gjAnusvara 0/3, gjCandrabindu 0/3, gjNukta 0/3, gjVirama 0/3, gjmAI 0/3, gjmE 0/3, gjmEcandra 0/3, gjmU 0/3, gjmUU 0/3, gjmvL 0/3, gjmvLL 0/3, gjmvR 0/3, gjmvRR 0/3
+    functional:   hinting      FAIL release no glyph programs, prep 127 bytes; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {7: 10, 19: 7, 65535: 15} / {65535: 15}
+    functional:       - prep: release 127 bytes, build the smart_dropout setup (7 bytes)
+KumarOneOutline-Regular          RESIDUAL: 3 blocking row(s), functional FAIL(gdef+hinting)
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [3, 1], "2": [6, 2], "3": [9, 4], "4": [12, 5],
+    BLOCKING GSUB.feature_list {"abvs": {"0": [16, 17]}, "blws": {"0": [17, 18]}, "psts": {"0": [18, 19]}}
+    BLOCKING GSUB.lookup_list {"14": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["gjRA'
+    functional:   cmap         PASS 408 codepoints, exact
+    functional:   shaping      PASS 759446 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 795 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 18 class difference(s) shaping reads, 777 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 18 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 0/3, dotbelowcomb 0/3, gjAnusvara 0/3, gjCandrabindu 0/3, gjNukta 0/3, gjVirama 0/3, gjmAI 0/3, gjmE 0/3, gjmEcandra 0/3, gjmU 0/3, gjmUU 0/3, gjmvL 0/3, gjmvLL 0/3, gjmvR 0/3, gjmvRR 0/3
+    functional:   hinting      FAIL release no glyph programs, prep 127 bytes; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {7: 10, 19: 7, 65535: 15} / {65535: 15}
+    functional:       - prep: release 127 bytes, build the smart_dropout setup (7 bytes)
+HindColombo-Bold                 RESIDUAL: 2 blocking row(s), functional FAIL(shaping+rendering+line_spacing+gdef+hinting)
+    BLOCKING GSUB.feature_list {"blws": {"1": [7, 10]}, "psts": {"0": [8, 11]}}
+    BLOCKING GSUB.lookup_list {"0": {"0": {"uni200D uni0DCA": ["glyph.00571", "uF023B"]}}, "1": {"0": {"uni0D9
+    functional:   cmap         PASS 587 codepoints, exact
+    functional:   shaping      FAIL 893180 runs shaped, 2412 differ
+    functional:       - default features, base+mark: 5 of 1620 runs differ
+    functional:       - default features, rules: 4 of 180 runs differ
+    functional:       - default features, words: 2326 of 673530 runs differ
+    functional:       - ... 6 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 6 word diffs (0 / 6 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 6 word(s) render differently (>8 px at 16 ppem), confirmed: 'මූලිකථ්වයෙන්' 548px, 'අධිමූර්ච්ඡාව' 343px, 'අකුසලමූලයන්' 234px, 'ඇරඹූණු' 146px, 'අගමුලද' 127px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: WWS lost
+    functional:   advances     PASS 588 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 5 class difference(s) shaping reads, 158 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 5 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0DCA 1/3, uni0DD2 1/3, uni0DD3 1/3, uni0DD4 1/3, uni0DD6 1/3
+    functional:   hinting      FAIL release 583 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 141 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3042 bytes, build none
+    functional:       - cvt: release 30 values, build none
+    functional:       - ... 5 more
+HindColombo-Light                RESIDUAL: 2 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+gdef+hinting)
+    BLOCKING GSUB.feature_list {"blws": {"1": [7, 10]}, "psts": {"0": [8, 11]}}
+    BLOCKING GSUB.lookup_list {"0": {"0": {"uni200D uni0DCA": ["glyph.00571", "uF023B"]}}, "1": {"0": {"uni0D9
+    functional:   cmap         PASS 587 codepoints, exact
+    functional:   shaping      FAIL 893180 runs shaped, 3329 differ
+    functional:       - default features, base+mark: 12 of 1620 runs differ
+    functional:       - default features, rules: 11 of 180 runs differ
+    functional:       - default features, words: 3171 of 673530 runs differ
+    functional:       - ... 6 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 6 word diffs (0 / 6 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 6 word(s) render differently (>8 px at 16 ppem), confirmed: 'මූලිකථ්වයෙන්' 687px, 'අධිමූර්ච්ඡාව' 437px, 'අකුසලමූලයන්' 292px, 'ඇරඹූණු' 171px, 'අගමුලද' 147px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Hind Colombo', build 'Hind Colombo Light'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Hind Colombo', build 'Hind Colombo Light'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: REGULAR gained, WWS lost
+    functional:   advances     PASS 588 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 5 class difference(s) shaping reads, 158 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 5 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0DCA 1/3, uni0DD2 1/3, uni0DD3 1/3, uni0DD4 1/3, uni0DD6 1/3
+    functional:   hinting      FAIL release 583 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 141 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3042 bytes, build none
+    functional:       - cvt: release 30 values, build none
+    functional:       - ... 5 more
+HindColombo-Medium               RESIDUAL: 2 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+gdef+hinting)
+    BLOCKING GSUB.feature_list {"blws": {"1": [7, 10]}, "psts": {"0": [8, 11]}}
+    BLOCKING GSUB.lookup_list {"0": {"0": {"uni200D uni0DCA": ["glyph.00571", "uF023B"]}}, "1": {"0": {"uni0D9
+    functional:   cmap         PASS 587 codepoints, exact
+    functional:   shaping      FAIL 893180 runs shaped, 3329 differ
+    functional:       - default features, base+mark: 12 of 1620 runs differ
+    functional:       - default features, rules: 11 of 180 runs differ
+    functional:       - default features, words: 3171 of 673530 runs differ
+    functional:       - ... 6 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 6 word diffs (0 / 6 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 6 word(s) render differently (>8 px at 16 ppem), confirmed: 'මූලිකථ්වයෙන්' 726px, 'අධිමූර්ච්ඡාව' 446px, 'අකුසලමූලයන්' 299px, 'ඇරඹූණු' 171px, 'අගමුලද' 163px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Hind Colombo', build 'Hind Colombo Medium'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Hind Colombo', build 'Hind Colombo Medium'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: REGULAR gained, WWS lost
+    functional:   advances     PASS 588 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 5 class difference(s) shaping reads, 158 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 5 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0DCA 1/3, uni0DD2 1/3, uni0DD3 1/3, uni0DD4 1/3, uni0DD6 1/3
+    functional:   hinting      FAIL release 583 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 141 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3042 bytes, build none
+    functional:       - cvt: release 30 values, build none
+    functional:       - ... 5 more
+HindColombo-Regular              RESIDUAL: 2 blocking row(s), functional FAIL(shaping+rendering+line_spacing+gdef+hinting)
+    BLOCKING GSUB.feature_list {"blws": {"1": [7, 10]}, "psts": {"0": [8, 11]}}
+    BLOCKING GSUB.lookup_list {"0": {"0": {"uni200D uni0DCA": ["glyph.00571", "uF023B"]}}, "1": {"0": {"uni0D9
+    functional:   cmap         PASS 587 codepoints, exact
+    functional:   shaping      FAIL 893180 runs shaped, 3329 differ
+    functional:       - default features, base+mark: 12 of 1620 runs differ
+    functional:       - default features, rules: 11 of 180 runs differ
+    functional:       - default features, words: 3171 of 673530 runs differ
+    functional:       - ... 6 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 6 word diffs (0 / 6 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 6 word(s) render differently (>8 px at 16 ppem), confirmed: 'මූලිකථ්වයෙන්' 710px, 'අධිමූර්ච්ඡාව' 455px, 'අකුසලමූලයන්' 298px, 'ඇරඹූණු' 175px, 'අගමුලද' 158px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: WWS lost
+    functional:   advances     PASS 588 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 5 class difference(s) shaping reads, 158 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 5 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0DCA 1/3, uni0DD2 1/3, uni0DD3 1/3, uni0DD4 1/3, uni0DD6 1/3
+    functional:   hinting      FAIL release 583 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 141 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3042 bytes, build none
+    functional:       - cvt: release 30 values, build none
+    functional:       - ... 5 more
+HindColombo-SemiBold             RESIDUAL: 2 blocking row(s), functional FAIL(shaping+rendering+names+line_spacing+gdef+hinting)
+    BLOCKING GSUB.feature_list {"blws": {"1": [7, 10]}, "psts": {"0": [8, 11]}}
+    BLOCKING GSUB.lookup_list {"0": {"0": {"uni200D uni0DCA": ["glyph.00571", "uF023B"]}}, "1": {"0": {"uni0D9
+    functional:   cmap         PASS 587 codepoints, exact
+    functional:   shaping      FAIL 893180 runs shaped, 2412 differ
+    functional:       - default features, base+mark: 5 of 1620 runs differ
+    functional:       - default features, rules: 4 of 180 runs differ
+    functional:       - default features, words: 2326 of 673530 runs differ
+    functional:       - ... 6 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 6 word diffs (0 / 6 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 6 word(s) render differently (>8 px at 16 ppem), confirmed: 'මූලිකථ්වයෙන්' 686px, 'අධිමූර්ච්ඡාව' 413px, 'අකුසලමූලයන්' 297px, 'ඇරඹූණු' 170px, 'අගමුලද' 157px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Hind Colombo', build 'Hind Colombo SemiBold'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Hind Colombo', build 'Hind Colombo SemiBold'
+    functional:   line_spacing FAIL per-platform ascender/descender/gap equal
+    functional:       - fsSelection: REGULAR gained, WWS lost
+    functional:   advances     PASS 588 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 5 class difference(s) shaping reads, 158 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 5 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni0DCA 1/3, uni0DD2 1/3, uni0DD3 1/3, uni0DD4 1/3, uni0DD6 1/3
+    functional:   hinting      FAIL release 583 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 141 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3042 bytes, build none
+    functional:       - cvt: release 30 values, build none
+    functional:       - ... 5 more
+Poppins-Regular                  RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [3, 1], "2": [6, 3], "3": [9, 5], "4": [12, 6],
+    BLOCKING GSUB.feature_list {"abvs": {"0": [14, 42], "1": [15, 43], "2": [16, 44]}, "blwf": {"0": [6, 7]}, "
+    BLOCKING GSUB.lookup_list {"2": {"0": {"type": ["chained_sequence_context", "ligature"], "rules": [["dvRA'
+Poppins-Italic                   RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [3, 1], "2": [6, 3], "3": [9, 5], "4": [12, 6],
+    BLOCKING GSUB.feature_list {"abvs": {"0": [14, 42], "1": [15, 43], "2": [16, 44]}, "blwf": {"0": [6, 7]}, "
+    BLOCKING GSUB.lookup_list {"2": {"0": {"type": ["chained_sequence_context", "ligature"], "rules": [["dvRA'
+Poppins-Black                    RESIDUAL: 3 blocking row(s), functional FAIL(names)
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [3, 1], "2": [6, 3], "3": [9, 5], "4": [12, 6],
+    BLOCKING GSUB.feature_list {"abvs": {"0": [14, 42], "1": [15, 43], "2": [16, 44]}, "blwf": {"0": [6, 7]}, "
+    BLOCKING GSUB.lookup_list {"2": {"0": {"type": ["chained_sequence_context", "ligature"], "rules": [["dvRA'
+    functional:   cmap         PASS 471 codepoints, exact
+    functional:   shaping      PASS 780406 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Poppins', build 'Poppins Black'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Poppins', build 'Poppins Black'
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1059 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 495 it does not
+    functional:   hinting      PASS release no glyph programs, prep none; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp None / {65535: 15}
