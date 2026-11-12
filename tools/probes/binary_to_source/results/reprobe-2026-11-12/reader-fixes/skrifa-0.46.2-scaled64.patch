@@ -1,0 +1,15 @@
+--- a/src/metrics.rs
++++ b/src/metrics.rs
+@@ -401,9 +401,9 @@
+     fn apply(self, value: i32) -> f32 {
+         // Match FreeType metric scaling
+         // <https://gitlab.freedesktop.org/freetype/freetype/-/blob/80a507a6b8e3d2906ad2c8ba69329bd2fb2a85ef/src/base/ftadvanc.c#L50>
+-        self.0
+-            .mul_div(Fixed::from_bits(value), Fixed::from_bits(64))
+-            .to_f32()
++        let product = self.0.to_bits() as i64 * value as i64;
++        let scaled = (product.abs() + 32) / 64 * product.signum();
++        scaled as f32 * (1.0 / 65536.0)
+     }
+ }
+ 

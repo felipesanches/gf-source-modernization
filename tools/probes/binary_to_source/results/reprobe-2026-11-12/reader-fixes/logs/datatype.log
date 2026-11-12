@@ -1,0 +1,22 @@
+Datatype[wdth,wght]              RESIDUAL: 9 blocking row(s), functional FAIL(names)
+    BLOCKING STAT.version ["1.1", "1.2"]
+    BLOCKING STAT.design_axis_count [2, 3]
+    BLOCKING STAT.design_axes_offset {"2": [null, {"axis_tag": "ARRR", "axis_name_id": "NameId 284", "axis_ordering":
+    BLOCKING STAT.axis_value_count [17, 18]
+    BLOCKING STAT.offset_to_axis_value_offsets {"axis_value_offsets": {"0": {"value_name_id": ["NameId 266", "NameId 276"]}, "1
+    BLOCKING fvar.axis_instance_arrays_offset {"instances": {"0": {"post_script_name_id": [null, "NameId 259"]}, "1": {"subfam
+    BLOCKING fvar.instance_size [12, 14]
+    BLOCKING gvar.shared_tuples_offset {"tuples": {"0": {"values": {"1": [1.0, -1.0]}}, "1": {"values": {"1": [-1.0, 1.
+    BLOCKING meta: whole-table difference
+    functional:   cmap         PASS 319 codepoints, exact
+    functional:   shaping      PASS 630647 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (4)
+    functional:       - name ID 1 (3,1,0x409): release 'Datatype', build 'Datatype Default'
+    functional:       - name ID 4 (3,1,0x409): release 'Datatype Regular', build 'Datatype Default'
+    functional:       - name ID 17 (3,1,0x409) as read: release 'Regular', build 'Default'
+    functional:       - ... 1 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 10850 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      PASS release no glyph programs, prep the smart_dropout setup (7 bytes); build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
