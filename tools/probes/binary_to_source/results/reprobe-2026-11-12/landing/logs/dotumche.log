@@ -1,0 +1,6 @@
+dotumche: RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER @ (scratch commit), 3 commits, 0 edit(s): DotumChe-Regular=5 functional=PASS
+   DotumChe-Regular BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00457": ["glyph.00032", null], "glyph.00458": ["glyph.00033"
+   DotumChe-Regular BLOCKING head.font_direction_hint [1, 2]
+   DotumChe-Regular BLOCKING vhea.version ["1.0", "1.1"]
+   DotumChe-Regular BLOCKING vhea.min_bottom_side_bearing [-9, -7]
+   DotumChe-Regular BLOCKING vhea.y_max_extent [1033, 1031]

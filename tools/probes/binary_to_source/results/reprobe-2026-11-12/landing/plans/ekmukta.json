@@ -1,0 +1,10 @@
+{
+  "repo": "ekmukta",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/googlefonts/MuktaGFVersion at bccb1e2d95db0eea6be66e001edb2aeb50ab8d2b: the fonts as built (28 font files) and TTX dumps of a build (21 files); no source."
+  ],
+  "disclose": [
+    "The released fonts are hinted (TrueType instructions). These sources carry no TrueType instructions, so the build is hinted by ttfautohint: the outlines, spacing and layout are the releases', its rendering at small sizes under a TrueType interpreter is not. Hinting is not compared by the gates."
+  ]
+}

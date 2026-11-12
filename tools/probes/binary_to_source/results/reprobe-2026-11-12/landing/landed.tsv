@@ -1,0 +1,9 @@
+ubuntucondensed	main	(scratch)	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	UbuntuCondensed-Regular=0 functional=PASS
+anonymouspro	main	(scratch)	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	AnonymousPro-Bold=3 functional=FAIL(hinting); AnonymousPro-BoldItalic=3 functional=FAIL(hinting); AnonymousPro-Italic=3 functional=FAIL(hinting); AnonymousPro-Regular=3 functional=FAIL(hinting)
+ekmukta	main	(scratch)	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	EkMukta-Bold=0 functional=PASS; EkMukta-ExtraBold=0 functional=PASS; EkMukta-ExtraLight=0 functional=PASS; EkMukta-Light=0 functional=PASS; EkMukta-Medium=0 functional=PASS; EkMukta-Regular=0 functional=PASS; EkMukta-SemiBold=0 functional=PASS
+kiranghaerang	main	(scratch)	3	CLEAN-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	KirangHaerang-Regular=0 functional=PASS
+gothica1	main	(scratch)	4	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	GothicA1-Black=0 functional=FAIL(names); GothicA1-Bold=0 functional=PASS; GothicA1-ExtraBold=0 functional=FAIL(names); GothicA1-ExtraLight=0 functional=FAIL(names); GothicA1-Light=0 functional=FAIL(names); GothicA1-Medium=0 functional=FAIL(names); GothicA1-Regular=0 functional=PASS; GothicA1-SemiBold=0 functional=FAIL(names); GothicA1-Thin=0 functional=FAIL(names)
+gulim	main	(scratch)	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Gulim-Regular=3 functional=PASS
+gulimche	main	(scratch)	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	GulimChe-Regular=5 functional=PASS
+dotum	main	(scratch)	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	Dotum-Regular=5 functional=PASS
+dotumche	main	(scratch)	3	RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER	DotumChe-Regular=5 functional=PASS

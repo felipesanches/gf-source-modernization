@@ -1,0 +1,57 @@
+anonymouspro: RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER @ (scratch commit), 3 commits, 0 edit(s): AnonymousPro-Bold=3 functional=FAIL(hinting); AnonymousPro-BoldItalic=3 functional=FAIL(hinting); AnonymousPro-Italic=3 functional=FAIL(hinting); AnonymousPro-Regular=3 functional=FAIL(hinting)
+   AnonymousPro-Bold BLOCKING EBDT: whole-table difference
+   AnonymousPro-Bold BLOCKING EBLC: whole-table difference
+   AnonymousPro-Bold BLOCKING EBSC: whole-table difference
+     cmap         PASS 623 codepoints, exact
+     shaping      PASS 759239 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 624 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+     hinting      FAIL release 410 glyph programs; build 410 glyph programs; gasp {9: 2, 13: 1, 65535: 2} / {9: 2, 13: 1, 65535: 2}
+         - hinted rendering, FreeType v35 mono, 8-24 ppem: 2496 of 10608 glyph sizes differ: .notdef@10, .null@10, nonmarkingreturn@10, space@10, numbersign@10
+         - hinted rendering, FreeType v35 gray, 8-24 ppem: 2480 of 10608 glyph sizes differ: .notdef@10, numbersign@10, dollar@10, percent@10, ampersand@10
+         - hinted rendering, FreeType v40 gray, 8-24 ppem: 2480 of 10608 glyph sizes differ: .notdef@10, numbersign@10, dollar@10, percent@10, ampersand@10
+   AnonymousPro-BoldItalic BLOCKING EBDT: whole-table difference
+   AnonymousPro-BoldItalic BLOCKING EBLC: whole-table difference
+   AnonymousPro-BoldItalic BLOCKING EBSC: whole-table difference
+     cmap         PASS 623 codepoints, exact
+     shaping      PASS 759239 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 624 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+     hinting      FAIL release 409 glyph programs; build 409 glyph programs; gasp {9: 2, 13: 1, 65535: 2} / {9: 2, 13: 1, 65535: 2}
+         - hinted rendering, FreeType v35 mono, 8-24 ppem: 2496 of 10608 glyph sizes differ: .notdef@10, .null@10, nonmarkingreturn@10, space@10, numbersign@10
+         - hinted rendering, FreeType v35 gray, 8-24 ppem: 2480 of 10608 glyph sizes differ: .notdef@10, numbersign@10, dollar@10, percent@10, ampersand@10
+         - hinted rendering, FreeType v40 gray, 8-24 ppem: 2480 of 10608 glyph sizes differ: .notdef@10, numbersign@10, dollar@10, percent@10, ampersand@10
+   AnonymousPro-Italic BLOCKING EBDT: whole-table difference
+   AnonymousPro-Italic BLOCKING EBLC: whole-table difference
+   AnonymousPro-Italic BLOCKING EBSC: whole-table difference
+     cmap         PASS 623 codepoints, exact
+     shaping      PASS 759239 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 624 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+     hinting      FAIL release 409 glyph programs; build 409 glyph programs; gasp {9: 2, 13: 1, 65535: 2} / {9: 2, 13: 1, 65535: 2}
+         - hinted rendering, FreeType v35 mono, 8-24 ppem: 2496 of 10608 glyph sizes differ: .notdef@10, .null@10, nonmarkingreturn@10, space@10, numbersign@10
+         - hinted rendering, FreeType v35 gray, 8-24 ppem: 2480 of 10608 glyph sizes differ: .notdef@10, numbersign@10, dollar@10, percent@10, ampersand@10
+         - hinted rendering, FreeType v40 gray, 8-24 ppem: 2480 of 10608 glyph sizes differ: .notdef@10, numbersign@10, dollar@10, percent@10, ampersand@10
+   AnonymousPro-Regular BLOCKING EBDT: whole-table difference
+   AnonymousPro-Regular BLOCKING EBLC: whole-table difference
+   AnonymousPro-Regular BLOCKING EBSC: whole-table difference
+     cmap         PASS 623 codepoints, exact
+     shaping      PASS 759239 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 624 glyph advances compared, 0 differ
+     gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+     hinting      FAIL release 407 glyph programs; build 407 glyph programs; gasp {9: 2, 13: 1, 65535: 2} / {9: 2, 13: 1, 65535: 2}
+         - hinted rendering, FreeType v35 mono, 8-24 ppem: 2496 of 10608 glyph sizes differ: .notdef@10, .null@10, nonmarkingreturn@10, space@10, numbersign@10
+         - hinted rendering, FreeType v35 gray, 8-24 ppem: 2480 of 10608 glyph sizes differ: .notdef@10, numbersign@10, dollar@10, percent@10, ampersand@10
+         - hinted rendering, FreeType v40 gray, 8-24 ppem: 2480 of 10608 glyph sizes differ: .notdef@10, numbersign@10, dollar@10, percent@10, ampersand@10

@@ -1,0 +1,4 @@
+gulim: RESIDUAL-UNPUBLISHED-CONVERTER-UNPUBLISHED-BUILDER @ (scratch commit), 3 commits, 0 edit(s): Gulim-Regular=3 functional=PASS
+   Gulim-Regular BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00547": ["glyph.00004", null], "glyph.00548": ["glyph.00005"
+   Gulim-Regular BLOCKING head.font_direction_hint [1, 2]
+   Gulim-Regular BLOCKING vhea.version ["1.0", "1.1"]

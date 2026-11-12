@@ -10,12 +10,12 @@ decision, not a probe.
 
 Inputs:
 
-| input           | revision                                                                                     |
-|-----------------|----------------------------------------------------------------------------------------------|
-| converter       | simoncozens/babelfont-rs main `f1458803` (includes #139, static TrueType stored points)      |
-| builder         | `tools/land.py` B3_DEFAULT (the builder of every landed binary family)                       |
-| shipped fonts   | google/fonts `c30b221be` (2026-11-11)                                                       |
-| gates           | `tools/table_gate.py`, `tools/functional_gate.py` at the commit adding this directory      |
+| input         | revision                                                                                |
+|---------------|-----------------------------------------------------------------------------------------|
+| converter     | simoncozens/babelfont-rs main `f1458803` (includes #139, static TrueType stored points) |
+| builder       | `tools/land.py` B3_DEFAULT (the builder of every landed binary family)                  |
+| shipped fonts | google/fonts `c30b221be` (2026-11-11)                                                   |
+| gates         | `tools/table_gate.py`, `tools/functional_gate.py` at the commit adding this directory   |
 
 Rerun (smallest fonts first; `summary.tsv`, `order.txt`, one log per family):
 
@@ -42,3 +42,34 @@ Result (`summary.tsv`; the `'space'=1` of jsMath is a fontTools warning line cou
 | killed (signal 9; cause not recorded)                       | Adobe Blank, BPMF Zihi Kai Std                                           |
 
 Against 2026-10-13: Gothic A1 (8 of 9 did not build) and Kirang Haerang (did not build) now build.
+
+## Measurement landings of the nine hinted families (`landing/`)
+
+Question: with the hinting route A tools (`tools/probes/hinting/ROUTE-A.md`), do the families above
+that the hinting gate blocked land equivalent? Scratch landings by `tools/land.py`, never pushed;
+`landing/run.sh` has the command and pins the tools:
+
+| input     | revision                                                                                                |
+|-----------|---------------------------------------------------------------------------------------------------------|
+| converter | babelfont-rs main `f1458803` merged with the branch typographic-family-names (unpublished, PR-QUEUE 1c) |
+| builder   | gftools-builder from the head of https://github.com/simoncozens/gftools-rust/pull/2 (applyHinting)      |
+| extractor | gftools-extract-hinting from the head of https://github.com/googlefonts/gftools/pull/1248               |
+| plans     | `landing/plans/*.json`, from `tools/make_plan.py`; Gothic A1's adds `gdef_classes_fea`                  |
+| land.py   | `fa8b96d`                                                                                               |
+
+The plans' `disclose` line (hinted by ttfautohint) predates route A and does not describe these
+builds. `landed.tsv` and the logs' first line show `(scratch)` where land.py printed the landing
+commit: those commits lived only in scratch.
+
+| family (styles)                      | verdict  | what remains                                                                                                                                                                             |
+|--------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ubuntu Condensed (1)                 | CLEAN    | nothing                                                                                                                                                                                  |
+| Kirang Haerang (1)                   | CLEAN    | nothing                                                                                                                                                                                  |
+| Ek Mukta (7)                         | CLEAN    | nothing; the probe's ID 16/21 name failures in 5 styles are gone with typographic-family-names                                                                                           |
+| Gulim (1)                            | RESIDUAL | functional PASS (hinting included); 3 rows: GSUB lookup list, head.fontDirectionHint 1/2, vhea.version 1.0/1.1                                                                           |
+| Gulim Che, Dotum, Dotum Che (1 each) | RESIDUAL | functional PASS (hinting included); 5 rows: Gulim's 3 + vhea.minBottomSideBearing, vhea.yMaxExtent                                                                                       |
+| Gothic A1 (9)                        | RESIDUAL | Regular and Bold PASS; 7 styles fail names only: the release's Korean (0x412) name ID 1 is the English `Gothic A1`, the build's `고딕 A1` (the release's Korean ID 16)                   |
+| Anonymous Pro (4)                    | RESIDUAL | hinting fails in hinted rendering only, at the release's EBDT strikes (10, 11, 12 and 13 ppem, 624 glyphs each: 2496, the v35 mono count); rows EBDT, EBLC, EBSC (absent from the build) |
+
+Against the probe: Gulim Che and Dotum Che no longer fail advances, and Gothic A1's shaping,
+rendering and GDEF failures are gone with the plan's `gdef_classes_fea` source edit.
