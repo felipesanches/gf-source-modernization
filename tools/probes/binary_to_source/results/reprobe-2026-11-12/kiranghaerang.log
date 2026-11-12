@@ -1,0 +1,14 @@
+KirangHaerang-Regular            RESIDUAL: 0 blocking row(s), functional FAIL(hinting)
+    functional:   cmap         PASS 3158 codepoints, exact
+    functional:   shaping      PASS 7608672 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 1 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 5638 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 2686 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - fpgm: release 371 bytes, build none
+    functional:       - cvt: release 12 values, build none
+    functional:       - maxp TrueType limits (release/build): maxFunctionDefs 10/0, maxStackElements 512/0, maxSizeOfInstructions 1948/0
+    functional:       - ... 4 more
+done

@@ -1,0 +1,212 @@
+GothicA1-Black                   RESIDUAL: 0 blocking row(s), functional FAIL(names+hinting)
+    functional:   cmap         PASS 14721 codepoints, exact
+    functional:   shaping      PASS 2603611 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (10)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 Black'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 Black'
+    functional:       - name ID 1 (3,1,0x412): release 'Gothic A1', build None
+    functional:       - ... 7 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22709 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 10334 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 146 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+GothicA1-Bold                    RESIDUAL: 0 blocking row(s), functional FAIL(shaping+rendering+names+gdef+hinting)
+    functional:   cmap         PASS 14721 codepoints, exact
+    functional:   shaping      FAIL 9875976 runs shaped, 23488 differ
+    functional:       - default features, singles: 10 of 14721 runs differ
+    functional:       - default features, base+mark: 16227 of 1565136 runs differ
+    functional:       - default features, base+mark+mark: 7192 of 129600 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'і҆и҃съ' 357px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+    functional:       - name ID 1 (3,1,0x412): release '고딕 A1', build None
+    functional:       - name ID 2 (3,1,0x412): release 'Bold', build None
+    functional:       - name ID 4 (3,1,0x412): release '고딕 A1 Bold', build None
+    functional:       - ... 5 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22709 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 117 class difference(s) shaping reads, 8155 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 117 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): .notdef.2289 1/3, .notdef.2290 1/3, .notdef.364 1/3, .notdef.365 1/3, .notdef.366 1/3, .notdef.367 1/3, .notdef.368 1/3, .notdef.369 1/3, .notdef.370 1/3, .notdef.371 1/3, .notdef.372 1/3, .notdef.373 1/3, .notdef.374 1/3, .notdef.375 1/3, .notdef.376 1/3
+    functional:   hinting      FAIL release 10334 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 146 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+GothicA1-ExtraBold               RESIDUAL: 0 blocking row(s), functional FAIL(shaping+rendering+names+gdef+hinting)
+    functional:   cmap         PASS 14721 codepoints, exact
+    functional:   shaping      FAIL 9875976 runs shaped, 23488 differ
+    functional:       - default features, singles: 10 of 14721 runs differ
+    functional:       - default features, base+mark: 16227 of 1565136 runs differ
+    functional:       - default features, base+mark+mark: 7192 of 129600 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'і҆и҃съ' 378px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (10)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 ExtraBold'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 ExtraBold'
+    functional:       - name ID 1 (3,1,0x412): release 'Gothic A1', build None
+    functional:       - ... 7 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22709 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 117 class difference(s) shaping reads, 8155 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 117 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): .notdef.2289 1/3, .notdef.2290 1/3, .notdef.364 1/3, .notdef.365 1/3, .notdef.366 1/3, .notdef.367 1/3, .notdef.368 1/3, .notdef.369 1/3, .notdef.370 1/3, .notdef.371 1/3, .notdef.372 1/3, .notdef.373 1/3, .notdef.374 1/3, .notdef.375 1/3, .notdef.376 1/3
+    functional:   hinting      FAIL release 10334 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 146 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+GothicA1-ExtraLight              RESIDUAL: 0 blocking row(s), functional FAIL(shaping+rendering+names+gdef+hinting)
+    functional:   cmap         PASS 14719 codepoints, exact
+    functional:   shaping      FAIL 9875942 runs shaped, 23485 differ
+    functional:       - default features, singles: 10 of 14719 runs differ
+    functional:       - default features, base+mark: 16227 of 1565136 runs differ
+    functional:       - default features, base+mark+mark: 7192 of 129600 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'і҆и҃съ' 200px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (10)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 ExtraLight'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 ExtraLight'
+    functional:       - name ID 1 (3,1,0x412): release 'Gothic A1', build None
+    functional:       - ... 7 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22707 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 117 class difference(s) shaping reads, 8155 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 117 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): .notdef.2289 1/3, .notdef.2290 1/3, .notdef.364 1/3, .notdef.365 1/3, .notdef.366 1/3, .notdef.367 1/3, .notdef.368 1/3, .notdef.369 1/3, .notdef.370 1/3, .notdef.371 1/3, .notdef.372 1/3, .notdef.373 1/3, .notdef.374 1/3, .notdef.375 1/3, .notdef.376 1/3
+    functional:   hinting      FAIL release 10334 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 182 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 26 values, build none
+    functional:       - ... 5 more
+GothicA1-Light                   RESIDUAL: 0 blocking row(s), functional FAIL(shaping+rendering+names+gdef+hinting)
+    functional:   cmap         PASS 14719 codepoints, exact
+    functional:   shaping      FAIL 9875966 runs shaped, 23485 differ
+    functional:       - default features, singles: 10 of 14719 runs differ
+    functional:       - default features, base+mark: 16227 of 1565136 runs differ
+    functional:       - default features, base+mark+mark: 7192 of 129600 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'і҆и҃съ' 231px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (10)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 Light'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 Light'
+    functional:       - name ID 1 (3,1,0x412): release 'Gothic A1', build None
+    functional:       - ... 7 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22707 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 117 class difference(s) shaping reads, 8155 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 117 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): .notdef.2289 1/3, .notdef.2290 1/3, .notdef.364 1/3, .notdef.365 1/3, .notdef.366 1/3, .notdef.367 1/3, .notdef.368 1/3, .notdef.369 1/3, .notdef.370 1/3, .notdef.371 1/3, .notdef.372 1/3, .notdef.373 1/3, .notdef.374 1/3, .notdef.375 1/3, .notdef.376 1/3
+    functional:   hinting      FAIL release 10335 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 146 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+GothicA1-Medium                  RESIDUAL: 0 blocking row(s), functional FAIL(shaping+rendering+names+gdef+hinting)
+    functional:   cmap         PASS 14721 codepoints, exact
+    functional:   shaping      FAIL 2603603 runs shaped, 23488 differ
+    functional:       - default features, singles: 10 of 14721 runs differ
+    functional:       - default features, base+mark: 16227 of 1565136 runs differ
+    functional:       - default features, base+mark+mark: 7192 of 129600 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'і҆и҃съ' 291px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (10)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 Medium'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 Medium'
+    functional:       - name ID 1 (3,1,0x412): release 'Gothic A1', build None
+    functional:       - ... 7 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22709 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 117 class difference(s) shaping reads, 8155 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 117 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): .notdef.2289 1/3, .notdef.2290 1/3, .notdef.364 1/3, .notdef.365 1/3, .notdef.366 1/3, .notdef.367 1/3, .notdef.368 1/3, .notdef.369 1/3, .notdef.370 1/3, .notdef.371 1/3, .notdef.372 1/3, .notdef.373 1/3, .notdef.374 1/3, .notdef.375 1/3, .notdef.376 1/3
+    functional:   hinting      FAIL release 10334 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 146 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+GothicA1-Regular                 RESIDUAL: 0 blocking row(s), functional FAIL(shaping+rendering+names+gdef+hinting)
+    functional:   cmap         PASS 14719 codepoints, exact
+    functional:   shaping      FAIL 9875958 runs shaped, 23485 differ
+    functional:       - default features, singles: 10 of 14719 runs differ
+    functional:       - default features, base+mark: 16227 of 1565136 runs differ
+    functional:       - default features, base+mark+mark: 7192 of 129600 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'і҆и҃съ' 272px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (8)
+    functional:       - name ID 1 (3,1,0x412): release '고딕 A1', build None
+    functional:       - name ID 2 (3,1,0x412): release 'Regular', build None
+    functional:       - name ID 4 (3,1,0x412): release '고딕 A1 Regular', build None
+    functional:       - ... 5 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22707 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 117 class difference(s) shaping reads, 8155 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 117 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): .notdef.2289 1/3, .notdef.2290 1/3, .notdef.364 1/3, .notdef.365 1/3, .notdef.366 1/3, .notdef.367 1/3, .notdef.368 1/3, .notdef.369 1/3, .notdef.370 1/3, .notdef.371 1/3, .notdef.372 1/3, .notdef.373 1/3, .notdef.374 1/3, .notdef.375 1/3, .notdef.376 1/3
+    functional:   hinting      FAIL release 10334 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 146 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+GothicA1-SemiBold                RESIDUAL: 0 blocking row(s), functional FAIL(cmap+shaping+rendering+names+gdef+hinting)
+    functional:   cmap         FAIL 14720 codepoints, 1 problem(s)
+    functional:       - 1 codepoint(s) map to a different glyph: U+2121 .notdef.1578/_notdef.1578
+    functional:   shaping      FAIL 9875991 runs shaped, 23488 differ
+    functional:       - default features, singles: 10 of 14720 runs differ
+    functional:       - default features, base+mark: 16227 of 1565136 runs differ
+    functional:       - default features, base+mark+mark: 7192 of 129600 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 0 of 1 changed outlines draw different ink
+    functional:       - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'і҆и҃съ' 317px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (10)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 SemiBold'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 SemiBold'
+    functional:       - name ID 1 (3,1,0x412): release 'Gothic A1', build None
+    functional:       - ... 7 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22708 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 117 class difference(s) shaping reads, 8155 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 117 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): .notdef.2289 1/3, .notdef.2290 1/3, .notdef.364 1/3, .notdef.365 1/3, .notdef.366 1/3, .notdef.367 1/3, .notdef.368 1/3, .notdef.369 1/3, .notdef.370 1/3, .notdef.371 1/3, .notdef.372 1/3, .notdef.373 1/3, .notdef.374 1/3, .notdef.375 1/3, .notdef.376 1/3
+    functional:   hinting      FAIL release 10339 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 146 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+GothicA1-Thin                    RESIDUAL: 0 blocking row(s), functional FAIL(cmap+shaping+rendering+names+gdef+hinting)
+    functional:   cmap         FAIL 14718 codepoints, 1 problem(s)
+    functional:       - 1 codepoint(s) map to a different glyph: U+2121 .notdef.1578/_notdef.1578
+    functional:   shaping      FAIL 9875957 runs shaped, 23485 differ
+    functional:       - default features, singles: 10 of 14718 runs differ
+    functional:       - default features, base+mark: 16227 of 1565136 runs differ
+    functional:       - default features, base+mark+mark: 7192 of 129600 runs differ
+    functional:       - ... 2 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 1 word diffs (0 / 1 confirmed); 0 of 1 changed outlines draw different ink
+    functional:       - diffenator3: 1 word(s) render differently (>8 px at 16 ppem), confirmed: 'і҆и҃съ' 175px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (10)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 Thin'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Gothic A1', build 'Gothic A1 Thin'
+    functional:       - name ID 1 (3,1,0x412): release 'Gothic A1', build None
+    functional:       - ... 7 more
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22706 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 117 class difference(s) shaping reads, 8155 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 117 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): .notdef.2289 1/3, .notdef.2290 1/3, .notdef.364 1/3, .notdef.365 1/3, .notdef.366 1/3, .notdef.367 1/3, .notdef.368 1/3, .notdef.369 1/3, .notdef.370 1/3, .notdef.371 1/3, .notdef.372 1/3, .notdef.373 1/3, .notdef.374 1/3, .notdef.375 1/3, .notdef.376 1/3
+    functional:   hinting      FAIL release 10340 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 218 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 742 bytes, build none
+    functional:       - cvt: release 28 values, build none
+    functional:       - ... 5 more
+done

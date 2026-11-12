@@ -1,0 +1,102 @@
+EkMukta-Bold                     RESIDUAL: 0 blocking row(s), functional FAIL(hinting)
+    functional:   cmap         PASS 652 codepoints, exact
+    functional:   shaping      PASS 2347597 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1356 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1015 it does not
+    functional:   hinting      FAIL release 1355 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 188 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3437 bytes, build none
+    functional:       - cvt: release 81 values, build none
+    functional:       - ... 5 more
+EkMukta-ExtraBold                RESIDUAL: 0 blocking row(s), functional FAIL(names+hinting)
+    functional:   cmap         PASS 652 codepoints, exact
+    functional:   shaping      PASS 2339988 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta ExtraBold'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta ExtraBold'
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1356 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1015 it does not
+    functional:   hinting      FAIL release 1355 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 188 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3437 bytes, build none
+    functional:       - cvt: release 81 values, build none
+    functional:       - ... 5 more
+EkMukta-ExtraLight               RESIDUAL: 0 blocking row(s), functional FAIL(names+hinting)
+    functional:   cmap         PASS 652 codepoints, exact
+    functional:   shaping      PASS 2381686 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta ExtraLight'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta ExtraLight'
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1356 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1015 it does not
+    functional:   hinting      FAIL release 1355 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 188 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3437 bytes, build none
+    functional:       - cvt: release 81 values, build none
+    functional:       - ... 5 more
+EkMukta-Light                    RESIDUAL: 0 blocking row(s), functional FAIL(names+hinting)
+    functional:   cmap         PASS 652 codepoints, exact
+    functional:   shaping      PASS 2381892 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta Light'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta Light'
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1356 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1015 it does not
+    functional:   hinting      FAIL release 1355 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 188 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3437 bytes, build none
+    functional:       - cvt: release 81 values, build none
+    functional:       - ... 5 more
+EkMukta-Medium                   RESIDUAL: 0 blocking row(s), functional FAIL(names+hinting)
+    functional:   cmap         PASS 652 codepoints, exact
+    functional:   shaping      PASS 2341512 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta Medium'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta Medium'
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1356 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1015 it does not
+    functional:   hinting      FAIL release 1355 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 188 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3437 bytes, build none
+    functional:       - cvt: release 81 values, build none
+    functional:       - ... 5 more
+EkMukta-Regular                  RESIDUAL: 0 blocking row(s), functional FAIL(hinting)
+    functional:   cmap         PASS 652 codepoints, exact
+    functional:   shaping      PASS 2387824 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1356 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1015 it does not
+    functional:   hinting      FAIL release 1355 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 188 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3437 bytes, build none
+    functional:       - cvt: release 81 values, build none
+    functional:       - ... 5 more
+EkMukta-SemiBold                 RESIDUAL: 0 blocking row(s), functional FAIL(names+hinting)
+    functional:   cmap         PASS 652 codepoints, exact
+    functional:   shaping      PASS 2338079 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 16 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta SemiBold'
+    functional:       - name ID 21 (3,1,0x409) as read: release 'Ek Mukta', build 'Ek Mukta SemiBold'
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 1356 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 1015 it does not
+    functional:   hinting      FAIL release 1355 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 188 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3437 bytes, build none
+    functional:       - cvt: release 81 values, build none
+    functional:       - ... 5 more
+done

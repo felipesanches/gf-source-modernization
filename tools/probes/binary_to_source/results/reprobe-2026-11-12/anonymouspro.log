@@ -1,0 +1,69 @@
+AnonymousPro-Bold                RESIDUAL: 3 blocking row(s), functional FAIL(advances+hinting)
+    BLOCKING EBDT: whole-table difference
+    BLOCKING EBLC: whole-table difference
+    BLOCKING EBSC: whole-table difference
+    functional:   cmap         PASS 623 codepoints, exact
+    functional:   shaping      PASS 759239 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 624 glyph advances compared, 0 differ
+    functional:       - post.isFixedPitch: release 1, build 0
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 410 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {9: 2, 13: 1, 65535: 2} / {65535: 15}
+    functional:       - prep: release 181 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 353 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+AnonymousPro-BoldItalic          RESIDUAL: 3 blocking row(s), functional FAIL(advances+hinting)
+    BLOCKING EBDT: whole-table difference
+    BLOCKING EBLC: whole-table difference
+    BLOCKING EBSC: whole-table difference
+    functional:   cmap         PASS 623 codepoints, exact
+    functional:   shaping      PASS 759239 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 624 glyph advances compared, 0 differ
+    functional:       - post.isFixedPitch: release 1, build 0
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 409 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {9: 2, 13: 1, 65535: 2} / {65535: 15}
+    functional:       - prep: release 181 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 353 bytes, build none
+    functional:       - cvt: release 24 values, build none
+    functional:       - ... 5 more
+AnonymousPro-Italic              RESIDUAL: 3 blocking row(s), functional FAIL(advances+hinting)
+    BLOCKING EBDT: whole-table difference
+    BLOCKING EBLC: whole-table difference
+    BLOCKING EBSC: whole-table difference
+    functional:   cmap         PASS 623 codepoints, exact
+    functional:   shaping      PASS 759239 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 624 glyph advances compared, 0 differ
+    functional:       - post.isFixedPitch: release 1, build 0
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 409 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {9: 2, 13: 1, 65535: 2} / {65535: 15}
+    functional:       - prep: release 171 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 353 bytes, build none
+    functional:       - cvt: release 23 values, build none
+    functional:       - ... 5 more
+AnonymousPro-Regular             RESIDUAL: 3 blocking row(s), functional FAIL(advances+hinting)
+    BLOCKING EBDT: whole-table difference
+    BLOCKING EBLC: whole-table difference
+    BLOCKING EBSC: whole-table difference
+    functional:   cmap         PASS 623 codepoints, exact
+    functional:   shaping      PASS 759239 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 624 glyph advances compared, 0 differ
+    functional:       - post.isFixedPitch: release 1, build 0
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 407 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {9: 2, 13: 1, 65535: 2} / {65535: 15}
+    functional:       - prep: release 171 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 353 bytes, build none
+    functional:       - cvt: release 23 values, build none
+    functional:       - ... 5 more
+done

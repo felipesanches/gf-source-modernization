@@ -1,0 +1,3 @@
+Datatype[wdth,wght]              BUILD FAILED (nothing)
+    operation 'InstantiateSource' while building [../fonts//ttf/Datatype-Bold.ttf, ../fonts//webfonts/Datatype-Bold.woff2] from [<Datatype source>]: Failed to set default location: Filter error: No master was present at location Design {wdth: 100.00, wght: 700.02}
+done

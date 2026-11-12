@@ -1,0 +1,31 @@
+Siemreap                         RESIDUAL: 9 blocking row(s), functional FAIL(shaping+rendering+gdef+hinting)
+    BLOCKING GPOS.script_list [{"khmr/dflt": {"lookups": []}, "latn/dflt": {"lookups": []}}, null]
+    BLOCKING GPOS.feature_list [{}, null]
+    BLOCKING GPOS.lookup_list [{}, null]
+    BLOCKING GSUB.script_list {"khmr/dflt": {"lookups": {"4": [5, 4]}}, "latn/dflt": {"lookups": {"0": [4, 5]}
+    BLOCKING GSUB.feature_list {"abvf": {"0": [5, 7], "1": [14, 24]}, "blwf": {"1": [6, 9], "2": [7, 11]}, "blw
+    BLOCKING GSUB.lookup_list {"2": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["uni17D2
+    BLOCKING feat: whole-table difference
+    BLOCKING prop: whole-table difference
+    BLOCKING morx: whole-table difference
+    functional:   cmap         PASS 138 codepoints, exact
+    functional:   shaping      FAIL 164513 runs shaped, 80272 differ
+    functional:       - default features, singles: 30 of 138 runs differ
+    functional:       - default features, base+mark: 614 of 2220 runs differ
+    functional:       - default features, base+mark+mark: 2400 of 3600 runs differ
+    functional:       - ... 54 more
+    functional:   rendering    FAIL diffenator3 30 glyph / 22 word diffs (30 / 22 confirmed); 0 of 0 changed outlines draw different ink
+    functional:       - diffenator3: 30 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+17BF 761px, U+17C0 667px, U+17C5 452px, U+17C4 373px, U+17BE 372px
+    functional:       - diffenator3: 22 word(s) render differently (>8 px at 16 ppem), confirmed: 'គ្រឿងសស្ត្រាវុធ' 910px, 'រ្តៃយ៍' 614px, 'ពិជ័យសង្គ្រាម' 577px, 'ម្ល៉ោះហើយ' 544px, 'អចិន្ត្រៃយ៍' 466px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 693 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/absent; 19 class difference(s) shaping reads, 560 it does not
+    functional:       - GDEF absent in the build
+    functional:       - 19 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): uni17B7 1/3, uni17B8 1/3, uni17B9 1/3, uni17BA 1/3, uni17BB 1/3, uni17BC 1/3, uni17BD 1/3, uni17C6 1/3, uni17C9 1/3, uni17CA 1/3, uni17CB 1/3, uni17CC 1/3, uni17CD 1/3, uni17CE 1/3, uni17CF 1/3
+    functional:   hinting      FAIL release 342 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {8: 2, 16: 1, 65535: 3} / {65535: 15}
+    functional:       - maxp TrueType limits (release/build): maxZones 0/1, maxFunctionDefs 1/0, maxStackElements 72/0, maxSizeOfInstructions 163/0
+    functional:       - 342 of 342 instructed glyph(s) do not carry the release's program on the release's points (342 programs missing, 0 on other points): .notdef, exclam, quotedbl, dollar, percent
+    functional:       - hinted rendering, FreeType v35 mono, 8-24 ppem: 10602 of 11781 glyph sizes differ: exclam@8, quotedbl@8, numbersign@8, dollar@8, percent@8
+    functional:       - ... 2 more
+done
