@@ -1,0 +1,54 @@
+amaranth               default:fail(fontc)=1  default:fail(fontc+fontmake)=1  gftools:fail(fontc)=2  gftools:identical=2
+      1x fontmake: fontmake: Error: In 'googlefonts/amaranth_f4f60a57f5/sources/Amaranth-Roman.glyphs' -> 'master_ufo/Amaranth.design
+amiri                  default:fail(fontc+fontmake)=1  gftools:identical=2
+      1x fontmake: fontmake: Error: In 'aliftype/amiri_04d40ee68c/sources/Amiri.glyphspackage' -> 'master_ufo/Amiri.designspace': Com
+amiriquran             default:fail(fontc+fontmake)=1  gftools:identical=2
+      1x fontmake: fontmake: Error: In 'aliftype/amiri_480bb746e9/sources/Amiri.glyphspackage' -> 'master_ufo/Amiri.designspace': Com
+baijamjuree            default:fail(fontc+fontmake)=1  gftools:fail(fontc)=6  gftools:identical=6
+      1x fontmake: fontmake: Error: In 'cadsondemak/Bai-Jamjuree_e35cafdf69/source/Baijam.glyphs' -> 'master_ufo/BaiJamjuree.designsp
+chakrapetch            default:fail(fontc+fontmake)=1  gftools:fail(fontc)=6  gftools:identical=6
+      1x fontmake: fontmake: Error: In 'm4rc1e/Chakra-Petch_6176529d05/source/Chakra Petch.glyphs' -> 'master_ufo/ChakraPetch.designs
+ibmplexmono            default:fail(fontc+fontmake)=2  gftools:fail(fontc+fontmake)=10
+      1x fontmake: fontmake: Error: In 'googlefonts/plex_9ab3b5b3b9/IBM-Plex-Mono/sources/masters/IBM Plex Mono Italic.designspace': 
+      1x fontmake: fontmake: Error: In 'IBM-Plex-Mono/sources/masters/IBM Plex Mono Italic.designspace': Interpolating instance 'Extralight Italic' failed.: Failed to ge
+ibmplexsanscondensed   default:fail(fontc+fontmake)=2  gftools:fail(fontc+fontmake)=10
+      1x fontmake: fontmake: Error: In 'googlefonts/plex_71d012bccb/IBM-Plex-Sans-Condensed/sources/masters/IBM Plex Sans Condensed I
+      1x fontmake: fontmake: Error: In 'IBM-Plex-Sans-Condensed/sources/masters/IBM Plex Sans Condensed Italic.designspace': Interpolating instance 'Extralight Italic' f
+ibmplexsansdevanagari  default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=5
+      1x fontmake: fontmake: Error: In 'googlefonts/plex_4ef531544d/IBM-Plex-Sans-Devanagari/sources/masters/IBM Plex Sans Devanagari
+      1x fontmake: fontmake: Error: In 'IBM-Plex-Sans-Devanagari/sources/masters/IBM Plex Sans Devanagari.designspace': Interpolating instance 'Extralight' failed.: Fail
+ibmplexsanshebrew      default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=5
+      1x fontmake: fontmake: Error: In 'googlefonts/plex_0f91126e49/IBM-Plex-Sans-Hebrew/sources/masters/IBM Plex Sans Hebrew.designs
+      1x fontmake: fontmake: Error: In 'IBM-Plex-Sans-Hebrew/sources/masters/IBM Plex Sans Hebrew.designspace': Interpolating instance 'Extralight' failed.: Failed to ge
+ibmplexsanskr          default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=8
+      9x fontmake: ValueError: could not convert string to float: ' 100off'
+      8x fontc: ValueError: could not convert string to float: ' 100off'
+ibmplexsansthai        default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=5
+      1x fontmake: fontmake: Error: In 'googlefonts/plex_67b4babc1f/IBM-Plex-Sans-Thai/sources/masters/IBM Plex Sans Thai.designspace
+      1x fontmake: fontmake: Error: In 'IBM-Plex-Sans-Thai/sources/masters/IBM Plex Sans Thai.designspace': Interpolating instance 'Extralight' failed.: Failed to genera
+ibmplexsansthailooped  default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=5
+      1x fontmake: fontmake: Error: In 'googlefonts/plex_20f93381c4/IBM-Plex-Sans-Thai-Looped/sources/masters/IBM Plex Sans Thai Loop
+      1x fontmake: fontmake: Error: In 'IBM-Plex-Sans-Thai-Looped/sources/masters/IBM Plex Sans Thai Looped.designspace': Interpolating instance 'ExtraLight' failed.: Fa
+ibmplexserif           default:fail(fontc+fontmake)=2  gftools:fail(fontc+fontmake)=10
+      1x fontmake: fontmake: Error: In 'googlefonts/plex_43279c1511/IBM-Plex-Serif/sources/masters/IBM Plex Serif Italic.designspace'
+      1x fontmake: fontmake: Error: In 'IBM-Plex-Serif/sources/masters/IBM Plex Serif Italic.designspace': Interpolating instance 'Extralight Italic' failed.: Failed to 
+istokweb               default:fail(fontc+fontmake)=2  gftools:fail(fontc+fontmake)=2
+      1x fontmake: fontmake: Error: In 'm4rc1e/Istok-Web_f995ade617/sources/IstokWeb-Italic.glyphs' -> 'master_ufo/IstokWeb-Italic.de
+      1x fontmake: fontmake: Error: Compiling UFO failed: <features>:61:5: Expected glyph class definition or statement: got NAME mark
+kumarone               default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=1
+      1x fontmake: fontmake: Error: In 'itfoundry/kumar_3192a79a79/masters/Kumar One.glyphs' -> 'master_ufo/KumarOne.designspace': Ge
+      1x fontc: AssertionError: No final targets
+kumaroneoutline        gftools:fail(fontc+fontmake)=1
+      1x fontc: AssertionError: No final targets
+      1x fontmake: AssertionError: No final targets
+mali                   default:fail(fontc+fontmake)=1  gftools:fail(fontc)=6  gftools:identical=6
+      1x fontmake: fontmake: Error: In 'cadsondemak/Mali_4f4843c99a/source/Mali-Master.glyphs' -> 'master_ufo/Mali.designspace': Comp
+pragatinarrow          default:fail(fontc+fontmake)=1  gftools:fail(fontmake)=2
+      2x fontmake: fontmake: Error: Compiling UFO failed: <features>:316:1: "languagesystem deva dflt" has already been specified
+      1x fontmake: fontmake: Error: In 'Omnibus-Type/PragatiNarrow_829be323c4/SRC/PragatiNarrow.glyphs' -> 'master_ufo/PragatiNarrow.
+sarabun                default:fail(fontc+fontmake)=1  gftools:fail(fontc)=10  gftools:identical=6
+      1x fontmake: fontmake: Error: In 'cadsondemak/Sarabun_854cdbc6af/source/Sarabun.glyphs' -> 'master_ufo/Sarabun.designspace': Co
+srisakdi               default:fail(fontc+fontmake)=1  gftools:identical=2
+      1x fontmake: fontmake: Error: In 'cadsondemak/Srisakdi_fc86bd7fea/source/Srisakdi.glyphs' -> 'master_ufo/Srisakdi.designspace':
+thasadith              default:fail(fontc+fontmake)=1  gftools:identical=4
+      1x fontmake: fontmake: Error: In 'cadsondemak/Thasadith_033efaea8d/source/Thasadith_Master.glyphs' -> 'master_ufo/Thasadith.des
