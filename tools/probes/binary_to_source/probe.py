@@ -11,7 +11,10 @@ against the shipped binary exactly as tools/land.py
 gates a conversion -- table gate (tools/table_gate.py), the release's exact codepoints,
 tools/functional_gate.py (cmap, shaping, rendering, names, line spacing, advances, GDEF).
 
-Usage: BF=<babelfont> B3=<gftools-builder> probe.py <scratch dir> <shipped.ttf>...
+VARIABLE=1 builds the variable font instead (buildVariable: true, buildStatic: false) and gates
+fonts/variable/: a shipped variable font is one source, not one per style.
+
+Usage: [VARIABLE=1] BF=<babelfont> B3=<gftools-builder> probe.py <scratch dir> <shipped.ttf>...
 Prints one verdict line per font; the gate's blocking rows and failed checks follow it.
 """
 import os
@@ -30,6 +33,7 @@ from fontTools.ttLib import TTFont  # noqa: E402
 
 BF = os.environ["BF"]
 B3 = os.environ.get("B3", land.B3)
+VARIABLE = os.environ.get("VARIABLE") == "1"
 
 
 def probe(scratch, shipped):
@@ -53,10 +57,11 @@ def probe(scratch, shipped):
     # the landing's: the recipe keeps transformed and nested components, overlaps and the
     # source's glyph names, and autohints only a release that has a font program
     with open(os.path.join(work, "sources", "config.yaml"), "w") as fh:
-        fh.write("buildVariable: false\nremoveOutlineOverlaps: false\n"
+        fh.write(("buildVariable: true\nbuildStatic: false\n" if VARIABLE else "buildVariable: false\n")
+                 + "removeOutlineOverlaps: false\n"
                  + recipe.builder_keys([shipped], False) + "sources:\n  - %s.glyphs\n" % stem)
     b = subprocess.run([B3, "sources/config.yaml"], cwd=work, capture_output=True, text=True)
-    ttf_dir = os.path.join(work, "fonts", "ttf")
+    ttf_dir = os.path.join(work, "fonts", "variable" if VARIABLE else "ttf")
     built = sorted(os.listdir(ttf_dir)) if os.path.isdir(ttf_dir) else []
     if len(built) != 1:
         tail = [l for l in (b.stderr + b.stdout).splitlines() if l.strip()][-3:]
