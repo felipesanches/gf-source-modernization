@@ -1,13 +1,13 @@
 59 targets left out as skipped
-48 entries, 273 targets
+50 entries, 277 targets
 default  differ                 4
-default  fail fontc             8
+default  fail fontc             9
 default  fail fontc+fontmake    30
 default  fail fontmake          2
-default  identical              19
+default  identical              20
 gftools  differ                 2
-gftools  fail fontc             56
+gftools  fail fontc             57
 gftools  fail fontc+fontmake    71
 gftools  fail fontmake          11
-gftools  identical              70
+gftools  identical              71
 gftools-mode fontc-only failures at no master's location: 47

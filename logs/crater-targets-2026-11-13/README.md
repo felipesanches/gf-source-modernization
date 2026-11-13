@@ -36,3 +36,7 @@ Result for the 36 entries, 171 targets:
 fontc_crater's `results/skipped.json` (read by crater since fontc 5715ced0) lists configs its CI does not build. The local runs above used a fresh output directory without that file, so they also built configs the CI skips (the SIL families among them). `crater-local-union-not-skipped.txt` is the same union with `--skipped <the branch's results/skipped.json>`: 48 entries, 273 targets; gftools mode 70 identical, 56 fontc-only failures, 47 of them instances at no master's location.
 
 The branch changes skipped.json in two commits: Khula and Nerko One removed and Charis SIL's reviewed rev updated; then one new group for Tiny5 (+ Duo), Cairo, Cairo Play and Sawarabi Mincho, whose sources are generated at build time. Checked locally: `fontc_crater ci` on those five entries with the new file in the output directory reports no targets and an empty failed_repos.json.
+
+## Fifth commit: google/fonts#11324 (Qahiri, Pushster, Amethysta)
+
+`qahiri-pushster/`: regenerated against [google/fonts 29b4ec6d](https://github.com/google/fonts/tree/29b4ec6df2522a8aee279414b78a07910b065874): 1574 -> 1573 entries (`merge.txt`: Pushster's entry moves to its upstream config, Amethysta's goes). Local crater on Qahiri and Pushster, 4 targets, with the branch's skipped.json: Pushster identical in both modes; Qahiri builds with fontmake and fails in fontc in both modes ("unsupported glyphs predicate attribute 'category'", fontc#2052). `crater-local-union-not-skipped.txt` now covers the four runs.

@@ -1,0 +1,3 @@
+pushster (upstream config) default:identical=1  gftools:identical=1
+qahiri                 default:fail(fontc)=1  gftools:fail(fontc)=1
+      2x fontc: error: unsupported glyphs predicate attribute 'category': only 'name' is supported (see fontc#2052)

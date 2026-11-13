@@ -1,0 +1,5 @@
+old 1574 entries, generated 1572, kept by hand 1 (googlesans-flex), result 1573
+added 1, removed 2, rev changed 0
+  + https://github.com/simoncozens/pushster  sources/config.yaml
+  - https://github.com/cyrealtype/Amethysta  google/fonts/ofl/amethysta/config.yaml
+  - https://github.com/simoncozens/pushster  google/fonts/ofl/pushster/config.yaml
