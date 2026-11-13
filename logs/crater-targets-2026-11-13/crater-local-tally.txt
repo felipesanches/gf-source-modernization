@@ -1,0 +1,64 @@
+Playfair-Display (upstream config) default:identical=2  gftools:fail(fontc+fontmake)=2
+      1x fontc: ValueError: Filename PlayfairDisplay-Italic[wdth,wght].ttf not found in stat dictionary
+      1x fontmake: ValueError: Filename PlayfairDisplay-Italic[wdth,wght].ttf not found in stat dictionary
+Playpen-Sans (upstream config) default:fail(fontc)=1  gftools:fail(fontc)=1
+      2x fontc: error: Expected ';'
+PlusJakartaSans (upstream config) default:identical=2  gftools:identical=2
+Ruda-new (upstream config) default:identical=1  gftools:identical=1
+akatab                 default:diff=1  gftools:fail(fontc)=4  gftools:identical=2
+amita                  default:diff=1  gftools:fail(fontc)=2
+bahianita              default:fail(fontc)=1  gftools:fail(fontc)=1
+charissil              default:fail(fontc+fontmake)=2  gftools:identical=4
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/silnrsi/font-charis/source/CharisSILItalic.designspace': Compatibility check faile
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/silnrsi/font-charis/source/CharisSILRoman.designspace': Compatibility check failed
+charmonman             default:diff=1  gftools:identical=2
+cormorantupright       default:identical=1  gftools:fail(fontc)=3  gftools:identical=2
+courierprime           default:identical=2  gftools:identical=4
+dmmono                 default:diff=2  gftools:fail(fontc)=2  gftools:identical=4
+harmattan              default:fail(fontc+fontmake)=1  gftools:fail(fontc)=4
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/silnrsi/font-harmattan/source/Harmattan.designspace': Generating fonts from Design
+heptaslab              default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=1
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/aaronbell/Hepta-Slab/sources/HeptaSlab.glyphs' -> 'master_ufo/HeptaSlab.designspac
+      1x fontmake: fontmake: Error: In 'sources/HeptaSlab.glyphs' -> 'master_ufo/HeptaSlab.designspace': Generating fonts from Designspace failed: fonts contains incompa
+jaldi                  default:fail(fontmake)=1  gftools:identical=2
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/Omnibus-Type/Jaldi/SRC/Jaldi-[2048].glyphs' -> 'master_ufo/Jaldi.designspace': Com
+kumarone               default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=1
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/itfoundry/kumar/masters/Kumar One.glyphs' -> 'master_ufo/KumarOne.designspace': Ge
+      1x fontc: AssertionError: No final targets
+kumaroneoutline        gftools:fail(fontc+fontmake)=1
+      1x fontc: AssertionError: No final targets
+      1x fontmake: AssertionError: No final targets
+lisubosa               default:diff=2  gftools:fail(fontc)=10  gftools:identical=6
+narnoor                default:diff=1  gftools:fail(fontc)=3  gftools:identical=2
+pacifico               default:identical=1  gftools:identical=1
+playfairdisplaysc      default:identical=2  gftools:fail(fontc)=2  gftools:fail(fontc+fontmake)=2  gftools:fail(fontmake)=4  gftools:identical=4
+      6x fontmake: fontmake: Error: Compiling UFO failed: cyclical component reference: Gcommaaccent -> commaaccentcomb.case -> commaaccentcomb => commaaccentcomb
+rakkas                 default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=1
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/Gue3bara/Rakkas/Rakkas_SourceFiles/Rakkas.glyphs' -> 'master_ufo/Rakkas-Regular.de
+      1x fontmake: fontmake: Error: Compiling UFO failed: mark anchor cannot be numbered: '_top_2'
+rhodiumlibre           default:fail(fontmake)=1  gftools:fail(fontc+fontmake)=1
+      2x fontmake: KeyError: "glyph named 'dollar.lf.BRACKET.varAlt01' already exists"
+      1x fontc: KeyError: "glyph named 'dollar.lf.BRACKET.varAlt01' already exists"
+rowdies                default:identical=1  gftools:identical=3
+ruwudu                 default:fail(fontc+fontmake)=1  gftools:fail(fontc)=2  gftools:identical=2
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/silnrsi/font-ruwudu/source/Ruwudu.designspace': Generating fonts from Designspace 
+sahitya                default:identical=2  gftools:identical=2
+sarala                 default:fail(fontc+fontmake)=1  gftools:fail(fontmake)=2
+      2x fontmake: fontmake: Error: Compiling UFO failed: 'sha_comp'
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/huertatipografica/sarala/Sarala.glyphs' -> 'master_ufo/Sarala.designspace': Compat
+scheherazadenew        default:fail(fontc+fontmake)=1  gftools:fail(fontc)=2  gftools:identical=2
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/silnrsi/font-scheherazade/source/ScheherazadeNew.designspace': Generating fonts fr
+solway                 default:identical=1  gftools:fail(fontc)=4  gftools:identical=1
+srisakdi               default:fail(fontc+fontmake)=1  gftools:identical=2
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/cadsondemak/Srisakdi/source/Srisakdi.glyphs' -> 'master_ufo/Srisakdi.designspace':
+sulphurpoint           default:fail(fontc+fontmake)=1  gftools:diff=2  gftools:fail(fontmake)=1
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/noponies/sulphur-point/sources/sulphur-point.glyphs' -> 'master_ufo/SulphurPoint.d
+      1x fontmake: fontmake: error: sources/instance_ufos/SulphurPoint-Regular.ufo.json not found
+sura                   default:fail(fontc+fontmake)=1  gftools:identical=2
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/huertatipografica/sura/Sura.glyphs' -> 'master_ufo/Sura.designspace': Compatibilit
+tirra                  default:diff=1  gftools:fail(fontc)=4  gftools:identical=2
+tsukimirounded         default:identical=1  gftools:fail(fontc)=4  gftools:identical=1
+unna                   default:identical=2  gftools:fail(fontc)=2  gftools:identical=2
+vesperlibre            default:fail(fontc+fontmake)=1  gftools:fail(fontc+fontmake)=2  gftools:fail(fontmake)=2
+      2x fontmake: fontmake: Error: Compiling UFO failed: <features>:276:1: "languagesystem deva dflt" has already been specified
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/motaitalic/vesper-libre/VesperLibre.glyphs' -> 'master_ufo/VesperLibre.designspace

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Question: per family, how did the local crater run of the 21 overrides changed by
-google/fonts #11277 and #11303 go? Counts per mode: identical / diff / which compiler failed,
+"""Question: per family, how did a local crater run (tools/crater_local.sh) go? Counts per mode: identical / diff / which compiler failed,
 and the most common last error line of each failing compiler.
 
 Usage: crater_local_tally.py <crater results json>
 """
 import collections, json, re, sys
 d = json.load(open(sys.argv[1]))
-fam = lambda tid: re.search(r"ofl/([^/]+)/config", tid).group(1)
+def fam(tid):
+    m = re.search(r"ofl/([^/]+)/config", tid)   # an override config: the google/fonts family dir
+    return m.group(1) if m else tid.split("/")[1] + " (upstream config)"
 mode = lambda tid: "gftools" if "(gftools" in tid else "default"
 tally = collections.defaultdict(collections.Counter); errs = collections.defaultdict(collections.Counter)
 for tid, v in d["success"].items():
