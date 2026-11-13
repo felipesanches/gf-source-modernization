@@ -30,3 +30,9 @@ Result for the 36 entries, 171 targets:
 ## Third commit: google/fonts#11323 (Khula, Nerko One)
 
 `khula-nerkoone/`: regenerated against [google/fonts b78877b7](https://github.com/google/fonts/tree/b78877b777ed3a18a1b431b0df7d8ee3f84c2e5f): no entry changes (`merge.txt`), only `fonts_repo_sha`. Local crater on the two entries, 12 targets (`crater-local-tally.txt`): Nerko One identical in both modes; Khula's five UFOs build with fontmake and fail in fontc in both modes. fontc's error: `feature pres {` opens in `UFO/Khula-shaping.fea` and closes in the next included file, `UFO/<Weight>/feat/<Weight>-Ivowel.fea` ("Feature block is unclosed"). `crater-local-union.txt` now covers the three runs: 56 entries, 332 targets.
+
+## skipped.json
+
+fontc_crater's `results/skipped.json` (read by crater since fontc 5715ced0) lists configs its CI does not build. The local runs above used a fresh output directory without that file, so they also built configs the CI skips (the SIL families among them). `crater-local-union-not-skipped.txt` is the same union with `--skipped <the branch's results/skipped.json>`: 48 entries, 273 targets; gftools mode 70 identical, 56 fontc-only failures, 47 of them instances at no master's location.
+
+The branch changes skipped.json in two commits: Khula and Nerko One removed and Charis SIL's reviewed rev updated; then one new group for Tiny5 (+ Duo), Cairo, Cairo Play and Sawarabi Mincho, whose sources are generated at build time. Checked locally: `fontc_crater ci` on those five entries with the new file in the output directory reports no targets and an empty failed_repos.json.

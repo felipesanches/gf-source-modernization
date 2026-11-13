@@ -4,7 +4,8 @@ targets are identical / differ / fail in which compiler, and how many fontc-only
 static instances at no master's location? A family present in a later file replaces its
 results from the earlier ones (re-pinned entries).
 
-Usage: crater_local_union.py <results json, oldest first>...
+Usage: crater_local_union.py [--skipped <fontc_crater results/skipped.json>] <results json, oldest first>...
+With --skipped, targets of the configs that file lists are left out, as crater's CI does.
 """
 import collections, json, re, sys
 
@@ -23,11 +24,18 @@ def family(tid):
     m = re.search(r"ofl/([^/]+)/config", tid)
     return m.group(1) if m else tid.split("/")[1]
 
+args = sys.argv[1:]; skip = set()
+if args[0] == "--skipped":
+    skip = {k for g in json.load(open(args[1])) for k in g["configs"]}; args = args[2:]
 merged = {}
-for path in sys.argv[1:]:
+for path in args:
     run = load(path); fams = {family(t) for t in run}
     merged = {t: v for t, v in merged.items() if family(t) not in fams}
     merged.update(run)
+n_all = len(merged)
+merged = {t: v for t, v in merged.items() if t.split(" ")[0] not in skip}
+if skip:
+    print("%d targets left out as skipped" % (n_all - len(merged)))
 count = collections.Counter(); off = 0
 for tid, (kind, is_off) in merged.items():
     mode = "gftools" if "(gftools" in tid else "default"
