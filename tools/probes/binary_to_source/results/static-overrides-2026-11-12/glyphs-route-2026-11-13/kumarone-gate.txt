@@ -1,0 +1,38 @@
+KumarOne RESIDUAL: 17 blocking row(s), functional FAIL(shaping+rendering+line_spacing+gdef+hinting)
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [3, 1], "2": [6, 2], "3": [9, 4], "4": [12, 5],
+    BLOCKING GSUB.feature_list {"abvs": {"0": [16, 17]}, "blws": {"0": [17, 18]}, "psts": {"0": [18, 19]}}
+    BLOCKING GSUB.lookup_list {"14": {"0": {"rules": {"0": ["gjRA' lookup lookup_19 gjmvR", "gjRA' lookup look
+    BLOCKING OS/2.fs_type [0, 8]
+    BLOCKING OS/2.y_strikeout_position [360, 408]
+    BLOCKING OS/2.panose_10 {"2": [5, 0]}
+    BLOCKING OS/2.ach_vend_id ["ITFO", "    "]
+    BLOCKING OS/2.s_typo_ascender [1137, 800]
+    BLOCKING OS/2.s_typo_descender [-642, -200]
+    BLOCKING OS/2.s_typo_line_gap [0, 200]
+    BLOCKING OS/2.us_win_ascent [1137, 1000]
+    BLOCKING OS/2.us_win_descent [642, 200]
+    BLOCKING OS/2.sx_height [600, 680]
+    BLOCKING OS/2.s_cap_height [800, 750]
+    BLOCKING hhea.ascender [1137, 1000]
+    BLOCKING hhea.descender [-642, -200]
+    BLOCKING post.underline_position [-75, -100]
+    functional:   cmap         PASS 408 codepoints, exact
+    functional:   shaping      FAIL 756602 runs shaped, 528 differ
+    functional:       - default features, base+mark: 464 of 3075 runs differ
+    functional:       - default features, base+mark+mark: 64 of 2600 runs differ
+    functional:   rendering    FAIL diffenator3 4 glyph / 30 word diffs (2 / 15 confirmed); 65 of 410 changed outlines draw different ink
+    functional:       - diffenator3: 2 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0309 62px, U+0323 38px
+    functional:       - diffenator3: 15 word(s) render differently (>8 px at 16 ppem), confirmed: 'અતિધ્રુવીભવનોત્તર' 18px, 'પ્રજોત્ત્પત્તિ' 17px, 'આંન્ધ્રપ્રદેશના' 15px, 'પ્રકૄતિ' 13px, 'આન્ત્રેપ્રેન્યોરશીપ' 12px
+    functional:       - 65 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): hookabovecomb 625px, dieresiscomb 434px, dotbelowcomb 222px, dotaccentcomb 210px, Eng 25px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing FAIL per-platform ascender/descender/gap DIFFER
+    functional:       - CoreText line spacing (ascender, descender, gap): release hhea (1137, -642, 0), build hhea (1000, -200, 0)
+    functional:       - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1137, -642, 0), build win (1000, -200, 0)
+    functional:       - FreeType engines line spacing (ascender, descender, gap): release hhea (1137, -642, 0), build hhea (1000, -200, 0)
+    functional:       - ... 11 more
+    functional:   advances     PASS 797 glyph advances compared, 0 differ
+    functional:   gdef         FAIL GDEF present/present; 25 class difference(s) shaping reads, 0 it does not
+    functional:       - 25 glyph class(es) differ where shaping reads them (release/build; '-' = decided by substitution, the build has no class table): acutecomb 0/3, brevecomb 0/3, caroncomb 0/3, circumflexcomb 0/3, dieresiscomb 0/3, dotaccentcomb 0/3, dotbelowcomb 0/3, gjAnusvara 0/3, gjCandrabindu 0/3, gjNukta 0/3, gjVirama 0/3, gjmAI 0/3, gjmE 0/3, gjmEcandra 0/3, gjmU 0/3
+    functional:   hinting      FAIL release no glyph programs, prep 127 bytes; build no glyph programs, prep none; gasp {7: 10, 19: 7, 65535: 15} / None
+    functional:       - prep: release 127 bytes, build none
+    functional:       - gasp: release {7: 10, 19: 7, 65535: 15}, build None

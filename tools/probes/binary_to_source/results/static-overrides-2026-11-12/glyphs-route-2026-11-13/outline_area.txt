@@ -1,0 +1,18 @@
+== KumarOne
+  bounds differ: hookabovecomb (121, 875, 321, 1137) (-300, 875, -100, 1137)
+  bounds differ: dotbelowcomb (100, -174, 214, -60) (-214, -174, -100, -60)
+  bounds differ: dieresiscomb (100, 880, 433, 994) (-433, 880, -100, 994)
+  bounds differ: dotaccentcomb (100, 880, 214, 994) (-214, 880, -100, 994)
+  bounds differ: commaaccentcomb (100, -380, 290, -52) (-280, -380, -90, -52)
+  bounds differ: cedillacomb (100, -302, 254, -50) (-254, -302, -100, -50)
+  bounds differ: ogonekcomb (100, -235, 336, 47) (-336, -235, -100, 47)
+372 of 868 glyphs differ in signed area (>200) or bounds; 365 have equal bounds; 19 have opposite sign
+== KumarOneOutline
+  bounds differ: hookabovecomb (121, 875, 321, 1137) (-300, 875, -100, 1137)
+  bounds differ: dotbelowcomb (100, -174, 214, -60) (-214, -174, -100, -60)
+  bounds differ: dieresiscomb (100, 880, 433, 994) (-433, 880, -100, 994)
+  bounds differ: dotaccentcomb (100, 880, 214, 994) (-214, 880, -100, 994)
+  bounds differ: commaaccentcomb (100, -380, 290, -52) (-280, -380, -90, -52)
+  bounds differ: cedillacomb (100, -302, 254, -50) (-254, -302, -100, -50)
+  bounds differ: ogonekcomb (100, -235, 336, 47) (-336, -235, -100, 47)
+805 of 868 glyphs differ in signed area (>200) or bounds; 798 have equal bounds; 682 have opposite sign
