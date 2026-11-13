@@ -1,0 +1,12 @@
+54 entries, 320 targets
+default  differ                 9
+default  fail fontc             3
+default  fail fontc+fontmake    35
+default  fail fontmake          2
+default  identical              18
+gftools  differ                 2
+gftools  fail fontc             80
+gftools  fail fontc+fontmake    71
+gftools  fail fontmake          11
+gftools  identical              89
+gftools-mode fontc-only failures at no master's location: 74
