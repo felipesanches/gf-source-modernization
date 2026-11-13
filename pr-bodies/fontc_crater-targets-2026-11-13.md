@@ -1,4 +1,4 @@
-Title: crater targets: google/fonts at 3e56677 (corrected pins, buildVariable: false overrides)
+Title: crater targets: google/fonts at 3e56677 (buildVariable: false in 35 overrides, 22 corrected pins)
 
 Body:
 * google/fonts#11277
