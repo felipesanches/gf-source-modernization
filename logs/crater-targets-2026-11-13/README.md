@@ -26,3 +26,7 @@ Result for the 36 entries, 171 targets:
 - Both fail: Hepta Slab (incompatible glyph uniEFFD), Kumar One and Outline ("No final targets"), Rakkas ('_top_2' anchor), Rhodium Libre (duplicate bracket glyph), Vesper Libre, Playfair Display (gftools names the fonts `[wdth,wght]`, which the config's stat block does not list), two Playfair Display SC instances.
 
 `crater-local-union.txt`: this run and the 2026-11-12 one (the 21 overrides of #11277 and #11303) taken together, by `tools/probes/crater_local/crater_local_union.py <2026-11-12 results> <2026-11-13 results>`: 54 entries (Srisakdi, Kumar One and Kumar One Outline are in both; the later results count), 320 targets. Both runs used fontc 5715ced0 and the same Python pins.
+
+## Third commit: google/fonts#11323 (Khula, Nerko One)
+
+`khula-nerkoone/`: regenerated against [google/fonts b78877b7](https://github.com/google/fonts/tree/b78877b777ed3a18a1b431b0df7d8ee3f84c2e5f): no entry changes (`merge.txt`), only `fonts_repo_sha`. Local crater on the two entries, 12 targets (`crater-local-tally.txt`): Nerko One identical in both modes; Khula's five UFOs build with fontmake and fail in fontc in both modes. fontc's error: `feature pres {` opens in `UFO/Khula-shaping.fea` and closes in the next included file, `UFO/<Weight>/feat/<Weight>-Ivowel.fea` ("Feature block is unclosed"). `crater-local-union.txt` now covers the three runs: 56 entries, 332 targets.

@@ -1,0 +1,3 @@
+khula                  default:fail(fontc)=5  gftools:fail(fontc)=5
+      10x fontc: error: Unexpected token '}', expected global keyword.
+nerkoone               default:identical=1  gftools:identical=1
