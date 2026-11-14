@@ -1,0 +1,47 @@
+== main run: 2026-11-14-175436.json (38 entries; Gayathri not fetched)
+AlienBlock (upstream config) default:identical=1  gftools:identical=1
+Asap_Sharp (upstream config) default:identical=2  gftools:identical=2
+Castoro (upstream config) default:identical=1  gftools:identical=1
+FinlandicaHeadline (upstream config) default:identical=2  gftools:identical=2
+FinlandicaText (upstream config) default:identical=2  gftools:identical=2
+Firjar (upstream config) default:identical=1  gftools:identical=1
+HiburMono (upstream config) default:identical=1  gftools:fail(fontc)=1
+      1x fontc: error: unexpected argument '--overlaps-backend' found
+Madhuban (upstream config) default:identical=1  gftools:identical=1
+Redaction (upstream config) default:identical=21  gftools:identical=21
+Yuyu-Font (upstream config) default:identical=2  gftools:identical=2
+agrave-pro (upstream config) default:identical=1  gftools:identical=1
+akt (upstream config)  default:identical=1  gftools:identical=1
+arya                   default:identical=1  gftools:fail(fontc)=1  gftools:fail(fontc+fontmake)=1
+      1x fontmake: fontmake: error: Source/instance_ufos/Arya-Regular.ufo.json not found
+bjcree                 default:diff=1  gftools:fail(fontc)=4
+      4x fontc: error: unexpected argument '--feature-writer' found
+caacupe (upstream config) default:identical=1  gftools:identical=1
+cabin                  default:identical=2  gftools:identical=2
+cambay                 default:identical=4  gftools:identical=4
+clarity-city (upstream config) default:identical=2  gftools:identical=2
+coda                   default:fail(fontc+fontmake)=2  gftools:fail(fontc+fontmake)=2
+      2x fontmake: fontTools.ufoLib.errors.GlifLibError: The file 'A_.glif' associated with glyph 'A' in contents.plist does not exist on <osfs '<scratch>
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/vernnobile/CodaFont_41ce6c5246/coda/1.0/Heavy/src/Coda-Heavy.ufo': Reading UFO source failed:
+cousine (upstream config) default:identical=4  gftools:identical=4
+geist-font (upstream config) default:fail(fontc)=1  gftools:fail(fontc)=1
+geomini (upstream config) default:identical=3  gftools:identical=3
+googlesans-flex (upstream config) default:fail(fontmake)=1  gftools:fail(fontc+fontmake)=1
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/googlefonts/googlesans-flex_cedf1e9cef/sources/GoogleSansFlex.glyphspackage' -> 'master_ufo/G
+isometra               default:identical=1  gftools:identical=1
+libre-caslon-condensed (upstream config) default:identical=2  gftools:identical=2
+mpluscodelatin         default:diff=1  gftools:diff=1
+nevermind (upstream config) default:fail(fontc)=1  gftools:fail(fontc+fontmake)=1
+      1x fontmake: ValueError: Filename Nevermind[ital,wght].ttf not found in stat dictionary
+scoutie (upstream config) default:identical=2  gftools:identical=2
+sigmar                 default:identical=1  gftools:identical=1
+syriac (upstream config) default:identical=1
+tangerine              default:fail(fontc+fontmake)=1  gftools:identical=2
+      1x fontmake: fontmake: Error: In '../../crater-local-2026-11-08/cache/googlefonts/TangerineFont_9b57a9f9be/sources/Tangerine_Regular.glyphs' -> 'master_ufo/Tangeri
+tinos (upstream config) default:identical=4  gftools:identical=4
+valley-sans (upstream config) default:identical=2  gftools:identical=2
+xmind (upstream config) default:fail(fontc)=1  gftools:fail(fontc+fontmake)=1
+      1x fontmake: ValueError: Filename Xmind[ital,wght].ttf not found in stat dictionary
+
+== Gayathri alone: 2026-11-14-225205.json
+gayathri               default:diff=3  gftools:diff=3
