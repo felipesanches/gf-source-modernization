@@ -1,0 +1,23 @@
+GowunBatang RESIDUAL: 5 blocking row(s), functional FAIL(shaping+advances+hinting)
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"3": [4, 3], "4": [5, 4], "5": [6, 5], "6": [7, 6], "
+    BLOCKING GSUB.feature_list {"case": {"0": [22, 20]}, "ccmp": {"1": [5, 4], "2": [5, null]}, "dnom": {"0": [
+    BLOCKING GSUB.lookup_list {"1": {"0": {"A": {"0": ["uniFF21", "ordfeminine"], "1": ["ordfeminine", "uniFF2
+    BLOCKING vmtx.top_side_bearings {"462": [219, 218], "1367": [99, 98], "1479": [94, 93]}
+    functional:   cmap         PASS 12494 codepoints, exact
+    functional:   shaping      FAIL 11665116 runs shaped, 23547 differ
+    functional:       - default features, base+mark: 567 of 320382 runs differ
+    functional:       - default features, kern+mark: 15505 of 187560 runs differ
+    functional:       - GSUB aalt on: 6755 of 54956 runs differ
+    functional:       - ... 8 more
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 10362 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 12549 glyph advances compared, 0 differ
+    functional:       - 3 vertical metric(s) differ: uni3132 (1000, 219)/(1000, 218), uniAF2C (1000, 99)/(1000, 98), uniAF9C (1000, 94)/(1000, 93)
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 103 it does not
+    functional:   hinting      FAIL release no glyph programs, prep none; build 11818 glyph programs; gasp {65535: 10} / {65535: 15}
+    functional:       - prep: release none, build 189 bytes
+    functional:       - the build is instructed (11818 glyph programs, fpgm 3596 bytes), the release is not
+    functional:       - 11818 of 0 instructed glyph(s) do not carry the release's program on the release's points (0 programs missing, 0 on other points): .notdef, A, Aacute, Abreve, uni1EAE
+    functional:       - ... 3 more

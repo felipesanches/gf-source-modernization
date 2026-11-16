@@ -1,0 +1,24 @@
+GowunBatang RESIDUAL: 5 blocking row(s), functional FAIL(shaping+rendering+advances+hinting)
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"3": [4, 3], "4": [5, 4], "5": [6, 5], "6": [7, 6], "
+    BLOCKING GSUB.feature_list {"case": {"0": [22, 20]}, "ccmp": {"1": [5, 4], "2": [5, null]}, "dnom": {"0": [
+    BLOCKING GSUB.lookup_list {"1": {"0": {"A": {"0": ["uniFF21", "ordfeminine"], "1": ["ordfeminine", "uniFF2
+    BLOCKING vmtx.top_side_bearings {"error": "There are 130 changes, check manually!"}
+    functional:   cmap         PASS 12494 codepoints, exact
+    functional:   shaping      FAIL 11663056 runs shaped, 21554 differ
+    functional:       - default features, base+mark: 458 of 320382 runs differ
+    functional:       - default features, kern+mark: 13573 of 185656 runs differ
+    functional:       - GSUB aalt on: 6755 of 54956 runs differ
+    functional:       - ... 8 more
+    functional:   rendering    FAIL diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 1 of 11106 changed outlines draw different ink
+    functional:       - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): uni2776 15px
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 12549 glyph advances compared, 0 differ
+    functional:       - 130 vertical metric(s) differ: uni316D (1000, 264)/(1000, 263), uniAD58 (1000, 68)/(1000, 69), uniAD59 (1000, 68)/(1000, 69), uniAD5A (1000, 68)/(1000, 69), uniAD5B (1000, 68)/(1000, 69)
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 98 it does not
+    functional:   hinting      FAIL release no glyph programs, prep none; build 11693 glyph programs; gasp {65535: 10} / {65535: 15}
+    functional:       - prep: release none, build 189 bytes
+    functional:       - the build is instructed (11693 glyph programs, fpgm 3596 bytes), the release is not
+    functional:       - 11693 of 0 instructed glyph(s) do not carry the release's program on the release's points (0 programs missing, 0 on other points): .notdef, A, Aacute, Abreve, uni1EAE
+    functional:       - ... 3 more
