@@ -1,0 +1,8 @@
+{
+  "repo": "gowunbatang",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/yangheeryu/Gowun-Batang at 4e73f5a9a004927220354f4b68a4c720da538147, the designer's repository: sources/GowunBatang.zip holds GowunBatang.glyphs (113 MB). Built today it does not give the release (shaping differs in 21554 of 11663056 runs for the Regular; logs/crater-skipped-2026-11-16), so the fonts as shipped are the source of record here."
+  ],
+  "gdef_classes_fea": "the release's GDEF classes glyphs no glyph category expresses; a lookup filters on glyph class (logs/crater-skipped-2026-11-16/probe-korean.txt)"
+}
