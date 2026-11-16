@@ -21,10 +21,10 @@ fontc_crater's `results/skipped.json` lists 9 google/fonts override configs that
 
 Lancelot's only `.vfb` (`Lancelot_source/Lancelot_Rom_Reg.vfb` at antonxheight/Lancelot 3039d277) is not a `-TTF` import, so both routes were measured. `lancelot-vfb-route.log`: `FAMILIES=<a one-row table of kind upstream> tools/land.py lancelot --unpublished-converter` with the VFB reader of babelfont-rs worktree vfb-integration (unpublished).
 
-| route  | blocking rows | functional gate                                                            |
-|--------|---------------|----------------------------------------------------------------------------|
-| binary | 0             | fails hinting only                                                         |
-| VFB    | 23            | fails shaping, rendering, names, line spacing, advances and hinting        |
+| route  | blocking rows | functional gate                                                     |
+|--------|---------------|---------------------------------------------------------------------|
+| binary | 0             | fails hinting only                                                  |
+| VFB    | 23            | fails shaping, rendering, names, line spacing, advances and hinting |
 
 The `.vfb` is an earlier state of the design, not what shipped: 7 outlines draw different ink (b, T, B, F, E, ...), 11 advances differ, the names read `Lancelot_Rom_Reg`, the vertical metrics differ and the release's `titl` feature is absent. Lancelot therefore joins `families-binary.tsv` with the six `-TTF.vfb` imports.
 
