@@ -1,0 +1,4 @@
+gowunbatang	main	-	4	CLEAN	GowunBatang-Regular=0 functional=PASS; GowunBatang-Bold=0 functional=PASS
+dongle	main	-	4	CLEAN	Dongle-Bold=0 functional=PASS; Dongle-Light=0 functional=PASS; Dongle-Regular=0 functional=PASS
+englebert	main	-	3	RESIDUAL-UNCOMMITTED-EVIDENCE	Englebert-Regular=3 functional=PASS
+englebert	main	-	3	CLEAN-DISCLOSED	Englebert-Regular=3 functional=PASS

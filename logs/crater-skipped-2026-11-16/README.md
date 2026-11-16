@@ -56,3 +56,9 @@ The `.vfb` is an earlier state of the design, not what shipped: 7 outlines draw 
 ## With unmodified upstream tools
 
 `probe-upstream-babelfont-f1458803.txt`: the same probe of the 8 fonts of the 7 VFB families with babelfont at simoncozens/babelfont-rs main f1458803 (no fork commits) and gftools-builder 1e638bd, verdict and blocking rows only. The verdicts equal those of `probe.txt`: Codystar (Light, Regular) is CLEAN; the other six differ as listed above. Codystar-Light's usWeightClass 300 travels as FEA (`tools/workarounds.py`, the fontc 1.0.0 single-master weight class), which is a line in the source, not a tool change.
+
+## Measurement landings of 2026-11-16 (second set)
+
+`landed-measurement-2.tsv` (scratch OUT and LANDED, babelfont 26fdcfa9, gftools-builder 1e638bd): Gowun Batang CLEAN (2 styles) and Dongle CLEAN (3 styles), both with the plan's `gdef_classes_fea`; Englebert CLEAN-DISCLOSED.
+
+Englebert's three rows: the two GSUB rows are fontc's lookup numbering and packing (the release's `frac` rules are chaining contextual, type 6, without backtrack or lookahead; the build's are contextual, type 5), the row Bigelow Rules has; text shapes identically in 535652 runs. `head.version`: the release's head table states version 1.010 (0x0001028F, its fontRevision) where the format allows only 1.0. google/fonts 90abd17b4 (2015) had 1.0; the hotfix 056368350 (2024-12-04) edited the binary. It is the only font in google/fonts cc39c4c2c with another value (`head_version_scan.py`, research-scratch `sessions/2026-11-16_crater-skipped/`). Felipe accepted the row as a disclosed release defect on 2026-11-16.
