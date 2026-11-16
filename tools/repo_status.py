@@ -34,6 +34,7 @@ CENSUS_CLASSES = ("sfd", "vfb", "sfd+vfb", "binary-only", "no-repo", "empty")
 CLONES = ("/home/fsanches/compartilhado/sfd-reland-repos",
           "/home/fsanches/compartilhado/vfb-reland-repos-fixes",
           "/home/fsanches/compartilhado/vfb-reland-repos")
+LEDGER_CLONES = dict(zip(("landed.tsv", "landed-vfb-fixes.tsv", "landed-vfb.tsv"), CLONES))
 
 
 def rows(path):
@@ -84,7 +85,10 @@ def main():
                 repos[slug] = {"table": "census", "kind": r["class"], "base": r["repo"]}
     for repo, info in repos.items():
         info["dest"] = "https://github.com/googlefonts/%s.git" % repo
-        for c in CLONES:
+        # a landed repository's destination is its own ledger's clone, never another track's
+        # (a pushed clone may be gone: the repo archive mirrors it, and the default holds)
+        ledger = landed.get(repo, {}).get("ledger")
+        for c in ((LEDGER_CLONES[ledger],) if ledger else CLONES):
             d = os.path.join(c, repo)
             if os.path.isdir(d):
                 p = subprocess.run(["git", "-C", d, "remote", "get-url", "origin"], capture_output=True, text=True)
