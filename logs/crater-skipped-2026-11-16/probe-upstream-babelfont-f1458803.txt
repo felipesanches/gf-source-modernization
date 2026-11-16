@@ -1,0 +1,14 @@
+Bonbon-Regular                   RESIDUAL: 0 blocking row(s), functional FAIL(hinting)
+Codystar-Light                   CLEAN: 0 blocking row(s), functional PASS
+Codystar-Regular                 CLEAN: 0 blocking row(s), functional PASS
+Englebert-Regular                RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.feature_list {"frac": {"0": [4, 7]}, "ordn": {"0": [3, 4]}}
+    BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[two th
+    BLOCKING head.version ["1.655", "1.0"]
+Federo-Regular                   RESIDUAL: 1 blocking row(s), functional FAIL(hinting)
+    BLOCKING hmtx.nonmarkingreturn {"width": [532, 0]}
+Iceberg-Regular                  RESIDUAL: 1 blocking row(s), functional FAIL(hinting)
+    BLOCKING PCLT: whole-table difference
+Iceland-Regular                  RESIDUAL: 1 blocking row(s), functional FAIL(hinting)
+    BLOCKING PCLT: whole-table difference
+Lancelot-Regular                 RESIDUAL: 0 blocking row(s), functional FAIL(hinting)

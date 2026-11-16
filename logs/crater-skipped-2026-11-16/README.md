@@ -52,3 +52,7 @@ The `.vfb` is an earlier state of the design, not what shipped: 7 outlines draw 
 
 - Dongle's Glyphs file on gftools-builder d93d65e: the build was killed (exit 137) twice, the second time with nothing else running on a 32 GB machine; the builder had reached 9.5 GB after 40 seconds in the first attempt. The kernel log could not be read to confirm it was memory.
 - Decision: both families convert from their binaries. Dongle's rows return to this track (its landing of October was CLEAN; it had been withdrawn when the zipped source was found).
+
+## With unmodified upstream tools
+
+`probe-upstream-babelfont-f1458803.txt`: the same probe of the 8 fonts of the 7 VFB families with babelfont at simoncozens/babelfont-rs main f1458803 (no fork commits) and gftools-builder 1e638bd, verdict and blocking rows only. The verdicts equal those of `probe.txt`: Codystar (Light, Regular) is CLEAN; the other six differ as listed above. Codystar-Light's usWeightClass 300 travels as FEA (`tools/workarounds.py`, the fontc 1.0.0 single-master weight class), which is a line in the source, not a tool change.
