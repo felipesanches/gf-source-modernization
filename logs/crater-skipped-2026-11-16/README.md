@@ -41,7 +41,7 @@ The `.vfb` is an earlier state of the design, not what shipped: 7 outlines draw 
 |---------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------|
 | binary (`probe-korean.txt`)                       | 1 blocking row each (GDEF glyph classes); functional gate passes                    | the same                                  |
 | Glyphs, gftools-builder 1e638bd (pinned)          | 1261 rows (Regular); cmap, shaping, rendering, names, advances, GDEF fail           | 1095 and 1115 rows (Light, Regular)       |
-| Glyphs, gftools-builder d93d65e (upstream main)   | 6 and 7 rows; shaping, rendering, names, advances (no vhea/vmtx), gasp fail         | not measured (the run was stopped: memory) |
+| Glyphs, gftools-builder d93d65e (upstream main)   | 6 and 7 rows; shaping, rendering, names, advances (no vhea/vmtx), gasp fail         | build killed twice (exit 137), see below  |
 | Glyphs, Python gftools 0.10.8                     | 5 rows each; shaping, advances (vmtx off by 1), hinting (config default) fail       | does not build without the source edit    |
 
 - gftools-builder 1e638bd reads an all-digit Glyphs 2 code point (`unicode = 2002;`) as decimal: 332 code points land on other values (U+2002 becomes U+07D2). glyphslib 0.2.8 at that revision; upstream main d93d65e has glyphslib 0.4.1, which reads them as hexadecimal, and the build has the release's 12494 code points.
@@ -49,3 +49,6 @@ The `.vfb` is an earlier state of the design, not what shipped: 7 outlines draw 
 - With d93d65e the Glyphs route also differs in `perthousand`'s outline, name IDs 4 and 6 of the Regular (`Gowun Batang`), usWeightClass of the Bold (400), and has no vhea/vmtx and no gasp.
 - The binary-route sources are 30 to 55 MB per style; the upstream Glyphs files are about 113 MB.
 - Dongle's source edit (`dongle_edit.py`, research-scratch): `parallel` loses `unicode = 2225`; the release maps U+2225 to `dblverticalbar` only and keeps `parallel` unencoded.
+
+- Dongle's Glyphs file on gftools-builder d93d65e: the build was killed (exit 137) twice, the second time with nothing else running on a 32 GB machine; the builder had reached 9.5 GB after 40 seconds in the first attempt. The kernel log could not be read to confirm it was memory.
+- Decision: both families convert from their binaries. Dongle's rows return to this track (its landing of October was CLEAN; it had been withdrawn when the zipped source was found).

@@ -2,6 +2,7 @@
   "repo": "dongle",
   "commits": [],
   "earlier_sources": [
-    "https://github.com/yangheeryu/Dongle, the designer's repository: it holds the fonts as built, no source."
-  ]
+    "https://github.com/yangheeryu/Dongle at f7127c4d2450e1cad20254ec692591347e2fc260, the designer's repository: sources/Dongle.zip holds Dongle.glyphs (113 MB). It maps U+2225 to two glyphs, which fontmake rejects, and built with gftools-builder it is far from the release (logs/crater-skipped-2026-11-16), so the fonts as shipped are the source of record here."
+  ],
+  "gdef_classes_fea": "the release's GDEF classes glyphs no glyph category expresses; a lookup filters on glyph class (logs/crater-skipped-2026-11-16/probe-korean.txt)"
 }
