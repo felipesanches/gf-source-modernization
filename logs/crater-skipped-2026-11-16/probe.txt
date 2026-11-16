@@ -1,0 +1,75 @@
+'kern' subtable longer than defined: 68156 bytes instead of 2620 bytes
+Bonbon-Regular                   RESIDUAL: 0 blocking row(s), functional FAIL(hinting)
+    functional:   cmap         PASS 214 codepoints, exact
+    functional:   shaping      PASS 535652 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 220 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 167 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 348 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 3012 bytes, build none
+    functional:       - cvt: release 37 values, build none
+    functional:       - ... 5 more
+Codystar-Light                   CLEAN: 0 blocking row(s), functional PASS
+Codystar-Regular                 CLEAN: 0 blocking row(s), functional PASS
+Englebert-Regular                RESIDUAL: 3 blocking row(s), functional PASS
+    BLOCKING GSUB.feature_list {"frac": {"0": [4, 7]}, "ordn": {"0": [3, 4]}}
+    BLOCKING GSUB.lookup_list {"3": {"0": {"type": ["chained_sequence_context", "single"], "rules": [["[two th
+    BLOCKING head.version ["1.655", "1.0"]
+Federo-Regular                   RESIDUAL: 1 blocking row(s), functional FAIL(hinting)
+    BLOCKING hmtx.nonmarkingreturn {"width": [532, 0]}
+    functional:   cmap         PASS 214 codepoints, exact
+    functional:   shaping      PASS 583362 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 215 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 209 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {8: 2, 65535: 3} / {65535: 15}
+    functional:       - prep: release 226 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 371 bytes, build none
+    functional:       - cvt: release 15 values, build none
+    functional:       - ... 5 more
+Iceberg-Regular                  RESIDUAL: 1 blocking row(s), functional FAIL(hinting)
+    BLOCKING PCLT: whole-table difference
+    functional:   cmap         PASS 215 codepoints, exact
+    functional:   shaping      PASS 535653 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 220 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 172 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 77 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 2641 bytes, build none
+    functional:       - cvt: release 19 values, build none
+    functional:       - ... 5 more
+Iceland-Regular                  RESIDUAL: 1 blocking row(s), functional FAIL(hinting)
+    BLOCKING PCLT: whole-table difference
+    functional:   cmap         PASS 216 codepoints, exact
+    functional:   shaping      PASS 535654 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 217 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 184 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+    functional:       - prep: release 77 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 2641 bytes, build none
+    functional:       - cvt: release 19 values, build none
+    functional:       - ... 5 more
+Lancelot-Regular                 RESIDUAL: 0 blocking row(s), functional FAIL(hinting)
+    functional:   cmap         PASS 219 codepoints, exact
+    functional:   shaping      PASS 552075 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 246 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 186 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp None / {65535: 15}
+    functional:       - prep: release 281 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 1571 bytes, build none
+    functional:       - cvt: release 112 values, build none
+    functional:       - ... 5 more

@@ -1,0 +1,6 @@
+codystar	main	-	3	CLEAN-UNCOMMITTED-EVIDENCE	Codystar-Light=0 functional=PASS; Codystar-Regular=0 functional=PASS
+bonbon	main	-	3	RESIDUAL-UNCOMMITTED-EVIDENCE	Bonbon-Regular=0 functional=FAIL(hinting)
+englebert	main	-	3	RESIDUAL-UNCOMMITTED-EVIDENCE	Englebert-Regular=3 functional=PASS
+federo	main	-	3	RESIDUAL-UNCOMMITTED-EVIDENCE	Federo-Regular=1 functional=FAIL(hinting)
+iceberg	main	-	3	RESIDUAL-UNCOMMITTED-EVIDENCE	Iceberg-Regular=1 functional=FAIL(hinting)
+iceland	main	-	3	RESIDUAL-UNCOMMITTED-EVIDENCE	Iceland-Regular=1 functional=FAIL(hinting)
