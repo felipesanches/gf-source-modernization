@@ -1,0 +1,35 @@
+lancelot: RESIDUAL-UNPUBLISHED-CONVERTER @ (scratch), 6 commits, 0 edit(s): Lancelot-Regular=23 functional=FAIL(shaping+rendering+names+line_spacing+advances+hinting)
+   Lancelot-Regular BLOCKING GSUB.script_list [{"DFLT/dflt": {"lookups": [0]}, "latn/dflt": {"lookups": [0]}}, null]
+   Lancelot-Regular BLOCKING GSUB.feature_list [{"titl": [0]}, null]
+   Lancelot-Regular BLOCKING GSUB.lookup_list [{"0": [{"type": "single", "A": "A.alt1", "B": "B.alt1", "C": "C.alt1", "D": "D.
+   Lancelot-Regular BLOCKING OS/2.fs_type [0, 4]
+   Lancelot-Regular BLOCKING OS/2.y_subscript_x_size [1434, 2937]
+   Lancelot-Regular BLOCKING OS/2.y_subscript_y_size [1331, 2726]
+     cmap         PASS 219 codepoints, exact
+     shaping      FAIL 552075 runs shaped, 398818 differ
+         - default features, singles: 10 of 219 runs differ
+         - default features, pairs: 2880 of 22201 runs differ
+         - default features, words: 392317 of 523980 runs differ
+         - ... 2 more
+     rendering    FAIL diffenator3 6 glyph / 52 word diffs (6 / 52 confirmed); 7 of 26 changed outlines draw different ink
+         - diffenator3: 6 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+0042 116px, U+0062 112px, U+0046 84px, U+0054 82px, U+0045 81px
+         - diffenator3: 52 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 49px, '1/234,latn,dflt,frac' 34px, '0,,,zero' 23px, 'Abcdefghijklmnopqrstuvwxyz' 836px, 'ACEGHIJOSUWYaceghijosuwy' 682px
+         - 7 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 256 ppem = 8 units/px, > 4 px at coverage fuzz 64): b 2497px, T 1749px, B 1704px, F 1262px, E 1254px
+     names        FAIL IDs 1 2 4 6 16 17 21 22 differ (5)
+         - name ID 1 (3,1,0x409): release 'Lancelot', build 'Lancelot_Rom_Reg'
+         - name ID 4 (3,1,0x409): release 'Lancelot', build 'Lancelot_Rom_Reg'
+         - name ID 6 (3,1,0x409): release 'Lancelot', build 'Lancelot_Rom_Reg'
+         - ... 2 more
+     line_spacing FAIL per-platform ascender/descender/gap DIFFER
+         - CoreText line spacing (ascender, descender, gap): release hhea (1595, -668, 0), build hhea (3146, 1049, 0)
+         - DirectWrite/GDI line spacing (ascender, descender, gap): release win (1595, -668, 0), build win (0, 0, 2097)
+         - FreeType engines line spacing (ascender, descender, gap): release hhea (1595, -668, 0), build hhea (3146, 1049, 0)
+         - ... 7 more
+     advances     FAIL 246 glyph advances compared, 11 differ
+         - 11 advance width(s) differ (release/build): B 963/983, Ccedilla 1150/739, E 913/933, F 799/819, H.alt1 1268/1275, R 1428/1378, T 1428/1355, b 954/922, r 630/644, u 985/968, v 789/798
+     gdef         PASS GDEF absent/present; 0 class difference(s) shaping reads, 239 it does not
+     hinting      FAIL release 186 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp None / {65535: 15}
+         - prep: release 281 bytes, build the smart_dropout setup (7 bytes)
+         - fpgm: release 1571 bytes, build none
+         - cvt: release 112 values, build none
+         - ... 5 more
