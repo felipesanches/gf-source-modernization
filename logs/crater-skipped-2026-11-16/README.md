@@ -34,3 +34,18 @@ The `.vfb` is an earlier state of the design, not what shipped: 7 outlines draw 
 
 - Dongle does not build: `cannot map 'parallel' to U+2225; already mapped to 'dblverticalbar'`. The source gives `dblverticalbar` the code points 2016 and 2225 and `parallel` 2225; the shipped font maps U+2225 to `uni2016`.
 - Gowun Batang builds. `gowunbatang-regular-gate.txt` and `gowunbatang-bold-gate.txt`: that build against the shipped fonts (`gate_source.py` with `BUILT=`). Same 12494 code points, names, line spacing and advance widths; 5 blocking rows each (GSUB script, feature and lookup lists, GDEF classes, vmtx). Shaping differs in 21554 of 11663056 runs (Regular) and 23547 of 11665116 (Bold); 130 and 3 top side bearings differ by 1 unit; one Regular outline (`uni2776`) draws different ink. The build is autohinted and the release is not (the default config; `autohintTTF: false` is what the release needs).
+
+## Dongle and Gowun Batang: Glyphs route against binary route
+
+| route                                             | Gowun Batang (Regular, Bold)                                                        | Dongle (Light, Regular, Bold)             |
+|---------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------|
+| binary (`probe-korean.txt`)                       | 1 blocking row each (GDEF glyph classes); functional gate passes                    | the same                                  |
+| Glyphs, gftools-builder 1e638bd (pinned)          | 1261 rows (Regular); cmap, shaping, rendering, names, advances, GDEF fail           | 1095 and 1115 rows (Light, Regular)       |
+| Glyphs, gftools-builder d93d65e (upstream main)   | 6 and 7 rows; shaping, rendering, names, advances (no vhea/vmtx), gasp fail         | not measured (the run was stopped: memory) |
+| Glyphs, Python gftools 0.10.8                     | 5 rows each; shaping, advances (vmtx off by 1), hinting (config default) fail       | does not build without the source edit    |
+
+- gftools-builder 1e638bd reads an all-digit Glyphs 2 code point (`unicode = 2002;`) as decimal: 332 code points land on other values (U+2002 becomes U+07D2). glyphslib 0.2.8 at that revision; upstream main d93d65e has glyphslib 0.4.1, which reads them as hexadecimal, and the build has the release's 12494 code points.
+- The shaping difference is the same in the Python build and the d93d65e build (21554 of 11663056 runs for Regular, 23547 of 11665116 for Bold), so it does not come from the compiler. Against the release (`gsub_diff.py`, research-scratch): GSUB `ccmp` has 3 lookups in the release and 2 in the build; GPOS `mark` 2 and 9; 98 GDEF classes differ. The release was compiled by the repository's `build.py` from this file in June 2021.
+- With d93d65e the Glyphs route also differs in `perthousand`'s outline, name IDs 4 and 6 of the Regular (`Gowun Batang`), usWeightClass of the Bold (400), and has no vhea/vmtx and no gasp.
+- The binary-route sources are 30 to 55 MB per style; the upstream Glyphs files are about 113 MB.
+- Dongle's source edit (`dongle_edit.py`, research-scratch): `parallel` loses `unicode = 2225`; the release maps U+2225 to `dblverticalbar` only and keeps `parallel` unencoded.

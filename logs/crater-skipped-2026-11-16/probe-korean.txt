@@ -1,0 +1,10 @@
+Dongle-Bold                      RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+Dongle-Light                     RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+Dongle-Regular                   RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+GowunBatang-Bold                 RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+GowunBatang-Regular              RESIDUAL: 1 blocking row(s), functional PASS
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class

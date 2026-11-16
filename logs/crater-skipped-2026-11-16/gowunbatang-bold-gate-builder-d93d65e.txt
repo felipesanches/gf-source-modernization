@@ -1,0 +1,27 @@
+GowunBatang RESIDUAL: 7 blocking row(s), functional FAIL(shaping+rendering+names+advances+hinting)
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"3": [4, 3], "4": [5, 4], "5": [6, 5], "6": [7, 6], "
+    BLOCKING GSUB.feature_list {"case": {"0": [22, 20]}, "ccmp": {"1": [5, 4], "2": [5, null]}, "dnom": {"0": [
+    BLOCKING GSUB.lookup_list {"1": {"0": {"A": {"0": ["uniFF21", "ordfeminine"], "1": ["ordfeminine", "uniFF2
+    BLOCKING OS/2.us_weight_class [700, 400]
+    BLOCKING vmtx: whole-table difference
+    BLOCKING vhea: whole-table difference
+    functional:   cmap         PASS 12494 codepoints, exact
+    functional:   shaping      FAIL 11665116 runs shaped, 23547 differ
+    functional:       - default features, base+mark: 567 of 320382 runs differ
+    functional:       - default features, kern+mark: 15505 of 187560 runs differ
+    functional:       - GSUB aalt on: 6755 of 54956 runs differ
+    functional:       - ... 8 more
+    functional:   rendering    FAIL diffenator3 36 glyph / 176 word diffs (4 / 43 confirmed); 14 of 11565 changed outlines draw different ink
+    functional:       - diffenator3: 4 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+2030 102px, U+33AD 27px, U+33AF 22px, U+33AE 20px
+    functional:       - diffenator3: 43 word(s) render differently (>8 px at 16 ppem), confirmed: '1/234,latn,dflt,frac' 55px, '0,,,zero' 10px, 'ĂČĎĚĞĽŇŘŠŤŬŽăčďěğľňřšťŭž' 62px, 'ÇĢĶĻŅŖŞŢçģķļņŗşţ' 51px, 'Bŗhadāraņyaka' 49px
+    functional:       - 14 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): perthousand 936px, uni33AD 10px, uni33DB 9px, uni33B9 8px, uni0213 8px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (1)
+    functional:       - OS/2.usWeightClass: release 700, build 400
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 12549 glyph advances compared, 0 differ
+    functional:       - vhea: True in the release, False in the build
+    functional:       - vmtx: True in the release, False in the build
+    functional:   gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 103 it does not
+    functional:   hinting      FAIL release no glyph programs, prep none; build no glyph programs, prep none; gasp {65535: 10} / None
+    functional:       - gasp: release {65535: 10}, build None

@@ -1,0 +1,64 @@
+GowunBatang RESIDUAL: 1261 blocking row(s), functional FAIL(cmap+shaping+rendering+names+advances+gdef)
+    BLOCKING GDEF.glyph_classes -- a lookup filters on glyph class
+    BLOCKING GDEF.mark_glyph_sets {"0": {"0": ["uni030C", "caroncomb"], "2": ["uni0324", "dieresisbelowcomb"], "3"
+    BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"3": [4, 3], "4": [5, 4], "5": [6, 5], "6": [7, 6], "
+    BLOCKING GSUB.feature_list {"case": {"0": [22, 20]}, "ccmp": {"1": [5, 4], "2": [5, null]}, "dnom": {"0": [
+    BLOCKING GSUB.lookup_list {"0": {"0": {"B": ["uniFF22", "B.full"], "C": ["uniFF23", "C.full"], "D": ["uniF
+    BLOCKING cmap U+00B2 ["uni00B2", "twosuperior"]
+    BLOCKING cmap U+00B3 ["uni00B3", "threesuperior"]
+    BLOCKING cmap U+00B9 ["uni00B9", "onesuperior"]
+    BLOCKING cmap U+0122 ["uni0122", "Gcommaaccent"]
+    BLOCKING cmap U+0123 ["uni0123", "gcommaaccent"]
+    BLOCKING cmap U+0136 ["uni0136", "Kcommaaccent"]
+    BLOCKING cmap U+0137 ["uni0137", "kcommaaccent"]
+    BLOCKING cmap U+0146 ["uni0146", "ncommaaccent"]
+    BLOCKING cmap U+0156 ["uni0156", "Rcommaaccent"]
+    BLOCKING cmap U+0157 ["uni0157", "rcommaaccent"]
+    BLOCKING cmap U+0162 ["uni0162", "Tcedilla"]
+    BLOCKING cmap U+0163 ["uni0163", "tcedilla"]
+    BLOCKING cmap U+018F ["uni018F", "Schwa"]
+    BLOCKING cmap U+01C5 ["uni01C5", "Dzcaron"]
+    BLOCKING cmap U+01C6 ["uni01C6", "dzcaron"]
+    BLOCKING cmap U+01CC ["uni01CC", "nj"]
+    BLOCKING cmap U+0200 ["uni0200", "Adblgrave"]
+    BLOCKING cmap U+0201 ["uni0201", "adblgrave"]
+    BLOCKING cmap U+0202 ["uni0202", "Ainvertedbreve"]
+    BLOCKING cmap U+0203 ["uni0203", "ainvertedbreve"]
+    BLOCKING cmap U+0205 ["uni0205", "edblgrave"]
+    BLOCKING cmap U+0207 ["uni0207", "einvertedbreve"]
+    BLOCKING cmap U+0210 ["uni0210", "Rdblgrave"]
+    BLOCKING cmap U+0211 ["uni0211", "rdblgrave"]
+    BLOCKING cmap U+0212 ["uni0212", "Rinvertedbreve"]
+    BLOCKING cmap U+0213 ["uni0213", "rinvertedbreve"]
+    BLOCKING cmap U+0215 ["uni0215", "udblgrave"]
+    BLOCKING cmap U+0217 ["uni0217", "uinvertedbreve"]
+    BLOCKING cmap U+021A ["uni021A", "Tcommaaccent"]
+    BLOCKING cmap U+021B ["uni021B", "tcommaaccent"]
+    BLOCKING cmap U+0233 ["uni0233", "ymacron"]
+    BLOCKING cmap U+0259 ["uni0259", "schwa"]
+    BLOCKING cmap U+02BC ["uni02BC", "apostrophemod"]
+    BLOCKING cmap U+0302 ["uni0302", "circumflexcomb"]
+    BLOCKING cmap U+030C ["uni030C", "caroncomb"]
+    functional:   cmap         FAIL 12494 codepoints, 4 problem(s)
+    functional:       - build loses 332 codepoint(s): U+2002 U+2003 U+2005 U+2007 U+2010 U+2013 U+2014 U+2015 U+2016 U+2018 U+2019 U+2020 U+2021 U+2022 U+2023 U+2025 U+2026 U+2030 U+2032 U+2033
+    functional:       - build gains 332 codepoint(s): U+07D2 U+07D3 U+07D5 U+07D7 U+07DA U+07DD U+07DE U+07DF U+07E0 U+07E2 U+07E3 U+07E4 U+07E5 U+07E6 U+07E7 U+07E9 U+07EA U+07EE U+07F0 U+07F1
+    functional:       - 599 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 uni00A0/nbspace; U+00AB guillemotleft/guillemetleft; U+00AD uni00AD/softhyphen; U+00B5 uni00B5/micro; U+00BB guillemotright/guillemetright; U+0131 dotlessi/idotless; U+01C7 uni01C7/LJ; U+01CA uni01CA/NJ; U+01EB uni01EB/oogonek; U+0208 uni0208/Idblgrave
+    functional:       - ... 1 more
+    functional:   shaping      FAIL 10563938 runs shaped, 24704 differ
+    functional:       - default features, base+mark: 498 of 316818 runs differ
+    functional:       - default features, base+mark+mark: 52 of 5832 runs differ
+    functional:       - default features, rules: 8 of 425 runs differ
+    functional:       - ... 17 more
+    functional:   rendering    FAIL diffenator3 18 glyph / 183 word diffs (0 / 0 confirmed); 1 of 11496 changed outlines draw different ink
+    functional:       - 1 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 125 ppem = 8 units/px, > 4 px at coverage fuzz 64): perthousand 875px
+    functional:   names        FAIL IDs 1 2 4 6 16 17 21 22 differ (2)
+    functional:       - name ID 4 (3,1,0x409): release 'Gowun Batang Regular', build 'Gowun Batang'
+    functional:       - name ID 6 (3,1,0x409): release 'GowunBatang-Regular', build 'GowunBatang'
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 12368 glyph advances compared, 0 differ
+    functional:       - 181 reachable release glyph(s) have no build counterpart: angleleft i.loclTRK propersubset propersuperset shade uni03020300 uni03020301 uni03020303 uni03020309 uni03060300 uni03060301 uni03060303 uni03060309 uni2002 uni2003
+    functional:       - 181 reachable build glyph(s) have no release counterpart: HzSquare Ten-roman aeCompa-ko angleLeft anglebracketleft arc brevecomb_acutecomb brevecomb_gravecomb brevecomb_hookabovecomb brevecomb_tildecomb calSquare centigrade chieuch-ko.circle chieuchParen-ko chieucha-ko.circle
+    functional:       - 130 vertical metric(s) differ: uni316D (1000, 264)/(1000, 263), uniAD58 (1000, 68)/(1000, 69), uniAD59 (1000, 68)/(1000, 69), uniAD5A (1000, 68)/(1000, 69), uniAD5B (1000, 68)/(1000, 69)
+    functional:   gdef         FAIL GDEF present/present; 0 class difference(s) shaping reads, 80 it does not
+    functional:       - mark glyph sets differ
+    functional:   hinting      PASS release no glyph programs, prep none; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 10} / {65535: 15}
