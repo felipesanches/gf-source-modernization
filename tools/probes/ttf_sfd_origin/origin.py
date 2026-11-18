@@ -15,7 +15,9 @@ Signals read from the .sfd at the commit families*.tsv pins, and from its direct
 Verdict: IMPORT when quadratic and (instrs or vfb_twin); LIKELY-IMPORT when quadratic alone;
 WORKING otherwise. A verdict is evidence for the source-format decision, not the decision.
 
-Usage: python3 -I tools/probes/ttf_sfd_origin/origin.py > tools/probes/ttf_sfd_origin/results-<date>.tsv
+Usage: python3 -I tools/probes/ttf_sfd_origin/origin.py [<table.tsv>...] > tools/probes/ttf_sfd_origin/results-<date>.tsv
+The tables default to families.tsv and families-next.tsv; any other table with the same columns
+(repo family lic kind base commit style source) may be named instead.
 """
 import csv, datetime, os, re, subprocess, sys
 
@@ -29,12 +31,13 @@ def git(mirror, *a):
 
 def main():
     rows = []
-    for t in ("families.tsv", "families-next.tsv"):
-        rows += [dict(r, table=t) for r in csv.DictReader(open(os.path.join(W, t)), delimiter="\t")]
+    for t in sys.argv[1:] or ("families.tsv", "families-next.tsv"):
+        rows += [dict(r, table=os.path.basename(t))
+                 for r in csv.DictReader(open(os.path.join(W, t)), delimiter="\t")]
     print("\t".join(["repo", "style", "table", "source", "quadratic", "instrs", "sameday", "vfb_twin", "verdict"]))
     for r in rows:
         src = r["source"]
-        if not re.search(r"-(TTF|OTF)\.sfd$", src):
+        if not re.search(r"[-_](TTF|TFF|OTF|ttf|otf)\.sfd$", src):
             continue
         mirror = os.path.join(ARC, r["base"] + ".git")
         prefix = "%s/%s/" % (r["lic"], r["family"]) if r["kind"] == "hg" else ""
@@ -53,7 +56,7 @@ def main():
             d = lambda s: datetime.datetime.fromtimestamp(int(s), datetime.timezone.utc).date()
             same = "yes" if d(ct.group(1)) == d(mt.group(1)) else "no"
         sib = git(mirror, "ls-tree", "--name-only", r["commit"], os.path.dirname(path) + "/").split()
-        stem = re.sub(r"-(TTF|OTF)\.sfd$", "", os.path.basename(path))
+        stem = re.sub(r"[-_](TTF|TFF|OTF|ttf|otf)\.sfd$", "", os.path.basename(path))
         twin = any(os.path.basename(s).startswith(stem) and s.endswith(".vfb") for s in sib)
         if quad and (instrs or twin):
             v = "IMPORT"

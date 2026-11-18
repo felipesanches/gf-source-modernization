@@ -34,6 +34,11 @@ reader (no filters; usWeightClass, read from the binary, travels as FEA as for a
 .sfd) and retires them. When google/fonts takes the fonts from a googlefonts repository
 that already exists (`base` is not google/fonts: carlito), step 1 is that repository's
 history at the recorded commit instead, and the landing is a branch for a pull request.
+When that repository does not hold the fonts (a librefonts fork whose src/ has only
+FontLab files and FontForge imports of the binaries: Krona One), the plan names the
+google/fonts commit they are taken from (plan key `binaries_from`) and step 1 ends with a
+commit adding them, byte-identical to the fonts the gate compares against; the
+conversion then retires them and src/ together.
 
 A row of kind `glyphs` (families.tsv) says the source already IS a .glyphs file,
 <base>@<commit>:<source>: step 1 is that upstream history, step 3 must be empty
@@ -137,6 +142,11 @@ def on_upstream(rows):
     return rows[0]["kind"] == "binary" and rows[0]["base"] != "google/fonts"
 
 
+def legacy_src(rows, tracked):
+    """A binary family landing in a repository that also holds legacy sources in src/."""
+    return on_upstream(rows) and any(f.startswith("src/") for f in tracked)
+
+
 def branch_of(rows):
     if on_upstream(rows):
         return "modernize-binary-to-glyphs"
@@ -206,6 +216,7 @@ def family_rows(repo):
         raise LandError("no rows for repo %s in %s" % (repo, recipe.families_file()))
     for r in rows:
         # a relative path is in the google/fonts checkout (families-binary.tsv)
+        r["shipped_in_gf"] = r["shipped"]
         r["shipped"] = os.path.join(GF, r["shipped"])
     return rows
 
@@ -270,7 +281,46 @@ def check_converter():
 
 
 # --- step 1: the unmodified original ------------------------------------------
-def start(repo, rows, d):
+def add_binaries(rows, d, plan):
+    """A repository that does not hold the fonts it is converted from: add them, as
+    google/fonts holds them at plan["binaries_from"], in a commit of their own."""
+    gf_commit = plan.get("binaries_from")
+    missing = [r for r in rows if not os.path.exists(os.path.join(d, r["source"]))]
+    if not missing:
+        return None
+    if not gf_commit:
+        raise LandError("%s not in %s at %s; name the google/fonts commit to take them from "
+                        "(plan key binaries_from)" % (", ".join(r["source"] for r in missing),
+                                                      rows[0]["base"], rows[0]["commit"][:7]))
+    gf_commit = git(GF, "rev-parse", gf_commit).stdout.strip()
+    for r in missing:
+        blob = subprocess.run(["git", "-C", GF, "show", "%s:%s" % (gf_commit, r["shipped_in_gf"])],
+                              capture_output=True, check=True).stdout
+        if blob != open(r["shipped"], "rb").read():
+            raise LandError("%s at google/fonts %s is not the font the gate compares against (%s)"
+                            % (r["shipped_in_gf"], gf_commit[:9], r["shipped"]))
+        os.makedirs(os.path.dirname(os.path.join(d, r["source"])) or d, exist_ok=True)
+        open(os.path.join(d, r["source"]), "wb").write(blob)
+    names = [r["source"] for r in missing]
+    one = len(names) == 1
+    gf_dir = os.path.dirname(missing[0]["shipped_in_gf"])
+    msg = ("Add %s as Google Fonts ships %s\n\n" % (describe_sources(names), "it" if one else "them")
+           + "\n".join(textwrap.wrap(
+               "Byte-identical to %s at commit %s of https://github.com/google/fonts."
+               % (" and ".join(os.path.basename(r["shipped_in_gf"]) for r in missing)
+                  + " in " + gf_dir, gf_commit), 72))
+           + "\n\n" + "\n".join(textwrap.wrap(
+               "The FontForge .sfd files in src/ are imports of the released %s, not working "
+               "sources; as advised on https://github.com/google/fonts/pull/10490, the sources "
+               "this repository adds are converted from the %s %s. The conversion retires %s; "
+               "%s in the git history."
+               % ("font" if one else "fonts", "font" if one else "fonts",
+                  "itself" if one else "themselves", "it" if one else "them",
+                  "it remains" if one else "they remain"), 72)))
+    return commit(d, msg, *names)
+
+
+def start(repo, rows, d, plan=None):
     kind, fam, lic, base, commit_id = (rows[0][k] for k in ("kind", "family", "lic", "base", "commit"))
     mirror = os.path.join(ARC, base + ".git")
     if kind == "hg":
@@ -302,7 +352,7 @@ def start(repo, rows, d):
     if kind == "binary" and on_upstream(rows):
         sh("git", "clone", "-q", mirror, d)
         git(d, "checkout", "-q", "-b", branch_of(rows), commit_id)
-        return None
+        return add_binaries(rows, d, plan or {})
     if kind == "binary":
         sh("git", "init", "-q", "-b", "main", d)
         path = "%s/%s" % (lic, fam)
@@ -363,7 +413,19 @@ def template(repo, rows, d, plan=None):
     tracked = git(d, "ls-files").stdout.splitlines()
     old_readme = read_text(os.path.join(d, "README.md")) if "README.md" in tracked else ""
     disp = display_name(rows[0]["family"])
-    if rows[0]["kind"] == "binary":
+    if rows[0]["kind"] == "binary" and legacy_src(rows, tracked):
+        readme = textwrap.dedent("""\
+            # %s
+
+            The sources in `sources/` were converted from the fonts Google Fonts ships
+            with [babelfont-rs](%s), and build with
+            [gftools-builder](https://github.com/simoncozens/gftools-rust) and fontc.
+
+            The FontLab (`.vfb`) and FontForge (`.sfd`) files that were in `src/` remain
+            in the git history, as do the fonts the sources were converted from. The
+            `.sfd` files are imports of those fonts, not working sources.
+            """) % (disp, BF_URL)
+    elif rows[0]["kind"] == "binary":
         readme = textwrap.dedent("""\
             # %s
 
@@ -718,6 +780,12 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
         what = ("The converted %s retired; %s in the git history, and google/fonts "
                 "ships %s." % (("binaries are", "they remain", "them") if len(retired) > 1
                                else ("binary is", "it remains", "it")))
+        old = git(d, "ls-files", "src").stdout.split()
+        if old and on_upstream(rows):
+            git(d, "rm", "-r", "-q", "src")
+            retired += old
+            what += (" src/ is retired too (%d files, among them the FontLab sources and the FontForge "
+                     "imports of the fonts); it remains in the git history." % len(old))
     elif kind in ("hg", "fork"):
         retired = git(d, "ls-files", "src").stdout.split()
         if retired:
@@ -925,7 +993,7 @@ def main():
             shutil.rmtree(prev)
         os.rename(d, prev)            # keep the previous generation, never just delete
     os.makedirs(OUT, exist_ok=True)
-    start(repo, rows, d)
+    start(repo, rows, d, plan)
     template(repo, rows, d, plan)
     made = edits(repo, rows, d, plan)
     head, results, functional = convert(repo, rows, d, plan, bf_rev, len(made))
