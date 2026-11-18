@@ -1,0 +1,6 @@
+Manjari-Thin                     BUILD FAILED (nothing)
+    operation 'Fontc' while building [../fonts//ttf/Manjari-Thin.ttf, ../fonts//webfonts/Manjari-Thin.woff2] from [Manjari-Thin.glyphs]: Invalid tag 'SMC{0x00}': Invalid length (9)
+Manjari-Regular                  BUILD FAILED (nothing)
+    operation 'Fontc' while building [../fonts//ttf/Manjari-Regular.ttf, ../fonts//webfonts/Manjari-Regular.woff2] from [Manjari-Regular.glyphs]: Invalid tag 'SMC{0x00}': Invalid length (9)
+Manjari-Bold                     BUILD FAILED (nothing)
+    operation 'Fontc' while building [../fonts//ttf/Manjari-Bold.ttf, ../fonts//webfonts/Manjari-Bold.woff2] from [Manjari-Bold.glyphs]: Invalid tag 'SMC{0x00}': Invalid length (9)
