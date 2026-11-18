@@ -1,0 +1,12 @@
+{
+  "repo": "federo",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/cyrealtype/Federo at 79d2ed54e783fb0b116aabdb6c9b0318393cd3c8: src/Federo-TTF.vfb, a FontLab import of the TrueType font, and src/Federo-Regular_PS_Source.vfb."
+  ],
+  "disclose": [
+    "The release's post table names two glyphs `nonmarkingreturn`: glyph 2 (advance 0) and glyph 217 (advance 532), both empty and unencoded. A source cannot hold two glyphs of one name, so glyph 217 is `nonmarkingreturn.1` here; every glyph keeps its index, advance and outline (tools/table_gate.py, arbitrate_duplicate_names)."
+  ],
+  "flags": {},
+  "accepted": []
+}

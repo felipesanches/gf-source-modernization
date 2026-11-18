@@ -1,0 +1,18 @@
+{
+  "repo": "iceberg",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/librefonts/iceberg at db1c024077a00f9999b5f6437a70c19ced5c1fc5: src/Iceberg-Regular-TTF.vfb, a FontLab import of the TrueType font, and src/Iceberg-Regular-OTF.vfb, one of the OpenType font."
+  ],
+  "disclose": [
+    "The release carries a `PCLT` table (HP PCL 5 printer metrics; the OpenType specification says its use is strongly discouraged). fontc writes none, and no renderer reads it, so the build has no `PCLT`. Kept and disclosed."
+  ],
+  "flags": {},
+  "accepted": [
+    {
+      "style": "Iceberg-Regular",
+      "check": "table",
+      "row": "BLOCKING PCLT: whole-table difference"
+    }
+  ]
+}

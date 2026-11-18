@@ -682,6 +682,51 @@ def arbitrate_source_declared(rows, shipped, built, sfd):
     return block, stale
 
 
+def arbitrate_duplicate_names(rows, shipped, built):
+    """An `hmtx.<name>` width row where the release's post table gives `<name>` to more
+    than one glyph.
+
+    diffenator3 keys its hmtx diff by glyph name, so with a name stated twice it reads
+    one glyph's advance in the release and another's in the build. A source cannot hold
+    two glyphs of one name: the build keeps both glyphs and names the later one
+    `<name>.1`, as fontTools does when it reads the release. The row is benign when,
+    glyph index by glyph index, every advance and left side bearing of the two fonts is
+    equal; otherwise it still blocks.
+
+    -> (blocking, benign)"""
+    from fontTools.ttLib import TTFont
+    heads = [r.split(' ', 1)[0] for r in rows]
+    if not any(h.startswith('hmtx.') for h in heads):
+        return rows, []
+    try:
+        ship, ours = TTFont(shipped), TTFont(built)
+        ship_order, our_order = ship.getGlyphOrder(), ours.getGlyphOrder()
+        stated = getattr(ship['post'], 'mapping', None) or {}
+        indices = {}
+        for index, name in enumerate(ship_order):
+            indices.setdefault(stated.get(name, name), []).append(index)
+        same = (len(ship_order) == len(our_order)
+                and all(ship['hmtx'][a] == ours['hmtx'][b]
+                        for a, b in zip(ship_order, our_order)))
+    except Exception:
+        return rows, []
+    block, benign = [], []
+    for row, head in zip(rows, heads):
+        name = head[len('hmtx.'):]
+        if (head.startswith('hmtx.') and '"width"' in row and same
+                and len(indices.get(name, ())) > 1):
+            benign.append('%s -- the release\'s post table names glyphs %s all `%s`, so a '
+                          'lookup by name reads either. Index by index, every advance '
+                          'and left side bearing of the %d glyphs is equal; the build '
+                          'names the later ones %s.'
+                          % (head, ', '.join(map(str, indices[name])), name,
+                             len(ship_order),
+                             ', '.join('`%s`' % our_order[i] for i in indices[name][1:])))
+        else:
+            block.append(row)
+    return block, benign
+
+
 def arbitrate_post_version(rows, shipped, built):
     """A `post.version` row where the release is 3.0 and our build is 2.0.
 
@@ -2012,6 +2057,8 @@ def main():
         stale += declared
         rows, postv = arbitrate_post_version(rows, fonts[0], fonts[1])
         stale += postv
+        rows, dupnames = arbitrate_duplicate_names(rows, fonts[0], fonts[1])
+        stale += dupnames
     if exc_file and exc_family:
         keep = []
         for r in rows:

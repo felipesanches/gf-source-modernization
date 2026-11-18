@@ -1,0 +1,18 @@
+{
+  "repo": "iceland",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/cyrealtype/Iceland at bb43144b50825221060747ddba7b23bc05e7c960: src/Iceland-Regular-TTF.vfb, a FontLab import of the TrueType font, and src/Iceland-Regular-OTF.vfb, one of the OpenType font."
+  ],
+  "disclose": [
+    "The release carries a `PCLT` table (HP PCL 5 printer metrics; the OpenType specification says its use is strongly discouraged). fontc writes none, and no renderer reads it, so the build has no `PCLT`. Kept and disclosed."
+  ],
+  "flags": {},
+  "accepted": [
+    {
+      "style": "Iceland-Regular",
+      "check": "table",
+      "row": "BLOCKING PCLT: whole-table difference"
+    }
+  ]
+}
