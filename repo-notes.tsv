@@ -67,3 +67,12 @@ alef	bottleneck 9, and its instructed release waits for gftools-rust#2 (hinting)
 nanumgothiccoding	bottleneck 9, and its instructed release waits for gftools-rust#2 (hinting)
 nanummyeongjo	bottleneck 9, and its instructed release waits for gftools-rust#2 (hinting)
 jomolhari	bottleneck 11, and its instructed release waits for gftools-rust#2 (hinting)
+codystar	landed 2026-11-16: PR-QUEUE 5, push.sh
+gowunbatang	landed 2026-11-16: PR-QUEUE 5, push.sh
+dongle	landed 2026-11-16: PR-QUEUE 5, push.sh
+englebert	landed 2026-11-16, CLEAN-DISCLOSED accepted 2026-11-16: PR-QUEUE 5, ALLOW_DISCLOSED=1 push.sh
+bonbon	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hinting)
+lancelot	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hinting)
+federo	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hinting)
+iceberg	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hinting); PCLT disclosed
+iceland	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hinting); PCLT disclosed

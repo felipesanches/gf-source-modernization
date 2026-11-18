@@ -84,7 +84,7 @@ ptsansnarrow	families-binary.tsv	binary	google/fonts	googlefonts/ptsansnarrow.gi
 ptsanscaption	families-binary.tsv	binary	google/fonts	googlefonts/ptsanscaption.git	branches: main	main	-	CLEAN	landed.tsv
 almarai	families-binary.tsv	binary	google/fonts	googlefonts/almarai.git	branches: master	main	-	WITHDRAWN	landed.tsv
 jua	families-binary.tsv	binary	google/fonts	googlefonts/jua.git	branches: main	main	-	CLEAN	landed.tsv
-dongle	families-binary.tsv	binary	google/fonts	googlefonts/dongle.git	MISSING	main	-	CLEAN	landed.tsv
+dongle	families-binary.tsv	binary	google/fonts	googlefonts/dongle.git	EMPTY	main	-	CLEAN	landed.tsv
 homemadeapple	families-binary.tsv	binary	google/fonts	googlefonts/homemadeapple.git	branches: main	main	-	CLEAN	landed.tsv
 calligraffitti	families-binary.tsv	binary	google/fonts	googlefonts/calligraffitti.git	branches: main	main	-	CLEAN	landed.tsv
 kranky	families-binary.tsv	binary	google/fonts	googlefonts/kranky.git	branches: main	main	-	CLEAN	landed.tsv
@@ -259,14 +259,14 @@ yesteryear	families-binary.tsv	binary	google/fonts	googlefonts/yesteryear.git	MI
 novascript	families-binary.tsv	binary	google/fonts	googlefonts/novascript.git	EMPTY	main	-	CLEAN-DISCLOSED	landed.tsv
 smythe	families-binary.tsv	binary	google/fonts	googlefonts/smythe.git	EMPTY	main	-	RESIDUAL	landed.tsv
 play	families-binary.tsv	binary	google/fonts	googlefonts/play.git	EMPTY	main	-	RESIDUAL	landed.tsv
-bonbon	families-binary.tsv	binary	google/fonts	googlefonts/bonbon.git	MISSING		-	not landed	
-codystar	families-binary.tsv	binary	google/fonts	googlefonts/codystar.git	MISSING	main	-	CLEAN	landed.tsv
-englebert	families-binary.tsv	binary	google/fonts	googlefonts/englebert.git	MISSING	main	-	CLEAN-DISCLOSED	landed.tsv
-federo	families-binary.tsv	binary	google/fonts	googlefonts/federo.git	MISSING		-	not landed	
-iceberg	families-binary.tsv	binary	google/fonts	googlefonts/iceberg.git	MISSING		-	not landed	
-iceland	families-binary.tsv	binary	google/fonts	googlefonts/iceland.git	MISSING		-	not landed	
-lancelot	families-binary.tsv	binary	google/fonts	googlefonts/lancelot.git	MISSING		-	not landed	
-gowunbatang	families-binary.tsv	binary	google/fonts	googlefonts/gowunbatang.git	MISSING	main	-	CLEAN	landed.tsv
+bonbon	families-binary.tsv	binary	google/fonts	googlefonts/bonbon.git	EMPTY		-	not landed	
+codystar	families-binary.tsv	binary	google/fonts	googlefonts/codystar.git	EMPTY	main	-	CLEAN	landed.tsv
+englebert	families-binary.tsv	binary	google/fonts	googlefonts/englebert.git	EMPTY	main	-	CLEAN-DISCLOSED	landed.tsv
+federo	families-binary.tsv	binary	google/fonts	googlefonts/federo.git	EMPTY		-	not landed	
+iceberg	families-binary.tsv	binary	google/fonts	googlefonts/iceberg.git	EMPTY		-	not landed	
+iceland	families-binary.tsv	binary	google/fonts	googlefonts/iceland.git	EMPTY		-	not landed	
+lancelot	families-binary.tsv	binary	google/fonts	googlefonts/lancelot.git	EMPTY		-	not landed	
+gowunbatang	families-binary.tsv	binary	google/fonts	googlefonts/gowunbatang.git	EMPTY	main	-	CLEAN	landed.tsv
 aclonica	families-vfb.tsv	fork	librefonts/aclonica	googlefonts/aclonica.git	MISSING	modernize-vfb-to-glyphs	-	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
 crushed	families-vfb.tsv	fork	librefonts/crushed	googlefonts/crushed.git	MISSING	modernize-vfb-to-glyphs	-	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
 irishgrover	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	googlefonts/irishgrover.git	MISSING	main	-	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
