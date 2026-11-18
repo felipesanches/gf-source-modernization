@@ -1,0 +1,10 @@
+vastshadow: RESIDUAL @ 21e437f, 14 commits, 0 edit(s): VastShadow-Regular=0 functional=FAIL(hinting)
+     cmap         PASS 230 codepoints, exact
+     shaping      PASS 545849 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 229 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+     hinting      FAIL release no glyph programs, prep 7 bytes; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+         - prep: release 7 bytes, build the smart_dropout setup (7 bytes)

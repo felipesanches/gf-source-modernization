@@ -1,0 +1,11 @@
+pompiere: CLEAN-DISCLOSED @ bf12060, 14 commits, 0 edit(s): Pompiere-Regular=0 functional=FAIL(shaping)
+     cmap         PASS 260 codepoints, exact
+     shaping      FAIL 547649 runs shaped, 112 differ
+         - default features, base+mark: 103 of 324 runs differ
+         - default features, base+mark+mark: 9 of 20 runs differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 268 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 0 it does not
+     hinting      PASS release no glyph programs, prep the smart_dropout setup (7 bytes); build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 3} / {65535: 15}

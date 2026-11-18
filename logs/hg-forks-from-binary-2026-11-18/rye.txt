@@ -1,0 +1,13 @@
+rye: RESIDUAL @ 9badba0, 15 commits, 0 edit(s): Rye-Regular=0 functional=FAIL(hinting)
+     cmap         PASS 258 codepoints, exact
+     shaping      PASS 546859 runs shaped, 0 differ
+     rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 0 changed outlines draw different ink
+     names        PASS IDs 1 2 4 6 16 17 21 22 equal
+     line_spacing PASS per-platform ascender/descender/gap equal
+     advances     PASS 258 glyph advances compared, 0 differ
+     gdef         PASS GDEF present/absent; 0 class difference(s) shaping reads, 1 it does not
+     hinting      FAIL release 246 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
+         - prep: release 96 bytes, build the smart_dropout setup (7 bytes)
+         - fpgm: release 1865 bytes, build none
+         - cvt: release 24 values, build none
+         - ... 5 more

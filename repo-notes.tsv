@@ -76,3 +76,20 @@ lancelot	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hint
 federo	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hinting)
 iceberg	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hinting); PCLT disclosed
 iceland	converts from its binaries (2026-11-16): waits for gftools-rust#2 (hinting); PCLT disclosed
+kronaone	landed 2026-11-18 from its binaries into the librefonts fork (branch + PR): PR-QUEUE 6, push.sh
+ovo	landed 2026-11-18 from its binaries into the librefonts fork (branch + PR): PR-QUEUE 6, push.sh
+shortstack	landed 2026-11-18 from its binaries into the librefonts fork (branch + PR): PR-QUEUE 6, push.sh
+sonsieone	landed 2026-11-18 from its binaries into the librefonts fork (branch + PR): PR-QUEUE 6, push.sh
+pompiere	landed 2026-11-18 from its binaries, CLEAN-DISCLOSED (stale glyf bboxes move fallback marks): PR-QUEUE 6 after bottleneck 7
+pollerone	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting); stale-bbox fallback marks disclosed
+oldenburg	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+passeroone	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+rye	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+sarina	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+snowburstone	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+spinnaker	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+stoke	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+supermercadoone	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+tauri	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+vastshadow	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
+wellfleet	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hinting)
