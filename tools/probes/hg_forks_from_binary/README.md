@@ -31,3 +31,20 @@ builder writes the smart-dropout prep with SCANTYPE, and the hinting check count
 
 The hinting rows wait on gftools-rust#2 (apply a font's own TrueType hinting), as Bonbon, Federo and Lancelot do.
 Plan key gdef_classes_fea (plans/pollerone.json, plans/pompiere.json) states the GDEF classes.
+
+## Pompiere and Poller One after the GDEF statement (land.py, 2026-11-18)
+
+With gdef_classes_fea the GDEF classes match, but some base+mark runs still shape differently. Neither font has
+GSUB or GPOS, so HarfBuzz places combining marks itself from the glyph bounding boxes, and the release's glyf
+bounding boxes are stale where a compiled font's are exact. fallback_mark_delta.py measures this on every
+cmap base followed by every U+0300-036F mark, against a build of the landed sources:
+
+| style            | stale glyf bboxes in the release | base+mark pairs | differ | largest offset difference (of 2048) |
+|------------------|----------------------------------|-----------------|--------|-------------------------------------|
+| Pompiere-Regular | 174                              | 26656           | 25596  | 35                                  |
+| PollerOne        | 3                                | 25648           | 59     | 1                                   |
+
+Command: `python3 -I tools/probes/hg_forks_from_binary/fallback_mark_delta.py <release.ttf> <build.ttf>`
+(uharfbuzz from the gftools venv). No source can restate a stale bounding box, so plans/pompiere.json and
+plans/pollerone.json disclose it. Pompiere's shaping row is accepted, which makes it CLEAN-DISCLOSED. Poller One
+also waits on hinting.
