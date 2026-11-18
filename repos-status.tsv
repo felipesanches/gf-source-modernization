@@ -267,6 +267,23 @@ iceberg	families-binary.tsv	binary	google/fonts	googlefonts/iceberg.git	EMPTY		-
 iceland	families-binary.tsv	binary	google/fonts	googlefonts/iceland.git	EMPTY		-	not landed	
 lancelot	families-binary.tsv	binary	google/fonts	googlefonts/lancelot.git	EMPTY		-	not landed	
 gowunbatang	families-binary.tsv	binary	google/fonts	googlefonts/gowunbatang.git	EMPTY	main	-	CLEAN	landed.tsv
+kronaone	families-binary.tsv	binary	googlefonts/kronaone	googlefonts/kronaone.git	branches: gh-pages master	modernize-binary-to-glyphs	-	CLEAN	landed.tsv
+oldenburg	families-binary.tsv	binary	googlefonts/oldenburg	googlefonts/oldenburg.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+ovo	families-binary.tsv	binary	googlefonts/ovo	googlefonts/ovo.git	branches: gh-pages master	modernize-binary-to-glyphs	-	CLEAN	landed.tsv
+passeroone	families-binary.tsv	binary	googlefonts/passeroone	googlefonts/passeroone.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+pollerone	families-binary.tsv	binary	googlefonts/pollerone	googlefonts/pollerone.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+pompiere	families-binary.tsv	binary	googlefonts/pompiere	googlefonts/pompiere.git	branches: gh-pages master	modernize-binary-to-glyphs	-	CLEAN-DISCLOSED	landed.tsv
+rye	families-binary.tsv	binary	googlefonts/rye	googlefonts/rye.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+sarina	families-binary.tsv	binary	googlefonts/sarina	googlefonts/sarina.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+shortstack	families-binary.tsv	binary	googlefonts/shortstack	googlefonts/shortstack.git	branches: gh-pages master	modernize-binary-to-glyphs	-	CLEAN	landed.tsv
+snowburstone	families-binary.tsv	binary	googlefonts/snowburstone	googlefonts/snowburstone.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+sonsieone	families-binary.tsv	binary	googlefonts/sonsieone	googlefonts/sonsieone.git	branches: gh-pages master	modernize-binary-to-glyphs	-	CLEAN	landed.tsv
+spinnaker	families-binary.tsv	binary	googlefonts/spinnaker	googlefonts/spinnaker.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+stoke	families-binary.tsv	binary	googlefonts/stoke	googlefonts/stoke.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+supermercadoone	families-binary.tsv	binary	googlefonts/supermercadoone	googlefonts/supermercadoone.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+tauri	families-binary.tsv	binary	googlefonts/tauri	googlefonts/tauri.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+vastshadow	families-binary.tsv	binary	googlefonts/vastshadow	googlefonts/vastshadow.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
+wellfleet	families-binary.tsv	binary	googlefonts/wellfleet	googlefonts/wellfleet.git	branches: gh-pages master	modernize-binary-to-glyphs	-	RESIDUAL	landed.tsv
 aclonica	families-vfb.tsv	fork	librefonts/aclonica	googlefonts/aclonica.git	MISSING	modernize-vfb-to-glyphs	-	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
 crushed	families-vfb.tsv	fork	librefonts/crushed	googlefonts/crushed.git	MISSING	modernize-vfb-to-glyphs	-	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
 irishgrover	families-vfb.tsv	hg	googlefonts/googlefontdirectory-hg	googlefonts/irishgrover.git	MISSING	main	-	RESIDUAL-UNPUBLISHED-CONVERTER	landed-vfb-fixes.tsv
@@ -355,7 +372,6 @@ karlatamilinclined	census	vfb	googlefonts/googlefontdirectory-hg	googlefonts/kar
 karlatamilupright	census	vfb	googlefonts/googlefontdirectory-hg	googlefonts/karlatamilupright.git	MISSING		-	not landed	
 khmer	census	binary-only	danhhong/Khmer	googlefonts/khmer.git	MISSING		-	not landed	
 kiranghaerang	census	binary-only	woowabros/KirangHaerang	googlefonts/kiranghaerang.git	MISSING		-	not landed	
-kronaone	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/kronaone.git	branches: gh-pages master		-	not landed	
 libertinuskeyboard	census	binary-only	googlefonts/libertinus	googlefonts/libertinuskeyboard.git	MISSING		-	not landed	
 libertinusmath	census	binary-only	googlefonts/libertinus	googlefonts/libertinusmath.git	MISSING		-	not landed	
 libertinusmono	census	binary-only	googlefonts/libertinus	googlefonts/libertinusmono.git	MISSING		-	not landed	
@@ -390,44 +406,28 @@ notoserifjp	census	binary-only	notofonts/noto-cjk	googlefonts/notoserifjp.git	MI
 notoserifkr	census	binary-only	notofonts/noto-cjk	googlefonts/notoserifkr.git	MISSING		-	not landed	
 notoserifsc	census	binary-only	notofonts/noto-cjk	googlefonts/notoserifsc.git	MISSING		-	not landed	
 notoseriftc	census	binary-only	notofonts/noto-cjk	googlefonts/notoseriftc.git	MISSING		-	not landed	
-oldenburg	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/oldenburg.git	branches: gh-pages master		-	not landed	
 oldstandardtt	census	no-repo	https://git.sr.ht/~ralessi/oldstandard	googlefonts/oldstandardtt.git	MISSING		-	not landed	
 orelegaone	census	binary-only	haleyhalcyon/orelega	googlefonts/orelegaone.git	MISSING		-	not landed	
-ovo	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/ovo.git	branches: gh-pages master		-	not landed	
-passeroone	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/passeroone.git	branches: gh-pages master		-	not landed	
 patrickhandsc	census	sfd	googlefonts/googlefontdirectory-hg	googlefonts/patrickhandsc.git	MISSING		-	not landed	
 phetsarath	census	binary-only	googlefonts/googlefontdirectory-hg	googlefonts/phetsarath.git	MISSING		-	not landed	
-pollerone	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/pollerone.git	branches: gh-pages master		-	not landed	
-pompiere	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/pompiere.git	branches: gh-pages master		-	not landed	
 pressstart2p	census	binary-only	googlefonts/googlefontdirectory-hg	googlefonts/pressstart2p.git	MISSING		-	not landed	
 ptmono	census	no-repo	-	googlefonts/ptmono.git	MISSING		-	not landed	
 ruslandisplay	census	no-repo	-	googlefonts/ruslandisplay.git	MISSING		-	not landed	
-rye	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/rye.git	branches: gh-pages master		-	not landed	
-sarina	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/sarina.git	branches: gh-pages master		-	not landed	
 sawarabigothic	census	empty	googlefonts/sawarabi-mincho	googlefonts/sawarabigothic.git	MISSING		-	not landed	
 shipporimincho	census	binary-only	fontdasu/ShipporiMincho	googlefonts/shipporimincho.git	MISSING		-	not landed	
 shipporiminchob1	census	binary-only	fontdasu/ShipporiMincho	googlefonts/shipporiminchob1.git	MISSING		-	not landed	
-shortstack	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/shortstack.git	branches: gh-pages master		-	not landed	
 siemreap	census	binary-only	danhhong/Siemreap	googlefonts/siemreap.git	MISSING		-	not landed	
 singleday	census	no-repo	-	googlefonts/singleday.git	MISSING		-	not landed	
 sitara	census	no-repo	-	googlefonts/sitara.git	branches: main		-	not landed	
-snowburstone	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/snowburstone.git	branches: gh-pages master		-	not landed	
-sonsieone	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/sonsieone.git	branches: gh-pages master		-	not landed	
 sourcecodepro	census	binary-only	adobe-fonts/source-code-pro	googlefonts/sourcecodepro.git	MISSING		-	not landed	
-spinnaker	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/spinnaker.git	branches: gh-pages master		-	not landed	
-stoke	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/stoke.git	branches: gh-pages master		-	not landed	
-supermercadoone	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/supermercadoone.git	branches: gh-pages master		-	not landed	
 syne	census	no-repo	https://gitlab.com/bonjour-monde/fonderie/syne-typeface	googlefonts/syne.git	MISSING		-	not landed	
 synemono	census	no-repo	https://gitlab.com/bonjour-monde/fonderie/syne-typeface	googlefonts/synemono.git	MISSING		-	not landed	
 synetactile	census	no-repo	https://gitlab.com/bonjour-monde/fonderie/syne-typeface	googlefonts/synetactile.git	MISSING		-	not landed	
-tauri	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/tauri.git	branches: gh-pages master		-	not landed	
 uchen	census	no-repo	-	googlefonts/uchen.git	MISSING		-	not landed	
 unifrakturmaguntia	census	sfd	googlefonts/googlefontdirectory-hg	googlefonts/unifrakturmaguntia.git	MISSING		-	not landed	
-vastshadow	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/vastshadow.git	branches: gh-pages master		-	not landed	
 wdxllubrifontjpn	census	binary-only	NightFurySL2001/WD-XL-font	googlefonts/wdxllubrifontjpn.git	MISSING		-	not landed	
 wdxllubrifontsc	census	binary-only	NightFurySL2001/WD-XL-font	googlefonts/wdxllubrifontsc.git	MISSING		-	not landed	
 wdxllubrifonttc	census	binary-only	NightFurySL2001/WD-XL-font	googlefonts/wdxllubrifonttc.git	MISSING		-	not landed	
-wellfleet	census	sfd+vfb	googlefonts/googlefontdirectory-hg	googlefonts/wellfleet.git	branches: gh-pages master		-	not landed	
 yinmar	census	binary-only	khmertype/Yinmar	googlefonts/yinmar.git	MISSING		-	not landed	
 zenantique	census	binary-only	googlefonts/zen-antique	googlefonts/zenantique.git	MISSING		-	not landed	
 zenantiquesoft	census	binary-only	googlefonts/zen-antique	googlefonts/zenantiquesoft.git	MISSING		-	not landed	
