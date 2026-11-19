@@ -1,0 +1,63 @@
+follow-up <follow-up worktree> at 2e9f690, built in <scratch> with gftools-builder 3.0.0-alpha
+BethEllen-Regular: 33 blocking table row(s); codepoints gained 7, lost 19
+  gained: U+0300 U+0301 U+0302 U+0303 U+0308 U+030A U+0327
+  lost:   U+000A U+000D U+F009 U+F00B U+F00F U+F010 U+F01A U+F01E U+F020 U+F023 U+F024 U+F025 U+F027 U+F028 U+F02A U+F032 U+F033 U+F034 U+F035
+  BLOCKING GPOS.script_list {"DFLT/dflt": {"lookups": {"0": [null, 0]}}}
+  BLOCKING GPOS.feature_list {"mark": [null, [0, 1, 2, 3]]}
+  BLOCKING GPOS.lookup_list {"0": [null, [{"type": "mark_to_base", "marks": {"anchor_0": {"cedillacomb": {"x
+  BLOCKING GSUB.script_list {"DFLT/dflt": {"lookups": {"1": [1, null]}}}
+  BLOCKING GSUB.feature_list {"aalt": [[0, 1], null], "liga": {"0": [2, 0]}}
+  BLOCKING GSUB.lookup_list {"0": {"0": {"type": ["single", "ligature"], "question": ["question.alt1", null]
+  BLOCKING OS/2.fs_type [0, 8]
+  BLOCKING OS/2.y_subscript_y_size [1398, 1200]
+  BLOCKING OS/2.y_subscript_y_offset [280, 150]
+  BLOCKING OS/2.y_superscript_y_size [1398, 1200]
+  BLOCKING OS/2.y_superscript_y_offset [958, 700]
+  BLOCKING cmap U+000A LOST ["LF", null]
+  BLOCKING cmap U+000D LOST ["controlCR", null]
+  BLOCKING cmap U+0131 ["dotlessi", "idotless"]
+  BLOCKING cmap U+F009 LOST ["asterisk.alt1", null]
+  BLOCKING cmap U+F00B LOST ["question.alt1", null]
+  BLOCKING cmap U+F00F LOST ["asterisk.alt2", null]
+  BLOCKING cmap U+F010 LOST ["asterisk.alt3", null]
+  BLOCKING cmap U+F01A LOST ["asterisk.alt4", null]
+  BLOCKING cmap U+F01E LOST ["asterisk.alt5", null]
+  BLOCKING cmap U+F020 LOST ["asterisk.alt6", null]
+  BLOCKING cmap U+F023 LOST ["asterisk.alt7", null]
+  BLOCKING cmap U+F024 LOST ["asterisk.alt8", null]
+  BLOCKING cmap U+F025 LOST ["asterisk.alt9", null]
+  BLOCKING cmap U+F027 LOST ["asterisk.alt10", null]
+  BLOCKING cmap U+F028 LOST ["asterisk.alt11", null]
+  BLOCKING cmap U+F02A LOST ["asterisk.alt12", null]
+  BLOCKING cmap U+F032 LOST ["asterisk.alt13", null]
+  BLOCKING cmap U+F033 LOST ["asterisk.alt14", null]
+  BLOCKING cmap U+F034 LOST ["asterisk.alt15", null]
+  BLOCKING cmap U+F035 LOST ["asterisk.alt16", null]
+  BLOCKING hmtx.160 bearings differ though both fonts agree with their own outlines -- the outlines differ, widest 298 unit(s) at n_e (release -134, ours 164)
+  BLOCKING post.num_glyphs -- the release has dotlessi (1 contour(s), at U+0131); and we add idotless (1 contour(s), at U+0131)
+  BethEllen-Regular BethEllen-Regular.ttf: functional FAIL
+    cmap         FAIL 243 codepoints, 4 problem(s)
+        - build loses 19 codepoint(s): U+000A U+000D U+F009 U+F00B U+F00F U+F010 U+F01A U+F01E U+F020 U+F023 U+F024 U+F025 U+F027 U+F028 U+F02A U+F032 U+F033 U+F034 U+F035
+        - build gains 7 codepoint(s): U+0300 U+0301 U+0302 U+0303 U+0308 U+030A U+0327
+        - 1 codepoint(s) map to a glyph of another name (same outline and advance): U+00A0 nonbreakingspace/uni00A0
+        - 5 codepoint(s) map to a different glyph: U+00B2 unib2/uni00B2; U+00B3 unib3/uni00B3; U+00B5 mu/uni00B5; U+00B9 unib9/uni00B9; U+0131 dotlessi/idotless
+    shaping      FAIL 549210 runs shaped, 150839 differ
+        - default features, singles: 51 of 224 runs differ
+        - default features, pairs: 12602 of 22201 runs differ
+        - default features, rules: 5 of 8 runs differ
+        - default features, words: 130124 of 516117 runs differ
+        - GSUB aalt on: 1404 of 1494 runs differ
+        - GSUB liga off: 19 of 1699 runs differ
+        - GPOS mark off: 6634 of 7467 runs differ
+    rendering    FAIL diffenator3 83 glyph / 92 word diffs (70 / 91 confirmed); 116 of 231 changed outlines draw different ink
+        - diffenator3: 70 encoded glyph(s) render differently (>16 px at 32 ppem), confirmed: U+00D5 604px, U+00D4 586px, U+00D6 586px, U+00D3 580px, U+00D2 569px
+        - diffenator3: 91 word(s) render differently (>8 px at 16 ppem), confirmed: '0123456789,,,pnum' 35px, '0123456789,,,sinf' 28px, '1/234,latn,dflt,frac' 28px, '0,,,zero' 14px, 'ACEGHIJOSUWYaceghijosuwy' 2426px
+        - 116 glyph outline(s) draw ink more than rounding apart (FreeType unhinted, 250 ppem = 8 units/px, > 4 px at coverage fuzz 64): Atilde 31466px, Agrave 31196px, Acircumflex 30884px, Adieresis 30708px, Aacute 28840px
+    names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    line_spacing PASS per-platform ascender/descender/gap equal
+    advances     FAIL 235 glyph advances compared, 56 differ
+        - 17 reachable release glyph(s) have no build counterpart: asterisk.alt1 asterisk.alt10 asterisk.alt11 asterisk.alt12 asterisk.alt13 asterisk.alt14 asterisk.alt15 asterisk.alt16 asterisk.alt2 asterisk.alt3 asterisk.alt4 asterisk.alt5 asterisk.alt6 asterisk.alt7 asterisk.alt8
+        - 7 reachable build glyph(s) have no release counterpart: acutecomb cedillacomb circumflexcomb dieresiscomb gravecomb ringcomb tildecomb
+        - 56 advance width(s) differ (release/build): Aacute 1529/1731, Acircumflex 1505/1731, Adieresis 1527/1731, Agrave 1505/1731, Aring 1959/1731, Atilde 1505/1731, Ccedilla 1737/1479, Eacute 1475/1255, Ecircumflex 1475/1255, Edieresis 1575/1255, Egrave 1447/1255, Iacute 1951/2173, Icircumflex 1937/2173, Idieresis 1951/2173, Igrave 1909/2173
+    gdef         PASS GDEF present/present; 0 class difference(s) shaping reads, 160 it does not
+    hinting      PASS release no glyph programs, prep the smart_dropout setup (7 bytes); build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {65535: 15} / {65535: 15}
