@@ -36,6 +36,9 @@ def main():
     kind = rows[0]["kind"]
     d = os.path.join(land.OUT, repo)
     base = "master" if kind == "allerta" else rows[0]["commit"]
+    onto = (land.load_plan(repo) or {}).get("restore_onto")
+    if kind == "upstream" and onto:
+        base = "origin/" + onto       # land.py restore_onto: the PR is our commits on its tip
     commits = git(d, "log", "--reverse", "--format=%h %s", "%s..HEAD" % base).splitlines()
     convert = git(d, "log", "-1", "--format=%B", "HEAD")
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)

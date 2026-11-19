@@ -164,6 +164,25 @@ def verify(repo):
             problems.append("ORIGINAL: %s is not an ancestor of HEAD" % commit[:12])
         log = [commit] + run("git", "-C", d, "rev-list", "--reverse", "%s..HEAD" % commit).stdout.split()
         start = 1
+        onto = (land.load_plan(repo) or {}).get("restore_onto")
+        if kind == "upstream" and onto:
+            # land.py restore_onto: the upstream's unreleased commits, then a commit whose
+            # tree is the shipped revision's; ours start there
+            restore = [c for c in log[1:] if run("git", "-C", d, "log", "-1", "--format=%s", c)
+                       .stdout.startswith(land.RESTORE_PREFIX)]
+            if len(restore) != 1:
+                problems.append("ORIGINAL: plan restores onto %s, but %d restore commits" % (onto, len(restore)))
+            else:
+                r = restore[0]
+                parent = run("git", "-C", d, "rev-parse", r + "^").stdout.strip()
+                if run("git", "-C", mirror, "merge-base", "--is-ancestor", parent, "refs/heads/" + onto).returncode:
+                    problems.append("ORIGINAL: the restore commit's parent %s is not on %s's %s"
+                                    % (parent[:12], base, onto))
+                if (run("git", "-C", d, "rev-parse", r + "^{tree}").stdout
+                        != run("git", "-C", mirror, "rev-parse", commit + "^{tree}").stdout):
+                    problems.append("ORIGINAL: the restore commit's tree is not %s's" % commit[:12])
+                log = log[log.index(r):]
+                start = 1
     if land.on_upstream(rows):
         branch = run("git", "-C", d, "symbolic-ref", "--short", "HEAD").stdout.strip()
         if branch != land.branch_of(rows):
@@ -230,6 +249,8 @@ def verify(repo):
 
     # 5. messages
     ours_from = start - 1 if kind == "hg" or (kind == "binary" and not land.on_upstream(rows)) else start
+    if kind == "upstream" and (land.load_plan(repo) or {}).get("restore_onto"):
+        ours_from = 0             # log[0] is our restore commit
     for c in all_log[ours_from:]:
         msg = run("git", "-C", d, "log", "-1", "--format=%B", c).stdout
         if any(ord(ch) > 127 for ch in msg):

@@ -40,6 +40,12 @@ google/fonts commit they are taken from (plan key `binaries_from`) and step 1 en
 commit adding them, byte-identical to the fonts the gate compares against; the
 conversion then retires them and src/ together.
 
+An `upstream` row whose plan names `restore_onto` (a branch, e.g. "main") is for an
+upstream that moved past the shipped revision with commits never released (Beth Ellen):
+the landing branches from that branch's tip, and step 1 is a commit returning every file
+to the shipped revision ("Restore the sources as at <commit>, ..."), so the pull request
+merges without conflicts and the later commits stay in the history.
+
 A row of kind `glyphs` (families.tsv) says the source already IS a .glyphs file,
 <base>@<commit>:<source>: step 1 is that upstream history, step 3 must be empty
 (no .glyphs edit ops yet), and step 4 runs no converter -- it only adds
@@ -394,8 +400,42 @@ def start(repo, rows, d, plan=None):
             Allerta was converted, but the commit retiring the legacy sources
             (2efd249) removed Allerta Stencil's too, leaving a family Google Fonts
             ships with no source here at all.""") % (src, commit_id[:12], commit_id), src)
+    onto = (plan or {}).get("restore_onto")
+    if onto and kind == "upstream":
+        return restore_onto(rows, d, onto)
     git(d, "checkout", "-q", "-b", branch_of(rows), commit_id)
     return None
+
+
+RESTORE_PREFIX = "Restore the sources as at "
+
+
+def restore_onto(rows, d, onto):
+    """An upstream whose branch moved past the revision Google Fonts ships, with commits
+    never released (Beth Ellen): branch from the tip of `onto`, so the pull request merges
+    cleanly, and make the first commit return the tree to the shipped revision exactly.
+    The later commits stay in the history."""
+    commit_id = rows[0]["commit"]
+    tip = git(d, "rev-parse", "origin/" + onto).stdout.strip()
+    if git(d, "merge-base", "--is-ancestor", commit_id, tip, check=False).returncode:
+        raise LandError("%s is not an ancestor of %s (%s)" % (commit_id[:12], onto, tip[:12]))
+    git(d, "checkout", "-q", "-b", branch_of(rows), tip)
+    if tip == commit_id:
+        return None
+    later = git(d, "log", "--reverse", "--format=%h %s", "%s..%s" % (commit_id, tip)).stdout.splitlines()
+    git(d, "rm", "-r", "-q", "--", ".")
+    git(d, "checkout", commit_id, "--", ".")
+    msg = (RESTORE_PREFIX + commit_id[:7] + ", the revision Google Fonts ships\n\n"
+           + "\n".join(textwrap.wrap(
+               "Google Fonts ships the font built at commit %s. The %d commit(s) on %s "
+               "after it were never released; this commit returns every file to that "
+               "revision, so the conversion that follows starts from the released source. "
+               "Those commits remain in the git history:" % (commit_id, len(later), onto), 72))
+           + "\n\n" + "\n".join("  " + c for c in later))
+    h = commit(d, msg)
+    if git(d, "rev-parse", "HEAD^{tree}").stdout != git(d, "rev-parse", commit_id + "^{tree}").stdout:
+        raise LandError("the restore commit's tree is not %s's" % commit_id[:12])
+    return h
 
 
 # --- step 2: the template -----------------------------------------------------
