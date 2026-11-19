@@ -4,7 +4,7 @@
 # Input: backlog.tsv (table, repo, ledger status, ledger detail as of 2026-11-19).
 # Each family is landed with tools/land.py into scratch (OUT, LANDED and SCRATCH under <scratch>),
 # one at a time; recipe flags main does not know are dropped by land.py (recipe.NOT_YET_UPSTREAM).
-# Usage: sh tools/probes/upstream_main_2026-11-19/sweep.sh <scratch dir> <babelfont-rs worktree>
+# Usage: sh tools/probes/upstream_main_2026-11-19/sweep.sh <scratch dir> <babelfont-rs worktree> [backlog file]
 #   -> <scratch>/results.tsv: table, repo, old status, old detail, new verdict line
 set -u
 S=${1:?scratch dir}; BT=${2:?babelfont-rs worktree with target-heights/release/babelfont}
@@ -19,4 +19,4 @@ while IFS='	' read -r table repo old detail; do
   new=$(grep -m1 "^$repo: " "$log" || tail -1 "$log")
   printf '%s\t%s\t%s\t%s\t%s\n' "$table" "$repo" "$old" "$detail" "$new" >> "$S/results.tsv"
   rm -rf -- "${S:?}/out/${repo:?}" "${S:?}/build"
-done < "$W/tools/probes/upstream_main_2026-11-19/backlog.tsv"
+done < "${3:-$W/tools/probes/upstream_main_2026-11-19/backlog.tsv}"
