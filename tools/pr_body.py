@@ -70,6 +70,13 @@ def main():
                  "holds, the ones Google Fonts ships, to `.glyphs` with babelfont's TTF reader, so "
                  "%s builds with gftools-builder and fontc. One commit per step, the conversion "
                  "last:" % (names, names))
+    elif kind == "upstream" and onto:
+        title = "Convert %s from .sfd to .glyphs" % names
+        intro = ("Converts %s's FontForge source, as Google Fonts ships it, to `.glyphs`, so it "
+                 "builds with gftools-builder and fontc. The first commit returns the files to %s, "
+                 "the revision Google Fonts ships; the later commits on %s are in no release and "
+                 "stay in the history, for a separate update. One commit per step, the conversion "
+                 "last:" % (names, rows[0]["commit"][:7], onto))
     else:
         title = "Convert %s from .sfd to .glyphs" % names
         intro = ("Converts %s's FontForge sources to `.glyphs`, so they build with "

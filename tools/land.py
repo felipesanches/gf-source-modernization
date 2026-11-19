@@ -427,10 +427,11 @@ def restore_onto(rows, d, onto):
     git(d, "checkout", commit_id, "--", ".")
     msg = (RESTORE_PREFIX + commit_id[:7] + ", the revision Google Fonts ships\n\n"
            + "\n".join(textwrap.wrap(
-               "Google Fonts ships the font built at commit %s. The %d commit(s) on %s "
-               "after it were never released; this commit returns every file to that "
-               "revision, so the conversion that follows starts from the released source. "
-               "Those commits remain in the git history:" % (commit_id, len(later), onto), 72))
+               "Google Fonts ships the font built at commit %s of https://github.com/%s. "
+               "The %d commit(s) on %s after it are in no release; this commit returns every "
+               "file to that revision, so the conversion that follows starts from the released "
+               "source. Those commits remain in the git history:"
+               % (commit_id, rows[0]["base"], len(later), onto), 72))
            + "\n\n" + "\n".join("  " + c for c in later))
     h = commit(d, msg)
     if git(d, "rev-parse", "HEAD^{tree}").stdout != git(d, "rev-parse", commit_id + "^{tree}").stdout:
