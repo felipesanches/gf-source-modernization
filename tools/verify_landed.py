@@ -8,7 +8,9 @@ a fresh clone -- and checks, for every repository given:
      archive does at the revision METADATA.pb records (fresh repositories); a fork
      branches from exactly that revision; a restored file is byte-identical; a
      `binary` row's first commit is google/fonts' directory of the family at the
-     recorded commit (or, kept in a googlefonts repository, that history).
+     recorded commit (or, kept in a googlefonts repository, that history; a fork that
+     did not hold the fonts adds them in an "Add <font> as Google Fonts ships it" commit,
+     byte-identical to google/fonts at the plan's binaries_from).
   2. LICENCE: OFL.txt at HEAD is the family's own, unchanged, and never the
      template's (which is Bentham's).
   3. SHAPE: every commit between the template and the conversion changes only .sfd
@@ -92,6 +94,30 @@ def glyphs_shape(d, rows, log, subjects):
                   log[-1]).stdout.splitlines()
     if not re.fullmatch(r"[AM]\tsources/config\.yaml", "\n".join(changed)):
         problems.append("SHAPE: the config commit must change only sources/config.yaml: %s" % changed)
+    return problems
+
+
+def added_binaries(d, rows, c):
+    """ORIGINAL of an "Add <font> as Google Fonts ships it" commit: it adds only the rows'
+    fonts, each byte-identical to google/fonts at the plan's binaries_from."""
+    plan = land.load_plan(rows[0]["repo"]) or {}
+    gf_commit = plan.get("binaries_from")
+    if not gf_commit:
+        return ["ORIGINAL: %s adds fonts, but the plan names no binaries_from" % c[:7]]
+    status = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-status", "-r", c).stdout.splitlines()
+    by_source = {r["source"]: r for r in rows}
+    problems = []
+    for line in status:
+        st, path = line.split("\t", 1)
+        r = by_source.get(path)
+        if st != "A" or r is None:
+            problems.append("SHAPE: %s adds or changes %s %s, not one of the fonts" % (c[:7], st, path))
+            continue
+        want = run("git", "-C", land.GF, "rev-parse", "%s:%s" % (gf_commit, r["shipped_in_gf"])).stdout.strip()
+        got = run("git", "-C", d, "rev-parse", "%s:%s" % (c, path)).stdout.strip()
+        if not want or want != got:
+            problems.append("ORIGINAL: %s is not google/fonts %s:%s (%s vs %s)"
+                            % (path, gf_commit[:9], r["shipped_in_gf"], got[:9], want[:9]))
     return problems
 
 
@@ -186,6 +212,11 @@ def verify(repo):
     middle = log[start:-1] if kind != "glyphs" else []
     for c, s in zip(middle, subjects[start:-1]):
         if s == "Adopt the Unified Font Repository template":
+            continue
+        if kind == "binary" and land.on_upstream(rows) and re.fullmatch(r"Add .+ as Google Fonts ships (it|them)", s):
+            # the fonts a fork did not hold, added as google/fonts holds them at the plan's
+            # binaries_from (land.py add_binaries); the gate compares against the same files
+            problems += added_binaries(d, rows, c)
             continue
         changed = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-only", "-r", c).stdout.split()
         if not changed or any(not p.lower().endswith((".sfd", ".vfb")) for p in changed):

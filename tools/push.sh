@@ -22,6 +22,7 @@
 #   - a fork: pushes the branch and prints the compare URL for the pull request
 #   - never force-pushes; refuses if the remote branch exists and is not an
 #     ancestor of the local one
+#   - refuses an archived repository (read-only on GitHub; the 17 hg forks, 2026-11-19)
 # Every push is logged to push_log.tsv.
 set -u
 W=$(cd "$(dirname "$0")/.." && pwd)
@@ -87,6 +88,14 @@ for repo in $repos; do
   case "$url" in
     */googlefonts/*) ;;
     *) echo "$repo: HOLD -- origin is $url, not a googlefonts repository (decision needed)"; continue ;;
+  esac
+  # an archived repository refuses every push (HTTP 403) yet still answers ls-remote
+  slug=$(echo "$url" | sed -n 's#^https://github.com/\([^/]*/[^/]*\)$#\1#p' | sed 's/\.git$//')
+  archived=$(curl -s "https://api.github.com/repos/$slug" | sed -n 's/^  "archived": \([a-z]*\),$/\1/p')
+  case "$archived" in
+    false) ;;
+    true) echo "$repo: BLOCKED -- $slug is archived on GitHub (read-only); an org admin must unarchive it"; continue ;;
+    *) echo "$repo: REFUSED -- cannot tell whether $slug is archived (GitHub API: rate limit?)"; continue ;;
   esac
   if [ -n "$CHECK" ]; then
     echo "$repo: READY  $head -> $url $branch${remote:+ (fast-forward from ${remote%"${remote#???????}"})}"
