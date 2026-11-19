@@ -1,0 +1,9 @@
+# Share Tech Mono: table-gate blocking rows that differ between converters (sweep logs, tools/land.py)
+## cc4d20e4 only
+ShareTechMono-Regular BLOCKING OS/2.fs_type [0, 8]
+ShareTechMono-Regular BLOCKING OS/2.y_strikeout_size [50, 75]
+ShareTechMono-Regular BLOCKING OS/2.panose_10 {"0": [2, 0], "1": [11, 0], "2": [5, 0], "3": [9, 0], "4": [5, 0], "7": [2, 0],
+## 36701fd7 only
+ShareTechMono-Regular BLOCKING OS/2.y_subscript_x_size [650, 700]
+ShareTechMono-Regular BLOCKING OS/2.y_subscript_y_size [600, 650]
+ShareTechMono-Regular BLOCKING OS/2.y_subscript_y_offset [75, 140]
