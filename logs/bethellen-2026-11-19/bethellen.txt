@@ -1,0 +1,4 @@
+$ BF_TREE=/home/fsanches/compartilhado/babelfont-rs-worktrees/2026-11-02 FAMILIES=families-next.tsv python3 -I tools/land.py bethellen
+bethellen: CLEAN @ 32a74b8, 28 commits, 1 edit(s): BethEllen-Regular=0 functional=PASS
+$ FAMILIES=families-next.tsv python3 -I tools/verify_landed.py bethellen
+bethellen            VERIFIED
