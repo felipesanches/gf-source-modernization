@@ -1,0 +1,21 @@
+field                    same(ok)      same(neither) main          os2           both          neither      
+name1 family             7             6             0             0             0             0            
+name2/17 style           13            0             0             0             0             0            
+name7 trademark          5             8             0             0             0             0            
+name9 designer           11            2             0             0             0             0            
+name10 description       5             8             0             0             0             0            
+name11 manufacturerURL   9             4             0             0             0             0            
+name12 designerURL       9             4             0             0             0             0            
+name13 license           7             6             0             0             0             0            
+name14 licenseURL        11            2             0             0             0             0            
+version                  0             13            0             0             0             0            
+OS/2 weightClass         0             0             0             13            0             0            
+OS/2 widthClass          0             0             0             13            0             0            
+OS/2 fsType              0             0             0             13            0             0            
+OS/2 panose              0             0             0             11            0             2            
+OS/2 vendorID            0             0             0             11            0             2            
+head lowestRecPPEM       0             0             0             6             0             7            
+ascender                 1             12            0             0             0             0            
+descender                9             4             0             0             0             0            
+xHeight                  11            2             0             0             0             0            
+capHeight                10            3             0             0             0             0            

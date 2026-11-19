@@ -1,0 +1,62 @@
+files: 50
+  font_info    50 differ
+  font_params  50 differ
+  masters      50 differ
+  instances    48 differ
+  kerning      36 differ
+  groups       29 differ
+  anchors      0 differ
+  glyph_names  0 differ
+  outlines     6 differ
+  features     29 differ
+
+bigelowrules.prev/src/BigelowRules-Regular-OTF.vfb  font_info(5) font_params(17) masters(13) instances(3) kerning(2532) groups(485) outlines(2) features(3)
+bigelowrules.prev/src/BigelowRules-Regular-TTF.vfb  font_info(5) font_params(17) masters(13) instances(3) kerning(2532) groups(485) features(3)
+bigelowrules.prev/src/BigelowRules-Regular.vfb  font_info(5) font_params(17) masters(13) instances(3) kerning(2532) groups(485) features(3)
+librecaslondisplay.prev/source/LibreCaslonDisplay-Regular-OTF.vfb  font_info(1) font_params(17) masters(14) instances(3) kerning(3406) groups(647) outlines(1) features(1)
+librecaslondisplay.prev/source/LibreCaslonDisplay-Regular.vfb  font_info(1) font_params(17) masters(14) instances(3) kerning(3406) groups(647) features(1)
+miltonian.prev/source/Miltonian-Regular-OTF.vfb  font_info(3) font_params(17) masters(14) instances(3) kerning(3688) groups(195) features(1)
+miltonian.prev/source/Miltonian-Regular.vfb  font_info(3) font_params(17) masters(14) instances(3) kerning(3688) groups(195) outlines(1) features(1)
+miltonian.prev/source/MiltonianTattoo-Regular-OTF.vfb  font_info(3) font_params(17) masters(14) instances(3) kerning(3688) groups(195) features(1)
+miltonian.prev/source/MiltonianTattoo-Regular-TTF.vfb  font_info(3) font_params(17) masters(14) instances(3) kerning(3644) groups(193) features(1)
+miltonian.prev/source/MiltonianTattoo-Regular.vfb  font_info(3) font_params(17) masters(14) instances(3) kerning(3688) groups(195) outlines(1) features(1)
+miltoniantattoo.prev/source/Miltonian-Regular-TTF.vfb  font_info(3) font_params(17) masters(14) instances(3) kerning(3644) groups(193) features(1)
+muktamahee/Mukta-Devanagari/Bold/VFB/Mukta-Bold.vfb  font_info(6) font_params(16) masters(13) instances(3) kerning(1986) groups(1851) features(1)
+muktamahee/Mukta-Devanagari/ExtraBold/VFB/Mukta-Extrabold.vfb  font_info(5) font_params(16) masters(13) instances(3) kerning(1994) groups(1851) outlines(1) features(1)
+muktamahee/Mukta-Devanagari/ExtraLight/VFB/Mukta-Extralight.vfb  font_info(5) font_params(16) masters(15) instances(3) kerning(2221) groups(1851) features(1)
+muktamahee/Mukta-Devanagari/Light/VFB/Mukta-Light.vfb  font_info(5) font_params(16) masters(13) instances(3) kerning(2171) groups(1851) features(1)
+muktamahee/Mukta-Devanagari/Medium/VFB/Mukta-Medium.vfb  font_info(5) font_params(16) masters(13) instances(3) kerning(1925) groups(1851) features(1)
+muktamahee/Mukta-Devanagari/Regular/VFB/Mukta-Regular.vfb  font_info(5) font_params(16) masters(13) instances(3) kerning(2429) groups(1851) features(1)
+muktamahee/Mukta-Devanagari/SemiBold/VFB/Mukta-Semibold.vfb  font_info(4) font_params(16) masters(13) instances(3) kerning(1925) groups(1851) features(1)
+muktamahee/MuktaMalar-Tamil/Bold/VFB/MuktaMalar-Bold.vfb  font_info(4) font_params(17) masters(14) instances(3) kerning(9)
+muktamahee/MuktaMalar-Tamil/ExtraBold/VFB/MuktaMalar-ExtraBold.vfb  font_info(4) font_params(16) masters(15) instances(3) kerning(100)
+muktamahee/MuktaMalar-Tamil/ExtraLight/VFB/MuktaMalar-Extralight.vfb  font_info(4) font_params(16) masters(15) instances(3) kerning(59)
+muktamahee/MuktaMalar-Tamil/Light/VFB/MuktaMalar-Light.vfb  font_info(4) font_params(16) masters(15) instances(3) kerning(3)
+muktamahee/MuktaMalar-Tamil/Medium/VFB/MuktaMalar-Medium.vfb  font_info(4) font_params(16) masters(15) instances(3) kerning(11)
+muktamahee/MuktaMalar-Tamil/Regular/VFB/MuktaMalar-Regular.vfb  font_info(4) font_params(16) masters(15) instances(3) kerning(97)
+muktamahee/MuktaMalar-Tamil/SemiBold/VFB/MuktaMalar-Semibold.vfb  font_info(4) font_params(16) masters(15) instances(3) kerning(14)
+muktamahee/MuktaVaani-Gujarati/Bold/VFB/MuktaVaani-Bold.vfb  font_info(4) font_params(17) masters(13) instances(3)
+muktamahee/MuktaVaani-Gujarati/ExtraBold/VFB/MuktaVaani-ExtraBold.vfb  font_info(4) font_params(16) masters(13) instances(3)
+muktamahee/MuktaVaani-Gujarati/ExtraLight/VFB/MuktaVaani-Extralight.vfb  font_info(4) font_params(16) masters(15) instances(3)
+muktamahee/MuktaVaani-Gujarati/Light/VFB/MuktaVaani-Light.vfb  font_info(4) font_params(16) masters(13) instances(3)
+muktamahee/MuktaVaani-Gujarati/Medium/VFB/MuktaVaani-Medium.vfb  font_info(4) font_params(16) masters(13) instances(3)
+muktamahee/MuktaVaani-Gujarati/Regular/VFB/MuktaVaani-Regular.vfb  font_info(4) font_params(16) masters(13) instances(3)
+muktamahee/MuktaVaani-Gujarati/SemiBold/VFB/MuktaVaani-Semibold.vfb  font_info(4) font_params(16) masters(13) instances(3)
+muktamalar/MuktaMahee-Gurmukhi/Bold/VFB/MuktaMahee-Bold.vfb  font_info(4) font_params(17) masters(13) instances(3)
+muktamalar/MuktaMahee-Gurmukhi/ExtraBold/VFB/MuktaMahee-ExtraBold.vfb  font_info(3) font_params(16) masters(13) instances(3)
+muktamalar/MuktaMahee-Gurmukhi/ExtraLight/VFB/MuktaMahee-ExtraLight.vfb  font_info(4) font_params(16) masters(15) instances(3)
+muktamalar/MuktaMahee-Gurmukhi/Light/VFB/MuktaMahee-Light.vfb  font_info(4) font_params(16) masters(13) instances(3)
+muktamalar/MuktaMahee-Gurmukhi/Medium/VFB/MuktaMahee-Medium.vfb  font_info(4) font_params(16) masters(13) instances(3)
+muktamalar/MuktaMahee-Gurmukhi/Regular/VFB/MuktaMahee-Regular.vfb  font_info(4) font_params(16) masters(13) instances(3)
+muktamalar/MuktaMahee-Gurmukhi/SemiBold/VFB/MuktaMahee-SemiBold.vfb  font_info(3) font_params(16) masters(13) instances(3)
+prozalibre.prev/Sources/ProzaLibre-Italic-MM.vfb  font_info(3) font_params(18) masters(38) kerning(1085) groups(375) features(1)
+prozalibre.prev/Sources/ProzaLibre-Roman-MM.vfb  font_info(3) font_params(18) masters(38) kerning(1288) groups(389) features(1)
+prozalibre.prev/Sources/TTF/ProzaLibre-BoldItalic.vfb  font_info(3) font_params(17) masters(13) instances(3) kerning(1085) groups(375) features(1)
+prozalibre.prev/Sources/TTF/Proza-Libre-Extrabold.vfb  font_info(7) font_params(17) masters(13) instances(3) kerning(1720) groups(389) features(1)
+prozalibre.prev/Sources/TTF/ProzaLibre-ExtraBold.vfb  font_info(7) font_params(17) masters(13) instances(3) kerning(1720) groups(389) features(1)
+prozalibre.prev/Sources/TTF/ProzaLibre-Italic.vfb  font_info(3) font_params(17) masters(13) instances(3) kerning(1085) groups(375) features(1)
+prozalibre.prev/Sources/TTF/Proza-Libre-LightItalic.vfb  font_info(3) font_params(17) masters(13) instances(3) kerning(1484) groups(367) features(1)
+prozalibre.prev/Sources/TTF/Proza-Libre-Light.vfb  font_info(3) font_params(17) masters(13) instances(3) kerning(1148) groups(389) features(1)
+prozalibre.prev/Sources/TTF/Proza-Libre-Regular.vfb  font_info(3) font_params(17) masters(13) instances(3) kerning(1288) groups(389) features(1)
+stardosstencil.prev/src/StardosStencil-Bold.vfb  font_info(5) font_params(17) masters(18) instances(3) kerning(96) groups(57) outlines(1) features(1)
+stardosstencil.prev/src/StardosStencil-Regular.vfb  font_info(5) font_params(17) masters(18) instances(3) kerning(56) groups(18) features(1)
