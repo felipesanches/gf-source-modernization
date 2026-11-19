@@ -2,12 +2,12 @@ Title: fontlab: read the whole element model
 
 Body:
 
-The VFJ reader fails on most FontLab files: of 132 .vfj files (FontLab's format examples), main converts 45. The rest stop at "data did not match any variant of untagged enum FontlabElement" (57) or "missing field `layers`" (28).
+main converts 45 of 132 VFJ files (FontLab's format examples). Most of the rest fail with "data did not match any variant of untagged enum FontlabElement" (57) or "missing field `layers`" (28).
 
-- `elementData` can be the id of an element defined on another glyph, or a composite gathering more elements; ids are unique font-wide, so a table of them is built up front and references are resolved through it
-- elements with no geometry, such as stickers, are skipped instead of failing the parse
-- fields VFJ does not always write, or writes as floats, are accepted: glyph `layers`, master tsn/sgn/ffn/psn, capsHeight, component offsets
+- Resolve `elementData` that names an element defined on another glyph (ids are font-wide), or that is a composite of other elements.
+- Skip elements without geometry, such as stickers, instead of failing.
+- Accept fields VFJ omits or writes as floats: glyph `layers`, master tsn/sgn/ffn/psn, capsHeight, component offsets.
 
-Test: 124 of the 132 files convert; the 45 that main converts give identical output. Three unit tests; cargo test: 344 pass, plus the 11 RoboCJK tests that fail on main.
+Result: 124 of 132 files convert; the 45 that already did give identical output. Three new unit tests. The 11 RoboCJK test failures also occur on main (missing fixture).
 
 Assisted by an AI agent (Claude Opus 5.5)
