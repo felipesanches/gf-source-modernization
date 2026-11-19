@@ -2,7 +2,7 @@ Title: vfb: read the OS/2 and head values the font info states
 
 Body:
 
-The VFB reader skips the weight code, PANOSE, vendor and three TrueType-block values (all `todo`), so a converted VFB builds with the compiler's defaults for them. This puts them in `custom_ot_values`, which the Glyphs writer already exports:
+The VFB reader currently skips the weight code, PANOSE, vendor and three TrueType-block values (all `todo`), so a converted VFB builds with the compiler's defaults for them. This PR puts them in `custom_ot_values`, which the Glyphs writer already exports:
 
 - usWeightClass from the weight code, as FontLab's export writes it (IBMPlexSerif-Text.vfb: 450; its TrueType block says 400)
 - usWidthClass, fsType and head.lowestRecPPEM from the TrueType block
