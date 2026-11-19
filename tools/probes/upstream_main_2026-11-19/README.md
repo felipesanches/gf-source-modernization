@@ -66,3 +66,12 @@ kerning classes (leading underscore).
 feature holds 20,861 glyph pairs, all equal to the release's and to the converted kerning; the
 converted kerning holds all 21,280 pairs the release kerns, with their values. Stardos Stencil
 crashed at cc4d20e4 (vfbreader "capacity overflow"); with main, fontc stalls ("122 jobs stuck pending").
+
+## After #141 (main 36701fd7, 2026-11-19)
+
+`results-vfb-main-36701fd7.tsv`, `results-vfb-layerfix-7ed09143.tsv` (the layer fix rebased on
+36701fd7): the same 27 VFB families that built with cc4d20e4 fail to build (9 build again with the
+layer fix, 18 still fail on the undefined kerning classes). #141 removes the OS/2 rows from the 19
+families that build with the layer fix (e.g. Irish Grover, Crushed, Sue Ellen Francisco, Waiting for
+the Sunrise: 4 table rows to 1); none lands CLEAN. SFD and binary-route families are unaffected
+(#141 changes only the VFB reader).
