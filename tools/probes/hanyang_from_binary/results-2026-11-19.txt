@@ -1,0 +1,144 @@
+Batang-Regular                   RESIDUAL: 6 blocking row(s), functional FAIL(hinting)
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00547": ["glyph.00004", null], "glyph.00548": ["glyph.00005"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    BLOCKING vhea.min_top_side_bearing [-4, 0]
+    BLOCKING vhea.min_bottom_side_bearing [-13, 0]
+    BLOCKING vhea.y_max_extent [1037, 1024]
+    functional:   cmap         PASS 20579 codepoints, exact
+    functional:   shaping      PASS 1961806 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 33 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22772 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 11854 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {10: 2, 25: 1, 65535: 3} / {65535: 15}
+    functional:       - prep: release 181 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 700 bytes, build none
+    functional:       - cvt: release 407 values, build none
+    functional:       - ... 5 more
+BatangChe-Regular                RESIDUAL: 6 blocking row(s), functional FAIL(advances+hinting)
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00457": ["glyph.00032", null], "glyph.00458": ["glyph.00033"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    BLOCKING vhea.min_top_side_bearing [-4, -3]
+    BLOCKING vhea.min_bottom_side_bearing [-13, 0]
+    BLOCKING vhea.y_max_extent [1037, 1024]
+    functional:   cmap         PASS 20579 codepoints, exact
+    functional:   shaping      PASS 1961806 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 11 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 22772 glyph advances compared, 0 differ
+    functional:       - post.isFixedPitch: release 1, build 0
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 11731 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {10: 2, 25: 1, 65535: 3} / {65535: 15}
+    functional:       - prep: release 181 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 700 bytes, build none
+    functional:       - cvt: release 407 values, build none
+    functional:       - ... 5 more
+Gungsuh-Regular                  RESIDUAL: 3 blocking row(s), functional FAIL(hinting)
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00547": ["glyph.00004", null], "glyph.00548": ["glyph.00005"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    functional:   cmap         PASS 20579 codepoints, exact
+    functional:   shaping      PASS 1961806 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 156 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 21896 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 8840 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {10: 2, 25: 1, 65535: 3} / {65535: 15}
+    functional:       - prep: release 181 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 700 bytes, build none
+    functional:       - cvt: release 407 values, build none
+    functional:       - ... 5 more
+GungsuhChe-Regular               RESIDUAL: 3 blocking row(s), functional FAIL(advances+hinting)
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00457": ["glyph.00032", null], "glyph.00458": ["glyph.00033"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    functional:   cmap         PASS 20579 codepoints, exact
+    functional:   shaping      PASS 1961806 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 172 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 21896 glyph advances compared, 0 differ
+    functional:       - post.isFixedPitch: release 1, build 0
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 8712 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {10: 2, 25: 1, 65535: 3} / {65535: 15}
+    functional:       - prep: release 181 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 700 bytes, build none
+    functional:       - cvt: release 407 values, build none
+    functional:       - ... 5 more
+Gulim-Regular                    RESIDUAL: 3 blocking row(s), functional FAIL(hinting)
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00547": ["glyph.00004", null], "glyph.00548": ["glyph.00005"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    functional:   cmap         PASS 20579 codepoints, exact
+    functional:   shaping      PASS 1961806 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 451 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22522 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 11182 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {10: 2, 25: 1, 65535: 3} / {65535: 15}
+    functional:       - prep: release 201 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 770 bytes, build none
+    functional:       - cvt: release 146 values, build none
+    functional:       - ... 5 more
+GulimChe-Regular                 RESIDUAL: 5 blocking row(s), functional FAIL(advances+hinting)
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00457": ["glyph.00032", null], "glyph.00458": ["glyph.00033"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    BLOCKING vhea.min_bottom_side_bearing [-9, -8]
+    BLOCKING vhea.y_max_extent [1033, 1032]
+    functional:   cmap         PASS 20579 codepoints, exact
+    functional:   shaping      PASS 1961806 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 259 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 22522 glyph advances compared, 0 differ
+    functional:       - post.isFixedPitch: release 1, build 0
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 11015 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {10: 2, 25: 1, 65535: 3} / {65535: 15}
+    functional:       - prep: release 201 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 770 bytes, build none
+    functional:       - cvt: release 146 values, build none
+    functional:       - ... 5 more
+Dotum-Regular                    RESIDUAL: 5 blocking row(s), functional FAIL(hinting)
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00547": ["glyph.00004", null], "glyph.00548": ["glyph.00005"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    BLOCKING vhea.min_bottom_side_bearing [-9, -7]
+    BLOCKING vhea.y_max_extent [1033, 1031]
+    functional:   cmap         PASS 20579 codepoints, exact
+    functional:   shaping      PASS 1961806 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 238 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     PASS 22643 glyph advances compared, 0 differ
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 11560 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {10: 2, 25: 1, 65535: 3} / {65535: 15}
+    functional:       - prep: release 201 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 770 bytes, build none
+    functional:       - cvt: release 146 values, build none
+    functional:       - ... 5 more
+DotumChe-Regular                 RESIDUAL: 5 blocking row(s), functional FAIL(advances+hinting)
+    BLOCKING GSUB.lookup_list {"0": {"0": {"glyph.00457": ["glyph.00032", null], "glyph.00458": ["glyph.00033"
+    BLOCKING head.font_direction_hint [1, 2]
+    BLOCKING vhea.version ["1.0", "1.1"]
+    BLOCKING vhea.min_bottom_side_bearing [-9, -7]
+    BLOCKING vhea.y_max_extent [1033, 1031]
+    functional:   cmap         PASS 20579 codepoints, exact
+    functional:   shaping      PASS 1961806 runs shaped, 0 differ
+    functional:   rendering    PASS diffenator3 0 glyph / 0 word diffs (0 / 0 confirmed); 0 of 92 changed outlines draw different ink
+    functional:   names        PASS IDs 1 2 4 6 16 17 21 22 equal
+    functional:   line_spacing PASS per-platform ascender/descender/gap equal
+    functional:   advances     FAIL 22643 glyph advances compared, 0 differ
+    functional:       - post.isFixedPitch: release 1, build 0
+    functional:   gdef         PASS GDEF absent/absent; 0 class difference(s) shaping reads, 0 it does not
+    functional:   hinting      FAIL release 11431 glyph programs; build no glyph programs, prep the smart_dropout setup (7 bytes); gasp {10: 2, 25: 1, 65535: 3} / {65535: 15}
+    functional:       - prep: release 201 bytes, build the smart_dropout setup (7 bytes)
+    functional:       - fpgm: release 770 bytes, build none
+    functional:       - cvt: release 146 values, build none
+    functional:       - ... 5 more
