@@ -42,3 +42,27 @@ VFB families (40):
 
 The 19 that build are worse than with our VFB branch (more table rows; line spacing and names
 fail where our branch applied FontLab's export rules, which are to become source edits).
+
+## What Simon's changes of 2026-11-16..18 made worse (baseline: main cc4d20e4, just before them)
+
+`results-baseline-cc4d20e4.tsv`: the 40 VFB families plus Miama, Ultra, Overlock and Passion One,
+re-landed with main cc4d20e4. Miama, Ultra, Overlock and Passion One fail the same with both
+converters (their failures wait for our open PRs, not on these changes). Of the 40 VFB families,
+27 built with cc4d20e4 and do not build with f253aa84; 9 that build with both are better.
+
+| cause                                                       | families | with the layer fix 46603a17 |
+|-------------------------------------------------------------|----------|-----------------------------|
+| free-floating mask/img layers ("missing master 'img'")      | 9 only   | build again                 |
+| the layers, then undefined kerning classes                  | 16       | FEA fails                   |
+| undefined kerning classes only                              | 2        | FEA fails                   |
+
+`undefined_classes.py` (`python3 -I undefined_classes.py <.glyphs>...`) over the 20 families whose
+build fails FEA validation with the layer fix (the 18 above and Gotu and Proza Libre, which failed at
+cc4d20e4 too), converted from the archive with 46603a17 and --add-instance-per-master:
+`undefined-classes-layerfix.txt`: every one names 9 to 128 classes nothing defines, all FontLab
+kerning classes (leading underscore).
+
+`kern_feature_vs_kerning.py <.glyphs> <release.ttf>` (`kern-aclonica.txt`): Aclonica's own `kern`
+feature holds 20,861 glyph pairs, all equal to the release's and to the converted kerning; the
+converted kerning holds all 21,280 pairs the release kerns, with their values. Stardos Stencil
+crashed at cc4d20e4 (vfbreader "capacity overflow"); with main, fontc stalls ("122 jobs stuck pending").

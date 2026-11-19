@@ -1,0 +1,4 @@
+release: 21280 kerned glyph pairs
+kern feature  20861 pairs; equal to the release 20861; release pairs missing 419
+kerning       22666 pairs; equal to the release 21280; release pairs missing 0
+kern feature pairs not equal in the kerning: 0
