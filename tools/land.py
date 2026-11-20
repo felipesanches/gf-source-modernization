@@ -446,6 +446,68 @@ def restore_onto(rows, d, onto):
 
 
 # --- step 2: the template -----------------------------------------------------
+EARLIER_IMPORT = re.compile(r"\b(FontForge|FontLab) import of\b")
+SOURCE_FORMAT = re.compile(r"\.(glyphs|glyphspackage|ufo|designspace|sfd|vfb|vfj|zip)\b", re.I)
+
+
+def earlier_kind(plan):
+    """What a binary family's earlier_sources hold: ("designer", None) when a source the
+    designer published is among them (it does not rebuild the release, or the family would
+    not be on the binary route); ("import", "FontLab"|"FontForge") when the only sources are
+    imports of the shipped fonts (P13); ("fonts", None) when they are fonts as built only;
+    (None, None) with no earlier sources. A plan's `earlier_kind` states it explicitly."""
+    earlier = plan.get("earlier_sources", [])
+    tools = sorted({m.group(1) for t in earlier for m in [EARLIER_IMPORT.search(t)] if m})
+    stated = plan.get("earlier_kind")
+    if stated:
+        return stated, (tools[0] if stated == "import" and tools else None)
+    if not earlier:
+        return None, None
+    if any(SOURCE_FORMAT.search(t) and not EARLIER_IMPORT.search(t) for t in earlier):
+        return "designer", None
+    if tools:
+        if len(tools) > 1:
+            raise LandError("earlier_sources name imports by both FontForge and FontLab")
+        return "import", tools[0]
+    return "fonts", None
+
+
+def binary_opening(plan, bf_url=None):
+    """The README's first paragraph for a family converted from the fonts Google Fonts ships;
+    bf_url links the converter (default: this run's, BF_URL)."""
+    kind, tool = earlier_kind(plan)
+    built = ("The sources in `sources/` were converted from those fonts with "
+             "[babelfont-rs](%s), and build with "
+             "[gftools-builder](https://github.com/simoncozens/gftools-rust) and fontc." % (bf_url or BF_URL))
+    if kind == "designer":
+        first = ("The sources the designer published (below) do not rebuild the fonts Google "
+                 "Fonts ships.")
+    elif kind == "import":
+        first = ("The only source of this family ever published is a %s import of the fonts "
+                 "Google Fonts ships (below), not a working source." % tool)
+    else:
+        first = ("No source of this family was ever published: the fonts Google Fonts ships "
+                 "were its only form.")
+    return ("\n".join(textwrap.wrap(first + " " + built, 78, break_on_hyphens=False))
+            + "\n\nThe fonts they were converted from remain in the git history.\n")
+
+
+def earlier_section(rows, plan):
+    """The README's "Earlier sources": every entry of the plan, introduced by what they are."""
+    earlier = plan.get("earlier_sources", [])
+    if not earlier:
+        return ""
+    kind, _ = earlier_kind(plan) if rows[0]["kind"] == "binary" else (None, None)
+    intro = {"fonts": "Where this family was published before, kept on record; none of these "
+                      "holds a source of it:",
+             "import": "Where this family was published before, kept on record:",
+             "designer": "Earlier sources, kept on record; none of them rebuilds the fonts "
+                         "Google Fonts ships:"}.get(kind, "Other sources of this family, kept on "
+                                                         "record; none of them is what Google "
+                                                         "Fonts ships:")
+    return "\n## Earlier sources\n\n%s\n\n%s" % (intro, "".join("- %s\n" % t for t in earlier))
+
+
 def template(repo, rows, d, plan=None):
     if rows[0]["kind"] == "allerta":
         return None          # already adopted in that repository
@@ -473,17 +535,7 @@ def template(repo, rows, d, plan=None):
             `.sfd` files are imports of those fonts, not working sources.
             """) % (disp, BF_URL)
     elif rows[0]["kind"] == "binary":
-        readme = textwrap.dedent("""\
-            # %s
-
-            No source of this family was ever published: the fonts Google Fonts ships
-            were its only form. The sources in `sources/` were converted from those
-            fonts with [babelfont-rs](%s), and
-            build with [gftools-builder](https://github.com/simoncozens/gftools-rust)
-            and fontc.
-
-            The fonts they were converted from remain in the git history.
-            """) % (disp, BF_URL)
+        readme = "# %s\n\n%s" % (disp, binary_opening(plan or {}))
     elif rows[0]["kind"] == "glyphs":
         readme = textwrap.dedent("""\
             # %s
@@ -508,16 +560,7 @@ def template(repo, rows, d, plan=None):
         """) % disp
     readme += ("\nHow these sources were checked against the released fonts (the tools, this "
                "family's plan and the logs): %s.\n" % EVIDENCE_URL)
-    earlier = (plan or {}).get("earlier_sources", [])
-    if earlier and rows[0]["kind"] == "binary":
-        # a binary family's earlier copies are fonts as built, often the very files
-        # Google Fonts ships: what none of them holds is a source
-        readme += ("\n## Earlier sources\n\nWhere this family was published before, kept on "
-                   "record; none of these holds a source of it:\n\n")
-    elif earlier:
-        readme += ("\n## Earlier sources\n\nOther sources of this family, kept on record; "
-                   "none of them is what Google Fonts ships:\n\n")
-        readme += "".join("- %s\n" % t for t in earlier)
+    readme += earlier_section(rows, plan or {})
     disclose = (plan or {}).get("disclose", [])
     if disclose:
         readme += ("\n## Known differences from the released fonts\n\n"

@@ -1,0 +1,7 @@
+{
+  "repo": "codystar",
+  "commits": [],
+  "earlier_sources": [
+    "https://github.com/librefonts/codystar at e32d050fbb01232b6a85423b121da89f21bba8b3 (the repository google/fonts recorded): src/Codystar-Light-TTF.vfb and src/Codystar-Regular-TTF.vfb, a FontLab import of the shipped fonts (a -TTF .vfb, P13), not a source; the rest are the release's tables as TTX."
+  ]
+}

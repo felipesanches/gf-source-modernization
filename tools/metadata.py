@@ -431,17 +431,20 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     return "\n".join(out) + "\n"
 
 
-IMPORT = re.compile(r", an? (FontForge|FontLab) import of the shipped font")
 
 
 def imported_by(plan):
     """"FontForge" or "FontLab" when the family's only published source is an import of the
     shipped fonts (an archival "-TTF" .sfd or .vfb, Simon on google/fonts#10490), as its
-    plan's earlier_sources says; None when no source was ever published."""
-    tools = {m.group(1) for t in plan.get("earlier_sources", []) for m in [IMPORT.search(t)] if m}
-    if len(tools) > 1:
-        raise SystemExit("FATAL: earlier_sources name imports by both FontForge and FontLab")
-    return tools.pop() if tools else None
+    plan's earlier_sources says; None otherwise (land.earlier_kind)."""
+    kind, tool = land.earlier_kind(plan)
+    return tool if kind == "import" else None
+
+
+def designer_sources(plan):
+    """True when the designer published sources that do not rebuild the release
+    (land.earlier_kind "designer"): the family converts from its binaries all the same."""
+    return land.earlier_kind(plan)[0] == "designer"
 
 
 def binary_upstream_info(repo, rows, old_block, head_full, display, previous, future):
@@ -460,7 +463,17 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     out, _ = header(display, d, head_full)
     date = git(d, "log", "-1", "--format=%cs", conversion_commit(d)).strip()
     tool = imported_by(plan)
-    if tool:
+    if designer_sources(plan):
+        out += wrap("Sources modernized %s: the sources the designer published do not rebuild the "
+                    "fonts Google Fonts ships (listed under \"Earlier sources\"), so those fonts "
+                    "were converted to Glyphs (`.glyphs`) sources, which build with gftools-builder "
+                    "and fontc. The repository, commit and config are in the `source { }` block of "
+                    "METADATA.pb." % date[:7], 88)
+        out += ["", "## Initial state", ""]
+        out += wrap("Google Fonts shipped %s (google/fonts at commit `%s`). The designer's "
+                    "published sources (\"Earlier sources\") do not rebuild those fonts, so the "
+                    "family could not be built from them with fontc." % (display, rows[0]["commit"][:12]), 88)
+    elif tool:
         ext = ".sfd" if tool == "FontForge" else ".vfb"
         out += wrap("Sources modernized %s: the only published source of this family, a %s "
                     "`%s`, is an import of the fonts Google Fonts ships, so those fonts were "
@@ -720,7 +733,9 @@ def main():
                       "its only published source, a %s %s, is an import of them" % (
                           imported_by(land.load_plan(repo)),
                           ".sfd" if imported_by(land.load_plan(repo)) == "FontForge" else ".vfb")
-                      if imported_by(land.load_plan(repo)) else "no source was ever published",
+                      if imported_by(land.load_plan(repo)) else
+                      "the sources the designer published do not rebuild them"
+                      if designer_sources(land.load_plan(repo)) else "no source was ever published",
                       confidence(landed[repo][4], repo)))
             git(wt, "commit", "-q", "-F", "-", input=msg)
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
