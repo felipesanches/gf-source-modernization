@@ -54,3 +54,17 @@ are not the release's. Over the 29 fonts (3075 glyphs): another contour start 18
 implied on-curve midpoints 327, a horizontal shift 9, a repeated point 1; none differs in outline. In Actor `O`
 the release's contour starts at an on-curve point fontc drops as implied, so the build starts elsewhere: some
 "start" cases share the midpoint cause (pr-bodies/fontc-issue-keep-source-oncurves.md); not yet measured.
+
+## A compiler that keeps the source's points? (fontmake_points.sh, fontmake-points-2026-11-20.txt)
+
+`sh fontmake_points.sh <run.sh scratch> <python with fontmake>` builds the same .glyphs sources with fontmake
+3.12.2 / ufo2ft 3.11.0 / glyphsLib 6.17.2 / fonttools 4.68.0 (ufo2ft keeps on-curve points: dropImpliedOnCurves
+False), overlaps and direction kept, and classifies the instructed glyphs against the release. It is not a usable
+proxy: almost every glyph comes out with another outline ("other" 5660), because glyphsLib/ufo2ft read babelfont's
+quadratic .glyphs differently from fontc (Actor `a` comes out traversed backwards; `O` has re-approximated points,
+82,505 where the source says 81,505).
+
+Traced by hand on Actor `O` (release 20 points, .glyphs 32 nodes, fontc build 18 points): babelfont's TTF reader
+reverses the contour and writes every implied on-curve point as an explicit node; fontc drops every on-curve point
+halfway between two off-curves, the release's explicit ones included, and reverses the contour back, starting
+elsewhere. Points change in both tools.

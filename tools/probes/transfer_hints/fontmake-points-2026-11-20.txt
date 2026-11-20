@@ -1,0 +1,30 @@
+actor Actor-Regular.ttf other=164
+cantoraone CantoraOne-Regular.ttf other=400
+forum Forum-Regular.ttf other=576
+lobstertwo LobsterTwo-Bold.ttf other=351
+lobstertwo LobsterTwo-BoldItalic.ttf other=351
+lobstertwo LobsterTwo-Italic.ttf other=351
+lobstertwo LobsterTwo-Regular.ttf other=351
+oldenburg Oldenburg-Regular.ttf 
+passeroone PasseroOne-Regular.ttf 
+quattrocento Quattrocento-Bold.ttf other=232
+quattrocento Quattrocento-Regular.ttf other=232
+rye Rye-Regular.ttf other=237
+sarina Sarina-Regular.ttf 
+share Share-Bold.ttf other=246
+share Share-BoldItalic.ttf other=246
+share Share-Italic.ttf other=246
+share Share-Regular.ttf other=246
+snowburstone SnowburstOne-Regular.ttf other=178
+spinnaker Spinnaker-Regular.ttf other=55
+stalinistone StalinistOne-Regular.ttf other=231
+stoke Stoke-Light.ttf 
+stoke Stoke-Regular.ttf other=196 repeated=1
+supermercadoone Supermercado-Regular.ttf no shipped font of that name
+tauri Tauri-Regular.ttf other=157
+vastshadow VastShadow-Regular.ttf 
+volkhov Volkhov-Bold.ttf other=152
+volkhov Volkhov-BoldItalic.ttf other=157
+volkhov Volkhov-Italic.ttf other=157
+volkhov Volkhov-Regular.ttf other=148
+wellfleet Wellfleet-Regular.ttf 
