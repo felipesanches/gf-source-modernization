@@ -1,0 +1,17 @@
+# Glyph renames the functional gate reports (codepoint release-name/build-name), sweep with the layer fix 7ed09143
+annieuseyourtelescope: U+00A0 nonbreakingspace/nbspace
+atomicage: U+000D nonmarkingreturn/CR; U+00A0 nonbreakingspace/nbspace
+cedarvillecursive: U+00A0 nonbreakingspace/nbspace
+crushed: U+00A0 nonbreakingspace/nbspace
+gloriahallelujah: U+00A0 nonbreakingspace/nbspace
+muktamahee: U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+muktamahee: U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+muktamahee: U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+muktamahee: U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+muktamahee: U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+muktamahee: U+200C ZWJ/ZWNJ; U+200D ZWNJ/ZWJ
+shadowsintolight: U+00A0 nonbreakingspace/nbspace; U+00AD uni00AD/_173
+sharetechmono: U+000D nonmarkingreturn/CR
+sueellenfrancisco: U+00A0 nonbreakingspace/nbspace
+waitingforthesunrise: U+00A0 nonbreakingspace/nbspace
+zeyada: U+00A0 nonbreakingspace/nbspace

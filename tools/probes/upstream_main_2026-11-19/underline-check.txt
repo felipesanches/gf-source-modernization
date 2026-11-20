@@ -1,0 +1,18 @@
+## main 36701fd7
+annieuseyourtelescope release=-77 converted=-76 DIFF
+gloriahallelujah release=-77 converted=-76 DIFF
+labelleaurore release=-77 converted=-76 DIFF
+irishgrover release=-77 converted=-76 DIFF
+sueellenfrancisco release=-109 converted=-108 DIFF
+cedarvillecursive release=-77 converted=-76 DIFF
+waitingforthesunrise release=-77 converted=-76 DIFF
+zeyada release=-77 converted=-76 DIFF
+## vfb-underline-half-thickness-2026-11-20 20027ac7
+annieuseyourtelescope release=-77 converted=-77 OK
+gloriahallelujah release=-77 converted=-77 OK
+labelleaurore release=-77 converted=-77 OK
+irishgrover release=-77 converted=-77 OK
+sueellenfrancisco release=-109 converted=-109 OK
+cedarvillecursive release=-77 converted=-77 OK
+waitingforthesunrise release=-77 converted=-77 OK
+zeyada release=-77 converted=-77 OK

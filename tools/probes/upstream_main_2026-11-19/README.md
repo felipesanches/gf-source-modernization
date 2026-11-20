@@ -75,3 +75,17 @@ layer fix, 18 still fail on the undefined kerning classes). #141 removes the OS/
 families that build with the layer fix (e.g. Irish Grover, Crushed, Sue Ellen Francisco, Waiting for
 the Sunrise: 4 table rows to 1); none lands CLEAN. SFD and binary-route families are unaffected
 (#141 changes only the VFB reader).
+
+## The near-clean VFB families: underline and glyph names (2026-11-20)
+
+`underline_check.sh <babelfont> <scratch> <repo>...` (`underline-check.txt`): in 8 of the 19 VFB
+families that build with the layer fix, post.underlinePosition is one unit above the release. Each
+has an odd thickness (51; Sue Ellen Francisco 75): FontLab's export writes position + thickness / 2
+with integer division (tools/probes/vfb_rules: 189 of 194 releases), main rounds the half. Branch
+vfb-underline-half-thickness-2026-11-20 (20027ac7) converts all 8 to the release's value.
+
+`renames-layerfix-7ed09143.txt`: glyphs whose name in the release differs from the source's (same
+outline and advance): U+00A0 nonbreakingspace/nbspace (9 families), U+000D nonmarkingreturn/CR (2),
+U+200C and U+200D ZWJ/ZWNJ swapped (6), U+00AD uni00AD/_173 (1). The source names are the VFBs' own
+(read with Python vfbLib 0.11.7); nonbreakingspace and nonmarkingreturn are Macintosh standard
+names (post format 2 indices 172 and 2): FontLab's export renamed glyphs by codepoint.
