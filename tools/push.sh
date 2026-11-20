@@ -23,7 +23,7 @@
 #   - never force-pushes; refuses if the remote branch exists and is not an
 #     ancestor of the local one
 #   - refuses an archived repository (read-only on GitHub; the 17 hg forks, 2026-11-19)
-# Every push is logged to push_log.tsv.
+# Every push is logged to push_log.tsv: repo, branch, head, url, UTC time.
 set -u
 W=$(cd "$(dirname "$0")/.." && pwd)
 R=/home/fsanches/compartilhado/sfd-reland-repos
@@ -102,7 +102,7 @@ for repo in $repos; do
     continue
   fi
   if git -C "$d" push origin "$branch"; then
-    printf '%s\t%s\t%s\t%s\n' "$repo" "$branch" "$head" "$url" >> "$W/push_log.tsv"
+    printf '%s\t%s\t%s\t%s\t%s\n' "$repo" "$branch" "$head" "$url" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$W/push_log.tsv"
     if [ "$branch" != main ]; then
       echo "$repo: pushed $branch -- open the pull request:"
       # the pull request goes to the repository's default branch (carlito's is main)
