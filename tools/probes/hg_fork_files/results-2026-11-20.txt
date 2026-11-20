@@ -1,0 +1,12 @@
+kronaone src/KronaOne-Regular-OTF.sfd same
+kronaone src/KronaOne-Regular-TTF.sfd same
+kronaone src/KronaOne-Regular.vfb same
+ovo src/Ovo-Regular-TFF.sfd same
+ovo src/Ovo-Regular.vfb same
+pompiere src/Pompiere-Regular-TTF.sfd same
+pompiere src/Pompiere-Regular.vfb same
+shortstack src/ShortStack-Regular-TTF.sfd same
+shortstack src/ShortStack-Regular.vfb same
+sonsieone src/SonsieOne-Regular-OTF.vfb same
+sonsieone src/SonsieOne-Regular-TTF.sfd same
+sonsieone src/SonsieOne-Regular.vfb same

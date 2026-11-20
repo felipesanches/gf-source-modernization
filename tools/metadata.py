@@ -153,7 +153,7 @@ def provenance(repo, rows, wt):
 def source_block(repo, rows, head_full, branch):
     d = os.path.join(land.OUT, repo)
     lic = license_file(repo, rows, head_full)
-    lines = ["source {", '  repository_url: "https://github.com/googlefonts/%s"' % repo,
+    lines = ["source {", '  repository_url: "https://github.com/googlefonts/%s"' % slug(repo),
              '  commit: "%s"' % head_full,
              "  files {", '    source_file: "%s"' % lic, '    dest_file: "%s"' % lic, "  }"]
     for r in rows:
@@ -171,6 +171,15 @@ def replace_source(text, block):
     if m:
         return text[:m.start()] + block + text[m.end():], m.group(0)
     return text.rstrip("\n") + "\n" + block, None
+
+
+def slug(repo):
+    """The googlefonts repository's name as GitHub spells it (BethEllen, not bethellen):
+    the landed clone's origin when it points at googlefonts, else the repository key."""
+    r = subprocess.run(["git", "-C", os.path.join(land.OUT, repo), "remote", "get-url", "origin"],
+                       capture_output=True, text=True)
+    m = re.match(r"https://github\.com/googlefonts/([^/]+?)(?:\.git)?$", r.stdout.strip())
+    return m.group(1) if m and m.group(1).lower() == repo.lower() else repo
 
 
 def plural(text):
@@ -231,8 +240,8 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
                          % (display, origin, provenance(repo, rows, wt)), 88)
     out += ["", "## Actions taken", ""]
     first = ("The family's files were imported unmodified as the first commit of "
-             "https://github.com/googlefonts/%s." % repo if kind == "hg" else
-             "The work was done on top of the upstream history, in https://github.com/googlefonts/%s." % repo)
+             "https://github.com/googlefonts/%s." % slug(repo) if kind == "hg" else
+             "The work was done on top of the upstream history, in https://github.com/googlefonts/%s." % slug(repo))
     out += wrap("- " + first, 88, subsequent_indent="  ")
     if edits:
         out += wrap("- Each change to the `.sfd` before conversion is its own commit: "
@@ -252,7 +261,7 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
                     % (superseded[:12], head_full[:12]), 88, subsequent_indent="  ")
     out += ["", "## Final state", ""]
     out += wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
-                         % (repo, head_full[:12], claim), 88)
+                         % (slug(repo), head_full[:12], claim), 88)
     out += [""]
     out += wrap("`%s` is the equivalence commit: its build is functionally equivalent "
                          "to the binaries Google Fonts ships. Source modernization adds no "
@@ -281,7 +290,7 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
         for f in future:
             out += wrap("- " + f, 88, subsequent_indent="  ")
     if old_block:
-        same = "googlefonts/%s\"" % repo in old_block
+        same = "googlefonts/%s\"" % slug(repo) in old_block
         out += ["", "## Previous source block" if same else "## Original repository (dormant)", ""]
         out += wrap("The source block this replaces%s, preserved for provenance:"
                     % (" (the same repository, before this work)" if same else ""), 88)
@@ -361,7 +370,7 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
                 "config to build it with fontc." % (display, src, base, commit), 88)
     out += ["", "## Actions taken", ""]
     out += wrap("- https://github.com/googlefonts/%s carries the history of "
-                "https://github.com/%s up to `%s`, unmodified." % (repo, base, commit[:12]),
+                "https://github.com/%s up to `%s`, unmodified." % (slug(repo), base, commit[:12]),
                 88, subsequent_indent="  ")
     out += wrap("- The Unified Font Repository template was adopted in its own commit; the "
                 "README records the provenance and the known differences below.", 88,
@@ -374,7 +383,7 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     out += ["", "## Final state", ""]
     out += wrap("The source is https://github.com/googlefonts/%s at `%s`, built directly "
                 "from the designer's Glyphs.app source `%s` (%s@%s), with no conversion."
-                % (repo, head_full[:12], src, base, commit[:12]), 88)
+                % (slug(repo), head_full[:12], src, base, commit[:12]), 88)
     if builder:
         # the builder, then what was measured with it, as the config commit states them
         rest = claim[0][builder.end():].strip()
@@ -424,7 +433,7 @@ def glyphs_upstream_info(repo, rows, old_block, head_full, display, previous, fu
         for f in future:
             out += wrap("- " + f, 88, subsequent_indent="  ")
     if old_block:
-        same = "googlefonts/%s\"" % repo in old_block
+        same = "googlefonts/%s\"" % slug(repo) in old_block
         out += ["", "## Previous source block" if same else "## Original repository (dormant)", ""]
         out += wrap("The source block this replaces%s, preserved for provenance:"
                     % (" (the same repository, before this work)" if same else ""), 88)
@@ -450,6 +459,25 @@ def designer_sources(plan):
     """True when the designer published sources that do not rebuild the release
     (land.earlier_kind "designer"): the family converts from its binaries all the same."""
     return land.earlier_kind(plan)[0] == "designer"
+
+
+def legacy_fork(repo, rows, old_block):
+    """A binary family converted on top of its googlefonts fork (land.on_upstream) whose
+    src/ holds FontForge imports of the shipped fonts, while google/fonts recorded another
+    repository (googlefontdirectory-hg): (that repository's URL, its commit, the fork's
+    src/ files), else None. The 17 hg families of google/fonts#10589."""
+    if not land.on_upstream(rows) or not old_block:
+        return None
+    url = re.search(r'repository_url: "([^"]+)"', old_block)
+    commit = re.search(r'commit: "([0-9a-f]+)"', old_block)
+    if not url or not commit or url.group(1).lower() == "https://github.com/" + rows[0]["base"].lower():
+        return None
+    files = [f for f in git(os.path.join(land.OUT, repo), "ls-tree", "-r", "--name-only",
+                            rows[0]["commit"], "--", "src").split()
+             if f.lower().endswith((".sfd", ".vfb"))]
+    if not any(f.lower().endswith(".sfd") for f in files):
+        return None
+    return url.group(1), commit.group(1), files
 
 
 def binary_upstream_info(repo, rows, old_block, head_full, display, previous, future):
@@ -491,6 +519,21 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
                     "under \"Earlier sources\"; Simon on google/fonts#10490: \"batch-converted "
                     "from the binary files\"), and it could not be built with fontc."
                     % (display, rows[0]["commit"][:12], tool), 88)
+    elif legacy_fork(repo, rows, old_block):
+        url, commit, files = legacy_fork(repo, rows, old_block)
+        out += wrap("Sources modernized %s: https://github.com/googlefonts/%s held only FontLab "
+                    "(`.vfb`) and FontForge (`.sfd`) files, and the `.sfd` files are imports of "
+                    "the fonts Google Fonts ships, so those fonts were converted to Glyphs "
+                    "(`.glyphs`) sources, which build with gftools-builder and fontc. The "
+                    "repository, commit and config are in the `source { }` block of METADATA.pb."
+                    % (date[:7], slug(repo)), 88)
+        out += ["", "## Initial state", ""]
+        out += wrap("Google Fonts shipped %s with %s at `%s` recorded as its source. That "
+                    "repository and https://github.com/googlefonts/%s (at `%s`) hold the same "
+                    "files: %s. The `.sfd` files are imports of the shipped fonts, and the "
+                    "family could not be built with fontc."
+                    % (display, url, commit[:12], slug(repo), rows[0]["commit"][:12],
+                       ", ".join("`%s`" % f for f in files)), 88)
     else:
         out += wrap("Sources created %s: no source of this family was ever published, so the "
                     "fonts Google Fonts ships were converted to Glyphs (`.glyphs`) sources, which "
@@ -506,13 +549,17 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
                         "source of the family was ever published, so it could not be built with "
                         "fontc." % (display, rows[0]["commit"][:12]), 88)
     out += ["", "## Actions taken", ""]
-    if land.on_upstream(rows):
+    if legacy_fork(repo, rows, old_block):
+        out += wrap("- The work was done on top of the history of https://github.com/googlefonts/%s, "
+                    "in a pull request merged into its default branch." % slug(repo), 88,
+                    subsequent_indent="  ")
+    elif land.on_upstream(rows):
         out += wrap("- The work was done on top of that repository's history, in a pull request "
                     "merged into its default branch, so its fonts are the ones converted." , 88,
                     subsequent_indent="  ")
     else:
         out += wrap("- The fonts Google Fonts ships were imported unmodified as the first commit "
-                    "of https://github.com/googlefonts/%s." % repo, 88, subsequent_indent="  ")
+                    "of https://github.com/googlefonts/%s." % slug(repo), 88, subsequent_indent="  ")
     out += wrap("- The Unified Font Repository template was adopted in its own commit; the "
                 "README records the provenance and the known differences below.", 88,
                 subsequent_indent="  ")
@@ -529,7 +576,7 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
                     subsequent_indent="  ")
     out += ["", "## Final state", ""]
     out += wrap("The source is https://github.com/googlefonts/%s at `%s`. %s"
-                % (repo, head_full[:12], claim), 88)
+                % (slug(repo), head_full[:12], claim), 88)
     out += [""]
     out += wrap("`%s` is the equivalence commit: its build is functionally equivalent to "
                 "the binaries Google Fonts ships. Source modernization adds no features. Any "
@@ -563,7 +610,7 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
         for f in future:
             out += wrap("- " + f, 88, subsequent_indent="  ")
     if old_block:
-        same = "googlefonts/%s\"" % repo in old_block
+        same = "googlefonts/%s\"" % slug(repo) in old_block
         out += ["", "## Previous source block" if same else "## Original repository (dormant)", ""]
         out += wrap("The source block this replaces%s, preserved for provenance:"
                     % (" (the same repository, before this work)" if same else ""), 88)
@@ -726,7 +773,7 @@ def main():
                    "gftools-builder and fontc\n"
                    "%s%s\n\n"
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
-                   % (display, repo, repo, head_full[:12], rows[0]["source"],
+                   % (display, slug(repo), slug(repo), head_full[:12], rows[0]["source"],
                       confidence(landed[repo][4], repo),
                       "; %d known difference(s) disclosed" % n_disc if n_disc else ""))
             git(wt, "commit", "-q", "-F", "-", input=with_override(msg))
@@ -739,7 +786,7 @@ def main():
                    "(productionNames); builds with gftools-builder and fontc\n"
                    "Confidence: high -- 0 blocking rows against the shipped binaries\n\n"
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
-                   % (display, repo, repo, head_full[:12], superseded[:12]))
+                   % (display, slug(repo), slug(repo), head_full[:12], superseded[:12]))
             git(wt, "commit", "-q", "-F", "-", input=with_override(msg))
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
             continue
@@ -750,13 +797,15 @@ def main():
                    "with babelfont-rs's TTF reader; builds with gftools-builder and fontc\n"
                    "%s\n\n"
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
-                   % (display, repo, repo, head_full[:12],
+                   % (display, slug(repo), slug(repo), head_full[:12],
                       "its only published source, a %s %s, is an import of them" % (
                           imported_by(land.load_plan(repo)),
                           ".sfd" if imported_by(land.load_plan(repo)) == "FontForge" else ".vfb")
                       if imported_by(land.load_plan(repo)) else
                       "the sources the designer published do not rebuild them"
-                      if designer_sources(land.load_plan(repo)) else "no source was ever published",
+                      if designer_sources(land.load_plan(repo)) else
+                      "the .sfd files in its repository are imports of them"
+                      if legacy_fork(repo, rows, old) else "no source was ever published",
                       confidence(landed[repo][4], repo)))
             git(wt, "commit", "-q", "-F", "-", input=with_override(msg))
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
@@ -766,7 +815,7 @@ def main():
                "Status: %s; builds with gftools-builder and fontc\n"
                "%s\n\n"
                "Assisted by an AI agent (Claude Opus 5.5)\n"
-               % (display, repo, repo, head_full[:12],
+               % (display, slug(repo), slug(repo), head_full[:12],
                   "converted from the unmodified .sfd" if not edits_in(d, rows) else
                   plural("converted from the .sfd after %d documented edit(s)" % edits_in(d, rows)),
                   confidence(landed[repo][4], repo)))
