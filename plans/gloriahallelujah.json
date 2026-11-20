@@ -1,0 +1,28 @@
+{
+  "repo": "gloriahallelujah",
+  "commits": [],
+  "source_edits": [
+    {
+      "styles": "*",
+      "ops": [
+        [
+          "rename",
+          "nbspace nonbreakingspace"
+        ]
+      ],
+      "subject": "name U+00A0 nonbreakingspace, as the release does",
+      "body": "FontLab's export named the glyph of U+00A0 with its Macintosh standard name, nonbreakingspace (post format 2, index 172); the .vfb names it nbspace. Same outline and advance; this renames the glyph as the release names it (tools/probes/upstream_main_2026-11-19/renames-layerfix-7ed09143.txt)."
+    },
+    {
+      "styles": "*",
+      "ops": [
+        [
+          "setparam",
+          "fsType=[]"
+        ]
+      ],
+      "subject": "state the release's fsType 0",
+      "body": "The .vfb states fsType 4 (preview and print embedding). Google Fonts set it to 0 (installable) in google/fonts 8ccda7bf7 (2015-08-05, \"Fix fsType for 40 font files\"); the release ships 0. This states 0."
+    }
+  ]
+}

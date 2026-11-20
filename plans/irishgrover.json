@@ -1,0 +1,25 @@
+{
+  "repo": "irishgrover",
+  "commits": [],
+  "source_edits": [
+    {
+      "styles": "*",
+      "ops": [
+        [
+          "setnameentry",
+          "4=Irish Grover Regular"
+        ],
+        [
+          "setprop",
+          "postscriptFullName=Irish Grover Regular"
+        ],
+        [
+          "setprop",
+          "postscriptFontName=IrishGrover-Regular"
+        ]
+      ],
+      "subject": "state the full and PostScript names of the release",
+      "body": "The .vfb and the first release (google/fonts 90abd17b4) name the font Irish Grover and IrishGrover. The release Google Fonts ships, version 1.001 of the 2017 hotfix (google/fonts daa6505c6, \"hotfix-irishgrover: v1.001 added (#777)\"), names it Irish Grover Regular and IrishGrover-Regular (name IDs 4 and 6). This states those names."
+    }
+  ]
+}
