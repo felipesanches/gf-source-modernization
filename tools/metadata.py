@@ -646,8 +646,15 @@ def main():
         if landed.get(repo, [None] * 5)[4] not in accepted:
             raise SystemExit("FATAL: %s is not landed CLEAN; its metadata would overclaim" % repo)
         rows = land.family_rows(repo)
-        if git(os.path.join(land.OUT, repo), "rev-parse", "--short", "HEAD").strip() != landed[repo][2]:
-            raise SystemExit("FATAL: %s HEAD is not the landed commit %s" % (repo, landed[repo][2]))
+        clone = os.path.join(land.OUT, repo)
+        if git(clone, "rev-parse", "--short", "HEAD").strip() != landed[repo][2]:
+            # later commits may only correct the README (tools/readme_fix.py)
+            later = subprocess.run(["git", "-C", clone, "diff", "--name-only", landed[repo][2], "HEAD"],
+                                   capture_output=True, text=True)
+            ahead = subprocess.run(["git", "-C", clone, "merge-base", "--is-ancestor", landed[repo][2], "HEAD"])
+            if ahead.returncode or later.returncode or set(later.stdout.split()) - {"README.md"}:
+                raise SystemExit("FATAL: %s HEAD is not the landed commit %s, nor README-only "
+                                 "commits after it" % (repo, landed[repo][2]))
         d = os.path.join(land.OUT, repo)
         head_full = equivalence_commit(d, rows)   # recorded; later commits are future work
         future = land.load_plan(repo).get("future_work", [])
@@ -697,6 +704,15 @@ def main():
             raise SystemExit("FATAL: non-ASCII introduced into upstream_info.md for %s" % fam)
         open(ui, "w", encoding="utf-8").write(body)
         git(wt, "add", "--", os.path.relpath(mp, wt), os.path.relpath(ui, wt))
+        # an override config.yaml in the family directory would win over the repository's own
+        # sources/config.yaml (google-fonts-sources reads a local override first): remove it
+        override = os.path.join(wt, lic, fam, "config.yaml")
+        with_override = (lambda m: m) if not os.path.exists(override) else (
+            lambda m: m.replace("Config: sources/config.yaml\n", "Config: sources/config.yaml "
+                                "(the override config.yaml in this directory is removed: the "
+                                "repository builds itself)\n", 1))
+        if os.path.exists(override):
+            git(wt, "rm", "-q", "--", os.path.relpath(override, wt))
         if rows[0]["kind"] == "glyphs":
             n_disc = len(land.load_plan(repo).get("disclose", []))
             msg = ("%s: reference the googlefonts/%s Glyphs source\n\n"
@@ -708,7 +724,7 @@ def main():
                    % (display, repo, repo, head_full[:12], rows[0]["source"],
                       confidence(landed[repo][4], repo),
                       "; %d known difference(s) disclosed" % n_disc if n_disc else ""))
-            git(wt, "commit", "-q", "-F", "-", input=msg)
+            git(wt, "commit", "-q", "-F", "-", input=with_override(msg))
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
             continue
         if superseded:
@@ -719,7 +735,7 @@ def main():
                    "Confidence: high -- 0 blocking rows against the shipped binaries\n\n"
                    "Assisted by an AI agent (Claude Opus 5.5)\n"
                    % (display, repo, repo, head_full[:12], superseded[:12]))
-            git(wt, "commit", "-q", "-F", "-", input=msg)
+            git(wt, "commit", "-q", "-F", "-", input=with_override(msg))
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
             continue
         if rows[0]["kind"] == "binary":
@@ -737,7 +753,7 @@ def main():
                       "the sources the designer published do not rebuild them"
                       if designer_sources(land.load_plan(repo)) else "no source was ever published",
                       confidence(landed[repo][4], repo)))
-            git(wt, "commit", "-q", "-F", "-", input=msg)
+            git(wt, "commit", "-q", "-F", "-", input=with_override(msg))
             print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
             continue
         msg = ("%s: reference the googlefonts/%s .glyphs source\n\n"
@@ -749,7 +765,7 @@ def main():
                   "converted from the unmodified .sfd" if not edits_in(d, rows) else
                   plural("converted from the .sfd after %d documented edit(s)" % edits_in(d, rows)),
                   confidence(landed[repo][4], repo)))
-        git(wt, "commit", "-q", "-F", "-", input=msg)
+        git(wt, "commit", "-q", "-F", "-", input=with_override(msg))
         print("%s: %s" % (fam, git(wt, "rev-parse", "--short", "HEAD").strip()))
 
 
