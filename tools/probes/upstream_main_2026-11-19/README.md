@@ -89,3 +89,12 @@ outline and advance): U+00A0 nonbreakingspace/nbspace (9 families), U+000D nonma
 U+200C and U+200D ZWJ/ZWNJ swapped (6), U+00AD uni00AD/_173 (1). The source names are the VFBs' own
 (read with Python vfbLib 0.11.7); nonbreakingspace and nonmarkingreturn are Macintosh standard
 names (post format 2 indices 172 and 2): FontLab's export renamed glyphs by codepoint.
+
+## With #142, #143 and the source edits (2026-11-20)
+
+`results-vfb-142-143-edits.tsv`: the 40 VFB families with a measurement build of main 36701fd7 plus
+#142 and #143 (integration-142-143-2026-11-20, 4277eba3), and the plans' source_edits (the glyph
+renames FontLab's export made, Irish Grover's 2017 names, Gloria Hallelujah's fsType 0). Irish Grover
+lands CLEAN; Waiting for the Sunrise and Gloria Hallelujah fail only hinting; the renames clear the
+cmap check of 7 more, which still fail line spacing, rendering or names; 21 do not build (undefined
+kerning classes, and Stardos Stencil's fontc stall).

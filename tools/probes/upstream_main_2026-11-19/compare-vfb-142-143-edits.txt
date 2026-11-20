@@ -1,0 +1,86 @@
+== HINTING-ONLY: 3
+  irishgrover            old: IrishGrover-Regular=3 line_spacing+names
+                         new: IrishGrover-Regular=0 ok
+  gloriahallelujah       old: GloriaHallelujah=1 cmap
+                         new: GloriaHallelujah=0 ok
+  waitingforthesunrise   old: WaitingfortheSunrise=0 cmap
+                         new: WaitingfortheSunrise=0 ok
+== BETTER: 7
+  annieuseyourtelescope  old: AnnieUseYourTelescope-Regular=2 cmap+line_spacing+names+rendering
+                         new: AnnieUseYourTelescope-Regular=2 line_spacing+names+rendering
+  atomicage              old: AtomicAge-Regular=9 cmap+gdef+line_spacing+rendering+shaping
+                         new: AtomicAge-Regular=9 gdef+line_spacing+rendering+shaping
+  cedarvillecursive      old: Cedarville-Cursive=4 cmap+line_spacing+rendering
+                         new: Cedarville-Cursive=4 line_spacing+rendering
+  shadowsintolight       old: ShadowsIntoLight=4 cmap+line_spacing+rendering
+                         new: ShadowsIntoLight=4 line_spacing+rendering
+  sueellenfrancisco      old: SueEllenFrancisco-Regular=0 cmap+names
+                         new: SueEllenFrancisco-Regular=0 names
+  vibur                  old: Vibur-Regular=BUILD ok
+                         new: Vibur-Regular=29 advances+cmap+line_spacing+names+rendering+shaping
+  zeyada                 old: Zeyada=2 cmap+line_spacing+rendering
+                         new: Zeyada=2 line_spacing+rendering
+== SAME: 5
+  labelleaurore          old: LaBelleAurore=5 line_spacing+rendering
+                         new: LaBelleAurore=5 line_spacing+rendering
+  muktamalar             old: MuktaMalar-Bold=36 cmap+gdef+line_spacing+names+rendering+shaping; MuktaMalar-ExtraBold=36 cmap+gdef+line_spacing+names+rendering+shaping; M
+                         new: MuktaMalar-Bold=36 cmap+gdef+line_spacing+names+rendering+shaping; MuktaMalar-ExtraBold=36 cmap+gdef+line_spacing+names+rendering+shaping; M
+  sharetechmono          old: ShareTechMono-Regular=38 advances+cmap+line_spacing+rendering+shaping
+                         new: ShareTechMono-Regular=38 advances+cmap+line_spacing+rendering+shaping
+  taiheritagepro         old: TaiHeritagePro-Bold=11 gdef+rendering+shaping; TaiHeritagePro-Regular=11 gdef+rendering+shaping
+                         new: TaiHeritagePro-Bold=11 gdef+rendering+shaping; TaiHeritagePro-Regular=11 gdef+rendering+shaping
+  tenorsans              old: TenorSans-Regular=4 advances+cmap
+                         new: TenorSans-Regular=4 advances+cmap
+== WORSE: 4
+  crushed                old: Crushed-Regular=4 cmap+line_spacing+names
+                         new: Crushed-Regular=1 names+shaping
+  aldrich                old: Aldrich-Regular=3 advances+cmap+line_spacing+names+rendering+shaping
+                         new: Aldrich-Regular=6 advances+cmap+line_spacing+names+rendering+shaping
+  muktamahee             old: MuktaMahee-Bold=16 cmap+gdef+line_spacing+names+rendering+shaping; MuktaMahee-ExtraBold=17 cmap+gdef+line_spacing+names+rendering+shaping; M
+                         new: MuktaMahee-Bold=20 cmap+gdef+line_spacing+names+rendering+shaping; MuktaMahee-ExtraBold=21 cmap+gdef+line_spacing+names+rendering+shaping; M
+  muktavaani             old: MuktaVaani-Bold=90 cmap+gdef+line_spacing+names+rendering+shaping; MuktaVaani-ExtraBold=91 cmap+gdef+line_spacing+names+rendering+shaping; M
+                         new: MuktaVaani-Bold=94 cmap+gdef+line_spacing+names+rendering+shaping; MuktaVaani-ExtraBold=95 cmap+gdef+line_spacing+names+rendering+shaping; M
+== BUILD FAILS: 21
+  aclonica               old: Aclonica-Regular=3 cmap+names+rendering
+                         new: Aclonica-Regular=BUILD ok
+  justanotherhand        old: JustAnotherHand-Regular=8 advances+cmap+names
+                         new: JustAnotherHand-Regular=BUILD ok
+  luckiestguy            old: LuckiestGuy-Regular=7 cmap+line_spacing+names+rendering
+                         new: LuckiestGuy-Regular=BUILD ok
+  maidenorange           old: MaidenOrange-Regular=5 cmap+line_spacing+names+rendering
+                         new: MaidenOrange-Regular=BUILD ok
+  montez                 old: Montez-Regular=3 cmap+names
+                         new: Montez-Regular=BUILD ok
+  redressed              old: Redressed-Regular=3 cmap+names+rendering
+                         new: Redressed-Regular=BUILD ok
+  specialelite           old: SpecialElite-Regular=3 cmap+names+rendering
+                         new: SpecialElite-Regular=BUILD ok
+  syncopate              old: Syncopate-Bold=1 cmap+gdef+shaping; Syncopate-Regular=6 cmap+gdef+line_spacing+names+shaping
+                         new: Syncopate-Bold=BUILD ok; Syncopate-Regular=BUILD ok
+  gotu                   old: Gotu-Regular=BUILD ok
+                         new: Gotu-Regular=BUILD ok
+  hennypenny             old: HennyPenny-Regular=0 cmap
+                         new: HennyPenny-Regular=BUILD ok
+  kenia                  old: Kenia-Regular=5 advances+cmap+line_spacing+rendering+shaping
+                         new: Kenia-Regular=BUILD ok
+  modak                  old: Modak-Regular=1553 advances+cmap+gdef+line_spacing+rendering+shaping
+                         new: Modak-Regular=BUILD ok
+  mukta                  old: Mukta-Bold=86 cmap+gdef+line_spacing+names+rendering+shaping; Mukta-ExtraBold=87 cmap+gdef+line_spacing+names+rendering+shaping; Mukta-Extra
+                         new: Mukta-Bold=BUILD ok; Mukta-ExtraBold=BUILD ok; Mukta-ExtraLight=BUILD ok; Mukta-Light=BUILD ok; Mukta-Medium=BUILD ok; Mukta-Regular=BUILD o
+  neucha                 old: Neucha=1 cmap
+                         new: Neucha=BUILD ok
+  prozalibre             old: ProzaLibre-Bold=BUILD ok; ProzaLibre-ExtraBoldItalic=BUILD ok; ProzaLibre-Medium=BUILD ok; ProzaLibre-MediumItalic=BUILD ok; ProzaLibre-Semi
+                         new: ProzaLibre-Bold=BUILD ok; ProzaLibre-ExtraBoldItalic=BUILD ok; ProzaLibre-Medium=BUILD ok; ProzaLibre-MediumItalic=BUILD ok; ProzaLibre-Semi
+  righteous              old: Righteous-Regular=3 cmap+rendering+shaping
+                         new: Righteous-Regular=BUILD ok
+  sevillana              old: Sevillana-Regular=0 cmap
+                         new: Sevillana-Regular=BUILD ok
+  simonetta              old: Simonetta-Black=1 cmap+names; Simonetta-BlackItalic=1 cmap+names; Simonetta-Italic=2 cmap; Simonetta-Regular=2 cmap+names
+                         new: Simonetta-Black=BUILD ok; Simonetta-BlackItalic=BUILD ok; Simonetta-Italic=BUILD ok; Simonetta-Regular=BUILD ok
+  stardosstencil         old: -
+                         new: StardosStencil-Bold=BUILD ok; StardosStencil-Regular=BUILD ok
+  telex                  old: Telex-Regular=23 advances+cmap+gdef+line_spacing+names+rendering+shaping
+                         new: Telex-Regular=BUILD ok
+  ubuntu                 old: Ubuntu-Bold=7 advances+cmap+line_spacing+rendering+shaping; Ubuntu-BoldItalic=7 advances+cmap+line_spacing+rendering+shaping; Ubuntu-Italic=
+                         new: Ubuntu-Bold=BUILD ok; Ubuntu-BoldItalic=BUILD ok; Ubuntu-Italic=BUILD ok; Ubuntu-Light=BUILD ok; Ubuntu-LightItalic=BUILD ok; Ubuntu-Medium=
+== ERROR: 0
