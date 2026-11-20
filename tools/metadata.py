@@ -179,6 +179,11 @@ def plural(text):
         m.group(1), m.group(2), m.group(3), "" if m.group(1) == "1" else "s"), text)
 
 
+def sentence(text):
+    """End a claim with a full stop: the gate summary can end in a bare verdict."""
+    return text if text.endswith((".", ":")) else text + "."
+
+
 def tools_cited(message):
     """Where the convert commit says its gate tools live: the evidence repository at the
     landing's revision, and the family's plan there if it has one."""
@@ -206,7 +211,7 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
     d = os.path.join(land.OUT, repo)
     convert = git(d, "log", "-1", "--format=%B", head_full)
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", convert, re.S | re.M)
-    claim = plural(" ".join(claim.group(1).split())) + " " + tools_cited(convert) if claim else ""
+    claim = sentence(plural(" ".join(claim.group(1).split()))) + " " + tools_cited(convert) if claim else ""
     if kind == "hg":
         origin = ("the family's directory in the googlefontdirectory-hg monorepo "
                   "(https://github.com/%s, `%s/%s` at commit `%s`); it had no repository "
@@ -456,7 +461,7 @@ def binary_upstream_info(repo, rows, old_block, head_full, display, previous, fu
     # the equivalence claim is the last gated commit's: the conversion's, or a source edit's after it
     equiv = git(d, "log", "-1", "--format=%B", head_full)
     claim = re.search(r"^(Builds with .*?)(?:\n\n|\Z)", equiv, re.S | re.M)
-    claim = plural(" ".join(claim.group(1).split())) + " " + tools_cited(equiv) if claim else ""
+    claim = sentence(plural(" ".join(claim.group(1).split()))) + " " + tools_cited(equiv) if claim else ""
     conv = re.search(r"^Converted from\s.*?(?:\n\n|\Z)", convert, re.S | re.M)
     conv = " ".join(conv.group(0).split()) if conv else ""
     plan = land.load_plan(repo)
