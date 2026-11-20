@@ -71,7 +71,9 @@ def check_commit(wt, sha, build):
     if not m:
         return fam_dir, ["repository_url %r is not a googlefonts repository" % src.repository_url]
     repo = m.group(1)
-    local = os.path.join(land.OUT, repo)
+    # the landed clone and its plan are keyed in lower case (BethEllen -> bethellen)
+    key = repo if os.path.isdir(os.path.join(land.OUT, repo)) else repo.lower()
+    local = os.path.join(land.OUT, key)
     # standing rule (Felipe, 2026-11-04): the commit is on the repository's DEFAULT branch
     # as GitHub publishes it, never on a pull request's branch
     head = subprocess.run(["git", "ls-remote", "--symref", src.repository_url, "HEAD"],
@@ -112,7 +114,7 @@ def check_commit(wt, sha, build):
             built = sorted(os.listdir(ttf)) if os.path.isdir(ttf) else []
             if sorted(mapped) != built:
                 problems.append("build produces %s, the source block maps %s" % (built, sorted(mapped)))
-            accepted = land.load_plan(repo).get("accepted", []) if os.environ.get("ALLOW_DISCLOSED") else []
+            accepted = land.load_plan(key).get("accepted", []) if os.environ.get("ALLOW_DISCLOSED") else []
             for f in src.files:
                 name = os.path.basename(f.source_file)
                 if not f.source_file.startswith("fonts/ttf/") or name not in built:
