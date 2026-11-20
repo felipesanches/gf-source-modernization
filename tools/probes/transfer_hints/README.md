@@ -46,3 +46,11 @@ contour); with box recomputation Stoke-Regular failed in 5 of 7225 glyph sizes (
 A .ttx dump of the release as the hint source (`ttx -t GlyphOrder -t head -t maxp -t hmtx -t glyf -t fpgm -t prep
 -t "cvt " -t gasp -t hdmx -t LTSH -t VDMX`, 0.6 to 1.1 MB per style) gives the same glyf, fpgm and prep and passes
 too (Actor-Regular, Stoke-Regular, Volkhov-Italic).
+
+## Why the built points differ (why_points_differ.py, why-points-differ-2026-11-20.txt)
+
+`python3 -I why_points_differ.py <release.ttf> <built.ttf>` classifies each instructed glyph whose built points
+are not the release's. Over the 29 fonts (3075 glyphs): another contour start 1854, a combination 884, dropped
+implied on-curve midpoints 327, a horizontal shift 9, a repeated point 1; none differs in outline. In Actor `O`
+the release's contour starts at an on-curve point fontc drops as implied, so the build starts elsewhere: some
+"start" cases share the midpoint cause (pr-bodies/fontc-issue-keep-source-oncurves.md); not yet measured.

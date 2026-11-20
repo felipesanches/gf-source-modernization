@@ -1,0 +1,29 @@
+actor Actor-Regular.ttf implied=10 several=18 start=27
+cantoraone CantoraOne-Regular.ttf implied=92 several=140 start=119
+forum Forum-Regular.ttf implied=24 several=141 start=117
+lobstertwo LobsterTwo-BoldItalic.ttf implied=18 several=60 start=152
+lobstertwo LobsterTwo-Bold.ttf implied=25 several=70 start=142
+lobstertwo LobsterTwo-Italic.ttf implied=9 several=70 start=154
+lobstertwo LobsterTwo-Regular.ttf implied=18 several=42 start=173
+oldenburg Oldenburg-Regular.ttf 
+passeroone PasseroOne-Regular.ttf 
+quattrocento Quattrocento-Bold.ttf implied=29 several=18 start=74
+quattrocento Quattrocento-Regular.ttf implied=44 several=46 start=49
+rye Rye-Regular.ttf implied=1 several=40 start=184
+sarina Sarina-Regular.ttf 
+share Share-BoldItalic.ttf implied=5 several=6 start=71
+share Share-Bold.ttf implied=10 several=38 start=39
+share Share-Italic.ttf implied=8 several=6 start=72
+share Share-Regular.ttf implied=14 several=33 start=42
+snowburstone SnowburstOne-Regular.ttf implied=5 several=34 shift=9 start=101
+spinnaker Spinnaker-Regular.ttf several=2
+stalinistone StalinistOne-Regular.ttf 
+stoke Stoke-Light.ttf 
+stoke Stoke-Regular.ttf implied=8 repeated=1 several=24 start=133
+tauri Tauri-Regular.ttf implied=1 several=29 start=27
+vastshadow VastShadow-Regular.ttf 
+volkhov Volkhov-BoldItalic.ttf implied=2 several=6 start=62
+volkhov Volkhov-Bold.ttf implied=1 several=23 start=33
+volkhov Volkhov-Italic.ttf implied=1 several=12 start=55
+volkhov Volkhov-Regular.ttf implied=2 several=26 start=28
+wellfleet Wellfleet-Regular.ttf 
