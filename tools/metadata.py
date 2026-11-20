@@ -243,6 +243,12 @@ def upstream_info(repo, rows, old_block, head_full, display, previous, future, w
              "https://github.com/googlefonts/%s." % slug(repo) if kind == "hg" else
              "The work was done on top of the upstream history, in https://github.com/googlefonts/%s." % slug(repo))
     out += wrap("- " + first, 88, subsequent_indent="  ")
+    aside = set_aside(d, rows) if kind != "hg" else []
+    if aside:
+        out += wrap(plural("- Its default branch had %d later commit(s) (%s); a commit restored the "
+                           "sources as at `%s`, the revision Google Fonts ships, so they stay in "
+                           "history but are not part of this conversion."
+                           % (len(aside), "; ".join(aside), commit[:12])), 88, subsequent_indent="  ")
     if edits:
         out += wrap("- Each change to the `.sfd` before conversion is its own commit: "
                              + "; ".join(edits) + ".", 88, subsequent_indent="  ")
@@ -655,7 +661,19 @@ def own_subjects(d, rows):
     kind = rows[0]["kind"]
     rng = ("HEAD" if kind == "hg" else "master..HEAD" if kind == "allerta"
            else "%s..HEAD" % rows[0]["commit"])
-    return git(d, "log", "--reverse", "--format=%s", rng).splitlines()
+    subjects = git(d, "log", "--reverse", "--format=%s", rng).splitlines()
+    # restore_onto: the branch starts at the upstream tip; the commits before the restore are
+    # the upstream's own later history, which the restore set aside
+    restores = [i for i, s in enumerate(subjects) if s.startswith(land.RESTORE_PREFIX)]
+    return subjects[restores[-1]:] if restores else subjects
+
+
+def set_aside(d, rows):
+    """restore_onto: the upstream commits after the shipped revision that the restore commit
+    set aside (subjects, oldest first); [] when the branch did not need a restore."""
+    subjects = git(d, "log", "--reverse", "--format=%s", "%s..HEAD" % rows[0]["commit"]).splitlines()
+    restores = [i for i, s in enumerate(subjects) if s.startswith(land.RESTORE_PREFIX)]
+    return subjects[:restores[-1]] if restores else []
 
 
 def edit_subjects(d, rows):
