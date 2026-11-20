@@ -1,0 +1,17 @@
+{
+  "repo": "annieuseyourtelescope",
+  "commits": [],
+  "source_edits": [
+    {
+      "styles": "*",
+      "ops": [
+        [
+          "rename",
+          "nbspace nonbreakingspace"
+        ]
+      ],
+      "subject": "name U+00A0 nonbreakingspace, as the release does",
+      "body": "FontLab's export named the glyph of U+00A0 with its Macintosh standard name, nonbreakingspace (post format 2, index 172); the .vfb names it nbspace. Same outline and advance; this renames the glyph as the release names it (tools/probes/upstream_main_2026-11-19/renames-layerfix-7ed09143.txt)."
+    }
+  ]
+}

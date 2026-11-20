@@ -1,0 +1,17 @@
+{
+  "repo": "muktamahee",
+  "commits": [],
+  "source_edits": [
+    {
+      "styles": "*",
+      "ops": [
+        [
+          "rename",
+          "ZWJ ZWNJ; ZWNJ ZWJ"
+        ]
+      ],
+      "subject": "name U+200C ZWJ and U+200D ZWNJ, as the release does",
+      "body": "The release names the glyph of U+200C (ZERO WIDTH NON-JOINER) ZWJ and the glyph of U+200D (ZERO WIDTH JOINER) ZWNJ: the two names swapped relative to the characters, which the .vfb names correctly. Same outlines and advances; this reproduces the release's names, as an equivalent source must, and correcting them is a later change (tools/probes/upstream_main_2026-11-19/renames-layerfix-7ed09143.txt)."
+    }
+  ]
+}
