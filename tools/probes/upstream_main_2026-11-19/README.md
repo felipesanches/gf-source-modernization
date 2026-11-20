@@ -98,3 +98,5 @@ renames FontLab's export made, Irish Grover's 2017 names, Gloria Hallelujah's fs
 lands CLEAN; Waiting for the Sunrise and Gloria Hallelujah fail only hinting; the renames clear the
 cmap check of 7 more, which still fail line spacing, rendering or names; 21 do not build (undefined
 kerning classes, and Stardos Stencil's fontc stall).
+
+Irish Grover alone with main 36701fd7 plus #143 only (vfb-underline-half-thickness-2026-11-20, 20027ac7) and its source edit, landed with tools/land.py (FAMILIES=families-vfb.tsv, --unpublished-converter) on 2026-11-20: CLEAN (IrishGrover-Regular=0 functional=PASS). It needs #143, not #142.
