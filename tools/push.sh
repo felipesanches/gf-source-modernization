@@ -82,6 +82,7 @@ for repo in $repos; do
   fam="$W/families.tsv"
   grep -q "^$repo	" "$fam" || fam="$W/families-next.tsv"   # the table that pairs this repo
   grep -q "^$repo	" "$fam" || fam="$W/families-binary.tsv"
+  grep -q "^$repo	" "$fam" || fam="$W/families-vfb.tsv"
   if ! FAMILIES="$fam" "$PY" "$W/tools/verify_landed.py" "$repo" >/dev/null 2>&1; then
     echo "$repo: REFUSED -- verify_landed.py fails; run it to see why"; continue
   fi
