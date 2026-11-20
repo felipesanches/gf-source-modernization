@@ -19,7 +19,8 @@ a fresh clone -- and checks, for every repository given:
      followed by "Builder config: ..." commits that change only sources/config.yaml
      and the CI workflow (a builder key renamed, the builder pin moved) and, for a
      `binary` row, "Source edit: ..." commits that change only sources/*.glyphs (a
-     documented statement the binary's conversion cannot carry, e.g. its GDEF classes);
+     documented statement the binary's conversion cannot carry, e.g. its GDEF classes),
+     and, for any row, the plan's `source_edits` in order (glyphs_edit.py);
      step 4 rebuilds HEAD, so they are gated like the conversion.
      A `glyphs` row (the source already is .glyphs): the upstream history at its
      commit, the template, then "Add a gftools-builder config for <source>" last,
@@ -213,13 +214,20 @@ def verify(repo):
     tail = 0
     while tail < len(subjects) - 1 and subjects[-1 - tail].startswith((CONFIG_PREFIX, land.SOURCE_EDIT_PREFIX)):
         tail += 1
+    # the plan's source_edits, in order, are the only "Source edit:" commits besides a binary's
+    # GDEF statement (land.py apply_source_edits)
+    planned = [land.SOURCE_EDIT_PREFIX + e["subject"] for e in (land.load_plan(repo) or {}).get("source_edits", [])]
+    edit_subjects = [s for s in subjects[len(log) - tail:] if s.startswith(land.SOURCE_EDIT_PREFIX)]
+    if planned and edit_subjects[-len(planned):] != planned:
+        problems.append("SHAPE: the source edits are not the plan's: %s" % edit_subjects)
     for c, s in zip(log[len(log) - tail:], subjects[len(log) - tail:]):
         changed = run("git", "-C", d, "diff-tree", "--no-commit-id", "--name-only", "-r", c).stdout.split()
         if s.startswith(land.SOURCE_EDIT_PREFIX):
-            # a documented edit of the converted source after a binary's conversion (a binary
-            # has no earlier source to edit): it changes only sources/*.glyphs
-            if kind != "binary" or not changed or any(not re.fullmatch(r"sources/[^/]+\.glyphs", p) for p in changed):
-                problems.append("SHAPE: %s %r is not a binary's .glyphs-only source edit: %s" % (c[:7], s, changed))
+            # a documented edit of the converted source: a binary's GDEF statement, or one of
+            # the plan's source_edits; it changes only sources/*.glyphs
+            if (kind != "binary" and s not in planned) or not changed or any(
+                    not re.fullmatch(r"sources/[^/]+\.glyphs", p) for p in changed):
+                problems.append("SHAPE: %s %r is not a planned .glyphs-only source edit: %s" % (c[:7], s, changed))
         elif not changed or any(p not in CONFIG_FILES for p in changed):
             problems.append("SHAPE: %s %r touches more than the builder config: %s" % (c[:7], s, changed))
     if tail:

@@ -40,6 +40,11 @@ google/fonts commit they are taken from (plan key `binaries_from`) and step 1 en
 commit adding them, byte-identical to the fonts the gate compares against; the
 conversion then retires them and src/ together.
 
+A plan's `source_edits` (any row kind): documented edits of the converted .glyphs, applied
+after the conversion with tools/glyphs_edit.py, each its own "Source edit: <subject>" commit;
+the last carries the build claim (VFB families: FontLab's export renamed glyphs by codepoint,
+releases that changed their names).
+
 An `upstream` row whose plan names `restore_onto` (a branch, e.g. "main") is for an
 upstream that moved past the shipped revision with commits never released (Beth Ellen):
 the landing branches from that branch's tip, and step 1 is a commit returning every file
@@ -70,6 +75,7 @@ W = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import functional_gate  # noqa: E402
 import recipe        # noqa: E402
+import glyphs_edit   # noqa: E402
 import sfd_edit      # noqa: E402
 import workarounds   # noqa: E402
 
@@ -920,6 +926,12 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
                       "GDEF glyph classes in the source. Against google/fonts %s, under "
                       "tools/table_gate.py and tools/functional_gate.py:" % gf_ref)
         lines += gate_lines(results, functional, wrap)
+    elif plan.get("source_edits"):
+        lines += para("Not yet equivalent on its own: the commits that follow are documented "
+                      "source edits, each stating in the source what the release has and the "
+                      "conversion does not carry (plans/%s.json). Against google/fonts %s, under "
+                      "tools/table_gate.py and tools/functional_gate.py:" % (repo, gf_ref))
+        lines += gate_lines(results, functional, wrap)
     elif clean:
         lines += para("Builds with gftools-builder (%s, fontc %s) and matches the binaries "
                       "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
@@ -959,6 +971,9 @@ def convert(repo, rows, d, plan, bf_rev, n_edits):
     if deferred_gdef:
         head, results, functional = state_gdef_classes(
             d, plan, deferred_gdef, build_and_gate, para, wrap, gf_ref, cited)
+    if plan.get("source_edits"):
+        head, results, functional = apply_source_edits(
+            d, plan, per_style, build_and_gate, para, wrap, gf_ref, cited)
     return head, results, functional
 
 
@@ -977,6 +992,53 @@ def gate_lines(results, functional, wrap):
         lines += wrap("%s: %s; %s" % (st, table, "functionally equivalent" if not bad else
                                       "functionally different in " + ", ".join(bad)))
     return lines
+
+
+def claim_lines(results, functional, para, wrap, gf_ref):
+    """The build claim a landing's last commit carries."""
+    clean = all(n == 0 and st in functional and functional[st]["verdict"] == "PASS"
+                for st, n, _ in results)
+    if clean:
+        return para("Builds with gftools-builder (%s, fontc %s) and matches the binaries "
+                    "google/fonts %s ships: 0 blocking rows under tools/table_gate.py, "
+                    "exactly the release's codepoints, and functionally equivalent under "
+                    "tools/functional_gate.py (cmap, shaping, rendering, names, line "
+                    "spacing, advances, GDEF, hinting), %d style(s)."
+                    % (B3_WHERE, FONTC_ID, gf_ref, len(results)))
+    return (para("Builds with gftools-builder (%s, fontc %s). Against google/fonts %s, "
+                 "under tools/table_gate.py and tools/functional_gate.py:"
+                 % (B3_WHERE, FONTC_ID, gf_ref)) + gate_lines(results, functional, wrap))
+
+
+def apply_source_edits(d, plan, per_style, build_and_gate, para, wrap, gf_ref, cited):
+    """After the conversion: the plan's `source_edits`, each a documented edit of the converted
+    .glyphs (tools/glyphs_edit.py) in a commit of its own, "Source edit: <subject>". They state
+    what the release has and no reader rule gives (an exporter's renames, a release's own
+    names). The last commit carries the build claim."""
+    by_style = {p["row"]["style"]: p["glyphs"] for p in per_style}
+    edits = plan["source_edits"]
+    results = functional = None
+    for i, c in enumerate(edits):
+        styles = list(by_style) if c.get("styles", "*") in ("*", ["*"]) else c["styles"]
+        touched = []
+        for st in styles:
+            for op, args in c["ops"]:
+                _, changed = glyphs_edit.apply_file(by_style[st], op, args)
+                if changed and by_style[st] not in touched:
+                    touched.append(by_style[st])
+        if not touched:
+            raise LandError("source edit changed nothing: %s" % c["subject"])
+        lines = [SOURCE_EDIT_PREFIX + c["subject"], ""]
+        for n, block in enumerate(c["body"].strip().split("\n\n")):
+            lines += ([""] if n else []) + para(" ".join(block.split()))
+        last = i == len(edits) - 1
+        if last:
+            scratch, results, functional = build_and_gate()
+            lines += [""] + claim_lines(results, functional, para, wrap, gf_ref) + [""] + para(cited)
+        head = commit(d, "\n".join(lines), *touched)
+        if last:
+            shutil.rmtree(scratch, ignore_errors=True)
+    return head, results, functional
 
 
 def state_gdef_classes(d, plan, deferred, build_and_gate, para, wrap, gf_ref, cited):
