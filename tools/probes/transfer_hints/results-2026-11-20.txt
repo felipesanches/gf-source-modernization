@@ -1,0 +1,155 @@
+== oldenburg Oldenburg-Regular.ttf
+  instructed 0; transferred 0; refused: points/contours 0; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 0
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 15} / {65535: 15}
+== passeroone PasseroOne-Regular.ttf
+  instructed 0; transferred 0; refused: points/contours 0; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 0
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {36: 15, 65535: 14} / {36: 15, 65535: 14}
+== rye Rye-Regular.ttf
+  instructed 246; transferred 210; refused: points/contours 36; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 189
+  hinting check: FAIL release 246 glyph programs; build 210 glyph programs; gasp {65535: 15} / {65535: 15}
+    - 225 of 246 instructed glyph(s) do not carry the release's program on the release's points (36 programs missing, 189 on other points): exclam, quotedbl, dollar
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 3444 of 4386 glyph sizes differ: exclam@8, dollar@8, percent@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 3655 of 4386 glyph sizes differ: exclam@8, quotedbl@8, dollar@8
+== sarina Sarina-Regular.ttf
+  instructed 0; transferred 0; refused: points/contours 0; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 0
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 14} / {65535: 14}
+== snowburstone SnowburstOne-Regular.ttf
+  instructed 258; transferred 242; refused: points/contours 16; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 133
+  hinting check: FAIL release 258 glyph programs; build 242 glyph programs; gasp {65535: 15} / {65535: 15}
+    - 177 of 258 instructed glyph(s) do not carry the release's program on the release's points (16 programs missing, 161 on other points): exclam, numbersign, dollar
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 3440 of 5457 glyph sizes differ: numbersign@8, dollar@8, percent@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 4070 of 5457 glyph sizes differ: exclam@8, numbersign@8, dollar@8
+== spinnaker Spinnaker-Regular.ttf
+  instructed 56; transferred 54; refused: points/contours 2; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 0
+  hinting check: FAIL release 56 glyph programs; build 54 glyph programs; gasp {65535: 15} / {65535: 15}
+    - 2 of 56 instructed glyph(s) do not carry the release's program on the release's points (2 programs missing, 0 on other points): dieresis, dieresis.cap
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 172 of 4386 glyph sizes differ: dieresis@8, adieresis@8, edieresis@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 326 of 4386 glyph sizes differ: dieresis@8, Adieresis@8, Edieresis@8
+== stoke Stoke-Light.ttf
+  instructed 0; transferred 0; refused: points/contours 0; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 0
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 15} / {65535: 15}
+== stoke Stoke-Regular.ttf
+  instructed 401; transferred 368; refused: points/contours 33; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 133
+  hinting check: FAIL release 401 glyph programs; build 368 glyph programs; gasp {65535: 15} / {65535: 15}
+    - 361 of 401 instructed glyph(s) do not carry the release's program on the release's points (33 programs missing, 328 on other points): exclam, quotedbl, numbersi
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 5238 of 7225 glyph sizes differ: percent@8, parenleft@8, parenright@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 6008 of 7225 glyph sizes differ: exclam@8, quotedbl@8, numbersign@8
+== supermercadoone Supermercado-Regular.ttf
+  no shipped font named Supermercado-Regular.ttf
+== tauri Tauri-Regular.ttf
+  instructed 171; transferred 141; refused: points/contours 30; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 27
+  hinting check: FAIL release 171 glyph programs; build 141 glyph programs; gasp {65535: 15} / {65535: 15}
+    - 57 of 171 instructed glyph(s) do not carry the release's program on the release's points (30 programs missing, 27 on other points): O, a, d
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1419 of 4811 glyph sizes differ: O@8, a@8, d@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1789 of 4811 glyph sizes differ: O@8, a@8, d@8
+== vastshadow VastShadow-Regular.ttf
+  instructed 0; transferred 0; refused: points/contours 0; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 0
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 15} / {65535: 15}
+== wellfleet Wellfleet-Regular.ttf
+  instructed 0; transferred 0; refused: points/contours 0; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 0
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 15} / {65535: 15}
+== actor Actor-Regular.ttf
+  instructed 169; transferred 141; refused: points/contours 28; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 27
+  hinting check: FAIL release 169 glyph programs; build 141 glyph programs; gasp {8: 2, 16: 1, 65535: 3} / {8: 2, 16: 1, 65535: 3}
+    - 55 of 169 instructed glyph(s) do not carry the release's program on the release's points (28 programs missing, 27 on other points): O, Oslash, P
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1244 of 3995 glyph sizes differ: Atilde@9, Ntilde@9, O@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1396 of 3995 glyph sizes differ: O@8, Oacute@8, Ocircumflex@8
+== cantoraone CantoraOne-Regular.ttf
+  instructed 466; transferred 234; refused: points/contours 232; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 119
+  hinting check: FAIL release 466 glyph programs; build 234 glyph programs; gasp {65535: 15} / {65535: 15}
+    - 351 of 466 instructed glyph(s) do not carry the release's program on the release's points (232 programs missing, 119 on other points): .notdef, B, D
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 5050 of 7718 glyph sizes differ: .notdef@8, B@8, D@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 5784 of 7718 glyph sizes differ: .notdef@8, B@8, D@8
+== forum Forum-Regular.ttf
+  instructed 577; transferred 412; refused: points/contours 165; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 117
+  hinting check: FAIL release 577 glyph programs; build 412 glyph programs; gasp {8: 2, 16: 1, 65535: 3} / {8: 2, 16: 1, 65535: 3}
+    - 282 of 577 instructed glyph(s) do not carry the release's program on the release's points (165 programs missing, 117 on other points): Adieresis, Aring, C
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 4185 of 9826 glyph sizes differ: Adieresis@9, Aring@9, C@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 4476 of 9826 glyph sizes differ: edieresis@8, n@8, zero@8
+== lobstertwo LobsterTwo-Bold.ttf
+  instructed 355; transferred 260; refused: points/contours 95; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 142
+  hinting check: FAIL release 355 glyph programs; build 260 glyph programs; gasp None / {65535: 15}
+    - 237 of 355 instructed glyph(s) do not carry the release's program on the release's points (95 programs missing, 142 on other points): Adieresis, Aogonek, Aring
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 3600 of 6018 glyph sizes differ: Adieresis@9, Aogonek@9, Aring@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 3785 of 6018 glyph sizes differ: S@8, Sacute@8, Scaron@8
+== lobstertwo LobsterTwo-BoldItalic.ttf
+  instructed 355; transferred 277; refused: points/contours 78; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 152
+  hinting check: FAIL release 355 glyph programs; build 277 glyph programs; gasp None / {65535: 15}
+    - 230 of 355 instructed glyph(s) do not carry the release's program on the release's points (78 programs missing, 152 on other points): AE, Adieresis, Aogonek
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 3478 of 6018 glyph sizes differ: AE@9, Adieresis@9, Aogonek@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 3676 of 6018 glyph sizes differ: D@8, a_x@8, a_x.end@8
+== lobstertwo LobsterTwo-Italic.ttf
+  instructed 355; transferred 276; refused: points/contours 79; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 154
+  hinting check: FAIL release 355 glyph programs; build 276 glyph programs; gasp None / {65535: 15}
+    - 233 of 355 instructed glyph(s) do not carry the release's program on the release's points (79 programs missing, 154 on other points): A, AE, Aacute
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 3582 of 6018 glyph sizes differ: A@9, AE@9, Aacute@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 3719 of 6018 glyph sizes differ: Adieresis@8, Edieresis@8, adieresis@8
+== lobstertwo LobsterTwo-Regular.ttf
+  instructed 355; transferred 295; refused: points/contours 60; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 173
+  hinting check: FAIL release 355 glyph programs; build 295 glyph programs; gasp None / {65535: 15}
+    - 233 of 355 instructed glyph(s) do not carry the release's program on the release's points (60 programs missing, 173 on other points): A, AE, Aacute
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 3474 of 6018 glyph sizes differ: A@9, AE@9, Aacute@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 3716 of 6018 glyph sizes differ: Aring@8, bullet@8, periodcentered@8
+== quattrocento Quattrocento-Bold.ttf
+  instructed 245; transferred 198; refused: points/contours 47; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 74
+  hinting check: FAIL release 245 glyph programs; build 198 glyph programs; gasp {65535: 15} / {65535: 15}
+    - 121 of 245 instructed glyph(s) do not carry the release's program on the release's points (47 programs missing, 74 on other points): .notdef, D, F
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1751 of 4233 glyph sizes differ: D@8, F@8, H@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 2023 of 4233 glyph sizes differ: D@8, F@8, H@8
+== quattrocento Quattrocento-Regular.ttf
+  instructed 245; transferred 155; refused: points/contours 90; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 49
+  hinting check: FAIL release 245 glyph programs; build 155 glyph programs; gasp {65535: 15} / {65535: 15}
+    - 139 of 245 instructed glyph(s) do not carry the release's program on the release's points (90 programs missing, 49 on other points): .notdef, AE, Adieresis
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1917 of 4233 glyph sizes differ: AE@8, Adieresis@8, Aring@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 2346 of 4233 glyph sizes differ: AE@8, Adieresis@8, Aring@8
+== share Share-Bold.ttf
+  instructed 252; transferred 204; refused: points/contours 48; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 39
+  hinting check: FAIL release 252 glyph programs; build 204 glyph programs; gasp None / {65535: 15}
+    - 87 of 252 instructed glyph(s) do not carry the release's program on the release's points (48 programs missing, 39 on other points): percent, ampersand, parenlef
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1325 of 4318 glyph sizes differ: percent@9, ampersand@9, parenleft@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1394 of 4318 glyph sizes differ: C@8, aring@8, percent@9
+== share Share-BoldItalic.ttf
+  instructed 252; transferred 241; refused: points/contours 11; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 71
+  hinting check: FAIL release 252 glyph programs; build 241 glyph programs; gasp None / {65535: 15}
+    - 82 of 252 instructed glyph(s) do not carry the release's program on the release's points (11 programs missing, 71 on other points): percent, ampersand, parenlef
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1207 of 4318 glyph sizes differ: percent@9, parenleft@9, parenright@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1312 of 4318 glyph sizes differ: percent@9, ampersand@9, parenleft@9
+== share Share-Italic.ttf
+  instructed 252; transferred 238; refused: points/contours 14; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 72
+  hinting check: FAIL release 252 glyph programs; build 238 glyph programs; gasp None / {65535: 15}
+    - 86 of 252 instructed glyph(s) do not carry the release's program on the release's points (14 programs missing, 72 on other points): percent, ampersand, parenlef
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1245 of 4318 glyph sizes differ: percent@9, parenright@9, two@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1376 of 4318 glyph sizes differ: percent@9, ampersand@9, parenleft@9
+== share Share-Regular.ttf
+  instructed 252; transferred 205; refused: points/contours 47; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 42
+  hinting check: FAIL release 252 glyph programs; build 205 glyph programs; gasp None / {65535: 15}
+    - 89 of 252 instructed glyph(s) do not carry the release's program on the release's points (47 programs missing, 42 on other points): percent, ampersand, parenlef
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1266 of 4318 glyph sizes differ: percent@9, ampersand@9, parenleft@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1426 of 4318 glyph sizes differ: G@8, otilde@8, percent@9
+== stalinistone StalinistOne-Regular.ttf
+  instructed 330; transferred 330; refused: points/contours 0; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 0
+  hinting check: PASS release 330 glyph programs; build 330 glyph programs; gasp {65535: 15} / {65535: 15}
+== volkhov Volkhov-Bold.ttf
+  instructed 217; transferred 193; refused: points/contours 24; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 33
+  hinting check: FAIL release 217 glyph programs; build 193 glyph programs; gasp {8: 2, 65535: 3} / {8: 2, 65535: 3}
+    - 57 of 217 instructed glyph(s) do not carry the release's program on the release's points (24 programs missing, 33 on other points): exclam, dollar, percent
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1352 of 3723 glyph sizes differ: exclam@9, dollar@9, percent@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1386 of 3723 glyph sizes differ: zero@8, question@8, o@8
+== volkhov Volkhov-BoldItalic.ttf
+  instructed 213; transferred 205; refused: points/contours 8; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 62
+  hinting check: FAIL release 213 glyph programs; build 205 glyph programs; gasp {8: 2, 65535: 3} / {8: 2, 65535: 3}
+    - 70 of 213 instructed glyph(s) do not carry the release's program on the release's points (8 programs missing, 62 on other points): exclam, dollar, percent
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1640 of 3723 glyph sizes differ: percent@8, ampersand@8, parenleft@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1751 of 3723 glyph sizes differ: exclam@8, dollar@8, percent@8
+== volkhov Volkhov-Italic.ttf
+  instructed 213; transferred 200; refused: points/contours 13; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 55
+  hinting check: FAIL release 213 glyph programs; build 200 glyph programs; gasp {8: 2, 65535: 3} / {8: 2, 65535: 3}
+    - 68 of 213 instructed glyph(s) do not carry the release's program on the release's points (13 programs missing, 55 on other points): exclam, dollar, percent
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1636 of 3723 glyph sizes differ: dollar@8, percent@8, ampersand@8
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1768 of 3723 glyph sizes differ: exclam@8, dollar@8, percent@8
+== volkhov Volkhov-Regular.ttf
+  instructed 215; transferred 187; refused: points/contours 28; refused: direction 0; refused: composite 0; missing 0; transferred on moved points 28
+  hinting check: FAIL release 215 glyph programs; build 187 glyph programs; gasp {8: 2, 65535: 3} / {8: 2, 65535: 3}
+    - 56 of 215 instructed glyph(s) do not carry the release's program on the release's points (28 programs missing, 28 on other points): exclam, dollar, percent
+    - hinted rendering, FreeType v35 mono, 8-24 ppem: 1333 of 3723 glyph sizes differ: exclam@9, dollar@9, percent@9
+    - hinted rendering, FreeType v35 gray, 8-24 ppem: 1378 of 3723 glyph sizes differ: percent@8, O@8, o@8
