@@ -96,3 +96,4 @@ wellfleet	converts from its binaries (2026-11-18): waits for gftools-rust#2 (hin
 bethellen	landed 2026-11-19 CLEAN on main's tip after a restore of d6c8d9b (restore_onto); archived on GitHub: bottleneck 0b; follow-up (the 2019 redesign): FOLLOWUP-QUEUE
 batang	probed 2026-11-19 from its binaries (tools/probes/hanyang_from_binary); layout waits for Aaron; hinting waits for gftools-rust#2; archived
 gulim	probed 2026-11-19 from its binaries (tools/probes/hanyang_from_binary); layout waits for Aaron; hinting waits for gftools-rust#2; archived
+irishgrover	landed 2026-11-20 CLEAN with babelfont main 282866b0 (after #143) and the 2017 hotfix names as a source edit; repository to create: PR-QUEUE 5e
