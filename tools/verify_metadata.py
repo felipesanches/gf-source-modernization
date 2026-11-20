@@ -2,7 +2,8 @@
 """Question answered: is a google/fonts branch written by tools/metadata.py right to submit?
 
 Checks every commit between the base (upstream/main by default) and the branch HEAD:
-  1. it touches exactly <lic>/<family>/METADATA.pb and upstream_info.md, one family;
+  1. it touches exactly <lic>/<family>/METADATA.pb and upstream_info.md, one family (and may
+     delete that family's override config.yaml);
   2. METADATA.pb parses (gftools' fonts_public_pb2) and its source block names
      https://github.com/googlefonts/<repo>, its DEFAULT branch on GitHub, and a commit on
      that branch as GitHub publishes it (fetched; never a pull request's branch);
@@ -50,6 +51,13 @@ def check_commit(wt, sha, build):
     files = git(wt, "show", "--format=", "--name-only", sha).split()
     dirs = {os.path.dirname(f) for f in files}
     names = sorted(os.path.basename(f) for f in files)
+    if names == ["METADATA.pb", "config.yaml", "upstream_info.md"] and len(dirs) == 1:
+        # the family's override config.yaml may go, deleted, never added or changed:
+        # the repository now builds from its own sources/config.yaml (metadata.py)
+        status = git(wt, "show", "--format=", "--name-status", sha).split("\n")
+        if not any(l.startswith("D\t") and l.endswith("/config.yaml") for l in status):
+            return "?", ["changes %s/config.yaml (only its deletion is allowed)" % dirs.pop()]
+        names = ["METADATA.pb", "upstream_info.md"]
     if len(dirs) != 1 or names != ["METADATA.pb", "upstream_info.md"]:
         return "?", ["touches %s" % ", ".join(files)]
     fam_dir = dirs.pop()
