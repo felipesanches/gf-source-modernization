@@ -1,0 +1,58 @@
+== actor Actor-Regular.ttf
+  hinting check: PASS release 169 glyph programs; build 169 glyph programs; gasp {8: 2, 16: 1, 65535: 3} / {8: 2, 16: 1, 65535: 3}
+== cantoraone CantoraOne-Regular.ttf
+  hinting check: PASS release 466 glyph programs; build 466 glyph programs; gasp {65535: 15} / {65535: 15}
+== forum Forum-Regular.ttf
+  hinting check: PASS release 577 glyph programs; build 577 glyph programs; gasp {8: 2, 16: 1, 65535: 3} / {8: 2, 16: 1, 65535: 3}
+== lobstertwo LobsterTwo-BoldItalic.ttf
+  hinting check: PASS release 355 glyph programs; build 355 glyph programs; gasp None / None
+== lobstertwo LobsterTwo-Bold.ttf
+  hinting check: PASS release 355 glyph programs; build 355 glyph programs; gasp None / None
+== lobstertwo LobsterTwo-Italic.ttf
+  hinting check: PASS release 355 glyph programs; build 355 glyph programs; gasp None / None
+== lobstertwo LobsterTwo-Regular.ttf
+  hinting check: PASS release 355 glyph programs; build 355 glyph programs; gasp None / None
+== oldenburg Oldenburg-Regular.ttf
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 15} / {65535: 15}
+== passeroone PasseroOne-Regular.ttf
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {36: 15, 65535: 14} / {36: 15, 65535: 14}
+== quattrocento Quattrocento-Bold.ttf
+  hinting check: PASS release 245 glyph programs; build 245 glyph programs; gasp {65535: 15} / {65535: 15}
+== quattrocento Quattrocento-Regular.ttf
+  hinting check: PASS release 245 glyph programs; build 245 glyph programs; gasp {65535: 15} / {65535: 15}
+== rye Rye-Regular.ttf
+  hinting check: PASS release 246 glyph programs; build 246 glyph programs; gasp {65535: 15} / {65535: 15}
+== sarina Sarina-Regular.ttf
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 14} / {65535: 14}
+== share Share-BoldItalic.ttf
+  hinting check: PASS release 252 glyph programs; build 252 glyph programs; gasp None / None
+== share Share-Bold.ttf
+  hinting check: PASS release 252 glyph programs; build 252 glyph programs; gasp None / None
+== share Share-Italic.ttf
+  hinting check: PASS release 252 glyph programs; build 252 glyph programs; gasp None / None
+== share Share-Regular.ttf
+  hinting check: PASS release 252 glyph programs; build 252 glyph programs; gasp None / None
+== snowburstone SnowburstOne-Regular.ttf
+  hinting check: PASS release 258 glyph programs; build 258 glyph programs; gasp {65535: 15} / {65535: 15}
+== spinnaker Spinnaker-Regular.ttf
+  hinting check: PASS release 56 glyph programs; build 56 glyph programs; gasp {65535: 15} / {65535: 15}
+== stalinistone StalinistOne-Regular.ttf
+  hinting check: PASS release 330 glyph programs; build 330 glyph programs; gasp {65535: 15} / {65535: 15}
+== stoke Stoke-Light.ttf
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 15} / {65535: 15}
+== stoke Stoke-Regular.ttf
+  hinting check: PASS release 401 glyph programs; build 401 glyph programs; gasp {65535: 15} / {65535: 15}
+== tauri Tauri-Regular.ttf
+  hinting check: PASS release 171 glyph programs; build 171 glyph programs; gasp {65535: 15} / {65535: 15}
+== vastshadow VastShadow-Regular.ttf
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 15} / {65535: 15}
+== volkhov Volkhov-BoldItalic.ttf
+  hinting check: PASS release 213 glyph programs; build 213 glyph programs; gasp {8: 2, 65535: 3} / {8: 2, 65535: 3}
+== volkhov Volkhov-Bold.ttf
+  hinting check: PASS release 217 glyph programs; build 217 glyph programs; gasp {8: 2, 65535: 3} / {8: 2, 65535: 3}
+== volkhov Volkhov-Italic.ttf
+  hinting check: PASS release 213 glyph programs; build 213 glyph programs; gasp {8: 2, 65535: 3} / {8: 2, 65535: 3}
+== volkhov Volkhov-Regular.ttf
+  hinting check: PASS release 215 glyph programs; build 215 glyph programs; gasp {8: 2, 65535: 3} / {8: 2, 65535: 3}
+== wellfleet Wellfleet-Regular.ttf
+  hinting check: PASS release no glyph programs, prep 7 bytes; build no glyph programs, prep 7 bytes; gasp {65535: 15} / {65535: 15}
