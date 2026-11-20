@@ -14,6 +14,8 @@
 # failure crater recorded. Exit 1 if any target fails.
 set -eu
 OLD=${1:?old targets.json}; NEW=${2:?new targets.json}; S=${3:?scratch dir}
+# fontc_crater rebuilds fontc itself with the default toolchain; fontc needs rustc >= 1.96 (vergen)
+export RUSTUP_TOOLCHAIN="${RUSTUP_TOOLCHAIN:-1.97.1}"
 python3 - "$OLD" "$NEW" "$S/subset.json" <<'PY'
 import json, sys
 old, new, out = json.load(open(sys.argv[1])), json.load(open(sys.argv[2])), sys.argv[3]

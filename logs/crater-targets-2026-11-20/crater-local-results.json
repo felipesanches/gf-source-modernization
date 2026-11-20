@@ -1,0 +1,21 @@
+{
+  "success": {
+    "googlefonts/codystar/sources/config.yaml Codystar-Light.glyphs?7bfc4fb2c0 (default)": "identical",
+    "googlefonts/codystar/sources/config.yaml Codystar-Light.glyphs?7bfc4fb2c0 (gftools)": "identical",
+    "googlefonts/codystar/sources/config.yaml Codystar-Regular.glyphs?7bfc4fb2c0 (default)": "identical",
+    "googlefonts/codystar/sources/config.yaml Codystar-Regular.glyphs?7bfc4fb2c0 (gftools)": "identical",
+    "googlefonts/dongle/sources/config.yaml Dongle-Bold.glyphs?d424e1283e (default)": "identical",
+    "googlefonts/dongle/sources/config.yaml Dongle-Bold.glyphs?d424e1283e (gftools)": "identical",
+    "googlefonts/dongle/sources/config.yaml Dongle-Light.glyphs?d424e1283e (default)": "identical",
+    "googlefonts/dongle/sources/config.yaml Dongle-Light.glyphs?d424e1283e (gftools)": "identical",
+    "googlefonts/dongle/sources/config.yaml Dongle-Regular.glyphs?d424e1283e (default)": "identical",
+    "googlefonts/dongle/sources/config.yaml Dongle-Regular.glyphs?d424e1283e (gftools)": "identical",
+    "googlefonts/englebert/sources/config.yaml Englebert-Regular.glyphs?078d44fadf (default)": "identical",
+    "googlefonts/englebert/sources/config.yaml Englebert-Regular.glyphs?078d44fadf (gftools)": "identical",
+    "googlefonts/gowunbatang/sources/config.yaml GowunBatang-Bold.glyphs?bf6ce63b0e (default)": "identical",
+    "googlefonts/gowunbatang/sources/config.yaml GowunBatang-Bold.glyphs?bf6ce63b0e (gftools)": "identical",
+    "googlefonts/gowunbatang/sources/config.yaml GowunBatang-Regular.glyphs?bf6ce63b0e (default)": "identical",
+    "googlefonts/gowunbatang/sources/config.yaml GowunBatang-Regular.glyphs?bf6ce63b0e (gftools)": "identical"
+  },
+  "failure": {}
+}

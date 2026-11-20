@@ -1,0 +1,10 @@
+old 1602 entries, generated 1602, kept by hand 0 (), result 1602
+added 4, removed 4, rev changed 0
+  + https://github.com/googlefonts/codystar  sources/config.yaml
+  + https://github.com/googlefonts/dongle  sources/config.yaml
+  + https://github.com/googlefonts/englebert  sources/config.yaml
+  + https://github.com/googlefonts/gowunbatang  sources/config.yaml
+  - https://github.com/librefonts/codystar  google/fonts/ofl/codystar/config.yaml
+  - https://github.com/librefonts/englebert  google/fonts/ofl/englebert/config.yaml
+  - https://github.com/yangheeryu/Dongle  google/fonts/ofl/dongle/config.yaml
+  - https://github.com/yangheeryu/Gowun-Batang  google/fonts/ofl/gowunbatang/config.yaml
