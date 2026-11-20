@@ -1,0 +1,5 @@
+fontmake==3.12.2
+fonttools==4.68.0
+gftools==0.10.8
+glyphsLib==6.17.1
+ufo2ft==3.11.0
